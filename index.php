@@ -90,4 +90,4 @@ foreach($result as $row){
 	echo "<li>{$row["Password"]}</li>";
 }
 
-echo '<br>[TAKOOOOO]!!';
+echo '<br>[TAKOOOOO JUJU]!!';
