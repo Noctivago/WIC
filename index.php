@@ -58,7 +58,7 @@ $stmt->bindParam(':good_user', $id);
 $stmt->bindParam(':status', $id);
 $stmt->bindParam(':last_status_online', $id);
 
-
+'asdasdasdad
 $stmt->execute();
 $result = $stmt->fetchAll();
 foreach($result as $row){
