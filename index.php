@@ -89,3 +89,5 @@ foreach($result as $row){
 	echo "<li>{$row["Username"]}</li>";
 	echo "<li>{$row["Password"]}</li>";
 }
+
+echo 'Hello!';
