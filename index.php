@@ -1,5 +1,5 @@
 <?php
-require_once('conn.inc.php'); 
+require_once('./db/conn.inc.php'); 
    
 /*
 $consulta = $pdo->prepare("SELECT nome, senha FROM login where usuario = :usuario;");
