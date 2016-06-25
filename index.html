@@ -88,43 +88,6 @@
                             <a href="http://plus.google.com/"><i class="fa fa-google-plus" style="color:white"></i></a>
                             <a href="http://instagram.com/"><i class="fa fa-instagram" style="color:white"></i></a>		
                         </div>	
-                        <?php
-
-                        /*
-                        require_once './db/pdo.php';
-                        require_once './dao/TestDAO.php';
-                        require_once './model/Test.php';
-
-                        $test = new Test();
-                        $test->setTitle('TITULO');
-                        $test->setContent('CONTENT');
-
-                        $testDAO = new TestDao($pdo);
-                        $testDAO->insert($test);
-                        */
-
-                        function OpenConnection(){  
-                        $server = "wicsqlserver.database.windows.net";
-                        $port = "1433";
-                        $pass = '#$youcandoit2017$#';
-                        $user = "wic";
-                        $db = "wicoplannerdb";
-                        try  
-                        {  
-                        $conn = new PDO("sqlsrv:server=$server; Database=$db", "$user", "$pass");
-                        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-                        if($conn == false) {
-                        echo "Ups!";
-                        } else {
-                        echo "Connected!";
-                        }
-                        }  
-                        catch(Exception $e)  
-                        {  
-                        echo("Error -> IP NOT ALLOWED!");  
-                        }  
-                        }
-                        OpenConnection();	
                         <div>
                         </div>
                         </div><!-- /col-lg-6 -->
