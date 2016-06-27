@@ -1,10 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 function f_100() {
     //dados a enviar, vai buscar os valores dos campos que queremos enviar para a BD
     var dadosajax = {
@@ -13,7 +6,7 @@ function f_100() {
         'email': $("#email").val()
     };
 
-    pageurl = '100.php';
+    pageurl = "../func/100.php";
     //para consultar mais opcoes possiveis numa chamada ajax
     //http://api.jquery.com/jQuery.ajax/
     $.ajax({
