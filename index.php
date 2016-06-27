@@ -91,4 +91,4 @@ foreach($result as $row){
 }
 
 ?>
-<a href="func/ola.php">O Builder arrebentou com o tal</a> 
+<a href="forms/f_1000.html">O Builder arrebentou com o tal</a> 
