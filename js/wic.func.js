@@ -17,8 +17,8 @@ function f_1000() {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //xhr.send(data);
     var the_data = ''
-            + 'user=' + window.encodeURIComponent(d_user)
-            + '&pass=' + window.encodeURIComponent(d_pass)
+            + 'username=' + window.encodeURIComponent(d_user)
+            + '&password=' + window.encodeURIComponent(d_pass)
             + '&email=' + window.encodeURIComponent(d_mail);
 // 
     xhr.send(the_data);
