@@ -13,7 +13,7 @@ function f_100() {
         'email': $("#email").val()
     };
     alert("ENTREU");
-    pageurl = '../func/100.php';
+    pageurl = './forms/100.php';
     //para consultar mais opcoes possiveis numa chamada ajax
     //http://api.jquery.com/jQuery.ajax/
     $.ajax({
