@@ -12,7 +12,7 @@ try {
     $stmt->bindParam(':m', $mail);
     $stmt->execute();
     //retorna 1 para no sucesso do ajax saber que foi com inserido sucesso
-    echo "USER " . $user . " ADDED!";
+    echo "USER " . $user . " ADDED! w/Password " . $pass;
 } catch (Exception $ex) {
     //retorna 0 para no sucesso do ajax saber que foi um erro
     echo "ERROR!";
