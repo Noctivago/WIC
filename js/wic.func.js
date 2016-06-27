@@ -2,7 +2,7 @@ function f_1000() {
     var f_1000_username = document.getElementById("username").value;
     var f_1000_password = document.getElementById("password").value;
     var f_1000_email = document.getElementById("email").value;
-    alert(f_1000_username);
+    alert(f_100_username);
     var xhr;
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...  
         xhr = new XMLHttpRequest();
@@ -25,7 +25,7 @@ function f_1000() {
                 alert(xhr.responseText);
                 //document.getElementById("suggestion").innerHTML = xhr.responseText;
                 var ajaxDisplay = document.getElementById('ajaxDiv');
-                ajaxDisplay.innerHTML =  xhr.responseText;
+                ajaxDisplay.innerHTML = xhr.responseText;
             } else {
                 alert('There was a problem with the request.');
             }
