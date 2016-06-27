@@ -4,9 +4,12 @@ require_once('./db/conn.inc.php');
 
 // insert one row
 /* @var $_REQUEST type */
-$user = FILTER_SANITIZE_STRING($_REQUEST['username']);
-$pass = FILTER_SANITIZE_STRING($_REQUEST['password']);
-$email = FILTER_SANITIZE_EMAIL($_REQUEST['email']);
+//$user = FILTER_SANITIZE_STRING($_REQUEST['username']);
+//$pass = FILTER_SANITIZE_STRING($_REQUEST['password']);
+//$email = FILTER_SANITIZE_EMAIL($_REQUEST['email']);
+$user = FILTER_SANITIZE_STRING('username');
+$pass = FILTER_SANITIZE_STRING('password');
+$email = FILTER_SANITIZE_EMAIL('email');
 
 try {
     $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:user, :pass, :mail)");
