@@ -16,7 +16,12 @@ function f_1000() {
     //alert('FILE');
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //xhr.send(data);
-    xhr.send(d_user, d_pass, d_mail);
+    var the_data = ''
+            + 'user=' + window.encodeURIComponent(d_user)
+            + '&pass=' + window.encodeURIComponent(d_pass)
+            + '&email=' + window.encodeURIComponent(d_mail);
+// 
+    xhr.send(the_data);
     xhr.onreadystatechange = display_data;
     function display_data() {
         if (xhr.readyState === 4) {
