@@ -1,8 +1,8 @@
-function f_100() {
+function f_1000() {
     alert('FDX');
-    var f_100_username = document.getElementById("username").value;
-    var f_100_password = document.getElementById("password").value;
-    var f_100_email = document.getElementById("email").value;
+    var f_1000_username = document.getElementById("username").value;
+    var f_1000_password = document.getElementById("password").value;
+    var f_1000_email = document.getElementById("email").value;
     alert(f_100_username);
     var xhr;
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...  
@@ -10,10 +10,10 @@ function f_100() {
     } else if (window.ActiveXObject) { // IE 8 and older  
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    var d_user = "username=" + f_100_username;
+    var d_user = "username=" + f_1000_username;
     //var d_pass = "password=" + f_100_password;
     //var d_mail = "email=" + f_100_email;
-    xhr.open("POST", "../func/100.php", true);
+    xhr.open("POST", "../func/1000.php", true);
     alert('FILE');
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //xhr.send(data);
