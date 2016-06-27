@@ -91,3 +91,6 @@ foreach($result as $row){
 }
 
 echo '<br>[TAKOOOOO JUJU]!!';
+
+?>
+<a href="./forms/l.html">LINK</a> 
