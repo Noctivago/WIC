@@ -10,7 +10,8 @@ try {
     $utilizador->setEmail(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
     $stmt->bindParam(':u', $utilizador->getUsername());
-    $stmt->bindParam(':p', $utilizador->getPassword());
+    #$stmt->bindParam(':p', $utilizador->getPassword());
+    $stmt->bindParam(':p', $_POST['password']);
     $stmt->bindParam(':m', $utilizador->getEmail());
     $stmt->execute();
     //retorna 1 para no sucesso do ajax saber que foi com inserido sucesso
