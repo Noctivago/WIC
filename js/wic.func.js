@@ -9,17 +9,14 @@ function f_1000() {
     } else if (window.ActiveXObject) { // IE 8 and older  
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    var d_user = "username=" + f_1000_username;
-    var d_pass = "password=" + f_1000_password;
-    var d_mail = "email=" + f_1000_email;
     xhr.open("POST", "../func/f_1000.php", true);
     //alert('FILE');
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //xhr.send(data);
     var the_data = ''
-            + 'username=' + window.encodeURIComponent(d_user)
-            + '&password=' + window.encodeURIComponent(d_pass)
-            + '&email=' + window.encodeURIComponent(d_mail);
+            + 'username=' + window.encodeURIComponent(f_1000_username)
+            + '&password=' + window.encodeURIComponent(f_1000_password)
+            + '&email=' + window.encodeURIComponent(f_1000_email);
 // 
     xhr.send(the_data);
     xhr.onreadystatechange = display_data;
