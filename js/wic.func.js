@@ -10,13 +10,13 @@ function f_1000() {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
     var d_user = "username=" + f_1000_username;
-    //var d_pass = "password=" + f_100_password;
-    //var d_mail = "email=" + f_100_email;
+    var d_pass = "password=" + f_100_password;
+    var d_mail = "email=" + f_100_email;
     xhr.open("POST", "../func/f_1000.php", true);
     alert('FILE');
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //xhr.send(data);
-    xhr.send(d_user);
+    xhr.send(d_user, d_pass, d_mail);
     xhr.onreadystatechange = display_data;
     function display_data() {
         if (xhr.readyState === 4) {
