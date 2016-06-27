@@ -24,7 +24,7 @@ function f_100() {
         //parametros a passar
         data: dadosajax,
         //tipo: POST ou GET
-        type: 'POST',
+        type: 'GET',
         //cache
         cache: false,
         //se ocorrer um erro na chamada ajax, retorna este alerta
