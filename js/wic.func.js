@@ -1,42 +1,33 @@
 function f_100() {
-    //dados a enviar, vai buscar os valores dos campos que queremos enviar para a BD
-    var dadosajax = {
-        'username': $("#username").val(),
-        'password': $("#password").val(),
-        'email': $("#email").val()
-    };
-
-    pageurl = "../func/100.php";
-    //para consultar mais opcoes possiveis numa chamada ajax
-    //http://api.jquery.com/jQuery.ajax/
-    $.ajax({
-        //url da pagina
-        url: pageurl,
-        //parametros a passar
-        data: dadosajax,
-        //tipo: POST ou GET
-        type: 'POST',
-        //cache
-        cache: false,
-        //se ocorrer um erro na chamada ajax, retorna este alerta
-        //possiveis erros: pagina nao existe, erro de codigo na pagina, falha de comunicacao/internet, etc etc etc
-        error: function () {
-            alert('Erro: Inserir Registo!!');
-        },
-        //retorna o resultado da pagina para onde enviamos os dados
-        success: function (result)
-        {
-            //se foi inserido com sucesso
-            if ($.trim(result) === '1')
-            {
-                alert("O seu registo foi inserido com sucesso!");
+    alert('FDX');
+    var f_100_username = document.getElementById("username").value;
+    var f_100_password = document.getElementById("password").value;
+    var f_100_email = document.getElementById("email").value;
+    alert(f_100_username);
+    var xhr;
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...  
+        xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) { // IE 8 and older  
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    var d_user = "username=" + f_100_username;
+    //var d_pass = "password=" + f_100_password;
+    //var d_mail = "email=" + f_100_email;
+    xhr.open("POST", "../func/100.php", true);
+    alert('FILE');
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    //xhr.send(data);
+    xhr.send(d_user);
+    xhr.onreadystatechange = display_data;
+    function display_data() {
+        if (xhr.readyState === 4) {
+            alert('xhr.readyState === 4');
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+                document.getElementById("suggestion").innerHTML = xhr.responseText;
+            } else {
+                alert('There was a problem with the request.');
             }
-            //se foi um erro
-            else
-            {
-                alert("Ocorreu um erro ao inserir o seu registo!");
-            }
-
         }
-    });
+    }
 }
