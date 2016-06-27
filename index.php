@@ -90,7 +90,5 @@ foreach($result as $row){
 	echo "<li>{$row["Password"]}</li>";
 }
 
-echo '<br>[TAKOOOOO JUJU]!!';
-
 ?>
 <a href="./forms/l.html">LINK</a> 
