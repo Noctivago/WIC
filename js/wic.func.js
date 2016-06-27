@@ -2,7 +2,7 @@ function f_1000() {
     var f_1000_username = document.getElementById("username").value;
     var f_1000_password = document.getElementById("password").value;
     var f_1000_email = document.getElementById("email").value;
-    alert(f_100_username);
+    alert(f_1000_username);
     var xhr;
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...  
         xhr = new XMLHttpRequest();
