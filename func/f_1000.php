@@ -3,6 +3,7 @@
 include_once '../db/conn.inc.php';
 include_once '../poo/User.php';
 
+//addUser
 try {
     $utilizador = new User();
     $utilizador->setUsername($user = filter_var($_POST['username'], FILTER_SANITIZE_STRING));

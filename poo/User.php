@@ -109,9 +109,15 @@ class User {
     function __construct() {
         $this->account_enabled = false;
         $this->login_failed = false;
+        $this->abusive_user = false;
+        $this->setLast_status_online = false;
     }
 
     public function __destruct() {
+        
+    }
+
+    public function __clone() {
         
     }
 
