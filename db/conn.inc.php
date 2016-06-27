@@ -17,8 +17,8 @@ try {
     if ($pdo == false) {
         echo "Redirect to 404!";
     } else {
-        #echo "Connected!";
+        echo "Connected!";
     }
 } catch (Exception $e) {
-    echo("Error -> IP NOT ALLOWED! . $e");
+    echo("Error -> IP NOT ALLOWED!");
 }  
