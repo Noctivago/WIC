@@ -91,4 +91,4 @@ foreach($result as $row){
 }
 
 ?>
-<a href="l.html">LINK 100-LINK 100</a> 
+<a href="fdx.php">LINK 100-LINK 100</a> 
