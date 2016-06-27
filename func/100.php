@@ -15,5 +15,5 @@ try {
     echo "USER " . $user . " ADDED!";
 } catch (Exception $ex) {
     //retorna 0 para no sucesso do ajax saber que foi um erro
-    echo "ERROR";
+    echo "ERROR!";
 }
