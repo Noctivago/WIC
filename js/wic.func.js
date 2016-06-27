@@ -24,7 +24,9 @@ function f_100() {
             alert('xhr.readyState === 4');
             if (xhr.status === 200) {
                 alert(xhr.responseText);
-                document.getElementById("suggestion").innerHTML = xhr.responseText;
+                //document.getElementById("suggestion").innerHTML = xhr.responseText;
+                var ajaxDisplay = document.getElementById('ajaxDiv');
+                ajaxDisplay.innerHTML =  xhr.responseText;
             } else {
                 alert('There was a problem with the request.');
             }
