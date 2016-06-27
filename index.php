@@ -91,4 +91,4 @@ foreach($result as $row){
 }
 
 ?>
-<a href="func/ola.php">LINK 100-LINhhhuK 100</a> 
+<a href="func/ola.php">LINK LINhhhuK 100</a> 
