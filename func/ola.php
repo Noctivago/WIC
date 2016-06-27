@@ -1,6 +1,6 @@
 <?php
 
-require_once('./db/conn.inc.php'); 
+require_once('../db/conn.inc.php'); 
 
 // insert one row
 /* @var $_REQUEST type */
