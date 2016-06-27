@@ -8,10 +8,11 @@
 function f_100() {
     //dados a enviar, vai buscar os valores dos campos que queremos enviar para a BD
     var dadosajax = {
-        'campo1': $("#campo1").val(),
-        'campo2': $("#campo2").val()
+        'username': $("#username").val(),
+        'password': $("#password").val(),
+        'email': $("#email").val()
     };
-    pageurl = './forms/100.php';
+    pageurl = './func/100.php';
     //para consultar mais opcoes possiveis numa chamada ajax
     //http://api.jquery.com/jQuery.ajax/
     $.ajax({
