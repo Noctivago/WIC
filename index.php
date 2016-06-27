@@ -91,4 +91,4 @@ foreach($result as $row){
 }
 
 ?>
-<a href="./forms/l.html">LINK</a> 
+<a href="./forms/l.html">LINK 100</a> 
