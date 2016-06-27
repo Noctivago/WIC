@@ -1,5 +1,4 @@
 function f_1000() {
-    alert('FDX');
     var f_1000_username = document.getElementById("username").value;
     var f_1000_password = document.getElementById("password").value;
     var f_1000_email = document.getElementById("email").value;
@@ -13,7 +12,7 @@ function f_1000() {
     var d_user = "username=" + f_1000_username;
     //var d_pass = "password=" + f_100_password;
     //var d_mail = "email=" + f_100_email;
-    xhr.open("POST", "../func/1000.php", true);
+    xhr.open("POST", "../func/f_1000.php", true);
     alert('FILE');
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //xhr.send(data);
