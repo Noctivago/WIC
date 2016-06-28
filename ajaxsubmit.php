@@ -37,9 +37,10 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
-    echo "<table><tr><th>Username</th><th>Password</th></tr>";
+    echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
     foreach ($result as $row) {
         echo "<tr>";
+        echo "<td>" . $row['Id'] . "</td>";
         echo "<td>" . $row['Username'] . "</td>";
         echo "<td>" . $row['Password'] . "</td>";
         echo "<tr>";
