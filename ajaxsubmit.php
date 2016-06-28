@@ -50,6 +50,10 @@ if ($arg === 'addUser') {
     
 } else if ($arg === 'deleteUser') {
     
+} else if ($arg === 'loginUser') {
+    
+} else if ($arg === 'blockUser') {
+    
 } else {
     echo "IF -> ELSE -> ERROR!";
 }
