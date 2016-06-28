@@ -55,7 +55,7 @@ function loginUser(){
     alert('login');
     var user = $("#user").val();
     var pass = $("#pass").val();
-    var arg = 'loginUser2';
+    var arg = 'loginUser';
     var dataString = 'user=' + user + '&pass=' + pass + '&arg=' + arg;
     
     

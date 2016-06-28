@@ -53,8 +53,8 @@ if ($arg === 'addUser') {
 } else if ($arg === 'loginUser') {
     $username = (filter_var($_POST['user'], FILTER_SANITIZE_STRING));
     $password = (filter_var($_POST['pass'], FILTER_SANITIZE_STRING));
-    echo $username;
-    $stmt = $pdo->prepare("SELECT [Id]
+    
+    $sql ="SELECT [Id]
       ,[Username]
       ,[Password]
       ,[Email]
@@ -67,7 +67,7 @@ if ($arg === 'addUser') {
       ,[Status]
       ,[Last_Status_online]
   FROM [dbo].[User]
-	where [dbo].[User].[Username]="+$username);
+	where [dbo].[User].[Username]='jesualdoCunha'";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     echo $stmt;
