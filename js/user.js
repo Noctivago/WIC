@@ -55,9 +55,10 @@ function loginUser(){
     alert('login');
     var user = $("#user").val();
     var pass = $("#pass").val();
-    var arg = 'loginUser';
+    var arg = 'loginUser2';
     var dataString = 'user=' + user + '&pass=' + pass + '&arg=' + arg;
- 
+    
+    
     if (user === '' || pass === '')
     {
         alert("Please Fill All Fields");
