@@ -3,6 +3,9 @@ function addUser() {
     var username = $("#username").val();
     var password = $("#password").val();
     var email = $("#email").val();
+    //podemos passar um argumento que define a funcao a executar
+    //no ficheiro ajaxsubmit
+    //desta forma conforme o arg executa uma determinada func
 
     // Returns successful data submission message when the entered information is stored in database.
     var dataString = 'username=' + username + '&password=' + password + '&email=' + email;
