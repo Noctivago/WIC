@@ -70,7 +70,7 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
-    echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
+    echo "<table><tr><th>ID</th><th>user</th><th>pass</th></tr>";
     
 } else if ($arg === 'blockUser') {
     
