@@ -5,6 +5,7 @@
  */
 
 function createUser() {
+    alert('createUser');
     var f_1000_username = document.getElementById("username").value;
     var f_1000_password = document.getElementById("password").value;
     var f_1000_email = document.getElementById("email").value;
