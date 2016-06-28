@@ -50,3 +50,32 @@ function readAllUsers() {
 
     return false;
 }
+
+function loginUser(){
+    alert('login');
+    var user = $("#user").val();
+    var pass = $("#pass").val();
+    var arg = 'loginUser';
+
+    var dataString = 'user=' + user + '&pass=' + pass + '&arg=' + arg;
+    if (username === '' || password === '')
+    {
+        alert("Please Fill All Fields");
+    } else
+    {
+        //AJAX code to submit form.
+        $.ajax({
+            type: "POST",
+            url: "ajaxsubmit.php",
+            data: dataString,
+            cache: false,
+            success: function (result) {
+                alert(result);
+
+            }
+
+        });
+    }
+    return false;
+}
+
