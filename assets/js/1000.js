@@ -23,7 +23,7 @@ function createUser() {
             + '&password=' + window.encodeURIComponent(f_1000_password)
             + '&email=' + window.encodeURIComponent(f_1000_email);
     xhr.send(the_data);
-    alert('createUser->DataSent');
+    alert(the_data);
     xhr.onreadystatechange = display_data;
     function display_data() {
         if (xhr.readyState === 4) {
