@@ -23,6 +23,7 @@ function addUser() {
             cache: false,
             success: function (result) {
                 alert(result);
+                readAllUsers();
             }
         });
     }
