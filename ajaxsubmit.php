@@ -14,7 +14,7 @@ try {
     $stmt->bindParam(':m', $email);
     $stmt->execute();
     //retorna 1 para no sucesso do ajax saber que foi com inserido sucesso
-    echo "USER " . $user . " ADDED! w/Password " . $_POST['password'];
+    echo "USER " . $username . " ADDED! w/Password " . $password;
 } catch (Exception $ex) {
     //retorna 0 para no sucesso do ajax saber que foi um erro
     echo "ERROR!";
