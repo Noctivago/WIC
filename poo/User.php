@@ -66,8 +66,9 @@ class User {
     }
 
     function setPassword($password) {
-        $codificada = hash('sha512', $password);
-        $this->password = $codificada;
+        #$codificada = hash('sha512', $password);
+        #$this->password = $codificada;
+        $this->password = $password;
     }
 
     function setEmail($email) {
