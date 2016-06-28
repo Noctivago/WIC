@@ -19,14 +19,17 @@ function createUser() {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     var the_data = ''
             + 'op=' + 'new'
-            + 'username=' + window.encodeURIComponent(f_1000_username)
+            + '&username=' + window.encodeURIComponent(f_1000_username)
             + '&password=' + window.encodeURIComponent(f_1000_password)
             + '&email=' + window.encodeURIComponent(f_1000_email);
     xhr.send(the_data);
+    alert('createUser->DataSent');
     xhr.onreadystatechange = display_data;
     function display_data() {
         if (xhr.readyState === 4) {
+            alert('createUser->readyState === 4');
             if (xhr.status === 200) {
+                 alert('createUser->readyState === 200');
                 var ajaxDisplay = document.getElementById('show');
                 ajaxDisplay.innerHTML = xhr.responseText;
             } else {
