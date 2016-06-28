@@ -73,7 +73,7 @@ if ($arg === 'addUser') {
     $db_Password = $result['Password'];
     if($password === $db_Password){
         $db_id = $result['Id'];
-       $sql2 =("SELECT [dbo].[User].[Id]
+       $sql2 =("SELECT [dbo].[User].[Id] as u
 	  ,[Username]
 	  ,[Email]
 	  ,[Account_Enabled]
@@ -94,7 +94,7 @@ if ($arg === 'addUser') {
     $result2 = $stmt2->fetch();
         
     echo "<table><tr><th>ID User</th><th>Username</th><th>Email</th><th>Account</th><th>Date Created</th><th>Login Failed</th><th>First Name</th><th>Last Name</th><th> Role </th><th>Role ID</th></tr>";
-        echo "<td>" . $result2['Id'] . "</td>";
+        echo "<td>" . $result2['u'] . "</td>";
          echo "<td>" . $result2['Username'] . "</td>";
         echo "<td>" . $result2['Email'] . "</td>";
         echo "<td>" . $result2['Account_Enabled'] . "</td>";
