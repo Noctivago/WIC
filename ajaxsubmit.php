@@ -70,8 +70,8 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
-    $db_Password = $result['Passowd'];
-    if($password == $db_Password){
+    $db_Password = $result['Password'];
+    if($password === $db_Password){
     echo "<table><tr><th>ID</th><th>Username</th><th>Password</th><th>Email</th><th>Account</th><th>Date_Created</th><th>Last Login</th><th>Status</th><th>Last Status Online</th></tr>";
         echo "<td>" . $result['Id'] . "</td>";
         echo "<td>" . $result['Username'] . "</td>";
