@@ -58,7 +58,7 @@ function loginUser(){
     var arg = 'loginUser';
 
     var dataString = 'user=' + user + '&pass=' + pass + '&arg=' + arg;
-    if (username === '' || password === '')
+    if (user === '' || pass === '')
     {
         alert("Please Fill All Fields");
     } else
@@ -71,7 +71,8 @@ function loginUser(){
             cache: false,
             success: function (result) {
                 alert(result);
-
+                var ajaxDisplay = document.getElementById('login-response');
+                ajaxDisplay.innerHTML = result;
             }
 
         });
