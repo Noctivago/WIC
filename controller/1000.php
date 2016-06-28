@@ -5,7 +5,7 @@ require_once '../poo/User.php';
 
 
 $op = filter_var($_POST['op'], FILTER_SANITIZE_STRING);
-if ($op === "new") {
+if ($op === 'new') {
     $utilizador = new User();
     $utilizador->setUsername($user = filter_var($_POST['username'], FILTER_SANITIZE_STRING));
     $utilizador->setPassword(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
