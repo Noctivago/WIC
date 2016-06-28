@@ -69,7 +69,8 @@ if ($arg === 'addUser') {
        where [dbo].[User].[Username]='jesualdocunha'";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
-    echo $stmt;
+    $result = $stmt->fetch();
+    echo $result['Username'];
     
 } else if ($arg === 'blockUser') {
     
