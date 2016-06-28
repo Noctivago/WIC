@@ -124,14 +124,14 @@ class User {
         $Utilizador = new User();
         $Utilizador = $User;
         try {
-            $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, 'p', 'm')");
+            $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, 'm')");
             $stmt->bindParam(':u', $Utilizador->getUsername());
-            #$stmt->bindParam(':p', $utilizador->getPassword());
+            $stmt->bindParam(':p', $utilizador->getPassword());
             #$stmt->bindParam(':p', $Utilizador->getPassword());
             #$stmt->bindParam(':m', $Utilizador->getEmail());
             $stmt->execute();
             //retorna 1 para no sucesso do ajax saber que foi com inserido sucesso
-            echo "USER " . $user . " ADDED! w/Password " . $_POST['password'];
+            echo "USER " . $Utilizador->getUsername() . " ADDED! w/Password " . $Utilizador->getPassword();
         } catch (Exception $ex) {
             //retorna 0 para no sucesso do ajax saber que foi um erro
             echo "ERROR!";
