@@ -5,25 +5,42 @@ include_once './db/conn.inc.php';
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addUser') {
-//addUser
     try {
         $username = (filter_var($_POST['username'], FILTER_SANITIZE_STRING));
         $password = (filter_var($_POST['password'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
         $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
         $stmt->bindParam(':u', $username);
-#$stmt->bindParam(':p', $utilizador->getPassword());
         $stmt->bindParam(':p', $password);
         $stmt->bindParam(':m', $email);
         $stmt->execute();
-//retorna 1 para no sucesso do ajax saber que foi com inserido sucesso
         echo "USER " . $username . " ADDED! w/Password " . $password;
     } catch (Exception $ex) {
-//retorna 0 para no sucesso do ajax saber que foi um erro
         echo "ERROR!";
     }
 } else if ($arg === 'readUser') {
     
+} else if ($arg === 'readAllUsers') {
+    $sql = "SELECT [Id]
+      ,[Username]
+      ,[Password]
+      ,[Email]
+      ,[Account_Enabled]
+      ,[Date_Created]
+      ,[Login_Failed]
+      ,[Last_Login]
+      ,[Abusive_User]
+      ,[Good_User]
+      ,[Status]
+      ,[Last_Status_online]
+	FROM [dbo].[User]";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    foreach ($result as $row) {
+        echo $row['Username'];
+        echo $row['Password'];
+    }
 } else if ($arg === 'updateUser') {
     
 } else if ($arg === 'deleteUser') {

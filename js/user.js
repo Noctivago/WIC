@@ -28,3 +28,22 @@ function addUser() {
     }
     return false;
 }
+
+function addUser() {
+    alert('readAllUsers');
+    var arg = 'readAllUsers';
+    var dataString = 'arg=' + arg;
+    $.ajax({
+        type: "POST",
+        url: "ajaxsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            var ajaxDisplay = document.getElementById('ajaxDiv');
+            ajaxDisplay.innerHTML = xhr.responseText;
+            alert(result);
+        }
+    });
+
+    return false;
+}
