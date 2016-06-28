@@ -70,7 +70,22 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
-    echo $result['Username'];
+    $db_Password = $result['Passowd'];
+    if($password == $db_Password){
+    echo "<table><tr><th>ID</th><th>Username</th><th>Password</th><th>Email</th><th>Account</th><th>Date_Created</th><th>Last Login</th><th>Status</th><th>Last Status Online</th></tr>";
+        echo "<td>" . $result['Id'] . "</td>";
+        echo "<td>" . $result['Username'] . "</td>";
+        echo "<td>" . $result['Password'] . "</td>";
+        echo "<td>" . $result['Email'] . "</td>";
+        echo "<td>" . $result['Account_Enabled'] . "</td>";
+        echo "<td>" . $result['Date_Created'] . "</td>";
+        echo "<td>" . $result['Last_Login'] . "</td>";
+        echo "<td>" . $result['Status'] . "</td>";
+        echo "<td>" . $result['Last_Status_online'] . "</td>";
+        echo "<tr>";
+    }else {
+        
+        echo 'Erro';}
     
 } else if ($arg === 'blockUser') {
     
