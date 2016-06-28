@@ -29,7 +29,7 @@ function addUser() {
     return false;
 }
 
-function addUser() {
+function readAllUsers() {
     alert('readAllUsers');
     var arg = 'readAllUsers';
     var dataString = 'arg=' + arg;
