@@ -56,7 +56,6 @@ function loginUser(){
     var user = $("#user").val();
     var pass = $("#pass").val();
     var arg = 'loginUser';
-   
     var dataString = 'user=' + user + '&pass=' + pass + '&arg=' + arg;
  
     if (user === '' || pass === '')
