@@ -23,6 +23,6 @@ if ($arg === 'addUser') {
         echo "ERROR!";
     }
 } else {
-    
+    echo "IF -> ELSE -> ERROR!";
 }
 
