@@ -51,6 +51,26 @@ if ($arg === 'addUser') {
 } else if ($arg === 'deleteUser') {
     
 } else if ($arg === 'loginUser') {
+    $username = (filter_var($_POST['user'], FILTER_SANITIZE_STRING));
+    $password = (filter_var($_POST['pass'], FILTER_SANITIZE_STRING));
+    $stmt = $pdo->prepare("SELECT [Id]
+      ,[Username]
+      ,[Password]
+      ,[Email]
+      ,[Account_Enabled]
+      ,[Date_Created]
+      ,[Login_Failed]
+      ,[Last_Login]
+      ,[Abusive_User]
+      ,[Good_User]
+      ,[Status]
+      ,[Last_Status_online]
+  FROM [dbo].[User]
+	where [dbo].[User].[Username]='$username'");
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
     
 } else if ($arg === 'blockUser') {
     
