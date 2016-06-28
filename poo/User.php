@@ -1,16 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of User
  *
  * @author Paulo . Cunha
  */
+require_once '../config/conn.inc.php';
+
 class User {
 
     //put your code here
@@ -118,6 +114,42 @@ class User {
     }
 
     public function __clone() {
+        
+    }
+
+    //stripslashes
+
+    public function createUser($User) {
+        $Utilizador = new User();
+        $Utilizador = $User;
+        try {
+            $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
+            $stmt->bindParam(':u', $Utilizador->getUsername());
+            #$stmt->bindParam(':p', $utilizador->getPassword());
+            $stmt->bindParam(':p', $Utilizador->getPassword());
+            $stmt->bindParam(':m', $Utilizador->getEmail());
+            $stmt->execute();
+            //retorna 1 para no sucesso do ajax saber que foi com inserido sucesso
+            echo "USER " . $user . " ADDED! w/Password " . $_POST['password'];
+        } catch (Exception $ex) {
+            //retorna 0 para no sucesso do ajax saber que foi um erro
+            echo "ERROR!";
+        }
+    }
+
+    public function readUser($User) {
+        
+    }
+
+    public function readAllUsers() {
+        
+    }
+
+    public function updateUser($User) {
+        
+    }
+
+    public function deleteUser($User) {
         
     }
 
