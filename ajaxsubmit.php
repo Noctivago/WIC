@@ -37,10 +37,14 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
+    echo "<table><tr><th>Username</th><th>Password</th></tr>";
     foreach ($result as $row) {
-        echo $row['Username'];
-        echo $row['Password'];
+        echo "<tr>";
+        echo "<td>" . $row['Username'] . "</td>";
+        echo "<td>" . $row['Password'] . "</td>";
+        echo "<tr>";
     }
+    echo "</table>";
 } else if ($arg === 'updateUser') {
     
 } else if ($arg === 'deleteUser') {
