@@ -1,6 +1,6 @@
 <?php
 
-#include_once './config/conn.inc.php';
+include_once './config/conn.inc.php';
 
 /*
  * To change this license header, choose License Headers in Project Properties.
