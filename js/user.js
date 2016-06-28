@@ -40,8 +40,8 @@ function readAllUsers() {
         cache: false,
         success: function (result) {
             var ajaxDisplay = document.getElementById('ajaxDiv');
-            ajaxDisplay.innerHTML = xhr.responseText;
-            alert(result);
+            ajaxDisplay.innerHTML = result;
+            //alert(result);
         }
     });
 
