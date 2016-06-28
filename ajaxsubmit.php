@@ -93,11 +93,12 @@ if ($arg === 'addUser') {
     $stmt2->execute();
     $result2 = $stmt2->fetch();
         
-    echo "<table><tr><th>ID</th><th>Username</th><th>Password</th><th>Email</th><th>Account</th><th>Date_Created</th><th>Last Login</th><th>Status</th><th>Last Status Online</th></tr>";
-        echo "<td>" . $result2['Username'] . "</td>";
+    echo "<table><tr><th>ID User</th><th>Username</th><th>Email</th><th>Account</th><th>Date Created</th><th>Login Failed</th><th>First Name</th><th>Last Name</th><th> Role </th><th>Role ID</th></tr>";
+        echo "<td>" . $result2['Id'] . "</td>";
+         echo "<td>" . $result2['Username'] . "</td>";
         echo "<td>" . $result2['Email'] . "</td>";
         echo "<td>" . $result2['Account_Enabled'] . "</td>";
-        echo "<td>" . $result2['Date_Create'] . "</td>";
+        echo "<td>" . $result2['Date_Created'] . "</td>";
         echo "<td>" . $result2['Login_Failed'] . "</td>";
         echo "<td>" . $result2['First_Name'] . "</td>";
         echo "<td>" . $result2['Last_Name'] . "</td>";
