@@ -72,16 +72,37 @@ if ($arg === 'addUser') {
     $result = $stmt->fetch();
     $db_Password = $result['Password'];
     if($password === $db_Password){
+        $db_id = $result['Id'];
+       $sql2 =("SELECT [dbo].[User].[Id]
+	  ,[Username]
+	  ,[Email]
+	  ,[Account_Enabled]
+	  ,[Date_Created]
+	  ,[Login_Failed],[First_Name],[Last_Name]
+	  ,[dbo].[Role].[Name]
+	  ,[dbo].[Role].[Id]
+  FROM [dbo].[User_In_Role] 
+  INNER JOIN [dbo].[Role]
+  ON  [dbo].[User_In_Role].[Role_Id] = [dbo].[Role].[Id]
+  INNER JOIN [dbo].[User]
+  ON [dbo].[User_In_Role].[User_Id] = [dbo].[User].[Id]
+  INNER Join [dbo].[Profile]
+  ON [dbo].[User_In_Role].[User_ID] = [dbo].[Profile].[User_ID]
+  where [dbo].[User_In_Role].[Enabled] != 0 and [User_In_Role].[User_Id] = $db_id");
+    $stmt2 = $pdo->prepare($sql2);
+    $stmt2->execute();
+    $result2 = $stmt2->fetch();
+        
     echo "<table><tr><th>ID</th><th>Username</th><th>Password</th><th>Email</th><th>Account</th><th>Date_Created</th><th>Last Login</th><th>Status</th><th>Last Status Online</th></tr>";
-        echo "<td>" . $result['Id'] . "</td>";
-        echo "<td>" . $result['Username'] . "</td>";
-        echo "<td>" . $result['Password'] . "</td>";
-        echo "<td>" . $result['Email'] . "</td>";
-        echo "<td>" . $result['Account_Enabled'] . "</td>";
-        echo "<td>" . $result['Date_Created'] . "</td>";
-        echo "<td>" . $result['Last_Login'] . "</td>";
-        echo "<td>" . $result['Status'] . "</td>";
-        echo "<td>" . $result['Last_Status_online'] . "</td>";
+        echo "<td>" . $result2['Username'] . "</td>";
+        echo "<td>" . $result2['Email'] . "</td>";
+        echo "<td>" . $result2['Account_Enabled'] . "</td>";
+        echo "<td>" . $result2['Date_Create'] . "</td>";
+        echo "<td>" . $result2['Login_Failed'] . "</td>";
+        echo "<td>" . $result2['First_Name'] . "</td>";
+        echo "<td>" . $result2['Last_Name'] . "</td>";
+        echo "<td>" . $result2['Name'] . "</td>";
+        echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
     }else {
         
