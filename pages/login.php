@@ -80,7 +80,7 @@ session_start();
                 try {
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                    $user = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] > ?", array($id), "rows");
+                    $user = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
                     if ($row['Username'] == $username && $row['Password'] == $password) {
                         $_SESSION['valid'] = true;
                         $_SESSION['timeout'] = time();
@@ -103,10 +103,10 @@ session_start();
             ?>" method = "post">
                 <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
                 <input type = "text" class = "form-control" 
-                       name = "username" placeholder = "username = tutorialspoint" 
+                       name = "username" placeholder = "username" 
                        required autofocus></br>
                 <input type = "password" class = "form-control"
-                       name = "password" placeholder = "password = 1234" required>
+                       name = "password" placeholder = "password" required>
                 <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
                         name = "login">Login</button>
             </form>
