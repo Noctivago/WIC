@@ -1,7 +1,6 @@
 <?php
 
 include_once './db/conn.inc.php';
-include_once './model/User.php';
 
 //$USER = new User();
 //$USER->setUsername(1);
