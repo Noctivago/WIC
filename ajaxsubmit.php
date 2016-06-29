@@ -1,7 +1,7 @@
 <?php
 
 include_once './db/conn.inc.php';
-include 'Functions.php';
+include_once 'Functions.php';
 
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
@@ -54,23 +54,8 @@ if ($arg === 'addUser') {
 } else if ($arg === 'loginUser') {
     $username = (filter_var($_POST['user'], FILTER_SANITIZE_STRING));
     $password = (filter_var($_POST['pass'], FILTER_SANITIZE_STRING));
-    $sql ="SELECT [Id]
-      ,[Username]
-      ,[Password]
-      ,[Email]
-      ,[Account_Enabled]
-      ,[Date_Created]
-      ,[Login_Failed]
-      ,[Last_Login]
-      ,[Abusive_User]
-      ,[Good_User]
-      ,[Status]
-      ,[Last_Status_online]
-       FROM [dbo].[User]
-       where [dbo].[User].[Username]='$username' and [dbo].[User].[Account_Enabled] = 1";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->fetch();
+    $result = login($username);
+   
   // $count = $stmt->rowCount();
   //  $oi = helloworld();
   //  echo login($username);
