@@ -2,17 +2,6 @@
 
 include_once './db/conn.inc.php';
 
-//$USER = new User();
-//$USER->setUsername(1);
-//$USER->setPassword(1);
-//$USER->setEmail(1);
-//$stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
-//$stmt->bindParam(':u', $USER->getUsername());
-//$stmt->bindParam(':p', $USER->getPassword());
-//$stmt->bindParam(':m', $USER->getEmail());
-//$stmt->execute();
-//echo "USER " . $USER->getUsername() . " ADDED! w/Password " . $USER->getPassword();
-
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addUser') {
@@ -25,6 +14,7 @@ if ($arg === 'addUser') {
         $stmt->bindParam(':p', $password);
         $stmt->bindParam(':m', $email);
         $stmt->execute();
+        $pdo = null;
         echo "USER " . $username . " ADDED! w/Password " . $password;
     } catch (Exception $ex) {
         echo "ERROR!";
