@@ -80,14 +80,16 @@ session_start();
                 try {
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                    $user = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username));
-                    if ($row['Username'] == $username && $row['Password'] == $password) {
-                        $_SESSION['valid'] = true;
-                        $_SESSION['timeout'] = time();
-                        $_SESSION['id'] = $row['Id'];
-                        $_SESSION['username'] = $row['Username'];
-                    } else {
-                        $msg = 'Wrong username or password -> ' . $row['Username'] . $row['Password'];
+                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
+                    foreach ($rows as $row) {
+                        if ($row['Username'] == $username && $row['Password'] == $password) {
+                            $_SESSION['valid'] = true;
+                            $_SESSION['timeout'] = time();
+                            $_SESSION['id'] = $row['Id'];
+                            $_SESSION['username'] = $row['Username'];
+                        } else {
+                            $msg = 'Wrong username or password -> ' . $row['Username'] . $row['Password'];
+                        }
                     }
                 } catch (Exception $ex) {
                     echo "ERROR!";
