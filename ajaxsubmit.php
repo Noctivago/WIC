@@ -54,16 +54,12 @@ if ($arg === 'addUser') {
 } else if ($arg === 'blockUser') {
     
 } else if ($arg === 'addNews') {
-    try {
-        $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
-        if (checkIfEmailtExists($email) == true) {
-            echo 'Email already registed!';
-        } else {
-            sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", array($email));
-            echo 'Email Registed';
-        }
-    } catch (Exception $exc) {
-        echo $exc->getTraceAsString();
+    $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
+    if (checkIfEmailtExists($email) == true) {
+        echo 'Email already registed!';
+    } else {
+        sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", array($email));
+        echo 'Email Registed';
     }
 } else {
     echo "IF -> ELSE -> ERROR!";
