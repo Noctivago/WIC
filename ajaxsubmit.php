@@ -51,7 +51,7 @@ if ($arg === 'addUser') {
     }
 } else if ($arg === 'loginUser') {
     
-} else if ($arg === 'blockUser') {
+} else if ($arg === 'blockUser') { 
     
 } else if ($arg === 'addNews') {
     $UserEmail = (filter_var(INPUT_POST, ['email'], FILTER_SANITIZE_STRING));
