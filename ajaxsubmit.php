@@ -67,15 +67,15 @@ if ($arg === 'addUser') {
       ,[Status]
       ,[Last_Status_online]
        FROM [dbo].[User]
-       where [dbo].[User].[Username]='$username'";
+       where [dbo].[User].[Username]='$username' and [dbo].[User].[Account_Enabled] = 1";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
-    $count = $stmt->rowCount();
-    $oi = helloworld();
+  // $count = $stmt->rowCount();
+  //  $oi = helloworld();
   //  echo login($username);
     $db_pass = $result['Password'];
-    if($db_pass ===$password){
+    if($db_pass === $password){
         $db_id = $result['Id'];
         $sql2 =("SELECT [dbo].[User].[Id] as u
 	  ,[Username]
@@ -108,7 +108,7 @@ if ($arg === 'addUser') {
         echo "<td>" . $result2['Name'] . "</td>";
         echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
-    }else {
+    }else if(rowcount()!= 0){
         $db_update_login = $result['Login_Failed'];
         //echo $db_update_login ;
         if($db_update_login == 3){
@@ -117,7 +117,7 @@ if ($arg === 'addUser') {
         WHERE [dbo].[User].[Username] ='$username'";
         $stmt2 = $pdo->prepare($query_update_Login_Failed);
         $stmt2->execute();
-        echo 'Account Bloq';
+        echo 'Account Block';
         }else{
         $db_update_login= $db_update_login + 1;
         $query_update_Login_Failed = "UPDATE [dbo].[User]
@@ -126,6 +126,8 @@ if ($arg === 'addUser') {
         $stmt2 = $pdo->prepare($query_update_Login_Failed);
         $stmt2->execute();
         echo 'Password Error';}
+    } else {
+        echo 'Account is block contact Wic';    
     }
 } else if ($arg === 'blockUser') {
         
