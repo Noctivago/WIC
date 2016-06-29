@@ -71,11 +71,9 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
-    $e = 'error';
     $count = $stmt->rowCount();
-    echo $result;
     $oi = helloworld();
-    echo $oi;
+    echo login($username);
     $db_pass = $result['Password'];
     if($db_pass ===$password){
         $db_id = $result['Id'];
