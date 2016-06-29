@@ -55,7 +55,7 @@ if ($arg === 'addUser') {
     
 } else if ($arg === 'addNews') {
     $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
-    if (checkIfEmailtExists($email) == true) {
+    if ($count = sql($pdo, "SELECT * FROM [dbo].[News] WHERE [Email] = ?", array($UserEmail), "countColumn") > 0) {
         echo 'Email already registed!';
     } else {
         sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", array($email));

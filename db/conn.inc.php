@@ -41,16 +41,3 @@ function sql($pdo, $q, $params, $return) {
         echo '';
     }
 }
-
-function checkIfEmailtExists($UserEmail) {
-    try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[News] WHERE [Email] = ?", array($UserEmail), "countColumn");
-        if ($count > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    } catch (Exception $exc) {
-        echo '';
-    }
-}
