@@ -34,7 +34,7 @@ if ($arg === 'addUser') {
       ,[Good_User]
       ,[Status]
       ,[Last_Status_online]
-	FROM [dbo].[User]";
+	FROM [dbo].[User] where [dbo].[User].[Account_Enabled] = 1";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
