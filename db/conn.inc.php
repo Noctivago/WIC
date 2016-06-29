@@ -32,7 +32,10 @@ function sql($pdo, $q, $params, $return) {
         if ($return == "rows") {
             return $stmt->fetchAll();
         } elseif ($return == "count") {
+            //$res->fetchColumn() > 0)
             return $stmt->rowCount();
+        } elseif ($return == "countColumn") {
+            return $stmt->fetchColumn();
         }
     } catch (Exception $exc) {
         echo '';
@@ -41,7 +44,7 @@ function sql($pdo, $q, $params, $return) {
 
 function checkIfEmailtExists($UserEmail) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[News] WHERE [Email] = ?", array($UserEmail), "count");
+        $count = sql($pdo, "SELECT * FROM [dbo].[News] WHERE [Email] = ?", array($UserEmail), "countColumn");
         if ($count > 0) {
             return true;
         } else {
