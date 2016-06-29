@@ -11,6 +11,6 @@ foreach ($rows as $row) {
     $login_session = $row['Username'];
 }
 if (!isset($login_session)) {
-    $pdo = null;
+    #$pdo = null;
     header('Location: login.php'); // Redirecting To Home Page
 }
