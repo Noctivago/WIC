@@ -78,23 +78,23 @@ session_start();
             if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
                 try {
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
-                    echo 'USERNAME ' . $rows['Username'];
+                    #echo 'USERNAME ' . $rows['Username'];
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                     $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
-                    echo 'USER ' . $rows['Username'];
+                    #echo 'USER ' . $rows['Username'];
                     $msg = '';
-                    foreach ($rows as $row) {
-                        if ($row['Username'] == $username && $row['Password'] == $password) {
-                            $_SESSION['valid'] = true;
-                            $_SESSION['timeout'] = time();
-                            $_SESSION['id'] = $row['Id'];
-                            $_SESSION['username'] = $row['Username'];
-                            $msg = 'Welcome ' . $row['Username'];
-                            header('Location: profile.php');
-                        } else {
-                            $msg = 'Wrong username or password';
-                        }
+                    #foreach ($rows as $row) {
+                    if ($row['Username'] == $username && $row['Password'] == $password) {
+                        $_SESSION['valid'] = true;
+                        $_SESSION['timeout'] = time();
+                        $_SESSION['id'] = $row['Id'];
+                        $_SESSION['username'] = $row['Username'];
+                        #$msg = 'Welcome ' . $row['Username'];
+                        header('Location: profile.php');
+                    } else {
+                        $msg = 'Wrong username or password';
                     }
+                    #}
                 } catch (Exception $ex) {
                     echo "ERROR!";
                 }
