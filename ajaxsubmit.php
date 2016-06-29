@@ -72,7 +72,7 @@ if ($arg === 'addUser') {
     $result = $stmt->fetch();
     $count = $stmt->rowCount();
     echo $count;
-    if($count>=0){
+    if($count>-1){
         echo 'Username not exist';
     }  else if ($result['password']===$password){
         $db_id = $result['Id'];
@@ -109,6 +109,7 @@ if ($arg === 'addUser') {
         echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
     }else {
+        
         $db_update_login = $result['Login_Failed'] + 1;
         echo $db_update_login;
         $query_update_Login_Failed = "UPDATE [dbo].[User]
