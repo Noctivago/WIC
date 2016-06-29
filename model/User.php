@@ -162,17 +162,13 @@ class User {
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
-        $table = "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
+       
+         $lista[] = array();
         foreach ($result as $row) {
-            $table . "<tr>";
-            $table . "<td>" . $row['Id'] . "</td>";
-            $table . "<td>" . $row['Username'] . "</td>";
-            $table . "<td>" . $row['Password'] . "</td>";
-            $table . "<tr>";
+          $lista[] = $row;
         }
-        $table . "</table>";
-        //return $table;
-        return 'true';
+        return $lista[];
     }
+
 
 }
