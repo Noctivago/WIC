@@ -71,11 +71,8 @@ if ($arg === 'addUser') {
     $stmt->execute();
     $result = $stmt->fetch();
     $count = $stmt->rowCount();
-    echo $count;
-    $db_pass = $result['password'];
-    if($count>-1){
-        echo 'Username not exist';
-    }  else if ($db_pass ===$password){
+    $db_pass = $result['Password'];
+    if($db_pass ===$password){
         $db_id = $result['Id'];
         $sql2 =("SELECT [dbo].[User].[Id] as u
 	  ,[Username]
