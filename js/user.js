@@ -21,7 +21,7 @@ function addUser() {
             url: "ajaxsubmit.php",
             data: dataString,
             cache: false,
-            success: function(result){
+            success: function (result) {
                 alert(result);
             }
 
@@ -47,6 +47,33 @@ function readAllUsers() {
         }
     });
 
+    return false;
+}
+
+function deleteUser() {
+    alert('deleteUser');
+    //var username = $("#username").val();
+    //var password = $("#password").val();
+    //var email = $("#email").val();
+    var arg = 'deleteUser';
+    //podemos passar um argumento que define a funcao a executar
+    //no ficheiro ajaxsubmit
+    //desta forma conforme o arg executa uma determinada func
+
+    // Returns successful data submission message when the entered information is stored in database.
+    var dataString = 'arg=' + arg;
+    //AJAX code to submit form.
+    $.ajax({
+        type: "POST",
+        url: "ajaxsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            alert(result);
+        }
+
+    });
+    readAllUsers();
     return false;
 }
 
