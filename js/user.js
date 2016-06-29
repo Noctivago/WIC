@@ -148,5 +148,6 @@ function validateForm(value) {
         return false;
     } else {
         alert("Valid e-mail address");
+        return true;
     }
 }
