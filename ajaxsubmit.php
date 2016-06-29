@@ -2,6 +2,7 @@
 
 include_once './db/conn.inc.php';
 include 'Functions.php';
+
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addUser') {
@@ -70,7 +71,8 @@ if ($arg === 'addUser') {
 //    $stmt = $pdo->prepare($sql);
 //    $stmt->execute();
 //    $result = $stmt->fetch();
-    $result = login($username);
+    $e = 'error';
+    $result->login($username);
 //    $count = $stmt->rowCount();
     echo $result;
     $oi = helloworld();
