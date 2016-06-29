@@ -11,7 +11,6 @@ if ($arg === 'addUser') {
         $USER->setUsername(filter_var($_POST['username'], FILTER_SANITIZE_STRING));
         $USER->setPassword(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
         $USER->setEmail(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
-        var_dump($USER);
         echo $USER->addUserIntoDB();
 //        $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
 //        $stmt->bindParam(':u', $username);
@@ -37,7 +36,7 @@ if ($arg === 'addUser') {
       ,[Good_User]
       ,[Status]
       ,[Last_Status_online]
-	FROM [dbo].[User] where [dbo].[User].[Account_Enabled] = 1";
+	FROM [dbo].[User]";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
