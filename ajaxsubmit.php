@@ -55,8 +55,7 @@ if ($arg === 'addUser') {
     
 } else if ($arg === 'addNews') {
     $UserEmail = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
-//    $count = sql($pdo, "SELECT * FROM [dbo].[News] WHERE [Email] = ? ", array($UserEmail), "count");
-    $count = emailRegisted($UserEmail);
+    $count = sql($pdo, "SELECT * FROM [dbo].[News] WHERE [Email] = ? ", array($UserEmail), "count");
     //IF EXISTS -1
     if ($count < 0) {
         echo 'Email already registed!';
@@ -68,9 +67,4 @@ if ($arg === 'addUser') {
     }
 } else {
     echo "IF -> ELSE -> ERROR!";
-}
-
-function emailRegisted($param) {
-    $count = sql($pdo, "SELECT * FROM [dbo].[News] WHERE [Email] = ? ", array($UserEmail), "count");
-    return $count;
 }
