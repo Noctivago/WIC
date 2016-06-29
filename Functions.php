@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 function helloworld(){
-    echo 'ola';
+    return 'ola';
 }
 
 ?>
