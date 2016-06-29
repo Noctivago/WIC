@@ -39,7 +39,7 @@ if ($arg === 'addUser') {
     
 } else if ($arg === 'readAllUsers') {
     $id = 0;
-    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE Id > ?", array($id), "rows");
+    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array($id), "rows");
 
     echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
     foreach ($rows as $row) {
