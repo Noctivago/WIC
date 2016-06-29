@@ -7,7 +7,7 @@ include_once './db/conn.inc.php';
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function Login($username,$password){
+function Login($username){
     $sql ="SELECT [Id]
       ,[Username]
       ,[Password]
