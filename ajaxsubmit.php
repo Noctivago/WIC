@@ -1,6 +1,5 @@
 <?php
 
-include_once './db/conn.inc.php';
 include_once './model/User.php';
 
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
