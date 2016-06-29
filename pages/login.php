@@ -81,7 +81,7 @@ session_start();
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                     $user = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
-                    if ($row['Username'] == $username && $row['Password'] == $password) {
+                    if ($user['Username'] == $username && $user['Password'] == $password) {
                         $_SESSION['valid'] = true;
                         $_SESSION['timeout'] = time();
                         $_SESSION['id'] = $row['Id'];
