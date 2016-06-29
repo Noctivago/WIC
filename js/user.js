@@ -33,6 +33,7 @@ function addUser() {
 function news(){
     var email = $("#email").val();
     var arg = 'addNews';
+     alert('AddUserNewsletter');
     //podemos passar um argumento que define a funcao a executar
     //no ficheiro ajaxsubmit
     //desta forma conforme o arg executa uma determinada func
