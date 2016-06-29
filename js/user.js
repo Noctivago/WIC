@@ -35,7 +35,7 @@ function news() {
     //validateForm(email);
     if (validateForm(email)) {
         var arg = 'addNews';
-        alert('AddUserNewsletter');
+        //alert('AddUserNewsletter');
         var dataString = 'email=' + email + '&arg=' + arg;
         if (email === '')
         {
@@ -142,7 +142,7 @@ function validateForm(value) {
         alert("Not a valid e-mail address");
         return false;
     } else {
-        alert("Valid e-mail address");
+        //alert("Valid e-mail address");
         return true;
     }
 }
