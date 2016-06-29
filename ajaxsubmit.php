@@ -112,8 +112,8 @@ if ($arg === 'addUser') {
         $db_update_login = $result['Login_Failed'];
         echo $db_update_login ;
         $query_update_Login_Failed = "UPDATE [dbo].[User]
-        SET [Login_Failed] = '$db_update_login'
-        WHERE [dbo].[User].[Username] ="+$username;
+        SET [Login_Failed] = 3
+        WHERE [dbo].[User].[Username] ='$username'";
         $stmt2 = $pdo->prepare($db_update_login);
         $stmt2->execute();
         echo 'Password Error';}
