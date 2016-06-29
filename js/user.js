@@ -30,7 +30,35 @@ function addUser() {
     readAllUsers();
     return false;
 }
+function news(){
+    var email = $("#form-city-name").val();
+    var arg = 'addNews';
+    //podemos passar um argumento que define a funcao a executar
+    //no ficheiro ajaxsubmit
+    //desta forma conforme o arg executa uma determinada func
 
+    // Returns successful data submission message when the entered information is stored in database.
+    var dataString = 'email=' + email + '&arg=' + arg;
+    if (email === '')
+    {
+        alert("Please Fill All Fields");
+    } else
+    {
+        //AJAX code to submit form.
+        $.ajax({
+            type: "POST",
+            url: "ajaxsubmit.php",
+            data: dataString,
+            cache: false,
+            success: function (result) {
+                alert(result);
+            }
+
+        });
+    }
+    return false;
+    
+}
 function readAllUsers() {
     alert('readAllUsers');
     var arg = 'readAllUsers';

@@ -13,7 +13,6 @@ include_once '../db/conn.inc.php';
  * @author Paulo . Cunha
  */
 class User {
-
     private $username;
     private $password;
     private $email;
@@ -162,8 +161,7 @@ class User {
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
-       
-         $lista[] = array();
+        $lista[] = array();
         foreach ($result as $row) {
           $lista[] = $row;
         }

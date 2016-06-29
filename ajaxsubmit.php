@@ -52,6 +52,12 @@ if ($arg === 'addUser') {
 } else if ($arg === 'loginUser') {
     
 } else if ($arg === 'blockUser') {
+
+    
+} else if ($arg ==='addNews'){
+    $email = (filter_var($_POST['Email'], FILTER_SANITIZE_STRING));
+    sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", $email);
+    echo 'Email Registed';
     
 } else {
     echo "IF -> ELSE -> ERROR!";
