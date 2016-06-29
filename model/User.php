@@ -133,12 +133,16 @@ class User {
     }
 
     function addUserIntoDB() {
-        $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
-        $stmt->bindParam(':u', $this->getUsername());
-        $stmt->bindParam(':p', $this->getPassword());
-        $stmt->bindParam(':m', $this->getEmail());
-        $stmt->execute();
-        return "USER " . $this->getUsername() . " ADDED! w/Password " . $this->getPassword();
+        try {
+            $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
+            $stmt->bindParam(':u', $this->getUsername());
+            $stmt->bindParam(':p', $this->getPassword());
+            $stmt->bindParam(':m', $this->getEmail());
+            $stmt->execute();
+            return "USER " . $this->getUsername() . " ADDED! w/Password " . $this->getPassword();
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
     }
 
     function getAllUsers() {
