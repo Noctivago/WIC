@@ -139,7 +139,7 @@ class User {
             $stmt->bindParam(':p', $this->getPassword());
             $stmt->bindParam(':m', $this->getEmail());
             $stmt->execute();
-            return "USER " . $this->getUsername() . " ADDED! w/Password " . $this->getPassword();
+            echo "USER " . $this->getUsername() . " ADDED! w/Password " . $this->getPassword();
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }
