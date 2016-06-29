@@ -61,7 +61,8 @@ if ($arg === 'addUser') {
         echo $count;
     } else {
         sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", array($email));
-        echo 'Email Registed';
+        #echo 'Email Registed';
+        echo $count;
     }
 } else {
     echo "IF -> ELSE -> ERROR!";
