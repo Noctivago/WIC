@@ -80,15 +80,15 @@ session_start();
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                     #echo 'USERNAME ' . $rows['Username'];
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
+                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username));
                     #echo 'USER ' . $rows['Username'];
                     $msg = '';
                     #foreach ($rows as $row) {
-                    if ($rows['Username'] == $username && $rows['Password'] == $password) {
+                    if ($row['Username'] == $username && $row['Password'] == $password) {
                         $_SESSION['valid'] = true;
                         $_SESSION['timeout'] = time();
-                        $_SESSION['id'] = $rows['Id'];
-                        $_SESSION['username'] = $rows['Username'];
+                        $_SESSION['id'] = $row['Id'];
+                        $_SESSION['username'] = $row['Username'];
                         #$msg = 'Welcome ' . $row['Username'];
                         header('Location: profile.php');
                     } else {
