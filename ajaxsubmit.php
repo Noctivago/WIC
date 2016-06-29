@@ -70,7 +70,8 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
-    if($result->rowCount()<1){
+    $count = $stmt->rowCount();
+    if($count<1){
         echo 'Username não existe';
     }  else if ($result['password']===$password){
         $db_id = $result['Id'];
