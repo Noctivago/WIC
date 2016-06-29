@@ -2,10 +2,8 @@
 
 include_once './db/conn.inc.php';
 
-function USERADD() {
-    $username = (filter_var($_POST['username'], FILTER_SANITIZE_STRING));
-    $password = (filter_var($_POST['password'], FILTER_SANITIZE_STRING));
-    $email = (filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
+function USERADD($username, $password, $email) {
+
     $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
     $stmt->bindParam(':u', $username);
     $stmt->bindParam(':p', $password);
@@ -18,7 +16,10 @@ $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addUser') {
     try {
-        echo USERADD();
+        $username = (filter_var($_POST['username'], FILTER_SANITIZE_STRING));
+        $password = (filter_var($_POST['password'], FILTER_SANITIZE_STRING));
+        $email = (filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
+        echo USERADD($username, $password, $email);
     } catch (Exception $ex) {
         echo "ERROR!";
     }
