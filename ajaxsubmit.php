@@ -73,7 +73,7 @@ if ($arg === 'addUser') {
     $result = $stmt->fetch();
     $count = $stmt->rowCount();
     $oi = helloworld();
-    echo login($username);
+  //  echo login($username);
     $db_pass = $result['Password'];
     if($db_pass ===$password){
         $db_id = $result['Id'];
@@ -112,14 +112,14 @@ if ($arg === 'addUser') {
         $db_update_login = $result['Login_Failed'];
         echo $db_update_login ;
         $query_update_Login_Failed = "UPDATE [dbo].[User]
-        SET [Login_Failed] = $db_update_login
+        SET [Login_Failed] = '$db_update_login'
         WHERE [dbo].[User].[Username] ="+$username;
         $stmt2 = $pdo->prepare($db_update_login);
         $stmt2->execute();
         echo 'Password Error';}
     
 } else if ($arg === 'blockUser') {
-    
+        
 } else {
     echo "IF -> ELSE -> ERROR!";
 }
