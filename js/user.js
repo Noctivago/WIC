@@ -30,35 +30,41 @@ function addUser() {
     readAllUsers();
     return false;
 }
-function news(){
+function news() {
     var email = $("#email").val();
-    var arg = 'addNews';
-     alert('AddUserNewsletter');
-    //podemos passar um argumento que define a funcao a executar
-    //no ficheiro ajaxsubmit
-    //desta forma conforme o arg executa uma determinada func
+    //validateForm(email);
+    if (validateForm(email) === true) {
+        var arg = 'addNews';
+        alert('AddUserNewsletter');
+        //podemos passar um argumento que define a funcao a executar
+        //no ficheiro ajaxsubmit
+        //desta forma conforme o arg executa uma determinada func
 
-    // Returns successful data submission message when the entered information is stored in database.
-    var dataString = 'email=' + email + '&arg=' + arg;
-    if (email === '')
-    {
-        alert("Please Fill All Fields");
-    } else
-    {
-        //AJAX code to submit form.
-        $.ajax({
-            type: "POST",
-            url: "ajaxsubmit.php",
-            data: dataString,
-            cache: false,
-            success: function (result) {
-                alert(result);
-            }
+        // Returns successful data submission message when the entered information is stored in database.
+        var dataString = 'email=' + email + '&arg=' + arg;
+        if (email === '')
+        {
+            alert("Please Fill All Fields");
+        } else
+        {
+            //AJAX code to submit form.
+            $.ajax({
+                type: "POST",
+                url: "ajaxsubmit.php",
+                data: dataString,
+                cache: false,
+                success: function (result) {
+                    alert(result);
+                }
 
-        });
+            });
+        }
+        return false;
+
+    } else {
+
     }
-    return false;
-    
+
 }
 function readAllUsers() {
     alert('readAllUsers');
@@ -112,8 +118,6 @@ function loginUser() {
     var pass = $("#pass").val();
     var arg = 'loginUser';
     var dataString = 'user=' + user + '&pass=' + pass + '&arg=' + arg;
-
-
     if (user === '' || pass === '')
     {
         alert("Please Fill All Fields");
@@ -136,3 +140,11 @@ function loginUser() {
     return false;
 }
 
+function validateForm(value) {
+    var atpos = value.indexOf("@");
+    var dotpos = value.lastIndexOf(".");
+    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+}
