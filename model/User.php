@@ -158,8 +158,7 @@ class User {
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
-        $table;
-        $table = $table . "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
+        $table = "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
         foreach ($result as $row) {
             $table . "<tr>";
             $table . "<td>" . $row['Id'] . "</td>";
@@ -168,7 +167,8 @@ class User {
             $table . "<tr>";
         }
         $table . "</table>";
-        return $table;
+        //return $table;
+        return 'true';
     }
 
 }
