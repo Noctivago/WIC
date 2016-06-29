@@ -23,12 +23,12 @@ function addUser() {
             cache: false,
             success: function (result) {
                 alert(result);
-
+                readAllUsers();
             }
 
         });
     }
-    readAllUsers();
+
     return false;
 }
 
@@ -51,14 +51,14 @@ function readAllUsers() {
     return false;
 }
 
-function loginUser(){
+function loginUser() {
     alert('login');
     var user = $("#user").val();
     var pass = $("#pass").val();
     var arg = 'loginUser';
     var dataString = 'user=' + user + '&pass=' + pass + '&arg=' + arg;
-    
-    
+
+
     if (user === '' || pass === '')
     {
         alert("Please Fill All Fields");
