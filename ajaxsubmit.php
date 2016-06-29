@@ -109,7 +109,7 @@ if ($arg === 'addUser') {
         echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
     }else {
-        
+        echo $result['Login_Failed'];
         $db_update_login = $result['Login_Failed'] + 1;
         echo $db_update_login;
         $query_update_Login_Failed = "UPDATE [dbo].[User]
