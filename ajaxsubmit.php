@@ -54,26 +54,25 @@ if ($arg === 'addUser') {
 } else if ($arg === 'loginUser') {
     $username = (filter_var($_POST['user'], FILTER_SANITIZE_STRING));
     $password = (filter_var($_POST['pass'], FILTER_SANITIZE_STRING));
-//    $sql ="SELECT [Id]
-//      ,[Username]
-//      ,[Password]
-//      ,[Email]
-//      ,[Account_Enabled]
-//      ,[Date_Created]
-//      ,[Login_Failed]
-//      ,[Last_Login]
-//      ,[Abusive_User]
-//      ,[Good_User]
-//      ,[Status]
-//      ,[Last_Status_online]
-//       FROM [dbo].[User]
-//       where [dbo].[User].[Username]='$username'";
-//    $stmt = $pdo->prepare($sql);
-//    $stmt->execute();
-//    $result = $stmt->fetch();
+    $sql ="SELECT [Id]
+      ,[Username]
+      ,[Password]
+      ,[Email]
+      ,[Account_Enabled]
+      ,[Date_Created]
+      ,[Login_Failed]
+      ,[Last_Login]
+      ,[Abusive_User]
+      ,[Good_User]
+      ,[Status]
+      ,[Last_Status_online]
+       FROM [dbo].[User]
+       where [dbo].[User].[Username]='$username'";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetch();
     $e = 'error';
-    login($username);
-//    $count = $stmt->rowCount();
+    $count = $stmt->rowCount();
     echo $result;
     $oi = helloworld();
     echo $oi;
