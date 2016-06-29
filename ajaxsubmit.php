@@ -60,7 +60,7 @@ if ($arg === 'addUser') {
         #echo 'Email already registed!';
         echo $count;
     } else {
-        sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", array($email));
+        sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", array($UserEmail));
         #echo 'Email Registed';
         echo $count;
     }
