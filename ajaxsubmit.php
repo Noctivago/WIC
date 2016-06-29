@@ -71,7 +71,7 @@ if ($arg === 'addUser') {
 
 function checkIfEmailUserExists($UserEmail) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array($id), "count");
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] > ?", array($UserEmail), "count");
         if ($count === 1) {
             return false;
         } else {
