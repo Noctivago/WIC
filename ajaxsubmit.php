@@ -1,12 +1,13 @@
 <?php
 
-//include_once './db/conn.inc.php';
+include_once './db/conn.inc.php';
 include_once 'Functions.php';
 
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addUser') {
     try {
+        echo 'INSERT USER';
         $username = (filter_var($_POST['username'], FILTER_SANITIZE_STRING));
         $password = (filter_var($_POST['password'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
