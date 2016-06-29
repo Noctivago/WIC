@@ -14,7 +14,7 @@ if ($arg === 'addUser') {
     try {
         $username = (filter_var($_POST['username'], FILTER_SANITIZE_STRING));
         $password = (filter_var($_POST['password'], FILTER_SANITIZE_STRING));
-        $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
+        $email = (filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
         sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $password, $email));
         echo "USER " . $username . " ADDED! w/Password " . $password;
     } catch (Exception $ex) {
@@ -55,7 +55,7 @@ if ($arg === 'addUser') {
 
     
 } else if ($arg ==='addNews'){
-    $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
+    $email = (filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", $email);
     echo 'Email Registed';
     
