@@ -6,9 +6,8 @@ session_start(); // Starting Session
 $userId = $_SESSION['Id'];
 $userUsername = $_SESSION['Username'];
 //Query To Fetch Complete Information Of User
-
 $user = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ? and [Id] = ?", array($userUsername, $userId), "rows");
-$login_session = $user['Username'];
+$login_session = $row['Username'];
 if (!isset($login_session)) {
     $pdo = null;
     header('Location: login.php'); // Redirecting To Home Page
