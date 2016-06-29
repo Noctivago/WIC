@@ -78,8 +78,9 @@ session_start();
             if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
                 try {
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
+                    echo 'USERNAME ' . $rows['Username'];
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username));
+                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
                     echo 'USER ' . $rows['Username'];
                     $msg = '';
                     foreach ($rows as $row) {
@@ -89,7 +90,7 @@ session_start();
                             $_SESSION['id'] = $row['Id'];
                             $_SESSION['username'] = $row['Username'];
                             $msg = 'Welcome ' . $row['Username'];
-                            header('Location: login.php');
+                            header('Location: profile.php');
                         } else {
                             $msg = 'Wrong username or password';
                         }
