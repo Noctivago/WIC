@@ -7,11 +7,10 @@ $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addUser') {
     try {
-        echo 'INSERT USER';
         $username = (filter_var($_POST['username'], FILTER_SANITIZE_STRING));
         $password = (filter_var($_POST['password'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
-        echo addUser($username, $password, $email);
+        echo addUserIntoDB($username, $password, $email);
     } catch (Exception $ex) {
         echo "ERROR!";
     }
@@ -51,7 +50,7 @@ if ($arg === 'addUser') {
     $username = (filter_var($_POST['user'], FILTER_SANITIZE_STRING));
     $password = (filter_var($_POST['pass'], FILTER_SANITIZE_STRING));
     login($username);
-    $sql ="SELECT [Id]
+    $sql = "SELECT [Id]
       ,[Username]
       ,[Password]
       ,[Email]
@@ -68,13 +67,13 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
-  // $count = $stmt->rowCount();
-  //  $oi = helloworld();
-  //  echo login($username);
+    // $count = $stmt->rowCount();
+    //  $oi = helloworld();
+    //  echo login($username);
     $db_pass = $result['Password'];
-    if($db_pass === $password){
+    if ($db_pass === $password) {
         $db_id = $result['Id'];
-        $sql2 =("SELECT [dbo].[User].[Id] as u
+        $sql2 = ("SELECT [dbo].[User].[Id] as u
 	  ,[Username]
 	  ,[Email]
 	  ,[Account_Enabled]
@@ -90,12 +89,12 @@ if ($arg === 'addUser') {
   INNER Join [dbo].[Profile]
   ON [dbo].[User_In_Role].[User_ID] = [dbo].[Profile].[User_ID]
   where [dbo].[User_In_Role].[Enabled] != 0 and [User_In_Role].[User_Id] = $db_id");
-    $stmt2 = $pdo->prepare($sql2);
-    $stmt2->execute();
-    $result2 = $stmt2->fetch();
-    echo "<table><tr><th>ID User</th><th>Username</th><th>Email</th><th>Account</th><th>Date Created</th><th>Login Failed</th><th>First Name</th><th>Last Name</th><th> Role </th><th>Role ID</th></tr>";
+        $stmt2 = $pdo->prepare($sql2);
+        $stmt2->execute();
+        $result2 = $stmt2->fetch();
+        echo "<table><tr><th>ID User</th><th>Username</th><th>Email</th><th>Account</th><th>Date Created</th><th>Login Failed</th><th>First Name</th><th>Last Name</th><th> Role </th><th>Role ID</th></tr>";
         echo "<td>" . $result2[0] . "</td>";
-         echo "<td>" . $result2['Username'] . "</td>";
+        echo "<td>" . $result2['Username'] . "</td>";
         echo "<td>" . $result2['Email'] . "</td>";
         echo "<td>" . $result2['Account_Enabled'] . "</td>";
         echo "<td>" . $result2['Date_Created'] . "</td>";
@@ -105,39 +104,37 @@ if ($arg === 'addUser') {
         echo "<td>" . $result2['Name'] . "</td>";
         echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
-        $sql_update_login_failed  = "UPDATE [dbo].[User]
+        $sql_update_login_failed = "UPDATE [dbo].[User]
         SET [Login_Failed] = 0
         WHERE [dbo].[User].[Username] ='$username'";
         $stmt3 = $pdo->prepare($sql_update_login_failed);
         $stmt3->execute();
-     
-    }else{
+    } else {
         $db_update_login = $result['Login_Failed'];
         //echo $db_update_login ;
-        if($db_update_login == 3){
-        $query_update_Login_Failed = "UPDATE [dbo].[User]
+        if ($db_update_login == 3) {
+            $query_update_Login_Failed = "UPDATE [dbo].[User]
         SET [Account_Enabled] = 0
         WHERE [dbo].[User].[Username] ='$username'";
-        $stmt2 = $pdo->prepare($query_update_Login_Failed);
-        $stmt2->execute();
-        echo 'Account Block';
-        }else{
-            if($db_update_login >= 0){
-        $db_update_login= $db_update_login + 1;
-        $query_update_Login_Failed = "UPDATE [dbo].[User]
+            $stmt2 = $pdo->prepare($query_update_Login_Failed);
+            $stmt2->execute();
+            echo 'Account Block';
+        } else {
+            if ($db_update_login >= 0) {
+                $db_update_login = $db_update_login + 1;
+                $query_update_Login_Failed = "UPDATE [dbo].[User]
         SET [Login_Failed] = $db_update_login
         WHERE [dbo].[User].[Username] ='$username'";
-        $stmt2 = $pdo->prepare($query_update_Login_Failed);
-        $stmt2->execute();
-        echo 'Password Error';}
-            else {
-            echo 'Account is block contact Wic';    
+                $stmt2 = $pdo->prepare($query_update_Login_Failed);
+                $stmt2->execute();
+                echo 'Password Error';
+            } else {
+                echo 'Account is block contact Wic';
+            }
         }
     }
-    }
-
 } else if ($arg === 'blockUser') {
-        
+    
 } else {
     echo "IF -> ELSE -> ERROR!";
 }
