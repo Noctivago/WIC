@@ -66,7 +66,7 @@ if ($arg === 'addUser') {
       ,[Status]
       ,[Last_Status_online]
        FROM [dbo].[User]
-       where [dbo].[User].[Username]='jesualdocunha'";
+       where [dbo].[User].[Username]='$username'";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
