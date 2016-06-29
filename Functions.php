@@ -28,6 +28,9 @@ function Login($username){
     return $result[0];
 }
 
+function helloworld($o){
+    return $o + "ola mundo";
+}
 function ReadAll(){
     $sql = "SELECT [Id]
       ,[Username]

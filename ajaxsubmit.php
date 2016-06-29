@@ -37,6 +37,7 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
+    echo helloworld($result['Username']);
     echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
     foreach ($result as $row) {
         echo "<tr>";
