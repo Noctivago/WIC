@@ -16,9 +16,9 @@ if ($arg === 'addUser') {
         $password = (filter_var($_POST['password'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
         sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $password, $email));
-        echo "USER " . $username . " ADDED! w/Password " . $password;
+        return "USER " . $username . " ADDED! w/Password " . $password;
     } catch (Exception $ex) {
-        echo "ERROR!";
+        return "ERROR!";
     }
 } else if ($arg === 'readUser') {
     
