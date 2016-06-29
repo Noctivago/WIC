@@ -87,7 +87,7 @@ session_start();
                         $_SESSION['id'] = $row['Id'];
                         $_SESSION['username'] = $row['Username'];
                     } else {
-                        $msg = 'Wrong username or password';
+                        $msg = 'Wrong username or password -> ' . $row['Username'] . $row['Password'];
                     }
                 } catch (Exception $ex) {
                     echo "ERROR!";
