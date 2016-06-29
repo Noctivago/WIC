@@ -56,8 +56,12 @@ if ($arg === 'addUser') {
 } else if ($arg === 'addNews') {
     try {
         $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
-        sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", array($email));
-        echo 'Email Registed';
+        if (checkIfEmailUserExists($email) === true) {
+            echo 'Email already registed!';
+        } else {
+            sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", array($email));
+            echo 'Email Registed';
+        }
     } catch (Exception $exc) {
         echo $exc->getTraceAsString();
     }
@@ -65,3 +69,15 @@ if ($arg === 'addUser') {
     echo "IF -> ELSE -> ERROR!";
 }
 
+function checkIfEmailUserExists($UserEmail) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array($id), "count");
+        if ($count === 1) {
+            return false;
+        } else {
+            return true;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
