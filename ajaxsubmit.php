@@ -72,7 +72,7 @@ if ($arg === 'addUser') {
     $result = $stmt->fetch();
     $count = $stmt->rowCount();
     echo $count;
-    if($count<=0){
+    if($count>=0){
         echo 'Username not exist';
     }  else if ($result['password']===$password){
         $db_id = $result['Id'];
