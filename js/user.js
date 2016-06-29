@@ -31,7 +31,7 @@ function addUser() {
     return false;
 }
 function news(){
-    var email = $("#form-city-name").val();
+    var email = $("#email").val();
     var arg = 'addNews';
     //podemos passar um argumento que define a funcao a executar
     //no ficheiro ajaxsubmit
