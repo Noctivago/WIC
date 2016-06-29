@@ -39,13 +39,13 @@ function sql($pdo, $q, $params, $return) {
     }
 }
 
-function checkIfEmailUserNotExists($UserEmail) {
+function checkIfEmailtExists($UserEmail) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($UserEmail), "count");
+        $count = sql($pdo, "SELECT * FROM [dbo].[News] WHERE [Email] = ?", array($UserEmail), "count");
         if ($count > 0) {
-            return false;
-        } else {
             return true;
+        } else {
+            return false;
         }
     } catch (Exception $exc) {
         echo '';
