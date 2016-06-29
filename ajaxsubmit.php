@@ -38,14 +38,14 @@ if ($arg === 'addUser') {
 //    $stmt->execute();
 //    $result = $stmt->fetchAll();
     $result = ReadAll();
-    echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
-    foreach ($result as $row) {
-        echo "<tr>";
-        echo "<td>" . $row['Id'] . "</td>";
-        echo "<td>" . $row['Username'] . "</td>";
-        echo "<td>" . $row['Password'] . "</td>";
-        echo "<tr>";
-    }
+//    echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
+//    foreach ($result as $row) {
+//        echo "<tr>";
+//        echo "<td>" . $row['Id'] . "</td>";
+//        echo "<td>" . $row['Username'] . "</td>";
+//        echo "<td>" . $row['Password'] . "</td>";
+//        echo "<tr>";
+//    }
     echo "</table>";
 } else if ($arg === 'updateUser') {
     
