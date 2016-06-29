@@ -51,7 +51,7 @@ if ($arg === 'addUser') {
 } else if ($arg === 'updateUser') {
     
 } else if ($arg === 'deleteUser') {
-    $id = 123;
+    $id = 122;
     sql($pdo, "DELETE FROM [dbo].[User] WHERE [Id] = ?", array($id));
     echo 'User deleted!';
 } else if ($arg === 'loginUser') {
