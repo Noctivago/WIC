@@ -52,7 +52,7 @@ if ($arg === 'addUser') {
     
 } else if ($arg === 'deleteUser') {
     $id = 123;
-    sql($db, "DELETE FROM [dbo].[User] WHERE [Id] = ?", array($id));
+    sql($pdo, "DELETE FROM [dbo].[User] WHERE [Id] = ?", array($id));
     echo 'User deleted!';
 } else if ($arg === 'loginUser') {
     
