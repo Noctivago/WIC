@@ -25,7 +25,7 @@ function Login($username){
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
-    return $result[0];
+    return 'ollll';
 }
 
 function helloworld($o){

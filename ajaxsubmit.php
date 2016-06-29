@@ -37,7 +37,7 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
-    echo helloworld($result['Username']);
+    
     echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
     foreach ($result as $row) {
         echo "<tr>";
@@ -54,24 +54,25 @@ if ($arg === 'addUser') {
 } else if ($arg === 'loginUser') {
     $username = (filter_var($_POST['user'], FILTER_SANITIZE_STRING));
     $password = (filter_var($_POST['pass'], FILTER_SANITIZE_STRING));
-    $sql ="SELECT [Id]
-      ,[Username]
-      ,[Password]
-      ,[Email]
-      ,[Account_Enabled]
-      ,[Date_Created]
-      ,[Login_Failed]
-      ,[Last_Login]
-      ,[Abusive_User]
-      ,[Good_User]
-      ,[Status]
-      ,[Last_Status_online]
-       FROM [dbo].[User]
-       where [dbo].[User].[Username]='$username'";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->fetch();
-    $count = $stmt->rowCount();
+//    $sql ="SELECT [Id]
+//      ,[Username]
+//      ,[Password]
+//      ,[Email]
+//      ,[Account_Enabled]
+//      ,[Date_Created]
+//      ,[Login_Failed]
+//      ,[Last_Login]
+//      ,[Abusive_User]
+//      ,[Good_User]
+//      ,[Status]
+//      ,[Last_Status_online]
+//       FROM [dbo].[User]
+//       where [dbo].[User].[Username]='$username'";
+//    $stmt = $pdo->prepare($sql);
+//    $stmt->execute();
+//    $result = $stmt->fetch();
+//    $count = $stmt->rowCount();
+    echo Login($username);
     $db_pass = $result['Password'];
     if($db_pass ===$password){
         $db_id = $result['Id'];
