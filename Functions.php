@@ -1,25 +1,28 @@
 <?php
+
 include_once './db/conn.inc.php';
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function helloworld(){
+
+function helloworld() {
     $ola = 'ola mundo';
     return $ola;
 }
 
-function addUserIntoDB($username,$password,$email){
+function addUserIntoDB($username, $password, $email) {
     $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
-        $stmt->bindParam(':u', $username);
-        $stmt->bindParam(':p', $password);
-        $stmt->bindParam(':m', $email);
-        $stmt->execute();
-        return "USER " . $username . " ADDED! w/Password " . $password;
+    $stmt->bindParam(':u', $username);
+    $stmt->bindParam(':p', $password);
+    $stmt->bindParam(':m', $email);
+    $stmt->execute();
+    echo "USER " . $username . " ADDED! w/Password " . $password;
 }
-function login($username){
-    $sql ="SELECT [Id]
+
+function login($username) {
+    $sql = "SELECT [Id]
       ,[Username]
       ,[Password]
       ,[Email]
@@ -38,5 +41,3 @@ function login($username){
     $result = $stmt->fetch();
     return $result['Password'];
 }
-
-
