@@ -3,16 +3,16 @@
 include_once './db/conn.inc.php';
 include_once './model/User.php';
 
-$USER = new User();
-$USER->setUsername(1);
-$USER->setPassword(1);
-$USER->setEmail(1);
-$stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
-$stmt->bindParam(':u', $USER->getUsername());
-$stmt->bindParam(':p', $USER->getPassword());
-$stmt->bindParam(':m', $USER->getEmail());
-$stmt->execute();
-echo "USER " . $USER->getUsername() . " ADDED! w/Password " . $USER->getPassword();
+//$USER = new User();
+//$USER->setUsername(1);
+//$USER->setPassword(1);
+//$USER->setEmail(1);
+//$stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
+//$stmt->bindParam(':u', $USER->getUsername());
+//$stmt->bindParam(':p', $USER->getPassword());
+//$stmt->bindParam(':m', $USER->getEmail());
+//$stmt->execute();
+//echo "USER " . $USER->getUsername() . " ADDED! w/Password " . $USER->getPassword();
 
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
