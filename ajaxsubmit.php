@@ -1,7 +1,7 @@
 <?php
 
 include_once './db/conn.inc.php';
-include_once 'Functions.php';
+
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addUser') {
@@ -21,24 +21,23 @@ if ($arg === 'addUser') {
 } else if ($arg === 'readUser') {
     
 } else if ($arg === 'readAllUsers') {
-//    $sql = "SELECT [Id]
-//      ,[Username]
-//      ,[Password]
-//      ,[Email]
-//      ,[Account_Enabled]
-//      ,[Date_Created]
-//      ,[Login_Failed]
-//      ,[Last_Login]
-//      ,[Abusive_User]
-//      ,[Good_User]
-//      ,[Status]
-//      ,[Last_Status_online]
-//	FROM [dbo].[User]";
-//    $stmt = $pdo->prepare($sql);
-//    $stmt->execute();
-//    $result = $stmt->fetchAll();
+    $sql = "SELECT [Id]
+      ,[Username]
+      ,[Password]
+      ,[Email]
+      ,[Account_Enabled]
+      ,[Date_Created]
+      ,[Login_Failed]
+      ,[Last_Login]
+      ,[Abusive_User]
+      ,[Good_User]
+      ,[Status]
+      ,[Last_Status_online]
+	FROM [dbo].[User]";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
     echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
-    $result = ReadAll();
     foreach ($result as $row) {
         echo "<tr>";
         echo "<td>" . $row['Id'] . "</td>";
@@ -54,52 +53,68 @@ if ($arg === 'addUser') {
 } else if ($arg === 'loginUser') {
     $username = (filter_var($_POST['user'], FILTER_SANITIZE_STRING));
     $password = (filter_var($_POST['pass'], FILTER_SANITIZE_STRING));
-    $result = Login($username);
-    
+    $sql ="SELECT [Id]
+      ,[Username]
+      ,[Password]
+      ,[Email]
+      ,[Account_Enabled]
+      ,[Date_Created]
+      ,[Login_Failed]
+      ,[Last_Login]
+      ,[Abusive_User]
+      ,[Good_User]
+      ,[Status]
+      ,[Last_Status_online]
+       FROM [dbo].[User]
+       where [dbo].[User].[Username]='$username'";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetch();
+    $count = $stmt->rowCount();
     $db_pass = $result['Password'];
-//    if($db_pass ===$password){
-//        $db_id = $result['Id'];
-//        $sql2 =("SELECT [dbo].[User].[Id] as u
-//	  ,[Username]
-//	  ,[Email]
-//	  ,[Account_Enabled]
-//	  ,[Date_Created]
-//	  ,[Login_Failed],[First_Name],[Last_Name]
-//	  ,[dbo].[Role].[Name]
-//	  ,[dbo].[Role].[Id]
-//  FROM [dbo].[User_In_Role] 
-//  INNER JOIN [dbo].[Role]
-//  ON  [dbo].[User_In_Role].[Role_Id] = [dbo].[Role].[Id]
-//  INNER JOIN [dbo].[User]
-//  ON [dbo].[User_In_Role].[User_Id] = [dbo].[User].[Id]
-//  INNER Join [dbo].[Profile]
-//  ON [dbo].[User_In_Role].[User_ID] = [dbo].[Profile].[User_ID]
-//  where [dbo].[User_In_Role].[Enabled] != 0 and [User_In_Role].[User_Id] = $db_id");
-//    $stmt2 = $pdo->prepare($sql2);
-//    $stmt2->execute();
-//    $result2 = $stmt2->fetch();
-   echo "<table><tr><th>ID User</th><th>Username</th><th>Email</th><th>Account</th><th>Date Created</th><th>Login Failed</th><th>First Name</th><th>Last Name</th><th> Role </th><th>Role ID</th></tr>";
-        echo "<td>" . $result[0] . "</td>";
-         echo "<td>" . $result['Username'] . "</td>";
-        echo "<td>" . $result['Email'] . "</td>";
-        echo "<td>" . $result['Account_Enabled'] . "</td>";
-        echo "<td>" . $result['Date_Created'] . "</td>";
-        echo "<td>" . $result['Login_Failed'] . "</td>";
-      //  echo "<td>" . $result['First_Name'] . "</td>";
-       // echo "<td>" . $result['Last_Name'] . "</td>";
-        //echo "<td>" . $result2['Name'] . "</td>";
-        //echo "<td>" . $result2['Id'] . "</td>";
+    if($db_pass ===$password){
+        $db_id = $result['Id'];
+        $sql2 =("SELECT [dbo].[User].[Id] as u
+	  ,[Username]
+	  ,[Email]
+	  ,[Account_Enabled]
+	  ,[Date_Created]
+	  ,[Login_Failed],[First_Name],[Last_Name]
+	  ,[dbo].[Role].[Name]
+	  ,[dbo].[Role].[Id]
+  FROM [dbo].[User_In_Role] 
+  INNER JOIN [dbo].[Role]
+  ON  [dbo].[User_In_Role].[Role_Id] = [dbo].[Role].[Id]
+  INNER JOIN [dbo].[User]
+  ON [dbo].[User_In_Role].[User_Id] = [dbo].[User].[Id]
+  INNER Join [dbo].[Profile]
+  ON [dbo].[User_In_Role].[User_ID] = [dbo].[Profile].[User_ID]
+  where [dbo].[User_In_Role].[Enabled] != 0 and [User_In_Role].[User_Id] = $db_id");
+    $stmt2 = $pdo->prepare($sql2);
+    $stmt2->execute();
+    $result2 = $stmt2->fetch();
+    echo "<table><tr><th>ID User</th><th>Username</th><th>Email</th><th>Account</th><th>Date Created</th><th>Login Failed</th><th>First Name</th><th>Last Name</th><th> Role </th><th>Role ID</th></tr>";
+        echo "<td>" . $result2[0] . "</td>";
+         echo "<td>" . $result2['Username'] . "</td>";
+        echo "<td>" . $result2['Email'] . "</td>";
+        echo "<td>" . $result2['Account_Enabled'] . "</td>";
+        echo "<td>" . $result2['Date_Created'] . "</td>";
+        echo "<td>" . $result2['Login_Failed'] . "</td>";
+        echo "<td>" . $result2['First_Name'] . "</td>";
+        echo "<td>" . $result2['Last_Name'] . "</td>";
+        echo "<td>" . $result2['Name'] . "</td>";
+        echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
-//    }else {
-//        $db_update_login = $result['Login_Failed'];
-//        echo $db_update_login ;
-//        $query_update_Login_Failed = "UPDATE [dbo].[User]
-//        SET [Login_Failed] = $db_update_login
-//        WHERE [dbo].[User].[Username] ="+$username;
-//        $stmt2 = $pdo->prepare($db_update_login);
-//        $stmt2->execute();
-//        echo 'Password Error';}
-//    
+    }else {
+        $db_update_login = $result['Login_Failed'];
+        echo $db_update_login ;
+        $query_update_Login_Failed = "UPDATE [dbo].[User]
+        SET [Login_Failed] = $db_update_login
+        WHERE [dbo].[User].[Username] ="+$username;
+        $stmt2 = $pdo->prepare($db_update_login);
+        $stmt2->execute();
+        echo 'Password Error';}
+    
 } else if ($arg === 'blockUser') {
     
 } else {
