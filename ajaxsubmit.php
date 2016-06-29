@@ -5,7 +5,7 @@ include_once './model/User.php';
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 switch ($arg) {
-    case 'addUser':
+    case 'AddUser':
         try {
             $USER = new User();
             $USER->setUsername(filter_var($_POST['username'], FILTER_SANITIZE_STRING));
