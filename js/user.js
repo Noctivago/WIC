@@ -33,7 +33,7 @@ function addUser() {
 function news() {
     var email = $("#email").val();
     //validateForm(email);
-    if (validateForm(email) === true) {
+    if (validateForm(email)) {
         var arg = 'addNews';
         alert('AddUserNewsletter');
         //podemos passar um argumento que define a funcao a executar
