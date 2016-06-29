@@ -1,6 +1,5 @@
 <?php
 include_once './db/conn.inc.php';
-echo 'oi';
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +10,7 @@ function helloworld(){
     return $ola;
 }
 
-function addUser($username,$password,$email){
+function addUserIntoDB($username,$password,$email){
     $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
         $stmt->bindParam(':u', $username);
         $stmt->bindParam(':p', $password);
