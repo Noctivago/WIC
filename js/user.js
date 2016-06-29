@@ -21,7 +21,9 @@ function addUser() {
             url: "ajaxsubmit.php",
             data: dataString,
             cache: false,
-            success: readAllUsers()
+            success: function(result){
+                alert(result);
+            }
 
         });
     }
