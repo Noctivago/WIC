@@ -45,7 +45,7 @@ function ReadAll(){
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
-    return $result;
+    
 }
 
 
