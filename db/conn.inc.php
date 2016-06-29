@@ -9,6 +9,7 @@ $db = "wicdb";
 try {
     $pdo = new PDO("sqlsrv:server=$dbserver; Database=$db", "$dbuser", "$dbpass");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     if ($pdo == false) {
         echo "Redirect to 404!";
     } else {
@@ -19,7 +20,7 @@ try {
 }
 
 // Simple function to handle PDO prepared statements
-function sql($db, $q, $params, $return) {
+function sql($pdo, $q, $params, $return) {
 
     try {
 
