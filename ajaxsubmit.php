@@ -22,7 +22,7 @@ switch ($arg) {
     case 'readAllUsers':
         try {
             $USER = new User();
-            echo $USER->getAllUsers();
+            var_dump($USER->getAllUsers());
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }

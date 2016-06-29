@@ -158,15 +158,17 @@ class User {
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
-        echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
+        $table;
+        $table = $table . "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
         foreach ($result as $row) {
-            echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
-            echo "<td>" . $row['Username'] . "</td>";
-            echo "<td>" . $row['Password'] . "</td>";
-            echo "<tr>";
+            $table . "<tr>";
+            $table . "<td>" . $row['Id'] . "</td>";
+            $table . "<td>" . $row['Username'] . "</td>";
+            $table . "<td>" . $row['Password'] . "</td>";
+            $table . "<tr>";
         }
-        echo "</table>";
+        $table . "</table>";
+        return $table;
     }
 
 }
