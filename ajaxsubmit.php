@@ -108,7 +108,7 @@ if ($arg === 'addUser') {
         echo "<td>" . $result2['Name'] . "</td>";
         echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
-    }else if(rowcount()!= 0){
+    }else{
         $db_update_login = $result['Login_Failed'];
         //echo $db_update_login ;
         if($db_update_login == 3){
@@ -119,6 +119,7 @@ if ($arg === 'addUser') {
         $stmt2->execute();
         echo 'Account Block';
         }else{
+            if($db_update_login >= 0){
         $db_update_login= $db_update_login + 1;
         $query_update_Login_Failed = "UPDATE [dbo].[User]
         SET [Login_Failed] = $db_update_login
@@ -126,9 +127,12 @@ if ($arg === 'addUser') {
         $stmt2 = $pdo->prepare($query_update_Login_Failed);
         $stmt2->execute();
         echo 'Password Error';}
-    } else {
-        echo 'Account is block contact Wic';    
+            else {
+            echo 'Account is block contact Wic';    
+        }
     }
+    }
+
 } else if ($arg === 'blockUser') {
         
 } else {
