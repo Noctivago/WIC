@@ -71,7 +71,8 @@ if ($arg === 'addUser') {
     $stmt->execute();
     $result = $stmt->fetch();
     $count = $stmt->rowCount();
-    echo helloworld();
+    $oi = helloworld();
+    echo $oi;
     $db_pass = $result['Password'];
     if($db_pass ===$password){
         $db_id = $result['Id'];
