@@ -10,6 +10,15 @@ function helloworld(){
     $ola = 'ola mundo';
     return $ola;
 }
+
+function addUser($username,$password,$email){
+    $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
+        $stmt->bindParam(':u', $username);
+        $stmt->bindParam(':p', $password);
+        $stmt->bindParam(':m', $email);
+        $stmt->execute();
+        return "USER " . $username . " ADDED! w/Password " . $password;
+}
 function login($username){
     $sql ="SELECT [Id]
       ,[Username]

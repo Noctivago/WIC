@@ -10,12 +10,7 @@ if ($arg === 'addUser') {
         $username = (filter_var($_POST['username'], FILTER_SANITIZE_STRING));
         $password = (filter_var($_POST['password'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
-        $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
-        $stmt->bindParam(':u', $username);
-        $stmt->bindParam(':p', $password);
-        $stmt->bindParam(':m', $email);
-        $stmt->execute();
-        echo "USER " . $username . " ADDED! w/Password " . $password;
+        echo addUser($username, $password, $email);
     } catch (Exception $ex) {
         echo "ERROR!";
     }
@@ -54,12 +49,28 @@ if ($arg === 'addUser') {
 } else if ($arg === 'loginUser') {
     $username = (filter_var($_POST['user'], FILTER_SANITIZE_STRING));
     $password = (filter_var($_POST['pass'], FILTER_SANITIZE_STRING));
-    $result = login($username);
-   
+    login($username);
+    $sql ="SELECT [Id]
+      ,[Username]
+      ,[Password]
+      ,[Email]
+      ,[Account_Enabled]
+      ,[Date_Created]
+      ,[Login_Failed]
+      ,[Last_Login]
+      ,[Abusive_User]
+      ,[Good_User]
+      ,[Status]
+      ,[Last_Status_online]
+       FROM [dbo].[User]
+       where [dbo].[User].[Username]='$username' and [dbo].[User].[Account_Enabled] = 1";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetch();
   // $count = $stmt->rowCount();
   //  $oi = helloworld();
   //  echo login($username);
-    $db_pass = $result;
+    $db_pass = $result['Password'];
     if($db_pass === $password){
         $db_id = $result['Id'];
         $sql2 =("SELECT [dbo].[User].[Id] as u
