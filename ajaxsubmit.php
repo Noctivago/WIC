@@ -109,8 +109,8 @@ if ($arg === 'addUser') {
         echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
     }else {
-        $db_update_login = $result['Login_Failed'];
-        echo $db_update_login ;
+        //$db_update_login = $result['Login_Failed'];
+        //echo $db_update_login ;
         $query_update_Login_Failed = "UPDATE [dbo].[User]
         SET [Login_Failed] = 3
         WHERE [dbo].[User].[Username] ='$username'";
