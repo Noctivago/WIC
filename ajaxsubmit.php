@@ -14,7 +14,7 @@ if ($arg === 'addUser') {
         $stmt->bindParam(':p', 1);
         $stmt->bindParam(':m', 1);
         $stmt->execute();
-        echo "USER " . $username . " ADDED! w/Password " . $password;
+        echo "USER " . 1 . " ADDED! w/Password " . 1;
     } catch (Exception $ex) {
         echo "ERROR!";
     }
