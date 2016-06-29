@@ -23,24 +23,32 @@ if ($arg === 'addUser') {
 } else if ($arg === 'readUser') {
     
 } else if ($arg === 'readAllUsers') {
-    $id = 0;
-    //PARA CONTAR -> count
-    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array($id), "rows");
-    echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
-    foreach ($rows as $row) {
-        echo "<tr>";
-        echo "<td>" . $row['Id'] . "</td>";
-        echo "<td>" . $row['Username'] . "</td>";
-        echo "<td>" . $row['Password'] . "</td>";
-        echo "<tr>";
+    try {
+        $id = 0;
+        //PARA CONTAR -> count
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array($id), "rows");
+        echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Username'] . "</td>";
+            echo "<td>" . $row['Password'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo '';
     }
-    echo "</table>";
 } else if ($arg === 'updateUser') {
     
 } else if ($arg === 'deleteUser') {
-    $id = 122;
-    sql($pdo, "DELETE FROM [dbo].[User] WHERE [Id] = ?", array($id));
-    echo 'User deleted!';
+    try {
+        $id = 122;
+        sql($pdo, "DELETE FROM [dbo].[User] WHERE [Id] = ?", array($id));
+        echo 'User deleted!';
+    } catch (Exception $exc) {
+        echo '';
+    }
 } else if ($arg === 'loginUser') {
     
 } else if ($arg === 'blockUser') {
