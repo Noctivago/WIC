@@ -93,7 +93,6 @@ if ($arg === 'addUser') {
     $stmt2 = $pdo->prepare($sql2);
     $stmt2->execute();
     $result2 = $stmt2->fetch();
-        
     echo "<table><tr><th>ID User</th><th>Username</th><th>Email</th><th>Account</th><th>Date Created</th><th>Login Failed</th><th>First Name</th><th>Last Name</th><th> Role </th><th>Role ID</th></tr>";
         echo "<td>" . $result2[0] . "</td>";
          echo "<td>" . $result2['Username'] . "</td>";
@@ -107,12 +106,11 @@ if ($arg === 'addUser') {
         echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
     }else {
-        echo $result['Login_Failed'];
-        $db_update_login = $result['Login_Failed'] + 1;
-        echo $db_update_login;
+        $db_update_login = $result['Login_Failed'];
+        echo $db_update_login + 1;
         $query_update_Login_Failed = "UPDATE [dbo].[User]
-SET [Login_Failed] = $db_update_login
- WHERE [dbo].[User].[Username] ="+$username;
+        SET [Login_Failed] = $db_update_login
+        WHERE [dbo].[User].[Username] ="+$username;
         $stmt2 = $pdo->prepare($db_update_login);
         $stmt2->execute();
         echo 'Password Error';}
