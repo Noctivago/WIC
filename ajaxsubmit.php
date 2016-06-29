@@ -108,6 +108,12 @@ if ($arg === 'addUser') {
         echo "<td>" . $result2['Name'] . "</td>";
         echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
+        $sql_update_login_failed  = "UPDATE [dbo].[User]
+        SET [Login_Failed] = 0
+        WHERE [dbo].[User].[Username] ='$username'";
+        $stmt3 = $pdo->prepare($sql_update_login_failed);
+        $stmt3->execute();
+     
     }else{
         $db_update_login = $result['Login_Failed'];
         //echo $db_update_login ;
