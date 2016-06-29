@@ -72,10 +72,10 @@ if ($arg === 'addUser') {
     $result = $stmt->fetch();
     $count = $stmt->rowCount();
     if($count<1){
-        echo 'Username não existe';
+        echo 'Username not exist';
     }  else if ($result['password']===$password){
         $db_id = $result['Id'];
-       $sql2 =("SELECT [dbo].[User].[Id] as u
+        $sql2 =("SELECT [dbo].[User].[Id] as u
 	  ,[Username]
 	  ,[Email]
 	  ,[Account_Enabled]
@@ -108,8 +108,13 @@ if ($arg === 'addUser') {
         echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
     }else {
-        
-        echo 'Erro';}
+        $db_update_login = $result['Login_Failed'] + 1;
+        $query_update_Login_Failed = "UPDATE [dbo].[User]
+   SET [Login_Failed] = $db_update_login
+ WHERE [dbo].[User].[Username] = '$username'";
+        $stmt2 = $pdo->prepare($db_update_login);
+        $stmt2->execute();
+        echo 'Password Error';}
     
 } else if ($arg === 'blockUser') {
     
