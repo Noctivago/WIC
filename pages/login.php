@@ -75,20 +75,22 @@ session_start();
         <h2>LOGIN</h2> 
         <div class = "container form-signin">
             <?php
-            $msg = '';
             if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
                 try {
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                     $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
+                    $msg = '';
                     foreach ($rows as $row) {
                         if ($row['Username'] == $username && $row['Password'] == $password) {
                             $_SESSION['valid'] = true;
                             $_SESSION['timeout'] = time();
                             $_SESSION['id'] = $row['Id'];
                             $_SESSION['username'] = $row['Username'];
+                            $msg = 'Welcome ' . $row['Username'];
+                            header('Location: login.php');
                         } else {
-                            $msg = 'Wrong username or password -> ' . $row['Username'] . $row['Password'];
+                            $msg = 'Wrong username or password';
                         }
                     }
                 } catch (Exception $ex) {
@@ -111,7 +113,7 @@ session_start();
                         name = "login">Login</button>
             </form>
 
-            <!--Click here to clean <a href = "logout.php" tite = "Logout">Session.-->
+            Click here to clean <a href = "logout.php" tite = "Logout">Session
 
         </div> 
 
