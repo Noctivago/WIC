@@ -54,7 +54,7 @@ if ($arg === 'addUser') {
 } else if ($arg === 'blockUser') {
     
 } else if ($arg === 'addNews') {
-    $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
+    $UserEmail = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
     $count = sql($pdo, "SELECT * FROM [dbo].[News] WHERE [Email] = ? ", array($UserEmail), "count");
     if ($count > 0) {
         #echo 'Email already registed!';
