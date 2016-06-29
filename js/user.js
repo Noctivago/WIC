@@ -36,11 +36,6 @@ function news() {
     if (validateForm(email)) {
         var arg = 'addNews';
         alert('AddUserNewsletter');
-        //podemos passar um argumento que define a funcao a executar
-        //no ficheiro ajaxsubmit
-        //desta forma conforme o arg executa uma determinada func
-
-        // Returns successful data submission message when the entered information is stored in database.
         var dataString = 'email=' + email + '&arg=' + arg;
         if (email === '')
         {
