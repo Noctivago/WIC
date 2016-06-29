@@ -80,7 +80,7 @@ session_start();
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                     $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username));
-                    echo 'USER ' . $row['Username'];
+                    echo 'USER ' . $rows['Username'];
                     $msg = '';
                     foreach ($rows as $row) {
                         if ($row['Username'] == $username && $row['Password'] == $password) {
