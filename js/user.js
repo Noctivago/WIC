@@ -143,7 +143,7 @@ function loginUser() {
 function validateForm(value) {
     var atpos = value.indexOf("@");
     var dotpos = value.lastIndexOf(".");
-    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= value.length) {
         alert("Not a valid e-mail address");
         return false;
     }
