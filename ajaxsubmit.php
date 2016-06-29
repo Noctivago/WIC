@@ -59,7 +59,7 @@ if ($arg === 'addUser') {
   // $count = $stmt->rowCount();
   //  $oi = helloworld();
   //  echo login($username);
-    $db_pass = $result['Password'];
+    $db_pass = $result;
     if($db_pass === $password){
         $db_id = $result['Id'];
         $sql2 =("SELECT [dbo].[User].[Id] as u
