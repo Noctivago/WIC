@@ -42,7 +42,7 @@ function sql($pdo, $q, $params, $return) {
 function checkIfEmailUserExists($UserEmail) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] > ?", array($UserEmail), "count");
-        if ($count === 1) {
+        if ($count > 0) {
             return false;
         } else {
             return true;
