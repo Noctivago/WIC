@@ -117,7 +117,7 @@ class User {
 
     function __construct() {
         $this->setAbussiveUser(0);
-        $this->setAccountEnabled(0);
+        $this->setAccountEnabled(1);
         $this->setGoodUser(0);
         #$this->setLastLogin($lastLogin);
         #$this->setLastStatusOnline($lastStatusOnline)
