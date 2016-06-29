@@ -111,7 +111,7 @@ if ($arg === 'addUser') {
     }else {
         $db_update_login = $result['Login_Failed'];
         //echo $db_update_login ;
-        if($db_update_login === 3){
+        if($db_update_login == 3){
         $query_update_Login_Failed = "UPDATE [dbo].[User]
         SET [Account_Enabled] = 0
         WHERE [dbo].[User].[Username] ='$username'";
