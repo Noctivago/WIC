@@ -141,4 +141,32 @@ class User {
         return "USER " . $this->getUsername() . " ADDED! w/Password " . $this->getPassword();
     }
 
+    function getAllUsers() {
+        $sql = "SELECT [Id]
+      ,[Username]
+      ,[Password]
+      ,[Email]
+      ,[Account_Enabled]
+      ,[Date_Created]
+      ,[Login_Failed]
+      ,[Last_Login]
+      ,[Abusive_User]
+      ,[Good_User]
+      ,[Status]
+      ,[Last_Status_online]
+	FROM [dbo].[User]";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
+        foreach ($result as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Username'] . "</td>";
+            echo "<td>" . $row['Password'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    }
+
 }

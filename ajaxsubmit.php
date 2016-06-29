@@ -19,6 +19,14 @@ switch ($arg) {
     case 'login':
 
         break;
+    case 'readAllUsers':
+        try {
+            $USER = new User();
+            echo $USER->getAllUsers();
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+
     default :
         echo 'Ups! ERROR!';
         break;
