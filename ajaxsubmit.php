@@ -109,15 +109,24 @@ if ($arg === 'addUser') {
         echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
     }else {
-        $db_update_login = $result['Login_Failed']+1;
+        $db_update_login = $result['Login_Failed'];
         //echo $db_update_login ;
+        if($db_update_login === 3){
+        $query_update_Login_Failed = "UPDATE [dbo].[User]
+        SET [Account_Enabled] = 0
+        WHERE [dbo].[User].[Username] ='$username'";
+        $stmt2 = $pdo->prepare($query_update_Login_Failed);
+        $stmt2->execute();
+        echo 'Account Bloq';
+        }else{
+        $db_update_login= $db_update_login + 1;
         $query_update_Login_Failed = "UPDATE [dbo].[User]
         SET [Login_Failed] = $db_update_login
         WHERE [dbo].[User].[Username] ='$username'";
         $stmt2 = $pdo->prepare($query_update_Login_Failed);
         $stmt2->execute();
         echo 'Password Error';}
-    
+    }
 } else if ($arg === 'blockUser') {
         
 } else {
