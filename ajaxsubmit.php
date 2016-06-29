@@ -72,7 +72,7 @@ if ($arg === 'addUser') {
 //    $stmt->execute();
 //    $result = $stmt->fetch();
     $e = 'error';
-    $result->login($username);
+    login($username);
 //    $count = $stmt->rowCount();
     echo $result;
     $oi = helloworld();
