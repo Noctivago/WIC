@@ -1,7 +1,7 @@
 <?php
 
 include_once '/db/conn.inc.php';
-include_once 'Functions.php';
+include_once './Functions.php';
 
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
