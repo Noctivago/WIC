@@ -33,9 +33,7 @@ function sql($pdo, $q, $params, $return) {
             return $stmt->fetchAll();
         } elseif ($return == "count") {
             return $stmt->rowCount();
-        } elseif ($return == "countColumn") {
-            return $stmt->fetch(PDO::FETCH_NUM);
-        }
+        } 
     } catch (Exception $exc) {
         echo '';
     }
