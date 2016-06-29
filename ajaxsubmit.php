@@ -54,7 +54,7 @@ if ($arg === 'addUser') {
     $username = (filter_var($_POST['user'], FILTER_SANITIZE_STRING));
     $password = (filter_var($_POST['pass'], FILTER_SANITIZE_STRING));
     $result = Login($username, $password);
-    $count = $stmt->rowCount();
+    echo $result;
     $db_pass = $result['Password'];
     if($db_pass ===$password){
         $db_id = $result['Id'];

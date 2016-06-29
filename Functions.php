@@ -25,7 +25,7 @@ function Login($username,$password){
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
-    return $result;
+    return $result[0];
 }
 
 
