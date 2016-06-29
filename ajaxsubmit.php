@@ -70,11 +70,9 @@ if ($arg === 'addUser') {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
-    if($result === 0){
+    if(@@ROWCOUNT==0){
         echo 'Username não existe';
-    }
-    $db_Password = $result['Password'];
-    if($password === $db_Password){
+    }  else if ($result['password']===$password){
         $db_id = $result['Id'];
        $sql2 =("SELECT [dbo].[User].[Id] as u
 	  ,[Username]
