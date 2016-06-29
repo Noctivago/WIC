@@ -2,25 +2,11 @@
 
 include_once './db/conn.inc.php';
 
-//// With SELECT
-//// Call function
-//$rows = sql($db, "SELECT * FROM table WHERE id = ?", array($id), "rows");
-//// Get results
-//foreach($rows as $row) {
-//    echo $row['field1'].' '.$row['field2']; //etc...
-//}
-//
-//// With INSERT
-//// Call function
-//sql($db, "INSERT INTO table (field1, field2, field3) VALUES (?, ?, ?)", array($id, $name, $pass));
-//
+
 //// With UPDATE
 //// Call function
 //sql($db, "UPDATE table SET name = ? WHERE id = ?", array($name, $id));
-//
-//// With DELETE
-//// Call function
-//sql($db, "DELETE FROM table WHERE id = ?", array($id));
+
 
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
