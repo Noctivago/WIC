@@ -7,32 +7,8 @@ include_once './db/conn.inc.php';
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function Login($username){
-    $sql ="SELECT [Id]
-      ,[Username]
-      ,[Password]
-      ,[Email]
-      ,[Account_Enabled]
-      ,[Date_Created]
-      ,[Login_Failed]
-      ,[Last_Login]
-      ,[Abusive_User]
-      ,[Good_User]
-      ,[Status]
-      ,[Last_Status_online]
-       FROM [dbo].[User]
-       where [dbo].[User].[Username]='$username'";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->fetch();
-    return 'ollll';
-}
-
-function helloworld($o){
-    return $o + "ola mundo";
-}
-function ReadAll(){
-    $sql = "SELECT [Id]
+function readAl(){
+        $sql = "SELECT [Id]
       ,[Username]
       ,[Password]
       ,[Email]
@@ -48,8 +24,15 @@ function ReadAll(){
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
-    
+    echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
+    foreach ($result as $row) {
+        echo "<tr>";
+        echo "<td>" . $row['Id'] . "</td>";
+        echo "<td>" . $row['Username'] . "</td>";
+        echo "<td>" . $row['Password'] . "</td>";
+        echo "<tr>";
+    }
+    echo "</table>";
+
 }
-
-
 ?>
