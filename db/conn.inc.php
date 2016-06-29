@@ -5,11 +5,6 @@ $dbport = "1433";
 $dbpass = '#$youcandoit2017$#';
 $dbuser = "wic";
 $db = "wicdb";
-//$server = "wicsqlserver.database.windows.net";
-//$port = "1433";
-//$pass = '#$youcandoit2017$#';
-//$user = "wic";
-//$db = "wicdb";
 
 try {
     $pdo = new PDO("sqlsrv:server=$dbserver; Database=$db", "$dbuser", "$dbpass");
@@ -29,7 +24,7 @@ function sql($db, $q, $params, $return) {
     try {
 
         // Prepare statement
-        $stmt = $db->prepare($q);
+        $stmt = $pdo->prepare($q);
         // Execute statement
         $stmt->execute($params);
         // Decide whether to return the rows themselves, or just count the rows
