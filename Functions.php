@@ -28,6 +28,25 @@ function Login($username){
     return $result[0];
 }
 
+function ReadAll(){
+    $sql = "SELECT [Id]
+      ,[Username]
+      ,[Password]
+      ,[Email]
+      ,[Account_Enabled]
+      ,[Date_Created]
+      ,[Login_Failed]
+      ,[Last_Login]
+      ,[Abusive_User]
+      ,[Good_User]
+      ,[Status]
+      ,[Last_Status_online]
+	FROM [dbo].[User]";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    return $result;
+}
 
 
 ?>

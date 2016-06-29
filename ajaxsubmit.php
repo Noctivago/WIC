@@ -21,23 +21,24 @@ if ($arg === 'addUser') {
 } else if ($arg === 'readUser') {
     
 } else if ($arg === 'readAllUsers') {
-    $sql = "SELECT [Id]
-      ,[Username]
-      ,[Password]
-      ,[Email]
-      ,[Account_Enabled]
-      ,[Date_Created]
-      ,[Login_Failed]
-      ,[Last_Login]
-      ,[Abusive_User]
-      ,[Good_User]
-      ,[Status]
-      ,[Last_Status_online]
-	FROM [dbo].[User]";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->fetchAll();
+//    $sql = "SELECT [Id]
+//      ,[Username]
+//      ,[Password]
+//      ,[Email]
+//      ,[Account_Enabled]
+//      ,[Date_Created]
+//      ,[Login_Failed]
+//      ,[Last_Login]
+//      ,[Abusive_User]
+//      ,[Good_User]
+//      ,[Status]
+//      ,[Last_Status_online]
+//	FROM [dbo].[User]";
+//    $stmt = $pdo->prepare($sql);
+//    $stmt->execute();
+//    $result = $stmt->fetchAll();
     echo "<table><tr><th>ID</th><th>Username</th><th>Password</th></tr>";
+    $result = ReadAll();
     foreach ($result as $row) {
         echo "<tr>";
         echo "<td>" . $row['Id'] . "</td>";
@@ -89,16 +90,16 @@ if ($arg === 'addUser') {
         //echo "<td>" . $result2['Name'] . "</td>";
         //echo "<td>" . $result2['Id'] . "</td>";
         echo "<tr>";
-    }else {
-        $db_update_login = $result['Login_Failed'];
-        echo $db_update_login ;
-        $query_update_Login_Failed = "UPDATE [dbo].[User]
-        SET [Login_Failed] = $db_update_login
-        WHERE [dbo].[User].[Username] ="+$username;
-        $stmt2 = $pdo->prepare($db_update_login);
-        $stmt2->execute();
-        echo 'Password Error';}
-    
+//    }else {
+//        $db_update_login = $result['Login_Failed'];
+//        echo $db_update_login ;
+//        $query_update_Login_Failed = "UPDATE [dbo].[User]
+//        SET [Login_Failed] = $db_update_login
+//        WHERE [dbo].[User].[Username] ="+$username;
+//        $stmt2 = $pdo->prepare($db_update_login);
+//        $stmt2->execute();
+//        echo 'Password Error';}
+//    
 } else if ($arg === 'blockUser') {
     
 } else {
