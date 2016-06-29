@@ -2,30 +2,23 @@
 
 include_once './db/conn.inc.php';
 
-//$USER = new User();
-//$USER->setUsername(1);
-//$USER->setPassword(1);
-//$USER->setEmail(1);
-//$stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
-//$stmt->bindParam(':u', $USER->getUsername());
-//$stmt->bindParam(':p', $USER->getPassword());
-//$stmt->bindParam(':m', $USER->getEmail());
-//$stmt->execute();
-//echo "USER " . $USER->getUsername() . " ADDED! w/Password " . $USER->getPassword();
+function USERADD() {
+    $username = (filter_var($_POST['username'], FILTER_SANITIZE_STRING));
+    $password = (filter_var($_POST['password'], FILTER_SANITIZE_STRING));
+    $email = (filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
+    $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
+    $stmt->bindParam(':u', $username);
+    $stmt->bindParam(':p', $password);
+    $stmt->bindParam(':m', $email);
+    $stmt->execute();
+    echo "USER " . $username . " ADDED! w/Password " . $password;
+}
 
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addUser') {
     try {
-        $username = (filter_var($_POST['username'], FILTER_SANITIZE_STRING));
-        $password = (filter_var($_POST['password'], FILTER_SANITIZE_STRING));
-        $email = (filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
-        $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
-        $stmt->bindParam(':u', $username);
-        $stmt->bindParam(':p', $password);
-        $stmt->bindParam(':m', $email);
-        $stmt->execute();
-        echo "USER " . $username . " ADDED! w/Password " . $password;
+        echo USERADD();
     } catch (Exception $ex) {
         echo "ERROR!";
     }
