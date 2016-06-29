@@ -11,7 +11,7 @@ switch ($arg) {
             $USER->setUsername(filter_var($_POST['username'], FILTER_SANITIZE_STRING));
             $USER->setPassword(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
             $USER->setEmail(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
-            echo $USER->addUserIntoDB();
+            echo $USER->addUserIntoDB($USER);
         } catch (Exception $ex) {
             echo "ERROR!";
         }

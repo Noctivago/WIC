@@ -116,12 +116,12 @@ class User {
     }
 
     function __construct() {
-        $this->setAbussiveUser(0);
-        $this->setAccountEnabled(1);
-        $this->setGoodUser(0);
-        #$this->setLastLogin($lastLogin);
-        #$this->setLastStatusOnline($lastStatusOnline)
-        $this->setStatus(0);
+//        $this->setAbussiveUser(0);
+//        $this->setAccountEnabled(1);
+//        $this->setGoodUser(0);
+//        #$this->setLastLogin($lastLogin);
+//        #$this->setLastStatusOnline($lastStatusOnline)
+//        $this->setStatus(0);
     }
 
     public function __clone() {
@@ -132,12 +132,12 @@ class User {
         
     }
 
-    function addUserIntoDB() {
+    function addUserIntoDB($Utilizador) {
         try {
             $stmt = $pdo->prepare("INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (:u, :p, :m)");
-            $stmt->bindParam(':u', $this->getUsername());
-            $stmt->bindParam(':p', $this->getPassword());
-            $stmt->bindParam(':m', $this->getEmail());
+            $stmt->bindParam(':u', $Utilizador->getUsername());
+            $stmt->bindParam(':p', $Utilizador->getPassword());
+            $stmt->bindParam(':m', $Utilizador->getEmail());
             $stmt->execute();
             echo "USER " . $this->getUsername() . " ADDED! w/Password " . $this->getPassword();
         } catch (Exception $exc) {
