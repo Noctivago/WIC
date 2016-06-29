@@ -84,11 +84,11 @@ session_start();
                     #echo 'USER ' . $rows['Username'];
                     $msg = '';
                     #foreach ($rows as $row) {
-                    if ($row['Username'] == $username && $row['Password'] == $password) {
+                    if ($rows['Username'] == $username && $rows['Password'] == $password) {
                         $_SESSION['valid'] = true;
                         $_SESSION['timeout'] = time();
-                        $_SESSION['id'] = $row['Id'];
-                        $_SESSION['username'] = $row['Username'];
+                        $_SESSION['id'] = $rows['Id'];
+                        $_SESSION['username'] = $rows['Username'];
                         #$msg = 'Welcome ' . $row['Username'];
                         header('Location: profile.php');
                     } else {
