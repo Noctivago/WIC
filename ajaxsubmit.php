@@ -26,7 +26,7 @@ switch ($arg) {
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }
-
+        break;
     default :
         echo 'Ups! ERROR!';
         break;
