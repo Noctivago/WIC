@@ -1,7 +1,7 @@
 <?php
 
 include_once './db/conn.inc.php';
-
+include 'Functions.php';
 $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addUser') {
@@ -71,6 +71,7 @@ if ($arg === 'addUser') {
     $stmt->execute();
     $result = $stmt->fetch();
     $count = $stmt->rowCount();
+    echo helloworld();
     $db_pass = $result['Password'];
     if($db_pass ===$password){
         $db_id = $result['Id'];
