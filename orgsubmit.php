@@ -40,7 +40,6 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'fuck';
     }
-
 } else if ($arg === 'removeOrganization') {
     
 } else if ($arg === 'editOrganizationInformation') {
