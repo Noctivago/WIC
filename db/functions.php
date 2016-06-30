@@ -11,3 +11,7 @@ function generateActivationCode($length = 16) {
 
     return $key;
 }
+
+function getLength($str) {
+    return strlen($str);
+}
