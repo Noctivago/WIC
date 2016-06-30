@@ -72,6 +72,10 @@ if (isset($_SESSION['username'])) {
                 text-align: center;
                 color: #017572;
             }
+            p{
+                text-align: right;
+                color: #017572;
+            }
         </style>
     </head>
     <body>
@@ -117,6 +121,7 @@ if (isset($_SESSION['username'])) {
                        name = "password" placeholder = "password" required>
                 <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
                         name = "login">Login</button>
+                <!-- RECUPERAR USER + PASS FACULTANDO EMAIL -->
                 <p>Forgot your account's details?</p>
             </form>
 
