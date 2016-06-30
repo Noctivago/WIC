@@ -80,3 +80,23 @@ function DB_compareActivationCode($pdo, $email, $code) {
         echo '';
     }
 }
+
+function DB_setLoginFailed($pdo, $value, $email) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Login_Failed] = ? WHERE [Email] = ? ", array($value, $email));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}
+
+function DB_getLoginFailedValue($pdo, $email) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
+        foreach ($rows as $row) {
+            return $row['Login_Failed'];
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}

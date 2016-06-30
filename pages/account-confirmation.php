@@ -85,7 +85,7 @@ include_once '../db/conn.inc.php';
                 //SE EMAIL EXISTE
                 if (DB_checkIfUserExists($pdo, $email)) {
                     //VERIFICA SE O ACTIVATION CODE PERTENCE AO EMAIL
-                    if (DB_compareActivationCode($pdo, $email, $code) == TRUE) {
+                    if (DB_compareActivationCode($pdo, $email, $code)) {
                         //SE TRUE ATIVA CONTA
                         if (DB_activateUserAccount($pdo, $email)) {
                             $msg = 'ACCOUNT SUCESSUFULY ACTIVATED';
