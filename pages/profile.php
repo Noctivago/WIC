@@ -1,6 +1,6 @@
 <?php
 //
-include('session.php');
+include_once ('session.php');
 #session_start();
 ?>
 
