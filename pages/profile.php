@@ -6,16 +6,16 @@ include_once ('session.php');
 
 //<?php session_start(); ?>
 
-<!--<html>
+<html>
     <head>
         <title> Home </title>
     </head>
     <body>
--->
-<?php
-echo 'Welcome ' . $_SESSION['username'] . '<br>';
+
+        <?php
+        echo 'Welcome ' . $_SESSION['username'] . '<br>';
 #echo "Login Success";
-echo "<a href='logout.php'> Logout</a> ";
-?>
-</body>
-</html>-->
+        echo "<a href='logout.php'> Logout</a> ";
+        ?>
+    </body>
+</html>
