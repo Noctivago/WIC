@@ -81,7 +81,7 @@ include_once '../db/conn.inc.php';
                 $msg = '';
                 $forgotPassword = '';
                 $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_STRING));
-                $email = (filter_var($_POST ['activateText'], FILTER_SANITIZE_EMAIL));
+                $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                 if (DB_checkIfUserExists($pdo, $email)) {
                     $aCode = DB_getActivationCode($pdo, $email);
                     if ($acode == $code) {
