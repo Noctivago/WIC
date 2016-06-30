@@ -19,11 +19,11 @@ function addOrganization(){
     }else
     {
         $.ajax({
-            type:"POST",
-            url:"orgsubmit.php",
-            data:dataString,
-            cache:false, 
-            sucess:function(result){
+            type: "POST",
+            url: "orgsubmit.php",
+            data: dataString,
+            cache: false,
+            sucess: function(result){
                 alert(result);
             }
         });
