@@ -69,7 +69,7 @@ include_once '../db/conn.inc.php';
         </style>
     </head>
     <body>
-        <h2>LOGIN</h2> 
+        <h2>SIGN UP</h2> 
         <div class = "container form-signin">
             <?php
             if (isset($_POST['signup']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email'])) {
