@@ -83,7 +83,7 @@ include_once '../db/conn.inc.php';
 
                 if (checkIfUserExists($pdo, $email)) {
                     $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
-                    $forgotPassword = '<a href=account-recovery.php">Forgot your account details?</a>';
+                    $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
                     try {
                         sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $hashPassword, $email));
