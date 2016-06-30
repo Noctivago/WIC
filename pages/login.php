@@ -102,7 +102,7 @@ if (isset($_SESSION['username'])) {
                                 $_SESSION['password'] = $row['Password'];
                                 $msg = 'Welcome ' . $row['Username'];
                                 //SET [Login_failed] = 0
-                                if (DB_setLoginFailed('0', $email)) {
+                                if (DB_setLoginFailed($pdo, $email)) {
                                     header('Location: profile.php');
                                 }
                             } else {
@@ -111,7 +111,7 @@ if (isset($_SESSION['username'])) {
                                 $val = DB_getLoginFailedValue($pdo, $email);
                                 if ($val < 3) {
                                     $value = $val + 1;
-                                    DB_setLoginFailed($pdo, $value, $email);
+                                    DB_setLoginFailed($pdo, $email, $value);
                                     $msg = 'Wrong username or password';
                                 } else {
                                     $msg = 'Account blocked!';

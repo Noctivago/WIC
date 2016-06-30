@@ -81,7 +81,7 @@ function DB_compareActivationCode($pdo, $email, $code) {
     }
 }
 
-function DB_setLoginFailed($pdo, $value, $email) {
+function DB_setLoginFailed($pdo, $email, $value = '0') {
     try {
         $count = sql($pdo, "UPDATE [dbo].[User] SET [Login_Failed] = ? WHERE [Email] = ? ", array($value, $email));
         return true;
