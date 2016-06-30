@@ -21,7 +21,8 @@ function addOrganization(){
             type:"POST",
             url:"orgsubmit.php",
             data:dataString,
-            cache:false,sucess:function(result){
+            cache:false, 
+            sucess:function(result){
                 alert(result);
             }
         });
