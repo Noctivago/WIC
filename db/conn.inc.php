@@ -38,3 +38,16 @@ function sql($pdo, $q, $params, $return) {
         echo '';
     }
 }
+
+function checkIfUserExists($pdo, $email) {
+    $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "count");
+    //IF EXISTS -1
+    if ($count < 0) {
+        #echo 'Email already registed!';
+        return true;
+    } else {
+        #echo 'Email Registed';
+        #echo $count;
+        return false;
+    }
+}
