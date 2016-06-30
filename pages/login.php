@@ -72,7 +72,7 @@ if (isset($_SESSION['username'])) {
                 text-align: center;
                 color: #017572;
             }
-            p{
+            href{
                 text-align: right;
                 color: #017572;
             }
