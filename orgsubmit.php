@@ -5,6 +5,7 @@ include_once './db/conn.inc.php';
 $arg = (filter_var($_POST['arg'],FILTER_SANITIZE_STRING));
 
 if($arg==='addOrganization'){
+    echo 'oi';
     try{
         $userid = (filter_var($_POST['userid'],FILTER_SANITIZE_STRING));
         $name = (filter_var($_POST['name'],FILTER_SANITIZE_STRING));
