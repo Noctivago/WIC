@@ -1,5 +1,6 @@
 <?php
 include_once '../db/conn.inc.php';
+include_once './functions.php';
 ob_start();
 session_start();
 if (isset($_SESSION['username'])) {
@@ -87,7 +88,8 @@ if (isset($_SESSION['username'])) {
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                     #echo 'USERNAME ' . $rows['Username'];
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
+                    $password = hashPassword($password);
+                    $password = $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
                     #echo 'USER ' . $rows['Username'];
                     $msg = '';
                     foreach ($rows as $row) {
@@ -97,7 +99,7 @@ if (isset($_SESSION['username'])) {
                             $_SESSION['timeout'] = time();
                             $_SESSION['id'] = $row['Id'];
                             $_SESSION['username'] = $row['Username'];
-                            #$msg = 'Welcome ' . $row['Username'];
+                            $msg = 'Welcome ' . $row['Username'];
                             header('Location: profile.php');
                         } else {
                             $msg = 'Wrong username or password';
