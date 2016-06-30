@@ -1,5 +1,6 @@
 <?php
 include_once '../db/conn.inc.php';
+include_once '../db/functions.php';
 ?>
 
 <html lang = "en">
@@ -82,7 +83,10 @@ include_once '../db/conn.inc.php';
                 $hashPassword = hash('whirlpool', $password);
 
                 if (checkIfUserExists($pdo, $email)) {
-                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
+                    $l = '128';
+                    $code = generateActivationCode($l);
+                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED! -> ' . $code;
+
                     $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
                     try {
