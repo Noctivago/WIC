@@ -70,6 +70,7 @@ include_once '../db/conn.inc.php';
     </head>
     <body>
         <h2>ACCOUNT ACTIVATION</h2> 
+        <h3>PLACE THE CODE SENT TO YOU BY EMAIL IN THE FIELD BELOW</h3> 
         <div class = "container form-signin">
             <?php
             if (isset($_POST['activate']) && !empty($_POST['activateText'])) {
