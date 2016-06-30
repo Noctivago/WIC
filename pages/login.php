@@ -99,6 +99,7 @@ if (isset($_SESSION['username'])) {
                             $_SESSION['timeout'] = time();
                             $_SESSION['id'] = $row['Id'];
                             $_SESSION['username'] = $row['Username'];
+                            $_SESSION['password'] = $row['Password'];
                             $msg = 'Welcome ' . $row['Username'];
                             header('Location: profile.php');
                         } else {
