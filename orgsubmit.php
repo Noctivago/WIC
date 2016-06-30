@@ -2,7 +2,7 @@
 
 include_once './db/conn.inc.php';
 
-$arg = (filter_var($_POST ['arg'], FILTER_SANITIZE_STRING));
+$arg = (filter_var($_POST ['arg']));
 
 if ($arg === 'addOrganization') {
     try {
