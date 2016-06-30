@@ -70,7 +70,7 @@ function DB_compareActivationCode($pdo, $email, $code) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
         foreach ($rows as $row) {
-            if ($row['User_Code_Activation'] === $code) {
+            if ($row['User_Code_Activation'] == $code) {
                 return true;
             } else {
                 return false;
