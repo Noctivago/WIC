@@ -1,10 +1,10 @@
 <?php
 include_once '../db/conn.inc.php';
+ob_start();
+session_start();
 if (isset($_SESSION['username'])) {
     header("location: profile.php");
 }
-ob_start();
-session_start();
 ?>
 
 <?
