@@ -35,10 +35,7 @@ if ($arg === 'addOrganization') {
            ,[Website]) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", array($name, $phone, $mobile, 0, $address, 1, $userid, $facebook, $twitter, $linkdin, 0, 0, $orgEmail, $website));
 **/
 
-        sql($pdo, "INSERT INTO [dbo].[Organization]
-           ([Name]
-           ,[Phone_Number]
-           ,[Website]) VALUES(?,?,?)", array($name, $phone, $website),"count");
+        sql($pdo, "INSERT INTO [dbo].[Organization]([Name],[Phone_Number],[Website]) VALUES(?,?,?)", array($name, $phone, $website));
         echo 'Organization added!';
     } catch (Exception $ex) {
         echo 'ERRO';
@@ -69,4 +66,6 @@ if ($arg === 'addOrganization') {
     
 } else if ($arg === 'viewAllUsersInOrganization') {
     
+}  else {
+    echo 'lol';    
 }
