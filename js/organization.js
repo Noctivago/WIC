@@ -24,8 +24,8 @@ function addOrganization(){
             data: dataString,
             cache: false,
             sucess: function(result){
-                alert(result);
-            }
+            var ajaxDisplay = document.getElementById('result');
+            ajaxDisplay.innerHTML = result;}
         });
     }
     }
