@@ -114,6 +114,7 @@ if (isset($_SESSION['username'])) {
                                     DB_setLoginFailed($pdo, $email, $value);
                                     $msg = 'Wrong username or password';
                                 } else {
+                                    //BLOCK ACCOUNT
                                     $msg = 'Account blocked!';
                                 }
                             }
