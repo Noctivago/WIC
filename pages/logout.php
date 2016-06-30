@@ -3,8 +3,7 @@ session_start();
 unset($_SESSION["Username"]);
 //unset($_SESSION["password"]);
 unset($_SESSION["Id"]);
-
-echo 'You have cleaned session';
+#echo 'You have cleaned session';
 header('Refresh: 2; URL = login.php');
 ?>
 
@@ -72,10 +71,11 @@ header('Refresh: 2; URL = login.php');
     </head>
     <body>
         <h2>LOGOUT</h2> 
+        <h1>Hope to see you again!</h1>
         <div class = "container form-signin">
         </div> <!-- /container -->
         <div class = "container">
-            <h1>Hope to see you again!</h1>
+
             <!--Click here to clean <a href = "logout.php" tite = "Logout">Session-->
 
         </div> 
