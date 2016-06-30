@@ -8,11 +8,12 @@ $userUsername = $_SESSION['username'];
 //Query To Fetch Complete Information Of User
 $user = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ? and [Id] = ?", array($userUsername, $userId), "rows");
 foreach ($rows as $row) {
-    $login_session = $row['Username'];
-}
-if (!isset($login_session)) {
-    #$pdo = null;
-    header('Location: login.php'); // Redirecting To Home Page
-} else {
-    
+    if ($_SESSION['username'] == $row['Username']) {
+        if (!isset($_SESSION['username'])) {
+            #$pdo = null;
+            header('Location: login.php'); // Redirecting To Home Page
+        } else {
+            
+        }
+    }
 }
