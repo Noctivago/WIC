@@ -17,7 +17,8 @@ if ($arg === 'addOrganization') {
         $linkdin = (filter_var($_POST['linkdin'], FILTER_SANITIZE_STRING));
         $orgEmail = (filter_var($_POST['orgEmail'], FILTER_SANITIZE_STRING));
         $website = (filter_var($_POST['website'], FILTER_SANITIZE_STRING));
-        sql($pdo, "INSERT INTO [dbo].[Organization]
+
+  /**      sql($pdo, "INSERT INTO [dbo].[Organization]
            ([Name]
            ,[Phone_Number]
            ,[Mobile_Number]
@@ -32,6 +33,12 @@ if ($arg === 'addOrganization') {
            ,[Good_Organization]
            ,[Organization_Email]
            ,[Website]) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", array($name, $phone, $mobile, 0, $address, 1, $userid, $facebook, $twitter, $linkdin, 0, 0, $orgEmail, $website));
+**/
+
+        sql($pdo, "INSERT INTO [dbo].[Organization]
+           ([Name]
+           ,[Phone_Number]
+           ,[Website]) VALUES(?,?,?)", array($name, $phone, $website));
         echo 'Organization added!';
     } catch (Exception $ex) {
         echo 'ERRO';
