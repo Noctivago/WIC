@@ -82,22 +82,23 @@ if (isset($_SESSION['username'])) {
         <h2>LOGIN</h2> 
         <div class = "container form-signin">
             <?php
-            if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
+            if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                 try {
-                    $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
+                    $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                     #echo 'USERNAME ' . $rows['Username'];
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                     $hashPassword = hash('whirlpool', $password);
-                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
+                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
                     #echo 'USER ' . $rows['Username'];
                     $msg = '';
                     foreach ($rows as $row) {
-                        if ($row['Username'] == $username && $row['Password'] == $hashPassword) {
+                        if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
                             //ADICIONAR PASSWORD
                             $_SESSION['valid'] = true;
                             $_SESSION['timeout'] = time();
                             $_SESSION['id'] = $row['Id'];
                             $_SESSION['username'] = $row['Username'];
+                            $_SESSION['email'] = $row['Email'];
                             $_SESSION['password'] = $row['Password'];
                             $msg = 'Welcome ' . $row['Username'];
                             header('Location: profile.php');
@@ -116,8 +117,8 @@ if (isset($_SESSION['username'])) {
 
             <form class = "form-signin" role = "form" action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post">
                 <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
-                <input type = "text" class = "form-control" 
-                       name = "username" placeholder = "username" 
+                <input type = "email" class = "form-control" 
+                       name = "email" placeholder = "youremail@email.com" 
                        required autofocus></br>
                 <input type = "password" class = "form-control"
                        name = "password" placeholder = "password" required>
