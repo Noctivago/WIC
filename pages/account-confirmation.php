@@ -82,15 +82,19 @@ include_once '../db/conn.inc.php';
                 $forgotPassword = '';
                 $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_STRING));
                 $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+                //SE EMAIL EXISTE
                 if (DB_checkIfUserExists($pdo, $email)) {
-                    $aCode = DB_getActivationCode($pdo, $email);
-                    if ($acode == $code) {
+                    //VERIFICA SE O ACTIVATION CODE PERTENCE AO EMAIL
+                    if (DB_compareActivationCode($pdo, $email, $code)) {
+                        //SE TRUE ATIVA CONTA
                         DB_activateUserAccount($pdo, $email);
                         $msg = 'ACCOUNT SUCESSUFULY ACTIVATED';
                     } else {
+                        //SENAO INFORMA
                         $msg = 'INCORRECT ACTIVATION CODE';
                     }
                 } else {
+                    //SENAO INFORMA
                     $msg = 'INCORRECT DATA. EMAIL NOT FOUND!';
                 }
             }
