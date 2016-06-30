@@ -89,7 +89,7 @@ include_once '../db/functions.php';
                     try {
                         //GERA CODIGO DE ATIVACAO DE 128car
                         $code = generateActivationCode($length = 64);
-                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
+                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
                         $msg = 'USER ' . $username . ' ADDED!';
                         header('Location: account-confirmation.php');
                     } catch (Exception $ex) {
