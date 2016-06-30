@@ -81,7 +81,7 @@ include_once '../db/conn.inc.php';
                 $msg = '';
                 $forgotPassword = '';
                 $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_STRING));
-                
+
                 if (checkIfUserExists($pdo, $email)) {
                     $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
                     $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
@@ -105,6 +105,9 @@ include_once '../db/conn.inc.php';
                 <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
                 <input type = "text" class = "form-control" 
                        name = "activateText" placeholder = "place activation code here" 
+                       required autofocus></br>
+                <input type = "email" class = "form-control" 
+                       name = "email" placeholder = "youremail@email.com" 
                        required autofocus></br>
                 <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
                         name = "activate">Activate Account</button>
