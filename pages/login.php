@@ -87,7 +87,7 @@ if (isset($_SESSION['username'])) {
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                     #echo 'USERNAME ' . $rows['Username'];
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                    $hashPassword = hash('sha512', $password);
+                    $hashPassword = hash('whirlpool', $password);
                     $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
                     #echo 'USER ' . $rows['Username'];
                     $msg = '';

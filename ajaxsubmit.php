@@ -15,7 +15,7 @@ if ($arg === 'addUser') {
         $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
         $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-        $hashPassword = hash('sha512', $password);
+        $hashPassword = hash('whirlpool', $password);
         sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $hashPassword, $email));
         echo "USER " . $username . " ADDED!";
     } catch (Exception $ex) {
