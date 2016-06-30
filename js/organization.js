@@ -23,9 +23,11 @@ function addOrganization(){
             url: "orgsubmit.php",
             data: dataString,
             cache: false,
-            sucess: function(result){
+            sucess: function (result) {
             var ajaxDisplay = document.getElementById('result');
-            ajaxDisplay.innerHTML = result;}
+            ajaxDisplay.innerHTML = result;
+        alert(result);
+    }
         });
     }
     }
