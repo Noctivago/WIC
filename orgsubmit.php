@@ -38,7 +38,7 @@ if ($arg === 'addOrganization') {
         sql($pdo, "INSERT INTO [dbo].[Organization]
            ([Name]
            ,[Phone_Number]
-           ,[Website]) VALUES(?,?,?)", array($name, $phone, $website));
+           ,[Website]) VALUES(?,?,?)", array($name, $phone, $website),"count");
         echo 'Organization added!';
     } catch (Exception $ex) {
         echo 'ERRO';
