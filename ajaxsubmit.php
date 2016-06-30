@@ -16,12 +16,11 @@ if ($arg === 'addUser') {
     $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
     $hashPassword = hash('whirlpool', $password);
     if (checkIfUserExists($pdo, $email)) {
-        echo "EMAIL [" . $email . "] ALREADY REGISTED!";
+        echo 'EMAIL [' . $email . '] ALREADY REGISTED!';
     } else {
         try {
-
             sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $hashPassword, $email));
-            echo "USER " . $username . " ADDED!";
+            echo 'USER ' . $username . ' ADDED!';
         } catch (Exception $ex) {
             echo "ERROR!";
         }
