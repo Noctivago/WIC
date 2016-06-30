@@ -88,7 +88,7 @@ include_once '../db/functions.php';
                 } else {
                     try {
                         $code = generateActivationCode($length = 128);
-                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation]) VALUES (?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code));
+                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation]) VALUES (?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code));
                         $msg = 'USER ' . $username . ' ADDED!';
                         header('Location: account-confirmation.php');
                     } catch (Exception $ex) {
