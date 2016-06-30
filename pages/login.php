@@ -123,11 +123,8 @@ if (isset($_SESSION['username'])) {
                         name = "login">Login</button>
                 <!-- RECUPERAR USER + PASS FACULTANDO EMAIL -->
                 <p></p>
-                <p>Forgot your account's details?</p>
+                <a href="account-recovery.php">Forgot your account's details?</a> 
             </form>
-
-            <!--Click here to clean <a href = "logout.php" tite = "Logout">Session-->
-
         </div> 
 
     </body>
