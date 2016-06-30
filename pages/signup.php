@@ -83,9 +83,9 @@ include_once '../db/functions.php';
                 $hashPassword = hash('whirlpool', $password);
 
                 if (checkIfUserExists($pdo, $email)) {
-                    //$l = '10';
-                    //$code = generateActivationCode($l);
-                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
+                    #$l = '10';
+                    $code = generateActivationCode($length = 128);
+                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED! -> ' . $code;
 
                     $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
