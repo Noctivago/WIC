@@ -84,15 +84,13 @@ if (isset($_SESSION['username'])) {
             <?php
             if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                 try {
+                    $msg = '';
                     $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                    #echo 'USERNAME ' . $rows['Username'];
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                     $hashPassword = hash('whirlpool', $password);
-
                     if (DB_checkIfUserExists($pdo, $email)) {
                         $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, '1'), "rows");
-                        #echo 'USER ' . $rows['Username'];
-                        $msg = '';
+                        $msg ='EMAIL FOUND';
                         foreach ($rows as $row) {
                             if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
                                 //ADICIONAR PASSWORD
