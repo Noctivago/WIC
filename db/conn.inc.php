@@ -31,6 +31,8 @@ function sql($pdo, $q, $params, $return) {
         // Decide whether to return the rows themselves, or just count the rows
         if ($return == "rows") {
             return $stmt->fetchAll();
+        } elseif ($return == "row") {
+            return $stmt->featch();
         } elseif ($return == "count") {
             return $stmt->rowCount();
         }
@@ -66,8 +68,8 @@ function DB_activateUserAccount($pdo, $email) {
 
 function DB_compareActivationCode($pdo, $email, $code) {
     try {
-        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [User_Code_Activation] = ? AND [Account_Enabled] = ? ", array($email, $code, '0'), "rows");
-        if ($rows['User_Code_Activation'] == $code) {
+        $row = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [User_Code_Activation] = ? AND [Account_Enabled] = ? ", array($email, $code, '0'), "row");
+        if ($row['User_Code_Activation'] == $code) {
             return true;
         } else {
             return false;
