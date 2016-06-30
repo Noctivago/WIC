@@ -87,7 +87,7 @@ include_once '../db/conn.inc.php';
                     if ($acode == $code) {
                         DB_activateUserAccount($pdo, $email);
                     } else {
-                        $msg = 'INCORRECT DATA. EMAIL NOT FOUND!';
+                        $msg = 'INCORRECT ACTIVATION CODE';
                     }
                 } else {
                     $msg = 'INCORRECT DATA. EMAIL NOT FOUND!';
