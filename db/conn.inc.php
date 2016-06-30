@@ -44,11 +44,8 @@ function DB_checkIfUserExists($pdo, $email) {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "count");
         //IF EXISTS -1
         if ($count < 0) {
-            #echo 'Email already registed!';
             return true;
         } else {
-            #echo 'Email Registed';
-            #echo $count;
             return false;
         }
     } catch (Exception $exc) {
@@ -69,16 +66,11 @@ function DB_activateUserAccount($pdo, $email) {
 
 function DB_compareActivationCode($pdo, $email, $code) {
     try {
-        $sqlSelect = 'SELECT * FROM [dbo].[User] WHERE [Email] = :email AND [User_Code_Activation] = :code';
-        $sth = $pdo->prepare($sqlSelect);
-        $sth->execute(array(':email' => $email));
-        $sth->execute(array(':code' => $code));
-        foreach ($sth->fetchAll() as $row) {
-            if ($code == $row['User_Code_Activation']) {
-                return true;
-            } else {
-                return false;
-            }
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [User_Code_Activation] = ?", array($email, $code), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
         }
     } catch (Exception $exc) {
         echo '';
