@@ -126,8 +126,7 @@ if (isset($_SESSION['username'])) {
                         name = "login">Login</button>
                 <!-- RECUPERAR USER + PASS FACULTANDO EMAIL -->
                 <p></p>
-                <a href="account-recovery.php">Forgot your account's details?</a> 
-                <a href="#">New User?</a> 
+                
             </form>
         </div> 
 

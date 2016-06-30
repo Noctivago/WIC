@@ -72,31 +72,24 @@ include_once '../db/conn.inc.php';
         <h2>LOGIN</h2> 
         <div class = "container form-signin">
             <?php
-            if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
-                try {
-                    $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
-                    #echo 'USERNAME ' . $rows['Username'];
-                    $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                    $hashPassword = hash('whirlpool', $password);
-                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
-                    #echo 'USER ' . $rows['Username'];
-                    $msg = '';
-                    foreach ($rows as $row) {
-                        if ($row['Username'] == $username && $row['Password'] == $hashPassword) {
-                            //ADICIONAR PASSWORD
-                            $_SESSION['valid'] = true;
-                            $_SESSION['timeout'] = time();
-                            $_SESSION['id'] = $row['Id'];
-                            $_SESSION['username'] = $row['Username'];
-                            $_SESSION['password'] = $row['Password'];
-                            $msg = 'Welcome ' . $row['Username'];
-                            header('Location: profile.php');
-                        } else {
-                            $msg = 'Wrong username or password';
-                        }
+            if (isset($_POST['signup']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email'])) {
+                $msg = '';
+                $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
+                $email = (filter_var($_POST ['username'], FILTER_SANITIZE_EMAIL));
+                #echo 'USERNAME ' . $rows['Username'];
+                $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
+                $hashPassword = hash('whirlpool', $password);
+
+                if (checkIfUserExists($pdo, $email)) {
+                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
+                } else {
+                    try {
+                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $hashPassword, $email));
+                        $msg = 'USER ' . $username . ' ADDED!';
+                        header('Location: account-confirmation.php');
+                    } catch (Exception $ex) {
+                        echo "ERROR!";
                     }
-                } catch (Exception $ex) {
-                    echo "ERROR!";
                 }
             }
             ?>
@@ -114,11 +107,9 @@ include_once '../db/conn.inc.php';
                 <input type = "email" class = "form-control"
                        name = "email" placeholder = "youremail@email.com" required>
                 <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
-                        name = "login">Login</button>
+                        name = "signup">Sign Up</button>
                 <!-- RECUPERAR USER + PASS FACULTANDO EMAIL -->
                 <p></p>
-                <a href="account-recovery.php">Forgot your account's details?</a> 
-                <a href="#">New User?</a> 
             </form>
         </div> 
 
