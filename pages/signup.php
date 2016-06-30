@@ -83,14 +83,12 @@ include_once '../db/functions.php';
                 $hashPassword = hash('whirlpool', $password);
 
                 if (checkIfUserExists($pdo, $email)) {
-                    #$l = '10';
-                    $code = generateActivationCode($length = 128);
-                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED! -> ' . $code;
-
+                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
                     $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
                     try {
-                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled]) VALUES (?, ?, ?, ?)", array($username, $hashPassword, $email, '0'));
+                        $code = generateActivationCode($length = 128);
+                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation]) VALUES (?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code));
                         $msg = 'USER ' . $username . ' ADDED!';
                         header('Location: account-confirmation.php');
                     } catch (Exception $ex) {
