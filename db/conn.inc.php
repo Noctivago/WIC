@@ -75,7 +75,7 @@ function DB_compareActivationCode($pdo, $email, $code) {
                 #return true;
                 return $row['User_Code_Activation'];
             } else {
-                return false;
+                return $row['User_Code_Activation'];
             }
         }
     } catch (Exception $exc) {
