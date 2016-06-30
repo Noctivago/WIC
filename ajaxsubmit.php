@@ -15,7 +15,7 @@ if ($arg === 'addUser') {
     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
     $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
     $hashPassword = hash('whirlpool', $password);
-    if (checkIfUserExists($pdo, $email)) {
+    if (DB_checkIfUserExists($pdo, $email)) {
         echo 'EMAIL [' . $email . '] ALREADY REGISTED!';
     } else {
         try {

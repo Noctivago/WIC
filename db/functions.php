@@ -1,5 +1,7 @@
 <?php
 
+//FUNÇÕES SEM ACESSO A BD
+
 function generateActivationCode($length = 16) {
     $key = '';
 

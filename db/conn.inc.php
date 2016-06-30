@@ -39,15 +39,49 @@ function sql($pdo, $q, $params, $return) {
     }
 }
 
-function checkIfUserExists($pdo, $email) {
-    $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "count");
-    //IF EXISTS -1
-    if ($count < 0) {
-        #echo 'Email already registed!';
-        return true;
-    } else {
-        #echo 'Email Registed';
-        #echo $count;
-        return false;
+function DB_checkIfUserExists($pdo, $email) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "count");
+        //IF EXISTS -1
+        if ($count < 0) {
+            #echo 'Email already registed!';
+            return true;
+        } else {
+            #echo 'Email Registed';
+            #echo $count;
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
+//sql($db, "UPDATE table SET name = ? WHERE id = ?", array($name, $id));
+
+function DB_activateUserAccount($pdo, $email) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? ", array('1', $email), "count");
+        //IF EXISTS -1
+        if ($count < 0) {
+            #echo 'Email already registed!';
+            return true;
+        } else {
+            #echo 'Email Registed';
+            #echo $count;
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
+function DB_getActivationCode($pdo, $email) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
+        foreach ($rows as $row) {
+            return $row['User_Code_Activation'];
+        }
+    } catch (Exception $exc) {
+        echo '';
     }
 }

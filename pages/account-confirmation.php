@@ -77,23 +77,20 @@ include_once '../db/conn.inc.php';
         <h3>PLACE THE CODE SENT TO YOU BY EMAIL IN THE FIELD BELOW</h3> 
         <div class = "container form-signin">
             <?php
-            if (isset($_POST['activate']) && !empty($_POST['activateText'])) {
+            if (isset($_POST['activate']) && !empty($_POST['activateText']) && !empty($_POST['email'])) {
                 $msg = '';
                 $forgotPassword = '';
                 $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_STRING));
-
-                if (checkIfUserExists($pdo, $email)) {
-                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
-                    $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
-                } else {
-                    try {
-                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $hashPassword, $email));
-                        $msg = 'ACCOUNT ACTIVATED! REDIRECTING TO LOGIN PAGE!';
-                        //HOLD2SEC
-                        header('Location: login.php');
-                    } catch (Exception $ex) {
-                        echo "ERROR!";
+                $email = (filter_var($_POST ['activateText'], FILTER_SANITIZE_EMAIL));
+                if (DB_checkIfUserExists($pdo, $email)) {
+                    $aCode = DB_getActivationCode($pdo, $email);
+                    if ($acode == $code) {
+                        DB_activateUserAccount($pdo, $email);
+                    } else {
+                        $msg = 'INCORRECT DATA. EMAIL NOT FOUND!';
                     }
+                } else {
+                    $msg = 'INCORRECT DATA. EMAIL NOT FOUND!';
                 }
             }
             ?>

@@ -82,7 +82,7 @@ include_once '../db/functions.php';
                 $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                 $hashPassword = hash('whirlpool', $password);
 
-                if (checkIfUserExists($pdo, $email)) {
+                if (DB_checkIfUserExists($pdo, $email)) {
                     $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
                     $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
