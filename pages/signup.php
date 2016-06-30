@@ -89,7 +89,7 @@ include_once '../db/functions.php';
                     try {
                         $length = '128';
                         $code = generateActivationCode($length);
-                        $msg = $code;
+                        echo $code;
                         sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation]) VALUES (?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code));
                         $msg = 'USER ' . $username . ' ADDED!';
                         header('Location: account-confirmation.php');
