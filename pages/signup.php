@@ -1,5 +1,5 @@
 <?php
-include_once '../db/conn.inc.php';
+//include_once '../db/conn.inc.php';
 include_once '../db/functions.php';
 ?>
 
@@ -88,7 +88,7 @@ include_once '../db/functions.php';
                 } else {
                     try {
                         $l = '128';
-                        $code = generateActivationCode($l);
+                        $code = generateActivationCode($pdo, $l);
                         sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation]) VALUES (?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code));
                         $msg = 'USER ' . $username . ' ADDED!';
                         header('Location: account-confirmation.php');
