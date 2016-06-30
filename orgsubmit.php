@@ -42,9 +42,9 @@ if ($arg === 'addOrganization') {
     
 } else if ($arg === 'removeOrganizationSubCategoryOwner') {
     
-} else if ($arg === 'editPermissionUserInOrganization') {
+} else if ($arg == 'editPermissionUserInOrganization') {
     
-} else if ($arg === 'viewAllOrganization') {
+} else if ($arg == 'viewAllOrganization') {
     try {
         $id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ?", array($id), "rows");

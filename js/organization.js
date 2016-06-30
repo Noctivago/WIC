@@ -1,22 +1,22 @@
-function addOrganization(){
-    
+function addOrganization() {
+
     var userid = $("#userid").val();
     var name = $("#name").val();
     var phone = $("#phone").val();
     var mobile = $("#mobile").val();
-  //  var logotype = $("#logotype").val();
+    //  var logotype = $("#logotype").val();
     var address = $("#Address").val();
-    var facebook= $("#facebook").val();
+    var facebook = $("#facebook").val();
     var twitter = $("#twitter").val();
     var linkdin = $("#linkdin").val();
     var orgEmail = $("#email").val();
     var website = $("#website").val();
     var arg = 'addOrganization';
-    var dataString = 'userid=' + userid + '&name=' + name + '&phone=' + phone + '&mobile=' + mobile + '&address=' + address +'&facebook=' + facebook + '&twitter=' + twitter + '&linkdin=' + linkdin + '&orgEmail=' + orgEmail + '&website=' + website +'&arg='+arg;
+    var dataString = 'userid=' + userid + '&name=' + name + '&phone=' + phone + '&mobile=' + mobile + '&address=' + address + '&facebook=' + facebook + '&twitter=' + twitter + '&linkdin=' + linkdin + '&orgEmail=' + orgEmail + '&website=' + website + '&arg=' + arg;
     alert(dataString);
-    if(name==='' || mobile==='' || address==='' || orgEmail===''){
+    if (name === '' || mobile === '' || address === '' || orgEmail === '') {
         alert('Please filld the fields required <br/>Name<br/>mobile<br/>Adress<br/>Organization Email');
-    }else
+    } else
     {
         $.ajax({
             type: "POST",
@@ -24,58 +24,58 @@ function addOrganization(){
             data: dataString,
             cache: false,
             sucess: function (result) {
-            var ajaxDisplay = document.getElementById('result');
-            ajaxDisplay.innerHTML = result;
-        alert(result);
-    }
+                var ajaxDisplay = document.getElementById('result');
+                ajaxDisplay.innerHTML = result;
+                alert(result);
+            }
         });
     }
-    }
-
-function removeOrganization(){
-    
 }
 
-function editOrganizationInformation(){
-    
+function removeOrganization() {
+
 }
 
-function validateOrganization(){
-    
+function editOrganizationInformation() {
+
 }
 
-function assignUserInOrganization(){
-    
+function validateOrganization() {
+
 }
 
-function removeUserInOrganization(){
-    
+function assignUserInOrganization() {
+
 }
 
-function UserValidateInvite(){
-    
+function removeUserInOrganization() {
+
 }
 
-function assignOrganizationCategoryOwner(){
-    
+function UserValidateInvite() {
+
 }
 
-function assignOrganizationSubCategoryOwner(){
-    
-}
-function removeOrganizationCategoryOwner(){
-    
+function assignOrganizationCategoryOwner() {
+
 }
 
-function removeOrganizationSubCategoryOwner(){
-    
+function assignOrganizationSubCategoryOwner() {
+
+}
+function removeOrganizationCategoryOwner() {
+
 }
 
-function editPermissionUserInOrganization(){
-    
+function removeOrganizationSubCategoryOwner() {
+
 }
 
-function viewAllOrganization(){
+function editPermissionUserInOrganization() {
+
+}
+
+function viewAllOrganization() {
     var arg = 'viewAllOrganization';
     var dataString = 'arg=' + arg;
     alert(dataString);

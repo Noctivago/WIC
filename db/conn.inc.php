@@ -33,7 +33,7 @@ function sql($pdo, $q, $params, $return) {
             return $stmt->fetchAll();
         } elseif ($return == "count") {
             return $stmt->rowCount();
-        } 
+        }
     } catch (Exception $exc) {
         echo '';
     }
