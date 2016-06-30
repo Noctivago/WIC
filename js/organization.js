@@ -12,8 +12,7 @@ function addOrganization(){
     var orgEmail = $("#email").val();
     var website = $("#website").val();
     var arg = 'addOrganization';
-    alert(userid+name+phone+mobile+address);
-    var dataString = 'userid'+userid+'&name'+name+'&phone'+phone+'&mobile'+mobile+'&addres'+address+'&facebook'+facebook+'&twitter'+twitter+'&linkdin'+linkdin+'&orgEmail'+orgEmail+'&website'+'arg'+arg;
+    var dataString = 'userid' + userid + '&name' + name + '&phone' + phone + '&mobile' + mobile + '&addres' + address + '&facebook' + facebook + '&twitter' + twitter + '&linkdin' + linkdin + '&orgEmail' + orgEmail + '&website' + website +'arg'+arg;
     if(name==='' || mobile==='' || address==='' || orgEmail===''){
         alert('Please filld the fields required <br/>Name<br/>mobile<br/>Adress<br/>Organization Email');
     }else
