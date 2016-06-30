@@ -122,6 +122,7 @@ if (isset($_SESSION['username'])) {
                 <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
                         name = "login">Login</button>
                 <!-- RECUPERAR USER + PASS FACULTANDO EMAIL -->
+                <br>
                 <p>Forgot your account's details?</p>
             </form>
 
