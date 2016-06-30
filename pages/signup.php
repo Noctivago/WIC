@@ -83,7 +83,7 @@ include_once '../db/conn.inc.php';
 
                 if (checkIfUserExists($pdo, $email)) {
                     $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
-                    $forgotPassword = '<a href=account-recovery.php">Log In</a>';
+                    $forgotPassword = '<a href=account-recovery.php">Forgot your account details?</a>';
                 } else {
                     try {
                         sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $hashPassword, $email));
@@ -111,7 +111,7 @@ include_once '../db/conn.inc.php';
                 <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
                         name = "signup">Sign Up</button>
                 <!-- RECUPERAR USER + PASS FACULTANDO EMAIL -->
-                <p><?php echo $forgotPassword; ?></p>
+                <h2><?php echo $forgotPassword; ?></h2>
             </form>
         </div> 
 
