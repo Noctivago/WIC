@@ -90,7 +90,7 @@ if (isset($_SESSION['username'])) {
                     $hashPassword = hash('whirlpool', $password);
 
                     if (checkIfUserExists($pdo, $email)) {
-                        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, 1), "rows");
+                        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, '1'), "rows");
                         #echo 'USER ' . $rows['Username'];
                         $msg = '';
                         foreach ($rows as $row) {
