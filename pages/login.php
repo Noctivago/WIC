@@ -117,10 +117,7 @@ if (isset($_SESSION['username'])) {
                        name = "password" placeholder = "password" required>
                 <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
                         name = "login">Login</button>
-                <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
-                        name = "forgetPassword">Recover Password</button>
-                <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
-                        name = "forgetUsername">Recover Username</button>
+                <p>Forgot your account's details?</p>
             </form>
 
             <!--Click here to clean <a href = "logout.php" tite = "Logout">Session-->
