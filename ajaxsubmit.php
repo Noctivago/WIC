@@ -32,12 +32,13 @@ if ($arg === 'addUser') {
         $id = 0;
         //PARA CONTAR -> count
         $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array($id), "rows");
-        echo "<table><tr><th>ID</th><th>ACCOUNT ENABLED?</th><th>ACTIVATION CODE</th><th>Username</th><th>Password</th><th>Email</th></tr>";
+        echo "<table><tr><th>ID</th><th>ACCOUNT ENABLED?</th><th>ACTIVATION CODE</th><th>FAILED</th><th>Username</th><th>Password</th><th>Email</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Account_Enabled'] . "</td>";
             echo "<td>" . $row['User_Code_Activation'] . "</td>";
+            echo "<td>" . $row['Login_Failed'] . "</td>";
             echo "<td>" . $row['Username'] . "</td>";
             echo "<td>" . $row['Password'] . "</td>";
             echo "<td>" . $row['Email'] . "</td>";
