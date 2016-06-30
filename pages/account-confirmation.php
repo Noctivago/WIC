@@ -72,7 +72,7 @@ include_once '../db/conn.inc.php';
         <h2>LOGIN</h2> 
         <div class = "container form-signin">
             <?php
-            if (isset($_POST['signup']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email'])) {
+            if (isset($_POST['activate']) && !empty($_POST['activateText'])) {
                 $msg = '';
                 $forgotPassword = '';
                 $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
@@ -102,14 +102,10 @@ include_once '../db/conn.inc.php';
             <form class = "form-signin" role = "form" action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post">
                 <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
                 <input type = "text" class = "form-control" 
-                       name = "username" placeholder = "username" 
+                       name = "activateText" placeholder = "place activation code here" 
                        required autofocus></br>
-                <input type = "password" class = "form-control"
-                       name = "password" placeholder = "password" required>
-                <input type = "email" class = "form-control"
-                       name = "email" placeholder = "youremail@email.com" required>
                 <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
-                        name = "signup">Sign Up</button>
+                        name = "activate">Activate Account</button>
                 <!-- RECUPERAR USER + PASS FACULTANDO EMAIL -->
                 <h2><?php echo $forgotPassword; ?></h2>
             </form>

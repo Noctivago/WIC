@@ -109,7 +109,7 @@ if (isset($_SESSION['username'])) {
                             }
                         }
                     } else {
-                        
+                        $msg = 'Wrong username or password';
                     }
                 } catch (Exception $ex) {
                     echo "ERROR!";
