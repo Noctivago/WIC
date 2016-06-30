@@ -86,6 +86,7 @@ include_once '../db/conn.inc.php';
                     $aCode = DB_getActivationCode($pdo, $email);
                     if ($acode == $code) {
                         DB_activateUserAccount($pdo, $email);
+                        $msg = 'ACCOUNT SUCESSUFULY ACTIVATED';
                     } else {
                         $msg = 'INCORRECT ACTIVATION CODE';
                     }
