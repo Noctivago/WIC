@@ -6,12 +6,13 @@ $arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addOrganization') {
     try {
+        
         $userid = (filter_var($_POST['userid']));
         $name = (filter_var($_POST['name']));
         $phone = (filter_var($_POST['phone']));
         $mobile = (filter_var($_POST['mobile']));
         //     $logotype = (filter_var($_POST['logotype'],FILTER_SANITIZE_STRING));
-        $address = (filter_var($_POST['addres']));
+        $address = (filter_var($_POST['address']));
         $facebook = (filter_var($_POST['facebook']));
         $twitter = (filter_var($_POST['twitter']));
         $linkdin = (filter_var($_POST['linkdin']));
