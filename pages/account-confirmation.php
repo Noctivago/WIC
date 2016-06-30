@@ -80,7 +80,7 @@ include_once '../db/conn.inc.php';
             if (isset($_POST['activate']) && !empty($_POST['activateText']) && !empty($_POST['email'])) {
                 $msg = '';
                 $forgotPassword = '';
-                $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_STRING));
+                $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_SPECIAL_CHARS));
                 $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                 //SE EMAIL EXISTE
                 if (DB_checkIfUserExists($pdo, $email)) {
