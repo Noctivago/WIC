@@ -1,7 +1,5 @@
 <?php
 
-include_once './conn.inc.php';
-
 function generateActivationCode($length = 16) {
     $key = '';
 
