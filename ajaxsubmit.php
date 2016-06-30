@@ -1,7 +1,6 @@
 <?php
 
 include_once './db/conn.inc.php';
-include_once './pages/functions.php';
 
 
 //// With UPDATE
@@ -16,9 +15,9 @@ if ($arg === 'addUser') {
         $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
         $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-        $password = hashPassword($password);
-        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $password, $email));
-        echo "USER " . $username . " ADDED! w/Password " . $password;
+        $hashPassword = hash('sha512', $password);
+        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $hashPassword, $email));
+        echo "USER " . $username . " ADDED!";
     } catch (Exception $ex) {
         echo "ERROR!";
     }

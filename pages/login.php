@@ -1,6 +1,5 @@
 <?php
 include_once '../db/conn.inc.php';
-include_once './functions.php';
 ob_start();
 session_start();
 if (isset($_SESSION['username'])) {
@@ -88,12 +87,12 @@ if (isset($_SESSION['username'])) {
                     $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                     #echo 'USERNAME ' . $rows['Username'];
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                    $password = hashPassword($password);
-                    $password = $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
+                    $hashPassword = hash('sha512', $password);
+                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ?", array($username), "rows");
                     #echo 'USER ' . $rows['Username'];
                     $msg = '';
                     foreach ($rows as $row) {
-                        if ($row['Username'] == $username && $row['Password'] == $password) {
+                        if ($row['Username'] == $username && $row['Password'] == $hashPassword) {
                             //ADICIONAR PASSWORD
                             $_SESSION['valid'] = true;
                             $_SESSION['timeout'] = time();
