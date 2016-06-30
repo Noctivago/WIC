@@ -102,7 +102,7 @@ if (isset($_SESSION['username'])) {
                                 $_SESSION['password'] = $row['Password'];
                                 $msg = 'Welcome ' . $row['Username'];
                                 //SET [Login_failed] = 0
-                                if (DB_setLoginFailed(0, $email)) {
+                                if (DB_setLoginFailed('0', $email)) {
                                     header('Location: profile.php');
                                 }
                             } else {
