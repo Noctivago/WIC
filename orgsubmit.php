@@ -22,6 +22,25 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'ERRO';
     }
+} else if ($arg === 'viewAllOrganization') {
+    try {
+        $id = 0;
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ?", array($id), "rows");
+        echo "<table><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Name'] . "</td>";
+            echo "<td>" . $row['User_Boss'] . "</td>";
+            echo "<td>" . $row['Date_Created'] . "</td>";
+            echo "<td>" . $row['Address'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $ex) {
+        echo 'fuck';
+    }
+
 } else if ($arg === 'removeOrganization') {
     
 } else if ($arg === 'editOrganizationInformation') {
@@ -42,26 +61,8 @@ if ($arg === 'addOrganization') {
     
 } else if ($arg === 'removeOrganizationSubCategoryOwner') {
     
-} else if ($arg == 'editPermissionUserInOrganization') {
+} else if ($arg === 'editPermissionUserInOrganization') {
     
-} else if ($arg == 'viewAllOrganization') {
-    try {
-        $id = 0;
-        $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ?", array($id), "rows");
-        echo "<table><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
-        foreach ($rows as $row) {
-            echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
-            echo "<td>" . $row['Name'] . "</td>";
-            echo "<td>" . $row['User_Boss'] . "</td>";
-            echo "<td>" . $row['Date_Created'] . "</td>";
-            echo "<td>" . $row['Address'] . "</td>";
-            echo "<tr>";
-        }
-        echo "</table>";
-    } catch (Exception $ex) {
-        echo 'fuck';
-    }
 } else if ($arg === 'viewAllUsersInOrganization') {
     
 } else {
