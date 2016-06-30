@@ -99,7 +99,7 @@ include_once '../db/conn.inc.php';
                     }
                 } else {
                     //SENAO INFORMA
-                    $msg = 'INCORRECT DATA. EMAIL NOT FOUND!';
+                    $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
                 }
             }
             ?>
