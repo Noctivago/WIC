@@ -1,6 +1,5 @@
 <?php
-#include_once '../db/conn.inc.php';
-include_once '../db/functions.php';
+include_once '../db/conn.inc.php';
 ?>
 
 <html lang = "en">
@@ -70,7 +69,7 @@ include_once '../db/functions.php';
         </style>
     </head>
     <body>
-        <h2>SIGN UP</h2> 
+        <h2>LOGIN</h2> 
         <div class = "container form-signin">
             <?php
             if (isset($_POST['signup']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email'])) {
@@ -87,11 +86,7 @@ include_once '../db/functions.php';
                     $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
                     try {
-                        //$length = '128';
-                        //$code = generateActivationCode($length);
-                        $code = 'generateActivationCode($length)';
-                        echo $code;
-                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation]) VALUES (?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code));
+                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled]) VALUES (?, ?, ?, ?)", array($username, $hashPassword, $email, '0'));
                         $msg = 'USER ' . $username . ' ADDED!';
                         header('Location: account-confirmation.php');
                     } catch (Exception $ex) {
