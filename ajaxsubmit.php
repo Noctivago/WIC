@@ -16,7 +16,7 @@ if ($arg === 'addUser') {
     $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
     $hashPassword = hash('whirlpool', $password);
     if (checkIfUserExists($pdo, $email)) {
-        echo "USER " . $username . " ALREADY EXISTS! FORGOT YOUR PASSWORD?!";
+        echo "Email " . $email . " ALREADY REGISTED! " . '<a href="account-recovery.php">Forgot your account details?</a>';
     } else {
         try {
 
