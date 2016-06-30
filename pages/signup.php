@@ -75,7 +75,7 @@ include_once '../db/conn.inc.php';
             if (isset($_POST['signup']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email'])) {
                 $msg = '';
                 $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
-                $email = (filter_var($_POST ['username'], FILTER_SANITIZE_EMAIL));
+                $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                 #echo 'USERNAME ' . $rows['Username'];
                 $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                 $hashPassword = hash('whirlpool', $password);
