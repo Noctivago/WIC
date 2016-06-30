@@ -46,8 +46,20 @@ if ($arg === 'addOrganization') {
     
 } else if ($arg === 'editPermissionUserInOrganization') {
     
-} else if ($arg === 'viewAllOrganizations') {
-            
+} else if ($arg === 'viewAllOrganization') {
+            $rows = sql($pdo,"SELECT * FROM [dbo].[Organization] WHERE [Id] > ?",array(0),"rows");
+            echo "<table><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Name'] . "</td>";
+            echo "<td>" . $row['User_Boss'] . "</td>";
+            echo "<td>" . $row['Date_Created'] . "</td>";
+            echo "<td>" . $row['Address'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    
 } else if ($arg === 'viewAllUsersInOrganization') {
     
 }  else {
