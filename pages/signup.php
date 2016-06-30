@@ -1,5 +1,6 @@
 <?php
 include_once '../db/conn.inc.php';
+include_once '../db/functions.php';
 ?>
 
 <html lang = "en">
@@ -86,6 +87,7 @@ include_once '../db/conn.inc.php';
                     $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
                     try {
+                        $code = generateActivationCode('128');
                         sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled]) VALUES (?, ?, ?, ?)", array($username, $hashPassword, $email, '0'));
                         $msg = 'USER ' . $username . ' ADDED!';
                         header('Location: account-confirmation.php');
