@@ -39,6 +39,7 @@ if ($arg === 'addUser') {
             echo "<td>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Username'] . "</td>";
             echo "<td>" . $row['Password'] . "</td>";
+            echo "<td>" . $row['Email'] . "</td>";
             echo "<tr>";
         }
         echo "</table>";
