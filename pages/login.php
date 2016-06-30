@@ -88,23 +88,28 @@ if (isset($_SESSION['username'])) {
                     #echo 'USERNAME ' . $rows['Username'];
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                     $hashPassword = hash('whirlpool', $password);
-                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, 1), "rows");
-                    #echo 'USER ' . $rows['Username'];
-                    $msg = '';
-                    foreach ($rows as $row) {
-                        if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
-                            //ADICIONAR PASSWORD
-                            $_SESSION['valid'] = true;
-                            $_SESSION['timeout'] = time();
-                            $_SESSION['id'] = $row['Id'];
-                            $_SESSION['username'] = $row['Username'];
-                            $_SESSION['email'] = $row['Email'];
-                            $_SESSION['password'] = $row['Password'];
-                            $msg = 'Welcome ' . $row['Username'];
-                            header('Location: profile.php');
-                        } else {
-                            $msg = 'Wrong username or password';
+
+                    if (checkIfUserExists($pdo, $email)) {
+                        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, 1), "rows");
+                        #echo 'USER ' . $rows['Username'];
+                        $msg = '';
+                        foreach ($rows as $row) {
+                            if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
+                                //ADICIONAR PASSWORD
+                                $_SESSION['valid'] = true;
+                                $_SESSION['timeout'] = time();
+                                $_SESSION['id'] = $row['Id'];
+                                $_SESSION['username'] = $row['Username'];
+                                $_SESSION['email'] = $row['Email'];
+                                $_SESSION['password'] = $row['Password'];
+                                $msg = 'Welcome ' . $row['Username'];
+                                header('Location: profile.php');
+                            } else {
+                                $msg = 'Wrong username or password';
+                            }
                         }
+                    } else {
+                        
                     }
                 } catch (Exception $ex) {
                     echo "ERROR!";
