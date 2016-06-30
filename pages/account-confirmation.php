@@ -85,10 +85,14 @@ include_once '../db/conn.inc.php';
                 //SE EMAIL EXISTE
                 if (DB_checkIfUserExists($pdo, $email)) {
                     //VERIFICA SE O ACTIVATION CODE PERTENCE AO EMAIL
-                    if (DB_compareActivationCode($pdo, $email, $code)) {
+                    if (DB_compareActivationCode($pdo, $email, $code) == true) {
                         //SE TRUE ATIVA CONTA
-                        DB_activateUserAccount($pdo, $email);
-                        $msg = 'ACCOUNT SUCESSUFULY ACTIVATED';
+                        if (DB_activateUserAccount($pdo, $email)) {
+                            $msg = 'ACCOUNT SUCESSUFULY ACTIVATED';
+                        } else {
+                            //SENAO
+                            $msg = 'AN ERROR OCCURED WHILE ACTIVATING ACCOUNT';
+                        }
                     } else {
                         //SENAO INFORMA
                         $msg = 'INCORRECT ACTIVATION CODE';

@@ -60,18 +60,10 @@ function DB_checkIfUserExists($pdo, $email) {
 
 function DB_activateUserAccount($pdo, $email) {
     try {
-        $count = sql($pdo, "UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? ", array('1', $email), "count");
-        //IF EXISTS -1
-        if ($count < 0) {
-            #echo 'Email already registed!';
-            return true;
-        } else {
-            #echo 'Email Registed';
-            #echo $count;
-            return false;
-        }
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? ", array('1', $email));
+        return true;
     } catch (Exception $exc) {
-        echo '';
+        return false;
     }
 }
 
