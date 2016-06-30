@@ -88,6 +88,7 @@ if (isset($_SESSION['username'])) {
                     $msg = '';
                     foreach ($rows as $row) {
                         if ($row['Username'] == $username && $row['Password'] == $password) {
+                            //ADICIONAR PASSWORD
                             $_SESSION['valid'] = true;
                             $_SESSION['timeout'] = time();
                             $_SESSION['id'] = $row['Id'];

@@ -29,8 +29,8 @@
         if (!isset($_SESSION['username'])) { // If session is not set that redirect to Login Page                            {
             header("Location:Login.php");
         } else {
-            echo $_SESSION['username'];
-            echo "Login Success";
+            echo 'Welcome' . $_SESSION['username'] . '<br>'; 
+            #echo "Login Success";
             echo "<a href='logout.php'> Logout</a> ";
         }
         ?>
