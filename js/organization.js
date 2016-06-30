@@ -75,7 +75,7 @@ function editPermissionUserInOrganization(){
 function viewAllOrganization(){
     alert('View all organization');
     var arg = 'viewAllOrganization';
-    var dataString = 'arg='+arg;
+    var dataString = 'arg=' + arg;
     $.ajax({
         type: 'POST',
         url: "orgsubmit.php",

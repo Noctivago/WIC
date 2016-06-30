@@ -2,7 +2,7 @@
 
 include_once './db/conn.inc.php';
 
-$arg = (filter_var($_POST['arg'], FILTER_SANITIZE_STRING));
+$arg = (filter_var($_POST ['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addOrganization') {
     try {
@@ -49,7 +49,7 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'viewAllOrganization') {
             $rows = sql($pdo,"SELECT * FROM [dbo].[Organization] WHERE [Id] > ?",array(0),"rows");
             echo "<table><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
-        foreach ($rows as $row) {
+            foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Name'] . "</td>";
