@@ -87,5 +87,6 @@ function viewAllOrganization() {
             var ajaxDisplay = document.getElementById('orgresp');
             ajaxDisplay.innerHTML = result;
         }
-    })
+    });
+    return false;
 }
