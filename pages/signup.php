@@ -87,8 +87,9 @@ include_once '../db/functions.php';
                     $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
                     try {
-                        $code = generateActivationCode('128');
-                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled]) VALUES (?, ?, ?, ?)", array($username, $hashPassword, $email, '0'));
+                        $l = '128';
+                        $code = generateActivationCode($l);
+                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation]) VALUES (?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code));
                         $msg = 'USER ' . $username . ' ADDED!';
                         header('Location: account-confirmation.php');
                     } catch (Exception $ex) {
