@@ -83,7 +83,7 @@ include_once '../db/functions.php';
                 $hashPassword = hash('whirlpool', $password);
 
                 if (checkIfUserExists($pdo, $email)) {
-                    $l = '128';
+                    $l = '10';
                     $code = generateActivationCode($l);
                     $msg = 'EMAIL [' . $email . '] ALREADY REGISTED! -> ' . $code;
 
