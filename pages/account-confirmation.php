@@ -62,6 +62,10 @@ include_once '../db/conn.inc.php';
                 text-align: center;
                 color: #017572;
             }
+            h3{
+                text-align: center;
+                color: #017572;
+            }
             href{
                 text-align: right;
                 color: #017572;
