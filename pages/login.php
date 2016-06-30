@@ -88,7 +88,7 @@ if (isset($_SESSION['username'])) {
                     #echo 'USERNAME ' . $rows['Username'];
                     $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                     $hashPassword = hash('whirlpool', $password);
-                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
+                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = 1", array($email), "rows");
                     #echo 'USER ' . $rows['Username'];
                     $msg = '';
                     foreach ($rows as $row) {
@@ -126,7 +126,7 @@ if (isset($_SESSION['username'])) {
                         name = "login">Login</button>
                 <!-- RECUPERAR USER + PASS FACULTANDO EMAIL -->
                 <p></p>
-                
+
             </form>
         </div> 
 
