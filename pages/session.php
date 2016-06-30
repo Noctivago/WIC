@@ -13,4 +13,6 @@ foreach ($rows as $row) {
 if (!isset($login_session)) {
     #$pdo = null;
     header('Location: login.php'); // Redirecting To Home Page
+} else {
+    
 }
