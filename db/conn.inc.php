@@ -67,7 +67,6 @@ function DB_activateUserAccount($pdo, $email) {
 function DB_compareActivationCode($pdo, $email, $code) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [User_Code_Activation] = ?", array($email, $code));
-        $count->rowCount();
         if ($count > 0) {
             return true;
         } else {
