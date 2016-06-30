@@ -37,6 +37,7 @@ if ($arg === 'addUser') {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Account_Enabled'] . "</td>";
+            echo "<td>" . $row['User_Code_Activation'] . "</td>";
             echo "<td>" . $row['Username'] . "</td>";
             echo "<td>" . $row['Password'] . "</td>";
             echo "<td>" . $row['Email'] . "</td>";

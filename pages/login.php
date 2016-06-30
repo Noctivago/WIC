@@ -105,6 +105,7 @@ if (isset($_SESSION['username'])) {
                                 $msg = 'Welcome ' . $row['Username'];
                                 header('Location: profile.php');
                             } else {
+                                //INC TO BLOCK;
                                 $msg = 'Wrong username or password';
                             }
                         }

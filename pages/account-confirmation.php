@@ -69,26 +69,23 @@ include_once '../db/conn.inc.php';
         </style>
     </head>
     <body>
-        <h2>LOGIN</h2> 
+        <h2>ACCOUNT ACTIVATION</h2> 
         <div class = "container form-signin">
             <?php
             if (isset($_POST['activate']) && !empty($_POST['activateText'])) {
                 $msg = '';
                 $forgotPassword = '';
-                $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
-                $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                #echo 'USERNAME ' . $rows['Username'];
-                $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                $hashPassword = hash('whirlpool', $password);
-
+                $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_STRING));
+                
                 if (checkIfUserExists($pdo, $email)) {
                     $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
                     $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
                     try {
                         sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email]) VALUES (?, ?, ?)", array($username, $hashPassword, $email));
-                        $msg = 'USER ' . $username . ' ADDED!';
-                        header('Location: account-confirmation.php');
+                        $msg = 'ACCOUNT ACTIVATED! REDIRECTING TO LOGIN PAGE!';
+                        //HOLD2SEC
+                        header('Location: login.php');
                     } catch (Exception $ex) {
                         echo "ERROR!";
                     }
