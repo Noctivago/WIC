@@ -81,7 +81,7 @@ function viewAllOrganization() {
     alert(dataString);
     $.ajax({
         type: 'POST',
-        url: "orgsubmit.php",
+        url: 'orgsubmit.php',
         cache: false,
         success: function (result) {
             var ajaxDisplay = document.getElementById('orgresp');
