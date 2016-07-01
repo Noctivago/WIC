@@ -98,12 +98,31 @@ function assignUserInOrganization() {
 }
 //remover utilizador da organização
 function removeUserInOrganization() {
+    var userId = $("#userIdOrg").val();
+    var orgId = $("#orgId3").val();
+    var arg = 'removeUserInOrganization';
+    var dataString ='arg=' + arg + '&userId=' + userId + '&orgId=' + orgId;
+    alert(dataString);
+    $.ajax({
+            type:'POST',
+            url: "orgsubmit.php",
+            data: dataString,
+            cache: false,
+            success: function (result) {
+                alert(result);
+        }
+    });
+    viewAllOrganization();
+    return false;
+}
 
 }
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
+        
 
 }
+
 //atribuir chefe
 function assignOrganizationCategoryOwner() {
 
