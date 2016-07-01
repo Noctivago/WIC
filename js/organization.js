@@ -35,23 +35,23 @@ function addOrganization() {
 }
 
 function removeOrganization() {
-        //remove organização selecionada pelo o boss
-        var arg = 'removeOrganization';
-        var org = $("#orgId").val();
-        var dataString = 'arg=' + arg + '&org='+org;
-        alert(dataString);
-        $.ajax({
-            type:"POST",
-            url:"orgsubmit.php",
-            data:dataString,
-            cache:false,
-            success: function(result){
-                alert(result);
-            }
-        });
-        viewAllOrganization();
-        return false;
-        
+    //remove organização selecionada pelo o boss
+    var arg = 'removeOrganization';
+    var org = $("#orgId").val();
+    var dataString = 'arg=' + arg + '&org=' + org;
+    alert(dataString);
+    $.ajax({
+        type: "POST",
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            alert(result);
+        }
+    });
+    viewAllOrganization();
+    return false;
+
 }
 //edidar a informação da organização
 function editOrganizationInformation() {
@@ -63,14 +63,14 @@ function validateOrganization() {
     var arg = 'validateOrganization';
     var orgId = $("#orgId").val();
     //falta enviar user id para verificar se é admin para poder validar
-    var dataString = 'arg='+ arg + '&org=' + orgId;
+    var dataString = 'arg=' + arg + '&org=' + orgId;
     alert(dataString);
     $.ajax({
         type: 'POST',
         url: "orgsubmit.php",
         data: dataString,
         cache: false,
-        sucess: function(result){
+        sucess: function (result) {
             alert(result);
         }
     });
@@ -82,15 +82,15 @@ function assignUserInOrganization() {
     var email = $("#emailuser").val();
     var orgId = $("#orgId2").val();
     var arg = 'assignUserInOrganization';
-    var dataString ='arg=' + arg + '&email=' + email + '&orgId=' + orgId;
+    var dataString = 'arg=' + arg + '&email=' + email + '&orgId=' + orgId;
     alert(dataString);
     $.ajax({
-            type:'POST',
-            url: "orgsubmit.php",
-            data: dataString,
-            cache: false,
-            success: function (result) {
-                alert(result);
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            alert(result);
         }
     });
     viewAllUsersInOrganization();
@@ -101,15 +101,15 @@ function removeUserInOrganization() {
     var userId = $("#userIdOrg").val();
     var orgId = $("#orgId3").val();
     var arg = 'removeUserInOrganization';
-    var dataString ='arg=' + arg + '&userId=' + userId + '&orgId=' + orgId;
+    var dataString = 'arg=' + arg + '&userId=' + userId + '&orgId=' + orgId;
     alert(dataString);
     $.ajax({
-            type:'POST',
-            url: "orgsubmit.php",
-            data: dataString,
-            cache: false,
-            success: function (result) {
-                alert(result);
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            alert(result);
         }
     });
     viewAllUsersInOrganization();
@@ -118,17 +118,17 @@ function removeUserInOrganization() {
 function viewAllUsersInOrganization() {
     var orgId = $("#organizationId").val();
     var arg = 'viewAllUsersInOrganization';
-    var dataString ='arg=' + arg + '&orgId=' + orgId;
+    var dataString = 'arg=' + arg + '&orgId=' + orgId;
     alert(dataString);
     $.ajax({
-            type:'POST',
-            url: "orgsubmit.php",
-            data: dataString,
-            cache: false,
-            success: function (result) {
-                var ajaxDisplay = document.getElementById('membros');
-                ajaxDisplay.innerHTML = result;
-            }
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            var ajaxDisplay = document.getElementById('membros');
+            ajaxDisplay.innerHTML = result;
+        }
     });
     viewAllOrganization();
     return false;
@@ -136,12 +136,28 @@ function viewAllUsersInOrganization() {
 
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
-        
+    var arg = $("#UserValidateInvite").val();
+    var orgId = $("#organizationId2").val();
+    var userId = $("#userOdvalidation").val();
+    var response = $("#response").val();
+    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId + '&response=' + response;
+    alert(dataString);
+    $.ajax({
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            alert(result);
+        }
+    });
+    return false;
+
 }
 
 //atribuir chefe
 function assignOrganizationCategoryOwner() {
-    
+
 }
 //atribuir subchefe
 function assignOrganizationSubCategoryOwner() {
