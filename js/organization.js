@@ -73,7 +73,9 @@ function validateOrganization() {
         sucess: function(result){
             alert(result);
         }
-    })
+    });
+    viewAllOrganization();
+    return false;
 }
 //atribuir utilizador para a organização
 function assignUserInOrganization() {
