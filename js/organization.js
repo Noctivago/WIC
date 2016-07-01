@@ -116,7 +116,7 @@ function removeUserInOrganization() {
     return false;
 }
 
-}
+
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
         
