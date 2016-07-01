@@ -45,7 +45,7 @@ if ($arg === 'addOrganization') {
         $id = (filter_var($_POST ['org'],FILTER_SANITIZE_STRING));
         //parametro para receber user id
         $userid = 32;
-        if(DB_checkIfOrganizationExists($pdo, $id,$userid)){
+        if(DB_checkIfOrganizationExistsWithBossId($pdo, $id,$userid)){
         sql($pdo,"UPDATE [dbo].[Organization] SET [Enabled] = ? where [Id]=? and [User_Boss] = ?",array(0,$id,$userid));
         echo 'Organization Deleted';
         }  else {
@@ -72,7 +72,7 @@ if ($arg === 'addOrganization') {
     try{
         $orgId = (filter_var($_POST ['orgId'],FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST ['email'],FILTER_SANITIZE_STRING));
-        if(DB_checkIfOrganizationExists($pdo, $orgId, $userId)){
+        if(DB_checkIfOrganizationExists($pdo, $orgId)){
             if(DB_checkIfUserExists($pdo, $email)){
                 //get id do user pelo email
                 $row = sql($pdo,"SELECT [Id] From [dbo].[User] where [Email]=?",array($email),"row");

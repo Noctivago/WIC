@@ -110,9 +110,20 @@ function DB_setBlockAccount($pdo, $email) {
     }
 }
 
-function DB_checkIfOrganizationExists($pdo, $id,$userId) {
+function DB_checkIfOrganizationExistsWithBossId($pdo, $id,$userId) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[Organization] Where [Id]=? and [User_Boss]=?", array($id,$userId), "count");
+        if ($count < 0) {
+            return true;
+        } else
+            return false;
+    } catch (Exception $ex) {
+        
+    }
+}
+function DB_checkIfOrganizationExists($pdo, $id) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[Organization] Where [Id]=?", array($id), "count");
         if ($count < 0) {
             return true;
         } else
