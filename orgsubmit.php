@@ -109,11 +109,11 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'viewAllUsersInOrganization') {  
       try{
           $orgId = (filter_var($_POST ['orgId'],FILTER_SANITIZE_STRING));
-      $rows = sql($pdo,"SELECT * FROM [User_In_Organization] Where [Organization_ID]=?",array($orgId),"rows");
+      $rows = sql($pdo,"SELECT * FROM [User_In_Organization] Where [Organization_ID]=? and [Enabled]=1",array($orgId),"rows");
        echo "<table><tr><th>ID</th></tr>";
        foreach ($rows as $row) {
             echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['User_Id'] . "</td>";
             echo "<tr>";
         }
         echo "</table>";
