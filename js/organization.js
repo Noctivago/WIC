@@ -196,10 +196,44 @@ function assignOrganizationSubCategoryOwner() {
 }
 //remover chefe
 function removeOrganizationCategoryOwner() {
-
+    var arg = 'removeOrganizationCategoryOwner';
+    var orgId = $("#roco").val();
+    var userId = $("#userOwnerCat").val();
+    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId ;
+    alert(dataString);
+    $.ajax({
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            alert(result);
+        }
+    });
+    return false;
+   
 }
+
+
+
 //remover subchefe da organização
 function removeOrganizationSubCategoryOwner() {
+    var arg = 'removeOrganizationSubCategoryOwner';
+    var orgId = $("#rosco").val();
+    var userId = $("#userOwnerSubCat").val();
+    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId ;
+    alert(dataString);
+    $.ajax({
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            alert(result);
+        }
+    });
+    return false;
+   
 
 }
 //editar permissoes de um utilizador em um serviço

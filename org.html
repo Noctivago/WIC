@@ -122,7 +122,7 @@
             </select>    
             <input type="button" value="validate" onclick="UserValidateInvite()"/> 
         </div>
-        
+        <div> 
         <h1>Assign organization category owner</h1>
             <label> User Id to be Owner</label>
             <input type="text" id="userOwner">
@@ -131,6 +131,29 @@
             <input type="text" id="organizationId3">
             <br>
              <input type="button" value="validate" onclick="assignOrganizationCategoryOwner()"/>
+        </div>
+        
+        <div> 
+        <h1>Remove organization category owner</h1>
+            <label> User Id to be Owner</label>
+            <input type="text" id="userOwnerCat">
+            <br>
+            <label> organization Id </label>
+            <input type="text" id="roco">
+            <br>
+             <input type="button" value="validate" onclick="removeOrganizationCategoryOwner()"/>
+        </div>
+        <div>
+        <h1>Remove organization Sub category owner</h1>
+            <label> User Id to be Owner</label>
+            <input type="text" id="userOwnerSubCat">
+            <br>
+            <label> organization Id </label>
+            <input type="text" id="rosco">
+            <br>
+             <input type="button" value="validate" onclick="removeOrganizationSubCategoryOwner()"/>
+        </div>
+        
         <div>
         <h1>Assign organization Sub category owner</h1>
             <label> User Id to be Owner</label>
@@ -140,8 +163,6 @@
             <input type="text" id="organizationId4">
             <br>
              <input type="button" value="validate" onclick="assignOrganizationSubCategoryOwner()"/>
-            
         </div>
-        
     </body>
 </html>
