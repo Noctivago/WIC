@@ -29,6 +29,7 @@ function addOrganization() {
                 alert(result);
             }
         });
+    return false;
     }
 }
 
