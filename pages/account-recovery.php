@@ -85,7 +85,7 @@ include_once '../db/functions.php';
                 //SE EMAIL EXISTE
                 if (DB_checkIfUserExists($pdo, $email)) {
                     $password = generatePassword();
-                    $msg = 'PASSWORD: ' . $password;
+                    $msg = $password;
                     //ENVIAR PASSWORD POR EMAIL
                     $hashPassword = hash('whirlpool', $password);
                     DB_setUserPasword($pdo, $email, $hashPassword);
