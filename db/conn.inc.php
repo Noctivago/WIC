@@ -100,3 +100,12 @@ function DB_getLoginFailedValue($pdo, $email) {
         echo '';
     }
 }
+
+function DB_setBlockAccount($pdo, $email) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? ", array('0', $email));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}
