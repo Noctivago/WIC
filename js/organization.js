@@ -79,7 +79,21 @@ function validateOrganization() {
 }
 //atribuir utilizador para a organização
 function assignUserInOrganization() {
-
+    var email = $("#emailuser").val();
+    var arg = 'assignUserInOrganization';
+    var dataString ='arg='+arg+'&email='+email;
+    alert(dataString);
+    $.ajax({
+            type:'POST',
+            url: "orgsubmit.php",
+            data: dataString,
+            cache: false,
+            success: function (result) {
+                alert(result);
+        }
+    });
+    viewAllOrganization();
+    return false;
 }
 //remover utilizador da organização
 function removeUserInOrganization() {
