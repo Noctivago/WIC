@@ -146,7 +146,7 @@ function DB_checkUserByEmail($pdo, $email) {
 
 function DB_User_In_Organization($pdo,$userId,$orgId){
     try {
-        $count = sql($pdo,"SELECT * FROM [User_In_Organization] Where [User_Id]=? and [Organization__Id]=? and [Enabled]=1",array($userId,$orgId), "count");
+        $count = sql($pdo,"SELECT * FROM [User_In_Organization] Where [User_Id] = ? and [Organization_Id] = ? and [Enabled] = 1",array($userId,$orgId), "count");
         if($count < 0){
             return true;
         }else{
