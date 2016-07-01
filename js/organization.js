@@ -176,6 +176,22 @@ function assignOrganizationCategoryOwner() {
 }
 //atribuir subchefe
 function assignOrganizationSubCategoryOwner() {
+    var arg = 'assignOrganizationSubCategoryOwner';
+    var orgId = $("#organizationId4").val();
+    var userId = $("#userOwner1").val();
+    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId ;
+    alert(dataString);
+    $.ajax({
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            alert(result);
+        }
+    });
+    return false;
+   
 
 }
 //remover chefe
