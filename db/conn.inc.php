@@ -103,6 +103,7 @@ function DB_getLoginFailedValue($pdo, $email) {
 
 function DB_setBlockAccount($pdo, $email) {
     try {
+        //GERA NOVO CODIGO PARA ATIVAR CONTA -> ENVIA EMAIL
         $count = sql($pdo, "UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? ", array('0', $email));
         return true;
     } catch (Exception $exc) {
