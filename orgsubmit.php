@@ -163,7 +163,7 @@ if ($arg === 'addOrganization') {
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
         //falta adicionar as categorias para inserir o id da categoria[Category_Id]
         if(DB_User_In_Organization($pdo,$userId,$orgId)){
-         sql($pdo,"UPDATE ", array($userId,1,$orgId));
+         sql($pdo,"UPDATE [dbo].[Category_Owner] SET [Enabled] = ? where [User_Id] = ? and [Organization_Id] = ? ", array(0,$userId,$orgId));
          echo 'Removed Category Owner Success ';
         }else {
             echo 'User not in Organization';
@@ -177,7 +177,7 @@ if ($arg === 'addOrganization') {
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
         //falta adicionar as categorias para inserir o id da categoria[Category_Id]
         if(DB_User_In_Organization($pdo,$userId,$orgId)){
-         sql($pdo,"UPDATE [dbo].[Sub_Category_Owner] SET [Enabled] = 0 WHERE [User_Id]=? and [Organization_Id] = ?", array($userId,$orgId));
+         sql($pdo,"UPDATE [dbo].[Sub_Category_Owner] SET [Enabled] = ? where [User_Id] = ? and [Organization_Id] = ? ", array(0,$userId,$orgId));
          echo 'Removed Sub Category Owner Success ';
         }else {
             echo 'User not in Organization';
