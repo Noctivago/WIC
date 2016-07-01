@@ -141,7 +141,7 @@ if ($arg === 'addOrganization') {
                 sql($pdo, "UPDATE [dbo].[Category_Owner] SET [Enabled] = ? where [User_Id] = ? and [Organization_Id] = ? ", array(1, $userId, $orgId));
                 echo 'Category owner updated';
             } else {
-                sql($pdo, "INSERT INTO [dbo].[Category_Owner]([User_Id],[Date_Created][Enabled],[Organization_Id])VALUES(?,?,?,?)", array($userId,$dateTime, 1, $orgId));
+                sql($pdo, "INSERT INTO [dbo].[Category_Owner]([User_Id],[Date_Created],[Enabled],[Organization_Id])VALUES(?,?,?,?)", array($userId,$dateTime, 1, $orgId));
                 echo 'Add Category Owner Success ';
             }
         } else {
