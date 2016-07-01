@@ -118,17 +118,12 @@ if ($arg === 'addOrganization') {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
         $response = (filter_var($_POST ['response'], FILTER_SANITIZE_NUMBER_INT));
-        if($response===1){
-            sql($pdo,"UPDATE [dbo].[User_In_Organization] SET [User_Validation]=1,[Enabled]=1 Where [User_Id]=? and [Organization_Id]=?", array($userId,$orgId));
+         
+        sql($pdo,"UPDATE [dbo].[User_In_Organization] SET [User_Validation]=?,[Enabled]=1 Where [User_Id]=? and [Organization_Id]=?", array($response,$userId,$orgId));
             echo 'Validate Success';
-        }else if($response===0){
-            echo 'Response success';
-        }else{
-            echo 'Error';
-        }
-    
+      
     } catch (Exception $ex) {
-        
+        echo 'error';
     }
 } else if ($arg === 'assignOrganizationCategoryOwner') {
     
