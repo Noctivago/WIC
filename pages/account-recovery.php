@@ -73,7 +73,22 @@ include_once '../db/conn.inc.php';
         <div class = "container form-signin">
 
         </div> <!-- /container -->
-
+        <?php
+        if (isset($_POST['recover']) && !empty($_POST['email'])) {
+            $msg = '';
+            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+            //SE EMAIL EXISTE
+            if (DB_checkIfUserExists($pdo, $email)) {
+                $password = generatePassword();
+                DB_setUserPasword($pdo, $email, $password);
+                $msg = $password;
+                //ENVIA EMAIL
+            } else {
+                //SENAO INFORMA
+                $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
+            }
+        }
+        ?>
         <div class = "container">
 
             <form class = "form-signin">

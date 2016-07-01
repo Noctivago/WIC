@@ -89,6 +89,15 @@ function DB_setLoginFailed($pdo, $email, $value = '0') {
     }
 }
 
+function DB_setUserPasword($pdo, $email, $password) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Email] = ? ", array($password, $email));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}
+
 function DB_getLoginFailedValue($pdo, $email) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
@@ -110,9 +119,9 @@ function DB_setBlockAccount($pdo, $email) {
     }
 }
 
-function DB_checkIfOrganizationExistsWithBossId($pdo, $id,$userId) {
+function DB_checkIfOrganizationExistsWithBossId($pdo, $id, $userId) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[Organization] Where [Id]=? and [User_Boss]=?", array($id,$userId), "count");
+        $count = sql($pdo, "SELECT * FROM [dbo].[Organization] Where [Id]=? and [User_Boss]=?", array($id, $userId), "count");
         if ($count < 0) {
             return true;
         } else
@@ -121,6 +130,7 @@ function DB_checkIfOrganizationExistsWithBossId($pdo, $id,$userId) {
         
     }
 }
+
 function DB_checkIfOrganizationExists($pdo, $id) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[Organization] Where [Id]=?", array($id), "count");
@@ -144,43 +154,41 @@ function DB_checkUserByEmail($pdo, $email) {
     }
 }
 
-function DB_User_In_Organization($pdo,$userId,$orgId){
+function DB_User_In_Organization($pdo, $userId, $orgId) {
     try {
-        $count = sql($pdo,"SELECT * FROM [User_In_Organization] Where [User_Id] = ? and [Organization_Id] = ? and [Enabled] = 1",array($userId,$orgId), "count");
-        if($count < 0){
+        $count = sql($pdo, "SELECT * FROM [User_In_Organization] Where [User_Id] = ? and [Organization_Id] = ? and [Enabled] = 1", array($userId, $orgId), "count");
+        if ($count < 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
-            
-        
     } catch (Exception $exc) {
         echo 'Erro';
     }
+}
 
-}
-function DB_chekIfUserExistCategoryOwner($pdo,$userId,$orgId){
-    try{    
-        $count = sql($pdo,"SELECT * FROM [Category_Owner] Where [User_Id] = ? and [Organization_Id] = ?",array($userId,$orgId), "count");
-        if($count < 0){
+function DB_chekIfUserExistCategoryOwner($pdo, $userId, $orgId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [Category_Owner] Where [User_Id] = ? and [Organization_Id] = ?", array($userId, $orgId), "count");
+        if ($count < 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
-    }  catch (Exception $ex){
-        echo 'Erro';
-    }
-}
-function DB_chekIfUserExistSubCategoryOwner($pdo,$userId,$orgId){
-    try{    
-        $count = sql($pdo,"SELECT * FROM [Sub_Category_Owner] Where [User_Id] = ? and [Organization_Id] = ?",array($userId,$orgId), "count");
-        if($count < 0){
-            return true;
-        }else{
-            return false;
-        }
-    }  catch (Exception $ex){
+    } catch (Exception $ex) {
         echo 'Erro';
     }
 }
 
+function DB_chekIfUserExistSubCategoryOwner($pdo, $userId, $orgId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [Sub_Category_Owner] Where [User_Id] = ? and [Organization_Id] = ?", array($userId, $orgId), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $ex) {
+        echo 'Erro';
+    }
+}
