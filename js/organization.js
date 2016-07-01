@@ -93,7 +93,7 @@ function assignUserInOrganization() {
                 alert(result);
         }
     });
-    viewAllOrganization();
+    viewAllUsersInOrganization();
     return false;
 }
 //remover utilizador da organização
@@ -112,20 +112,36 @@ function removeUserInOrganization() {
                 alert(result);
         }
     });
+    viewAllUsersInOrganization();
+    return false;
+}
+function viewAllUsersInOrganization() {
+    var orgId = $("#organizationId").val();
+    var arg = 'viewAllUsersInOrganization';
+    var dataString ='arg=' + arg + '&orgId=' + orgId;
+    alert(dataString);
+    $.ajax({
+            type:'POST',
+            url: "orgsubmit.php",
+            data: dataString,
+            cache: false,
+            success: function (result) {
+                var ajaxDisplay = document.getElementById('membros');
+                ajaxDisplay.innerHTML = result;
+            }
+    });
     viewAllOrganization();
     return false;
 }
 
-
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
         
-
 }
 
 //atribuir chefe
 function assignOrganizationCategoryOwner() {
-
+    
 }
 //atribuir subchefe
 function assignOrganizationSubCategoryOwner() {

@@ -106,7 +106,20 @@ if ($arg === 'addOrganization') {
 }
       
       
-    
+} else if ($arg === 'viewAllUsersInOrganization') {  
+      try{
+          $orgId = (filter_var($_POST ['orgId'],FILTER_SANITIZE_STRING));
+      $rows = sql($pdo,"SELECT * FROM [User_In_Organization] Where [Organization_ID]=?",array($orgId),"rows");
+       echo "<table><tr><th>ID</th></tr>";
+       foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $ex) {
+        echo 'erro sdadasdasdas';
+    }
 } else if ($arg === 'UserValidateInvite') {
     
 } else if ($arg === 'assignOrganizationCategoryOwner') {
