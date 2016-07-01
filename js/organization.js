@@ -80,8 +80,9 @@ function validateOrganization() {
 //atribuir utilizador para a organização
 function assignUserInOrganization() {
     var email = $("#emailuser").val();
+    var orgId = $("#orgId2").val();
     var arg = 'assignUserInOrganization';
-    var dataString ='arg='+arg+'&email='+email;
+    var dataString ='arg='+arg+'&email='+email+'&orgId='+orgId;
     alert(dataString);
     $.ajax({
             type:'POST',

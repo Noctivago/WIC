@@ -70,13 +70,13 @@ if ($arg === 'addOrganization') {
    
 } else if ($arg === 'assignUserInOrganization') {
     try{
-        $userid = (filter_var($_POST ['org'],FILTER_SANITIZE_STRING));
-        $orgId = (filter_var($_POST ['org'],FILTER_SANITIZE_STRING));
+        $orgId = (filter_var($_POST ['orgId'],FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST ['email'],FILTER_SANITIZE_STRING));
         if(DB_checkIfOrganizationExists($pdo, $orgId, $userId)){
             if(DB_checkIfUserExists($pdo, $email)){
                 //get id do user pelo email
                 $row = sql($pdo,"SELECT [Id] From [dbo].[User] where [Email]=?",array($email),"row");
+                $userId = $row['Id'];
                 //insere user na organizacao com enabled 0 e user validation 0
                 sql($pdo,"INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled])VALUES(?,?,?,?)",array($orgId,$userId,0,0));
                 echo 'Success';
