@@ -81,7 +81,6 @@ if ($arg === 'addOrganization') {
                 echo 'Success';
                 }  else {
                 //envia convite para o email para se registar.
-                
                 echo 'GRRRR';
                 }
             
