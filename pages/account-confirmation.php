@@ -96,7 +96,7 @@ include_once '../db/conn.inc.php';
                         }
                     } else {
                         //SENAO INFORMA
-                        $msg = $code;
+                        $msg = 'WRONG ACTIVATION CODE!';
                     }
                 } else {
                     //SENAO INFORMA
