@@ -80,8 +80,8 @@ include_once '../db/functions.php.php';
             $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
             //SE EMAIL EXISTE
             if (DB_checkIfUserExists($pdo, $email)) {
-                $password = generatePassword();
-                DB_setUserPasword($pdo, $email, $password);
+                //$password = generatePassword();
+                //DB_setUserPasword($pdo, $email, $password);
                 $msg = $password;
                 //ENVIA EMAIL
             } else {
