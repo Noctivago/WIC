@@ -29,10 +29,12 @@ function addOrganization() {
                 alert(result);
             }
         });
-    return false;
+        
     }
+    return false;
+    
 }
-
+ 
 function removeOrganization() {
 
 }
