@@ -44,7 +44,7 @@ if ($arg === 'addOrganization') {
     try{
         $id = 11;
         $userid = 32;
-        sql($pdo,"UPDATE FROM [dbo].[Organization] where [Id]=? and [User_Boss] = ?",array($id,$userid));
+        sql($pdo,"UPDATE [dbo].[Organization] SET [Enabled] = ? where [Id]=? and [User_Boss] = ?",array(0,$id,$userid));
         echo 'Organization Deleted';
     } catch (Exception $ex) {
         echo '';
