@@ -99,11 +99,14 @@ if ($arg === 'addOrganization') {
              sql($pdo,"UPDATE [dbo].[User_In_Organization] SET [Enabled] = ? where [Organization_Id] = ? and [User_Id] = ?",array(1,$orgId,$userId));
              echo 'User removed';
         }else{
-            
+        echo 'Organization ERROR';
         }
-            
-        }
-    
+        
+}  catch (Exception $ex){
+    echo 'error';
+}
+      
+      
     
 } else if ($arg === 'UserValidateInvite') {
     
