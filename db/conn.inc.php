@@ -155,7 +155,31 @@ function DB_User_In_Organization($pdo,$userId,$orgId){
             
         
     } catch (Exception $exc) {
-        echo $exc->getTraceAsString();
+        echo 'Erro';
     }
 
+}
+function DB_chekIfUserExistCategoryOwner($pdo,$userId,$orgId){
+    try{    
+        $count = sql($pdo,"SELECT * FROM [Category_Owner] Where [User_Id] = ? and [Organization_Id] = ?",array($userId,$orgId), "count");
+        if($count < 0){
+            return true;
+        }else{
+            return false;
+        }
+    }  catch (Exception $ex){
+        echo 'Erro';
+    }
+}
+function DB_chekIfUserExistSubCategoryOwner($pdo,$userId,$orgId){
+    try{    
+        $count = sql($pdo,"SELECT * FROM [Sub_Category_Owner] Where [User_Id] = ? and [Organization_Id] = ?",array($userId,$orgId), "count");
+        if($count < 0){
+            return true;
+        }else{
+            return false;
+        }
+    }  catch (Exception $ex){
+        echo 'Erro';
+    }
 }

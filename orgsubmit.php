@@ -118,73 +118,84 @@ if ($arg === 'addOrganization') {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
         $response = (filter_var($_POST ['response'], FILTER_SANITIZE_NUMBER_INT));
-        if($response==="1"){
+        if ($response === "1") {
             $enabled = 1;
-        }else{
+        } else {
             $enabled = 0;
         }
-        sql($pdo,"UPDATE [dbo].[User_In_Organization] SET [User_Validation]=?,[Enabled]=? Where [User_Id]=? and [Organization_Id]=?", array($response,$enabled,$userId,$orgId));
+        sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [User_Validation]=?,[Enabled]=? Where [User_Id]=? and [Organization_Id]=?", array($response, $enabled, $userId, $orgId));
         echo 'Validate Success';
-      
     } catch (Exception $ex) {
         echo 'error';
     }
 } else if ($arg === 'assignOrganizationCategoryOwner') {
-     try{
+    try {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
         //falta adicionar as categorias para inserir o id da categoria[Category_Id]
-        if(DB_User_In_Organization($pdo,$userId,$orgId)){
-         sql($pdo,"INSERT INTO [dbo].[Category_Owner]([User_Id],[Enabled],[Organization_Id])VALUES(?,?,?)", array($userId,1,$orgId));
-         echo 'Add Category Owner Success ';
-        }else {
+        if (DB_User_In_Organization($pdo, $userId, $orgId)) {
+            //falta a categoria
+            if (DB_chekIfUserExistCategoryOwner($pdo, $userId, $orgId)) {
+                sql($pdo, "UPDATE [dbo].[Category_Owner] SET [Enabled] = ? where [User_Id] = ? and [Organization_Id] = ? ", array(1, $userId, $orgId));
+                echo 'Category owner updated';
+            } else {
+                sql($pdo, "INSERT INTO [dbo].[Category_Owner]([User_Id],[Enabled],[Organization_Id])VALUES(?,?,?)", array($userId, 1, $orgId));
+                echo 'Add Category Owner Success ';
+            }
+        } else {
             echo 'User not in Organization';
         }
-     }  catch (Exception $ex){
-         echo 'error';
-     }
-}else if ($arg === 'assignOrganizationSubCategoryOwner') {
-    try{
+    } catch (Exception $ex) {
+        echo 'error';
+    }
+} else if ($arg === 'assignOrganizationSubCategoryOwner') {
+    try {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
         //falta adicionar as categorias para inserir o id da categoria[Category_Id]
-        if(DB_User_In_Organization($pdo,$userId,$orgId)){
-         sql($pdo,"INSERT INTO [dbo].[Sub_Category_Owner]([User_Id],[Organization_Id],[Enabled])VALUES(?,?,?)", array($userId,$orgId,1));
-         echo 'Add Sub Category Owner Success ';
-        }else {
+        if (DB_User_In_Organization($pdo, $userId, $orgId)) {
+            //falta a sub categoria
+            if (DB_chekIfUserExistSubCategoryOwner($pdo, $userId, $orgId)) {
+                sql($pdo, "UPDATE [dbo].[Sub_Category_Owner] SET [Enabled] = ? where [User_Id] = ? and [Organization_Id] = ? ", array(1, $userId, $orgId));
+                echo 'Sub Category owner updated';
+            } else {
+                sql($pdo, "INSERT INTO [dbo].[Sub_Category_Owner]([User_Id],[Organization_Id],[Enabled])VALUES(?,?,?)", array($userId, $orgId, 1));
+                echo 'Add Sub Category Owner Success ';
+            }
+        } else {
             echo 'User not in Organization';
         }
-     }  catch (Exception $ex){
-         echo 'error';
-     }
+    } catch (Exception $ex) {
+        echo 'error';
+    }
 } else if ($arg === 'removeOrganizationCategoryOwner') {
-    try{
+    try {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
         //falta adicionar as categorias para inserir o id da categoria[Category_Id]
-        if(DB_User_In_Organization($pdo,$userId,$orgId)){
-         sql($pdo,"UPDATE [dbo].[Category_Owner] SET [Enabled] = ? where [User_Id] = ? and [Organization_Id] = ? ", array(0,$userId,$orgId));
-         echo 'Removed Category Owner Success ';
-        }else {
+        if (DB_User_In_Organization($pdo, $userId, $orgId)) {
+            sql($pdo, "UPDATE [dbo].[Category_Owner] SET [Enabled] = ? where [User_Id] = ? and [Organization_Id] = ? ", array(0, $userId, $orgId));
+            echo 'Removed Category Owner Success ';
+        } else {
             echo 'User not in Organization';
         }
-     }  catch (Exception $ex){
-         echo 'error';
-     }
+    } catch (Exception $ex) {
+        echo 'error';
+    }
 } else if ($arg === 'removeOrganizationSubCategoryOwner') {
-    try{
+    try {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
         //falta adicionar as categorias para inserir o id da categoria[Category_Id]
-        if(DB_User_In_Organization($pdo,$userId,$orgId)){
-         sql($pdo,"UPDATE [dbo].[Sub_Category_Owner] SET [Enabled] = ? where [User_Id] = ? and [Organization_Id] = ? ", array(0,$userId,$orgId));
-         echo 'Removed Sub Category Owner Success ';
-        }else {
+        if (DB_User_In_Organization($pdo, $userId, $orgId)) {
+            sql($pdo, "UPDATE [dbo].[Sub_Category_Owner] SET [Enabled] = ? where [User_Id] = ? and [Organization_Id] = ? ", array(0, $userId, $orgId));
+            echo 'Removed Sub Category Owner Success ';
+        } else {
             echo 'User not in Organization';
         }
-     }  catch (Exception $ex){
-         echo 'error';
-     }
+    } catch (Exception $ex) {
+        echo 'error';
+    }
 } else if ($arg === 'editPermissionUserInOrganization') {
     
 } else {

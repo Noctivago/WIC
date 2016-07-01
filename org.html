@@ -75,41 +75,41 @@
         <input type="button" value="Submit" onclick="validateOrganization()"/>
         <br/>
         <div>
-         <h1>Assign User in organization</h1>
-       <label>Email</label>
-        <br/>
-        <input type="text" id="emailuser"/><br/>
-        <br/>
-        <label>Org ID</label>
-        <br/>
-        <input type="text" id="orgId2" /><br/>
-        <br/>
-    <input type="button" value="Submit" onclick="assignUserInOrganization()"/>
-    </div>
-        
-    <div>
-          <h1>Remove User in Organization</h1>
-        <label> User id </label>
-        <br/>
-        <input type="text" id="userIdOrg"/><br/>
-        <br/>
-        <label>Org ID</label>
-        <br/>
-        <input type="text" id="orgId3" /><br/>
-        <br/>
-    <input type="button" value="Submit" onclick="removeUserInOrganization()"/>
-    </div>
+            <h1>Assign User in organization</h1>
+            <label>Email</label>
+            <br/>
+            <input type="text" id="emailuser"/><br/>
+            <br/>
+            <label>Org ID</label>
+            <br/>
+            <input type="text" id="orgId2" /><br/>
+            <br/>
+            <input type="button" value="Submit" onclick="assignUserInOrganization()"/>
+        </div>
+
         <div>
-        <h1>View all members on organization</h1>
+            <h1>Remove User in Organization</h1>
+            <label> User id </label>
+            <br/>
+            <input type="text" id="userIdOrg"/><br/>
+            <br/>
+            <label>Org ID</label>
+            <br/>
+            <input type="text" id="orgId3" /><br/>
+            <br/>
+            <input type="button" value="Submit" onclick="removeUserInOrganization()"/>
+        </div>
+        <div>
+            <h1>View all members on organization</h1>
             <div id="membros"></div>
             <label> organization id </label>
             <input type="text" id="organizationId"/>
             <br/>
             <input type="button" value="view members" onclick="viewAllUsersInOrganization()"/>
         </div>    
-        
+
         <div>
-        <h1>User Validate Invite</h1>
+            <h1>User Validate Invite</h1>
             <label> User Id </label>
             <input type="text" id="UserValidateInvite">
             <br>
@@ -123,46 +123,46 @@
             <input type="button" value="validate" onclick="UserValidateInvite()"/> 
         </div>
         <div> 
-        <h1>Assign organization category owner</h1>
+            <h1>Assign organization category owner</h1>
             <label> User Id to be Owner</label>
             <input type="text" id="userOwner">
             <br>
             <label> organization Id </label>
             <input type="text" id="organizationId3">
             <br>
-             <input type="button" value="validate" onclick="assignOrganizationCategoryOwner()"/>
+            <input type="button" value="validate" onclick="assignOrganizationCategoryOwner()"/>
         </div>
-        
+
         <div> 
-        <h1>Remove organization category owner</h1>
+            <h1>Remove organization category owner</h1>
             <label> User Id to be Owner</label>
             <input type="text" id="userOwnerCat">
             <br>
             <label> organization Id </label>
             <input type="text" id="roco">
             <br>
-             <input type="button" value="validate" onclick="removeOrganizationCategoryOwner()"/>
+            <input type="button" value="validate" onclick="removeOrganizationCategoryOwner()"/>
         </div>
         <div>
-        <h1>Remove organization Sub category owner</h1>
+            <h1>Remove organization Sub category owner</h1>
             <label> User Id to be Owner</label>
             <input type="text" id="userOwnerSubCat">
             <br>
             <label> organization Id </label>
             <input type="text" id="rosco">
             <br>
-             <input type="button" value="validate" onclick="removeOrganizationSubCategoryOwner()"/>
+            <input type="button" value="validate" onclick="removeOrganizationSubCategoryOwner()"/>
         </div>
-        
+
         <div>
-        <h1>Assign organization Sub category owner</h1>
+            <h1>Assign organization Sub category owner</h1>
             <label> User Id to be Owner</label>
             <input type="text" id="userOwner1">
             <br>
             <label> organization Id </label>
             <input type="text" id="organizationId4">
             <br>
-             <input type="button" value="validate" onclick="assignOrganizationSubCategoryOwner()"/>
+            <input type="button" value="validate" onclick="assignOrganizationSubCategoryOwner()"/>
         </div>
     </body>
 </html>
