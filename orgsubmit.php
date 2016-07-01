@@ -135,8 +135,8 @@ if ($arg === 'addOrganization') {
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
         //falta adicionar as categorias para inserir o id da categoria[Category_Id]
         if(DB_User_In_Organization($pdo,$userId,$orgId)){
-        sql($pdo,"INSERT INTO [dbo].[Category_Owner]([User_Id],[Enabled],[Organization_Id])VALUES(?,?,?)", array($userId,1,$orgId));
-        echo 'Add Category Owner Success ';
+         sql($pdo,"INSERT INTO [dbo].[Category_Owner]([User_Id],[Enabled],[Organization_Id])VALUES(?,?,?)", array($userId,1,$orgId));
+         echo 'Add Category Owner Success ';
         }else {
             echo 'User not in Organization';
         }
@@ -151,7 +151,6 @@ if ($arg === 'addOrganization') {
     
 } else if ($arg === 'editPermissionUserInOrganization') {
     
-} else if ($arg === 'viewAllUsersInOrganization') {
     
 } else {
     echo 'lol';
