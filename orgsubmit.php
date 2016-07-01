@@ -132,6 +132,8 @@ if ($arg === 'addOrganization') {
     try {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
+        $dateTime = date('Y/m/d H:i:s',getdate());
+                
         //falta adicionar as categorias para inserir o id da categoria[Category_Id]
         if (DB_User_In_Organization($pdo, $userId, $orgId)) {
             //falta a categoria
@@ -139,7 +141,7 @@ if ($arg === 'addOrganization') {
                 sql($pdo, "UPDATE [dbo].[Category_Owner] SET [Enabled] = ? where [User_Id] = ? and [Organization_Id] = ? ", array(1, $userId, $orgId));
                 echo 'Category owner updated';
             } else {
-                sql($pdo, "INSERT INTO [dbo].[Category_Owner]([User_Id],[Enabled],[Organization_Id])VALUES(?,?,?)", array($userId, 1, $orgId));
+                sql($pdo, "INSERT INTO [dbo].[Category_Owner]([User_Id],[Date_Created][Enabled],[Organization_Id])VALUES(?,?,?,?)", array($userId,$date, 1, $orgId));
                 echo 'Add Category Owner Success ';
             }
         } else {

@@ -183,3 +183,4 @@ function DB_chekIfUserExistSubCategoryOwner($pdo,$userId,$orgId){
         echo 'Erro';
     }
 }
+
