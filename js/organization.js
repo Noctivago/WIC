@@ -157,7 +157,22 @@ function UserValidateInvite() {
 
 //atribuir chefe
 function assignOrganizationCategoryOwner() {
-
+    var arg = 'assignOrganizationCategoryOwner';
+    var orgId = $("#organizationId3").val();
+    var userId = $("#userOwner").val();
+    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId ;
+    alert(dataString);
+    $.ajax({
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            alert(result);
+        }
+    });
+    return false;
+   
 }
 //atribuir subchefe
 function assignOrganizationSubCategoryOwner() {

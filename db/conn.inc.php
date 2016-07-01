@@ -143,3 +143,19 @@ function DB_checkUserByEmail($pdo, $email) {
         echo '';
     }
 }
+
+function DB_User_In_Organization($pdo,$userId,$orgId){
+    try {
+        $count = sql($pdo,"SELECT * FROM [User_In_Organization] Where [User_ID]=? and [Organization__Id]=? and [Enabled]=1",array($userId,$orgId), "count");
+        if($count < 0){
+            echo true;
+        }else{
+            echo false;
+        }
+            
+        
+    } catch (Exception $exc) {
+        echo $exc->getTraceAsString();
+    }
+
+}
