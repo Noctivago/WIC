@@ -118,7 +118,7 @@ if ($arg === 'addOrganization') {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
         $response = (filter_var($_POST ['response'], FILTER_SANITIZE_NUMBER_INT));
-        if($response===1){
+        if($response==="1"){
             $enabled = 1;
         }else{
             $enabled = 0;
