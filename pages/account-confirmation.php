@@ -88,6 +88,7 @@ include_once '../db/conn.inc.php';
                     if (DB_compareActivationCode($pdo, $email, $code)) {
                         //SE TRUE ATIVA CONTA
                         if (DB_activateUserAccount($pdo, $email)) {
+                            header('Location: login.php');
                             $msg = 'ACCOUNT SUCESSUFULY ACTIVATED';
                         } else {
                             //SENAO
