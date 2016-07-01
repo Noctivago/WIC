@@ -136,9 +136,9 @@ function viewAllUsersInOrganization() {
 
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
-    var arg = $("#UserValidateInvite").val();
+    var arg = 'UserValidateInvite';
     var orgId = $("#organizationId2").val();
-    var userId = $("#userOdvalidation").val();
+    var userId = $("#UserValidateInvite").val();
     var response = $("#response").val();
     var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId + '&response=' + response;
     alert(dataString);
