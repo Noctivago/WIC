@@ -42,10 +42,15 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'removeOrganization') {
     try{
-        $id = 11;
+        //parametros a receber id da organização e id do utilizador
+        $id = (filter_var($_POST ['org'],FILTER_SANITIZE_STRING));
         $userid = 32;
+        if(DB_checkIfOrganizationExists($pdo, $id,$userid)){
         sql($pdo,"UPDATE [dbo].[Organization] SET [Enabled] = ? where [Id]=? and [User_Boss] = ?",array(0,$id,$userid));
         echo 'Organization Deleted';
+        }  else {
+            echo 'Erro';    
+        }
     } catch (Exception $ex) {
         echo '';
     }

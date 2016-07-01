@@ -37,7 +37,8 @@ function addOrganization() {
 function removeOrganization() {
         //remove organização selecionada pelo o boss
         var arg = 'removeOrganization';
-        var dataString = 'arg=' + arg;
+        var org = $("#orgId").val();
+        var dataString = 'arg=' + arg + '&org='+org;
         alert(dataString);
         $.ajax({
             type:"POST",

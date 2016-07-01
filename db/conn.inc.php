@@ -109,3 +109,15 @@ function DB_setBlockAccount($pdo, $email) {
         return false;
     }
 }
+
+function DB_checkIfOrganizationExists($pdo, $id,$userId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[Organization] Where [Id]=? and [User_Boss]=?", array($id,$userId), "count");
+        if ($count < 0) {
+            return true;
+        } else
+            return false;
+    } catch (Exception $ex) {
+        
+    }
+}
