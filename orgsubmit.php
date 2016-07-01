@@ -95,7 +95,7 @@ if ($arg === 'addOrganization') {
         $orgId = (filter_var($_POST ['orgId'],FILTER_SANITIZE_STRING));
         $userId = (filter_var($_POST ['userId'],FILTER_SANITIZE_STRING));
         if(DB_checkIfOrganizationExists($pdo, $orgId)){
-             sql($pdo,"UPDATE [dbo].[User_In_Organization] SET [Enabled] = ? where [Organization_Id] = ? and [User_Id] = ?",array(1,$orgId,$userId));
+             sql($pdo,"UPDATE [dbo].[User_In_Organization] SET [Enabled] = ? where [Organization_Id] = ? and [User_Id] = ?",array(0,$orgId,$userId));
              echo 'User removed';
         }else{
         echo 'Organization ERROR';
