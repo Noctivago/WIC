@@ -132,3 +132,14 @@ function DB_checkIfOrganizationExists($pdo, $id) {
         
     }
 }
+
+function DB_checkUserByEmail($pdo, $email) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
+        foreach ($rows as $row) {
+            return $row['Id'];
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
