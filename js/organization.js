@@ -29,12 +29,11 @@ function addOrganization() {
                 alert(result);
             }
         });
-        
+        viewAllOrganization();
+        return false;
     }
-    return false;
-    
 }
- 
+
 function removeOrganization() {
 
 }
@@ -90,7 +89,6 @@ function viewAllOrganization() {
         success: function (result) {
             var ajaxDisplay = document.getElementById('orgresp');
             ajaxDisplay.innerHTML = result;
-            alert(result);
         }
     });
 
