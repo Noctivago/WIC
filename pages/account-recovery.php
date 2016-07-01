@@ -83,7 +83,11 @@ include_once '../db/conn.inc.php';
                 $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                 //SE EMAIL EXISTE
                 if (DB_checkIfUserExists($pdo, $email)) {
-                    
+                    $password = generatePassword();
+                    $msg = 'PASSWORD-> . ' . $password;
+                    //ENVIAR PASSWORD POR EMAIL
+                    $hashPassword = hash('whirlpool', $password);
+                    DB_setUserPasword($pdo, $email, $hashPassword);
                 } else {
                     //SENAO INFORMA
                     $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
