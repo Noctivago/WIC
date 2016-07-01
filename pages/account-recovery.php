@@ -82,7 +82,8 @@ include_once '../db/functions.php.php';
             if (DB_checkIfUserExists($pdo, $email)) {
                 //$password = generatePassword();
                 //DB_setUserPasword($pdo, $email, $password);
-                $msg = $password;
+                //$msg = $password;
+                $msg = "123";
                 //ENVIA EMAIL
             } else {
                 //SENAO INFORMA
