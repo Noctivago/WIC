@@ -35,44 +35,61 @@ function addOrganization() {
 }
 
 function removeOrganization() {
-
+        //remove organização selecionada pelo o boss
+        var arg = 'removeOrganization';
+        var dataString = 'arg=' + arg;
+        alert(dataString);
+        $.ajax({
+            type:"POST",
+            url:"orgsubmit.php",
+            data:dataString,
+            cache:false,
+            success: function(result){
+                alert(result);
+            }
+        });
+        viewAllOrganization();
+        return false;
+        
 }
-
+//edidar a informação da organização
 function editOrganizationInformation() {
 
-}
 
+}
+//validar organização por parte do admin
 function validateOrganization() {
 
 }
-
+//atribuir utilizador para a organização
 function assignUserInOrganization() {
 
 }
-
+//remover utilizador da organização
 function removeUserInOrganization() {
 
 }
-
+//aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
 
 }
-
+//atribuir chefe
 function assignOrganizationCategoryOwner() {
 
 }
-
+//atribuir subchefe
 function assignOrganizationSubCategoryOwner() {
 
 }
+//remover chefe
 function removeOrganizationCategoryOwner() {
 
 }
-
+//remover subchefe da organização
 function removeOrganizationSubCategoryOwner() {
 
 }
-
+//editar permissoes de um utilizador em um serviço
 function editPermissionUserInOrganization() {
 
 }
