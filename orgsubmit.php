@@ -42,8 +42,8 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'removeOrganization') {
     try{
-        //parametros a receber id da organização e id do utilizador
         $id = (filter_var($_POST ['org'],FILTER_SANITIZE_STRING));
+        //parametro para receber user id
         $userid = 32;
         if(DB_checkIfOrganizationExists($pdo, $id,$userid)){
         sql($pdo,"UPDATE [dbo].[Organization] SET [Enabled] = ? where [Id]=? and [User_Boss] = ?",array(0,$id,$userid));
@@ -56,8 +56,18 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'editOrganizationInformation') {
     
-} else if ($arg === 'validateOrganization') {
     
+    
+} else if ($arg === 'validateOrganization') {
+   try{
+    $orgId = (filter_var($_POST ['org'],FILTER_SANITIZE_STRING));
+    //Falta verificar se é admin.
+    sql($pdo,"UPDATE [dbo].[Organization] SET [Enabled] = ? where [Id]=?",array(1,$orgId));
+    echo 'Organization In';
+   } catch (Exception $ex) {
+       echo 'Error';
+   }
+   
 } else if ($arg === 'assignUserInOrganization') {
     
 } else if ($arg === 'removeUserInOrganization') {

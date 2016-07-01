@@ -60,7 +60,20 @@ function editOrganizationInformation() {
 }
 //validar organização por parte do admin
 function validateOrganization() {
-
+    var arg = 'validateOrganization';
+    var orgId = $("#orgId").val();
+    //falta enviar user id para verificar se é admin para poder validar
+    var dataString = 'arg='+ arg + '&org=' + orgId;
+    alert(dataString);
+    $.ajax({
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        sucess: function(result){
+            alert(result);
+        }
+    })
 }
 //atribuir utilizador para a organização
 function assignUserInOrganization() {
