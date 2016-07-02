@@ -242,3 +242,11 @@ function DB_getCityOnSelect($pdo) {
         //echo $row['Id'] . ">" . $row['Name'];
     }
 }
+
+function DB_getCityOnSelectByCityName($pdo, $cityName) {
+    $rows = sql($pdo, "SELECT * FROM [dbo].[City] WHERE [Name] Like ?%", array($cityName), "rows");
+    foreach ($rows as $row) {
+        echo "<option value=" . $row['Name'] . "></option>";
+        //echo $row['Id'] . ">" . $row['Name'];
+    }
+}
