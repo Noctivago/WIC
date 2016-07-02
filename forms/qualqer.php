@@ -97,11 +97,12 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-5">
-                            <p>Permissions:</p>
+
                             <div class="form-box">
                                 <div class="form-top">
                                 </div>
                                 <div class="form-bottom">
+                                    <p>Permissions:</p>
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group">
                                             <h4 <?php echo $msg; ?></h4>
