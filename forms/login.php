@@ -121,12 +121,12 @@
 				                    	<div class="form-group">
                                                             <h4 <?php echo $msg; ?></h4>
 				                    		<label class="sr-only" for="form-username">Username</label>
-                                                                <input type="email" name="form-username" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required autofocus>
+                                                                <input type="email" name="username" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required autofocus>
 
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-password">Password</label>
-                                                                <input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="form-password" required>
+                                                                <input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password" required>
 				                        </div>
                                                         <button type="submit" class="btn" name="login">Sign in!</button>
 				                    </form>
