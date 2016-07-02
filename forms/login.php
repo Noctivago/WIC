@@ -54,7 +54,21 @@
                     </div>
                     
                     <div class="row">
-                                            <div class="col-sm-5">
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Login to our site</h3>
+	                            		<p>Enter username and password to log on:</p>
+                                                
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-key"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+                                                                                    <div class="col-sm-5">
  <?php
             if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                 try {
@@ -104,20 +118,6 @@
             }
             ?>
                     </div>
-                        <div class="col-sm-5">
-                        	
-                        	<div class="form-box">
-	                        	<div class="form-top">
-	                        		<div class="form-top-left">
-	                        			<h3>Login to our site</h3>
-	                            		<p>Enter username and password to log on:</p>
-                                                
-	                        		</div>
-	                        		<div class="form-top-right">
-	                        			<i class="fa fa-key"></i>
-	                        		</div>
-	                            </div>
-	                            <div class="form-bottom">
 				                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
 				                    	<div class="form-group">
                                                             <h4 <?php echo $msg; ?></h4>
