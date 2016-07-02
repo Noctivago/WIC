@@ -93,7 +93,7 @@
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                           
+
                         </div>
                     </div>
 
@@ -102,7 +102,7 @@
 
                             <div class="form-box">
                                 <div class="form-top">
-                                    
+
                                 </div>
                                 <div class="form-bottom">
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
@@ -144,9 +144,6 @@
                 <div class="row">
 
                     <div class="col-sm-8 col-sm-offset-2">
-                        <div class="footer-border"></div>
-                        <p>Made by <a href="http://google.pt" target="_blank"><strong>Easy Solutions</strong></a> 
-                            having a lot of fun. <i class="fa fa-smile-o"></i></p>
                     </div>
 
                 </div>
