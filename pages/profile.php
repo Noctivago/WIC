@@ -1,7 +1,7 @@
 <?php
 //
 include_once ('session.php');
-#include_once ('../db/conn.inc.php');
+include_once ('../db/conn.inc.php');
 #session_start();
 ?>
 
