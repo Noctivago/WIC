@@ -192,3 +192,62 @@ function DB_chekIfUserExistSubCategoryOwner($pdo, $userId, $orgId) {
         echo 'Erro';
     }
 }
+
+function DB_chekIfUserProfileExist($pdo, $userId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [Profile] Where [User_Id] = ?", array($userId), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $ex) {
+        echo 'Erro';
+    }
+}
+
+function DB_updateUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath, $cityId, $languageId) {
+    try {
+        //UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? 
+        $count = sql($pdo, "UPDATE [dbo].[Profile] SET"
+                . " [First_Name] = ?"
+                . " [Last_Name] = ? "
+                . " [Picture] = ? "
+                . " [Picture_Path] = ? "
+                . " [City_Id] = ? "
+                . " [Language_Id] = ? "
+                . " Where [User_Id] = ?", array($fname, $lname, $picture, $picturePath, $cityId, $languageId, $userId));
+        return true;
+    } catch (Exception $ex) {
+        return false;
+    }
+}
+
+function DB_addUserProfile($userId, $fname, $lname, $picture, $picturePath, $cityId, $languageId) {
+    //sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Profile] ([First_Name], [Last_Name], [Picture], [Picture_Path], [User_Id], [City_Id], [Language_Id]) "
+                . "VALUES (?, ?, ?, ?, ?, ?, ?)", array($fname, $lname, $picture, $picturePath, $userId, $cityId, $languageId));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}
+
+function DB_getCityOnSelect() {
+    $id = 0;
+    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array($id), "rows");
+    echo '<input list="cities" name="city">';
+    echo '<datalist id="cities">';
+    foreach ($rows as $row) {
+        echo '';
+        echo '<option value="' . $row[''] . '">' . $row[''] . '</option>';
+//<option value="India">India</option>
+//</datalist>
+//<input list="cities" name="city">
+//  <datalist id="cities">
+//    <option value="Internet Explorer"></option>
+//  </datalist>
+    }
+    echo '</datalist>';
+}

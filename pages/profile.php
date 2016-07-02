@@ -13,6 +13,8 @@ include_once ('session.php');
         <?php
         echo 'Welcome ' . $_SESSION['username'] . '<br>';
         echo 'Profile ' . '<br>';
+        echo '<br>';
+        echo DB_getCityOnSelect();
 #echo "Login Success";
         echo "<a href='logout.php'> Logout</a> ";
         ?>
