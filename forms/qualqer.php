@@ -106,8 +106,10 @@
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group">
                                             <h4 <?php echo $msg; ?></h4>
-                                            <input type="text" name="username" placeholder="type permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
+                                            <input type="text" name="permission" placeholder="type permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
                                         </div>
+                                        <input type="checkbox" name="permissionOrg" value="permissionOrg" />Organization Permission?
+                                        <br>
                                         <button type="submit" class="btn" name="addOrgPermission">Add permission!</button>
                                     </form>
                                 </div>
