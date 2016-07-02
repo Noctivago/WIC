@@ -240,7 +240,6 @@ function DB_getCityOnSelect() {
     echo '<input list="cities" name="city">';
     echo '<datalist id="cities">';
     foreach ($rows as $row) {
-        echo '';
         echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
 //<option value="India">India</option>
 //</datalist>
