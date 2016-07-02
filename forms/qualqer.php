@@ -108,7 +108,6 @@
                                         <h4 <?php echo $msg; ?></h4>
                                         <input type="text" id = "role" name="role" placeholder="type Role description..." class="form-username form-control" id="permissiondescription" required autofocus>
                                     </div>
-                                    <br>
                                     <button type="submit" class="btn" name="addRole">Add Role!</button>
                                 </form>
                             </div>
