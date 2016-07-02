@@ -68,11 +68,11 @@ if ($arg === 'addUser') {
     $count = sql($pdo, "SELECT * FROM [dbo].[News] WHERE [Email] = ? ", array($UserEmail), "count");
     //IF EXISTS -1
     if ($count < 0) {
-        echo 'Email already registed!';
+        echo 'Email already registered!';
         #echo $count;
     } else {
         sql($pdo, "INSERT INTO [dbo].[News] ([Email]) VALUES (?)", array($UserEmail));
-        echo 'Email Registed';
+        echo 'Email registered';
         #echo $count;
     }
 } else {
