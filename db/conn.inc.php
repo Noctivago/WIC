@@ -236,12 +236,12 @@ function DB_addUserProfile($userId, $fname, $lname, $picture, $picturePath, $cit
 
 function DB_getCityOnSelect() {
     $id = 0;
-    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array($id), "rows");
+    $rows = sql($pdo, "SELECT * FROM [dbo].[City] WHERE [Id] > ?", array($id), "rows");
     echo '<input list="cities" name="city">';
     echo '<datalist id="cities">';
     foreach ($rows as $row) {
         echo '';
-        echo '<option value="' . $row[''] . '">' . $row[''] . '</option>';
+        echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
 //<option value="India">India</option>
 //</datalist>
 //<input list="cities" name="city">
