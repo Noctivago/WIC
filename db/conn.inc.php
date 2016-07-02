@@ -237,10 +237,7 @@ function DB_addUserProfile($userId, $fname, $lname, $picture, $picturePath, $cit
 function DB_getCityOnSelect() {
     $id = 0;
     $rows = sql($pdo, "SELECT * FROM [dbo].[City] WHERE [Id] > ?", array($id), "rows");
-    echo '<input list="cities" name="city">';
-    echo '<datalist id="cities">';
     foreach ($rows as $row) {
-        echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+        echo "<option value='" . $row['Id'] . "'>" . $row['Name'] . "</option>";
     }
-    echo '</datalist>';
 }
