@@ -107,7 +107,7 @@
                         	
                         	<div class="form-box">
 	                        	<div class="form-top">
-	                        		<div class="form-top-right">
+	                        		<div class="form-top-left">
 	                        			<h3>Login to our site</h3>
 	                            		<p>Enter username and password to log on:</p>
                                                 
