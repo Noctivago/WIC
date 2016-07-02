@@ -15,11 +15,10 @@ include_once ('../db/conn.inc.php');
         echo 'Welcome ' . $_SESSION['username'] . '<br>';
         echo 'Profile ' . '<br>';
         echo '<br>';
-        //echo '<input list="cities" name="city">';
-        //echo '<datalist id="cities">';
+        echo '<input list="cities" name="city">';
+        echo '<datalist id="cities">';
         DB_getCityOnSelect($pdo);
-        //echo '</datalist>';
-        #echo "Login Success";
+        echo '</datalist>';
         echo '<br>';
         echo "<a href='logout.php'> Logout</a> ";
         ?>
