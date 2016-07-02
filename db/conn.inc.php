@@ -223,7 +223,7 @@ function DB_updateUserProfile($pdo, $userId, $fname, $lname, $picture, $pictureP
     }
 }
 
-function DB_addUserProfile($userId, $fname, $lname, $picture, $picturePath, $cityId, $languageId) {
+function DB_addUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath, $cityId, $languageId) {
     //sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
     try {
         sql($pdo, "INSERT INTO [dbo].[Profile] ([First_Name], [Last_Name], [Picture], [Picture_Path], [User_Id], [City_Id], [Language_Id]) "
@@ -234,7 +234,7 @@ function DB_addUserProfile($userId, $fname, $lname, $picture, $picturePath, $cit
     }
 }
 
-function DB_getCityOnSelect() {
+function DB_getCityOnSelect($pdo) {
     $id = 0;
     $rows = sql($pdo, "SELECT * FROM [dbo].[City] WHERE [Id] > ?", array($id), "rows");
     foreach ($rows as $row) {
