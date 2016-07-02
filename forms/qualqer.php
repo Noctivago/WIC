@@ -102,18 +102,13 @@
                                 <div class="form-top">
                                 </div>
                                 <div class="form-bottom">
-                                    <p>Permissions:</p>
+                                    <p>Permission description:</p>
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group">
                                             <h4 <?php echo $msg; ?></h4>
-                                            <label class="sr-only" for="form-username">Username</label>
-                                            <input type="email" name="username" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required autofocus>
+                                            <input type="text" name="username" placeholder="type permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="sr-only" for="form-password">Password</label>
-                                            <input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password" required>
-                                        </div>
-                                        <button type="submit" class="btn" name="login">Sign in!</button>
+                                        <button type="submit" class="btn" name="addOrgPermission">Add permission!</button>
                                     </form>
                                 </div>
                             </div>
