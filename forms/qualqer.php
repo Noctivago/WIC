@@ -118,8 +118,9 @@
                         </div>
                         <!--                        <div class="col-sm-1 middle-border"></div>-->
                         <div class="col-sm-1"></div>
-                        <p>Existent Permissions</p>
+
                         <div class="col-sm-5">
+                            <p>Available Permissions</p>
                         </div>
                     </div>
 
