@@ -19,7 +19,7 @@ include_once ('session.php');
         echo '<datalist id="cities">';
         DB_getCityOnSelect();
         echo '</datalist>';
-        #echo "Login Success";
+        echo '<br>';
         echo "<a href='logout.php'> Logout</a> ";
         ?>
     </body>
