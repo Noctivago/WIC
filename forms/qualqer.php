@@ -90,19 +90,15 @@
                         }
                         ?>
                     </div>
-
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
 
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-sm-5">
-
                             <div class="form-box">
                                 <div class="form-top">
-
                                 </div>
                                 <div class="form-bottom">
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
@@ -110,7 +106,6 @@
                                             <h4 <?php echo $msg; ?></h4>
                                             <label class="sr-only" for="form-username">Username</label>
                                             <input type="email" name="username" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required autofocus>
-
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-password">Password</label>
@@ -120,35 +115,19 @@
                                     </form>
                                 </div>
                             </div>
-
                         </div>
-
                         <!--                        <div class="col-sm-1 middle-border"></div>-->
                         <div class="col-sm-1"></div>
 
                         <div class="col-sm-5">
-
-
-
                         </div>
                     </div>
 
                 </div>
             </div>
-
         </div>
-
         <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-sm-8 col-sm-offset-2">
-                    </div>
-
-                </div>
-            </div>
-        </footer>
+        
 
         <!-- Javascript -->
         <script src="../assets/js/jquery-1.11.1.min.js"></script>
