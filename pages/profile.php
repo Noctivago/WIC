@@ -12,6 +12,7 @@ include_once ('session.php');
 
         <?php
         echo 'Welcome ' . $_SESSION['username'] . '<br>';
+        echo 'Profile ' . '<br>';
 #echo "Login Success";
         echo "<a href='logout.php'> Logout</a> ";
         ?>
