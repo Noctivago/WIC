@@ -106,10 +106,10 @@
                                 <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                     <div class="form-group">
                                         <h4 <?php echo $msg; ?></h4>
-                                        <input type="text" id = "permission" name="permission" placeholder="type permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
+                                        <input type="text" id = "role" name="role" placeholder="type Role description..." class="form-username form-control" id="permissiondescription" required autofocus>
                                     </div>
                                     <br>
-                                    <button type="submit" class="btn" name="addOrgPermission">Add permission!</button>
+                                    <button type="submit" class="btn" name="addRole">Add Role!</button>
                                 </form>
                             </div>
                             <br>
@@ -118,11 +118,11 @@
                                 <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                     <div class="form-group">
                                         <h4 <?php echo $msg; ?></h4>
-                                        <input type="text" id = "permission" name="permission" placeholder="type permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
+                                        <input type="text" id = "permission" name="permission" placeholder="type Permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
                                     </div>
                                     <input type="checkbox" id = "permissionOrg" name="permissionOrg" value="1" /> Organization Permission?
                                     <br>
-                                    <button type="submit" class="btn" name="addOrgPermission">Add permission!</button>
+                                    <button type="submit" class="btn" name="addPermission">Add permission!</button>
                                 </form>
                             </div>
                         </div>
