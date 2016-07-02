@@ -238,6 +238,6 @@ function DB_getCityOnSelect() {
     $id = 0;
     $rows = sql($pdo, "SELECT * FROM [dbo].[City] WHERE [Id] > ?", array($id), "rows");
     foreach ($rows as $row) {
-        echo "<option value='" . $row['Id'] . "'>" . $row['Name'] . "</option>";
+        echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
     }
 }
