@@ -15,13 +15,12 @@ include_once ('session.php');
         echo 'Welcome ' . $_SESSION['username'] . '<br>';
         echo 'Profile ' . '<br>';
         echo '<br>';
-        
+        echo '<input list="cities" name="city">';
+        echo '<datalist id="cities">';
+        DB_getCityOnSelect();
+        echo '</datalist>';
         #echo "Login Success";
         echo "<a href='logout.php'> Logout</a> ";
         ?>
-        <input list="cities" name="city">;
-        <datalist id="cities">;
-        <? DB_getCityOnSelect(); ?>
-        </datalist>
     </body>
 </html>
