@@ -108,7 +108,7 @@
                                             <h4 <?php echo $msg; ?></h4>
                                             <input type="text" name="permission" placeholder="type permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
                                         </div>
-                                        <input type="checkbox" name="permissionOrg" value="permissionOrg" />Organization Permission?
+                                        <input class="checkbox" type="checkbox" name="permissionOrg" value="permissionOrg" /> Organization Permission?
                                         <br>
                                         <button type="submit" class="btn" name="addOrgPermission">Add permission!</button>
                                     </form>
