@@ -111,8 +111,10 @@
 	                        			<h3>Login to our site</h3>
 	                            		<p>Enter username and password to log on:</p>
                                                 
-	                        		
->
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-key"></i>
+	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
 				                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
