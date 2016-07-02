@@ -97,6 +97,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-5">
+                            <p>Permissions:</p>
                             <div class="form-box">
                                 <div class="form-top">
                                 </div>
@@ -127,7 +128,7 @@
             </div>
         </div>
         <!-- Footer -->
-        
+
 
         <!-- Javascript -->
         <script src="../assets/js/jquery-1.11.1.min.js"></script>
