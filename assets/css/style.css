@@ -7,6 +7,7 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
+    position: absolute;
 }
 
 strong { font-weight: 500; }
