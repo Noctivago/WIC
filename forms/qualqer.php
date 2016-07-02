@@ -33,8 +33,8 @@
 
     </head>
 
-    <body>
-
+    <body  onload="readOrganizationPermissons()>
+        
         <!-- Top content -->
         <div class="top-content">
 
@@ -121,6 +121,7 @@
 
                         <div class="col-sm-5">
                             <p>Available Permissions</p>
+                            <div id="loadPermissionOrg"></div>
                         </div>
                     </div>
 
