@@ -68,7 +68,7 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-                                                                                    <div class="col-sm-5">
+                                                                                    <div class="container">
  <?php
             if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                 try {
