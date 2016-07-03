@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
 
-        <script src="../js/RolePermission.js" type="text/javascript"></script>
+        <script src="RolePermission.js" type="text/javascript"></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
