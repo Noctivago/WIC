@@ -34,9 +34,6 @@
     </head>
 
     <body  onload="readPermission()" >
-        < !-- Top content -- >
-        < div class ="top-content">
-
         <div class="inner-bg">
             <div class="container">
                 <div class="container">
