@@ -29,8 +29,10 @@ function addPermission() {
     var permissionOrg = $("#Org").val();
     if (permissionOrg === 'OP')
     {
+        alert("TRUE");
         permissionOrg = 1;
     } else {
+        alert("FALSE");
         permissionOrg = 0;
     }
     var arg = 'addPermission';
