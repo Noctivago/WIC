@@ -54,7 +54,7 @@ if ($arg === 'addRole') {
     }
     $permissionOrg = (filter_var($_POST ['permissionOrg'], FILTER_SANITIZE_STRING));
     try {
-        sql($pdo, "INSERT INTO [dbo].[Permission] ([Name], [Enabled], [Organization]) VALUES (?, ?, ?)", array($role, '1', $permissionOrg));
+        sql($pdo, "INSERT INTO [dbo].[Permission] ([Name], [Enabled], [Organization]) VALUES (?, ?, ?)", array($permission, '1', $permissionOrg));
         #echo 'USER ' . $role . ' ADDED!';
     } catch (Exception $ex) {
         echo "ERROR!";
