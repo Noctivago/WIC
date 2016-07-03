@@ -10,7 +10,7 @@ function addRole() {
         $.ajax({
             type: "POST",
             //../forms/RolePermissionSubmit.php
-            url: "../forms/RolePermissionSubmit.php",
+            url: "RolePermissionSubmit.php",
             data: dataString,
             cache: false,
             sucess: function (result) {
@@ -33,7 +33,7 @@ function readRole() {
     var dataString = 'arg=' + arg;
     $.ajax({
         type: "POST",
-        url: "../forms/RolePermissionSubmit.php",
+        url: "RolePermissionSubmit.php",
         data: dataString,
         cache: false,
         sucess: function (result) {
@@ -52,7 +52,7 @@ function readPermission() {
     var dataString = 'arg=' + arg;
     $.ajax({
         type: "POST",
-        url: "../forms/RolePermissionSubmit.php",
+        url: "RolePermissionSubmit.php",
         data: dataString,
         cache: false,
         sucess: function (result) {
