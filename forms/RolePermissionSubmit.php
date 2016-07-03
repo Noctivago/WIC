@@ -15,39 +15,9 @@ if ($arg === 'addRole') {
         echo "ERROR!";
     }
 } else if ($arg === 'readAllRole') {
-    try {
-        //$id = 0;
-//        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [id] > ?", array('0'), "rows");
-//        echo "<table><tr><th>ID</th><th>Name</th><th>Enabled?</th></tr>";
-//        foreach ($rows as $row) {
-//            echo "<tr>";
-//            echo "<td>" . $row['id'] . "</td>";
-//            echo "<td>" . $row['Name'] . "</td>";
-//            echo "<td>" . $row['Enabled'] . "</td>";
-//            echo "<tr>";
-//        }
-//        echo "</table>";
-        echo 'READING ROLES';
-    } catch (Exception $exc) {
-        echo 'ERROR READING ROLES';
-    }
+    echo DB_getRoles($pdo);
 } else if ($arg === 'readAllPermission') {
-    try {
-        //$id = 0;
-        $rows = sql($pdo, "SELECT * FROM [dbo].[Permission] WHERE [Id] > ?", array('0'), "rows");
-        echo "<table><tr><th>ID</th><th>Name</th><th>Enabled?</th><th>Organization?</th></tr>";
-        foreach ($rows as $row) {
-            echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
-            echo "<td>" . $row['Name'] . "</td>";
-            echo "<td>" . $row['Enabled'] . "</td>";
-            echo "<td>" . $row['Organization'] . "</td>";
-            echo "<tr>";
-        }
-        echo "</table>";
-    } catch (Exception $exc) {
-        echo 'ERROR READING PERMISSIONS';
-    }
+    echo DB_getPermissions($pdo);
 } else if ($arg === 'addPermission') {
     $permission = (filter_var($_POST ['permission'], FILTER_SANITIZE_STRING));
     $permissionOrg = (filter_var($_POST ['permissionOrg'], FILTER_SANITIZE_STRING));

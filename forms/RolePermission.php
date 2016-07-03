@@ -1,3 +1,6 @@
+<?php
+include_once '../db/conn.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,7 +96,7 @@
                         </div>
                         <div>
                             <p>Available Permissions</p>
-                            <div id="loadPermission">LOAD PERMISSION</div>
+                            <div id="loadPermission"></div>
                         </div>
                     </div>
                 </div>
