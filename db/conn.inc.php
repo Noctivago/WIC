@@ -272,11 +272,12 @@ function DB_getPermissions($pdo) {
 
 function DB_getRoles($pdo) {
     try {
-        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [id] > ?", array('0'), "rows");
+        //$id = 0;
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [Id] > ?", array('0'), "rows");
         echo "<table><tr><th>ID</th><th>Name</th><th>Enabled?</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
-            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Name'] . "</td>";
             echo "<td>" . $row['Enabled'] . "</td>";
             echo "<tr>";
