@@ -33,7 +33,7 @@
 
     </head>
 
-    <body  onload="readPermission()" >
+    <body  onload="readRole()" >
         <div class="inner-bg">
             <div class="container">
                 <div class="container">
