@@ -74,7 +74,7 @@
                                     <input type="text" id = "permission" name="permission" placeholder="type Permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
                                 </div>
                                 <!--< N BUSCA VALOR -->
-                                <input type="checkbox" name="Org" value="1"> Organization Permission<br>
+                                <input type="checkbox" id="Org" name="Org" value="1"> Organization Permission<br>
 
                                 <!--<input type="checkbox" id = "permissionOrg" name="permissionOrg" value="1" /> Organization Permission?-->
                                 <br>
