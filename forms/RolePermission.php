@@ -73,8 +73,8 @@
                                     <h4 <?php echo $msg; ?></h4>
                                     <input type="text" id = "permission" name="permission" placeholder="type Permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
                                 </div>
-                                <input type="radio" name="Org" value="1"> Organization Permission<br>
-                                <input type="radio" name="Org" value="0"> Role Permission<br>
+                                <input type="radio" id = "Org" name="Org" value="1"> Organization Permission<br>
+                                <input type="radio" id = "Org" name="Org" value="0"> Role Permission<br>
 
                                 <!--<input type="checkbox" id = "permissionOrg" name="permissionOrg" value="1" /> Organization Permission?-->
                                 <br>
