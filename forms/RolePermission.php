@@ -36,7 +36,7 @@ include_once '../db/conn.inc.php';
 
     </head>
 
-    <body  onload="readRole(), readPermission()" >
+    <body  onload="readRolePermission()" >
         <div class="inner-bg">
             <div class="container">
                 <div class="container">

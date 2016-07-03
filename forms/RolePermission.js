@@ -96,3 +96,8 @@ function readPermission() {
 
     return false;
 }
+
+function readRolePermission() {
+    readPermission();
+    readRole();
+}
