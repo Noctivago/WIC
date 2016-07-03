@@ -47,6 +47,7 @@ function readRole() {
 }
 
 function readPermission() {
+    alert('readPermission');
     var arg = 'readAllPermission';
     var dataString = 'arg=' + arg;
     $.ajax({
