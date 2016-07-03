@@ -29,7 +29,7 @@ function addPermission() {
     var permissionOrg = 0;
     if (document.getElementById("Org").checked = true)
     {
-        var permissionOrg = 1;
+        permissionOrg = 1;
     }
     var arg = 'addPermission';
     var dataString = 'permission=' + permission + '&permissionOrg=' + permissionOrg + '&arg=' + arg;
