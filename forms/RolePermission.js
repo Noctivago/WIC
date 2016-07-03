@@ -38,7 +38,7 @@ function addPermission() {
     var arg = 'addPermission';
     var dataString = 'permission=' + permission + '&permissionOrg=' + permissionOrg + '&arg=' + arg;
     alert(dataString);
-    if (role === '') {
+    if (permission === '') {
         alert('Please filld the fields!');
     } else
     {
@@ -69,9 +69,9 @@ function readRole() {
         data: dataString,
         cache: false,
         sucess: function (result) {
+            alert(result);
             var ajaxDisplay = document.getElementById('loadRole');
             ajaxDisplay.innerHTML = result;
-            alert(result);
         }
     });
     return false;
@@ -88,9 +88,9 @@ function readPermission() {
         data: dataString,
         cache: false,
         sucess: function (result) {
+            alert(result);
             var ajaxDisplay = document.getElementById('loadPermission');
             ajaxDisplay.innerHTML = result;
-            alert(result);
         }
     });
     return false;
