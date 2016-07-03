@@ -27,7 +27,8 @@ function addRole() {
 function addPermission() {
     var permission = $("#permission").val();
     var permissionOrg = 0;
-    if (document.getElementById("Org").checked = true)
+    var status = document.getElementById("Org").checked = true;
+    if (status)
     {
         permissionOrg = 1;
     }
