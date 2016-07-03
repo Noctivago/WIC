@@ -26,7 +26,7 @@ function addRole() {
 
 function addPermission() {
     var permission = $("#permission").val();
-    var permissionOrg = $("#permissionOrg").val();
+    var permissionOrg = $("#Org").val();
     var arg = 'addPermission';
     var dataString = 'permission=' + permission + '&permissionOrg=' + permissionOrg + '&arg=' + arg;
     alert(dataString);

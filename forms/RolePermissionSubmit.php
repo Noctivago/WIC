@@ -47,14 +47,14 @@ if ($arg === 'addRole') {
     }
 } else if ($arg === 'addPermission') {
     $permission = (filter_var($_POST ['permission'], FILTER_SANITIZE_STRING));
-    if (isset($_POST ['permissionOrg'])) {
-        $permissionOrg = '1';
-    } else {
-        $permissionOrg = '0';
-    }
     $permissionOrg = (filter_var($_POST ['permissionOrg'], FILTER_SANITIZE_STRING));
+    if ($permissionOrg == '1') {
+        $p = '1';
+    } else {
+        $p = '0';
+    }
     try {
-        sql($pdo, "INSERT INTO [dbo].[Permission] ([Name], [Enabled], [Organization]) VALUES (?, ?, ?)", array($permission, '1', $permissionOrg));
+        sql($pdo, "INSERT INTO [dbo].[Permission] ([Name], [Enabled], [Organization]) VALUES (?, ?, ?)", array($permission, '1', $p));
         #echo 'USER ' . $role . ' ADDED!';
     } catch (Exception $ex) {
         echo "ERROR!";
