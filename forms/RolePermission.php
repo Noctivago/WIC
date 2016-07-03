@@ -74,7 +74,7 @@
                                     <input type="text" id = "permission" name="permission" placeholder="type Permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
                                 </div>
                                 <!--< N BUSCA VALOR -->
-                                <select name="Org" id="Org" required="required">
+                                <select class="form-control" name="Org" id="Org" required="required">
                                     <option value="OP">Organization Permission</option>
                                     <option value="RP">Role Permission</option>
                                 </select>
