@@ -15,7 +15,7 @@ function addRole() {
             cache: false,
             sucess: function (result) {
                 //var ajaxDisplay = document.getElementById('loadRole');
-                //ajaxDisplay.innerHTML = result;
+                //ajaxDisplay.innerHTML = result; 
                 alert(result);
             }
         });
