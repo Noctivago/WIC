@@ -247,7 +247,6 @@ function DB_getCityOnSelectByCityName($pdo, $cityName) {
     $rows = sql($pdo, "SELECT * FROM [dbo].[City] WHERE [Name] Like ?%", array($cityName), "rows");
     foreach ($rows as $row) {
         echo "<option value=" . $row['Name'] . "></option>";
-        //echo $row['Id'] . ">" . $row['Name'];
     }
 }
 
@@ -283,6 +282,47 @@ function DB_getRoles($pdo) {
             echo "<tr>";
         }
         echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING ROLES';
+    }
+}
+
+function DB_getCategoryAsTable($pdo) {
+    try {
+        //$id = 0;
+        $rows = sql($pdo, "SELECT [Id]
+      ,[Name]
+      ,[Image]
+      ,[Image_Path]
+      ,[Enabled]
+        FROM [dbo].[Category] WHERE [Id] > ?", array('0'), "rows");
+        echo "<table><tr><th>ID</th><th>Name</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Name'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING ROLES';
+    }
+}
+
+function DB_getCategoryAsSelect($pdo) {
+    try {
+        //$id = 0;
+        $rows = sql($pdo, "SELECT [Id]
+        ,[Name]
+        ,[Image]
+        ,[Image_Path]
+        ,[Enabled]
+        FROM [dbo].[Category] WHERE [Id] > ?", array('0'), "rows");
+        echo '<select>';
+        foreach ($rows as $row) {
+            echo DB_getCityOnSelect($pdo);
+        }
+        echo '</select>';
     } catch (Exception $exc) {
         echo 'ERROR READING ROLES';
     }
