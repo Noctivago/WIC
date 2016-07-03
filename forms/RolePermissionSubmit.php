@@ -2,12 +2,6 @@
 
 include_once '../db/conn.inc.php';
 
-
-//// With UPDATE
-//// Call function
-//sql($db, "UPDATE table SET name = ? WHERE id = ?", array($name, $id));
-
-
 $arg = (filter_var($_POST ['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addRole') {
