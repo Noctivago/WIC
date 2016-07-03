@@ -87,12 +87,12 @@ function readPermission() {
         url: "RolePermissionSubmit.php",
         data: dataString,
         cache: false,
-        sucess: function (result) {
-            alert(result);
+        success: function (result) {
             var ajaxDisplay = document.getElementById('loadPermission');
             ajaxDisplay.innerHTML = result;
+            //alert(result);
         }
     });
-    return false;
 
+    return false;
 }
