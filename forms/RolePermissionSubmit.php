@@ -47,7 +47,7 @@ if ($arg === 'addRole') {
     }
 } else if ($arg === 'addPermission') {
     $permission = (filter_var($_POST ['permission'], FILTER_SANITIZE_STRING));
-    if (isset(filter_var($_POST ['permissionOrg'], FILTER_SANITIZE_STRING))) {
+    if (isset($_POST ['permissionOrg'])) {
         $permissionOrg = '1';
     } else {
         $permissionOrg = '0';
