@@ -78,7 +78,7 @@
                                 </div>
                                 <input type="checkbox" id = "permissionOrg" name="permissionOrg" value="1" /> Organization Permission?
                                 <br>
-                                <button type="submit" class="btn" name="addPermission">Add permission!</button>
+                                <button type="submit" class="btn" name="addPermission" onclick="addPermission()">Add permission!</button>
 
                             </div>
                         </div>

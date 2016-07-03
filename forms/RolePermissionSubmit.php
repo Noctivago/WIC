@@ -26,7 +26,7 @@ if ($arg === 'addRole') {
         }
         echo "</table>";
     } catch (Exception $exc) {
-        echo '';
+        echo 'ERROR READING ROLES';
     }
 } else if ($arg === 'readAllPermission') {
     try {
