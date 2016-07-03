@@ -31,6 +31,7 @@ function addPermission() {
 function readRole() {
     var arg = 'readAllRole';
     var dataString = 'arg=' + arg;
+    alert('readRole');
     $.ajax({
         type: "POST",
         url: "RolePermissionSubmit.php",
