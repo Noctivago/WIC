@@ -305,7 +305,7 @@ function DB_getCategoryAsTable($pdo) {
         }
         echo "</table>";
     } catch (Exception $exc) {
-        echo 'ERROR READING ROLES';
+        echo 'ERROR READING CATEGORY TABLE';
     }
 }
 
@@ -324,6 +324,45 @@ function DB_getCategoryAsSelect($pdo) {
         }
         echo '</select>';
     } catch (Exception $exc) {
-        echo 'ERROR READING ROLES';
+        echo 'ERROR READING CATEGORY TABLE';
+    }
+}
+
+function DB_getSubCategoryAsTable($pdo) {
+    try {
+        //$id = 0;
+        $rows = sql($pdo, "SELECT [Id]
+      ,[Name]
+      ,[Category_Id]
+      ,[Enabled]
+        FROM [dbo].[Sub_Category] WHERE [Id] > ?", array('0'), "rows");
+        echo "<table><tr><th>ID</th><th>Name</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Name'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING SUBCATEGORY TABLE';
+    }
+}
+
+function DB_getSubCategoryAsSelect($pdo) {
+    try {
+        //$id = 0;
+        $rows = sql($pdo, "SELECT TOP 1000 [Id]
+      ,[Name]
+      ,[Category_Id]
+      ,[Enabled]
+        FROM [dbo].[Sub_Category] WHERE [Id] > ?", array('0'), "rows");
+        echo '<select>';
+        foreach ($rows as $row) {
+            echo DB_getCityOnSelect($pdo);
+        }
+        echo '</select>';
+    } catch (Exception $exc) {
+        echo 'ERROR READING SUBCATEGORY TABLE';
     }
 }
