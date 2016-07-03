@@ -55,9 +55,6 @@
                     <div class="col-sm-5">
 
                         <div class="form-box">
-                            <div class="form-top">
-                                <!--FORM CHAPT-->
-                            </div>
                             <div class="form-bottom">
                                 <p>Role description:</p>
                                 <div class="form-group">
