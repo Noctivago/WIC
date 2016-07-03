@@ -14,8 +14,8 @@ if ($arg === 'addRole') {
     }
 } else if ($arg === 'readAllRole') {
     try {
-        $id = 0;
-        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [id] > ?", array($id), "rows");
+        //$id = 0;
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [id] > ?", array('0'), "rows");
         echo "<table><tr><th>ID</th><th>Name</th><th>Enabled?</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
@@ -30,8 +30,8 @@ if ($arg === 'addRole') {
     }
 } else if ($arg === 'readAllPermission') {
     try {
-        $id = 0;
-        $rows = sql($pdo, "SELECT * FROM [dbo].[Permission] WHERE [Id] > ?", array($id), "rows");
+        //$id = 0;
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Permission] WHERE [Id] > ?", array('0'), "rows");
         echo "<table><tr><th>ID</th><th>Name</th><th>Enabled?</th><th>Organization?</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
