@@ -49,7 +49,7 @@ if ($arg === 'addRole') {
         }
         echo "</table>";
     } catch (Exception $exc) {
-        echo '';
+        echo 'ERROR READING PERMISSIONS';
     }
 } else if ($arg === 'addPermission') {
     $permission = (filter_var($_POST ['permission'], FILTER_SANITIZE_STRING));
