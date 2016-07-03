@@ -7,5 +7,6 @@ include_once '../db/conn.inc.php';
 
 DB_getCategoryAsTable($pdo);
 DB_getCategoryAsSelect($pdo);
-
+DB_getSubCategoryAsTable($pdo);
+DB_getSubCategoryAsSelect($pdo);
 
