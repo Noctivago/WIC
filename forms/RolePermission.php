@@ -89,11 +89,11 @@
                     <div class="col-sm-5">
                         <div>
                             <p>Available Roles</p>
-                            <div id="loadRole"></div>
+                            <div id="loadRole">LOAD ROLE</div>
                         </div>
                         <div>
                             <p>Available Permissions</p>
-                            <div id="loadPermission"></div>
+                            <div id="loadPermission">LOAD PERMISSION</div>
                         </div>
                     </div>
                 </div>
