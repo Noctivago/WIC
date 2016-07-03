@@ -51,6 +51,15 @@ if ($arg === 'addRole') {
     } catch (Exception $exc) {
         echo '';
     }
+} else if ($arg === 'addPermission') {
+    $permission = (filter_var($_POST ['permission'], FILTER_SANITIZE_STRING));
+    $permissionOrg = (filter_var($_POST ['permissionOrg'], FILTER_SANITIZE_STRING));
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Permission] ([Name], [Enabled], [Organization]) VALUES (?, ?, ?)", array($role, '1', $permissionOrg));
+        #echo 'USER ' . $role . ' ADDED!';
+    } catch (Exception $ex) {
+        echo "ERROR!";
+    }
 } else {
     echo "IF -> ELSE -> ERROR!";
 }
