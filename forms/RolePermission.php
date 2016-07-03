@@ -37,54 +37,14 @@
         <div class="inner-bg">
             <div class="container">
                 <div class="container">
-                    <?php
-                    if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
-                        try {
-                            $msg = '';
-                            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                            $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                            $hashPassword = hash('whirlpool', $password);
-                            if (DB_checkIfUserExists($pdo, $email)) {
-                                $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, '1'), "rows");
-                                #$msg ='EMAIL FOUND';
-                                foreach ($rows as $row) {
-                                    if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
-                                        //ADICIONAR PASSWORD
-                                        $_SESSION['valid'] = true;
-                                        $_SESSION['timeout'] = time();
-                                        $_SESSION['id'] = $row['Id'];
-                                        $_SESSION['username'] = $row['Username'];
-                                        $_SESSION['email'] = $row['Email'];
-                                        $_SESSION['password'] = $row['Password'];
-                                        $msg = 'Welcome ' . $row['Username'];
-                                        //SET [Login_failed] = 0
-                                        if (DB_setLoginFailed($pdo, $email)) {
-                                            header('Location: profile.php');
-                                        }
-                                    } else {
-                                        //INC TO BLOCK;
-                                        //SET
-                                        $val = DB_getLoginFailedValue($pdo, $email);
-                                        if ($val < 3) {
-                                            $value = $val + 1;
-                                            DB_setLoginFailed($pdo, $email, $value);
-                                            $msg = 'Wrong username or password';
-                                        } else {
-                                            //BLOCK ACCOUNT
-                                            DB_setLoginFailed($pdo, $email);
-                                            DB_setBlockAccount($pdo, $email);
-                                            $msg = 'Account blocked!';
-                                        }
-                                    }
-                                }
-                            } else {
-                                $msg = 'Wrong username or password';
-                            }
-                        } catch (Exception $ex) {
-                            echo "ERROR!";
-                        }
-                    }
-                    ?>
+
+
+
+
+
+
+
+
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 text">
@@ -100,26 +60,26 @@
                             </div>
                             <div class="form-bottom">
                                 <p>Role description:</p>
-                                <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                                    <div class="form-group">
-                                        <h4 <?php echo $msg; ?></h4>
-                                        <input type="text" id = "role" name="role" placeholder="type Role description..." class="form-username form-control" id="permissiondescription" required autofocus>
-                                    </div>
-                                    <button type="submit" class="btn" name="addRole" onclick="addRole()">Add Role!</button>
-                                </form>
+
+                                <div class="form-group">
+                                    <h4 <?php echo $msg; ?></h4>
+                                    <input type="text" id = "role" name="role" placeholder="type Role description..." class="form-username form-control" id="permissiondescription" required autofocus>
+                                </div>
+                                <button type="submit" class="btn" name="addRole" onclick="addRole()">Add Role!</button>
+
                             </div>
                             <br>
                             <div class="form-bottom">
                                 <p>Permission description:</p>
-                                <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                                    <div class="form-group">
-                                        <h4 <?php echo $msg; ?></h4>
-                                        <input type="text" id = "permission" name="permission" placeholder="type Permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
-                                    </div>
-                                    <input type="checkbox" id = "permissionOrg" name="permissionOrg" value="1" /> Organization Permission?
-                                    <br>
-                                    <button type="submit" class="btn" name="addPermission">Add permission!</button>
-                                </form>
+
+                                <div class="form-group">
+                                    <h4 <?php echo $msg; ?></h4>
+                                    <input type="text" id = "permission" name="permission" placeholder="type Permission description..." class="form-username form-control" id="permissiondescription" required autofocus>
+                                </div>
+                                <input type="checkbox" id = "permissionOrg" name="permissionOrg" value="1" /> Organization Permission?
+                                <br>
+                                <button type="submit" class="btn" name="addPermission">Add permission!</button>
+
                             </div>
                         </div>
                     </div>
