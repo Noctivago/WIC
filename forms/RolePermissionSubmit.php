@@ -47,6 +47,11 @@ if ($arg === 'addRole') {
     }
 } else if ($arg === 'addPermission') {
     $permission = (filter_var($_POST ['permission'], FILTER_SANITIZE_STRING));
+    if (isset(filter_var($_POST ['permissionOrg'], FILTER_SANITIZE_STRING))) {
+        $permissionOrg = '1';
+    } else {
+        $permissionOrg = '0';
+    }
     $permissionOrg = (filter_var($_POST ['permissionOrg'], FILTER_SANITIZE_STRING));
     try {
         sql($pdo, "INSERT INTO [dbo].[Permission] ([Name], [Enabled], [Organization]) VALUES (?, ?, ?)", array($role, '1', $permissionOrg));
