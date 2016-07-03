@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
 
-
+        <script src="../js/RolePermission.js" type="text/javascript"></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,11 +33,11 @@
 
     </head>
 
-    <body  onload="readOrganizationPermissons() >
-                    < !-- Top content -- >
-                    < div class ="top-content">
+    <body  onload="readPermission()" >
+        < !-- Top content -- >
+        < div class ="top-content">
 
-           <div class="inner-bg">
+        <div class="inner-bg">
             <div class="container">
                 <div class="container">
                     <?php
@@ -102,13 +102,13 @@
                                 <!--FORM CHAPT-->
                             </div>
                             <div class="form-bottom">
-                                <p>Permission description:</p>
+                                <p>Role description:</p>
                                 <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                     <div class="form-group">
                                         <h4 <?php echo $msg; ?></h4>
                                         <input type="text" id = "role" name="role" placeholder="type Role description..." class="form-username form-control" id="permissiondescription" required autofocus>
                                     </div>
-                                    <button type="submit" class="btn" name="addRole">Add Role!</button>
+                                    <button type="submit" class="btn" name="addRole" onclick="addRole()">Add Role!</button>
                                 </form>
                             </div>
                             <br>
@@ -130,8 +130,14 @@
                     <div class="col-sm-1"></div>
 
                     <div class="col-sm-5">
-                        <p>Available Permissions</p>
-                        <div id="loadPermissionOrg"></div>
+                        <div>
+                            <p>Available Roles</p>
+                            <div id="loadRole"></div>
+                        </div>
+                        <div>
+                            <p>Available Permissions</p>
+                            <div id="loadPermission"></div>
+                        </div>
                     </div>
                 </div>
 
