@@ -2,6 +2,8 @@
 
 include_once '../db/conn.inc.php';
 
+//VERIFICAR SE TEM PERMISSOES
+
 $arg = (filter_var($_POST ['arg'], FILTER_SANITIZE_STRING));
 
 if ($arg === 'addRole') {
@@ -13,20 +15,40 @@ if ($arg === 'addRole') {
         echo "ERROR!";
     }
 } else if ($arg === 'readAllRole') {
+//    try {
+//        //$id = 0;
+//        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [id] > ?", array('0'), "rows");
+//        echo "<table><tr><th>ID</th><th>Name</th><th>Enabled?</th></tr>";
+//        foreach ($rows as $row) {
+//            echo "<tr>";
+//            echo "<td>" . $row['id'] . "</td>";
+//            echo "<td>" . $row['Name'] . "</td>";
+//            echo "<td>" . $row['Enabled'] . "</td>";
+//            echo "<tr>";
+//        }
+//        echo "</table>";
+//    } catch (Exception $exc) {
+//        echo 'ERROR READING ROLES';
+//    }
     try {
-        //$id = 0;
-        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [id] > ?", array('0'), "rows");
-        echo "<table><tr><th>ID</th><th>Name</th><th>Enabled?</th></tr>";
+        $id = 0;
+        //PARA CONTAR -> count
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array($id), "rows");
+        echo "<table><tr><th>ID</th><th>ACCOUNT ENABLED?</th><th>ACTIVATION CODE</th><th>FAILED</th><th>Username</th><th>Password</th><th>Email</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
-            echo "<td>" . $row['id'] . "</td>";
-            echo "<td>" . $row['Name'] . "</td>";
-            echo "<td>" . $row['Enabled'] . "</td>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Account_Enabled'] . "</td>";
+            echo "<td>" . $row['User_Code_Activation'] . "</td>";
+            echo "<td>" . $row['Login_Failed'] . "</td>";
+            echo "<td>" . $row['Username'] . "</td>";
+            echo "<td>" . $row['Password'] . "</td>";
+            echo "<td>" . $row['Email'] . "</td>";
             echo "<tr>";
         }
         echo "</table>";
     } catch (Exception $exc) {
-        echo 'ERROR READING ROLES';
+        echo '';
     }
 } else if ($arg === 'readAllPermission') {
     try {
