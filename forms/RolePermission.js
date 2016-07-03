@@ -75,7 +75,6 @@ function readRole() {
         }
     });
     return false;
-
 }
 
 function readPermission() {
@@ -93,7 +92,6 @@ function readPermission() {
             //alert(result);
         }
     });
-
     return false;
 }
 
