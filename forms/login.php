@@ -146,12 +146,12 @@ if (isset($_SESSION['username'])) {
                                         
                                     </form>
                                 </div>
-                                <p> Don´t have an account?</p>
+                                <h3> Don´t have an account?</3>
                                         <button type="submit" class="btn" href="registration.php">Sign up!</button>
                             </div>
 
                             <div class="social-login">
-                                <h3>...or login with:</h3>
+                                <h5>...or login with:</h5>
                                 <div class="social-login-buttons">
                                     <a class="btn btn-link-1 btn-link-1-facebook" href="login_facebook.php">
                                         <i class="fa fa-facebook"></i> Facebook
