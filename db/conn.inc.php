@@ -237,8 +237,16 @@ function DB_addUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath
 }
 
 function DB_getCityAsSelect($pdo) {
-    $id = 0;
-    $rows = sql($pdo, "SELECT * FROM [dbo].[City] WHERE [Id] > ?", array($id), "rows");
+    $rows = sql($pdo, "  SELECT [City].[Id]
+      ,[City].[Name]
+      ,[City].[Enabled]
+      ,[City].[Number_of_Research]
+      ,[Country_Id]
+	  ,[Country].[Name]
+  FROM [dbo].[City]
+  join [Country]
+  on [Country].[Id] = [City].[Country_Id]
+  where [City].[Enabled]=1 and [Country].[Enabled] = ?", array('1'), "rows");
     foreach ($rows as $row) {
         echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
         //echo $row['Id'] . ">" . $row['Name'];
@@ -392,24 +400,6 @@ function DB_getCityAsSelectByCountryId($pdo, $idState) {
     }
 }
 
-function DB_addOrganizationService($pdo, $nome, $description, $OrgId, $serviceId) {
-    try {
-        $stmt = $pdo->prepare("INSERT INTO Organization_Service (Name, Description, Organization_Id, Date_Created, Enabled, Service_Id)"
-                . " VALUES (:name, :des, :org, :dc, :en, :serId)");
-        $stmt->bindParam(':name', $nome);
-        $stmt->bindParam(':des', $description);
-        $stmt->bindParam(':en', '1');
-        $stmt->bindParam(':serId', $serviceId);
-        $stmt->bindParam(':org', $OrgId);
-        $stmt->bindParam(':dc', 'GET CURRENT DATE FROM QUERY');
-        $stmt->execute();
-        #$dbh = null;
-    } catch (PDOException $e) {
-        print "Error!" . "<br/>";
-        die();
-    }
-}
-
 function DB_addOrganizationServiceBook($pdo, $nome, $description, $OrgId) {
     try {
         $stmt = $pdo->prepare("INSERT INTO Organization_Service_Book (Name, Description, Enabled, Date_Created, Organization_Service_Id) "
@@ -480,5 +470,17 @@ function DB_readSubCategoryAsSelect($pdo) {
         }
     } catch (Exception $exc) {
         echo 'ERROR READING SUBCATEGORY TABLE';
+    }
+}
+
+function DB_addOrganizationService($pdo, $name, $description, $org, $subCategory, $city, $d) {
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Organization_Service] ([Name],[Description],[Organization_Id],"
+                . "[Date_Created],[Enabled],[Views],[Sub_Category_Id],[City_Id])"
+                . " VALUES(?,?,?,?,?,?,?,?)", array($name, $description, $org, $d, 0, 0, $subCategory, $city));
+        echo 'Organization Service added!';
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
     }
 }

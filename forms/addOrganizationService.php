@@ -70,11 +70,11 @@ include_once ('../db/functions.php');
                                             $d = getDateToDB();
                                             $userid = $_SESSION['id'];
                                             $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
-                                            $phone = (filter_var($_POST ['description'], FILTER_SANITIZE_STRING));
-                                            $mobile = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
-                                            $address = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_STRING));
-                                            $facebook = (filter_var($_POST ['city'], FILTER_SANITIZE_STRING));
-                                            $msg = DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
+                                            $description = (filter_var($_POST ['description'], FILTER_SANITIZE_STRING));
+                                            $org = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
+                                            $subCategory = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_STRING));
+                                            $city = (filter_var($_POST ['city'], FILTER_SANITIZE_STRING));
+                                            $msg = DB_addOrganizationService($pdo, $name, $description, $org, $subCategory, $city, $d);
                                         } catch (Exception $ex) {
                                             $msg = "ERROR!";
                                         }
