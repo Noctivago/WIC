@@ -47,7 +47,7 @@ if (isset($_POST['submit']) && !empty($_POST['nome']) && !empty($_POST['city']) 
         <!-- ADRESS -->
         <p>
             <label class="form-control" for="eventDate">EVENT DATE</label>
-            <input class="form-control" type="date" name="eventDate" id="adress" required="required" pattern="[a-Z\s]+$">
+            <input class="form-control" type="text" name="eventDate" id="adress" required="required" pattern="[a-Z\s]+$">
         </p>
         <p>
             <label class="form-control" for="adress">ADRESS</label>
