@@ -89,13 +89,15 @@ include_once ('../db/functions.php');
                                         <div class="form-group">
                                             <input type="text" name="description" placeholder="SERVICE DESCRIPTION" class="form-password form-control" id="description" required>
                                         </div>
-
-                                        <select class="form-group" name="org" id="org" required="required">
-                                            <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
-                                        </select>
-
                                         <div class="form-group">
-                                            <input type="text" name="subCategory" placeholder="SERVICE SUB CATEGORY" class="form-password form-control" id="subCategory" required>
+                                            <select class="form-group" name="org" id="org" required="required">
+                                                <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-group" name="subCategory" id="subCategory" required="required">
+                                                <?= DB_readSubCategoryAsSelect($pdo) ?>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="city" placeholder="SERVICE CITY" class="form-password form-control" id="city" required>

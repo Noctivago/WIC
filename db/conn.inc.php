@@ -469,3 +469,16 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
         echo 'ERROR READING ORGANIZATION TABLE';
     }
 }
+
+function DB_readSubCategoryAsSelect($pdo) {
+    try {
+        $id = 0;
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Sub_Category]"
+                . "WHERE [dbo].[Sub_Category].[Enabled] = ?", array('1'), "rows");
+        foreach ($rows as $row) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING SUBCATEGORY TABLE';
+    }
+}
