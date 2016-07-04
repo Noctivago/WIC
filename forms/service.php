@@ -69,8 +69,7 @@ include_once ('../db/conn.inc.php');
                                             $nome = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
                                             $description = (filter_var($_POST ['description'], FILTER_SANITIZE_STRING));
                                             $subCategoryId = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_STRING));
-                                            $msg = $subCategoryId;
-                                            DB_addService($pdo, $nome, $description, $subCategoryId);
+                                            $msg = DB_addService($pdo, $nome, $description, $subCategoryId);
                                         } catch (Exception $ex) {
                                             echo "ERROR!";
                                         }
