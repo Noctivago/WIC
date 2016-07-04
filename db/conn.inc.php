@@ -500,3 +500,7 @@ function DB_addOrganizationServiceBook($pdo, $name, $description, $d, $orgSerId)
         die();
     }
 }
+
+function DB_readOrganizationServiceBookAsTable($pdo){
+    
+}
