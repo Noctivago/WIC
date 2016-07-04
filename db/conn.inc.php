@@ -341,6 +341,7 @@ function DB_getSubCategoryAsTable($pdo) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Name'] . "</td>";
+            echo "<td>" . $row['Category_Id'] . "</td>";
             echo "<tr>";
         }
         echo "</table>";
