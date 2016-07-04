@@ -54,7 +54,7 @@ include_once ('../db/functions.php');
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>NEW NEWSLETTER PLATAFORM</strong> </h1>
+                            <h1><strong>NEW NEWSLETTER PLATFORM</strong> </h1>
                         </div>
                     </div>
 
@@ -69,7 +69,7 @@ include_once ('../db/functions.php');
                                         try {
                                             $d = getDateToDB();
                                             $userId = $_SESSION['id'];
-                                            $msg = addNewsLetterPlataform($pdo, $userId);
+                                            $msg = addNewsLetterPlatform($pdo, $userId);
                                         } catch (Exception $ex) {
                                             $msg = "ERROR!";
                                         }
@@ -77,7 +77,7 @@ include_once ('../db/functions.php');
                                     ?>	
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                                        <button type="submit" class="btn" name="addNewsPlataform">NEW NEWSLETTER PLATAFORM!</button>
+                                        <button type="submit" class="btn" name="addNewsPlataform">ADD NEWSLETTER PLATFORM!</button>
                                     </form>
                                 </div>
                             </div>
