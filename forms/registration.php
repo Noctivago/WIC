@@ -1,3 +1,8 @@
+<?php
+include_once '../db/conn.inc.php';
+include_once '../db/functions.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,6 +62,32 @@
                         <div class="col-sm-1"></div>
                         	
                         <div class="col-sm-5">
+                            <?php
+            if (isset($_POST['signup']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email'])) {
+                $msg = '';
+                $forgotPassword = '';
+                $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
+                $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+                #echo 'USERNAME ' . $rows['Username'];
+                $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
+                $hashPassword = hash('whirlpool', $password);
+
+                if (DB_checkIfUserExists($pdo, $email)) {
+                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
+                    $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
+                } else {
+                    try {
+                        //GERA CODIGO DE ATIVACAO DE 128car
+                        $code = generateActivationCode();
+                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
+                        $msg = 'USER ' . $username . ' ADDED!';
+                        header('Location: account-confirmation.php');
+                    } catch (Exception $ex) {
+                        echo "ERROR!";
+                    }
+                }
+            }
+            ?>
                         	
                         	<div class="form-box">
                         		<div class="form-top">
@@ -69,25 +100,21 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="registration-form">
-				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-first-name">First name</label>
-				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+				                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
+				                    	<div class="form-group"<h4><?php echo $msg; ?></h4>>
+				                    		<label class="sr-only" for="form-first-name">Username</label>
+                                                                <input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name" required autofocus>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-last-name">Last name</label>
-				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+				                        	<label class="sr-only" for="form-last-name">Password</label>
+                                                                <input type="password" name="form-last-name" placeholder="Password" class="form-last-name form-control" id="form-last-name" required>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+                                                                <input type="email" name="form-email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
 				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
-				                        	<textarea name="form-about-yourself" placeholder="About yourself..." 
-				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
-				                        </div>
-				                        <button type="submit" class="btn">Sign me up!</button>
+                                                        <button type="submit" class="btn" name="signuo">Sign me up!</button>
+                                                        <h2><?php echo $forgotPassword; ?></h2>
 				                    </form>
 			                    </div>
                         	</div>
