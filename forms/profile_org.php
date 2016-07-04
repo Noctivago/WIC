@@ -167,7 +167,10 @@ include_once ('../db/conn.inc.php');
 				                    </form>
 			                    </div>
                         	</div>
+                           		
                            
+                          </div>
+                          
                           <!-- main col right -->
                           <div class="col-sm-4">
                                
