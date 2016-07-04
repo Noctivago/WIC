@@ -63,48 +63,13 @@ include_once ('../db/conn.inc.php');
                             <div class="form-box">
                                 <div class="form-bottom">
                                     <?php
-                                    if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+                                    if (isset($_POST['addService']) && !empty($_POST['name']) && !empty($_POST['description'])) {
                                         $msg = '';
                                         try {
-                                            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                                            $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                                            $hashPassword = hash('whirlpool', $password);
-                                            if (DB_checkIfUserExists($pdo, $email)) {
-                                                $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, '1'), "rows");
-                                                $msg = 'EMAIL FOUND';
-                                                foreach ($rows as $row) {
-                                                    if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
-                                                        //ADICIONAR PASSWORD
-                                                        $_SESSION['valid'] = true;
-                                                        $_SESSION['timeout'] = time();
-                                                        $_SESSION['id'] = $row['Id'];
-                                                        $_SESSION['username'] = $row['Username'];
-                                                        $_SESSION['email'] = $row['Email'];
-                                                        $_SESSION['password'] = $row['Password'];
-                                                        $msg = 'Welcome ' . $row['Username'];
-                                                        //SET [Login_failed] = 0
-                                                        if (DB_setLoginFailed($pdo, $email)) {
-                                                            header('Location: profile.php');
-                                                        }
-                                                    } else {
-                                                        //INC TO BLOCK;
-                                                        //SET
-                                                        $val = DB_getLoginFailedValue($pdo, $email);
-                                                        if ($val < 3) {
-                                                            $value = $val + 1;
-                                                            DB_setLoginFailed($pdo, $email, $value);
-                                                            $msg = 'Wrong username or password';
-                                                        } else {
-                                                            //BLOCK ACCOUNT
-                                                            DB_setLoginFailed($pdo, $email);
-                                                            DB_setBlockAccount($pdo, $email);
-                                                            $msg = 'Account blocked!';
-                                                        }
-                                                    }
-                                                }
-                                            } else {
-                                                $msg = 'Wrong username or password';
-                                            }
+                                            $nome = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
+                                            $description = (filter_var($_POST ['description'], FILTER_SANITIZE_STRING));
+                                            $subCategoryId = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_NUMBER_INT));
+                                            $msg = DB_addService($pdo, $nome, $description, $subCategoryId);
                                         } catch (Exception $ex) {
                                             echo "ERROR!";
                                         }
@@ -113,21 +78,17 @@ include_once ('../db/conn.inc.php');
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
-
-                                            <label class="sr-only" for="form-username">Username</label>
-                                            <input type="text" name="name" placeholder="youremail@email.com" class="form-username form-control" id="form-name" required autofocus>
-
+                                            <input type="text" name="name" placeholder="SERVICE NAME" class="form-username form-control" id="form-name" required autofocus>
                                         </div>
                                         <div class="form-group">
-                                            <label class="sr-only" for="form-password">DESCRIPTION</label>
-                                            <input type="text" name="description" placeholder="Password" class="form-password form-control" id="description" required>
+                                            <input type="text" name="description" placeholder="SERVICE DESCRIPTION" class="form-password form-control" id="description" required>
                                         </div>
                                         <div class='form-group'>
-                                            <select class="form-control" name="subCategory" id="subCategory" required="required" onchange="">
+                                            <select class="form-control" name="subCategory" id="subCategory" required="required">
                                                 <?= DB_getSubCategoryAsSelect($pdo) ?> 
                                             </select>
                                         </div>
-                                        <button type="submit" class="btn" name="login">Add Service!</button>
+                                        <button type="submit" class="btn" name="addService">Add Service!</button>
                                     </form>
                                 </div>
                             </div>
