@@ -36,7 +36,8 @@ include_once ('../db/conn.inc.php');
   
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		
+                <link href="../assets/css_profile_org/styles.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
 <div class="wrapper">
