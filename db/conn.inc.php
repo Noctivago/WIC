@@ -482,6 +482,7 @@ function DB_addService($pdo, $nome, $description, $subCategoryId) {
         $stmt->bindParam(':subId', $subCategoryId);
         $stmt->execute();
         #$dbh = null;
+        return 'SERVICE ADDED!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
