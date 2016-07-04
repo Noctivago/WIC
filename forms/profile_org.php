@@ -125,7 +125,7 @@ include_once ('../db/conn.inc.php');
                 <!-- /top nav -->
               
                 <div class="padding">
-                    <div class="full col-sm-9">
+                    <div class="full col-sm-7">
                       
                         <!-- content -->                      
                       	<div class="row">
