@@ -127,13 +127,13 @@ include_once ('../db/conn.inc.php');
               
                 <div class="padding">
                     <div class="full col-sm-9">
-                        <div class="col-sm-5">
                       
                         <!-- content -->                      
                       	<div class="row">
                           
                          <!-- main col left --> 
                           <div class="col-sm-5">
+                        	
                         	<div class="form-box">
                         		<div class="form-top">
 	                        		<div class="form-top-left">
