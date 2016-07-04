@@ -66,7 +66,20 @@ include_once '../db/functions.php';
                         <div class="col-sm-1"></div>
                         	
                         <div class="col-sm-5">
-                            <?php
+
+                        	
+                        	<div class="form-box">
+                        		<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Sign up now</h3>
+	                            		<p>Fill in the form below to get instant access:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-pencil"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+<?php
             if (isset($_POST['signup']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email'])) {
                 $msg = '';
                 $forgotPassword = '';
@@ -92,18 +105,6 @@ include_once '../db/functions.php';
                 }
             }
             ?>
-                        	
-                        	<div class="form-box">
-                        		<div class="form-top">
-	                        		<div class="form-top-left">
-	                        			<h3>Sign up now</h3>
-	                            		<p>Fill in the form below to get instant access:</p>
-	                        		</div>
-	                        		<div class="form-top-right">
-	                        			<i class="fa fa-pencil"></i>
-	                        		</div>
-	                            </div>
-	                            <div class="form-bottom">
 				                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
 				                    	<div class="form-group"<h4><?php echo $msg; ?></h4>>
 				                    		<label class="sr-only" for="form-first-name">Username</label>
