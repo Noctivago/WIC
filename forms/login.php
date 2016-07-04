@@ -67,13 +67,13 @@ if (isset($_SESSION['username'])) {
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-8 col-sm-offset-2 text">
 
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
                                         <p>Login to our site</p>
-                                        <p>Enter your EMAIL and password to log on:</p>
+                                        <p>Enter your Email and Password to log on:</p>
 
                                     </div>
                                     <div class="form-top-right">
