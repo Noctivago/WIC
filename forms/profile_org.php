@@ -178,7 +178,7 @@ include_once ('../db/conn.inc.php');
                           </div>
                           
                           <!-- main col right -->
-                          <div class="col-sm-9">
+                          <div class="col-sm-1">
                                <div class="panel panel-default">
                                  <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootply Editor &amp; Code Library</h4></div>
                                   <div class="panel-body">
