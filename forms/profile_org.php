@@ -143,9 +143,9 @@ include_once ('../db/conn.inc.php');
       <h3>Personal info</h3>
       <form class="form-horizontal" role="form">
         <div class="form-group">
-          <label class="col-lg-3 control-label">First name:</label>
+          <label class="col-lg-3 control-label">User:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="Jane" type="text">
+            <input class="form-control" type="text">
           </div>
         </div>
         <div class="form-group">
