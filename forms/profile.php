@@ -22,6 +22,8 @@ include_once ('../db/conn.inc.php');
         echo '<br>';
         echo "<a href='addOrganizationServiceBook.php'> AddOrgServiceBook</a> ";
         echo '<br>';
+        echo "<a href='addNewsletterPlataform.php'> addNewsletterPlataform</a> ";
+        echo '<br>';
         echo "<a href='logout.php'> Logout</a> ";
         ?>
         

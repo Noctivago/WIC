@@ -516,7 +516,7 @@ function DB_addOrganizationServiceBook($pdo, $name, $description, $d, $orgSerId)
 }
 
 function DB_readOrganizationServiceBookAsTable($pdo, $userId) {
-     try {
+    try {
         $id = 0;
         $rows = sql($pdo, "SELECT [Organization_Service_Book].[Id] AS OSBID
       ,[Organization_Service_Book].[Name] AS OSBNAME
@@ -541,5 +541,16 @@ function DB_readOrganizationServiceBookAsTable($pdo, $userId) {
         echo "</table>";
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION SERVICE BOOK TABLE';
+    }
+}
+
+function addNewsLetterPlataform($pdo, $userId) {
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Plataform_Newsletter] ([User_Id], [Newsletter_ID]) VALUES(?,?,?)"
+                . "", array($userId, 1, 1));
+        echo 'Sucessufuly added to Plataform Newsletter!';
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
     }
 }
