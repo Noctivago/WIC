@@ -438,10 +438,10 @@ function DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $fa
     }
 }
 
-function DB_readOrganizationAsTable($pdo) {
+function DB_readOrganizationAsTable($pdo, $userId) {
     try {
         $id = 0;
-        $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]=1", array($id), "rows");
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
         echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
