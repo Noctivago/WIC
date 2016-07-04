@@ -125,7 +125,7 @@ include_once ('../db/conn.inc.php');
                 <!-- /top nav -->
               
                 <div class="padding">
-                    <div class="full col-sm-7">
+                    <div class="full col-sm-9">
                       
                         <!-- content -->                      
                       	<div class="row">
@@ -133,25 +133,18 @@ include_once ('../db/conn.inc.php');
                          <!-- main col left --> 
                          <div class="col-sm-9">
                            
-                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="registration-form">
-				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-first-name">First name</label>
-				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-last-name">Last name</label>
-				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
-				                        	<textarea name="form-about-yourself" placeholder="About yourself..." 
-				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
-				                        </div>
+                              <div class="panel panel-default">
+                                <div class="panel-thumbnail"><img src="/assets/example/bg_5.jpg" class="img-responsive"></div>
+                                <div class="panel-body">
+                                  <p class="lead">Urbanization</p>
+                                  <p>45 Followers, 13 Posts</p>
+                                  
+                                  <p>
+                                    <img src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s28" width="28px" height="28px">
+                                  </p>
+                                </div>
+                              </div>
+
                            
                               <div class="panel panel-default">
                                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootstrap Examples</h4></div>
@@ -185,7 +178,7 @@ include_once ('../db/conn.inc.php');
                           </div>
                           
                           <!-- main col right -->
-                          <div class="col-sm-7">
+                          <div class="col-sm-3">
                                <div class="panel panel-default">
                                  <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootply Editor &amp; Code Library</h4></div>
                                   <div class="panel-body">
