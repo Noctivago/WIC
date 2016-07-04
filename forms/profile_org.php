@@ -140,7 +140,7 @@ include_once ('../db/conn.inc.php');
     </div>
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-      <h3>Personal info</h3>
+      <h3>Organization info</h3>
       <form class="form-horizontal" role="form">
         <div class="form-group">
           <label class="col-lg-3 control-label">Username:</label>
