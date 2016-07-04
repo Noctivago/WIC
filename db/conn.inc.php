@@ -424,3 +424,33 @@ function DB_getCountryAsSelect($pdo) {
         die();
     }
 }
+
+function DB_getStateAsSelect($pdo) {
+    try {
+        //global $pdo;
+        $stmt = $pdo->prepare("SELECT * FROM State ORDER BY Name ASC");
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+        }
+        #$dbh = null;
+    } catch (PDOException $e) {
+        echo 'ERROR READING STATE TABLE';
+        die();
+    }
+}
+
+function DB_getCityAsSelect($pdo) {
+    try {
+        //global $pdo;
+        $stmt = $pdo->prepare("SELECT * FROM City ORDER BY Name ASC");
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+        }
+        #$dbh = null;
+    } catch (PDOException $e) {
+        echo 'ERROR READING CITY TABLE';
+        die();
+    }
+}

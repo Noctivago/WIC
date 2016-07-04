@@ -42,8 +42,7 @@ if (isset($_POST['submit']) && !empty($_POST['nome']) && !empty($_POST['city']) 
          <p>
             <label class="form-control" for="state">STATE</label>
             <select class="form-control" name="state" id="state" required="required">
-                <!-- LOAD CITIES 
-                <= load_alpha3_option() ?> -->
+                <?= DB_getStateAsSelect($pdo) ?> 
             </select>
         </p>
         <p>
