@@ -508,8 +508,8 @@ function DB_readOrganizationServiceAsSelect($pdo, $userId) {
 function DB_addOrganizationServiceBook($pdo, $name, $description, $d, $orgSerId) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Organization_Service_Book] ([Name],[Description],[Organization_Id],[Date_Created], [Enabled]"
-                . "VALUES(?,?,?,?)", array($name, $description, $$orgSerId, $d, '1'));
-        echo 'Organization Service added!';
+                . "VALUES(?,?,?,?)", array($name, $description, $$orgSerId, $d, 1));
+        echo 'Organization Service Book added!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
