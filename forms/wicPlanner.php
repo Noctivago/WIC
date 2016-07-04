@@ -36,8 +36,7 @@ if (isset($_POST['submit']) && !empty($_POST['nome']) && !empty($_POST['city']) 
         <p>
             <label class="form-control" for="country">COUNTRY</label>
             <select class="form-control" name="country" id="city" required="required">
-                <!-- LOAD CITIES 
-                <= load_alpha3_option() ?> -->
+                <?= DB_getCountryAsSelect($pdo) ?> 
             </select>
         </p>
         <p>
