@@ -73,7 +73,7 @@ ini_set("display_errors", 1);
 	                        	<div class="form-top">
 	                        		<div class="form-top-left">
 	                        			<h3>Login to our site</h3>
-	                            		<p>Enter your eMAIL and password to log on:</p>
+	                            		<p>Enter your EAIL and password to log on:</p>
                                                 
 	                        		</div>
 	                        		<div class="form-top-right">
