@@ -30,8 +30,10 @@ include_once ('../db/conn.inc.php');
 		<title>Faceboot - A Facebook style template for Bootstrap</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		
+                <link href="../assets/css_profile_org/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 		<!--[if lt IE 9]>
+  
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
