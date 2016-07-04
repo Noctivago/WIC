@@ -112,12 +112,6 @@ include_once ('../db/conn.inc.php');
             <div class="container">
                 <div class="row">
 
-                    <div class="col-sm-8 col-sm-offset-2">
-                        <div class="footer-border"></div>
-                        <p>Made by <a href="http://google.pt" target="_blank"><strong>Easy Solutions</strong></a> 
-                            having a lot of fun. <i class="fa fa-smile-o"></i></p>
-                    </div>
-
                 </div>
             </div>
         </footer>
