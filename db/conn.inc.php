@@ -435,7 +435,7 @@ function DB_getStateAsSelect($pdo) {
         }
         #$dbh = null;
     } catch (PDOException $e) {
-        echo 'ERROR READING STATE TABLE';
+        echo 'ERROR READING COUNTRY TABLE';
         die();
     }
 }
