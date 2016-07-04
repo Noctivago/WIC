@@ -111,7 +111,7 @@ include_once ('../db/conn.inc.php');
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                       <li class="dropdown">
-                        <a href="../assets/img/logo.png" src="../assets/img/logo.png" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+                        <a href=""  class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
                         <ul class="dropdown-menu">
                           <li><a href="">More</a></li>
                           <li><a href="">More</a></li>

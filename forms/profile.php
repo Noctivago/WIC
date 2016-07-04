@@ -5,7 +5,7 @@ include_once ('../db/conn.inc.php');
 #session_start();
 ?>
 
-<!--<html>
+<html>
     <head>
         <title> Home </title>
     </head>
@@ -21,4 +21,4 @@ include_once ('../db/conn.inc.php');
         ?>
         
     </body>
-</html>-->
+</html>
