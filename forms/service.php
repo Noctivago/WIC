@@ -78,7 +78,7 @@ include_once ('../db/conn.inc.php');
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
-                                            <input type="text" name="name" placeholder="SERVICE NAME" class="form-username form-control" id="form-name" required autofocus>
+                                            <input type="text" name="name" placeholder="SERVICE NAME" class="form-username form-control" id="name" required autofocus>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="description" placeholder="SERVICE DESCRIPTION" class="form-password form-control" id="description" required>
