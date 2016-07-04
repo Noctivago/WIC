@@ -43,9 +43,10 @@ if (isset($_POST['submit']) && !empty($_POST['nome']) && !empty($_POST['city']) 
         <p>
             <label class="form-control" for="city">CITY</label>
             <select class="form-control" name="city" id="city" required="required">
-                <?= DB_getCityAsSelect($pdo) ?> 
+
             </select>
         </p>
+        <?DB_getSubCategoryAsTable();?>
         <!-- USER ID FROM COOKIE -->
         <!-- DATE CREATED -->
         <!-- ENABLED -->
