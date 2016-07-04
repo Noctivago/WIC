@@ -148,6 +148,12 @@ include_once ('../db/conn.inc.php');
             <input class="form-control" type="text">
           </div>
         </div>
+           <div class="form-group">
+          <label class="col-lg-3 control-label">Company:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="" type="text">
+          </div>
+        </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Website:</label>
           <div class="col-lg-8">
@@ -161,9 +167,9 @@ include_once ('../db/conn.inc.php');
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-3 control-label">Company:</label>
+          <label class="col-lg-3 control-label">Twitter:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="" type="text">
+            <input class="form-control"  type="text">
           </div>
         </div>
         <div class="form-group">
