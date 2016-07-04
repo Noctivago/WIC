@@ -15,3 +15,8 @@ function generatePassword() {
 function getLength($str) {
     return strlen($str);
 }
+
+function getDateToDB() {
+    $now = new DateTime();
+    return $now->format('Y-m-d H:i:s');
+}
