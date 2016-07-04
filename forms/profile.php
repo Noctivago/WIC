@@ -18,6 +18,8 @@ include_once ('../db/conn.inc.php');
         echo '<br>';
         echo "<a href='addOrganization.php'> AddOrg</a> ";
         echo '<br>';
+        echo "<a href='addOrganizationService.php'> AddOrgService</a> ";
+        echo '<br>';
         echo "<a href='logout.php'> Logout</a> ";
         echo "<a href='main_page.php'> Main Page</a> ";
         ?>
