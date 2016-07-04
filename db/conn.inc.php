@@ -440,10 +440,27 @@ function DB_getStateAsSelect($pdo) {
     }
 }
 
-function DB_getCityAsSelect($pdo) {
+function DB_getStateAsSelectByCountryId($pdo, $idCountry) {
     try {
         //global $pdo;
-        $stmt = $pdo->prepare("SELECT * FROM City ORDER BY Name ASC");
+        $stmt = $pdo->prepare("SELECT * FROM State WHERE Country_Id = :countryID ORDER BY Name ASC");
+        $stmt->bindParam(':countryID', $idCountry);
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+        }
+        #$dbh = null;
+    } catch (PDOException $e) {
+        echo 'ERROR READING CITY TABLE';
+        die();
+    }
+}
+
+function DB_getCityAsSelectByCountryId($pdo, $idState) {
+    try {
+        //global $pdo;
+        $stmt = $pdo->prepare("SELECT * FROM City WHERE State_Id = :stateID ORDER BY Name ASC");
+        $stmt->bindParam(':stateID', $idState);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
