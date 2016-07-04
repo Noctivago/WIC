@@ -516,6 +516,31 @@ function DB_addOrganizationServiceBook($pdo, $name, $description, $d, $orgSerId)
     }
 }
 
-function DB_readOrganizationServiceBookAsTable($pdo) {
-    
+function DB_readOrganizationServiceBookAsTable($pdo, $userId) {
+     try {
+        $id = 0;
+        $rows = sql($pdo, "SELECT [Organization_Service_Book].[Id] AS OSBID
+      ,[Organization_Service_Book].[Name] AS OSBNAME
+      ,[Organization_Service_Book].[Description] AS OSBDES
+      ,[Organization_Service_Book].[Enabled]
+      ,[Organization_Service_Book].[Date_Created]
+      ,[Organization_Service_Id]
+  FROM [dbo].[Organization_Service_Book]
+  join [Organization_Service]
+  on [Organization_Service].[Id] = [Organization_Service_Book].[Organization_Service_Id]
+  join [Organization]
+  on [Organization].[Id] = [Organization_Service].[Organization_Id]
+  where [Organization].[User_Boss] = ?", array($userId), "rows");
+        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Description</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['OSBID'] . "</td>";
+            echo "<td>" . $row['OSBNAME'] . "</td>";
+            echo "<td>" . $row['OSBDES'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING ORGANIZATION SERVICE BOOK TABLE';
+    }
 }
