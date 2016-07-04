@@ -471,3 +471,53 @@ function DB_getCityAsSelectByCountryId($pdo, $idState) {
         die();
     }
 }
+
+function DB_addService($pdo, $nome, $description, $subCategoryId) {
+    try {
+        $stmt = $pdo->prepare("INSERT INTO Service (Name, Description, Enabled, Sub_Category_id) VALUES (:name, :des, :en, :subId)");
+        $stmt->bindParam(':name', $nome);
+        $stmt->bindParam(':des', $description);
+        $stmt->bindParam(':en', '1');
+        $stmt->bindParam(':subId', $subCategoryId);
+        $stmt->execute();
+        #$dbh = null;
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
+    }
+}
+
+function DB_addOrganizationService($pdo, $nome, $description, $OrgId, $serviceId) {
+    try {
+        $stmt = $pdo->prepare("INSERT INTO Organization_Service (Name, Description, Organization_Id, Date_Created, Enabled, Service_Id)"
+                . " VALUES (:name, :des, :org, :dc, :en, :serId)");
+        $stmt->bindParam(':name', $nome);
+        $stmt->bindParam(':des', $description);
+        $stmt->bindParam(':en', '1');
+        $stmt->bindParam(':serId', $serviceId);
+        $stmt->bindParam(':org', $OrgId);
+        $stmt->bindParam(':dc', 'GET CURRENT DATE FROM QUERY');
+        $stmt->execute();
+        #$dbh = null;
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
+    }
+}
+
+function DB_addOrganizationServiceBook($pdo, $nome, $description, $OrgId) {
+    try {
+        $stmt = $pdo->prepare("INSERT INTO Organization_Service_Book (Name, Description, Enabled, Date_Created, Organization_Service_Id) "
+                . "VALUES (:name, :des, :en, :dc, :orgID)");
+        $stmt->bindParam(':name', $nome);
+        $stmt->bindParam(':des', $description);
+        $stmt->bindParam(':en', '1');
+        $stmt->bindParam(':orgID', $OrgId);
+        $stmt->bindParam(':dc', 'GET CURRENT DATE FROM QUERY');
+        $stmt->execute();
+        #$dbh = null;
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
+    }
+}
