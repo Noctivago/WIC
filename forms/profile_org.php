@@ -194,7 +194,7 @@ include_once ('../db/conn.inc.php');
           <label class="col-lg-3 control-label">Country:</label>
           <div class="col-lg-8">
             <div class="ui-select">
-              <select id="user_time_zone" class="form-control">
+              <select id="user_contry" class="form-control">
               </select>
             </div>
           </div>
