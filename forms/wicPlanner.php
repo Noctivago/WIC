@@ -35,14 +35,8 @@ if (isset($_POST['submit']) && !empty($_POST['nome']) && !empty($_POST['city']) 
     <div>
         <p>
             <label class="form-control" for="country">COUNTRY</label>
-            <select class="form-control" name="country" id="city" required="required">
+            <select class="form-control" name="country" id="city" required="required" onchange="">
                 <?= DB_getCountryAsSelect($pdo) ?> 
-            </select>
-        </p>
-        <p>
-            <label class="form-control" for="state">STATE</label>
-            <select class="form-control" name="state" id="state" required="required">
-                <?= DB_getStateAsSelect($pdo) ?> 
             </select>
         </p>
         <p>
