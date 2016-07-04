@@ -490,6 +490,21 @@ function DB_readOrganizationServiceAsTable($pdo, $userId) {
     }
 }
 
+function DB_readOrganizationServiceAsSelect($pdo, $userId) {
+    try {
+        $id = 0;
+        $rows = sql($pdo, "SELECT [Organization_Service].[Id] AS OSI, [Organization_Service].[Name] AS OSNAME, [Organization_Service].[Description] AS OSDES  FROM [dbo].[Organization_Service]
+    join [Organization]
+    on [Organization_Id] = [Organization].[Id]
+    where [Organization].[User_Boss] = ? and [Organization_Service].[Enabled] = 1", array($userId), "rows");
+        foreach ($rows as $row) {
+            echo "<option value='" . htmlspecialchars($row['OSI']) . "'>" . htmlspecialchars($row['OSNAME']) . "</option>";
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING ORGANIZATION SERVICE TABLE';
+    }
+}
+
 function DB_addOrganizationServiceBook($pdo, $name, $description, $d, $orgSerId) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Organization_Service_Book] ([Name],[Description],[Organization_Id],[Date_Created], [Enabled]"
@@ -501,6 +516,6 @@ function DB_addOrganizationServiceBook($pdo, $name, $description, $d, $orgSerId)
     }
 }
 
-function DB_readOrganizationServiceBookAsTable($pdo){
+function DB_readOrganizationServiceBookAsTable($pdo) {
     
 }
