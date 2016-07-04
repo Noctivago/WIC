@@ -82,7 +82,10 @@ ini_set("display_errors", 1);
 	                            </div>
                                     
 <div class="form-bottom">
- <?php
+
+                    </div>
+	                            <div class="form-bottom">
+                                                         <?php
             if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                 try {
                     $msg = '';
@@ -129,10 +132,7 @@ ini_set("display_errors", 1);
                     echo "ERROR!";
                 }
             }
-            ?>
-                    </div>
-	                            <div class="form-bottom">
-                                                        	
+            ?>	
  
 				                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
