@@ -171,7 +171,7 @@ include_once ('../db/conn.inc.php');
                            
                           </div>
                           <!-- main col right -->
-                          <div class="col-sm-0">
+                          <div class="col-sm-3">
                               <h3>TEste</h3>
                           <!-- main col right -->
                           <div class="col-sm-4">
