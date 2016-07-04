@@ -151,7 +151,7 @@ if (isset($_SESSION['username'])) {
                             </div>
 
                             <div class="social-login">
-                                <h5>...or login with:</h5>
+                                <h3>...or login with:</h3>
                                 <div class="social-login-buttons">
                                     <a class="btn btn-link-1 btn-link-1-facebook" href="login_facebook.php">
                                         <i class="fa fa-facebook"></i> Facebook
