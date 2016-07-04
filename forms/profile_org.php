@@ -169,7 +169,6 @@ include_once ('../db/conn.inc.php');
                         	</div>
                            		
                            
-                         
                           </div>
                           
                           <!-- main col right -->
