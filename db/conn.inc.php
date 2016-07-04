@@ -489,13 +489,14 @@ function DB_addOrganizationService($pdo, $name, $description, $org, $subCategory
 function DB_readOrganizationServiceAsTable($pdo, $userId) {
     try {
         $id = 0;
-        $rows = sql($pdo, "SELECT [Organization_Service].[Name] AS OSNAME, [Organization_Service].[Description] AS OSDES  FROM [dbo].[Organization_Service]
+        $rows = sql($pdo, "SELECT [Organization_Service].[Id] AS OSI, [Organization_Service].[Name] AS OSNAME, [Organization_Service].[Description] AS OSDES  FROM [dbo].[Organization_Service]
     join [Organization]
     on [Organization_Id] = [Organization].[Id]
     where [Organization].[User_Boss] = ? and [Organization_Service].[Enabled] = 1", array($userId), "rows");
         echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Description</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
+            echo "<td>" . $row['OSI'] . "</td>";
             echo "<td>" . $row['OSNAME'] . "</td>";
             echo "<td>" . $row['OSDES'] . "</td>";
             echo "<tr>";
