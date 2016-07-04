@@ -12,16 +12,15 @@
     <title>WIC - TESTING PAGE</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="../../assets/assets_main/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="../../assets/assets_main/css/sb-admin.css" rel="stylesheet" type="text/css"/>
 
     <!-- Morris Charts CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet">
+    <link href="../../assets/assets_main/css/plugins/morris.css" rel="stylesheet" type="text/css"/>
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/assets_main/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
