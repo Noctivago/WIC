@@ -266,16 +266,6 @@ include_once ('../db/conn.inc.php');
                             </p>
                           </div>
                         </div>
-                      
-                      <hr>
-                      
-                      <h4 class="text-center">
-                      <a href="http://bootply.com/96266" target="ext">Download this Template @Bootply</a>
-                      </h4>
-                        
-                      <hr>
-                        
-                      
                     </div><!-- /col-9 -->
                 </div><!-- /padding -->
             </div>
