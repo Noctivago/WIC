@@ -134,7 +134,7 @@ include_once ('../db/conn.inc.php');
                           
                          <!-- main col left --> 
                           <div class="col-sm-5">
-                        	
+                        	<div class="form-box">
                         		<div class="form-top">
 	                        		<div class="form-top-left">
 	                        			<h3>Profile</h3>
