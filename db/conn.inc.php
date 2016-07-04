@@ -248,7 +248,7 @@ function DB_getCityAsSelect($pdo) {
   on [Country].[Id] = [City].[Country_Id]
   where [City].[Enabled]=1 and [Country].[Enabled] = ?", array('1'), "rows");
     foreach ($rows as $row) {
-        echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
+        echo "<option value=" . $row['Id'] . ">" . $row['Country']['Name'] . '-' . ['City'].['Name'] . "</option>";
         //echo $row['Id'] . ">" . $row['Name'];
     }
 }
