@@ -126,15 +126,8 @@ include_once ('../db/conn.inc.php');
                 <!-- /top nav -->
               
                 <div class="padding">
-                    <div class="full col-sm-9">
-                      
-                        <!-- content -->                      
-                      	<div class="row">
-                          
-                         <!-- main col left --> 
-                          <div class="col-sm-5">
-                        	
-                        	<div class="container" style="padding-top: 60px;">
+                                            	
+  <div class="container" style="padding-top: 60px;">
   <h1 class="page-header">Edit Profile</h1>
   <div class="row">
     <!-- left column -->
