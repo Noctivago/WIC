@@ -27,7 +27,6 @@ include_once ('../db/conn.inc.php');
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Faceboot - A Facebook style template for Bootstrap</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
@@ -76,7 +75,7 @@ include_once ('../db/conn.inc.php');
             <!-- /sidebar -->
           
             <!-- main right col -->
-            <div class="column col-sm-10 col-xs-11" id="main">
+            <div class="column col-sm-8 col-xs-9" id="main">
                 
                 <!-- top nav -->
               	<div class="navbar navbar-blue navbar-static-top">  
