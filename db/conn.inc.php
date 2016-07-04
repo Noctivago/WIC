@@ -400,23 +400,6 @@ function DB_getCityAsSelectByCountryId($pdo, $idState) {
     }
 }
 
-function DB_addOrganizationServiceBook($pdo, $nome, $description, $OrgId) {
-    try {
-        $stmt = $pdo->prepare("INSERT INTO Organization_Service_Book (Name, Description, Enabled, Date_Created, Organization_Service_Id) "
-                . "VALUES (:name, :des, :en, :dc, :orgID)");
-        $stmt->bindParam(':name', $nome);
-        $stmt->bindParam(':des', $description);
-        $stmt->bindParam(':en', '1');
-        $stmt->bindParam(':orgID', $OrgId);
-        $stmt->bindParam(':dc', 'GET CURRENT DATE FROM QUERY');
-        $stmt->execute();
-        #$dbh = null;
-    } catch (PDOException $e) {
-        print "Error!" . "<br/>";
-        die();
-    }
-}
-
 function DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d) {
     try {
         #$d = getDateToDB();
@@ -503,6 +486,17 @@ function DB_readOrganizationServiceAsTable($pdo, $userId) {
         }
         echo "</table>";
     } catch (Exception $exc) {
-        echo 'ERROR READING ORGANIZATION TABLE';
+        echo 'ERROR READING ORGANIZATION SERVICE TABLE';
+    }
+}
+
+function DB_addOrganizationServiceBook($pdo, $name, $description, $d, $orgSerId) {
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Organization_Service_Book] ([Name],[Description],[Organization_Id],[Date_Created], [Enabled]"
+                . "VALUES(?,?,?,?)", array($name, $description, $$orgSerId, $d, '1'));
+        echo 'Organization Service added!';
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
     }
 }
