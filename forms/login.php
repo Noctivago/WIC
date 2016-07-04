@@ -147,7 +147,7 @@ if (isset($_SESSION['username'])) {
                                     </form>
                                 </div>
                                 <h3> Don´t have an account?</3>
-                                    <button type="submit" class="btn"  onclick="registration.php">Sign up!</button>
+                                    <button type="submit" class="btn"  onClick="document.location.href='registration.php'">Sign up!</button>
                                     <input type="button" class="btn" onClick="document.location.href='registration.php'" />
                             </div>
 
