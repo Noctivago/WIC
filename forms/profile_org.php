@@ -172,7 +172,15 @@ include_once ('../db/conn.inc.php');
                           </div>
                           <!-- main col right -->
                           <div class="col-sm-3">
-                              <h3>TEste</h3>
+                             <div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Profile</h3>
+	                            		<p>Edit your profile</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-pencil"></i>
+	                        		</div>
+	                            </div>
                           <!-- main col right -->
                           <div class="col-sm-4">
                                
