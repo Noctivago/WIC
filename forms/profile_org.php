@@ -168,9 +168,7 @@ include_once ('../db/conn.inc.php');
 			                    </div>
                         	</div>
                           </div>
-                        <!-- main col center -->
-                          <div class="col-sm-2">  
-                        
+                          
                           <!-- main col right -->
                           <div class="col-sm-4">
                                
