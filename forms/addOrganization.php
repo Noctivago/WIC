@@ -53,7 +53,7 @@ include_once ('../db/conn.inc.php');
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>SERVICE ADD</strong> </h1>
+                            <h1><strong>NEW ORGANIZATION</strong> </h1>
                         </div>
                     </div>
 
@@ -71,14 +71,14 @@ include_once ('../db/conn.inc.php');
                                             $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
                                             $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
                                             $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
-                                            $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
-                                            $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
-                                            $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
+                                            $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_URL));
+                                            $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_URL));
+                                            $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_URL));
                                             $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
                                             $website = (filter_var($_POST ['website'], FILTER_SANITIZE_URL));
                                             $msg = DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website);
                                         } catch (Exception $ex) {
-                                            echo "ERROR!";
+                                            $msg = "ERROR!";
                                         }
                                     }
                                     ?>	
