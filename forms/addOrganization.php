@@ -71,11 +71,11 @@ include_once ('../db/conn.inc.php');
                                             $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
                                             $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
                                             $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
-                                            $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_URL));
-                                            $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_URL));
-                                            $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_URL));
+                                            $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
+                                            $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
+                                            $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
                                             $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
-                                            $website = (filter_var($_POST ['website'], FILTER_SANITIZE_URL));
+                                            $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
                                             $msg = DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website);
                                         } catch (Exception $ex) {
                                             $msg = "ERROR!";
