@@ -107,7 +107,7 @@ include_once '../db/conn.inc.php';
             }
             ?>
 				                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
-				                    	<div class="form-group"<h4><?php echo $msg; ?></h4>>
+				                    	<div class="form-group"<h4><?php echo $msg; ?></h4>
 				                    		<label class="sr-only" for="form-first-name">Username</label>
                                                                 <input type="text" name="activateText" placeholder="Place your Ativation code here" class="form-first-name form-control" id="form-first-name" required autofocus>
 				                        </div>
