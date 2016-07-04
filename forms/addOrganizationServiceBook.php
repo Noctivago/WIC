@@ -71,7 +71,7 @@ include_once ('../db/functions.php');
                                             $orgSerId = (filter_var($_POST ['org_ser_id'], FILTER_SANITIZE_STRING));
                                             $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
                                             $description = (filter_var($_POST ['description'], FILTER_SANITIZE_STRING));
-                                            $msg = DB_addOrganizationServiceBook($pdo, $name, $description, $d, $orgSerId) . '->' . $orgSerId;
+                                            $msg = DB_addOrganizationServiceBook($pdo, $name, $description, $d, $orgSerId);
                                         } catch (Exception $ex) {
                                             $msg = "ERROR!";
                                         }
