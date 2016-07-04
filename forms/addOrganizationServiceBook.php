@@ -88,7 +88,7 @@ include_once ('../db/functions.php');
                                         </div>
                                         <div class="form-group">
                                             <select class="form-group" name="org_ser_id" id="org_ser_id" required="required">
-                                                <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
+                                                <?= DB_readOrganizationServiceAsTable($pdo, $_SESSION['id']) ?>
                                             </select>
                                         </div>
                                         <button type="submit" class="btn" name="addOrgSerBook">NEW ORGANIZATION SERVICE BOOK!</button>
