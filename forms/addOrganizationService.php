@@ -102,8 +102,8 @@ include_once ('../db/functions.php');
                                         <div class="form-group">
                                             <select class="form-group" name="city" id="city" required="required">
                                                 <?= DB_getCityAsSelect($pdo) ?>
+                                            </select>
                                         </div>
-
                                         <button type="submit" class="btn" name="addOrgSer">NEW ORGANIZATION SERVICE!</button>
                                     </form>
                                 </div>
