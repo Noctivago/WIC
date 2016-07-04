@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4 portfolio-item">
                 <a href="#">
-                    <img class="img-responsive" width="700" height="400" src="images/a_tasca.jpg" alt="" >
+                    <img class="img-responsive" width="700" height="400" src="../../assets/assets_main/images/a_tasca.jpg" alt="" >
                 </a>
                 <h3>
                     <a href="formu.php">A Tasca</a>
@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="#">
-                    <img class="img-responsive" src="images/carroça.jpg" alt="">
+                    <img class="img-responsive" src="../../assets/assets_main/images/carroça.jpg" alt="">
                 </a>
                 <h3>
                     <a href="#">Carroça</a>
