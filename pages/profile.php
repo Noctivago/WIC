@@ -17,7 +17,7 @@ include_once ('../db/conn.inc.php');
         echo '<br>';
         echo '<datalist>';
         echo '<select>';
-        echo DB_getCityOnSelect($pdo);
+        #echo DB_getCityOnSelect($pdo);
         echo '</select>';
         echo '</datalist>';
         echo '<br>';
