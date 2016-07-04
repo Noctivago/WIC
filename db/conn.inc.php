@@ -358,11 +358,11 @@ function DB_getSubCategoryAsSelect($pdo) {
       ,[Category_Id]
       ,[Enabled]
         FROM [dbo].[Sub_Category] WHERE [Id] > ?", array('0'), "rows");
-        echo '<select>';
+        #echo '<select>';
         foreach ($rows as $row) {
             echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
         }
-        echo '</select>';
+        #echo '</select>';
     } catch (Exception $exc) {
         echo 'ERROR READING SUBCATEGORY TABLE';
     }

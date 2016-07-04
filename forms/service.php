@@ -53,12 +53,7 @@ include_once ('../db/conn.inc.php');
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Sign In </strong> </h1>
-                            <div class="description">
-                                <p>
-                                    Life is all about Celebration... You Can Event!! Try and have fun!
-                                </p>
-                            </div>
+                            <h1><strong>SERVICE ADD</strong> </h1>
                         </div>
                     </div>
 
