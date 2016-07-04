@@ -72,7 +72,7 @@ if (isset($_SESSION['username'])) {
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
-                                        <p>Login to our site</p>
+                                        <h3>Login to our site</h3>
                                         <p>Enter your Email and Password to log on:</p>
 
                                     </div>
