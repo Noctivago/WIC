@@ -475,13 +475,7 @@ function DB_getCityAsSelectByCountryId($pdo, $idState) {
 
 function DB_addService($pdo, $nome, $description, $subCategoryId) {
     try {
-        $stmt = $pdo->prepare("INSERT INTO Service (Name, Description, Enabled, Sub_Category_id) VALUES (:name, :des, :en, :subId)");
-        $stmt->bindParam(':name', $nome);
-        $stmt->bindParam(':des', $description);
-        $stmt->bindParam(':en', '1');
-        $stmt->bindParam(':subId', $subCategoryId);
-        $stmt->execute();
-        #$dbh = null;
+        sql($pdo, "INSERT INTO [dbo].[Service] ([Name], [Description], [Enabled], [Sub_Category_id]) VALUES (?, ?, ?, ?)", array($nome, $description, '1', $subCategoryId));
         return 'SERVICE ADDED!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
