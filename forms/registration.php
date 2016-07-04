@@ -71,7 +71,7 @@ include_once '../db/functions.php';
                         	<div class="form-box">
                         		<div class="form-top">
 	                        		<div class="form-top-left">
-	                        			<p>Sign up now</p>
+	                        			<p>Sign up now!!</p>
 	                            		<p>Fill in the form below to get instant access:</p>
 	                        		</div>
 	                        		<div class="form-top-right">
