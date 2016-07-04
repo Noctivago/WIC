@@ -184,14 +184,7 @@ include_once ('../db/conn.inc.php');
                                   </form>
                                 </div>
                        
-                                    
-                                    
-                                  </div>
-                               </div>
-
-                              
-                            
-                               <div class="panel panel-default">
+                                   <div class="panel panel-default">
                                 <div class="panel-thumbnail"><img src="/assets/example/bg_4.jpg" class="img-responsive"></div>
                                 <div class="panel-body">
                                   <p class="lead">Social Good</p>
@@ -203,8 +196,11 @@ include_once ('../db/conn.inc.php');
                                     <img src="https://lh4.googleusercontent.com/-9Yw2jNffJlE/AAAAAAAAAAI/AAAAAAAAAAA/u3WcFXvK-g8/s28-c-k-no/photo.jpg" width="28px" height="28px">
                                   </p>
                                 </div>
-                              </div>
-                            
+                              </div>  
+                                    
+                                  </div>
+                               </div>
+
                           </div>
                        </div><!--/row-->
                       
