@@ -108,17 +108,17 @@ include_once '../db/functions.php';
 				                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
 				                    	<div class="form-group"<h4><?php echo $msg; ?></h4>>
 				                    		<label class="sr-only" for="form-first-name">Username</label>
-                                                                <input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name" required autofocus>
+                                                                <input type="text" name="username" placeholder="First name..." class="form-first-name form-control" id="form-first-name" required autofocus>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-last-name">Password</label>
-                                                                <input type="password" name="form-last-name" placeholder="Password" class="form-last-name form-control" id="form-last-name" required>
+                                                                <input type="password" name="password" placeholder="Password" class="form-last-name form-control" id="form-last-name" required>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
-                                                                <input type="email" name="form-email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
+                                                                <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
 				                        </div>
-                                                        <button type="submit" class="btn" name="signuo">Sign me up!</button>
+                                                        <button type="submit" class="btn" name="signup">Sign me up!</button>
                                                         <h2><?php echo $forgotPassword; ?></h2>
 				                    </form>
 			                    </div>
