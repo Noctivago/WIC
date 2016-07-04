@@ -139,6 +139,7 @@ img { max-width: 100%; }
 	background: #eee;
 	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
 	text-align: center;
+        display: inline-block;
 }
 
 .form-bottom form textarea {
