@@ -85,7 +85,6 @@
                     <ul class="dropdown-menu">
                         <li>
                             <a href="../profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
-                            
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
