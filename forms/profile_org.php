@@ -134,7 +134,7 @@ include_once ('../db/conn.inc.php');
     <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="text-center">
         <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Upload a different photo...</h6>
+        <h6>Upload a different logo...</h6>
         <input type="file" class="text-center center-block well well-sm">
       </div>
     </div>
@@ -152,6 +152,12 @@ include_once ('../db/conn.inc.php');
           <label class="col-lg-3 control-label">Company:</label>
           <div class="col-lg-8">
             <input class="form-control" value="" type="text">
+          </div>
+        </div>
+           <div class="form-group">
+          <label class="col-lg-3 control-label">Address:</label>
+          <div class="col-lg-8">
+            <input class="form-control"  type="text">
           </div>
         </div>
         <div class="form-group">
