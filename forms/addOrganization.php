@@ -124,6 +124,7 @@ include_once ('../db/conn.inc.php');
 
                         <div class="col-sm-5">
                             <br>
+                            <br>
                             <?= DB_readOrganizationAsTable($pdo, $_SESSION['id']); ?>
                         </div>
                     </div>
