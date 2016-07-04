@@ -215,9 +215,7 @@ include_once ('../db/conn.inc.php');
                             
                           </div>
                           <div class="col-sm-6">
-                            <p>
-                            <a href="#" class="pull-right">©Copyright 2013</a>
-                            </p>
+                            
                           </div>
                         </div>
                       
