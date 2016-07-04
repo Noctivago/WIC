@@ -63,7 +63,7 @@ include_once ('../db/conn.inc.php');
                             <div class="form-box">
                                 <div class="form-bottom">
                                     <?php
-                                    if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['email'])) {
+                                    if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
                                         $msg = '';
                                         try {
                                             $userid = $_SESSION['id'];
