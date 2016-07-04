@@ -424,3 +424,32 @@ function DB_addOrganizationServiceBook($pdo, $nome, $description, $OrgId) {
         die();
     }
 }
+
+function DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website) {
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Organization] ([Name],[Phone_Number],[Mobile_Number],[Validate],[Address],[Enabled],[User_Boss],[Facebook],[Twitter],[Linkdin],[Abusive_Organization],[Good_Organization],[Organization_Email],[Website]) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", array($name, $phone, $mobile, 0, $address, 0, $userid, $facebook, $twitter, $linkdin, 0, 0, $orgEmail, $website));
+        echo 'Organization added!';
+    } catch (Exception $exc) {
+        echo 'ERROR INSERTING ORGANIZATION';
+    }
+}
+
+function DB_readOrganizationAsTable($pdo) {
+    try {
+        $id = 0;
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]=1", array($id), "rows");
+        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Name'] . "</td>";
+            echo "<td>" . $row['User_Boss'] . "</td>";
+            echo "<td>" . $row['Date_Created'] . "</td>";
+            echo "<td>" . $row['Address'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING ORGANIZATION TABLE';
+    }
+}
