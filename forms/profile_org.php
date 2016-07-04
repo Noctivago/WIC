@@ -137,6 +137,8 @@ include_once ('../db/conn.inc.php');
         <input type="file" class="text-center center-block well well-sm">
       </div>
     </div>
+    <!-- edit form column -->
+    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
       <h3>Personal info</h3>
       <form class="form-horizontal" role="form">
         <div class="form-group">
