@@ -149,25 +149,10 @@ include_once ('../db/conn.inc.php');
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-3 control-label">Website:</label>
+          <label class="col-lg-3 control-label">Web Site:</label>
           <div class="col-lg-8">
-            <input class="form-control" type="text">
+            <input class="form-control"  type="text">
           </div>
-        </div>
-           <label class="col-lg-3 control-label">Facebook:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text">
-          </div>
-        </div>
-     <label class="col-lg-3 control-label">Twitter:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text">
-          </div>
-      <label class="col-lg-3 control-label">Instagram:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text">
-          </div>
-        </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Company:</label>
