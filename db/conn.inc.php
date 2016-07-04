@@ -416,7 +416,7 @@ function DB_getCountryAsSelect($pdo) {
         $rows = sql($pdo, "SELECT [Id]
       ,[Name]
       ,[Enabled]
-      FROM [dbo].[Country] WHERE [Id] > ? AND [Enabled] = ?", array('0', '1'), "rows");
+      FROM [dbo].[Country] WHERE [Id] > ? AND [Enabled] = ?", array(0, 1), "rows");
         echo '<select>';
         foreach ($rows as $row) {
             echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
