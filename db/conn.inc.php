@@ -237,18 +237,18 @@ function DB_addUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath
 }
 
 function DB_getCityAsSelect($pdo) {
-    $rows = sql($pdo, "  SELECT [City].[Id]
-      ,[City].[Name]
+    $rows = sql($pdo, "  SELECT [City].[Id] CID
+      ,[City].[Name] AS CNAME
       ,[City].[Enabled]
       ,[City].[Number_of_Research]
       ,[Country_Id]
-	  ,[Country].[Name]
+	  ,[Country].[Name] CONAME
   FROM [dbo].[City]
   join [Country]
   on [Country].[Id] = [City].[Country_Id]
   where [City].[Enabled]=1 and [Country].[Enabled] = ?", array('1'), "rows");
     foreach ($rows as $row) {
-        echo "<option value=" . $row['Id'] . ">" . $row['Country']['Name'] . '-' . ['City'].['Name'] . "</option>";
+        echo "<option value=" . $row['CID'] . ">" . $row['CONAME'] . '-' . ['CNAME'] . "</option>";
         //echo $row['Id'] . ">" . $row['Name'];
     }
 }
