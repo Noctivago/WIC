@@ -545,6 +545,7 @@ function DB_readOrganizationServiceBookAsTable($pdo, $userId) {
 }
 
 function addNewsLetterPlatform($pdo, $userId) {
+    //FALTA VERIFICAR SE JA EXISTE
     try {
         sql($pdo, "INSERT INTO [dbo].[Plataform_Newsletter] ([User_Id], [Newsletter_ID], [Enabled]) VALUES(?,?,?)"
                 . "", array($userId, 1, 1));
