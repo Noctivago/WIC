@@ -234,7 +234,7 @@ function DB_addUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath
     }
 }
 
-function DB_getCityOnSelect($pdo) {
+function DB_getCityAsSelect($pdo) {
     $id = 0;
     $rows = sql($pdo, "SELECT * FROM [dbo].[City] WHERE [Id] > ?", array($id), "rows");
     foreach ($rows as $row) {
@@ -243,7 +243,7 @@ function DB_getCityOnSelect($pdo) {
     }
 }
 
-function DB_getCityOnSelectByCityName($pdo, $cityName) {
+function DB_getCityAsSelectByCityName($pdo, $cityName) {
     $rows = sql($pdo, "SELECT * FROM [dbo].[City] WHERE [Name] Like ?%", array($cityName), "rows");
     foreach ($rows as $row) {
         echo "<option value=" . $row['Name'] . "></option>";
