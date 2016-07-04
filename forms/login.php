@@ -72,8 +72,8 @@ if (isset($_SESSION['username'])) {
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
-                                        <h3>Login to our site</h3>
-                                        <p>Enter your Email and Password to log on:</p>
+                                        <h3 style="color:red>Login to our site</h3>
+                                        <p style="color:red>Enter your Email and Password to log on:</p>
 
                                     </div>
                                     <div class="form-top-right">
