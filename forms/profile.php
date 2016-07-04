@@ -16,7 +16,8 @@ include_once ('../db/conn.inc.php');
         echo 'Profile ' . '<br>';
         echo '<br>';
         echo '<br>';
-        echo "<a href='service.php'> AddService</a> ";
+        echo "<a href='addOrganization.php'> AddOrg</a> ";
+        echo '<br>';
         echo "<a href='logout.php'> Logout</a> ";
         ?>
         
