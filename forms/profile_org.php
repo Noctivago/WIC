@@ -126,7 +126,7 @@ include_once ('../db/conn.inc.php');
                 <!-- /top nav -->
              
                         	
- <div class="container" style="padding-top: 60px;">
+  <div class="container" style="padding-top: 60px;">
   <h1 class="page-header">Edit Profile</h1>
   <div class="row">
     <!-- left column -->
@@ -139,6 +139,11 @@ include_once ('../db/conn.inc.php');
     </div>
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+      <div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <i class="fa fa-coffee"></i>
+        This is an <strong>.alert</strong>. Use this to show important messages to the user.
+      </div>
       <h3>Personal info</h3>
       <form class="form-horizontal" role="form">
         <div class="form-group">
