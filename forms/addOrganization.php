@@ -1,6 +1,7 @@
 <?php
 include_once ('session.php');
 include_once ('../db/conn.inc.php');
+include_once ('../db/functions.php');
 ?>
 
 <?
@@ -66,6 +67,7 @@ include_once ('../db/conn.inc.php');
                                     if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
                                         $msg = '';
                                         try {
+                                            $d = getDateToDB();
                                             $userid = $_SESSION['id'];
                                             $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
                                             $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
@@ -76,7 +78,7 @@ include_once ('../db/conn.inc.php');
                                             $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
                                             $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
                                             $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
-                                            $msg = DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website);
+                                            $msg = DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
                                         } catch (Exception $ex) {
                                             $msg = "ERROR!";
                                         }
