@@ -396,7 +396,7 @@ function DB_getServiceAsTable($pdo) {
       ,[Enabled]
       ,[Sub_Category_Id]
   FROM [dbo].[Service] WHERE [Id] > ?", array('0'), "rows");
-        echo "<table><tr><th>ID</th><th>Name</th><th>Description</th><th>SubCategory</th></tr>";
+        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Description</th><th>SubCategory</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
