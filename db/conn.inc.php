@@ -375,7 +375,7 @@ function DB_getServiceAsSelect($pdo) {
       ,[Description]
       ,[Enabled]
       ,[Sub_Category_Id]
-  FROM [dbo].[Service] > WHERE [Id] > ?", array('0'), "rows");
+  FROM [dbo].[Service] WHERE [Id] > ?", array('0'), "rows");
         echo '<select>';
         foreach ($rows as $row) {
             echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
@@ -394,7 +394,7 @@ function DB_getServiceAsTable($pdo) {
       ,[Description]
       ,[Enabled]
       ,[Sub_Category_Id]
-  FROM [dbo].[Service] > WHERE [Id] > ?", array('0'), "rows");
+  FROM [dbo].[Service] WHERE [Id] > ?", array('0'), "rows");
         echo "<table><tr><th>ID</th><th>Name</th><th>Description</th><th>SubCategory</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
@@ -407,5 +407,22 @@ function DB_getServiceAsTable($pdo) {
         echo "</table>";
     } catch (Exception $exc) {
         echo 'ERROR READING SUBCATEGORY TABLE';
+    }
+}
+
+function DB_getCountryAsSelect($pdo) {
+    try {
+        //$id = 0;
+        $rows = sql($pdo, "SELECT [Id]
+      ,[Name]
+      ,[Enabled]
+      FROM [dbo].[Country] WHERE [Id] > ? AND [Enabled] = ?", array('0', '1'), "rows");
+        echo '<select>';
+        foreach ($rows as $row) {
+            echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
+        }
+        echo '</select>';
+    } catch (Exception $exc) {
+        echo 'ERROR READING COUNTRY TABLE';
     }
 }
