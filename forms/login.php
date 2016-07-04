@@ -73,15 +73,15 @@ ini_set("display_errors", 1);
 	                        	<div class="form-top">
 	                        		<div class="form-top-left">
 	                        			<h3>Login to our site</h3>
-	                            		<p>Enter your EMAIL and password to log on:</p>
+	                            		<p>Enter your eMAIL and password to log on:</p>
                                                 
 	                        		</div>
 	                        		<div class="form-top-right">
 	                        			<i class="fa fa-key"></i>
 	                        		</div>
 	                            </div>
-	                            <div class="form-bottom">
-                                                        	<div class="container">
+                                    
+<div class="form-bottom">
  <?php
             if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                 try {
@@ -131,6 +131,8 @@ ini_set("display_errors", 1);
             }
             ?>
                     </div>
+	                            <div class="form-bottom">
+                                                        	
  
 				                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
