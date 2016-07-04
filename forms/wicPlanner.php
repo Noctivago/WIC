@@ -41,7 +41,7 @@ if (isset($_POST['submit']) && !empty($_POST['nome']) && !empty($_POST['city']) 
             </select>
         </p>
         
-        <? echo DB_getSubCategoryAsTable();?>
+        <?= DB_getSubCategoryAsTable($pdo);?>
         <!-- USER ID FROM COOKIE -->
         <!-- DATE CREATED -->
         <!-- ENABLED -->
