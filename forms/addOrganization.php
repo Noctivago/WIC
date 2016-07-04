@@ -67,7 +67,7 @@ include_once ('../db/conn.inc.php');
                                         $msg = '';
                                         try {
                                             $userid = $_SESSION['id'];
-                                            $nome = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
+                                            $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
                                             $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
                                             $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
                                             $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
