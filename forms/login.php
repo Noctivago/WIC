@@ -143,10 +143,11 @@ if (isset($_SESSION['username'])) {
                                             <input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password" required>
                                         </div>
                                         <button type="submit" class="btn" name="login">Sign in!</button>
-                                        <p> Don´t have an account?</p>
-                                        <button type="submit" class="btn" href="registration.php">Sign up!</button>
+                                        
                                     </form>
                                 </div>
+                                <p> Don´t have an account?</p>
+                                        <button type="submit" class="btn" href="registration.php">Sign up!</button>
                             </div>
 
                             <div class="social-login">
