@@ -3,7 +3,7 @@ include_once '../db/conn.inc.php';
 ob_start();
 session_start();
 if (isset($_SESSION['username'])) {
-    header("location: profile.php");
+    header("location: ../pages/profile.php");
 }
 ?>
 
@@ -77,7 +77,7 @@ if (isset($_SESSION['username'])) {
                                 $msg = 'Welcome ' . $row['Username'];
                                 //SET [Login_failed] = 0
                                 if (DB_setLoginFailed($pdo, $email)) {
-                                    header('Location: profile.php');
+                                    header('Location: ../pages/profile.php');
                                 }
                             } else {
                                 //INC TO BLOCK;
