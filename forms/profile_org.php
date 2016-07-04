@@ -235,12 +235,6 @@ include_once ('../db/conn.inc.php');
                           </div>
                        </div><!--/row-->
                       
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <a href="#">Twitter</a> <small class="text-muted">|</small> <a href="#">Facebook</a> <small class="text-muted">|</small> <a href="#">Google+</a>
-                          </div>
-                        </div>
-                      
                         <div class="row" id="footer">    
                           <div class="col-sm-6">
                             
