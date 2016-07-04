@@ -92,6 +92,7 @@ include_once ('../db/conn.inc.php');
                                     </form>
                                 </div>
                             </div>
+                            <br>
                             <?= DB_getServiceAsTable($pdo); ?>
                         </div>
 
