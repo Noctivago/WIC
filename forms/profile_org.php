@@ -143,15 +143,15 @@ include_once ('../db/conn.inc.php');
       <h3>Personal info</h3>
       <form class="form-horizontal" role="form">
         <div class="form-group">
-          <label class="col-lg-3 control-label">User:</label>
+          <label class="col-lg-3 control-label">Username:</label>
           <div class="col-lg-8">
             <input class="form-control" type="text">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-3 control-label">Last name:</label>
+          <label class="col-lg-3 control-label">Web Site:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="Bishop" type="text">
+            <input class="form-control" type="text">
           </div>
         </div>
         <div class="form-group">
@@ -163,7 +163,7 @@ include_once ('../db/conn.inc.php');
         <div class="form-group">
           <label class="col-lg-3 control-label">Email:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="janesemail@gmail.com" type="text">
+            <input class="form-control" type="text">
           </div>
         </div>
         <div class="form-group">
