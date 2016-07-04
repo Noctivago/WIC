@@ -254,7 +254,7 @@ function DB_getPermissions($pdo) {
     try {
         //$id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Permission] WHERE [Id] > ?", array('0'), "rows");
-        echo "<table><tr><th>ID</th><th>Name</th><th>Enabled?</th><th>Organization?</th></tr>";
+        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Enabled?</th><th>Organization?</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
@@ -273,7 +273,7 @@ function DB_getRoles($pdo) {
     try {
         //$id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [Id] > ?", array('0'), "rows");
-        echo "<table><tr><th>ID</th><th>Name</th><th>Enabled?</th></tr>";
+        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Enabled?</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
@@ -296,7 +296,7 @@ function DB_getCategoryAsTable($pdo) {
       ,[Image_Path]
       ,[Enabled]
         FROM [dbo].[Category] WHERE [Id] > ?", array('0'), "rows");
-        echo "<table><tr><th>ID</th><th>Name</th></tr>";
+        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
@@ -336,7 +336,7 @@ function DB_getSubCategoryAsTable($pdo) {
       ,[Category_Id]
       ,[Enabled]
         FROM [dbo].[Sub_Category] WHERE [Id] > ?", array('0'), "rows");
-        echo "<table><tr><th>ID</th><th>Name</th></tr>";
+        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
