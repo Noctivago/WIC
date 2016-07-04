@@ -92,14 +92,15 @@ include_once ('../db/conn.inc.php');
                                     </form>
                                 </div>
                             </div>
-                            <br>
-                            <?= DB_getServiceAsTable($pdo); ?>
+
                         </div>
 
                         <!--                        <div class="col-sm-1 middle-border"></div>-->
                         <div class="col-sm-1"></div>
 
                         <div class="col-sm-5">
+                            <br>
+                            <?= DB_getServiceAsTable($pdo); ?>
                         </div>
                     </div>
 
