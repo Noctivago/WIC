@@ -419,7 +419,8 @@ function DB_getCountryAsSelect($pdo) {
       FROM [dbo].[Country] WHERE [Id] > ? AND [Enabled] > ?", array('0', '0'), "rows");
         echo '<select>';
         foreach ($rows as $row) {
-            echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['name']) . "</option>";
+            #echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
         }
         echo '</select>';
     } catch (Exception $exc) {
