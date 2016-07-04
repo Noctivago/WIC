@@ -1,6 +1,6 @@
 <?php
 // ADD WICPLANNER
-include_once ('session.php');
+#include_once ('session.php');
 include_once ('../db/conn.inc.php');
 $msg = '';
 if (isset($_POST['submit']) && !empty($_POST['nome']) && !empty($_POST['city']) && !empty($_POST['eventDate'])) {
