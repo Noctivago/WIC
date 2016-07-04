@@ -36,8 +36,8 @@ if (isset($_POST['submit']) && !empty($_POST['nome']) && !empty($_POST['city']) 
         <p>
             <label class="form-control" for="city">CITY</label>
             <select class="form-control" name="city" id="city" required="required">
-                <!-- LOAD CITIES -->
-                <?= load_alpha3_option() ?>
+                <!-- LOAD CITIES 
+                <= load_alpha3_option() ?> -->
             </select>
         </p>
         <!-- USER ID FROM COOKIE -->
