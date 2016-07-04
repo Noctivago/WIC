@@ -149,7 +149,13 @@ include_once ('../db/conn.inc.php');
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-3 control-label">Web Site:</label>
+          <label class="col-lg-3 control-label">Website:</label>
+          <div class="col-lg-8">
+            <input class="form-control"  type="text">
+          </div>
+        </div>
+          <div class="form-group">
+          <label class="col-lg-3 control-label">Facebook:</label>
           <div class="col-lg-8">
             <input class="form-control"  type="text">
           </div>
