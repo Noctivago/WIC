@@ -2,6 +2,10 @@
 include_once '../db/conn.inc.php';
 include_once '../db/functions.php';
 ?>
+<?
+// error_reporting(E_ALL);
+// ini_set("display_errors", 1);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +72,7 @@ include_once '../db/functions.php';
                 $forgotPassword = '';
                 $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                 $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                #echo 'USERNAME ' . $rows['Username'];
+                echo 'USERNAME ' . $rows['Username'];
                 $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                 $hashPassword = hash('whirlpool', $password);
 
