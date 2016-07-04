@@ -21,7 +21,7 @@ include_once ('../db/conn.inc.php');
         echo '</select>';
         echo '</datalist>';
         echo '<br>';
-        echo "<a href='logout.php'> Logout</a> ";
+        echo "<a href='../pages/logout.php'> Logout</a> ";
         ?>
     </body>
 </html>
