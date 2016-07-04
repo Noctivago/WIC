@@ -132,7 +132,7 @@ include_once ('../db/conn.inc.php');
                       	<div class="row">
                           
                          <!-- main col left --> 
-                         <div class="col-sm-5">
+                         <div class="col-sm-8">
                            
                               <div class="panel panel-default">
                                 <div class="panel-thumbnail"><img src="/assets/example/bg_5.jpg" class="img-responsive"></div>
@@ -190,7 +190,7 @@ include_once ('../db/conn.inc.php');
                           </div>
                           
                           <!-- main col right -->
-                          <div class="col-sm-7">
+                          <div class="col-sm-4">
                                
                                 <div class="well"> 
                                    <form class="form">
