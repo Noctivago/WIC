@@ -146,7 +146,7 @@ if (isset($_SESSION['username'])) {
                                         
                                     </form>
                                 </div>
-                                <p> Don´t have an account?</p>
+                                <h3> Don´t have an account?</3>
                                         <button type="submit" class="btn" href="registration.php">Sign up!</button>
                             </div>
 
