@@ -91,7 +91,7 @@ include_once ('../db/functions.php');
                                         </div>
 
                                         <select class="form-group" name="org" id="org" required="required">
-                                            <?= DB_readOrganizationAsSelect() ?>
+                                            <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                         </select>
 
                                         <div class="form-group">
