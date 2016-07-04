@@ -179,17 +179,6 @@ include_once ('../db/conn.inc.php');
                           
                           <!-- main col right -->
                           <div class="col-sm-7">
-                               
-                                <div class="well"> 
-                                   <form class="form">
-                                    <h4>Sign-up</h4>
-                                    <div class="input-group text-center">
-                                    <input type="text" class="form-control input-lg" placeholder="Enter your email address">
-                                      <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button">OK</button></span>
-                                    </div>
-                                  </form>
-                                </div>
-                      
                                <div class="panel panel-default">
                                  <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootply Editor &amp; Code Library</h4></div>
                                   <div class="panel-body">
