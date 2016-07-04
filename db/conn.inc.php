@@ -328,89 +328,6 @@ function DB_getCategoryAsSelect($pdo) {
     }
 }
 
-function DB_getSubCategoryAsTable($pdo) {
-    try {
-        //$id = 0;
-        $rows = sql($pdo, "SELECT [Id]
-      ,[Name]
-      ,[Category_Id]
-      ,[Enabled]
-        FROM [dbo].[Sub_Category] WHERE [Id] > ?", array('0'), "rows");
-        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th></tr>";
-        foreach ($rows as $row) {
-            echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
-            echo "<td>" . $row['Name'] . "</td>";
-            echo "<td>" . $row['Category_Id'] . "</td>";
-            echo "<tr>";
-        }
-        echo "</table>";
-    } catch (Exception $exc) {
-        echo 'ERROR READING SUBCATEGORY TABLE';
-    }
-}
-
-function DB_getSubCategoryAsSelect($pdo) {
-    try {
-        //$id = 0;
-        $rows = sql($pdo, "SELECT [Id]
-      ,[Name]
-      ,[Category_Id]
-      ,[Enabled]
-        FROM [dbo].[Sub_Category] WHERE [Id] > ?", array('0'), "rows");
-        #echo '<select>';
-        foreach ($rows as $row) {
-            echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
-        }
-        #echo '</select>';
-    } catch (Exception $exc) {
-        echo 'ERROR READING SUBCATEGORY TABLE';
-    }
-}
-
-function DB_getServiceAsSelect($pdo) {
-    try {
-        //$id = 0;
-        $rows = sql($pdo, "SELECT [Id]
-      ,[Name]
-      ,[Description]
-      ,[Enabled]
-      ,[Sub_Category_Id]
-  FROM [dbo].[Service] WHERE [Id] > ?", array('0'), "rows");
-        echo '<select>';
-        foreach ($rows as $row) {
-            echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
-        }
-        echo '</select>';
-    } catch (Exception $exc) {
-        echo 'ERROR READING SUBCATEGORY TABLE';
-    }
-}
-
-function DB_getServiceAsTable($pdo) {
-    try {
-        //$id = 0;
-        $rows = sql($pdo, "SELECT [Id]
-      ,[Name]
-      ,[Description]
-      ,[Enabled]
-      ,[Sub_Category_Id]
-  FROM [dbo].[Service] WHERE [Id] > ?", array('0'), "rows");
-        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Description</th><th>SubCategory</th></tr>";
-        foreach ($rows as $row) {
-            echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
-            echo "<td>" . $row['Name'] . "</td>";
-            echo "<td>" . $row['Description'] . "</td>";
-            echo "<td>" . $row['Sub_Category_Id'] . "</td>";
-            echo "<tr>";
-        }
-        echo "</table>";
-    } catch (Exception $exc) {
-        echo 'ERROR READING SUBCATEGORY TABLE';
-    }
-}
-
 function DB_getCountryAsSelect($pdo) {
     try {
         //global $pdo;
@@ -469,16 +386,6 @@ function DB_getCityAsSelectByCountryId($pdo, $idState) {
         #$dbh = null;
     } catch (PDOException $e) {
         echo 'ERROR READING CITY TABLE';
-        die();
-    }
-}
-
-function DB_addService($pdo, $nome, $description, $subCategoryId) {
-    try {
-        sql($pdo, "INSERT INTO [dbo].[Service] ([Name], [Description], [Enabled], [Sub_Category_id]) VALUES (?, ?, ?, ?)", array($nome, $description, '1', $subCategoryId));
-        return 'SERVICE ADDED!';
-    } catch (PDOException $e) {
-        print "Error!" . "<br/>";
         die();
     }
 }

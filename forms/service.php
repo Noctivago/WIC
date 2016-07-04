@@ -85,7 +85,7 @@ include_once ('../db/conn.inc.php');
                                         </div>
                                         <div class='form-group'>
                                             <select class="form-control" name="subCategory" id="subCategory" required="required">
-                                                <?= DB_getSubCategoryAsSelect($pdo) ?> 
+                                               
                                             </select>
                                         </div>
                                         <button type="submit" class="btn" name="addService">Add Service!</button>
@@ -98,10 +98,10 @@ include_once ('../db/conn.inc.php');
                         <!--                        <div class="col-sm-1 middle-border"></div>-->
                         <div class="col-sm-1"></div>
 
-                        <div class="col-sm-5">
-                            <br>
-                            <?= DB_getServiceAsTable($pdo); ?>
-                        </div>
+                            <div class="col-sm-5">
+                                <br>
+                                <?= DB_getServiceAsTable($pdo); ?>
+                            </div>
                     </div>
 
                 </div>
