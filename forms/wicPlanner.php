@@ -35,6 +35,7 @@ if (isset($_POST['submit']) && !empty($_POST['nome']) && !empty($_POST['city']) 
     <div>
         <p>
             <label class="form-control" for="country">COUNTRY</label>
+            <? echo 'On change load cities from selected country' ?>
             <select class="form-control" name="country" id="city" required="required" onchange="">
                 <?= DB_getCountryAsSelect($pdo) ?> 
             </select>
