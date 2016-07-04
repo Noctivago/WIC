@@ -81,9 +81,6 @@ ini_set("display_errors", 1);
 	                        		</div>
 	                            </div>
                                     
-<div class="form-bottom">
-
-                    </div>
 	                            <div class="form-bottom">
                                                          <?php
             if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
