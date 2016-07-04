@@ -184,28 +184,12 @@ include_once ('../db/conn.inc.php');
                                   </form>
                                 </div>
                        
-                                    <form>
-                                    <div class="input-group">
-                                      <div class="input-group-btn">
-                                      <button class="btn btn-default">+1</button><button class="btn btn-default"><i class="glyphicon glyphicon-share"></i></button>
-                                      </div>
-                                      <input type="text" class="form-control" placeholder="Add a comment..">
-                                    </div>
-                                    </form>
+                                    
                                     
                                   </div>
                                </div>
 
-                               <div class="panel panel-default">
-                                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
-                                  <div class="panel-body">
-                                    <ul class="list-group">
-                                    <li class="list-group-item">Modals</li>
-                                    <li class="list-group-item">Sliders / Carousel</li>
-                                    <li class="list-group-item">Thumbnails</li>
-                                    </ul>
-                                  </div>
-                               </div>
+                              
                             
                                <div class="panel panel-default">
                                 <div class="panel-thumbnail"><img src="/assets/example/bg_4.jpg" class="img-responsive"></div>
