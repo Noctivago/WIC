@@ -132,7 +132,7 @@ include_once ('../db/conn.inc.php');
                       	<div class="row">
                           
                          <!-- main col left --> 
-                          <div class="col-sm-8">
+                          <div class="col-sm-5">
                         	
                         	<div class="form-box">
                         		<div class="form-top">
