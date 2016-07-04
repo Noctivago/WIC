@@ -457,3 +457,15 @@ function DB_readOrganizationAsTable($pdo, $userId) {
         echo 'ERROR READING ORGANIZATION TABLE';
     }
 }
+
+function DB_readOrganizationAsSelect($pdo, $userId) {
+    try {
+        $id = 0;
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
+        foreach ($rows as $row) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING ORGANIZATION TABLE';
+    }
+}
