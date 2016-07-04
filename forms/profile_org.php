@@ -168,10 +168,7 @@ include_once ('../db/conn.inc.php');
 			                    </div>
                         	</div>
                            		
-                           
-                          </div>
-                          <!-- main col right -->
-                          <div class="col-sm-3">
+                           <div class="col-sm-3">
                              <div class="form-top">
 	                        		<div class="form-top-left">
 	                        			<h3>Profile</h3>
@@ -181,6 +178,9 @@ include_once ('../db/conn.inc.php');
 	                        			<i class="fa fa-pencil"></i>
 	                        		</div>
 	                            </div>
+                          </div>
+                          
+                          
                           <!-- main col right -->
                           <div class="col-sm-4">
                                
