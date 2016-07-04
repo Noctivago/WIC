@@ -412,18 +412,15 @@ function DB_getServiceAsTable($pdo) {
 
 function DB_getCountryAsSelect($pdo) {
     try {
-        //$id = 0;
-        $rows = sql($pdo, "SELECT [Id]
-      ,[Name]
-      ,[Enabled]
-      FROM [dbo].[Country] WHERE [Id] > ? AND [Enabled] > ?", array('0', '0'), "rows");
-        echo '<select>';
-        foreach ($rows as $row) {
-            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['name']) . "</option>";
-            #echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
+        //global $pdo;
+        $stmt = $pdo->prepare("SELECT * FROM Country ORDER BY Name ASC");
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
-        echo '</select>';
-    } catch (Exception $exc) {
+        #$dbh = null;
+    } catch (PDOException $e) {
         echo 'ERROR READING COUNTRY TABLE';
+        die();
     }
 }
