@@ -127,7 +127,7 @@ include_once ('../db/conn.inc.php');
               
                 <div class="padding">
                                             	
-  <div class="container" style="padding-top: 60px;">
+  <div class="container" style="text-align:center;">
   <h1 class="page-header">Edit Profile</h1>
   <div class="row">
     <!-- left column -->
