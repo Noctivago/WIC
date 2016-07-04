@@ -94,7 +94,7 @@ ini_set("display_errors", 1);
                     $hashPassword = hash('whirlpool', $password);
                     if (DB_checkIfUserExists($pdo, $email)) {
                         $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, '1'), "rows");
-                        #$msg ='EMAIL FOUND';
+                        $msg ='EMAIL FOUND';
                         foreach ($rows as $row) {
                             if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
                                 //ADICIONAR PASSWORD
