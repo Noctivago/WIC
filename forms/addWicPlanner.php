@@ -86,7 +86,8 @@ include_once ('../db/functions.php');
                                             $userId = $_SESSION['id'];
                                             $eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
                                             $eventTime = (filter_var($_POST ['eventTime'], FILTER_SANITIZE_STRING));
-                                            $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate, $eventTime);
+                                            #$msg = DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate, $eventTime);
+                                            $msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $eventDate . ' EVENT TIME ' . $eventTime;
                                         } catch (Exception $ex) {
                                             echo "ERROR!";
                                         }
