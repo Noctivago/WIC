@@ -1,5 +1,6 @@
 	<header class="cd-main-header">
-		<a href="#0" class="cd-logo"><img width="100" height="100" src="../../assets/img/backgrounds/logo.svg.png" alt="Logo"></a>
+		<img width="100" height="100" src="../../assets/img/backgrounds/logo.svg.png" alt="Logo">
+<!--                <a href="#0" class="cd-logo"></a>-->
 		<div class="cd-search is-hidden">
 			<form action="#0">
 				<input type="search" placeholder="Search...">
