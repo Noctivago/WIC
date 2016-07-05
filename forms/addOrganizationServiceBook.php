@@ -87,7 +87,7 @@ include_once ('../db/functions.php');
                                             <input type="text" name="description" placeholder="ORGANIZATION SERVICE BOOK DESCRIPTION" class="form-password form-control" id="description" required>
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-group" name="org_ser_id" id="org_ser_id" required="required">
+                                            <select class="form-username form-control" name="org_ser_id" id="org_ser_id" required="required">
                                                 <?= DB_readOrganizationServiceAsSelect($pdo, $_SESSION['id']); ?>
                                             </select>
                                         </div>
