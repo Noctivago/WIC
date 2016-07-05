@@ -3,12 +3,17 @@
 			<ul>
 				<li class="cd-label">Main</li>
 				<li class="has-children overview">
-					<a href="#0">Overview</a>
+					<a href="#0">Categories</a>
 					
 					<ul>
-						<li><a href="#0">All Data</a></li>
-						<li><a href="#0">Category 1</a></li>
-						<li><a href="#0">Category 2</a></li>
+						<li><a href="#0">Space</a></li>
+						<li><a href="#0">Food</a></li>
+						<li><a href="#0">Entertainement</a></li>
+                                                <li><a href="#0">Decoration</a></li>
+                                                <li><a href="#0">Staff</a></li>
+                                                <li><a href="#0">Audio Visual</a></li>
+                                                <li><a href="#0">Reporters Photo & Video</a></li>
+                                                
 					</ul>
 				</li>
 				<li class="has-children notifications active">
@@ -22,12 +27,20 @@
 				</li>
 
 				<li class="has-children comments">
-					<a href="#0">Comments</a>
+					<a href="#0">WicPlanner</a>
 					
 					<ul>
-						<li><a href="#0">All Comments</a></li>
-						<li><a href="#0">Edit Comment</a></li>
-						<li><a href="#0">Delete Comment</a></li>
+						<li><a href="#0">Create</a></li>
+						<li><a href="#0">Edit</a></li>
+					</ul>
+				</li>
+                                <li class="has-children comments">
+					<a href="#0">Organization</a>
+					
+					<ul>
+						<li><a href="#0">Create</a></li>
+						<li><a href="#0">Edit</a></li>
+						<li><a href="#0">Add Users</a></li>
 					</ul>
 				</li>
 			</ul>
