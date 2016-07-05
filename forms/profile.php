@@ -26,6 +26,8 @@ include_once ('../db/conn.inc.php');
         echo '<br>';
         echo "<a href='addWicPlanner.php'> addWicPlanner</a> ";
         echo '<br>';
+        echo "<a href='addPicture.php'> addPicture</a> ";
+        echo '<br>';
         echo "<a href='logout.php'> Logout</a> ";
         ?>
         

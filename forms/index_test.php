@@ -26,7 +26,31 @@
 
   <ul class="nav__list">
     <li class="nav__item">
-      <a href="login.php" class="nav__link c-blue">Profile<i class="fa fa-camera-retro"></i></a>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+        // Tooltip only Text
+        $('.masterTooltip').hover(function(){
+                // Hover over code
+                var title = $(this).attr('title');
+                $(this).data('tipText', title).removeAttr('title');
+                $('<p class="tooltip"></p>')
+                .text(title)
+                .appendTo('body')
+                .fadeIn('slow');
+        }, function() {
+                // Hover out code
+                $(this).attr('title', $(this).data('tipText'));
+                $('.tooltip').remove();
+        }).mousemove(function(e) {
+                var mousex = e.pageX + 20; //Get X coordinates
+                var mousey = e.pageY + 10; //Get Y coordinates
+                $('.tooltip')
+                .css({ top: mousey, left: mousex })
+        });
+});
+</script>
+      <a href="login.php" class="nav__link c-blue"class="masterTooltip"><i class="fa fa-camera-retro"></i></a>
     </li>
     <li class="nav__item">
       <a href="#2" class="nav__link c-yellow scrolly"><i class="fa fa-bolt"></i></a>
