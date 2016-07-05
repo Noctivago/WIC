@@ -1,20 +1,7 @@
-<!doctype html>
-<html lang="en" class="no-js">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+include("elements_index/head_index.php");
+?>
 
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
-
-<link href="../assets/assests_sidebar/css/reset.css" rel="stylesheet" type="text/css"/> <!-- CSS reset -->
-        
-	 <link href="../assets/assests_sidebar/css/style.css" rel="stylesheet" type="text/css"/> <!-- Resource style -->
-       
-	 <script src="../assets/assests_sidebar/js/modernizr.js" type="text/javascript"></script><!-- Modernizr -->
-         
-  	
-	<title>Responsive Sidebar Navigation | CodyHouse</title>
-</head>
 <body>
 	<header class="cd-main-header">
 		<a href="#0" class="cd-logo"><img src="../assets/assests_sidebar/img/cd-logo.svg" alt="Logo"></a>
