@@ -556,10 +556,10 @@ function addNewsLetterPlatform($pdo, $userId) {
     }
 }
 
-function DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate, $eventTime) {
+function DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate) {
     try {
-        sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [City_Id], [User_Id], [Date_Created], [Enabled], [Event_Date], [Event_Time]) VALUES(?,?,?,?,?,?,?)"
-                . "", array($name, $city, $userId, $d, 1, $eventDate, $eventTime));
+        sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [City_Id], [User_Id], [Date_Created], [Enabled], [Event_Date]) VALUES(?,?,?,?,?,?)"
+                . "", array($name, $city, $userId, $d, 1, $eventDate));
         echo 'WIC Planner added!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
