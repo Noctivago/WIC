@@ -67,8 +67,6 @@ include_once ('../db/functions.php');
                                     if (isset($_POST['addPicture']) && !empty($_POST['file'])) {
                                         $msg = '';
                                         try {
-                                            $d = getDateToDB();
-                                            $picture = (filter_var($_POST ['file'], FILTER_SANITIZE_STRING));
                                             $file_exts = array("jpg", "bmp", "gif", "png");
                                             $upload_exts = end(explode(".", $_FILES["file"]["name"]));
                                             if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/pjpeg")) && ($_FILES["file"]["size"] < 2000000) && in_array($upload_exts, $file_exts)) {
@@ -79,13 +77,12 @@ include_once ('../db/functions.php');
                                                     echo "Type: " . $_FILES["file"]["type"] . "<br>";
                                                     echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
                                                     echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
-// Enter your path to upload file here
                                                     if (file_exists('../pics/' .
                                                                     $_FILES["file"]["name"])) {
                                                         echo "<div class='error'>" . "(" . $_FILES["file"]["name"] . ")" .
                                                         " already exists. " . "</div>";
                                                     } else {
-                                                        move_uploaded_file($_FILES["file"]["tmp_name"], "c:\wamp\www\upload/newupload/" . $_FILES["file"]["name"]);
+                                                        move_uploaded_file($_FILES["file"]["tmp_name"], "../pics/" . $_FILES["file"]["name"]);
                                                         echo "<div class='sucess'>" . "Stored in: " .
                                                         "../pics/" . $_FILES["file"]["name"] . "</div>";
                                                     }
