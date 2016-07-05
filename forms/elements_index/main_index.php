@@ -16,9 +16,7 @@
                                                 
 					</ul>
 				</li>
-				<li class="has-children notifications active">
-					<a href="#0">Notifications<span class="count">3</span></a>
-				</li>
+				
 
 				<li class="has-children comments">
 					<a href="#0">WicPlanner</a>
@@ -37,37 +35,19 @@
 						<li><a href="#0">Add Users</a></li>
 					</ul>
 				</li>
+                                <li class="has-children notifications active">
+					<a href="#0">Notifications<span class="count">3</span></a>
+				</li>
 			</ul>
 
 			<ul>
 				<li class="cd-label">Secondary</li>
 				<li class="has-children bookmarks">
-					<a href="#0">Bookmarks</a>
+					<a href="#0">FAQS</a>
 					
-					<ul>
-						<li><a href="#0">All Bookmarks</a></li>
-						<li><a href="#0">Edit Bookmark</a></li>
-						<li><a href="#0">Import Bookmark</a></li>
-					</ul>
-				</li>
-				<li class="has-children images">
-					<a href="#0">Images</a>
-					
-					<ul>
-						<li><a href="#0">All Images</a></li>
-						<li><a href="#0">Edit Image</a></li>
-					</ul>
+
 				</li>
 
-				<li class="has-children users">
-					<a href="#0">Users</a>
-					
-					<ul>
-						<li><a href="#0">All Users</a></li>
-						<li><a href="#0">Edit User</a></li>
-						<li><a href="#0">Add User</a></li>
-					</ul>
-				</li>
 			</ul>
 
 			<ul>
