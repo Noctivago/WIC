@@ -1,6 +1,6 @@
 	<header class="cd-main-header">
 
-            <img class="img-responsive" width="75" height="60" align="left" src="../../assets/img/backgrounds/logo.svg.png" alt="Logo">
+            <a href="login.php" ><img class="img-responsive" width="75" height="60" align="left" src="../../assets/img/backgrounds/logo.svg.png" alt="Logo"></a>
 <!--                <a href="#0" class="cd-logo" ></a>-->
 		<div class="cd-search is-hidden">
 			<form action="#0">
