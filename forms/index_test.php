@@ -12,21 +12,7 @@
 
         <link href="../assets/css_sidebar/style.css" rel="stylesheet" type="text/css"/>
 
-    
-    
-    
-  </head>
-
-  <body>
-
-    <nav class="nav">
-  <div class="burger">
-    <div class="burger__patty"></div>
-  </div>
-
-  <ul class="nav__list">
-    <li class="nav__item">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
         // Tooltip only Text
@@ -50,6 +36,19 @@ $(document).ready(function() {
         });
 });
 </script>
+    
+    
+  </head>
+
+  <body>
+
+    <nav class="nav">
+  <div class="burger">
+    <div class="burger__patty"></div>
+  </div>
+
+  <ul class="nav__list">
+    <li class="nav__item">
 <!--class="nav__link c-blue"-->
       <a href="login.php" class="masterTooltip"><i class="fa fa-camera-retro"></i></a>
     </li>
