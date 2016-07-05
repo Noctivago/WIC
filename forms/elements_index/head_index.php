@@ -13,5 +13,5 @@
 	 <script src="../assets/assests_sidebar/js/modernizr.js" type="text/javascript"></script><!-- Modernizr -->
          
   	
-	<title>puta to WIC</title>
+	<title>porco to WIC</title>
 </head>
