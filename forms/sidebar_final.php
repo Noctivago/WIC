@@ -10,6 +10,9 @@ include("elements_index/head_index.php");
 <?php
 include ("elements_index/main_index.php");
 ?>
+<?php
+include ("elements_index/body_index.php");
+?><!-- .content-wrapper -->
  <!-- .cd-main-content -->
 
 
