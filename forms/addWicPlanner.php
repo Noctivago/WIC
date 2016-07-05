@@ -105,7 +105,7 @@ include_once ('../db/functions.php');
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="eventDate">EVENT DATE</label>
-                                            <input type="text" name="eventDate" placeholder="EVENT DATE" class="form-password form-control" id="eventDate" required>
+                                            <input type="date" name="eventDate" placeholder="EVENT DATE" class="form-password form-control" id="eventDate" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="eventTime">EVENT TIME</label>
