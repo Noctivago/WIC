@@ -90,17 +90,17 @@ include_once ('../db/functions.php');
                                             <input type="text" name="description" placeholder="SERVICE DESCRIPTION" class="form-password form-control" id="description" required>
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-group" name="org" id="org" required="required">
+                                            <select class="form-username form-control" name="org" id="org" required="required">
                                                 <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-group" name="subCategory" id="subCategory" required="required">
+                                            <select class="form-username form-control" name="subCategory" id="subCategory" required="required">
                                                 <?= DB_readSubCategoryAsSelect($pdo) ?>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-group" name="city" id="city" required="required">
+                                            <select class="form-username form-control" name="city" id="city" required="required">
                                                 <?= DB_getCityAsSelect($pdo) ?>
                                             </select>
                                         </div>

@@ -99,7 +99,7 @@ include_once ('../db/functions.php');
                                             <input type="text" name="name" placeholder="WIC PLANNER NAME" class="form-username form-control" id="name" required autofocus>
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-group" name="city" id="city" required="required">
+                                            <select class="form-username form-control" name="city" id="city" required="required">
                                                 <?= DB_getCityAsSelect($pdo) ?>
                                             </select>
                                         </div>
