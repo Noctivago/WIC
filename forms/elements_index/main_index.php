@@ -36,7 +36,7 @@
 					</ul>
 				</li>
                                 <li class="has-children notifications active">
-					<a href="#0">Notifications<span class="count">3</span></a>
+					<a href="#0">Notifications<span class="count"></span></a>
 				</li>
 			</ul>
 
@@ -50,10 +50,10 @@
 
 			</ul>
 
-			<ul>
-				<li class="cd-label">Action</li>
+			<!--<ul>-->
+<!--				<li class="cd-label">Action</li>
 				<li class="action-btn"><a href="#0">+ Button</a></li>
-			</ul>
+			</ul>-->
 		</nav>
 
 <!--		<div class="content-wrapper">
