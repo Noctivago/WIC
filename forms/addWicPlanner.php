@@ -19,7 +19,7 @@ include_once ('../db/functions.php');
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LOGIN PAGE</title>
+        <title>ADD WIC PLANNER</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -83,7 +83,7 @@ include_once ('../db/functions.php');
                                             $d = getDateToDB();
                                             $name = (filter_var($_POST ['name'], FILTER_SANITIZE_EMAIL));
                                             $city = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
-                                            $userId = $_SESSION['username'];
+                                            $userId = $_SESSION['id'];
                                             $eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
                                             $eventTime = (filter_var($_POST ['eventTime'], FILTER_SANITIZE_STRING));
                                             $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate, $eventTime);
