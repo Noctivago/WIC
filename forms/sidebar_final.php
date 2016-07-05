@@ -16,8 +16,8 @@ include ("elements_index/main_index.php");
 
 
 <!-- Resource jQuery -->
-<script src="../assets/assests_sidebar/js/jquery-2.1.4.js" type="text/javascript"></script>
-<script src="../assets/assests_sidebar/js/jquery.menu-aim.js" type="text/javascript"></script>
-<script src="../assets/assests_sidebar/js/main.js" type="text/javascript"></script>
+<?php
+include("elements_index/jquery_source.php");
+?>
 </body>
 </html>
