@@ -218,6 +218,7 @@ Header
 }
 .cd-search.is-hidden {
   opacity: 0;
+  color:#1a93de;
 }
 .cd-search::before {
   /* lens icon */
