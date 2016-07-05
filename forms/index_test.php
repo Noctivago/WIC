@@ -50,7 +50,8 @@ $(document).ready(function() {
         });
 });
 </script>
-      <a href="login.php" class="nav__link c-blue"class="masterTooltip"><i class="fa fa-camera-retro"></i></a>
+<!--class="nav__link c-blue"-->
+      <a href="login.php" class="masterTooltip"><i class="fa fa-camera-retro"></i></a>
     </li>
     <li class="nav__item">
       <a href="#2" class="nav__link c-yellow scrolly"><i class="fa fa-bolt"></i></a>
