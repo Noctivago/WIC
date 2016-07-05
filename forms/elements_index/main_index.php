@@ -18,12 +18,6 @@
 				</li>
 				<li class="has-children notifications active">
 					<a href="#0">Notifications<span class="count">3</span></a>
-					
-					<ul>
-						<li><a href="#0">All Notifications</a></li>
-						<li><a href="#0">Friends</a></li>
-						<li><a href="#0">Other</a></li>
-					</ul>
 				</li>
 
 				<li class="has-children comments">
