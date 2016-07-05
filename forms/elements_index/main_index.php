@@ -35,7 +35,8 @@
 						<li><a href="#0">Add Users</a></li>
 					</ul>
 				</li>
-                                <li class="has-children notifications active">
+                                <!--<li class="has-children notifications active">-->
+                                <li class="has-children notifications">
 					<!--<a href="#0">Notifications<span class="count"></span></a>-->
 					<a href="#0">Notifications<span ></span></a>
 				</li>
