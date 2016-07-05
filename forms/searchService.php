@@ -97,7 +97,7 @@ include_once ('../db/functions.php');
                                         </div>
                                         <div class="form-group">
                                             <select class="form-username form-control" name="category" id="category" required="required">
-                                                <?= DB_getCityAsSelect($pdo) ?>
+                                                <?= DB_getCategoryAsSelect($pdo) ?>
                                             </select>
                                         </div>
                                         <div class="form-group">

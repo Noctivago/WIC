@@ -570,11 +570,12 @@ function DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate) {
 //GET SERVICE AS TABLE WHERE ORGANIZATION BELONGS TO USER
 function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_Id, $City_id) {
     try {
-        $id = 0;
-        $rows = sql($pdo, "SELECT [Organization_Service].[Id] AS OSI, [Organization_Service].[Name] AS OSNAME, [Organization_Service].[Description] AS OSDES  FROM [dbo].[Organization_Service]
-    join [Organization]
-    on [Organization_Id] = [Organization].[Id]
-    where [Organization].[User_Boss] = ? and [Organization_Service].[Enabled] = 1", array($Sub_Category_Id, $City_id), "rows");
+        //IF
+        
+        //IF
+        
+        //IF
+        $rows = sql($pdo, "", array($name, $Sub_Category_Id, $City_id), "rows");
         echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Description</th><th>Category</th><th>City</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
