@@ -4,7 +4,7 @@
 <!--                <a href="#0" class="cd-logo" ></a>-->
 		<div class="cd-search is-hidden">
 			<form action="#0">
-				<input type="search" placeholder="Search...">
+				<input type="search" placeholder="Search Service..">
 			</form>
 		</div> <!-- cd-search -->
 
