@@ -1,7 +1,9 @@
 <?php
+include("session.php");
+?>
+<?php
 include("elements_index/head_index.php");
 ?>
-
 <body>
     <?php
     include("elements_index/header_index.php");
