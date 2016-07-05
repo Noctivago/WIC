@@ -85,9 +85,8 @@ include_once ('../db/functions.php');
                                             $city = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
                                             $eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
-                                            $eventTime = (filter_var($_POST ['eventTime'], FILTER_SANITIZE_STRING));
                                             #$msg = DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate, $eventTime);
-                                            $msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $eventDate . ' EVENT TIME ' . $eventTime;
+                                            $msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $eventDate;
                                         } catch (Exception $ex) {
                                             echo "ERROR!";
                                         }
@@ -104,10 +103,7 @@ include_once ('../db/functions.php');
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="eventDate" placeholder="EVENT DATE" class="form-password form-control" id="eventDate" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="eventTime" placeholder="EVENT TIME" class="form-password form-control" id="eventTime" required>
+                                            <input type="date" name="eventDate" placeholder="EVENT DATE" class="form-password form-control" id="eventDate" required>
                                         </div>
                                         <button type="submit" class="btn" name="addWic">ADD WIC PLANNER!</button>
 
