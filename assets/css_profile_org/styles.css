@@ -73,7 +73,7 @@ hr {
 
 .navbar-blue {
     border-width:0;
-	background-color:#F05F11;
+	background-color:#373737;
     color:#ffffff;
     font-family:arial,sans-serif;
     top:0;
@@ -85,11 +85,11 @@ hr {
    color:#efefef;
 }
 
-.navbar-blue .dropdown-menu li a {color:F05F11;}
+.navbar-blue .dropdown-menu li a {color:#2A4888;}
 .navbar-blue .dropdown-menu li > a {padding-left:30px;}
 
 .navbar-blue li>a:hover, .navbar-blue li>a:focus, .navbar-blue .open, .navbar-blue .open>a, .navbar-blue .open>a:hover, .navbar-blue .open>a:focus {
-   background-color:#F05F11;
+   background-color:#2A4888;
    color:#fff;
 }
 
