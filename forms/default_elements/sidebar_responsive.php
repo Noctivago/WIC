@@ -8,10 +8,9 @@
 
 <meta name="viewport" content="width=device-width">
     
-    <link rel="stylesheet" href="css/normalize.css">
+    <link href="../../assets/css_sidebar/normalize.css" rel="stylesheet" type="text/css"/>
 
-    
-        <link rel="stylesheet" href="css/style.css">
+        <link href="../../assets/css_sidebar/style.css" rel="stylesheet" type="text/css"/>
 
     
     
@@ -82,7 +81,7 @@
 </a>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-        <script src="js/index.js"></script>
+        <script src="../../assets/js_sidebar/index.js" type="text/javascript"></script>
 
     
     
