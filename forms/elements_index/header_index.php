@@ -1,6 +1,6 @@
 	<header class="cd-main-header">
 
-            <img class="img-responsive" width="60" height="60" align="left" src="../../assets/img/backgrounds/logo.svg.png" alt="Logo">
+            <img class="img-responsive" width="70" height="60" align="left" src="../../assets/img/backgrounds/logo.svg.png" alt="Logo">
 <!--                <a href="#0" class="cd-logo" ></a>-->
 		<div class="cd-search is-hidden">
 			<form action="#0">
