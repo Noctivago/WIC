@@ -22,17 +22,18 @@
 					<a href="#0">WicPlanner</a>
 					
 					<ul>
+                                                <li><a href="#0">View</a></li>
 						<li><a href="addWicPlanner.php">Create</a></li>
-						<li><a href="#0">Edit</a></li>
+						
 					</ul>
 				</li>
                                 <li class="has-children comments">
 					<a href="#0">Organization</a>
 					
 					<ul>
+						<li><a href="#">View</a></li>
 						<li><a href="addOrganization.php">Create</a></li>
-						<li><a href="#0">Edit</a></li>
-						<li><a href="#0">Add Users</a></li>
+
 					</ul>
 				</li>
                                 <!--<li class="has-children notifications active">-->
