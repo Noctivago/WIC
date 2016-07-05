@@ -18,7 +18,7 @@
   </head>
 
   <body>
-<div class="collapse navbar-collapse navbar-ex1-collapse">
+
     <nav class="nav">
   <div class="burger">
     <div class="burger__patty"></div>
@@ -48,7 +48,6 @@
         <script src="../../assets/js_sidebar/index.js" type="text/javascript"></script>
 
     
-    </div>
     
   </body>
 </html>
