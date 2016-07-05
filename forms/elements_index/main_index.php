@@ -69,7 +69,7 @@
 			</ul>
 		</nav>
 
-		<div class="content-wrapper">
+<!--		<div class="content-wrapper">
 			<h1>Responsive Sidebar Navigation</h1>
-		</div> <!-- .content-wrapper -->
+		</div>  .content-wrapper -->
 	</main> <!-- .cd-main-content -->
