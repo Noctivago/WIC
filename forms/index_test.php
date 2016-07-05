@@ -8,10 +8,9 @@
 
 <meta name="viewport" content="width=device-width">
     
-    <link rel="stylesheet" href="css/normalize.css">
+    <link href="../../assets/css_sidebar/normalize.css" rel="stylesheet" type="text/css"/>
 
-    
-        <link rel="stylesheet" href="css/style.css">
+        <link href="../../assets/css_sidebar/style.css" rel="stylesheet" type="text/css"/>
 
     
     
