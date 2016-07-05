@@ -73,9 +73,6 @@ include_once ('../db/functions.php');
                                         <h3 style="color:black">ADD WIC PLANNER</h3>
 
                                     </div>
-                                    <div class="form-top-right">
-                                        <i class="fa fa-key"></i>
-                                    </div>
                                 </div>
 
                                 <div class="form-bottom">
