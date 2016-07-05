@@ -22,7 +22,7 @@
 					<a href="#0">WicPlanner</a>
 					
 					<ul>
-						<li><a href="#0">Create</a></li>
+						<li><a href="addWicPlanner.php">Create</a></li>
 						<li><a href="#0">Edit</a></li>
 					</ul>
 				</li>
@@ -30,7 +30,7 @@
 					<a href="#0">Organization</a>
 					
 					<ul>
-						<li><a href="#0">Create</a></li>
+						<li><a href="addOrganization.php">Create</a></li>
 						<li><a href="#0">Edit</a></li>
 						<li><a href="#0">Add Users</a></li>
 					</ul>
