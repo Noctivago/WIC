@@ -103,7 +103,7 @@ include_once ('../db/functions.php');
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="date" name="eventDate" placeholder="EVENT DATE" class="form-password form-control" id="eventDate" required>
+                                            <input type="text" name="eventDate" placeholder="EVENT DATE" class="form-password form-control" id="eventDate" required>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="eventTime" placeholder="EVENT TIME" class="form-password form-control" id="eventTime" required>
