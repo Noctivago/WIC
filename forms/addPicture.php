@@ -76,6 +76,7 @@ include_once ('../db/functions.php');
                                         <label for="file"><span class="IL_AD" id="IL_AD4">Filename</span>:</label>
                                         <input type="file" name="fileUpload" id="fileUpload"><br>
                                     </div>
+                                    <!-- ESCOLHER SERVIÇO AO QUAL SERA ADICIONADA A PIC -->
                                     <button type="submit" class="btn" name="addPicture">UPLOAD PICTURE!</button>
                                     </form>
                                 </div>
