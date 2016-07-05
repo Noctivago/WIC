@@ -13,5 +13,5 @@
 	 <script src="../assets/assests_sidebar/js/modernizr.js" type="text/javascript"></script><!-- Modernizr -->
          
   	
-	<title>EU to WIC</title>
+	<title>ele to WIC</title>
 </head>
