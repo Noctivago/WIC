@@ -77,7 +77,7 @@ include_once ('../db/functions.php');
 
                                 <div class="form-bottom">
                                     <?php
-                                    if (isset($_POST['addWic']) && !empty($_POST['name']) && !empty($_POST['eventDate']) && !empty($_POST['eventTime'])) {
+                                    if (isset($_POST['addWic']) && !empty($_POST['name']) && !empty($_POST['city'])) {
                                         $msg = '';
                                         try {
                                             $d = getDateToDB();
