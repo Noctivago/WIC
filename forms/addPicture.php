@@ -64,48 +64,21 @@ include_once ('../db/functions.php');
                             <div class="form-box">
                                 <div class="form-bottom">
                                     <?php
-                                    if (isset($_POST['addPicture']) && !empty($_POST['file'])) {
-                                        $msg = '';
-                                        try {
-                                            $file_exts = array("jpg", "bmp", "gif", "png");
-                                            $upload_exts = end(explode(".", $_FILES["file"]["name"]));
-                                            if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/pjpeg")) && ($_FILES["file"]["size"] < 2000000) && in_array($upload_exts, $file_exts)) {
-                                                if ($_FILES["file"]["error"] > 0) {
-                                                    echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
-                                                } else {
-                                                    echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-                                                    echo "Type: " . $_FILES["file"]["type"] . "<br>";
-                                                    echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-                                                    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
-                                                    if (file_exists('../pics/' .
-                                                                    $_FILES["file"]["name"])) {
-                                                        echo "<div class='error'>" . "(" . $_FILES["file"]["name"] . ")" .
-                                                        " already exists. " . "</div>";
-                                                    } else {
-                                                        move_uploaded_file($_FILES["file"]["tmp_name"], "../pics/" . $_FILES["file"]["name"]);
-                                                        echo "<div class='sucess'>" . "Stored in: " .
-                                                        "../pics/" . $_FILES["file"]["name"] . "</div>";
-                                                    }
-                                                }
-                                            } else {
-                                                echo "<div class='error'>Invalid file</div>";
-                                            }
-                                            $msg = DB_addOrganizationServiceBook($pdo, $name, $description, $d, $orgSerId);
-                                        } catch (Exception $ex) {
-                                            $msg = "ERROR!";
-                                        }
+                                    $msg = '';
+                                    if (isset($_FILES['fileUpload'])) {
+                                        date_default_timezone_set("Europe/Lisbon"); //Definindo timezone padrão
+                                        $ext = strtolower(substr($_FILES['fileUpload']['name'], -4)); //Pegando extensão do arquivo
+                                        $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+                                        $dir = '../pics/'; //Diretório para uploads
+                                        $msg = move_uploaded_file($_FILES['fileUpload']['tmp_name'], $dir . $new_name); //Fazer upload do arquivo
                                     }
-                                    ?>	
-
-                                    <form role="form" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-
-
-
-                                        <div class="form-group"><h4> <?php echo $msg; ?></h4>
-                                            <label for="file"><span class="IL_AD" id="IL_AD4">Filename</span>:</label>
-                                            <input type="file" name="file" id="file"><br>
-                                        </div>
-                                        <button type="submit" class="btn" name="addPicture">UPLOAD PICTURE!</button>
+                                    ?>
+                                    <div class = "form-group"><h4> <?php echo $msg; ?></h4>
+                                        <label for="file"><span class="IL_AD" id="IL_AD4">Filename</span>:</label>
+                                        <input type="file" name="fileUpload" id="fileUpload"><br>
+                                    </div>
+                                    <!-- ESCOLHER SERVIÇO AO QUAL SERA ADICIONADA A PIC -->
+                                    <button type="submit" class="btn" name="addPicture">UPLOAD PICTURE!</button>
                                     </form>
                                 </div>
                             </div>
