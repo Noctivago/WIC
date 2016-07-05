@@ -13,5 +13,5 @@
 	 <script src="../assets/assests_sidebar/js/modernizr.js" type="text/javascript"></script><!-- Modernizr -->
          
   	
-	<title>vos to WIC</title>
+	<title>puta to WIC</title>
 </head>
