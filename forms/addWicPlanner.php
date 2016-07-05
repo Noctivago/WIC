@@ -107,11 +107,11 @@ include_once ('../db/functions.php');
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label class="sr-only" for="eventDate">Password</label>
+                                            <label class="sr-only" for="eventDate">EVENT DATE</label>
                                             <input type="text" name="eventDate" placeholder="EVENT DATE" class="form-password form-control" id="eventDate" required>
                                         </div>
                                         <div class="form-group">
-                                            <label class="sr-only" for="eventTime">Password</label>
+                                            <label class="sr-only" for="eventTime">EVENT TIME</label>
                                             <input type="text" name="eventTime" placeholder="EVENT TIME" class="form-password form-control" id="eventTime" required>
                                         </div>
                                         <button type="submit" class="btn" name="addWic">ADD WIC PLANNER!</button>
