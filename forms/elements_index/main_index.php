@@ -12,7 +12,7 @@
                                                 <li><a href="#0">Decoration</a></li>
                                                 <li><a href="#0">Staff</a></li>
                                                 <li><a href="#0">Audio Visual</a></li>
-                                                <li><a href="#0">Reporters Photo & Video</a></li>
+                                                <li><a href="#0">Reportage Photo & Video</a></li>
                                                 
 					</ul>
 				</li>
