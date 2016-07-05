@@ -84,8 +84,10 @@ include_once ('../db/functions.php');
                                             $name = (filter_var($_POST ['name'], FILTER_SANITIZE_EMAIL));
                                             $city = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
-                                            $eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
-                                            $eventTime = (filter_var($_POST ['eventTime'], FILTER_SANITIZE_STRING));
+                                            #$eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
+                                            #$eventTime = (filter_var($_POST ['eventTime'], FILTER_SANITIZE_STRING));
+                                            $eventDate;
+                                            $eventTime;
                                             $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate, $eventTime);
                                         } catch (Exception $ex) {
                                             echo "ERROR!";
@@ -105,11 +107,11 @@ include_once ('../db/functions.php');
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="eventDate">EVENT DATE</label>
-                                            <input type="date" name="eventDate" placeholder="EVENT DATE" class="form-password form-control" id="eventDate" >
+                                            <input type="date" name="eventDate" placeholder="EVENT DATE" class="form-password form-control" id="eventDate" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="eventTime">EVENT TIME</label>
-                                            <input type="text" name="eventTime" placeholder="EVENT TIME" class="form-password form-control" id="eventTime" >
+                                            <input type="text" name="eventTime" placeholder="EVENT TIME" class="form-password form-control" id="eventTime" required>
                                         </div>
                                         <button type="submit" class="btn" name="addWic">ADD WIC PLANNER!</button>
 
