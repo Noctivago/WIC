@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index_teste.php">Nome User</a>
+                <a class="navbar-brand" href="index_teste.php"> User</a>
             </div>
             
 </nav>
