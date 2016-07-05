@@ -31,6 +31,7 @@ include_once ('../db/conn.inc.php');
         echo "<a href='searchService.php'> searchService</a> ";
         echo '<br>';
         echo "<a href='logout.php'> Logout</a> ";
+        echo "<a href='sidebar_final.php'> Main Page</a> ";
         ?>
         
     </body>
