@@ -12,8 +12,8 @@
 
 		<nav class="cd-nav">
 			<ul class="cd-top-nav">
-				<li><a href="#0">Tour</a></li>
-				<li><a href="#0">Support</a></li>
+<!--				<li><a href="#0">Tour</a></li>
+				<li><a href="#0">Support</a></li>-->
 				<li class="has-children account">
 					<a href="#0">
 						<img src="../assets/assests_sidebar/img/cd-avatar.png" alt="avatar">
