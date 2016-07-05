@@ -80,13 +80,13 @@ include_once ('../db/functions.php');
                                     if (isset($_POST['addWic']) && !empty($_POST['name']) && !empty($_POST['city'])) {
                                         $msg = '';
                                         try {
-                                            $d = getDateToDB();
+                                            #$d = getDateToDB();
                                             $name = (filter_var($_POST ['name'], FILTER_SANITIZE_EMAIL));
                                             $city = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
                                             $eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
                                             $DB_Date = getDateToDBStringToDate($eventDate);
-                                            $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate);
+                                            $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $DB_Date, $eventDate);
                                             #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
                                         } catch (Exception $ex) {
                                             echo "ERROR!";
