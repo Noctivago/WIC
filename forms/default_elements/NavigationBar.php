@@ -8,11 +8,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index_teste.php"> User</a>
+                <a class="navbar-brand" href="index_teste.php">Nome User</a>
             </div>
-            
-</nav>
-<!-- Top Menu Items -->            
+            <!-- Top Menu Items -->            
 <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
@@ -113,3 +111,6 @@
                     </ul>
                 </li>
             </ul>
+
+            
+</nav>
