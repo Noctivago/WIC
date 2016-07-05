@@ -18,7 +18,7 @@
   </head>
 
   <body>
-
+<div class="collapse navbar-collapse navbar-ex1-collapse">
     <nav class="nav">
   <div class="burger">
     <div class="burger__patty"></div>
@@ -39,6 +39,7 @@
     </li>
   </ul>
 </nav>
+</div>
 
 <section class="panel b-blue" id="1">
   <article class="panel__wrapper">
