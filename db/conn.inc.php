@@ -328,11 +328,11 @@ function DB_getCategoryAsSelect($pdo) {
         ,[Image_Path]
         ,[Enabled]
         FROM [dbo].[Category] WHERE [Id] > ?", array('0'), "rows");
-        echo '<select>';
+        #echo '<select>';
         foreach ($rows as $row) {
             echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
         }
-        echo '</select>';
+        #echo '</select>';
     } catch (Exception $exc) {
         echo 'ERROR READING CATEGORY TABLE';
     }
