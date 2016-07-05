@@ -18,6 +18,7 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <?php
             include ("default_elements/sideBar.php");
+            include("default_elements/sidebar_responsive.php");
             
             ?>
 
