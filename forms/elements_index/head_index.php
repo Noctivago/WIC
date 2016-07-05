@@ -13,5 +13,5 @@
 	 <script src="../assets/assests_sidebar/js/modernizr.js" type="text/javascript"></script><!-- Modernizr -->
          
   	
-	<title>porco to WIC</title>
+	<title>Welcome to WIC</title>
 </head>

@@ -1,5 +1,5 @@
 	<header class="cd-main-header">
-		<a href="#0" class="cd-logo"><img src="../assets/assests_sidebar/img/cd-logo.svg" alt="Logo"></a>
+		
 		
 		<div class="cd-search is-hidden">
 			<form action="#0">
