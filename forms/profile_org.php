@@ -39,9 +39,9 @@ include_once ('../db/conn.inc.php');
 		
                 <link href="../assets/css_profile_org/styles.css" rel="stylesheet" type="text/css"/>
 	</head>
-<?php
-include("elements_index/head_index.php");
-?>
+//<?php
+//include("elements_index/head_index.php");
+//?>
 	<body>
 <div class="wrapper">
     <div class="box">
