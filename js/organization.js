@@ -41,12 +41,12 @@ function removeOrganization($idOrg) {
     var dataString = 'arg=' + arg + '&org=' + org;
     alert(dataString);
     $.ajax({
-        type: "POST",
+        type: 'POST',
         url: "orgsubmit.php",
         data: dataString,
         cache: false,
-        success: function (result) {
-            alert('go');
+        sucess: function (result) {
+            alert(result);
         }
     });
     viewAllOrganization();
@@ -59,9 +59,9 @@ function editOrganizationInformation() {
 
 }
 //validar organização por parte do admin
-function validateOrganization() {
+function validateOrganization($cont) {
     var arg = 'validateOrganization';
-    var orgId = $("#orgId").val();
+    var orgId = $("#Id".$cont).val();
     //falta enviar user id para verificar se é admin para poder validar
     var dataString = 'arg=' + arg + '&org=' + orgId;
     alert(dataString);
