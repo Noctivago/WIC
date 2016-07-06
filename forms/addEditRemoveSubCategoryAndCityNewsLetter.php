@@ -95,9 +95,6 @@ include_once ('../db/functions.php');
                                     ?>	
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                                        <div class="form-group"><h4> <?php echo $msg; ?></h4>
-                                            <input type="text" name="name" placeholder="WIC PLANNER NAME" class="form-username form-control" id="name" required autofocus>
-                                        </div>
                                         <div class="form-group">
                                             <select class="form-username form-control" name="city" id="city" required="required">
                                                 <?= DB_getCityAsSelect($pdo) ?>
