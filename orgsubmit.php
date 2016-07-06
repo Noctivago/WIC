@@ -42,7 +42,7 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'removeOrganization') {
     try {
-        $id = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
+        $id = (filter_var($_POST ['org']));
         //parametro para receber user id
         $userid = 33;
         if (DB_checkIfOrganizationExistsWithBossId($pdo, $id, $userid)) {
