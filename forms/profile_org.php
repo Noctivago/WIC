@@ -92,16 +92,16 @@ include("elements_index/head_index.php");
                  top nav 
               	<div class="navbar navbar-blue navbar-static-top">  
                     <div class="navbar-header">
-<!--                      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle</span>
                         <span class="icon-bar"></span>
           				<span class="icon-bar"></span>
           				<span class="icon-bar"></span>
                       </button>
-                      <a href="/" class="navbar-brand logo">b</a>-->
+                      <a href="/" class="navbar-brand logo">b</a>
                   	</div>
                   	<nav class="collapse navbar-collapse" role="navigation">
-<!--                    <form class="navbar-form navbar-left">
+                    <form class="navbar-form navbar-left">
                         <div class="input-group input-group-sm" style="max-width:360px;">
                           <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
                           <div class="input-group-btn">
@@ -131,7 +131,7 @@ include("elements_index/head_index.php");
                           <li><a href="">More</a></li>
                         </ul>
                       </li>
-                    </ul>-->
+                    </ul>
                   	</nav>
                 </div>
                 <!-- /top nav -->
