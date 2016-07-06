@@ -33,10 +33,9 @@ include_once ('../db/conn.inc.php');
 		
                 <link href="../assets/css_profile_org/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 		[if lt IE 9]>
-  
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+                	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]
-		
+
                 <link href="../assets/css_profile_org/styles.css" rel="stylesheet" type="text/css"/>
 	</head>
 //<?php
