@@ -46,7 +46,7 @@ function removeOrganization($idOrg) {
         data: dataString,
         cache: false,
         success: function (result) {
-            alert(result);
+            alert('go');
         }
     });
     viewAllOrganization();
