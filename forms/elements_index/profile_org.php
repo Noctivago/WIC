@@ -1,160 +1,130 @@
-<div class="top-content">
-                                            	
-  <div class="inner-bg" style="text-align:center;">
-  <h1 class="container">Edit Profile</h1>
-  
-  <div class="row">
-    <!-- left column -->
-    <div class="col-sm-8 col-sm-offset-2 text">
-      <div class="text">
-        <img src="http://lyco.com.br/s
-             ite/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Upload a different photo...</h6>
-        <input type="file" class="btn">
-      </div>
-    </div>
-    <!-- edit form column -->
-    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-      <h3>Organization info</h3>
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Username:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text">
-          </div>
-        </div>
-           <div class="form-group">
-          <label class="col-lg-3 control-label">Company:</label>
-          <div class="col-lg-8">
-            <input class="form-control" value="" type="text">
-          </div>
-        </div>
-           <div class="form-group">
-          <label class="col-lg-3 control-label">Email:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text">
-          </div>
-        </div>
-           <div class="form-group">
-          <label class="col-lg-3 control-label">Address:</label>
-          <div class="col-lg-8">
-            <input class="form-control"  type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Website:</label>
-          <div class="col-lg-8">
-            <input class="form-control"  type="text">
-          </div>
-        </div>
-          <div class="form-group">
-          <label class="col-lg-3 control-label">Facebook:</label>
-          <div class="col-lg-8">
-            <input class="form-control"  type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Twitter:</label>
-          <div class="col-lg-8">
-            <input class="form-control"  type="text">
-          </div>
-        </div>
-       <div class="form-group">
-          <label class="col-lg-3 control-label">Linkedin:</label>
-          <div class="col-lg-8">
-            <input class="form-control"  type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Country:</label>
-          <div class="col-lg-8">
-            <div class="ui-select">
-              <select id="user_contry" class="form-control">
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Password:</label>
-          <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Confirm password:</label>
-          <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label"></label>
-          <div class="col-md-8">
-            <input class="btn btn-primary" value="Save Changes" type="button">
-            <span></span>
-            <input class="btn btn-default" value="Cancel" type="reset">
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-                           		
-                           
-                          </div>
-                          
-                          <!-- main col right -->
-                          <div class="col-sm-4">
-                               
-                                
-                       
-                                
-                                    
-                                  </div>
-                               </div>
+ <!-- Top content -->
+        <div class="top-content">
 
-                          </div>
-                       </div><!--/row-->
-                      
-                        <div class="row" id="footer">    
-                          <div class="col-sm-6">
-                            
-                          </div>
-                          <div class="col-sm-6">
-                            
-                          </div>
+            <div class="inner-bg">
+                <div class="container">
+
+
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Sign In </strong> </h1>
+                            <div class="description">
+                                <p>
+                                    Edit Profile
+                                </p>
+                            </div>
                         </div>
-                    
-                    </div><!-- /col-9 -->
-                </div><!-- /padding -->
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+
+                            <div class="form-box">
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3 style="color:black"> Edit Your Profle</h3>
+                                        <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                                        <h6>Upload a different photo...</h6>
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-key"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-bottom">
+                                   
+
+                                    <form role="form" action="" method="post" class="login-form">
+                                        <div class="form-group">
+
+                                            <label class="sr-only" for="form-username">Username:</label>
+                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required autofocus>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-password">Company</label>
+                                            <input type="text" name="password" placeholder="Company Name..." class="form-password form-control" id="form-password" required>
+                                        </div>
+                                                                                <div class="form-group">
+                                            <label class="sr-only" for="form-password">Email</label>
+                                            <input type="email" name="email" placeholder="Eamil" class="form-password form-control" id="form-username" required>
+                                        </div>
+                                                                                <div class="form-group">
+                                            <label class="sr-only" for="form-password">Adrress:</label>
+                                            <input type="text" name="password" placeholder="Password" class="form-password form-control" id="form-password" required>
+                                        </div>
+                                                                                <div class="form-group">
+                                            <label class="sr-only" for="form-password">WebSite:</label>
+                                            <input type="text" name="password" placeholder="Password" class="form-password form-control" id="form-password" required>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <label class="sr-only" for="form-username">Facebook:</label>
+                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required >
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <label class="sr-only" for="form-username">Twitter:</label>
+                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required >
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <label class="sr-only" for="form-username">Linkedin:</label>
+                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required >
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <label class="sr-only" for="form-username">Country:</label>
+                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required >
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-password">Password:</label>
+                                            <input type="text" name="password" placeholder="Company Name..." class="form-password form-control" id="form-password" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-password">Confirm Password:</label>
+                                            <input type="text" name="password" placeholder="Company Name..." class="form-password form-control" id="form-password" required>
+                                        </div>
+                                        <button type="submit" class="btn" name="login">Sign in!</button>
+                                        
+                                    </form>
+                                </div>
+                                <h3> Don´t have an account?</3>
+                                    <button type="submit" class="btn"  onClick="document.location.href='registration.php'">Sign up!</button>
+                            </div>
+
+                            <div class="social-login">
+                                <h3>...or login with:</h3>
+                                <div class="social-login-buttons">
+                                    <a class="btn btn-link-1 btn-link-1-facebook" href="login_facebook.php">
+                                        <i class="fa fa-facebook"></i> Facebook
+                                    </a>
+                                    <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+                                        <i class="fa fa-twitter"></i> Twitter
+                                    </a>
+                                    <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                                        <i class="fa fa-google-plus"></i> Google Plus
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--                        <div class="col-sm-1 middle-border"></div>-->
+                        <div class="col-sm-1"></div>
+
+                        <div class="col-sm-5">
+
+
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <!-- /main -->
-          
+
         </div>
-    </div>
-</div>
-
-
-<!--post modal-->
-<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-  <div class="modal-content">
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			Update Status
-      </div>
-      <div class="modal-body">
-          <form class="form center-block">
-            <div class="form-group">
-              <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
-            </div>
-          </form>
-      </div>
-      <div class="modal-footer">
-          <div>
-          <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-            <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-		  </div>	
-      </div>
-  </div>
-  </div>
-</div>
