@@ -420,12 +420,12 @@ function DB_readOrganizationAsTable($pdo, $userId) {
         foreach ($rows as $row) {
             $cont =+1;
             echo "<tr>";
-            echo "<td id='Id$cont'>" . $row['Id'] . "</td>";
+            echo "<td id='Id".$cont."'>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Name'] . "</td>";
             #echo "<td>" . $row['User_Boss'] . "</td>";
             echo "<td>" . $row['Date_Created'] . "</td>";
             echo "<td>" . $row['Address'] . "</td>";
-            echo "<td> <input type='button' value='Delete' onClick='removeOrganization($cont)'> </td>";
+            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(".$cont.")'> </td>";
              echo "<tr>";
         }
         echo "</table>";
