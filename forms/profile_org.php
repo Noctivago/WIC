@@ -60,7 +60,7 @@ include_once ('../db/conn.inc.php');
             <!-- /sidebar -->
           
             <!-- main right col -->
-            <div class="column col-sm-10 col-xs-11" id="main">
+<!--            <div class="column col-sm-10 col-xs-11" id="main">
                 
                 <!-- top nav -->
               	<div class="navbar navbar-blue navbar-static-top">  
@@ -107,6 +107,7 @@ include_once ('../db/conn.inc.php');
                     </ul>
                   	</nav>
                 </div>
+                </div>-->
                 <!-- /top nav -->
               
                 <div class="padding">

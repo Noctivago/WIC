@@ -24,5 +24,6 @@ include ("elements_index/body_index.php");
 <?php
 include("elements_index/jquery_source.php");
 ?>
+
 </body>
 </html>
