@@ -48,7 +48,7 @@ function removeOrganization($IdOrg) {
             alert(result);
         }
     });
-    viewAllOrganization();
+    //viewAllOrganization();
     return false;
 
 }
