@@ -12,17 +12,6 @@
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Sign In </strong> </h1>
-                            <div class="description">
-                                <p>
-                                    Edit Profile
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 text">
 
                             <div class="form-box">
                                 <div class="form-top">
