@@ -92,7 +92,7 @@ include_once ('../db/functions.php');
                                     ?>	
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                                        <div class="form-group"><h4></h4>
+                                        <div class="form-group">
                                             <input type="text" name="name" placeholder="SERVICE NAME" class="form-username form-control" id="name" required autofocus>
                                         </div>
                                         <div class="form-group">
