@@ -423,7 +423,7 @@ function DB_readOrganizationAsTable($pdo, $userId) {
             #echo "<td>" . $row['User_Boss'] . "</td>";
             echo "<td>" . $row['Date_Created'] . "</td>";
             echo "<td>" . $row['Address'] . "</td>";
-            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(this)'> </td>";
+            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(".$row['Id'].")'> </td>";
              echo "<tr>";
         }
         echo "</table>";
