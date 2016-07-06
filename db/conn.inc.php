@@ -415,7 +415,7 @@ function DB_readOrganizationAsTable($pdo, $userId) {
     try {
         $id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
-        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Date Created</th><th>Address</th></th><th>Delete</th></tr>";
+        echo "<table class='table table-striped' id='table-org'><tr><th>ID</th><th>Name</th><th>Date Created</th><th>Address</th></th><th>Delete</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
@@ -423,7 +423,7 @@ function DB_readOrganizationAsTable($pdo, $userId) {
             #echo "<td>" . $row['User_Boss'] . "</td>";
             echo "<td>" . $row['Date_Created'] . "</td>";
             echo "<td>" . $row['Address'] . "</td>";
-            echo "<td> <input type='button' value='Delete' onClick='removeOrganization()'> </td>";
+            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(".$row['Id'].")> </td>";
              echo "<tr>";
         }
         echo "</table>";
