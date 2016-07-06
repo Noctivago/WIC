@@ -1,3 +1,19 @@
+function readAllUserNewsletter($username){
+    var username = $username;
+    var arg = 'readAllUserNewsletter';
+    var dataString = 'arg=' + arg + '&username='+username;
+    $.ajax({
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        sucess : function (result) {
+                alert(result);
+        }
+    });
+    return false;
+}
+
 function addOrganization() {
 
     var userid = $("#userid").val();

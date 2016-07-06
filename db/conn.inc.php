@@ -559,7 +559,17 @@ function addNewsLetterPlatform($pdo, $userId) {
     }
 }
 
-function DB_readAllUserNewsletter(){
+function DB_readAllUserNewsletter($pdo,$userId){
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User_Newsletter] where [User_Id] = ? and [Enabled] = 1", array($userId), "rows");
+        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Description</th><th>Category</th><th>City</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Sub_Category_Id'] . "</td>";
+            echo "<td>" . $row['City_Id'] . "</td>";
+            echo "<td>" . $row['User_Id'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
     
 }
 

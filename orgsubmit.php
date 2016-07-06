@@ -42,6 +42,13 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'fuck';
     }
+}else if ($arg ==='readAllUserNewsletter'){
+    try{
+        $userId = $_SESSION['Id'];
+        DB_readAllUserNewsletter($pdo,$userId);
+    } catch (Exception $ex) {
+
+    }
 } else if ($arg === 'removeOrganization') {
     try {
         $id = (filter_var($_POST ['org']));
