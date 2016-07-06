@@ -18,8 +18,8 @@
                                     <div class="form-top-left">
                                         <h3 style="color:black"> Edit Your Profle</h3>
                                         <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                                        <h6 style="color:black">Upload another photo...</h6>
-                                        <input type="file" class="text-center center-block well well-sm">
+                                        <h6 style="color:black">Upload a different photo...</h6>
+                                        <input type="file" class="text-center center-block well well-sm" style="color:black">
                                     </div>
                                     <div class="form-top-right">
                                         <i class="fa fa-key"></i>
@@ -33,7 +33,7 @@
                                         <div class="form-group">
 
                                             <label class="sr-only" for="form-username">Username:</label>
-                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required autofocus>
+                                            <input type="text" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required autofocus>
 
                                         </div>
                                         <div class="form-group">
@@ -42,7 +42,7 @@
                                         </div>
                                                                                 <div class="form-group">
                                             <label class="sr-only" for="form-password">Email</label>
-                                            <input type="email" name="email" placeholder="Eamil" class="form-password form-control" id="form-username" required>
+                                            <input type="text" name="email" placeholder="Eamil" class="form-password form-control" id="form-username" required>
                                         </div>
                                                                                 <div class="form-group">
                                             <label class="sr-only" for="form-password">Adrress:</label>
@@ -55,7 +55,7 @@
                                         <div class="form-group">
 
                                             <label class="sr-only" for="form-username">Facebook:</label>
-                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required >
+                                            <input type="text" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required >
 
                                         </div>
                                         <div class="form-group">
