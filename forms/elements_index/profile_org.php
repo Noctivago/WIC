@@ -18,7 +18,7 @@
                                     <div class="form-top-left">
                                         <h3 style="color:black"> Edit Your Profle</h3>
                                         <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                                        <h6>Upload another photo...</h6>
+                                        <h6 style="color:black">Upload another photo...</h6>
                                         <input type="file" class="text-center center-block well well-sm">
                                     </div>
                                     <div class="form-top-right">
