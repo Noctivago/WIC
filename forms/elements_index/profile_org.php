@@ -92,20 +92,30 @@
                                     <button type="submit" class="btn"  onClick="document.location.href='registration.php'">Sign up!</button>
                             </div>
 
-                            <div class="social-login">
-                                <h3>...or login with:</h3>
-                                <div class="social-login-buttons">
-                                    <a class="btn btn-link-1 btn-link-1-facebook" href="login_facebook.php">
-                                        <i class="fa fa-facebook"></i> Facebook
-                                    </a>
-                                    <a class="btn btn-link-1 btn-link-1-twitter" href="#">
-                                        <i class="fa fa-twitter"></i> Twitter
-                                    </a>
-                                    <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
-                                        <i class="fa fa-google-plus"></i> Google Plus
-                                    </a>
-                                </div>
-                            </div>
+<!--post modal-->
+<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			Update Status
+      </div>
+      <div class="modal-body">
+          <form class="form center-block">
+            <div class="form-group">
+              <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+          <div>
+          <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
+            <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+		  </div>	
+      </div>
+  </div>
+  </div>
+</div>
 
                         </div>
 
