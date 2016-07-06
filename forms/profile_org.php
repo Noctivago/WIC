@@ -24,37 +24,32 @@ include_once ('../db/conn.inc.php');
 </html>-->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+<!--	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<title>Faceboot - A Facebook style template for Bootstrap</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
-<!--                <link href="../assets/css_profile_org/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+                <link href="../assets/css_profile_org/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 		[if lt IE 9]>
   
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]
-		-->
+		
                 <link href="../assets/css_profile_org/styles.css" rel="stylesheet" type="text/css"/>
-	</head>
+	</head>-->
 <?php
 include("elements_index/head_index.php");
 ?>
 	<body>
-            <?php
-            include("elements_index/header_index.php");
-            ?>
 <div class="wrapper">
     <div class="box">
         <div class="row row-offcanvas row-offcanvas-left">
-            
-
                       
           
             <!-- sidebar -->
-<!--            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
               
               	<ul class="nav">
           			<li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
@@ -72,7 +67,7 @@ include("elements_index/head_index.php");
                     </li>
                 </ul>
               
-              	 tiny only nav
+              	<!-- tiny only nav-->
               <ul class="nav visible-xs" id="xs-menu">
                   	<li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
                     <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
@@ -80,11 +75,8 @@ include("elements_index/head_index.php");
                     <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
                 </ul>
               
-            </div>-->
+            </div>
             <!-- /sidebar -->
-            <?php
-            include ("elements_index/main_index.php");
-            ?>
           
             <!-- main right col -->
             <div class="column col-sm-10 col-xs-11" id="main">
