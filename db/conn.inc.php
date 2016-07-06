@@ -415,7 +415,7 @@ function DB_readOrganizationAsTable($pdo, $userId) {
     try {
         $id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
-        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Date Created</th><th>Address</th></tr>";
+        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Date Created</th><th>Address</th></th><th>Delete</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
@@ -423,7 +423,8 @@ function DB_readOrganizationAsTable($pdo, $userId) {
             #echo "<td>" . $row['User_Boss'] . "</td>";
             echo "<td>" . $row['Date_Created'] . "</td>";
             echo "<td>" . $row['Address'] . "</td>";
-            echo "<tr>";
+            echo "<td> <input type='button' value='Delete' onClick='removeOrganization()'> </td>";
+             echo "<tr>";
         }
         echo "</table>";
     } catch (Exception $exc) {
@@ -589,3 +590,17 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
         echo 'ERROR READING ORGANIZATION SERVICE TABLE';
     }
 }
+function DB_removeOrganization($pdo,$userId,$Organization_Id){
+    try{ 
+        if (DB_checkIfOrganizationExistsWithBossId($pdo, $Organization_Id, $userid)) {
+            sql($pdo, "UPDATE [dbo].[Organization] SET [Enabled] = ? where [Id]=? and [User_Boss] = ?", array(0, $Organization_Id, $userid));
+            echo 'Organization Deleted';
+        } else {
+            echo 'Erro';
+        }
+    }
+     catch (Exception $ex) {
+        echo '';
+    }
+    
+    }   
