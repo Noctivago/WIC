@@ -6,7 +6,7 @@
   <div class="row">
     <!-- left column -->
     <div class="col-sm-8 col-sm-offset-2 text">
-      <div class="description">
+      <div class="text">
         <img src="http://lyco.com.br/s
              ite/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
         <h6>Upload a different photo...</h6>
