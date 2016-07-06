@@ -52,7 +52,7 @@ if ($arg === 'addOrganization') {
             echo 'Erro';
         }
     } catch (Exception $ex) {
-        echo '';
+        echo 'ERROR REMOVING THE ORGANIZATION!';
     }
 } else if ($arg === 'editOrganizationInformation') {
     
