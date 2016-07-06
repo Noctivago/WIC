@@ -8,7 +8,7 @@ include("elements_index/head_index.php");
     <?php
     include("elements_index/header_index.php");
     ?>
-    <!-- .cd-main-header -->
+<!-- .cd-main-header -->
 <?php
 include ("elements_index/main_index.php");
 ?>
@@ -16,10 +16,14 @@ include ("elements_index/main_index.php");
 include ("elements_index/profile_org.php");
 ?><!-- .content-wrapper -->
  <!-- .cd-main-content -->
- 
- <!-- Resource jQuery -->
+
+
+
+
+<!-- Resource jQuery -->
 <?php
 include("elements_index/jquery_source.php");
 ?>
- 
+
 </body>
+</html>
