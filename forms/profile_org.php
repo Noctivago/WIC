@@ -24,7 +24,7 @@ include_once ('../db/conn.inc.php');
 </html>-->
 <!DOCTYPE html>
 <html lang="en">
-<!--	<head>
+	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<title>Faceboot - A Facebook style template for Bootstrap</title>
@@ -38,7 +38,7 @@ include_once ('../db/conn.inc.php');
 		<![endif]
 		
                 <link href="../assets/css_profile_org/styles.css" rel="stylesheet" type="text/css"/>
-	</head>-->
+	</head>
 <?php
 include("elements_index/head_index.php");
 ?>
