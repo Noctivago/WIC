@@ -5,11 +5,12 @@
   
   <div class="row">
     <!-- left column -->
-    <div class="col-md-4 col-sm-6 col-xs-12">
-      <div class="text-center">
-        <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
+    <div class="col-sm-8 col-sm-offset-2 text">
+      <div class="description">
+        <img src="http://lyco.com.br/s
+             ite/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
         <h6>Upload a different photo...</h6>
-        <input type="file" class="text-center center-block well well-sm">
+        <input type="file" class="btn">
       </div>
     </div>
     <!-- edit form column -->
