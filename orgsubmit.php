@@ -1,6 +1,8 @@
 <?php
 
 include_once './db/conn.inc.php';
+include_once './forms/session.php';
+
 
 $arg = (filter_var($_POST ['arg']));
 
