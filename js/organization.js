@@ -40,7 +40,7 @@ function removeOrganization($IdOrg) {
     var dataString = 'arg=' + arg + '&org=' + $IdOrg;
     alert(dataString);
     $.ajax({
-        type: 'POST',
+        type: "POST",
         url: "orgsubmit.php",
         data: dataString,
         cache: false,
