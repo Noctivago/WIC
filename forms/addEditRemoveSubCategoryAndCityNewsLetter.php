@@ -77,23 +77,21 @@ include_once ('../db/functions.php');
 
                                 <div class="form-bottom">
                                     <?php
-                                    if (isset($_POST['addWic']) && !empty($_POST['name']) && !empty($_POST['city'])) {
+                                    if (!empty($_POST['subCategory']) && !empty($_POST['city'])) {
                                         $msg = '';
                                         try {
                                             #$d = getDateToDB();
-                                            $name = (filter_var($_POST ['name'], FILTER_SANITIZE_EMAIL));
-                                            $city = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
+                                            $subCategoryId = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_EMAIL));
+                                            $cityId = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
-                                            $eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
-                                            $DB_Date = getDateToDBStringToDate($eventDate);
-                                            $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $DB_Date, $eventDate);
+                                            $msg = DB_addUserNewsletter($pdo,$subCategoryId,$cityId,$userId);
                                             #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
                                         } catch (Exception $ex) {
                                             echo "ERROR!";
                                         }
                                     }
                                     ?>	
-
+                                    
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group">
                                             <select class="form-username form-control" name="city" id="city" required="required">
@@ -101,7 +99,7 @@ include_once ('../db/functions.php');
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-username form-control" name="subCategory" id="city" required="required">
+                                            <select class="form-username form-control" name="subCategory" id="subCategory" required="required">
                                                 <?= DB_readSubCategoryAsSelect($pdo) ?>
                                             </select>
                                         </div>

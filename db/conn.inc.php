@@ -559,6 +559,20 @@ function addNewsLetterPlatform($pdo, $userId) {
     }
 }
 
+function DB_readAllUserNewsletter(){
+    
+}
+
+function DB_addUserNewsletter($pdo,$subCategoryId,$cityId,$userId){
+    try {
+        sql($pdo, "INSERT INTO [dbo].[User_Newsletter] ([Sub_Category_Id], [City_Id], [User_Id], [Enabled], [Newsletter_Id]) VALUES(?,?,?,?,?)", array($subCategoryId, $cityId, $userId, 1,1));
+        echo 'Newsletter added';
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
+    }
+}
+
 function DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate) {
     try {
         sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [City_Id], [User_Id], [Date_Created], [Enabled], [Event_Date]) VALUES(?,?,?,?,?,?)"
