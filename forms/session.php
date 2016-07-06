@@ -8,18 +8,20 @@ if (!isset($_SESSION['username'])) {
 }
 
 
-#SE ESTIVER ATRIBUIDO VERIFICAR NOVAMENTE SE EXISTE NA BD <- ADICIONAR PASSWORD A SESSION
+#SE ESTIVER ATRIBUIDO VERIFICAR NOVAMENTE SE EXISTE NA BD 
 
-//} else {
-//    //ADICIONAR PASSWORD
-//    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Username] = ? AND [Id] = ?", array($_SESSION['username'], $_SESSION['id']), "rows");
-//    foreach ($rows as $row) {
-//        if ($row['Username'] == $_SESSION['username']) {
-//            
-//        } else {
-//            
-//        }
-//    }
-//}
-
-
+//   session_start();
+//   
+//   $user_check = $_SESSION['login_user'];
+//   
+//   $ses_sql = mysqli_query($db,"select username from admin where username = '$user_check' ");
+//   
+//   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+//   
+//   $login_session = $row['username'];
+//   
+//   if(!isset($_SESSION['login_user'])){
+//      header("location:login.php");
+//   }
+//
+//
