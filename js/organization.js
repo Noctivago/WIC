@@ -34,10 +34,10 @@ function addOrganization() {
     }
 }
 
-function removeOrganization($orgId) {
+function removeOrganization($cont) {
     //remove organização selecionada pelo o boss
     var arg = 'removeOrganization';
-    var org = $orgId.valueOf();
+    var org = $("#Id"+$cont).val();
     var dataString = 'arg=' + arg + '&org=' + org;
     alert(dataString);
     $.ajax({
@@ -59,9 +59,9 @@ function editOrganizationInformation() {
 
 }
 //validar organização por parte do admin
-function validateOrganization($cont) {
+function validateOrganization() {
     var arg = 'validateOrganization';
-    var orgId = $("#Id".$cont).val();
+    var orgId = $("#Id").val();
     //falta enviar user id para verificar se é admin para poder validar
     var dataString = 'arg=' + arg + '&org=' + orgId;
     alert(dataString);
