@@ -420,7 +420,7 @@ function DB_readOrganizationAsTable($pdo, $userId) {
         foreach ($rows as $row) {
             $cont =+1;
             echo "<tr id='".$cont."'>";
-            echo "<td id='Id".$cont."'>" . $row['Id'] . "</td>";
+            echo "<td id='Id".$cont."' type='text'>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Name'] . "</td>";
             #echo "<td>" . $row['User_Boss'] . "</td>";
             echo "<td>" . $row['Date_Created'] . "</td>";
@@ -592,17 +592,4 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
         echo 'ERROR READING ORGANIZATION SERVICE TABLE';
     }
 }
-function DB_removeOrganization($pdo,$userId,$Organization_Id){
-    try{ 
-        if (DB_checkIfOrganizationExistsWithBossId($pdo, $Organization_Id, $userid)) {
-            sql($pdo, "UPDATE [dbo].[Organization] SET [Enabled] = ? where [Id]=? and [User_Boss] = ?", array(0, $Organization_Id, $userid));
-            echo 'Organization Deleted';
-        } else {
-            echo 'Erro';
-        }
-    }
-     catch (Exception $ex) {
-        echo '';
-    }
-    
-    }   
+     
