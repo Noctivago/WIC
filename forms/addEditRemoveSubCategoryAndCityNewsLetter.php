@@ -77,7 +77,7 @@ include_once ('../db/functions.php');
 
                                 <div class="form-bottom">
                                     <?php
-                                    if (!empty($_POST['subCategory']) && !empty($_POST['city'])) {
+                                    if (isset($_POST['addNews'])&&!empty($_POST['subCategory']) && !empty($_POST['city'])) {
                                         $msg = '';
                                         try {
                                             #$d = getDateToDB();
@@ -103,7 +103,7 @@ include_once ('../db/functions.php');
                                                 <?= DB_readSubCategoryAsSelect($pdo) ?>
                                             </select>
                                         </div>
-                                        <button type="submit" class="btn" name="addWic">ADD Newsletter</button>
+                                        <button type="submit" class="btn" name="addNews">ADD Newsletter</button>
                                  </form>
                                 </div>
 
