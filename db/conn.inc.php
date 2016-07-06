@@ -419,13 +419,13 @@ function DB_readOrganizationAsTable($pdo, $userId) {
         $cont = 1;
         foreach ($rows as $row) {
             $cont =+1;
-            echo "<tr>";
+            echo "<tr id='".$cont."'>";
             echo "<td id='Id".$cont."'>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Name'] . "</td>";
             #echo "<td>" . $row['User_Boss'] . "</td>";
             echo "<td>" . $row['Date_Created'] . "</td>";
             echo "<td>" . $row['Address'] . "</td>";
-            echo "<td> <input type='button' value='Delete' onClick='removeOrganization($cont)'> </td>";
+            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(this)'> </td>";
              echo "<tr>";
         }
         echo "</table>";
