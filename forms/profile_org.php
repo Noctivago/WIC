@@ -89,7 +89,7 @@ include("elements_index/head_index.php");
             <!-- main right col -->
             <div class="column col-sm-10 col-xs-11" id="main">
                 
-                 top nav 
+                <!-- top nav -->
               	<div class="navbar navbar-blue navbar-static-top">  
                     <div class="navbar-header">
                       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
