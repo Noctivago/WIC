@@ -43,9 +43,14 @@ include_once ('../db/conn.inc.php');
 include("elements_index/head_index.php");
 ?>
 	<body>
+            <?php
+            include("elements_index/header_index.php");
+            ?>
 <div class="wrapper">
     <div class="box">
         <div class="row row-offcanvas row-offcanvas-left">
+            
+
                       
           
             <!-- sidebar -->
