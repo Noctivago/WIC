@@ -24,7 +24,7 @@ include_once ('../db/conn.inc.php');
 </html>-->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+<!--	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<title>Faceboot - A Facebook style template for Bootstrap</title>
@@ -32,13 +32,16 @@ include_once ('../db/conn.inc.php');
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
                 <link href="../assets/css_profile_org/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-		<!--[if lt IE 9]>
+		[if lt IE 9]>
   
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+		<![endif]
 		
                 <link href="../assets/css_profile_org/styles.css" rel="stylesheet" type="text/css"/>
-	</head>
+	</head>-->
+<?php
+include("elements_index/head_index.php");
+?>
 	<body>
 <div class="wrapper">
     <div class="box">
