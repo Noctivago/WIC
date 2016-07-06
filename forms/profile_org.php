@@ -4,24 +4,6 @@ include_once ('session.php');
 include_once ('../db/conn.inc.php');
 #session_start();
 ?>
-
-<!--<html>
-    <head>
-        <title> Home </title>
-    </head>
-    <body>
-
-        <?php
-        echo 'Welcome ' . $_SESSION['username'] . '<br>';
-        echo 'Profile ' . '<br>';
-        echo '<br>';
-        echo '<br>';
-        echo "<a href='service.php'> AddService</a> ";
-        echo "<a href='logout.php'> Logout</a> ";
-        ?>
-        
-    </body>
-</html>-->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -37,10 +19,10 @@ include_once ('../db/conn.inc.php');
 		<![endif]
 
                 <link href="../assets/css_profile_org/styles.css" rel="stylesheet" type="text/css"/>
+                <?php
+                include("elements_index/head_index.php");
+                ?>
 	</head>
-//<?php
-//include("elements_index/head_index.php");
-//?>
 	<body>
 <div class="wrapper">
     <div class="box">
