@@ -34,10 +34,10 @@ function addOrganization() {
     }
 }
 
-function removeOrganization($cont) {
+function removeOrganization($orgId) {
     //remove organização selecionada pelo o boss
     var arg = 'removeOrganization';
-    var org = $("#Id"+$cont).val();
+    var org = $orgId;
     var dataString = 'arg=' + arg + '&org=' + org;
     alert(dataString);
     $.ajax({
