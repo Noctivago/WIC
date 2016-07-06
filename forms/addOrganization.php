@@ -42,7 +42,7 @@ include_once ('../db/functions.php');
         <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
         
         <!-- javascripto-->
-        <script src="js/organization.js"></script>
+        <script src="../js/organization.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
        
     </head>
