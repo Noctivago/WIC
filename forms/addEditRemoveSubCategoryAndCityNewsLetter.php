@@ -43,6 +43,9 @@ include_once ('../db/functions.php');
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+        
+        <!--javascript-->
+        <script src="../js/organization.js"></script>
 
     </head>
 
@@ -71,7 +74,14 @@ include_once ('../db/functions.php');
                                 <div class="form-top">
                                     <div class="form-top-left">
                                         <h3 style="color:black">ADD Newsletter</h3>
+                                        <?php DB_readAllUserNewsletter($_SESSION['username']) ?>
+                                    </div>
+                                </div>
 
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3 style="color:black">ADD Newsletter</h3>
+                                        
                                     </div>
                                 </div>
 
