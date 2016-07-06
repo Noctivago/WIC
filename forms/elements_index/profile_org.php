@@ -1,7 +1,8 @@
-<div class="padding">
+<div class="top-content">
                                             	
-  <div class="container" style="text-align:center;">
-  <h1 class="page-header">Edit Profile</h1>
+  <div class="inner-bg" style="text-align:center;">
+  <h1 class="container">Edit Profile</h1>
+  
   <div class="row">
     <!-- left column -->
     <div class="col-md-4 col-sm-6 col-xs-12">
