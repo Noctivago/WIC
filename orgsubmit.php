@@ -44,7 +44,7 @@ if ($arg === 'addOrganization') {
     try {
         $id = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
         //parametro para receber user id
-        $userid = 32;
+        $userid = 33;
         if (DB_checkIfOrganizationExistsWithBossId($pdo, $id, $userid)) {
             sql($pdo, "UPDATE [dbo].[Organization] SET [Enabled] = ? where [Id]=? and [User_Boss] = ?", array(0, $id, $userid));
             echo 'Organization Deleted';
