@@ -858,22 +858,21 @@ Sidebar
   
 /*FORM GROUP MAIN*/
 
-.form-group {
+.form-group-main {
   margin-bottom: 15px;
 }
 
 @media (min-width: 768px) {
-  .form-inline .form-group {
+  .form-inline .form-group-main {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .form-horizontal .form-group {
+  .form-horizontal .form-group-main {
   margin-right: -15px;
   margin-left: -15px;
   
 }
 }
-.form-horizontal .form-group:before,
-.form-horizontal .form-group:after,
-.form-horizontal .form-group:after,
+.form-horizontal .form-group-main:before,
+.form-horizontal .form-group-main:after,

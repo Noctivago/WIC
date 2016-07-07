@@ -28,57 +28,57 @@
                                    
 
                                     <form role="form" action="" method="post" class="login-form-main">
-                                        <div class="form-group">
+                                        <div class="form-group-main">
 
                                             <label class="sr-only" for="form-username">Username:</label>
                                             <input type="text" name="email" placeholder="Username" class="form-username form-control" id="form-username" required autofocus>
 
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group-main">
                                             <label class="sr-only" for="form-password">Company</label>
                                             <input type="text" name="password" placeholder="Company Name..." class="form-password form-control" id="form-password" required>
                                         </div>
-                                                                                <div class="form-group">
+                                                                                <div class="form-group-main">
                                                                                     <label class="sr-only" for="form-password" style="color:black">Email</label>
                                             <input type="text" name="email" placeholder="Email" class="form-password form-control" id="form-username" required>
                                         </div>
-                                                                                <div class="form-group">
+                                                                          <div class="form-group-main">
                                             <label class="sr-only" for="form-password">Adrress:</label>
                                             <input type="text" name="password" placeholder="Adress" class="form-password form-control" id="form-password" required>
                                         </div>
-                                                                                <div class="form-group">
+                                                                                <div class="form-group-main">
                                             <label class="sr-only" for="form-password">WebSite:</label>
                                             <input type="text" name="password" placeholder="WebSite" class="form-password form-control" id="form-password" required>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group-main">
 
                                             <label class="sr-only" for="form-username">Facebook:</label>
                                             <input type="email" name="email" placeholder="Your Facebook account" class="form-username form-control" id="form-username" required >
 
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group-main">
 
                                             <label class="sr-only" for="form-username">Twitter:</label>
                                             <input type="email" name="email" placeholder="Your Twitter account" class="form-username form-control" id="form-username" required >
 
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group-main">
 
                                             <label class="sr-only" for="form-username">Linkedin:</label>
                                             <input type="email" name="email" placeholder="Your Linkedin account" class="form-username form-control" id="form-username" required >
 
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group-main">
 
                                             <label class="sr-only" for="form-username">Country:</label>
                                             <input type="text" name="email" placeholder="Choose your Country" class="form-username form-control" id="form-username" required >
 
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group-main">
                                             <label class="sr-only" for="form-password">Password:</label>
                                             <input type="password" name="password" placeholder="Enter a safe password" class="form-password form-control" id="form-password" required>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group-main">
                                             <label class="sr-only" for="form-password">Confirm Password:</label>
                                             <input type="password" name="password" placeholder="Please Confirm your Password" class="form-password form-control" id="form-password" required>
                                         </div>
