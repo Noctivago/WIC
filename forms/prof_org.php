@@ -1,5 +1,5 @@
 <?php
-//include("session.php");
+include("session.php");
 ?>
 <?php
 include("elements_index/head_index.php");
@@ -13,7 +13,8 @@ include("elements_index/head_index.php");
 include ("elements_index/main_index.php");
 ?>
 <?php
-include ("elements_index/userProfile.php");
+include ("elements_index/profile_org.php");
+
 ?><!-- .content-wrapper -->
  <!-- .cd-main-content -->
 

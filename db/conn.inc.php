@@ -513,7 +513,7 @@ function DB_readOrganizationServiceAsSelect($pdo, $userId) {
         $rows = sql($pdo, "SELECT [Organization_Service].[Id] AS OSI, [Organization_Service].[Name] AS OSNAME, [Organization_Service].[Description] AS OSDES  FROM [dbo].[Organization_Service]
     join [Organization]
     on [Organization_Id] = [Organization].[Id]
-    where [Organization].[User_Boss] = ? and [Organization_Service].[Enabled] = 1", array($userId), "rows");
+    where [Organization].[User_Boss] = ? and [Organization_Service].[Enabled] = 1 and [Organization].[Enabled] = 1", array($userId), "rows");
         foreach ($rows as $row) {
             echo "<option value='" . htmlspecialchars($row['OSI']) . "'>" . htmlspecialchars($row['OSNAME']) . "</option>";
         }
@@ -546,7 +546,7 @@ function DB_readOrganizationServiceBookAsTable($pdo, $userId) {
   on [Organization_Service].[Id] = [Organization_Service_Book].[Organization_Service_Id]
   join [Organization]
   on [Organization].[Id] = [Organization_Service].[Organization_Id]
-  where [Organization].[User_Boss] = ?", array($userId), "rows");
+  where [Organization].[User_Boss] = ? and [Organization].[Enabled] = 1", array($userId), "rows");
         echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Description</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
