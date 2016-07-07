@@ -1,5 +1,8 @@
 
-
+<link href="../../assets/assests_sidebar/css/css_main/style_main.css" rel="stylesheet" type="text/css"/><!--styleMain-->
+         <link href="../../assets/assests_sidebar/css/css_main/boostrap.min_main.css" rel="stylesheet" type="text/css"/><!--boostrap min main-->
+         <link href="../../assets/assests_sidebar/css/css_main/font-awesome-main/font-awesome.min_main.css" rel="stylesheet" type="text/css"/>
+         <link href="../../assets/assests_sidebar/css/css_main/form-elements_main.css" rel="stylesheet" type="text/css"/>
 
         <div class="top-content">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -129,7 +132,13 @@
             </div>
 
         </div>
-<script src="../../assets/assests_sidebar/js/js_main/bootstrap.min_main.js" type="text/javascript"></script>
+<!--<script src="../../assets/assests_sidebar/js/js_main/bootstrap.min_main.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/js/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/js/js_main/backstretch.min_main.js" type="text/javascript"></script>
-<script src="../../assets/assests_sidebar/js/js_main/scripts_main.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/js/js_main/scripts_main.js" type="text/javascript"></script>-->
+
+
+<script src="../../assets/assests_sidebar/css/css_main/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/css/css_main/js_main/bootstrap.min_main.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/css/css_main/js_main/backstretch.min_main.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/css/css_main/js_main/scripts_main.js" type="text/javascript"></script>
