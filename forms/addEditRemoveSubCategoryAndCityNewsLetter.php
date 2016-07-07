@@ -82,16 +82,20 @@ include_once ('../db/functions.php');
                                     if (isset($_POST['addNews'])&&!empty($_POST['subCategory']) && !empty($_POST['city'])) {
                                         $msg = '';
                                         try {
-                                            #$d = getDateToDB();
+                                            if(DB_checkIfUserNewsletterExists){
+                                            }  else {
                                             $subCategoryId = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_NUMBER_INT));
                                             $cityId = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
                                             $msg = DB_addUserNewsletter($pdo,$subCategoryId,$cityId,$userId);
                                             #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
-                                        } catch (Exception $ex) {
-                                            echo "ERROR!";
                                         }
-                                    }
+                                        }catch (Exception $ex) {
+                                            echo "ERROR!";
+                                        
+                                        }
+                                        }
+                                    
                                     ?>	
                                     
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
