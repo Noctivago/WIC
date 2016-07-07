@@ -89,12 +89,13 @@ if (isset($_SESSION['username'])) {
                                             $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                                             $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                                             $hashPassword = hash('whirlpool', $password);
-                                            if (DB_checkIfUserExists($pdo, $email)) {
+                                            $val = DB_getLoginFailedValue($pdo, $email);
+                                            if (DB_checkIfUserExists($pdo, $email) && $val < 3) {
                                                 $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, '1'), "rows");
                                                 #$msg = 'EMAIL FOUND';
 
                                                 foreach ($rows as $row) {
-                                                    if ($row['Email'] == $email && $row['Password'] == $hashPassword && (DB_getLoginFailedValue($pdo, $email) < 3)) {
+                                                    if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
                                                         //ADICIONAR PASSWORD
                                                         $_SESSION['valid'] = true;
                                                         $_SESSION['timeout'] = time();
@@ -121,8 +122,10 @@ if (isset($_SESSION['username'])) {
                                                         }
                                                     }
                                                 }
+                                            } else if (DB_getLoginFailedValue($pdo, $email) > 3) {
+                                                $msg = 'Account blocked!';
                                             } else {
-                                                $msg = 'Wrong username or password';
+                                                 $msg = 'Wrong username or password';
                                             }
                                         } catch (Exception $ex) {
                                             echo "ERROR!";
