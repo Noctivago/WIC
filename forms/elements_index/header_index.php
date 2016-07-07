@@ -10,7 +10,7 @@
 		<div class="cd-search is-hidden">
 			<form action="#0">
 				<input type="search" placeholder="Search Service..">
-                                <style>
+<!--                                <style>
                                     .container_se{
     margin-top:30px;
 }
@@ -50,17 +50,17 @@
                                 <option value="500">500</option>
                                 <option value="1000">1000</option>
                             </select>                                
-                        </div> <!-- form group [rows] -->
+                        </div>  form group [rows] 
                         <div class="form-group">
                             <label class="filter-col_se" style="margin-right:0;" for="pref-search">Search:</label>
                             <input type="text" class="form-control input-sm" id="pref-search">
-                        </div><!-- form group [search] -->
+                        </div> form group [search] 
                         <div class="form-group">
                             <label class="filter-col_se" style="margin-right:0;" for="pref-orderby">Order by:</label>
                             <select id="pref-orderby" class="form-control">
                                 <option>Descendent</option>
                             </select>                                
-                        </div> <!-- form group [order by] --> 
+                        </div>  form group [order by]  
                         <div class="form-group">    
                             <div class="checkbox" style="margin-left:10px; margin-right:10px;">
                                 <label><input type="checkbox"> Ingested</label>
@@ -81,7 +81,7 @@
             <span class="glyphicon glyphicon-cog"></span> Advanced Search
         </button>
 	</div>
-</div>
+</div>-->
 			</form>
 		</div> <!-- cd-search -->
 
