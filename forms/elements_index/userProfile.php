@@ -46,15 +46,14 @@
                                     <input type="text" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
+                                    <label class="sr-only" for="form-username">Email</label>
+                                    <input type="text" name="email" placeholder="" class="form-username form-control" id="form-username" required disabled="">
+                                </div>
+                                <div class="form-group">
                                     <label class="sr-only" for="form-password">Country:</label>
                                     <input type="text" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
                                 </div>
-                                <div class="form-group">
 
-                                    <label class="sr-only" for="form-username">City</label>
-                                    <input type="text" name="email" placeholder="Choose your City" class="form-username form-control" id="form-username" required disabled="">
-
-                                </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Password:</label>
                                     <input type="password" name="password" placeholder="Enter a safe password" class="form-password form-control" id="form-password" required>
