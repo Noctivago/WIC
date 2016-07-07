@@ -25,7 +25,8 @@ if ($arg === 'addOrganization') {
         echo 'ERRO';
     }
 } else if ($arg === 'viewOrganization') {
-   try{ $id = $_SESSION['Id'];
+   try{
+    $id = $_SESSION['Id'];
     $rows = $sql($pdo,"SELECT * FROM [Organization] where [User_Boss] = ? and [Enabled] = 1",array($id),"rows");
     echo "<table><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
         foreach ($rows as $row) {

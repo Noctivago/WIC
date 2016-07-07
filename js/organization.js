@@ -1,5 +1,6 @@
 function viewOrganization(){
     var arg = 'viewOrganization';
+    alert(arg);
     $.post('orgsubmit.php',{postarg:arg},
     function(data){
         $('#result').html(data);
