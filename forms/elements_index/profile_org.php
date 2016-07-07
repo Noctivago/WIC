@@ -1,8 +1,9 @@
 
-<link href="../../assets/assests_sidebar/css/css_main/style_main.css" rel="stylesheet" type="text/css"/><!--styleMain-->
-         <link href="../../assets/assests_sidebar/css/css_main/boostrap.min_main.css" rel="stylesheet" type="text/css"/><!--boostrap min main-->
-         <!--<link href="../../assets/assests_sidebar/css/css_main/font-awesome-main/font-awesome.min_main.css" rel="stylesheet" type="text/css"/>-->
-<!--         <link href="../../assets/assests_sidebar/css/css_main/form-elements_main.css" rel="stylesheet" type="text/css"/>-->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link href="../../../form_login/public_html/form-1/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../form_login/public_html/form-1/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../form_login/public_html/form-1/assets/css/form-elements.css" rel="stylesheet" type="text/css"/>
+<link href="../../../form_login/public_html/form-1/assets/css/style.css" rel="stylesheet" type="text/css"/>
 
         <div class="top-content">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
