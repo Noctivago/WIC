@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Email</label>
-                                    <input type="text" name="email" placeholder="" class="form-username form-control" id="form-username" required>
+                                    <input type="text" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Country:</label>
