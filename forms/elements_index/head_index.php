@@ -16,6 +16,7 @@
          <link href="../../assets/assests_sidebar/css/css_main/boostrap.min_main.css" rel="stylesheet" type="text/css"/><!--boostrap min main-->
          <link href="../../assets/assests_sidebar/css/css_main/font-awesome-main/font-awesome.min_main.css" rel="stylesheet" type="text/css"/>
          <link href="../../assets/assests_sidebar/css/css_main/form-elements_main.css" rel="stylesheet" type="text/css"/>
-  	
+  	<link rel="shortcut icon" href="../../assets/img/logo.png">
+
 	<title>Welcome to WIC</title>
 </head>
