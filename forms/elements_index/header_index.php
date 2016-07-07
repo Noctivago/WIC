@@ -100,7 +100,7 @@
 					<ul>
 
 						<li><a href="#0">My Account</a></li>
-						<li><a href="prof_org.php">Edit Account</a></li>
+						<li><a href="userProfile.php">Edit Account</a></li>
 						<li><a href="logout.php">Logout</a></li>
                                                 
 					</ul>
