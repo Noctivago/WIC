@@ -47,7 +47,7 @@ include_once ('../db/functions.php');
        
     </head>
 
-    <body onload="viewOrganization()">
+    <body onload="readAllOrganization(<?php $_SESSION['Id'] ?>)">
 
         <!-- Top content -->
         <div class="top-content">
@@ -124,14 +124,16 @@ include_once ('../db/functions.php');
                             </div>
 
                         </div>
-
+                        <div id="orgresp">
+                            
+                        </div>
                         <!--                        <div class="col-sm-1 middle-border"></div>-->
                         <div class="col-sm-1"></div>
-
-                        <div class="col-sm-5" id="result">
+                        
+                        <div class="col-sm-5">
                             <br>
                             <br>
-                           <!--?= DB_readOrganizationAsTable($pdo, $_SESSION['id']); ?>-->
+                            <?= DB_readOrganizationAsTable($pdo, $_SESSION['id']); ?>
                         </div>
                     </div>
 

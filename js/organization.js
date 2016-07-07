@@ -1,12 +1,3 @@
-function viewOrganization(){
-    var arg = 'viewOrganization';
-    alert(arg);
-    $.post('orgsubmit.php',{postarg:arg},
-    function(data){
-        $('#result').html(data);
-    });
-}
-
 function readAllUserNewsletter(){
     var arg = 'readAllUserNewsletter';
     var dataString = 'arg=' + arg;
@@ -278,6 +269,29 @@ function removeOrganizationSubCategoryOwner() {
 function editPermissionUserInOrganization() {
 
 }
+
+function readAllOrganization(idUser){
+    alert('viewAllOrganization');
+    var arg = 'viewAllOrganization';
+    var id = idUser;
+    var dataString = 'arg=' + arg + '&idUser='+id;
+    alert(dataString);
+    $.ajax({
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        success: function (result) {
+            alert(result);
+             var ajaxDisplay = document.getElementById('orgresp');
+                ajaxDisplay.innerHTML = result;
+        }
+    });
+
+    return false;
+
+}
+
 
 function viewAllOrganization() {
     alert('viewAllOrganization');
