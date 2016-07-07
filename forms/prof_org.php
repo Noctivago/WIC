@@ -13,7 +13,8 @@ include("elements_index/head_index.php");
 include ("elements_index/main_index.php");
 ?>
 <?php
-include ("elements_index/profile_org.php");
+#include ("elements_index/profile_org.php");
+include ("elements_index/userProfile.php");
 ?><!-- .content-wrapper -->
  <!-- .cd-main-content -->
 
