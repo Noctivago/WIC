@@ -20,7 +20,7 @@
 
                     <div class="form-box">
                         <div class="form-top">
-                            <div class="form-top-left">
+                            <div class="form-top">
 
                                 <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
                                 <input type="file" class="text-center center-block well well-sm" style="color:black">
