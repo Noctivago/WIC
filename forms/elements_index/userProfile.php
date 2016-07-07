@@ -46,10 +46,6 @@
                                     <input type="text" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password" style="color:black">Picture</label>
-                                    <input type="text" name="email" placeholder="" class="form-password form-control" id="form-username" required>
-                                </div>
-                                <div class="form-group">
                                     <label class="sr-only" for="form-password">Country:</label>
                                     <input type="text" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
                                 </div>
