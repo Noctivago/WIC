@@ -38,25 +38,21 @@
                                 <div class="form-group">
 
                                     <label class="sr-only" for="form-username">First Name</label>
-                                    <input type="text" name="email" placeholder="Username" class="form-username form-control" id="form-username" required autofocus>
+                                    <input type="text" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
 
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Last Name</label>
-                                    <input type="text" name="password" placeholder="Company Name..." class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password" style="color:black">Picture</label>
-                                    <input type="text" name="email" placeholder="Email" class="form-password form-control" id="form-username" required>
+                                    <input type="text" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Country:</label>
-                                    <input type="text" name="password" placeholder="WebSite" class="form-password form-control" id="form-password" required>
+                                    <input type="text" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
 
                                     <label class="sr-only" for="form-username">City</label>
-                                    <input type="text" name="email" placeholder="Choose your Country" class="form-username form-control" id="form-username" required >
+                                    <input type="text" name="email" placeholder="Choose your City" class="form-username form-control" id="form-username" required disabled="">
 
                                 </div>
                                 <div class="form-group">
