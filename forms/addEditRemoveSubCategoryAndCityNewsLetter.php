@@ -83,7 +83,7 @@ include_once ('../db/functions.php');
                                         $msg = '';
                                         try {
                                             #$d = getDateToDB();
-                                            $subCategoryId = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_EMAIL));
+                                            $subCategoryId = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_NUMBER_INT));
                                             $cityId = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
                                             $msg = DB_addUserNewsletter($pdo,$subCategoryId,$cityId,$userId);
