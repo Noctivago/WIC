@@ -146,3 +146,22 @@ function validateForm(value) {
         return true;
     }
 }
+
+
+function removeUserNewsletter($IdNews){
+     var arg = 'removeUserNewsletter';
+    var dataString = 'arg=' + arg + '&idNews=' + $IdNews;
+    alert(dataString);
+    $.ajax({
+        type: 'POST',
+        url: "../orgsubmit.php",
+        data: dataString,
+        cache: false,
+        sucess: function (result) {
+            alert(result);
+        }
+    });
+    return false;
+
+}
+    

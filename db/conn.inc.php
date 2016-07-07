@@ -574,12 +574,12 @@ function DB_checkIfUserNewsletterExists($pdo, $userId, $subcategoryId, $cityId) 
 
 function DB_readAllUserNewsletter($pdo, $userId) {
     $rows = sql($pdo, "SELECT [dbo].[User_Newsletter].[Id],[dbo].[Sub_Category].[Name] AS Sub_Name ,[dbo].[City].[Name] AS City_Name FROM [dbo].[User_Newsletter] join [dbo].[City] on [dbo].[City].[Id] = [dbo].[User_Newsletter].[City_Id] join [dbo].[Sub_Category] on [dbo].[Sub_Category].[Id] = [dbo].[User_Newsletter].[Sub_Category_ID] where [dbo].[User_Newsletter].[User_Id] = ? and [dbo].[User_Newsletter].[Enabled] = 1", array($userId), "rows");
-    echo "<table class='table table-striped'><tr><th>ID</th><th>Sub Category</th><th>City</th><th>Delete</th></tr>";
+    echo "<table class='table table-striped'><tr><<th>Sub Category</th><th>City</th><th>Delete</th></tr>";
     foreach ($rows as $row) {
         echo "<tr>";
         echo "<td>" . $row['Sub_Name'] . "</td>";
         echo "<td>" . $row['City_Name'] . "</td>";
-         echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . ")'> </td>";
+         echo "<td> <input type='button' value='Delete' onClick='removeUserNewsletter(" . $row['Id'] . ")'> </td>";
         echo "<tr>";
     }
     echo "</table>";

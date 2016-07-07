@@ -27,6 +27,17 @@ if ($arg === 'addUser') {
     }
 } else if ($arg === 'readUser') {
     
+
+} else if ($arg === 'removeUserNewsletter') {   
+    try{
+        $idNewsLetter = (filter_var($_POST ['idNews'], FILTER_SANITIZE_STRING));
+        $idUser = $_SESSION['Id'];
+        sql($pdo,"UPDATE [dbo].[User_Newsletter] SET [Enabled] = 0 WHERE [User_Id] = ? and [Id] = ?", array($idUser,$idNewsLetter));
+        echo 'Newsletter removed';
+        
+    } catch (Exception $ex) {
+
+    }
 } else if ($arg === 'readAllUsers') {
     try {
         $id = 0;
