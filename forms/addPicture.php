@@ -71,7 +71,8 @@ include_once ('../db/functions.php');
                                         $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
                                         $dir = '../pics/'; //Diretório para uploads
                                         $msg = move_uploaded_file($_FILES['fileUpload']['tmp_name'], $dir . $new_name); //Fazer upload do arquivo
-                                    }
+                                    } else
+                                        $msg = 'ERROR UPLOADING THE PICTURE!';
                                     ?>
                                     <div class = "form-group"><h4> <?php echo $msg; ?></h4>
                                         <label for="file"><span class="IL_AD" id="IL_AD4">Filename</span>:</label>
