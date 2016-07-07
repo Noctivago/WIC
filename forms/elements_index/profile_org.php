@@ -39,7 +39,7 @@
                                             <input type="text" name="password" placeholder="Company Name..." class="form-password form-control" id="form-password" required>
                                         </div>
                                                                                 <div class="form-group-main">
-                                                                                    <label class="sr-only" for="form-password" style="color:black">Email</label>
+                                                                                    <label class="sr-only-main" for="form-password" style="color:black">Email</label>
                                             <input type="text" name="email" placeholder="Email" class="form-password form-control" id="form-username" required>
                                         </div>
                                                                           <div class="form-group-main">
