@@ -213,7 +213,7 @@ if ($arg === 'addOrganization') {
         $idNewsLetter = (filter_var($_POST ['idNews']));
         $userid = $_SESSION['id'];
         $msg = sql($pdo,"UPDATE [dbo].[User_Newsletter] SET [Enabled] = 0 WHERE [User_Id] = ? and [Id]=?", array($userid,$idNewsLetter));
-        DB_readAllUserNewsletter($pdo, $userId);
+        //DB_readAllUserNewsletter($pdo, $userId);
         echo 'Newsletter removed';
     } catch (Exception $ex) {
         echo 'erro';
