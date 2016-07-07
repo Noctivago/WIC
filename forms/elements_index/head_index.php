@@ -11,6 +11,7 @@
 	 <link href="../assets/assests_sidebar/css/style.css" rel="stylesheet" type="text/css"/> <!-- Resource style -->
        
 	 <script src="../assets/assests_sidebar/js/modernizr.js" type="text/javascript"></script><!-- Modernizr -->
+         <link href="../../assets/assests_sidebar/css/boostrap_main.css" rel="stylesheet" type="text/css"/><!--boostrap_main-->
          
   	
 	<title>Welcome to WIC</title>
