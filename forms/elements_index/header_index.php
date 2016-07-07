@@ -10,14 +10,24 @@
 		<div class="cd-search is-hidden">
 			<form action="#0">
 				<input type="search" placeholder="Search Service..">
-                                                <div class="container">
+                                <style>
+                                    .container_se{
+    margin-top:30px;
+}
+
+.filter-col_se{
+    padding-left:10px;
+    padding-right:10px;
+}
+                                </style>
+                                                <div class="container_Se">
 	<div class="row">
         <div id="filter-panel" class="collapse filter-panel">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <form class="form-inline" role="form">
                         <div class="form-group">
-                            <label class="filter-col" style="margin-right:0;" for="pref-perpage">Rows per page:</label>
+                            <label class="filter-col_se" style="margin-right:0;" for="pref-perpage">Rows per page:</label>
                             <select id="pref-perpage" class="form-control">
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -42,11 +52,11 @@
                             </select>                                
                         </div> <!-- form group [rows] -->
                         <div class="form-group">
-                            <label class="filter-col" style="margin-right:0;" for="pref-search">Search:</label>
+                            <label class="filter-col_se" style="margin-right:0;" for="pref-search">Search:</label>
                             <input type="text" class="form-control input-sm" id="pref-search">
                         </div><!-- form group [search] -->
                         <div class="form-group">
-                            <label class="filter-col" style="margin-right:0;" for="pref-orderby">Order by:</label>
+                            <label class="filter-col_se" style="margin-right:0;" for="pref-orderby">Order by:</label>
                             <select id="pref-orderby" class="form-control">
                                 <option>Descendent</option>
                             </select>                                
@@ -58,7 +68,7 @@
                             <div class="checkbox" style="margin-left:10px; margin-right:10px;">
                                 <label><input type="checkbox"> Automated</label>
                             </div>
-                            <button type="submit" class="btn btn-default filter-col">
+                            <button type="submit" class="btn btn-default filter-col_se">
                                 <span class="glyphicon glyphicon-record"></span> Save Settings
                             </button>  
                         </div>
