@@ -1,3 +1,11 @@
+function viewOrganization(){
+    var arg = 'viewOrganization';
+    $.post('orgsubmit.php',{postarg:arg},
+    function(data){
+        $('#result').html(data);
+    });
+}
+
 function readAllUserNewsletter(){
     var arg = 'readAllUserNewsletter';
     var dataString = 'arg=' + arg;
