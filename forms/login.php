@@ -106,9 +106,10 @@ if (isset($_SESSION['username'])) {
                                                         if (DB_setLoginFailed($pdo, $email)) {
                                                             header('Location: profile.php');
                                                         }
-                                                    } else {
+                                                    } else if ($row['Email'] == $email && (DB_getLoginFailedValue($pdo, $email) > 3)) {
                                                         //INC TO BLOCK;
-                                                        //SET
+                                                        $msg = 'Account blocked!';
+                                                    } else {
                                                         $val = DB_getLoginFailedValue($pdo, $email);
                                                         if ($val < 3) {
                                                             $value = $val + 1;
@@ -143,11 +144,11 @@ if (isset($_SESSION['username'])) {
                                             <input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password" required>
                                         </div>
                                         <button type="submit" class="btn" name="login">Sign in!</button>
-                                        
+
                                     </form>
                                 </div>
                                 <h3> Don´t have an account?</3>
-                                    <button type="submit" class="btn"  onClick="document.location.href='registration.php'">Sign up!</button>
+                                    <button type="submit" class="btn"  onClick="document.location.href = 'registration.php'">Sign up!</button>
                             </div>
 
                             <div class="social-login">
