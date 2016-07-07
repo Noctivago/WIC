@@ -270,11 +270,10 @@ function editPermissionUserInOrganization() {
 
 }
 
-function readAllOrganization(idUser){
+function readAllOrganization(){
     alert('viewAllOrganization');
     var arg = 'viewAllOrganization';
-    var id = idUser;
-    var dataString = 'arg=' + arg + '&idUser='+id;
+    var dataString = 'arg=' + arg;
     alert(dataString);
     $.ajax({
         type: 'POST',

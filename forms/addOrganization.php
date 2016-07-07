@@ -47,7 +47,7 @@ include_once ('../db/functions.php');
        
     </head>
 
-    <body onload="readAllOrganization(<?php echo '$_SESSION["Id"]'; ?>)">
+    <body onload="readAllOrganization()">
 
         <!-- Top content -->
         <div class="top-content">
