@@ -92,8 +92,9 @@ if (isset($_SESSION['username'])) {
                                             if (DB_checkIfUserExists($pdo, $email)) {
                                                 $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, '1'), "rows");
                                                 #$msg = 'EMAIL FOUND';
+
                                                 foreach ($rows as $row) {
-                                                    if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
+                                                    if ($row['Email'] == $email && $row['Password'] == $hashPassword && (DB_getLoginFailedValue($pdo, $email) < 3)) {
                                                         //ADICIONAR PASSWORD
                                                         $_SESSION['valid'] = true;
                                                         $_SESSION['timeout'] = time();
@@ -106,9 +107,6 @@ if (isset($_SESSION['username'])) {
                                                         if (DB_setLoginFailed($pdo, $email)) {
                                                             header('Location: profile.php');
                                                         }
-                                                    } else if ($row['Email'] == $email && (DB_getLoginFailedValue($pdo, $email) > 3)) {
-                                                        //INC TO BLOCK;
-                                                        $msg = 'Account blocked!';
                                                     } else {
                                                         $val = DB_getLoginFailedValue($pdo, $email);
                                                         if ($val < 3) {
