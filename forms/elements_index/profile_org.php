@@ -80,7 +80,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-password">Confirm Password:</label>
-                                            <input type="passowrd" name="password" placeholder="Please Confirm your Password" class="form-password form-control" id="form-password" required>
+                                            <input type="password" name="password" placeholder="Please Confirm your Password" class="form-password form-control" id="form-password" required>
                                         </div>
                                         <button type="submit" class="btn" name="login">Save Changes!</button>
                                         
