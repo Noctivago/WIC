@@ -31,9 +31,9 @@
 					<a href="#0">Organization</a>
 					
 					<ul>
-						<li><a href="#">View</a></li>
+                                                <li><a href="prof_org.php">View</a></li>
 						<li><a href="addOrganization.php">Create</a></li>
-
+                                                
 					</ul>
 				</li>
                                 <!--<li class="has-children notifications active">-->
