@@ -827,3 +827,30 @@ Sidebar
 }
 
 
+/*ROWS*/
+
+.row-main {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.row-main:before,
+.row-main:after {
+  display: table;
+  content: " ";
+}
+
+.row-main:after {
+  clear: both;
+}
+
+.row-main:before,
+.row-main:after {
+  display: table;
+  content: " ";
+}
+
+.row-main:after {
+  clear: both;
+}
+
