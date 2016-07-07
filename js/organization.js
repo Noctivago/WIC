@@ -48,9 +48,9 @@ function addOrganization() {
         return false;
     }
 }
-function removeUserNewsletter(IdNews){
+function removeUserNewsletter($IdNews){
      var arg = 'removeUserNewsletter';
-    var dataString = 'arg=' + arg + '&idNews=' + IdNews;
+    var dataString = 'arg=' + arg + '&idNews=' + $IdNews;
     alert(dataString);
     $.ajax({
         type: 'POST',
