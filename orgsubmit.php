@@ -24,6 +24,24 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'ERRO';
     }
+} else if ($arg === 'viewOrganization') {
+   try{ $id = $_SESSION['Id'];
+    $rows = $sql($pdo,"SELECT * FROM [Organization] where [User_Boss] = ? and [Enabled] = 1",array($id),"rows");
+    echo "<table><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Name'] . "</td>";
+            echo "<td>" . $row['User_Boss'] . "</td>";
+            echo "<td>" . $row['Date_Created'] . "</td>";
+            echo "<td>" . $row['Address'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+   }  catch (Exception $e){
+       echo 'erros';
+   } 
+    
 } else if ($arg === 'viewAllOrganization') {
     try {
         $id = 0;
