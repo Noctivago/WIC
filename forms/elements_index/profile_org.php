@@ -40,7 +40,7 @@
                                         </div>
                                                                                 <div class="form-group">
                                             <label class="sr-only" for="form-password">Email</label>
-                                            <input type="text" name="email" placeholder="Eamil" class="form-password form-control" id="form-username" required>
+                                            <input type="text" name="email" placeholder="Email" class="form-password form-control" id="form-username" required>
                                         </div>
                                                                                 <div class="form-group">
                                             <label class="sr-only" for="form-password">Adrress:</label>
