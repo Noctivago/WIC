@@ -1,5 +1,5 @@
-<?php
-include("session.php");
+<?php //
+//include("session.php");
 ?>
 <?php
 include("elements_index/head_index.php");
