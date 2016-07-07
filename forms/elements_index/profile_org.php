@@ -14,7 +14,7 @@
 
 
                     <div class="row">
-<!--                        <div class="col-sm-8 col-sm-offset-2 text">
+                        <div class="col-sm-8 col-sm-offset-2 text">
 
                             <div class="form-box">
                                 <div class="form-top">
@@ -22,8 +22,8 @@
                                         <h3 style="color:black">  Edit Your Profle</h3>
                                         <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
                                         <h6 style="color:black">Upload a different photo...</h6>
-                                        <input type="file" class="text-center center-block well well-sm" style="color:black">-->
-<!--                                    </div>
+                                        <input type="file" class="text-center center-block well well-sm" style="color:black">
+                                    </div>
                                     <div class="form-top-right">
                                         <i class="fa fa-key"></i>
                                     </div>
@@ -90,11 +90,11 @@
                                         <button type="submit" class="btn" name="login">Save Changes!</button>
                                         
                                     </form>
-                                </div>-->
+                                </div>
                                 
 
-<!--post modal-->
-<!--<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+post modal
+<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
@@ -116,7 +116,7 @@
       </div>
   </div>
   </div>
-</div>-->
+</div>
 
                         </div>
 
