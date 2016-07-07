@@ -158,7 +158,8 @@ function removeUserNewsletter(IdNews){
         data: dataString,
         cache: false,
         sucess: function (result) {
-            alert(result);
+             var ajaxDisplay = document.getElementById('o');
+                ajaxDisplay.innerHTML = result;
         }
     });
     return false;

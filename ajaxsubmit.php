@@ -33,7 +33,7 @@ if ($arg === 'addUser') {
         $idNewsLetter = (filter_var($_POST ['idNews'], FILTER_SANITIZE_STRING));
 
         sql($pdo,"UPDATE [dbo].[User_Newsletter] SET [Enabled] = 0 WHERE [User_Id] = ?", array($idUser));
-        echo 'Newsletter removed';
+        DB_readAllUserNewsletter($pdo, $userId);
         
     } catch (Exception $ex) {
 
