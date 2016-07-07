@@ -14,7 +14,7 @@
 
 
                     <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 text">
+<!--                        <div class="col-sm-8 col-sm-offset-2 text">
 
                             <div class="form-box">
                                 <div class="form-top">
@@ -22,7 +22,7 @@
                                         <h3 style="color:black">  Edit Your Profle</h3>
                                         <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
                                         <h6 style="color:black">Upload a different photo...</h6>
-                                        <input type="file" class="text-center center-block well well-sm" style="color:black">
+                                        <input type="file" class="text-center center-block well well-sm" style="color:black">-->
 <!--                                    </div>
                                     <div class="form-top-right">
                                         <i class="fa fa-key"></i>
