@@ -82,11 +82,14 @@ include_once ('../db/functions.php');
                                     if (isset($_POST['addNews'])&&!empty($_POST['subCategory']) && !empty($_POST['city'])) {
                                         $msg = '';
                                         try {
-                                            if(DB_checkIfUserNewsletterExists){
-                                            }  else {
                                             $subCategoryId = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_NUMBER_INT));
                                             $cityId = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
+                                            if(DB_checkIfUserNewsletterExists($pdo, $userId, $subcategoryId, $cityId)){
+                                            
+                                                
+                                            }  else {
+                                            
                                             $msg = DB_addUserNewsletter($pdo,$subCategoryId,$cityId,$userId);
                                             #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
                                         }
