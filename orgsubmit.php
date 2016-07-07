@@ -206,7 +206,18 @@ if ($arg === 'addOrganization') {
         echo 'error';
     }
 } else if ($arg === 'editPermissionUserInOrganization') {
+ 
     
+} else if ($arg === 'removeUserNewsletter') {   
+    try{
+        $idNewsLetter = (filter_var($_POST ['idNews'], FILTER_SANITIZE_STRING));
+        $userid = $_SESSION['id'];
+        $msg = sql($pdo,"UPDATE [dbo].[User_Newsletter] SET [Enabled] = 0 WHERE [User_Id] = ? and [Id]=?", array($idNewsLetter,$userid));
+       // DB_readAllUserNewsletter($pdo, $userId);
+        echo 'Newsletter removed';
+    } catch (Exception $ex) {
+
+    }
 } else {
     echo 'lol';
 }
