@@ -59,7 +59,7 @@ function DB_checkIfUserExists($pdo, $email) {
 
 function DB_checkIfUserEnabled($pdo, $email) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [Enabled] = ?", array($email, 1), "count");
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [Account_Enabled] = ?", array($email, 1), "count");
         //IF EXISTS -1
         if ($count < 0) {
             return true;
