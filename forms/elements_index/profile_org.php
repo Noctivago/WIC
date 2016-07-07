@@ -23,7 +23,7 @@
                                         <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
                                         <h6 style="color:black">Upload a different photo...</h6>
                                         <input type="file" class="text-center center-block well well-sm" style="color:black">
-                                    </div>
+<!--                                    </div>
                                     <div class="form-top-right">
                                         <i class="fa fa-key"></i>
                                     </div>
@@ -43,7 +43,7 @@
                                             <label class="sr-only" for="form-password">Company</label>
                                             <input type="text" name="password" placeholder="Company Name..." class="form-password form-control" id="form-password" required>
                                         </div>
-<!--                                        <div class="form-group">
+                                        <div class="form-group">
                                             <label class="sr-only" for="form-password" style="color:black">Email</label>
                                             <input type="text" name="email" placeholder="Email" class="form-password form-control" id="form-username" required>
                                         </div>
@@ -87,10 +87,10 @@
                                             <label class="sr-only" for="form-password">Confirm Password:</label>
                                             <input type="password" name="password" placeholder="Please Confirm your Password" class="form-password form-control" id="form-password" required>
                                         </div>
-                                        <button type="submit" class="btn" name="login">Save Changes!</button>-->
+                                        <button type="submit" class="btn" name="login">Save Changes!</button>
                                         
                                     </form>
-                                </div>
+                                </div>-->
                                 
 
 <!--post modal-->
