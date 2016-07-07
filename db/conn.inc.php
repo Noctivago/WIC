@@ -560,11 +560,11 @@ function addNewsLetterPlatform($pdo, $userId) {
 }
 function DB_checkIfUserNewsletterExists($pdo,$userId,$subcategoryId,$cityId){
     try {
-       $count = sql($pdo,"SELECT * FROM [dbo].[User_Newsletter] where [User_Id] = ? and [Sub_Category_Id] = ? and [City_Id] = ? and [Enabled] = 1", array($userId,$subcategoryId,$cityId), "count");
+       $count = sql($pdo,"SELECT * FROM [dbo].[User_Newsletter] where [User_Id] = ? and [Sub_Category_Id] = ? and [City_Id] = ? and [Enabled] = 1", array($userId, $subcategoryId, $cityId), "count");
        if($count<0){
-           return true;
-       }else{
            return false;
+       }else{
+           return true;
        }
        
     } catch (Exception $ex) {
