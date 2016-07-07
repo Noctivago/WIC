@@ -93,9 +93,7 @@
                                         
                                     </form>
                                 </div>
-                                <h3> Don´t have an account?</3>
-                                    <button type="submit" class="btn"  onClick="document.location.href='registration.php'">Sign up!</button>
-                            </div>
+                                
 
 <!--post modal-->
 <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
