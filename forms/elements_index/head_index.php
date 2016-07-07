@@ -14,9 +14,8 @@
          
          <link href="../../assets/assests_sidebar/css/css_main/style_main.css" rel="stylesheet" type="text/css"/><!--styleMain-->
          <link href="../../assets/assests_sidebar/css/css_main/boostrap.min_main.css" rel="stylesheet" type="text/css"/><!--boostrap min main-->
-         <link href="../../assets/assests_sidebar/css/css_main/boostrap_main.css" rel="stylesheet" type="text/css"/><!--boostrap main-->
-         
-         
+         <link href="../../assets/assests_sidebar/css/css_main/font-awesome-main/font-awesome.min_main.css" rel="stylesheet" type="text/css"/>
+         <link href="../../assets/assests_sidebar/css/css_main/form-elements_main.css" rel="stylesheet" type="text/css"/>
   	
 	<title>Welcome to WIC</title>
 </head>
