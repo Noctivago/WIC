@@ -1,4 +1,5 @@
-
+<main class="cd-main-content">
+<div class="content-wrapper">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
 <link href="../../assets/assests_sidebar/css/css_main/assets/bootstrap/css/bootstrap.min1.css" rel="stylesheet" type="text/css"/>
 <link href="../../assets/assests_sidebar/css/css_main/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -134,6 +135,8 @@ post modal
             </div>
 
         </div>
+</div>
+</main>
 <!--<script src="../../assets/assests_sidebar/js/js_main/bootstrap.min_main.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/js/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/js/js_main/backstretch.min_main.js" type="text/javascript"></script>
