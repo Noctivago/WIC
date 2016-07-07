@@ -12,6 +12,7 @@
        
 	 <script src="../assets/assests_sidebar/js/modernizr.js" type="text/javascript"></script><!-- Modernizr -->
          <link href="../../assets/assests_sidebar/css/boostrap_main.css" rel="stylesheet" type="text/css"/><!--boostrap_main-->
+         <link href="../../assets/assests_sidebar/font-awesome-main/font-awesome-main.css" rel="stylesheet" type="text/css"/><!--font-awesome-main-->
          
   	
 	<title>Welcome to WIC</title>
