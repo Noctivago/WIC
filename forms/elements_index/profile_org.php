@@ -142,9 +142,10 @@
 <script src="../../assets/assests_sidebar/js/js_main/scripts_main.js" type="text/javascript"></script>-->
 
 
-<script src="../../assets/assests_sidebar/css/css_main/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
-<script src="../../assets/assests_sidebar/css/css_main/js_main/bootstrap.min_main.js" type="text/javascript"></script>
-<script src="../../assets/assests_sidebar/css/css_main/js_main/backstretch.min_main.js" type="text/javascript"></script>
-<script src="../../assets/assests_sidebar/css/css_main/js_main/scripts_main.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
+
 
 
