@@ -118,13 +118,15 @@ if (isset($_SESSION['username'])) {
                                                                 //BLOCK ACCOUNT
                                                                 DB_setLoginFailed($pdo, $email);
                                                                 DB_setBlockAccount($pdo, $email);
+                                                                //ENVIAR EMAIL COM INSTRUÇÔES DE DESBLOQUEIO
                                                                 $msg = 'Account blocked!';
                                                             }
                                                         }
                                                     }
                                                 } else {
                                                     //SE N ESTIVER ENABLED
-                                                    $msg = "Account blocked!";
+                                                    //FOI ENVIADO UM EMAIL PARA A SUA CONTA, POR FAVOR VERIFIQUE
+                                                    $msg = "Account blocked! Please check your email!";
                                                 }
                                             } else {
                                                 $msg = "Wrong email or password!";
