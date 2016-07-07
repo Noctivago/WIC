@@ -733,8 +733,8 @@ Sidebar
 
 /*CSS PARTILHADO */
 
-
-/***** Top content *****/
+/*
+**** Top content ****
 
 .inner-bg-main {
     padding: 60px 0 80px 0;
@@ -827,7 +827,7 @@ Sidebar
 }
 
 
-/*ROWS*/
+ROWS
 
 .row-main {
   margin-right: -15px;
@@ -856,7 +856,7 @@ Sidebar
 }
 
   
-/*FORM GROUP MAIN*/
+FORM GROUP MAIN
 
 .form-group-main {
   margin-bottom: 15px;
@@ -874,7 +874,7 @@ Sidebar
   
 }
 }
-/*SR-ONLY*/
+SR-ONLY
 
 .sr-only-main {
   position: absolute;
@@ -894,4 +894,4 @@ Sidebar
   margin: 0;
   overflow: visible;
   clip: auto;
-}
+}*/
