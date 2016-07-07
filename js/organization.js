@@ -1,7 +1,6 @@
-function readAllUserNewsletter($username){
-    var username = $username;
+function readAllUserNewsletter(){
     var arg = 'readAllUserNewsletter';
-    var dataString = 'arg=' + arg + '&username='+username;
+    var dataString = 'arg=' + arg;
     $.ajax({
         type: 'POST',
         url: "orgsubmit.php",
