@@ -74,7 +74,7 @@ include_once ('../db/functions.php');
                                 <div class="form-top">
                                     <div class="form-top-left">
                                         <h3 style="color:black">ADD Newsletter</h3>
-                                        <?php DB_readAllUserNewsletter($_SESSION['username']) ?>
+                                        <?php readAllUserNewsletter(); ?>
                                     </div>
                                 </div>
 
