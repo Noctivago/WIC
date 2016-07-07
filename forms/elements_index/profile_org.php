@@ -11,23 +11,23 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
 
-                            <div class="form-box">
-                                <div class="form-top">
-                                    <div class="form-top-left">
+                            <div class="form-box-main">
+                                <div class="form-top-main">
+                                    <div class="form-top-left-main">
                                         <h3 style="color:black"> Edit Your Profle</h3>
                                         <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
                                         <h6 style="color:black">Upload a different photo...</h6>
                                         <input type="file" class="text-center center-block well well-sm" style="color:black">
                                     </div>
-                                    <div class="form-top-right">
+                                    <div class="form-top-right-main">
                                         <i class="fa fa-key"></i>
                                     </div>
                                 </div>
 
-                                <div class="form-bottom">
+                                <div class="form-bottom-main">
                                    
 
-                                    <form role="form" action="" method="post" class="login-form">
+                                    <form role="form" action="" method="post" class="login-form-main">
                                         <div class="form-group">
 
                                             <label class="sr-only" for="form-username">Username:</label>
