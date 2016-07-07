@@ -1,9 +1,12 @@
 
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-<link href="../../../form_login/public_html/form-1/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="../../../form_login/public_html/form-1/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="../../../form_login/public_html/form-1/assets/css/form-elements.css" rel="stylesheet" type="text/css"/>
-<link href="../../../form_login/public_html/form-1/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/assests_sidebar/css/css_main/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/assests_sidebar/css/css_main/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/assests_sidebar/css/css_main/assets/css/form-elements.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/assests_sidebar/css/css_main/assets/css/style.css" rel="stylesheet" type="text/css"/>
+
+
+
 
         <div class="top-content">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -143,3 +146,5 @@
 <script src="../../assets/assests_sidebar/css/css_main/js_main/bootstrap.min_main.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/js_main/backstretch.min_main.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/js_main/scripts_main.js" type="text/javascript"></script>
+
+
