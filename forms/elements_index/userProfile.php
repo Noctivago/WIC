@@ -26,9 +26,9 @@
                                 <h6 style="color:black">Upload a different photo...</h6>
                                 <input type="file" class="text-center center-block well well-sm" style="color:black">
                             </div>
-                            <div class="form-top-right">
-                                <i class="fa fa-key"></i>
-                            </div>
+                            <!--                            <div class="form-top-right">
+                                                            <i class="fa fa-key"></i>
+                                                        </div>-->
                         </div>
 
                         <div class="form-bottom">
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Email</label>
-                                    <input type="text" name="email" placeholder="" class="form-username form-control" id="form-username" required>
+                                    <input type="text" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Country:</label>
