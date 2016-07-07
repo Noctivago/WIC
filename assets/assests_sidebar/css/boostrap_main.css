@@ -1,0 +1,96 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7/jul/2016, 16:52:46
+    Author     : JoelAmaro
+*/
+
+/*containers*/
+
+.container-main {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container-main:before,
+.container-main:after {
+  display: table;
+  content: " ";
+}
+
+.container-main:after {
+  clear: both;
+}
+
+.container-main:before,
+.container-main:after {
+  display: table;
+  content: " ";
+}
+
+.container-main:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .container-main {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-main {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-main {
+    width: 1170px;
+  }
+}
+
+.container-main > .navbar-header,
+.container-main > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+@media (min-width: 768px) {
+  .container-main > .navbar-header,
+  .container-main > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+@media (min-width: 768px) {
+  .navbar > .container-main .navbar-brand {
+    margin-left: -15px;
+  }
+}
+
+.container-main .jumbotron {
+  border-radius: 6px;
+}
+
+.jumbotron .container-main {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container-main .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    font-size: 63px;
+  }
+}
