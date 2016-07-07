@@ -43,13 +43,13 @@ include_once ('../db/functions.php');
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-        
+
         <!--javascript-->
         <script src="../js/organization.js"></script>
 
     </head>
 
-    <body onload="readAllUserNewsletter()">
+    <body >
 
         <!-- Top content -->
         <div class="top-content">
@@ -70,93 +70,94 @@ include_once ('../db/functions.php');
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
 
-                                <div class="form-top">
-                                    <div class="form-top-left">
-                                        <h3 style="color:black">ADD Newsletter</h3>
-                                        
-                                    </div>
-                                </div>
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3 style="color:black">ADD Newsletter</h3>
 
-                                <div class="form-bottom">
-                                    <?php
-                                    if (isset($_POST['addNews'])&&!empty($_POST['subCategory']) && !empty($_POST['city'])) {
-                                        $msg = '';
-                                        try {
-                                            $subCategoryId = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_NUMBER_INT));
-                                            $cityId = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
-                                            $userId = $_SESSION['id'];
-                                              $msg = DB_addUserNewsletter($pdo,$subCategoryId,$cityId,$userId);
-                                              echo $userId + 'sub' + $subCategoryId + 'city' + $cityId;
-                                            #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
-                                        
-                                        }catch (Exception $ex) {
-                                            echo "ERROR!";
-                                        
-                                        }
-                                        }
-                                    
-                                    ?>	
-                                    
-                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                                        <div class="form-group">
-                                            <select class="form-username form-control" name="city" id="city" required="required">
-                                                <?= DB_getCityAsSelect($pdo) ?>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <select class="form-username form-control" name="subCategory" id="subCategory" required="required">
-                                                <?= DB_readSubCategoryAsSelect($pdo) ?>
-                                            </select>
-                                        </div>
-                                        <button type="submit" class="btn" name="addNews">ADD Newsletter</button>
-                                 </form>
                                 </div>
-
                             </div>
 
-                            <div class="social-login">
+                            <div class="form-bottom">
+                                <?php
+                                if (isset($_POST['addNews']) && !empty($_POST['subCategory']) && !empty($_POST['city'])) {
+                                    $msg = '';
+                                    try {
+                                        $subCategoryId = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_NUMBER_INT));
+                                        $cityId = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
+                                        $userId = $_SESSION['id'];
+                                        $msg = DB_addUserNewsletter($pdo, $subCategoryId, $cityId, $userId);
+                                        echo $userId + 'sub' + $subCategoryId + 'city' + $cityId;
+                                        #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
+                                    } catch (Exception $ex) {
+                                        echo "ERROR!";
+                                    }
+                                }
+                                ?>	
 
+                                <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
+                                    <div class="form-group">
+                                        <select class="form-username form-control" name="city" id="city" required="required">
+                                            <?= DB_getCityAsSelect($pdo) ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-username form-control" name="subCategory" id="subCategory" required="required">
+                                            <?= DB_readSubCategoryAsSelect($pdo) ?>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn" name="addNews">ADD Newsletter</button>
+                                </form>
                             </div>
 
                         </div>
 
-                        <!--                        <div class="col-sm-1 middle-border"></div>-->
-                        <div class="col-sm-1"></div>
+                        <div class="social-login">
+
+                        </div>
+
+                    </div>
+
+                    <!--                        <div class="col-sm-1 middle-border"></div>-->
+                    <div class="col-sm-1">
+
 
                         <div class="col-sm-5">
-
-
-
+                            <br>
+                            <br>
+                            <?= DB_readAllUserNewsletter($pdo, $_SESSION['id']); ?>
                         </div>
                     </div>
 
-                </div>
-            </div>
 
+                </div>
+
+            </div>
         </div>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
 
 
 
-                </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-        <!-- Javascript -->
-        <script src="../assets/js/jquery-1.11.1.min.js"></script>
-        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../assets/js/jquery.backstretch.min.js"></script>
-        <script src="../assets/js/scripts.js"></script>
-        <script src="../assets/js/scripts.js" type="text/javascript"></script>
-        <!--[if lt IE 10]>
-            <script src="assets/js/placeholder.js"></script>
-        <![endif]-->
+    <!-- Javascript -->
+    <script src="../assets/js/jquery-1.11.1.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.backstretch.min.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/scripts.js" type="text/javascript"></script>
+    <!--[if lt IE 10]>
+        <script src="assets/js/placeholder.js"></script>
+    <![endif]-->
 
-    </body>
+</body>
 
 
 </html>
