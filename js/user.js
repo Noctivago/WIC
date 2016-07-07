@@ -154,7 +154,7 @@ function removeUserNewsletter(IdNews){
     alert(dataString);
     $.ajax({
         type: 'POST',
-        url: "orgsubmit.php",
+        url: "../orgsubmit.php",
         data: dataString,
         cache: false,
         sucess: function (result) {
