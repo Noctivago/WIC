@@ -49,7 +49,7 @@ include_once ('../db/functions.php');
 
     </head>
 
-    <body>
+    <body onload="readAllUserNewsletter()">
 
         <!-- Top content -->
         <div class="top-content">
@@ -74,7 +74,7 @@ include_once ('../db/functions.php');
                                 <div class="form-top">
                                     <div class="form-top-left">
                                         <h3 style="color:black">ADD Newsletter</h3>
-                                        <?php readAllUserNewsletter(); ?>
+                                         
                                     </div>
                                 </div>
 
