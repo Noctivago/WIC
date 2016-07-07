@@ -14,7 +14,7 @@
                             <div class="form-box-main">
                                 <div class="form-top-main">
                                     <div class="form-top-left-main">
-                                        <h3 style="color:black"> Edit Your Profle</h3>
+                                        <h3 style="color:black">  Your Profle</h3>
                                         <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail" alt="avatar">
                                         <h6 style="color:black">Upload a different photo...</h6>
                                         <input type="file" class="text-center center-block well well-sm" style="color:black">
