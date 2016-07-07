@@ -58,8 +58,9 @@ function removeUserNewsletter(IdNews){
         data: dataString,
         cache: false,
         sucess: function (result) {
-             var ajaxDisplay = document.getElementById('o');
-                ajaxDisplay.innerHTML = result;
+            alert(result);
+//  var ajaxDisplay = document.getElementById('o');
+            //    ajaxDisplay.innerHTML = result;
         }
     });
     return false;
@@ -282,8 +283,8 @@ function viewAllOrganization() {
         cache: false,
         success: function (result) {
             alert(result);
-// var ajaxDisplay = document.getElementById('orgresp');
-            //ajaxDisplay.innerHTML = result;
+             var ajaxDisplay = document.getElementById('orgresp');
+                ajaxDisplay.innerHTML = result;
         }
     });
 
