@@ -108,7 +108,7 @@ include_once '../db/functions.php';
 				                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
 				                    	<div class="form-group"<h4><?php echo $msg; ?></h4>
 				                    		<label class="sr-only" for="form-first-name">Username</label>
-                                                                <input type="text" name="username" placeholder="First name..." class="form-first-name form-control" id="form-first-name" required autofocus>
+                                                                <input type="text" name="username" placeholder="Username..." class="form-first-name form-control" id="form-first-name" required autofocus>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-last-name">Password</label>
