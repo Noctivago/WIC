@@ -26,9 +26,9 @@
                                 <h6 style="color:black">Upload a different photo...</h6>
                                 <input type="file" class="text-center center-block well well-sm" style="color:black">
                             </div>
-                            <div class="form-top-right">
-                                <i class="fa fa-key"></i>
-                            </div>
+                            <!--                            <div class="form-top-right">
+                                                            <i class="fa fa-key"></i>
+                                                        </div>-->
                         </div>
 
                         <div class="form-bottom">
