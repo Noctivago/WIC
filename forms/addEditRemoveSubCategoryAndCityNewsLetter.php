@@ -85,13 +85,10 @@ include_once ('../db/functions.php');
                                             $subCategoryId = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_NUMBER_INT));
                                             $cityId = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
-                                            if(!DB_checkIfUserNewsletterExists($pdo, $userId, $subcategoryId, $cityId)){
                                               $msg = DB_addUserNewsletter($pdo,$subCategoryId,$cityId,$userId);
                                               echo $userId + 'sub' + $subCategoryId + 'city' + $cityId;
-                                            }  else {
-                                                echo 'Newsletter already exists!';
                                             #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
-                                        }
+                                        
                                         }catch (Exception $ex) {
                                             echo "ERROR!";
                                         

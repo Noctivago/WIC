@@ -560,7 +560,7 @@ function addNewsLetterPlatform($pdo, $userId) {
 }
 function DB_checkIfUserNewsletterExists($pdo,$userId,$subcategoryId,$cityId){
     try {
-       $count = sql($pdo, "SELECT * FROM [dbo].[User_Newsletter] where [User_Id] = ? and [Sub_Category_Id] = ? and [City_Id] = ? and [Enabled] = ?" , array($userId, $subcategoryId, $cityId,1), "count");
+       $count = sql($pdo,"SELECT * FROM [dbo].[User_Newsletter] WHERE [User_Id]=? and [Sub_Category_Id]=? and [City_Id]=? and [Enabled]=?", array($userId, $subcategoryId, $cityId, 1), "count");
        if($count < 0){
            return true;
        }else{
@@ -588,9 +588,13 @@ function DB_readAllUserNewsletter($pdo,$userId){
 
 function DB_addUserNewsletter($pdo,$subCategoryId,$cityId,$userId){
     try {
+        if(DB_checkIfUserNewsletterExists($pdo, $userId, $subCategoryId, $cityId)){
+            
+        }  else {
         sql($pdo, "INSERT INTO [dbo].[User_Newsletter] ([Sub_Category_Id], [City_Id], [User_Id], [Enabled], [Newsletter_Id]) VALUES(?,?,?,?,?)", array($subCategoryId, $cityId, $userId, 1,1));
         echo 'Newsletter added';
-    } catch (PDOException $e) {
+    }
+        } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
     }
