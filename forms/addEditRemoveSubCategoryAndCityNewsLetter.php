@@ -70,14 +70,6 @@ include_once ('../db/functions.php');
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
 
-                            <div class="form-box">
-                                <div class="form-top">
-                                    <div class="form-top-left">
-                                        <h3 style="color:black">ADD Newsletter</h3>
-                                         
-                                    </div>
-                                </div>
-
                                 <div class="form-top">
                                     <div class="form-top-left">
                                         <h3 style="color:black">ADD Newsletter</h3>
