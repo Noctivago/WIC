@@ -31,7 +31,7 @@
 					<a href="#0">Organization</a>
 					
 					<ul>
-                                            <li><a href=href="prof_org.php">View</a></li>
+                                            <li><a href="../prof_org.php">View</a></li>
 						<li><a href="addOrganization.php">Create</a></li>
                                                 
 					</ul>
