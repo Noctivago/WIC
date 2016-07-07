@@ -276,13 +276,14 @@ function viewAllOrganization() {
     var arg = 'viewAllOrganization';
     var dataString = 'arg=' + arg;
     $.ajax({
-        type: "POST",
+        type: 'POST',
         url: "orgsubmit.php",
         data: dataString,
         cache: false,
         success: function (result) {
-            var ajaxDisplay = document.getElementById('orgresp');
-            ajaxDisplay.innerHTML = result;
+            alert(result);
+// var ajaxDisplay = document.getElementById('orgresp');
+            //ajaxDisplay.innerHTML = result;
         }
     });
 
