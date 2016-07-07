@@ -55,12 +55,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">Password:</label>
-                                    <input type="password" name="password" placeholder="Enter a safe password" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Confirm Password:</label>
-                                    <input type="password" name="password" placeholder="Please Confirm your Password" class="form-password form-control" id="form-password" required>
+                                    <label class="sr-only" for="form-password">City:</label>
+                                    <input type="password" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <button type="submit" class="btn" name="login">Save Changes!</button>
 
