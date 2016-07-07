@@ -463,7 +463,7 @@ function DB_addOrganizationService($pdo, $name, $description, $org, $subCategory
     try {
         sql($pdo, "INSERT INTO [dbo].[Organization_Service] ([Name],[Description],[Organization_Id],"
                 . "[Date_Created],[Enabled],[Views],[Sub_Category_Id],[City_Id])"
-                . " VALUES(?,?,?,?,?,?,?,?)", array($name, $description, $org, $d, 0, 0, $subCategory, $city));
+                . " VALUES(?,?,?,?,?,?,?,?)", array($name, $description, $org, $d, 0, 1, $subCategory, $city));
         echo 'Organization Service added!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";

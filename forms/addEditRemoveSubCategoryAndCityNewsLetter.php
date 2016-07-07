@@ -122,7 +122,6 @@ include_once ('../db/functions.php');
 
 
                         <div class="col-sm-5">
-                            <table id ="o"></table>
                             <br>
                             <?= DB_readAllUserNewsletter($pdo, $_SESSION['id']); ?>
                         </div>
