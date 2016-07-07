@@ -3,7 +3,12 @@
         <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">-->
+<link href="../../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/form-elements.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/style.css" rel="stylesheet" type="text/css"/>
 <!-- Top content -->
+
         <div class="top-content">
 
             <div class="inner-bg">
