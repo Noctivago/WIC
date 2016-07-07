@@ -88,6 +88,7 @@ include_once ('../db/functions.php');
                                             if(DB_checkIfUserNewsletterExists($pdo, $userId, $subcategoryId, $cityId)){
                                             }  else {
                                               $msg = DB_addUserNewsletter($pdo,$subCategoryId,$cityId,$userId);
+                                              echo $userId + '' + $subCategoryId + '';
                                             #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
                                         }
                                         }catch (Exception $ex) {
