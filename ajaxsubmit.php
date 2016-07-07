@@ -31,8 +31,8 @@ if ($arg === 'addUser') {
 } else if ($arg === 'removeUserNewsletter') {   
     try{
         $idNewsLetter = (filter_var($_POST ['idNews'], FILTER_SANITIZE_STRING));
-        $idUser = $_SESSION['Id'];
-        sql($pdo,"UPDATE [dbo].[User_Newsletter] SET [Enabled] = 0 WHERE [User_Id] = ? and [Id] = ?", array($idUser,$idNewsLetter));
+
+        sql($pdo,"UPDATE [dbo].[User_Newsletter] SET [Enabled] = 0 WHERE [User_Id] = ?", array($idUser));
         echo 'Newsletter removed';
         
     } catch (Exception $ex) {
