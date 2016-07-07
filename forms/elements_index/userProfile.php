@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Email</label>
-                                    <input type="text" name="email" placeholder="" class="form-username form-control" id="form-username" required disabled="">
+                                    <input type="text" name="email" placeholder="" class="form-username form-control" id="form-username" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Country:</label>
@@ -56,7 +56,7 @@
 
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">City:</label>
-                                    <input type="password" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required>
+                                    <input type="password" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
                                 </div>
                                 <button type="submit" class="btn" name="login">Save Changes!</button>
 
