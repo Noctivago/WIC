@@ -418,15 +418,15 @@ function DB_readOrganizationAsTable($pdo, $userId) {
         echo "<table class='table table-striped' id='table-org'><tr><th>ID</th><th>Name</th><th>Date Created</th><th>Address</th></th><th>Delete</th></tr>";
         $cont = 1;
         foreach ($rows as $row) {
-            $cont =+1;
-            echo "<tr id='".$cont."'>";
-            echo "<td id='Id".$cont."' type='text'>" . $row['Id'] . "</td>";
+            $cont = +1;
+            echo "<tr id='" . $cont . "'>";
+            echo "<td id='Id" . $cont . "' type='text'>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Name'] . "</td>";
             #echo "<td>" . $row['User_Boss'] . "</td>";
             echo "<td>" . $row['Date_Created'] . "</td>";
             echo "<td>" . $row['Address'] . "</td>";
-            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id']. ")'> </td>";
-             echo "<tr>";
+            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . ")'> </td>";
+            echo "<tr>";
         }
         echo "</table>";
     } catch (Exception $exc) {
@@ -558,43 +558,47 @@ function addNewsLetterPlatform($pdo, $userId) {
         die();
     }
 }
-function DB_checkIfUserNewsletterExists($pdo,$userId,$subcategoryId,$cityId){
+
+function DB_checkIfUserNewsletterExists($pdo, $userId, $subcategoryId, $cityId) {
     try {
-       $count = sql($pdo,"SELECT * FROM [dbo].[User_Newsletter] WHERE [User_Id]=? and [Sub_Category_Id]=? and [City_Id]=? and [Enabled]=?", array($userId, $subcategoryId, $cityId, 1), "count");
-       if($count < 0){
-           return true;
-       }else{
-           return false;
-       }
-       
+        $count = sql($pdo, "SELECT * FROM [dbo].[User_Newsletter] WHERE [User_Id]=? and [Sub_Category_Id]=? and [City_Id]=? and [Enabled]=?", array($userId, $subcategoryId, $cityId, 1), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
     } catch (Exception $ex) {
         
     }
 }
 
-function DB_readAllUserNewsletter($pdo,$userId){
-        $rows = sql($pdo, "SELECT * FROM [dbo].[User_Newsletter] where [User_Id] = ? and [Enabled] = 1", array($userId), "rows");
-        echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Description</th><th>Category</th><th>City</th></tr>";
-        foreach ($rows as $row) {
-            echo "<tr>";
-            echo "<td>" . $row['Sub_Category_Id'] . "</td>";
-            echo "<td>" . $row['City_Id'] . "</td>";
-            echo "<td>" . $row['User_Id'] . "</td>";
-            echo "<tr>";
-        }
-        echo "</table>";
-    
+function DB_readAllUserNewsletter($pdo, $userId) {
+    $rows = sql($pdo, "SELECT [dbo].[Sub_Category].[Name] as Sub_Name ,[dbo].[City].[Name] as City_Name
+FROM [dbo].[User_Newsletter] 
+join [dbo].[City]
+on [dbo].[City].[Id] = [dbo].[User_Newsletter].[City_Id]
+join [dbo].[Sub_Category]
+on [dbo].[Sub_Category].[Id] = [dbo].[User_Newsletter].[Sub_Category_ID] where [dbo].[User_Newsletter].[User_Id] = ? , [Enabled] = 1", array($userId), "rows");
+    echo "<table class='table table-striped'><tr><th>ID</th><th>City</th><th>Sub Category</th><th>Delete</th></tr>";
+    foreach ($rows as $row) {
+        echo "<tr>";
+        echo "<td>" . $row['Sub_Name'] . "</td>";
+        echo "<td>" . $row['City_Name'] . "</td>";
+        echo "<td>" . Delete . "</td>";
+        echo "<tr>";
+    }
+    echo "</table>";
 }
 
-function DB_addUserNewsletter($pdo,$subCategoryId,$cityId,$userId){
+function DB_addUserNewsletter($pdo, $subCategoryId, $cityId, $userId) {
     try {
-        if(DB_checkIfUserNewsletterExists($pdo, $userId, $subCategoryId, $cityId)){
+        if (DB_checkIfUserNewsletterExists($pdo, $userId, $subCategoryId, $cityId)) {
             
-        }  else {
-        sql($pdo, "INSERT INTO [dbo].[User_Newsletter] ([Sub_Category_Id], [City_Id], [User_Id], [Enabled], [Newsletter_Id]) VALUES(?,?,?,?,?)", array($subCategoryId, $cityId, $userId, 1,1));
-        echo 'Newsletter added';
-    }
-        } catch (PDOException $e) {
+        } else {
+            sql($pdo, "INSERT INTO [dbo].[User_Newsletter] ([Sub_Category_Id], [City_Id], [User_Id], [Enabled], [Newsletter_Id]) VALUES(?,?,?,?,?)", array($subCategoryId, $cityId, $userId, 1, 1));
+            echo 'Newsletter added';
+        }
+    } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
     }
@@ -615,9 +619,7 @@ function DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate) {
 function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_Id, $City_id) {
     try {
         //IF
-        
         //IF
-        
         //IF
         $rows = sql($pdo, "", array($name, $Sub_Category_Id, $City_id), "rows");
         echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Description</th><th>Category</th><th>City</th></tr>";
@@ -633,4 +635,3 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
         echo 'ERROR READING ORGANIZATION SERVICE TABLE';
     }
 }
-     
