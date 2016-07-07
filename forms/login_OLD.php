@@ -89,45 +89,43 @@ if (isset($_SESSION['username'])) {
                                             $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                                             $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                                             $hashPassword = hash('whirlpool', $password);
-                                            #$val = DB_getLoginFailedValue($pdo, $email);
-                                            if (DB_checkIfUserExists($pdo, $email)) {
-                                                if (DB_checkIfUserEnabled($pdo, $email)) {
-                                                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "rows");
-                                                    #$msg = 'EMAIL FOUND';
-                                                    foreach ($rows as $row) {
-                                                        if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
-                                                            //ADICIONAR PASSWORD
-                                                            $_SESSION['valid'] = true;
-                                                            $_SESSION['timeout'] = time();
-                                                            $_SESSION['id'] = $row['Id'];
-                                                            $_SESSION['username'] = $row['Username'];
-                                                            $_SESSION['email'] = $row['Email'];
-                                                            $_SESSION['password'] = $row['Password'];
-                                                            $msg = 'Welcome ' . $row['Username'];
-                                                            //SET [Login_failed] = 0
-                                                            if (DB_setLoginFailed($pdo, $email)) {
-                                                                header('Location: profile.php');
-                                                            }
+                                            $val = DB_getLoginFailedValue($pdo, $email);
+                                            if (DB_checkIfUserExists($pdo, $email) && $val < 3) {
+                                                $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? and [Account_Enabled] = ?", array($email, '1'), "rows");
+                                                #$msg = 'EMAIL FOUND';
+
+                                                foreach ($rows as $row) {
+                                                    if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
+                                                        //ADICIONAR PASSWORD
+                                                        $_SESSION['valid'] = true;
+                                                        $_SESSION['timeout'] = time();
+                                                        $_SESSION['id'] = $row['Id'];
+                                                        $_SESSION['username'] = $row['Username'];
+                                                        $_SESSION['email'] = $row['Email'];
+                                                        $_SESSION['password'] = $row['Password'];
+                                                        $msg = 'Welcome ' . $row['Username'];
+                                                        //SET [Login_failed] = 0
+                                                        if (DB_setLoginFailed($pdo, $email)) {
+                                                            header('Location: profile.php');
+                                                        }
+                                                    } else {
+                                                        $val = DB_getLoginFailedValue($pdo, $email);
+                                                        if ($val < 3) {
+                                                            $value = $val + 1;
+                                                            DB_setLoginFailed($pdo, $email, $value);
+                                                            $msg = 'Wrong username or password';
                                                         } else {
-                                                            $val = DB_getLoginFailedValue($pdo, $email);
-                                                            if ($val < 3) {
-                                                                $value = $val + 1;
-                                                                DB_setLoginFailed($pdo, $email, $value);
-                                                                $msg = 'Wrong email or password';
-                                                            } else {
-                                                                //BLOCK ACCOUNT
-                                                                DB_setLoginFailed($pdo, $email);
-                                                                DB_setBlockAccount($pdo, $email);
-                                                                $msg = 'Account blocked!';
-                                                            }
+                                                            //BLOCK ACCOUNT
+                                                            DB_setLoginFailed($pdo, $email);
+                                                            DB_setBlockAccount($pdo, $email);
+                                                            $msg = 'Account blocked!';
                                                         }
                                                     }
-                                                } else {
-                                                    //SE N ESTIVER ENABLED
-                                                    $msg = "Account blocked!";
                                                 }
+                                            } else if (DB_getLoginFailedValue($pdo, $email) > 3) {
+                                                $msg = 'Account blocked!';
                                             } else {
-                                                $msg = "Wrong email or password!";
+                                                 $msg = 'Wrong username or password';
                                             }
                                         } catch (Exception $ex) {
                                             echo "ERROR!";

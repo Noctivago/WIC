@@ -57,6 +57,20 @@ function DB_checkIfUserExists($pdo, $email) {
     }
 }
 
+function DB_checkIfUserEnabled($pdo, $email) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [Enabled] = ?", array($email, 1), "count");
+        //IF EXISTS -1
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
 //sql($db, "UPDATE table SET name = ? WHERE id = ?", array($name, $id));
 
 function DB_activateUserAccount($pdo, $email) {
@@ -579,7 +593,7 @@ function DB_readAllUserNewsletter($pdo, $userId) {
         echo "<tr>";
         echo "<td>" . $row['Sub_Name'] . "</td>";
         echo "<td>" . $row['City_Name'] . "</td>";
-         echo "<td> <input type='button' value='Delete' onClick='removeUserNewsletter(" . $row['Id'] . ")'> </td>";
+        echo "<td> <input type='button' value='Delete' onClick='removeUserNewsletter(" . $row['Id'] . ")'> </td>";
         echo "<tr>";
     }
     echo "</table>";
