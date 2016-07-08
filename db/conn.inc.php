@@ -646,47 +646,43 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
 }
 
 #função que procede ao envio de um Email
+#function sendEmail($address, $mail_subject, $mail_body) {
 
-function sendEmail($address, $mail_subject, $mail_body) {
-    // multiple recipients
-    #$to = 'aidan@example.com' . ', '; // note the comma
-    $to = $address;
-// subject
-    $subject = $mail_subject;
+function sendEmail() {
+    require '../mail/PHPMailerAutoload.php';
+    $mail = new PHPMailer;
 
-// message
-//    $message = '
-//        <html>
-//        <head>
-//          <title>Birthday Reminders for August</title>
-//        </head>
-//        <body>
-//          <p>Here are the birthdays upcoming in August!</p>
-//          <table>
-//            <tr>
-//              <th>Person</th><th>Day</th><th>Month</th><th>Year</th>
-//            </tr>
-//            <tr>
-//              <td>Joe</td><td>3rd</td><td>August</td><td>1970</td>
-//            </tr>
-//            <tr>
-//              <td>Sally</td><td>17th</td><td>August</td><td>1973</td>
-//            </tr>
-//          </table>
-//        </body>
-//        </html>
-//';
-    $message = $mail_body;
-// To send HTML mail, the Content-type header must be set
-    $headers = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-// Additional headers
-    $headers .= "To: $to" . "\r\n";
-    $headers .= 'From: WIC ACCOUNT RECOVERY <donotreply@wic.club>' . "\r\n";
-    #$headers .= 'Cc: birthdayarchive@example.com' . "\r\n";
-    #$headers .= 'Bcc: birthdaycheck@example.com' . "\r\n";
-// Mail it
-    return mail($to, $subject, $message, $headers);
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';                       // Specify main and backup server
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'donotreply@wic.club';                   // SMTP username
+    $mail->Password = '#$youcandoit2017$#';               // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
+    $mail->Port = 25;                                    //Set the SMTP port number - 587 for authenticated TLS
+    $mail->setFrom('donotreply@wic.club', 'WIC');     //Set who the message is to be sent from
+    $mail->addReplyTo('donotreply@wic.club', 'WIC');  //Set an alternative reply-to address
+    $mail->addAddress('prcunha.383@gmail.com', 'Eng. Paulo Cunha');  // Add a recipient
+    #$mail->addAddress('ellen@example.com');               // Name is optional
+    #$mail->addCC('cc@example.com');
+    #$mail->addBCC('bcc@example.com');
+    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+    #$mail->addAttachment('/usr/labnol/file.doc');         // Add attachments
+    #$mail->addAttachment('/images/image.jpg', 'new.jpg'); // Optional name
+    $mail->isHTML(true);                                  // Set email format to HTML
+
+    $mail->Subject = 'Here is the subject';
+    $mail->Body = 'This is the HTML message body <b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+//Read an HTML message body from an external file, convert referenced images to embedded,
+//convert HTML into a basic plain-text alternative body
+    $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+    if (!$mail->send()) {
+        echo 'Message could not be sent.';
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+        exit;
+    }
+    echo 'Message has been sent';
 }
 
 function DB_changeUserPassword($pdo, $email, $password) {
