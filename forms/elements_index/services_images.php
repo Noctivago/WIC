@@ -4,7 +4,7 @@
 <!-- Page Header -->
         <div class="testarrow">
             <div  class="page-header" class="col-lg-12">
-                <h1 >WIC  Paulo o BOB
+                <h1 >WIC  POCUNHA o BOB
                     <small>Secondary Text</small>
                 </h1>
             </div>
@@ -156,10 +156,12 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+
+    <script src="../../assets/assests_sidebar/css/css_main/assets/js_services/jquery.js" type="text/javascript"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+
+    <script src="../../assets/assests_sidebar/css/css_main/assets/js_services/bootstrap.min.js" type="text/javascript"></script>
 
 
 </main>
