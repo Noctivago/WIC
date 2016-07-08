@@ -73,6 +73,7 @@ function editOrganization($orgId,$idUser){
 }
 function removeOrganization($IdOrg,$id) {
     //remove organização selecionada pelo o boss
+    deleteConfirmation();
     var arg = 'removeOrganization';
     var dataString = 'arg=' + arg + '&org=' + $IdOrg;
     alert(dataString);
@@ -279,7 +280,7 @@ function editPermissionUserInOrganization() {
 }
 
 function viewAllOrganization(id) {
-    var msg = deleteConfirmation();
+    //var msg = deleteConfirmation();
     var arg = 'viewAllOrganization';
     var dataString = 'arg=' + arg +'&idUser='+id;
     $.ajax({
