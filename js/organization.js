@@ -104,10 +104,9 @@ function removeOrganization($IdOrg,$id) {
 function editOrganizationInformation(cont) {
  //   var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
  //   alert(x[0]);
- var rowN = 'row'+cont;
- var userId = $('#mytable #'+rowN+' #org').text();
- var orgId = $('#mytable #'+rowN+' #orgId').text();
- alert(r);
+ var orgId = $('#mytable #'+cont+' #org').text();
+ var orgName = $('#mytable #'+cont+' #name').text();
+ alert(orgId + '     ' + orgName);
  
 //   var table = $('#mytable');
 //    var data = [];
