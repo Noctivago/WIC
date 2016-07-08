@@ -61,7 +61,7 @@ Main Page Content
 @media only screen and (min-width: 768px) {
   .cd-main-content .content-wrapper {
     margin-left: 110px;
-    padding-top: 55px;
+    padding-top: 10px;
   }
   .cd-main-content .content-wrapper h1 {
     padding: 4em 0;
