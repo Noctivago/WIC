@@ -109,8 +109,7 @@ function editOrganizationInformation(cont) {
     var data = [];
     table.find('tr').each(function (cont, r) {
         var cols = [];
-        $(this).find('td').each(function (colIndex, c) {
-            colIndex = 2;
+        $(this).find('td:idUser').each(function (colIndex, c) {
             cols.push(c.textContent);
         });
         data.push(cols);
