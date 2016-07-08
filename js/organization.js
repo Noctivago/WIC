@@ -101,9 +101,14 @@ function removeOrganization($IdOrg,$id) {
 
 }
 //edidar a informação da organização
-function editOrganizationInformation(user , org) {
+function editOrganizationInformation(cont) {
+    $('#mytable tr').eq(cont).each(function(){
+        var userId = $(this).find("userId").html();
+        var orgId = $(this).find("orgId").html();  
+        alert(userId + orgId);
+    });
     var arg = 'viewOrganizationInformation';
-    var dataString = 'arg=' + arg + '&org=' + org + '&userId='+user;
+    var dataString = 'arg=' + arg + '&org=' + org + '&userId='+userId;
     alert(dataString);
     $.ajax({
         type: 'POST',

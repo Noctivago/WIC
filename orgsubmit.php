@@ -69,7 +69,7 @@ if ($arg === 'addOrganization') {
             echo "<td id='date'>" . $row['Date_Created'] . "</td>";
             echo "<td id='address'>" . $row['Address'] . "</td>";
             echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . ",".$userid.")'> </td>";
-            echo "<td> <input type='button' value='Edit' onClick='editOrganizationInformation(" . $row['Id'] . ",".$userid.")'> </td>";
+            echo "<td> <input type='button' value='Edit' onClick='editOrganizationInformation()'> </td>";
             echo "<tr>";
         }
         echo "</table>";
