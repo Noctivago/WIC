@@ -1,5 +1,6 @@
 <main class="cd-main-content">
-
+<div class="content-wrapper">
+    <div class="container">
 <!-- Page Header -->
         <div class="row">
             <div  class="page-header" class="col-lg-12">
@@ -149,6 +150,7 @@
             </div>
             <!-- /.row -->
         </footer>
+    </div>
 
     
     <!-- /.container -->
@@ -158,5 +160,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+</div>
 
 </main>
