@@ -13,6 +13,16 @@
 	 <script src="../assets/assests_sidebar/js/modernizr.js" type="text/javascript"></script><!-- Modernizr -->
          
          
+<!--         css forms-->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link href="../../assets/assests_sidebar/css/css_main/assets/bootstrap/css/bootstrap.min1.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/assests_sidebar/css/css_main/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/assests_sidebar/css/css_main/assets/css/form-elements.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/assests_sidebar/css/css_main/assets/css/style.css" rel="stylesheet" type="text/css"/>
+
+
+         
+         
   	<link rel="shortcut icon" href="../../assets/img/logo.png">
 
 	<title>Welcome to WIC</title>
