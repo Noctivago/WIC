@@ -58,15 +58,16 @@ if ($arg === 'addOrganization') {
         $cont = 0;
         $userid = $_POST['idUser'];
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
-        echo "<table class='table table-striped'><tr><th> ID </th><th> Name </th><th> Boss </th><th> Date Created </th><th> Addres </th><th> Delete </th> <th>Edit</th></tr>";
+        echo "<table class='table table-striped' id='mytable'><tr><th> UserID </th><th> OrgId </th><th> Name </th><th> Boss </th><th> Date Created </th><th> Addres </th><th> Delete </th> <th>Edit</th></tr>";
         foreach ($rows as $row) {
             $cont += 1;
-            echo "<tr id='.$cont.'>";
-            echo "<td>" . $userid . "</td>";
-            echo "<td>" . $row['Name'] . "</td>";
-            echo "<td>" . $row['User_Boss'] . "</td>";
-            echo "<td>" . $row['Date_Created'] . "</td>";
-            echo "<td>" . $row['Address'] . "</td>";
+            echo "<tr id='$cont'>";
+            echo "<td id='userId'>" . $row['Id'] . "</td>";
+            echo "<td id='orgId'>" . $userid . "</td>";
+            echo "<td id='name'>" . $row['Name'] . "</td>";
+            echo "<td id='boss'>" . $row['User_Boss'] . "</td>";
+            echo "<td id='date'>" . $row['Date_Created'] . "</td>";
+            echo "<td id='address'>" . $row['Address'] . "</td>";
             echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . ",".$userid.")'> </td>";
             echo "<td> <input type='button' value='Edit' onClick='editOrganizationInformation(" . $row['Id'] . ",".$userid.")'> </td>";
             echo "<tr>";
