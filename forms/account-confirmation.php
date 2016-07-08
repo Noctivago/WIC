@@ -91,16 +91,16 @@ include_once '../db/conn.inc.php';
                                                 //SE TRUE ATIVA CONTA
                                                 if (DB_activateUserAccount($pdo, $email)) {
                                                     header('Location: login.php');
-                                                    $msg = 'ACCOUNT SUCESSUFULY ACTIVATED';
+                                                    $msg = 'ACCOUNT SUCESSUFULLY ACTIVATED';
                                                     $to = $email;
-                                                    $subject = "WIC #ACCOUNT CONFIRMATION";
+                                                    $subject = "WIC #ACCOUNT ACTIVATED";
                                                     $body = "Hi! <br>"
                                                             . "Your account was successfully activated!<br>"
                                                             . "You can now login and make the best event for you!<br>"
                                                             . "Best regards,<br>"
                                                             . "WIC<br><br>"
                                                             . "Note: Please do not reply to this email! Thanks!";
-                                                    $msg = sendEmail($to, $subject, $body) . ' Please check your inbox for foward information!';
+                                                    $msg = sendEmail($to, $subject, $body) . ' Account successfully activated!';
                                                 } else {
                                                     //SENAO
                                                     $msg = 'AN ERROR OCCURED WHILE ACTIVATING ACCOUNT';
