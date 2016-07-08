@@ -105,12 +105,12 @@ function editOrganizationInformation(cont) {
  //   var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
  //   alert(x[0]);
  var rowN = 'row'+cont;
- var r = $('#mytable #'+rowN).text();
+ var r = $('#mytable #'+rowN+'#idUser').text();
  alert(r);
  
 //   var table = $('#mytable');
 //    var data = [];
-//    table.find('tr').each(function (cont, r) {
+//    table.find('tr').each(function (rowIndex, r) {
 //        var cols = [];
 //        $(this).find('td:idUser').each(function (colIndex, c) {
 //            cols.push(c.textContent);
