@@ -42,6 +42,16 @@ if ($arg === 'addOrganization') {
    }  catch (Exception $e){
        echo 'erros';
    } 
+} else if ($arg === 'viewOrganizationInformation') {
+    try{
+        $orgId = $_POST['org'];
+        $userId = $_POST['userId'];
+        $response = sql($pdo, "SELECT * FROM [Organization] where [User_Boss] = ? and [Id] = ?", array($orgId,$userId), "row");
+        echo $response;
+        
+    } catch (Exception $ex) {
+        echo 'error';
+    }
     
 } else if ($arg === 'viewAllOrganization') {
     try {
@@ -56,7 +66,7 @@ if ($arg === 'addOrganization') {
             echo "<td>" . $row['Date_Created'] . "</td>";
             echo "<td>" . $row['Address'] . "</td>";
             echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . ",".$userid.")'> </td>";
-            echo "<td> <input type='button' value='Edit' onClick='editOrganization(" . $row['Id'] . ",".$userid.")'> </td>";
+            echo "<td> <input type='button' value='Edit' onClick='editOrganizationInformation(" . $row['Id'] . ",".$userid.")'> </td>";
             echo "<tr>";
         }
         echo "</table>";

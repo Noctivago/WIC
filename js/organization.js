@@ -101,10 +101,24 @@ function removeOrganization($IdOrg,$id) {
 
 }
 //edidar a informação da organização
-function editOrganizationInformation() {
-
-
+function editOrganizationInformation(user , org) {
+    var arg = 'viewOrganizationInformation';
+    var dataString = 'arg=' + arg + '&org=' + org + '&userId='+user;
+    alert(dataString);
+    $.ajax({
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        sucess: function (result) {
+            var ajaxDisplay = document.getElementById('name');
+            ajaxDisplay.innerHTML = result['Id'];
+        }
+    });
+    return false;
 }
+    
+
 //validar organização por parte do admin
 function validateOrganization() {
     var arg = 'validateOrganization';
