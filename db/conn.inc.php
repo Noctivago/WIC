@@ -649,7 +649,7 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
 #function sendEmail($address, $mail_subject, $mail_body) {
 
 function sendEmail() {
-    require '../mail/PHPMailerAutoload.php';
+    require '../mail/class.phpmailer.php';
     $mail = new PHPMailer;
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'mail.wic.club';                       // Specify main and backup server
@@ -672,11 +672,10 @@ function sendEmail() {
     $mail->Subject = 'Here is the subject';
     $mail->Body = 'This is the HTML message body <b>in bold!</b>';
     #$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
     #$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-    #$mail->msgHTML("TESTE!");
+    $mail->msgHTML("TESTE!");
     if (!$mail->send()) {
         echo 'Message could not be sent.<br>';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
