@@ -499,7 +499,7 @@ Sidebar
   .cd-side-nav {
     position: relative;
     float: left;
-    top: auto;
+    top: 100px;
     width: 110px;
     min-height: 100vh;
     padding-top: 55px;
@@ -508,7 +508,7 @@ Sidebar
     opacity: 1;
     overflow: visible;
     max-height: none;
-    height: 100%;
+    
   }
   .cd-side-nav.nav-is-visible {
     box-shadow: none;
