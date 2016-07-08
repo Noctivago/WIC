@@ -64,7 +64,7 @@ function removeUserNewsletter($IdNews){
     return false;
 
 }
-function removeOrganization($IdOrg) {
+function removeOrganization($IdOrg,$id) {
     //remove organização selecionada pelo o boss
     var arg = 'removeOrganization';
     var dataString = 'arg=' + arg + '&org=' + $IdOrg;
@@ -75,7 +75,7 @@ function removeOrganization($IdOrg) {
         data: dataString,
         cache: false,
         sucess: function (result) {
-            alert(result);
+            viewAllOrganization($id);
         }
     });
     //viewAllOrganization();
