@@ -91,7 +91,7 @@ include_once '../db/functions.php';
                                             //INSERE PASSWORD NA BD
                                             if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
                                                 //ENVIA EMAIL
-
+                                                $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
                                                 $msg = sendEmail();
                                                 #$msg = "NEW PASSWORD > " . $password;
                                             } else {
