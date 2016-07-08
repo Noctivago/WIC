@@ -116,7 +116,7 @@ function editOrganizationInformation(cont) {
     });
     alert(data);
     return data;
-}
+
     
     
 // $('#mytable tr').each(function(){
