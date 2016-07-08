@@ -104,29 +104,17 @@ function removeOrganization($IdOrg,$id) {
 function editOrganizationInformation(cont) {
  //   var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
  //   alert(x[0]);
- var orgId = $('#mytable #'+cont+' #org').text();
- var orgName = $('#mytable #'+cont+' #name').text();
- alert(orgId + '     ' + orgName);
- 
-//   var table = $('#mytable');
-//    var data = [];
-//    table.find('tr').each(function (rowIndex, r) {
-//        var cols = [];
-//        $(this).find('td:idUser').each(function (colIndex, c) {
-//            cols.push(c.textContent);
-//        });
-//        data.push(cols);
-//    });
-//    alert(data);
-//    return data;
-
-    
-    
-// $('#mytable tr').each(function(){
-//        var fuck = $(this).find('td').html();
-//        alert(fuck);
-//    });
-//    var arg = 'viewOrganizationInformation';
+ var UserId = $('#mytable #'+cont+' #UserId').text();
+ var Name = $('#mytable #'+cont+' #OName').text();
+ var Phone = $('#mytable #'+cont+' #OPhone').text();
+ var Mobile = $('#mytable #'+cont+' #OMobile').text();
+ var Address = $('#mytable #'+cont+' #OAddress').text();
+ var Facebook = $('#mytable #'+cont+' #OFacebook').text();
+ var Twitter = $('#mytable #'+cont+' #OTwitter').text();
+ var Linkdin = $('#mytable #'+cont+' #OLinkdin').text();
+ var OEmail = $('#mytable #'+cont+' #OO_Email').text();
+ var Website = $('#mytable #'+cont+' #OWebsite').text();
+ alert(UserId + '    ' + Name + '   '+Phone+ '   '+ Mobile+ '   '+ Address+ '   '+ Facebook+ '   '+ Twitter+ '   '+ Linkdin+ '   '+ OEmail+ '   '+ Website);
     var dataString = 'arg=' + arg; //+ '&org=' + org + '&userId='+userId;
     //alert(dataString);
     $.ajax({
