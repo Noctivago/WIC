@@ -39,7 +39,7 @@ function sql($pdo, $q, $params, $return) {
             return $stmt->rowCount();
         }
     } catch (Exception $exc) {
-        echo '';
+        return '';
     }
 }
 
