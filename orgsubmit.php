@@ -47,7 +47,7 @@ if ($arg === 'addOrganization') {
         $orgId = $_POST['org'];
         $userId = $_POST['userId'];
         $response = sql($pdo, "SELECT * FROM [Organization] where [User_Boss] = ? and [Id] = ?", array($orgId,$userId), "row");
-        echo $response;
+        echo $response['Id'];
         
     } catch (Exception $ex) {
         echo 'error';
