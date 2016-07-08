@@ -92,7 +92,16 @@ include_once '../db/functions.php';
                                             if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
                                                 //ENVIA EMAIL
                                                 $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
-                                                $msg = sendEmail();
+                                                $to = $email;
+                                                $subject = "WIC #ACCOUNT RECOVERY";
+                                                $body = "Hi! <br>"
+                                                        . "A new password was assignet to you.<br>"
+                                                        . "Use the following password to login: " . $password . "<br>"
+                                                        . "ADVICE: AFTER LOGIN CHANGE YOUR PASSWORD!<br>"
+                                                        . "Best regards,<br>"
+                                                        . "WIC<br><br>"
+                                                        . "Note: Please do not reply to this email! Thanks!";
+                                                $msg = sendEmail($to, $subject, $body);
                                                 #$msg = "NEW PASSWORD > " . $password;
                                             } else {
                                                 $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";

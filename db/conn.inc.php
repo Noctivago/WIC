@@ -648,7 +648,7 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
 #função que procede ao envio de um Email
 #function sendEmail($address, $mail_subject, $mail_body) {
 
-function sendEmail() {
+function sendEmail($to, $subject, $body) {
     #error_reporting(E_STRICT);
 #configura o fuso horario
     date_default_timezone_set('Europe/Lisbon');
@@ -664,12 +664,12 @@ function sendEmail() {
     $mail->Port = 465;                   // set the SMTP port for the GMAIL server
     $mail->Username = "donotreply@wic.club";  // GMAIL username
     $mail->Password = '#$youcandoit2017$#';            // GMAIL password
-    $mail->SetFrom('donotreply@wic.club', 'WIC');
+    $mail->SetFrom('donotreply@wic.club', 'WIC #Please do not reply!');
     $mail->AddReplyTo("donotreply@wic.club", "WIC");
-    $mail->Subject = "SUBJCET";
+    $mail->Subject = $subject;
     #$mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
-    $mail->MsgHTML("BODY");
-    $mail->AddAddress("prcunha.383@gmail.com");
+    $mail->MsgHTML($body);
+    $mail->AddAddress($to);
     if (!$mail->Send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
