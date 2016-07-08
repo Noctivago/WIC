@@ -10,11 +10,11 @@ include_once ('../db/functions.php');
 ?>
 
  <?php
+                                    $userid = $_SESSION['id'];
                                     if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
                                         $msg = '';
                                         try {
                                             $d = getDateToDB();
-                                            $userid = $_SESSION['id'];
                                             $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
                                             $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
                                             $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
@@ -71,7 +71,7 @@ include_once ('../db/functions.php');
        
     </head>
 
-    <body onload="viewAllOrganization(<?php echo $userId; ?>)">
+    <body onload="viewAllOrganization(<?= $userId ?>)">
 
         <!-- Top content -->
         
