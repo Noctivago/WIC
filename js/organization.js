@@ -271,9 +271,9 @@ function editPermissionUserInOrganization() {
 }
 
 function viewAllOrganization(id) {
-    alert(id);
+   
     var arg = 'viewAllOrganization';
-    var dataString = 'arg=' + arg;
+    var dataString = 'arg=' + arg +'&idUser='+id;
     $.ajax({
         type: 'POST',
         url: "../orgsubmit.php",

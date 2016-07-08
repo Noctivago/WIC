@@ -45,6 +45,7 @@ if ($arg === 'addOrganization') {
     
 } else if ($arg === 'viewAllOrganization') {
     try {
+        $userid = $_POST['idUser'];
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
         echo "<table><tr><th>".$userid."</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
         foreach ($rows as $row) {
