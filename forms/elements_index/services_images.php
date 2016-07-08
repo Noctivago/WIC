@@ -4,7 +4,7 @@
 <!-- Page Header -->
         <div class="testarrow">
             <div  class="page-header" class="col-lg-12">
-                <h1 >WIC  Paulo o Buiilder
+                <h1 >WIC  Paulo o BOB
                     <small>Secondary Text</small>
                 </h1>
             </div>
@@ -13,7 +13,7 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
-        <div class="row">
+        <div class="testarrow">
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
