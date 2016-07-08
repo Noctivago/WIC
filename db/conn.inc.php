@@ -57,6 +57,20 @@ function DB_checkIfUserExists($pdo, $email) {
     }
 }
 
+function DB_checkIfUserPasswordIsCorrect($pdo, $password, $userId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Password] = ? AND [Id] = ?", array($userId), "count");
+        //IF EXISTS -1
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
 function DB_checkIfUserEnabled($pdo, $email) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [Account_Enabled] = ?", array($email, 1), "count");
@@ -677,9 +691,9 @@ function sendEmail($to, $subject, $body) {
     }
 }
 
-function DB_changeUserPassword($pdo, $email, $password) {
+function DB_changeUserPassword($pdo, $userId, $password) {
     try {
-        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Email] = ? ", array($password, $email));
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Id] = ? ", array($password, $userId));
         return true;
     } catch (Exception $exc) {
         return false;
