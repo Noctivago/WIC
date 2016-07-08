@@ -8,7 +8,7 @@
 <!-- Page Header -->
         <div class="row">
             <div  class="page-header" class="col-lg-12">
-                <h1 >WIC  teste heigth do menausduasnduasd
+                <h1 >WIC  teste 
                     <small>Secondary Text</small>
                 </h1>
             </div>
