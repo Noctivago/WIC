@@ -114,7 +114,7 @@ function editOrganizationInformation(cont) {
  var Linkdin = $('#mytable #'+cont+' #OLinkdin').text();
  var OEmail = $('#mytable #'+cont+' #OO_Email').text();
  var Website = $('#mytable #'+cont+' #OWebsite').text();
- alert(UserId + '    ' + Name + '   '+Phone+ '   '+ Mobile+ '   '+ Address+ '   '+ Facebook+ '   '+ Twitter+ '   '+ Linkdin+ '   '+ OEmail+ '   '+ Website);
+ alert('    ' + Name + '   '+Phone+ '   '+ Mobile+ '   '+ Address+ '   '+ Facebook+ '   '+ Twitter+ '   '+ Linkdin+ '   '+ OEmail+ '   '+ Website);
     var dataString = 'arg=' + arg; //+ '&org=' + org + '&userId='+userId;
     //alert(dataString);
     $.ajax({
