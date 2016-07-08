@@ -47,7 +47,7 @@ include_once ('../db/functions.php');
        
     </head>
 
-    <body onload="readAllOrganization()">
+    <body onload="viewAllOrganization()">
 
         <!-- Top content -->
         <div class="top-content">
@@ -124,12 +124,10 @@ include_once ('../db/functions.php');
                             </div>
 
                         </div>
-                        <div id="orgresp">
-                            
-                        </div>
+
                         <!--                        <div class="col-sm-1 middle-border"></div>-->
-                        <div class="col-sm-1"></div>
-                        
+                        <div class="col-sm-1" id="orgresp"></div>
+
                         <div class="col-sm-5">
                             <br>
                             <br>

@@ -270,35 +270,13 @@ function editPermissionUserInOrganization() {
 
 }
 
-function readAllOrganization(){
-    alert('viewAllOrganization');
-    var arg = 'viewAllOrganization';
-    var dataString = 'arg=' + arg;
-    alert(dataString);
-    $.ajax({
-        type: 'POST',
-        url: "orgsubmit.php",
-        data: dataString,
-        cache: false,
-        success: function (result) {
-            alert(result);
-             var ajaxDisplay = document.getElementById('orgresp');
-                ajaxDisplay.innerHTML = result;
-        }
-    });
-
-    return false;
-
-}
-
-
 function viewAllOrganization() {
     alert('viewAllOrganization');
     var arg = 'viewAllOrganization';
     var dataString = 'arg=' + arg;
     $.ajax({
         type: 'POST',
-        url: "orgsubmit.php",
+        url: "../orgsubmit.php",
         data: dataString,
         cache: false,
         success: function (result) {
