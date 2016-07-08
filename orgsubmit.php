@@ -48,10 +48,10 @@ if ($arg === 'addOrganization') {
         $userid = $_POST['idUser'];
         // $id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
-        echo "<table><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
+        echo "<table class=''><tr><th>".$userid."</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $userid . "</td>";
             echo "<td>" . $row['Name'] . "</td>";
             echo "<td>" . $row['User_Boss'] . "</td>";
             echo "<td>" . $row['Date_Created'] . "</td>";
