@@ -652,7 +652,7 @@ function sendEmail() {
     require '../mail/PHPMailerAutoload.php';
     $mail = new PHPMailer;
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.gmail.com';                       // Specify main and backup server
+    $mail->Host = 'mail.wic.club';                       // Specify main and backup server
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'donotreply@wic.club';                   // SMTP username
     $mail->Password = '#$youcandoit2017$#';               // SMTP password
