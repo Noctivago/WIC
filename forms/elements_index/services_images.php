@@ -4,7 +4,7 @@
 <!-- Page Header -->
         <div class="testarrow">
             <div  class="page-header" class="col-lg-12">
-                <h1 >WIC  TROLHA
+                <h1 >WIC  teste ao menu
                     <small>Secondary Text</small>
                 </h1>
             </div>
