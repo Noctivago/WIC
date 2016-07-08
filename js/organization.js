@@ -104,37 +104,46 @@ function removeOrganization($IdOrg, $id) {
 function editOrganizationInformation(cont) {
     //   var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
     //   alert(x[0]);
-    var orgId = $('#mytable #' + cont + ' #Org').text();
-    var Name = $('#mytable #' + cont + ' #OName').text();
-    var Phone = $('#mytable #' + cont + ' #OPhone').text();
-    var Mobile = $('#mytable #' + cont + ' #OMobile').text();
-    var Address = $('#mytable #' + cont + ' #OAddress').text();
-    var Facebook = $('#mytable #' + cont + ' #OFacebook').text();
-    var Twitter = $('#mytable #' + cont + ' #OTwitter').text();
-    var Linkdin = $('#mytable #' + cont + ' #OLinkdin').text();
-    var OEmail = $('#mytable #' + cont + ' #OO_Email').text();
-    var Website = $('#mytable #' + cont + ' #OWebsite').text();
-    alert(Name + '   ' + Phone + '   ' + Mobile + '   ' + Address + '   ' + Facebook + '   ' + Twitter + '   ' + Linkdin + '   ' + OEmail + '   ' + Website);
-    var displayName = document.getElementById('name');
-    displayName.innerHTML = Name;
-    
-    
+//    var orgId = $('#mytable #' + cont + ' #Org').text();
+//    var Name = $('#mytable #' + cont + ' #OName').text();
+//    var Phone = $('#mytable #' + cont + ' #OPhone').text();
+//    var Mobile = $('#mytable #' + cont + ' #OMobile').text();
+//    var Address = $('#mytable #' + cont + ' #OAddress').text();
+//    var Facebook = $('#mytable #' + cont + ' #OFacebook').text();
+//    var Twitter = $('#mytable #' + cont + ' #OTwitter').text();
+//    var Linkdin = $('#mytable #' + cont + ' #OLinkdin').text();
+//    var OEmail = $('#mytable #' + cont + ' #OO_Email').text();
+//    var Website = $('#mytable #' + cont + ' #OWebsite').text();
+    // = $('#mytable #' + cont + ' #Org').text();
+    document.getElementById('name').value = $('#mytable #' + cont + ' #OName').text();
+    document.getElementById('phone').value = $('#mytable #' + cont + ' #OPhone').text();
+    document.getElementById('mobile').value = $('#mytable #' + cont + ' #OMobile').text();
+    document.getElementById('address').value = $('#mytable #' + cont + ' #OAddress').text();
+    document.getElementById('facebook').value = $('#mytable #' + cont + ' #OFacebook').text();
+    document.getElementById('twitter').value = $('#mytable #' + cont + ' #OTwitter').text();
+    document.getElementById('linkdin').value = $('#mytable #' + cont + ' #OLinkdin').text();
+    document.getElementById('orgEmail').value = $('#mytable #' + cont + ' #OO_Email').text();
+    document.getElementById('website').value = $('#mytable #' + cont + ' #OWebsite').text();
 
-    var dataString = 'arg=' + arg; //+ '&org=' + org + '&userId='+userId;
-    //alert(dataString);
-    $.ajax({
-        type: 'POST',
-        url: "../orgsubmit.php",
-        data: dataString,
-        cache: false,
-        sucess: function (result) {
-            alert('func');
-            var ajaxDisplay = document.getElementById('name');
-            ajaxDisplay.innerHTML = result['Id'];
-        }
-    });
-    return false;
-}
+//    alert(Name + '   ' + Phone + '   ' + Mobile + '   ' + Address + '   ' + Facebook + '   ' + Twitter + '   ' + Linkdin + '   ' + OEmail + '   ' + Website);
+
+
+    /**
+     var dataString = 'arg=' + arg; //+ '&org=' + org + '&userId='+userId;
+     //alert(dataString);
+     $.ajax({
+     type: 'POST',
+     url: "../orgsubmit.php",
+     data: dataString,
+     cache: false,
+     sucess: function (result) {
+     alert('func');
+     var ajaxDisplay = document.getElementById('name');
+     ajaxDisplay.innerHTML = result['Id'];
+     }
+     });
+     return false;
+     */}
 
 
 //validar organização por parte do admin
