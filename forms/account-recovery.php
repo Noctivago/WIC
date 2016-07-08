@@ -1,5 +1,6 @@
 <?php
 include_once '../db/conn.inc.php';
+include_once '../db/functions.php';
 ?>
 <?
 // error_reporting(E_ALL);
