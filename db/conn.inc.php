@@ -649,39 +649,32 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
 #function sendEmail($address, $mail_subject, $mail_body) {
 
 function sendEmail() {
-    require '../mail/class.phpmailer.php';
-    $mail = new PHPMailer;
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'mail.wic.club';                       // Specify main and backup server
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'donotreply@wic.club';                   // SMTP username
-    $mail->Password = '#$youcandoit2017$#';               // SMTP password
-    #$mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
-    $mail->Port = 25;                                    //Set the SMTP port number - 587 for authenticated TLS
-    $mail->setFrom('donotreply@wic.club', 'WIC');     //Set who the message is to be sent from
-    $mail->addReplyTo('donotreply@wic.club', 'WIC');  //Set an alternative reply-to address
-    $mail->addAddress('prcunha.383@gmail.com', 'Eng. Paulo Cunha');  // Add a recipient
-    #$mail->addAddress('ellen@example.com');               // Name is optional
-    #$mail->addCC('cc@example.com');
-    #$mail->addBCC('bcc@example.com');
-    #$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-    #$mail->addAttachment('/usr/labnol/file.doc');         // Add attachments
-    #$mail->addAttachment('/images/image.jpg', 'new.jpg'); // Optional name
-    $mail->isHTML(false);                                  // Set email format to HTML
-    #$mail->isHTML(false);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body = 'This is the HTML message body <b>in bold!</b>';
-    #$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-//Read an HTML message body from an external file, convert referenced images to embedded,
-//convert HTML into a basic plain-text alternative body
-    #$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-    $mail->msgHTML("TESTE!");
-    if (!$mail->send()) {
-        echo 'Message could not be sent.<br>';
-        echo 'Mailer Error: ' . $mail->ErrorInfo;
-        exit;
+    #error_reporting(E_STRICT);
+#configura o fuso horario
+    date_default_timezone_set('Europe/Lisbon');
+#faz os includes necessarios das bibliotecas
+    require_once('../mail/class.phpmailer.php');
+#cria uma nova instancia do PHPMailer
+    $mail = new PHPMailer();
+    $mail->IsSMTP(); // telling the class to use SMTP
+    $mail->SMTPDebug = 2;                     // enables SMTP debug information (for testing)
+    $mail->SMTPAuth = true;                  // enable SMTP authentication
+    #$mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+    $mail->Host = "mail.wic.club";      // sets GMAIL as the SMTP server
+    $mail->Port = 25;                   // set the SMTP port for the GMAIL server
+    $mail->Username = "donotreply@wic.club";  // GMAIL username
+    $mail->Password = '#$youcandoit2017$#';            // GMAIL password
+    $mail->SetFrom('donotreply@wic.club', 'WIC');
+    $mail->AddReplyTo("donotreply@wic.club", "WIC");
+    $mail->Subject = "SUBJCET";
+    #$mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+    $mail->MsgHTML("BODY");
+    $mail->AddAddress("prcunha.383@gmail.com");
+    if (!$mail->Send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    } else {
+        echo "Message sent!";
     }
-    echo 'Message has been sent';
 }
 
 function DB_changeUserPassword($pdo, $email, $password) {
