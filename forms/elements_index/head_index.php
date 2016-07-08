@@ -20,5 +20,5 @@
          
   	<link rel="shortcut icon" href="../../assets/img/logo.png">
 
-	<title>Bem vindo WIC</title>
+	<title> vindo WIC</title>
 </head>
