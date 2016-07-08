@@ -108,11 +108,6 @@ include_once ('../db/functions.php');
                                     }
                                     ?>
                                     <div class = "form-group"><h4> <?php echo $msg; ?></h4>
-                                        <label for="file"><span class="IL_AD" id="IL_AD4">Filename</span>:</label>
-                                        <input type="file" name="fileUpload" id="fileUpload"><br>
-
-                                        <!-- ESCOLHER SERVIÇO AO QUAL SERA ADICIONADA A PIC -->
-                                        <button type="submit" class="btn" name="addPicture">UPLOAD PICTURE!</button>
                                         <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
                                             Select image to upload:
                                             <input type="file" name="fileToUpload" id="fileToUpload">
