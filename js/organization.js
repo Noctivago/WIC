@@ -270,8 +270,8 @@ function editPermissionUserInOrganization() {
 
 }
 
-function viewAllOrganization() {
-    alert('viewAllOrganization');
+function viewAllOrganization(id) {
+    alert(id);
     var arg = 'viewAllOrganization';
     var dataString = 'arg=' + arg;
     $.ajax({
