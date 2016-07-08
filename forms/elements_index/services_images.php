@@ -1,5 +1,9 @@
 <main class="cd-main-content">
 
+   <div class="top-content">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
+    <div class="inner-bg">
     <div class="container">
 <!-- Page Header -->
 <!--        <div class="testarrow">
@@ -19,7 +23,7 @@
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <a href="#">Project Name</a>
+                    <a href="#">bocados de pao</a>
                 </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
@@ -151,9 +155,13 @@
             <!-- /.row -->
         </footer>
     </div>
-
-
+    </div>
+   </div>
 </main>
+
+
+
+
     <!-- /.container -->
 
     <!-- jQuery -->
