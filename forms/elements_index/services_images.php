@@ -6,7 +6,7 @@
     <div class="inner-bg">
     <div class="container">
 <!-- Page Header -->
-        <div class="testarrow">
+        <div class="row">
             <div  class="page-header" class="col-lg-12">
                 <h1 >WIC  teste heigth do menausduasnduasd
                     <small>Secondary Text</small>
@@ -17,7 +17,7 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
-        <div class="testarrow">
+        <div class="row">
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
