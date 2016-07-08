@@ -61,7 +61,7 @@ if ($arg === 'addOrganization') {
         echo "<table class='table table-striped' id='mytable'><tr><th> UserID </th><th> OrgId </th><th> Name </th><th> Boss </th><th> Date Created </th><th> Addres </th><th> Delete </th> <th>Edit</th></tr>";
         foreach ($rows as $row) {
             $cont += 1;
-            echo "<tr>";
+            echo "<tr id='$cont'>";
             echo "<td id='userId'>" . $row['Id'] . "</td>";
             echo "<td id='orgId'>" . $userid . "</td>";
             echo "<td id='name'>" . $row['Name'] . "</td>";
