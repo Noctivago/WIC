@@ -97,13 +97,13 @@ include_once '../db/functions.php';
                                                 //GERA CODIGO DE ATIVACAO DE 128car
                                                 $code = generateActivationCode();
                                                 sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
-                                                $to = $email;
-                                                $subject = "WIC - ACCOUNT CONFIRMATION";
-                                                $body = "Hi! <br> Welcome to WIC! To be enabled to use ours "
-                                                        . "services you need to activate your account! Please use "
-                                                        . "the following code to activate it!" . $code . "<br> You can activate "
-                                                        . "your account in the following page: http://wic.club/forms/account-confirmation.php";
-                                                $msg = sendEmail($to, $subject, $body);
+                                                #$to = $email;
+                                                #$subject = "WIC - ACCOUNT CONFIRMATION";
+                                                #$body = "Hi! <br> Welcome to WIC! To be enabled to use ours "
+                                                #        . "services you need to activate your account! Please use "
+                                                #        . "the following code to activate it!" . $code . "<br> You can activate "
+                                                #        . "your account in the following page: http://wic.club/forms/account-confirmation.php";
+                                                #$msg = sendEmail($to, $subject, $body);
                                                 header('Location: account-confirmation.php');
                                             } catch (Exception $ex) {
                                                 echo "ERROR!";
