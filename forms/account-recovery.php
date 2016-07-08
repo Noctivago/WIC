@@ -107,8 +107,8 @@ include_once '../db/functions.php';
                                                 ";
 //                                                $body = $password;
 //                                                $msg = sendEmail($to, $subject, $body);
-                                                sendEmail($address, $mail_subject, $mail_body);
-                                                $msg = "NEW PASSWORD > " . $password;
+                                                $msg = sendEmail($address, $mail_subject, $mail_body);
+                                                #$msg = "NEW PASSWORD > " . $password;
                                             } else {
                                                 $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
                                             }
