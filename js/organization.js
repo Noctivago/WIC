@@ -104,12 +104,10 @@ function removeOrganization($IdOrg,$id) {
 function editOrganizationInformation() {
   //var row = document.getElementById('1');
   //alert(row);
-    $("#mytable tr").click(function(){
-        var id = $(this).attr("id");
-       var row = document.getElementById("row");
-       var cells = row.getElementsByTagName("td");
-        alert(cells[0].innertext);
-    });
+      var id = $(this).attr("id");
+      var row = document.getElementById("row");
+      var cells = row.getElementsByTagName("td");
+      alert(cells[0].innertext);
 //    $('#mytable tr').each(function(){
 //        var userId = $(this).find("td:userId").html();
 //        var orgId = $(this).find("td:orgId").html();  
