@@ -114,7 +114,7 @@ function editOrganizationInformation(cont) {
         });
         data.push(cols);
     });
-    alert(data[1]);
+    alert(data.indexOf(2));
     return data;
 
     
