@@ -55,13 +55,13 @@ if ($arg === 'addOrganization') {
             echo "<td>" . $row['User_Boss'] . "</td>";
             echo "<td>" . $row['Date_Created'] . "</td>";
             echo "<td>" . $row['Address'] . "</td>";
-            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . ")'> </td>";
+            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . ",".$userid.")'> </td>";
             echo "<td> <input type='button' value='Edit' onClick='editOrganization(" . $row['Id'] . ")'> </td>";
             echo "<tr>";
         }
         echo "</table>";
     } catch (Exception $ex) {
-        echo 'fuck';
+        echo 'erro';
     }
 }else if ($arg ==='readAllUserNewsletter'){
     try{
