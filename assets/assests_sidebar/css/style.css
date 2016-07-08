@@ -499,7 +499,7 @@ Sidebar
   .cd-side-nav {
     position: relative;
     float: left;
-    top: auto;
+    top: 50px;
     width: 110px;
     min-height: 100vh;
     padding-top: 55px;
