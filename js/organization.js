@@ -106,7 +106,9 @@ function editOrganizationInformation(cont) {
   //alert(row);
   var search = "row"+cont;
       var id = $(this).attr("id");
-      var row = document.getElementById(search);
+      alert(id);
+      var row = document.getElementById("row1");
+      alert(row);
       var cells = row.getElementsByTagName("td");
       alert(cells[0].innertext);
 //    $('#mytable tr').each(function(){
