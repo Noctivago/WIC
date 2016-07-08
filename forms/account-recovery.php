@@ -15,7 +15,7 @@ include_once '../db/functions.php';
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Account Confirmation </title>
+        <title> Account Recovery </title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -50,7 +50,7 @@ include_once '../db/functions.php';
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Confirm your Account</strong> </h1>
+                            <h1><strong>Recover your Account</strong> </h1>
                             <div class="description">
 
                             </div>
