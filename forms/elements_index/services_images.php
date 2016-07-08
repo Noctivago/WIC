@@ -2,16 +2,17 @@
 
 <!-- Page Header -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Page Head
+            <div  class="row_teste"class="col-lg-12">
+                <h1 >Page Head
                     <small>Secondary Text</small>
                 </h1>
             </div>
         </div>
+<!--class="page-header"-->
         <!-- /.row -->
 
         <!-- Projects Row -->
-        <div class="row_teste">
+        <div class="row">
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
