@@ -101,12 +101,12 @@ function removeOrganization($IdOrg,$id) {
 
 }
 //edidar a informação da organização
-function editOrganizationInformation(cont) {
-  var row = document.getElementById(cont);
+function editOrganizationInformation() {
+  var row = document.getElementById('1');
   alert(row);
     $("#mytable tr").click(function(){
         var id = $(this).attr("id");
-       var row = document.getElementById("id");
+       var row = document.getElementById("1");
        var cells = row.getElementsByTagName("td");
         //alert(cells[0].innertext);
     });
