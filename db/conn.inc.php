@@ -651,7 +651,6 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
 function sendEmail() {
     require '../mail/PHPMailerAutoload.php';
     $mail = new PHPMailer;
-
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';                       // Specify main and backup server
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -668,9 +667,8 @@ function sendEmail() {
     $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
     #$mail->addAttachment('/usr/labnol/file.doc');         // Add attachments
     #$mail->addAttachment('/images/image.jpg', 'new.jpg'); // Optional name
-    #$mail->isHTML(true);                                  // Set email format to HTML
-    $mail->isHTML(false);                                  // Set email format to HTML
-
+    $mail->isHTML(true);                                  // Set email format to HTML
+    #$mail->isHTML(false);                                  // Set email format to HTML
     $mail->Subject = 'Here is the subject';
     $mail->Body = 'This is the HTML message body <b>in bold!</b>';
     #$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
@@ -678,6 +676,7 @@ function sendEmail() {
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
     #$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+    $mail->msgHTML("TESTE!");
     if (!$mail->send()) {
         echo 'Message could not be sent.<br>';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
