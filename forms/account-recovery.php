@@ -61,11 +61,7 @@ include_once '../db/functions.php';
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
-                                        <p>Please fill the form below to get access again:</p>
 
-                                        <!--                                        <div class="form-top-right">
-                                                                                    <i class="fa fa-pencil"></i>
-                                                                                </div>-->
                                     </div>
                                     <div class="form-bottom"><h4> <?php echo $msg; ?></h4>
                                         <?php
@@ -83,10 +79,11 @@ include_once '../db/functions.php';
                                                 //INSERE PASSWORD NA BD
                                                 if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
                                                     //ENVIA EMAIL
-                                                    $to = $email;
-                                                    $subject = "WIC - ACCOUNT RECOVERY";
-                                                    $body = $password;
-                                                    $msg = sendEmail($to, $subject, $body);
+//                                                    $to = $email;
+//                                                    $subject = "WIC - ACCOUNT RECOVERY";
+//                                                    $body = $password;
+//                                                    $msg = sendEmail($to, $subject, $body);
+                                                    $msg = "NEW PASSWORD > " . $password;
                                                 } else {
                                                     $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
                                                 }
