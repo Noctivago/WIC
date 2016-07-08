@@ -58,7 +58,8 @@ if ($arg === 'addOrganization') {
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
         echo '<input type="hidden" name="UserId" value="'.$row['User_Boss'].'"> ';
         echo '<input type="hidden" name="UserId" value="'.$row['Id'].'"> ';
-        echo "<table class='table table-striped' id='mytable'><tr><th> ID </th><th> UserId </th><th> Name </th><th> Boss </th><th> Date Created </th><th> Addres </th><th> Delete </th> <th>Edit</th></tr>";     
+        echo "<table class='table table-striped' id='mytable'><tr><th> Name </th><th> Phone Number </th><th>"
+        . " Mobile </th><th> Address </th><th> Facebook </th><th> Twitter </th><th> Linkdin </th> <th>Email</th><th>Website</th><th>Delete</th><th>Edit</th></tr>";     
 //echo "<table class='table table-striped' id='mytable'><tr><th> ID </th><th> UserId </th><th> Name </th><th> Boss </th><th> Date Created </th><th> Addres </th><th> Delete </th> <th>Edit</th></tr>";
         foreach ($rows as $row) {
             echo "<tr id=".$cont.">";
