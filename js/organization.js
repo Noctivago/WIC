@@ -108,7 +108,7 @@ function editOrganizationInformation(cont) {
         var id = $(this).attr("id");
        var row = document.getElementById("id");
        var cells = row.getElementsByTagName("td");
-        alert(cells[0].innertext);
+        //alert(cells[0].innertext);
     });
 //    $('#mytable tr').each(function(){
 //        var userId = $(this).find("td:userId").html();
