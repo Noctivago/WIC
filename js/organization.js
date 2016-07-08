@@ -75,9 +75,10 @@ function removeOrganization($IdOrg,$id) {
         data: dataString,
         cache: false,
         sucess: function (result) {
-            viewAllOrganization($id);
+         
         }
     });
+    viewAllOrganization($id);
     //viewAllOrganization();
     return false;
 
