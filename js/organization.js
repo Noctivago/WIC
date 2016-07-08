@@ -124,7 +124,7 @@ function editOrganizationInformation(cont) {
     document.getElementById('linkdin').value = $('#mytable #' + cont + ' #OLinkdin').text();
     document.getElementById('orgEmail').value = $('#mytable #' + cont + ' #OO_Email').text();
     document.getElementById('website').value = $('#mytable #' + cont + ' #OWebsite').text();
-    document.getElementById('update').style = "display: visible";
+    document.getElementById('update').style = "display: true";
 //    alert(Name + '   ' + Phone + '   ' + Mobile + '   ' + Address + '   ' + Facebook + '   ' + Twitter + '   ' + Linkdin + '   ' + OEmail + '   ' + Website);
 
 
