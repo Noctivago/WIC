@@ -88,10 +88,10 @@ include_once ('../db/functions.php');
                                             //VERIFICAR SE NEW == NEW !
                                             if ($new === $new1) {
                                                 $hashPassword = hash('whirlpool', $new);
-                                                $password;
+                                                $password = hash('whirlpool', $old);
                                                 //VERIFICAR SE OLD CORRETA
                                                 if (DB_checkIfUserPasswordIsCorrect($pdo, $password, $userId)) {
-                                                    if(DB_changeUserPassword($pdo, $userId, $hashPassword)) {
+                                                    if (DB_changeUserPassword($pdo, $userId, $hashPassword)) {
                                                         $msg = 'PASSWORD CHANGED!';
                                                     } else {
                                                         $msg = 'AN ERROR OCCURED! PLEASE TRY AGAIN!';
