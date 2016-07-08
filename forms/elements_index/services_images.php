@@ -1,11 +1,12 @@
-
+<main class="cd-main-content">
+<div class="content-wrapper">
     <!-- Page Content -->
     <div class="container">
 
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading
+                <h1 class="page-header">Pang
                     <small>Secondary Text</small>
                 </h1>
             </div>
@@ -138,3 +139,7 @@
             </div>
         </div>
         <!-- /.row -->
+        		</div> 
+</div>
+    <!-- .content-wrapper -->
+</main>
