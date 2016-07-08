@@ -85,7 +85,7 @@ include_once '../db/functions.php';
                                         $forgotPassword = '';
                                         $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
                                         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                                        echo 'USERNAME ' . $rows['Username'];
+                                        #echo 'USERNAME ' . $rows['Username'];
                                         $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                                         $hashPassword = hash('whirlpool', $password);
 
@@ -107,7 +107,7 @@ include_once '../db/functions.php';
                                                         . "Best regards,<br>"
                                                         . "WIC<br><br>"
                                                         . "Note: Please do not reply to this email! Thanks!";
-                                                $msg = sendEmail($to, $subject, $body);
+                                                $msg = sendEmail($to, $subject, $body) . ' Please check your inbox for foward information!';
                                                 #'<a href=account-recovery.php>Forgot your account details?</a>'
                                             } catch (Exception $ex) {
                                                 echo "ERROR!";
