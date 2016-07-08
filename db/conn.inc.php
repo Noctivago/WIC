@@ -644,3 +644,29 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
         echo 'ERROR READING ORGANIZATION SERVICE TABLE';
     }
 }
+
+#função que procede ao envio de um Email
+
+function sendEmail($address, $mail_subject, $mail_body) {
+    date_default_timezone_set('Europe/Lisbon');
+    require_once('./inc/mail/class.phpmailer.php');
+    $mail = new PHPMailer();
+    $mail->IsSMTP(); // telling the class to use SMTP
+    $mail->SMTPDebug = 2;                     // enables SMTP debug information (for testing)
+    $mail->SMTPAuth = true;                  // enable SMTP authentication
+    #$mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+    $mail->Host = "mail.wic.club";      // sets GMAIL as the SMTP server
+    $mail->Port = 25;                   // set the SMTP port for the GMAIL server
+    $mail->Username = "donotreply@wic.club";  // GMAIL username
+    $mail->Password = '#$youcandoit2017$#';            // GMAIL password
+    $mail->SetFrom('donotreply@wic.club', 'WIC');
+    $mail->AddReplyTo("donotreply@wic.club", "WIC");
+    $mail->Subject = $mail_subject;
+    $mail->MsgHTML($mail_body);
+    $mail->AddAddress($address);
+    if (!$mail->Send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    } else {
+        echo "Message sent!";
+    }
+}
