@@ -20,5 +20,5 @@
          
   	<link rel="shortcut icon" href="../../assets/img/logo.png">
 
-	<title>  WIC</title>
+	<title> Welcome WIC</title>
 </head>
