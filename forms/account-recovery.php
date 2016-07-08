@@ -95,7 +95,7 @@ include_once '../db/functions.php';
                                                 $to = $email;
                                                 $subject = "WIC #ACCOUNT RECOVERY";
                                                 $body = "Hi! <br>"
-                                                        . "A new password was assignet to you.<br>"
+                                                        . "A new password was assigned to you.<br>"
                                                         . "Use the following password to login: " . $password . "<br>"
                                                         . "ADVICE: AFTER LOGIN CHANGE YOUR PASSWORD!<br>"
                                                         . "Best regards,<br>"
