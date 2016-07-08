@@ -8,6 +8,30 @@ include_once ('../db/functions.php');
 // error_reporting(E_ALL);
 // ini_set("display_errors", 1);
 ?>
+
+ <?php
+                                    if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
+                                        $msg = '';
+                                        try {
+                                            $d = getDateToDB();
+                                            $userid = $_SESSION['id'];
+                                            $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
+                                            $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
+                                            $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
+                                            $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
+                                            $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
+                                            $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
+                                            $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
+                                            $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
+                                            $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
+                                            $msg = DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
+                                        } catch (Exception $ex) {
+                                            $msg = "ERROR!";
+                                        }
+                                    }
+                                    ?>	
+
+                                   
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,28 +91,6 @@ include_once ('../db/functions.php');
 
                             <div class="form-box">
                                 <div class="form-bottom">
-                                    <?php
-                                    if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
-                                        $msg = '';
-                                        try {
-                                            $d = getDateToDB();
-                                            $userid = $_SESSION['id'];
-                                            $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
-                                            $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
-                                            $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
-                                            $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
-                                            $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
-                                            $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
-                                            $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
-                                            $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
-                                            $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
-                                            $msg = DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
-                                        } catch (Exception $ex) {
-                                            $msg = "ERROR!";
-                                        }
-                                    }
-                                    ?>	
-
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
                                             <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
