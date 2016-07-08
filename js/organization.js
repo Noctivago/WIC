@@ -276,7 +276,7 @@ function viewAllOrganization() {
     var dataString = 'arg=' + arg;
     $.ajax({
         type: 'POST',
-        url: "./orgsubmit.php",
+        url: "../orgsubmit.php",
         data: dataString,
         cache: false,
         success: function (result) {
