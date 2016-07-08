@@ -64,16 +64,24 @@ function removeUserNewsletter($IdNews){
     return false;
 
 }
+
 function deleteConfirmation(){
-    $['#delete_confirm_modal'].show('modal');
+    var txt;
+    var r = confirm("Are you sure?");
+    if (r == true) {
+        return true;
+    } else {
+        return false;
 }
 
+}
 function editOrganization($orgId,$idUser){
-    $
+    
 }
 function removeOrganization($IdOrg,$id) {
     //remove organização selecionada pelo o boss
-    deleteConfirmation();
+    var resp = deleteConfirmation();
+    if(resp == true){
     var arg = 'removeOrganization';
     var dataString = 'arg=' + arg + '&org=' + $IdOrg;
     alert(dataString);
@@ -86,6 +94,7 @@ function removeOrganization($IdOrg,$id) {
          
         }
     });
+    }
     viewAllOrganization($id);
     //viewAllOrganization();
     return false;
