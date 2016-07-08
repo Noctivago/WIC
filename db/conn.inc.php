@@ -676,9 +676,9 @@ function sendEmail() {
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-    $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+    #$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
     if (!$mail->send()) {
-        echo 'Message could not be sent.';
+        echo 'Message could not be sent.<br>';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
         exit;
     }
