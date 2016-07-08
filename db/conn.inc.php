@@ -657,7 +657,7 @@ function sendEmail() {
 #cria uma nova instancia do PHPMailer
     $mail = new PHPMailer();
     $mail->IsSMTP(); // telling the class to use SMTP
-    $mail->SMTPDebug = 2;                     // enables SMTP debug information (for testing)
+    #$mail->SMTPDebug = 2;                     // enables SMTP debug information (for testing)
     $mail->SMTPAuth = true;                  // enable SMTP authentication
     $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
     $mail->Host = "iberweb4a.ibername.com";      // sets GMAIL as the SMTP server
