@@ -102,7 +102,7 @@ function removeOrganization($IdOrg,$id) {
 }
 //edidar a informação da organização
 function editOrganizationInformation(cont) {
-    $('#mytable tr').eq(cont).each(function(){
+    $('#mytable tr:'+cont).each(function(){
         var userId = $(this).find("td:userId").html();
         var orgId = $(this).find("td:orgId").html();  
         alert(userId + orgId);
