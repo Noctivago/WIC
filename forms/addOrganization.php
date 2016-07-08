@@ -70,8 +70,8 @@ include_once ('../db/functions.php');
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
        
     </head>
-<!--<//?= //$_SESSION['id'] ?>-->
-    <body onload="viewAllOrganization(this)">
+<!---->
+    <body onload="viewAllOrganization(<?= $userid ?>)">
         
 
         <!-- Top content -->
@@ -122,7 +122,7 @@ include_once ('../db/functions.php');
                                         <div class="form-group">
                                             <input type="text" name="website" placeholder="ORGANIZATION WEBSITE" class="form-password form-control" id="website" required>
                                         </div>
-                                        <button type="submit" class="btn" name="addOrg">NEW ORGANIZATION!</button>
+                                        <button type="submit" id="add" class="btn" name="addOrg">NEW ORGANIZATION!</button>
                                     </form>
                                 </div>
                             </div>
