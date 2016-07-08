@@ -71,7 +71,8 @@ include_once ('../db/functions.php');
        
     </head>
 
-    <body onload="viewAllOrganization(<?= $userId ?>)">
+    <body onload="viewAllOrganization(<?= $_SESSION['id'] ?>)">
+        
 
         <!-- Top content -->
         
