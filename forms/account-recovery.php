@@ -52,9 +52,7 @@ include_once '../db/functions.php';
                         <div class="col-sm-8 col-sm-offset-2 text">
                             <h1><strong>Confirm your Account</strong> </h1>
                             <div class="description">
-                                <p>
-                                    Ative a sua conta e realize o seu evento de sonho já!  A vida é uma celebração
-                                </p>
+
                             </div>
                         </div>
                     </div>
@@ -71,7 +69,7 @@ include_once '../db/functions.php';
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
-                                        <p>Confirm!!</p>
+                                        <p>Recovery!!</p>
                                         <p>Fill in the form below to get instant access:</p>
                                     </div>
                                     <div class="form-top-right">
@@ -87,7 +85,7 @@ include_once '../db/functions.php';
                                         if (DB_checkIfUserExists($pdo, $email)) {
                                             //CRIA PASSWORD -
                                             //ATRIBUI NOVA PASSWORD AO USER
-                                            $password = generateActivationCode();
+                                            $password = generatePassword();
                                             //CODIFICA PASSWORD PARA INSERIR NA BD
                                             $hashPassword = hash('whirlpool', $password);
                                             //INSERE PASSWORD NA BD
