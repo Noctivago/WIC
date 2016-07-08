@@ -664,10 +664,10 @@ function sendEmail() {
     #$mail->addAddress('ellen@example.com');               // Name is optional
     #$mail->addCC('cc@example.com');
     #$mail->addBCC('bcc@example.com');
-    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+    #$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
     #$mail->addAttachment('/usr/labnol/file.doc');         // Add attachments
     #$mail->addAttachment('/images/image.jpg', 'new.jpg'); // Optional name
-    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->isHTML(false);                                  // Set email format to HTML
     #$mail->isHTML(false);                                  // Set email format to HTML
     $mail->Subject = 'Here is the subject';
     $mail->Body = 'This is the HTML message body <b>in bold!</b>';
@@ -676,7 +676,7 @@ function sendEmail() {
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
     #$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-    $mail->msgHTML("TESTE!");
+    #$mail->msgHTML("TESTE!");
     if (!$mail->send()) {
         echo 'Message could not be sent.<br>';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
