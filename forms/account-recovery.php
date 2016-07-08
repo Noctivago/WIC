@@ -1,6 +1,9 @@
 <?php
 include_once '../db/conn.inc.php';
-include_once '../db/functions.php';
+?>
+<?
+// error_reporting(E_ALL);
+// ini_set("display_errors", 1);
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +14,7 @@ include_once '../db/functions.php';
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Account Recovery </title>
+        <title> Account Confirmation </title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -46,13 +49,19 @@ include_once '../db/functions.php';
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Account recovery</strong> </h1>
+                            <h1><strong>Confirm your Account</strong> </h1>
                             <div class="description">
-
+                                <p>
+                                    Ative a sua conta e realize o seu evento de sonho já!  A vida é uma celebração
+                                </p>
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
+
+
+
                         <div class="col-sm-1"></div>
 
                         <div class="col-sm-5">
@@ -61,80 +70,87 @@ include_once '../db/functions.php';
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
-
+                                        <p>Confirm!!</p>
+                                        <p>Fill in the form below to get instant access:</p>
                                     </div>
-                                    <div class="form-bottom"><h4> <?php echo $msg; ?></h4>
-                                        <?php
-                                        if (isset($_POST['activate']) && !empty($_POST['email'])) {
-                                            $msg = '';
-                                            $forgotPassword = '';
-                                            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                                            //SE EMAIL EXISTE
-                                            if (DB_checkIfUserExists($pdo, $email)) {
-                                                //CRIA PASSWORD -
-                                                //ATRIBUI NOVA PASSWORD AO USER
-                                                $password = generateActivationCode();
-                                                //CODIFICA PASSWORD PARA INSERIR NA BD
-                                                $hashPassword = hash('whirlpool', $password);
-                                                //INSERE PASSWORD NA BD
-                                                if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
-                                                    //ENVIA EMAIL
+                                    <div class="form-top-right">
+                                        <i class="fa fa-pencil"></i>
+                                    </div>
+                                </div>
+                                <div class="form-bottom">
+                                    <?php
+                                    if (isset($_POST['activate']) && !empty($_POST['email'])) {
+                                        $msg = '';
+                                        $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+                                        //SE EMAIL EXISTE
+                                        if (DB_checkIfUserExists($pdo, $email)) {
+                                            //CRIA PASSWORD -
+                                            //ATRIBUI NOVA PASSWORD AO USER
+                                            $password = generateActivationCode();
+                                            //CODIFICA PASSWORD PARA INSERIR NA BD
+                                            $hashPassword = hash('whirlpool', $password);
+                                            //INSERE PASSWORD NA BD
+                                            if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
+                                                //ENVIA EMAIL
 //                                                    $to = $email;
 //                                                    $subject = "WIC - ACCOUNT RECOVERY";
 //                                                    $body = $password;
 //                                                    $msg = sendEmail($to, $subject, $body);
-                                                    $msg = "NEW PASSWORD > " . $password;
-                                                } else {
-                                                    $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
-                                                }
+                                                $msg = "NEW PASSWORD > " . $password;
                                             } else {
-                                                //SENAO INFORMA
-                                                $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
+                                                $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
                                             }
+                                        } else {
+                                            //SENAO INFORMA
+                                            $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
                                         }
-                                        ?>
-                                        <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
-                                            <div class="form-group">
-                                                <label class="sr-only" for="form-email">Email</label>
-                                                <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
-                                            </div>
-                                            <button type="submit" class="btn" name="activate">Recovery Account</button>
-                                        </form>
-                                    </div>
+                                    }
+                                    ?>
+                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
+                                        <div class="form-group"<h4><?php echo $msg; ?></h4>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-email">Email</label>
+                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
+                                        </div>
+                                        <button type="submit" class="btn" name="activate">Activate Account</button>
+
+                                    </form>
                                 </div>
-
                             </div>
+
                         </div>
-
                     </div>
-                </div>
 
+                </div>
             </div>
 
-            <!-- Footer -->
-            <footer>
-                <div class="container">
-                    <div class="row">
+        </div>
 
-                        <div class="col-sm-8 col-sm-offset-2">
-                            <div class="footer-border"></div>
-                            <p>Made by  <a href="http://google.pt" target="_blank"><strong>Easy Solutions</strong></a> 
-                                having a lot of fun. <i class="fa fa-smile-o"></i></p>
-                        </div>
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
 
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="footer-border"></div>
+                        <p>Made by  <a href="http://google.pt" target="_blank"><strong>Easy Solutions</strong></a> 
+                            having a lot of fun. <i class="fa fa-smile-o"></i></p>
                     </div>
+
                 </div>
-            </footer>
+            </div>
+        </footer>
 
-            <!-- Javascript -->
-            <script src="../assets/js/jquery-1.11.1.min.js"></script>
-            <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-            <script src="../assets/js/jquery.backstretch.min.js"></script>
-            <script src="../assets/js/scripts.js"></script>
+        <!-- Javascript -->
+        <script src="../assets/js/jquery-1.11.1.min.js"></script>
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/jquery.backstretch.min.js"></script>
+        <script src="../assets/js/scripts.js"></script>
 
-            <!--[if lt IE 10]>
-                <script src="assets/js/placeholder.js"></script>
-            <![endif]-->
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
 
     </body>
 
