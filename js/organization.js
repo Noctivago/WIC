@@ -111,6 +111,7 @@ function editOrganizationInformation(user , org) {
         data: dataString,
         cache: false,
         sucess: function (result) {
+            alert('func')
             var ajaxDisplay = document.getElementById('name');
             ajaxDisplay.innerHTML = result['Id'];
         }
