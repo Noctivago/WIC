@@ -108,7 +108,7 @@ function editOrganizationInformation(cont) {
         alert(fuck);
     });
     var arg = 'viewOrganizationInformation';
-    var dataString = 'arg=' + arg + '&org=' + org + '&userId='+userId;
+    var dataString = 'arg=' + arg; //+ '&org=' + org + '&userId='+userId;
     //alert(dataString);
     $.ajax({
         type: 'POST',
