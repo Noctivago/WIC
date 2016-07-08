@@ -1,5 +1,5 @@
 <main class="cd-main-content">
-
+<div class="content-wrapper">
     <div class="container">
 <!-- Page Header -->
         <div class="testarrow">
@@ -163,5 +163,5 @@
 
     <script src="../../assets/assests_sidebar/css/css_main/assets/js_services/bootstrap.min.js" type="text/javascript"></script>
 
-
+</div>
 </main>
