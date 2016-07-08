@@ -104,18 +104,21 @@ function removeOrganization($IdOrg,$id) {
 function editOrganizationInformation(cont) {
  //   var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
  //   alert(x[0]);
+ var rowN = 'row'+cont;
+ var r = $('mytable #'+rowN).text();
+ alert(r);
  
-   var table = $('#mytable');
-    var data = [];
-    table.find('tr').each(function (cont, r) {
-        var cols = [];
-        $(this).find('td:idUser').each(function (colIndex, c) {
-            cols.push(c.textContent);
-        });
-        data.push(cols);
-    });
-    alert(data);
-    return data;
+//   var table = $('#mytable');
+//    var data = [];
+//    table.find('tr').each(function (cont, r) {
+//        var cols = [];
+//        $(this).find('td:idUser').each(function (colIndex, c) {
+//            cols.push(c.textContent);
+//        });
+//        data.push(cols);
+//    });
+//    alert(data);
+//    return data;
 
     
     
