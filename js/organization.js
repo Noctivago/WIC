@@ -1,4 +1,4 @@
-function readAllUserNewsletter(){
+function readAllUserNewsletter() {
     var arg = 'readAllUserNewsletter';
     var dataString = 'arg=' + arg;
     $.ajax({
@@ -6,8 +6,8 @@ function readAllUserNewsletter(){
         url: "orgsubmit.php",
         data: dataString,
         cache: false,
-        sucess : function (result) {
-                alert(result);
+        sucess: function (result) {
+            alert(result);
         }
     });
     return false;
@@ -48,8 +48,8 @@ function addOrganization() {
         return false;
     }
 }
-function removeUserNewsletter($IdNews){
-     var arg = 'removeUserNewsletter';
+function removeUserNewsletter($IdNews) {
+    var arg = 'removeUserNewsletter';
     var dataString = 'arg=' + arg + '&idNews=' + $IdNews;
     alert(dataString);
     $.ajax({
@@ -65,35 +65,35 @@ function removeUserNewsletter($IdNews){
 
 }
 
-function deleteConfirmation(){
+function deleteConfirmation() {
     var txt;
     var r = confirm("Are you sure?");
     if (r == true) {
         return true;
     } else {
         return false;
-}
+    }
 
 }
-function editOrganization($orgId,$idUser){
-    
+function editOrganization($orgId, $idUser) {
+
 }
-function removeOrganization($IdOrg,$id) {
+function removeOrganization($IdOrg, $id) {
     //remove organização selecionada pelo o boss
     var resp = deleteConfirmation();
-    if(resp == true){
-    var arg = 'removeOrganization';
-    var dataString = 'arg=' + arg + '&org=' + $IdOrg;
-    alert(dataString);
-    $.ajax({
-        type: 'POST',
-        url: "../orgsubmit.php",
-        data: dataString,
-        cache: false,
-        sucess: function (result) {
-         
-        }
-    });
+    if (resp == true) {
+        var arg = 'removeOrganization';
+        var dataString = 'arg=' + arg + '&org=' + $IdOrg;
+        alert(dataString);
+        $.ajax({
+            type: 'POST',
+            url: "../orgsubmit.php",
+            data: dataString,
+            cache: false,
+            sucess: function (result) {
+
+            }
+        });
     }
     viewAllOrganization($id);
     //viewAllOrganization();
@@ -102,19 +102,24 @@ function removeOrganization($IdOrg,$id) {
 }
 //edidar a informação da organização
 function editOrganizationInformation(cont) {
- //   var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
- //   alert(x[0]);
- var orgId = $('#mytable #'+cont+' #Org').text();
- var Name = $('#mytable #'+cont+' #OName').text();
- var Phone = $('#mytable #'+cont+' #OPhone').text();
- var Mobile = $('#mytable #'+cont+' #OMobile').text();
- var Address = $('#mytable #'+cont+' #OAddress').text();
- var Facebook = $('#mytable #'+cont+' #OFacebook').text();
- var Twitter = $('#mytable #'+cont+' #OTwitter').text();
- var Linkdin = $('#mytable #'+cont+' #OLinkdin').text();
- var OEmail = $('#mytable #'+cont+' #OO_Email').text();
- var Website = $('#mytable #'+cont+' #OWebsite').text();
- alert(orgId +'    ' + Name + '   '+Phone+ '   '+ Mobile+ '   '+ Address+ '   '+ Facebook+ '   '+ Twitter+ '   '+ Linkdin+ '   '+ OEmail+ '   '+ Website);
+    //   var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
+    //   alert(x[0]);
+    var orgId = $('#mytable #' + cont + ' #Org').text();
+    var Name = $('#mytable #' + cont + ' #OName').text();
+    var Phone = $('#mytable #' + cont + ' #OPhone').text();
+    var Mobile = $('#mytable #' + cont + ' #OMobile').text();
+    var Address = $('#mytable #' + cont + ' #OAddress').text();
+    var Facebook = $('#mytable #' + cont + ' #OFacebook').text();
+    var Twitter = $('#mytable #' + cont + ' #OTwitter').text();
+    var Linkdin = $('#mytable #' + cont + ' #OLinkdin').text();
+    var OEmail = $('#mytable #' + cont + ' #OO_Email').text();
+    var Website = $('#mytable #' + cont + ' #OWebsite').text();
+    alert(Name + '   ' + Phone + '   ' + Mobile + '   ' + Address + '   ' + Facebook + '   ' + Twitter + '   ' + Linkdin + '   ' + OEmail + '   ' + Website);
+    var displayName = document.getElementById('name');
+    displayName.innerHTML = Name;
+    
+    
+
     var dataString = 'arg=' + arg; //+ '&org=' + org + '&userId='+userId;
     //alert(dataString);
     $.ajax({
@@ -130,7 +135,7 @@ function editOrganizationInformation(cont) {
     });
     return false;
 }
-    
+
 
 //validar organização por parte do admin
 function validateOrganization() {
@@ -234,7 +239,7 @@ function assignOrganizationCategoryOwner() {
     var arg = 'assignOrganizationCategoryOwner';
     var orgId = $("#organizationId3").val();
     var userId = $("#userOwner").val();
-    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId ;
+    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId;
     alert(dataString);
     $.ajax({
         type: 'POST',
@@ -246,14 +251,14 @@ function assignOrganizationCategoryOwner() {
         }
     });
     return false;
-   
+
 }
 //atribuir subchefe
 function assignOrganizationSubCategoryOwner() {
     var arg = 'assignOrganizationSubCategoryOwner';
     var orgId = $("#organizationId4").val();
     var userId = $("#userOwner1").val();
-    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId ;
+    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId;
     alert(dataString);
     $.ajax({
         type: 'POST',
@@ -265,7 +270,7 @@ function assignOrganizationSubCategoryOwner() {
         }
     });
     return false;
-   
+
 
 }
 //remover chefe
@@ -273,7 +278,7 @@ function removeOrganizationCategoryOwner() {
     var arg = 'removeOrganizationCategoryOwner';
     var orgId = $("#roco").val();
     var userId = $("#userOwnerCat").val();
-    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId ;
+    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId;
     alert(dataString);
     $.ajax({
         type: 'POST',
@@ -285,7 +290,7 @@ function removeOrganizationCategoryOwner() {
         }
     });
     return false;
-   
+
 }
 
 
@@ -295,7 +300,7 @@ function removeOrganizationSubCategoryOwner() {
     var arg = 'removeOrganizationSubCategoryOwner';
     var orgId = $("#rosco").val();
     var userId = $("#userOwnerSubCat").val();
-    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId ;
+    var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId;
     alert(dataString);
     $.ajax({
         type: 'POST',
@@ -307,7 +312,7 @@ function removeOrganizationSubCategoryOwner() {
         }
     });
     return false;
-   
+
 
 }
 //editar permissoes de um utilizador em um serviço
@@ -318,15 +323,15 @@ function editPermissionUserInOrganization() {
 function viewAllOrganization(id) {
     //var msg = deleteConfirmation();
     var arg = 'viewAllOrganization';
-    var dataString = 'arg=' + arg +'&idUser='+id;
+    var dataString = 'arg=' + arg + '&idUser=' + id;
     $.ajax({
         type: 'POST',
         url: "../orgsubmit.php",
         data: dataString,
         cache: false,
         success: function (result) {
-             var ajaxDisplay = document.getElementById('orgresp');
-                ajaxDisplay.innerHTML = result;
+            var ajaxDisplay = document.getElementById('orgresp');
+            ajaxDisplay.innerHTML = result;
         }
     });
 
