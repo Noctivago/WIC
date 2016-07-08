@@ -64,85 +64,83 @@ include_once '../db/conn.inc.php';
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
-                                        <p>Confirm!!</p>
-                                        <p>Fill in the form below to get instant access:</p>
-                                    </div>
-                                    <div class="form-top-right">
-                                        <i class="fa fa-pencil"></i>
-                                    </div>
-                                </div>
-                                <div class="form-bottom">
-                                    <?php
-                                    if (isset($_POST['activate']) && !empty($_POST['email'])) {
-                                        $msg = '';
-                                        $forgotPassword = '';
-                                        $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                                        //SE EMAIL EXISTE
-                                        if (DB_checkIfUserExists($pdo, $email)) {
-                                            //CRIA PASSWORD -
-                                            //ATRIBUI NOVA PASSWORD AO USER
-                                            $password = generateActivationCode();
-                                            //CODIFICA PASSWORD PARA INSERIR NA BD
-                                            $hashPassword = hash('whirlpool', $password);
-                                            //INSERE PASSWORD NA BD
-                                            if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
-                                                //ENVIA EMAIL
-                                                $to = $email;
-                                                $subject = "WIC - ACCOUNT RECOVERY";
-                                                $body = $password;
-                                                $msg = sendEmail($to, $subject, $body);
-                                            } else {
-                                                $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
-                                            }
-                                        } else {
-                                            //SENAO INFORMA
-                                            $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
-                                        }
-                                    }
-                                    ?>
-                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
-                                        <div class="form-group">
-                                            <label class="sr-only" for="form-email">Email</label>
-                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
+                                        <p>Please fill the form below to get access again:</p>
+                                        <h4> <?php echo $msg; ?></h4>
+                                        <div class="form-top-right">
+                                            <i class="fa fa-pencil"></i>
                                         </div>
-                                        <button type="submit" class="btn" name="activate">Activate Account</button>
-                                        <h2><?php echo $forgotPassword; ?></h2>
-                                    </form>
+                                    </div>
+                                    <div class="form-bottom">
+                                        <?php
+                                        if (isset($_POST['activate']) && !empty($_POST['email'])) {
+                                            $msg = '';
+                                            $forgotPassword = '';
+                                            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+                                            //SE EMAIL EXISTE
+                                            if (DB_checkIfUserExists($pdo, $email)) {
+                                                //CRIA PASSWORD -
+                                                //ATRIBUI NOVA PASSWORD AO USER
+                                                $password = generateActivationCode();
+                                                //CODIFICA PASSWORD PARA INSERIR NA BD
+                                                $hashPassword = hash('whirlpool', $password);
+                                                //INSERE PASSWORD NA BD
+                                                if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
+                                                    //ENVIA EMAIL
+                                                    $to = $email;
+                                                    $subject = "WIC - ACCOUNT RECOVERY";
+                                                    $body = $password;
+                                                    $msg = sendEmail($to, $subject, $body);
+                                                } else {
+                                                    $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
+                                                }
+                                            } else {
+                                                //SENAO INFORMA
+                                                $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
+                                            }
+                                        }
+                                        ?>
+                                        <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="form-email">Email</label>
+                                                <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
+                                            </div>
+                                            <button type="submit" class="btn" name="activate">Recovery Account</button>
+                                        </form>
+                                    </div>
                                 </div>
+
                             </div>
-
                         </div>
-                    </div>
 
+                    </div>
                 </div>
+
             </div>
 
-        </div>
+            <!-- Footer -->
+            <footer>
+                <div class="container">
+                    <div class="row">
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="footer-border"></div>
+                            <p>Made by  <a href="http://google.pt" target="_blank"><strong>Easy Solutions</strong></a> 
+                                having a lot of fun. <i class="fa fa-smile-o"></i></p>
+                        </div>
 
-                    <div class="col-sm-8 col-sm-offset-2">
-                        <div class="footer-border"></div>
-                        <p>Made by  <a href="http://google.pt" target="_blank"><strong>Easy Solutions</strong></a> 
-                            having a lot of fun. <i class="fa fa-smile-o"></i></p>
                     </div>
-
                 </div>
-            </div>
-        </footer>
+            </footer>
 
-        <!-- Javascript -->
-        <script src="../assets/js/jquery-1.11.1.min.js"></script>
-        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../assets/js/jquery.backstretch.min.js"></script>
-        <script src="../assets/js/scripts.js"></script>
+            <!-- Javascript -->
+            <script src="../assets/js/jquery-1.11.1.min.js"></script>
+            <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="../assets/js/jquery.backstretch.min.js"></script>
+            <script src="../assets/js/scripts.js"></script>
 
-        <!--[if lt IE 10]>
-            <script src="assets/js/placeholder.js"></script>
-        <![endif]-->
+            <!--[if lt IE 10]>
+                <script src="assets/js/placeholder.js"></script>
+            <![endif]-->
 
     </body>
 
