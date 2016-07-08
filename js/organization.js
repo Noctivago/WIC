@@ -107,6 +107,7 @@ function editOrganizationInformation(cont) {
         var orgId = $(this).find("td:orgId").html();  
         alert(userId + orgId);
     });
+    alert(cont);
     var arg = 'viewOrganizationInformation';
     var dataString = 'arg=' + arg + '&org=' + org + '&userId='+userId;
     alert(dataString);
