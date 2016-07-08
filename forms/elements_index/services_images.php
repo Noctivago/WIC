@@ -4,7 +4,7 @@
 <!-- Page Header -->
         <div class="testarrow">
             <div  class="page-header" class="col-lg-12">
-                <h1 >WIC  POCUNHA o BOB
+                <h1 >WIC  ELE É o BOB
                     <small>Secondary Text</small>
                 </h1>
             </div>
