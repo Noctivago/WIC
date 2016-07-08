@@ -104,7 +104,7 @@ function removeOrganization($IdOrg,$id) {
 function editOrganizationInformation(cont) {
     var search = 'row'+cont;
     $('#mytable tr').each(function(){
-        var fuck = $(this).find(".userId").html();
+        var fuck = $(this).find("td").html();
         alert(fuck);
     });
     var arg = 'viewOrganizationInformation';
