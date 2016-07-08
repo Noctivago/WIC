@@ -104,7 +104,7 @@ function removeOrganization($IdOrg,$id) {
 function editOrganizationInformation(cont) {
  //   var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
  //   alert(x[0]);
- var UserId = $('#mytable #'+cont+' #UserId').text();
+// var UserId = $('#mytable #'+cont+' #UserId').text();
  var Name = $('#mytable #'+cont+' #OName').text();
  var Phone = $('#mytable #'+cont+' #OPhone').text();
  var Mobile = $('#mytable #'+cont+' #OMobile').text();
