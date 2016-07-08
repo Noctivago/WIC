@@ -25,10 +25,10 @@ if ($arg === 'addOrganization') {
         echo 'ERRO';
     }
 } else if ($arg === 'viewOrganization') {
-   try{
-    $id = $_SESSION['Id'];
-    $rows = $sql($pdo,"SELECT * FROM [Organization] where [User_Boss] = ? and [Enabled] = 1",array($id),"rows");
-    echo "<table><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
+    try {
+        $id = $_SESSION['Id'];
+        $rows = $sql($pdo, "SELECT * FROM [Organization] where [User_Boss] = ? and [Enabled] = 1", array($id), "rows");
+        echo "<table><tr><th>ID</th><th>Name</th><th>Boss</th><th>Date Created</th><th>Addres</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
@@ -39,20 +39,18 @@ if ($arg === 'addOrganization') {
             echo "<tr>";
         }
         echo "</table>";
-   }  catch (Exception $e){
-       echo 'erros';
-   } 
+    } catch (Exception $e) {
+        echo 'erros';
+    }
 } else if ($arg === 'viewOrganizationInformation') {
-    try{
+    try {
         $orgId = $_POST['org'];
         $userId = $_POST['userId'];
-        $response = sql($pdo, "SELECT * FROM [Organization] where [User_Boss] = ? and [Id] = ?", array($orgId,$userId), "row");
+        $response = sql($pdo, "SELECT * FROM [Organization] where [User_Boss] = ? and [Id] = ?", array($orgId, $userId), "row");
         echo $response['Id'];
-        
     } catch (Exception $ex) {
         echo 'error';
     }
-    
 } else if ($arg === 'viewAllOrganization') {
     try {
         $cont = 0;
@@ -60,7 +58,6 @@ if ($arg === 'addOrganization') {
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
         echo "<table class='table table-striped' id='mytable'><tr><th> UserID </th><th> OrgId </th><th> Name </th><th> Boss </th><th> Date Created </th><th> Addres </th><th> Delete </th> <th>Edit</th></tr>";
         foreach ($rows as $row) {
-            $cont += 1;
             echo "<tr >";
             echo "<td >" . $row['Id'] . "</td>";
             echo "<td >" . $userid . "</td>";
@@ -68,20 +65,21 @@ if ($arg === 'addOrganization') {
             echo "<td >" . $row['User_Boss'] . "</td>";
             echo "<td >" . $row['Date_Created'] . "</td>";
             echo "<td >" . $row['Name'] . "</td>";
-            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . ",".$userid.")'> </td>";
+            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . "," . $userid . ")'> </td>";
             echo "<td> <input type='button' value='Edit' onClick='editOrganizationInformation($cont)'> </td>";
             echo "<tr>";
+            $cont += 1;
         }
         echo "</table>";
     } catch (Exception $ex) {
         echo 'erro';
     }
-}else if ($arg ==='readAllUserNewsletter'){
-    try{
+} else if ($arg === 'readAllUserNewsletter') {
+    try {
         $userId = $_SESSION['Id'];
-        DB_readAllUserNewsletter($pdo,$userId);
+        DB_readAllUserNewsletter($pdo, $userId);
     } catch (Exception $ex) {
-
+        
     }
 } else if ($arg === 'removeOrganization') {
     try {
@@ -240,13 +238,12 @@ if ($arg === 'addOrganization') {
         echo 'error';
     }
 } else if ($arg === 'editPermissionUserInOrganization') {
- 
     
-} else if ($arg === 'removeUserNewsletter') {   
-    try{
+} else if ($arg === 'removeUserNewsletter') {
+    try {
         $idNewsLetter = (filter_var($_POST ['idNews']));
         $userid = $_SESSION['id'];
-        $msg = sql($pdo,"UPDATE [dbo].[User_Newsletter] SET [Enabled] = 0 WHERE [User_Id] = ? and [Id]=?", array($userid,$idNewsLetter));
+        $msg = sql($pdo, "UPDATE [dbo].[User_Newsletter] SET [Enabled] = 0 WHERE [User_Id] = ? and [Id]=?", array($userid, $idNewsLetter));
         //DB_readAllUserNewsletter($pdo, $userId);
         echo 'Newsletter removed';
     } catch (Exception $ex) {

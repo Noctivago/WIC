@@ -102,8 +102,22 @@ function removeOrganization($IdOrg,$id) {
 }
 //edidar a informação da organização
 function editOrganizationInformation(cont) {
-    var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
-    alert(x.toString());
+ //   var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
+ //   alert(x[0]);
+ 
+   var table = $('#mytable');
+    var data = [];
+    table.find('tr').each(function (cont, r) {
+        var cols = [];
+        $(this).find('th,td').each(function (colIndex, c) {
+            cols.push(c.textContent);
+        });
+        data.push(cols);
+    });
+    alert(data);
+    return data;
+}
+    
     
 // $('#mytable tr').each(function(){
 //        var fuck = $(this).find('td').html();
