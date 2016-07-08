@@ -102,17 +102,19 @@ function removeOrganization($IdOrg,$id) {
 }
 //edidar a informação da organização
 function editOrganizationInformation(cont) {
-    
+  var row = document.getElementById(cont);
+  alert(row);
     $("#mytable tr").click(function(){
-        var id = $(this).attr("userId");
-        alert(id);
+        var id = $(this).attr("id");
+       var row = document.getElementById("id");
+       var cells = row.getElementsByTagName("td");
+        alert(cells[0].innertext);
     });
 //    $('#mytable tr').each(function(){
 //        var userId = $(this).find("td:userId").html();
 //        var orgId = $(this).find("td:orgId").html();  
 //        alert(userId + orgId);
 //    });
-    alert(cont);
     var arg = 'viewOrganizationInformation';
     var dataString = 'arg=' + arg + '&org=' + org + '&userId='+userId;
     alert(dataString);
