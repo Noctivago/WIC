@@ -71,9 +71,10 @@ include_once ('../db/functions.php');
        
     </head>
 
-    <body onload="viewAllOrganization(<?php echo $userId; ?>)>
+    <body onload="viewAllOrganization(<?php echo $userId; ?>)">
 
         <!-- Top content -->
+        
         <div class="top-content">
 
             <div class="inner-bg">
