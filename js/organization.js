@@ -105,7 +105,7 @@ function editOrganizationInformation(cont) {
     
     $("#mytable tr").click(function(){
         $(this).find("td").each(function(){
-            alert($(this).find('#userId').html());
+            alert($(this).find('td:first').html());
         });
     });
 //    $('#mytable tr').each(function(){
