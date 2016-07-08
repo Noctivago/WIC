@@ -648,27 +648,45 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
 #função que procede ao envio de um Email
 
 function sendEmail($address, $mail_subject, $mail_body) {
-    date_default_timezone_set('Europe/Lisbon');
-    require_once('./inc/mail/class.phpmailer.php');
-    $mail = new PHPMailer();
-    $mail->IsSMTP(); // telling the class to use SMTP
-    $mail->SMTPDebug = 2;                     // enables SMTP debug information (for testing)
-    $mail->SMTPAuth = true;                  // enable SMTP authentication
-    #$mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
-    $mail->Host = "mail.wic.club";      // sets GMAIL as the SMTP server
-    $mail->Port = 25;                   // set the SMTP port for the GMAIL server
-    $mail->Username = "donotreply@wic.club";  // GMAIL username
-    $mail->Password = '#$youcandoit2017$#';            // GMAIL password
-    $mail->SetFrom('donotreply@wic.club', 'WIC');
-    $mail->AddReplyTo("donotreply@wic.club", "WIC");
-    $mail->Subject = $mail_subject;
-    $mail->MsgHTML($mail_body);
-    $mail->AddAddress($address);
-    if (!$mail->Send()) {
-        echo "Mailer Error: " . $mail->ErrorInfo;
-    } else {
-        echo "Message sent!";
-    }
+    // multiple recipients
+    #$to = 'aidan@example.com' . ', '; // note the comma
+    $to = $address;
+// subject
+    $subject = $mail_subject;
+
+// message
+//    $message = '
+//        <html>
+//        <head>
+//          <title>Birthday Reminders for August</title>
+//        </head>
+//        <body>
+//          <p>Here are the birthdays upcoming in August!</p>
+//          <table>
+//            <tr>
+//              <th>Person</th><th>Day</th><th>Month</th><th>Year</th>
+//            </tr>
+//            <tr>
+//              <td>Joe</td><td>3rd</td><td>August</td><td>1970</td>
+//            </tr>
+//            <tr>
+//              <td>Sally</td><td>17th</td><td>August</td><td>1973</td>
+//            </tr>
+//          </table>
+//        </body>
+//        </html>
+//';
+    $message = $mail_body;
+// To send HTML mail, the Content-type header must be set
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+// Additional headers
+    $headers .= "To: $to" . "\r\n";
+    $headers .= 'From: WIC ACCOUNT RECOVERY <donotreply@wic.club>' . "\r\n";
+    #$headers .= 'Cc: birthdayarchive@example.com' . "\r\n";
+    #$headers .= 'Bcc: birthdaycheck@example.com' . "\r\n";
+// Mail it
+    mail($to, $subject, $message, $headers);
 }
 
 function DB_changeUserPassword($pdo, $email, $password) {
