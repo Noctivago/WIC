@@ -109,7 +109,7 @@ function editOrganizationInformation(cont) {
     });
     var arg = 'viewOrganizationInformation';
     var dataString = 'arg=' + arg + '&org=' + org + '&userId='+userId;
-    alert(dataString);
+    //alert(dataString);
     $.ajax({
         type: 'POST',
         url: "../orgsubmit.php",
