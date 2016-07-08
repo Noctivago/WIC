@@ -110,11 +110,12 @@ function editOrganizationInformation(cont) {
     table.find('tr').each(function (cont, r) {
         var cols = [];
         $(this).find('td').each(function (colIndex, c) {
+            colIndex = 2;
             cols.push(c.textContent);
         });
         data.push(cols);
     });
-    alert(data.indexOf(2));
+    alert(data);
     return data;
 
     
