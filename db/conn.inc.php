@@ -670,3 +670,12 @@ function sendEmail($address, $mail_subject, $mail_body) {
         echo "Message sent!";
     }
 }
+
+function DB_changeUserPassword($pdo, $email, $password) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Email] = ? ", array($password, $email));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}
