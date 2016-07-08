@@ -657,7 +657,7 @@ function sendEmail() {
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'donotreply@wic.club';                   // SMTP username
     $mail->Password = '#$youcandoit2017$#';               // SMTP password
-    $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
+    #$mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
     $mail->Port = 25;                                    //Set the SMTP port number - 587 for authenticated TLS
     $mail->setFrom('donotreply@wic.club', 'WIC');     //Set who the message is to be sent from
     $mail->addReplyTo('donotreply@wic.club', 'WIC');  //Set an alternative reply-to address
