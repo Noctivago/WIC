@@ -2,8 +2,8 @@
 
 <!-- Page Header -->
         <div class="row">
-            <div  class="row_teste"class="col-lg-12">
-                <h1 >Page cabeça
+            <div  class="page-header" class="col-lg-12">
+                <h1 >Page Head
                     <small>Secondary Text</small>
                 </h1>
             </div>
