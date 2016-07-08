@@ -3,7 +3,7 @@
 <!-- Page Header -->
         <div class="row">
             <div  class="row_teste"class="col-lg-12">
-                <h1 >Page Head
+                <h1 >Page cabeça
                     <small>Secondary Text</small>
                 </h1>
             </div>
