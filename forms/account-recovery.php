@@ -3,8 +3,8 @@ include_once '../db/conn.inc.php';
 include_once '../db/functions.php';
 ?>
 <?
- error_reporting(E_ALL);
- ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 
 <!DOCTYPE html>
@@ -78,8 +78,8 @@ include_once '../db/functions.php';
                                 </div>
                                 <div class="form-bottom">
                                     <?php
+                                    $msg = '';
                                     if (isset($_POST['activate']) && !empty($_POST['email'])) {
-                                        $msg = '';
                                         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                                         //SE EMAIL EXISTE
                                         if (DB_checkIfUserExists($pdo, $email)) {
