@@ -62,12 +62,12 @@ if ($arg === 'addOrganization') {
         foreach ($rows as $row) {
             $cont += 1;
             echo "<tr id='row".$cont."'>";
-            echo "<td id='userId'>" . $row['Id'] . "</td>";
-            echo "<td id='orgId'>" . $userid . "</td>";
-            echo "<td id='name'>" . $row['Name'] . "</td>";
-            echo "<td id='boss'>" . $row['User_Boss'] . "</td>";
-            echo "<td id='date'>" . $row['Date_Created'] . "</td>";
-            echo "<td id='address'>" . $row['Address'] . "</td>";
+            echo "<td >" . $row['Id'] . "</td>";
+            echo "<td >" . $userid . "</td>";
+            echo "<td >" . $row['Name'] . "</td>";
+            echo "<td >" . $row['User_Boss'] . "</td>";
+            echo "<td >" . $row['Date_Created'] . "</td>";
+            echo "<td >" . $row['Address'] . "</td>";
             echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . ",".$userid.")'> </td>";
             echo "<td> <input type='button' value='Edit' onClick='editOrganizationInformation($cont)'> </td>";
             echo "<tr>";
