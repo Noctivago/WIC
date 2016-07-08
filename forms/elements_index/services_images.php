@@ -1,10 +1,10 @@
 <main class="cd-main-content">
-<div class="content-wrapper">
+
     <div class="container">
 <!-- Page Header -->
         <div class="row">
             <div  class="page-header" class="col-lg-12">
-                <h1 >Pagina
+                <h1 >Pagina teste
                     <small>Secondary Text</small>
                 </h1>
             </div>
@@ -160,6 +160,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-</div>
+
 
 </main>
