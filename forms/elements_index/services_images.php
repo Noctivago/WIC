@@ -1,10 +1,10 @@
 <main class="cd-main-content">
-<div class="content-wrapper">
+
     <div class="container">
 <!-- Page Header -->
         <div class="testarrow">
             <div  class="page-header" class="col-lg-12">
-                <h1 >WIC  PASTOR
+                <h1 >WIC  TROLHA
                     <small>Secondary Text</small>
                 </h1>
             </div>
@@ -152,7 +152,7 @@
         </footer>
     </div>
 
-    </div>
+
 </main>
     <!-- /.container -->
 
