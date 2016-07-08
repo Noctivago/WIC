@@ -91,11 +91,11 @@ include_once '../db/functions.php';
                                             //INSERE PASSWORD NA BD
                                             if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
                                                 //ENVIA EMAIL
-//                                                    $to = $email;
-//                                                    $subject = "WIC - ACCOUNT RECOVERY";
-//                                                    $body = $password;
-//                                                    $msg = sendEmail($to, $subject, $body);
-                                                $msg = "NEW PASSWORD > " . $password;
+                                                $to = $email;
+                                                $subject = "WIC - ACCOUNT RECOVERY";
+                                                $body = $password;
+                                                $msg = sendEmail($to, $subject, $body);
+                                                #$msg = "NEW PASSWORD > " . $password;
                                             } else {
                                                 $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
                                             }
