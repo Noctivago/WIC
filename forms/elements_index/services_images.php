@@ -4,7 +4,7 @@
 <!-- Page Header -->
         <div class="row">
             <div  class="page-header" class="col-lg-12">
-                <h1 >WIC  RAZAO teste
+                <h1 >WIC  ATAO
                     <small>Secondary Text</small>
                 </h1>
             </div>
