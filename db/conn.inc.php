@@ -59,7 +59,7 @@ function DB_checkIfUserExists($pdo, $email) {
 
 function DB_checkIfUserPasswordIsCorrect($pdo, $password, $userId) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Password] = ? AND [Id] = ?", array($userId), "count");
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Password] = ? AND [Id] = ?", array($password, $userId), "count");
         //IF EXISTS -1
         if ($count < 0) {
             return true;
