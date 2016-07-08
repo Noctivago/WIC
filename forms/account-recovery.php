@@ -62,12 +62,12 @@ include_once '../db/functions.php';
                                 <div class="form-top">
                                     <div class="form-top-left">
                                         <p>Please fill the form below to get access again:</p>
-                                        <h4> <?php echo $msg; ?></h4>
-                                        <div class="form-top-right">
-                                            <i class="fa fa-pencil"></i>
-                                        </div>
+
+                                        <!--                                        <div class="form-top-right">
+                                                                                    <i class="fa fa-pencil"></i>
+                                                                                </div>-->
                                     </div>
-                                    <div class="form-bottom">
+                                    <div class="form-bottom"><h4> <?php echo $msg; ?></h4>
                                         <?php
                                         if (isset($_POST['activate']) && !empty($_POST['email'])) {
                                             $msg = '';
