@@ -59,7 +59,7 @@ if ($arg === 'addOrganization') {
         echo "<table class='table table-striped' id='mytable'><tr><th> ID </th><th> UserId </th><th> Name </th><th> Boss </th><th> Date Created </th><th> Addres </th><th> Delete </th> <th>Edit</th></tr>";
         foreach ($rows as $row) {
             echo "<tr id=".'row'. $cont." hidden=>";
-            echo "<td id='org' type='hidden'>" . $row['Id'] . "</td>";
+            echo "<td id='org'>" . $row['Id'] . "</td>";
             echo "<td >" . $row[''] . "</td>";
             echo "<td >" . $row['Name'] . "</td>";
             echo "<td >" . $row['User_Boss'] . "</td>";
