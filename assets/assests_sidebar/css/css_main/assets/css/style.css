@@ -135,7 +135,7 @@ img { max-width: 100%; }
 }
 
 .form-bottom {
-	padding: 25px 25px 30px 25px;
+	padding: -30px -30px -30px -30px;
 	background: white;
 	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
 	text-align: left;
