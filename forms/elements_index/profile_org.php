@@ -30,7 +30,6 @@
 
                             </div>
                             <div class="form-top-right">
-                                <i class="fa fa-key"
                             </div>
                             <!--                            <div class="form-top-right">
                                                             <i class="fa fa-key"></i>-->
