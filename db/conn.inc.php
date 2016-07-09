@@ -736,7 +736,7 @@ function DB_getUserProfileInfo($pdo, $UserId) {
             $userInfo["Id"] = $row["grupo_sanguineo"];
             $userInfo["First_Name"] = $row["First_Name"];
             $userInfo["Last_Name"] = $row["Last_Name"];
-            $userInfo["Country_Id"] = $row["Country_Id"];
+//            $userInfo["Country_Id"] = $row["Country_Id"];
         }
         return $userInfo;
     } catch (PDOException $e) {
@@ -758,28 +758,28 @@ function DB_updateUserProfile($pdo, $fname, $lname, $userId) {
     }
 }
 
-function DB_getCountryAsSelectWithSelected($pdo, $userId) {
-    try {
-        $CID;
-        $stmt = $pdo->prepare("SELECT * FROM [dbo].[Profile] WHERE [User_Id]=:id");
-        $stmt->bindParam(':id', $userId);
-        $stmt->execute();
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $CID = $row["Country_Id"];
-        }
-        //LE PAISES E IGNORA O QUE FOR IGUAL
-        //NO FIM FAZER APPEND AO SELECT
-        $stmt = $pdo->prepare("SELECT * FROM Country ORDER BY Name ASC");
-        $stmt->execute();
-        while ($row = $stmt->fetch(PDO::FETCH())) {
-            if ($CID == $row['Id']) {
-                // <option value="audi" selected>Audi</option>
-                echo "<option value='" . htmlspecialchars($row['Id']) . "' selected>" . htmlspecialchars($row['Name']) . "</option>";
-            } else {
-                echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
-            }
-        }
-    } catch (PDOException $e) {
-        echo "ERROR UPDATING PROFILE!";
-    }
-}
+//function DB_getCountryAsSelectWithSelected($pdo, $userId) {
+//    try {
+//        $CID;
+//        $stmt = $pdo->prepare("SELECT * FROM [dbo].[Profile] WHERE [User_Id]=:id");
+//        $stmt->bindParam(':id', $userId);
+//        $stmt->execute();
+//        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+//            $CID = $row["Country_Id"];
+//        }
+//        //LE PAISES E IGNORA O QUE FOR IGUAL
+//        //NO FIM FAZER APPEND AO SELECT
+//        $stmt = $pdo->prepare("SELECT * FROM Country ORDER BY Name ASC");
+//        $stmt->execute();
+//        while ($row = $stmt->fetch(PDO::FETCH())) {
+//            if ($CID == $row['Id']) {
+//                // <option value="audi" selected>Audi</option>
+//                echo "<option value='" . htmlspecialchars($row['Id']) . "' selected>" . htmlspecialchars($row['Name']) . "</option>";
+//            } else {
+//                echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+//            }
+//        }
+//    } catch (PDOException $e) {
+//        echo "ERROR UPDATING PROFILE!";
+//    }
+//}
