@@ -10,16 +10,12 @@
 
 
                     <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1 style="color: darkgray"><strong>asd A PICTURE</strong> </h1>
-                        </div>
-                    </div>
+                <div class="col-sm-8 col-sm-offset-2 text">
 
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 text">
-
-                            <div class="form-box">
-                                <div class="form-bottom">
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top">
+                                <h1 style="color:darkgray">UPLOAD A PHOTO</h1>
                                     <?php
                                     $msg = '';
 
@@ -93,6 +89,9 @@
             </div>
 
         </div>
+            </div>
+</div>
+</main>
 
         <!-- Javascript -->
         <script src="../../assets/js/jquery-1.11.1.min.js"></script>
@@ -104,5 +103,4 @@
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
   
-</div>
-</main>
+
