@@ -724,3 +724,13 @@ function DB_createProfileOnRegistration($pdo, $email) {
         die();
     }
 }
+
+function DB_updateUserAccountActivationCode($pdo, $email, $code) {
+    $userId = DB_checkUserByEmail($pdo, $email);
+    try {
+        sql($pdo, "UPDATE [dbo].[User] SET [User_Code_Activation] = ? WHERE [Id] = ?", array($code, $userId));
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
+    }
+}
