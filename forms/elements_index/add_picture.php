@@ -19,7 +19,7 @@
                             <div class="form-top">
 
                                 
-                                <h3 style="color:black">Upload a different photo...</h3>
+                                <h3 style="color:black">Upload a  photo...</h3>
 
                             </div>
 
@@ -75,7 +75,7 @@
                                     ?>
 
                             <h3 style="color:black">  Edit Your Profle</h3>
-                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
+                            <form role="form" action="" method="post" enctype="multipart/form-data" class="login-form">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Select an Image to upload</label>
                                     <input type="file" name="fileToUpload"  class="form-username form-control" id="fileToUpload" required autofocus>
