@@ -1,4 +1,32 @@
-<?php
+
+<main class="cd-main-content">
+<div class="content-wrapper">
+
+
+
+<div class="top-content">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
+    <div class="inner-bg">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top">
+
+                                
+                                <h3 style="color:black">Upload a different photo...</h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-bottom">
+                            <?php
                                     $msg = '';
 
 // Check if image file is a actual image or fake image
@@ -45,35 +73,6 @@
                                         }
                                     }
                                     ?>
-<main class="cd-main-content">
-<div class="content-wrapper">
-
-
-
-<div class="top-content">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-    <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
-    <div class="inner-bg">
-        <div class="container">
-
-
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 text">
-
-                    <div class="form-box">
-                        <div class="form-top">
-                            <div class="form-top">
-
-                                
-                                <h6 style="color:black">Upload a different photo...</h6>
-
-                            </div>
-                            <!--                            <div class="form-top-right">
-                                                            <i class="fa fa-key"></i>
-                                                        </div>-->
-                        </div>
-
-                        <div class="form-bottom">
                             <h3 style="color:black">  Edit Your Profle</h3>
                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
                                 <div class="form-group">
@@ -86,30 +85,6 @@
                         </div>
 
 
-                        <!--post modal-->
-                        <!--<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                          <div class="modal-dialog">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                Update Status
-                              </div>
-                              <div class="modal-body">
-                                  <form class="form center-block">
-                                    <div class="form-group">
-                                      <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
-                                    </div>
-                                  </form>
-                              </div>
-                              <div class="modal-footer">
-                                  <div>
-                                  <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-                                    <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-                                          </div>	
-                              </div>
-                          </div>
-                          </div>
-                        </div>-->
 
                     </div>
 
