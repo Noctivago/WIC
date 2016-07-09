@@ -76,7 +76,7 @@ include_once ('../db/functions.php');
                                         $fileSize = $_FILES['Photo']['size'];
                                         $fileType = $_FILES['Photo']['type'];
                                         $temp = explode(".", $_FILES["file"]["name"]);
-                                        $newfilename = generateActivationCode() . '_' . $userId . '.' . end($temp);
+                                        $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
                                         #$filePath = $uploadDir . $fileName;
                                         $filePath = $uploadDir . $newfilename;
                                         #$result = move_uploaded_file($tmpName, $filePath);
