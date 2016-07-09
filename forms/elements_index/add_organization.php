@@ -51,11 +51,12 @@ include_once ('../db/functions.php');
 
 
 <div class="row" style="color: #000" onload="viewAllOrganization(<?= $userid ?>)">
-                <h1 style="color: darkgray"><strong>NOVA ORGANIZATION</strong> </h1>
+                
                 <div class="col-sm-8 col-sm-offset-2 text">
 
                     <div class="form-box">
                         <div class="form-top">
+                            <h1 style="color: darkgray"><strong>NOVA ORGANIZATION</strong> </h1>
                             <div class="form-top">
 
                                 <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
