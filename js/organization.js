@@ -116,18 +116,18 @@ function cleanInformation() {
 
 //edidar a informação da organização
 function editOrganizationInformation(cont) {
-    var orgId = $("#org-sel").val();
+    var orgId = $('#mytable #'+cont + ' #org-sel').val();
     alert(orgId);
-    document.getElementById('Org').value = $('#'+cont+' #OOrg').text();
-    document.getElementById('name').value = $('#'+cont+' #OName').text();
-    document.getElementById('phone').value = $('#'+cont+' #OPhone').text();
-    document.getElementById('mobile').value = $('#'+cont+' #OMobile').text();
-    document.getElementById('address').value = $('#'+cont+' #OAddress').text();
-    document.getElementById('facebook').value = $('#'+cont+' #OFacebook').text();
-    document.getElementById('twitter').value = $('#'+cont+' #OTwitter').text();
-    document.getElementById('linkdin').value = $('#'+cont+' #OLinkdin').text();
-    document.getElementById('orgEmail').value = $('#'+cont+'#mytable #' + cont + ' #OO_Email').text();
-    document.getElementById('website').value = $('#'+cont+'#mytable #' + cont + ' #OWebsite').text();
+    document.getElementById('Org').value = $('#mytable #'+cont + ' #OOrg').text();
+    document.getElementById('name').value = $('#mytable #'+cont + ' #OName').text();
+    document.getElementById('phone').value = $('#mytable #'+cont + ' #OPhone').text();
+    document.getElementById('mobile').value = $('#mytable #'+cont + ' #OMobile').text();
+    document.getElementById('address').value = $('#mytable #'+cont + ' #OAddress').text();
+    document.getElementById('facebook').value = $('#mytable #'+cont + ' #OFacebook').text();
+    document.getElementById('twitter').value = $('#mytable #'+cont + ' #OTwitter').text();
+    document.getElementById('linkdin').value = $('#mytable #'+cont + ' #OLinkdin').text();
+    document.getElementById('orgEmail').value = $('#mytable #'+cont + ' #OO_Email').text();
+    document.getElementById('website').value = $('#mytable #'+cont + ' #OWebsite').text();
     document.getElementById('add').style = "display: none";
     document.getElementById('update').style = "display: true";
     document.getElementById('cancel').style = "display: true";

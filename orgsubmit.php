@@ -71,6 +71,7 @@ if ($arg === 'addOrganization') {
         $userid = $_POST['idUser'];
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
         echo '<div style="display:none">';
+        echo '<table id="mytable">';
         echo '<input type="hidden" name="UserId" value="' . $_POST['User_Boss'] . '"> ';
         //echo '<input type="hidden" name="orgId" value="'.$row['Id'].'"> ';
         foreach ($rows as $row) {
