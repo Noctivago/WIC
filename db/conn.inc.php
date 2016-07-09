@@ -719,7 +719,7 @@ function DB_getUserProfilePicture($pdo, $userId) {
         $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [[User_Id]] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             #return $row['Picture_Path'];
-            return '<img src=/"http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png/" class=/"avatar img-circle img-thumbnail text-center center-block/" alt=/"avatar/">';
+            return '<img src=/"' . $row['Picture_Path'] . '/" class=/"avatar img-circle img-thumbnail text-center center-block/" alt=/"avatar/">';
         }
     } catch (Exception $exc) {
         echo 'ERROR READING PROFILE PICTURE!';
