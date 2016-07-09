@@ -11,7 +11,7 @@
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>DOWN PICTURE</strong> </h1>
+                            <h1 style="color: darkgray"><strong>DOWN PICTURE</strong> </h1>
                         </div>
                     </div>
 
@@ -93,15 +93,6 @@
             </div>
 
         </div>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-
-                </div>
-            </div>
-        </footer>
 
         <!-- Javascript -->
         <script src="../../assets/js/jquery-1.11.1.min.js"></script>
