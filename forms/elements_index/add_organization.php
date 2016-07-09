@@ -70,7 +70,7 @@ include_once ('../db/functions.php');
                         </div>
 
                         <div class="form-bottom">
-                            <h3 style="color:black">  New Organization</h3>
+                            
                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
                                             <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
