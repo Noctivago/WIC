@@ -113,8 +113,8 @@ function editOrganizationInformation(cont) {
     document.getElementById('linkdin').value = $('#mytable #' + cont + ' #OLinkdin').text();
     document.getElementById('orgEmail').value = $('#mytable #' + cont + ' #OO_Email').text();
     document.getElementById('website').value = $('#mytable #' + cont + ' #OWebsite').text();
-    document.getElementById('update').style = "display: true";
-    document.getElementById('cancel').style = "display: true";
+    //document.getElementById('update').style = "display: true";
+    //document.getElementById('cancel').style = "display: true";
     var span = document.createElement('upda');
     span.innerHTML = '<button onclick="updateOrg('+org+')" />';
     //document.getElementById('update').onclick = '"'+updateOrg(org)+"'";
