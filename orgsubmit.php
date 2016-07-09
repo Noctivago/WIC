@@ -136,11 +136,11 @@ if ($arg === 'addOrganization') {
     //$userid = $_SESSION['id'];
     try {
         $orgId = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
-        //$rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id]=? and [Enabled] = 1 and [Validate]=1", array($orgId), "rows");
+        $rows = sql($pdo, "SELECT [Id] FROM [dbo].[Organization] WHERE [Id]=? and [Enabled] = 1 and [Validate]=1", array($orgId), "rows");
         echo 'vai para o caralho';
-//        foreach ($rows as $row) {
-//            echo $row['Id'];
-//        }
+        foreach ($rows as $row) {
+            echo $row['Id'];
+        }
         echo 'adsadsadas';
     } catch (Exception $ex) {
         echo 'error';
