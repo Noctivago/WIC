@@ -45,11 +45,11 @@ include_once ('../db/functions.php');
                                     <form role="form" action="" method="post" class="login-form">
                                         <div class="form-group">
                                             <label class="sr-only" for="form-username">First Name</label>
-                                            <input type="text" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                            <input type="text" name="fname" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-password">Last Name</label>
-                                            <input type="text" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                            <input type="text" name="lname" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-username">Email</label>
@@ -57,12 +57,12 @@ include_once ('../db/functions.php');
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-password">Country:</label>
-                                            <input type="text" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
+                                            <input type="text" name="country" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="sr-only" for="form-password">City:</label>
-                                            <input type="password" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
+                                            <input type="password" name="city" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
                                         </div>
                                         <button type="submit" class="btn" name="login">Save Changes!</button>
 
