@@ -19,7 +19,7 @@
                         <div class="col-sm-5">
 
                             <div class="form-box">
-                                <div class="form-bottom">
+                                <div class="form-top">
                                     <?php
                                     $msg = '';
 
