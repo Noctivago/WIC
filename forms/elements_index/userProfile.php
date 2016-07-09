@@ -31,9 +31,39 @@ include_once ('../db/functions.php');
                                         <!--<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">-->
                                         <?= DB_getUserProfilePicture($pdo, $_SESSION['id']) ?>
                                         <?= $userInfo = DB_getUserProfileInfo($pdo, $_SESSION['id']) ?>
+                                        <?php
+                                        if (isset($_POST["changePic"])) {
+                                            $userId = $_SESSION['id'];
+                                            //pasta do user para guardar a foto de perfil
+                                            $uploadDir = '../pics/'; //Image Upload Folder
+                                            $fileName = $_FILES['Photo']['name'];
+                                            $tmpName = $_FILES['Photo']['tmp_name'];
+                                            $fileSize = $_FILES['Photo']['size'];
+                                            $fileType = $_FILES['Photo']['type'];
+                                            $temp = explode(".", $_FILES["file"]["name"]);
+                                            $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
+                                            #$filePath = $uploadDir . $fileName;
+                                            $filePath = $uploadDir . $newfilename;
+                                            #$result = move_uploaded_file($tmpName, $filePath);
+                                            $result = move_uploaded_file($tmpName, $filePath);
+                                            $pic = $filePath;
+                                            if (!$result) {
+                                                $msg = "Error uploading file";
+                                                exit;
+                                            } else {
+                                                if (!get_magic_quotes_gpc()) {
+                                                    $fileName = addslashes($fileName);
+                                                    $filePath = addslashes($filePath);
+                                                }
+
+                                                #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
+                                                $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
+                                            }
+                                        }
+                                        ?>
                                         <br>
-                                        <p class="text-center center-block well well-sm"><input type="file" style="color:black">
-                                            <button type="submit" class="btn " name="login">Change picture!</button></p>
+                                        <input type="file" class="text-center center-block well well-sm" style="color:black">
+                                        <button type="submit" class="btn " name="changePic">Change picture!</button>
 
                                     </div>
                                     <!--                            <div class="form-top-right">
