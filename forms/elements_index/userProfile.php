@@ -85,7 +85,7 @@ include_once ('../db/functions.php');
                                 <div class="form-bottom">
                                     <h3 style="color:black">  Edit Your Profile</h3>
                                     <h2><?php echo $msg; ?></h2>
-                                    <form role="form" action="" method="post" class="login-form">
+                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group">
                                             <label class="sr-only" for="form-username">First Name</label>
                                             <input type="text" name="fname" placeholder="First Name" value="<?= $userInfo["First_Name"] ?> "class="form-username form-control" id="fname" required autofocus>
