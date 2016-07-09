@@ -764,6 +764,8 @@ function DB_getCountryAsSelectWithSelected($pdo, $userId) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $CID = $row["Country_Id"];
         }
+        //LE PAISES E IGNORA O QUE FOR IGUAL
+        //NO FIM FAZER APPEND AO SELECT
         $stmt = $pdo->prepare("SELECT * FROM Country ORDER BY Name ASC");
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH())) {
