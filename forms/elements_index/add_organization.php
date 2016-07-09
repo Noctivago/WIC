@@ -32,7 +32,7 @@ include_once ('../db/functions.php');
                                     ?>	
 
                                    
-
+<body onload="viewAllOrganization(<?= $userid ?>)">
 <main class="cd-main-content">
 <div class="content-wrapper">
 
@@ -142,10 +142,6 @@ include_once ('../db/functions.php');
     </div>
 </div>
 </main>
-<!--<script src="../../assets/assests_sidebar/js/js_main/bootstrap.min_main.js" type="text/javascript"></script>
-<script src="../../assets/assests_sidebar/js/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
-<script src="../../assets/assests_sidebar/js/js_main/backstretch.min_main.js" type="text/javascript"></script>
-<script src="../../assets/assests_sidebar/js/js_main/scripts_main.js" type="text/javascript"></script>-->
 
 
     <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
@@ -154,5 +150,5 @@ include_once ('../db/functions.php');
     <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
 
 
-
+</body>
 
