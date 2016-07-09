@@ -745,12 +745,36 @@ function DB_getUserProfileInfo($pdo, $UserId) {
     }
 }
 
-function DB_updateUserProfile($pdo, $fname, $lname,$countryId, $userId) {
+function DB_updateUserProfile($pdo, $fname, $lname, $countryId, $userId) {
     try {
         sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? , [Country_Id] = ? WHERE [User_Id] = ?", array($fname, $lname, $countryId, $userId));
         echo 'PROFILE UPDATED!';
     } catch (PDOException $e) {
         echo "ERROR UPDATING PROFILE!";
 #die();
+    }
+}
+
+function DB_getCountryAsSelectWithSelected($pdo, $userId) {
+    try {
+        $CID;
+        $stmt = $pdo->prepare("SELECT * FROM [dbo].[Profile] WHERE [User_Id]=:id");
+        $stmt->bindParam(':id', $userId);
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $CID = $row["Country_Id"];
+        }
+        $stmt = $pdo->prepare("SELECT * FROM Country ORDER BY Name ASC");
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH())) {
+            if ($CID == $row['Id']) {
+                // <option value="audi" selected>Audi</option>
+                echo "<option value='" . htmlspecialchars($row['Id']) . "' selected>" . htmlspecialchars($row['Name']) . "</option>";
+            } else {
+                echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            }
+        }
+    } catch (PDOException $e) {
+        echo "ERROR UPDATING PROFILE!";
     }
 }
