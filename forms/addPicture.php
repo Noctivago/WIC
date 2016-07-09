@@ -69,7 +69,8 @@ include_once ('../db/functions.php');
 // Check if image file is a actual image or fake image
                                     if (isset($_POST["submit"])) {
                                         $target_dir = "../pics/";
-                                        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+                                        #$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+                                        $target_file = $target_dir . basename($_FILES["fileToUpload"][$_SESSION['id']]);
                                         $uploadOk = 1;
                                         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
                                         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -112,7 +113,7 @@ include_once ('../db/functions.php');
                                     <div class = "form-group"><h4> <?php echo $msg; ?></h4>
                                         <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
                                             Select image to upload:
-                                            <input type="file" name="fileToUpload" id="fileToUpload">
+                                            <input type="file" name="fileToUpload" id="fileToUpload" required="">
                                             <input type="submit" value="Upload Image" name="submit">
                                         </form>
                                     </div>

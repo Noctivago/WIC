@@ -85,7 +85,7 @@ include_once ('../db/functions.php');
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>NEW ORGANIZATION</strong> </h1>
+                            <h1 ><strong>NEW ORGANIZATION</strong> </h1>
                         </div>
                     </div>
 
@@ -98,7 +98,7 @@ include_once ('../db/functions.php');
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
                                             <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
                                         </div>
-                                            <input type="hidden" name="Org"  class="form-password form-control" id="Org">
+                                        <input type="hidden" name="Org"  class="form-password form-control" id="Org" value="null">
                                         <div class="form-group">
                                             <input type="text" name="phone" placeholder="ORGANIZATION PHONE" class="form-password form-control" id="phone" required>
                                         </div>
