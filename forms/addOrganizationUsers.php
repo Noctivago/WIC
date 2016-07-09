@@ -107,7 +107,7 @@ include_once ('../db/functions.php');
                         <div class="col-sm-5" id="table-users-in-organization" onload="viewAllUsersInOrganization()">
                             <br>
                             <br>
-                            <?= DB_readOrganizationServiceAsTable($pdo, $_SESSION['id']); ?>
+                            
                         </div>
                     </div>
 
