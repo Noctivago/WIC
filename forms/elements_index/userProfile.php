@@ -70,8 +70,13 @@ include_once ('../db/functions.php');
                                         }
                                         ?>
                                         <br>
-                                        <input type="file" class="text-center center-block well well-sm" style="color:black">
-                                        <button type="submit" class="btn " name="changePic">Change picture!</button>
+                                        <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
+                                            Select image to upload:
+                                            <input type="file" name="Photo" id="Photo" required="">
+                                            <input type="submit" value="Change picture!" name="changePic">
+                                        </form>
+<!--                                        <input type="file" class="text-center center-block well well-sm" style="color:black">
+                                        <button type="submit" class="btn " name="changePic">Change picture!</button>-->
 
                                     </div>
                                     <!--                            <div class="form-top-right">

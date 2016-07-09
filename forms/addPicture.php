@@ -99,7 +99,7 @@ include_once ('../db/functions.php');
                                     <div class = "form-group"><h4> <?php echo $msg; ?></h4>
                                         <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
                                             Select image to upload:
-                                            <input type="file" name="Photo" id="fileToUpload" required="">
+                                            <input type="file" name="Photo" id="Photo" required="">
                                             <input type="submit" value="Upload Image" name="submit">
                                         </form>
                                     </div>
