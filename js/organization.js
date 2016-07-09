@@ -116,8 +116,8 @@ function editOrganizationInformation(cont) {
     document.getElementById('update').style = "display: true";
     document.getElementById('Cancel').style = "display: true";
     document.getElementById('update').onclick = function updateOrg(org){
-        alert(org);
-    }
+    alert(org);
+    
     var userid = $("#userid").val();
     var name = $("#name").val();
     var phone = $("#phone").val();
