@@ -45,19 +45,20 @@ include_once ('../db/functions.php');
                                     <form role="form" action="" method="post" class="login-form">
                                         <div class="form-group">
                                             <label class="sr-only" for="form-username">First Name</label>
-                                            <input type="text" name="fname" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                            <input type="text" name="fname" placeholder="First Name" class="form-username form-control" id="fname" required autofocus>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-password">Last Name</label>
-                                            <input type="text" name="lname" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                            <input type="text" name="lname" placeholder="Last Name" class="form-password form-control" id="lname" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-username">Email</label>
-                                            <input type="text" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
+                                            <input type="text" name="email" placeholder="youremail@email.com" class="form-username form-control" id="email" required>
                                         </div>
                                         <div class="form-group">
-                                            <label class="sr-only" for="form-password">Country:</label>
-                                            <input type="text" name="country" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
+                                            <select class="form-username form-control" name="country" id="country">
+                                                <?= DB_getCountryAsSelect($pdo) ?>
+                                            </select>
                                         </div>
 
                                         <div class="form-group">
