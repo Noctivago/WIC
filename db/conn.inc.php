@@ -473,7 +473,7 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
         echo "<option value='0'></option>";
         foreach ($rows as $row) {
             $cont +=1;
-            echo "<option value='" . $cont . "'>
+            echo "<option value='" . $cont . "'>" . htmlspecialchars($row['Name']) . "
             <input type='hidden' id='OOrg' value='".$row['Id']."'/>
             <input type='hidden' id='OName' value='".$row['Id']."'/>
             <input type='hidden' id='OPhone' value='".$row['Phone_Number']."'/>
@@ -483,7 +483,7 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
             <input type='hidden' id='OTwitter' value='".$row['Twitter']."'/>
             <input type='hidden' id='OLinkdin' value='".$row['Linkdin']."'/>
             <input type='hidden' id='OO_Email' value='".$row['Organization_Email']."'/>
-            <input type='hidden' id='OWebsite' value='".$row['Website']."'/> " . htmlspecialchars($row['Name']) . "</option>";
+            <input type='hidden' id='OWebsite' value='".$row['Website']."'/> </option>";
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION TABLE';
