@@ -25,3 +25,7 @@ function getDateToDBStringToDate($date) {
     $ymd = DateTime::createFromFormat('Y-m-d', $date)->format('Y-m-d H:i:s');
     return $ymd;
 }
+
+function getSiteKey() {
+    return '6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6';
+}
