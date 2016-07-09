@@ -745,11 +745,12 @@ function DB_getUserProfileInfo($pdo, $UserId) {
     }
 }
 
-function DB_updateUserProfile($pdo, $fname, $lname, $countryId, $userId) {
-#function DB_updateUserProfile($pdo, $fname, $lname, $userId) {
+#function DB_updateUserProfile($pdo, $fname, $lname, $countryId, $userId) {
+
+function DB_updateUserProfile($pdo, $fname, $lname, $userId) {
     try {
-        sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? , [Country_Id] = ? WHERE [User_Id] = ?", array($fname, $lname, $countryId, $userId));
-        #sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? WHERE [User_Id] = ?", array($fname, $lname, $userId));
+        #sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? , [Country_Id] = ? WHERE [User_Id] = ?", array($fname, $lname, $countryId, $userId));
+        sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? WHERE [User_Id] = ?", array($fname, $lname, $userId));
         echo 'PROFILE UPDATED!';
     } catch (PDOException $e) {
         echo "ERROR UPDATING PROFILE!";
