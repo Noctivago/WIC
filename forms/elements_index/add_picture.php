@@ -94,7 +94,6 @@
 
                     <div class="col-sm-5">
 
-                         <?= DB_readOrganizationServiceBookAsTable($pdo, $_SESSION['id']); ?>
 
 
 
