@@ -89,7 +89,6 @@ if (isset($_SESSION['username'])) {
                                         $msg = '';
                                         // sua chave secreta
                                         $secret = "6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6";
-                                        $response = null;
                                         // verifique a chave secreta
                                         $reCaptcha = new ReCaptcha($secret);
                                         // se submetido, verifique a resposta
@@ -98,7 +97,7 @@ if (isset($_SESSION['username'])) {
                                                     $_SERVER["REMOTE_ADDR"], $_POST["g-recaptcha-response"]
                                             );
                                         }
-                                        if ($response != null && $response->success) {
+                                        if ($response->success) {
                                             try {
                                                 $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                                                 $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
@@ -163,7 +162,7 @@ if (isset($_SESSION['username'])) {
                                             <label class="sr-only" for="form-password">Password</label>
                                             <input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password" required>
                                         </div>
-                                        <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
+                                        <div class="g-recaptcha" id="g-recaptcha-response" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
                                         <button type="submit" class="btn" name="login">Sign in!</button>
 
                                     </form>
