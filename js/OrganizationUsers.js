@@ -11,7 +11,7 @@ function assignUserInOrganization() {
         data: dataString,
         cache: false,
         success: function (result) {
-            alert(result);
+            
         }
     });
     viewAllUsersInOrganization();
@@ -40,7 +40,7 @@ function removeUserInOrganization() {
 }
 
 function viewAllUsersInOrganization() {
-    var orgId = $("#organizationId").val();
+    var orgId = $("#org").val();
     var arg = 'viewAllUsersInOrganization';
     var dataString = 'arg=' + arg + '&orgId=' + orgId;
     alert(dataString);
