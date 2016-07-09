@@ -64,62 +64,35 @@ include_once ('../db/conn.inc.php');
                                 <div class="form-bottom">
                                     <?php
                                     $msg = '';
+                                    $userId;
                                     // Check if image file is a actual image or fake image
                                     if (isset($_POST["submit"])) {
-                                        $target_dir = "../pics/";
-                                        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-                                        $uploadOk = 1;
-                                        $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-                                        $check = getimagesize($_FILES["fileToUpload"]["name"]);
-                                        if ($check !== false) {
-                                            echo "File is an image - " . $check["mime"] . ".";
-                                            $uploadOk = 1;
+                                        $userId = $_SESSION['id'];
+                                        //pasta do user para guardar a foto de perfil
+                                        $uploadDir = '../pics/' . $userId . '/'; //Image Upload Folder
+                                        $fileName = $_FILES['Photo']['name'];
+                                        $tmpName = $_FILES['Photo']['tmp_name'];
+                                        $fileSize = $_FILES['Photo']['size'];
+                                        $fileType = $_FILES['Photo']['type'];
+                                        $filePath = $uploadDir . $fileName;
+                                        $result = move_uploaded_file($tmpName, $filePath);
+                                        if (!$result) {
+                                            echo "Error uploading file";
+                                            exit;
                                         } else {
-                                            echo "File is not an image.";
-                                            $uploadOk = 0;
-                                        }
-                                        // Check if file already exists
-//                                        if (file_exists($target_file)) {
-//                                            echo "Sorry, file already exists.";
-//                                            $uploadOk = 0;
-//                                        }
-                                        // Check file size
-                                        if ($_FILES["fileToUpload"]["size"] > 500000) {
-                                            echo "Sorry, your file is too large.";
-                                            $uploadOk = 0;
-                                        }
-                                        // Allow certain file formats
-                                        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-                                            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-                                            $uploadOk = 0;
-                                        }
-                                        // Check if $uploadOk is set to 0 by an error
-                                        if ($uploadOk == 0) {
-                                            echo "Sorry, your file was not uploaded.";
-                                            // if everything is ok, try to upload file
-                                        } else {
-                                            #$pic = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
-                                            $userId = $_SESSION['id'];
-                                            $filename = trim($_FILES["fileToUpload"]["tmp_name"]);
-                                            $datastring = file_get_contents($filename);
-                                            $data = unpack("H*hex", $datastring);
-                                            #echo trim($_REQUEST['slcfile']);
-                                            #mssql_query("insert into imageinserter values ( 0x" . $data['hex'] . ",'.$filename.')");
-                                            $pic = "0x" . $data['hex'] . ",'.$filename.'";
-                                            echo DB_addUserProfilePicture($pdo, $pic, $userId);
-                                            #if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                                            //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $_SESSION['id'] . '.jpg')) {
-                                            #    echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
-                                            #} else {
-                                            #    echo "Sorry, there was an error uploading your file.";
-                                            #}
+                                            if (!get_magic_quotes_gpc()) {
+                                                $fileName = addslashes($fileName);
+                                                $filePath = addslashes($filePath);
+                                            }
+
+                                            $msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
                                         }
                                     }
                                     ?>
                                     <div class = "form-group"><h4> <?php echo $msg; ?></h4>
                                         <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
                                             Select image to upload:
-                                            <input type="file" name="fileToUpload" id="fileToUpload" required="">
+                                            <input type="file" name="Photo" id="fileToUpload" required="">
                                             <input type="submit" value="Upload Image" name="submit">
                                         </form>
                                     </div>
