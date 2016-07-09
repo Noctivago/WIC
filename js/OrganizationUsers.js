@@ -40,7 +40,7 @@ function removeUserInOrganization() {
 }
 
 function viewAllUsersInOrganization() {
-    var orgId = $("#org").val();
+    var orgId = $("#org2 #org").val();
     var arg = 'viewAllUsersInOrganization';
     var dataString = 'arg=' + arg + '&orgId=' + orgId;
     alert(dataString);

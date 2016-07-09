@@ -1,15 +1,4 @@
 <?php
-include_once ('session.php');
-include_once ('../db/conn.inc.php');
-include_once ('../db/functions.php');
-?>
-
-<?
-// error_reporting(E_ALL);
-// ini_set("display_errors", 1);
-?>
-
- <?php
                                     $userid = $_SESSION['id'];
                                     if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
                                         $msg = '';
@@ -107,7 +96,7 @@ include_once ('../db/functions.php');
 
                     </div>
 
-                    <!--                        <div class="col-sm-1 middle-border"></div>-->
+                                            <div class="col-sm-1 middle-border"></div>
                     <div class="col-sm-1"></div>
 
                     <div class="col-sm-5">
