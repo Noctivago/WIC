@@ -77,7 +77,8 @@ if ($arg === 'addOrganization') {
         foreach ($rows as $row) {
             echo "<tr id=" . $cont . ">";
             echo '<tbody style="display:none">';
-             echo "<td id='OName'>" . $row['Name'] . "</td>";
+            echo "<td id='OId'>" . $row['Id'] . "</td>";
+            echo "<td id='OName'>" . $row['Name'] . "</td>";
             echo "<td id='OPhone'>" . $row['Phone_Number'] . "</td>";
             echo "<td id='OMobile'>" . $row['Mobile_Number'] . "</td>";
             echo "<td id='OAddress'>" . $row['Address'] . "</td>";
