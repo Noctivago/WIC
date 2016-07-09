@@ -19,11 +19,9 @@ function assignUserInOrganization() {
 
 
 //remover utilizador da organização
-function removeUserInOrganization() {
-    var userId = $("#userIdOrg").val();
-    var orgId = $("#orgId3").val();
+function removeUserInOrganization(id) {
     var arg = 'removeUserInOrganization';
-    var dataString = 'arg=' + arg + '&userId=' + userId + '&orgId=' + orgId;
+    var dataString = 'arg=' + arg + '&Id=' + id;
     alert(dataString);
     $.ajax({
         type: 'POST',

@@ -103,11 +103,11 @@ include_once ('../db/functions.php');
 
                         <!--                        <div class="col-sm-1 middle-border"></div>-->
                         <div class="col-sm-1"></div>
-
+                        
+                        <!--É aqui que mostra a tabela-->
                         <div class="col-sm-5" id="table-users-in-organization" >
                             <br>
                             <br>
-                            
                         </div>
                     </div>
 
