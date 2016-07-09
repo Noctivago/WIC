@@ -150,7 +150,7 @@ function editOrganizationInformation(cont) {
     }
 };
 
-
+}
 
 function updateOrg2(org){
     var userid = $("#userid").val();
