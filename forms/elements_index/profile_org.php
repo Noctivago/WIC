@@ -3,7 +3,7 @@
 <div class="content-wrapper">
 
 
-
+<h3 style="color:black">  Edit Your Profle</h3>
 
 
 <div class="top-content">
@@ -31,7 +31,6 @@
                         </div>
 
                         <div class="form-bottom">
-                            <h3 style="color:black">  Edit Your Profle</h3>
                             <form role="form" action="" method="post" class="login-form">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Company Name:</label>
