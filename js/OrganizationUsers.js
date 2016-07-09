@@ -50,11 +50,10 @@ function viewAllUsersInOrganization() {
         data: dataString,
         cache: false,
         success: function (result) {
-            var ajaxDisplay = document.getElementById('membros');
+            var ajaxDisplay = document.getElementById('table-users-in-organization');
             ajaxDisplay.innerHTML = result;
         }
     });
-    viewAllOrganization();
     return false;
 }
 
