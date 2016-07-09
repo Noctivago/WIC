@@ -67,7 +67,7 @@ include_once ('../db/conn.inc.php');
                                     // Check if image file is a actual image or fake image
                                     if (isset($_POST["submit"])) {
                                         $target_dir = "../pics/";
-                                        $target_file = $target_dir . '36.jpg'; #basename($_FILES["fileToUpload"]["name"]);
+                                        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
                                         #$target_file = $target_dir . basename($_FILES["fileToUpload"][$_SESSION['id']]);
                                         $uploadOk = 1;
                                         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
@@ -100,7 +100,8 @@ include_once ('../db/conn.inc.php');
                                             echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
                                         } else {
-                                            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                                            #if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                                            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $_SESSION['id'] . '.jpg')) {
                                                 echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
                                             } else {
                                                 echo "Sorry, there was an error uploading your file.";
