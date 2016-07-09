@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-bottom">
-                            <?php
+                                                        <?php
                                     $msg = '';
 
 // Check if image file is a actual image or fake image
@@ -73,6 +73,7 @@
                                         }
                                     }
                                     ?>
+
                             <h3 style="color:black">  Edit Your Profle</h3>
                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
                                 <div class="form-group">
@@ -91,14 +92,7 @@
                     <!--                        <div class="col-sm-1 middle-border"></div>-->
                     <div class="col-sm-1"></div>
 
-                    <div class="col-sm-5">
-                        <br>
-                        <br>
-                         <?= DB_readOrganizationServiceBookAsTable($pdo, $_SESSION['id']); ?>
-
-
-
-                    </div>
+                    <div class="col-sm-5"> </div>
                 </div>
 
             </div>
