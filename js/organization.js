@@ -98,6 +98,23 @@ function removeOrganization($IdOrg, $id) {
     return false;
 
 }
+function cleanInformation(){
+    document.getElementById('Org').value = 0;
+    document.getElementById('name').value = "";
+    document.getElementById('phone').value = "";
+    document.getElementById('mobile').value = "";
+    document.getElementById('address').value = "";
+    document.getElementById('facebook').value = "";
+    document.getElementById('twitter').value = "";
+    document.getElementById('linkdin').value = "";
+    document.getElementById('orgEmail').value = "";
+    document.getElementById('website').value = "";
+    document.getElementById('add').style = "display: true";
+    document.getElementById('update').style = "display: none";
+    document.getElementById('cancel').style = "display: none";
+    
+}
+
 //edidar a informação da organização
 function editOrganizationInformation(cont) {
     
