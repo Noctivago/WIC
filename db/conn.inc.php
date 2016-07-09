@@ -725,8 +725,7 @@ function DB_getUserProfilePicture($pdo, $userId) {
                 return '<img src="' . $row['Picture_Path'] . '" alt="avatar">';
             }
         }
-#    #return '<img src=/"' . $row['Picture_Path'] . '/" class=/"avatar img-circle img-thumbnail text-center center-block/" alt=/"avatar/">';
-#}
+
     } catch (Exception $exc) {
         echo 'ERROR READING PROFILE PICTURE!';
     }
@@ -737,7 +736,6 @@ function DB_createProfileOnRegistration($pdo, $email) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Profile] ([User_Id], [Enabled], [Picture_Path]) VALUES(?,?, 'http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png')"
                 . "", array($userId, 1));
-#echo 'Profile Created!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
