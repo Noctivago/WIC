@@ -8,7 +8,8 @@ include_once ('../db/functions.php');
 // error_reporting(E_ALL);
 // ini_set("display_errors", 1);
 ?>
-
+<main class="cd-main-content">
+<div class="content-wrapper">
 
         <!-- Top content -->
         <div class="top-content">
@@ -120,7 +121,6 @@ include_once ('../db/functions.php');
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
-    </body>
-
-
-</html>
+  
+</div>
+</main>
