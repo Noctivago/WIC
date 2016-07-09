@@ -473,7 +473,7 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
         echo "<option value='0'></option>";
         foreach ($rows as $row) {
             $cont +=1;
-            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo "<option value='" .$cont. "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION TABLE';
