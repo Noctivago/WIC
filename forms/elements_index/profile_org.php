@@ -70,7 +70,7 @@
                                     <label class="sr-only" for="form-password">City:</label>
                                     <input type="password" style="height: 30px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
                                 </div>
-                                <button type="submit" style="height: 30px" style="alignment-adjust:central" class="btn" name="login">Save Changes!</button>
+                                <button type="submit" class="btn" name="login">Save Changes!</button>
 
                             </form>
                         </div>
