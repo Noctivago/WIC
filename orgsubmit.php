@@ -135,9 +135,10 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'orgInformation') {
     //$userid = $_SESSION['id'];
  try {   $orgId = (filter_var($_POST ['org']));
-    $rows = sql($pdo,"SELECT * FROM [dbo].[Organization] WHERE [Enabled] = 1 and [Validate]=1", array($orgId), "row");
-    foreach($rows as $row){
-    echo $row['Name'];
+    $rows = sql($pdo,"SELECT * FROM [dbo].[Organization] WHERE [Enabled] = 1 and [Validate]=1", array($orgId), "rows");
+    foreach ($rows as $row) {
+            return $row['Id'];
+        
     }
     } catch (Exception $ex) {
         echo 'error';
