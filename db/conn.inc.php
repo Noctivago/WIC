@@ -472,8 +472,7 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
         echo "<option value='0'></option>";
         foreach ($rows as $row) {
-            $cont +=1;
-            echo "<option value='".$cont. "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo "<option value='". htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION TABLE';
