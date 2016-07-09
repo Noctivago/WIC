@@ -69,7 +69,7 @@ include_once ('../db/functions.php');
 // Check if image file is a actual image or fake image
                                     if (isset($_POST["submit"])) {
                                         $target_dir = "../pics/";
-                                        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+                                        $target_file = $target_dir . "TESTE.jpg"; #basename($_FILES["fileToUpload"]["name"]);
                                         #$target_file = $target_dir . basename($_FILES["fileToUpload"][$_SESSION['id']]);
                                         $uploadOk = 1;
                                         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
