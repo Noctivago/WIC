@@ -733,7 +733,7 @@ function DB_getUserProfileInfo($pdo, $UserId) {
         $userInfo = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-            $userInfo["Id"] = $row["grupo_sanguineo"];
+            $userInfo["Id"] = $row["id"];
             $userInfo["First_Name"] = $row["First_Name"];
             $userInfo["Last_Name"] = $row["Last_Name"];
 //            $userInfo["Country_Id"] = $row["Country_Id"];
