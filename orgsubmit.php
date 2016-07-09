@@ -72,26 +72,35 @@ if ($arg === 'addOrganization') {
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
         echo '<input type="hidden" name="UserId" value="' . $_POST['User_Boss'] . '"> ';
         //echo '<input type="hidden" name="orgId" value="'.$row['Id'].'"> ';
-        echo "<table class='table table-striped' id='mytable'><tr><th> Id </th><th> Name </th><th> Phone Number </th><th> Mobile </th><th> Address </th><th> Facebook </th><th> Twitter </th><th> Linkdin </th> <th>Email</th><th>Website</th><th>Delete</th><th>Edit</th></tr>";
         foreach ($rows as $row) {
-            echo "<tr id=" . $cont . ">";
+            echo "<div id=" . $cont . ">";
             //echo '<input type="hidden" name="UserId" value="'.$row['User_Boss'].'"> ';
-            echo "<td id='OOrg'>" . $row['Id'] . "</td>";
-            echo "<td id='OName'>" . $row['Name'] . "</td>";
-            echo "<td id='OPhone'>" . $row['Phone_Number'] . "</td>";
-            echo "<td id='OMobile'>" . $row['Mobile_Number'] . "</td>";
-            echo "<td id='OAddress'>" . $row['Address'] . "</td>";
-            echo "<td id='OFacebook'>" . $row['Facebook'] . "</td>";
-            echo "<td id='OTwitter'>" . $row['Twitter'] . "</td>";
-            echo "<td id='OLinkdin'>" . $row['Linkdin'] . "</td>";
-            echo "<td id='OO_Email'>" . $row['Organization_Email'] . "</td>";
-            echo "<td id='OWebsite'>" . $row['Website'] . "</td>";
-            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . "," . $userid . ")'> </td>";
-            echo "<td> <input type='button' value='Edit' onClick='editOrganizationInformation($cont)'> </td>";
-            echo "<tr>";
+            echo "<input type='hidden' id='OOrg' value='".$row['Id']."'/>";
+            echo "<input type='hidden' id='OName' value='".$row['Id']."'/>";
+            echo "<input type='hidden' id='OPhone' value='".$row['Phone_Number']."'/>";
+            echo "<input type='hidden' id='OMobile' value='".$row['Mobile_Number']."'/>";
+            echo "<input type='hidden' id='OAddress' value='".$row['Address']."'/>";
+            echo "<input type='hidden' id='OFacebook' value='".$row['Facebook']."'/>";
+            echo "<input type='hidden' id='OTwitter' value='".$row['Twitter']."'/>";
+            echo "<input type='hidden' id='OLinkdin' value='".$row['Linkdin']."'/>";
+            echo "<input type='hidden' id='OO_Email' value='".$row['Organization_Email']."'/>";
+            echo "<input type='hidden' id='OWebsite' value='".$row['Website']."'/>";
+//            echo "<td id='OName'>" . $row['Name'] . "</td>";
+//            echo "<td id='OPhone'>" . $row['Phone_Number'] . "</td>";
+//            echo "<td id='OMobile'>" . $row['Mobile_Number'] . "</td>";
+//            echo "<td id='OAddress'>" . $row['Address'] . "</td>";
+//            echo "<td id='OFacebook'>" . $row['Facebook'] . "</td>";
+//            echo "<td id='OTwitter'>" . $row['Twitter'] . "</td>";
+//            echo "<td id='OLinkdin'>" . $row['Linkdin'] . "</td>";
+//            echo "<td id='OO_Email'>" . $row['Organization_Email'] . "</td>";
+//            echo "<td id='OWebsite'>" . $row['Website'] . "</td>";
+//            echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . "," . $userid . ")'> </td>";
+//            echo "<td> <input type='button' value='Edit' onClick='editOrganizationInformation($cont)'> </td>";
+//            echo "<tr>";
             $cont += 1;
+            echo '</div>';
         }
-        echo "</table>";
+        
     } catch (Exception $ex) {
         echo 'erro';
     }
