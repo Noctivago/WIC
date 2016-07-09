@@ -741,7 +741,7 @@ function DB_getUserProfileInfo($pdo, $UserId) {
         return $userInfo;
     } catch (PDOException $e) {
         print "ERROR READING USER PROFILE INFO!<br/>";
-        die();
+        #die();
     }
 }
 
