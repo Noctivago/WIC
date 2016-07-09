@@ -29,9 +29,12 @@
                                 <!--<h6 style="color:black">Upload a different photo...</h6>-->
 
                             </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-key"
+                            </div>
                             <!--                            <div class="form-top-right">
-                                                            <i class="fa fa-key"></i>
-                                                        </div>-->
+                                                            <i class="fa fa-key"></i>-->
+                                                       </div>
                         </div>
 
                         <div class="form-bottom">
