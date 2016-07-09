@@ -142,6 +142,7 @@ function editOrganizationInformation() {
 //            document.getElementById('cancel').style = "display: true";
         }
     });
+    return false;
 }
 
 //    document.getElementById('Org').value = $('#mytable #' + cont + ' #OOrg').text();
