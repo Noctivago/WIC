@@ -745,7 +745,7 @@ function DB_getUserProfileInfo($pdo, $UserId) {
     }
 }
 
-function DB_addUserProfile($pdo, $fname, $userId) {
+function DB_updateUserProfile($pdo, $fname, $userId) {
     try {
         sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? WHERE [User_Id] = ?", array($fname, $userId));
         echo 'Picture sucessufully changed!';
