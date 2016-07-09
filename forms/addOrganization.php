@@ -144,7 +144,7 @@ include_once ('../db/functions.php');
                         <div class="col-sm-5" id="orgresp">
                             <br>
                             <br>
-                            <!--?= DB_readOrganizationAsTable($pdo, $_SESSION['id']); ?-->
+                            <?= DB_readOrganizationAsTable($pdo, $_SESSION['id']); ?>
                         </div>
                     </div>
 
