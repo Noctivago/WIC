@@ -710,23 +710,23 @@ function DB_addUserProfilePicture($pdo, $pic, $userId) {
         echo 'Picture sucessufully changed!';
     } catch (PDOException $e) {
         echo "ERROR UPDATING PROFILE PICTURE!";
-        #die();
+#die();
     }
 }
 
 function DB_getUserProfilePicture($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [User_Id] = ?", array($userId), "rows");
-        #foreach ($rows as $row) {
-        #    return $row['Picture_Path'];
-        if ($rows['Picture_Path'] == NULL) {
-            return '<img src="' . $rows['Picture_Path'] . '">';
-            #return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
-        } else {
-            return $rows['Picture_Path'];
+        foreach ($rows as $row) {
+            if ($row['Picture_Path'] == NULL) {
+                return '<img src="' . $row['Picture_Path'] . '" alt="avatar">';
+#return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
+            } else {
+                return '<img src="' . $row['Picture_Path'] . '" alt="avatar">';
+            }
         }
-        #    #return '<img src=/"' . $row['Picture_Path'] . '/" class=/"avatar img-circle img-thumbnail text-center center-block/" alt=/"avatar/">';
-        #}
+#    #return '<img src=/"' . $row['Picture_Path'] . '/" class=/"avatar img-circle img-thumbnail text-center center-block/" alt=/"avatar/">';
+#}
     } catch (Exception $exc) {
         echo 'ERROR READING PROFILE PICTURE!';
     }
@@ -737,7 +737,7 @@ function DB_createProfileOnRegistration($pdo, $email) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Profile] ([User_Id], [Enabled], [Picture_Path]) VALUES(?,?, 'http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png')"
                 . "", array($userId, 1));
-        #echo 'Profile Created!';
+#echo 'Profile Created!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
