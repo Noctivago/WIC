@@ -101,7 +101,7 @@ include_once ('../db/functions.php');
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
+                                            <input type="text" name="name" placeholder="ORGANIZATION NAMEkkkkkkkkkk" class="form-username form-control" id="name" required autofocus>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="phone" placeholder="ORGANIZATION PHONE" class="form-password form-control" id="phone" required>
