@@ -468,10 +468,22 @@ function DB_readOrganizationAsTable($pdo, $userId) {
 function DB_readOrganizationAsSelect($pdo, $userId) {
     try {
         $id = 0;
+        $cont =0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
         echo "<option value='0'></option>";
         foreach ($rows as $row) {
-            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            $cont +=1;
+            echo "<option value='" . $cont . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo "<input type='hidden' id='OOrg' value='".$row['Id']."'/>";
+            echo "<input type='hidden' id='OName' value='".$row['Id']."'/>";
+            echo "<input type='hidden' id='OPhone' value='".$row['Phone_Number']."'/>";
+            echo "<input type='hidden' id='OMobile' value='".$row['Mobile_Number']."'/>";
+            echo "<input type='hidden' id='OAddress' value='".$row['Address']."'/>";
+            echo "<input type='hidden' id='OFacebook' value='".$row['Facebook']."'/>";
+            echo "<input type='hidden' id='OTwitter' value='".$row['Twitter']."'/>";
+            echo "<input type='hidden' id='OLinkdin' value='".$row['Linkdin']."'/>";
+            echo "<input type='hidden' id='OO_Email' value='".$row['Organization_Email']."'/>";
+            echo "<input type='hidden' id='OWebsite' value='".$row['Website']."'/>";
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION TABLE';
@@ -706,27 +718,26 @@ function DB_changeUserPassword($pdo, $userId, $password) {
 
 function DB_addUserProfilePicture($pdo, $pic, $userId) {
     try {
-        sql($pdo, "UPDATE [dbo].[Profile] SET [Picture_Path] = ? WHERE [User_Id]] = ?", array($pic, $userId));
+        sql($pdo, "UPDATE [dbo].[Profile] SET [Picture_Path] = ? WHERE [User_Id] = ?", array($pic, $userId));
         echo 'Picture sucessufully changed!';
     } catch (PDOException $e) {
-        echo "Error! > " . $e . "<br/>";
-        #die();
+        echo "ERROR UPDATING PROFILE PICTURE!";
+#die();
     }
 }
 
 function DB_getUserProfilePicture($pdo, $userId) {
     try {
-        $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [User_Id]] = ?", array($userId), "rows");
-        #foreach ($rows as $row) {
-        #    return $row['Picture_Path'];
-        if ($rows['Picture_Path'] == NULL) {
-            #return "PROFILE PICTURE NOT FOUND!";
-            return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
-        } else {
-            return $rows['Picture_Path'];
+        $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [User_Id] = ?", array($userId), "rows");
+        foreach ($rows as $row) {
+            if ($row['Picture_Path'] == NULL) {
+                return '<img src="' . $row['Picture_Path'] . '" alt="avatar">';
+#return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
+            } else {
+                return '<img src="' . $row['Picture_Path'] . '" alt="avatar">';
+            }
         }
-        #    #return '<img src=/"' . $row['Picture_Path'] . '/" class=/"avatar img-circle img-thumbnail text-center center-block/" alt=/"avatar/">';
-        #}
+
     } catch (Exception $exc) {
         echo 'ERROR READING PROFILE PICTURE!';
     }
@@ -735,9 +746,8 @@ function DB_getUserProfilePicture($pdo, $userId) {
 function DB_createProfileOnRegistration($pdo, $email) {
     $userId = DB_checkUserByEmail($pdo, $email);
     try {
-        sql($pdo, "INSERT INTO [dbo].[Profile] ([User_Id], [Enabled]) VALUES(?,?)"
+        sql($pdo, "INSERT INTO [dbo].[Profile] ([User_Id], [Enabled], [Picture_Path]) VALUES(?,?, 'http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png')"
                 . "", array($userId, 1));
-        #echo 'Profile Created!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();

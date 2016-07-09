@@ -166,8 +166,8 @@ img { max-width: 100%; }
 }
 
 .middle-border {
-	min-height: 300px;
-	margin-top: 170px;
+	min-height: 600px;
+	margin-top: 230px;
 	border-right: 1px solid #fff;
 	border-right: 1px solid rgba(255, 255, 255, 0.6);
         border-color: darkgray;
