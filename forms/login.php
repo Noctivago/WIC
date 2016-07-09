@@ -94,6 +94,7 @@ if (isset($_SESSION['username'])) {
                                         // se submetido, verifique a resposta
                                         $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
                                         $responseData = json_decode($verifyResponse);
+                                        // se resposta ok
                                         if ($response->success) {
                                             try {
                                                 $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
@@ -144,6 +145,7 @@ if (isset($_SESSION['username'])) {
                                             } catch (Exception $ex) {
                                                 echo "ERROR!";
                                             }
+                                            // se resposta KO
                                         } else {
                                             $msg = 'reCAPTCHA failed! > ' . $response;
                                         }
