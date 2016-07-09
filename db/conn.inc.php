@@ -468,10 +468,22 @@ function DB_readOrganizationAsTable($pdo, $userId) {
 function DB_readOrganizationAsSelect($pdo, $userId) {
     try {
         $id = 0;
+        $cont =0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
         echo "<option value='0'></option>";
         foreach ($rows as $row) {
-            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            $cont +=1;
+            echo "<option value='" . $cont . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo "<input type='hidden' id='OOrg' value='".$row['Id']."'/>";
+            echo "<input type='hidden' id='OName' value='".$row['Id']."'/>";
+            echo "<input type='hidden' id='OPhone' value='".$row['Phone_Number']."'/>";
+            echo "<input type='hidden' id='OMobile' value='".$row['Mobile_Number']."'/>";
+            echo "<input type='hidden' id='OAddress' value='".$row['Address']."'/>";
+            echo "<input type='hidden' id='OFacebook' value='".$row['Facebook']."'/>";
+            echo "<input type='hidden' id='OTwitter' value='".$row['Twitter']."'/>";
+            echo "<input type='hidden' id='OLinkdin' value='".$row['Linkdin']."'/>";
+            echo "<input type='hidden' id='OO_Email' value='".$row['Organization_Email']."'/>";
+            echo "<input type='hidden' id='OWebsite' value='".$row['Website']."'/>";
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION TABLE';
