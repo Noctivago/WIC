@@ -709,8 +709,8 @@ function DB_addUserProfilePicture($pdo, $pic, $userId) {
         sql($pdo, "UPDATE [dbo].[Profile] SET [Picture] = ? WHERE [Id] = ?", array($pic, $userId));
         echo 'Picture sucessufully changed!';
     } catch (PDOException $e) {
-        print "Error!" . "<br/>";
-        die();
+        echo "Error!" . "<br/>";
+        #die();
     }
 }
 

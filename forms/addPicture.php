@@ -80,7 +80,7 @@ include_once ('../db/conn.inc.php');
                                         $filePath = $uploadDir . $newfilename;
                                         #$result = move_uploaded_file($tmpName, $filePath);
                                         $result = move_uploaded_file($tmpName, $filePath);
-
+                                        $pic = $filePath;
                                         if (!$result) {
                                             $msg = "Error uploading file";
                                             exit;
@@ -89,7 +89,9 @@ include_once ('../db/conn.inc.php');
                                                 $fileName = addslashes($fileName);
                                                 $filePath = addslashes($filePath);
                                             }
-                                            $msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
+
+                                            #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
+                                            $msg = DB_addUserProfilePicture($pdo, $pic, $userId);
                                         }
                                     }
                                     ?>
