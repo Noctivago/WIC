@@ -95,7 +95,7 @@ include_once ('../db/functions.php');
                                         </div>
                                         <div class="form-group">
                                             <select class="form-username form-control" value="<?= $userInfo["Country_Id"] ?> "name="country" id="country">
-                                                <?= DB_getCountryAsSelect($pdo) ?>
+                                                <?= DB_getCountryAsSelectWithSelected($pdo, $userId); ?>
                                             </select>
                                         </div>
                                         <button type="submit" class="btn" name="saveProfile">Save Changes!</button>
