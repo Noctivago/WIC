@@ -87,7 +87,7 @@ include_once ('../db/functions.php');
 
                                     <form role="form" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
-                                            <select class="form-username form-control" name="org" id="org" required="required">
+                                            <select class="form-username form-control" name="org" id="org2" onselect="viewAllUsersInOrganization()" required="required">
                                                 <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                             </select>
                                         </div>
