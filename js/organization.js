@@ -129,17 +129,17 @@ function editOrganizationInformation() {
         sucess: function (result) {
             alert(result);
             document.getElementById('name').innerHTML = result;
-            document.getElementById('phone').innerHTML = result;
-            document.getElementById('mobile').innerHTML = result;
-            document.getElementById('address').innerHTML = result;
-            document.getElementById('facebook').innerHTML = result;
-            document.getElementById('twitter').innerHTML = result;
-            document.getElementById('linkdin').innerHTML = result;
-            document.getElementById('orgEmail').innerHTML = result;
-            document.getElementById('website').innerHTML = result;
-            document.getElementById('add').style = "display: none";
-            document.getElementById('update').style = "display: true";
-            document.getElementById('cancel').style = "display: true";
+//            document.getElementById('phone').innerHTML = result;
+//            document.getElementById('mobile').innerHTML = result;
+//            document.getElementById('address').innerHTML = result;
+//            document.getElementById('facebook').innerHTML = result;
+//            document.getElementById('twitter').innerHTML = result;
+//            document.getElementById('linkdin').innerHTML = result;
+//            document.getElementById('orgEmail').innerHTML = result;
+//            document.getElementById('website').innerHTML = result;
+//            document.getElementById('add').style = "display: none";
+//            document.getElementById('update').style = "display: true";
+//            document.getElementById('cancel').style = "display: true";
         }
     });
 }
