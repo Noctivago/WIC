@@ -44,13 +44,14 @@ include_once ('../db/functions.php');
     <div class="inner-bg">
         <div class="container">
             
-            <div class="row">
+<!--            <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
                             <h1 style="color: darkgray"><strong>NEW ORGANIZATION</strong> </h1>
-            </div>
+            </div>-->
 
 
-            <div class="row" onload="viewAllOrganization(<?= $userid ?>)">
+<div class="row" style="color: #000" onload="viewAllOrganization(<?= $userid ?>)">
+                <h1 style="color: darkgray"><strong>NEW ORGANIZATION</strong> </h1>
                 <div class="col-sm-8 col-sm-offset-2 text">
 
                     <div class="form-box">
