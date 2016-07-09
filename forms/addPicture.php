@@ -92,7 +92,7 @@ include_once ('../db/functions.php');
                                             }
 
                                             #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
-                                            $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . '>' . $pic;
+                                            $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
                                         }
                                     }
                                     ?>
