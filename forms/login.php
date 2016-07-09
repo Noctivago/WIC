@@ -29,7 +29,7 @@ if (isset($_SESSION['username'])) {
         <link rel="stylesheet" href="../assets/css/style.css">
 
         <!-- RECHAPTA -->
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
