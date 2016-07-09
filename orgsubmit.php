@@ -136,7 +136,7 @@ if ($arg === 'addOrganization') {
     $userid = $_SESSION['id'];
     $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
     $row = sql($pdo,"SELECT * FROM [dbo].[Organization] WHERE [Enabled] = 1 and [Validate]=1", array($orgId), "row");
-    return $row['Name'];
+    echo $row['Name'];
     
 } else if ($arg === 'assignUserInOrganization') {
     try {
