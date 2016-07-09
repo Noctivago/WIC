@@ -706,7 +706,7 @@ function DB_changeUserPassword($pdo, $userId, $password) {
 
 function DB_addUserProfilePicture($pdo, $pic, $userId) {
     try {
-        sql($pdo, "UPDATE [dbo].[Profile] SET [Picture_Path] = ? WHERE [User_Id]] = ?", array($pic, $userId));
+        sql($pdo, "UPDATE [dbo].[Profile] SET [Picture_Path] = ? WHERE [User_Id] = ?", array($pic, $userId));
         echo 'Picture sucessufully changed!';
     } catch (PDOException $e) {
         echo "Error! > " . $e . "<br/>";
@@ -716,7 +716,7 @@ function DB_addUserProfilePicture($pdo, $pic, $userId) {
 
 function DB_getUserProfilePicture($pdo, $userId) {
     try {
-        $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [User_Id]] = ?", array($userId), "rows");
+        $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [User_Id] = ?", array($userId), "rows");
         #foreach ($rows as $row) {
         #    return $row['Picture_Path'];
         if ($rows['Picture_Path'] == NULL) {
