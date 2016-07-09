@@ -87,11 +87,10 @@ if (isset($_SESSION['username'])) {
                                     if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password']) && isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
                                         $msg = '';
                                         try {
-                                            $key = "6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6";
                                             $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                                             $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                                             $hashPassword = hash('whirlpool', $password);
-                                            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $key . '&response=' . $_POST['g-recaptcha-response']);
+                                            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6&response=' . $_POST['g-recaptcha-response']);
                                             $responseData = json_decode($verifyResponse);
                                             if ($responseData->success) {
                                                 #$val = DB_getLoginFailedValue($pdo, $email);
@@ -143,7 +142,7 @@ if (isset($_SESSION['username'])) {
                                             echo "ERROR!";
                                         }
                                     } else {
-                                        $msg = 'Please fill all fills';
+                                        #$msg = 'Please fill all fills';
                                     }
                                     ?>	
 
@@ -156,7 +155,7 @@ if (isset($_SESSION['username'])) {
                                             <label class="sr-only" for="form-password">Password</label>
                                             <input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password" required>
                                         </div>
-                                        <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"</div>
+                                        <div class="g-recaptcha" id ="g-recaptcha-response" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"</div>
                                         <button type="submit" class="btn" name="login">Sign in!</button>
 
                                     </form>
