@@ -33,7 +33,7 @@ include_once ('../db/functions.php');
                                         <?= $userInfo = DB_getUserProfileInfo($pdo, $_SESSION['id']) ?>
                                         <br>
                                         <input type="file" class="text-center center-block well well-sm" style="color:black">
-                                        <!--<h6 style="color:black">Upload a different photo...</h6>-->
+                                        <h6 style="color:black">Upload a different photo...</h6>
 
                                     </div>
                                     <!--                            <div class="form-top-right">
@@ -57,13 +57,7 @@ include_once ('../db/functions.php');
                                                 <?= DB_getCountryAsSelect($pdo) ?>
                                             </select>
                                         </div>
-
-                                        <div class="form-group">
-                                            <label class="sr-only" for="form-password">City:</label>
-                                            <input type="password" name="city" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
-                                        </div>
                                         <button type="submit" class="btn" name="login">Save Changes!</button>
-
                                     </form>
                                 </div>
 
