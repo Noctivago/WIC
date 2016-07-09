@@ -253,17 +253,6 @@ function DB_updateUserProfile($pdo, $userId, $fname, $lname, $picture, $pictureP
     }
 }
 
-function DB_addUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath, $cityId, $languageId) {
-//sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
-    try {
-        sql($pdo, "INSERT INTO [dbo].[Profile] ([First_Name], [Last_Name], [Picture], [Picture_Path], [User_Id], [City_Id], [Language_Id]) "
-                . "VALUES (?, ?, ?, ?, ?, ?, ?)", array($fname, $lname, $picture, $picturePath, $userId, $cityId, $languageId));
-        return true;
-    } catch (Exception $exc) {
-        return false;
-    }
-}
-
 function DB_getCityAsSelect($pdo) {
     $rows = sql($pdo, "  SELECT [City].[Id] CID
       ,[City].[Name] AS CNAME
@@ -751,3 +740,35 @@ function DB_updateUserAccountActivationCode($pdo, $email, $code) {
         die();
     }
 }
+
+function DB_getUserProfileInfo($pdo, $UserId) {
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM [dbo].[Profile] WHERE [User_Id]=:id");
+        $stmt->bindParam(':id', $UserId);
+        $stmt->execute();
+        #$dbh = null;
+        $userInfo = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            $userInfo["Id"] = $row["grupo_sanguineo"];
+            $userInfo["First_Name"] = $row["First_Name"];
+            $userInfo["Last_Name"] = $row["Last_Name"];
+            $userInfo["Country_Id"] = $row["Country_Id"];
+        }
+        return $userInfo;
+    } catch (PDOException $e) {
+        print "ERROR READING USER PROFILE INFO!<br/>";
+        die();
+    }
+}
+
+//function DB_addUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath, $cityId, $languageId) {
+////sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
+//    try {
+//        sql($pdo, "INSERT INTO [dbo].[Profile] ([First_Name], [Last_Name],  [User_Id], [City_Id], [Language_Id]) "
+//                . "VALUES (?, ?, ?, ?, ?, ?, ?)", array($fname, $lname, $picture, $picturePath, $userId, $cityId, $languageId));
+//        return true;
+//    } catch (Exception $exc) {
+//        return false;
+//    }
+//}

@@ -30,6 +30,7 @@ include_once ('../db/functions.php');
                                         <!-- GET USER PICS PATH -->
                                         <!--<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">-->
                                         <?= DB_getUserProfilePicture($pdo, $_SESSION['id']) ?>
+                                        <?= $userInfo = DB_getUserProfileInfo($pdo, $_SESSION['id']) ?>
                                         <br>
                                         <input type="file" class="text-center center-block well well-sm" style="color:black">
                                         <!--<h6 style="color:black">Upload a different photo...</h6>-->
@@ -45,18 +46,14 @@ include_once ('../db/functions.php');
                                     <form role="form" action="" method="post" class="login-form">
                                         <div class="form-group">
                                             <label class="sr-only" for="form-username">First Name</label>
-                                            <input type="text" name="fname" placeholder="First Name" class="form-username form-control" id="fname" required autofocus>
+                                            <input type="text" name="fname" placeholder="First Name" value="<?= $userInfo["First_Name"] ?> "class="form-username form-control" id="fname" required autofocus>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-password">Last Name</label>
-                                            <input type="text" name="lname" placeholder="Last Name" class="form-password form-control" id="lname" required>
+                                            <input type="text" name="lname" placeholder="Last Name" value="<?= $userInfo["Last_Name"] ?> "class="form-password form-control" id="lname" required>
                                         </div>
                                         <div class="form-group">
-                                            <label class="sr-only" for="form-username">Email</label>
-                                            <input type="text" name="email" placeholder="youremail@email.com" class="form-username form-control" id="email" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <select class="form-username form-control" name="country" id="country">
+                                            <select class="form-username form-control" value="<?= $userInfo["Country_Id"] ?> "name="country" id="country">
                                                 <?= DB_getCountryAsSelect($pdo) ?>
                                             </select>
                                         </div>
