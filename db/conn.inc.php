@@ -468,12 +468,12 @@ function DB_readOrganizationAsTable($pdo, $userId) {
 function DB_readOrganizationAsSelect($pdo, $userId) {
     try {
         $id = 0;
-        $cont =0;
+        $cont = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
         echo "<option value='0'></option>";
         foreach ($rows as $row) {
             $cont +=1;
-            echo "<option value='". htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) ."</option>";
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION TABLE';
@@ -721,13 +721,12 @@ function DB_getUserProfilePicture($pdo, $userId) {
         $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             if ($row['Picture_Path'] == NULL) {
-                return '<img src="' . $row['Picture_Path'] . '" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
-#return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
+                #return '<img src="' . $row['Picture_Path'] . '" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
+                return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
             } else {
-                return '<img src="' . $row['Picture_Path'] . '" alt="avatar">';
+                return '<img src="' . $row['Picture_Path'] . '" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
             }
         }
-
     } catch (Exception $exc) {
         echo 'ERROR READING PROFILE PICTURE!';
     }
