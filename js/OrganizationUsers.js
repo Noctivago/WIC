@@ -11,7 +11,7 @@ function assignUserInOrganization() {
         data: dataString,
         cache: false,
         success: function (result) {
-            
+            alert(result);
         }
     });
     viewAllUsersInOrganization();
