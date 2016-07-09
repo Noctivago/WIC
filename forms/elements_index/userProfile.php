@@ -2,6 +2,10 @@
 include_once ('session.php');
 include_once ('../db/conn.inc.php');
 ?>
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+?>
 
 <main class="cd-main-content">
     <div class="content-wrapper">
@@ -24,7 +28,7 @@ include_once ('../db/conn.inc.php');
 
                                         <!-- GET USER PICS PATH -->
                                         <!--<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">-->
-                                        <?= DB_getUserProfilePicture($pdo, $_SESSION['id']) ?>
+                                        <? echo DB_getUserProfilePicture($pdo, $_SESSION['id']) ?>
                                         <input type="file" class="text-center center-block well well-sm" style="color:black">
                                         <!--<h6 style="color:black">Upload a different photo...</h6>-->
 
