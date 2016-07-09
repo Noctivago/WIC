@@ -1,13 +1,13 @@
 
-<main class="cd-main-content">
-<div class="content-wrapper">
+
 
 <div class="top-content">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
     <div class="inner-bg">
         <div class="container">
-
+<main class="cd-main-content">
+<div class="content-wrapper">
             <div class="row">
 <!--                <div class="col-sm-8 col-lg-offset-2 text">
             </div>-->
