@@ -745,16 +745,12 @@ function DB_getUserProfileInfo($pdo, $UserId) {
     }
 }
 
-function DB_updateUserProfile($pdo, $fname, $lname, $countryId, $userId) {
+function DB_addUserProfile($pdo, $fname, $userId) {
     try {
-//UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? 
-        $count = sql($pdo, "UPDATE [dbo].[Profile] SET"
-                . " [First_Name] = ?"
-                . " [Last_Name] = ? "
-                . " [Country_Id] = ? "
-                . " Where [User_Id] = ?", array($fname, $lname, $countryId, $userId));
-        return true;
-    } catch (Exception $ex) {
-        return false;
+        sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? WHERE [User_Id] = ?", array($fname, $userId));
+        echo 'Picture sucessufully changed!';
+    } catch (PDOException $e) {
+        echo "ERROR UPDATING PROFILE PICTURE!";
+#die();
     }
 }
