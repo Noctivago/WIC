@@ -63,7 +63,7 @@ if ($arg === 'addOrganization') {
         foreach ($rows as $row) {
             echo "<tr id=".$cont.">";
         //echo '<input type="hidden" name="UserId" value="'.$row['User_Boss'].'"> ';
-        echo '<input type="hidden" id="Org" name="Org" value="'.$row['Id'].'"> ';
+        echo '<input type="text" id="Org" name="Org" value="'.$row['Id'].' style="display:none">';
             echo "<td id='OName'>" . $row['Name'] . "</td>";
             echo "<td id='OPhone'>" . $row['Phone_Number'] . "</td>";
             echo "<td id='OMobile'>" . $row['Mobile_Number'] . "</td>";
