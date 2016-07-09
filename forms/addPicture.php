@@ -98,8 +98,15 @@ include_once ('../db/conn.inc.php');
                                             echo "Sorry, your file was not uploaded.";
                                             // if everything is ok, try to upload file
                                         } else {
-                                            $pic = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
-                                            DB_
+                                            #$pic = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
+                                            $userId = $_SESSION['id'];
+                                            $filename = trim($_FILES["fileToUpload"]["tmp_name"]);
+                                            $datastring = file_get_contents($filename);
+                                            $data = unpack("H*hex", $datastring);
+                                            #echo trim($_REQUEST['slcfile']);
+                                            #mssql_query("insert into imageinserter values ( 0x" . $data['hex'] . ",'.$filename.')");
+                                            $pic = "0x" . $data['hex'] . ",'.$filename.'";
+                                            echo DB_addUserProfilePicture($pdo, $pic, $userId);
                                             #if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                                             //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $_SESSION['id'] . '.jpg')) {
                                             #    echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
