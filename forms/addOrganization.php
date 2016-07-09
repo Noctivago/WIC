@@ -96,9 +96,13 @@ include_once ('../db/functions.php');
                                 <div class="form-bottom">
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
+                                            <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()" required="required">
+                                                <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
                                         </div>
-                                        <input type="hidden" name="Org"  class="form-password form-control" id="Org" value="0">
                                         <div class="form-group">
                                             <input type="text" name="phone" placeholder="ORGANIZATION PHONE" class="form-password form-control" id="phone" required>
                                         </div>
