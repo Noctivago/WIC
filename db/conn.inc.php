@@ -15,7 +15,7 @@ try {
     if ($pdo == false) {
         echo "Redirect to 404!";
     } else {
-        #echo "Connected!";
+#echo "Connected!";
     }
 } catch (Exception $e) {
     echo("Error -> IP NOT ALLOWED!");
@@ -26,11 +26,11 @@ function sql($pdo, $q, $params, $return) {
 
     try {
 
-        // Prepare statement
+// Prepare statement
         $stmt = $pdo->prepare($q);
-        // Execute statement
+// Execute statement
         $stmt->execute($params);
-        // Decide whether to return the rows themselves, or just count the rows
+// Decide whether to return the rows themselves, or just count the rows
         if ($return == "rows") {
             return $stmt->fetchAll();
         } elseif ($return == "row") {
@@ -46,7 +46,7 @@ function sql($pdo, $q, $params, $return) {
 function DB_checkIfUserExists($pdo, $email) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "count");
-        //IF EXISTS -1
+//IF EXISTS -1
         if ($count < 0) {
             return true;
         } else {
@@ -60,7 +60,7 @@ function DB_checkIfUserExists($pdo, $email) {
 function DB_checkIfUserPasswordIsCorrect($pdo, $password, $userId) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Password] = ? AND [Id] = ?", array($password, $userId), "count");
-        //IF EXISTS -1
+//IF EXISTS -1
         if ($count < 0) {
             return true;
         } else {
@@ -74,7 +74,7 @@ function DB_checkIfUserPasswordIsCorrect($pdo, $password, $userId) {
 function DB_checkIfUserEnabled($pdo, $email) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [Account_Enabled] = ?", array($email, 1), "count");
-        //IF EXISTS -1
+//IF EXISTS -1
         if ($count < 0) {
             return true;
         } else {
@@ -99,7 +99,7 @@ function DB_activateUserAccount($pdo, $email) {
 function DB_compareActivationCode($pdo, $email, $code) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [User_Code_Activation] = ?", array($email, $code), "count");
-        //IF EXISTS -1
+//IF EXISTS -1
         if ($count < 0) {
             return true;
         } else {
@@ -141,7 +141,7 @@ function DB_getLoginFailedValue($pdo, $email) {
 
 function DB_setBlockAccount($pdo, $email) {
     try {
-        //GERA NOVO CODIGO PARA ATIVAR CONTA -> ENVIA EMAIL
+//GERA NOVO CODIGO PARA ATIVAR CONTA -> ENVIA EMAIL
         $count = sql($pdo, "UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? ", array('0', $email));
         return true;
     } catch (Exception $exc) {
@@ -238,7 +238,7 @@ function DB_chekIfUserProfileExist($pdo, $userId) {
 
 function DB_updateUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath, $cityId, $languageId) {
     try {
-        //UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? 
+//UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? 
         $count = sql($pdo, "UPDATE [dbo].[Profile] SET"
                 . " [First_Name] = ?"
                 . " [Last_Name] = ? "
@@ -254,7 +254,7 @@ function DB_updateUserProfile($pdo, $userId, $fname, $lname, $picture, $pictureP
 }
 
 function DB_addUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath, $cityId, $languageId) {
-    //sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
+//sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
     try {
         sql($pdo, "INSERT INTO [dbo].[Profile] ([First_Name], [Last_Name], [Picture], [Picture_Path], [User_Id], [City_Id], [Language_Id]) "
                 . "VALUES (?, ?, ?, ?, ?, ?, ?)", array($fname, $lname, $picture, $picturePath, $userId, $cityId, $languageId));
@@ -277,7 +277,7 @@ function DB_getCityAsSelect($pdo) {
   where [City].[Enabled]=1 and [Country].[Enabled] = ?", array('1'), "rows");
     foreach ($rows as $row) {
         echo "<option value=" . $row['CID'] . ">" . $row['CONAME'] . '-' . $row['CNAME'] . "</option>";
-        //echo $row['Id'] . ">" . $row['Name'];
+//echo $row['Id'] . ">" . $row['Name'];
     }
 }
 
@@ -290,7 +290,7 @@ function DB_getCityAsSelectByCityName($pdo, $cityName) {
 
 function DB_getPermissions($pdo) {
     try {
-        //$id = 0;
+//$id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Permission] WHERE [Id] > ?", array('0'), "rows");
         echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Enabled?</th><th>Organization?</th></tr>";
         foreach ($rows as $row) {
@@ -309,7 +309,7 @@ function DB_getPermissions($pdo) {
 
 function DB_getRoles($pdo) {
     try {
-        //$id = 0;
+//$id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [Id] > ?", array('0'), "rows");
         echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Enabled?</th></tr>";
         foreach ($rows as $row) {
@@ -327,7 +327,7 @@ function DB_getRoles($pdo) {
 
 function DB_getCategoryAsTable($pdo) {
     try {
-        //$id = 0;
+//$id = 0;
         $rows = sql($pdo, "SELECT [Id]
       ,[Name]
       ,[Image]
@@ -349,18 +349,18 @@ function DB_getCategoryAsTable($pdo) {
 
 function DB_getCategoryAsSelect($pdo) {
     try {
-        //$id = 0;
+//$id = 0;
         $rows = sql($pdo, "SELECT [Id]
         ,[Name]
         ,[Image]
         ,[Image_Path]
         ,[Enabled]
         FROM [dbo].[Category] WHERE [Id] > ?", array('0'), "rows");
-        #echo '<select>';
+#echo '<select>';
         foreach ($rows as $row) {
             echo "<option value=" . $row['Id'] . ">" . $row['Name'] . "</option>";
         }
-        #echo '</select>';
+#echo '</select>';
     } catch (Exception $exc) {
         echo 'ERROR READING CATEGORY TABLE';
     }
@@ -368,13 +368,13 @@ function DB_getCategoryAsSelect($pdo) {
 
 function DB_getCountryAsSelect($pdo) {
     try {
-        //global $pdo;
+//global $pdo;
         $stmt = $pdo->prepare("SELECT * FROM Country ORDER BY Name ASC");
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
-        #$dbh = null;
+#$dbh = null;
     } catch (PDOException $e) {
         echo 'ERROR READING COUNTRY TABLE';
         die();
@@ -383,13 +383,13 @@ function DB_getCountryAsSelect($pdo) {
 
 function DB_getStateAsSelect($pdo) {
     try {
-        //global $pdo;
+//global $pdo;
         $stmt = $pdo->prepare("SELECT * FROM State ORDER BY Name ASC");
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
-        #$dbh = null;
+#$dbh = null;
     } catch (PDOException $e) {
         echo 'ERROR READING COUNTRY TABLE';
         die();
@@ -398,14 +398,14 @@ function DB_getStateAsSelect($pdo) {
 
 function DB_getStateAsSelectByCountryId($pdo, $idCountry) {
     try {
-        //global $pdo;
+//global $pdo;
         $stmt = $pdo->prepare("SELECT * FROM State WHERE Country_Id = :countryID ORDER BY Name ASC");
         $stmt->bindParam(':countryID', $idCountry);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
-        #$dbh = null;
+#$dbh = null;
     } catch (PDOException $e) {
         echo 'ERROR READING CITY TABLE';
         die();
@@ -414,29 +414,29 @@ function DB_getStateAsSelectByCountryId($pdo, $idCountry) {
 
 function DB_getCityAsSelectByCountryId($pdo, $idState) {
     try {
-        //global $pdo;
+//global $pdo;
         $stmt = $pdo->prepare("SELECT * FROM City WHERE State_Id = :stateID ORDER BY Name ASC");
         $stmt->bindParam(':stateID', $idState);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
-        #$dbh = null;
+#$dbh = null;
     } catch (PDOException $e) {
         echo 'ERROR READING CITY TABLE';
         die();
     }
 }
 
-function DB_addOrganization($pdo, $userid,$orgId, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d) {
+function DB_addOrganization($pdo, $userid, $orgId, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d) {
     try {
-        if($orgId === '0'){
-        sql($pdo, "INSERT INTO [dbo].[Organization] ([Name],[Phone_Number],[Mobile_Number],[Validate],[Address],[Enabled],[User_Boss],[Facebook],[Twitter],[Linkdin],[Abusive_Organization],[Good_Organization],[Organization_Email],[Website], [Date_Created]) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", array($name, $phone, $mobile, 0, $address, 0, $userid, $facebook, $twitter, $linkdin, 0, 0, $orgEmail, $website, $d));
-        echo 'Organization added!';
-        }else{
+        if ($orgId === '0') {
+            sql($pdo, "INSERT INTO [dbo].[Organization] ([Name],[Phone_Number],[Mobile_Number],[Validate],[Address],[Enabled],[User_Boss],[Facebook],[Twitter],[Linkdin],[Abusive_Organization],[Good_Organization],[Organization_Email],[Website], [Date_Created]) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", array($name, $phone, $mobile, 0, $address, 0, $userid, $facebook, $twitter, $linkdin, 0, 0, $orgEmail, $website, $d));
+            echo 'Organization added!';
+        } else {
             sql($pdo, "UPDATE [dbo].[Organization]SET [Name] =?, [Phone_Number] = ?, [Mobile_Number] = ?, [Address] = ?,[Facebook] = ? ,[Twitter] = ? ,[Linkdin] = ? , [Organization_Email] = ? ,[Website] = ? WHERE [Organization].[Id] = ?", array($name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $orgId));
-         echo 'Organization information as been updated!' .$orgId;
-   }
+            echo 'Organization information as been updated!' . $orgId;
+        }
     } catch (Exception $exc) {
         echo 'ERROR INSERTING ORGANIZATION';
     }
@@ -453,7 +453,7 @@ function DB_readOrganizationAsTable($pdo, $userId) {
             echo "<tr id='" . $cont . "'>";
             echo "<td id='Id" . $cont . "' type='text'>" . $row['Id'] . "</td>";
             echo "<td>" . $row['Name'] . "</td>";
-            #echo "<td>" . $row['User_Boss'] . "</td>";
+#echo "<td>" . $row['User_Boss'] . "</td>";
             echo "<td>" . $row['Date_Created'] . "</td>";
             echo "<td>" . $row['Address'] . "</td>";
             echo "<td> <input type='button' value='Delete' onClick='removeOrganization(" . $row['Id'] . ")'> </td>";
@@ -579,7 +579,7 @@ function DB_readOrganizationServiceBookAsTable($pdo, $userId) {
 }
 
 function addNewsLetterPlatform($pdo, $userId) {
-    //FALTA VERIFICAR SE JA EXISTE
+//FALTA VERIFICAR SE JA EXISTE
     try {
         sql($pdo, "INSERT INTO [dbo].[Plataform_Newsletter] ([User_Id], [Newsletter_ID], [Enabled]) VALUES(?,?,?)"
                 . "", array($userId, 1, 1));
@@ -644,9 +644,9 @@ function DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate) {
 //GET SERVICE AS TABLE WHERE ORGANIZATION BELONGS TO USER
 function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_Id, $City_id) {
     try {
-        //IF
-        //IF
-        //IF
+//IF
+//IF
+//IF
         $rows = sql($pdo, "", array($name, $Sub_Category_Id, $City_id), "rows");
         echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Description</th><th>Category</th><th>City</th></tr>";
         foreach ($rows as $row) {
@@ -666,7 +666,7 @@ function DB_readOrganizationServiceAsTableWithQuery($pdo, $name, $Sub_Category_I
 #function sendEmail($address, $mail_subject, $mail_body) {
 
 function sendEmail($to, $subject, $body) {
-    #error_reporting(E_STRICT);
+#error_reporting(E_STRICT);
 #configura o fuso horario
     date_default_timezone_set('Europe/Lisbon');
 #faz os includes necessarios das bibliotecas
@@ -674,7 +674,7 @@ function sendEmail($to, $subject, $body) {
 #cria uma nova instancia do PHPMailer
     $mail = new PHPMailer();
     $mail->IsSMTP(); // telling the class to use SMTP
-    #$mail->SMTPDebug = 2;                     // enables SMTP debug information (for testing)
+#$mail->SMTPDebug = 2;                     // enables SMTP debug information (for testing)
     $mail->SMTPAuth = true;                  // enable SMTP authentication
     $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
     $mail->Host = "iberweb4a.ibername.com";      // sets GMAIL as the SMTP server
@@ -684,7 +684,7 @@ function sendEmail($to, $subject, $body) {
     $mail->SetFrom('donotreply@wic.club', 'WIC #Please do not reply!');
     $mail->AddReplyTo("donotreply@wic.club", "WIC");
     $mail->Subject = $subject;
-    #$mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+#$mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
     $mail->MsgHTML($body);
     $mail->AddAddress($to);
     if (!$mail->Send()) {
@@ -700,5 +700,15 @@ function DB_changeUserPassword($pdo, $userId, $password) {
         return true;
     } catch (Exception $exc) {
         return false;
+    }
+}
+
+function DB_addUserProfilePicture($pdo, $pic, $userId) {
+    try {
+        sql($pdo, "UPDATE [dbo].[User] SET [Picture] = ? WHERE [Id] = ?", array($pic, $userId));
+        echo 'Picture sucessufully changed!';
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
     }
 }

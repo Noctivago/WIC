@@ -98,12 +98,14 @@ include_once ('../db/conn.inc.php');
                                             echo "Sorry, your file was not uploaded.";
                                             // if everything is ok, try to upload file
                                         } else {
-                                            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                                                #if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $_SESSION['id'] . '.jpg')) {
-                                                echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
-                                            } else {
-                                                echo "Sorry, there was an error uploading your file.";
-                                            }
+                                            $pic = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
+                                            DB_
+                                            #if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                                            //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $_SESSION['id'] . '.jpg')) {
+                                            #    echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+                                            #} else {
+                                            #    echo "Sorry, there was an error uploading your file.";
+                                            #}
                                         }
                                     }
                                     ?>
