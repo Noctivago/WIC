@@ -32,7 +32,7 @@ include_once ('../db/functions.php');
                                     ?>	
 
                                    
-<body onload="viewAllOrganization(<?= $userid ?>)">
+<body >
 <main class="cd-main-content">
 <div class="content-wrapper">
 
@@ -45,7 +45,7 @@ include_once ('../db/functions.php');
         <div class="container">
 
 
-            <div class="row">
+            <div class="row" onload="viewAllOrganization(<?= $userid ?>)">
                 <div class="col-sm-8 col-sm-offset-2 text">
 
                     <div class="form-box">
