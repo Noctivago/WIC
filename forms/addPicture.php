@@ -92,7 +92,7 @@ ini_set("display_errors", 1);
                                             }
 
                                             #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
-                                            $msg = $pic; #DB_addUserProfilePicture($pdo, $pic, $userId);
+                                            $msg = DB_addUserProfilePicture($pdo, $pic, $userId);
                                         }
                                     }
                                     ?>
