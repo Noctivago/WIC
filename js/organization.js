@@ -116,7 +116,7 @@ function cleanInformation(){
 
 //edidar a informação da organização
 function editOrganizationInformation() {
-    var orgId = document.getElementById('org').value;
+    var orgId = document.getElementById('org-sel').value;
     alert(orgId);
 //    document.getElementById('Org').value = $('#mytable #' + cont + ' #OOrg').text();
 //    document.getElementById('name').value = $('#mytable #' + cont + ' #OName').text();

@@ -469,9 +469,9 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
     try {
         $id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
-               echo "<option id='org' value='.0.'></option>";
+               echo "<option value='0'></option>";
         foreach ($rows as $row) {
-            echo "<option id='org' value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION TABLE';
