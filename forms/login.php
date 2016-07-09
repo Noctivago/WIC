@@ -92,11 +92,8 @@ if (isset($_SESSION['username'])) {
                                         // verifique a chave secreta
                                         $reCaptcha = new ReCaptcha($secret);
                                         // se submetido, verifique a resposta
-                                        if ($_POST["g-recaptcha-response"]) {
-                                            $response = $reCaptcha->verifyResponse(
-                                                    $_SERVER["REMOTE_ADDR"], $_POST["g-recaptcha-response"]
-                                            );
-                                        }
+                                        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+                                        $responseData = json_decode($verifyResponse);
                                         if ($response->success) {
                                             try {
                                                 $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
