@@ -33,7 +33,7 @@ include_once ('../db/functions.php');
                                         <?= $userInfo = DB_getUserProfileInfo($pdo, $_SESSION['id']) ?>
                                         <br>
                                         <input type="file" class="text-center center-block well well-sm" style="color:black">
-                                        <button type="submit" class="btn" name="login">Change picture!</button>
+                                        <button type="submit" class="btn text-center center-block well well-sm" name="login">Change picture!</button>
 
                                     </div>
                                     <!--                            <div class="form-top-right">
