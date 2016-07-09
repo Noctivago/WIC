@@ -1,6 +1,7 @@
 <?php
 include_once '../db/conn.inc.php';
 include_once '../db/recaptchalib.php';
+include_once '../db/functions.php';
 ob_start();
 session_start();
 if (isset($_SESSION['username'])) {
@@ -131,13 +132,34 @@ if (isset($_SESSION['username'])) {
                                                                 DB_setBlockAccount($pdo, $email);
                                                                 //ENVIAR EMAIL COM INSTRUÇÔES DE DESBLOQUEIO
                                                                 $msg = 'Account blocked!';
+                                                                $to = $email;
+                                                                $subject = "WIC #ACCOUNT BLOCKED";
+                                                                $code = generateActivationCode();
+                                                                DB_updateUserAccountActivationCode($pdo, $email, $code);
+                                                                $body = "Hi! <br>"
+                                                                        . "Your account was blocked due severed failed logins.<br>"
+                                                                        . "Use the following code to unblock your account: " . $code . "<br>"
+                                                                        . "Plase use the following URL to unlock: http://www.wic.club<br>"
+                                                                        . "Best regards,<br>"
+                                                                        . "WIC<br><br>"
+                                                                        . "Note: Please do not reply to this email! Thanks!";
+                                                                sendEmail($to, $subject, $body);
                                                             }
                                                         }
                                                     }
                                                 } else {
-                                                    //SE N ESTIVER ENABLED
-                                                    //FOI ENVIADO UM EMAIL PARA A SUA CONTA, POR FAVOR VERIFIQUE
                                                     $msg = "Account blocked! Please check your email!";
+                                                    $subject = "WIC #ACCOUNT BLOCKED";
+                                                    $code = generateActivationCode();
+                                                    DB_updateUserAccountActivationCode($pdo, $email, $code);
+                                                    $body = "Hi! <br>"
+                                                            . "Your account was blocked due severed failed logins.<br>"
+                                                            . "Use the following code to unblock your account: " . $code . "<br>"
+                                                            . "Plase use the following URL to unlock: http://www.wic.club<br>"
+                                                            . "Best regards,<br>"
+                                                            . "WIC<br><br>"
+                                                            . "Note: Please do not reply to this email! Thanks!";
+                                                    sendEmail($to, $subject, $body);
                                                 }
                                             } else {
                                                 $msg = "Wrong email or password!";

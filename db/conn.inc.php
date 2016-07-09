@@ -469,6 +469,7 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
     try {
         $id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
+               echo "<option value='.0.'></option>";
         foreach ($rows as $row) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
@@ -718,7 +719,17 @@ function DB_createProfileOnRegistration($pdo, $email) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Profile] ([User_Id], [Enabled]) VALUES(?,?)"
                 . "", array($userId, 1));
-        echo 'Profile Created!';
+        #echo 'Profile Created!';
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
+    }
+}
+
+function DB_updateUserAccountActivationCode($pdo, $email, $code) {
+    $userId = DB_checkUserByEmail($pdo, $email);
+    try {
+        sql($pdo, "UPDATE [dbo].[User] SET [User_Code_Activation] = ? WHERE [Id] = ?", array($code, $userId));
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();

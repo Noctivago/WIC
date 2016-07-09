@@ -172,19 +172,29 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'viewAllUsersInOrganization') {
     try {
+        $cont =0;
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
-        $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_ID]=? and [Enabled]=1", array($orgId), "rows");
-        echo "<table class='table table-striped' id='table'><tr><th>Organization</th><th>User</th><th>Validation</th></tr>";
+        $rows = sql($pdo, "SELECT [dbo].[User_In_Organization].[Id] as id ,[Organization].[Name] as orgName
+	  ,[User].[Email] as email
+      ,[Responded]
+  FROM [dbo].[User_In_Organization]
+  join [User]
+  on [User].[Id] = [User_In_Organization].[User_Id]
+  join [Organization]
+  on [dbo].[Organization].[Id] = [dbo].[User_In_Organization].[Organization_Id] where [Organization_Id]=? and [dbo].[User_In_Organization].[Enabled] = 1", array($orgId), "rows");
+        echo "<table class='table table-striped' id='table'><tr><th>Id org</th><th>Organization Name</th><th>email</th><th>Remove</th></tr>";
         foreach ($rows as $row) {
-            echo "<tr>";
-            echo "<td>" . $row['Organization_Id'] . "</td>";
-            echo "<td>" . $row['User_Id'] . "</td>";
-            echo "<td>" . $row['User_Validation'] . "</td>";
+            $cont += 1;
+            echo "<tr id=" . $cont . ">";
+            echo "<td >" . $row['id'] . "</td>";
+            echo "<td>" . $row['orgName'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
+            echo "<td><input type='button' value='Delete' onClick='removeUserInOrganization(" . $row['id'] . ")'></td>";
             echo "<tr>";
         }
         echo "</table>";
     } catch (Exception $ex) {
-        echo 'erro sdadasdasdas';
+        echo 'erro';
     }
 } else if ($arg === 'UserValidateInvite') {
     try {
