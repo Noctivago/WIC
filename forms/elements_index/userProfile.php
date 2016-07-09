@@ -60,10 +60,10 @@ include_once ('../db/functions.php');
                                         }
                                         if (isset($_POST['saveProfile'])) {
                                             $fname = (filter_var($_POST ['fname'], FILTER_SANITIZE_STRING));
-                                            #$lname = (filter_var($_POST ['lname'], FILTER_SANITIZE_STRING));
+                                            $lname = (filter_var($_POST ['lname'], FILTER_SANITIZE_STRING));
                                             #$countryId = (filter_var($_POST ['country'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
-                                            $msg = DB_updateUserProfile($pdo, $fname, $userId);
+                                            $msg = DB_updateUserProfile($pdo, $fname, $lname, $userId);
                                         }
                                         ?>
                                         <?= DB_getUserProfilePicture($pdo, $_SESSION['id']) ?>

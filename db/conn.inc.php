@@ -745,9 +745,9 @@ function DB_getUserProfileInfo($pdo, $UserId) {
     }
 }
 
-function DB_updateUserProfile($pdo, $fname, $userId) {
+function DB_updateUserProfile($pdo, $fname, $lname, $userId) {
     try {
-        sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? WHERE [User_Id] = ?", array($fname, $userId));
+        sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? WHERE [User_Id] = ?", array($fname, $lname, $userId));
         echo 'PROFILE UPDATED!';
     } catch (PDOException $e) {
         echo "ERROR UPDATING PROFILE!";
