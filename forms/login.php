@@ -148,6 +148,7 @@ if (isset($_SESSION['username'])) {
                                                         }
                                                     }
                                                 } else {
+                                                    $to = $email;
                                                     $msg = "Account blocked! Please check your email!";
                                                     $subject = "WIC #ACCOUNT BLOCKED";
                                                     $code = generateActivationCode();
