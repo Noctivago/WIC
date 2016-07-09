@@ -236,23 +236,6 @@ function DB_chekIfUserProfileExist($pdo, $userId) {
     }
 }
 
-function DB_updateUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath, $cityId, $languageId) {
-    try {
-//UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? 
-        $count = sql($pdo, "UPDATE [dbo].[Profile] SET"
-                . " [First_Name] = ?"
-                . " [Last_Name] = ? "
-                . " [Picture] = ? "
-                . " [Picture_Path] = ? "
-                . " [City_Id] = ? "
-                . " [Language_Id] = ? "
-                . " Where [User_Id] = ?", array($fname, $lname, $picture, $picturePath, $cityId, $languageId, $userId));
-        return true;
-    } catch (Exception $ex) {
-        return false;
-    }
-}
-
 function DB_getCityAsSelect($pdo) {
     $rows = sql($pdo, "  SELECT [City].[Id] CID
       ,[City].[Name] AS CNAME
@@ -461,7 +444,7 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
         echo "<option value='0'></option>";
         foreach ($rows as $row) {
-            echo "<option value='". htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION TABLE';
@@ -762,13 +745,16 @@ function DB_getUserProfileInfo($pdo, $UserId) {
     }
 }
 
-//function DB_addUserProfile($pdo, $userId, $fname, $lname, $picture, $picturePath, $cityId, $languageId) {
-////sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
-//    try {
-//        sql($pdo, "INSERT INTO [dbo].[Profile] ([First_Name], [Last_Name],  [User_Id], [City_Id], [Language_Id]) "
-//                . "VALUES (?, ?, ?, ?, ?, ?, ?)", array($fname, $lname, $picture, $picturePath, $userId, $cityId, $languageId));
-//        return true;
-//    } catch (Exception $exc) {
-//        return false;
-//    }
-//}
+function DB_updateUserProfile($pdo, $fname, $lname, $countryId, $userId) {
+    try {
+//UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? 
+        $count = sql($pdo, "UPDATE [dbo].[Profile] SET"
+                . " [First_Name] = ?"
+                . " [Last_Name] = ? "
+                . " [Country_Id] = ? "
+                . " Where [User_Id] = ?", array($fname, $lname, $countryId, $userId));
+        return true;
+    } catch (Exception $ex) {
+        return false;
+    }
+}
