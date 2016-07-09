@@ -149,7 +149,7 @@ if (isset($_SESSION['username'])) {
                                                 echo "ERROR!";
                                             }
                                         } else {
-                                            $msg = 'reCAPTCHA failed!';
+                                            $msg = 'reCAPTCHA failed! > ' . $response;
                                         }
                                     }
                                     ?>	
