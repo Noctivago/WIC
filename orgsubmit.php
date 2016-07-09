@@ -75,6 +75,7 @@ if ($arg === 'addOrganization') {
         //echo '<input type="hidden" name="orgId" value="'.$row['Id'].'"> ';
         foreach ($rows as $row) {
             echo "<tr id=" . $cont . ">";
+            echo '<tbody style="display:none">';
              echo "<td id='OName'>" . $row['Name'] . "</td>";
             echo "<td id='OPhone'>" . $row['Phone_Number'] . "</td>";
             echo "<td id='OMobile'>" . $row['Mobile_Number'] . "</td>";
