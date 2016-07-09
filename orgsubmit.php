@@ -134,12 +134,13 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'orgInformation') {
     //$userid = $_SESSION['id'];
- try {   $orgId = (filter_var($_POST ['org']));
-    $rows = sql($pdo,"SELECT * FROM [dbo].[Organization] WHERE [Id]=? and [Enabled] = 1 and [Validate]=1", array($orgId), "rows");
-    foreach ($rows as $row) {
-        echo  $row['Id'];
-        
-    }
+    try {
+        $orgId = (filter_var($_POST ['org']));
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id]=? and [Enabled] = 1 and [Validate]=1", array($orgId), "rows");
+        foreach ($rows as $row) {
+            echo $row['Id'];
+        }
+        echo 'adsadsadas';
     } catch (Exception $ex) {
         echo 'error';
     }
@@ -152,11 +153,11 @@ if ($arg === 'addOrganization') {
                 //get id do user pelo email
                 $userId = DB_checkUserByEmail($pdo, $email);
                 //insere user na organizacao com enabled 0 e user validation 0
-                sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($orgId, $userId, 0, 0,0));
+                sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($orgId, $userId, 0, 0, 0));
                 echo 'Success';
             } else {
-                $to=$email;
-                $subject="Invite to join organization";
+                $to = $email;
+                $subject = "Invite to join organization";
                 $body = "Hi, please resgist on www.wic.club";
                 sendEmail($to, $subject, $body);
                 //envia convite para o email para se registar.
@@ -183,7 +184,7 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'viewAllUsersInOrganization') {
     try {
-        $cont =0;
+        $cont = 0;
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $rows = sql($pdo, "SELECT [dbo].[User_In_Organization].[Id] as id ,[Organization].[Name] as orgName
 	  ,[User].[Email] as email
