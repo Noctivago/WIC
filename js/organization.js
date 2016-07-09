@@ -115,7 +115,9 @@ function editOrganizationInformation(cont) {
     document.getElementById('website').value = $('#mytable #' + cont + ' #OWebsite').text();
     document.getElementById('update').style = "display: true";
     document.getElementById('cancel').style = "display: true";
-    document.getElementById('update').onclick = '"'+updateOrg(org)+"'";
+    var span = document.createElement('upda');
+    span.innerHTML = '<button onclick="updateOrg('+org+')" />';
+    //document.getElementById('update').onclick = '"'+updateOrg(org)+"'";
     }
 function updateOrg(org){
     alert(org);

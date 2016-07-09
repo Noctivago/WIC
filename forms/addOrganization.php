@@ -123,7 +123,6 @@ include_once ('../db/functions.php');
                                             <input type="text" name="website" placeholder="ORGANIZATION WEBSITE" class="form-password form-control" id="website" required>
                                         </div>
                                         <button type="submit" id="add" class="btn" name="addOrg" visible="true">NEW ORGANIZATION!</button>
-                                        <input id="update" class="btn" onclick="" name="Update" placeholder="Update" style="display: none;">
                                         <button type="submit" id="cancel" class="btn" name="Cancel" style="display: none;"> Cancel </button>
                                     </form>
                                 </div>
