@@ -41,7 +41,7 @@
 
 <div class="row" style="color: #000" onload="viewAllOrganization(<?= $userid ?>)">
                 
-                <div class="col-sm-5">
+                <div class="col-sm-8 col-sm-offset-2 text-center">
 
                     <div class="form-box">
                         <div class="form-top">
