@@ -718,8 +718,8 @@ function DB_getUserProfilePicture($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT [Picture] FROM [dbo].[Profile] WHERE [Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-            #return $row['Picture'];
-            return "<img border=\"0\" src=\"" . $row['Picture'] . "\" alt=\"Profile Picture\" class=\"avatar img-circle img-thumbnail text-center center-block\">";
+            return $row['Picture'];
+            #return "<img  src=\"" . $row['Picture'] . "\ alt=\"Profile Picture\" class=\"avatar img-circle img-thumbnail text-center center-block\">";
         }
     } catch (Exception $exc) {
         echo '';
