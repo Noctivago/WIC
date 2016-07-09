@@ -15,6 +15,7 @@ include_once ('../db/functions.php');
                                         $msg = '';
                                         try {
                                             $d = getDateToDB();
+                                            $orgId = (filter_var($_POST ['Org'], FILTER_SANITIZE_NUMBER_INT));
                                             $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
                                             $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
                                             $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
@@ -24,7 +25,7 @@ include_once ('../db/functions.php');
                                             $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
                                             $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
                                             $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
-                                            $msg = DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
+                                            $msg = DB_addOrganization($pdo, $userid,$orgId, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
                                         } catch (Exception $ex) {
                                             $msg = "ERROR!";
                                         }
@@ -123,7 +124,7 @@ include_once ('../db/functions.php');
                                             <input type="text" name="website" placeholder="ORGANIZATION WEBSITE" class="form-password form-control" id="website" required>
                                         </div>
                                         <button type="submit" id="add" class="btn" name="addOrg" visible="true">NEW ORGANIZATION!</button>
-                                        <button type="submit" id="update" class="btn" name="Update" style="display: none;"> Save</button>
+                                        <button type="submit" id="add" class="btn" name="addOrg" style="display: none;"> Save</button>
                                         <button type="submit" id="cancel" class="btn" name="Cancel" style="display: none;"> Cancel </button>
                                     </form>
                                 </div>
