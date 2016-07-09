@@ -721,7 +721,7 @@ function DB_getUserProfilePicture($pdo, $userId) {
         #    return $row['Picture_Path'];
         if ($rows['Picture_Path'] == NULL) {
             #return "PROFILE PICTURE NOT FOUND!";
-            return '<img src=/""http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png/"" class=/"avatar img-circle img-thumbnail text-center center-block/" alt=/"avatar/">';
+            return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
         } else {
             return $rows['Picture_Path'];
         }
