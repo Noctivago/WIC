@@ -21,7 +21,7 @@
                             <div class="form-top">
 
                                 <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                <input style="color: black; width: 330px;" class="text-center center-block well well-sm" type="file">
+                                <input style="color: black; width: 155px;" class="text-center center-block well well-sm" type="file">
                                 <!--<h6 style="color:black">Upload a different photo...</h6>-->
 
                             </div>
