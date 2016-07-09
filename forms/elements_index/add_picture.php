@@ -15,7 +15,7 @@
                     <div class="form-box">
                         <div class="form-top">
                             <div class="form-top">
-                                <h1 style="color:darkgray">UPLOAD A PHOTO</h1>
+                                <h1 style="color:darkgray">ups A PHOTO</h1>
                             </div>
                         </div>´
                                     <?php
