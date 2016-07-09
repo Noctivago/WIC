@@ -2,6 +2,7 @@
 include_once ('session.php');
 include_once ('../db/conn.inc.php');
 include_once ('../db/functions.php');
+$msg = '';
 ?>
 <?php
 error_reporting(E_ALL);
