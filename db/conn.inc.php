@@ -748,9 +748,9 @@ function DB_getUserProfileInfo($pdo, $UserId) {
 function DB_updateUserProfile($pdo, $fname, $userId) {
     try {
         sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? WHERE [User_Id] = ?", array($fname, $userId));
-        echo 'Picture sucessufully changed!';
+        echo 'PROFILE UPDATED!';
     } catch (PDOException $e) {
-        echo "ERROR UPDATING PROFILE PICTURE!";
+        echo "ERROR UPDATING PROFILE!";
 #die();
     }
 }
