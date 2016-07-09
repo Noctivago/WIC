@@ -719,7 +719,11 @@ function DB_getUserProfilePicture($pdo, $userId) {
         $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [[User_Id]] = ?", array($userId), "rows");
         #foreach ($rows as $row) {
         #    return $row['Picture_Path'];
-        return $rows['Picture_Path'];
+        if ($rows['Picture_Path'] == NULL) {
+            return "PROFILE PICTURE NOT FOUND!";
+        } else {
+            return $rows['Picture_Path'];
+        }
         #    #return '<img src=/"' . $row['Picture_Path'] . '/" class=/"avatar img-circle img-thumbnail text-center center-block/" alt=/"avatar/">';
         #}
     } catch (Exception $exc) {
