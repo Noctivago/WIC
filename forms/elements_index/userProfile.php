@@ -88,11 +88,11 @@ include_once ('../db/functions.php');
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group">
                                             <label class="sr-only" for="form-username">First Name</label>
-                                            <input type="text" name="fname" placeholder="First Name" value="<?= $userInfo["First_Name"] ?> class="form-username form-control" id="fname" required autofocus>
+                                            <input type="text" name="fname" placeholder="First Name" value="'<?= $userInfo["First_Name"] ?>'"class="form-username form-control" id="fname" required autofocus>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-password">Last Name</label>
-                                            <input type="text" name="lname" placeholder="Last Name" value="<?= $userInfo["Last_Name"] ?> class="form-password form-control" id="lname" required>
+                                            <input type="text" name="lname" placeholder="Last Name" value="'<?= $userInfo["Last_Name"] ?>'" class="form-password form-control" id="lname" required>
                                         </div>
                                         <div class="form-group">
                                             <select class="form-username form-control" name="country" id="country">
