@@ -1,24 +1,4 @@
-
-<main class="cd-main-content">
-<div class="content-wrapper">
-
-        <!-- Top content -->
-        <div class="top-content">
-
-            <div class="inner-bg">
-                <div class="container">
-
-
-                    <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 text">
-
-                    <div class="form-box">
-                        <div class="form-top">
-                            <div class="form-top">
-                                <h1 style="color:darkgray">ups A PHOTO</h1>
-                            </div>
-                        </div>´
-                                    <?php
+<?php
                                     $msg = '';
 
 // Check if image file is a actual image or fake image
@@ -65,6 +45,26 @@
                                         }
                                     }
                                     ?>
+<main class="cd-main-content">
+<div class="content-wrapper">
+
+        <!-- Top content -->
+        <div class="top-content">
+
+            <div class="inner-bg">
+                <div class="container">
+
+
+                    <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top">
+                                <h1 style="color:darkgray">aiai A PHOTO</h1>
+                            </div>
+                        </div>´
+                                    
                         <div class="form-bottom">
                                     <h4> <?php echo $msg; ?></h4>
                                         <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
