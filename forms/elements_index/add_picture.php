@@ -19,7 +19,7 @@
                             <div class="form-top">
 
                                 
-                                <h3 style="color:black">Upload a different photo...</h3>
+                                <h3 style="color:black">Upload a  photo...</h3>
 
                             </div>
 
@@ -92,12 +92,7 @@
                     <!--                        <div class="col-sm-1 middle-border"></div>-->
                     <div class="col-sm-1"></div>
 
-                    <div class="col-sm-5">
-
-
-
-
-                    </div>
+                    <div class="col-sm-5"> </div>
                 </div>
 
             </div>
