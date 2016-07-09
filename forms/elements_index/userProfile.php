@@ -94,9 +94,8 @@ include_once ('../db/functions.php');
                                             <input type="text" name="lname" placeholder="Last Name" value="<?= $userInfo["Last_Name"] ?> "class="form-password form-control" id="lname" required>
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-username form-control" name="country" id="country">
-                                                //<?= DB_getCountryAsSelectWithSelected($pdo, $userId); ?>
-                                                <?= DB_getCountryAsSelect($pdo, $userId); ?>
+                                            <select class="form-username form-control" value="<?= $userInfo["Country_Id"] ?> "name="country" id="country">
+                                                <?= DB_getCountryAsSelect($pdo) ?>
                                             </select>
                                         </div>
                                         <button type="submit" class="btn" name="saveProfile">Save Changes!</button>
