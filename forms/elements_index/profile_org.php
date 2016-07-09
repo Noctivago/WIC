@@ -19,7 +19,7 @@
 
                     <div class="form-box">
                         <div class="form-top">
-                            <div class="form-top">
+                            <div class="form-top-left">
 
                                 <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
                                 <input style="color: black; width: 370px;" class="text-left center-block well well-sm" type="file">
@@ -108,7 +108,7 @@
 
                     <div class="form-box">
                         <div class="form-top">
-                            <div class="form-top">
+                            <div class="form-top-right">
 
                                 <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
                                 <input style="color: black; width: 370px;" class="text-left center-block well well-sm" type="file">
