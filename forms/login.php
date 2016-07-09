@@ -88,11 +88,10 @@ if (isset($_SESSION['username'])) {
                                     if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password']) && isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
                                         $msg = '';
                                         try {
-                                            $secret = getSiteKey();
                                             $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                                             $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
                                             $hashPassword = hash('whirlpool', $password);
-                                            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+                                            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . getSiteKey() . '&response=' . $_POST['g-recaptcha-response']);
                                             $responseData = json_decode($verifyResponse);
                                             if ($responseData->success) {
                                                 #$val = DB_getLoginFailedValue($pdo, $email);
