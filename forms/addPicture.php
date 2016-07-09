@@ -79,17 +79,16 @@ include_once ('../db/conn.inc.php');
                                         #$filePath = $uploadDir . $fileName;
                                         $filePath = $uploadDir . $newfilename;
                                         #$result = move_uploaded_file($tmpName, $filePath);
-                                        move_uploaded_file($tmpName, $filePath);
+                                        $result = move_uploaded_file($tmpName, $filePath);
 
                                         if (!$result) {
-                                            echo "Error uploading file";
+                                            $msg = "Error uploading file";
                                             exit;
                                         } else {
                                             if (!get_magic_quotes_gpc()) {
                                                 $fileName = addslashes($fileName);
                                                 $filePath = addslashes($filePath);
                                             }
-
                                             $msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
                                         }
                                     }
