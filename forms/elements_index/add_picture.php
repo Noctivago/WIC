@@ -11,7 +11,7 @@
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1 style="color: darkgray"><strong>DOWN PICTURE</strong> </h1>
+                            <h1 style="color: darkgray"><strong>UPLOAD A PICTURE</strong> </h1>
                         </div>
                     </div>
 
