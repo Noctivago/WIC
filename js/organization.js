@@ -115,9 +115,40 @@ function editOrganizationInformation(cont) {
     document.getElementById('website').value = $('#mytable #' + cont + ' #OWebsite').text();
     document.getElementById('update').style = "display: true";
     document.getElementById('Cancel').style = "display: true";
-    document.getElementById('update').onclick = "updateOrg('')";
+    document.getElementById('update').onclick = "updateOrg("+org+")";
 }
 
+function updateOrg(org){
+    var userid = $("#userid").val();
+    var name = $("#name").val();
+    var phone = $("#phone").val();
+    var mobile = $("#mobile").val();
+    //  var logotype = $("#logotype").val();
+    var address = $("#Address").val();
+    var facebook = $("#facebook").val();
+    var twitter = $("#twitter").val();
+    var linkdin = $("#linkdin").val();
+    var orgEmail = $("#email").val();
+    var website = $("#website").val();
+    var arg = 'updateOrganizationInform';
+    var dataString = 'orgId='+org +'&userid=' + userid + '&name=' + name + '&phone=' + phone + '&mobile=' + mobile + '&address=' + address + '&facebook=' + facebook + '&twitter=' + twitter + '&linkdin=' + linkdin + '&orgEmail=' + orgEmail + '&website=' + website + '&arg=' + arg;
+    if (name === '' || mobile === '' || address === '' || orgEmail === '') {
+        alert('Please filld the fields required <br/>Name<br/>mobile<br/>Adress<br/>Organization Email');
+    } else
+    {
+        $.ajax({
+            type: "POST",
+            url: "../orgsubmit.php",
+            data: dataString,
+            cache: false,
+            sucess: function (result) {
+                alert(result);
+            }
+        });
+        viewAllOrganization();
+        return false;
+    }
+}
 
 //validar organização por parte do admin
 function validateOrganization() {
