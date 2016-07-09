@@ -1,6 +1,7 @@
 <?php
 include_once ('session.php');
 include_once ('../db/conn.inc.php');
+include_once ('../db/functions.php');
 ?>
 
 <?
@@ -91,7 +92,7 @@ include_once ('../db/conn.inc.php');
                                             }
 
                                             #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
-                                            $msg = DB_addUserProfilePicture($pdo, $pic, $userId);
+                                            $msg = $pic; #DB_addUserProfilePicture($pdo, $pic, $userId);
                                         }
                                     }
                                     ?>

@@ -133,11 +133,15 @@ if ($arg === 'addOrganization') {
         echo 'Error';
     }
 } else if ($arg === 'orgInformation') {
-    $userid = $_SESSION['id'];
-    $orgId = (filter_var($_POST ['org']));
-    $row = sql($pdo,"SELECT * FROM [dbo].[Organization] WHERE [Enabled] = 1 and [Validate]=1", array($orgId), "row");
+    //$userid = $_SESSION['id'];
+ try {   $orgId = (filter_var($_POST ['org']));
+    $rows = sql($pdo,"SELECT * FROM [dbo].[Organization] WHERE [Enabled] = 1 and [Validate]=1", array($orgId), "row");
+    foreach($rows as $row){
     echo $row['Name'];
-    
+    }
+    } catch (Exception $ex) {
+        echo 'error';
+    }
 } else if ($arg === 'assignUserInOrganization') {
     try {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
