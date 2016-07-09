@@ -110,13 +110,13 @@ include_once ('../db/functions.php');
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
-                                            <input type="password" name="oldPassword" placeholder="" class="form-username form-control" id="oldPassword" required autofocus>
+                                            <input type="password" name="oldPassword" placeholder="ACTUAL PASSWORD" class="form-username form-control" id="oldPassword" required autofocus>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="newPassword" placeholder="" class="form-username form-control" id="newPassword" required autofocus>
+                                            <input type="password" name="newPassword" placeholder="NEW PASSWORD" class="form-username form-control" id="newPassword" required autofocus>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="newPassword2" placeholder="" class="form-username form-control" id="newPassword2" required autofocus>
+                                            <input type="password" name="newPassword2" placeholder="CONFIRM NEW PASSWORD" class="form-username form-control" id="newPassword2" required autofocus>
                                         </div>
                                         <button type="submit" class="btn" name="changePassword">SAVE CHANGES!</button>
 
