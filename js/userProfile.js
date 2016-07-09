@@ -2,11 +2,8 @@ function updateUserProfile() {
     alert('updateUserProfile');
     var firstName = $("#firstname").val();
     var lastName = $("#lastname").val();
-    var picture = $("#picture").val();
-    var picturePath = $("#picturepath").val();
     var userId = $("#userId").val();
-    var cityId = $("#cityId").val();
-    var languageId = $("#languageId").val();
+    var cityId = $("#Country").val();
     var arg = 'updateUserProfile';
     //podemos passar um argumento que define a funcao a executar
     //no ficheiro ajaxsubmit
