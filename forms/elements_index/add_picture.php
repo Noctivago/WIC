@@ -19,7 +19,7 @@
                             <div class="form-top">
 
                                 
-                                <h3 style="color:black">Upload a  photo...</h3>
+                                <h3 style="color:black">Upload a different photo...</h3>
 
                             </div>
 
