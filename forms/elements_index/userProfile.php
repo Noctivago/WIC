@@ -62,7 +62,7 @@ include_once ('../db/functions.php');
                                             $msg = '';
                                             $fname = (filter_var($_POST ['fname'], FILTER_SANITIZE_STRING));
                                             $lname = (filter_var($_POST ['lname'], FILTER_SANITIZE_STRING));
-                                            $countryId = (filter_var($_POST ['password'], FILTER_SANITIZE_NUMBER_INT));
+                                            $countryId = (filter_var($_POST ['country'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
                                             $msg = DB_updateUserProfile($pdo, $fname, $lname, $countryId, $userId);
                                         }
@@ -75,8 +75,6 @@ include_once ('../db/functions.php');
                                             <input type="file" name="Photo" id="Photo" required="">
                                             <input type="submit" value="Change picture!" name="changePic">
                                         </form>
-<!--                                        <input type="file" class="text-center center-block well well-sm" style="color:black">
-                                        <button type="submit" class="btn " name="changePic">Change picture!</button>-->
 
                                     </div>
                                     <!--                            <div class="form-top-right">
@@ -86,6 +84,7 @@ include_once ('../db/functions.php');
 
                                 <div class="form-bottom">
                                     <h3 style="color:black">  Edit Your Profile</h3>
+                                    <h2><?php echo $msg; ?></h2>
                                     <form role="form" action="" method="post" class="login-form">
                                         <div class="form-group">
                                             <label class="sr-only" for="form-username">First Name</label>
