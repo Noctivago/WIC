@@ -51,7 +51,7 @@ include_once ('../db/functions.php');
 
 
 <div class="row" style="color: #000" onload="viewAllOrganization(<?= $userid ?>)">
-                <h1 style="color: darkgray"><strong>NEW ORGANIZATION</strong> </h1>
+                <h1 style="color: darkgray"><strong>NOVA ORGANIZATION</strong> </h1>
                 <div class="col-sm-8 col-sm-offset-2 text">
 
                     <div class="form-box">
