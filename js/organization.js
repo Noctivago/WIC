@@ -114,7 +114,7 @@ function editOrganizationInformation(cont) {
     document.getElementById('orgEmail').value = $('#mytable #' + cont + ' #OO_Email').text();
     document.getElementById('website').value = $('#mytable #' + cont + ' #OWebsite').text();
     document.getElementById('update').style = "display: true";
-    document.getElementById('Cancel').style = "display: true";
+    document.getElementById('cancel').style = "display: true";
     document.getElementById('update').onclick = updateOrg(org);
     }
 function updateOrg(org){
