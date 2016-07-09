@@ -116,7 +116,7 @@ function cleanInformation() {
 
 //edidar a informação da organização
 function editOrganizationInformation() {
-    var orgId = document.getElementById('org-sel').value;
+    var orgId = document.getElementById("org-sel").value;
     alert(orgId);
     var arg = 'orgInformation';
     var dataString = 'arg=' + arg + '&org=' + orgId;
@@ -128,7 +128,7 @@ function editOrganizationInformation() {
         cache: false,
         sucess: function (result) {
             alert(result);
-            document.getElementById('name').innerHTML = result;
+           // document.getElementById('name').innerHTML = result;
 //            document.getElementById('phone').innerHTML = result;
 //            document.getElementById('mobile').innerHTML = result;
 //            document.getElementById('address').innerHTML = result;
@@ -144,6 +144,7 @@ function editOrganizationInformation() {
     });
     return false;
 }
+
 
 //    document.getElementById('Org').value = $('#mytable #' + cont + ' #OOrg').text();
 //    document.getElementById('name').value = $('#mytable #' + cont + ' #OName').text();

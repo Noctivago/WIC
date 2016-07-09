@@ -722,7 +722,7 @@ function DB_getUserProfilePicture($pdo, $userId) {
             #return "<img  src=\"" . $row['Picture'] . "\ alt=\"Profile Picture\" class=\"avatar img-circle img-thumbnail text-center center-block\">";
         }
     } catch (Exception $exc) {
-        echo '';
+        echo 'ERROR READING PROFILE PICTURE!';
     }
 }
 
