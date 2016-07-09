@@ -69,13 +69,18 @@ include_once ('../db/conn.inc.php');
                                     if (isset($_POST["submit"])) {
                                         $userId = $_SESSION['id'];
                                         //pasta do user para guardar a foto de perfil
-                                        $uploadDir = '../pics/' . $userId . '/'; //Image Upload Folder
+                                        $uploadDir = '../pics/'; //Image Upload Folder
                                         $fileName = $_FILES['Photo']['name'];
                                         $tmpName = $_FILES['Photo']['tmp_name'];
                                         $fileSize = $_FILES['Photo']['size'];
                                         $fileType = $_FILES['Photo']['type'];
-                                        $filePath = $uploadDir . $fileName;
-                                        $result = move_uploaded_file($tmpName, $filePath);
+                                        $temp = explode(".", $_FILES["file"]["name"]);
+                                        $newfilename = getDateToDB() . '_' . $userId . '.' . end($temp);
+                                        #$filePath = $uploadDir . $fileName;
+                                        $filePath = $uploadDir . $newfilename;
+                                        #$result = move_uploaded_file($tmpName, $filePath);
+                                        move_uploaded_file($tmpName, $filePath);
+
                                         if (!$result) {
                                             echo "Error uploading file";
                                             exit;
