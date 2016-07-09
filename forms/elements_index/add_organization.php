@@ -32,55 +32,39 @@ include_once ('../db/functions.php');
                                     ?>	
 
                                    
-<!DOCTYPE html>
-<html lang="en">
 
-    <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>NEW ORGANIZATION</title>
-
-        <!-- CSS -->
+<main class="cd-main-content">
+<div class="content-wrapper">
 
 
 
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <!-- Favicon and touch icons -->
-       
-    </head>
-<!---->
-    <body onload="viewAllOrganization(<?= $userid ?>)">
-        
-
-        <!-- Top content -->
-        
-        <div class="top-content">
-
-            <div class="inner-bg">
-                <div class="container">
+<div class="top-content">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
+    <div class="inner-bg">
+        <div class="container">
 
 
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>NEW ORGANIZATION</strong> </h1>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top">
+
+                                <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                <input type="file" class="text-center center-block well well-sm" style="color:black">
+                                <!--<h6 style="color:black">Upload a different photo...</h6>-->
+
+                            </div>
+                            <!--                            <div class="form-top-right">
+                                                            <i class="fa fa-key"></i>
+                                                        </div>-->
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-sm-5">
-
-                            <div class="form-box">
-                                <div class="form-bottom">
-                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
+                        <div class="form-bottom">
+                            <h3 style="color:black">  Edit Your Profle</h3>
+                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
                                             <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
                                         </div>
@@ -112,46 +96,63 @@ include_once ('../db/functions.php');
                                         <button type="submit" id="add" class="btn" name="addOrg" visible="true">NEW ORGANIZATION!</button>
                                         <button type="submit" id="cancel" class="btn" name="Cancel" style="display: none;"> Cancel </button>
                                     </form>
-                                </div>
-                            </div>
-
                         </div>
 
-                        <!--                        <div class="col-sm-1 middle-border"></div>-->
-                        <div class="col-sm-1" ></div>
 
-                        <div class="col-sm-5" id="orgresp">
-                            <br>
-                            <br>
-                            <!--?= DB_readOrganizationAsTable($pdo, $_SESSION['id']); ?-->
-                        </div>
+                        <!--post modal-->
+                        <!--<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                          <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                Update Status
+                              </div>
+                              <div class="modal-body">
+                                  <form class="form center-block">
+                                    <div class="form-group">
+                                      <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
+                                    </div>
+                                  </form>
+                              </div>
+                              <div class="modal-footer">
+                                  <div>
+                                  <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
+                                    <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+                                          </div>	
+                              </div>
+                          </div>
+                          </div>
+                        </div>-->
+
                     </div>
 
-                </div>
-            </div>
+                    <!--                        <div class="col-sm-1 middle-border"></div>-->
+                    <div class="col-sm-1"></div>
 
+                    <div class="col-sm-5">
+
+
+
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-
-                </div>
-            </div>
-        </footer>
-
-        <!-- Javascript -->
-        <script src="../assets/js/jquery-1.11.1.min.js"></script>
-        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../assets/js/jquery.backstretch.min.js"></script>
-        <script src="../assets/js/scripts.js"></script>
-        <script src="../assets/js/scripts.js" type="text/javascript"></script>
-        <!--[if lt IE 10]>
-            <script src="assets/js/placeholder.js"></script>
-        <![endif]-->
-
-    </body>
+    </div>
+</div>
+</main>
+<!--<script src="../../assets/assests_sidebar/js/js_main/bootstrap.min_main.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/js/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/js/js_main/backstretch.min_main.js" type="text/javascript"></script>
+<script src="../../assets/assests_sidebar/js/js_main/scripts_main.js" type="text/javascript"></script>-->
 
 
-</html>
+    <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
+    <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
+
+
+
+
