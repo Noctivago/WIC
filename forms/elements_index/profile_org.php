@@ -108,11 +108,15 @@
 
                     
                            
-                           
-                            <div class="col-sm-5" style="width:420px">
+                        <div class="col-sm-1 middle-border">
+                        </div>                   
+                        <div class="col-sm-1"></div>
+                        
+                        <div class="col-sm-5" style="width:420px">
 
                     <div class="form-box">
                         <div class="form-top">
+                            <div class="form-top-left"></div>
                             <div class="form-top-right">
 
                                 <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
