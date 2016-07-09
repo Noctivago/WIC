@@ -97,7 +97,7 @@ include_once ('../db/functions.php');
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
                                             <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
                                         </div>
-
+                                            <input type="hidden" name="Org"  class="form-password form-control" id="Org">
                                         <div class="form-group">
                                             <input type="text" name="phone" placeholder="ORGANIZATION PHONE" class="form-password form-control" id="phone" required>
                                         </div>
@@ -123,7 +123,7 @@ include_once ('../db/functions.php');
                                             <input type="text" name="website" placeholder="ORGANIZATION WEBSITE" class="form-password form-control" id="website" required>
                                         </div>
                                         <button type="submit" id="add" class="btn" name="addOrg" visible="true">NEW ORGANIZATION!</button>
-                                        <button type="button" id="update" class="btn" name="Update" onclick="updateOrg(org)"style="display: none;"> Save</button>
+                                        <button type="submit" id="update" class="btn" name="Update" style="display: none;"> Save</button>
                                         <button type="submit" id="cancel" class="btn" name="Cancel" style="display: none;"> Cancel </button>
                                     </form>
                                 </div>
