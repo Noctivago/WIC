@@ -15,7 +15,7 @@
 
             <div class="row">
                 <div classe="col-sm-12">
-                       <div class="col-sm-6">
+                       <div class="col-sm-6" style="width:420px">
 
                     <div class="form-box">
                         <div class="form-top">
@@ -104,7 +104,7 @@
                     </div>
                            
                            
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" style="width:420px">
 
                     <div class="form-box">
                         <div class="form-top">
