@@ -469,7 +469,7 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
     try {
         $id = 0;
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
-               echo "<option value='0'></option>";
+        echo "<option value='0'></option>";
         foreach ($rows as $row) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
@@ -711,6 +711,18 @@ function DB_addUserProfilePicture($pdo, $pic, $userId) {
     } catch (PDOException $e) {
         echo "Error!" . "<br/>";
         #die();
+    }
+}
+
+function DB_getUserProfilePicture($pdo, $userId) {
+    try {
+        $rows = sql($pdo, "SELECT [Picture] FROM [dbo].[Profile] WHERE [Id] = ?", array($userId), "rows");
+        foreach ($rows as $row) {
+            #return $row['Picture'];
+            return "<img border=\"0\" src=\"" . $row['Picture'] . "\" alt=\"Profile Picture\" class=\"avatar img-circle img-thumbnail text-center center-block\">";
+        }
+    } catch (Exception $exc) {
+        echo '';
     }
 }
 
