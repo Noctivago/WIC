@@ -706,21 +706,22 @@ function DB_changeUserPassword($pdo, $userId, $password) {
 
 function DB_addUserProfilePicture($pdo, $pic, $userId) {
     try {
-        sql($pdo, "UPDATE [dbo].[Profile] SET [Picture_Path] = ? WHERE [[User_Id]] = ?", array($pic, $userId));
+        sql($pdo, "UPDATE [dbo].[Profile] SET [Picture_Path] = ? WHERE [User_Id]] = ?", array($pic, $userId));
         echo 'Picture sucessufully changed!';
     } catch (PDOException $e) {
-        echo "Error!" . "<br/>";
+        echo "Error! > " . $e . "<br/>";
         #die();
     }
 }
 
 function DB_getUserProfilePicture($pdo, $userId) {
     try {
-        $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [[User_Id]] = ?", array($userId), "rows");
+        $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [User_Id]] = ?", array($userId), "rows");
         #foreach ($rows as $row) {
         #    return $row['Picture_Path'];
         if ($rows['Picture_Path'] == NULL) {
-            return "PROFILE PICTURE NOT FOUND!";
+            #return "PROFILE PICTURE NOT FOUND!";
+            return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
         } else {
             return $rows['Picture_Path'];
         }
