@@ -88,7 +88,7 @@ if (isset($_SESSION['username'])) {
                                     if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                                         $msg = '';
                                         // sua chave secreta
-                                        $secret = "6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6";
+                                        $secret = "6LdypyQTAAAAAPaex4p6DqVY6W62Ihld7DDfCMDm";
                                         // verifique a chave secreta
                                         $reCaptcha = new ReCaptcha($secret);
                                         // se submetido, verifique a resposta
