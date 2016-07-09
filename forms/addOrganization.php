@@ -72,7 +72,7 @@ include_once ('../db/functions.php');
        
     </head>
 <!---->
-    <body onload="viewAllOrganization(<?= $userid ?>)">
+    <body>
         
 
         <!-- Top content -->
@@ -96,7 +96,7 @@ include_once ('../db/functions.php');
                                 <div class="form-bottom">
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
-                                            <select class="form-username form-control" name="org" id="org-sel" onchange="editOrganizationInformation()" required="required">
+                                            <select class="form-username form-control" name="org" id="org-sel" onchange="editOrganizationInformation()">
                                                 <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                             </select>
                                         </div>

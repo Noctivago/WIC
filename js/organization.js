@@ -160,8 +160,6 @@ function editOrganizationInformation() {
 //    //var span = document.createElement('upda');
 //span.innerHTML = '<button onclick="updateOrg('+org+')" />';
 //document.getElementById('update').onclick = updateOrg(org);
-}
-
 
 
 //validar organização por parte do admin
