@@ -118,7 +118,7 @@ function cleanInformation() {
 function editOrganizationInformation() {
     var orgId = document.getElementById("org-sel").value;
     alert(orgId);
-    var arg = 'orgInformation';
+    var arg = 'validateOrganization';
     var dataString = 'arg=' + arg + '&org=' + orgId;
     alert(dataString);
     $.ajax({
