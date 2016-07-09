@@ -18,7 +18,7 @@
             </div>
             <div class="row">
            
-                       <div class="col-sm-5" style="width:420px">
+                       <div class="col-sm-5">
 
                     <div class="form-box">
                         <div class="form-top">
@@ -112,7 +112,7 @@
                         </div>                   
                         <div class="col-sm-1"></div>
                         
-                        <div class="col-sm-5" style="width:420px">
+                        <div class="col-sm-5">
 
                     <div class="form-box">
                         <div class="form-top">
