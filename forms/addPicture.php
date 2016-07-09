@@ -91,7 +91,7 @@ include_once ('../db/conn.inc.php');
                                             }
 
                                             #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
-                                            $msg = DB_addUserProfilePicture($pdo, $pic, $userId);
+                                            $msg = $pic; #DB_addUserProfilePicture($pdo, $pic, $userId);
                                         }
                                     }
                                     ?>
