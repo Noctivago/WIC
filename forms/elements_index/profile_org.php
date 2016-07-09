@@ -106,7 +106,7 @@
                           </div>
                         </div>-->
 
-                    </div>
+                    
                            
                            
                             <div class="col-sm-5" style="width:420px">
