@@ -712,3 +712,15 @@ function DB_addUserProfilePicture($pdo, $pic, $userId) {
         die();
     }
 }
+
+function DB_createProfileOnRegistration($pdo, $email) {
+    $userId = DB_checkUserByEmail($pdo, $email);
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Profile] ([User_Id], [Enabled]) VALUES(?,?)"
+                . "", array($userId, 1));
+        echo 'Profile Created!';
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
+    }
+}

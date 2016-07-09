@@ -108,7 +108,8 @@ include_once '../db/functions.php';
                                                         . "WIC<br><br>"
                                                         . "Note: Please do not reply to this email! Thanks!";
                                                 $msg = sendEmail($to, $subject, $body) . ' Please check your inbox for foward information!';
-                                                #'<a href=account-recovery.php>Forgot your account details?</a>'
+                                                #CREATE PROFILE
+                                                DB_createProfileOnRegistration($pdo, $email);
                                             } catch (Exception $ex) {
                                                 echo "ERROR!";
                                             }
