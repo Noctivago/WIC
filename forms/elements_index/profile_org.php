@@ -12,9 +12,12 @@
     <div class="inner-bg">
         <div class="container">
 
-
             <div class="row">
-                <div classe="col-sm-11">
+                <div class="col-sm-8 col-lg-offset-2 text">
+            </div>
+            </div>
+            <div class="row">
+           
                        <div class="col-sm-5" style="width:420px">
 
                     <div class="form-box">
