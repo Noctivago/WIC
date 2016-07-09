@@ -2,10 +2,6 @@
 <main class="cd-main-content">
 <div class="content-wrapper">
 
-
-<h3 style="color:black">  Edit Your Profle</h3>
-
-
 <div class="top-content">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
