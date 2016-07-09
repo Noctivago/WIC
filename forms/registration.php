@@ -109,6 +109,7 @@ include_once '../db/functions.php';
                                                         . "Note: Please do not reply to this email! Thanks!";
                                                 $msg = sendEmail($to, $subject, $body) . ' Please check your inbox for foward information!';
                                                 #CREATE PROFILE
+                                                DB_createProfileOnRegistration($pdo, $email);
                                             } catch (Exception $ex) {
                                                 echo "ERROR!";
                                             }
