@@ -435,7 +435,7 @@ function DB_addOrganization($pdo, $userid,$orgId, $name, $phone, $mobile, $addre
         echo 'Organization added!';
         }else{
             sql($pdo, "UPDATE [dbo].[Organization]SET [Name] =?, [Phone_Number] = ?, [Mobile_Number] = ?, [Address] = ?,[Facebook] = ? ,[Twitter] = ? ,[Linkdin] = ? , [Organization_Email] = ? ,[Website] = ? WHERE [Organization].[Id] = ?", array($name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $orgId));
-         echo 'Organization information as been updated!';
+         echo 'Organization information as been updated!' .$orgId;
    }
     } catch (Exception $exc) {
         echo 'ERROR INSERTING ORGANIZATION';
