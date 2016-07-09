@@ -98,7 +98,7 @@ function removeOrganization($IdOrg, $id) {
     return false;
 
 }
-function cleanInformation(){
+function cleanInformation() {
     document.getElementById('Org').value = 0;
     document.getElementById('name').value = "";
     document.getElementById('phone').value = "";
@@ -118,6 +118,32 @@ function cleanInformation(){
 function editOrganizationInformation() {
     var orgId = document.getElementById('org-sel').value;
     alert(orgId);
+    var arg = 'orgInformation';
+    var dataString = 'arg=' + arg + '&org=' + orgId;
+    alert(dataString);
+    $.ajax({
+        type: 'POST',
+        url: "../orgsubmit.php",
+        data: dataString,
+        cache: false,
+        sucess: function (result) {
+            alert(result);
+            document.getElementById('name').innerHTML = result;
+            document.getElementById('phone').innerHTML = result;
+            document.getElementById('mobile').innerHTML = result;
+            document.getElementById('address').innerHTML = result;
+            document.getElementById('facebook').innerHTML = result;
+            document.getElementById('twitter').innerHTML = result;
+            document.getElementById('linkdin').innerHTML = result;
+            document.getElementById('orgEmail').innerHTML = result;
+            document.getElementById('website').innerHTML = result;
+            document.getElementById('add').style = "display: none";
+            document.getElementById('update').style = "display: true";
+            document.getElementById('cancel').style = "display: true";
+        }
+    });
+}
+
 //    document.getElementById('Org').value = $('#mytable #' + cont + ' #OOrg').text();
 //    document.getElementById('name').value = $('#mytable #' + cont + ' #OName').text();
 //    document.getElementById('phone').value = $('#mytable #' + cont + ' #OPhone').text();
@@ -132,10 +158,10 @@ function editOrganizationInformation() {
 //    document.getElementById('update').style = "display: true";
 //    document.getElementById('cancel').style = "display: true";
 //    //var span = document.createElement('upda');
-    //span.innerHTML = '<button onclick="updateOrg('+org+')" />';
-    //document.getElementById('update').onclick = updateOrg(org);
-    }
-    
+//span.innerHTML = '<button onclick="updateOrg('+org+')" />';
+//document.getElementById('update').onclick = updateOrg(org);
+}
+
 
 
 //validar organização por parte do admin
