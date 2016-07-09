@@ -11,15 +11,15 @@
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1 style="color: darkgray"><strong>UPLOAD A PICTURE</strong> </h1>
+                            <h1 style="color: darkgray"><strong>asd A PICTURE</strong> </h1>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-8 col-sm-offset-2 text">
 
                             <div class="form-box">
-                                <div class="form-top">
+                                <div class="form-bottom">
                                     <?php
                                     $msg = '';
 
