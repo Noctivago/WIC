@@ -32,7 +32,7 @@ if ($arg === 'addOrganization') {
         $rows = sql($pdo, "SELECT [Id] FROM [dbo].[Organization] WHERE [Id]=? and [Enabled] = 1 and [Validate]=1", array($orgId), "rows");
         echo 'vai para o caralho';
         foreach ($rows as $row) {
-            echo $row['Id'];
+            echo $rows['Id'];
         }
         echo 'adsadsadas';
     } catch (Exception $ex) {
