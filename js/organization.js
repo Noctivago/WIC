@@ -128,7 +128,7 @@ function editOrganizationInformation() {
         cache: false,
         sucess: function (result) {
             alert(result);
-            //document.getElementById('name').innerHTML = result;
+            document.getElementById('name').innerHTML = result;
 //            document.getElementById('phone').innerHTML = result;
 //            document.getElementById('mobile').innerHTML = result;
 //            document.getElementById('address').innerHTML = result;

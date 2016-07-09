@@ -5,8 +5,8 @@ include_once ('../db/functions.php');
 ?>
 
 <?
-// error_reporting(E_ALL);
-// ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +76,7 @@ include_once ('../db/functions.php');
                                         $fileSize = $_FILES['Photo']['size'];
                                         $fileType = $_FILES['Photo']['type'];
                                         $temp = explode(".", $_FILES["file"]["name"]);
-                                        $newfilename = getDateToDB() . '_' . $userId . '.' . end($temp);
+                                        $newfilename = generateActivationCode() . '_' . $userId . '.' . end($temp);
                                         #$filePath = $uploadDir . $fileName;
                                         $filePath = $uploadDir . $newfilename;
                                         #$result = move_uploaded_file($tmpName, $filePath);
