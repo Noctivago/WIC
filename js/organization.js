@@ -116,7 +116,7 @@ function cleanInformation() {
 
 //edidar a informação da organização
 function editOrganizationInformation() {
-    var orgId = document.getElementById("org-sel").value;
+    var orgId = $("#org-sel").val();
     alert(orgId);
     var arg = 'orgInformation';
     var dataString = 'arg=' + arg + '&org=' + orgId;
