@@ -705,7 +705,7 @@ function DB_changeUserPassword($pdo, $userId, $password) {
 
 function DB_addUserProfilePicture($pdo, $pic, $userId) {
     try {
-        sql($pdo, "UPDATE [dbo].[User] SET [Picture] = ? WHERE [Id] = ?", array($pic, $userId));
+        sql($pdo, "UPDATE [dbo].[Profile] SET [Picture] = ? WHERE [Id] = ?", array($pic, $userId));
         echo 'Picture sucessufully changed!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
