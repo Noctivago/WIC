@@ -29,8 +29,6 @@ include_once ('../db/functions.php');
 
                                         <!-- GET USER PICS PATH -->
                                         <!--<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">-->
-                                        <?= DB_getUserProfilePicture($pdo, $_SESSION['id']) ?>
-                                        <?= $userInfo = DB_getUserProfileInfo($pdo, $_SESSION['id']) ?>
                                         <?php
                                         if (isset($_POST["changePic"])) {
                                             $userId = $_SESSION['id'];
@@ -69,6 +67,8 @@ include_once ('../db/functions.php');
                                             $msg = DB_updateUserProfile($pdo, $fname, $lname, $countryId, $userId);
                                         }
                                         ?>
+                                        <?= DB_getUserProfilePicture($pdo, $_SESSION['id']) ?>
+                                        <?= $userInfo = DB_getUserProfileInfo($pdo, $_SESSION['id']) ?>
                                         <br>
                                         <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
                                             Select image to upload:
