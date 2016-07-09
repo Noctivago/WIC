@@ -718,7 +718,7 @@ function DB_createProfileOnRegistration($pdo, $email) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Profile] ([User_Id], [Enabled]) VALUES(?,?)"
                 . "", array($userId, 1));
-        echo 'Profile Created!';
+        #echo 'Profile Created!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
