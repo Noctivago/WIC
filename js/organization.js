@@ -102,19 +102,8 @@ function removeOrganization($IdOrg, $id) {
 }
 //edidar a informação da organização
 function editOrganizationInformation(cont) {
-    //   var x = document.getElementById("mytable").getElementsByTagName("td").item(cont);
-    //   alert(x[0]);
-//    var orgId = $('#mytable #' + cont + ' #Org').text();
-//    var Name = $('#mytable #' + cont + ' #OName').text();
-//    var Phone = $('#mytable #' + cont + ' #OPhone').text();
-//    var Mobile = $('#mytable #' + cont + ' #OMobile').text();
-//    var Address = $('#mytable #' + cont + ' #OAddress').text();
-//    var Facebook = $('#mytable #' + cont + ' #OFacebook').text();
-//    var Twitter = $('#mytable #' + cont + ' #OTwitter').text();
-//    var Linkdin = $('#mytable #' + cont + ' #OLinkdin').text();
-//    var OEmail = $('#mytable #' + cont + ' #OO_Email').text();
-//    var Website = $('#mytable #' + cont + ' #OWebsite').text();
-    // = $('#mytable #' + cont + ' #Org').text();
+    var org = $('#mytable #' + cont + ' #Org').text();
+    alert(org);
     document.getElementById('name').value = $('#mytable #' + cont + ' #OName').text();
     document.getElementById('phone').value = $('#mytable #' + cont + ' #OPhone').text();
     document.getElementById('mobile').value = $('#mytable #' + cont + ' #OMobile').text();
@@ -125,25 +114,9 @@ function editOrganizationInformation(cont) {
     document.getElementById('orgEmail').value = $('#mytable #' + cont + ' #OO_Email').text();
     document.getElementById('website').value = $('#mytable #' + cont + ' #OWebsite').text();
     document.getElementById('update').style = "display: true";
-//    alert(Name + '   ' + Phone + '   ' + Mobile + '   ' + Address + '   ' + Facebook + '   ' + Twitter + '   ' + Linkdin + '   ' + OEmail + '   ' + Website);
-
-
-    /**
-     var dataString = 'arg=' + arg; //+ '&org=' + org + '&userId='+userId;
-     //alert(dataString);
-     $.ajax({
-     type: 'POST',
-     url: "../orgsubmit.php",
-     data: dataString,
-     cache: false,
-     sucess: function (result) {
-     alert('func');
-     var ajaxDisplay = document.getElementById('name');
-     ajaxDisplay.innerHTML = result['Id'];
-     }
-     });
-     return false;
-     */}
+    document.getElementById('Cancel').style = "display: true";
+    document.getElementById('update').onclick = "updateOrg('')";
+}
 
 
 //validar organização por parte do admin
