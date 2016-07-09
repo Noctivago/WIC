@@ -125,7 +125,7 @@ include_once ('../db/functions.php');
                                         </div>
                                         <button type="submit" id="add" class="btn" name="addOrg" style="display: true;">NEW ORGANIZATION!</button>
                                         <button type="submit" id="update" class="btn" name="addOrg" style="display: none;"> Save</button>
-                                        <button type="submit" id="cancel" href="www.wic.club/forms/addorganization.php" style="display: none;"> Cancel </button>
+                                        <button type="submit" id="cancel" class="btn" href="www.wic.club/forms/addorganization.php" style="display: none;"> Cancel </button>
                                     </form>
                                 </div>
                             </div>
