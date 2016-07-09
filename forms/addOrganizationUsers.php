@@ -104,7 +104,7 @@ include_once ('../db/functions.php');
                         <!--                        <div class="col-sm-1 middle-border"></div>-->
                         <div class="col-sm-1"></div>
 
-                        <div class="col-sm-5" id="table-users-in-organization" onload="viewAllUsersInOrganization()">
+                        <div class="col-sm-5" id="table-users-in-organization" >
                             <br>
                             <br>
                             
