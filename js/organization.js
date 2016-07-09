@@ -132,6 +132,7 @@ function updateOrg(org){
     var website = $("#website").val();
     var arg = 'updateOrganizationInform';
     var dataString = 'orgId='+org +'&userid=' + userid + '&name=' + name + '&phone=' + phone + '&mobile=' + mobile + '&address=' + address + '&facebook=' + facebook + '&twitter=' + twitter + '&linkdin=' + linkdin + '&orgEmail=' + orgEmail + '&website=' + website + '&arg=' + arg;
+    alert(dataString);
     if (name === '' || mobile === '' || address === '' || orgEmail === '') {
         alert('Please filld the fields required <br/>Name<br/>mobile<br/>Adress<br/>Organization Email');
     } else
