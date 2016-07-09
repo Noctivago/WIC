@@ -34,7 +34,7 @@
                             <!--                            <div class="form-top-right">
                                                             <i class="fa fa-key"></i>-->
                                                        </div>
-                        </div>
+                        
 
                         <div class="form-bottom">
                             <form role="form" action="" method="post" class="login-form">
@@ -79,7 +79,7 @@
 
                             </form>
                         </div>
-
+</div>
 </div>
                         <!--post modal-->
                         <!--<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
