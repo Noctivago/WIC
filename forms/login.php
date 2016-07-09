@@ -1,5 +1,6 @@
 <?php
 include_once '../db/conn.inc.php';
+include_once '../db/recaptchalib.php';
 ob_start();
 session_start();
 if (isset($_SESSION['username'])) {
@@ -28,7 +29,8 @@ if (isset($_SESSION['username'])) {
         <link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
 
-
+        <!-- RECHAPTA -->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -85,69 +87,83 @@ if (isset($_SESSION['username'])) {
                                     <?php
                                     if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                                         $msg = '';
-                                        try {
-                                            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                                            $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                                            $hashPassword = hash('whirlpool', $password);
-                                            #$val = DB_getLoginFailedValue($pdo, $email);
-                                            if (DB_checkIfUserExists($pdo, $email)) {
-                                                if (DB_checkIfUserEnabled($pdo, $email)) {
-                                                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "rows");
-                                                    #$msg = 'EMAIL FOUND';
-                                                    foreach ($rows as $row) {
-                                                        if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
-                                                            //ADICIONAR PASSWORD
-                                                            $_SESSION['valid'] = true;
-                                                            $_SESSION['timeout'] = time();
-                                                            $_SESSION['id'] = $row['Id'];
-                                                            $_SESSION['username'] = $row['Username'];
-                                                            $_SESSION['email'] = $row['Email'];
-                                                            $_SESSION['password'] = $row['Password'];
-                                                            $msg = 'Welcome ' . $row['Username'];
-                                                            //SET [Login_failed] = 0
-                                                            if (DB_setLoginFailed($pdo, $email)) {
-                                                                header('Location: profile.php');
-                                                            }
-                                                        } else {
-                                                            $val = DB_getLoginFailedValue($pdo, $email);
-                                                            if ($val < 3) {
-                                                                $value = $val + 1;
-                                                                DB_setLoginFailed($pdo, $email, $value);
-                                                                $msg = 'Wrong email or password';
+                                        // sua chave secreta
+                                        $secret = "6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6";
+                                        $response = null;
+                                        // verifique a chave secreta
+                                        $reCaptcha = new ReCaptcha($secret);
+                                        // se submetido, verifique a resposta
+                                        if ($_POST["g-recaptcha-response"]) {
+                                            $response = $reCaptcha->verifyResponse(
+                                                    $_SERVER["REMOTE_ADDR"], $_POST["g-recaptcha-response"]
+                                            );
+                                        }
+                                        if ($response != null && $response->success) {
+                                            try {
+                                                $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+                                                $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
+                                                $hashPassword = hash('whirlpool', $password);
+                                                #$val = DB_getLoginFailedValue($pdo, $email);
+                                                if (DB_checkIfUserExists($pdo, $email)) {
+                                                    if (DB_checkIfUserEnabled($pdo, $email)) {
+                                                        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "rows");
+                                                        #$msg = 'EMAIL FOUND';
+                                                        foreach ($rows as $row) {
+                                                            if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
+                                                                //ADICIONAR PASSWORD
+                                                                $_SESSION['valid'] = true;
+                                                                $_SESSION['timeout'] = time();
+                                                                $_SESSION['id'] = $row['Id'];
+                                                                $_SESSION['username'] = $row['Username'];
+                                                                $_SESSION['email'] = $row['Email'];
+                                                                $_SESSION['password'] = $row['Password'];
+                                                                $msg = 'Welcome ' . $row['Username'];
+                                                                //SET [Login_failed] = 0
+                                                                if (DB_setLoginFailed($pdo, $email)) {
+                                                                    header('Location: profile.php');
+                                                                }
                                                             } else {
-                                                                //BLOCK ACCOUNT
-                                                                DB_setLoginFailed($pdo, $email);
-                                                                DB_setBlockAccount($pdo, $email);
-                                                                //ENVIAR EMAIL COM INSTRUÇÔES DE DESBLOQUEIO
-                                                                $msg = 'Account blocked!';
+                                                                $val = DB_getLoginFailedValue($pdo, $email);
+                                                                if ($val < 3) {
+                                                                    $value = $val + 1;
+                                                                    DB_setLoginFailed($pdo, $email, $value);
+                                                                    $msg = 'Wrong email or password';
+                                                                } else {
+                                                                    //BLOCK ACCOUNT
+                                                                    DB_setLoginFailed($pdo, $email);
+                                                                    DB_setBlockAccount($pdo, $email);
+                                                                    //ENVIAR EMAIL COM INSTRUÇÔES DE DESBLOQUEIO
+                                                                    $msg = 'Account blocked!';
+                                                                }
                                                             }
                                                         }
+                                                    } else {
+                                                        //SE N ESTIVER ENABLED
+                                                        //FOI ENVIADO UM EMAIL PARA A SUA CONTA, POR FAVOR VERIFIQUE
+                                                        $msg = "Account blocked! Please check your email!";
                                                     }
                                                 } else {
-                                                    //SE N ESTIVER ENABLED
-                                                    //FOI ENVIADO UM EMAIL PARA A SUA CONTA, POR FAVOR VERIFIQUE
-                                                    $msg = "Account blocked! Please check your email!";
+                                                    $msg = "Wrong email or password!";
                                                 }
-                                            } else {
-                                                $msg = "Wrong email or password!";
+                                            } catch (Exception $ex) {
+                                                echo "ERROR!";
                                             }
-                                        } catch (Exception $ex) {
-                                            echo "ERROR!";
+                                        } else {
+                                            $msg = 'reCAPTCHA failed!';
                                         }
                                     }
                                     ?>	
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
-
                                             <label class="sr-only" for="form-username">Username</label>
                                             <input type="email" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required autofocus>
-
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-password">Password</label>
                                             <input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password" required>
                                         </div>
+                                        <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
                                         <button type="submit" class="btn" name="login">Sign in!</button>
 
                                     </form>

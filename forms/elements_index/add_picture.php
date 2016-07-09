@@ -1,14 +1,6 @@
-<?php
-include_once ('session.php');
-include_once ('../db/conn.inc.php');
-include_once ('../db/functions.php');
-?>
 
-<?
-// error_reporting(E_ALL);
-// ini_set("display_errors", 1);
-?>
-
+<main class="cd-main-content">
+<div class="content-wrapper">
 
         <!-- Top content -->
         <div class="top-content">
@@ -19,12 +11,12 @@ include_once ('../db/functions.php');
 
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>UPLOAD PICTURE</strong> </h1>
+                            <h1 style="color: darkgray"><strong>asd A PICTURE</strong> </h1>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-8 col-sm-offset-2 text">
 
                             <div class="form-box">
                                 <div class="form-bottom">
@@ -102,15 +94,6 @@ include_once ('../db/functions.php');
 
         </div>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-
-                </div>
-            </div>
-        </footer>
-
         <!-- Javascript -->
         <script src="../../assets/js/jquery-1.11.1.min.js"></script>
         <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
@@ -120,7 +103,6 @@ include_once ('../db/functions.php');
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
-    </body>
-
-
-</html>
+  
+</div>
+</main>

@@ -44,17 +44,19 @@ include_once ('../db/functions.php');
     <div class="inner-bg">
         <div class="container">
             
-            <div class="row">
+<!--            <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
                             <h1 style="color: darkgray"><strong>NEW ORGANIZATION</strong> </h1>
-            </div>
+            </div>-->
 
 
-            <div class="row" onload="viewAllOrganization(<?= $userid ?>)">
+<div class="row" style="color: #000" onload="viewAllOrganization(<?= $userid ?>)">
+                
                 <div class="col-sm-8 col-sm-offset-2 text">
 
                     <div class="form-box">
                         <div class="form-top">
+                            <h1 style="color: darkgray"><strong>NEW ORGANIZATION</strong> </h1>
                             <div class="form-top">
 
                                 <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
@@ -68,7 +70,7 @@ include_once ('../db/functions.php');
                         </div>
 
                         <div class="form-bottom">
-                            <h3 style="color:black">  New Organization</h3>
+                            
                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
                                             <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>

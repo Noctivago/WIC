@@ -98,6 +98,22 @@ function removeOrganization($IdOrg, $id) {
     return false;
 
 }
+function cleanInformation(){
+    document.getElementById('Org').value = 0;
+    document.getElementById('name').value = "";
+    document.getElementById('phone').value = "";
+    document.getElementById('mobile').value = "";
+    document.getElementById('address').value = "";
+    document.getElementById('facebook').value = "";
+    document.getElementById('twitter').value = "";
+    document.getElementById('linkdin').value = "";
+    document.getElementById('orgEmail').value = "";
+    document.getElementById('website').value = "";
+    document.getElementById('add').style = "display: true";
+    document.getElementById('update').style = "display: none";
+    document.getElementById('cancel').style = "display: none";
+}
+
 //edidar a informação da organização
 function editOrganizationInformation(cont) {
     
@@ -119,39 +135,7 @@ function editOrganizationInformation(cont) {
     //document.getElementById('update').onclick = updateOrg(org);
     }
     
-function updateOrg(org){
-    alert(org);
-    var userid = $("#userid").val();
-    var name = $("#name").val();
-    var phone = $("#phone").val();
-    var mobile = $("#mobile").val();
-    //  var logotype = $("#logotype").val();
-    var address = $("#Address").val();
-    var facebook = $("#facebook").val();
-    var twitter = $("#twitter").val();
-    var linkdin = $("#linkdin").val();
-    var orgEmail = $("#email").val();
-    var website = $("#website").val();
-    var arg = 'updateOrganizationInform';
-    var dataString = 'orgId='+org +'&userid=' + userid + '&name=' + name + '&phone=' + phone + '&mobile=' + mobile + '&address=' + address + '&facebook=' + facebook + '&twitter=' + twitter + '&linkdin=' + linkdin + '&orgEmail=' + orgEmail + '&website=' + website + '&arg=' + arg;
-    alert(dataString);
-    if (name === '' || mobile === '' || address === '' || orgEmail === '') {
-        alert('Please filld the fields required <br/>Name<br/>mobile<br/>Adress<br/>Organization Email');
-    } else
-    {
-        $.ajax({
-            type: "POST",
-            url: "../orgsubmit.php",
-            data: dataString,
-            cache: false,
-            sucess: function (result) {
-                alert(result);
-            }
-        });
-        viewAllOrganization();
-        return false;
-    }
-}
+
 
 //validar organização por parte do admin
 function validateOrganization() {
