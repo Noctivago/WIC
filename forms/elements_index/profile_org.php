@@ -104,7 +104,7 @@
 
                     
                            
-                        <div class="col-sm-1 middle-border">
+                        <div class="col-sm-1 middle-border" style="color: darkgray">
                         </div>                   
                         <div class="col-sm-1"></div>
                         

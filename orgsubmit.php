@@ -24,6 +24,20 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'ERRO';
     }
+    
+} else if ($arg === 'orgInformation') {
+    //$userid = $_SESSION['id'];
+    try {
+        $orgId = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
+        $rows = sql($pdo, "SELECT [Id] FROM [dbo].[Organization] WHERE [Id]=? and [Enabled] = 1 and [Validate]=1", array($orgId), "rows");
+        echo 'vai para o caralho';
+        foreach ($rows as $row) {
+            echo $row['Id'];
+        }
+        echo 'adsadsadas';
+    } catch (Exception $ex) {
+        echo 'error';
+    }
 } else if ($arg === 'viewOrganization') {
     try {
         $id = $_SESSION['Id'];
@@ -132,19 +146,7 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'Error';
     }
-} else if ($arg === 'orgInformation') {
-    //$userid = $_SESSION['id'];
-    try {
-        $orgId = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
-        $rows = sql($pdo, "SELECT [Id] FROM [dbo].[Organization] WHERE [Id]=? and [Enabled] = 1 and [Validate]=1", array($orgId), "rows");
-        echo 'vai para o caralho';
-        foreach ($rows as $row) {
-            echo $row['Id'];
-        }
-        echo 'adsadsadas';
-    } catch (Exception $ex) {
-        echo 'error';
-    }
+
 } else if ($arg === 'assignUserInOrganization') {
     try {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
