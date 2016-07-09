@@ -88,17 +88,14 @@ if (isset($_SESSION['username'])) {
                                     if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                                         $msg = '';
                                         // sua chave secreta
-                                        $secret = "6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6";
-                                        $response = null;
+                                        $secret = "6LdypyQTAAAAAPaex4p6DqVY6W62Ihld7DDfCMDm";
                                         // verifique a chave secreta
                                         $reCaptcha = new ReCaptcha($secret);
                                         // se submetido, verifique a resposta
-                                        if ($_POST["g-recaptcha-response"]) {
-                                            $response = $reCaptcha->verifyResponse(
-                                                    $_SERVER["REMOTE_ADDR"], $_POST["g-recaptcha-response"]
-                                            );
-                                        }
-                                        if ($response != null && $response->success) {
+                                        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+                                        $responseData = json_decode($verifyResponse);
+                                        // se resposta ok
+                                        if ($response->success) {
                                             try {
                                                 $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
                                                 $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
@@ -148,6 +145,7 @@ if (isset($_SESSION['username'])) {
                                             } catch (Exception $ex) {
                                                 echo "ERROR!";
                                             }
+                                            // se resposta KO
                                         } else {
                                             $msg = 'reCAPTCHA failed! > ' . $response;
                                         }
