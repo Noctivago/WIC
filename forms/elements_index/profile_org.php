@@ -36,7 +36,7 @@
                             <form role="form" action="" method="post" class="login-form">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Company Name:</label>
-                                    <input type="text" style="height: 30px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    <input type="text" style="height: 50px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Adress:</label>
