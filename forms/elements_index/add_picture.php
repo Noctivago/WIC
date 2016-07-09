@@ -8,42 +8,7 @@ include_once ('../db/functions.php');
 // error_reporting(E_ALL);
 // ini_set("display_errors", 1);
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-    <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>UPLOAD PICTURE</title>
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../assets/css/form-elements.css">
-        <link rel="stylesheet" href="../assets/css/style.css">
-
-
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="../assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-
-    </head>
-
-    <body>
 
         <!-- Top content -->
         <div class="top-content">
@@ -69,11 +34,11 @@ include_once ('../db/functions.php');
 // Check if image file is a actual image or fake image
                                     if (isset($_POST["submit"])) {
                                         $target_dir = "../pics/";
-                                        $target_file = $target_dir . basename($_FILES["fileToUpload"]["TESTE"]);
-                                        #$target_file = $target_dir . basename($_FILES["fileToUpload"][$_SESSION['id']]);
+                                        #$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+                                        $target_file = $target_dir . basename($_FILES["fileToUpload"][$_SESSION['id']]);
                                         $uploadOk = 1;
                                         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-                                        $check = getimagesize($_FILES["fileToUpload"]["name"]);
+                                        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                                         if ($check !== false) {
                                             echo "File is an image - " . $check["mime"] . ".";
                                             $uploadOk = 1;
@@ -147,15 +112,14 @@ include_once ('../db/functions.php');
         </footer>
 
         <!-- Javascript -->
-        <script src="../assets/js/jquery-1.11.1.min.js"></script>
-        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../assets/js/jquery.backstretch.min.js"></script>
-        <script src="../assets/js/scripts.js"></script>
-        <script src="../assets/js/scripts.js" type="text/javascript"></script>
+        <script src="../../assets/js/jquery-1.11.1.min.js"></script>
+        <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../../assets/js/jquery.backstretch.min.js"></script>
+        <script src="../../assets/js/scripts.js"></script>
+        <script src="../../assets/js/scripts.js" type="text/javascript"></script>
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
-
     </body>
 
 
