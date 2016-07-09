@@ -14,7 +14,6 @@ function assignUserInOrganization() {
             alert(result);
         }
     });
-    viewAllUsersInOrganization();
     return false;
 }
 
@@ -42,7 +41,6 @@ function removeUserInOrganization() {
 function viewAllUsersInOrganization() {
     var org = document.getElementById("org").value;
     alert(org);
-    var orgId = $("#org2 #org").val();
     var arg = 'viewAllUsersInOrganization';
     var dataString = 'arg=' + arg + '&orgId=' + org;
     alert(dataString);

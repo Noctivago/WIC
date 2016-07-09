@@ -174,12 +174,12 @@ if ($arg === 'addOrganization') {
     try {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_ID]=? and [Enabled]=1", array($orgId), "rows");
-        echo "<table class='table table-striped' id='table'><tr><th>ID</th><th>Name</th><th>Email</th></tr>";
+        echo "<table class='table table-striped' id='table'><tr><th>Organization</th><th>User</th><th>Validation</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
+            echo "<td>" . $row['Organization_Id'] . "</td>";
             echo "<td>" . $row['User_Id'] . "</td>";
-            echo "<td>" . $row['Enabled'] . "</td>";
-            echo "<td>" . $row['Responded'] . "</td>";
+            echo "<td>" . $row['User_Validation'] . "</td>";
             echo "<tr>";
         }
         echo "</table>";
