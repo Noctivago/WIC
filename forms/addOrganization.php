@@ -123,8 +123,8 @@ include_once ('../db/functions.php');
                                             <input type="text" name="website" placeholder="ORGANIZATION WEBSITE" class="form-password form-control" id="website" required>
                                         </div>
                                         <button type="submit" id="add" class="btn" name="addOrg" visible="true">NEW ORGANIZATION!</button>
-                                        <button type="submit" id="update" class="btn" name="Update" style="display: none;"> Save</button>
-                                        <button type="submit" id="cancel" class="btn" name="Cancel" style="display: none;"> Cancel </button>
+                                        <input type="button" id="update" class="btn" name="Update" style="display: none;"/>
+                                        <input type="button" id="cancel" class="btn" name="Cancel" style="display: none;"/>
                                     </form>
                                 </div>
                             </div>
