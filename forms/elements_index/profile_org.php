@@ -36,40 +36,40 @@
                             <form role="form" action="" method="post" class="login-form">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Company Name:</label>
-                                    <input type="text" style="height: 50px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Adress:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Web Site:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Facebook:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Twitter:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Linkedin:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Email</label>
-                                    <input type="text" style="height: 30px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
+                                    <input type="text" style="height: 40px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Country:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">City:</label>
-                                    <input type="password" style="height: 30px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
+                                    <input type="password" style="height: 40px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
                                 </div>
                                 <button type="submit" class="btn" name="login">Save Changes!</button>
 
@@ -129,40 +129,40 @@
                             <form role="form" action="" method="post" class="login-form">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Company Name:</label>
-                                    <input type="text" style="height: 30px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Adress:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Web Site:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Facebook:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Twitter:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Linkedin:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Email</label>
-                                    <input type="text" style="height: 30px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
+                                    <input type="text" style="height: 40px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Country:</label>
-                                    <input type="text" style="height: 30px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">City:</label>
-                                    <input type="password" style="height: 30px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
+                                    <input type="password" style="height: 40px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
                                 </div>
                                 <button type="submit" class="btn" name="login">Save Changes!</button>
 
