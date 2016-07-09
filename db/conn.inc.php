@@ -720,8 +720,8 @@ function DB_getUserProfilePicture($pdo, $userId) {
         #foreach ($rows as $row) {
         #    return $row['Picture_Path'];
         if ($rows['Picture_Path'] == NULL) {
-            #return "PROFILE PICTURE NOT FOUND!";
-            return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
+            return $rows['Picture_Path'];
+            #return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
         } else {
             return $rows['Picture_Path'];
         }
@@ -735,7 +735,7 @@ function DB_getUserProfilePicture($pdo, $userId) {
 function DB_createProfileOnRegistration($pdo, $email) {
     $userId = DB_checkUserByEmail($pdo, $email);
     try {
-        sql($pdo, "INSERT INTO [dbo].[Profile] ([User_Id], [Enabled]) VALUES(?,?)"
+        sql($pdo, "INSERT INTO [dbo].[Profile] ([User_Id], [Enabled], [Picture_Path]) VALUES(?,?, 'http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png')"
                 . "", array($userId, 1));
         #echo 'Profile Created!';
     } catch (PDOException $e) {
