@@ -473,17 +473,17 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
         echo "<option value='0'></option>";
         foreach ($rows as $row) {
             $cont +=1;
-            echo "<option value='" . $cont . "'>" . htmlspecialchars($row['Name']) . "</option>";
-            echo "<input type='hidden' id='OOrg' value='".$row['Id']."'/>";
-            echo "<input type='hidden' id='OName' value='".$row['Id']."'/>";
-            echo "<input type='hidden' id='OPhone' value='".$row['Phone_Number']."'/>";
-            echo "<input type='hidden' id='OMobile' value='".$row['Mobile_Number']."'/>";
-            echo "<input type='hidden' id='OAddress' value='".$row['Address']."'/>";
-            echo "<input type='hidden' id='OFacebook' value='".$row['Facebook']."'/>";
-            echo "<input type='hidden' id='OTwitter' value='".$row['Twitter']."'/>";
-            echo "<input type='hidden' id='OLinkdin' value='".$row['Linkdin']."'/>";
-            echo "<input type='hidden' id='OO_Email' value='".$row['Organization_Email']."'/>";
-            echo "<input type='hidden' id='OWebsite' value='".$row['Website']."'/>";
+            echo "<option value='" . $cont . "'>" . htmlspecialchars($row['Name']) . "
+            <input type='hidden' id='OOrg' value='".$row['Id']."'/>
+            <input type='hidden' id='OName' value='".$row['Id']."'/>
+            <input type='hidden' id='OPhone' value='".$row['Phone_Number']."'/>
+            <input type='hidden' id='OMobile' value='".$row['Mobile_Number']."'/>
+            <input type='hidden' id='OAddress' value='".$row['Address']."'/>
+            <input type='hidden' id='OFacebook' value='".$row['Facebook']."'/>
+            <input type='hidden' id='OTwitter' value='".$row['Twitter']."'/>
+            <input type='hidden' id='OLinkdin' value='".$row['Linkdin']."'/>
+            <input type='hidden' id='OO_Email' value='".$row['Organization_Email']."'/>
+            <input type='hidden' id='OWebsite' value='".$row['Website']."'/> </option>";
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION TABLE';
