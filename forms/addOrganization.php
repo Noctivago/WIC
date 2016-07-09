@@ -96,7 +96,7 @@ include_once ('../db/functions.php');
                                 <div class="form-bottom">
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
-                                            <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()" required="required">
+                                            <select class="form-username form-control" name="org" id="org" onchange="editOrganizationInformation()" required="required">
                                                 <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                             </select>
                                         </div>
@@ -129,6 +129,7 @@ include_once ('../db/functions.php');
                                         </div>
                                         <button type="submit" id="add" class="btn" name="addOrg" style="display: true;">NEW ORGANIZATION!</button>
                                         <button type="submit" id="update" class="btn" name="addOrg" style="display: none;"> Save</button>
+                                        <button type="submit" id="delete" class="btn" onclick="removeOrganization()" style="display: none;"> Delete </button>
                                         <button type="submit" id="cancel" class="btn" onclick="cleanInformation()" style="display: none;"> Cancel </button>
                                     </form>
                                 </div>
