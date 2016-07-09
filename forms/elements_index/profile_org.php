@@ -118,12 +118,12 @@
                         <div class="form-top">
                             <div class="form-top-left"></div>
                             <div class="form-top-right">
-
+</div>
                                 <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
                                 <input style="color: black; width: 370px;" class="text-left center-block well well-sm" type="file">
                                 <!--<h6 style="color:black">Upload a different photo...</h6>-->
 
-                            </div>
+                            
                             <!--                            <div class="form-top-right">
                                                             <i class="fa fa-key"></i>
                                                         </div>-->
