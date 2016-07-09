@@ -84,7 +84,7 @@ if (isset($_SESSION['username'])) {
 
                                 <div class="form-bottom">
                                     <?php
-                                    if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password']) && isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
+                                    if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                                         $msg = '';
                                         try {
                                             $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
