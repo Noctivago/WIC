@@ -25,15 +25,14 @@ function readDataOrganization(){
         data: dataString,
         cache: false,
         sucess: function (result) {
-            response = result;
-            alert(response);
-         },
-        error: function(jqXHR, textStatus, errorThrown) {
-           console.log(textStatus, errorThrown);
+           if(result){
+            var resultado = eval(result);
+            alert(resultado);
+        }else{
+            alert('error');
         }
-    });
-    alert(response);
-    return false;
+            }
+        });
 }
 function addOrganization() {
 
