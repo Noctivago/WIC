@@ -16,7 +16,7 @@ function readAllUserNewsletter() {
 function readDataOrganization(){
     var orgId = $("#org-sel").val();
     alert(orgId);
-    var response
+    var response;
     $.ajax({ url: '../orgsubmit.php',
          data: {arg: 'viewAllUsersInOrganization',org: orgId},
          type: 'post',
