@@ -14,9 +14,16 @@ function readAllUserNewsletter() {
 }
 
 function readDataOrganization(){
-    var orgId = $("org-sel").val();
+    var orgId = $("#org-sel").val();
     alert(orgId);
-    
+    var arg = 'vi' 
+    $.ajax({ url: '../orgsubmit.php',
+         data: {arg: 'v',org: orgId},
+         type: 'post',
+         success: function(output) {
+                      alert(output);
+                  }
+});
 }
 function addOrganization() {
 
