@@ -71,7 +71,6 @@ $userInfo = array();
                                         ?>
                                         <?= DB_getUserProfilePicture($pdo, $_SESSION['id']) ?>
                                         <?= $userInfo = DB_getUserProfileInfo($pdo, $_SESSION['id']) ?>
-                                        <br>
                                         <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
                                             Select image to upload:
                                             <input type="file" name="Photo" id="Photo" required="">
