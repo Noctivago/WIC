@@ -16,16 +16,21 @@ function readAllUserNewsletter() {
 function readDataOrganization(){
     var orgId = $("#org-sel").val();
     alert(orgId);
+    var arg = 'viewAllUsersInOrganization';
+    var dataString = 'arg=' +arg + '&orgId=' + orgId;
     var response;
-    $.ajax({ url: '../orgsubmit.php',
-         data: {arg: 'viewAllUsersInOrganization',org: orgId},
-         type: 'POST',
-         success: function(output) {
-                      response = output;
-                  }
-});
-alert(response);
-return false;
+    $.ajax({
+        type: 'POST',
+        url: "orgsubmit.php",
+        data: dataString,
+        cache: false,
+        sucess: function (result) {
+            response = result;
+            alert(response);
+        }
+    });
+    alert(response);
+    return false;
 }
 function addOrganization() {
 

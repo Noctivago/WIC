@@ -202,7 +202,7 @@ if ($arg === 'addOrganization') {
             $cont += 1;
             echo "<tr id=" . $cont . ">";
             echo "<td >" . $row['id'] . "</td>";
-            echo "<td>" . $row['orgName'] . "</td>";
+            echo "<td>"  . $row['orgName'] . "</td>";
             echo "<td>" . $row['email'] . "</td>";
             echo "<td><input type='button' value='Delete' onClick='removeUserInOrganization(" . $row['id'] . ")'></td>";
             echo "<tr>";
