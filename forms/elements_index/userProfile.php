@@ -75,7 +75,7 @@ $userInfo = array();
                                         </div>
                                         <div col-sm-6 col-sm-offset-2 text>
                                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
-                                                Select image to upload:
+                                                <!--Select image to upload:-->
                                                 <input type="file" name="Photo" id="Photo" required="">
                                                 <button type="submit" class ="btn" name="changePic">Change picture!</button>
                                             </form>
