@@ -15,7 +15,6 @@ function readAllUserNewsletter() {
 
 function readDataOrganization(){
     var orgId = $("#org").val();
-    
     alert(orgId);
     var arg = 'viewAllUsersInOrganization';
     var dataString = 'arg=' +arg + '&orgId=' + orgId;
