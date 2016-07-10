@@ -27,6 +27,9 @@ function readDataOrganization(){
         sucess: function (result) {
             response = result;
             alert(response);
+         },
+        error: function(jqXHR, textStatus, errorThrown) {
+           console.log(textStatus, errorThrown);
         }
     });
     alert(response);
