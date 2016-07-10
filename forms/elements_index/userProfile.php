@@ -39,6 +39,7 @@ $userInfo = array();
                                             $fileName = $_FILES['Photo']['name'];
                                             $tmpName = $_FILES['Photo']['tmp_name'];
                                             $fileSize = $_FILES['Photo']['size'];
+                                            //FALTA VALIDAR FILE TIPE E FILE SIZE
                                             $fileType = $_FILES['Photo']['type'];
                                             $temp = explode(".", $_FILES["file"]["name"]);
                                             $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
