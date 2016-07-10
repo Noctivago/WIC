@@ -25,6 +25,11 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
     }
 }
 ?>	
+<script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
+    <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
+    <script src="../js/organization.js" type="text/javascript"/>
 
 
 <body >
@@ -69,7 +74,7 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
                                         <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
 
                                             <div class="form-group" id="org-sel"><h4> <?php echo $msg; ?></h4>
-                                                <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()" required="required">
+                                                <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()">
                                                     <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                                 </select>
                                             </div>
@@ -125,12 +130,6 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
             </div>
     </main>
 
-
-    <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-    <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
-    <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
-    <script src="../js/organization.js" type="text/javascript"/>
 
 </body>
 
