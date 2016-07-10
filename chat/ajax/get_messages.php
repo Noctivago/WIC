@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../../db/FbChatMock.php';
+require_once '../db/FbChatMock.php';
 
 $chat = new FbChatMock();
 $messages = $chat->getMessages();

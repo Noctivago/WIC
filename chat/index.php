@@ -19,7 +19,8 @@
         $_SESSION['id'] = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
         // Load the messages initially
-        require_once __DIR__ . '/../db/FbChatMock.php';
+        #require_once __DIR__ . '/../db/FbChatMock.php';
+        require_once '../db/FbChatMock.php';
         $chat = new FbChatMock();
         $messages = $chat->getMessages();
         ?>
