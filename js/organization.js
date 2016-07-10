@@ -21,6 +21,7 @@ function readDataOrganization(){
     var response;
     $.post("../orgsubmit.php", {arg: arg, id:orgId}, function(result){
             alert(result);
+            console.log(result);
     });
     return false;
 }
