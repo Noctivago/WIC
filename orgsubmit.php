@@ -188,7 +188,7 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'viewAllUsersInOrganization') {
     try {
         $cont = 0;
-        $orgId = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
+        $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $rows = sql($pdo, "SELECT [dbo].[User_In_Organization].[Id] as id ,[Organization].[Name] as orgName
              ,[User].[Email] as email
           ,[Responded]
