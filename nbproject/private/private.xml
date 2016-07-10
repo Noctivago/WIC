@@ -3,8 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/WIC_V/WIC/db/conn.inc.php</file>
-            <file>file:/C:/xampp/htdocs/WIC_V/WIC/forms/elements_index/userProfile.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/account-confirmation.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/CRUDOrganization.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/RolePermission.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/addOrganizationServiceBook.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/js/organization.js</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/db/conn.inc.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/js/OrganizationUsers.js</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/addOrganizationService.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/orgsubmit.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/changePassword.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/profile.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/add_org.php</file>
+            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/RolePermission.js</file>
         </group>
     </open-files>
 </project-private>

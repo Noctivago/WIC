@@ -19,21 +19,11 @@ function readDataOrganization(){
     var arg = 'viewAllUsersInOrganization';
     var dataString = 'arg=' +arg + '&orgId=' + orgId;
     var response;
-    $.ajax({
-        type: 'POST',
-        url: "../orgsubmit.php",
-        data: dataString,
-        cache: false,
-        sucess: function (result) {
-           if(result){
-            var resultado = eval(result);
-            alert(resultado);
-        }else{
-            alert('error');
-        }
-            }
-        });
+    $.post("../orgsubmit.php", {arg: arg, id:orgId}, function(result){
+            alert(result);
+    });
 }
+
 function addOrganization() {
 
     var userid = $("#userid").val();
