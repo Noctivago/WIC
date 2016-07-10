@@ -69,8 +69,28 @@ include_once ('../db/functions.php');
         <!-- javascripto-->
         <script src="../js/organization.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        
-       
+        <script>    function readDataOrganization(){
+    var orgId = $("#org-sel").val();
+    alert(orgId);
+    var arg = 'viewAllUsersInOrganization';
+    var dataString = 'arg=' +arg + '&orgId=' + orgId;
+    var response;
+    $.ajax({
+        type: 'POST',
+        url: "../orgsubmit.php",
+        data: dataString,
+        cache: false,
+        sucess: function (result) {
+           if(result){
+            var resultado = eval(result);
+            alert(resultado);
+        }else{
+            alert('error');
+        }
+            }
+        });
+}
+ </script>      
     </head>
 <!---->
 <body>
