@@ -124,7 +124,7 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
     <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
     <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
-
+    <script src="../js/organization.js"/>
 
 </body>
 
