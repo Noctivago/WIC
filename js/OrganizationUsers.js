@@ -48,6 +48,7 @@ function viewAllUsersInOrganization() {
         data: dataString,
         cache: false,
         success: function (result) {
+            alert(result + 'oi');
             var ajaxDisplay = document.getElementById('table-users-in-organization');
             ajaxDisplay.innerHTML = result;
         }
