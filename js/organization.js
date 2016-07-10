@@ -13,6 +13,11 @@ function readAllUserNewsletter() {
     return false;
 }
 
+function readDataOrganization(){
+    var orgId = $("orgId").val();
+    alert(orgId);
+    
+}
 function addOrganization() {
 
     var userid = $("#userid").val();
