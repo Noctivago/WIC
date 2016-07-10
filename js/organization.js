@@ -258,6 +258,7 @@ function viewAllOrganization(id) {
         data: dataString,
         cache: false,
         success: function (result) {
+            alert(result);
             var ajaxDisplay = document.getElementById('orgresp');
             ajaxDisplay.innerHTML = result;
         }

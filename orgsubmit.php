@@ -190,9 +190,9 @@ if ($arg === 'addOrganization') {
         $cont = 0;
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
         $rows = sql($pdo, "SELECT [dbo].[User_In_Organization].[Id] as id ,[Organization].[Name] as orgName
-	  ,[User].[Email] as email
-      ,[Responded]
-  FROM [dbo].[User_In_Organization]
+                         ,[User].[Email] as email
+          ,[Responded]
+         FROM [dbo].[User_In_Organization]
   join [User]
   on [User].[Id] = [User_In_Organization].[User_Id]
   join [Organization]
