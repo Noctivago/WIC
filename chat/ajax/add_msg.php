@@ -11,4 +11,3 @@ if (isset($_POST['msg'])) {
   $chat = new FbChatMock();
   $result = $chat->addMessage($userId, $msg);
 }
-?>
