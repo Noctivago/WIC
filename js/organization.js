@@ -19,12 +19,13 @@ function readDataOrganization(){
     var response;
     $.ajax({ url: '../orgsubmit.php',
          data: {arg: 'viewAllUsersInOrganization',org: orgId},
-         type: 'post',
+         type: 'POST',
          success: function(output) {
                       response = output;
                   }
 });
 alert(response);
+return false;
 }
 function addOrganization() {
 
@@ -57,6 +58,7 @@ function addOrganization() {
                 alert(result);
             }
         });
+        
         viewAllOrganization();
         return false;
     }
