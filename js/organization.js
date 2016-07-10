@@ -14,7 +14,7 @@ function readAllUserNewsletter() {
 }
 
 function readDataOrganization(){
-    var orgId = $("#org #orgId").val();
+    var orgId = $("org-sel").val();
     alert(orgId);
     
 }
