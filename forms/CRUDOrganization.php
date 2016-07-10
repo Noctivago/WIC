@@ -69,7 +69,7 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
                                         <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
 
                                             <div class="form-group"><h4> <?php echo $msg; ?></h4>
-                                                <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()()" required="required">
+                                                <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()" required="required">
                                                     <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                                 </select>
                                             </div>
