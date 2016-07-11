@@ -62,12 +62,12 @@
                                             }
                                             ?>
                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                               <div class="form-group" id="org-sel">
+<!--                               <div class="form-group" id="org-sel">
                                                     <h4> <?php echo $msg; ?></h4>
                                                     <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()">
                                                         <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                                     </select>
-                                 </div>
+                                 </div>-->
                                 
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Company Name:</label>
