@@ -13,6 +13,16 @@ $msg;
                 <!--<div class = "row"> -->
                 <div class = "col-sm-8 col-lg-offset-2 text">
                     <!--</div> -->
+                    <?php
+                    if (isset($_POST['addComment']) && !empty($_POST['userComment'])) {
+                        $userId = $_SESSION['id'];
+                        $comment = (filter_var($_POST ['userComment'], FILTER_SANITIZE_STRING));
+                        $d = getDateToDB();
+                        #$orgServId = ;
+                        $msg = 'USER > ' . $userId . ' COMMENT > ' . $comment . ' DATE > ' . $d . ' ORGSERID > ' . $orgServId;
+                        echo DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d);
+                    }
+                    ?>
                 </div>
                 <div class = "row">
                     <div class = "col-sm-5">
@@ -64,16 +74,6 @@ $msg;
                                     <div class = "form-bottom">
                                         <!--<div class = "status-upload"> -->
                                         <div class = "cd-label">
-                                            <?php
-                                            if (isset($_POST['addComment']) && !empty($_POST['userComment'])) {
-                                                $userId = $_SESSION['id'];
-                                                $comment = (filter_var($_POST ['userComment'], FILTER_SANITIZE_STRING));
-                                                $d = getDateToDB();
-                                                #$orgServId = ;
-                                                $msg = 'USER > ' . $userId . ' COMMENT > ' . $comment . ' DATE > ' . $d . ' ORGSERID > ' . $orgServId;
-                                                echo DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d);
-                                            }
-                                            ?>
                                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                                 <div class="form-group"><h4> <?php echo $msg; ?></h4>
                                                     <textarea id="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
@@ -90,7 +90,7 @@ $msg;
                             <!--espaço comentários anteriores-->
 
                             <div class="container">
-<?= DB_getCommentsOfService($pdo, $orgServId) ?>
+                                <?= DB_getCommentsOfService($pdo, $orgServId) ?>
 
                             </div><!-- /container -->
                             <!--/espaço comentarios anteriores-->
