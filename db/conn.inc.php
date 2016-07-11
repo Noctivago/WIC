@@ -464,18 +464,20 @@ function DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId) {
         
     }
 }
-function DB_CheckOrganizationInvitation($pdo,$email,$idOrg){
+
+function DB_CheckOrganizationInvitation($pdo, $email, $idOrg) {
     try {
-        $count = sql($pdo,"SELECT * FROM [Organization_Invitation] Where [Email] = ? and [Organization_Id] = ?", array($email,$idOrg), "count");
-        if($count < 0){
+        $count = sql($pdo, "SELECT * FROM [Organization_Invitation] Where [Email] = ? and [Organization_Id] = ?", array($email, $idOrg), "count");
+        if ($count < 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
     } catch (Exception $ex) {
         
     }
 }
+
 function DB_addUserInOrganization($pdo, $email, $idOrg) {
     try {
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
@@ -490,25 +492,24 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
                     echo 'User is already in organization!';
                 }
             } else {
-                if(DB_CheckOrganizationInvitation($pdo,$email,$idOrg)){
+                if (DB_CheckOrganizationInvitation($pdo, $email, $idOrg)) {
                     echo 'Waiting for Resgist';
-                }else{
-                sql($pdo,"INSERT INTO [dbo].[Organization_Invitation]([Email],[Organization_Id] ,[Enabled]) VALUES(?,?,?)", array($email,$idOrg,0));
-                $org = DB_checkOrganization($pdo, $idOrg);
-                $to = $email;
-                $subject = "WIC #INVITATION";
-                $body = "Hi! <br>"
-                        . "You have been invited to be part of an Organization.<br>"
-                        . "Organization name: " . $org . ".<br>"
-                        . "To do that you must sign up at: http://www.wic.club/<br>"
-                        . "Best regards,<br>"
-                        . "WIC<br><br>"
-                        . "Note: Please do not reply to this email! Thanks!";
-                echo sendEmail($to, $subject, $body);
-                //envia convite para o email para se registar.
+                } else {
+                    sql($pdo, "INSERT INTO [dbo].[Organization_Invitation]([Email],[Organization_Id] ,[Enabled]) VALUES(?,?,?)", array($email, $idOrg, 0));
+                    $org = DB_checkOrganization($pdo, $idOrg);
+                    $to = $email;
+                    $subject = "WIC #INVITATION";
+                    $body = "Hi! <br>"
+                            . "You have been invited to be part of an Organization.<br>"
+                            . "Organization name: " . $org . ".<br>"
+                            . "To do that you must sign up at: http://www.wic.club/<br>"
+                            . "Best regards,<br>"
+                            . "WIC<br><br>"
+                            . "Note: Please do not reply to this email! Thanks!";
+                    echo sendEmail($to, $subject, $body);
+                    //envia convite para o email para se registar.
                 }
-                
-                }
+            }
         }
     } catch (Exception $ex) {
         
@@ -876,15 +877,39 @@ function DB_getWicPlannerAsSelect($pdo, $userId) {
 
 //LOAD COMMENTS OF A SERVICE
 function DB_getCommentsOfService($pdo, $orgSerId) {
+    /*
+      <div class="col-sm-5" style="width: 100%">
+      <div class="panel panel-default">
+      <div class="panel-heading">
+      <strong>Joaquina Vitória</strong> <span class="text-muted">commented 5 days ago</span>
+      </div>
+      <div class="panel-body">
+      Panel content
+      </div>
+      </div>
+      </div>
+      </div>
+
+     */
     try {
-        $rows = sql($pdo, "SELECT [User].[UserName]
-        ,[Comment].[Comment]
+        $rows = sql($pdo, "SELECT [User].[UserName] AS UN
+        ,[Comment].[Comment] AS CC
         FROM [dbo].[Comment]
         join [User]
         on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? LIMIT 0,10", array($orgSerId), "rows");
         foreach ($rows as $row) {
             #echo "LINK TO READ ALL";
-            echo "";
+            echo '<div class="col-sm-5" style="width: 100%">';
+            echo '<div class="panel panel-default">';
+            echo '<div class="panel-heading">';
+            echo '<strong>' . $row['UN'] . '</strong> <span class="text-muted">commented...</span>';
+            echo '</div>';
+            echo '<div class="panel-body">';
+            echo $row['UN'];
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
         }
     } catch (Exception $exc) {
         echo 'ERROR READING COMMENTS TABLE';
