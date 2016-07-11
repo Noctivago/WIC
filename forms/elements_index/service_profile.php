@@ -49,7 +49,7 @@ $msg;
                                     </div>
                                     <div class = "form-group">
                                         <label class = "sr-only" for = "form-password">Address:</label>
-                                        <input type = "text" style = "height: 40px" name = "password" placeholder = "Adress:" class = "form-password form-control" id = "form-password" required>
+                                        <input type = "text" style = "height: 40px" name = "password" placeholder = "Address:" class = "form-password form-control" id = "form-password" required>
                                     </div>
 
                                     <button onclick="show('showWICPlanner');" style="display:none;" class = "btn" name = "login">Add to my Wic Planner!</button>
