@@ -26,7 +26,7 @@
                             <!--                            <div class="form-top-right">
                                                             <i class="fa fa-key"></i>-->
                             <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                <input style="color: black;" class="form-username form-control" type="file">
+                                <!--<input style="color: black;" class="form-username form-control" type="file">-->
                                 <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
 
                                                        </div>
@@ -50,33 +50,7 @@
                         </div>
 </div>
 </div>
-                        <!--post modal-->
-                        <!--<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                          <div class="modal-dialog">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                Update Status
-                              </div>
-                              <div class="modal-body">
-                                  <form class="form center-block">
-                                    <div class="form-group">
-                                      <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
-                                    </div>
-                                  </form>
-                              </div>
-                              <div class="modal-footer">
-                                  <div>
-                                  <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-                                    <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-                                          </div>	
-                              </div>
-                          </div>
-                          </div>
-                        </div>-->
 
-                    
-                           
                         <div class="col-sm-1 middle-border"  >
                         </div>                   
                         <div class="col-sm-1"></div>
