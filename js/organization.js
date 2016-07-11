@@ -32,7 +32,7 @@ function readDataOrganization() {
             document.getElementById('linkdin').value = json[0].Linkdin;
             document.getElementById('orgEmail').value = json[0].Organization_Email;
             document.getElementById('website').value = json[0].Website;
-            document.getElementById('add').style = "display: none";
+            document.getElementById('addOrg').style = "display: none";
             document.getElementById('update').style = "display: true";
             document.getElementById('delete').style = "display: true";
             document.getElementById('cancel').style = "display: true";
@@ -137,7 +137,7 @@ function cleanInformation() {
     document.getElementById('linkdin').value = "";
     document.getElementById('orgEmail').value = "";
     document.getElementById('website').value = "";
-    document.getElementById('add').style = "display: true";
+    document.getElementById('addOrg').style = "display: true";
     document.getElementById('update').style = "display: none";
     document.getElementById('delete').style = "display: none";
 //    document.getElementById('delete').style = "display: none";
