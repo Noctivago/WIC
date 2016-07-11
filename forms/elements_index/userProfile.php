@@ -56,7 +56,7 @@ $userInfo = array();
                                                     $fileName = addslashes($fileName);
                                                     $filePath = addslashes($filePath);
                                                 }
-
+                                                //REMOVE ATUAL
                                                 #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
                                                 $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
                                             }
