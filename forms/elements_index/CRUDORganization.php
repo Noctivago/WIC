@@ -24,7 +24,7 @@
 
                                     <div class="form-box">
                                         <div class="form-top">
-                                            <h1 style="color: darkgray"><strong>NOVA ORGANIZATION</strong> </h1>
+                                            <h1 style="color: darkgray"><strong> ORGANIZATION</strong> </h1>
                                             <div class="form-top">
 
 <!--                                                <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
@@ -119,3 +119,5 @@
                 </div>
             </div>
         </main>
+        <script src="../js/Organization.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
