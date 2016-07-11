@@ -10,7 +10,7 @@
         <div class="container">
 
         
-
+            <div class="row">
 <!-- I got these buttons from simplesharebuttons.com -->
 <div id="share-buttons">
     
@@ -84,6 +84,7 @@
         <img src="https://simplesharebuttons.com/images/somacro/yummly.png" alt="Yummly" />
     </a>
 
+</div>
 </div>
 </div>
 </div>
