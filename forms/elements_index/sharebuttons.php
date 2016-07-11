@@ -10,7 +10,7 @@
         <div class="container">
 
         
-            <div class="row">
+            
 <!-- I got these buttons from simplesharebuttons.com -->
 <div id="share-buttons">
     
