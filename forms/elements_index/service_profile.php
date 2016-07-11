@@ -173,7 +173,7 @@ Panel content
 											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
 											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
 										</ul>
-										<button type="submit" class="btn btn-success green"><i class="fa fa-reply"></i>Post</button>
+										<button type="submit" class="btn btn-success "><i class="fa fa-reply"></i>Post</button>
 									</form>
 								</div><!-- Status Upload  -->
 							</div><!-- Widget Area -->
