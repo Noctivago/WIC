@@ -166,7 +166,7 @@ Panel content
 
     						<div class="form-bottom">
 <!--								<div class="status-upload">-->
-								<div class="has-children account">
+								<div class="cd-label">
 									<form>
 										<textarea placeholder="Write your comment here" ></textarea>
 										<ul>
