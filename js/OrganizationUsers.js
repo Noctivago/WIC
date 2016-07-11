@@ -35,12 +35,14 @@ function addTable(json_resp){
     heading[2] = "Remove";
     var mytable = document.getElementById("no-more-tables");
     var table = document.createElement('TABLE');
+    table.className = "col-md-12 table-bordered table-striped table-condensed cf ";
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
     var tr = document.createElement('TR');
     tableBody.appendChild(tr)
     for(i= 0;i<heading.length;i++){
         var th = document.createElement('TH');
+        th.className="cf";
         th.appendChild(document.createTextNode(heading[i]));
         tr.appendChild(th);
     };
