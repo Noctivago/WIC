@@ -57,8 +57,10 @@ $msg;
                                     <select class="form-username form-control" name="wicPlanner" id="wicPlanner" required="required">
                                         <?= DB_getWicPlannerAsSelect($pdo, $_SESSION['id']) ?>
                                     </select>
-                                    <button class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
-                                    <button onclick="hide('showWICPlanner');" class = "btn" name = "WICPlannerHide">Hide WIC Planner!</button>
+                                    <div>
+                                        <button class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
+                                        <button onclick="hide('showWICPlanner');" class = "btn" name = "WICPlannerHide">Hide WIC Planner!</button>
+                                    </div>
                                 </div>
                                 <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
                                 <div id ="showChat" style="display:none;">
