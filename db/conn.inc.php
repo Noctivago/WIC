@@ -437,25 +437,37 @@ function DB_readOrganizationAsTable($pdo, $userId) {
         echo 'ERROR READING ORGANIZATION TABLE';
     }
 }
-function DB_checkOrganization($pdo, $idOrd){
+
+function DB_checkOrganization($pdo, $idOrd) {
     try {
-        $rows = sql($pdo,"SELECT [Name] From [Organization] where [Id] = ?", array($idOrd),"rows");
-        foreach ($rows as $row){
+        $rows = sql($pdo, "SELECT [Name] From [Organization] where [Id] = ?", array($idOrd), "rows");
+        foreach ($rows as $row) {
             return $row['Name'];
         }
     } catch (Exception $ex) {
         echo 'ERROR READING ORGANIZATION TABLE';
     }
-    
-    
 }
-function DB_checkIfExistUserInOrganization($pdo, $idOrg , $userId){
+
+function DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId) {
     try {
-        $count = sql($pdo,"SELECT [Organization_Id]
+        $count = sql($pdo, "SELECT [Organization_Id]
       ,[User_Id]
   FROM [dbo].[User_In_Organization]
-  where [User_Id] = ? and [Organization_Id] = ? and [Enabled]=1", array($userId , $idOrg), "count");
-        if($count < 1){
+  where [User_Id] = ? and [Organization_Id] = ? and [Enabled]=1", array($userId, $idOrg), "count");
+        if ($count < 1) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+function DB_CheckOrganizationInvitation($pdo,$email,$idOrg){
+    try {
+        $count = sql($pdo,"SELECT * FROM [Organization_Invitation] Where [Email] = ? and [Organization_Id] = ?", array($email,$idOrg), "count");
+        if($count < 0){
             return true;
         }else{
             return false;
@@ -464,21 +476,24 @@ function DB_checkIfExistUserInOrganization($pdo, $idOrg , $userId){
         
     }
 }
-
 function DB_addUserInOrganization($pdo, $email, $idOrg) {
     try {
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
             if (DB_checkIfUserExists($pdo, $email)) {
-                if(!DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId)){
-                //get id do user pelo email
-                $userId = DB_checkUserByEmail($pdo, $email);
-                //insere user na organizacao com enabled 0 e user validation 0
-                sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId, 0, 0, 0));
-                echo 'Success';
-                }  else {
+                if (!DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId)) {
+                    //get id do user pelo email
+                    $userId = DB_checkUserByEmail($pdo, $email);
+                    //insere user na organizacao com enabled 0 e user validation 0
+                    sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId, 0, 0, 0));
+                    echo 'Success';
+                } else {
                     echo 'User is already in organization!';
                 }
             } else {
+                if(DB_CheckOrganizationInvitation($pdo,$email,$idOrg)){
+                    echo 'Waiting for Resgist';
+                }else{
+                sql($pdo,"INSET INTO [dbo].[Organization_Invitation] ([Email],[Organization_Id],[Enabled]) VALUES(?,?,?)", array($email,$idOrg,0));
                 $org = DB_checkOrganization($pdo, $idOrg);
                 $to = $email;
                 $subject = "WIC #INVITATION";
@@ -491,7 +506,9 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
                         . "Note: Please do not reply to this email! Thanks!";
                 echo sendEmail($to, $subject, $body);
                 //envia convite para o email para se registar.
-            }
+                }
+                
+                }
         }
     } catch (Exception $ex) {
         
