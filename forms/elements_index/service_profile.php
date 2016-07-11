@@ -183,7 +183,7 @@ Panel content
 <!--								<div class="status-upload">-->
 								<div class="cd-label">
 									<form>
-										<textarea placeholder="Write your comment here" ></textarea>
+                                                                            <textarea placeholder="Write your comment here" style="width: 100%"></textarea>
 <!--										<ul>
 											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
 											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
