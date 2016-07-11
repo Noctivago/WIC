@@ -2,12 +2,12 @@
 include_once ('session.php');
 include_once ('../db/conn.inc.php');
 include_once ('../db/functions.php');
-$msg='';
+$msg = '';
 ?>
 
 <?
- error_reporting(E_ALL);
- ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,22 +65,22 @@ $msg='';
 
                     <div class="row">
                         <div class="col-sm-5">
-                            <?php
-                            if (isset($_POST['addUserOrg']) && !empty($_POST['email-user'])) {
-                                $msg = '';
-                                try {
-                                    $idOrg = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
-                                    $email = (filter_var($_POST ['email-user'], FILTER_SANITIZE_EMAIL));
-                                    $msg = DB_addUserInOrganization($pdo, $email, $idOrg);
-                                    echo $msg;
-                                } catch (Exception $ex) {
-                                    $msg = "ERROR!";
-                                }
-                            }
-                            ?>	
+
                             <div class="form-box">
                                 <div class="form-bottom">
-
+                                    <?php
+                                    if (isset($_POST['send-invite']) && !empty($_POST['email-user'])) {
+                                        $msg = '';
+                                        try {
+                                            $idOrg = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
+                                            $email = (filter_var($_POST ['email-user'], FILTER_SANITIZE_EMAIL));
+                                            $msg = DB_addUserInOrganization($pdo, $email, $idOrg);
+                                            echo $msg;
+                                        } catch (Exception $ex) {
+                                            $msg = "ERROR!";
+                                        }
+                                    }
+                                    ?>	
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group">
@@ -92,7 +92,7 @@ $msg='';
                                         <div class="form-group">
                                             <input type="email" name="email-user" placeholder="User email" class="form-password form-control" id="email-user" required>
                                         </div>
-                                        <button type="submit" id="addUserOrg" class="btn" name="send-invite">Send invite to join organization</button>
+                                        <button type="submit" id="send-invite" class="btn" name="send-invite">Send invite to join organization</button>
                                     </form>
                                 </div>
                             </div>
