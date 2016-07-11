@@ -18,7 +18,8 @@
                      <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                  </a>
                  <h3>
-                     <a href="service_profile.php">Teste perfil Serviço</a>
+                     <a href="../service_prof.php">Teste perfil Serviço</a>
+
                  </h3>
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
              </div>
