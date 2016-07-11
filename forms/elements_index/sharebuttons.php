@@ -9,7 +9,7 @@
 <!--    <div class="inner-bg" style="padding-top: 0px">-->
         <div class="container">
 
-        </div>
+        
 
 <!-- I got these buttons from simplesharebuttons.com -->
 <div id="share-buttons">
@@ -88,9 +88,7 @@
 </div>
 </div>
 
-    </div>
-
-    
+       
     </div>
 </main>
 
