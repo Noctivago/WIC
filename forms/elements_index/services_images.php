@@ -4,7 +4,7 @@
          <!--<div class="row">-->
              <div class="top-content">
              <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 10px; padding-top: 20px;">  Portugal Campeão europeu!
+                 <h1 class="page-header" style=" padding-bottom: 10px; padding-top: 20px;">  Portugal Campeão Europeu Se Fodam os Avecs!
                  </h1>
              </div>
              </div>
