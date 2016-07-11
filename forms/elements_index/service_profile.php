@@ -157,16 +157,16 @@ Panel content
  <!--<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">-->
 <div class="container">
 	<div class="row">
-		<h3>tututut</h3>
+		<h3>pipipipi</h3>
 	</div>
     
     <div class="row">
     
     <div class="col-md-6">
 
-    						<div class="form-bottom">
+    						<div class="form-box">
 <!--								<div class="status-upload">-->
-								<div class="has-children account">
+								<div class="cd-label">
 									<form>
 										<textarea placeholder="Write your comment here" ></textarea>
 										<ul>
@@ -175,9 +175,9 @@ Panel content
 											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
 											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
 										</ul>
-										<button type="submit" class="btn btn-success "><i class="fa fa-reply"></i>POST </button>
+										<button type="submit" class="btn "><i class="fa fa-reply"></i>POST </button>
 									</form>
-								</div><!-- Status Upload  -->
+								</div><!-- Status Upload class="btn btn-success "  -->
 							</div><!-- Widget Area -->
 						</div>
         

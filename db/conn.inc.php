@@ -437,7 +437,19 @@ function DB_readOrganizationAsTable($pdo, $userId) {
         echo 'ERROR READING ORGANIZATION TABLE';
     }
 }
-function DB_addUserInOrganization($pdo, $email, $idOrg){
+function DB_checkOrganization($pdo, $idOrd){
+    try {
+        $rows = sql($pdo,"SELECT [Name] From [Organizaion] where [Id] = ?", array($idOrd),"rows");
+        foreach ($rows as $row){
+            echo $row['Name'];
+        }
+    } catch (Exception $ex) {
+        echo 'ERROR READING ORGANIZATION TABLE';
+    }
+    
+    
+}
+function DB_addUserInOrganization($pdo, $email, $idOrg) {
     try {
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
             if (DB_checkIfUserExists($pdo, $email)) {
@@ -447,28 +459,32 @@ function DB_addUserInOrganization($pdo, $email, $idOrg){
                 sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId, 0, 0, 0));
                 echo 'Success';
             } else {
+                $org = DB_checkOrganization($pdo, $idOrg);
                 $to = $email;
-                $subject = "Invite to join organization";
-                $body = "Hi, please resgist on www.wic.club";
+                $subject = "WIC #INVITATION";
+                $body = "Hi! <br>"
+                        . "You have been invited to be part of an Organization.<br>"
+                        . "Organization name: " . $org . ".<br>"
+                        . "To do that you must sign up at: http://www.wic.club/<br>"
+                        . "Best regards,<br>"
+                        . "WIC<br><br>"
+                        . "Note: Please do not reply to this email! Thanks!";
                 echo sendEmail($to, $subject, $body);
                 //envia convite para o email para se registar.
-           
-                }
-            
+            }
         }
     } catch (Exception $ex) {
         
     }
 }
-function DB_readOrganizationAsSelect($pdo , $userId) {
+
+function DB_readOrganizationAsSelect($pdo, $userId) {
     try {
         //$userId = $_SESSION['id'];
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($userId), "rows");
         echo "<option id ='orgId' value='0'> Choose a organization</option>";
         foreach ($rows as $row) {
             echo "<option id ='orgId' value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
-            
-            
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION TABLE';
