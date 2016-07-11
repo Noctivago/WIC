@@ -439,17 +439,22 @@ function DB_readOrganizationAsTable($pdo, $userId) {
 }
 function DB_addUserInOrganization($pdo, $email, $idOrg){
     try {
-        if(DB_checkIfUserExists($pdo, $email)){
-            $userId = DB_checkUserByEmail($pdo, $email);
-            sql($pdo,"INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[Enabled],[Responded]) VALUES(?,?,?,?) ", array($idOrg,$userId,0,0));
-            echo 'Invitation send';
-        }  else {
-            $to = $email;
-            $subject = "WIC #INVITATION";
-            $body = "Hi! <br>"
-                    . "Please regist on www.Wic.club";
-            sendEmail($to, $subject, $body);
-            echo 'email send';
+        if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
+            if (DB_checkIfUserExists($pdo, $email)) {
+                //get id do user pelo email
+                $userId = DB_checkUserByEmail($pdo, $email);
+                //insere user na organizacao com enabled 0 e user validation 0
+                sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId, 0, 0, 0));
+                echo 'Success';
+            } else {
+                $to = $email;
+                $subject = "Invite to join organization";
+                $body = "Hi, please resgist on www.wic.club";
+                sendEmail($to, $subject, $body);
+                //envia convite para o email para se registar.
+                echo 'GRRRR';
+            }
+            
         }
     } catch (Exception $ex) {
         
