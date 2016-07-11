@@ -455,9 +455,9 @@ function DB_addUserInOrganization($pdo,$email,$idOrg){
         
     }
 }
-function DB_readOrganizationAsSelect($pdo) {
+function DB_readOrganizationAsSelect($pdo , $userId) {
     try {
-        $userId = $_SESSION['id'];
+        //$userId = $_SESSION['id'];
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id] > ? and [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($id, $userId), "rows");
         echo "<option id ='orgId' value='0'> Choose a organization</option>";
         foreach ($rows as $row) {
