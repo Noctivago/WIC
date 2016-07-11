@@ -52,12 +52,27 @@ $msg;
                                         <input type = "text" style = "height: 40px" name = "password" placeholder = "Adress:" class = "form-password form-control" id = "form-password" required>
                                     </div>
 
-                                    <button type = "submit" class = "btn" name = "login">Add to my Wic Planner!</button>
+                                    <button onclick="show('showWICPlanner')" style="display:none;" class = "btn" name = "login">Add to my Wic Planner!</button>
+                                    <div id ="showWICPlanner">
+
+                                    </div>
                                     <button type = "submit" class = "btn" name = "login">Start dealing!</button>
                                 </form>
                             </div>
                         </div>
                     </div>
+
+                    <script>
+                        function show(toBlock) {
+                            setDisplay(toBlock, 'block');
+                        }
+                        function hide(toNone) {
+                            setDisplay(toNone, 'none');
+                        }
+                        function setDisplay(target, str) {
+                            document.getElementById(target).style.display = str;
+                        }
+                    </script>
 
                     <div class = "col-sm-1 middle-border" >
                     </div>
