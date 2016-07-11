@@ -2,6 +2,7 @@
 include_once ('session.php');
 include_once ('../db/conn.inc.php');
 include_once ('../db/functions.php');
+$msg='';
 ?>
 
 <?
@@ -71,7 +72,7 @@ include_once ('../db/functions.php');
                                     $idOrg = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
                                     $email = (filter_var($_POST ['email-user'], FILTER_SANITIZE_EMAIL));
                                     $msg = DB_addUserInOrganization($pdo, $email, $idOrg);
-                                    echo $msg . $email;
+                                    echo $msg;
                                 } catch (Exception $ex) {
                                     $msg = "ERROR!";
                                 }

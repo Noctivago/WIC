@@ -154,10 +154,10 @@ Panel content
 
 </div><!-- /container -->
 
- <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+ <!--<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">-->
 <div class="container">
 	<div class="row">
-		<h3>Status Upload Snipp</h3>
+		<h3>Comment</h3>
 	</div>
     
     <div class="row">
@@ -173,7 +173,7 @@ Panel content
 											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
 											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
 										</ul>
-										<button type="submit" class="btn btn-success green"><i class="fa fa-reply"></i>Post</button>
+										<button type="submit" class="btn btn-success "><i class="fa fa-reply"></i>POST IT</button>
 									</form>
 								</div><!-- Status Upload  -->
 							</div><!-- Widget Area -->
