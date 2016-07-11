@@ -1,21 +1,39 @@
 <main class="cd-main-content">
-    <!-- Top content -->
-    <div class="top-content">
+    <div class="content-wrapper" style="padding-left: 0%">
 
-        <div class="inner-bg">
+        <div class="top-content">
+            <div class="col-lg-12">
+                <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  New  Organization </h1> <h4 style="color: darkgray"> <?php echo $msg; ?></h4>
+
+            </div>
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+            <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
+            <!--    <div class="inner-bg" style="padding-top: 0px">-->
             <div class="container">
 
-
-                <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2 text">
-                        <h1><strong>Users in organization</strong> </h1>
-                    </div>
+                <!--            <div class="row">-->
+                <div class="col-sm-8 col-lg-offset-2 text">
+                    <!--            </div>-->
                 </div>
-
                 <div class="row">
-                    <div class="col-sm-5">
+
+                    <div class="col-sm-8 col-lg-offset-2 text-center">
 
                         <div class="form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+
+                                </div>
+                                <div class="form-top-right">
+                                </div>
+                                <!--                            <div class="form-top-right">
+                                                                <i class="fa fa-key"></i>-->
+    <!--                            <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                    <input style="color: black;" class="form-username form-control" type="file">-->
+                                <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
+
+                            </div>
+
                             <div class="form-bottom">
                                 <?php
                                 if (isset($_POST['send-invite']) && !empty($_POST['email-user'])) {
