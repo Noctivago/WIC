@@ -945,7 +945,7 @@ function DB_getCommentsOfService($pdo, $orgServId) {
 function DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Comment] ([User_Id], [Comment], [Organization_Service_Id],[Date_Created]) VALUES(?,?,?,?)"
-                . "", array($userId, $comment, $orgServId, $d));
+                . "", array($userId, $comment, 2, $d));
         echo 'Comment added!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
