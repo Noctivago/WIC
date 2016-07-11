@@ -172,12 +172,12 @@ Panel content
  
  <div class="container">
 	<div class="row">
-		<h3>Give your Opinion about the service :)</h3>
+		<h3>Give your Opinion about this Service :D</h3>
 	</div>
     
     <div class="row">
     
-    <div class="col-md-6">
+        <div class="col-md-6" style="width: 100%">
 
     						<div class="form-bottom">
 <!--								<div class="status-upload">-->
