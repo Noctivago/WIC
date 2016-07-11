@@ -890,6 +890,22 @@ function DB_getWicPlannerAsSelect($pdo, $userId) {
     }
 }
 
+//CHECK IF COMMENTS EXISTS
+
+function DB_checkIfServiceCommentsExits($pdo, $orgServId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[Comment] WHERE [Organization_Service_Id] = ? ", array($orgServId), "count");
+//IF EXISTS -1
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
 //LOAD COMMENTS OF A SERVICE
 function DB_getCommentsOfService($pdo, $orgSerId) {
     try {
@@ -898,11 +914,13 @@ function DB_getCommentsOfService($pdo, $orgSerId) {
         FROM [dbo].[Comment]
         join [User]
         on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? LIMIT 0,10", array($orgSerId), "rows");
-        echo '<div class="row">
+        if (DB_checkIfServiceCommentsExits($pdo, $orgServId)) {
+            echo '<div class="row">
                 <div class="col-sm-12">
                     <h3>Users Comments</h3>
-                </div><!-- /col-sm-12 -->
+                </div>
             </div>';
+        }
         foreach ($rows as $row) {
             #echo "LINK TO READ ALL";
             echo '<div class="row">';
