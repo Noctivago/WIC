@@ -24,6 +24,9 @@ include_once '../db/functions.php';
         <link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
 
+        <!-- RECHAPTA -->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -80,34 +83,42 @@ include_once '../db/functions.php';
                                     <?php
                                     $msg = '';
                                     if (isset($_POST['activate']) && !empty($_POST['email'])) {
-                                        $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                                        //SE EMAIL EXISTE
-                                        if (DB_checkIfUserExists($pdo, $email)) {
-                                            //CRIA PASSWORD -
-                                            //ATRIBUI NOVA PASSWORD AO USER
-                                            $password = generatePassword();
-                                            //CODIFICA PASSWORD PARA INSERIR NA BD
-                                            $hashPassword = hash('whirlpool', $password);
-                                            //INSERE PASSWORD NA BD
-                                            if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
-                                                //ENVIA EMAIL
-                                                $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
-                                                $to = $email;
-                                                $subject = "WIC #ACCOUNT RECOVERY";
-                                                $body = "Hi! <br>"
-                                                        . "A new password was assigned to you.<br>"
-                                                        . "Use the following password to login: " . $password . "<br>"
-                                                        . "ADVICE: AFTER LOGIN CHANGE YOUR PASSWORD!<br>"
-                                                        . "Best regards,<br>"
-                                                        . "WIC<br><br>"
-                                                        . "Note: Please do not reply to this email! Thanks!";
-                                                $msg = sendEmail($to, $subject, $body);
+                                        $forgotPassword = '';
+                                        $secret = "6LdypyQTAAAAAPaex4p6DqVY6W62Ihld7DDfCMDm";
+                                        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $_POST['g-recaptcha-response']);
+                                        $response = json_decode($response, true);
+                                        if ($response["success"] === true) {
+                                            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+                                            //SE EMAIL EXISTE
+                                            if (DB_checkIfUserExists($pdo, $email)) {
+                                                //CRIA PASSWORD -
+                                                //ATRIBUI NOVA PASSWORD AO USER
+                                                $password = generatePassword();
+                                                //CODIFICA PASSWORD PARA INSERIR NA BD
+                                                $hashPassword = hash('whirlpool', $password);
+                                                //INSERE PASSWORD NA BD
+                                                if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
+                                                    //ENVIA EMAIL
+                                                    $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
+                                                    $to = $email;
+                                                    $subject = "WIC #ACCOUNT RECOVERY";
+                                                    $body = "Hi! <br>"
+                                                            . "A new password was assigned to you.<br>"
+                                                            . "Use the following password to login: " . $password . "<br>"
+                                                            . "ADVICE: AFTER LOGIN CHANGE YOUR PASSWORD!<br>"
+                                                            . "Best regards,<br>"
+                                                            . "WIC<br><br>"
+                                                            . "Note: Please do not reply to this email! Thanks!";
+                                                    $msg = sendEmail($to, $subject, $body);
+                                                } else {
+                                                    $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
+                                                }
                                             } else {
-                                                $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
+                                                //SENAO INFORMA
+                                                $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
                                             }
                                         } else {
-                                            //SENAO INFORMA
-                                            $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
+                                            echo "You are a robot";
                                         }
                                     }
                                     ?>
@@ -118,6 +129,8 @@ include_once '../db/functions.php';
                                             <label class="sr-only" for="form-email">Email</label>
                                             <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
                                         </div>
+                                        <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
+                                        <br>
                                         <button type="submit" class="btn" name="activate">Activate Account</button>
 
                                     </form>

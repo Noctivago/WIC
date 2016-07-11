@@ -23,6 +23,9 @@ include_once '../db/conn.inc.php';
         <link rel="stylesheet" href="../assets/css/form-elements.css">
         <link rel="stylesheet" href="../assets/css/style.css">
 
+        <!-- RECHAPTA -->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -82,36 +85,43 @@ include_once '../db/conn.inc.php';
                                     if (isset($_POST['activate']) && !empty($_POST['activateText']) && !empty($_POST['email'])) {
                                         $msg = '';
                                         $forgotPassword = '';
-                                        $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_SPECIAL_CHARS));
-                                        $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                                        //SE EMAIL EXISTE
-                                        if (DB_checkIfUserExists($pdo, $email)) {
-                                            //VERIFICA SE O ACTIVATION CODE PERTENCE AO EMAIL
-                                            if (DB_compareActivationCode($pdo, $email, $code)) {
-                                                //SE TRUE ATIVA CONTA
-                                                if (DB_activateUserAccount($pdo, $email)) {
-                                                    header('Location: login.php');
-                                                    $msg = 'ACCOUNT SUCESSUFULLY ACTIVATED';
-                                                    $to = $email;
-                                                    $subject = "WIC #ACCOUNT ACTIVATED";
-                                                    $body = "Hi! <br>"
-                                                            . "Your account was successfully activated!<br>"
-                                                            . "You can now login and make the best event for you!<br>"
-                                                            . "Best regards,<br>"
-                                                            . "WIC<br><br>"
-                                                            . "Note: Please do not reply to this email! Thanks!";
-                                                    $msg = sendEmail($to, $subject, $body) . ' Account successfully activated!';
+                                        $secret = "6LdypyQTAAAAAPaex4p6DqVY6W62Ihld7DDfCMDm";
+                                        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $_POST['g-recaptcha-response']);
+                                        $response = json_decode($response, true);
+                                        if ($response["success"] === true) {
+                                            $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_SPECIAL_CHARS));
+                                            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+                                            //SE EMAIL EXISTE
+                                            if (DB_checkIfUserExists($pdo, $email)) {
+                                                //VERIFICA SE O ACTIVATION CODE PERTENCE AO EMAIL
+                                                if (DB_compareActivationCode($pdo, $email, $code)) {
+                                                    //SE TRUE ATIVA CONTA
+                                                    if (DB_activateUserAccount($pdo, $email)) {
+                                                        header('Location: login.php');
+                                                        $msg = 'ACCOUNT SUCESSUFULLY ACTIVATED';
+                                                        $to = $email;
+                                                        $subject = "WIC #ACCOUNT ACTIVATED";
+                                                        $body = "Hi! <br>"
+                                                                . "Your account was successfully activated!<br>"
+                                                                . "You can now login and make the best event for you!<br>"
+                                                                . "Best regards,<br>"
+                                                                . "WIC<br><br>"
+                                                                . "Note: Please do not reply to this email! Thanks!";
+                                                        $msg = sendEmail($to, $subject, $body) . ' Account successfully activated!';
+                                                    } else {
+                                                        //SENAO
+                                                        $msg = 'AN ERROR OCCURED WHILE ACTIVATING ACCOUNT';
+                                                    }
                                                 } else {
-                                                    //SENAO
-                                                    $msg = 'AN ERROR OCCURED WHILE ACTIVATING ACCOUNT';
+                                                    //SENAO INFORMA
+                                                    $msg = 'WRONG ACTIVATION CODE!';
                                                 }
                                             } else {
                                                 //SENAO INFORMA
-                                                $msg = 'WRONG ACTIVATION CODE!';
+                                                $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
                                             }
                                         } else {
-                                            //SENAO INFORMA
-                                            $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
+                                            echo "You are a robot";
                                         }
                                     }
                                     ?>
@@ -124,6 +134,8 @@ include_once '../db/conn.inc.php';
                                             <label class="sr-only" for="form-email">Email</label>
                                             <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
                                         </div>
+                                        <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
+                                        <br>
                                         <button type="submit" class="btn" name="activate">Activate Account</button>
                                         <h2><?php echo $forgotPassword; ?></h2>
                                     </form>
