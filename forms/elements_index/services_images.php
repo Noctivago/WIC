@@ -1,9 +1,9 @@
 <main class="cd-main-content">
- <div class="content-wrapper">
+ <div class="content-wrapper" style="padding-left: 0%">
  <!-- Page Header -->
          <div class="row">
              <div class="col-lg-12">
-                 <h1 class="page-header"> Heading
+                 <h1 class="page-header"> HEADING MAGIC
                      <small>Secondary Text</small>
                  </h1>
              </div>
@@ -155,5 +155,5 @@
  
      <!-- Bootstrap Core JavaScript -->
      <script src="js/bootstrap.min.js"></script>
- </div>
+
  </main>
