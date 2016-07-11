@@ -89,7 +89,7 @@ include_once ('../db/functions.php');
                                                 try {
                                                     $userid = $_SESSION['id'];
                                                     $d = getDateToDB();
-                                                    $idOrg = (filter_var($_POST['Org-Id'], FILTER_SANITIZE_STRING));
+                                                    $idOrg = (filter_var($_POST['org'], FILTER_SANITIZE_STRING));
                                                     $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
                                                     $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
                                                     $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
