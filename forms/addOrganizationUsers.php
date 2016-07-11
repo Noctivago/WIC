@@ -72,9 +72,9 @@ include_once ('../db/functions.php');
                                         $msg = '';
                                         try {
                                             $idOrg = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
-                                            $email = (filter_var($_POST ['email-user'], FILTER_SANITIZE_STRING));
+                                            $email = (filter_var($_POST ['email-user'], FILTER_SANITIZE_EMAIL));
                                             $msg = DB_addUserInOrganization($pdo,$email,$idOrg);
-                                            echo $msg;
+                                            echo $msg . $email;
                                         } catch (Exception $ex) {
                                             $msg = "ERROR!";
                                         }
@@ -82,7 +82,8 @@ include_once ('../db/functions.php');
                                     ?>	
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                                        <div class="form-group"><h4> <?php echo $msg; ?></h4>
+                                        <div class="form-group">
+                                            <h4> <?php echo $msg; ?></h4>
                                             <select class="form-username form-control" name="org" id="org" required="required">
                                                 <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                             </select>
