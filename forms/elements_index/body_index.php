@@ -5,6 +5,6 @@
 include ("services_images.php");
 ?>
     
-			<h1>Responsive Sidebar Navigation</h1>
+<!--			<h1>Responsive Sidebar Navigation</h1>-->
 		</div> <!-- .content-wrapper -->
 </main>
