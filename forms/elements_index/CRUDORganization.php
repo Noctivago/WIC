@@ -4,7 +4,7 @@
 
 <div class="top-content">
                  <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  New Organization!
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  New Organization For YOU
                  </h1>
                  </div>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -18,7 +18,7 @@
             </div>
             <div class="row">
            
-                       <div class="col-sm-5">
+                       <div class="col-sm-8 col-lg-offset-2 text-center">
 
                     <div class="form-box">
                         <div class="form-top">
@@ -108,9 +108,9 @@
 
                     
                            
-                        <div class="col-sm-1 middle-border"  >
+<!--                        <div class="col-sm-1 middle-border"  >
                         </div>                   
-                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>-->
                         
 
                     <!--                        <div class="col-sm-1 middle-border"></div>-->
