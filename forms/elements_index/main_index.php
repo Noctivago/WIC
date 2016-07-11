@@ -22,7 +22,7 @@
 					<a href="#0">WicPlanner</a>
 					
 					<ul>
-                                                <li><a href="#0">View</a></li>
+                                            <li><a href="profile_org2.php">View</a></li>
 						<li><a href="addWicPlanner.php">Create</a></li>
 						
 					</ul>
