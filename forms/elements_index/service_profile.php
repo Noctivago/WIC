@@ -51,6 +51,10 @@ $msg;
                                         <label class = "sr-only" for = "form-password">Address:</label>
                                         <input type = "text" style = "height: 40px" name = "password" placeholder = "Address:" class = "form-password form-control" id = "form-password" required>
                                     </div>
+                                    <div class = "form-group">
+                                        <label class = "sr-only" for = "form-password">Description:</label>
+                                        <input type = "text" style = "height: 40px" name = "password" placeholder = "DESCRIPTION:" class = "form-password form-control" id = "form-password" required>
+                                    </div>
                                 </form>
                                 <button id ="showWICPlannerBTN"onclick="show('showWICPlanner');hide('showWICPlannerBTN');" class = "btn" name = "WICPlannerShow">WIC Planner!</button>
                                 <div id ="showWICPlanner" style="display:none;">
