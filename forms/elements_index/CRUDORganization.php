@@ -19,12 +19,12 @@
                     <div class="form-box">
                         <div class="form-top">
                             
-                            <h1 style="color: darkgray"><strong>NEW ORGANIZATION</strong> </h1>
-<!--                            <div class="form-top-left">
+                            <h1 style="color: darkgray"><strong>Nova ORGANIZATION</strong> </h1>
+                            <div class="form-top-left">
 
                             </div>
                             <div class="form-top-right">
-                            </div>-->
+                            </div>
                             <!--                            <div class="form-top-right">
                                                             <i class="fa fa-key"></i>-->
                             <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
@@ -35,6 +35,30 @@
                         
 
                         <div class="form-bottom">
+                                                                        <?php
+                                            if ((isset($_POST['addOrg'])||isset($_POST['update'])) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
+                                                $msg = '';
+                                                try {
+                                                    $userid = $_SESSION['id'];
+                                                    $d = getDateToDB();
+                                                    $idOrg = (filter_var($_POST['org'], FILTER_SANITIZE_STRING));
+                                                    $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
+                                                    $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
+                                                    $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
+                                                    $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
+                                                    $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
+                                                    $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
+                                                    $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
+                                                    $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
+                                                    $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
+                                                    $msg = DB_addOrganization($pdo, $userid, $idOrg, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
+                                                    echo $msg;
+                                                } catch (Exception $ex) {
+                                                    $msg = "ERROR!";
+                                                }
+                                            }else if(isset ($_POST['delete'])){
+                                            }
+                                            ?> 
                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                                 <div class="form-group" id="org-sel">
                                                     <h4> <?php echo $msg; ?></h4>
