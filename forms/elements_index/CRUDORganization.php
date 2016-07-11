@@ -4,7 +4,7 @@
 
 <div class="top-content">
                  <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  New Organization For YOU
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">   Organization For YOU <h4> <?php echo $msg; ?></h4>
                  </h1>
                  </div>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -37,7 +37,38 @@
                         
 
                         <div class="form-bottom">
-                            <form role="form" action="" method="post" class="login-form">
+                            <?php
+                                            if ((isset($_POST['addOrg'])||isset($_POST['update'])) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
+                                                $msg = '';
+                                                try {
+                                                    $userid = $_SESSION['id'];
+                                                    $d = getDateToDB();
+                                                    $idOrg = (filter_var($_POST['org'], FILTER_SANITIZE_STRING));
+                                                    $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
+                                                    $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
+                                                    $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
+                                                    $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
+                                                    $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
+                                                    $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
+                                                    $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
+                                                    $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
+                                                    $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
+                                                    $msg = DB_addOrganization($pdo, $userid, $idOrg, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
+                                                    echo $msg;
+                                                } catch (Exception $ex) {
+                                                    $msg = "ERROR!";
+                                                }
+                                            }else if(isset ($_POST['delete'])){
+                                            }
+                                            ?>
+                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
+                               <div class="form-group" id="org-sel">
+                                                    <h4> <?php echo $msg; ?></h4>
+                                                    <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()">
+                                                        <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
+                                                    </select>
+                                 </div>
+                                
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Company Name:</label>
                                     <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
@@ -139,6 +170,9 @@
     <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
     <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
+    
+    <script src="../js/Organization.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 
 
