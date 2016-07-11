@@ -11,22 +11,7 @@
 
 <!--            <div class="row">-->
                 <div class="col-sm-8 col-lg-offset-2 text">
-<!--            </div>-->
-            </div>
-            <div class="row">
-           
-                       <div class="col-sm-5">
 
-                    <div class="form-box">
-                        <div class="form-top">
-                            <div class="form-top-left">
-
-                            </div>
-                            <div class="form-top-right">
-                            </div>
-                            
-                                                       </div>
-                        
 <!-- I got these buttons from simplesharebuttons.com -->
 <div id="share-buttons">
     
@@ -103,29 +88,6 @@
 </div>
 </div>
 </div>
-                       
-                 
-                        <div class="col-sm-1"></div>
-                        
-                        <div class="col-sm-5">
-
-     
-                            <div class="container">
-
-    </div>
-    
-</div>
-                            
-                            
-                        </div>
-
-
-                      
-
-                    </div>
-                            </div>
-                   
-                
 
     </div>
 </div>
