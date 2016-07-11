@@ -84,7 +84,7 @@ include_once ('../db/functions.php');
 
                                         <div class="form-bottom">
                                             <?php
-                                            if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
+                                            if ((isset($_POST['addOrg'])||isset($_POST['update'])) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
                                                 $msg = '';
                                                 try {
                                                     $userid = $_SESSION['id'];
