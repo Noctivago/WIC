@@ -883,6 +883,11 @@ function DB_getCommentsOfService($pdo, $orgSerId) {
         FROM [dbo].[Comment]
         join [User]
         on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? LIMIT 0,10", array($orgSerId), "rows");
+        echo '<div class="row">
+                <div class="col-sm-12">
+                    <h3>Users Comments</h3>
+                </div><!-- /col-sm-12 -->
+            </div>';
         foreach ($rows as $row) {
             #echo "LINK TO READ ALL";
             echo '<div class="row">';

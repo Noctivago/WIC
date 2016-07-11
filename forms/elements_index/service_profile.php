@@ -90,11 +90,11 @@
                             <!--espaço comentários anteriores-->
 
                             <div class="container">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <h3>Users Comments</h3>
-                                    </div><!-- /col-sm-12 -->
-                                </div>
+                                <!--                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <h3>Users Comments</h3>
+                                                                    </div> /col-sm-12 
+                                                                </div>-->
                                 <?= DB_getCommentsOfService($pdo, $orgSerId) ?>
 
                                 <!-- /row -->
