@@ -59,6 +59,7 @@ $msg;
                                 <div>
                                     <button id ="showWICPlannerBTN"onclick="show('showWICPlanner');hide('showWICPlannerBTN');" class = "btn" name = "WICPlannerShow">Add to WIC Planner!</button>
                                     <div id ="showWICPlanner" style="display:none;">
+                                        <p>Choose a WIC Planner</p>
                                         <select class="form-username form-control" name="wicPlannerSelect" id="wicPlannerSelect" required="required">
                                             <?= DB_getWicPlannerAsSelect($pdo, $_SESSION['id']) ?>
                                         </select>

@@ -26,6 +26,7 @@ function addToWic(b) {
     return false;
 }
 
+//TO DO
 function addCommentToService(a, b) {
     //alert('add2Wic');
     ////DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d)
