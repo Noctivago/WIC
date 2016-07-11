@@ -72,7 +72,7 @@ if ($arg === 'addOrganization') {
         $idOrg = $_POST['id'];
        // $userid = $_POST['idUser'];
         //$rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
-        $row = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss]=? [Enabled] = 1 and [Validate]=1", array($id), "row");
+        $row = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss]=? and [Enabled] = 1 and [Validate]=1", array($id), "row");
         echo json_encode($row);
 //        echo '<div style="display:none">';
 //        echo '<table id="mytable">';
