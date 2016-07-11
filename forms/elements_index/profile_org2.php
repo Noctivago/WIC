@@ -116,11 +116,9 @@
     <div class="row">
         <div class="col-md-12">
             <h1 class="text-center">
-                No more tables.
+                Nome tabela
             </h1>
-            <h3 class="text-center">
-                Resize the browser screen to see how the table changes
-            </h3>
+            
         </div>
         <div id="no-more-tables">
             <table class="col-md-12 table-bordered table-striped table-condensed cf">
@@ -263,9 +261,7 @@
         	</table>
         </div>
     </div>
-    <div class="row">
-        <p class="bg-success" style="padding:10px;margin-top:20px"><small><a href="http://elvery.net/demo/responsive-tables/#no-more-tables" target="_blank">Link</a> to original article</small></p>
-    </div>
+    
 </div>
                             
                             
