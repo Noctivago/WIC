@@ -478,6 +478,21 @@ function DB_CheckOrganizationInvitation($pdo, $email, $idOrg) {
     }
 }
 
+function DB_CheckOrganizationInvitationAndMoveToInvites($pdo,$email){
+    try {
+        $rows = sql($pdo ,"Select * From [Organization_Invitation] where [Email] = ? and [Enabled]=?",array($email,0),"rows");
+        foreach ($rows as $row){
+            $orgId = $row['Organization_Id'];
+            $userId = DB_checkUserByEmail($pdo, $email);
+            sql($pdo,"INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($orgId, $userId, 0, 0, 0));        }
+            sql($pdo,"UPDATE [dbo].[Organization_Invitation] SET [Enabled] = ? WHERE [Email]= ? and [Organization_Id] = ?",array(1,$email,$orgId));
+            echo 'UPDATED SUCCESS';
+            
+        } catch (Exception $ex) {
+            echo 'error';
+    }
+}
+
 function DB_addUserInOrganization($pdo, $email, $idOrg) {
     try {
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
