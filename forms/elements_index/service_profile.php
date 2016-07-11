@@ -129,6 +129,17 @@
 <div class="col-sm-5" style="width: 100%">
 <div class="panel panel-default">
 <div class="panel-heading">
+    
+        <div class="col-sm-1" style="width: 100%">
+<div class="thumbnail">
+<img class="img-responsive user-photo" src="../../assets/img/logo.png">
+</div><!-- /thumbnail -->
+
+</div><!-- /col-sm-1 -->
+
+    
+    
+    
 <strong>Maria Vitória</strong> <span class="text-muted">commented 5 days ago</span>
 </div>
 <div class="panel-body">
