@@ -35,6 +35,7 @@ function readDataOrganization() {
             document.getElementById('addOrg').style = "display: none";
             document.getElementById('update').style = "display: true";
             document.getElementById('delete').style = "display: true";
+            document.getElementById('delete').onclick ="removeOrganization()";
         //    document.getElementById('cancel').style = "display: true";
         }
     });
@@ -104,8 +105,10 @@ function deleteConfirmation() {
 
 }
 
-function removeOrganization($IdOrg, $id) {
+function removeOrganization() {
     //remove organização selecionada pelo o boss
+    var orgId = $("#org").val();
+    alert(orgId);
     var resp = deleteConfirmation();
     if (resp == true) {
         var arg = 'removeOrganization';
@@ -121,11 +124,9 @@ function removeOrganization($IdOrg, $id) {
             }
         });
     }
-    viewAllOrganization($id);
-    //viewAllOrganization();
     return false;
-
 }
+
 function cleanInformation() {
     //document.getElementById('Org-Id').value = 0;
     document.getElementById('name').value = "";
