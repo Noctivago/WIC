@@ -127,7 +127,7 @@ function removeOrganization($IdOrg, $id) {
 
 }
 function cleanInformation() {
-    document.getElementById('Org-Id').value = 0;
+    //document.getElementById('Org-Id').value = 0;
     document.getElementById('name').value = "";
     document.getElementById('phone').value = "";
     document.getElementById('mobile').value = "";
