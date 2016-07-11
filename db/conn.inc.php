@@ -437,11 +437,11 @@ function DB_readOrganizationAsTable($pdo, $userId) {
         echo 'ERROR READING ORGANIZATION TABLE';
     }
 }
-function DB_addUserInOrganization($pdo,$email,$idOrg){
+function DB_addUserInOrganization($pdo, $email, $idOrg){
     try {
         if(DB_checkIfUserExists($pdo, $email)){
             $userId = DB_checkUserByEmail($pdo, $email);
-            $msg = sql($pdo,"INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[Enabled],[Responded]) VALUES(?,?,?,?) ", array($idOrg,$userId,0,0));
+            sql($pdo,"INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[Enabled],[Responded]) VALUES(?,?,?,?) ", array($idOrg,$userId,0,0));
             echo 'Invitation send';
         }  else {
             $to = $email;
