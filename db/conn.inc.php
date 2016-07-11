@@ -493,7 +493,7 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
                 if(DB_CheckOrganizationInvitation($pdo,$email,$idOrg)){
                     echo 'Waiting for Resgist';
                 }else{
-                sql($pdo,"INSET INTO [dbo].[Organization_Invitation] ([Email],[Organization_Id],[Enabled]) VALUES(?,?,?)", array($email,$idOrg,0));
+                sql($pdo,"INSERT INTO [dbo].[Organization_Invitation]([Email],[Organization_Id] ,[Enabled]) VALUES(?,?,?)", array($email,$idOrg,0));
                 $org = DB_checkOrganization($pdo, $idOrg);
                 $to = $email;
                 $subject = "WIC #INVITATION";
