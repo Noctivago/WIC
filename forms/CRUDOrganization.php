@@ -81,29 +81,7 @@ include_once ('../db/functions.php');
                                                                             <i class="fa fa-key"></i>
                                                                         </div>-->
                                         </div>
-                                        <?php
-                                        if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
-                                            $msg = '';
-                                            try {
-                                                $userid = $_SESSION['id'];
-                                                $d = getDateToDB();
-                                                $idOrg = (filter_var($_POST['Org-Id'], FILTER_SANITIZE_STRING));
-                                                $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
-                                                $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
-                                                $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
-                                                $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
-                                                $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
-                                                $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
-                                                $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
-                                                $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
-                                                $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
-                                                $msg = DB_addOrganization($pdo, $userid, $orgId, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
-                                                echo $msg;
-                                            } catch (Exception $ex) {
-                                                $msg = "ERROR!";
-                                            }
-                                        }
-                                        ?>
+
                                         <div class="form-bottom">
                                             <?php
                                             if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
