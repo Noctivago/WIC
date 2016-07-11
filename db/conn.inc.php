@@ -873,3 +873,57 @@ function DB_getWicPlannerAsSelect($pdo, $userId) {
         echo 'ERROR READING WIC PLANNER TABLE';
     }
 }
+
+//LOAD COMMENTS OF A SERVICE
+function DB_getCommentsOfService($pdo, $orgSerId) {
+    try {
+        $rows = sql($pdo, "SELECT [User].[UserName]
+        ,[Comment].[Comment]
+        FROM [dbo].[Comment]
+        join [User]
+        on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? LIMIT 0,10", array($orgSerId), "rows");
+        foreach ($rows as $row) {
+            #echo "LINK TO READ ALL";
+            echo "";
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING COMMENTS TABLE';
+    }
+}
+
+//ADD COMMENT TO A SERVICE
+function DB_addCommentOnService($pdo, $userId, $comment, $orgId, $d) {
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Comment] ([User_Id], [Comment], [Organization_Service_Id],[Date_Created]) VALUES(?,?,?,?)"
+                . "", array($userId, $comment, $orgId, $d));
+        echo 'Comment added!';
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
+    }
+}
+
+//ADICIONAR SERVIÇO AO WIC PLANNER
+function DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) {
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Event_Service] ([Organization_Service_Id], [WIC_Planner_Id], [Enabled]) VALUES(?,?,?)"
+                . "", array($orgServId, $wicPlannerId, 1));
+        echo 'Comment added!';
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
+    }
+}
+
+//CRIAR CONVERSA ENTRE USERS
+function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
+    try {
+        sql($pdo, "INSERT INTO [dbo].[[Conversation]] ([User_Id1], [User_Id2], [Date_Created]"
+                . "[Organization_Service], [Enabled_User1],[Enabled_User2]) VALUES(?,?,?,?,?,?)"
+                . "", array($userClient, $userOrg, $d, $orgServ, 1, 1));
+        echo 'CONVERSATION CREATED!';
+    } catch (PDOException $e) {
+        print "Error!" . "<br/>";
+        die();
+    }
+}
