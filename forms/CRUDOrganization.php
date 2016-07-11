@@ -105,7 +105,6 @@ include_once ('../db/functions.php');
                                                     $msg = "ERROR!";
                                                 }
                                             }else if(isset ($_POST['delete'])){
-                                                echo 'run';
                                             }
                                             ?>    
                                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
