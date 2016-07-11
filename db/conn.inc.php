@@ -478,18 +478,18 @@ function DB_CheckOrganizationInvitation($pdo, $email, $idOrg) {
     }
 }
 
-function DB_CheckOrganizationInvitationAndMoveToInvites($pdo,$email){
+function DB_CheckOrganizationInvitationAndMoveToInvites($pdo, $email) {
     try {
-        $rows = sql($pdo ,"Select * From [Organization_Invitation] where [Email] = ? and [Enabled]=?",array($email,0),"rows");
-        foreach ($rows as $row){
+        $rows = sql($pdo, "Select * From [Organization_Invitation] where [Email] = ? and [Enabled]=?", array($email, 0), "rows");
+        foreach ($rows as $row) {
             $orgId = $row['Organization_Id'];
             $userId = DB_checkUserByEmail($pdo, $email);
-            sql($pdo,"INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($orgId, $userId, 0, 0, 0));        }
-            sql($pdo,"UPDATE [dbo].[Organization_Invitation] SET [Enabled] = ? WHERE [Email]= ? and [Organization_Id] = ?",array(1,$email,$orgId));
-            echo 'UPDATED SUCCESS';
-            
-        } catch (Exception $ex) {
-            echo 'error';
+            sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($orgId, $userId, 0, 0, 0));
+        }
+        sql($pdo, "UPDATE [dbo].[Organization_Invitation] SET [Enabled] = ? WHERE [Email]= ? and [Organization_Id] = ?", array(1, $email, $orgId));
+        echo 'UPDATED SUCCESS';
+    } catch (Exception $ex) {
+        echo 'error';
     }
 }
 
@@ -907,13 +907,13 @@ function DB_checkIfServiceCommentsExits($pdo, $orgServId) {
 }
 
 //LOAD COMMENTS OF A SERVICE
-function DB_getCommentsOfService($pdo, $orgSerId) {
+function DB_getCommentsOfService($pdo, $orgServId) {
     try {
         $rows = sql($pdo, "SELECT [User].[UserName] AS UN
         ,[Comment].[Comment] AS CC
         FROM [dbo].[Comment]
         join [User]
-        on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? LIMIT 0,10", array($orgSerId), "rows");
+        on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? LIMIT 0,10", array($orgServId), "rows");
         if (DB_checkIfServiceCommentsExits($pdo, $orgServId)) {
             echo '<div class="row">
                 <div class="col-sm-12">
@@ -942,10 +942,10 @@ function DB_getCommentsOfService($pdo, $orgSerId) {
 }
 
 //ADD COMMENT TO A SERVICE
-function DB_addCommentOnService($pdo, $userId, $comment, $orgId, $d) {
+function DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Comment] ([User_Id], [Comment], [Organization_Service_Id],[Date_Created]) VALUES(?,?,?,?)"
-                . "", array($userId, $comment, $orgId, $d));
+                . "", array($userId, $comment, $orgServId, $d));
         echo 'Comment added!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";

@@ -1,4 +1,4 @@
-
+<?php $orgServId = 2;?>
 <main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
@@ -59,6 +59,15 @@
                                     <div class="form-bottom">
                                         <!--								<div class="status-upload">-->
                                         <div class="cd-label">
+                                            <?php
+                                            if (isset($_POST['addComment']) && !empty($_POST['userComment'])) {
+                                                $userId = $SESSION_['id'];
+                                                $comment = (filter_var($_POST ['userComment'], FILTER_SANITIZE_STRING));
+                                                $d = getDateToDB();
+                                                #$orgServId = ;
+                                                DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d);
+                                            }
+                                            ?>
                                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
                                                 <textarea id="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
                                                 <ul>
@@ -75,7 +84,7 @@
                             <!--espaço comentários anteriores-->
 
                             <div class="container">
-                                <?= DB_getCommentsOfService($pdo, $orgSerId) ?>
+                                <?= DB_getCommentsOfService($pdo, $orgServId) ?>
 
                             </div><!-- /container -->
                             <!--/espaço comentarios anteriores-->
