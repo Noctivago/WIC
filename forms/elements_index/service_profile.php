@@ -1,4 +1,7 @@
-<?php $orgServId = 2; ?>
+<?php
+$orgServId = 2;
+$msg;
+?>
 <main class = "cd-main-content">
     <div class = "content-wrapper" style = "padding-left: 0%">
 
@@ -67,15 +70,15 @@
                                                 $comment = (filter_var($_POST ['userComment'], FILTER_SANITIZE_STRING));
                                                 $d = getDateToDB();
                                                 #$orgServId = ;
-                                                echo 'USER > ' . $userId . ' COMMENT > ' . $comment . ' DATE > ' . $d . ' ORGSERID > ' . $orgServId;
+                                                $msg = 'USER > ' . $userId . ' COMMENT > ' . $comment . ' DATE > ' . $d . ' ORGSERID > ' . $orgServId;
                                                 echo DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d);
                                             }
                                             ?>
-                                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
-                                                <textarea id="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
-                                                <ul>
-                                                    <button type="addComment" class="btn "><i class="fa fa-reply"></i>POST </button>
-                                            </form> 
+                                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
+                                                <div class="form-group"><h4> <?php echo $msg; ?></h4>
+                                                    <textarea id="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
+                                                </div>
+                                                <button type="submit" class="btn" name="addComment"><i class="fa fa-reply"></i>POST </button>
                                         </div><!-- Status Upload class="btn btn-success "
                                         </div><!-- Widget Area -->
                                     </div>
@@ -87,7 +90,7 @@
                             <!--espaço comentários anteriores-->
 
                             <div class="container">
-                                <?= DB_getCommentsOfService($pdo, $orgServId) ?>
+<?= DB_getCommentsOfService($pdo, $orgServId) ?>
 
                             </div><!-- /container -->
                             <!--/espaço comentarios anteriores-->
