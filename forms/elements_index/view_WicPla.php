@@ -27,11 +27,11 @@
             
         </div>
         <div id="no-more-tables">
-            <table class="col-md-12 table-bordered table-striped table-condensed cf text-center" style="width: 932.22222px;height: 302.22222px;">
+            <table class="col-sm-8 col-lg-offset-2 text-center" style="width: 932.22222px;height: 302.22222px;">
         		<thead class="cf">
         			<tr>
         				<th>Id</th>
-        				<th>Dia da Semana</th>
+        				<th>Dia  Semana</th>
         				<th class="numeric">d-semana</th>	
         			</tr>
         		</thead>
