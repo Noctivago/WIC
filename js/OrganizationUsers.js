@@ -1,23 +1,3 @@
-//atribuir utilizador para a organização
-function assignUserInOrganization() {
-    var email = $("#email-user").val();
-    var orgId = $("#org").val();
-    var arg = 'assignUserInOrganization';
-    var dataString = 'arg=' + arg + '&email=' + email + '&orgId=' + orgId;
-    alert(dataString);
-    $.ajax({
-        type: 'POST',
-        url: "../orgsubmit.php",
-        data: dataString,
-        cache: false,
-        success: function (result) {
-            alert(result);
-        }
-    });
-    return false;
-}
-
-
 //remover utilizador da organização
 function removeUserInOrganization(id) {
     var arg = 'removeUserInOrganization';
