@@ -27,15 +27,17 @@ function addToWic(b) {
 }
 
 //TO DO
-function addCommentToService(a, b) {
+function addCommentToService(a, b, c, d) {
     //alert('add2Wic');
     ////DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d)
-    var wic = a;
-    var org = b;
-    var arg = 'add2Wic';
-    var dataString = 'wicPlannerId=' + a + '&orgServId=' + b + '&arg=' + arg;
+    var user = a;
+    var comment = b;
+    var org = c;
+    var date = d;
+    var arg = 'addComment';
+    var dataString = 'userId=' + a + '&comment=' + b + '&org=' + c + '&date=' + d + '&arg=' + arg;
     alert(dataString);
-    if (a === '' || b === '')
+    if (a === '' || b === '' || c === '' || d === '')
     {
         alert("Please Fill All Fields");
     } else

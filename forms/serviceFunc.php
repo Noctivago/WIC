@@ -12,15 +12,17 @@ if ($arg === 'add2Wic') {
         $orgServId = (filter_var($_POST ['orgServId']));
         echo DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId);
     } catch (Exception $ex) {
-        echo 'ERRO';
+        echo 'ERRO ADDING SERVICE TO WIC';
     }
 }
 if ($arg === 'addCommentToService') {
     try {
-        $wicPlannerId = (filter_var($_POST ['wicPlannerId']));
-        $orgServId = (filter_var($_POST ['orgServId']));
-        echo DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId);
+        $userId = (filter_var($_POST ['userId']));
+        $comment = (filter_var($_POST ['comment']));
+        $orgServId = (filter_var($_POST ['org']));
+        $d = (filter_var($_POST ['date']));
+        echo DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d);
     } catch (Exception $ex) {
-        echo 'ERRO';
+        echo 'ERRO ADDING YOUR COMMENT';
     }
 }
