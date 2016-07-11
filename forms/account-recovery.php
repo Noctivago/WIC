@@ -103,7 +103,6 @@ include_once '../db/functions.php';
                                                         . "WIC<br><br>"
                                                         . "Note: Please do not reply to this email! Thanks!";
                                                 $msg = sendEmail($to, $subject, $body);
-                                                #$msg = "NEW PASSWORD > " . $password;
                                             } else {
                                                 $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
                                             }
