@@ -115,7 +115,7 @@
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-<h3>User Comment Example</h3>
+<h3>User Comentário Example</h3>
 </div><!-- /col-sm-12 -->
 </div><!-- /row -->
 <div class="row">
@@ -136,9 +136,11 @@ Panel content
 </div><!-- /panel-body -->
 </div><!-- /panel panel-default -->
 </div><!-- /col-sm-5 -->
+</div>
 <br>
 <br>
 <br>
+<div class="row">
 <div class="col-sm-1">
 <div class="thumbnail">
 <img class="img-responsive user-photo" src="../../assets/img/logo.png">
