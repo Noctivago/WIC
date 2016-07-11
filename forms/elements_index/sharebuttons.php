@@ -12,16 +12,7 @@
                 <div class="col-sm-8 col-lg-offset-2 text">
 <!--            </div>-->
             </div>
-            <div class="row">
            
-                       <div class="col-sm-5">
-
-                    <div class="form-box">
-                       <div class="form-top-left">
-
-                            </div>
-                            <div class="form-top-right">
-                            </div>
 
         
             
@@ -105,9 +96,8 @@
                            
                            
 </div>
-            </div>
-        </div>
-            </div>
+           
+
 </div>
 </main>
     <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
