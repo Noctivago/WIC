@@ -10,6 +10,7 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
     $msg = '';
     try {
         $d = getDateToDB();
+        $idOrg = (filter_var($_POST['Org-Id'],FILTER_SANITIZE_STRING));
         $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
         $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
         $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
@@ -19,7 +20,8 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
         $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
         $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
         $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
-        $msg = DB_addOrganization($pdo, $userid, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
+        $msg = DB_addOrganization($pdo, $userid,$idOrg ,$name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
+        echo $msg;
     } catch (Exception $ex) {
         $msg = "ERROR!";
     }
@@ -82,7 +84,7 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
                                     </div>-->
 
 
-                        <div class="row" style="color: #000" onload="viewAllOrganization(<?= $userid ?>)">
+                        <div class="row" style="color: #000">
 
                             <div class="col-sm-8 col-sm-offset-2 text-center">
 
