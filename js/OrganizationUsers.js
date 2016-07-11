@@ -54,7 +54,7 @@ function addTable(json_resp){
     }
     tableBody.appendChild(tr);
 }
-        
+        mytable.appendChild(table);
     
 }
 //aceitar convite para ingressar na organizaçao
