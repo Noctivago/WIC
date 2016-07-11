@@ -126,7 +126,7 @@
 
 </div><!-- /col-sm-1 -->
 
-<div class="col-sm-5">
+<div class="col-sm-5" style="width: 330px">
 <div class="panel panel-default">
 <div class="panel-heading">
 <strong>Maria Vitória</strong> <span class="text-muted">commented 5 days ago</span>
@@ -147,7 +147,7 @@ Panel content
 </div><!-- /thumbnail -->
 </div><!-- /col-sm-1 -->
 
-<div class="col-sm-5">
+<div class="col-sm-5" style="width: 330px">
 <div class="panel panel-default">
 <div class="panel-heading">
 <strong>Augusto Morcao</strong> <span class="text-muted">commented 5 days ago</span>
