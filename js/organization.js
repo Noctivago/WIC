@@ -13,15 +13,24 @@ function readAllUserNewsletter() {
     return false;
 }
 
-function readDataOrganization(){
+function readDataOrganization() {
     var orgId = $("#org").val();
     alert(orgId);
-    var arg = 'viewAllUsersInOrganization';
-    var dataString = 'arg=' +arg + '&orgId=' + orgId;
-    var response;
-    $.post("../orgsubmit.php", {arg: arg, id:orgId}, function(result){
-            alert(result);
-            console.log(result);
+    var arg = 'viewAllOrganization';
+    $.post("../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
+        var json_obj = $.parseJSON(result);
+        alert(json_obj);
+        document.getElementById('Org').value = json_obj[0];
+        document.getElementById('name').value = json_obj[1];
+        document.getElementById('phone').value = json_obj[2];
+        document.getElementById('mobile').value = json_obj[3];
+        document.getElementById('address').value = json_obj[4];
+        document.getElementById('facebook').value = json_obj[5];
+        document.getElementById('twitter').value = json_obj[6];
+        document.getElementById('linkdin').value = json_obj[7];
+        document.getElementById('orgEmail').value = json_obj[8];
+        document.getElementById('website').value = json_obj[9];
+
     });
     return false;
 }
@@ -57,7 +66,7 @@ function addOrganization() {
                 alert(result);
             }
         });
-        
+
         viewAllOrganization();
         return false;
     }
@@ -130,18 +139,18 @@ function cleanInformation() {
 
 //edidar a informação da organização
 function editOrganizationInformation(cont) {
-    var orgId = $('#mytable #'+cont + ' #OId').val();
+    var orgId = $('#mytable #' + cont + ' #OId').val();
     alert(orgId);
-    document.getElementById('Org').value = $('#mytable #'+cont + ' #OOrg').text();
-    document.getElementById('name').value = $('#mytable #'+cont + ' #OName').text();
-    document.getElementById('phone').value = $('#mytable #'+cont + ' #OPhone').text();
-    document.getElementById('mobile').value = $('#mytable #'+cont + ' #OMobile').text();
-    document.getElementById('address').value = $('#mytable #'+cont + ' #OAddress').text();
-    document.getElementById('facebook').value = $('#mytable #'+cont + ' #OFacebook').text();
-    document.getElementById('twitter').value = $('#mytable #'+cont + ' #OTwitter').text();
-    document.getElementById('linkdin').value = $('#mytable #'+cont + ' #OLinkdin').text();
-    document.getElementById('orgEmail').value = $('#mytable #'+cont + ' #OO_Email').text();
-    document.getElementById('website').value = $('#mytable #'+cont + ' #OWebsite').text();
+    document.getElementById('Org').value = $('#mytable #' + cont + ' #OOrg').text();
+    document.getElementById('name').value = $('#mytable #' + cont + ' #OName').text();
+    document.getElementById('phone').value = $('#mytable #' + cont + ' #OPhone').text();
+    document.getElementById('mobile').value = $('#mytable #' + cont + ' #OMobile').text();
+    document.getElementById('address').value = $('#mytable #' + cont + ' #OAddress').text();
+    document.getElementById('facebook').value = $('#mytable #' + cont + ' #OFacebook').text();
+    document.getElementById('twitter').value = $('#mytable #' + cont + ' #OTwitter').text();
+    document.getElementById('linkdin').value = $('#mytable #' + cont + ' #OLinkdin').text();
+    document.getElementById('orgEmail').value = $('#mytable #' + cont + ' #OO_Email').text();
+    document.getElementById('website').value = $('#mytable #' + cont + ' #OWebsite').text();
     document.getElementById('add').style = "display: none";
     document.getElementById('update').style = "display: true";
     document.getElementById('cancel').style = "display: true";
