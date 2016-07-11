@@ -54,7 +54,7 @@ $msg;
 
                                     <button onclick="show('showWICPlanner');" style="display:none;" class = "btn" name = "login">Add to my Wic Planner!</button>
                                     <div id ="showWICPlanner">
-
+                                        <p>SHOWING WIC PLANNER SELECT</p>
                                     </div>
                                     <button type = "submit" class = "btn" name = "login">Start dealing!</button>
                                 </form>
