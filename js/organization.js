@@ -108,25 +108,16 @@ function deleteConfirmation() {
 function removeOrganization() {
     //remove organização selecionada pelo o boss
     var orgId = $("#org").val();
-    alert(orgId);
     var resp = deleteConfirmation();
     if (resp == true) {
         var arg = 'removeOrganization';
-        var dataString = 'arg=' + arg + '&org=' + $IdOrg;
-        alert(dataString);
-        $.ajax({
-            type: 'POST',
-            url: "../orgsubmit.php",
-            data: dataString,
-            cache: false,
-            sucess: function (result) {
-
-            }
-        });
-    }
+        $.post("../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
+        var json = $.parseJSON(result);
+            alert(result);
+    });
     return false;
 }
-
+}
 function cleanInformation() {
     //document.getElementById('Org-Id').value = 0;
     document.getElementById('name').value = "";
