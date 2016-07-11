@@ -22,9 +22,15 @@ function viewAllUsersInOrganization() {
     var arg = 'viewAllUsersInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
         var json = $.parseJSON(result);
-        
+        var tr = document.createElement('Tr');
+        tablebody
     });
     return false;
+}
+
+function addTable(){
+    var 
+    
 }
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
