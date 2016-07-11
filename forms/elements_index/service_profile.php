@@ -65,7 +65,7 @@ $msg;
                                 <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
                                 <div id ="showChat" style="display:none;">
                                     <p>SHOWING CHAT</p>
-                                    <button onclick="hide('showChat');" class = "btn" name = "ChatHide">Hide Chat!</button>
+                                    <button onclick="hide('showChat');" class = "btn" name = "ChatHide">Maybe later!</button>
                                 </div>
                             </div>
                         </div>
