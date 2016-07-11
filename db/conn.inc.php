@@ -957,7 +957,7 @@ function DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Event_Service] ([Organization_Service_Id], [WIC_Planner_Id], [Enabled]) VALUES(?,?,?)"
                 . "", array($orgServId, $wicPlannerId, 1));
-        echo 'Comment added!';
+        echo 'Service added to WIC Planner!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
