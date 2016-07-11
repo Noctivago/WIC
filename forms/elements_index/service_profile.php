@@ -52,7 +52,7 @@ $msg;
                                         <input type = "text" style = "height: 40px" name = "password" placeholder = "Adress:" class = "form-password form-control" id = "form-password" required>
                                     </div>
 
-                                    <button onclick="show('showWICPlanner')" style="display:none;" class = "btn" name = "login">Add to my Wic Planner!</button>
+                                    <button onclick="show('showWICPlanner');" style="display:none;" class = "btn" name = "login">Add to my Wic Planner!</button>
                                     <div id ="showWICPlanner">
 
                                     </div>
