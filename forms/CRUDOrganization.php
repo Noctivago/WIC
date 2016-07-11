@@ -3,7 +3,9 @@ include_once ('session.php');
 include_once ('../db/conn.inc.php');
 include_once ('../db/functions.php');
 
-if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
+
+
+if (isset($_POST['add']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
     $msg = '';
     try {
         $userid = $_SESSION['id'];
