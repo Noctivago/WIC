@@ -99,7 +99,7 @@ include_once ('../db/functions.php');
                                                     $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
                                                     $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
                                                     $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
-                                                    $msg = DB_addOrganization($pdo, $userid, $orgId, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
+                                                    $msg = DB_addOrganization($pdo, $userid, $idOrg, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
                                                     echo $msg;
                                                 } catch (Exception $ex) {
                                                     $msg = "ERROR!";
