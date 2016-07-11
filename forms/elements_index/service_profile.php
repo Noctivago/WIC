@@ -63,7 +63,7 @@
                                         <div class = "cd-label">
                                             <?php
                                             if (isset($_POST['addComment']) && !empty($_POST['userComment'])) {
-                                                $userId = $SESSION_['id'];
+                                                $userId = $_SESSION['id'];
                                                 $comment = (filter_var($_POST ['userComment'], FILTER_SANITIZE_STRING));
                                                 $d = getDateToDB();
                                                 #$orgServId = ;
