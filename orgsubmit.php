@@ -68,7 +68,6 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'viewAllOrganization') {
     try {
         $cont = 0;
-        $id = 33;
         $idOrg = $_POST['id'];
        // $userid = $_POST['idUser'];
         //$rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
