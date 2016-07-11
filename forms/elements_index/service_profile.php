@@ -136,7 +136,9 @@ Panel content
 </div><!-- /panel-body -->
 </div><!-- /panel panel-default -->
 </div><!-- /col-sm-5 -->
-
+<br>
+<br>
+<br>
 <div class="col-sm-1">
 <div class="thumbnail">
 <img class="img-responsive user-photo" src="../../assets/img/logo.png">
@@ -146,7 +148,7 @@ Panel content
 <div class="col-sm-5">
 <div class="panel panel-default">
 <div class="panel-heading">
-<strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+<strong>Augusto Morcao</strong> <span class="text-muted">commented 5 days ago</span>
 </div>
 <div class="panel-body">
 Panel content
