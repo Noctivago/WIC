@@ -70,28 +70,29 @@ if ($arg === 'addOrganization') {
         $cont = 0;
         $userid = $_POST['idUser'];
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
-        echo '<div style="display:none">';
-        echo '<table id="mytable">';
-        echo '<input type="hidden" name="UserId" value="' . $_POST['User_Boss'] . '"> ';
-        //echo '<input type="hidden" name="orgId" value="'.$row['Id'].'"> ';
-        foreach ($rows as $row) {
-            echo "<tr id=" . $cont . ">";
-            echo '<tbody style="display:none">';
-            echo "<td id='OId'>" . $row['Id'] . "</td>";
-            echo "<td id='OName'>" . $row['Name'] . "</td>";
-            echo "<td id='OPhone'>" . $row['Phone_Number'] . "</td>";
-            echo "<td id='OMobile'>" . $row['Mobile_Number'] . "</td>";
-            echo "<td id='OAddress'>" . $row['Address'] . "</td>";
-            echo "<td id='OFacebook'>" . $row['Facebook'] . "</td>";
-            echo "<td id='OTwitter'>" . $row['Twitter'] . "</td>";
-            echo "<td id='OLinkdin'>" . $row['Linkdin'] . "</td>";
-            echo "<td id='OO_Email'>" . $row['Organization_Email'] . "</td>";
-            echo "<td id='OWebsite'>" . $row['Website'] . "</td>";
-            echo "<tr>";
-            $cont += 1;
-            echo '</div>';
-        }
-        
+        echo json_encode($rows);
+//        echo '<div style="display:none">';
+//        echo '<table id="mytable">';
+//        echo '<input type="hidden" name="UserId" value="' . $_POST['User_Boss'] . '"> ';
+//        //echo '<input type="hidden" name="orgId" value="'.$row['Id'].'"> ';
+//        foreach ($rows as $row) {
+//            echo "<tr id=" . $cont . ">";
+//            echo '<tbody style="display:none">';
+//            echo "<td id='OId'>" . $row['Id'] . "</td>";
+//            echo "<td id='OName'>" . $row['Name'] . "</td>";
+//            echo "<td id='OPhone'>" . $row['Phone_Number'] . "</td>";
+//            echo "<td id='OMobile'>" . $row['Mobile_Number'] . "</td>";
+//            echo "<td id='OAddress'>" . $row['Address'] . "</td>";
+//            echo "<td id='OFacebook'>" . $row['Facebook'] . "</td>";
+//            echo "<td id='OTwitter'>" . $row['Twitter'] . "</td>";
+//            echo "<td id='OLinkdin'>" . $row['Linkdin'] . "</td>";
+//            echo "<td id='OO_Email'>" . $row['Organization_Email'] . "</td>";
+//            echo "<td id='OWebsite'>" . $row['Website'] . "</td>";
+//            echo "<tr>";
+//            $cont += 1;
+//            echo '</div>';
+//        }
+//        
     } catch (Exception $ex) {
         echo 'erro';
     }
