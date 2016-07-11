@@ -2,31 +2,6 @@
 include_once ('session.php');
 include_once ('../db/conn.inc.php');
 include_once ('../db/functions.php');
-
-if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
-                    $msg = '';
-                    try {
-                        $userid = $_SESSION['id'];
-                        $d = getDateToDB();
-                        $idOrg = (filter_var($_POST['Org-Id'], FILTER_SANITIZE_STRING));
-                        $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
-                        $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
-                        $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
-                        $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
-                        $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
-                        $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
-                        $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
-                        $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
-                        $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
-                        $msg = DB_addOrganization($pdo, $userid, $orgId, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
-                        echo $msg;
-                    } catch (Exception $ex) {
-                        $msg = "ERROR!";
-                    }
-                }
-                	
-
-
 ?>	
 <html lang="en">
 
@@ -71,8 +46,8 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
         <h4> <?php echo $msg; ?></h4>
         <main class="cd-main-content">
             <div class="content-wrapper">
-       
-                
+
+
 
 
 
@@ -108,12 +83,34 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
                                         </div>
 
                                         <div class="form-bottom">
-
+                                            <?php
+                                            if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
+                                                $msg = '';
+                                                try {
+                                                    $userid = $_SESSION['id'];
+                                                    $d = getDateToDB();
+                                                    $idOrg = (filter_var($_POST['Org-Id'], FILTER_SANITIZE_STRING));
+                                                    $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
+                                                    $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
+                                                    $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
+                                                    $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
+                                                    $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
+                                                    $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
+                                                    $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
+                                                    $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
+                                                    $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
+                                                    $msg = DB_addOrganization($pdo, $userid, $orgId, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
+                                                    echo $msg;
+                                                } catch (Exception $ex) {
+                                                    $msg = "ERROR!";
+                                                }
+                                            }
+                                            ?>    
                                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                                 <div class="form-group" id="org-sel">
                                                     <h4> <?php echo $msg; ?></h4>
                                                     <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()">
-<?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
+                                                        <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
