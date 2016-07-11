@@ -769,7 +769,7 @@ function DB_updateUserProfile($pdo, $fname, $lname, $countryId, $userId) {
     try {
         sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? , [Country_Id] = ? WHERE [User_Id] = ?", array($fname, $lname, $countryId, $userId));
         #sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? WHERE [User_Id] = ?", array($fname, $lname, $userId));
-        echo 'PROFILE UPDATED!';
+        #echo 'PROFILE UPDATED!';
     } catch (PDOException $e) {
         echo "ERROR UPDATING PROFILE!";
 #die();
