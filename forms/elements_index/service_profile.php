@@ -88,6 +88,7 @@ $msg;
                         function setDisplay(target, str) {
                             document.getElementById(target).style.display = str;
                         }
+
                     </script>
 
                     <div class = "col-sm-1 middle-border" >
