@@ -115,18 +115,18 @@
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-<h3>User  Example</h3>
+<h3>User Comment Example</h3>
 </div><!-- /col-sm-12 -->
 </div><!-- /row -->
 <div class="row">
-<div class="col-sm-1">
+    <div class="col-sm-1" style="width: 100%">
 <div class="thumbnail">
 <img class="img-responsive user-photo" src="../../assets/img/logo.png">
 </div><!-- /thumbnail -->
 
 </div><!-- /col-sm-1 -->
 
-<div class="col-sm-5" style="width: 330px">
+<div class="col-sm-5" style="width: 100%">
 <div class="panel panel-default">
 <div class="panel-heading">
 <strong>Maria Vitória</strong> <span class="text-muted">commented 5 days ago</span>
@@ -147,7 +147,7 @@ Panel content
 </div><!-- /thumbnail -->
 </div><!-- /col-sm-1 -->
 
-<div class="col-sm-5" style="width: 330px">
+<div class="col-sm-5" style="width: 100%">
 <div class="panel panel-default">
 <div class="panel-heading">
 <strong>Augusto Morcao</strong> <span class="text-muted">commented 5 days ago</span>
