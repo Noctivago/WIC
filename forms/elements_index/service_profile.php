@@ -115,7 +115,7 @@
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-<h3>User Comentário Example</h3>
+<h3>User  Example</h3>
 </div><!-- /col-sm-12 -->
 </div><!-- /row -->
 <div class="row">
