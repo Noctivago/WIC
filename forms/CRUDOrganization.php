@@ -147,7 +147,7 @@ include_once ('../db/functions.php');
                                                 </div>
                                                 <button type="submit" id="addOrg" class="btn" name="addOrg" visible="true">NEW ORGANIZATION!</button>
                                                 <button type="submit" id="update" class="btn" name="update" style="display: none;">Save</button>
-                                                <button type="submit" id="delete" class="btn" name="delete" style="display: none;">Delete</button>
+                                                <button type="submit" id="delete" class="btn" name="delete" onclick="removeOrganization()" style="display: none;">Delete</button>
                                                 <!--button type="reset" id="cancel" class="btn" name="Cancel" style="display: none;"> Cancel </button-->
                                             </form>
                                         </div>
