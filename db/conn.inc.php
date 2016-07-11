@@ -1,6 +1,6 @@
 <?php
 
-include_once './functions.php';
+#include_once './functions.php';
 
 $dbserver = "wicsqlserver.database.windows.net";
 $dbport = "1433";
