@@ -9,8 +9,7 @@
 <!--    <div class="inner-bg" style="padding-top: 0px">-->
         <div class="container">
 
-<!--            <div class="row">-->
-                <div class="col-sm-8 col-lg-offset-2 text">
+
 
 <!-- I got these buttons from simplesharebuttons.com -->
 <div id="share-buttons">
