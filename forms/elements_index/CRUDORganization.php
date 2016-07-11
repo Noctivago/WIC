@@ -3,14 +3,9 @@
 <div class="content-wrapper" style="padding-left: 0%">
 
 <div class="top-content">
-           <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Portugal Campeão Europeu!
-                 </h1>
-             </div>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
 <!--    <div class="inner-bg" style="padding-top: 0px">-->
-</div>
         <div class="container">
 
 <!--            <div class="row">-->
@@ -23,12 +18,13 @@
 
                     <div class="form-box">
                         <div class="form-top">
-                            <h1 style
-                            <div class="form-top-left">
+                            
+                            <h1 style="color: darkgray"><strong>NEW ORGANIZATION</strong> </h1>
+<!--                            <div class="form-top-left">
 
                             </div>
                             <div class="form-top-right">
-                            </div>
+                            </div>-->
                             <!--                            <div class="form-top-right">
                                                             <i class="fa fa-key"></i>-->
                             <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
@@ -39,170 +35,55 @@
                         
 
                         <div class="form-bottom">
-                            <form role="form" action="" method="post" class="login-form">
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-username">Company Name:</label>
-                                    <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Adress:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Web Site:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Facebook:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Twitter:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Linkedin:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-username">Email</label>
-                                    <input type="text" style="height: 40px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Country:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
-                                </div>
+                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
+                                                <div class="form-group" id="org-sel">
+                                                    <h4> <?php echo $msg; ?></h4>
+                                                    <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()">
+                                                        <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
+                                                    </select>
+                                                </div>
+                                                
 
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">City:</label>
-                                    <input type="password" style="height: 40px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
-                                </div>
-                                <button type="submit" class="btn" name="login">Save Changes!</button>
+                                                <div class="form-group">
+                                                    <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
+                                                </div>
 
-                            </form>
+                                                <div class="form-group">
+                                                    <input type="text" name="phone" placeholder="ORGANIZATION PHONE" class="form-password form-control" id="phone" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" name="mobile" placeholder="ORGANIZATION MOBILE" class="form-password form-control" id="mobile" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" name="address" placeholder="ORGANIZATION ADDRESS" class="form-password form-control" id="address" >
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" name="facebook" placeholder="ORGANIZATION FACEBOOK" class="form-password form-control" id="facebook" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" name="twitter" placeholder="ORGANIZATION TWITTER" class="form-password form-control" id="twitter" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" name="linkdin" placeholder="ORGANIZATION LINKDIN" class="form-password form-control" id="linkdin" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="email" name="orgEmail" placeholder="ORGANIZATION EMAIL" class="form-password form-control" id="orgEmail" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" name="website" placeholder="ORGANIZATION WEBSITE" class="form-password form-control" id="website" required>
+                                                </div>
+                                                <button type="submit" id="addOrg" class="btn" name="addOrg" visible="true">NEW ORGANIZATION!</button>
+                                                <button type="submit" id="update" class="btn" name="update" style="display: none;">Save</button>
+                                                <button type="submit" id="delete" class="btn" name="delete" onclick="removeOrganization()" style="display: none;">Delete</button>
+                                                <!--button type="reset" id="cancel" class="btn" name="Cancel" style="display: none;"> Cancel </button-->
+                                            </form>
                         </div>
 </div>
 </div>
-                        <!--post modal-->
-                        <!--<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                          <div class="modal-dialog">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                Update Status
-                              </div>
-                              <div class="modal-body">
-                                  <form class="form center-block">
-                                    <div class="form-group">
-                                      <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
-                                    </div>
-                                  </form>
-                              </div>
-                              <div class="modal-footer">
-                                  <div>
-                                  <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-                                    <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-                                          </div>	
-                              </div>
-                          </div>
-                          </div>
-                        </div>-->
+                       
 
                     
-                           
-                        <div class="col-sm-1 middle-border"  >
-                        </div>                   
-                        <div class="col-sm-1"></div>
-                        
-                        <div class="col-sm-5">
-
-                    <div class="form-box">
-                        <div class="form-top">
-                            <div class="form-top-left"></div>
-                            <div class="form-top-right">
-</div>
-                                <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                <input style="color: black;" class="form-username form-control" type="file">
-                                <!--<h6 style="color:black">Upload a different photo...</h6>-->
-
-                            
-                            <!--                            <div class="form-top-right">
-                                                            <i class="fa fa-key"></i>
-                                                        </div>-->
-                        </div>
-
-                        <div class="form-bottom">
-                            <form role="form" action="" method="post" class="login-form">
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-username">Company Name:</label>
-                                    <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Adress:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Web Site:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Facebook:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Twitter:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Linkedin:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-username">Email</label>
-                                    <input type="text" style="height: 40px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Country:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">City:</label>
-                                    <input type="password" style="height: 40px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
-                                </div>
-                                <button type="submit" class="btn" name="login">Save Changes!</button>
-
-                            </form>
-                        </div>
-
-
-                        <!--post modal-->
-                        <!--<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                          <div class="modal-dialog">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                Update Status
-                              </div>
-                              <div class="modal-body">
-                                  <form class="form center-block">
-                                    <div class="form-group">
-                                      <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
-                                    </div>
-                                  </form>
-                              </div>
-                              <div class="modal-footer">
-                                  <div>
-                                  <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-                                    <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-                                          </div>	
-                              </div>
-                          </div>
-                          </div>
-                        </div>-->
-
-                    </div>
-                            </div>
+                         
                     <!--                        <div class="col-sm-1 middle-border"></div>-->
 <!--                    <div class="col-sm-1"></div>
 
@@ -213,7 +94,7 @@
                     
                 </div>
 
-            
+            </div>
 <!--        </div>-->
 
     </div>
