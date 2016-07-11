@@ -27,11 +27,11 @@ function addToWic(b) {
 }
 
 //TO DO
-function addCommentToService(a, b, c, d) {
+function addCommentToService(a, c, d) {
     //alert('add2Wic');
     ////DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d)
     var user = a;
-    var comment = b;
+    var comment = document.getElementById("userComment").value;
     var org = c;
     var date = d;
     var arg = 'addComment';
