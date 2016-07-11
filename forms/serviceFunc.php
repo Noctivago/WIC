@@ -8,8 +8,8 @@ $arg = (filter_var($_POST ['arg']));
 
 if ($arg === 'add2Wic') {
     try {
-        $wicPlannerId = (filter_var($_POST ['wic']));
-        $orgServId = (filter_var($_POST ['org']));
+        $wicPlannerId = (filter_var($_POST ['wicPlannerId']));
+        $orgServId = (filter_var($_POST ['orgServId']));
         echo DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId);
     } catch (Exception $ex) {
         echo 'ERRO';

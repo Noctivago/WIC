@@ -4,7 +4,7 @@ function addToWic(a, b) {
     var wic = a;
     var org = b;
     var arg = 'add2Wic';
-    var dataString = 'wicPlannerId=' + username + '&orgServId=' + password + '&arg=' + arg;
+    var dataString = 'wicPlannerId=' + a + '&orgServId=' + b + '&arg=' + arg;
     if (a === '' || b === '')
     {
         alert("Please Fill All Fields");
