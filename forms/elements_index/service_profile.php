@@ -55,9 +55,13 @@ $msg;
                                 <button onclick="show('showWICPlanner');" class = "btn" name = "WICPlannerShow">Add to my Wic Planner!</button>
                                 <div id ="showWICPlanner" style="display:none;">
                                     <p>SHOWING WIC PLANNER SELECT</p>
-                                    <button onclick="hide('showWICPlanner');" class = "btn" name = "WICPlannerHide">Show Wic Planner!</button>
+                                    <button onclick="hide('showWICPlanner');" class = "btn" name = "WICPlannerHide">Hide Wic Planner!</button>
                                 </div>
-                                <button type = "submit" class = "btn" name = "WICChat">Start dealing!</button>
+                                <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
+                                 <div id ="showChat" style="display:none;">
+                                    <p>SHOWING CHAT</p>
+                                    <button onclick="hide('showChat');" class = "btn" name = "ChatHide">Hide Chat!</button>
+                                </div>
                             </div>
                         </div>
                     </div>
