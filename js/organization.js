@@ -25,6 +25,10 @@ function readDataOrganization() {
         alert(result);
         console.log(result);
         var json = $.parseJSON(result);
+        if(jsno[0].Name=== null){
+            cleanInformation();
+          
+        }else{
         console.log(json[0].Name);
         document.getElementById('Org-Id').value = json[0].Id;
         document.getElementById('name').value = json[0].Name;
@@ -40,7 +44,7 @@ function readDataOrganization() {
         document.getElementById('update').style = "display: true";
         document.getElementById('delete').style = "display: true";
         document.getElementById('cancel').style = "display: true";
-
+        }
     });
     return false;
 }
@@ -132,7 +136,7 @@ function removeOrganization($IdOrg, $id) {
 
 }
 function cleanInformation() {
-    document.getElementById('Org').value = 0;
+    document.getElementById('Org-Id').value = 0;
     document.getElementById('name').value = "";
     document.getElementById('phone').value = "";
     document.getElementById('mobile').value = "";
@@ -146,32 +150,6 @@ function cleanInformation() {
     document.getElementById('update').style = "display: none";
     document.getElementById('cancel').style = "display: none";
 }
-
-//edidar a informação da organização
-function editOrganizationInformation(cont) {
-    var orgId = $('#mytable #' + cont + ' #OId').val();
-    alert(orgId);
-    document.getElementById('Org').value = $('#mytable #' + cont + ' #OOrg').text();
-    document.getElementById('name').value = $('#mytable #' + cont + ' #OName').text();
-    document.getElementById('phone').value = $('#mytable #' + cont + ' #OPhone').text();
-    document.getElementById('mobile').value = $('#mytable #' + cont + ' #OMobile').text();
-    document.getElementById('address').value = $('#mytable #' + cont + ' #OAddress').text();
-    document.getElementById('facebook').value = $('#mytable #' + cont + ' #OFacebook').text();
-    document.getElementById('twitter').value = $('#mytable #' + cont + ' #OTwitter').text();
-    document.getElementById('linkdin').value = $('#mytable #' + cont + ' #OLinkdin').text();
-    document.getElementById('orgEmail').value = $('#mytable #' + cont + ' #OO_Email').text();
-    document.getElementById('website').value = $('#mytable #' + cont + ' #OWebsite').text();
-    document.getElementById('add').style = "display: none";
-    document.getElementById('update').style = "display: true";
-    document.getElementById('cancel').style = "display: true";
-    //var span = document.createElement('upda');
-    span.innerHTML = '<button onclick="updateOrg(' + org + ')" />';
-    document.getElementById('update').onclick = updateOrg(org);
-
-
-
-}
-
 
 
 
