@@ -48,7 +48,7 @@ $msg;
                                         <input type = "text" style = "height: 40px" name = "email" placeholder = "Name of the Service" class = "form-username form-control" id = "form-username" required autofocus>
                                     </div>
                                     <div class = "form-group">
-                                        <label class = "sr-only" for = "form-password">Adress:</label>
+                                        <label class = "sr-only" for = "form-password">Address:</label>
                                         <input type = "text" style = "height: 40px" name = "password" placeholder = "Adress:" class = "form-password form-control" id = "form-password" required>
                                     </div>
 
