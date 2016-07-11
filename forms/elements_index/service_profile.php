@@ -59,13 +59,13 @@ $msg;
                                 <div>
                                     <button id ="showWICPlannerBTN"onclick="show('showWICPlanner');hide('showWICPlannerBTN');" class = "btn" name = "WICPlannerShow">Add to WIC Planner!</button>
                                     <div id ="showWICPlanner" style="display:none;">
-                                        <select class="form-username form-control" name="wicPlanner" id="wicPlanner" required="required">
+                                        <select class="form-username form-control" name="wicPlannerSelect" id="wicPlannerSelect" required="required">
                                             <?= DB_getWicPlannerAsSelect($pdo, $_SESSION['id']) ?>
                                         </select>
                                         <br>
                                         <div class = "login-form">
                                             <button onclick="hide('showWICPlanner');show('showWICPlannerBTN');" class = "btn" name = "WICPlannerHide">Hide WIC Planner!</button>
-                                            <button onclick="addToWic(<?= $orgServId ?>,<?= $_SESSION['id'] ?>)"class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
+                                            <button onclick="addToWic(<?= $orgServId ?>)"class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
                                         </div>
                                     </div>
                                     <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>

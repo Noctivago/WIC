@@ -1,10 +1,10 @@
-function addToWic(a, b) {
+function addToWic(b) {
     //alert('add2Wic');
     //DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId)
-    var wic = a;
+    var wic = document.getElementById("wicPlannerSelect").value;
     var org = b;
     var arg = 'add2Wic';
-    var dataString = 'wicPlannerId=' + a + '&orgServId=' + b + '&arg=' + arg;
+    var dataString = 'wicPlannerId=' + wic + '&orgServId=' + org + '&arg=' + arg;
     alert(dataString);
     if (a === '' || b === '')
     {
