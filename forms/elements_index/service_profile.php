@@ -91,7 +91,7 @@ $msg;
                         function addToWICPlanner() {
                             //function DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId)
                             var myData = <?php DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) ?>;
-                            console.log(myData);
+                            //console.log(myData);
                             alert(myData);
                         }
 
