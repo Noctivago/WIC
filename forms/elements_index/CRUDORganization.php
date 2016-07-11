@@ -1,10 +1,10 @@
-
+<?php include_once ('../db/conn.inc.php');?>
 <main class="cd-main-content">
 <div class="content-wrapper" style="padding-left: 0%">
 
 <div class="top-content">
                  <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> New  Organization  <h4> <?php echo $msg; ?></h4>
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> New  Organization!!  <h4> <?php echo $msg; ?></h4>
                  </h1>
                  </div>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -65,7 +65,7 @@
                                <div class="form-group" id="org-sel">
                                                     <h4> <?php echo $msg; ?></h4>
                                                     <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()">
-                                                        
+                                                        <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                                     </select>
                                  </div>
                                 
