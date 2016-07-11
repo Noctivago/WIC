@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-12">
             <h1 class="text-center">
-                Nome tabela
+                My Wic Planner
             </h1>
             
         </div>
