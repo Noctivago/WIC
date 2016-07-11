@@ -450,10 +450,10 @@ function DB_addUserInOrganization($pdo, $email, $idOrg){
                 $to = $email;
                 $subject = "Invite to join organization";
                 $body = "Hi, please resgist on www.wic.club";
-                sendEmail($to, $subject, $body);
+                echo sendEmail($to, $subject, $body);
                 //envia convite para o email para se registar.
-                echo 'GRRRR';
-            }
+           
+                }
             
         }
     } catch (Exception $ex) {
