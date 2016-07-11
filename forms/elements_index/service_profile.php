@@ -56,20 +56,22 @@ $msg;
                                         <input type = "text" style = "height: 40px" name = "password" placeholder = "DESCRIPTION:" class = "form-password form-control" id = "form-password" required>
                                     </div>
                                 </form>
-                                <button id ="showWICPlannerBTN"onclick="show('showWICPlanner');hide('showWICPlannerBTN');" class = "btn" name = "WICPlannerShow">WIC Planner!</button>
-                                <div id ="showWICPlanner" style="display:none;">
-                                    <select class="form-username form-control" name="wicPlanner" id="wicPlanner" required="required">
-                                        <?= DB_getWicPlannerAsSelect($pdo, $_SESSION['id']) ?>
-                                    </select>
-                                    <div class = "login-form">
-                                        <button class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
-                                        <button onclick="hide('showWICPlanner');show('showWICPlannerBTN');" class = "btn" name = "WICPlannerHide">Hide WIC Planner!</button>
+                                <div>
+                                    <button id ="showWICPlannerBTN"onclick="show('showWICPlanner');hide('showWICPlannerBTN');" class = "btn" name = "WICPlannerShow">WIC Planner!</button>
+                                    <div id ="showWICPlanner" style="display:none;">
+                                        <select class="form-username form-control" name="wicPlanner" id="wicPlanner" required="required">
+                                            <?= DB_getWicPlannerAsSelect($pdo, $_SESSION['id']) ?>
+                                        </select>
+                                        <div class = "login-form">
+                                            <button class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
+                                            <button onclick="hide('showWICPlanner');show('showWICPlannerBTN');" class = "btn" name = "WICPlannerHide">Hide WIC Planner!</button>
+                                        </div>
                                     </div>
-                                </div>
-                                <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
-                                <div id ="showChat" style="display:none;">
-                                    <p>SHOWING CHAT</p>
-                                    <button onclick="hide('showChat');" class = "btn" name = "ChatHide">Maybe later!</button>
+                                    <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
+                                    <div id ="showChat" style="display:none;">
+                                        <p>SHOWING CHAT</p>
+                                        <button onclick="hide('showChat');" class = "btn" name = "ChatHide">Maybe later!</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
