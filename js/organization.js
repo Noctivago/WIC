@@ -22,7 +22,6 @@ function readDataOrganization() {
             cleanInformation();
         } else {
             console.log(json[0].Name);
-            document.getElementById('Org-Id').value = json[0].Id;
             document.getElementById('name').value = json[0].Name;
             document.getElementById('phone').value = json[0].Phone_Number;
             document.getElementById('mobile').value = json[0].Mobile_Number;
