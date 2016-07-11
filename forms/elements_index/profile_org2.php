@@ -120,40 +120,34 @@
             <table class="col-md-12 table-bordered table-striped table-condensed cf">
         		<thead class="cf">
         			<tr>
-        				<th>1</th>
-        				<th>Company</th>
-        				<th class="numeric">Price</th>
-        				<th class="numeric">Change</th>
-        				<th class="numeric">Change %</th>
-        				<th class="numeric">Open</th>
-        				<th class="numeric">High</th>
-        				<th class="numeric">Low</th>
-        				<th class="numeric">Volume</th>
+        				<th>Id</th>
+        				<th>Dia Semana</th>
+        				<th class="numeric">d-semana</th>	
         			</tr>
         		</thead>
         		<tbody>
         			<tr>
-        				<td data-title="Code">2</td>
+        				<td data-title="Code">21</td>
         				<td data-title="Company">SEGUNDA</td>
-        				<td data-title="Day" class="numeric">2</td>
+        				<td data-title="Day" class="numeric">seg-feira</td>
+        				
+        			</tr>
+        			<tr>
+        				<td data-title="Code">2</td>
+        				<td data-title="Company">TERCA</td>
+        				<td data-title="Day" class="numeric">ter-feira</td>
         				
         			</tr>
         			<tr>
         				<td data-title="Code">3</td>
-        				<td data-title="Company">TERCA</td>
-        				<td data-title="Day" class="numeric">3</td>
+        				<td data-title="Company">QUARTA</td>
+        				<td data-title="Day" class="numeric">qua-feira</td>
         				
         			</tr>
         			<tr>
         				<td data-title="Code">4</td>
-        				<td data-title="Company">QUARTA</td>
-        				<td data-title="Day" class="numeric">4</td>
-        				
-        			</tr>
-        			<tr>
-        				<td data-title="Code">5</td>
         				<td data-title="Company">QUINTA</td>
-        				<td data-title="Day" class="numeric">5</td>
+        				<td data-title="Day" class="numeric">qui-feira</td>
         				
         			</tr>
         			<tr>
