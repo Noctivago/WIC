@@ -35,43 +35,16 @@
                         <div class="form-bottom">
                             <form role="form" action="" method="post" class="login-form">
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-username">Company Name:</label>
-                                    <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    <label class="sr-only" for="form-username">Name of the Service:</label>
+                                    <input type="text" style="height: 40px" name="email" placeholder="Name of the Service" class="form-username form-control" id="form-username" required autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Adress:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Adress:" class="form-password form-control" id="form-password" required>
                                 </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Web Site:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Facebook:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Twitter:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Linkedin:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-username">Email</label>
-                                    <input type="text" style="height: 40px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Country:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">City:</label>
-                                    <input type="password" style="height: 40px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
-                                </div>
-                                <button type="submit" class="btn" name="login">Save Changes!</button>
+                               
+                                <button type="submit" class="btn" name="login">Add to my Wic Planner!</button>
+                                <button type="submit" class="btn" name="login">Start dealing!</button>
 
                             </form>
                         </div>
@@ -109,6 +82,41 @@
                         <div class="col-sm-1"></div>
                         
                         <div class="col-sm-5">
+                            
+                            
+ <!--<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">-->
+
+ <!--espaço comentários-->
+ 
+ <div class="container">
+	<div class="row">
+		<h3>Give your  about this Service :D</h3>
+	</div>
+    
+    <div class="row">
+    
+        <div class="col-md-6" style="width: 100%">
+
+    						<div class="form-bottom">
+<!--								<div class="status-upload">-->
+								<div class="cd-label">
+									<form>
+                                                                            <textarea placeholder="Write your comment here" style="width: 100%"></textarea>
+<!--										<ul>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
+										</ul>-->
+										<button type="submit" class="btn "><i class="fa fa-reply"></i>POST </button>
+									</form>
+								</div><!-- Status Upload class="btn btn-success "  -->
+							</div><!-- Widget Area -->
+						</div>
+        
+    </div>
+</div>
+ <!--/espaço comentários-->
                             
                             <!--espaço comentários anteriores-->
 
@@ -166,38 +174,6 @@ Panel content
 </div><!-- /container -->
 <!--/espaço comentarios anteriores-->
 
- <!--<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">-->
-
- <!--espaço comentários-->
- 
- <div class="container">
-	<div class="row">
-		<h3>Give your  about this Service :D</h3>
-	</div>
-    
-    <div class="row">
-    
-        <div class="col-md-6" style="width: 100%">
-
-    						<div class="form-bottom">
-<!--								<div class="status-upload">-->
-								<div class="cd-label">
-									<form>
-                                                                            <textarea placeholder="Write your comment here" style="width: 100%"></textarea>
-<!--										<ul>
-											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
-											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
-											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
-											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
-										</ul>-->
-										<button type="submit" class="btn "><i class="fa fa-reply"></i>POST </button>
-									</form>
-								</div><!-- Status Upload class="btn btn-success "  -->
-							</div><!-- Widget Area -->
-						</div>
-        
-    </div>
-</div>
                             </div>
                     <!--                        <div class="col-sm-1 middle-border"></div>-->
 <!--                    <div class="col-sm-1"></div>
