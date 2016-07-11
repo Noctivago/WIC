@@ -71,40 +71,40 @@
                                  </div>
                                 
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-username">Company Name:</label>
+                                    <!--<label class="sr-only" for="form-username">Company Name:</label>-->
                                     <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">Telephone:</label>
+                                    <!--<label class="sr-only" for="form-password">Telephone:</label>-->
                                     <input type="text" name="phone" placeholder="ORGANIZATION PHONE" class="form-password form-control" id="phone" required>
                                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">Mobile Number:</label>
+                                    <!--<label class="sr-only" for="form-password">Mobile Number:</label>-->
                                     <input type="text" name="mobile" placeholder="ORGANIZATION MOBILE" class="form-password form-control" id="mobile" required>
                                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">Adress:</label>
+                                    <!--<label class="sr-only" for="form-password">Adress:</label>-->
                                     <input type="text" name="address" placeholder="ORGANIZATION ADDRESS" class="form-password form-control" id="address" >
                                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">Facebook:</label>
+                                    <!--<label class="sr-only" for="form-password">Facebook:</label>-->
                                     <input type="text" name="facebook" placeholder="ORGANIZATION FACEBOOK" class="form-password form-control" id="facebook" required>
                                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">Twitter:</label>
+                                    <!--<label class="sr-only" for="form-password">Twitter:</label>-->
                                     <input type="text" name="twitter" placeholder="ORGANIZATION TWITTER" class="form-password form-control" id="twitter" required>
                                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-username">Linkedin</label>
+                                    <!--<label class="sr-only" for="form-username">Linkedin</label>-->
                                     <input type="text" name="linkdin" placeholder="ORGANIZATION LINKDIN" class="form-password form-control" id="linkdin" required>
                                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">Email of Organization:</label>
+                                    <!--<label class="sr-only" for="form-password">Email of Organization:</label>-->
                                     <input type="email" name="orgEmail" placeholder="ORGANIZATION EMAIL" class="form-password form-control" id="orgEmail" required>
                                                 </div>
 
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">WebSite:</label>
+                                    <!--<label class="sr-only" for="form-password">WebSite:</label>-->
                                     <input type="text" name="website" placeholder="ORGANIZATION WEBSITE" class="form-password form-control" id="website" required>
                                                 </div>
                                 <button type="submit" id="addOrg" class="btn" name="addOrg" visible="true">NEW ORGANIZATION!</button>

@@ -1,8 +1,4 @@
-<?php
-include_once 'session.php';
-//include_once '../db/conn.inc.php';
-include_once '../db/functions.php';
-?>
+
 
 <?php
 include("elements_index/head_index.php");
