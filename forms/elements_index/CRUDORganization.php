@@ -4,7 +4,7 @@
 
 <div class="top-content">
                  <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">   Organization For YOU <h4> <?php echo $msg; ?></h4>
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> New  Organization For YOU <h4> <?php echo $msg; ?></h4>
                  </h1>
                  </div>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -171,7 +171,7 @@
     <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
     <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
     
-    <script src="../js/Organization.js"></script>
+    <script src="../../js/organization.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 
