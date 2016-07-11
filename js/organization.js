@@ -25,33 +25,31 @@ function readDataOrganization() {
         alert(result);
         console.log(result);
         var json = $.parseJSON(result);
-        if(json.length == 0){
+        if (json.length === 0) {
             cleanInformation();
-          
-        }else{
-        console.log(json[0].Name);
-        document.getElementById('Org-Id').value = json[0].Id;
-        document.getElementById('name').value = json[0].Name;
-        document.getElementById('phone').value = json[0].Phone_Number;
-        document.getElementById('mobile').value = json[0].Mobile_Number;
-        document.getElementById('address').value = json[0].Address;
-        document.getElementById('facebook').value = json[0].Facebook;
-        document.getElementById('twitter').value = json[0].Twitter;
-        document.getElementById('linkdin').value = json[0].Linkdin;
-        document.getElementById('orgEmail').value = json[0].Organization_Email;
-        document.getElementById('website').value = json[0].Website;
-        document.getElementById('add').style = "display: none";
-        document.getElementById('update').style = "display: true";
-        document.getElementById('delete').style = "display: true";
-        document.getElementById('cancel').style = "display: true";
+        } else {
+            console.log(json[0].Name);
+            document.getElementById('Org-Id').value = json[0].Id;
+            document.getElementById('name').value = json[0].Name;
+            document.getElementById('phone').value = json[0].Phone_Number;
+            document.getElementById('mobile').value = json[0].Mobile_Number;
+            document.getElementById('address').value = json[0].Address;
+            document.getElementById('facebook').value = json[0].Facebook;
+            document.getElementById('twitter').value = json[0].Twitter;
+            document.getElementById('linkdin').value = json[0].Linkdin;
+            document.getElementById('orgEmail').value = json[0].Organization_Email;
+            document.getElementById('website').value = json[0].Website;
+            document.getElementById('add').style = "display: none";
+            document.getElementById('update').style = "display: true";
+            document.getElementById('delete').style = "display: true";
+            document.getElementById('cancel').style = "display: true";
         }
     });
     return false;
 }
 
 function addOrganization() {
-
-    var userid = $("#userid").val();
+var userid = $("#userid").val();
     var name = $("#name").val();
     var phone = $("#phone").val();
     var mobile = $("#mobile").val();
