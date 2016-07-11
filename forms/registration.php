@@ -139,7 +139,7 @@ include_once '../db/functions.php';
                                             <label class="sr-only" for="form-email">Email</label>
                                             <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
                                         </div>
-                                        <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
+                                        <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6" required></div>
                                         <br>
                                         <button type="submit" class="btn" name="signup">Sign me up!</button>
                                         <h2><?php echo $forgotPassword; ?></h2>
