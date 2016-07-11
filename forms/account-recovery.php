@@ -84,12 +84,13 @@ include_once '../db/functions.php';
                                         //SE EMAIL EXISTE
                                         if (DB_checkIfUserExists($pdo, $email)) {
                                             //CRIA PASSWORD -
+                                            $userId = $_SESSION['id'];
                                             //ATRIBUI NOVA PASSWORD AO USER
                                             $password = generatePassword();
                                             //CODIFICA PASSWORD PARA INSERIR NA BD
                                             $hashPassword = hash('whirlpool', $password);
                                             //INSERE PASSWORD NA BD
-                                            if (DB_changeUserPassword($pdo, $email, $hashPassword)) {
+                                            if (DB_changeUserPassword($pdo, $userId, $hashPassword)) {
                                                 //ENVIA EMAIL
                                                 $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
                                                 $to = $email;
