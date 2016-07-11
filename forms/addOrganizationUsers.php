@@ -68,24 +68,23 @@ include_once ('../db/functions.php');
                             <div class="form-box">
                                 <div class="form-bottom">
                                     <?php
-                                    if (isset($_POST['addOrgSer']) && !empty($_POST['name']) ) {
+                                    if (isset($_POST['addUserOrg']) && !empty($_POST['email-user']) ) {
                                         $msg = '';
                                         try {
-                                            $d = getDateToDB();
                                             $userid = $_SESSION['id'];
-                                            $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
-                                            $description = (filter_var($_POST ['description'], FILTER_SANITIZE_STRING));
-                                            $org = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
-                                            $subCategory = (filter_var($_POST ['subCategory'], FILTER_SANITIZE_STRING));
-                                            $city = (filter_var($_POST ['city'], FILTER_SANITIZE_STRING));
-                                            $msg = DB_addOrganizationService($pdo, $name, $description, $org, $subCategory, $city, $d);
+                                            $idOrg = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
+                                            $email = (filter_var($_POST ['email-user'], FILTER_SANITIZE_STRING));
+                                            $msg = DB_addUserInOrganization($pdo,$email,$idOrg);
+                                            echo $msg;
                                         } catch (Exception $ex) {
                                             $msg = "ERROR!";
                                         }
+                                    }  else {
+                                        echo 'fill the email';
                                     }
                                     ?>	
 
-                                    <form role="form" class="login-form">
+                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group"><h4> <?php echo $msg; ?></h4>
                                             <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()" required="required">
                                                 <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
@@ -94,21 +93,15 @@ include_once ('../db/functions.php');
                                         <div class="form-group">
                                             <input type="email" name="email-user" placeholder="User email" class="form-password form-control" id="email-user" required>
                                         </div>
-                                        <button type="submit" class="btn" name="send-invite" onclick="assignUserInOrganization()">Send invite to join organization</button>
+                                        <button type="submit" id="addUserOrg"class="btn" name="send-invite">Send invite to join organization</button>
                                     </form>
                                 </div>
                             </div>
 
                         </div>
 
-                        <!--                        <div class="col-sm-1 middle-border"></div>-->
-                        <div class="col-sm-1"></div>
                         
-                        <!--É aqui que mostra a tabela-->
-                        <div class="col-sm-5" id="table-users-in-organization" >
-                            <br>
-                            <br>
-                        </div>
+                        
                     </div>
 
                 </div>

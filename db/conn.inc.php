@@ -184,8 +184,9 @@ function DB_checkUserByEmail($pdo, $email) {
     }
 }
 
-function DB_User_In_Organization($pdo, $userId, $orgId) {
+function DB_User_In_Organization($pdo, $orgId) {
     try {
+        $userId = $_SESSION['id'];
         $count = sql($pdo, "SELECT * FROM [User_In_Organization] Where [User_Id] = ? and [Organization_Id] = ? and [Enabled] = 1", array($userId, $orgId), "count");
         if ($count < 0) {
             return true;
@@ -436,7 +437,24 @@ function DB_readOrganizationAsTable($pdo, $userId) {
         echo 'ERROR READING ORGANIZATION TABLE';
     }
 }
-
+function DB_addUserInOrganization($pdo,$email,$idOrg){
+    try {
+        if(DB_checkIfUserExists($pdo, $email)){
+            $userId = DB_checkUserByEmail($pdo, $email);
+            $msg = sql($pdo,"NSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[Enabled],[Responded]) VALUES(?,?,?,?) ", array($idOrg,$userId,0,0));
+            echo 'Invitation send';
+        }  else {
+            $to = $email;
+            $subject = "WIC #INVITATION";
+            $body = "Hi! <br>"
+                    . "Please regist on www.Wic.club";
+            sendEmail($to, $subject, $body);
+            echo 'email send';
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
 function DB_readOrganizationAsSelect($pdo, $userId) {
     try {
         $id = 0;
