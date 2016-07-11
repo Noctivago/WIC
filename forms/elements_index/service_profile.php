@@ -109,6 +109,8 @@
                         <div class="col-sm-1"></div>
                         
                         <div class="col-sm-5">
+                            
+                            <!--espaço comentários anteriores-->
 
 <div class="container">
 <div class="row">
@@ -119,8 +121,9 @@
 <div class="row">
 <div class="col-sm-1">
 <div class="thumbnail">
-<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+<img class="img-responsive user-photo" src="../../assets/img/logo.png">
 </div><!-- /thumbnail -->
+
 </div><!-- /col-sm-1 -->
 
 <div class="col-sm-5">
@@ -153,9 +156,13 @@ Panel content
 </div><!-- /row -->
 
 </div><!-- /container -->
+<!--/espaço comentarios anteriores-->
 
  <!--<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">-->
-<div class="container">
+
+ <!--espaço comentários-->
+ 
+ <div class="container">
 	<div class="row">
 		<h3>Give your Opinion about the service :)</h3>
 	</div>
