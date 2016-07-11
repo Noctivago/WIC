@@ -157,7 +157,7 @@ Panel content
  <!--<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">-->
 <div class="container">
 	<div class="row">
-		<h3>Comment</h3>
+		<h3>Comentários</h3>
 	</div>
     
     <div class="row">
@@ -165,7 +165,8 @@ Panel content
     <div class="col-md-6">
 
     						<div class="form-bottom">
-								<div class="status-upload">
+<!--								<div class="status-upload">-->
+								<div class="has-children">
 									<form>
 										<textarea placeholder="Write your comment here" ></textarea>
 										<ul>
