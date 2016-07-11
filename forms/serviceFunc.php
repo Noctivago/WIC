@@ -15,3 +15,12 @@ if ($arg === 'add2Wic') {
         echo 'ERRO';
     }
 }
+if ($arg === 'addCommentToService') {
+    try {
+        $wicPlannerId = (filter_var($_POST ['wicPlannerId']));
+        $orgServId = (filter_var($_POST ['orgServId']));
+        echo DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId);
+    } catch (Exception $ex) {
+        echo 'ERRO';
+    }
+}
