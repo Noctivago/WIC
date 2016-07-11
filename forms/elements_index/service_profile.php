@@ -7,19 +7,15 @@
             <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
             <!--    <div class="inner-bg" style="padding-top: 0px">-->
             <div class="container">
-
                 <!--            <div class="row">-->
                 <div class="col-sm-8 col-lg-offset-2 text">
                     <!--            </div>-->
                 </div>
                 <div class="row">
-
                     <div class="col-sm-5">
-
                         <div class="form-box">
                             <div class="form-top">
                                 <div class="form-top-left">
-
                                 </div>
                                 <div class="form-top-right">
                                 </div>
@@ -30,8 +26,6 @@
                                 <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
 
                             </div>
-
-
                             <div class="form-bottom">
                                 <form role="form" action="" method="post" class="login-form">
                                     <div class="form-group">
@@ -45,7 +39,6 @@
 
                                     <button type="submit" class="btn" name="login">Add to my Wic Planner!</button>
                                     <button type="submit" class="btn" name="login">Start dealing!</button>
-
                                 </form>
                             </div>
                         </div>
@@ -54,31 +47,23 @@
                     <div class="col-sm-1 middle-border"  >
                     </div>                   
                     <div class="col-sm-1"></div>
-
                     <div class="col-sm-5">
-
-
                         <!--<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">-->
-
                         <!--espaço comentários-->
-
                         <div class="container">
                             <div class="row">
                                 <h3>Give your  about this Service :D</h3>
                             </div>
-
                             <div class="row">
-
                                 <div class="col-md-6" style="width: 100%">
-
                                     <div class="form-bottom">
                                         <!--								<div class="status-upload">-->
                                         <div class="cd-label">
-                                            <form>
-                                                <textarea placeholder="Write your comment here" style="width: 100%"></textarea>
+                                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
+                                                <textarea id="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
                                                 <ul>
-                                                    <button type="submit" class="btn "><i class="fa fa-reply"></i>POST </button>
-                                            </form>
+                                                    <button type="addComment" class="btn "><i class="fa fa-reply"></i>POST </button>
+                                            </form> 
                                         </div><!-- Status Upload class="btn btn-success "
                                     </div><!-- Widget Area -->
                                     </div>
@@ -90,51 +75,7 @@
                             <!--espaço comentários anteriores-->
 
                             <div class="container">
-                                <!--                                <div class="row">
-                                                                    <div class="col-sm-12">
-                                                                        <h3>Users Comments</h3>
-                                                                    </div> /col-sm-12 
-                                                                </div>-->
                                 <?= DB_getCommentsOfService($pdo, $orgSerId) ?>
-
-                                <!-- /row -->
-                                <!--                            <div class="row">
-                                                                    <div class="col-sm-1" style="width: 100%">
-                                                                <div class="thumbnail">
-                                                                <img class="img-responsive user-photo" src="../../assets/img/logo.png">
-                                                                </div> /thumbnail 
-                                                                
-                                                                </div> /col-sm-1 
-                                
-                                                                <div class="col-sm-5" style="width: 100%">
-                                                                    <div class="panel panel-default">
-                                                                        <div class="panel-heading">
-                                                                            <strong>Joaquina Vitória</strong> <span class="text-muted">commented 5 days ago</span>
-                                                                        </div>
-                                                                        <div class="panel-body">
-                                                                            Panel content
-                                                                        </div> /panel-body 
-                                                                    </div> /panel panel-default 
-                                                                </div> /col-sm-5 
-                                                            </div>-->
-
-                                <!--                            <div class="row">
-                                                                <div class="col-sm-1">
-                                                                <div class="thumbnail">
-                                                                <img class="img-responsive user-photo" src="../../assets/img/logo.png">
-                                                                </div> /thumbnail 
-                                                                </div> /col-sm-1 
-                                                                <div class="col-sm-5" style="width: 100%">
-                                                                    <div class="panel panel-default">
-                                                                        <div class="panel-heading">
-                                                                            <strong>Augusto Morcao</strong> <span class="text-muted">commented 5 days ago</span>
-                                                                        </div>
-                                                                        <div class="panel-body">
-                                                                            Panel content
-                                                                        </div> /panel-body 
-                                                                    </div> /panel panel-default 
-                                                                </div> /col-sm-5 
-                                                            </div> /row -->
 
                             </div><!-- /container -->
                             <!--/espaço comentarios anteriores-->
