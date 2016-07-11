@@ -67,6 +67,7 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
     
 
 <body >
+    <h4> <?php echo $msg; ?></h4>
     <main class="cd-main-content">
         <div class="content-wrapper">
 
