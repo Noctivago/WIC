@@ -449,15 +449,35 @@ function DB_checkOrganization($pdo, $idOrd){
     
     
 }
+function DB_checkIfExistUserInOrganization($pdo, $idOrg , $userId){
+    try {
+        $count = sql($pdo,"SELECT [Organization_Id]
+      ,[User_Id]
+  FROM [dbo].[User_In_Organization]
+  where [User_Id] = ? and [Organization_Id] = ? and [Enabled]=1", array($userId , $idOrg), "count");
+        if($count < 1){
+            return true;
+        }else{
+            return false;
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 function DB_addUserInOrganization($pdo, $email, $idOrg) {
     try {
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
             if (DB_checkIfUserExists($pdo, $email)) {
+                if(!DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId)){
                 //get id do user pelo email
                 $userId = DB_checkUserByEmail($pdo, $email);
                 //insere user na organizacao com enabled 0 e user validation 0
                 sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId, 0, 0, 0));
                 echo 'Success';
+                }  else {
+                    echo 'User is already in organization!';
+                }
             } else {
                 $org = DB_checkOrganization($pdo, $idOrg);
                 $to = $email;
