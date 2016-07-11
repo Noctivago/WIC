@@ -1,15 +1,14 @@
 <main class="cd-main-content">
  <!--<div class="content-wrapper" style="padding-left: 0%">-->
  <!-- Page Header -->
-         <div class="row">
+         <!--<div class="row">-->
              <div class="top-content">
              <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 0px; padding-top: 0px;">  Try it out
-                     <small>Secondary Text</small>
+                 <h1 class="page-header" style=" padding-bottom: 0px; padding-top: 0px;">  CHECK IT OUT
                  </h1>
              </div>
              </div>
-         </div>
+<!--         </div>-->
          <!-- /.row -->
  
          <!-- Projects Row -->
