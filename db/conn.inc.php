@@ -439,9 +439,9 @@ function DB_readOrganizationAsTable($pdo, $userId) {
 }
 function DB_checkOrganization($pdo, $idOrd){
     try {
-        $rows = sql($pdo,"SELECT [Name] From [Organizaion] where [Id] = ?", array($idOrd),"rows");
+        $rows = sql($pdo,"SELECT [Name] From [Organization] where [Id] = ?", array($idOrd),"rows");
         foreach ($rows as $row){
-            echo $row['Name'];
+            return $row['Name'];
         }
     } catch (Exception $ex) {
         echo 'ERROR READING ORGANIZATION TABLE';
