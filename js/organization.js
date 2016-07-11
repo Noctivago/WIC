@@ -25,7 +25,7 @@ function readDataOrganization() {
         alert(result);
         console.log(result);
         var json = $.parseJSON(result);
-        if(jsno[0].Name=== null){
+        if(json[0].Name=== null){
             cleanInformation();
           
         }else{
