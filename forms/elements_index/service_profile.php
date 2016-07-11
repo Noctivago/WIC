@@ -119,23 +119,18 @@
 </div><!-- /col-sm-12 -->
 </div><!-- /row -->
 <div class="row">
-    <div class="col-sm-1" style="width: 100%">
+<!--    <div class="col-sm-1" style="width: 100%">
 <div class="thumbnail">
 <img class="img-responsive user-photo" src="../../assets/img/logo.png">
-</div><!-- /thumbnail -->
+</div> /thumbnail 
 
-</div><!-- /col-sm-1 -->
+</div> /col-sm-1 -->
 
 <div class="col-sm-5" style="width: 100%">
 <div class="panel panel-default">
 <div class="panel-heading">
     
-        <div class="col-sm-1" style="width: 100%">
-<div class="thumbnail">
-<img class="img-responsive user-photo" src="../../assets/img/logo.png">
-</div><!-- /thumbnail -->
 
-</div><!-- /col-sm-1 -->
 
     
     
@@ -152,11 +147,11 @@ Panel content
 <br>
 <br>
 <div class="row">
-<div class="col-sm-1">
+<!--<div class="col-sm-1">
 <div class="thumbnail">
 <img class="img-responsive user-photo" src="../../assets/img/logo.png">
-</div><!-- /thumbnail -->
-</div><!-- /col-sm-1 -->
+</div> /thumbnail 
+</div> /col-sm-1 -->
 
 <div class="col-sm-5" style="width: 100%">
 <div class="panel panel-default">
