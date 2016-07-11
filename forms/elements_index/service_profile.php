@@ -65,7 +65,7 @@
                                                 $comment = (filter_var($_POST ['userComment'], FILTER_SANITIZE_STRING));
                                                 $d = getDateToDB();
                                                 #$orgServId = ;
-                                                DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d);
+                                                echo DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d);
                                             }
                                             ?>
                                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
