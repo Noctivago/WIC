@@ -877,20 +877,6 @@ function DB_getWicPlannerAsSelect($pdo, $userId) {
 
 //LOAD COMMENTS OF A SERVICE
 function DB_getCommentsOfService($pdo, $orgSerId) {
-    /*
-      <div class="col-sm-5" style="width: 100%">
-      <div class="panel panel-default">
-      <div class="panel-heading">
-      <strong>Joaquina Vitória</strong> <span class="text-muted">commented 5 days ago</span>
-      </div>
-      <div class="panel-body">
-      Panel content
-      </div>
-      </div>
-      </div>
-      </div>
-
-     */
     try {
         $rows = sql($pdo, "SELECT [User].[UserName] AS UN
         ,[Comment].[Comment] AS CC
@@ -899,6 +885,7 @@ function DB_getCommentsOfService($pdo, $orgSerId) {
         on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? LIMIT 0,10", array($orgSerId), "rows");
         foreach ($rows as $row) {
             #echo "LINK TO READ ALL";
+            echo '<div class="row">';
             echo '<div class="col-sm-5" style="width: 100%">';
             echo '<div class="panel panel-default">';
             echo '<div class="panel-heading">';
