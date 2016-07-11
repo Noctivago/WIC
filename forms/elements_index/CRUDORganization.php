@@ -4,7 +4,7 @@
 
 <div class="top-content">
                  <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">   Organization For YOU <h4> <?php echo $msg; ?></h4>
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> New  Organization For YOU <h4> <?php echo $msg; ?></h4>
                  </h1>
                  </div>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -62,12 +62,12 @@
                                             }
                                             ?>
                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-<!--                               <div class="form-group" id="org-sel">
+                               <div class="form-group" id="org-sel">
                                                     <h4> <?php echo $msg; ?></h4>
                                                     <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()">
                                                         
                                                     </select>
-                                 </div>-->
+                                 </div>
                                 
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Company Name:</label>
