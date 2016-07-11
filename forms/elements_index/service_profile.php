@@ -1,4 +1,4 @@
-<?php $orgServId = '2'; ?>
+<?php $orgServId = 2; ?>
 <main class = "cd-main-content">
     <div class = "content-wrapper" style = "padding-left: 0%">
 
