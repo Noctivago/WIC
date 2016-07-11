@@ -90,88 +90,83 @@ if (isset($_SESSION['username'])) {
                                         $msg = '';
                                         // sua chave secreta
                                         $secret = "6LdypyQTAAAAAPaex4p6DqVY6W62Ihld7DDfCMDm";
-                                        // verifique a chave secreta
-                                        #$reCaptcha = new ReCaptcha($secret);
-                                        // se submetido, verifique a resposta
-                                        #$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
-                                        #$responseData = json_decode($verifyResponse);
-                                        // se resposta ok
-                                        #if ($response->success) {
-                                        try {
-                                            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                                            $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                                            $hashPassword = hash('whirlpool', $password);
-                                            #$val = DB_getLoginFailedValue($pdo, $email);
-                                            if (DB_checkIfUserExists($pdo, $email)) {
-                                                if (DB_checkIfUserEnabled($pdo, $email)) {
-                                                    $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "rows");
-                                                    #$msg = 'EMAIL FOUND';
-                                                    foreach ($rows as $row) {
-                                                        if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
-                                                            //ADICIONAR PASSWORD
-                                                            $_SESSION['valid'] = true;
-                                                            $_SESSION['timeout'] = time();
-                                                            $_SESSION['id'] = $row['Id'];
-                                                            $_SESSION['username'] = $row['Username'];
-                                                            $_SESSION['email'] = $row['Email'];
-                                                            $_SESSION['password'] = $row['Password'];
-                                                            $msg = 'Welcome ' . $row['Username'];
-                                                            //SET [Login_failed] = 0
-                                                            if (DB_setLoginFailed($pdo, $email)) {
-                                                                header('Location: profile.php');
-                                                            }
-                                                        } else {
-                                                            $val = DB_getLoginFailedValue($pdo, $email);
-                                                            if ($val < 3) {
-                                                                $value = $val + 1;
-                                                                DB_setLoginFailed($pdo, $email, $value);
-                                                                $msg = 'Wrong email or password';
+                                        file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $_POST['g-recaptcha-response']);
+                                        $response = json_decode($response, true);
+                                        if ($response["success"] === true) {
+                                            try {
+                                                $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+                                                $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
+                                                $hashPassword = hash('whirlpool', $password);
+                                                #$val = DB_getLoginFailedValue($pdo, $email);
+                                                if (DB_checkIfUserExists($pdo, $email)) {
+                                                    if (DB_checkIfUserEnabled($pdo, $email)) {
+                                                        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "rows");
+                                                        #$msg = 'EMAIL FOUND';
+                                                        foreach ($rows as $row) {
+                                                            if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
+                                                                //ADICIONAR PASSWORD
+                                                                $_SESSION['valid'] = true;
+                                                                $_SESSION['timeout'] = time();
+                                                                $_SESSION['id'] = $row['Id'];
+                                                                $_SESSION['username'] = $row['Username'];
+                                                                $_SESSION['email'] = $row['Email'];
+                                                                $_SESSION['password'] = $row['Password'];
+                                                                $msg = 'Welcome ' . $row['Username'];
+                                                                //SET [Login_failed] = 0
+                                                                if (DB_setLoginFailed($pdo, $email)) {
+                                                                    header('Location: profile.php');
+                                                                }
                                                             } else {
-                                                                //BLOCK ACCOUNT
-                                                                DB_setLoginFailed($pdo, $email);
-                                                                DB_setBlockAccount($pdo, $email);
-                                                                //ENVIAR EMAIL COM INSTRUÇÔES DE DESBLOQUEIO
-                                                                $msg = 'Account blocked!';
-                                                                $to = $email;
-                                                                $subject = "WIC #ACCOUNT BLOCKED";
-                                                                $code = generateActivationCode();
-                                                                DB_updateUserAccountActivationCode($pdo, $email, $code);
-                                                                $body = "Hi! <br>"
-                                                                        . "Your account was blocked due severed failed logins.<br>"
-                                                                        . "Use the following code to unblock your account: " . $code . "<br>"
-                                                                        . "Plase use the following URL to unlock: http://www.wic.club<br>"
-                                                                        . "Best regards,<br>"
-                                                                        . "WIC<br><br>"
-                                                                        . "Note: Please do not reply to this email! Thanks!";
-                                                                sendEmail($to, $subject, $body);
+                                                                $val = DB_getLoginFailedValue($pdo, $email);
+                                                                if ($val < 3) {
+                                                                    $value = $val + 1;
+                                                                    DB_setLoginFailed($pdo, $email, $value);
+                                                                    $msg = 'Wrong email or password';
+                                                                } else {
+                                                                    //BLOCK ACCOUNT
+                                                                    DB_setLoginFailed($pdo, $email);
+                                                                    DB_setBlockAccount($pdo, $email);
+                                                                    //ENVIAR EMAIL COM INSTRUÇÔES DE DESBLOQUEIO
+                                                                    $msg = 'Account blocked!';
+                                                                    $to = $email;
+                                                                    $subject = "WIC #ACCOUNT BLOCKED";
+                                                                    $code = generateActivationCode();
+                                                                    DB_updateUserAccountActivationCode($pdo, $email, $code);
+                                                                    $body = "Hi! <br>"
+                                                                            . "Your account was blocked due severed failed logins.<br>"
+                                                                            . "Use the following code to unblock your account: " . $code . "<br>"
+                                                                            . "Plase use the following URL to unlock: http://www.wic.club<br>"
+                                                                            . "Best regards,<br>"
+                                                                            . "WIC<br><br>"
+                                                                            . "Note: Please do not reply to this email! Thanks!";
+                                                                    sendEmail($to, $subject, $body);
+                                                                }
                                                             }
                                                         }
+                                                    } else {
+                                                        $to = $email;
+                                                        $msg = "Account blocked! Please check your email!";
+                                                        $subject = "WIC #ACCOUNT BLOCKED";
+                                                        $code = generateActivationCode();
+                                                        DB_updateUserAccountActivationCode($pdo, $email, $code);
+                                                        $body = "Hi! <br>"
+                                                                . "Your account was blocked due severed failed logins.<br>"
+                                                                . "Use the following code to unblock your account: " . $code . "<br>"
+                                                                . "Plase use the following URL to unlock: http://www.wic.club<br>"
+                                                                . "Best regards,<br>"
+                                                                . "WIC<br><br>"
+                                                                . "Note: Please do not reply to this email! Thanks!";
+                                                        sendEmail($to, $subject, $body);
                                                     }
                                                 } else {
-                                                    $to = $email;
-                                                    $msg = "Account blocked! Please check your email!";
-                                                    $subject = "WIC #ACCOUNT BLOCKED";
-                                                    $code = generateActivationCode();
-                                                    DB_updateUserAccountActivationCode($pdo, $email, $code);
-                                                    $body = "Hi! <br>"
-                                                            . "Your account was blocked due severed failed logins.<br>"
-                                                            . "Use the following code to unblock your account: " . $code . "<br>"
-                                                            . "Plase use the following URL to unlock: http://www.wic.club<br>"
-                                                            . "Best regards,<br>"
-                                                            . "WIC<br><br>"
-                                                            . "Note: Please do not reply to this email! Thanks!";
-                                                    sendEmail($to, $subject, $body);
+                                                    $msg = "Wrong email or password!";
                                                 }
-                                            } else {
-                                                $msg = "Wrong email or password!";
+                                            } catch (Exception $ex) {
+                                                echo "ERROR!";
                                             }
-                                        } catch (Exception $ex) {
-                                            echo "ERROR!";
+                                        } else {
+                                            echo "You are a robot";
                                         }
-                                        // se resposta KO
-                                        #} else {
-                                        #    $msg = 'reCAPTCHA failed! > ' . $response;
-                                        #}
                                     }
                                     ?>	
 
@@ -184,7 +179,7 @@ if (isset($_SESSION['username'])) {
                                             <label class="sr-only" for="form-password">Password</label>
                                             <input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password" required>
                                         </div>
-                                        <!--<div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>-->
+                                        <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
                                         <button type="submit" class="btn" name="login">Sign in!</button>
 
                                     </form>
