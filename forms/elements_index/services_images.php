@@ -1,14 +1,14 @@
 <main class="cd-main-content">
  <!--<div class="content-wrapper" style="padding-left: 0%">-->
  <!-- Page Header -->
-         <!--<div class="row">-->
+         <div class="row">
              <div class="top-content">
              <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 0px; padding-top: 0px;">  mÁGICO
+                 <h1 class="page-header" style=" padding-bottom: 0px; padding-top: 0px;">  Portugal Campeão europeu!
                  </h1>
              </div>
              </div>
-<!--         </div>-->
+         </div>
          <!-- /.row -->
  
          <!-- Projects Row -->
@@ -43,7 +43,7 @@
          <!-- /.row -->
  
          <!-- Projects Row -->
-         <div class="row">
+         <!--<div class="row">-->
              <div class="col-md-4 portfolio-item">
                  <a href="#">
                      <img class="img-responsive" src="http://placehold.it/700x400" alt="">
@@ -70,10 +70,10 @@
                  </h3>
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
              </div>
-        </div>
+        <!--</div>-->
 
          <!-- Projects Row -->
-        <div class="row">
+        <!--<div class="row">-->
             <div class="col-md-4 portfolio-item">
                  <a href="#">
                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
@@ -101,7 +101,7 @@
                  </h3>
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
              </div>
-         </div>
+         <!--</div>-->
          <!-- /.row -->
  
          <hr>
