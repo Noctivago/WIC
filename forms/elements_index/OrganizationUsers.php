@@ -39,7 +39,7 @@
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group">
                                             <h4> <?php echo $msg; ?></h4>
-                                            <select class="form-username form-control" name="org" id="org" required="required">
+                                            <select class="form-username form-control" name="org" id="org" required="required" onchange="viewAllUsersInOrganization()">
                                                 <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                             </select>
                                         </div>
@@ -53,11 +53,11 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h1 class="text-center">
-                                                Nome tabela
+                                                Users in organization
                                             </h1>
 
                                         </div>
-                                        <div id="no-more-tables">
+                                        <div id="no-more-tables" >
                                             <table class="col-md-12 table-bordered table-striped table-condensed cf ">
                                                 <thead class="cf">
                                                 </thead>
@@ -109,6 +109,9 @@
 <script src="../assets/js/jquery.backstretch.min.js"></script>
 <script src="../assets/js/scripts.js"></script>
 <script src="../assets/js/scripts.js" type="text/javascript"></script>
+<script src="../../js/OrganizationUsers.js"></script>
+
+
 <!--[if lt IE 10]>
     <script src="assets/js/placeholder.js"></script>
 <![endif]-->

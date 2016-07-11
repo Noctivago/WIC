@@ -20,22 +20,12 @@ function viewAllUsersInOrganization() {
     var org = document.getElementById("org").value;
     alert(org);
     var arg = 'viewAllUsersInOrganization';
-    var dataString = 'arg=' + arg + '&orgId=' + org;
-    alert(dataString);
-    $.ajax({
-        type: 'POST',
-        url: "../orgsubmit.php",
-        data: dataString,
-        cache: false,
-        success: function (result) {
-            alert(result + 'oi');
-            var ajaxDisplay = document.getElementById('table-users-in-organization');
-            ajaxDisplay.innerHTML = result;
-        }
+    $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
+        var json = $.parseJSON(result);
+        
     });
     return false;
 }
-
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
     var arg = 'UserValidateInvite';
