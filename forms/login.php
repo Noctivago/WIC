@@ -90,7 +90,7 @@ if (isset($_SESSION['username'])) {
                                         $msg = '';
                                         // sua chave secreta
                                         $secret = "6LdypyQTAAAAAPaex4p6DqVY6W62Ihld7DDfCMDm";
-                                        file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $_POST['g-recaptcha-response']);
+                                        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $_POST['g-recaptcha-response']);
                                         $response = json_decode($response, true);
                                         if ($response["success"] === true) {
                                             try {
