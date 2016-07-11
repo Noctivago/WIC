@@ -111,6 +111,10 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
                                                 </select>
                                             </div>
                                             <div class="form-group">
+                                                <input type="hidden" name="name" id="Org-Id" required autofocus>
+                                            </div>
+
+                                            <div class="form-group">
                                                 <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
                                             </div>
 
