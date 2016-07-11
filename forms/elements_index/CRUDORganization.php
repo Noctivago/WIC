@@ -4,7 +4,7 @@
 
 <div class="top-content">
                  <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  New  Organization  <h4> <?php echo $msg; ?></h4>
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> My New  Organization  <h4> <?php echo $msg; ?></h4>
                  </h1>
                  </div>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -61,6 +61,7 @@
                                             }else if(isset ($_POST['delete'])){
                                             }
                                             ?>
+
                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                <div class="form-group" id="org-sel">
                                                     <h4> <?php echo $msg; ?></h4>
