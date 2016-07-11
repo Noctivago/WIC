@@ -71,7 +71,6 @@ include_once ('../db/functions.php');
                                     if (isset($_POST['addUserOrg']) && !empty($_POST['email-user']) ) {
                                         $msg = '';
                                         try {
-                                            $userid = $_SESSION['id'];
                                             $idOrg = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
                                             $email = (filter_var($_POST ['email-user'], FILTER_SANITIZE_STRING));
                                             $msg = DB_addUserInOrganization($pdo,$email,$idOrg);
