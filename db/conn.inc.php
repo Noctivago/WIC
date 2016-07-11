@@ -913,7 +913,7 @@ function DB_getCommentsOfService($pdo, $orgServId) {
         ,[Comment].[Comment]
         FROM [dbo].[Comment]
         join [User]
-        on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? LIMIT 0,10", array($orgServId), "rows");
+        on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ?", array($orgServId), "rows");
         if (DB_checkIfServiceCommentsExits($pdo, $orgServId)) {
             echo '<div class="row">
                 <div class="col-sm-12">
