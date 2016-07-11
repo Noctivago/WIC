@@ -126,13 +126,13 @@
 		<tr>
 			<th>ID</th>
 			<th>Organization</th>
-			<th class="numeric">1</th>
-			<th class="numeric">2</th>
-			<th class="numeric">3</th>
-			<th class="numeric">4</th>
-			<th class="numeric">5</th>
-			<th class="numeric">6</th>
-			<th class="numeric">7</th>
+			<th class="numeric">Coluna 1</th>
+			<th class="numeric">Coluna 2</th>
+			<th class="numeric">Coluna 3</th>
+			<th class="numeric">Coluna 4</th>
+			<th class="numeric">Coluna 5</th>
+			<th class="numeric">Coluna 6</th>
+			<th class="numeric">Coluna 7</th>
 		</tr>
 	</thead>
 	<tbody>
