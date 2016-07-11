@@ -441,7 +441,7 @@ function DB_addUserInOrganization($pdo,$email,$idOrg){
     try {
         if(DB_checkIfUserExists($pdo, $email)){
             $userId = DB_checkUserByEmail($pdo, $email);
-            $msg = sql($pdo,"NSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[Enabled],[Responded]) VALUES(?,?,?,?) ", array($idOrg,$userId,0,0));
+            $msg = sql($pdo,"INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[Enabled],[Responded]) VALUES(?,?,?,?) ", array($idOrg,$userId,0,0));
             echo 'Invitation send';
         }  else {
             $to = $email;
