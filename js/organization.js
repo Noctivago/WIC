@@ -26,17 +26,17 @@ function readDataOrganization() {
         console.log(result);
         var json = $.parseJSON(result);
         console.log(json[0].Name);
-        document.getElementById('Org').value = json;
-        document.getElementById('name').value = json[1];
-//        document.getElementById('phone').value = 
-//        document.getElementById('mobile').value = 
-//        document.getElementById('address').value = 
-//        document.getElementById('facebook').value = 
-//        document.getElementById('twitter').value = 
-//        document.getElementById('linkdin').value = 
-//        document.getElementById('orgEmail').value = 
-//        document.getElementById('website').value = 
-//        document.getElementById('add').style = "display: none";
+        document.getElementById('Org').value = json[0].Id;
+        document.getElementById('name').value = json[0].Name;
+        document.getElementById('phone').value = json[0].Phone_Number;
+        document.getElementById('mobile').value = json[0].Mobile_Number;
+        document.getElementById('address').value = json[0].Address;
+        document.getElementById('facebook').value = json[0].Facebook;
+        document.getElementById('twitter').value = json[0].Twitter;
+        document.getElementById('linkdin').value = json[0].Linkdin;
+        document.getElementById('orgEmail').value = json[0].Organization_Email;
+        document.getElementById('website').value = json[0].Website;
+        document.getElementById('add').style = "display: none";
         document.getElementById('update').style = "display: true";
         document.getElementById('cancel').style = "display: true";
 
