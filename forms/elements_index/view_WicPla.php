@@ -27,7 +27,7 @@
             
         </div>
         <div id="no-more-tables">
-            <table class="col-md-12 table-bordered table-striped table-condensed cf" style="width: 100%">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf" style="width: 932.22222px;height: 302.22222px;">
         		<thead class="cf">
         			<tr>
         				<th>Id</th>
