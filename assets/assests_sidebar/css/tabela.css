@@ -1,11 +1,11 @@
 @media only screen and (max-width: 800px) {
-    .tabela
+    .table
 	#unseen table td:nth-child(2), 
 	#unseen table th:nth-child(2) {display: none;}
 }
  
 @media only screen and (max-width: 640px) {
-    .tabela
+    .table
 	#unseen table td:nth-child(4),
 	#unseen table th:nth-child(4),
 	#unseen table td:nth-child(7),
