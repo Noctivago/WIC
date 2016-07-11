@@ -13,7 +13,7 @@ include("elements_index/head_index.php");
 include ("elements_index/main_index.php");
 ?>
 <?php
-include ("elements_index/CRUDOrganization.php");
+include ("elements_index/CRUDORganization.php");
 
 ?><!-- .content-wrapper -->
  <!-- .cd-main-content -->
