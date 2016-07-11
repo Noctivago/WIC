@@ -59,11 +59,11 @@
                                     <div class="form-bottom">
                                         <!--								<div class="status-upload">-->
                                         <div class="cd-label">
-                                            <form>
+                                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
                                                 <textarea id="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
                                                 <ul>
                                                     <button type="addComment" class="btn "><i class="fa fa-reply"></i>POST </button>
-                                            </form>
+                                            </form> 
                                         </div><!-- Status Upload class="btn btn-success "
                                     </div><!-- Widget Area -->
                                     </div>
