@@ -20,16 +20,16 @@ function readDataOrganization() {
     $.post("../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
         var json_obj = $.parseJSON(result);
         alert(json_obj);
-        document.getElementById('Org').value = json_obj[0];
-        document.getElementById('name').value = json_obj[1];
-        document.getElementById('phone').value = json_obj[2];
-        document.getElementById('mobile').value = json_obj[3];
-        document.getElementById('address').value = json_obj[4];
-        document.getElementById('facebook').value = json_obj[5];
-        document.getElementById('twitter').value = json_obj[6];
-        document.getElementById('linkdin').value = json_obj[7];
-        document.getElementById('orgEmail').value = json_obj[8];
-        document.getElementById('website').value = json_obj[9];
+//        document.getElementById('Org').value = json_obj[0];
+//        document.getElementById('name').value = json_obj[1];
+//        document.getElementById('phone').value = json_obj[2];
+//        document.getElementById('mobile').value = json_obj[3];
+//        document.getElementById('address').value = json_obj[4];
+//        document.getElementById('facebook').value = json_obj[5];
+//        document.getElementById('twitter').value = json_obj[6];
+//        document.getElementById('linkdin').value = json_obj[7];
+//        document.getElementById('orgEmail').value = json_obj[8];
+//        document.getElementById('website').value = json_obj[9];
 
     });
     return false;

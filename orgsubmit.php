@@ -68,9 +68,11 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'viewAllOrganization') {
     try {
         $cont = 0;
+        $idOrg = $_POST['id'];
         $userid = $_POST['idUser'];
-        $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
-        echo json_encode($rows);
+        //$rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
+        $row = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id]=? [Enabled] = 1 and [Validate]=1", array($idOrg), "row");
+        echo json_encode($row . $userid);
 //        echo '<div style="display:none">';
 //        echo '<table id="mytable">';
 //        echo '<input type="hidden" name="UserId" value="' . $_POST['User_Boss'] . '"> ';
