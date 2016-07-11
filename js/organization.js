@@ -35,7 +35,7 @@ function readDataOrganization() {
             document.getElementById('addOrg').style = "display: none";
             document.getElementById('update').style = "display: true";
             document.getElementById('delete').style = "display: true";
-            document.getElementById('cancel').style = "display: true";
+        //    document.getElementById('cancel').style = "display: true";
         }
     });
     return false;
