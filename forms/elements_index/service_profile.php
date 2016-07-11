@@ -172,7 +172,7 @@ Panel content
  
  <div class="container">
 	<div class="row">
-		<h3>Give your Opinion about this Service :D</h3>
+		<h3>Give your  about this Service :D</h3>
 	</div>
     
     <div class="row">
