@@ -4,7 +4,7 @@
 
 <div class="top-content">
                  <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> New  Organization!!  <h4> <?php echo $msg; ?></h4>
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> New  Organization  <h4> <?php echo $msg; ?></h4>
                  </h1>
                  </div>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -71,41 +71,41 @@
                                 
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Company Name:</label>
-                                    <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
                                 </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Telephone:</label>
+                                    <input type="text" name="phone" placeholder="ORGANIZATION PHONE" class="form-password form-control" id="phone" required>
+                                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Mobile Number:</label>
+                                    <input type="text" name="mobile" placeholder="ORGANIZATION MOBILE" class="form-password form-control" id="mobile" required>
+                                                </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Adress:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Web Site:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
+                                    <input type="text" name="address" placeholder="ORGANIZATION ADDRESS" class="form-password form-control" id="address" >
+                                                </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Facebook:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
+                                    <input type="text" name="facebook" placeholder="ORGANIZATION FACEBOOK" class="form-password form-control" id="facebook" required>
+                                                </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Twitter:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
+                                    <input type="text" name="twitter" placeholder="ORGANIZATION TWITTER" class="form-password form-control" id="twitter" required>
+                                                </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">Linkedin:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                </div>
+                                    <label class="sr-only" for="form-username">Linkedin</label>
+                                    <input type="text" name="linkdin" placeholder="ORGANIZATION LINKDIN" class="form-password form-control" id="linkdin" required>
+                                                </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-username">Email</label>
-                                    <input type="text" style="height: 40px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="form-password">Country:</label>
-                                    <input type="text" style="height: 40px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
-                                </div>
+                                    <label class="sr-only" for="form-password">Email of Organization:</label>
+                                    <input type="email" name="orgEmail" placeholder="ORGANIZATION EMAIL" class="form-password form-control" id="orgEmail" required>
+                                                </div>
 
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">City:</label>
-                                    <input type="password" style="height: 40px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
-                                </div>
+                                    <label class="sr-only" for="form-password">WebSite:</label>
+                                    <input type="text" name="website" placeholder="ORGANIZATION WEBSITE" class="form-password form-control" id="website" required>
+                                                </div>
                                 <button type="submit" class="btn" name="login">Save Changes!</button>
 
                             </form>
