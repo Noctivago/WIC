@@ -1,6 +1,6 @@
 
 <main class="cd-main-content">
-<div class="content-wrapper" style="padding-left: 0%">
+<div class="content-wrapper">
 
 <div class="top-content">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
