@@ -909,8 +909,8 @@ function DB_checkIfServiceCommentsExits($pdo, $orgServId) {
 //LOAD COMMENTS OF A SERVICE
 function DB_getCommentsOfService($pdo, $orgServId) {
     try {
-        $rows = sql($pdo, "SELECT [User].[UserName] AS UN
-        ,[Comment].[Comment] AS CC
+        $rows = sql($pdo, "SELECT [User].[UserName]
+        ,[Comment].[Comment]
         FROM [dbo].[Comment]
         join [User]
         on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? LIMIT 0,10", array($orgServId), "rows");
@@ -927,10 +927,10 @@ function DB_getCommentsOfService($pdo, $orgServId) {
             echo '<div class="col-sm-5" style="width: 100%">';
             echo '<div class="panel panel-default">';
             echo '<div class="panel-heading">';
-            echo '<strong>' . $row['UN'] . '</strong> <span class="text-muted">commented...</span>';
+            echo '<strong>' . $row['UserName'] . '</strong> <span class="text-muted">commented...</span>';
             echo '</div>';
             echo '<div class="panel-body">';
-            echo $row['UN'];
+            echo $row['Comment'];
             echo '</div>';
             echo '</div>';
             echo '</div>';
