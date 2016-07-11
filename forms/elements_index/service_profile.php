@@ -52,13 +52,13 @@ $msg;
                                         <input type = "text" style = "height: 40px" name = "password" placeholder = "Address:" class = "form-password form-control" id = "form-password" required>
                                     </div>
                                 </form>
-                                <button onclick="show('showWICPlanner');" class = "btn" name = "WICPlannerShow">Add to my WIC Planner!</button>
+                                <button onclick="show('showWICPlanner');" class = "btn" name = "WICPlannerShow">WIC Planner!</button>
                                 <div id ="showWICPlanner" style="display:none;">
                                     <div class="form-group">
                                         <select class="form-username form-control" name="wicPlanner" id="wicPlanner" required="required">
                                             <?= DB_getWicPlannerAsSelect($pdo, $_SESSION['id']) ?>
                                         </select>
-                                        <button class = "btn" name = "addToWICPlanner">Add to my WIC Planner!</button>
+                                        <button class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
                                     </div>
                                     <button onclick="hide('showWICPlanner');" class = "btn" name = "WICPlannerHide">Hide WIC Planner!</button>
                                 </div>
