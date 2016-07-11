@@ -1,6 +1,9 @@
 <?php
 include("session.php");
+include("../db/conn.inc.php");
+include("../db/functions.php")
 ?>
+
 <?php
 include("elements_index/head_index.php");
 ?>
