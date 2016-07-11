@@ -3,7 +3,7 @@
  <!-- Page Header -->
          <div class="row">
              <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 0px; padding-top: 0px;">  MAGIC HEADER
+                 <h1 class="page-header" style=" padding-bottom: 0px; padding-top: 0px;">  MAGIC HEADER CARACA
                      <small>Secondary Text</small>
                  </h1>
              </div>
@@ -152,7 +152,9 @@
      <!-- /.container -->
  
      <!-- jQuery -->
-     <script src="js/jquery.js"></script>
+     <!--<script src="js/jquery.js"></script>-->
+     <script src="../../assets/assests_sidebar/js/js_img_serv/jquery.js" type="text/javascript"></script>
  
      <!-- Bootstrap Core JavaScript -->
-     <script src="js/bootstrap.min.js"></script>
+<!--     <script src="js/bootstrap.min.js"></script>-->
+     <script src="../../assets/assests_sidebar/js/js_img_serv/bootstrap.min.js" type="text/javascript"></script>
