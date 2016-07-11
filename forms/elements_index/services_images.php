@@ -1,9 +1,9 @@
 <main class="cd-main-content">
- <div class="content-wrapper" style="padding-left: 0%">
+ <!--<div class="content-wrapper" style="padding-left: 0%">-->
  <!-- Page Header -->
          <div class="row">
              <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 0px; padding-top: 0px;">  MAGIC
+                 <h1 class="page-header" style=" padding-bottom: 0px; padding-top: 0px;">  MAGIC HEADER
                      <small>Secondary Text</small>
                  </h1>
              </div>
@@ -136,7 +136,8 @@
          <!-- /.row -->
  
          <hr>
- 
+ </div>
+ </main>
          <!-- Footer -->
          <footer>
              <div class="row">
@@ -155,5 +156,3 @@
  
      <!-- Bootstrap Core JavaScript -->
      <script src="js/bootstrap.min.js"></script>
-
- </main>
