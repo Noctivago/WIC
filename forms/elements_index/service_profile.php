@@ -65,7 +65,7 @@ $msg;
                                         <br>
                                         <div class = "login-form">
                                             <button onclick="hide('showWICPlanner');show('showWICPlannerBTN');" class = "btn" name = "WICPlannerHide">Hide WIC Planner!</button>
-                                            <button class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
+                                            <button onclick="addToWICPlanner();"class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
                                         </div>
                                     </div>
                                     <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
@@ -87,6 +87,12 @@ $msg;
                         }
                         function setDisplay(target, str) {
                             document.getElementById(target).style.display = str;
+                        }
+                        function addToWICPlanner() {
+                            //function DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId)
+                            var myData = <?php DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) ?>;
+                            console.log(myData);
+                            alert(myData);
                         }
 
                     </script>
