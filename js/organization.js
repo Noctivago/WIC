@@ -38,6 +38,7 @@ function readDataOrganization() {
         document.getElementById('website').value = json[0].Website;
         document.getElementById('add').style = "display: none";
         document.getElementById('update').style = "display: true";
+        document.getElementById('delete').style = "display: true";
         document.getElementById('cancel').style = "display: true";
 
     });
