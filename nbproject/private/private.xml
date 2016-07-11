@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/CRUDOrganization.php</file>
-            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/js/organization.js</file>
-            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/elements_index/profile_org.php</file>
-            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/db/conn.inc.php</file>
-            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/js/OrganizationUsers.js</file>
-            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/forms/addOrganizationUsers.php</file>
-            <file>file:/C:/Users/Jesualdo/Documents/NetBeansProjects/2/WIC/orgsubmit.php</file>
+            <file>file:/C:/xampp/htdocs/WIC_VS/WIC/db/conn.inc.php</file>
+            <file>file:/C:/xampp/htdocs/WIC_VS/WIC/forms/elements_index/service_profile.php</file>
         </group>
     </open-files>
 </project-private>

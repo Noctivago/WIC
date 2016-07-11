@@ -67,6 +67,7 @@
                                                 $comment = (filter_var($_POST ['userComment'], FILTER_SANITIZE_STRING));
                                                 $d = getDateToDB();
                                                 #$orgServId = ;
+                                                echo 'USER > ' . $userId . ' COMMENT > ' . $comment . ' DATE > ' . $d . ' ORGSERID > ' . $orgServId;
                                                 echo DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d);
                                             }
                                             ?>
