@@ -139,7 +139,7 @@ function cleanInformation() {
     document.getElementById('website').value = "";
     document.getElementById('add').style = "display: true";
     document.getElementById('update').style = "display: none";
-    document.getElementById('cancel').style = "display: none";
+    document.getElementById('delete').style = "display: none";
 //    document.getElementById('delete').style = "display: none";
 }
 
