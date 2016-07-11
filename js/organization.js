@@ -25,7 +25,8 @@ function readDataOrganization() {
         alert(result);
         console.log(result);
         var json = $.parseJSON(result);
-        document.getElementById('Org').value = json[0];
+        console.log(json[0].Name);
+        document.getElementById('Org').value = json;
         document.getElementById('name').value = json[1];
 //        document.getElementById('phone').value = 
 //        document.getElementById('mobile').value = 
