@@ -41,10 +41,10 @@ include_once ('../db/functions.php');
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 
-         <!-- javascripto-->
-         <script src="../js/OrganizationUsers.js"></script>
+        <!-- javascripto-->
+        <script src="../js/OrganizationUsers.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-       
+
     </head>
 
     <body>
@@ -64,22 +64,22 @@ include_once ('../db/functions.php');
 
                     <div class="row">
                         <div class="col-sm-5">
-
+                            <?php
+                            if (isset($_POST['addUserOrg']) && !empty($_POST['email-user'])) {
+                                $msg = '';
+                                try {
+                                    $idOrg = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
+                                    $email = (filter_var($_POST ['email-user'], FILTER_SANITIZE_EMAIL));
+                                    $msg = DB_addUserInOrganization($pdo, $email, $idOrg);
+                                    echo $msg . $email;
+                                } catch (Exception $ex) {
+                                    $msg = "ERROR!";
+                                }
+                            }
+                            ?>	
                             <div class="form-box">
                                 <div class="form-bottom">
-                                    <?php
-                                    if (isset($_POST['addUserOrg']) && !empty($_POST['email-user']) ) {
-                                        $msg = '';
-                                        try {
-                                            $idOrg = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
-                                            $email = (filter_var($_POST ['email-user'], FILTER_SANITIZE_EMAIL));
-                                            $msg = DB_addUserInOrganization($pdo,$email,$idOrg);
-                                            echo $msg . $email;
-                                        } catch (Exception $ex) {
-                                            $msg = "ERROR!";
-                                        }
-                                    }  
-                                    ?>	
+
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group">
@@ -98,8 +98,8 @@ include_once ('../db/functions.php');
 
                         </div>
 
-                        
-                        
+
+
                     </div>
 
                 </div>
