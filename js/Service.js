@@ -1,5 +1,5 @@
 function addToWic(a, b) {
-    alert('add2Wic');
+    //alert('add2Wic');
     //DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId)
     var wic = a;
     var org = b;
