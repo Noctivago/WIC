@@ -15,7 +15,7 @@ include("elements_index/head_index.php");
 include ("elements_index/main_index.php");
 ?>
 <?php
-include ("elements_index/profile_org2.php");
+include ("elements_index/view_WicPla.php");
 
 ?><!-- .content-wrapper -->
  <!-- .cd-main-content -->
