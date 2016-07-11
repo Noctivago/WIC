@@ -10,12 +10,12 @@
         <div class="container">
 
 <!--            <div class="row">-->
-                <div class="col-sm-8 col-lg-offset-2 text">
-<!--            </div>-->
+<!--                <div class="col-sm-8 col-lg-offset-2 text">
             </div>
+            </div>-->
             <div class="row">
   
-                        <div class="col-sm-5">
+                        <div class="col-sm-8 col-lg-offset-2 text-center">
 
      
                             <div class="container">
