@@ -22,8 +22,6 @@ function readDataOrganization() {
     //  var dataString = 'arg=' +arg + '&orgId=' + orgId;
     // var response;
     $.post("../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
-        alert(result);
-        console.log(result);
         var json = $.parseJSON(result);
         if (json.length === 0) {
             cleanInformation();
