@@ -4,8 +4,8 @@
 
 <div class="top-content">
                  <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  New  Organization  <h4> <?php echo $msg; ?></h4>
-                 </h1>
+                     <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  New  Organization </h1> <h4 style="color: darkgray"> <?php echo $msg; ?></h4>
+                 
                  </div>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
@@ -29,8 +29,8 @@
                             </div>
                             <!--                            <div class="form-top-right">
                                                             <i class="fa fa-key"></i>-->
-                            <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                <input style="color: black;" class="form-username form-control" type="file">
+<!--                            <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                <input style="color: black;" class="form-username form-control" type="file">-->
                                 <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
 
                                                        </div>

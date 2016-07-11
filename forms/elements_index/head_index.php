@@ -1,9 +1,3 @@
-<?php
-include_once 'session.php';
-include_once '../db/conn.inc.php';
-include_once '../db/functions.php';
-?>
-
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
