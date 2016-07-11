@@ -135,7 +135,7 @@
     
     
     
-<strong>Maria Vitória</strong> <span class="text-muted">commented 5 days ago</span>
+<strong>Joaquina Vitória</strong> <span class="text-muted">commented 5 days ago</span>
 </div>
 <div class="panel-body">
 Panel content
@@ -143,9 +143,7 @@ Panel content
 </div><!-- /panel panel-default -->
 </div><!-- /col-sm-5 -->
 </div>
-<br>
-<br>
-<br>
+
 <div class="row">
 <!--<div class="col-sm-1">
 <div class="thumbnail">
