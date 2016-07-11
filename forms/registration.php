@@ -83,54 +83,62 @@ include_once '../db/functions.php';
                                     if (isset($_POST['signup']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email'])) {
                                         $msg = '';
                                         $forgotPassword = '';
-                                        $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
-                                        $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-                                        #echo 'USERNAME ' . $rows['Username'];
-                                        $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-                                        $hashPassword = hash('whirlpool', $password);
+                                        $secret = "6LdypyQTAAAAAPaex4p6DqVY6W62Ihld7DDfCMDm";
+                                        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $_POST['g-recaptcha-response']);
+                                        $response = json_decode($response, true);
+                                        if ($response["success"] === true) {
+                                            $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
+                                            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+                                            #echo 'USERNAME ' . $rows['Username'];
+                                            $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
+                                            $hashPassword = hash('whirlpool', $password);
 
-                                        if (DB_checkIfUserExists($pdo, $email)) {
-                                            $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
-                                            $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
-                                        } else {
-                                            try {
-                                                //GERA CODIGO DE ATIVACAO DE 128car
-                                                $code = generateActivationCode();
-                                                sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
-                                                $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
-                                                $to = $email;
-                                                $subject = "WIC #ACCOUNT CONFIRMATION";
-                                                $body = "Hi! <br>"
-                                                        . "To start using our services you need to validate your email.<br>"
-                                                        . "Please use the following code to do that: " . $code . "<br>"
-                                                        . "You can activate your account in the following address: http://www.wic.club/<br>"
-                                                        . "Best regards,<br>"
-                                                        . "WIC<br><br>"
-                                                        . "Note: Please do not reply to this email! Thanks!";
-                                                $msg = sendEmail($to, $subject, $body) . ' Please check your inbox for foward information!';
-                                                #CREATE PROFILE
-                                                DB_createProfileOnRegistration($pdo, $email);
-                                            } catch (Exception $ex) {
-                                                echo "ERROR!";
+                                            if (DB_checkIfUserExists($pdo, $email)) {
+                                                $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
+                                                $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
+                                            } else {
+                                                try {
+                                                    //GERA CODIGO DE ATIVACAO DE 128car
+                                                    $code = generateActivationCode();
+                                                    sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
+                                                    $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
+                                                    $to = $email;
+                                                    $subject = "WIC #ACCOUNT CONFIRMATION";
+                                                    $body = "Hi! <br>"
+                                                            . "To start using our services you need to validate your email.<br>"
+                                                            . "Please use the following code to do that: " . $code . "<br>"
+                                                            . "You can activate your account in the following address: http://www.wic.club/<br>"
+                                                            . "Best regards,<br>"
+                                                            . "WIC<br><br>"
+                                                            . "Note: Please do not reply to this email! Thanks!";
+                                                    $msg = sendEmail($to, $subject, $body) . ' Please check your inbox for foward information!';
+                                                    #CREATE PROFILE
+                                                    DB_createProfileOnRegistration($pdo, $email);
+                                                } catch (Exception $ex) {
+                                                    echo "ERROR!";
+                                                }
                                             }
+                                        } else {
+                                            echo "You are a robot";
                                         }
-                                    }
-                                    ?>
-                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
-                                        <div class="form-group"<h4><?php echo $msg; ?></h4>
-                                            <label class="sr-only" for="form-first-name">Username</label>
-                                            <input type="text" name="username" placeholder="Username..." class="form-first-name form-control" id="form-first-name" required autofocus>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="sr-only" for="form-last-name">Password</label>
-                                            <input type="password" name="password" placeholder="Password" class="form-last-name form-control" id="form-last-name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="sr-only" for="form-email">Email</label>
-                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
-                                        </div>
-                                        <button type="submit" class="btn" name="signup">Sign me up!</button>
-                                        <h2><?php echo $forgotPassword; ?></h2>
+                                        ?>
+                                        <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="registration-form">
+                                            <div class="form-group"<h4><?php echo $msg; ?></h4>
+                                                <label class="sr-only" for="form-first-name">Username</label>
+                                                <input type="text" name="username" placeholder="Username..." class="form-first-name form-control" id="form-first-name" required autofocus>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="form-last-name">Password</label>
+                                                <input type="password" name="password" placeholder="Password" class="form-last-name form-control" id="form-last-name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="form-email">Email</label>
+                                                <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
+                                            </div>
+                                            <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
+                                            <br>
+                                            <button type="submit" class="btn" name="signup">Sign me up!</button>
+                                            <h2><?php echo $forgotPassword; ?></h2>
                                     </form>
                                 </div>
                                 <h3> Already have an account?</3>
