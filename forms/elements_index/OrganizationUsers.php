@@ -51,47 +51,52 @@
                                 </div>
                                 <div class="form-top-left">
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div id="no-more-tables" >
                                             <h1 class="text-center">
                                                 Users in organization
                                             </h1>
-
-                                        </div>
-                                        <div id="no-more-tables" >
                                             <table class="col-md-12 table-bordered table-striped table-condensed cf ">
                                                 <thead class="cf">
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Email</th>
+                                                        <th>Remove</th>	
+                                                    </tr>
                                                 </thead>
-                                            </table>
-                                        </div>
+                                                <tbody>
+                                                    
+                                                </tbody>
+                                        </table>
                                     </div>
-
                                 </div>
-                                <div class="form-top-right">
-                                    
-
-                                </div>
-                                <!--                            <div class="form-top-right">
-                                                                <i class="fa fa-key"></i>-->
-    <!--                            <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                    <input style="color: black;" class="form-username form-control" type="file">-->
-                                <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
 
                             </div>
+                            <div class="form-top-right">
 
+
+                            </div>
+                            <!--                            <div class="form-top-right">
+                                                            <i class="fa fa-key"></i>-->
+<!--                            <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                <input style="color: black;" class="form-username form-control" type="file">-->
+                            <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
 
                         </div>
+
 
                     </div>
 
                 </div>
-
 
             </div>
 
 
         </div>
 
+
     </div>
+
+</div>
 
 </main>
 <!-- Footer >
