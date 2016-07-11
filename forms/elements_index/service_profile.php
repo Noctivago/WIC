@@ -65,7 +65,7 @@ $msg;
                                         <br>
                                         <div class = "login-form">
                                             <button onclick="hide('showWICPlanner');show('showWICPlannerBTN');" class = "btn" name = "WICPlannerHide">Hide WIC Planner!</button>
-                                            <button  class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
+                                            <button onclick="addToWic(<?= $orgServId ?>,<?= $_SESSION['id'] ?>)"class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
                                         </div>
                                     </div>
                                     <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
@@ -88,11 +88,6 @@ $msg;
                         function setDisplay(target, str) {
                             document.getElementById(target).style.display = str;
                         }
-                        //function addToWICPlanner() {
-                        //    var myData = <?php DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) ?>;
-                        //    alert(myData);
-                        //}
-
                     </script>
 
                     <div class = "col-sm-1 middle-border" >
@@ -158,6 +153,7 @@ $msg;
 <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
+<script src="../../js/Service.js" type="text/javascript"></script>
 
 
 
