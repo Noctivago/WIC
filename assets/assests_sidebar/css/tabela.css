@@ -1,15 +1,17 @@
 @media only screen and (max-width: 800px) {
-    .table
+    .table{
 	#unseen table td:nth-child(2), 
 	#unseen table th:nth-child(2) {display: none;}
+    }
 }
  
 @media only screen and (max-width: 640px) {
-    .table
+    .table{
 	#unseen table td:nth-child(4),
 	#unseen table th:nth-child(4),
 	#unseen table td:nth-child(7),
 	#unseen table th:nth-child(7),
 	#unseen table td:nth-child(8),
 	#unseen table th:nth-child(8){display: none;}
+    }
 }
