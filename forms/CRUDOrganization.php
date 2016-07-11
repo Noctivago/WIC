@@ -3,6 +3,28 @@ include_once ('session.php');
 include_once ('../db/conn.inc.php');
 include_once ('../db/functions.php');
 
+if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
+                    $msg = '';
+                    try {
+                        $userid = $_SESSION['id'];
+                        $d = getDateToDB();
+                        $idOrg = (filter_var($_POST['Org-Id'], FILTER_SANITIZE_STRING));
+                        $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
+                        $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
+                        $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
+                        $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
+                        $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
+                        $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
+                        $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
+                        $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
+                        $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
+                        $msg = DB_addOrganization($pdo, $userid, $orgId, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
+                        echo $msg;
+                    } catch (Exception $ex) {
+                        $msg = "ERROR!";
+                    }
+                }
+                	
 
 
 ?>	
@@ -49,29 +71,8 @@ include_once ('../db/functions.php');
         <h4> <?php echo $msg; ?></h4>
         <main class="cd-main-content">
             <div class="content-wrapper">
-                <?php
-                if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEmail'])) {
-                    $msg = '';
-                    try {
-                        $userid = $_SESSION['id'];
-                        $d = getDateToDB();
-                        $idOrg = (filter_var($_POST['Org-Id'], FILTER_SANITIZE_STRING));
-                        $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
-                        $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
-                        $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
-                        $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
-                        $facebook = (filter_var($_POST ['facebook'], FILTER_SANITIZE_STRING));
-                        $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
-                        $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
-                        $orgEmail = (filter_var($_POST ['orgEmail'], FILTER_SANITIZE_EMAIL));
-                        $website = (filter_var($_POST ['website'], FILTER_SANITIZE_STRING));
-                        $msg = DB_addOrganization($pdo, $userid, $idOrg, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d);
-                        echo $msg;
-                    } catch (Exception $ex) {
-                        $msg = "ERROR!";
-                    }
-                }
-                ?>	
+       
+                
 
 
 
@@ -147,7 +148,7 @@ include_once ('../db/functions.php');
                                                     <input type="text" name="website" placeholder="ORGANIZATION WEBSITE" class="form-password form-control" id="website" required>
                                                 </div>
                                                 <button type="submit" id="addOrg" class="btn" name="addOrg" visible="true">NEW ORGANIZATION!</button>
-                                                <button type="submit" id="update" class="btn" name="update" style="display: none;">Save</button>
+                                                <button type="submit" id="addOrg" class="btn" name="update" style="display: none;">Save</button>
                                                 <button type="submit" id="delete" class="btn" name="delete" style="display: none;">Delete</button>
                                                 <!--button type="reset" id="cancel" class="btn" name="Cancel" style="display: none;"> Cancel </button-->
                                             </form>
