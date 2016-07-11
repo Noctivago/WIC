@@ -130,15 +130,15 @@
         </div>
 
     </div>
-
-    <!-- Footer -->
+</main>
+    <!-- Footer >
     <footer>
         <div class="container">
             <div class="row">
 
             </div>
         </div>
-    </footer>
+    </footer-->
 
     <!-- Javascript -->
     <script src="../assets/js/jquery-1.11.1.min.js"></script>
@@ -149,4 +149,3 @@
     <!--[if lt IE 10]>
         <script src="assets/js/placeholder.js"></script>
     <![endif]-->
-</main>
