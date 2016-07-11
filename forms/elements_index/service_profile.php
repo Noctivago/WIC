@@ -157,14 +157,14 @@ Panel content
  <!--<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">-->
 <div class="container">
 	<div class="row">
-		<h3>mamamamam</h3>
+		<h3>toctoc</h3>
 	</div>
     
     <div class="row">
     
     <div class="col-md-6">
 
-    						<div class="form-bottom">
+    						<div class="form-box">
 <!--								<div class="status-upload">-->
 								<div class="cd-label">
 									<form>
