@@ -78,9 +78,7 @@ include_once ('../db/functions.php');
                                         } catch (Exception $ex) {
                                             $msg = "ERROR!";
                                         }
-                                    }  else {
-                                        echo 'fill the email';
-                                    }
+                                    }  
                                     ?>	
 
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
@@ -92,7 +90,7 @@ include_once ('../db/functions.php');
                                         <div class="form-group">
                                             <input type="email" name="email-user" placeholder="User email" class="form-password form-control" id="email-user" required>
                                         </div>
-                                        <button type="submit" id="addUserOrg"class="btn" name="send-invite">Send invite to join organization</button>
+                                        <button type="submit" id="addUserOrg" class="btn" name="send-invite">Send invite to join organization</button>
                                     </form>
                                 </div>
                             </div>
