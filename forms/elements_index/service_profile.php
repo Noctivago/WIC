@@ -154,10 +154,10 @@ Panel content
 
 </div><!-- /container -->
 
- <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+ <!--<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">-->
 <div class="container">
 	<div class="row">
-		<h3>Status Upload Snipp</h3>
+		<h3>Comment</h3>
 	</div>
     
     <div class="row">
