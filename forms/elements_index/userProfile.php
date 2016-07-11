@@ -66,6 +66,7 @@ $userInfo = array();
                                             $lname = (filter_var($_POST ['lname'], FILTER_SANITIZE_STRING));
                                             $countryId = (filter_var($_POST ['country'], FILTER_SANITIZE_NUMBER_INT));
                                             $userId = $_SESSION['id'];
+                                            echo $countryId;
                                             $msg = DB_updateUserProfile($pdo, $fname, $lname, $countryId, $userId);
                                             #DB_updateUserProfile($pdo, $fname, $lname, $userId);
                                         }
