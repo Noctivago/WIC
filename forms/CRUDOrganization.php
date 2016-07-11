@@ -110,7 +110,8 @@ if (isset($_POST['addOrg']) && !empty($_POST['address']) && !empty($_POST['orgEm
                                         <div class="form-bottom">
 
                                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                                                <div class="form-group" id="org-sel"><h4> <?php echo $msg; ?></h4>
+                                                <div class="form-group" id="org-sel">
+                                                    <h4> <?php echo $msg; ?></h4>
                                                     <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()">
 <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                                     </select>
