@@ -89,7 +89,7 @@ include_once ('../db/functions.php');
                                                 try {
                                                     $userid = $_SESSION['id'];
                                                     $d = getDateToDB();
-                                                    $idOrg = (filter_var($_POST['Org-Id'], FILTER_SANITIZE_STRING));
+                                                    $idOrg = (filter_var($_POST['org'], FILTER_SANITIZE_STRING));
                                                     $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
                                                     $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
                                                     $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
@@ -113,10 +113,6 @@ include_once ('../db/functions.php');
                                                         <?= DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                                     </select>
                                                 </div>
-                                                <div class="form-group">
-                                                    <input type="hidden" name="name" id="Org-Id" value="0">
-                                                </div>
-
                                                 <div class="form-group">
                                                     <input type="text" name="name" placeholder="ORGANIZATION NAME" class="form-username form-control" id="name" required autofocus>
                                                 </div>
