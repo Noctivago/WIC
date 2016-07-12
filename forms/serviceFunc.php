@@ -15,14 +15,23 @@ if ($arg === 'add2Wic') {
         echo 'ERRO ADDING SERVICE TO WIC';
     }
 }
-if ($arg === 'addCommentToService') {
+//if ($arg === 'addCommentToService') {
+//    try {
+//        $userId = (filter_var($_POST ['userId']));
+//        $comment = (filter_var($_POST ['comment']));
+//        $orgServId = (filter_var($_POST ['org']));
+//        $d = (filter_var($_POST ['date']));
+//        echo DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d);
+//    } catch (Exception $ex) {
+//        echo 'ERRO ADDING YOUR COMMENT';
+//    }
+//}
+if ($arg === 'addToConversation') {
     try {
         $userId = (filter_var($_POST ['userId']));
-        $comment = (filter_var($_POST ['comment']));
         $orgServId = (filter_var($_POST ['org']));
-        $d = (filter_var($_POST ['date']));
-        echo DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d);
+        echo DB_getUserToStartChat($pdo, $orgServId, $userId);
     } catch (Exception $ex) {
-        echo 'ERRO ADDING YOUR COMMENT';
+        echo 'ERRO ADDING CONVERSATION';
     }
 }
