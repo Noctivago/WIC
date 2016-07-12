@@ -69,11 +69,11 @@ $msg;
                                             <button onclick="addToWic(<?= $orgServId ?>)"class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
                                         </div>
                                     </div>
-                                    <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
-                                    <div id ="showChat" style="display:none;">
-                                        <button onclick="addToConversation(<?= $_SESSION['id'] ?>, <?= $orgServId ?>)" class = "btn" name = "addToConversation">Start it now!</button>
-                                        <button onclick="hide('showChat');" class = "btn" name = "ChatHide">Maybe later!</button>
-                                    </div>
+                                        <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
+                                        <div id ="showChat" style="display:none;">
+                                            <button onclick="hide('showChat');" class = "btn" name = "ChatHide">Maybe later!</button>
+                                            <button onclick="addToConversation(<?= $_SESSION['id'] ?>,<?= $orgServId ?>)" class = "btn" name = "addToConversation">Start it now!</button>
+                                        </div>
                                 </div>
                             </div>
                         </div>
