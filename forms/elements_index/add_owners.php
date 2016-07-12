@@ -6,17 +6,29 @@
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
             <link rel="stylesheet"   link href="../../assets/assests_sidebar/css/tabela.css" rel="stylesheet" type="text/css"/>
             <div class="container">
-
+    <div class="row">-->
                 <div class="col-sm-8 col-lg-offset-2 text">
-                </div>
-                <div class="row">
+<!--            </div>-->
+            </div>
+            <div class="row">
+           
+                       <div class="col-sm-5">
 
-                    <div class="col-sm-5">
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
 
-                        <div class="form-box">
+                            </div>
+                            <div class="form-top-right">
+                            </div>
+                            <!--                            <div class="form-top-right">
+                                                            <i class="fa fa-key"></i>-->
+                            <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                <input style="color: black;" class="form-username form-control" type="file">
+                                <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
 
-
-
+                                                       </div>
+                        
                             <div class="form-bottom">
                                 <form role="form" action="" method="post" class="login-form">
                                     <div class="form-group">
@@ -77,16 +89,24 @@
                     
                     </div>
                 
+<div class="col-sm-1"></div>
+                        
+                        <div class="col-sm-5">
 
-                    <!--<div class="col-sm-1"></div>-->
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left"></div>
+                            <div class="form-top-right">
+</div>
+                                <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                <input style="color: black;" class="form-username form-control" type="file">
+                                <!--<h6 style="color:black">Upload a different photo...</h6>-->
 
-                    <div class="col-sm-5"style="padding-top: 70px">
-
-
-                        <div class="container">
-                            <div class="row">
-                              
-                               
+                            
+                            <!--                            <div class="form-top-right">
+                                                            <i class="fa fa-key"></i>
+                                                        </div>-->
+                        </div>
 
                             <div class="form-bottom">
                                 <form role="form" action="" method="post" class="login-form">
