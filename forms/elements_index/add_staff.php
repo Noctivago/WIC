@@ -79,7 +79,7 @@ ini_set("display_errors", 1);
 
                             </div>
                             <div id="no-more-tables" >
-                                <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
+                                <table class="col-md-12 table-bordered table-striped table-condensed cf ">
                                     <thead class="cf">
                                         <tr>
                                             <th>First Name</th>
@@ -101,7 +101,7 @@ ini_set("display_errors", 1);
 
                         </div>
                         <div id="no-more-tables">
-                            <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
+                            <table class="col-md-12 table-bordered table-striped table-condensed cf ">
                                 <thead class="cf">
                                     <tr>
                                         <th>First Name</th>
