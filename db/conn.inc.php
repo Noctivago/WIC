@@ -991,14 +991,13 @@ function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
             //HEADER LOCATION > PAGE INBOX
             echo 'CONVERSATION ALREADY EXISTS!';
         } else {
-            sql($pdo, "INSERT INTO [dbo].[Conversation] "
-                    . "([User_Id1], "
-                    . "[User_Id2], "
-                    . "[Date_Created],"
-                    . "[Organization_Service], "
-                    . "[Enabled_User1],"
-                    . "[Enabled_User2]) VALUES(?,?,?,?,?,?)"
-                    . "", array($userClient, $userOrg, $d, $orgServ, 1, 1));
+            sql($pdo, "INSERT INTO [dbo].[Conversation]
+           ([User_Id1]
+           ,[User_Id2]
+           ,[Date_Created]
+           ,[Organization_Service]
+           ,[Enabled_User1]
+           ,[Enabled_User2]) VALUES(?,?,?,?,?,?)", array($userClient, $userOrg, $d, $orgServ, 1, 1));
             echo 'CONVERSATION CREATED!';
         }
     } catch (PDOException $e) {
