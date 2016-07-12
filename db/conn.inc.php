@@ -1104,6 +1104,5 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
             $userOrg = DB_checkOrgOwner($pdo, $orgId);
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         }
-        //SE POSSUIR CHEFE SUBCAT
     }
 }
