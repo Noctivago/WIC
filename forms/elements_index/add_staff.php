@@ -50,9 +50,8 @@
 
 <!--                        <div class="container">-->
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12" id="title-1" style="display: none;">
                                     <h4 class="text-center">
-                                        Tabela 1
                                     </h4>
 
                                 </div>
@@ -97,7 +96,7 @@
                                 </div>
                             </div>
                             
-                            <div class="col-md-12">
+                            <div class="col-md-12" id="title-2" style="display: none;">
                                     <h4 class="text-center">
                                         Tabela 2
                                     </h4>
