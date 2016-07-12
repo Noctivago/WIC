@@ -5,6 +5,8 @@
         <group>
             <file>file:/C:/xampp/htdocs/WIC_VS/WIC/db/conn.inc.php</file>
             <file>file:/C:/xampp/htdocs/WIC_VS/WIC/forms/elements_index/service_profile.php</file>
+            <file>file:/C:/xampp/htdocs/WIC_VS/WIC/forms/serviceFunc.php</file>
+            <file>file:/C:/xampp/htdocs/WIC_VS/WIC/js/Service.js</file>
         </group>
     </open-files>
 </project-private>

@@ -761,9 +761,9 @@ function sendEmail($to, $subject, $body) {
     }
 }
 
-function DB_changeUserPassword($pdo, $email, $password) {
+function DB_changeUserPassword($pdo, $userId, $password) {
     try {
-        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Email] = ? ", array($password, $email));
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Id] = ? ", array($password, $userId));
         return true;
     } catch (Exception $exc) {
         return false;
