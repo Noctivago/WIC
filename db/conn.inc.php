@@ -997,7 +997,7 @@ function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
             echo 'CONVERSATION CREATED!';
         }
     } catch (PDOException $e) {
-        print "Error!" . "<br/>";
+        print "ERROR READING/WRITING CONVERSATION!" . "<br/>";
         die();
     }
 }
