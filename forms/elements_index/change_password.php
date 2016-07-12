@@ -24,7 +24,7 @@
                        <div class="col-sm-5 ">
 
                     <div class="form-box">
-                        <div class="form-top" style="color: gainsboro">
+                        <div class="form-top" style="color: darkblue">
                             <div class="form-top-left">
                                 <h3 style="color: darkgray">Change your Account Password here:</h3>
                             </div>
