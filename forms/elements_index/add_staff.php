@@ -56,7 +56,7 @@ ini_set("display_errors", 1);
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-email" required autofocus>
+                                        <input type="email" style="height: 40px" name="email" placeholder="Email" class="form-username form-control" id="form-email" required autofocus>
                                     </div>
                                     <button type="submit" id="invite" class="btn" name="invite" visible="true">Send Invite</button>
                                 </form>
