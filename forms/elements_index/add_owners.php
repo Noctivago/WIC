@@ -6,9 +6,9 @@
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
             <link rel="stylesheet"   link href="../../assets/assests_sidebar/css/tabela.css" rel="stylesheet" type="text/css"/>
             <div class="container">
-    <div class="row">-->
+    <div class="row">
                 <div class="col-sm-8 col-lg-offset-2 text">
-<!--            </div>-->
+            
             </div>
             <div class="row">
            
@@ -45,7 +45,7 @@
                                         <thead class="cf">
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Dia Semana</th>
+                                                <th>Dia Semanarrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr/th>
                                                 <th class="numeric">d-semana</th>	
                                             </tr>
                                         </thead>
