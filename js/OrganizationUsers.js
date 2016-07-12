@@ -23,8 +23,16 @@ function viewAllUsersInOrganization() {
     var arg = 'viewAllUsersInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
         var json_r = $.parseJSON(result);
+        $(document).ready(function()
+        {
+            if($('table').length){
+                alert(json_r);
+            }else {
+                removetable();
+                addTable(json_r);
+            }
+        })
         console.log(json_r);
-        addTable(json_r);
     });
     return false;
 }
