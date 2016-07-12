@@ -7,7 +7,7 @@
             <link rel="stylesheet"   link href="../../assets/assests_sidebar/css/tabela.css" rel="stylesheet" type="text/css"/>
             <div class="container">
 
-                <div class="col-sm-8 col-lg-offset-2 text">
+<!--                <div class="col-sm-8 col-lg-offset-2 text">-->
                 </div>
                 <div class="row">
 
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
 
                     <!--<div class="col-sm-1"></div>-->
 
@@ -153,7 +153,7 @@
 
                 </div>
             </div>
- </div>
+ 
 </main>
 
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
