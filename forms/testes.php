@@ -25,6 +25,10 @@ include_once ('../db/conn.inc.php');
         echo '<br>Check Cat > 1 <br>';
         $cat = DB_checkCategoryOwner($pdo, $orgId, $catId);
         var_dump($cat);
+        $orgId = 19;
+        echo '<br>OrgID > 19 <br>';
+        $userOrg = DB_checkOrgOwner($pdo, $orgId);
+        var_dump($userOrg);
         ?>
 
     </body>
