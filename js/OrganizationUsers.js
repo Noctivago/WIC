@@ -34,7 +34,7 @@ function addTable(json_resp) {
     heading[0] = "Name";
     heading[1] = "Email";
     heading[2] = "Remove";
-    document.getElementById("title").innerHTML = "Users in Organization";
+    //document.getElementById("title").innerHTML = "Users in Organization";
     var mytable = document.getElementById("no-more-tables");
     var table = document.createElement('TABLE');
     //table.className = "col-md-12 table-bordered table-striped table-condensed cf ";
