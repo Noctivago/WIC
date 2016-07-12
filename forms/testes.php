@@ -14,6 +14,7 @@ include_once ('../db/conn.inc.php');
         <?php
         echo 'Welcome ' . $_SESSION['username'] . '<br>';
         $orgServId = 2;
+        $orgId = 19;
         echo 'GET IDs <br>';
         $orgUsers = DB_checkUserToStartChat($pdo, $orgServId);
         var_dump($orgUsers);
@@ -25,7 +26,6 @@ include_once ('../db/conn.inc.php');
         echo '<br>Check Cat > 1 <br>';
         $cat = DB_checkCategoryOwner($pdo, $orgId, $catId);
         var_dump($cat);
-        $orgId = 19;
         echo '<br>OrgID > 19 <br>';
         $userOrg = DB_checkOrgOwner($pdo, $orgId);
         var_dump($userOrg);
