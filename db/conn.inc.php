@@ -1079,6 +1079,7 @@ function DB_checkOrgOwner($pdo, $orgId) {
 
 //VERIFICA QUAL O USER COM O QUAL O CLIENT VAI FALAR E CRIA CONVERSA SEM MSG
 function DB_getUserToStartChat($pdo, $orgServId, $userId) {
+    $orgUsers = array();
     $orgUsers = DB_checkUserToStartChat($pdo, $orgServId);
     $orgId = $orgUsers["Organization_Id"];
     $subCatId = $orgUsers["Sub_Category_Id"];
