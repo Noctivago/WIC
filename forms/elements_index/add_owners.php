@@ -98,45 +98,19 @@
                                     </h4>
 
                                 </div>
-                                <div id="no-more-tables">
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
-                                        <thead class="cf">
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>Dia Semana</th>
-                                                <th class="numeric">d-semana</th>	
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td data-title="Code">1</td>
-                                                <td data-title="Company">SEGUNDA</td>
-                                                <td data-title="Day" class="numeric">seg-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">2</td>
-                                                <td data-title="Company">TERCA</td>
-                                                <td data-title="Day" class="numeric">ter-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">3</td>
-                                                <td data-title="Company">QUARTA</td>
-                                                <td data-title="Day" class="numeric">qua-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">4</td>
-                                                <td data-title="Company">QUINTA</td>
-                                                <td data-title="Day" class="numeric">qui-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                 <div class="form-bottom">
+                                <form role="form" action="" method="post" class="login-form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-username">Company Name:</label>
+                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Adress:</label>
+                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                    </div>
+                                    
+                                </form>
+                            </div>
                             </div>
                             
                             <div class="col-md-12">
