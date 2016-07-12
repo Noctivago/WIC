@@ -79,11 +79,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">New Password:</label>
-                                    <input type="password" style="height: 40px" name="newPassword" placeholder="New Password" class="form-password form-control" id="newPassword" required autofocus>
+                                    <input type="password" style="height: 40px" name="newPassword" placeholder="New Password" class="form-username form-control" id="newPassword" required autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Confirm your new Password:</label>
-                                    <input type="password" style="height: 40px" name="newPassword2" placeholder="Confirm your new password" class="form-password form-control" id="newPassword2" required>
+                                    <input type="password" style="height: 40px" name="newPassword2" placeholder="Confirm your new password" class="form-username form-control" id="newPassword2" required>
                                 </div>
                                 <button type="submit" class="btn" name="changePassword">Save Changes</button>
 
