@@ -21,7 +21,7 @@
             </div>
             <div class="row">
            
-                       <div class="col-sm-5">
+                       <div class="col-sm-8 col-lg-offset-2 text">
 
                     <div class="form-box">
                         <div class="form-top">
@@ -95,7 +95,7 @@
 
                     
                            
-                        <div class="col-sm-1 middle-border"  >
+                        <!--<div class="col-sm-1 middle-border"  >-->
                         </div>                   
                         <div class="col-sm-1"></div>
 
