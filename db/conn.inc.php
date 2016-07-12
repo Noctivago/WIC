@@ -986,7 +986,7 @@ function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[Conversation] "
                 . "WHERE [User_Id1] = ? AND [User_Id2] = ? OR "
-                . "[User_Id2] = ? AND [User_Id1]", array($userClient, $userOrg, $userClient, $userOrg), "count");
+                . "[User_Id2] = ? AND [User_Id1] = ?", array($userClient, $userOrg, $userClient, $userOrg), "count");
         if ($count < 0) {
             //HEADER LOCATION > PAGE INBOX
             echo 'CONVERSATION ALREADY EXISTS!';
