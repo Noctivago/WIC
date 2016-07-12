@@ -40,21 +40,19 @@ function change_table_data(json_r,div_table,id_table){
     var boddy = document.createElement('TBODY');
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
-        var td = document.createElement('TD');
+        var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Name));
-        tr.appendChild(td);
+        tr.appendChild(td)
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Email));
-        tr.appendChild(td);
-        var td = document.createElement('TD');
+        tr.appendChild(td)
+        var td = document.createElement('TD')
         td.appendChild(document.createTextNode("Delete"));
-        tr.appendChild(td);
+        tr.appendChild(td)
         boddy.appendChild(tr);
     }
     
-    
-    Tbody.innerHTML = boddy;
-    
+    table.replaceChild(Tbody,boddy);
 }
 
 //aceitar convite para ingressar na organizaçao
