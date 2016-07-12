@@ -14,14 +14,7 @@
                     <div class="col-sm-5">
 
                         <div class="form-box">
-<!--                            <div class="form-top">
-                                <div class="form-top-left">
 
-                                </div>
-                                <div class="form-top-right">
-                                </div>
-                              
-                            </div>-->
 
 
                             <div class="form-bottom">
