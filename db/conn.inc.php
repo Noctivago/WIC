@@ -1131,16 +1131,6 @@ function DB_getMyConversations($pdo, $userId) {
     echo "</table>";
 }
 
-/*
-  INSERT INTO [dbo].[Message]
-  ([User_Id]
-  ,[Message]
-  ,[Message_Date]
-  ,[Message_View]
-  ,[Date_Message_View]
-  ,[Conversation_Id])
- */
-
 function DB_getMyMessages($pdo, $Conversation_Id) {
     try {
         $rows = sql($pdo, "SELECT [Id]
