@@ -92,12 +92,7 @@
 
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-12">
-<!--                                    <h4 class="text-center">
-                                        Tabela 1
-                                    </h4>-->
-
-                                </div>
+                              
                                
 
                             <div class="form-bottom">
