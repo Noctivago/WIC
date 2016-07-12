@@ -984,19 +984,26 @@ function DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) {
 //CRIAR CONVERSA ENTRE USERS 
 function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[Conversation] WHERE [User_Id1] = ? AND [User_Id2] = ?", array($userClient, $userOrg), "count");
+        $count = sql($pdo, "SELECT * FROM [dbo].[Conversation] "
+                . "WHERE [User_Id1] = ? AND [User_Id2] = ? OR "
+                . "[User_Id2] = ? AND [User_Id1]", array($userClient, $userOrg), "count");
         if ($count < 0) {
             //HEADER LOCATION > PAGE INBOX
             echo 'CONVERSATION ALREADY EXISTS!';
         } else {
-            sql($pdo, "INSERT INTO [dbo].[[Conversation]] ([User_Id1], [User_Id2], [Date_Created]"
-                    . "[Organization_Service], [Enabled_User1],[Enabled_User2]) VALUES(?,?,?,?,?,?)"
+            sql($pdo, "INSERT INTO [dbo].[Conversation] "
+                    . "([User_Id1], "
+                    . "[User_Id2], "
+                    . "[Date_Created],"
+                    . "[Organization_Service], "
+                    . "[Enabled_User1],"
+                    . "[Enabled_User2]) VALUES(?,?,?,?,?,?)"
                     . "", array($userClient, $userOrg, $d, $orgServ, 1, 1));
             echo 'CONVERSATION CREATED!';
         }
     } catch (PDOException $e) {
-        print "Error!" . "<br/>";
-        die();
+        print "ERROR READING/WRITING CONVERSATION!" . "<br/>";
+        #die();
     }
 }
 
@@ -1007,16 +1014,15 @@ function DB_checkUserToStartChat($pdo, $orgServId) {
       ,[Organization_Id]
       ,[Sub_Category_Id]
       ,[Category].[Id] as Category_ID
-      ,[Organization_service].[Name] as SerName
+      ,[Organization_service].[Id] as SerName
       FROM [dbo].[Organization_Service]
       join [Sub_Category]
       on [Sub_Category].[Id] = [Organization_service].[Sub_Category_Id]
       join [Category]
       on [Category].[Id] = [Sub_Category].[Category_ID]
-      where [Organization_Service].[Id] =:id and [Organization_Service].[Enabled] = 1");
+      where [Organization_Service].[Id] = :id and [Organization_Service].[Enabled] = 1");
         $stmt->bindParam(':id', $orgServId);
         $stmt->execute();
-#$dbh = null;
         $orgUsers = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $orgUsers["Organization_Id"] = $row["Organization_Id"];
@@ -1041,7 +1047,7 @@ function DB_checkCategoryOwner($pdo, $orgId, $catId) {
         ,[Organization_Id]
         FROM [dbo].[Category_Owner] WHERE [Organization_Id] = ? AND [Category_Id] = ?", array($orgId, $catId), "rows");
         foreach ($rows as $row) {
-            return $row['[User_Id]'];
+            return $row['User_Id'];
         }
     } catch (Exception $exc) {
         echo 'ERROR READING CATEGORY OWNNER';
@@ -1059,7 +1065,7 @@ function DB_checkSubCategoryOwner($pdo, $orgId, $subCatId) {
             ,[Enabled]
         FROM [dbo].[Sub_Category_Owner] WHERE [Organization_Id] = ? AND [Sub_Category_Id] = ?", array($orgId, $subCatId), "rows");
         foreach ($rows as $row) {
-            return $row['[User_Id]'];
+            return $row['User_Id'];
         }
     } catch (Exception $exc) {
         echo 'ERROR READING SUBCATEGORY OWNNER';
@@ -1071,7 +1077,7 @@ function DB_checkOrgOwner($pdo, $orgId) {
     try {
         $rows = sql($pdo, "SELECT [Id] ,[User_Boss] FROM [dbo].[Organization] WHERE [Enabled] = 1 AND [Id] = ?", array($orgId), "rows");
         foreach ($rows as $row) {
-            return $row['[User_Id]'];
+            return $row['User_Boss'];
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION OWNNER';
@@ -1080,6 +1086,7 @@ function DB_checkOrgOwner($pdo, $orgId) {
 
 //VERIFICA QUAL O USER COM O QUAL O CLIENT VAI FALAR E CRIA CONVERSA SEM MSG
 function DB_getUserToStartChat($pdo, $orgServId, $userId) {
+    $orgUsers = array();
     $orgUsers = DB_checkUserToStartChat($pdo, $orgServId);
     $orgId = $orgUsers["Organization_Id"];
     $subCatId = $orgUsers["Sub_Category_Id"];
@@ -1088,19 +1095,18 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
     $userOnCat = DB_checkCategoryOwner($pdo, $orgId, $catId);
     $userClient = $userId;
     $orgServ = $orgUsers["OrgServiceName"];
+    #include_once './functions.php';
     $d = getDateToDB();
     //SE POSSUIR CHEFE SUBCATEGORIA
-    // isset($test) && !is_null($test)
-    if (isset($userOnSubCat) && !is_null($userOnSubCat)) {
+    if (isset($userOnSubCat)) {
         $userOrg = $userOnSubCat;
         return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
-        //SENAO
     } else {
-        //SE POSSUIR CHEFE CATEGORIA
-        if (isset($userOnCat) && !is_null($userOnCat)) {
+        //SE NAO POSSUIR CHEFE CATEGORIA
+        if (isset($userOnCat)) {
             $userOrg = $userOnCat;
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
-            //SENAO
+            //SE POSSUIR CHEFE CAT
         } else {
             //SE N POSSUIR CHEFE DE CAT OU SUBCAT USA ID_BOSS
             $userOrg = DB_checkOrgOwner($pdo, $orgId);

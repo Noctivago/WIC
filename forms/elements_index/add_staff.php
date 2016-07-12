@@ -50,95 +50,44 @@
 
 <!--                        <div class="container">-->
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12" id="title-1" style="display: none;">
                                     <h4 class="text-center">
-                                        Tabela 1
                                     </h4>
 
                                 </div>
-                                <div id="no-more-tables">
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
+                                <div id="no-more-tables" >
+                                    <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
                                         <thead class="cf">
                                             <tr>
-                                                <th>Id</th>
-                                                <th>Dia Semana</th>
-                                                <th class="numeric">d-semana</th>	
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                                <th>Remove</th>	
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td data-title="Code">1</td>
-                                                <td data-title="Company">SEGUNDA</td>
-                                                <td data-title="Day" class="numeric">seg-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">2</td>
-                                                <td data-title="Company">TERCA</td>
-                                                <td data-title="Day" class="numeric">ter-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">3</td>
-                                                <td data-title="Company">QUARTA</td>
-                                                <td data-title="Day" class="numeric">qua-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">4</td>
-                                                <td data-title="Company">QUINTA</td>
-                                                <td data-title="Day" class="numeric">qui-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             
-                            <div class="col-md-12">
+                            <div class="col-md-12" id="title-2" style="display: none;">
                                     <h4 class="text-center">
                                         Tabela 2
                                     </h4>
 
                                 </div>
                                 <div id="no-more-tables">
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
+                                    <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
                                         <thead class="cf">
                                             <tr>
-                                                <th>Id</th>
-                                                <th>Dia Semana</th>
-                                                <th class="numeric">d-semana</th>	
+                                            <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                                <th>Remove</th>	
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td data-title="Code">1</td>
-                                                <td data-title="Company">SEGUNDA</td>
-                                                <td data-title="Day" class="numeric">seg-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">2</td>
-                                                <td data-title="Company">TERCA</td>
-                                                <td data-title="Day" class="numeric">ter-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">3</td>
-                                                <td data-title="Company">QUARTA</td>
-                                                <td data-title="Day" class="numeric">qua-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">4</td>
-                                                <td data-title="Company">QUINTA</td>
-                                                <td data-title="Day" class="numeric">qui-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -160,6 +109,6 @@
 <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
-
+<script src="../js/OrganizationUsers.js"></script>
 
 

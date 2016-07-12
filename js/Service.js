@@ -48,7 +48,7 @@ function addToConversation(a, c) {
                 alert(result);
             },
             error: function (result) {
-                alert(result);
+                console.log(result);
             }
 
         });
