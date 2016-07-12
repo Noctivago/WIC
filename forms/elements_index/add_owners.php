@@ -98,31 +98,7 @@
                                     </h4>-->
 
                                 </div>
-                                 <div class="form-bottom">
-                                <form role="form" action="" method="post" class="login-form">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-username">Company Name:</label>
-                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Adress:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                    </div>
-                                    
-                                </form>
-                            </div>
-                            </div>
-                            
-                             <div class="form-box">
-<!--                            <div class="form-top">
-                                <div class="form-top-left">
-
-                                </div>
-                                <div class="form-top-right">
-                                </div>
-                              
-                            </div>-->
-
+                               
 
                             <div class="form-bottom">
                                 <form role="form" action="" method="post" class="login-form">
