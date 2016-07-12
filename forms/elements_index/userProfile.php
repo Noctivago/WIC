@@ -1,19 +1,14 @@
-<?php
-include_once ('session.php');
-include_once ('../db/conn.inc.php');
-include_once ('../db/functions.php');
-$msg = '';
-$userInfo = array();
-?>
-<?php
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
-?>
+
 
 <main class="cd-main-content">
     <div class="content-wrapper">
 
-
+                 <div class="top-content">
+             <div class="col-lg-12">
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  My Profile
+                 </h1>
+             </div>
+             </div>
 
         <div class="top-content">
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
