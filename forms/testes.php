@@ -21,6 +21,10 @@ include_once ('../db/conn.inc.php');
         $subCatId = 1;
         $subCat = DB_checkSubCategoryOwner($pdo, $orgId, $subCatId);
         var_dump($subCat);
+        $catId = 1;
+        echo '<br>Check Cat > 1 <br>';
+        $cat = DB_checkCategoryOwner($pdo, $orgId, $catId);
+        var_dump($cat);
         ?>
 
     </body>
