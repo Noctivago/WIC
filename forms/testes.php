@@ -13,6 +13,7 @@ include_once ('../db/conn.inc.php');
 
         <?php
         echo 'Welcome ' . $_SESSION['username'] . '<br>';
+        $orgServId = 2;
         $orgUsers = DB_checkUserToStartChat($pdo, $orgServId);
         var_dump($orgUsers);
         ?>
