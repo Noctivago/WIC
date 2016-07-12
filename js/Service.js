@@ -47,8 +47,8 @@ function addToConversation(a, c) {
             success: function (result) {
                 alert(result);
             },
-            error: function (status, err) {
-                console.log('Something went wrong', status, err);
+            error: function (result) {
+                console.log(result);
             }
 
         });
