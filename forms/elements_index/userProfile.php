@@ -78,16 +78,13 @@
                                             <?= $userInfo = DB_getUserProfileInfo($pdo, $_SESSION['id']) ?>
                                         </div>
                                         <div col-sm-6 col-sm-offset-2 text>
-                                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form">
+                                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" class="login-form" style="color: green">
                                                 <!--Select image to upload:-->
                                                 <input type="file" name="Photo" id="Photo" required="">
                                                 <button type="submit" class ="btn" name="changePic">Change picture!</button>
                                             </form>
                                         </div>    
-                                    </div>
-                                    <!--                            <div class="form-top-right">
-                                                                    <i class="fa fa-key"></i>
-                                                                </div>-->
+
                                 </div>
 
                                 <div class="form-bottom">
@@ -115,7 +112,7 @@
 
                             </div>
 
-                            <!--                        <div class="col-sm-1 middle-border"></div>-->
+                                                    <div class="col-sm-1 middle-border"></div>
                             <div class="col-sm-1"></div>
 
                             <div class="col-sm-5">
