@@ -29,6 +29,10 @@ include_once ('../db/conn.inc.php');
         echo '<br>OrgID > 19 <br>';
         $userOrg = DB_checkOrgOwner($pdo, $orgId);
         var_dump($userOrg);
+        echo '<br> FINAL TEST<br>';
+        $userId = 36;
+        $x = DB_getUserToStartChat($pdo, $orgServId, $userId);
+        var_dump($x);
         ?>
 
     </body>
