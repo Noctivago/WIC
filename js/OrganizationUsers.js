@@ -48,8 +48,7 @@ function addTable(json_resp) {
         th.className = "cf";
         th.appendChild(document.createTextNode(heading[i]));
         tr.appendChild(th);
-    }
-    ;
+    };
     //add rows
     for (i = 0; i < json_resp.length; i++) {
         var tr = document.createElement('TR');

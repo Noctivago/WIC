@@ -56,8 +56,8 @@
                                     </h4>
 
                                 </div>
-                                <div id="no-more-tables">
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
+                                <div id="no-more-tables" >
+                                    <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
                                         <thead class="cf">
                                             <tr>
                                                 <th>Id</th>
@@ -66,7 +66,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <!--tr>
                                                 <td data-title="Code">1</td>
                                                 <td data-title="Company">SEGUNDA</td>
                                                 <td data-title="Day" class="numeric">seg-feira</td>
@@ -91,7 +91,7 @@
 
                                             </tr>
                                             <tr>
-                                            </tr>
+                                            </tr-->
                                         </tbody>
                                     </table>
                                 </div>
@@ -104,7 +104,7 @@
 
                                 </div>
                                 <div id="no-more-tables">
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
+                                    <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
                                         <thead class="cf">
                                             <tr>
                                                 <th>Id</th>
@@ -113,7 +113,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <!--tr>
                                                 <td data-title="Code">1</td>
                                                 <td data-title="Company">SEGUNDA</td>
                                                 <td data-title="Day" class="numeric">seg-feira</td>
@@ -138,7 +138,7 @@
 
                                             </tr>
                                             <tr>
-                                            </tr>
+                                            </tr-->
                                         </tbody>
                                     </table>
                                 </div>
@@ -160,6 +160,6 @@
 <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
-
+<script src="../js/OrganizationUsers.js"></script>
 
 
