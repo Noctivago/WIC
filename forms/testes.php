@@ -4,8 +4,8 @@ include_once ('session.php');
 include_once ('../db/conn.inc.php');
 include_once ('../db/functions.php');
 #session_start();
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 
 <html>
@@ -40,14 +40,15 @@ include_once ('../db/functions.php');
         var_dump($userOrg);
         echo '<br> FINAL TEST<br>';
         $userId = $_SESSION['id'];
-        //$x = DB_getUserToStartChat($pdo, $orgServId, $userId);
-        //var_dump($x);
-        echo '<br>ADDING CONVERSATION<br>';
-        $d = getDateToDB();
-        $orgServ = 2;
-        $userClient = $userId;
-        echo 'CLIENT > ' . $userClient . ' USER ORG > ' . $userOrg . ' DATE > ' . $d .'<br>';
-        echo DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
+        $x = DB_getUserToStartChat($pdo, $orgServId, $userId);
+        var_dump($x);
+        echo $x;
+        #echo '<br>ADDING CONVERSATION<br>';
+        #$d = getDateToDB();
+        #$orgServ = 2;
+        #$userClient = $userId;
+        #echo 'CLIENT > ' . $userClient . ' USER ORG > ' . $userOrg . ' DATE > ' . $d .'<br>';
+        #echo DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         ?>
 
     </body>
