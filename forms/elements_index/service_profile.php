@@ -106,7 +106,7 @@ $msg;
                                     <div class = "form-bottom">
                                         <!--<div class = "status-upload"> -->
                                         <div class = "cd-label">
-                                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                                            <!--<form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">-->
                                                 <div><h4> <?php echo $msg; ?></h4>
                                                     <textarea id="userComment" name ="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
                                                 </div>
