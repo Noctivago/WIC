@@ -1113,3 +1113,20 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
         }
     }
 }
+
+function DB_getMyConversations($pdo, $userId) {
+    $rows = sql($pdo, "SELECT [Id]
+      ,[User_Id1]
+      ,[User_Id2]
+      ,[Organization_Service]
+    FROM [dbo].[Conversation] WHERE [User_Id1] = ? OR [User_Id2] = ?", array($userId, $userId), "rows");
+    echo "<table class='table table-striped'><tr><<th>ID</th><th>USER 1</th><th>USER 2</th></tr>";
+    foreach ($rows as $row) {
+        echo "<tr>";
+        echo "<td>" . $row['Id'] . "</td>";
+        echo "<td>" . $row['User_Id1'] . "</td>";
+        echo "<td>" . $row['User_Id2'] . "</td>";
+        echo "<tr>";
+    }
+    echo "</table>";
+}
