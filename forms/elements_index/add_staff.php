@@ -6,7 +6,7 @@ ini_set("display_errors", 1);
 <main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
-        <div class="top-content">
+        <div class="top-content"style="height: 480px">
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
             <link rel="stylesheet"   link href="../../assets/assests_sidebar/css/tabela.css" rel="stylesheet" type="text/css"/>
             <div class="container">
@@ -93,14 +93,14 @@ ini_set("display_errors", 1);
                             </div>
                         </div>
 
-                        <div class="col-md-12" id="title-2" style="display: none;">
+                        <div class="col-md-12">
                             <h4 class="text-center">
                                 Waiting for response
                             </h4>
 
                         </div>
                         <div id="no-more-tables">
-                            <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table2" style="display: none;">
+                            <table class="col-md-12 table-bordered table-striped table-condensed cf ">
                                 <thead class="cf">
                                     <tr>
                                         <th>First Name</th>
