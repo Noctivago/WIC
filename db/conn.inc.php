@@ -1089,10 +1089,13 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
     $userClient = $userId;
     $orgServ = $orgUsers["OrgServiceName"];
     $d = getDateToDB();
-    //SE NAO POSSUIR CHEFE SUBCATEGORIA
-    if ($userOnSubCat == NULL) {
+    //SE POSSUIR CHEFE SUBCATEGORIA
+    if (isset($userOnSubCat) && !is_null($userOnSubCat)) {
+        $userOrg = $userOnSubCat;
+        return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
+    } else {
         //SE NAO POSSUIR CHEFE CATEGORIA
-        if ($userOnCat == NULL) {
+        if (isset($userOnCat) && !is_null($userOnCat)) {
             $userOrg = $userOnCat;
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
             //SE POSSUIR CHEFE CAT
@@ -1102,8 +1105,5 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         }
         //SE POSSUIR CHEFE SUBCAT
-    } else {
-        $userOrg = $userOnSubCat;
-        return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
     }
 }
