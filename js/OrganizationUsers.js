@@ -30,6 +30,9 @@ function viewAllUsersInOrganization() {
 }
 
 function addTable(json_resp,Title) {
+    if(json_resp.length==null){
+        document.getElementById("title").innerHTML = "This organization doest'n have users";
+    }else{
     var heading = new Array();
     heading[0] = "Name";
     heading[1] = "Email";
@@ -64,7 +67,7 @@ function addTable(json_resp,Title) {
         tableBody.appendChild(tr);
     }
     mytable.appendChild(table);
-
+    }
 }
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
