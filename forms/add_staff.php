@@ -15,7 +15,7 @@ include("elements_index/head_index.php");
 include ("elements_index/main_index.php");
 ?>
 <?php
-include ("elements_index/insere_membros.php");
+include ("elements_index/add_staff.php");
 
 ?><!-- .content-wrapper -->
  <!-- .cd-main-content -->
