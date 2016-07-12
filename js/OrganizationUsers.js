@@ -41,10 +41,10 @@ function change_table_data(json_r,div_table,id_table){
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_resp[i].Name));
+        td.appendChild(document.createTextNode(json_r[i].Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_resp[i].Email));
+        td.appendChild(document.createTextNode(json_r[i].Email));
         tr.appendChild(td)
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode("Delete"));
