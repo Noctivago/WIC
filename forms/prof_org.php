@@ -14,6 +14,7 @@ include("elements_index/head_index.php");
 <?php
 include ("elements_index/main_index.php");
 ?>
+<!--body-->
 <?php
 include ("elements_index/profile_org.php");
 

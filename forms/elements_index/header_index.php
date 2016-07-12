@@ -30,7 +30,7 @@
 
 						
                                                 <li><a href="userProfile.php">My Account</a></li>
-                                                <li><a href="#0">Change Password</a></li>
+                                                <li><a href="chanfe_pass.php">Change Password</a></li>
 						<li><a href="logout.php">Logout</a></li>
                                                 
 					</ul>
