@@ -58,9 +58,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1 class="text-center">
-                                        Tabela 1
-                                    </h1>
+                                   
 
                                 </div>
                                 <div id="no-more-tables">
@@ -105,10 +103,7 @@
                             </div>
                             
                             <div class="col-md-12">
-                                    <h1 class="text-center">
-                                        Tabela 2
-                                    </h1>
-
+                                
                                 </div>
                                 <div id="no-more-tables">
                                     <table class="col-md-12 table-bordered table-striped table-condensed cf ">
