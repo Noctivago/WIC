@@ -32,9 +32,29 @@ function viewAllUsersInOrganization() {
     return false;
 }
 function change_table_data(json_r,div_table,id_table){
+    var div = document.getElementById(div_table);
+    var table = document.getElementById(id_table);
     document.getElementById(div_table).style = "Display: true";
     document.getElementById(id_table).style = "Display: true";
-
+    var Tbody = document.getElementById('body');
+    var boddy ;
+    for (i = 0; i < json_r.length; i++) {
+        var tr = document.createElement('TR');
+        var td = document.createElement('TD')
+        td.appendChild(document.createTextNode(json_resp[i].Name));
+        tr.appendChild(td)
+        var td = document.createElement('TD')
+        td.appendChild(document.createTextNode(json_resp[i].Email));
+        tr.appendChild(td)
+        var td = document.createElement('TD')
+        td.appendChild(document.createTextNode("Delete"));
+        tr.appendChild(td)
+        boddy.appendChild(tr);
+    }
+    
+    
+    Tbody.innerHTML = bodyy;
+    
 }
 
 

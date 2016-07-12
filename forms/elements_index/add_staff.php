@@ -87,7 +87,7 @@ ini_set("display_errors", 1);
                                             <th>Remove</th>	
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="body">
                                     </tbody>
                                 </table>
                             </div>
@@ -109,7 +109,7 @@ ini_set("display_errors", 1);
                                         <th></th>	
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="body">
                                 </tbody>
                             </table>
                         </div>
