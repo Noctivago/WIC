@@ -24,35 +24,36 @@ ini_set("display_errors", 1);
                                 </div>
                                 <div class="form-top-right">
                                 </div>
-                              
-                               <!-- <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                               -->
+
+ <!-- <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                -->
                             </div>
 
 
                             <div class="form-bottom">
                                 <?php
-                                    $userId = $_SESSION['id'];
-                                            if ((isset($_POST['invite']) && isset($_POST['form-email'])) && !empty($_POST['OrgId'])) {
-                                                $msg = '';
-                                                try {
-                                                    $email = (filter_var($_POST['form-email'], FILTER_SANITIZE_STRING));
-                                                    $orgId = (filter_var($_POST ['OrgId'], FILTER_SANITIZE_STRING));
-                                                    $msg = DB_addUserInOrganization($pdo, $email, $orgId);
-                                                    echo $msg;
-                                                } catch (Exception $ex) {
-                                                    $msg = "ERROR!";
-                                                }
-                                            }else if(isset ($_POST['delete'])){
-                                            }
-                                            ?>    
+                                $userId = $_SESSION['id'];
+                                if ((isset($_POST['invite']) && isset($_POST['form-email'])) && !empty($_POST['OrgId'])) {
+                                    $msg = '';
+                                    try {
+                                        $email = (filter_var($_POST['form-email'], FILTER_SANITIZE_STRING));
+                                        $orgId = (filter_var($_POST ['OrgId'], FILTER_SANITIZE_STRING));
+                                        $msg = DB_addUserInOrganization($pdo, $email, $orgId);
+                                        echo $msg;
+                                    } catch (Exception $ex) {
+                                        $msg = "ERROR!";
+                                    }
+                                } else if (isset($_POST['delete'])) {
+                                    
+                                }
+                                ?>    
 
                                 <form role="form" action="" method="post" class="login-form">
                                     <div class="form-group" id="OrgId">
-                                       <h4> <?php echo $msg; ?></h4>
-                                        <!--label class="sr-only" for="form-password">Adress:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required-->
-                                    <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
+                                        <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()">
+                                            <h4> <?php echo $msg; ?></h4>
+                                            <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-email" required autofocus>
@@ -62,69 +63,69 @@ ini_set("display_errors", 1);
                             </div>
                         </div>
                     </div>
-                
+
 
                     <!--<div class="col-sm-1"></div>-->
 
                     <div class="col-sm-5">
 
 
-<!--                        <div class="container">-->
-                            <div class="row">
-                                <div class="col-md-12" id="title-1" style="display: none;">
-                                    <h4 class="text-center">
-                                        Users in organization
-                                    </h4>
+                        <!--                        <div class="container">-->
+                        <div class="row">
+                            <div class="col-md-12" id="title-1" style="display: none;">
+                                <h4 class="text-center">
+                                    Users in organization
+                                </h4>
 
-                                </div>
-                                <div id="no-more-tables" >
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
-                                        <thead class="cf">
-                                            <tr>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Email</th>
-                                                <th>Remove</th>	
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
-                            
-                            <div class="col-md-12" id="title-2" style="display: none;">
-                                    <h4 class="text-center">
-                                       Waiting for response
-                                    </h4>
-
-                                </div>
-                                <div id="no-more-tables">
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
-                                        <thead class="cf">
-                                            <tr>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Email</th>
-                                                <th></th>	
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
-<!--                            </div>-->
-                    </div>
-                                
+                            <div id="no-more-tables" >
+                                <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
+                                    <thead class="cf">
+                                        <tr>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                            <th>Remove</th>	
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
 
+                        <div class="col-md-12" id="title-2" style="display: none;">
+                            <h4 class="text-center">
+                                Waiting for response
+                            </h4>
 
+                        </div>
+                        <div id="no-more-tables">
+                            <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
+                                <thead class="cf">
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th></th>	
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--                            </div>-->
                     </div>
 
-        </div>
                 </div>
+
+
             </div>
- 
+
+        </div>
+    </div>
+</div>
+
 </main>
 
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
