@@ -1091,13 +1091,13 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
     $d = getDateToDB();
     //SE POSSUIR CHEFE SUBCATEGORIA
     // isset($test) && !is_null($test)
-    if (isset($userOnSubCat) && !is_null($userOnSubCat)) {
+    if ($userOnSubCat == NULL) {
         $userOrg = $userOnSubCat;
         return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         //SENAO
     } else {
         //SE POSSUIR CHEFE CATEGORIA
-        if (isset($userOnCat) && !is_null($userOnCat)) {
+        if ($userOnCat == NULL) {
             $userOrg = $userOnCat;
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
             //SENAO
