@@ -32,6 +32,7 @@ ini_set("display_errors", 1);
 
                             <div class="form-bottom">
                                 <?php
+                                    $userId = $_SESSION['id'];
                                             if ((isset($_POST['invite']) && isset($_POST['form-email'])) && !empty($_POST['OrgId'])) {
                                                 $msg = '';
                                                 try {
