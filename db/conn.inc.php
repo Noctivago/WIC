@@ -1151,15 +1151,17 @@ function DB_getMyMessages($pdo, $Conversation_Id) {
       ,[Date_Message_View]
       ,[Conversation_Id]
       FROM [dbo].[Message] WHERE [Conversation_Id] = ?", array($Conversation_Id), "rows");
-        echo "<table class='table table-striped'><tr><th>ID</th><th>USER 1</th><th>USER 2</th></tr>";
+        echo "<table class='table table-striped'><tr><th>ID</th><th>USERID</th><th>MESSAGE</th><th>MESSAGE DATE</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
-            echo "<td>" . $row['User_Id1'] . "</td>";
-            echo "<td>" . $row['User_Id2'] . "</td>";
+            echo "<td>" . $row['User_Id'] . "</td>";
+            echo "<td>" . $row['Message'] . "</td>";
+            echo "<td>" . $row['Message_Date'] . "</td>";
             echo "<tr>";
         }
         echo "</table>";
+        //ON RETURN UPDATE -> SET DATE_MESSAGE_VIEW AND MESSAGE_VIEW
     } catch (Exception $exc) {
         echo 'ERROR READING YOUR MESSAGES!';
     }
