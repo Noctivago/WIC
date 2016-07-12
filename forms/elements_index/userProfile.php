@@ -1,9 +1,10 @@
+
 <main class="cd-main-content">
 <div class="content-wrapper" style="padding-left: 0%">
     
                  <div class="top-content">
              <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Edit your Profile
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Edit Your Profile
                  </h1>
              </div>
              </div>
@@ -112,7 +113,7 @@
 
                             </div>
 
-                                                    <div class="col-sm-1 middle-border"></div>
+                                                    <!--<div class="col-sm-1 middle-border"></div>-->
                             <div class="col-sm-1"></div>
 
                             <div class="col-sm-5">
