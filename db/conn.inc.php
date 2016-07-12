@@ -994,3 +994,106 @@ function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
         die();
     }
 }
+
+//VAI BUSCAR OS IDS PARA PODER PROCURAR OS USERS 
+function DB_checkUserToStartChat($pdo, $orgServId) {
+    try {
+        $stmt = $pdo->prepare("SELECT [Sub_Category].[Name]
+      ,[Organization_Id]
+      ,[Sub_Category_Id]
+      ,[Category].[Id] as Category_ID
+      FROM [dbo].[Organization_Service]
+      join [Sub_Category]
+      on [Sub_Category].[Id] = [Organization_service].[Sub_Category_Id]
+      join [Category]
+      on [Category].[Id] = [Sub_Category].[Category_ID]
+      where [Organization_Service].[Id] =:id and [Organization_Service].[Enabled] = 1");
+        $stmt->bindParam(':id', $orgServId);
+        $stmt->execute();
+        #$dbh = null;
+        $orgUsers = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $orgUsers["Organization_Id"] = $row["Organization_Id"];
+            $orgUsers["Sub_Category_Id"] = $row["Sub_Category_Id"];
+            $orgUsers["Category_ID"] = $row["Category_ID"];
+        }
+        return $orgUsers;
+    } catch (PDOException $e) {
+        print "ERROR READING ORGANIZATION SERVICE TABLE!<br/>";
+    }
+}
+
+//VERIFICA SE EXISTE CATEGORY OWNER
+function DB_checkCategoryOwner($pdo, $orgId, $catId) {
+    try {
+        $count = sql($pdo, "SELECT [Id]
+        ,[User_Id]
+        ,[Category_Id]
+        ,[Date_Created]
+        ,[Enabled]
+        ,[Organization_Id]
+        FROM [dbo].[Category_Owner] WHERE [Organization_Id] = ? AND [Category_Id] = ?", array($orgId, $catId), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
+//VERIFICA SE EXISTE SUBCATEGORY OWNER
+function DB_checkSubCategoryOwner($pdo, $orgId, $subCatId) {
+    try {
+        $count = sql($pdo, "SELECT TOP 1000 [Id]
+            ,[User_Id]
+            ,[Sub_Category_Id]
+            ,[Date_Created]
+            ,[Organization_Id]
+            ,[Enabled]
+        FROM [dbo].[Sub_Category_Owner] WHERE [Organization_Id] = ? AND [Sub_Category_Id] = ?", array($orgId, $subCatId), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
+//VAI BUSCAR O ID DO BOSS DA ORF
+function DB_checkOrgOwner($pdo, $orgId) {
+    $rows = sql($pdo, "SELECT [Id]
+       ,[User_Boss]
+        FROM [dbo].[Organization]
+        WHERE [Enabled] = 1 AND [Id] = ?", array($orgId), "rows");
+    foreach ($rows as $row) {
+        echo $row['User_Boss'];
+    }
+}
+
+//VERIFICA QUAL O USER COM O QUAL O CLIENT VAI FALAR
+function DB_getUserToStartChat($pdo, $orgServId) {
+    $orgUsers = DB_checkUserToStartChat($pdo, $orgServId);
+    $orgId = $orgUsers["Organization_Id"];
+    $subCatId = $orgUsers["Sub_Category_Id"];
+    $catId = $orgUsers["Category_ID"];
+
+
+    //SE POSSUIR CHEFE SUBCATEGORIA
+    if (DB_checkSubCategoryOwner($pdo, $orgId, $subCatId)) {
+
+        //SENAO
+    } else {
+        //SE POSSUIR CHEFE CATEGORIA
+        if (DB_checkCategoryOwner($pdo, $orgId, $catId)) {
+            //START CHAT
+            //SENAO
+        } else {
+            //SE N POSSUIR CHEFE DE CAT OU SUBCAT USA ID_BOSS
+            $orgBoss = DB_checkOrgOwner($pdo, $orgId);
+        }
+    }
+}
