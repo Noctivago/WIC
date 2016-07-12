@@ -7,7 +7,7 @@
             <link rel="stylesheet"   link href="../../assets/assests_sidebar/css/tabela.css" rel="stylesheet" type="text/css"/>
             <div class="container">
 
-<!--                <div class="col-sm-8 col-lg-offset-2 text">-->
+                <div class="col-sm-8 col-lg-offset-2 text">
                 </div>
                 <div class="row">
 
