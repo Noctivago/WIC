@@ -1009,7 +1009,7 @@ function DB_checkUserToStartChat($pdo, $orgServId) {
       ,[Organization_Id]
       ,[Sub_Category_Id]
       ,[Category].[Id] as Category_ID
-      ,[Organization_service].[Name] as SerName
+      ,[Organization_service].[Id] as SerName
       FROM [dbo].[Organization_Service]
       join [Sub_Category]
       on [Sub_Category].[Id] = [Organization_service].[Sub_Category_Id]
