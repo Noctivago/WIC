@@ -17,6 +17,7 @@ function removeUserInOrganization(id) {
 }
 
 function viewAllUsersInOrganization() {
+    var title = "Users in Organization";
     var org = document.getElementById("org").value;
     alert(org);
     var arg = 'viewAllUsersInOrganization';
@@ -29,41 +30,41 @@ function viewAllUsersInOrganization() {
 }
 
 function addTable(json_resp) {
-    //if(!json_resp.length===0)
     var heading = new Array();
     heading[0] = "Name";
     heading[1] = "Email";
     heading[2] = "Remove";
-    //document.getElementById("title").innerHTML = "Users in Organization";
+    //document.getElementById("title").innerHTML = Title;
     var mytable = document.getElementById("no-more-tables");
     var table = document.createElement('TABLE');
-    //table.className = "col-md-12 table-bordered table-striped table-condensed cf ";
+    table.className = "col-md-12 table-bordered table-striped table-condensed cf ";
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
     var tr = document.createElement('TR');
-    tableBody.appendChild(tr);
+    tableBody.appendChild(tr)
     for (i = 0; i < heading.length; i++) {
         var th = document.createElement('TH');
-    //    th.className = "cf";
+        th.className = "cf";
         th.appendChild(document.createTextNode(heading[i]));
         tr.appendChild(th);
     }
+    ;
     //add rows
     for (i = 0; i < json_resp.length; i++) {
         var tr = document.createElement('TR');
-        var td = document.createElement('TD');
+        var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_resp[i].Name));
-        tr.appendChild(td);
-        var td = document.createElement('TD');
+        tr.appendChild(td)
+        var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_resp[i].Email));
-        tr.appendChild(td);
-        var td = document.createElement('TD');
+        tr.appendChild(td)
+        var td = document.createElement('TD')
         td.appendChild(document.createTextNode("Delete"));
-        tr.appendChild(td);
+        tr.appendChild(td)
         tableBody.appendChild(tr);
     }
     mytable.appendChild(table);
-    
+
 }
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
