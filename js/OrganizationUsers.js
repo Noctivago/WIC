@@ -26,16 +26,15 @@ function viewAllUsersInOrganization() {
     var arg = 'viewAllUsersInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
         var json_r = $.parseJSON(result);
-        change_table_data(json_r,div_table1);
+        change_table_data(json_r,div_table1,id_table1);
         console.log(json_r);
     });
     return false;
 }
 function change_table_data(json_r,div_table,id_table){
-    var div = document.getElementById(div_table);
-    alert(div);
-    var table = document.getElementById(id_table);
-    alert(table);
+    document.getElementById(div_table).style = "Display: true";
+    document.getElementById(id_table).style = "Display: true";
+
 }
 
 

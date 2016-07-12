@@ -76,7 +76,6 @@ ini_set("display_errors", 1);
                                 <h4 class="text-center">
                                     Users in organization
                                 </h4>
-
                             </div>
                             <div id="no-more-tables" >
                                 <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1">
