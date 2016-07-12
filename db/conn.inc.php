@@ -1094,7 +1094,7 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
     $userOnCat = DB_checkCategoryOwner($pdo, $orgId, $catId);
     $userClient = $userId;
     $orgServ = $orgUsers["OrgServiceName"];
-    include_once './functions.php';
+    include_once 'functions.php';
     $d = getDateToDB();
     //SE POSSUIR CHEFE SUBCATEGORIA
     if (isset($userOnSubCat)) {
