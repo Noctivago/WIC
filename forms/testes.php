@@ -43,7 +43,7 @@ include_once ('../db/conn.inc.php');
         $d = getDateToDB();
         $orgServ = 'TESTE';
         $userClient = 36;
-        var_dump(DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ));
+        echo DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         ?>
 
     </body>
