@@ -17,22 +17,24 @@ function removeUserInOrganization(id) {
 }
 
 function viewAllUsersInOrganization() {
+    var title = "Users in Organization";
     var org = document.getElementById("org").value;
     alert(org);
     var arg = 'viewAllUsersInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
         var json_r = $.parseJSON(result);
         console.log(json_r);
-        addTable(json_r);
+        addTable(json_r,title);
     });
     return false;
 }
 
-function addTable(json_resp) {
+function addTable(json_resp,Title) {
     var heading = new Array();
     heading[0] = "Name";
     heading[1] = "Email";
     heading[2] = "Remove";
+    document.getElementById("title").innerHTML = Title;
     var mytable = document.getElementById("no-more-tables");
     var table = document.createElement('TABLE');
     table.className = "col-md-12 table-bordered table-striped table-condensed cf ";

@@ -50,7 +50,7 @@
                                     </form>
                                 </div>
                                 <div class="form-top-left">
-                                    <div class="row">
+                                    <div class="row" id="title">
                                         <div id="no-more-tables" >
                                             <!--h1 class="text-center">
                                                 Users in organization
