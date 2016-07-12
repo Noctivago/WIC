@@ -27,7 +27,7 @@
                                 <!--                            <div class="form-top-right">
                                                                 <i class="fa fa-key"></i>-->
                                 <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                <input style="color: black;" class="form-username form-control" type="file">
+<!--                                <input style="color: black;" class="form-username form-control" type="file">-->
                                 <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
 
                             </div>
@@ -43,37 +43,7 @@
                                         <label class="sr-only" for="form-password">Adress:</label>
                                         <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Web Site:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Facebook:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Twitter:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Linkedin:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-username">Email</label>
-                                        <input type="text" style="height: 40px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Country:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">City:</label>
-                                        <input type="password" style="height: 40px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
-                                    </div>
-                                    <button type="submit" class="btn" name="login">Save Changes!</button>
-
+                                    
                                 </form>
                             </div>
                         </div>
