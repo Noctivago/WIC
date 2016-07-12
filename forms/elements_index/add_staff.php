@@ -27,16 +27,31 @@
 
 
                             <div class="form-bottom">
+                                <?php
+                                            if ((isset($_POST['invite']) && isset($_POST['form-email'])) && !empty($_POST['OrgId'])) {
+                                                $msg = '';
+                                                try {
+                                                    $email = (filter_var($_POST['form-email'], FILTER_SANITIZE_STRING));
+                                                    $orgId = (filter_var($_POST ['OrgId'], FILTER_SANITIZE_STRING));
+                                                    $msg = DB_addUserInOrganization($pdo, $email, $orgId);
+                                                    echo $msg;
+                                                } catch (Exception $ex) {
+                                                    $msg = "ERROR!";
+                                                }
+                                            }else if(isset ($_POST['delete'])){
+                                            }
+                                            ?>    
+
                                 <form role="form" action="" method="post" class="login-form">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-username">Company Name:</label>
-                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    <div class="form-group" id="OrgId">
+                                        <!--label class="sr-only" for="form-password">Adress:</label>
+                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required-->
+                                    <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-password">Adress:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-email" required autofocus>
                                     </div>
-                                    
+                                    <button type="submit" id="invite" class="btn" name="invite" visible="true">Send Invite</button>
                                 </form>
                             </div>
                         </div>
