@@ -84,10 +84,7 @@
                                                 <button type="submit" class ="btn" name="changePic">Change picture!</button>
                                             </form>
                                         </div>    
-                                    </div>
-                                    <!--                            <div class="form-top-right">
-                                                                    <i class="fa fa-key"></i>
-                                                                </div>-->
+
                                 </div>
 
                                 <div class="form-bottom">
