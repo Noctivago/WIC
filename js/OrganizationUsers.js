@@ -37,29 +37,29 @@ function addTable(json_resp) {
     document.getElementById("title").innerHTML = "Users in Organization";
     var mytable = document.getElementById("no-more-tables");
     var table = document.createElement('TABLE');
-    table.className = "col-md-12 table-bordered table-striped table-condensed cf ";
+    //table.className = "col-md-12 table-bordered table-striped table-condensed cf ";
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
     var tr = document.createElement('TR');
-    tableBody.appendChild(tr)
+    tableBody.appendChild(tr);
     for (i = 0; i < heading.length; i++) {
         var th = document.createElement('TH');
-        th.className = "cf";
+    //    th.className = "cf";
         th.appendChild(document.createTextNode(heading[i]));
         tr.appendChild(th);
     }
     //add rows
     for (i = 0; i < json_resp.length; i++) {
         var tr = document.createElement('TR');
-        var td = document.createElement('TD')
+        var td = document.createElement('TD');
         td.appendChild(document.createTextNode(json_resp[i].Name));
-        tr.appendChild(td)
-        var td = document.createElement('TD')
+        tr.appendChild(td);
+        var td = document.createElement('TD');
         td.appendChild(document.createTextNode(json_resp[i].Email));
-        tr.appendChild(td)
-        var td = document.createElement('TD')
+        tr.appendChild(td);
+        var td = document.createElement('TD');
         td.appendChild(document.createTextNode("Delete"));
-        tr.appendChild(td)
+        tr.appendChild(td);
         tableBody.appendChild(tr);
     }
     mytable.appendChild(table);
