@@ -17,7 +17,7 @@ include_once ('../db/conn.inc.php');
         echo 'GET IDs <br>';
         $orgUsers = DB_checkUserToStartChat($pdo, $orgServId);
         var_dump($orgUsers);
-        echo 'Check Sub Cat > 1 <br>';
+        echo '<br>Check Sub Cat > 1 <br>';
         $subCatId = 1;
         $subCat = DB_checkSubCategoryOwner($pdo, $orgId, $subCatId);
         var_dump($subCat);
