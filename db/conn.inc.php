@@ -956,7 +956,6 @@ function DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d) {
 function DB_checkIfServiceExitsOnWIC($pdo, $wicPlannerId, $orgServId) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[Event_Service] WHERE [Organization_Service_Id] = ? AND [WIC_Planner_Id] = ?", array($wicPlannerId, $orgServId), "count");
-//IF EXISTS -1
         if ($count < 0) {
             return true;
         } else {
@@ -982,13 +981,19 @@ function DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) {
     }
 }
 
-//CRIAR CONVERSA ENTRE USERS
+//CRIAR CONVERSA ENTRE USERS 
 function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
     try {
-        sql($pdo, "INSERT INTO [dbo].[[Conversation]] ([User_Id1], [User_Id2], [Date_Created]"
-                . "[Organization_Service], [Enabled_User1],[Enabled_User2]) VALUES(?,?,?,?,?,?)"
-                . "", array($userClient, $userOrg, $d, $orgServ, 1, 1));
-        echo 'CONVERSATION CREATED!';
+        $count = sql($pdo, "SELECT * FROM [dbo].[Conversation] WHERE [User_Id1] = ? AND [User_Id2] = ?", array($userClient, $userOrg), "count");
+        if ($count < 0) {
+            //HEADER LOCATION > PAGE INBOX
+            echo 'CONVERSATION ALREADY EXISTS!';
+        } else {
+            sql($pdo, "INSERT INTO [dbo].[[Conversation]] ([User_Id1], [User_Id2], [Date_Created]"
+                    . "[Organization_Service], [Enabled_User1],[Enabled_User2]) VALUES(?,?,?,?,?,?)"
+                    . "", array($userClient, $userOrg, $d, $orgServ, 1, 1));
+            echo 'CONVERSATION CREATED!';
+        }
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
@@ -1073,8 +1078,8 @@ function DB_checkOrgOwner($pdo, $orgId) {
     }
 }
 
-//VERIFICA QUAL O USER COM O QUAL O CLIENT VAI FALAR
-function DB_getUserToStartChat($pdo, $orgServId, $userId, $d) {
+//VERIFICA QUAL O USER COM O QUAL O CLIENT VAI FALAR E CRIA CONVERSA SEM MSG
+function DB_getUserToStartChat($pdo, $orgServId, $userId) {
     $orgUsers = DB_checkUserToStartChat($pdo, $orgServId);
     $orgId = $orgUsers["Organization_Id"];
     $subCatId = $orgUsers["Sub_Category_Id"];
@@ -1083,6 +1088,7 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId, $d) {
     $userOnCat = DB_checkCategoryOwner($pdo, $orgId, $catId);
     $userClient = $userId;
     $orgServ = $orgUsers["OrgServiceName"];
+    $d = getDateToDB();
     //SE POSSUIR CHEFE SUBCATEGORIA
     if ($userOnSubCat > 0) {
         $userOrg = $userOnSubCat;
