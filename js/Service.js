@@ -27,8 +27,11 @@ function addToWic(b) {
 }
 
 function addToConversation(a, c) {
+    alert('addToConversation');
     var arg = 'addToConversation';
-    var dataString = 'userId=' + a + '&org=' + c + '&arg=' + arg;
+    var user = a;
+    var org = c;
+    var dataString = 'userId=' + user + '&org=' + org + '&arg=' + arg;
     alert(dataString);
     if (a === '' || c === '')
     {
@@ -43,6 +46,9 @@ function addToConversation(a, c) {
             cache: false,
             success: function (result) {
                 alert(result);
+            },
+            error: function (result) {
+                alert("ERROR STARTING CONVERSATION" . result);
             }
 
         });
