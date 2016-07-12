@@ -27,12 +27,12 @@ function addToWic(b) {
 }
 
 function addToConversation(a, c) {
-    alert('addToConversation');
+    //alert('addToConversation');
     var arg = 'addToConversation';
     var user = a;
     var org = c;
     var dataString = 'userId=' + user + '&org=' + org + '&arg=' + arg;
-    alert(dataString);
+    //alert(dataString);
     if (a === '' || c === '')
     {
         alert("Please Fill All Fields");
