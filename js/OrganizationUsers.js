@@ -28,7 +28,7 @@ function viewAllUsersInOrganization() {
     return false;
 }
 
-function addTable(json_resp){
+function addTable(json_resp) {
     var heading = new Array();
     heading[0] = "Name";
     heading[1] = "Email";
@@ -40,24 +40,29 @@ function addTable(json_resp){
     table.appendChild(tableBody);
     var tr = document.createElement('TR');
     tableBody.appendChild(tr)
-    for(i= 0;i<heading.length;i++){
+    for (i = 0; i < heading.length; i++) {
         var th = document.createElement('TH');
-        th.className="cf";
+        th.className = "cf";
         th.appendChild(document.createTextNode(heading[i]));
         tr.appendChild(th);
-    };
+    }
+    ;
     //add rows
     for (i = 0; i < json_resp.length; i++) {
-    var tr = document.createElement('TR');
-    for (j = 0; j < json_resp[i].length; j++) {
+        var tr = document.createElement('TR');
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_resp[i][j]));
+        td.appendChild(document.createTextNode(json_resp[i][j].Name));
         tr.appendChild(td)
+        var td = document.createElement('TD')
+        td.appendChild(document.createTextNode(json_resp[i][j].Email));
+        tr.appendChild(td)
+        var td = document.createElement('TD')
+        td.appendChild(document.createTextNode("Delete"));
+        tr.appendChild(td)
+        tableBody.appendChild(tr);
     }
-    tableBody.appendChild(tr);
-}
-        mytable.appendChild(table);
-    
+    mytable.appendChild(table);
+
 }
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
