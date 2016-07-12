@@ -26,18 +26,11 @@ function addToWic(b) {
     return false;
 }
 
-//TO DO
-function addCommentToService(a, c, d) {
-    //alert('add2Wic');
-    ////DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d)
-    var user = a;
-    var comment = document.getElementById("userComment").value;
-    var org = c;
-    var date = d;
-    var arg = 'addComment';
-    var dataString = 'userId=' + a + '&comment=' + b + '&org=' + c + '&date=' + d + '&arg=' + arg;
+function addToConversation(a, c) {
+    var arg = 'addToConversation';
+    var dataString = 'userId=' + a + '&org=' + c + '&arg=' + arg;
     alert(dataString);
-    if (a === '' || b === '' || c === '' || d === '')
+    if (a === '' || c === '')
     {
         alert("Please Fill All Fields");
     } else

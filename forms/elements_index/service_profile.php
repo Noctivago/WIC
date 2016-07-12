@@ -71,7 +71,7 @@ $msg;
                                     </div>
                                     <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
                                     <div id ="showChat" style="display:none;">
-                                        <p>SHOWING CHAT</p>
+                                        <button onclick="addToConversation(<?= $_SESSION['id'] ?>, <?= $orgServId ?>)" class = "btn" name = "addToConversation">Start it now!</button>
                                         <button onclick="hide('showChat');" class = "btn" name = "ChatHide">Maybe later!</button>
                                     </div>
                                 </div>
