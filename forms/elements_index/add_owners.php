@@ -116,7 +116,7 @@
                                         <thead class="cf">
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Dia Semana</th>
+                                                <th>Dia Semanattttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt</th>
                                                 <th class="numeric">d-semana</th>	
                                             </tr>
                                         </thead>
