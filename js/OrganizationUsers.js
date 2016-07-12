@@ -23,15 +23,7 @@ function viewAllUsersInOrganization() {
     var arg = 'viewAllUsersInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
         var json_r = $.parseJSON(result);
-        $(document).ready(function()
-        {
-            if($('T').length){
-                alert(json_r);
-            }else {
-                removetable();
-                addTable(json_r);
-            }
-        })
+            addTable(json_r);
         console.log(json_r);
     });
     return false;
@@ -43,9 +35,6 @@ function addTable(json_resp) {
     heading[1] = "Email";
     heading[2] = "Remove";
     //document.getElementById("title").innerHTML = Title;
-    if(document.getElementById("my-table")){
-        
-    }else{
     var mytable = document.getElementById("no-more-tables");
     var table = document.createElement('TABLE');
     table.setIdAttribute("my-table");
