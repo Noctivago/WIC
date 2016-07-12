@@ -1090,12 +1090,12 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
     $orgServ = $orgUsers["OrgServiceName"];
     $d = getDateToDB();
     //SE POSSUIR CHEFE SUBCATEGORIA
-    if (isset($userOnSubCat) && !is_null($userOnSubCat)) {
+    if (isset($userOnSubCat)) {
         $userOrg = $userOnSubCat;
         return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
     } else {
         //SE NAO POSSUIR CHEFE CATEGORIA
-        if (isset($userOnCat) && !is_null($userOnCat)) {
+        if (isset($userOnCat)) {
             $userOrg = $userOnCat;
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
             //SE POSSUIR CHEFE CAT
