@@ -1002,6 +1002,7 @@ function DB_checkUserToStartChat($pdo, $orgServId) {
       ,[Organization_Id]
       ,[Sub_Category_Id]
       ,[Category].[Id] as Category_ID
+      ,[Organization_service].[Name] as SerName
       FROM [dbo].[Organization_Service]
       join [Sub_Category]
       on [Sub_Category].[Id] = [Organization_service].[Sub_Category_Id]
@@ -1016,6 +1017,7 @@ function DB_checkUserToStartChat($pdo, $orgServId) {
             $orgUsers["Organization_Id"] = $row["Organization_Id"];
             $orgUsers["Sub_Category_Id"] = $row["Sub_Category_Id"];
             $orgUsers["Category_ID"] = $row["Category_ID"];
+            $orgUsers["OrgServiceName"] = $row["SerName"];
         }
         return $orgUsers;
     } catch (PDOException $e) {
@@ -1059,7 +1061,7 @@ function DB_checkSubCategoryOwner($pdo, $orgId, $subCatId) {
     }
 }
 
-//VAI BUSCAR O ID DO BOSS DA ORF
+//VAI BUSCAR O ID DO BOSS DA ORG
 function DB_checkOrgOwner($pdo, $orgId) {
     try {
         $rows = sql($pdo, "SELECT [Id] ,[User_Boss] FROM [dbo].[Organization] WHERE [Enabled] = 1 AND [Id] = ?", array($orgId), "rows");
@@ -1072,25 +1074,30 @@ function DB_checkOrgOwner($pdo, $orgId) {
 }
 
 //VERIFICA QUAL O USER COM O QUAL O CLIENT VAI FALAR
-function DB_getUserToStartChat($pdo, $orgServId) {
+function DB_getUserToStartChat($pdo, $orgServId, $userId, $d) {
     $orgUsers = DB_checkUserToStartChat($pdo, $orgServId);
     $orgId = $orgUsers["Organization_Id"];
     $subCatId = $orgUsers["Sub_Category_Id"];
     $catId = $orgUsers["Category_ID"];
     $userOnSubCat = DB_checkSubCategoryOwner($pdo, $orgId, $subCatId);
     $userOnCat = DB_checkCategoryOwner($pdo, $orgId, $catId);
-//SE POSSUIR CHEFE SUBCATEGORIA
-    if ($userOnSubCat) {
-
-//SENAO
+    $userClient = $userId;
+    $orgServ = $orgUsers["OrgServiceName"];
+    //SE POSSUIR CHEFE SUBCATEGORIA
+    if ($userOnSubCat > 0) {
+        $userOrg = $userOnSubCat;
+        return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
+        //SENAO
     } else {
-//SE POSSUIR CHEFE CATEGORIA
-        if ($userOnCat) {
-//START CHAT
-//SENAO
+        //SE POSSUIR CHEFE CATEGORIA
+        if ($userOnCat > 0) {
+            $userOrg = $userOnCat;
+            return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
+            //SENAO
         } else {
-//SE N POSSUIR CHEFE DE CAT OU SUBCAT USA ID_BOSS
-            $orgBoss = DB_checkOrgOwner($pdo, $orgId);
+            //SE N POSSUIR CHEFE DE CAT OU SUBCAT USA ID_BOSS
+            $userOrg = DB_checkOrgOwner($pdo, $orgId);
+            return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         }
     }
 }
