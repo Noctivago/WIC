@@ -50,7 +50,7 @@ ini_set("display_errors", 1);
 
                                 <form role="form" action="" method="post" class="login-form">
                                     <div class="form-group" id="OrgId">
-                                        <select class="form-username form-control" name="org" id="org" onchange="readDataOrganization()">
+                                        <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()">
                                             <h4> <?php echo $msg; ?></h4>
                                             <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
                                         </select>

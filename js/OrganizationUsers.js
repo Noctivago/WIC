@@ -17,6 +17,10 @@ function removeUserInOrganization(id) {
 }
 
 function viewAllUsersInOrganization() {
+    var orgId = $("#OrgId").val;
+    alert(orgId);
+    var org1 = $("#org").val;
+    alert(org1);
     var title = "Users in Organization";
     var org = document.getElementById("org").value;
     alert(org);
