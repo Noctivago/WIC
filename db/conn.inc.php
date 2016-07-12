@@ -1070,7 +1070,7 @@ function DB_checkOrgOwner($pdo, $orgId) {
     try {
         $rows = sql($pdo, "SELECT [Id] ,[User_Boss] FROM [dbo].[Organization] WHERE [Enabled] = 1 AND [Id] = ?", array($orgId), "rows");
         foreach ($rows as $row) {
-            return $row['[User_Id]'];
+            return $row['[User_Boss]'];
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION OWNNER';
