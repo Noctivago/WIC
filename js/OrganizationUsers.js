@@ -30,12 +30,11 @@ function viewAllUsersInOrganization() {
     return false;
 }
 function removetable(){
-    var elem = document.getElementById('my-table');
-    elem.removeChild('TBODY');
-    
+    var elem = document.getElementById('my-table').removeChild('TABLE');
 }
 
 function addTable(json_resp) {
+    
     var heading = new Array();
     heading[0] = "Name";
     heading[1] = "Email";
