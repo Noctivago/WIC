@@ -1,7 +1,7 @@
 
 
 <main class="cd-main-content">
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="padding-left: 0%">
 
                  <div class="top-content">
              <div class="col-lg-12">
