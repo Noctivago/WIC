@@ -26,7 +26,7 @@
                     <div class="form-box">
                         <div class="form-top">
                             <div class="form-top-left">
-<i class="fa fa-key"></i>
+                                <h3 style="color: darkgray">Change your Account Password here:</h3>
                             </div>
                             <div class="form-top-right">
                                  <i class="fa fa-key"></i>
