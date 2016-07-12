@@ -114,9 +114,9 @@
                             </div>
                             
                             <div class="col-md-12">
-                                    <h4 class="text-center">
+<!--                                    <h4 class="text-center">
                                         Tabela 2
-                                    </h4>
+                                    </h4>-->
 
                                 </div>
                                 <div id="no-more-tables">
