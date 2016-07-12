@@ -18,24 +18,29 @@ function removeUserInOrganization(id) {
 
 function viewAllUsersInOrganization() {
     var org = document.getElementById("org").value;
-    var table_id = "title-1";
-    var table_id2 ="title-2";
+    var div_table1 = "title-1";
+    var id_table1 = "table1";
+    var div_table2 ="title-2";
+    var id_table2 = "table2";
     alert(org);
     var arg = 'viewAllUsersInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
         var json_r = $.parseJSON(result);
-        change_table_data(json_r,table_id);
+        change_table_data(json_r,div_table1);
         console.log(json_r);
     });
     return false;
 }
-function 
+function change_table_data(json_r,div_table,id_table){
+    var div = document.getElementById(div_table);
+    alert(div);
+    var table = document.getElementById(id_table);
+    alert(table);
+}
+
+
+
 function addTable(json_resp) {
-    var heading = new Array();
-    heading[0] = "Name";
-    heading[1] = "Email";
-    heading[2] = "Remove";
-    //document.getElementById("title").innerHTML = Title;
     var mytable = document.getElementById("no-more-tables");
     var table = document.createElement('TABLE');
    // table.setIdAttribute("my-table");
