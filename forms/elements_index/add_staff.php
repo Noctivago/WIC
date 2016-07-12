@@ -50,14 +50,14 @@
 
 <!--                        <div class="container">-->
                             <div class="row">
-                                <div class="col-md-12" id="title-1" style="display: none;">
+                                <div class="col-md-12">
                                     <h4 class="text-center">
                                         Users in organization
                                     </h4>
 
                                 </div>
                                 <div id="no-more-tables" >
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
+                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
                                         <thead class="cf">
                                             <tr>
                                                 <th>First Name</th>
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             
-                            <div class="col-md-12" id="title-2" style="display: none;">
+                            <div class="col-md-12">
                                     <h4 class="text-center">
                                        Waiting for response
                                     </h4>
