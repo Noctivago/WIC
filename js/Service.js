@@ -46,6 +46,9 @@ function addToConversation(a, c) {
             cache: false,
             success: function (result) {
                 alert(result);
+            },
+            error: function (result) {
+                alert("fail");
             }
 
         });
