@@ -29,7 +29,7 @@ function viewAllUsersInOrganization() {
 }
 
 function addTable(json_resp) {
-    if(json_resp===0){
+    if(json_resp.length===0){
         document.getElementById("title").innerHTML = "This organization doest'n have users";
     }else{
     var heading = new Array();
