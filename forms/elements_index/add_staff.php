@@ -72,7 +72,7 @@ ini_set("display_errors", 1);
 
                         <!--                        <div class="container">-->
                         <div class="row">
-                            <div class="col-md-12" id="title-1" style="display: none;">
+                            <div class="col-md-12">
                                 <h4 class="text-center">
                                     Users in organization
                                 </h4>
