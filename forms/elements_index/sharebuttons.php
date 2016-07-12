@@ -7,7 +7,7 @@
     <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
 <!--    <div class="inner-bg" style="padding-top: 0px">-->
         <div class="container">
-     
+            
 <!-- I got these buttons from simplesharebuttons.com -->
 <div id="share-buttons">
     
