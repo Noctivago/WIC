@@ -17,6 +17,7 @@ function removeUserInOrganization(id) {
 }
 
 function viewAllUsersInOrganization() {
+    removetable();
     var title = "Users in Organization";
     var org = document.getElementById("org").value;
     alert(org);
@@ -27,6 +28,9 @@ function viewAllUsersInOrganization() {
         addTable(json_r);
     });
     return false;
+}
+function removetable(){
+    document.getElementById("no-more-tables").removeAttribute("Table");
 }
 
 function addTable(json_resp) {
