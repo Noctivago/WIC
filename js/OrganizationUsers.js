@@ -31,7 +31,7 @@ function viewAllUsersInOrganization() {
 }
 function removetable(){
     var elem = document.getElementById('my-table');
-    elem.removedNode();
+    elem.removeChild('TBODY');
     
 }
 
