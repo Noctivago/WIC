@@ -914,7 +914,7 @@ function DB_getCommentsOfService($pdo, $orgServId) {
         ,[Comment].[Comment]
         FROM [dbo].[Comment]
         join [User]
-        on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? ORDER BY [Date_Created] DESC", array($orgServId), "rows");
+        on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? ORDER BY [Comment].[Date_Created] DESC", array($orgServId), "rows");
         if (DB_checkIfServiceCommentsExits($pdo, $orgServId)) {
             echo '<div class="row">
                 <div class="col-sm-12">
