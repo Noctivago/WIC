@@ -17,27 +17,26 @@ function removeUserInOrganization(id) {
 }
 
 function viewAllUsersInOrganization() {
-    var title = "Users in Organization";
     var org = document.getElementById("org").value;
     alert(org);
     var arg = 'viewAllUsersInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
         var json_r = $.parseJSON(result);
         console.log(json_r);
-        addTable(json_r,title);
+        addTable(json_r);
     });
     return false;
 }
 
 function addTable(json_resp,Title) {
-    if(json_resp.length==null){
+    if(json_resp===0){
         document.getElementById("title").innerHTML = "This organization doest'n have users";
     }else{
     var heading = new Array();
     heading[0] = "Name";
     heading[1] = "Email";
     heading[2] = "Remove";
-    document.getElementById("title").innerHTML = Title;
+    document.getElementById("title").innerHTML = "Users in Organization";
     var mytable = document.getElementById("no-more-tables");
     var table = document.createElement('TABLE');
     table.className = "col-md-12 table-bordered table-striped table-condensed cf ";
@@ -50,8 +49,7 @@ function addTable(json_resp,Title) {
         th.className = "cf";
         th.appendChild(document.createTextNode(heading[i]));
         tr.appendChild(th);
-    }
-    ;
+    };
     //add rows
     for (i = 0; i < json_resp.length; i++) {
         var tr = document.createElement('TR');
