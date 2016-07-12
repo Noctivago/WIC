@@ -11,7 +11,7 @@
                 </div>
                 <div class="row">
 
-                    <div class="col-sm-5" style="padding-top: 70px">
+                    <div class="col-sm-5">
 
                         <div class="form-box">
 
@@ -80,7 +80,7 @@
 
                     <!--<div class="col-sm-1"></div>-->
 
-                    <div class="col-sm-5">
+                    <div class="col-sm-5"style="padding-top: 70px">
 
 
                         <div class="container">
