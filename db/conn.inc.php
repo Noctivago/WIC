@@ -1130,3 +1130,57 @@ function DB_getMyConversations($pdo, $userId) {
     }
     echo "</table>";
 }
+
+/*
+  INSERT INTO [dbo].[Message]
+  ([User_Id]
+  ,[Message]
+  ,[Message_Date]
+  ,[Message_View]
+  ,[Date_Message_View]
+  ,[Conversation_Id])
+ */
+
+function DB_getMyMessages($pdo, $Conversation_Id) {
+    try {
+        $rows = sql($pdo, "SELECT [Id]
+      ,[User_Id]
+      ,[Message]
+      ,[Message_Date]
+      ,[Message_View]
+      ,[Date_Message_View]
+      ,[Conversation_Id]
+      FROM [dbo].[Message] WHERE [Conversation_Id] = ?", array($Conversation_Id), "rows");
+        foreach ($rows as $row) {
+            echo '<div class="row">';
+            echo '<div class="col-sm-5" style="width: 100%">';
+            echo '<div class="panel panel-default">';
+            echo '<div class="panel-heading">';
+            echo '<strong>' . $row['UserName'] . '</strong> <span class="text-muted">commented...</span>';
+            echo '</div>';
+            echo '<div class="panel-body">';
+            echo $row['Comment'];
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING YOUR MESSAGES!';
+    }
+}
+
+function DB_sendMessage($pdo, $userId, $message, $Conversation_Id) {
+    $d = getDateToDB();
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Message]
+           ([User_Id]
+           ,[Message]
+           ,[Message_Date]
+           ,[Message_View]
+           ,[Date_Message_View]
+           ,[Conversation_Id]) VALUES(?,?,?,?,?,?)", array($userId, $message, $d, 0, NULL, $Conversation_Id));
+    } catch (Exception $exc) {
+        echo 'ERROR SENDING YOUR MESSAGE!';
+    }
+}
