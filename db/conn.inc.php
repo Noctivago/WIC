@@ -1090,13 +1090,13 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
     $orgServ = $orgUsers["OrgServiceName"];
     $d = getDateToDB();
     //SE POSSUIR CHEFE SUBCATEGORIA
-    if ($userOnSubCat > 0) {
+    if (is_numeric($userOnSubCat)) {
         $userOrg = $userOnSubCat;
         return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         //SENAO
     } else {
         //SE POSSUIR CHEFE CATEGORIA
-        if ($userOnCat > 0) {
+        if (is_numeric($userOnCat)) {
             $userOrg = $userOnCat;
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
             //SENAO
