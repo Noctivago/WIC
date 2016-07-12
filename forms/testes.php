@@ -39,7 +39,7 @@ include_once ('../db/functions.php');
 //        $userOrg = DB_checkOrgOwner($pdo, $orgId);
 //        var_dump($userOrg);
 //        echo '<br> FINAL TEST<br>';
-//        $userId = $_SESSION['id'];
+        $userId = $_SESSION['id'];
         #$x = DB_getUserToStartChat($pdo, $orgServId, $userId);
         #var_dump($x);
         #echo $x;
