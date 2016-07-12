@@ -44,7 +44,7 @@ include_once ('../db/functions.php');
         //var_dump($x);
         echo '<br>ADDING CONVERSATION<br>';
         $d = getDateToDB();
-        $orgServ = 'TESTE';
+        $orgServ = 2;
         $userClient = 36;
         echo DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         ?>
