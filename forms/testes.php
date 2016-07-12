@@ -42,7 +42,7 @@ ini_set("display_errors", 1);
         $userId = $_SESSION['id'];
         $x = DB_getUserToStartChat($pdo, $orgServId, $userId);
         var_dump($x);
-        echo $x;
+        #echo $x;
         #echo '<br>ADDING CONVERSATION<br>';
         #$d = getDateToDB();
         #$orgServ = 2;

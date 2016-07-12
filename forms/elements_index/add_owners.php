@@ -26,7 +26,7 @@
                                                        </div>
                         
                             <div class="form-bottom">
-                                <form role="form" action="" method="post" class="login-form">
+                                <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                     <div class="form-group">
                                         <label class="sr-only" for="form-username">Company Name:</label>
                                         <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
