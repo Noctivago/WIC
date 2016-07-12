@@ -21,7 +21,13 @@ include_once ('../db/conn.inc.php');
         echo '<br>Check Sub Cat > 1 <br>';
         $subCatId = 1;
         $subCat = DB_checkSubCategoryOwner($pdo, $orgId, $subCatId);
-        var_dump($subCat);
+        if(isset($subCat)) {
+            echo 'TEM VALOR';
+        } else {
+            echo 'ESTA A NULL <br>';
+            var_dump($subCat);
+        }
+       
         $catId = 1;
         echo '<br>Check Cat > 1 <br>';
         $cat = DB_checkCategoryOwner($pdo, $orgId, $catId);
