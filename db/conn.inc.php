@@ -953,12 +953,30 @@ function DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d) {
     }
 }
 
+function DB_checkIfServiceExitsOnWIC($pdo, $wicPlannerId, $orgServId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[Event_Service] WHERE [Organization_Service_Id] = ? AND [WIC_Planner_Id] = ?", array($wicPlannerId, $orgServId), "count");
+//IF EXISTS -1
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
 //ADICIONAR SERVIÇO AO WIC PLANNER
 //FALTA VERIFICAR SE JA EXISTE
 function DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) {
     try {
-        sql($pdo, "INSERT INTO [dbo].[Event_Service] ([Organization_Service_Id], [WIC_Planner_Id], [Enabled]) VALUES(?,?,?)", array($orgServId, $wicPlannerId, 1));
-        echo 'Service added to WIC Planner!';
+        if (DB_checkIfServiceExitsOnWIC($pdo, $wicPlannerId, $orgServId)) {
+            echo 'Service already exists on that WIC Planner!';
+        } else {
+            sql($pdo, "INSERT INTO [dbo].[Event_Service] ([Organization_Service_Id], [WIC_Planner_Id], [Enabled]) VALUES(?,?,?)", array($orgServId, $wicPlannerId, 1));
+            echo 'Service added to WIC Planner!';
+        }
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
