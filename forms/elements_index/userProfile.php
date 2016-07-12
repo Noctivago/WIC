@@ -3,7 +3,7 @@
     
                  <div class="top-content">
              <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Change your Password
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Edit your Profile
                  </h1>
              </div>
              </div>
