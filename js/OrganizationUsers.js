@@ -51,10 +51,10 @@ function addTable(json_resp) {
     for (i = 0; i < json_resp.length; i++) {
         var tr = document.createElement('TR');
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_resp[i][j].Name));
+        td.appendChild(document.createTextNode(json_resp[i].Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_resp[i][j].Email));
+        td.appendChild(document.createTextNode(json_resp[i].Email));
         tr.appendChild(td)
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode("Delete"));
