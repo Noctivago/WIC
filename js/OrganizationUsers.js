@@ -41,7 +41,7 @@ function addTable(json_resp) {
     //document.getElementById("title").innerHTML = Title;
     var mytable = document.getElementById("no-more-tables");
     var table = document.createElement('TABLE');
-    table.setIdAttribute("my-table");
+//    table.setIdAttribute("my-table");
     table.className = "col-md-12 table-bordered table-striped table-condensed cf ";
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
