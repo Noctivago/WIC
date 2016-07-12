@@ -36,7 +36,7 @@ function change_table_data(json_r,div_table,id_table){
     var table = document.getElementById(id_table);
     document.getElementById(div_table).style = "Display: true";
     document.getElementById(id_table).style = "Display: true";
-    var Tbody = document.getElementById('body');
+    var Tbody = document.getElementById('body1');
     var boddy = document.createElement('TBODY');
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
