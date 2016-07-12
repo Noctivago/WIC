@@ -405,10 +405,10 @@ function DB_addOrganization($pdo, $userid, $orgId, $name, $phone, $mobile, $addr
     try {
         if ($orgId === '0') {
             sql($pdo, "INSERT INTO [dbo].[Organization] ([Name],[Phone_Number],[Mobile_Number],[Validate],[Address],[Enabled],[User_Boss],[Facebook],[Twitter],[Linkdin],[Abusive_Organization],[Good_Organization],[Organization_Email],[Website], [Date_Created]) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", array($name, $phone, $mobile, 0, $address, 0, $userid, $facebook, $twitter, $linkdin, 0, 0, $orgEmail, $website, $d));
-            // echo 'Organization added!';
+// echo 'Organization added!';
         } else {
             sql($pdo, "UPDATE [dbo].[Organization]SET [Name] =?, [Phone_Number] = ?, [Mobile_Number] = ?, [Address] = ?,[Facebook] = ? ,[Twitter] = ? ,[Linkdin] = ? , [Organization_Email] = ? ,[Website] = ? WHERE [Organization].[Id] = ?", array($name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $orgId));
-            // echo 'Organization information as been updated!' . $orgId;
+// echo 'Organization information as been updated!' . $orgId;
         }
     } catch (Exception $exc) {
         echo 'ERROR INSERTING ORGANIZATION';
@@ -498,9 +498,9 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
             if (DB_checkIfUserExists($pdo, $email)) {
                 if (!DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId)) {
-                    //get id do user pelo email
+//get id do user pelo email
                     $userId = DB_checkUserByEmail($pdo, $email);
-                    //insere user na organizacao com enabled 0 e user validation 0
+//insere user na organizacao com enabled 0 e user validation 0
                     sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId, 0, 0, 0));
                     echo 'Success';
                 } else {
@@ -522,7 +522,7 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
                             . "WIC<br><br>"
                             . "Note: Please do not reply to this email! Thanks!";
                     echo sendEmail($to, $subject, $body);
-                    //envia convite para o email para se registar.
+//envia convite para o email para se registar.
                 }
             }
         }
@@ -533,7 +533,7 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
 
 function DB_readOrganizationAsSelect($pdo, $userId) {
     try {
-        //$userId = $_SESSION['id'];
+//$userId = $_SESSION['id'];
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($userId), "rows");
         echo "<option id ='orgId' value='0'> Choose a organization</option>";
         foreach ($rows as $row) {
@@ -785,7 +785,7 @@ function DB_getUserProfilePicture($pdo, $userId) {
         $rows = sql($pdo, "SELECT [Picture_Path] FROM [dbo].[Profile] WHERE [User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             if ($row['Picture_Path'] == NULL) {
-                #return '<img src="' . $row['Picture_Path'] . '" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
+#return '<img src="' . $row['Picture_Path'] . '" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
                 return '<img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
             } else {
                 return '<img src="' . $row['Picture_Path'] . '" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">';
@@ -822,7 +822,7 @@ function DB_getUserProfileInfo($pdo, $UserId) {
         $stmt = $pdo->prepare("SELECT * FROM [dbo].[Profile] WHERE [User_Id]=:id");
         $stmt->bindParam(':id', $UserId);
         $stmt->execute();
-        #$dbh = null;
+#$dbh = null;
         $userInfo = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
@@ -834,7 +834,7 @@ function DB_getUserProfileInfo($pdo, $UserId) {
         return $userInfo;
     } catch (PDOException $e) {
         print "ERROR READING USER PROFILE INFO!<br/>";
-        #die();
+#die();
     }
 }
 
@@ -842,9 +842,9 @@ function DB_getUserProfileInfo($pdo, $UserId) {
 
 function DB_updateUserProfile($pdo, $fname, $lname, $userId) {
     try {
-        #sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? , [Country_Id] = ? WHERE [User_Id] = ?", array($fname, $lname, $countryId, $userId));
+#sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? , [Country_Id] = ? WHERE [User_Id] = ?", array($fname, $lname, $countryId, $userId));
         sql($pdo, "UPDATE [dbo].[Profile] SET [First_Name] = ? , [Last_Name] = ? WHERE [User_Id] = ?", array($fname, $lname, $userId));
-        #echo 'PROFILE UPDATED!';
+#echo 'PROFILE UPDATED!';
     } catch (PDOException $e) {
         echo "ERROR UPDATING PROFILE!";
 #die();
@@ -923,7 +923,7 @@ function DB_getCommentsOfService($pdo, $orgServId) {
             </div>';
         }
         foreach ($rows as $row) {
-            #echo "LINK TO READ ALL";
+#echo "LINK TO READ ALL";
             echo '<div class="row">';
             echo '<div class="col-sm-5" style="width: 100%">';
             echo '<div class="panel panel-default">';
@@ -992,5 +992,105 @@ function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
         die();
+    }
+}
+
+//VAI BUSCAR OS IDS PARA PODER PROCURAR OS USERS 
+function DB_checkUserToStartChat($pdo, $orgServId) {
+    try {
+        $stmt = $pdo->prepare("SELECT [Sub_Category].[Name]
+      ,[Organization_Id]
+      ,[Sub_Category_Id]
+      ,[Category].[Id] as Category_ID
+      FROM [dbo].[Organization_Service]
+      join [Sub_Category]
+      on [Sub_Category].[Id] = [Organization_service].[Sub_Category_Id]
+      join [Category]
+      on [Category].[Id] = [Sub_Category].[Category_ID]
+      where [Organization_Service].[Id] =:id and [Organization_Service].[Enabled] = 1");
+        $stmt->bindParam(':id', $orgServId);
+        $stmt->execute();
+#$dbh = null;
+        $orgUsers = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $orgUsers["Organization_Id"] = $row["Organization_Id"];
+            $orgUsers["Sub_Category_Id"] = $row["Sub_Category_Id"];
+            $orgUsers["Category_ID"] = $row["Category_ID"];
+        }
+        return $orgUsers;
+    } catch (PDOException $e) {
+        print "ERROR READING ORGANIZATION SERVICE TABLE!<br/>";
+    }
+}
+
+//VERIFICA SE EXISTE CATEGORY OWNER
+function DB_checkCategoryOwner($pdo, $orgId, $catId) {
+    try {
+        $rows = sql($pdo, "SELECT [Id]
+        ,[User_Id]
+        ,[Category_Id]
+        ,[Date_Created]
+        ,[Enabled]
+        ,[Organization_Id]
+        FROM [dbo].[Category_Owner] WHERE [Organization_Id] = ? AND [Category_Id] = ?", array($orgId, $catId), "rows");
+        foreach ($rows as $row) {
+            return $row['[User_Id]'];
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING CATEGORY OWNNER';
+    }
+}
+
+//VERIFICA SE EXISTE SUBCATEGORY OWNER
+function DB_checkSubCategoryOwner($pdo, $orgId, $subCatId) {
+    try {
+        $rows = sql($pdo, "SELECT [Id]
+            ,[User_Id]
+            ,[Sub_Category_Id]
+            ,[Date_Created]
+            ,[Organization_Id]
+            ,[Enabled]
+        FROM [dbo].[Sub_Category_Owner] WHERE [Organization_Id] = ? AND [Sub_Category_Id] = ?", array($orgId, $subCatId), "rows");
+        foreach ($rows as $row) {
+            return $row['[User_Id]'];
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING SUBCATEGORY OWNNER';
+    }
+}
+
+//VAI BUSCAR O ID DO BOSS DA ORF
+function DB_checkOrgOwner($pdo, $orgId) {
+    try {
+        $rows = sql($pdo, "SELECT [Id] ,[User_Boss] FROM [dbo].[Organization] WHERE [Enabled] = 1 AND [Id] = ?", array($orgId), "rows");
+        foreach ($rows as $row) {
+            return $row['[User_Id]'];
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING ORGANIZATION OWNNER';
+    }
+}
+
+//VERIFICA QUAL O USER COM O QUAL O CLIENT VAI FALAR
+function DB_getUserToStartChat($pdo, $orgServId) {
+    $orgUsers = DB_checkUserToStartChat($pdo, $orgServId);
+    $orgId = $orgUsers["Organization_Id"];
+    $subCatId = $orgUsers["Sub_Category_Id"];
+    $catId = $orgUsers["Category_ID"];
+    $userOnSubCat = DB_checkSubCategoryOwner($pdo, $orgId, $subCatId);
+    $userOnCat = DB_checkCategoryOwner($pdo, $orgId, $catId);
+//SE POSSUIR CHEFE SUBCATEGORIA
+    if ($userOnSubCat) {
+
+//SENAO
+    } else {
+//SE POSSUIR CHEFE CATEGORIA
+        if ($userOnCat) {
+//START CHAT
+//SENAO
+        } else {
+//SE N POSSUIR CHEFE DE CAT OU SUBCAT USA ID_BOSS
+            $orgBoss = DB_checkOrgOwner($pdo, $orgId);
+        }
     }
 }
