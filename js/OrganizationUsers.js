@@ -37,18 +37,18 @@ function change_table_data(json_r,div_table,id_table){
     document.getElementById(div_table).style = "Display: true";
     document.getElementById(id_table).style = "Display: true";
     var Tbody = document.getElementById('body');
-    var boddy ;
+    var boddy = document.createElement('TBODY');
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
-        var td = document.createElement('TD')
+        var td = document.createElement('TD');
         td.appendChild(document.createTextNode(json_r[i].Name));
-        tr.appendChild(td)
+        tr.appendChild(td);
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Email));
-        tr.appendChild(td)
-        var td = document.createElement('TD')
+        tr.appendChild(td);
+        var td = document.createElement('TD');
         td.appendChild(document.createTextNode("Delete"));
-        tr.appendChild(td)
+        tr.appendChild(td);
         boddy.appendChild(tr);
     }
     
@@ -57,40 +57,6 @@ function change_table_data(json_r,div_table,id_table){
     
 }
 
-
-
-function addTable(json_resp) {
-    var mytable = document.getElementById("no-more-tables");
-    var table = document.createElement('TABLE');
-   // table.setIdAttribute("my-table");
-    table.className = "col-md-12 table-bordered table-striped table-condensed cf ";
-    var tableBody = document.createElement('TBODY');
-    table.appendChild(tableBody);
-    var tr = document.createElement('TR');
-    tableBody.appendChild(tr)
-    for (i = 0; i < heading.length; i++) {
-        var th = document.createElement('TH');
-        th.className = "cf";
-        th.appendChild(document.createTextNode(heading[i]));
-        tr.appendChild(th);
-    };
-    //add rows
-    for (i = 0; i < json_resp.length; i++) {
-        var tr = document.createElement('TR');
-        var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_resp[i].Name));
-        tr.appendChild(td)
-        var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_resp[i].Email));
-        tr.appendChild(td)
-        var td = document.createElement('TD')
-        td.appendChild(document.createTextNode("Delete"));
-        tr.appendChild(td)
-        tableBody.appendChild(tr);
-    }
-    mytable.appendChild(table);
-
-}
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
     var arg = 'UserValidateInvite';
