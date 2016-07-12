@@ -907,6 +907,7 @@ function DB_checkIfServiceCommentsExits($pdo, $orgServId) {
 }
 
 //LOAD COMMENTS OF A SERVICE
+//FALTA BUTTON PARA REMOVER SE FOR DONO DO COMMENT
 function DB_getCommentsOfService($pdo, $orgServId) {
     try {
         $rows = sql($pdo, "SELECT [User].[UserName]
@@ -953,6 +954,7 @@ function DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d) {
 }
 
 //ADICIONAR SERVIÇO AO WIC PLANNER
+//FALTA VERIFICAR SE JA EXISTE
 function DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Event_Service] ([Organization_Service_Id], [WIC_Planner_Id], [Enabled]) VALUES(?,?,?)", array($orgServId, $wicPlannerId, 1));
