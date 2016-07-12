@@ -1,4 +1,8 @@
-
+<?
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+?>
+<?php $msg = ''; ?>
 <main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
@@ -44,6 +48,7 @@
 
                                 <form role="form" action="" method="post" class="login-form">
                                     <div class="form-group" id="OrgId">
+                                       <h4> <?php echo $msg; ?></h4>
                                         <!--label class="sr-only" for="form-password">Adress:</label>
                                         <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required-->
                                     <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
