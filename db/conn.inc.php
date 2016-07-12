@@ -1013,10 +1013,9 @@ function DB_checkUserToStartChat($pdo, $orgServId) {
       on [Sub_Category].[Id] = [Organization_service].[Sub_Category_Id]
       join [Category]
       on [Category].[Id] = [Sub_Category].[Category_ID]
-      where [Organization_Service].[Id] =:id and [Organization_Service].[Enabled] = 1");
+      where [Organization_Service].[Id] = :id and [Organization_Service].[Enabled] = 1");
         $stmt->bindParam(':id', $orgServId);
         $stmt->execute();
-#$dbh = null;
         $orgUsers = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $orgUsers["Organization_Id"] = $row["Organization_Id"];
