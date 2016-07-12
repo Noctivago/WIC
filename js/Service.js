@@ -27,6 +27,7 @@ function addToWic(b) {
 }
 
 function addToConversation(a, c) {
+    alert('addToConversation');
     var arg = 'addToConversation';
     var dataString = 'userId=' + a + '&org=' + c + '&arg=' + arg;
     alert(dataString);
