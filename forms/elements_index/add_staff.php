@@ -2,7 +2,7 @@
 <main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
-        <div class="top-content">
+        <div class="top-content" style="height: 400px">
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
             <link rel="stylesheet"   link href="../../assets/assests_sidebar/css/tabela.css" rel="stylesheet" type="text/css"/>
             <div class="container">
@@ -50,14 +50,14 @@
 
 <!--                        <div class="container">-->
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12" id="title-1" style="display: none;">
                                     <h4 class="text-center">
                                         Users in organization
                                     </h4>
 
                                 </div>
                                 <div id="no-more-tables" >
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
+                                    <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
                                         <thead class="cf">
                                             <tr>
                                                 <th>First Name</th>
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             
-                            <div class="col-md-12">
+                            <div class="col-md-12" id="title-2" style="display: none;">
                                     <h4 class="text-center">
                                        Waiting for response
                                     </h4>
@@ -100,7 +100,7 @@
 
                     </div>
 
-       
+        </div>
                 </div>
             </div>
  
