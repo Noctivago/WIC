@@ -21,8 +21,8 @@
                                 <div class="form-top-right">
                                 </div>
                               
-                                <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-
+                               <!-- <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                               -->
                             </div>
 
 
@@ -52,6 +52,7 @@
                             <div class="row">
                                 <div class="col-md-12" id="title-1" style="display: none;">
                                     <h4 class="text-center">
+                                        Users in organization
                                     </h4>
 
                                 </div>
@@ -73,7 +74,7 @@
                             
                             <div class="col-md-12" id="title-2" style="display: none;">
                                     <h4 class="text-center">
-                                        Tabela 2
+                                       Waiting for response
                                     </h4>
 
                                 </div>
@@ -81,10 +82,10 @@
                                     <table class="col-md-12 table-bordered table-striped table-condensed cf " style="display: none;">
                                         <thead class="cf">
                                             <tr>
-                                            <th>First Name</th>
+                                                <th>First Name</th>
                                                 <th>Last Name</th>
                                                 <th>Email</th>
-                                                <th>Remove</th>	
+                                                <th></th>	
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -109,6 +110,6 @@
 <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
-<script src="../js/OrganizationUsers.js"></script>
+<script src="../../js/OrganizationUsers.js" ></script>
 
 
