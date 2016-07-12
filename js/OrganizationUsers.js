@@ -66,7 +66,7 @@ function addTable(json_resp) {
     }
     mytable.appendChild(table);
 
-}}
+}
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
     var arg = 'UserValidateInvite';
