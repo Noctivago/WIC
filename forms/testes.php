@@ -7,7 +7,7 @@ include_once ('../db/conn.inc.php');
 
 <html>
     <head>
-        <title> Home </title>
+        <title> TESTES </title>
     </head>
     <body>
 
