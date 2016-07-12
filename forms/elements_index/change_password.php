@@ -4,7 +4,7 @@
     
                  <div class="top-content">
              <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Portugal Campeão Europeu!
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Change Your Password
                  </h1>
              </div>
              </div>
@@ -73,8 +73,8 @@
                                     }
                                     ?>
                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                                <div class="form-group"> <h4> <?php echo $msg; ?></h4>
-                                    <label class="text" for="form-username">Old Password:</label>
+                                <div class="form-group"> <h4 class="btn"> <?php echo $msg; ?></h4>
+                                    <label class="sr-only" for="form-username">Old Password:</label>
                                     <input type="password" style="height: 40px" name="oldPassword" placeholder="Actual Password" class="form-username form-control" id="oldPassword" required autofocus>
                                 </div>
                                 <div class="form-group">
