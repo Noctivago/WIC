@@ -25,7 +25,7 @@ function viewAllUsersInOrganization() {
         var json_r = $.parseJSON(result);
         $(document).ready(function()
         {
-            if($('table').length){
+            if($('T').length){
                 alert(json_r);
             }else {
                 removetable();
@@ -36,20 +36,19 @@ function viewAllUsersInOrganization() {
     });
     return false;
 }
-function removetable(){
-    var elem = document.getElementById('my-table');
-}
 
 function addTable(json_resp) {
-    
     var heading = new Array();
     heading[0] = "Name";
     heading[1] = "Email";
     heading[2] = "Remove";
     //document.getElementById("title").innerHTML = Title;
+    if(document.getElementById("my-table")){
+        
+    }else{
     var mytable = document.getElementById("no-more-tables");
     var table = document.createElement('TABLE');
-//    table.setIdAttribute("my-table");
+    table.setIdAttribute("my-table");
     table.className = "col-md-12 table-bordered table-striped table-condensed cf ";
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
@@ -78,7 +77,7 @@ function addTable(json_resp) {
     }
     mytable.appendChild(table);
 
-}
+}}
 //aceitar convite para ingressar na organizaçao
 function UserValidateInvite() {
     var arg = 'UserValidateInvite';
