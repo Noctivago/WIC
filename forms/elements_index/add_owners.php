@@ -2,7 +2,7 @@
 <main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
-        <div class="top-content">
+        <div class="top-content" style="height: 480px">
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
             <link rel="stylesheet"   link href="../../assets/assests_sidebar/css/tabela.css" rel="stylesheet" type="text/css"/>
             <div class="container">
