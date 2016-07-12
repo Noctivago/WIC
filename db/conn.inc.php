@@ -1040,7 +1040,7 @@ function DB_checkCategoryOwner($pdo, $orgId, $catId) {
         ,[Organization_Id]
         FROM [dbo].[Category_Owner] WHERE [Organization_Id] = ? AND [Category_Id] = ?", array($orgId, $catId), "rows");
         foreach ($rows as $row) {
-            return $row['[User_Id]'];
+            return $row['User_Id'];
         }
     } catch (Exception $exc) {
         echo 'ERROR READING CATEGORY OWNNER';
@@ -1058,7 +1058,7 @@ function DB_checkSubCategoryOwner($pdo, $orgId, $subCatId) {
             ,[Enabled]
         FROM [dbo].[Sub_Category_Owner] WHERE [Organization_Id] = ? AND [Sub_Category_Id] = ?", array($orgId, $subCatId), "rows");
         foreach ($rows as $row) {
-            return $row['[User_Id]'];
+            return $row['User_Id'];
         }
     } catch (Exception $exc) {
         echo 'ERROR READING SUBCATEGORY OWNNER';
@@ -1070,7 +1070,7 @@ function DB_checkOrgOwner($pdo, $orgId) {
     try {
         $rows = sql($pdo, "SELECT [Id] ,[User_Boss] FROM [dbo].[Organization] WHERE [Enabled] = 1 AND [Id] = ?", array($orgId), "rows");
         foreach ($rows as $row) {
-            return $row['[User_Boss]'];
+            return $row['User_Boss'];
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ORGANIZATION OWNNER';
