@@ -111,7 +111,7 @@ $msg;
                                                 <textarea id="userComment" name ="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
                                             </div>
                                             <!--<button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>-->
-                                            <button onclick="addCommentToService(<?= $_SESSION['id'] ?> , <?= $orgServId ?> , <?= getDateToDB() ?>);" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
+                                            <button onclick="addCommentToService(<?= $_SESSION['id']?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
                                         </div><!-- Status Upload class="btn btn-success "
                                         </div><!-- Widget Area -->
                                     </div>
