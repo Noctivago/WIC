@@ -53,7 +53,7 @@ function change_table_data(json_r,div_table,id_table){
     }
     
     
-    Tbody.innerHTML = bodyy;
+    Tbody.innerHTML = boddy;
     
 }
 
