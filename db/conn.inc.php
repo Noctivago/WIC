@@ -984,12 +984,14 @@ function DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) {
 //CRIAR CONVERSA ENTRE USERS 
 function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[Conversation] WHERE [User_Id1] = ? AND [User_Id2] = ?", array($userClient, $userOrg), "count");
+        $count = sql($pdo, "SELECT * FROM [dbo].[Conversation] "
+                . "WHERE [User_Id1] = ? AND [User_Id2] = ? OR "
+                . "[User_Id2] = ? AND [User_Id1]", array($userClient, $userOrg), "count");
         if ($count < 0) {
             //HEADER LOCATION > PAGE INBOX
             echo 'CONVERSATION ALREADY EXISTS!';
         } else {
-            sql($pdo, "INSERT INTO [dbo].[[Conversation]] ([User_Id1], [User_Id2], [Date_Created]"
+            sql($pdo, "INSERT INTO [dbo].[Conversation] ([User_Id1], [User_Id2], [Date_Created]"
                     . "[Organization_Service], [Enabled_User1],[Enabled_User2]) VALUES(?,?,?,?,?,?)"
                     . "", array($userClient, $userOrg, $d, $orgServ, 1, 1));
             echo 'CONVERSATION CREATED!';
