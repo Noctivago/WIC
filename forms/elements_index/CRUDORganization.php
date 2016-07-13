@@ -3,7 +3,7 @@
 
         <div class="top-content">
             <div class="col-lg-12">
-                <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> NEW Organization </h1> <h4 style="color: darkgray"> <?php echo $msg; ?></h4>
+                <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Organization </h1> <h4 style="color: darkgray"> <?php echo $msg; ?></h4>
 
             </div>
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -111,10 +111,10 @@
                                     
                                     <div class="form-inline">
                                     
-                                    <button type="submit" id="update" class="btn" name="update" style="width: 140px;" style="display: none;" >Save</button>
+                                    <button type="submit" id="update" class="btn" name="update"  style="display: none; width: 140px;" >Save</button>
                                     
                                   
-                                    <button type="submit" id="delete" class="btn" name="delete" onclick="removeOrganization()" style="width: 140px;" style="display: none;width: 140px;" >Delete</button>
+                                    <button type="submit" id="delete" class="btn" name="delete" onclick="removeOrganization()"  style="display: none; width: 140px;" >Delete</button>
                                     </div>
                                 </form>
                             </div>
