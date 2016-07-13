@@ -29,14 +29,19 @@
                                 <h4 align="center"> Category owners</h4>
                                 <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()">
-                                            <h4> <?php echo $msg; ?></h4>
-                                            <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
+                                        <select class="form-username form-control" name="org" id="org" >
+                                            <?php DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-password">Adress:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                        <select class="form-username form-control" name="org" id="category" >
+                                            <?php DB_readCategoryAsSelect($pdo) ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-username form-control" name="org" id="user">
+                                            <?php DB_readUsersInOrganizationAsSelect($pdo) ?>
+                                        </select>
                                     </div>
                                     
                                 </form>
@@ -84,7 +89,7 @@
                                     </div>
                                     <div class="form-group">
                                         <select class="form-username form-control" name="org" id="category" >
-                                            <?php DB_readCategoryAsSelect($pdo) ?>
+                                            <?php DB_readSubCategoryAsSelect($pdo) ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
