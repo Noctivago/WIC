@@ -7,7 +7,7 @@ function fill_Users_Category() {
         $("#body1").empty();
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
-        dataSelect(json_r, userSel);
+        dataSelect(json_r, userSel,title);
         viewAllUsersInOrgOwners(idOrg);
     });
 }
@@ -22,7 +22,7 @@ function fill_Users_Sub_Category() {
         $("#body2").empty();
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
-        dataSelect(json_r, userSel);
+        dataSelect(json_r, userSel,title);
         viewAllUsersInOrgO(idOrg);
     });
 
