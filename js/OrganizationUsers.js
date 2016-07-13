@@ -134,7 +134,7 @@ function removeUserInOrgOwner() {
 }
 
 function removeUserInOrganization() {
-    var id = document.getElementById("c").value;
+    var id = document.getElementById("idUserOrg").value;
     alert(id);
     var arg = 'removeUserInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: id}, function (result) {
