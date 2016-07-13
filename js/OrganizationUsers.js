@@ -120,8 +120,8 @@ function change_table_data(json_r, div_table, id_table, tbody) {
             td.appendChild(btn);
             tr.appendChild(td);
         } else {
-            td.appendChild(document.createTextNode(json_r[i].Last_Name));
-            tr.appendChild(td)
+            //td.appendChild(document.createTextNode(json_r[i].Last_Name));
+            //tr.appendChild(td)
 
         }
         boddy.appendChild(tr);
