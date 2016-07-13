@@ -144,7 +144,22 @@ $msg;
                                             <div class="col-sm-5">-->
 
 <!--Caixa de escrever mensagens-->
+                           <div class = "form-box">
+                            <div class = "form-top">
+                                <div class = "form-top-left">
+                                </div>
+                                <div class = "form-top-right">
+                                    <i class="fa fa-comment"></i>
+                                </div>
+                                <!--<div class = "form-top-right">
+                                <i class = "fa fa-key"></i> -->
+                                <img src = "http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class = "avatar img-circle img-thumbnail text-center center-block" alt = "avatar">
+                                <!--<input style = "color: black;" class = "form-username form-control" type = "file"> -->
+                                <!--<h6 style = "color:black">Upload a different photo...</h6> width: 370px;
+                                align:center-left;
+                                text-left center-block well well-sm-->
 
+                            </div>
 
 
 <div class="message-wrap col-lg-8" >
@@ -218,6 +233,7 @@ $msg;
                 <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
             </div>
         </div>
+                           </div>
 
 
 <!--Caixa de escrever mensagens-->
