@@ -45,6 +45,12 @@ function viewAllUsersInOrganization() {
 function removeUserInOrganization(){
     var id = document.getElementById("idUserOrg").value;
     alert(id);
+    var arg = 'removeremoveUserInOrganization';
+    $.post("../../orgsubmit.php", {arg: arg, id: id}, function (result) {
+        alert(result);
+        viewAllUsersInOrganization();
+    });
+    return false;
 }
 
 function change_table_data(json_r,div_table,id_table,tbody){

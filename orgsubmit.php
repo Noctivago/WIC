@@ -176,14 +176,10 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'removeUserInOrganization') {
     try {
-        $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
-        $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
-        if (DB_checkIfOrganizationExists($pdo, $orgId)) {
-            sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [Enabled] = ? where [Organization_Id] = ? and [User_Id] = ?", array(0, $orgId, $userId));
+        $userInOrg = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
+           sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [Enabled] = ? where [Id] = ?", array(0, $userInOrg));
             echo 'User removed';
-        } else {
-            echo 'Organization ERROR';
-        }
+        
     } catch (Exception $ex) {
         echo 'error';
     }
