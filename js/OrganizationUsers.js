@@ -7,7 +7,7 @@ function fill_Users_Category() {
         $("#body1").empty();
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
-        dataSelect(json_r, userSel,title);
+        dataSelect(json_r, userSel, title);
         viewAllUsersInOrgOwners(idOrg);
     });
 }
@@ -22,13 +22,13 @@ function fill_Users_Sub_Category() {
         $("#body2").empty();
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
-        dataSelect(json_r, userSel,title);
+        dataSelect(json_r, userSel, title);
         viewAllUsersInOrgO(idOrg);
     });
 
 }
 
-function dataSelect(json, userSel,title) {
+function dataSelect(json, userSel, title) {
     var div = document.getElementById(title);
     var select = document.getElementById(userSel);
     select.disabled = false;
@@ -99,26 +99,22 @@ function change_tableData(json_r, div_table, id_table, tbody) {
         td.appendChild(document.createTextNode(json_r[i].Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        if (id_table === "table1") {
-             var dd = document.createElement('input');
-            dd.type = "hidden";
-            dd.id = "idUserOrg";
-            dd.value = json_r[i].Id;
-            tr.appendChild(dd);
-            var btn = document.createElement('input');
-            btn.type = 'button';
-            btn.className = 'btn';
-            btn.value = 'Remove';
-            //  btn.placeholder = 'Remove';
-            btn.id = 'idUserInOrg';
-            btn.addEventListener("click", removeUserInOrgOwner);
-            td.appendChild(btn);
-            tr.appendChild(td);
-        } else {
-            
-
-        }
+        var dd = document.createElement('input');
+        dd.type = "hidden";
+        dd.id = "idUserOrg";
+        dd.value = json_r[i].Id;
+        tr.appendChild(dd);
+        var btn = document.createElement('input');
+        btn.type = 'button';
+        btn.className = 'btn';
+        btn.value = 'Remove';
+        //  btn.placeholder = 'Remove';
+        btn.id = 'idUserInOrg';
+        btn.addEventListener("click", removeUserInOrgOwner);
+        td.appendChild(btn);
+        tr.appendChild(td);
         boddy.appendChild(tr);
+
     }
     table.replaceChild(Tbody, boddy);
 }
