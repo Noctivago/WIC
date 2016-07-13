@@ -23,7 +23,7 @@
 <!--                                <a href="view_WicPlanner.php" src="../../assets/ico/wic planner button-01.png" alt="avatar" class="navbar">
                                     
                                      Planner</a>-->
-<img   src="../../assets/ico/wic planner button-01.png" href="view_WicPlanner.php" alt="logo" >
+<img   src="../../assets/ico/wic planner button-01.png" href="view_WicPlanner.php" alt="logo" class="img-responsive" >
                                 </li>
 
 				<li class="has-children account">
