@@ -10,7 +10,7 @@ function fill_Users_Category() {
         alert(json_r);
         dataSelect(json_r,userSel);
         //dataSelect();
-        viewAllUsersInOrganization2(idOrg);
+        viewAllUsersInOrgOwners(idOrg);
         console.log(json_r);
     });
 }
@@ -56,7 +56,7 @@ function removeUserInOrganization(id) {
     viewAllUsersInOrganization();
     return false;
 }
-function viewAllUsersInOrganization2(idOrg) {
+function viewAllUsersInOrgOwners(idOrg) {
     alert(idOrg);
     var div_table1 = "title-1";
     var id_table1 = "table1";
