@@ -52,8 +52,8 @@
                                 <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1" style = "Display: none">
                                     <thead class="cf">
                                         <tr>
-                                            <th>Email</th>
-                                            <th>Username</th>
+                                            <th>Name</th>
+                                            <th>Category</th>
                                             <th>Remove</th>	
                                         </tr>
                                     </thead>

@@ -37,9 +37,10 @@ function dataSelect(json,userSel){
     div.replaceChild(select, newSele);
 }
 
-
 //remover utilizador da organização
 function removeUserInOrganization(id) {
+    var idOwner = document.getElementById('IdOwner').value;
+    alert(idOwner);
     var arg = 'removeUserInOrganization';
     var dataString = 'arg=' + arg + '&Id=' + id;
     alert(dataString);
@@ -59,11 +60,11 @@ function viewAllUsersInOrganization2(idOrg) {
     var div_table1 = "title-1";
     var id_table1 = "table1";
     var tbody1 = "body1"
-    var arg = 'viewAllUsersInOrganization';
+    var arg = 'viewAllUsersInOrganizationOwners';
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body1").empty();
         var json_r = $.parseJSON(result);
-        change_table_data(json_r, div_table1, id_table1, tbody1);
+        change_table_data2(json_r, div_table1, id_table1, tbody1);
         console.log(json_r);
     });
 
@@ -74,6 +75,48 @@ function viewAllUsersInOrganization2(idOrg) {
 //        console.log(json_r2);
 //    });
     return false;
+}
+
+function change_table_data2(json_r, div_table, id_table, tbody) {
+    var div = document.getElementById(div_table);
+    var table = document.getElementById(id_table);
+    document.getElementById(div_table).style = "Display: true";
+    document.getElementById(id_table).style = "Display: true";
+    var Tbody = document.getElementById(tbody);
+    var boddy = Tbody;
+    for (i = 0; i < json_r.length; i++) {
+        var tr = document.createElement('TR');
+        var td = document.createElement('TD')
+        td.appendChild(document.createTextNode(json_r[i].First_Name+ " " + json_r[i].Last_Name));
+        tr.appendChild(td)
+        var td = document.createElement('TD')
+        td.appendChild(document.createTextNode(json_r[i].Name));
+        tr.appendChild(td)
+        var td = document.createElement('TD')
+        if (id_table === "table1") {
+            var id = document.createElement('input');
+            id.type = "hidden";
+            id.id = "IdOwner";
+            id.value = json_r[i].Id;
+            tr.appendChild(id);
+
+            var btn = document.createElement('input');
+            btn.type = 'button';
+            btn.className = 'btn';
+            btn.value = 'Remove';
+            //  btn.placeholder = 'Remove';
+            btn.id = 'idUserInOrg';
+            btn.addEventListener("click", removeUserInOrganization);
+            td.appendChild(btn);
+            tr.appendChild(td);
+        } else {
+            //td.appendChild(document.createTextNode(json_r[i].Last_Name));
+            //tr.appendChild(td)
+
+        }
+        boddy.appendChild(tr);
+    }
+    table.replaceChild(Tbody, boddy);
 }
 
 function viewAllUsersInOrganization() {

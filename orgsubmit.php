@@ -209,6 +209,27 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'erro';
     }
+    
+  } else if ($arg === 'viewAllUsersInOrganizationOwners') {
+    try {
+        $idOrg = $_POST['id'];
+        $rows = sql($pdo, "[Category_Owner].[Id]
+      ,[Category].[Name]
+	  ,[Profile].[First_Name]
+	  ,[Profile].[Last_Name]
+  FROM [dbo].[Category_Owner]
+  join [User]
+  on [User].[Id] = [Category_Owner].[User_Id]
+  join [Profile]
+  on [Profile].[User_Id] = [Category_Owner].[User_Id]
+  join [Category]
+  on [Category].[Id] = [Category_Owner].[Category_Id]
+  where [Category_Owner].[Enabled] = 1 and [Category_Owner].[Organization_Id] = ?", array($idOrg), "rows");
+        echo json_encode($rows);
+    } catch (Exception $ex) {
+        echo 'error';
+    }  
+    
 } else if ($arg === 'viewAllUsersInOrganizationAsSelect') {
     try {
         $idOrg = $_POST['id'];
