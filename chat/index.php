@@ -5,9 +5,9 @@
         <title></title>
         <!--    <link href="/style/bootstrap.min.css" rel="stylesheet" type="text/css" />
             <link href="/style/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />-->
-        <link href="/style/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
+        <link href="./style/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
         <!--    <link href="/style/non-responsive.css" rel="stylesheet" type="text/css" />-->
-        <link href="/style/core.css" rel="stylesheet" type="text/css" />
+        <link href="./style/core.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div style="margin: 0px auto; width: 980px;">
