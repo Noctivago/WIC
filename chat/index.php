@@ -14,9 +14,9 @@
             <!--      Main content area-->
         </div>
         <?php
-        include_once ('../forms/session.php');
-        include_once ('../db/conn.inc.php');
-        include_once ('../db/functions.php');
+//        include_once ('../forms/session.php');
+//        include_once ('../db/conn.inc.php');
+//        include_once ('../db/functions.php');
         require_once ('../db/FbChatMock.php');
         #session_start();
 
