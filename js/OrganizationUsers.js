@@ -25,13 +25,12 @@ function dataSelect(json,userSel){
     var select = document.getElementById(userSel);
     select.disabled = false;
     var newSele = select;
-    var select1 = document.createElement('Select');
     for (i = 0; i < json_r.length; i++) {
-         select1.textContent = json_r[i].First_Name;
-         select1.value = json_r[i].Id;
+         newSele.textContent = json_r[i].First_Name;
+         newSele.value = json_r[i].Id;
     }
     
-    select = select1;
+    select = newSele;
 }
 //remover utilizador da organização
 function removeUserInOrganization(id) {
