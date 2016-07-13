@@ -1186,16 +1186,14 @@ function DB_getMyConversations($pdo, $userId) {
             echo '<div class="media conversation">';
             echo '<div>';
             echo '<a class="pull-left" href="#">';
-            #echo '<a class="pull-left">';
+            echo '<a class="pull-left">';
             echo '<img class="media-object" alt="64x64" style="width: 50px; height: 50px;" src="' . $row['PP'] . '">';
             echo '</div>';
-            echo '<div>';
             echo '<div class="media-body">';
             echo '<h5 class="media-heading">' . ' > ' . $row['UUN'] . '</h5>';
             #echo '<small>Hello</small>';
             echo '</div>';
             echo '</a>';
-            echo '</div>';
             echo '</div>';
         }
     }
