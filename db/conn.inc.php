@@ -568,10 +568,11 @@ function DB_readUsersInOrganizationAsSelect($pdo,$idOrg){
    try {
         $id = 0;
         $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_Id] = ? and [Enabled] = 1", array($idOrg), "rows");
-        echo "<option id ='orgId' value='0'> Choose a User</option>";
+        return json_encode($rows);
+        /**echo "<option id ='orgId' value='0'> Choose a User</option>";
         foreach ($rows as $row) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['User_Id']) . "</option>";
-        }
+        }*/
     } catch (Exception $exc) {
         echo 'ERROR READING SUBCATEGORY TABLE';
     } 
