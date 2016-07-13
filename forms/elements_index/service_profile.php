@@ -168,7 +168,15 @@ $msg;
                                 text-left center-block well well-sm-->
                                 <div class="send-wrap ">
 
-                                    <textarea class="form-control send-message" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
+                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                                        <div><h4> <?php echo $msg; ?></h4>
+                                            <textarea class="form-control send-message" id= "userComment" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
+                                        </div>
+                                        <button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
+                                        <!--<button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>-->
+                                    </form>
+
+
 
 
                                 </div>
