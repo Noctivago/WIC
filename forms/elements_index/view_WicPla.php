@@ -124,7 +124,8 @@
                  </h1>
 
                                 </div>-->
-
+                        <div class="form-box">
+                            
                            <div class="form-top">
                                 <div class="form-top-left">
                                     <h3 style="color: darkgray"> My Wic Planner's</h3>
@@ -140,6 +141,7 @@
                                 <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
 
                             </div>
+                            <div class="form-bottom">
 
                                 <div id="no-more-tables">
                                     <table class="col-md-12 table-bordered table-striped table-condensed cf ">
@@ -180,6 +182,8 @@
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
+                        </div>
                             </div>
 
                         </div>
