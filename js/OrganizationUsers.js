@@ -91,13 +91,14 @@ function change_tableData(json_r, div_table, id_table, tbody) {
         td.appendChild(document.createTextNode(json_r[i].Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        var btn = document.createElement('input');
         if (id_table === 'table1') {
             var dd = document.createElement('input');
             dd.type = "hidden";
             dd.id = "idCatOwner";
             dd.value = json_r[i].Id;
-            tr.appendChild(dd);
+            tr.appendChild(dd)
+            var btn = document.createElement('input');
+
             btn.type = 'button';
             btn.className = 'btn';
             btn.value = 'Remove';
@@ -107,7 +108,9 @@ function change_tableData(json_r, div_table, id_table, tbody) {
             dd.type = "hidden";
             dd.id = 'idSubOwner';
             dd.value = json_r[i].Id;
-            tr.appendChild(dd);
+            tr.appendChild(dd)
+            var btn = document.createElement('input');
+
             btn.type = 'button';
             btn.className = 'btn';
             btn.value = 'Remove';
