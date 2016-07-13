@@ -154,7 +154,7 @@ $msg;
                            <div class = "form-box">
                             <div class = "form-top">
                                 <div class = "form-top-left">
-                                    <h3 style="color: darkgray">Comentaries</h3>
+                                    <h3 style="color: darkgray">Reviews:</h3>
                                 </div>
                                 <div class = "form-top-right">
                                     <i class="fa fa-comment"></i>
