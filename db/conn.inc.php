@@ -569,8 +569,9 @@ function DB_readUsersInOrganizationAsSelect($pdo){
         $id = 0;
         $idorg = 23;
         $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_Id] = ? and [Enabled] = 1", array($idorg), "rows");
+        echo "<option id ='orgId' value='0'> Choose a User</option>";
         foreach ($rows as $row) {
-            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['User_Id']) . "</option>";
         }
     } catch (Exception $exc) {
         echo 'ERROR READING SUBCATEGORY TABLE';
