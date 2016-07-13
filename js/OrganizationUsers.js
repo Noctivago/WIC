@@ -75,7 +75,7 @@ function change_table_data2(json_r, div_table, id_table, tbody) {
         if (id_table === "table1") {
             var oo = document.createElement('input');
             oo.type = "hidden";
-            oo.id = "IdOwner";
+            oo.id = "IdOwner1";
             oo.value = json_r[i].Id;
             tr.appendChild(oo);
             var btn = document.createElement('input');
@@ -83,7 +83,6 @@ function change_table_data2(json_r, div_table, id_table, tbody) {
             btn.className = 'btn';
             btn.value = 'Remove';
             //  btn.placeholder = 'Remove';
-            btn.id = 'idUserInOrg';
             btn.addEventListener("click", removeUserInOrgOwner);
             td.appendChild(btn);
             tr.appendChild(td);
@@ -123,7 +122,7 @@ function viewAllUsersInOrganization() {
     return false;
 }
 function removeUserInOrgOwner() {
-    var id = document.getElementById("IdOwner").value;
+    var id = document.getElementById("IdOwner1").value;
     alert(id);
     var arg = 'removeUserInOrgOwner';
     $.post("../../orgsubmit.php", {arg: arg, id: id}, function (result) {
