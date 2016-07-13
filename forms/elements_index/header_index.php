@@ -21,8 +21,8 @@
 <!--				<li><a href="#0">Tour</a></li>
 -->				<li>
                                 <a href="view_WicPlanner.php">
-                                    <img src="../../assets/ico/wic planner button-01.png" alt="avatar">
-                                     WICPlanner</a>
+                                    <img src="../../assets/ico/wic planner button-01.png" alt="avatar" class="navbar-right">
+                                     Planner</a>
                                 </li>
 
 				<li class="has-children account">
