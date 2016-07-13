@@ -213,6 +213,7 @@ if ($arg === 'addOrganization') {
   } else if ($arg === 'viewAllUsersInOrgOwners') {
     try {
         $idOrg = $_POST['id'];
+        $id = 11;
         $rows = sql($pdo, "[Category_Owner].[Id]
       ,[Category].[Name]
 	  ,[Profile].[First_Name]
@@ -224,7 +225,7 @@ if ($arg === 'addOrganization') {
   on [Profile].[User_Id] = [Category_Owner].[User_Id]
   join [Category]
   on [Category].[Id] = [Category_Owner].[Category_Id]
-  where [Category_Owner].[Enabled] = 1 and [Category_Owner].[Organization_Id] = ?", array($idOrg), "rows");
+  where [Category_Owner].[Enabled] = 1 and [Category_Owner].[Organization_Id] = ?", array($id), "rows");
         echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'error';
