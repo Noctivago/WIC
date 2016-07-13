@@ -1240,7 +1240,6 @@ function DB_getMyWICPlanners($pdo, $userId) {
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
-
         foreach ($rows as $row) {
             echo '<tr>';
             echo '<td data-title = "WICID">' . $row['WICID'] . '</td>';
