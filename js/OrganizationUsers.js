@@ -4,9 +4,9 @@ function fill_Users_Category() {
     var userSel = 'userOrg1';
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body1").empty();
-        $("#"+userSel).empty();
+        $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
-        dataSelect(json_r,userSel);
+        dataSelect(json_r, userSel);
         //dataSelect();
         viewAllUsersInOrgOwners(idOrg);
     });
@@ -19,16 +19,17 @@ function fill_Users_Sub_Category() {
 
 }
 
-function dataSelect(json,userSel){
+function dataSelect(json, userSel) {
     var div = document.getElementById("title-1");
     var select = document.getElementById(userSel);
     select.disabled = false;
     var newSele = select;
     for (i = 0; i < json.length; i++) {
-    var option = document.createElement('Option');
-    option.textContent = json[i].Name;
-         option.value = json[i].Id;
-         newSele.appendChild(option);
+        var option = document.createElement('Option');
+        option.id = "";
+        option.textContent = json[i].Name;
+        option.value = json[i].Id;
+        newSele.appendChild(option);
     }
     //select.appendChild(newSele);
     div.replaceChild(select, newSele);
@@ -65,7 +66,7 @@ function change_table_data2(json_r, div_table, id_table, tbody) {
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].First_Name+ " " + json_r[i].Last_Name));
+        td.appendChild(document.createTextNode(json_r[i].First_Name + " " + json_r[i].Last_Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Name));
@@ -133,7 +134,7 @@ function removeUserInOrgOwner() {
 }
 
 function removeUserInOrganization() {
-    var id = document.getElementById("idUserOrg").value;
+    var id = document.getElementById("c").value;
     alert(id);
     var arg = 'removeUserInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: id}, function (result) {
@@ -160,12 +161,11 @@ function change_table_data(json_r, div_table, id_table, tbody) {
         tr.appendChild(td)
         var td = document.createElement('TD')
         if (id_table === "table1") {
-            var id = document.createElement('input');
-            id.type = "hidden";
-            id.id = "idUserOrg";
-            id.value = json_r[i].Id;
-            tr.appendChild(id);
-
+            var dd = document.createElement('input');
+            dd.type = "hidden";
+            dd.id = "idUserOrg";
+            dd.value = json_r[i].Id;
+            tr.appendChild(dd);
             var btn = document.createElement('input');
             btn.type = 'button';
             btn.className = 'btn';
