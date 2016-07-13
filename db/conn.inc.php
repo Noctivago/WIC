@@ -1165,10 +1165,10 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
 
 function DB_getMyConversations($pdo, $userId) {
     $rows = sql($pdo, "SELECT
-	[User].[Username] 
+	[User].[Username] UU
 	,[Conversation].[Id]
-        ,[Conversation].[User_Id1]
-        ,[Conversation].[User_Id2]
+        ,[Conversation].[User_Id1] AS CU1
+        ,[Conversation].[User_Id2] AS CU2
         ,[Conversation].[Organization_Service]
         FROM [dbo].[Conversation]
 	join [User]
@@ -1178,6 +1178,7 @@ function DB_getMyConversations($pdo, $userId) {
     foreach ($rows as $row) {
         echo "<tr>";
         echo "<td>" . $row['Id'] . "</td>";
+        echo "<td>" . $row['UU'] . "</td>";
         echo "<td>" . $row['User_Id1'] . "</td>";
         echo "<td>" . $row['User_Id2'] . "</td>";
         echo "<tr>";
