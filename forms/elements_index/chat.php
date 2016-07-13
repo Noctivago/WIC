@@ -36,7 +36,7 @@
     </div>
     <div class="row">
         
-        <div class="col-sm-6">
+
 
         <div class="conversation-wrap col-lg-3">
 
@@ -107,9 +107,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 
-<div class="col-sm-6">
+
 <!--Caixa de escrever mensagens-->
         <div class="message-wrap col-lg-8">
             <div class="msg-wrap">
@@ -181,7 +181,7 @@
                 <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
             </div>
         </div>
-</div>
+
 
 <!--Caixa de escrever mensagens-->
     </div>
