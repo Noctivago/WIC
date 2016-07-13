@@ -17,16 +17,13 @@
 			</form>
 		</div> <!-- cd-search -->
 
-		<a href="#0" class="cd-nav">Menu<span></span></a>
+		<a href="#0" class="cd-nav-trigger"><span></span></a>
 
 		<nav class="cd-nav">
 			<ul class="cd-top-nav">
 <!--				<li><a href="#0">Tour</a></li>
 -->				
-<li>
-                                    <a href="view_WicPlanner.php"> Wicer</a>
-
-                                </li>
+                                <li><a href="view_WicPlanner.php"> VOC</a></li>
 
 				<li class="has-children account">
 					<a href="#0">
