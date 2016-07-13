@@ -2,10 +2,13 @@ function fill_Users_Category(){
     alert(document.getElementById("org1").value);
     var idOrg = document.getElementById("org1").value;
     var arg = 'viewAllUsersInOrganizationAsSelect';
+    var userSel = 'userOrg1';
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body1").empty();
+        $("#"+userSel).empty();
         var json_r = $.parseJSON(result);
         alert(json_r);
+        dataSelect(json_r,userSel);
         //dataSelect();
         console.log(json_r);
     });
@@ -16,6 +19,19 @@ function fill_Users_Sub_Category(){
     alert(document.getElementById("org2").value);
     alert(document.getElementById("Sub_Category").value);
     
+}
+
+function dataSelect(json,userSel){
+    var select = document.getElementById(userSel);
+    select.disabled = false;
+    var newSele = select;
+    var select1 = document.createElement('Select');
+    for (i = 0; i < json_r.length; i++) {
+         select1.textContent = json_r[i].First_Name;
+         select1.value = json_r[i].Id;
+    }
+    
+    select = select1;
 }
 //remover utilizador da organização
 function removeUserInOrganization(id) {

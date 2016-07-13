@@ -39,7 +39,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="userOrg2" id="userOrg2" disabled>
+                                        <select class="form-username form-control" name="userOrg1" id="userOrg1" disabled>
                                             <option id ='user' value='0'> Choose a User</option>
                                         </select>
                                     </div>
