@@ -160,7 +160,7 @@ $msg;
                                 </div>
                                 <!--<div class = "form-top-right">
                                 <i class = "fa fa-key"></i> -->
-                                <
+                                
                                 <!--<input style = "color: black;" class = "form-username form-control" type = "file"> -->
                                 <!--<h6 style = "color:black">Upload a different photo...</h6> width: 370px;
                                 align:center-left;
