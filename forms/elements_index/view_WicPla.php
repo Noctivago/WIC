@@ -5,7 +5,7 @@
         
         <div class="top-content">
              <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Edit  Profile
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Wic Planner
                  </h1>
              </div>
              </div>
@@ -21,6 +21,7 @@
                 <div class="col-sm-8 col-lg-offset-2 text">
                     <!--            </div>-->
                 </div>
+                
                 <div class="row">
 
                     <div class="col-sm-5">
