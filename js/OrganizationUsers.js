@@ -127,7 +127,7 @@ function removeUserInOrgOwner() {
     alert(id);
     var arg = 'removeUserInOrgOwner';
     $.post("../../orgsubmit.php", {arg: arg, id: id}, function (result) {
-        location.reload();
+        document.location.reload(true);
     });
     return false;
 }
