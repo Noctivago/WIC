@@ -567,7 +567,7 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
 function DB_readUsersInOrganizationAsSelect($pdo,$idOg){
    try {
         $id = 0;
-        $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_Id] = ? and [Enabled] = 1", array($orgId), "rows");
+        $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_Id] = ? and [Enabled] = 1", array($idOg), "rows");
         foreach ($rows as $row) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
