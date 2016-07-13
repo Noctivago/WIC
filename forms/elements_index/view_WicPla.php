@@ -33,7 +33,7 @@
 
                                 </div>
                                 <div class="form-top-right">
-                                    <i class="fa fa-calendar"></i>
+                                    <i class="fa fa-hand-o-up"></i>
                                 </div>
                                 <!--                            <div class="form-top-right">
                                                                 <i class="fa fa-key"></i>-->
@@ -109,7 +109,7 @@
                       </div>
                       </div>
                     </div>-->
-                    <div class="col-sm-1 middle-border"></div>
+                    <div class="col-sm-1 middle-border" style="margin-top: 70px;"></div>
 
 
                     <div class="col-sm-1"></div>
@@ -132,7 +132,7 @@
 
                                 </div>
                                 <div class="form-top-right">
-                                    <i class="fa fa-hand-o-up"></i>
+                                    <i class="fa fa-calendar"></i>
                                 </div>
                                 <!--                            <div class="form-top-right">
                                                                 <i class="fa fa-key"></i>-->
