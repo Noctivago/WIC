@@ -1222,10 +1222,10 @@ function DB_sendMessage($pdo, $userId, $message, $Conversation_Id) {
 
 function DB_getMyWICPlanners($pdo, $userId) {
     try {
-        $rows = sql($pdo, "SELECT [WIC_Planner].Id
-      ,[WIC_Planner].[Name]
-      ,[City].[Name]
-      ,[WIC_Planner].[Event_Date]
+        $rows = sql($pdo, "SELECT [WIC_Planner].Id AS WICID
+      ,[WIC_Planner].[Name] AS WICNAME
+      ,[City].[Name] AS WICCITY
+      ,[WIC_Planner].[Event_Date] AS WICDATE
         FROM [dbo].[WIC_Planner]
          join [City]
         on [City].[Id] = [WIC_Planner].[City_Id]
@@ -1235,17 +1235,18 @@ function DB_getMyWICPlanners($pdo, $userId) {
         echo '<tr>';
         echo '<th>ID</th>';
         echo '<th>NAME</th>';
+        echo '<th>CITY</th>';
         echo '<th>EVENT DATE</th>';
-        echo '<th class="numeric">d-semana</th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
 
         foreach ($rows as $row) {
             echo '<tr>';
-            echo '<td data-title = "Code">4</td>';
-            echo '<td data-title = "Company">QUINTA</td>';
-            echo '<td data-title = "Day" class = "numeric">qui-feira</td>';
+            echo '<td data-title = "WICID">' . $row['WICID'] . '</td>';
+            echo '<td data-title = "WICNAME">' . $row['WICNAME'] . '</td>';
+            echo '<td data-title = "WICCITY">' . $row['WICCITY'] . '</td>';
+            echo '<td data-title = "WICEVENTDATE">' . $row['WICDATE'] . '</td>';
             echo '</tr>';
         }
         echo '<tr>';
