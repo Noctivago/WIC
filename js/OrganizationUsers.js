@@ -78,7 +78,9 @@ function change_table_data2(json_r, div_table, id_table, tbody) {
             oo.id = "IdOwner1";
             oo.value = json_r[i].Id;
             tr.appendChild(oo);
+            //  btn.placeholder = 'Remove';
             var btn = document.createElement('input');
+            btn.id = 'IdOwner1';
             btn.type = 'button';
             btn.className = 'btn';
             btn.value = 'Remove';
