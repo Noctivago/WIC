@@ -136,12 +136,7 @@ $msg;
                         
                                             <div class="col-sm-5">-->
 
-
-
-
-                    </div>
-                    
-                    <!--Caixa de escrever mensagens-->
+<!--Caixa de escrever mensagens-->
         <div class="message-wrap col-lg-8">
             <div class="msg-wrap">
 
@@ -212,6 +207,16 @@ $msg;
                 <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
             </div>
         </div>
+
+
+<!--Caixa de escrever mensagens-->
+                        
+
+
+
+                    </div>
+                    
+
 </div>
 
 
