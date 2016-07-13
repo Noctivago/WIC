@@ -971,7 +971,6 @@ function DB_getCommentsOfService($pdo, $orgServId) {
             </div>';
         }
         foreach ($rows as $row) {
-#echo "LINK TO READ ALL";
             echo '<div class="row">';
             echo '<div class="col-sm-5" style="width: 100%">';
             echo '<div class="panel panel-default">';
