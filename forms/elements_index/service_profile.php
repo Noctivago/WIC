@@ -148,8 +148,8 @@ $msg;
 
 
 <div class="message-wrap col-lg-8" >
-            <div class="msg-wrap" style="overflow: auto; ">
-<!--                height: 600px;-->
+            <div class="msg-wrap" style="overflow: auto; height: 600px;">
+
 
 
                 <div class="media msg ">
