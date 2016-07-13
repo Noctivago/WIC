@@ -158,33 +158,26 @@ ini_set("display_errors", 1);
                                     <i class="fa fa-comment"></i>
                                 </div>
                                 <div class="send-wrap ">
-
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                                         <div><h4> <?php echo $msg; ?></h4>
-                                            <textarea class="form-control send-message" id= "userComment" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
+                                            <textarea class="form-control send-message" id= "userComment" name ="userComment" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
                                         </div>
                                         <button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
-                                        <!--<button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>-->
+                                        <button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
                                     </form>
                                 </div>
                                 <div class="btn-panel">
                                     <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
                                     <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
                                 </div>
-
                             </div>
                             <!--<div class="message-wrap col-lg-8" style=" border-style: solid; border-color: darkgray;">-->
                             <div class="msg-wrap" style="overflow: auto; height: 450px; width:  ">
                                 <!--height: 600px; width: 450px;-->
 
                                 <?= DB_getCommentsOfService($pdo, $orgServId) ?>
-
-                                
-
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
