@@ -2,6 +2,8 @@
 //FAZER GET DO ID DO SERVICE
 $orgServId = 2;
 $msg;
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 <main class = "cd-main-content">
     <div class = "content-wrapper" style = "padding-left: 0%">
