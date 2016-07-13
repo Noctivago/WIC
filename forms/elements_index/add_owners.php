@@ -132,7 +132,7 @@
 <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
-<script src="../../js/OrganizationUsers.js" ></script>
+<script src="../../js/OrganizationUsers.js" type="text/javascript"></script>
 
 
 

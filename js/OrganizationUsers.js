@@ -34,24 +34,6 @@ function dataSelect(json,userSel){
     div.replaceChild(select, newSele);
 }
 
-//remover utilizador da organização
-function removeUserInOrganization() {
-    var idOwner = document.getElementById('IdOwner').value;
-    alert(idOwner);
-    var arg = 'removeUserInOrganization';
-    var dataString = 'arg=' + arg + '&idOwner=' + idOwner;
-    $.ajax({
-        type: 'POST',
-        url: "../orgsubmit.php",
-        data: dataString,
-        cache: false,
-        success: function (result) {
-            alert(result);
-        }
-    });
-    viewAllUsersInOrganization();
-    return false;
-}
 function viewAllUsersInOrgOwners(idOrg) {
     var div_table1 = "title-1";
     var id_table1 = "table1";
@@ -142,7 +124,7 @@ function viewAllUsersInOrganization() {
 }
 
 function removeUserInOrganization() {
-    var id = document.getElementById("idUserOrg").value;
+    var id = document.getElementById("IdOwner").value;
     alert(id);
     var arg = 'removeUserInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: id}, function (result) {
