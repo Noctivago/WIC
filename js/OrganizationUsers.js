@@ -52,10 +52,10 @@ function change_table_data(json_r,div_table,id_table,tbody){
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Name));
+        td.appendChild(document.createTextNode(json_r[i].Name || json_r[i].First_Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Email));
+        td.appendChild(document.createTextNode(json_r[i].Email || json_r[i].Last_Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode("Delete"));
