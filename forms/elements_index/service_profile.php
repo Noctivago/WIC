@@ -170,8 +170,8 @@ $msg;
                             </div>
 
 
-                               <div class="message-wrap col-lg-8" style=" border-style: solid; border-color: darkgray;">
-            <div class="msg-wrap" style="overflow: auto; height: 450px;  ">
+                               <!--<div class="message-wrap col-lg-8" style=" border-style: solid; border-color: darkgray;">-->
+            <div class="msg-wrap" style="overflow: auto; height: 450px; width:  ">
 <!--height: 600px; width: 450px;-->
 
 
@@ -240,7 +240,7 @@ $msg;
                 <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
                 <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
             </div>
-        </div>
+        <!--</div>-->
                            </div>
 
 
