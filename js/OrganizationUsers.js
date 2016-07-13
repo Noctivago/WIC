@@ -25,10 +25,11 @@ function fill_Users_Sub_Category() {
 function dataSelect(json,userSel){
     var select = document.getElementById(userSel);
     select.disabled = false;
+    alert(json[0].First_Name);
     var newSele = select;
     var option = document.createElement('Option');
     for (i = 0; i < json.length; i++) {
-         option.textContent = json[i].Last_Name;
+         option.placeholder = json[i].First_Name;
          option.value = json[i].Id;
          newSele.appendChild(option);
     }
