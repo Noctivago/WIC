@@ -23,7 +23,7 @@
 					
 					<ul>
                                             <li><a href="view_WicPlanner.php">View</a></li>
-						<li><a href="addWicPlanner.php">Create</a></li>
+                                            <li><a href="add_wicplanner.php">Create</a></li>
 						
 					</ul>
 				</li>
