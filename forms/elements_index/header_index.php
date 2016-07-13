@@ -22,7 +22,7 @@
 -->				<li>
                                 <a href="view_WicPlanner.php"  alt="avatar" class="img-responsive">
                                     
-                                    <img src="../../assets/ico/wic planner button-01.png" class="img-responsive"></a>
+                                    <img src="../../assets/ico/wic planner button-01.png" class="img-responsive" alt="logo"></a>
 
                                 </li>
 
