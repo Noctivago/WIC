@@ -40,7 +40,7 @@
                                         </div>
                                         <div class="form-group">
                                             <select class="form-username form-control" name="userOrg1" id="userOrg1" disabled>
-                                                <option id="user" value='0'> Choose a User</option>
+                                                <!--option id="user" value='0'> Choose a User</option-->
                                             </select>
                                         </div>
                                         <button type="submit" id="request" class="btn" name="request" visible="true">Add Category Owner</button>
