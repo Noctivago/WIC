@@ -4,12 +4,12 @@
     
                  <div class="top-content">
              <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Edit Your Profile
+                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Edit  Profile
                  </h1>
              </div>
              </div>
 
-<div class="top-content">
+<div class="top-content" style="height: 480px">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <!--        <link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
 <!--    <div class="inner-bg" style="padding-top: 0px">-->
