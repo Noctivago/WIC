@@ -4,7 +4,7 @@
     
             <div class="top-content">
             <div class="col-lg-12">
-                <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> MY WIC Planner </h1> <h4 style="color: darkgray"> <?php echo $msg; ?></h4>
+                <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> My WIC Planner </h1> <h4 style="color: darkgray"> <?php echo $msg; ?></h4>
 
             </div>
         </div>
@@ -22,14 +22,14 @@
             </div>-->
             <div class="row">
   
-                        <div class="col-sm-8 col-lg-offset-2 text-center">
+                        <div class="col-sm-8 col-lg-offset-2 text">
 
      
                             <div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1 class="text-center">
-                My Wic Planner
+                <!--My Wic Planner-->
             </h1>
             
         </div>
