@@ -1,7 +1,7 @@
 <?php
 //FAZER GET DO ID DO SERVICE
 $orgServId = 2;
-$msg='';
+$msg = '';
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
 ?>
@@ -63,7 +63,7 @@ $msg='';
                                     </div>
                                 </form>
                                 <div>
-                                    <button id ="showWICPlannerBTN" onclick="show('showWICPlanner');hide('showWICPlannerBTN');" class = "btn" name = "WICPlannerShow">Add to WIC Planner!</button>
+                                    <button id ="showWICPlannerBTN" onclick="show('showWICPlanner'); hide('showWICPlannerBTN');" class = "btn" name = "WICPlannerShow">Add to WIC Planner!</button>
                                     <div id ="showWICPlanner" style="display:none;">
                                         <p>Choose a WIC Planner</p>
                                         <select class="form-username form-control" name="wicPlannerSelect" id="wicPlannerSelect" required="required">
@@ -71,7 +71,7 @@ $msg='';
                                         </select>
                                         <br>
                                         <div class = "login-form">
-                                            <button onclick="hide('showWICPlanner');show('showWICPlannerBTN');" class = "btn" name = "WICPlannerHide">Hide WIC Planner!</button>
+                                            <button onclick="hide('showWICPlanner'); show('showWICPlannerBTN');" class = "btn" name = "WICPlannerHide">Hide WIC Planner!</button>
                                             <button onclick="addToWic(<?= $orgServId ?>)"class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
                                         </div>
                                     </div>
@@ -87,13 +87,13 @@ $msg='';
 
                     <script>
                         function show(toBlock) {
-                            setDisplay(toBlock, 'block');
+                        setDisplay(toBlock, 'block');
                         }
                         function hide(toNone) {
-                            setDisplay(toNone, 'none');
+                        setDisplay(toNone, 'none');
                         }
                         function setDisplay(target, str) {
-                            document.getElementById(target).style.display = str;
+                        document.getElementById(target).style.display = str;
                         }
                     </script>
 
@@ -163,12 +163,12 @@ $msg='';
                                             <textarea class="form-control send-message" id= "userComment" name ="userComment" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
                                         </div>
                                         <!--<button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>-->
-                                        <button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
+                                        <!--<button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>-->
                                     </form>
                                 </div>
                                 <div class="btn-panel">
                                     <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
-                                    <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
+                                    <a href="" onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
                                 </div>
                             </div>
                             <!--<div class="message-wrap col-lg-8" style=" border-style: solid; border-color: darkgray;">-->
