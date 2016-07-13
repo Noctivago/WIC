@@ -1240,11 +1240,13 @@ function DB_getMyWICPlanners($pdo, $userId) {
         echo '</thead>';
         echo '<tbody>';
         foreach ($rows as $row) {
+            $str = $row['WICDATE'];
+            $subStr = explode(" ", $str);
             echo '<tr>';
             echo '<td data-title = "WICID">' . $row['WICID'] . '</td>';
             echo '<td data-title = "WICNAME">' . $row['WICNAME'] . '</td>';
             echo '<td data-title = "WICCITY">' . $row['WICCITY'] . '</td>';
-            echo '<td data-title = "WICEVENTDATE">' . $row['WICDATE'] . '</td>';
+            echo '<td data-title = "WICEVENTDATE">' . $subStr[0] . '</td>';
             echo '</tr>';
         }
         echo '<tr>';
