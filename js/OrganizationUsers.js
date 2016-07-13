@@ -1,9 +1,10 @@
 function fill_Users_Category(){
-    //alert(document.getElementById("org1").value);
+    alert(document.getElementById("org1").value);
     var idOrg = document.getElementById("org1").value;
     var arg = 'viewAllUsersInOrganizationAsSelect';
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body1").empty();
+        alert(json_r);
         var json_r = $.parseJSON(result);
         //dataSelect();
         console.log(json_r);
