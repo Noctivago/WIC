@@ -168,7 +168,7 @@ $msg;
                                 text-left center-block well well-sm-->
                                         <div class="send-wrap ">
 
-                <textarea class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>
+                                            <textarea class="form-control send-message" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
 
 
             </div>
