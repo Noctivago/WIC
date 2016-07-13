@@ -1,12 +1,12 @@
 
 <main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
-         <div class="top-content">
+<!--         <div class="top-content">
             <div class="col-lg-12">
                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Inbox </h1> <h4 style="color: darkgray"> <?php echo $msg; ?></h4>
 
             </div>
-        </div>
+        </div>-->
 
         <div class="top-content" style="height: 480px">
                 <link href="../../assets/assests_sidebar/css/chat.css" rel="stylesheet">
