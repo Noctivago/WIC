@@ -10,7 +10,7 @@ function fill_Users_Category() {
         alert(json_r);
         dataSelect(json_r,userSel);
         //dataSelect();
-        //viewAllUsersInOrganization2(idOrg);
+        viewAllUsersInOrganization2(idOrg);
         console.log(json_r);
     });
 }
