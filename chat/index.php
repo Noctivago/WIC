@@ -14,10 +14,10 @@
             <!--      Main content area-->
         </div>
         <?php
-        include_once ('session.php');
+        include_once ('../forms/session.php');
         include_once ('../db/conn.inc.php');
         include_once ('../db/functions.php');
-        require_once '../db/FbChatMock.php';
+        require_once ('../db/FbChatMock.php');
         #session_start();
 
         $_SESSION['id'] = isset($_GET['id']) ? (int) $_GET['id'] : 0;
