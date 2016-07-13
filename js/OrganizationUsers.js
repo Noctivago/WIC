@@ -33,6 +33,7 @@ function dataSelect(json,userSel){
          option.value = json[i].Id;
          newSele.appendChild(option);
     }
+    //select.appendChild(newSele);
     div.replaceChild(select, newSele);
 }
 
