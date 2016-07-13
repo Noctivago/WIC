@@ -120,9 +120,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1 class="text-center">
-                                        Nome tabela
-                                    </h1>
+                                    <h3> My Wic Planners</h3>
 
                                 </div>
                                 <div id="no-more-tables">
