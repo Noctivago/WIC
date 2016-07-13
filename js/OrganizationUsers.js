@@ -27,6 +27,7 @@ function viewAllUsersInOrganization() {
     alert(org);
     var arg = 'viewAllUsersInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
+        $("tbodyid").empty();
         var json_r = $.parseJSON(result);
         change_table_data(json_r,div_table1,id_table1,tbody1);
         console.log(json_r);
