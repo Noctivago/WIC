@@ -33,11 +33,11 @@ ini_set("display_errors", 1);
                             <div class="form-bottom">
                                 <?php
                                 $userId = $_SESSION['id'];
-                                if ((isset($_POST['invite']) && isset($_POST['form-email'])) && !empty($_POST['org'])) {
+                                if ((isset($_POST['invite']) && isset($_POST['email'])) && !empty($_POST['org'])) {
                                     $msg = '';
                                     try {
-                                        $email = (filter_var($_POST['form-email'], FILTER_SANITIZE_STRING));
-                                        $orgId = (filter_var($_POST ['OrgId'], FILTER_SANITIZE_STRING));
+                                        $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
+                                        $orgId = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
                                         $msg = DB_addUserInOrganization($pdo, $email, $orgId);
                                         echo $msg;
                                     } catch (Exception $ex) {
@@ -56,7 +56,7 @@ ini_set("display_errors", 1);
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" style="height: 40px" name="email" placeholder="Email" class="form-username form-control" id="form-email" required autofocus>
+                                        <input type="email" style="height: 40px" name="email" placeholder="Email" class="form-username form-control" id="email" required autofocus>
                                     </div>
                                     <button type="submit" id="invite" class="btn" name="invite" visible="true">Send Invite</button>
                                 </form>
