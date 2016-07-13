@@ -22,7 +22,7 @@
                      ">
                     <div class="col-lg-3">
                         <div class="btn-panel btn-panel-conversation">
-                            <a href="" class="btn  col-lg-6 send-message-btn " role="button"><i class="fa fa-search"></i> Search</a>
+                            <!--<a href="" class="btn  col-lg-6 send-message-btn " role="button"><i class="fa fa-search"></i> Search</a>-->
                             <!--<a href="" class="btn  col-lg-6  send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> New Message</a>-->
                         </div>
                     </div>
