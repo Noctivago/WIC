@@ -492,7 +492,22 @@ function DB_CheckOrganizationInvitationAndMoveToInvites($pdo, $email) {
         echo 'error';
     }
 }
-
+function DB_checkIfExistUserInOrganizationNotEnabled($pdo, $idOrg, $userId){
+    try {
+         $count = sql($pdo, "SELECT [Organization_Id]
+      ,[User_Id]
+  FROM [dbo].[User_In_Organization]
+  where [User_Id] = ? and [Organization_Id] = ? and [Enabled] = 0", array($userId, $idOrg), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+        
+    } catch (Exception $ex) {
+        
+    }
+}
 function DB_addUserInOrganization($pdo, $email, $idOrg) {
     try {
         //get id do user pelo email
@@ -502,10 +517,14 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
                 if (DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId2)) {
                     echo 'User is already in organization!';
                     } else {
-                        //falta verificar se já tem um registo com o [enabled] = 0 se sim update responded para 0 ou seja novo convite
-                    sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId2, 0, 0, 0));
-                    echo 'Success';
-                
+                        if(DB_checkIfExistUserInOrganizationNotEnabled($pdo, $idOrg, $userId)){
+                            //update responded para 0
+                            sql($pdo,"UPDATE [dbo].[User_In_Organization] SET [Responded] = 0 where [Organization_Id] = ? and [User_Id] = ?", array($idOrg,$userId2));
+                            echo '[responded = 0]';
+                        }else{
+                            sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId2, 0, 0, 0));
+                            echo 'Success';
+                        }
                     
                 }
             } else {
