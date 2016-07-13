@@ -33,7 +33,7 @@
 
                                 </div>
                                 <div class="form-top-right">
-                                    <i class="fa fa-hand-o-up"></i>
+                                    <i class="fa fa-plus-circle"></i>
                                 </div>
                                 <!--                            <div class="form-top-right">
                                                                 <i class="fa fa-key"></i>-->
