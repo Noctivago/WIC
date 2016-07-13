@@ -5,7 +5,7 @@ function addToWic(b) {
     var org = b;
     var arg = 'add2Wic';
     var dataString = 'wicPlannerId=' + wic + '&orgServId=' + org + '&arg=' + arg;
-    alert(dataString);
+    //alert(dataString);
     if (wic === '' || b === '')
     {
         alert("Please Fill All Fields");
@@ -32,7 +32,7 @@ function addToConversation(a, c) {
     var user = a;
     var org = c;
     var dataString = 'userId=' + user + '&org=' + org + '&arg=' + arg;
-    alert(dataString);
+    //alert(dataString);
     if (a === '' || c === '')
     {
         alert("Please Fill All Fields");
