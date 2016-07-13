@@ -57,6 +57,7 @@ function removeUserInOrganization(id) {
     return false;
 }
 function viewAllUsersInOrganization2(idOrg) {
+    alert(idOrg);
     var div_table1 = "title-1";
     var id_table1 = "table1";
     var tbody1 = "body1"
