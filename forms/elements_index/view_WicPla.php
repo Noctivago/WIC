@@ -120,7 +120,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3 style="color: darkgray"> My Wic Planners</h3>
+                                    <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> My WicPlanner
+                 </h1>
 
                                 </div>
                                 <div id="no-more-tables">
