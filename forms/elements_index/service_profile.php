@@ -171,7 +171,7 @@ $msg;
 
 
 <div class="message-wrap col-lg-8" >
-            <div class="msg-wrap" style="overflow: auto; height: 600px; width: 500px; border: 2px darkgray ">
+            <div class="msg-wrap" style="overflow: auto; height: 550px; width: 500px; border: 2px darkgray ">
 <!--height: 600px; width: 450px;-->
 
 
