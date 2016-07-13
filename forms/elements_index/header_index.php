@@ -19,10 +19,11 @@
 		<nav class="cd-nav">
 			<ul class="cd-top-nav">
 <!--				<li><a href="#0">Tour</a></li>
--->				<li>
+-->				
+<!--<li>
                                     <a href="view_WicPlanner.php"> WicPlanner</a>
 
-                                </li>
+                                </li>-->
 
 				<li class="has-children account">
 					<a href="#0">
