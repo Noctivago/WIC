@@ -42,7 +42,7 @@ function viewAllUsersInOrganization() {
     return false;
 }
 
-function removeUserInOrganization(id){
+function removeUserInOrganization(){
     
 }
 function change_table_data(json_r,div_table,id_table,tbody){
