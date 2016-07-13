@@ -105,9 +105,9 @@
                                 <table class="col-md-12 table-bordered table-striped table-condensed cf " style = "Display: none" id="table2">
                                     <thead class="cf">
                                         <tr>
-                                            <th>Email</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
+                                            <th>Name</th>
+                                            <th>Category</th>
+                                            <th>Remove</th>
                                         </tr>
                                     </thead>
                                     <tbody id="body2">
