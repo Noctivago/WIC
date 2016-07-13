@@ -29,7 +29,7 @@ function dataSelect(json,userSel){
     var newSele = select;
     var option = document.createElement('Option');
     for (i = 0; i < json.length; i++) {
-         option.textContent = json[i].Id;
+         option.textContent = json[i].Name;
          option.value = json[i].Id;
          newSele.appendChild(option);
     }
