@@ -39,9 +39,7 @@ function change_table_data(json_r,div_table,id_table,tbody){
     document.getElementById(div_table).style = "Display: true";
     document.getElementById(id_table).style = "Display: true";
     var Tbody = document.getElementById(tbody);
-    var boddy = document.createElement('TBODY');
-    table.appendChild(boddy);
-    table.replaceChild(Tbody,boddy);
+    var boddy = Tbody;
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
         var td = document.createElement('TD')
