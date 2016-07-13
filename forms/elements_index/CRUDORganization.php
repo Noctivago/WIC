@@ -109,12 +109,12 @@
                                     </div>
                                     <button type="submit" id="addOrg" class="btn" name="addOrg" visible="true">NEW ORGANIZATION!</button>
                                     
-                                    <div class="form-inline">
-                                    <button type="submit" id="update" class="btn" name="update" style="display: none;">Save</button>
+                                    
+                                    <button type="submit" id="update" class="btn" name="update" style="display: none;" style="width: 140px">Save</button>
                                     
                                   
-                                    <button type="submit" id="delete" class="btn" name="delete" onclick="removeOrganization()" style="display: none;">Delete</button>
-                                    </div>
+                                    <button type="submit" id="delete" class="btn" name="delete" onclick="removeOrganization()" style="display: none;" style="width: 140px">Delete</button>
+                                    
                                 </form>
                             </div>
                         </div>
