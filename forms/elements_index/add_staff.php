@@ -48,8 +48,8 @@ ini_set("display_errors", 1);
                                 }
                                 ?>    
 
-                                <form role="form" action="" method="post" class="login-form">
-                                    <div class="form-group" id="OrgId">
+                                <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
+                                    <div class="form-group">
                                         <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()">
                                             <h4> <?php echo $msg; ?></h4>
                                             <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
