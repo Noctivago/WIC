@@ -1221,12 +1221,7 @@ function DB_getMyMessages($pdo, $Conversation_Id) {
 	WHERE [Conversation].[Id] = ? ORDER BY [Message].[Message_Date] DESC", array($Conversation_Id), "rows");
         foreach ($rows as $row) {
             if ($row['UID'] != $userId) {
-                echo "<tr>";
-                echo "<td>" . $row['Id'] . "</td>";
-                echo "<td>" . $row['User_Id'] . "</td>";
-                echo "<td>" . $row['Message'] . "</td>";
-                echo "<td>" . $row['Message_Date'] . "</td>";
-                echo "<tr>";
+                
             } else {
                 
             }
