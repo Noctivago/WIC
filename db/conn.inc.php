@@ -454,7 +454,7 @@ function DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId) {
         $count = sql($pdo, "SELECT [Organization_Id]
       ,[User_Id]
   FROM [dbo].[User_In_Organization]
-  where [User_Id] = ? and [Organization_Id] = ? and [Enabled] = 1", array($userId, $idOrg), "count");
+  where [User_Id] = ? and [Organization_Id] = ?", array($userId, $idOrg), "count");
         if ($count < 0) {
             return true;
         } else {
