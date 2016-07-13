@@ -3,6 +3,7 @@ function fill_Users_Category() {
     var idOrg = document.getElementById("org1").value;
     var arg = 'viewAllUsersInOrganizationAsSelect';
     var userSel = 'userOrg1';
+    var tbody = "body1";
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body1").empty();
         $("#" + userSel).empty();
@@ -18,6 +19,7 @@ function fill_Users_Sub_Category() {
     var title = "title-2";
     var arg = 'viewAllUsersInOrganizationAsSelect';
     var userSel = 'userOrg2';
+    var tbody = "body2";
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body2").empty();
         $("#" + userSel).empty();
@@ -43,14 +45,14 @@ function dataSelect(json, userSel, title) {
     div.replaceChild(select, newSele);
 }
 function viewAllUsersInOrgO(idOrg) {
-    var div_table1 = "title-2";
-    var id_table1 = "table2";
-    var tbody1 = "body2"
+    var div_table = "title-2";
+    var id_table = "table2";
+    var tbody = "body2"
     var arg = 'viewAllUsersInOrgOwners';
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body2").empty();
         var json = $.parseJSON(result);
-        change_tableData(json, div_table1, id_table1, tbody1);
+        change_tableData(json, div_table, id_table, tbody);
         console.log(json);
     });
 
@@ -93,7 +95,7 @@ function change_tableData(json_r, div_table, id_table, tbody) {
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].First_Name + " " + json_r[i].Last_Name));
+        td.appendChild(document.createTextNode(json_r[i].First_Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Name));
