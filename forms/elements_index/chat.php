@@ -17,14 +17,14 @@
         <div class="col-lg-3">
             <div class="btn-panel btn-panel-conversation">
                 <a href="" class="btn  col-lg-6 send-message-btn " role="button"><i class="fa fa-search"></i> Search</a>
-                <a href="" class="btn  col-lg-6  send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> New Message</a>
+                <!--<a href="" class="btn  col-lg-6  send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> New Message</a>-->
             </div>
         </div>
 
         <div class="col-lg-offset-1 col-lg-7">
             <div class="btn-panel btn-panel-msg">
 
-                <a href="" class="btn  col-lg-3  send-message-btn pull-right" role="button"><i class="fa fa-gears"></i> Settings</a>
+                <!--<a href="" class="btn  col-lg-3  send-message-btn pull-right" role="button"><i class="fa fa-gears"></i> Settings</a>-->
             </div>
         </div>
     </div>
@@ -168,7 +168,7 @@
 
             </div>
             <div class="btn-panel">
-                <a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>
+                <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
                 <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
             </div>
         </div>
