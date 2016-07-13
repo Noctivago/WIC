@@ -9,7 +9,11 @@
                        <!--    <div class="inner-bg" style="padding-top: 0px">-->
      
 <div class="container">
-    <div class="row">
+    <div class="row" style="
+    margin-top: 0px;
+    width: 800px;
+    height: 68px;
+">
         <div class="col-lg-3">
             <div class="btn-panel btn-panel-conversation">
                 <a href="" class="btn  col-lg-6 send-message-btn " role="button"><i class="fa fa-search"></i> Search</a>
