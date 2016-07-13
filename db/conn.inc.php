@@ -980,7 +980,7 @@ function DB_getCommentsOfService($pdo, $orgServId) {
             #echo '</a>';
             echo '<div class="media-body">';
             #echo '<small class="pull-right time"><i class="fa fa-clock-o"></i>' . ' ' . $subStr[0] . ' ' . $h[0] . '</small>';
-            echo '<h5 class="media-heading">' . $row['UU'] . '</h5>' . '<small class="pull-right time"><i class="fa fa-clock-o"></i>' . ' ' . $subStr[0] . ' ' . $h[0] . '</small>';
+            echo '<h5 class="media-heading">' . $row['UU'] . '</h5> ' . '<i class="fa fa-clock-o"></i>' . ' ' . $subStr[0] . ' ' . $h[0] . '</small>';
             echo '<small class="col-lg-10">' . $row['CC'] . '</small>';
             echo '</div>';
             echo '</div>';
