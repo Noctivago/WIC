@@ -102,9 +102,12 @@ ini_set("display_errors", 1);
                             <table class="col-md-12 table-bordered table-striped table-condensed cf " style = "Display: none" id="table2">
                                 <thead class="cf">
                                     <tr>
-                                        <th>Email</th>
+<!--                                        <th>Email</th>
                                         <th>First Name</th>
-                                        <th>Last Name</th>
+                                        <th>Last Name</th>-->
+                                        <th>Email</th>
+                                        <th>Username</th>
+                                        <!--<th>Last Name</th>-->
                                     </tr>
                                 </thead>
                                 <tbody id="body2">

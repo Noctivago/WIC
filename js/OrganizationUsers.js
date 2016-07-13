@@ -1,4 +1,4 @@
-function fill_Users_Category(){
+function fill_Users_Category() {
     alert(document.getElementById("org1").value);
     var idOrg = document.getElementById("org1").value;
     var arg = 'viewAllUsersInOrganizationAsSelect';
@@ -15,10 +15,10 @@ function fill_Users_Category(){
 }
 
 
-function fill_Users_Sub_Category(){
+function fill_Users_Sub_Category() {
     alert(document.getElementById("org2").value);
     alert(document.getElementById("Sub_Category").value);
-    
+
 }
 
 function dataSelect(json,userSel){
@@ -55,7 +55,7 @@ function viewAllUsersInOrganization() {
     var div_table1 = "title-1";
     var id_table1 = "table1";
     var tbody1 = "body1"
-    var div_table2 ="title-2";
+    var div_table2 = "title-2";
     var id_table2 = "table2";
     var tbody2 = "body2"
     var arg = 'viewAllUsersInOrganization';
@@ -63,20 +63,20 @@ function viewAllUsersInOrganization() {
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
         $("#body1").empty();
         var json_r = $.parseJSON(result);
-        change_table_data(json_r,div_table1,id_table1,tbody1);
+        change_table_data(json_r, div_table1, id_table1, tbody1);
         console.log(json_r);
     });
-    
-    $.post("../../orgsubmit.php",{arg: arg2, id:org},function(result){
-       $("#body2").empty();
-       var json_r2 = $.parseJSON(result);
-        change_table_data(json_r2,div_table2,id_table2,tbody2);
+
+    $.post("../../orgsubmit.php", {arg: arg2, id: org}, function (result) {
+        $("#body2").empty();
+        var json_r2 = $.parseJSON(result);
+        change_table_data(json_r2, div_table2, id_table2, tbody2);
         console.log(json_r2);
     });
     return false;
 }
 
-function removeUserInOrganization(){
+function removeUserInOrganization() {
     var id = document.getElementById("idUserOrg").value;
     alert(id);
     var arg = 'removeUserInOrganization';
@@ -87,7 +87,7 @@ function removeUserInOrganization(){
     return false;
 }
 
-function change_table_data(json_r,div_table,id_table,tbody){
+function change_table_data(json_r, div_table, id_table, tbody) {
     var div = document.getElementById(div_table);
     var table = document.getElementById(id_table);
     document.getElementById(div_table).style = "Display: true";
@@ -103,30 +103,30 @@ function change_table_data(json_r,div_table,id_table,tbody){
         td.appendChild(document.createTextNode(json_r[i].Username || json_r[i].First_Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        if(id_table==="table1"){
-        var id = document.createElement('input');
-        id.type = "hidden";
-        id.id ="idUserOrg";
-        id.value = json_r[i].Id;
-        tr.appendChild(id);
-        
+        if (id_table === "table1") {
+            var id = document.createElement('input');
+            id.type = "hidden";
+            id.id = "idUserOrg";
+            id.value = json_r[i].Id;
+            tr.appendChild(id);
+
             var btn = document.createElement('input');
             btn.type = 'button';
             btn.className = 'btn';
             btn.value = 'Remove';
-          //  btn.placeholder = 'Remove';
+            //  btn.placeholder = 'Remove';
             btn.id = 'idUserInOrg';
-            btn.addEventListener("click",removeUserInOrganization);
+            btn.addEventListener("click", removeUserInOrganization);
             td.appendChild(btn);
-        tr.appendChild(td);
-        }else{
-        td.appendChild(document.createTextNode(json_r[i].Last_Name));
-        tr.appendChild(td)
-        
-    }
+            tr.appendChild(td);
+        } else {
+            td.appendChild(document.createTextNode(json_r[i].Last_Name));
+            tr.appendChild(td)
+
+        }
         boddy.appendChild(tr);
     }
-    table.replaceChild(Tbody,boddy);
+    table.replaceChild(Tbody, boddy);
 }
 
 //aceitar convite para ingressar na organizaçao
