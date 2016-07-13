@@ -162,8 +162,8 @@ $msg = '';
                                         <div><h4> <?php echo $msg; ?></h4>
                                             <textarea class="form-control send-message" id= "userComment" name ="userComment" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
                                         </div>
-                                        <!--<button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>-->
-                                        <button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
+                                        <button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
+                                        <!--<button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>-->
                                     </form>
                                 </div>
                                 <div class="btn-panel">
