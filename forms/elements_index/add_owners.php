@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="form-group">
                                         <select class="form-username form-control" name="userOrg2" id="userOrg2" disabled>
-                                            
+                                            <option id ='user' value='0'> Choose a User</option>
                                         </select>
                                     </div>
                                     <button type="submit" id="request" class="btn" name="request" visible="true">Add Category Owner</button>
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="form-group">
                                         <select class="form-username form-control" name="userOrg2" id="userOrg2" disabled>
-                                            
+                                            <option id ='user' value='0'> Choose a User</option>
                                         </select>
                                     </div>
                                     <button type="submit" id="request" class="btn" name="request" visible="true">Add Sub Category Owner</button>
