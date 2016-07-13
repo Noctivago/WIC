@@ -1,8 +1,15 @@
 
 <main class="cd-main-content">
 <div class="content-wrapper" style="padding-left: 0%">
+    
+            <div class="top-content">
+            <div class="col-lg-12">
+                <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> MY WIC Planner </h1> <h4 style="color: darkgray"> <?php echo $msg; ?></h4>
 
-<div class="top-content">
+            </div>
+        </div>
+
+<div class="top-content" style="height: 480px">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
             <!--<link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
          <link rel="stylesheet"   link href="../../assets/assests_sidebar/css/tabela.css" rel="stylesheet" type="text/css"/>
@@ -27,7 +34,7 @@
             
         </div>
         <div id="no-more-tables">
-            <table class="col-md-12 table-bordered table-striped table-condensed cf " style="width: 932.22222px;height: 302.22222px;">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf " >
         		<thead class="cf">
         			<tr>
         				<th>Id</th>
