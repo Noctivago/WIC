@@ -207,7 +207,7 @@ FROM [dbo].[User_In_Organization]
   on [User].[Id] = [User_In_Organization].[User_Id]
   join [Profile]
   on [Profile].[User_Id] = [User].[Id]
-where [User_In_Organization].[Enabled] = ?", array($idOrg), "rows");
+where [User_In_Organization].[Enabled] = 1 and [Organization_Id] = ?", array($idOrg), "rows");
         echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'error';
