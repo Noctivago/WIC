@@ -33,12 +33,12 @@ function viewAllUsersInOrganization() {
     });
     return false;
 }
-function change_table_data(json_r,div_table,id_table,tbody1){
+function change_table_data(json_r,div_table,id_table,tbody){
     var div = document.getElementById(div_table);
     var table = document.getElementById(id_table);
     document.getElementById(div_table).style = "Display: true";
     document.getElementById(id_table).style = "Display: true";
-    var Tbody = document.getElementById('body1');
+    var Tbody = document.getElementById(tbody);
     var boddy = document.createElement('TBODY');
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
