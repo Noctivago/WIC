@@ -214,7 +214,7 @@ if ($arg === 'addOrganization') {
     try {
         $idOrg = $_POST['id'];
         $id = 11;
-        $rows = sql($pdo, "[Category_Owner].[Id]
+        $rows = sql($pdo, "Select [Category_Owner].[Id]
       ,[Category].[Name]
 	  ,[Profile].[First_Name]
 	  ,[Profile].[Last_Name]
