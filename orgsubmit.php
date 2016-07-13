@@ -212,9 +212,9 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'viewAllUsersInOrganizationAsSelect') {
     try {
         $idOrg = $_POST['id'];
-        $rows = sql($pdo, "SELECT [User_In_Organization].[Id]
-		,[Profile].[First_Name]
-		,[Profile].[Last_Name]
+        $rows = sql($pdo, "SELECT [User_In_Organization].[Id] as Id
+		,[Profile].[First_Name] as Name
+		,[Profile].[Last_Name] as Last
   FROM [dbo].[User_In_Organization]
   join [User]
   on [User].[Id] = [User_In_Organization].[User_Id]
