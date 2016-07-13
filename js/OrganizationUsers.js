@@ -5,8 +5,7 @@ function fill_Users_Category() {
     var userSel = 'userOrg1';
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body1").empty();
-        $("#"+userSel).empty();
-        
+        //$("#"+userSel).empty();
         var json_r = $.parseJSON(result);
         alert(json_r);
         dataSelect(json_r,userSel);
