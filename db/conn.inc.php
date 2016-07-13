@@ -511,7 +511,7 @@ function DB_checkIfExistUserInOrganizationNotEnabled($pdo, $idOrg, $userId) {
 
 function DB_addUserInOrganization($pdo, $email, $idOrg) {
     try {
-        //get id do user pelo email
+//get id do user pelo email
         $userId2 = DB_checkUserByEmail($pdo, $email);
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
             if (DB_checkIfUserExists($pdo, $email)) {
@@ -519,7 +519,7 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
                     echo 'User is already in organization!';
                 } else {
                     if (DB_checkIfExistUserInOrganizationNotEnabled($pdo, $idOrg, $userId2)) {
-                        //update responded para 0
+//update responded para 0
                         sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [Responded] = 0 where [Organization_Id] = ? and [User_Id] = ?", array($idOrg, $userId2));
                         echo '[responded = 0]';
                     } else {
@@ -975,13 +975,13 @@ function DB_getCommentsOfService($pdo, $orgServId) {
             $subStr = explode(" ", $str);
             $h = explode(".", $subStr[1]);
             echo '<div class="media msg ">';
-            #echo '<a class="pull-left" href="#">';
+#echo '<a class="pull-left" href="#">';
             echo '<img class="media-object" alt="64x64" style="width: 32px; height: 32px;" src="' . $row['PP'] . '">';
-            #echo '</a>';
+#echo '</a>';
             echo '<div class="media-body">';
             echo '<small class="pull-right time"><i class="fa fa-clock-o"></i>' . ' ' . $subStr[0] . ' ' . $h[0] . '</small>';
             echo '<h5 class="media-heading">' . $row['UU'] . '</h5>';
-            #echo '<small class="col-lg-10">' . $row['CC'] . '</small>';
+#echo '<small class="col-lg-10">' . $row['CC'] . '</small>';
             echo '<small>' . $row['CC'] . '</small>';
             echo '</div>';
             echo '</div>';
@@ -1037,7 +1037,7 @@ function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
                 . "WHERE [User_Id1] = ? AND [User_Id2] = ? OR "
                 . "[User_Id2] = ? AND [User_Id1] = ?", array($userClient, $userOrg, $userClient, $userOrg), "count");
         if ($count < 0) {
-            //HEADER LOCATION > PAGE INBOX
+//HEADER LOCATION > PAGE INBOX
             echo 'CONVERSATION ALREADY EXISTS!';
         } else {
             sql($pdo, "INSERT INTO [dbo].[Conversation]
@@ -1051,7 +1051,7 @@ function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
         }
     } catch (PDOException $e) {
         print "ERROR READING/WRITING CONVERSATION!" . "<br/>";
-        #die();
+#die();
     }
 }
 
@@ -1145,18 +1145,18 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
     $orgServ = $orgUsers["OrgServiceName"];
     include_once 'functions.php';
     $d = getDateToDB();
-    //SE POSSUIR CHEFE SUBCATEGORIA
+//SE POSSUIR CHEFE SUBCATEGORIA
     if (isset($userOnSubCat)) {
         $userOrg = $userOnSubCat;
         return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
     } else {
-        //SE NAO POSSUIR CHEFE CATEGORIA
+//SE NAO POSSUIR CHEFE CATEGORIA
         if (isset($userOnCat)) {
             $userOrg = $userOnCat;
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
-            //SE POSSUIR CHEFE CAT
+//SE POSSUIR CHEFE CAT
         } else {
-            //SE N POSSUIR CHEFE DE CAT OU SUBCAT USA ID_BOSS
+//SE N POSSUIR CHEFE DE CAT OU SUBCAT USA ID_BOSS
             $userOrg = DB_checkOrgOwner($pdo, $orgId);
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         }
@@ -1184,7 +1184,7 @@ function DB_getMyConversations($pdo, $userId) {
     foreach ($rows as $row) {
         if ($row['UID'] != $userId) {
             echo '<div class="media conversation">';
-            #echo '<a class="pull-left" href="#">';
+#echo '<a class="pull-left" href="#">';
             echo '<div>';
             echo '<a class="pull-left" href="#">';
             echo '<img class="media-object" alt="64x64" style="width: 50px; height: 50px;" src="' . $row['PP'] . '">';
@@ -1192,9 +1192,9 @@ function DB_getMyConversations($pdo, $userId) {
             echo '</div>';
             echo '<div class="media-body">';
             echo '<h5 class="media-heading">' . ' > ' . $row['UUN'] . '</h5>';
-            #echo '<small>Hello</small>';
+#echo '<small>Hello</small>';
             echo '</div>';
-            #echo '</a>';
+#echo '</a>';
             echo '</div>';
         }
     }
@@ -1202,32 +1202,36 @@ function DB_getMyConversations($pdo, $userId) {
 
 function DB_getMyMessages($pdo, $Conversation_Id) {
     try {
-        $rows = sql($pdo, "SELECT
-	  [Conversation].[Id]
-	  ,[User].[Id] AS UID
-	  ,[User].[Username] UUN
-	  ,[Message].[Message] MMM
-	  ,[Profile].[Picture_Path] PP
-          ,[Conversation].[Organization_Service]
-        FROM [dbo].[Conversation]
-	join [User]
-	on [User].[Id] = [Conversation].[User_Id2]  
-	or [User].[Id] = [Conversation].[User_Id1]
-	join [Profile]
-	on [User].[Id] = [Profile].[User_Id]
-	join [Message]
-	on [Message].[Conversation_Id] = [Conversation].[Id]
-	WHERE [Conversation].[Id] = ? ORDER BY [Message].[Message_Date] DESC", array($Conversation_Id), "rows");
+        $rows = sql($pdo, "SELECT [Message].[Id]
+      ,[Message].[User_Id]
+      ,[Message].[Message]
+      ,[Message].[Message_Date]
+      ,[Message].[Conversation_Id]
+	  ,[User].[Username]
+	  ,[Profile].[Picture_Path]
+    FROM [dbo].[Message]
+    join [Conversation]
+    on [Conversation].[Id] = [Message].[Conversation_Id]
+    join [Profile]
+    on [Profile].[User_Id] = [Message].[User_Id]
+    join [User]
+    on [User].[Id] = [Message].[User_Id]
+    WHERE [Conversation].[Id] = ? ORDER BY [Message].[Message_Date] DESC", array($Conversation_Id), "rows");
         foreach ($rows as $row) {
-            if ($row['UID'] != $userId) {
-                
-            } else {
-                
-            }
+            echo '<div class="media msg">';
+            echo '<a class="pull-left" href="#">';
+            echo '<img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 32px; height: 32px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC">';
+            echo '</a>';
+            echo '<div class="media-body">';
+            echo '<small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>';
+            echo '<h5 class="media-heading">Naimish Sakhpara</h5>';
+            echo '<small class="col-lg-10">Arnab Goswami: "Some people close to Congress Party and close to the government had a #secret #meeting in a farmhouse in Maharashtra in which Anna Hazare send some representatives and they had a meeting in the discussed how to go about this all fast and how eventually this will end."</small>';
+            echo '</div>';
+            echo '</div>';
         }
-        //ON RETURN UPDATE -> SET DATE_MESSAGE_VIEW AND MESSAGE_VIEW
+//ON RETURN UPDATE -> SET DATE_MESSAGE_VIEW AND MESSAGE_VIEW
     } catch (Exception $exc) {
-        echo 'ERROR READING YOUR MESSAGES!';
+        echo "ERROR READING YOUR MESSAGES!";
     }
 }
 
@@ -1235,12 +1239,12 @@ function DB_sendMessage($pdo, $userId, $message, $Conversation_Id) {
     $d = getDateToDB();
     try {
         sql($pdo, "INSERT INTO [dbo].[Message]
-           ([User_Id]
-           ,[Message]
-           ,[Message_Date]
-           ,[Message_View]
-           ,[Date_Message_View]
-           ,[Conversation_Id]) VALUES(?,?,?,?,?,?)", array($userId, $message, $d, 0, NULL, $Conversation_Id));
+([User_Id]
+, [Message]
+, [Message_Date]
+, [Message_View]
+, [Date_Message_View]
+, [Conversation_Id]) VALUES(?, ?, ?, ?, ?, ?)", array($userId, $message, $d, 0, NULL, $Conversation_Id));
     } catch (Exception $exc) {
         echo 'ERROR SENDING YOUR MESSAGE!';
     }
@@ -1249,14 +1253,14 @@ function DB_sendMessage($pdo, $userId, $message, $Conversation_Id) {
 function DB_getMyWICPlanners($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT [WIC_Planner].Id AS WICID
-      ,[WIC_Planner].[Name] AS WICNAME
-      ,[City].[Name] AS WICCITY
-      ,[WIC_Planner].[Event_Date] AS WICDATE
-        FROM [dbo].[WIC_Planner]
-         join [City]
-        on [City].[Id] = [WIC_Planner].[City_Id]
-	  WHERE [WIC_Planner].[User_Id] = ?", array($userId), "rows");
-        echo "<table class='col-md-12 table-bordered table-striped table-condensed cf'>";
+, [WIC_Planner].[Name] AS WICNAME
+, [City].[Name] AS WICCITY
+, [WIC_Planner].[Event_Date] AS WICDATE
+FROM [dbo].[WIC_Planner]
+join [City]
+on [City].[Id] = [WIC_Planner].[City_Id]
+WHERE [WIC_Planner].[User_Id] = ?", array($userId), "rows");
+        echo "<table class = 'col-md-12 table-bordered table-striped table-condensed cf'>";
         echo '<thead class="cf">';
         echo '<tr>';
         #echo '<th>ID</th>';
