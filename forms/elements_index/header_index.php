@@ -20,11 +20,7 @@
 			<ul class="cd-top-nav">
 <!--				<li><a href="#0">Tour</a></li>
 -->				<li>
-                                    <!--<a href="view_WicPlanner.php"  alt="avatar" class="img-responsive"></a>-->
-                                    
-                                    <h3 src="../../assets/ico/wic planner button-01.png" class="img-responsive" alt="logo">panao</h3>
-                                    
-                                    <!--<img src="../../assets/ico/wic planner button-01.png" class="img-responsive" alt="logo">asd</a>-->
+                                    <a href="view_WicPlanner.php"> WicPlanner</a>
 
                                 </li>
 
