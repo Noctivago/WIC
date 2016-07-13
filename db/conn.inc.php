@@ -1184,15 +1184,18 @@ function DB_getMyConversations($pdo, $userId) {
     foreach ($rows as $row) {
         if ($row['UID'] != $userId) {
             echo '<div class="media conversation">';
+            echo '<div>';
             echo '<a class="pull-left" href="#">';
             #echo '<a class="pull-left">';
             echo '<img class="media-object" alt="64x64" style="width: 50px; height: 50px;" src="' . $row['PP'] . '">';
-            #echo '</a>';
+            echo '</div>';
+            echo '<div>';
             echo '<div class="media-body">';
             echo '<h5 class="media-heading">' . $row['UUN'] . '</h5>';
             #echo '<small>Hello</small>';
             echo '</div>';
             echo '</a>';
+            echo '</div>';
             echo '</div>';
         }
     }
@@ -1200,24 +1203,34 @@ function DB_getMyConversations($pdo, $userId) {
 
 function DB_getMyMessages($pdo, $Conversation_Id) {
     try {
-        $rows = sql($pdo, "SELECT [Id]
-      ,[User_Id]
-      ,[Message]
-      ,[Message_Date]
-      ,[Message_View]
-      ,[Date_Message_View]
-      ,[Conversation_Id]
-      FROM [dbo].[Message] WHERE [Conversation_Id] = ?", array($Conversation_Id), "rows");
-        echo "<table class='table table-striped'><tr><th>ID</th><th>USERID</th><th>MESSAGE</th><th>MESSAGE DATE</th></tr>";
+        $rows = sql($pdo, "SELECT
+	  [Conversation].[Id]
+	  ,[User].[Id] AS UID
+	  ,[User].[Username] UUN
+	  ,[Message].[Message] MMM
+	  ,[Profile].[Picture_Path] PP
+          ,[Conversation].[Organization_Service]
+        FROM [dbo].[Conversation]
+	join [User]
+	on [User].[Id] = [Conversation].[User_Id2]  
+	or [User].[Id] = [Conversation].[User_Id1]
+	join [Profile]
+	on [User].[Id] = [Profile].[User_Id]
+	join [Message]
+	on [Message].[Conversation_Id] = [Conversation].[Id]
+	WHERE [Conversation].[Id] = ? ORDER BY [Message].[Message_Date] DESC", array($Conversation_Id), "rows");
         foreach ($rows as $row) {
-            echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
-            echo "<td>" . $row['User_Id'] . "</td>";
-            echo "<td>" . $row['Message'] . "</td>";
-            echo "<td>" . $row['Message_Date'] . "</td>";
-            echo "<tr>";
+            if ($row['UID'] != $userId) {
+                echo "<tr>";
+                echo "<td>" . $row['Id'] . "</td>";
+                echo "<td>" . $row['User_Id'] . "</td>";
+                echo "<td>" . $row['Message'] . "</td>";
+                echo "<td>" . $row['Message_Date'] . "</td>";
+                echo "<tr>";
+            } else {
+                
+            }
         }
-        echo "</table>";
         //ON RETURN UPDATE -> SET DATE_MESSAGE_VIEW AND MESSAGE_VIEW
     } catch (Exception $exc) {
         echo 'ERROR READING YOUR MESSAGES!';
