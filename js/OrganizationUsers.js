@@ -23,6 +23,7 @@ function fill_Users_Sub_Category() {
 }
 
 function dataSelect(json,userSel){
+    var div = document.getElementById("title-1");
     var select = document.getElementById(userSel);
     select.disabled = false;
     var newSele = select;
@@ -32,7 +33,7 @@ function dataSelect(json,userSel){
          option.value = json[i].Id;
          newSele.appendChild(option);
     }
-    select.appendChild(newSele);
+    div.replaceChild(select, newSele);
 }
 
 
