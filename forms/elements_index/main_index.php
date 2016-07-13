@@ -32,7 +32,7 @@
 					
 					<ul>
                                                 <li><a href="prof_org.php">View</a></li>
-                                                <li><a href="add_org.php">Create</a></li>
+                                                <li><a href="CRUD_org.php">Create</a></li>
                                                 <li><a href="add_org.php">Create Service</a></li>
                                                 
 					</ul>
