@@ -20,9 +20,9 @@
 			<ul class="cd-top-nav">
 <!--				<li><a href="#0">Tour</a></li>
 -->				<li>
-                                <a href="view_WicPlanner.php" src="../../assets/ico/wic planner button-01.png" alt="avatar">
-<!--                                    <img src="../../assets/ico/wic planner button-01.png" alt="avatar">-->
-                                     WICPLanner</a>
+                                <a href="view_WicPlanner.php">
+                                    <img src="../../assets/ico/wic planner button-01.png" alt="avatar">
+                                     WICPlanner</a>
                                 </li>
 
 				<li class="has-children account">
