@@ -194,7 +194,7 @@ FROM [dbo].[User_In_Organization]
   on [User].[Id] = [User_In_Organization].[User_Id] 
   join [Profile]
   on [Profile].[User_Id] = [User].[Id]
-  where [Organization_Id]=? and [responded] = 0", array($idOrg), "rows");
+  where [Organization_Id] = ? and [Responded] = 0", array($idOrg), "rows");
         echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'Error';
