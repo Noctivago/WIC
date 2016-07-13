@@ -501,7 +501,8 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
             if (DB_checkIfUserExists($pdo, $email)) {
                 if (DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId2)) {
-                    echo 'User is already in organization!' . $userId2 ."  ".$idOrg;
+                    $mss = DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId);
+                    echo 'User is already in organization!' . $userId2 ."  ".$idOrg . "        ".$mss;
                     } else {
                     sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId2, 0, 0, 0));
                     echo 'Success';
