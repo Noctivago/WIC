@@ -972,7 +972,7 @@ function DB_getCommentsOfService($pdo, $orgServId) {
 //        }
         $str = $row['CDC'];
         $subStr = explode(" ", $str);
-        $h = explode(".", $subStr);
+        $h = explode(".", $subStr[1]);
         foreach ($rows as $row) {
             echo '<div class="media msg ">';
             #echo '<a class="pull-left" href="#">';
