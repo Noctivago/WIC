@@ -1,4 +1,5 @@
 function fill_Users_Category() {
+    var title = "title-1";
     var idOrg = document.getElementById("org1").value;
     var arg = 'viewAllUsersInOrganizationAsSelect';
     var userSel = 'userOrg1';
@@ -14,13 +15,23 @@ function fill_Users_Category() {
 
 
 function fill_Users_Sub_Category() {
-    alert(document.getElementById("org2").value);
-    alert(document.getElementById("Sub_Category").value);
+    var idOrg = document.getElementById("org2").value;
+    var title = "title-2";
+    var arg = 'viewAllUsersInOrganizationAsSelect';
+    var userSel = 'userOrg2';
+    $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
+        $("#body1").empty();
+        $("#" + userSel).empty();
+        var json_r = $.parseJSON(result);
+        dataSelect(json_r, userSel);
+        //dataSelect();
+        viewAllUsersInOrgOwners(idOrg);
+    });
 
 }
 
-function dataSelect(json, userSel) {
-    var div = document.getElementById("title-1");
+function dataSelect(json, userSel,title) {
+    var div = document.getElementById(title);
     var select = document.getElementById(userSel);
     select.disabled = false;
     var newSele = select;
