@@ -44,7 +44,8 @@ function dataSelect(json, userSel, title) {
     //select.appendChild(newSele);
     div.replaceChild(select, newSele);
 }
-function viewAllUsersInOrgO(idOrg) {
+function viewAllUsersInOrgO() {
+    var idOrg = document.getElementById('org2').value;
     var div_table = "title-2";
     var id_table = "table2";
     var tbody = "body2"
@@ -64,7 +65,8 @@ function viewAllUsersInOrgO(idOrg) {
 //    });
     return false;
 }
-function viewAllUsersInOrgOwners(idOrg) {
+function viewAllUsersInOrgOwners() {
+    var idOrg = document.getElementById('org1').value;
     var div_table1 = "title-1";
     var id_table1 = "table1";
     var tbody1 = "body1"
@@ -101,22 +103,25 @@ function change_tableData(json_r, div_table, id_table, tbody) {
         td.appendChild(document.createTextNode(json_r[i].Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        var dd = document.createElement('input');
-        dd.type = "hidden";
-        dd.id = "idUserOrg";
-        dd.value = json_r[i].Id;
-        tr.appendChild(dd);
-        var btn = document.createElement('input');
-        btn.type = 'button';
-        btn.className = 'btn';
-        btn.value = 'Remove';
-        //  btn.placeholder = 'Remove';
-        btn.id = 'idUserInOrg';
-        btn.addEventListener("click", removeUserInOrgOwner);
-        td.appendChild(btn);
-        tr.appendChild(td);
+        if (id_table === "table1") {
+            var dd = document.createElement('input');
+            dd.type = "hidden";
+            dd.id = "idUserOrg";
+            dd.value = json_r[i].Id;
+            tr.appendChild(dd);
+            var btn = document.createElement('input');
+            btn.type = 'button';
+            btn.className = 'btn';
+            btn.value = 'Remove';
+            //  btn.placeholder = 'Remove';
+            btn.id = 'idUserInOrg';
+            btn.addEventListener("click", viewAllUsersInOrgO);
+            td.appendChild(btn);
+            tr.appendChild(td);
+        } else {
+        
+        }
         boddy.appendChild(tr);
-
     }
     table.replaceChild(Tbody, boddy);
 }
@@ -199,9 +204,7 @@ function change_table_data(json_r, div_table, id_table, tbody) {
             td.appendChild(btn);
             tr.appendChild(td);
         } else {
-            //td.appendChild(document.createTextNode(json_r[i].Last_Name));
-            //tr.appendChild(td)
-
+        
         }
         boddy.appendChild(tr);
     }
