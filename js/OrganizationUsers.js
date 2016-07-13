@@ -60,7 +60,7 @@ function change_table_data(json_r,div_table,id_table,tbody){
         id.type = "hidden";
         id.id ="idUserOrg";
         id.value = json_r[i].Id;
-        tr.addEventListener(id);
+        tr.appendChild(id);
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Email));
         tr.appendChild(td)
