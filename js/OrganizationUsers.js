@@ -8,7 +8,6 @@ function fill_Users_Category() {
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
         dataSelect(json_r, userSel);
-        //dataSelect();
         viewAllUsersInOrgOwners(idOrg);
     });
 }
@@ -24,7 +23,6 @@ function fill_Users_Sub_Category() {
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
         dataSelect(json_r, userSel);
-        //dataSelect();
         viewAllUsersInOrgO(idOrg);
     });
 
@@ -37,7 +35,7 @@ function dataSelect(json, userSel,title) {
     var newSele = select;
     for (i = 0; i < json.length; i++) {
         var option = document.createElement('Option');
-        option.id = "";
+        option.id = "idUser";
         option.textContent = json[i].Name;
         option.value = json[i].Id;
         newSele.appendChild(option);
