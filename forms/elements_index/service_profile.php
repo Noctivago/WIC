@@ -5,7 +5,7 @@ $msg;
 ?>
 <main class = "cd-main-content">
     <div class = "content-wrapper" style = "padding-left: 0%">
-        
+
         <div class="top-content">
             <div class="col-lg-12">
                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Service Profile
@@ -77,11 +77,11 @@ $msg;
                                             <button onclick="addToWic(<?= $orgServId ?>)"class = "btn" name = "addToWICPlanner">Add to WIC Planner!</button>
                                         </div>
                                     </div>
-                                        <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
-                                        <div id ="showChat" style="display:none;">
-                                            <button onclick="hide('showChat');" class = "btn" name = "ChatHide">Maybe later!</button>
-                                            <button onclick="addToConversation(<?= $_SESSION['id'] ?>,<?= $orgServId ?>)" class = "btn" name = "addToConversation">Start it now!</button>
-                                        </div>
+                                    <button onclick="show('showChat');" class = "btn" name = "WICChat">Start dealing!</button>
+                                    <div id ="showChat" style="display:none;">
+                                        <button onclick="hide('showChat');" class = "btn" name = "ChatHide">Maybe later!</button>
+                                        <button onclick="addToConversation(<?= $_SESSION['id'] ?>,<?= $orgServId ?>)" class = "btn" name = "addToConversation">Start it now!</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -105,44 +105,44 @@ $msg;
                     <div class = "col-sm-5">
                         <!--<link rel = "stylesheet" href = "http://fontawesome.io/assets/font-awesome/css/font-awesome.css"> -->
                         <!--espaço comentários-->
+
+                        <!--                        descomentar!!!-->
+
+                        <!--                        <div class = "container">
+                                                    <div class = "row">
+                                                        <h3>Give your about this Service :D</h3>
+                                                    </div>
+                                                    <div class = "row">
+                                                        <div class = "col-md-6" style = "width: 100%">
+                                                            <div class = "form-bottom">
+                                                                <div class = "status-upload"> 
+                                                                <div class = "cd-label">
+                                                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                                                                        <div><h4> <?php echo $msg; ?></h4>
+                                                                            <textarea id="userComment" name ="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
+                                                                        </div>
+                                                                        <button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
+                                                                        <button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
+                                                                    </form>
+                                                                </div> Status Upload class="btn btn-success "
+                                                                </div><!-- Widget Area 
+                                                            </div>
                         
-<!--                        descomentar!!!-->
+                                                        </div>
+                                                    </div>
+                                                    /espaço comentários
+                        
+                                                    espaço comentários anteriores
+                        
+                                                    <div class="container">
+                        <?= DB_getCommentsOfService($pdo, $orgServId) ?>
+                        
+                                                    </div> /container 
+                                                    /espaço comentarios anteriores
+                        
+                                                </div>-->
 
-<!--                        <div class = "container">
-                            <div class = "row">
-                                <h3>Give your about this Service :D</h3>
-                            </div>
-                            <div class = "row">
-                                <div class = "col-md-6" style = "width: 100%">
-                                    <div class = "form-bottom">
-                                        <div class = "status-upload"> 
-                                        <div class = "cd-label">
-                                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-                                                <div><h4> <?php echo $msg; ?></h4>
-                                                    <textarea id="userComment" name ="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
-                                                </div>
-                                                <button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
-                                                <button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
-                                            </form>
-                                        </div> Status Upload class="btn btn-success "
-                                        </div><!-- Widget Area 
-                                    </div>
-
-                                </div>
-                            </div>
-                            /espaço comentários
-
-                            espaço comentários anteriores
-
-                            <div class="container">
-                                <?= DB_getCommentsOfService($pdo, $orgServId) ?>
-
-                            </div> /container 
-                            /espaço comentarios anteriores
-
-                        </div>-->
-
-<!--                        descomentar!!!-->
+                        <!--                        descomentar!!!-->
 
 
                         <!--                        <div class="col-sm-1 middle-border"></div>-->
@@ -150,8 +150,8 @@ $msg;
                         
                                             <div class="col-sm-5">-->
 
-<!--Caixa de escrever mensagens-->
-                           <div class = "form-box">
+                        <!--Caixa de escrever mensagens-->
+                        <div class = "form-box">
                             <div class = "form-top">
                                 <div class = "form-top-left">
                                     <h3 style="color: darkgray">Reviews:</h3>
@@ -161,77 +161,77 @@ $msg;
                                 </div>
                                 <!--<div class = "form-top-right">
                                 <i class = "fa fa-key"></i> -->
-                                
-                                <!--<input style = "color: black;" class = "form-username form-control" type = "file"> -->
+
+<!--<input style = "color: black;" class = "form-username form-control" type = "file"> -->
                                 <!--<h6 style = "color:black">Upload a different photo...</h6> width: 370px;
                                 align:center-left;
                                 text-left center-block well well-sm-->
-                                        <div class="send-wrap ">
+                                <div class="send-wrap ">
 
-                                            <textarea class="form-control send-message" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
+                                    <textarea class="form-control send-message" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
 
 
-            </div>
-            <div class="btn-panel">
-                <a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>
-                <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
-            </div>
+                                </div>
+                                <div class="btn-panel">
+                                    <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
+                                    <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
+                                </div>
 
                             </div>
 
-                               
 
 
-                               <!--<div class="message-wrap col-lg-8" style=" border-style: solid; border-color: darkgray;">-->
-            <div class="msg-wrap" style="overflow: auto; height: 450px; width:  ">
-<!--height: 600px; width: 450px;-->
 
-            <?= DB_getCommentsOfService($pdo, $orgServId) ?>
+                            <!--<div class="message-wrap col-lg-8" style=" border-style: solid; border-color: darkgray;">-->
+                            <div class="msg-wrap" style="overflow: auto; height: 450px; width:  ">
+                                <!--height: 600px; width: 450px;-->
 
-
-               
-<!--                <div class="alert alert-info msg-date">
-                    <strong>Today</strong>
-                </div>-->
-                
-
-            </div>
-                               
-                               
-<!--botoes escrever e enviar-->
-<!--            <div class="send-wrap ">
-
-                <textarea class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>
+                                <?= DB_getCommentsOfService($pdo, $orgServId) ?>
 
 
-            </div>
-            <div class="btn-panel">
-                <a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>
-                <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
-            </div>-->
 
-<!--botoes escrever e enviar-->
-
-        <!--</div>-->
-                           </div>
+                                <!--                <div class="alert alert-info msg-date">
+                                                    <strong>Today</strong>
+                                                </div>-->
 
 
-<!--Caixa de escrever mensagens-->
-                        
+                            </div>
+
+
+                            <!--botoes escrever e enviar-->
+                            <!--            <div class="send-wrap ">
+                            
+                                            <textarea class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>
+                            
+                            
+                                        </div>
+                                        <div class="btn-panel">
+                                            <a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>
+                                            <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
+                                        </div>-->
+
+                            <!--botoes escrever e enviar-->
+
+                            <!--</div>-->
+                        </div>
+
+
+                        <!--Caixa de escrever mensagens-->
+
 
 
 
                     </div>
-                    
-
-</div>
 
 
                 </div>
-                <!--        </div>-->
+
 
             </div>
+            <!--        </div>-->
+
         </div>
+    </div>
 </main>
 <!--<script src="../../assets/assests_sidebar/js/js_main/bootstrap.min_main.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/js/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
