@@ -1165,31 +1165,35 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
 
 function DB_getMyConversations($pdo, $userId) {
     $rows = sql($pdo, "SELECT
-	[User].[Username] 
-	,[Profile].[Picture_Path]
-	,[Conversation].[Id]
-        ,[Conversation].[User_Id1]
-        ,[Conversation].[User_Id2]
-        ,[Conversation].[Organization_Service]
-        FROM [dbo].[Conversation]
+	  [Conversation].[Id]
+	  ,[User].[Id] AS UID
+	  ,[User].[Username] UUN
+	  ,[Profile].[Picture_Path]
+	  ,[Conversation].[Id]
+      ,[Conversation].[User_Id1]
+      ,[Conversation].[User_Id2]
+      ,[Conversation].[Organization_Service]
+    FROM [dbo].[Conversation]
 	join [User]
 	on [User].[Id] = [Conversation].[User_Id2]
 	or [User].[Id] = [Conversation].[User_Id1]
 	join [Profile]
-	on [User].[Id] = [Profile].[User_Id] WHERE [User_Id1] = ? OR [User_Id2] = ?", array($userId, $userId), "rows");
+	on [User].[Id] = [Profile].[User_Id]
+	WHERE [Conversation].[User_Id1] = ? OR [Conversation].[User_Id2] = ? ", array($userId, $userId), "rows");
 
     foreach ($rows as $row) {
-        echo '<div class="media conversation">';
-        echo '<a class="pull-left" href="#">';
-        echo '<img class="media-object" alt="64x64" style="width: 50px; height: 50px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC">';
-        #echo '<div class="media-body">';
-        echo '<div>';
-        echo '<h5 class="media-heading">Naimish Sakhpara</h5>';
-        echo '<small>Hello</small>';
-        echo '</div>';
-        echo '</a>';
-
-        echo '</div>';
+        if ($row['UID'] != $userId) {
+            echo '<div class="media conversation">';
+            echo '<a class="pull-left" href="#">';
+            echo '<img class="media-object" alt="64x64" style="width: 50px; height: 50px;" src="' . $row['PP'] . '">';
+            #echo '<div class="media-body">';
+            echo '<div>';
+            echo '<h5 class="media-heading">' . $row['UUN'] . '</h5>';
+            echo '<small>Hello</small>';
+            echo '</div>';
+            echo '</a>';
+            echo '</div>';
+        }
     }
 }
 
