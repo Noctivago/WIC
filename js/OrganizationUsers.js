@@ -33,7 +33,7 @@ function viewAllUsersInOrganization() {
         console.log(json_r);
     });
     
-    $.post("../../orgsubmit.php",{arg: arg2,id:org},function(result){
+    $.post("../../orgsubmit.php",{arg: arg2, id:org},function(result){
        $("#body2").empty();
        var json_r2 = $.parseJSON(result);
         change_table_data(json_r2,div_table2,id_table2,tbody2);
@@ -62,11 +62,6 @@ function change_table_data(json_r,div_table,id_table,tbody){
     var boddy = Tbody;
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
-        var id = document.createElement('input');
-        id.type = "hidden";
-        id.id ="idUserOrg";
-        id.value = json_r[i].Id;
-        tr.appendChild(id);
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Email));
         tr.appendChild(td)
@@ -75,6 +70,12 @@ function change_table_data(json_r,div_table,id_table,tbody){
         tr.appendChild(td)
         var td = document.createElement('TD')
         if(id_table==="table1"){
+        var id = document.createElement('input');
+        id.type = "hidden";
+        id.id ="idUserOrg";
+        id.value = json_r[i].Id;
+        tr.appendChild(id);
+        
             var btn = document.createElement('input');
             btn.type = 'button';
             btn.className = 'btn';
