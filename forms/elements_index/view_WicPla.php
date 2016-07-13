@@ -119,8 +119,8 @@
 
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> My WicPlanner
+                                <div class="col-lg-12">
+                                    <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> My WicPlanner's
                  </h1>
 
                                 </div>
