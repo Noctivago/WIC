@@ -58,11 +58,12 @@ function removeUserInOrganization(id) {
 }
 function viewAllUsersInOrgOwners(idOrg) {
     alert(idOrg);
+    var idO = 11;
     var div_table1 = "title-1";
     var id_table1 = "table1";
     var tbody1 = "body1"
     var arg = 'viewAllUsersInOrgOwners';
-    $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
+    $.post("../../orgsubmit.php", {arg: arg, id: idO}, function (result) {
         $("#body1").empty();
         var json_r = $.parseJSON(result);
         alert(json_r);
