@@ -73,12 +73,11 @@ function change_table_data2(json_r, div_table, id_table, tbody) {
         tr.appendChild(td)
         var td = document.createElement('TD')
         if (id_table === "table1") {
-            var id = document.createElement('input');
-            id.type = "hidden";
-            id.id = "IdOwner";
-            id.value = json_r[i].Id;
-            tr.appendChild(id);
-
+            var oo = document.createElement('input');
+            oo.type = "hidden";
+            oo.id = "IdOwner";
+            oo.value = json_r[i].Id;
+            tr.appendChild(oo);
             var btn = document.createElement('input');
             btn.type = 'button';
             btn.className = 'btn';
