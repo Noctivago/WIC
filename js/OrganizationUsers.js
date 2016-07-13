@@ -65,10 +65,10 @@ function viewAllUsersInOrgOwners(idOrg) {
     var arg = 'viewAllUsersInOrgOwners';
     $.post("../../orgsubmit.php", {arg: arg, id: idO}, function (result) {
         $("#body1").empty();
-        var json_r = $.parseJSON(result);
-        alert(json_r);
-        change_table_data2(json_r, div_table1, id_table1, tbody1);
-        console.log(json_r);
+        var json = $.parseJSON(result);
+        alert(json);
+        change_table_data2(json, div_table1, id_table1, tbody1);
+        console.log(json);
     });
 
 //    $.post("../../orgsubmit.php", {arg: arg2, id: org}, function (result) {
