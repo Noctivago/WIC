@@ -1184,7 +1184,7 @@ function DB_getMyConversations($pdo, $userId) {
     foreach ($rows as $row) {
         if ($row['UID'] != $userId) {
             echo '<div class="media conversation">';
-            echo '<a class="" href="#">';
+            #echo '<a class="pull-left" href="#">';
             echo '<div>';
             #echo '<a class="pull-left">';
             echo '<img class="media-object" alt="64x64" style="width: 50px; height: 50px;" src="' . $row['PP'] . '">';
@@ -1194,7 +1194,7 @@ function DB_getMyConversations($pdo, $userId) {
             echo '<h5 class="media-heading">' . ' > ' . $row['UUN'] . '</h5>';
             #echo '<small>Hello</small>';
             echo '</div>';
-            echo '</a>';
+            #echo '</a>';
             echo '</div>';
         }
     }
