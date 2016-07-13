@@ -967,9 +967,9 @@ function DB_getCommentsOfService($pdo, $orgServId) {
         on [User].[Id] = [Comment].[User_Id]
 	join [Profile]
 	on [Profile].[User_Id] = [User].[Id]  WHERE [Comment].[Organization_Service_Id] = ? ORDER BY [Comment].[Date_Created] DESC", array($orgServId), "rows");
-        if (DB_checkIfServiceCommentsExits($pdo, $orgServId)) {
-            
-        }
+//        if (DB_checkIfServiceCommentsExits($pdo, $orgServId)) {
+//            
+//        }
         $str = $row['CDC'];
         $subStr = explode(" ", $str);
         $h = explode(".", $subStr);
