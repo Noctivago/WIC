@@ -103,24 +103,20 @@ function change_tableData(json_r, div_table, id_table, tbody) {
         td.appendChild(document.createTextNode(json_r[i].Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        if (id_table === "table1") {
-            var dd = document.createElement('input');
-            dd.type = "hidden";
-            dd.id = "idUserOrg";
-            dd.value = json_r[i].Id;
-            tr.appendChild(dd);
-            var btn = document.createElement('input');
-            btn.type = 'button';
-            btn.className = 'btn';
-            btn.value = 'Remove';
-            //  btn.placeholder = 'Remove';
-            btn.id = 'idUserInOrg';
-            btn.addEventListener("click", viewAllUsersInOrgO);
-            td.appendChild(btn);
-            tr.appendChild(td);
-        } else {
-        
-        }
+        var dd = document.createElement('input');
+        dd.type = "hidden";
+        dd.id = "idUserOrg";
+        dd.value = json_r[i].Id;
+        tr.appendChild(dd);
+        var btn = document.createElement('input');
+        btn.type = 'button';
+        btn.className = 'btn';
+        btn.value = 'Remove';
+        //  btn.placeholder = 'Remove';
+        btn.id = 'idUserInOrg';
+        btn.addEventListener("click", viewAllUsersInOrgO);
+        td.appendChild(btn);
+        tr.appendChild(td);
         boddy.appendChild(tr);
     }
     table.replaceChild(Tbody, boddy);
@@ -204,7 +200,7 @@ function change_table_data(json_r, div_table, id_table, tbody) {
             td.appendChild(btn);
             tr.appendChild(td);
         } else {
-        
+
         }
         boddy.appendChild(tr);
     }
