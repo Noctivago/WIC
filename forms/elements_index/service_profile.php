@@ -145,11 +145,7 @@ $msg;
 
 <!--Caixa de escrever mensagens-->
 
-<div class="row" style="
-    margin-top: 0px;
-    width: 800px;
-    height: 68px;
-">
+
         <div class="col-lg-3">
             <div class="btn-panel btn-panel-conversation">
                 <a href="" class="btn  col-lg-6 send-message-btn " role="button"><i class="fa fa-search"></i> Search</a>
@@ -163,7 +159,7 @@ $msg;
                 <!--<a href="" class="btn  col-lg-3  send-message-btn pull-right" role="button"><i class="fa fa-gears"></i> Settings</a>-->
             </div>
         </div>
-    </div>
+
 
         <div class="message-wrap col-lg-8">
             <div class="msg-wrap">
