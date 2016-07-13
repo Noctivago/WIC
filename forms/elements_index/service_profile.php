@@ -2,8 +2,8 @@
 //FAZER GET DO ID DO SERVICE
 $orgServId = 2;
 $msg='';
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
 ?>
 <main class = "cd-main-content">
     <div class = "content-wrapper" style = "padding-left: 0%">
@@ -162,7 +162,7 @@ ini_set("display_errors", 1);
                                         <div><h4> <?php echo $msg; ?></h4>
                                             <textarea class="form-control send-message" id= "userComment" name ="userComment" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
                                         </div>
-                                        <button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
+                                        <!--<button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>-->
                                         <button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
                                     </form>
                                 </div>
