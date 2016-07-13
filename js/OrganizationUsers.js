@@ -54,11 +54,7 @@ function viewAllUsersInOrganization2(idOrg) {
     var div_table1 = "title-1";
     var id_table1 = "table1";
     var tbody1 = "body1"
-//    var div_table2 = "title-2";
-//    var id_table2 = "table2";
-//    var tbody2 = "body2"
     var arg = 'viewAllUsersInOrganization';
-//    var arg2 = 'viewAllInviteWaitingForResponse';
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body1").empty();
         var json_r = $.parseJSON(result);
