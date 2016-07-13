@@ -1168,7 +1168,7 @@ function DB_getMyConversations($pdo, $userId) {
 	  [Conversation].[Id]
 	  ,[User].[Id] AS UID
 	  ,[User].[Username] UUN
-	  ,[Profile].[Picture_Path]
+	  ,[Profile].[Picture_Path] AS PP
 	  ,[Conversation].[Id]
       ,[Conversation].[User_Id1]
       ,[Conversation].[User_Id2]
