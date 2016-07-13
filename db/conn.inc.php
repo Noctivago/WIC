@@ -1232,7 +1232,7 @@ function DB_getMyWICPlanners($pdo, $userId) {
         echo "<table class='col-md-12 table-bordered table-striped table-condensed cf'>";
         echo '<thead class="cf">';
         echo '<tr>';
-        echo '<th>ID</th>';
+        #echo '<th>ID</th>';
         echo '<th>NAME</th>';
         echo '<th>CITY</th>';
         echo '<th>EVENT DATE</th>';
@@ -1243,7 +1243,7 @@ function DB_getMyWICPlanners($pdo, $userId) {
             $str = $row['WICDATE'];
             $subStr = explode(" ", $str);
             echo '<tr>';
-            echo '<td data-title = "WICID">' . $row['WICID'] . '</td>';
+            #echo '<td data-title = "WICID">' . $row['WICID'] . '</td>';
             echo '<td data-title = "WICNAME">' . $row['WICNAME'] . '</td>';
             echo '<td data-title = "WICCITY">' . $row['WICCITY'] . '</td>';
             echo '<td data-title = "WICEVENTDATE">' . $subStr[0] . '</td>';
