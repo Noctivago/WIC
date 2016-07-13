@@ -45,7 +45,7 @@ function viewAllUsersInOrganization() {
 function removeUserInOrganization(){
     var id = document.getElementById("idUserOrg").value;
     alert(id);
-    var arg = 'removeremoveUserInOrganization';
+    var arg = 'removeUserInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: id}, function (result) {
         alert(result);
         viewAllUsersInOrganization();
