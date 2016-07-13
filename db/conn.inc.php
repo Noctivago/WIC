@@ -955,7 +955,7 @@ function DB_addCommentOnService($pdo, $userId, $comment, $orgServId, $d) {
 
 function DB_checkIfServiceExitsOnWIC($pdo, $wicPlannerId, $orgServId) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[Event_Service] WHERE [Organization_Service_Id] = ? AND [WIC_Planner_Id] = ?", array($wicPlannerId, $orgServId), "count");
+        $count = sql($pdo, "SELECT * FROM [dbo].[Event_Service] WHERE [Organization_Service_Id] = ? AND [WIC_Planner_Id] = ?", array($orgServId, $wicPlannerId), "count");
         if ($count < 0) {
             return true;
         } else {
