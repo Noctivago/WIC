@@ -495,11 +495,13 @@ function DB_CheckOrganizationInvitationAndMoveToInvites($pdo, $email) {
 
 function DB_addUserInOrganization($pdo, $email, $idOrg) {
     try {
+
+//get id do user pelo email
+        $userId = DB_checkUserByEmail($pdo, $email);
+
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
             if (DB_checkIfUserExists($pdo, $email)) {
                 if (!DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId)) {
-//get id do user pelo email
-                    $userId = DB_checkUserByEmail($pdo, $email);
 //insere user na organizacao com enabled 0 e user validation 0
                     sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId, 0, 0, 0));
                     echo 'Success';
