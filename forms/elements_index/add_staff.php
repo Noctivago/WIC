@@ -33,7 +33,7 @@ ini_set("display_errors", 1);
                             <div class="form-bottom">
                                 <?php
                                 $userId = $_SESSION['id'];
-                                if ((isset($_POST['invite']) && isset($_POST['form-email'])) && !empty($_POST['OrgId'])) {
+                                if ((isset($_POST['invite']) && isset($_POST['form-email'])) && !empty($_POST['org'])) {
                                     $msg = '';
                                     try {
                                         $email = (filter_var($_POST['form-email'], FILTER_SANITIZE_STRING));
