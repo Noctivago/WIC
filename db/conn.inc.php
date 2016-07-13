@@ -564,10 +564,11 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
         echo 'ERROR READING ORGANIZATION TABLE';
     }
 }
-function DB_readUsersInOrganizationAsSelect($pdo,$idOg){
+function DB_readUsersInOrganizationAsSelect($pdo){
    try {
         $id = 0;
-        $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_Id] = ? and [Enabled] = 1", array($idOg), "rows");
+        $idorg = 23;
+        $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_Id] = ? and [Enabled] = 1", array($idorg), "rows");
         foreach ($rows as $row) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
