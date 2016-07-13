@@ -78,17 +78,17 @@
                                 <h4 align="center"> Sub Category owners</h4>
                                 <form role="form" action="" method="post" class="login-form">
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="org" onchange="">
+                                        <select class="form-username form-control" name="org" id="org" >
                                             <?php DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="category" onchange="">
+                                        <select class="form-username form-control" name="org" id="category" >
                                             <?php DB_readCategoryAsSelect($pdo) ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="user" onchange="">
+                                        <select class="form-username form-control" name="org" id="user">
                                             <?php DB_readUsersInOrganizationAsSelect($pdo) ?>
                                         </select>
                                     </div>
