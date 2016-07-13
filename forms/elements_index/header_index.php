@@ -21,7 +21,7 @@
 <!--				<li><a href="#0">Tour</a></li>
 -->				
 <li>
-                                    <a href="view_WicPlanner.php"> WicPlanner</a>
+                                    <a href="view_WicPlanner.php"> Wicer</a>
 
                                 </li>
 
