@@ -87,13 +87,13 @@ $msg = '';
 
                     <script>
                         function show(toBlock) {
-                        setDisplay(toBlock, 'block');
+                            setDisplay(toBlock, 'block');
                         }
                         function hide(toNone) {
-                        setDisplay(toNone, 'none');
+                            setDisplay(toNone, 'none');
                         }
                         function setDisplay(target, str) {
-                        document.getElementById(target).style.display = str;
+                            document.getElementById(target).style.display = str;
                         }
                     </script>
 
@@ -163,7 +163,6 @@ $msg = '';
                                             <textarea class="form-control send-message" id= "userComment" name ="userComment" style="max-width: auto;" rows="3" placeholder="Write a reply..."></textarea>
                                         </div>
                                         <button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
-                                        <!--<button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>-->
                                     </form>
                                 </div>
                                 <div class="btn-panel">
