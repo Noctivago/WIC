@@ -91,24 +91,28 @@ function change_tableData(json_r, div_table, id_table, tbody) {
         td.appendChild(document.createTextNode(json_r[i].Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        var dd = document.createElement('input');
-        dd.type = "hidden";
-        dd.id = "idUserOrg";
-        dd.value = json_r[i].Id;
-        tr.appendChild(dd);
         var btn = document.createElement('input');
         if (id_table === 'table1') {
+            var dd = document.createElement('input');
+            dd.type = "hidden";
+            dd.id = "idUserOrg";
+            dd.value = json_r[i].Id;
+            tr.appendChild(dd);
             btn.type = 'button';
             btn.className = 'btn';
-            btn.value = 'Remove';
-            //  btn.placeholder = 'Remove';
             btn.id = 'idCatOwner';
+            btn.value = json_r[i].Id;
             btn.addEventListener("click", removeCategoryOwner);
         } else {
+            var dd = document.createElement('input');
+            dd.type = "hidden";
+            dd.id = "idUserOrg";
+            dd.value = json_r[i].Id;
+            tr.appendChild(dd);
+
             btn.type = 'button';
             btn.className = 'btn';
-            btn.value = 'Remove';
-            //  btn.placeholder = 'Remove';
+            btn.value = json_r[i].Id;
             btn.id = 'idSubOwner';
             btn.addEventListener("click", removeSubCategoryOwner);
         }
