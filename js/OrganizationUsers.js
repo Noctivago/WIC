@@ -8,7 +8,7 @@ function fill_Users_Category() {
         var json_r = $.parseJSON(result);
         dataSelect(json_r,userSel);
         //dataSelect();
-        viewAllUsersInOrganization(idOrg);
+        viewAllUsersInOrganization2(idOrg);
         console.log(json_r);
     });
 }
@@ -50,7 +50,7 @@ function removeUserInOrganization(id) {
     viewAllUsersInOrganization();
     return false;
 }
-function viewAllUsersInOrganization(idOrg) {
+function viewAllUsersInOrganization2(idOrg) {
     var div_table1 = "title-1";
     var id_table1 = "table1";
     var tbody1 = "body1"
