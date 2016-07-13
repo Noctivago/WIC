@@ -126,7 +126,7 @@
                                 </div>-->
                         <div class="form-box">
                             
-                           <div class="form-top">
+                           <div class="form-top" style="padding-bottom: 10px;">
                                 <div class="form-top-left">
                                     <h3 style="color: darkgray"> My Wic Planner's</h3>
 
