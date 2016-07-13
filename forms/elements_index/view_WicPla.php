@@ -28,60 +28,58 @@
                         <div class="form-box">
                             <div class="form-top">
                                 <div class="form-top-left">
+                                    <h3 style="color: darkgray"> New Wic Planner</h3>
 
                                 </div>
                                 <div class="form-top-right">
+                                    <i class="fa fa-calendar"></i>
                                 </div>
                                 <!--                            <div class="form-top-right">
                                                                 <i class="fa fa-key"></i>-->
-                                <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                <input style="color: black;" class="form-username form-control" type="file">
+    <!--                            <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                    <input style="color: black;" class="form-username form-control" type="file">-->
                                 <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
 
                             </div>
 
 
                             <div class="form-bottom">
-                                <form role="form" action="" method="post" class="login-form">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-username">Company Name:</label>
-                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    <?php
+                                    if (isset($_POST['addWic']) && !empty($_POST['name']) && !empty($_POST['city'])) {
+                                        $msg = '';
+                                        try {
+                                            #$d = getDateToDB();
+                                            $name = (filter_var($_POST ['name'], FILTER_SANITIZE_EMAIL));
+                                            $city = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
+                                            $userId = $_SESSION['id'];
+                                            $eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
+                                            $DB_Date = getDateToDBStringToDate($eventDate);
+                                            $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $DB_Date, $eventDate);
+                                            #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
+                                        } catch (Exception $ex) {
+                                            echo "ERROR!";
+                                        }
+                                    }
+                                    ?>	
+
+                                <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
+                                    <div class="form-group"><h4 style="color: darkgray"><?php echo $msg; ?></h4>
+
+                                        <!--<label class="sr-only" for="form-username">Company Name:</label>-->
+                                        <input type="text" name="name" placeholder="WIC Planner Name" class="form-username form-control" id="name" required autofocus>
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-password">Adress:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                        <!--<label class="sr-only" for="form-password">Telephone:</label>-->
+                                        <select type="text" name="city" placeholder="Chose a City" class="form-password form-control" id="city" required>
+                                            <?= DB_getCityAsSelect($pdo) ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-password">Web Site:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Facebook:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Twitter:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Linkedin:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-username">Email</label>
-                                        <input type="text" style="height: 40px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Country:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
+                                        <!--<label class="sr-only" for="form-password">Mobile Number:</label>-->
+                                        <input type="date" name="eventDate" placeholder="Event Date" class="form-username form-control" id="eventDate" required>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">City:</label>
-                                        <input type="password" style="height: 40px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
-                                    </div>
-                                    <button type="submit" class="btn" name="login">Save Changes!</button>
-
+                                    <button type="submit"  class="btn" name="addWic" visible="true">NEW Wic Planner!</button>
                                 </form>
                             </div>
                         </div>
