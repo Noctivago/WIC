@@ -9,7 +9,7 @@
             <!--    <div class="inner-bg" style="padding-top: 0px">-->
             <div class="container">
 
-                 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+                 <link href="../../assets/assests_sidebar/css/chat.css" rel="stylesheet">
 
 <div class="container">
     <div class="row">
