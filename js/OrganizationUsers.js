@@ -43,7 +43,7 @@ function viewAllUsersInOrgOwners(idOrg) {
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body1").empty();
         var json = $.parseJSON(result);
-        change_table_data2(json, div_table1, id_table1, tbody1);
+        change_tableData(json, div_table1, id_table1, tbody1);
         console.log(json);
     });
 
@@ -56,7 +56,7 @@ function viewAllUsersInOrgOwners(idOrg) {
     return false;
 }
 
-function change_table_data2(json_r, div_table, id_table, tbody) {
+function change_tableData(json_r, div_table, id_table, tbody) {
     var div = document.getElementById(div_table);
     var table = document.getElementById(id_table);
     document.getElementById(div_table).style = "Display: true";
