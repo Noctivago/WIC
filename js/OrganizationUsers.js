@@ -42,7 +42,7 @@ function viewAllUsersInOrganization() {
     return false;
 }
 
-function removeUserInOrganization(id){
+function removeUserInOrganization(){
     alert(id);
 }
 
