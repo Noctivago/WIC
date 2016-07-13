@@ -23,9 +23,10 @@
 					
 					<ul>
                                             <li><a href="view_WicPlanner.php">View</a></li>
-                                            <li><a href="add_wicplanner.php">Create</a></li>
+                                            <li><a src="../../assets/ico/wic planner button-01.png" href="add_wicplanner.php">Create</a></li>
 						
 					</ul>
+        
 				</li>
                                 <li class="has-children comments">
 					<a href="#0">Organization</a>
