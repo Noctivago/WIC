@@ -4,7 +4,6 @@ function fill_Users_Category(){
     var arg = 'viewAllUsersInOrganizationAsSelect';
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body1").empty();
-        
         var json_r = $.parseJSON(result);
         alert(json_r);
         //dataSelect();
