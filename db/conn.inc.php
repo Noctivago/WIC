@@ -1187,7 +1187,7 @@ function DB_getMyConversations($pdo, $userId) {
             #echo '<a class="pull-left">';
             echo '<img class="media-object" alt="64x64" style="width: 50px; height: 50px;" src="' . $row['PP'] . '">';
             echo '<div class="media-body">';
-            echo '<h5 class="media-heading">' . $row['UUN'] . '</h5>';
+            echo '<h5 class="media-heading">' . ' >' . $row['UUN'] . '</h5>';
             #echo '<small>Hello</small>';
             echo '</div>';
             echo '</a>';
