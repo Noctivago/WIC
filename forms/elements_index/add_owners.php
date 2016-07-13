@@ -26,7 +26,7 @@
                                                        </div>
                         
                             <div class="form-bottom">
-                                <h4> Category owners</h4>
+                                <h4 align="center"> Category owners</h4>
                                 <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                     <div class="form-group">
                                         <label class="sr-only" for="form-username">Company Name:</label>
@@ -73,7 +73,7 @@
                         </div>
 
                             <div class="form-bottom">
-                                <h4> Sub Category owners</h4>
+                                <h4 align="center"> Sub Category owners</h4>
                                 <form role="form" action="" method="post" class="login-form">
                                     <div class="form-group">
                                         <label class="sr-only" for="form-username">Company Name:</label>
