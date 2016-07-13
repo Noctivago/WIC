@@ -24,7 +24,6 @@ function viewAllUsersInOrganization() {
     var div_table2 ="title-2";
     var id_table2 = "table2";
     var tbody2 = "body2"
-    alert(org);
     var arg = 'viewAllUsersInOrganization';
     var arg2 = 'viewAllInviteWaitingForResponse';
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
