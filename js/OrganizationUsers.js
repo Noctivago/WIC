@@ -34,7 +34,7 @@ function viewAllUsersInOrganization() {
         console.log(json_r);
     });
     
-    $.post("../../orgsubmit.php",{arg: arg1,id:org},function(result){
+    $.post("../../orgsubmit.php",{arg: arg2,id:org},function(result){
        $("#body2").empty();
        var json_r2 = $.parseJSON(result);
         change_table_data(json_r2,div_table2,id_table2,tbody2);
