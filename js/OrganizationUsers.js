@@ -60,7 +60,6 @@ function change_table_data(json_r,div_table,id_table,tbody){
         var td = document.createElement('TD')
         if(id_table==="table1"){
         td.appendChild(document.createTextNode("Delete"));
-        td.setAttribute('Button');
         tr.appendChild(td)
         }else{
         td.appendChild(document.createTextNode(json_r[i].Last_Name));
