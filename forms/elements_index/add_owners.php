@@ -48,8 +48,8 @@
                             </div>
                         </div>
                     
-                     <div id="no-more-tables" >
-                                <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1" style = "Display: true">
+                     <div id="no-more-tables" style = "Display: none">
+                                <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1" style = "Display: none">
                                     <thead class="cf">
                                         <tr>
                                             <th>Email</th>
@@ -101,8 +101,8 @@
                                 </form>
                             </div>
                         </div>
-                                <div id="no-more-tables" >
-                            <table class="col-md-12 table-bordered table-striped table-condensed cf " style = "Display: true" id="table2">
+                                <div id="no-more-tables" style = "Display: none">
+                            <table class="col-md-12 table-bordered table-striped table-condensed cf " style = "Display: none" id="table2">
                                 <thead class="cf">
                                     <tr>
                                         <th>Email</th>
