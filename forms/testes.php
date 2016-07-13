@@ -50,6 +50,9 @@ include_once ('../db/functions.php');
         #echo 'CLIENT > ' . $userClient . ' USER ORG > ' . $userOrg . ' DATE > ' . $d .'<br>';
         #echo DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         echo DB_getMyConversations($pdo, $userId);
+        echo '<br>';
+        $Conversation_Id = 82;
+        echo DB_getMyMessages($pdo, $Conversation_Id);
         ?>
 
     </body>
