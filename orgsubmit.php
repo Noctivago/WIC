@@ -199,8 +199,8 @@ FROM [dbo].[User_In_Organization]
 } else if ($arg === 'viewAllUsersInOrganizationAsSelect') {
     try {
         $idOrg = $_POST['id'];
-        $msg = $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_Id] = ? and [Enabled] = 1", array($idOrg), "rows");
-        echo json_encode($msg);
+        $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_Id] = ? and [Enabled] = 1", array($idOrg), "rows");
+        echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'error';
     }
