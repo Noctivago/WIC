@@ -36,7 +36,7 @@ function dataSelect(json,userSel){
 
 //remover utilizador da organização
 function removeUserInOrganization(id) {
-    var idOwner = document.getElementById('idUserInOrg').value;
+    var idOwner = document.getElementById('userOrg1').value;
     alert(idOwner);
     var arg = 'removeUserInOrganization';
     var dataString = 'arg=' + arg + '&Id=' + id;
