@@ -58,7 +58,7 @@ function change_table_data(json_r,div_table,id_table,tbody){
         tr.appendChild(td)
         var td = document.createElement('TD')
         if(id_table==="table1"){
-        td.appendChild(document.createTextNode("Delete"));
+        td.appendChild(document.createTextNode("<input type='button' onclick = '"+remove(json_r[i].Id)+"'"));
         tr.appendChild(td)
         }else{
         td.appendChild(document.createTextNode(json_r[i].Last_Name));
