@@ -39,7 +39,7 @@ function removeUserInOrganization() {
     var idOwner = document.getElementById('IdOwner').value;
     alert(idOwner);
     var arg = 'removeUserInOrganization';
-    var dataString = 'arg=' + arg + '&idOwner=' + id;
+    var dataString = 'arg=' + arg + '&idOwner=' + idOwner;
     $.ajax({
         type: 'POST',
         url: "../orgsubmit.php",
