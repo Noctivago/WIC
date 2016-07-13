@@ -97,14 +97,19 @@ function change_tableData(json_r, div_table, id_table, tbody) {
         dd.value = json_r[i].Id;
         tr.appendChild(dd);
         var btn = document.createElement('input');
-        btn.type = 'button';
-        btn.className = 'btn';
-        btn.value = 'Remove';
-        //  btn.placeholder = 'Remove';
-        btn.id = 'idUserInOrg';
         if (id_table === 'table1') {
+            btn.type = 'button';
+            btn.className = 'btn';
+            btn.value = 'Remove';
+            //  btn.placeholder = 'Remove';
+            btn.id = 'idCatOwner';
             btn.addEventListener("click", removeCategoryOwner);
         } else {
+            btn.type = 'button';
+            btn.className = 'btn';
+            btn.value = 'Remove';
+            //  btn.placeholder = 'Remove';
+            btn.id = 'idSubOwner';
             btn.addEventListener("click", removeSubCategoryOwner);
         }
         td.appendChild(btn);
@@ -140,22 +145,21 @@ function viewAllUsersInOrganization() {
     return false;
 }
 function removeCategoryOwner() {
-    var id2 = document.getElementById("idUserOrg").value;
+    var id2 = document.getElementById('idCatOwner').value;
     alert(id2);
     var arg = 'removeUserInOrgOwner';
     $.post("../../orgsubmit.php", {arg: arg, id: id2}, function (result) {
-        document.location.reload(true);
+        alert(result);
     });
     return false;
 }
 
 function removeSubCategoryOwner() {
-    var id = document.getElementById("idUserOrg").value;
+    var id = document.getElementById("idSubOwner").value;
     alert(id);
     var arg = 'removeUserInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: id}, function (result) {
         alert(result);
-        viewAllUsersInOrganization();
     });
     return false;
 }
