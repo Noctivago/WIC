@@ -19,7 +19,7 @@
 		<nav class="cd-nav">
 			<ul class="cd-top-nav">
 <!--				<li><a href="#0">Tour</a></li>
--->				<li><a href="view_WicPlanner.php">My WICPlanner</a></li>
+-->				<li><a href="view_WicPlanner.php"><img src="../../assets/ico/wic planner button-01.png" alt="avatar">My WICPlanner</a></li>
 
 				<li class="has-children account">
 					<a href="#0">
