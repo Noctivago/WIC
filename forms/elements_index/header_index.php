@@ -20,6 +20,21 @@
 			<ul class="cd-top-nav">
 <!--				<li><a href="#0">Tour</a></li>
 				<li><a href="#0">Support</a></li>-->
+                                <li class="has-children account">
+					<a href="#0">
+						<img src="../../assets/img/backgrounds/logo.svg.png" alt="avatar">
+						Account
+					</a>
+
+					<ul>
+
+						
+                                                <li><a href="userProfile.php">My Account</a></li>
+                                                <li><a href="change_pass.php">Change Password</a></li>
+						<li><a href="logout.php">Logout</a></li>
+                                                
+					</ul>
+				</li>
 				<li class="has-children account">
 					<a href="#0">
 						<img src="../../assets/img/backgrounds/logo.svg.png" alt="avatar">
