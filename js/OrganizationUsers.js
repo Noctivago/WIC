@@ -43,6 +43,7 @@ function viewAllUsersInOrganization() {
 }
 
 function removeUserInOrganization(){
+    var id = document.getElementById("idUserInOrg").value;
     alert(id);
 }
 
