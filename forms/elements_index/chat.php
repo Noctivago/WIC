@@ -3,14 +3,11 @@
     <div class="content-wrapper" style="padding-left: 0%">
 
         <div class="top-content">
+                <link href="../../assets/assests_sidebar/css/chat.css" rel="stylesheet">
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
             <!--<link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
-            <link rel="stylesheet"   link href="../../assets/assests_sidebar/css/tabela.css" rel="stylesheet" type="text/css"/>
-            <!--    <div class="inner-bg" style="padding-top: 0px">-->
-            <div class="container">
-
-                 <link href="../../assets/assests_sidebar/css/chat.css" rel="stylesheet">
-
+                       <!--    <div class="inner-bg" style="padding-top: 0px">-->
+     
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
