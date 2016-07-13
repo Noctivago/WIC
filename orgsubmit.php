@@ -174,8 +174,8 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'removeUserInOrganization') {
     try {
-        $userInOrg = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
-        sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [Enabled] = ? where [Id] = ?", array(0, $userInOrg));
+        $idOwner = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
+        sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [Enabled] = ? where [Id] = ?", array(0, $idOwner));
         echo 'User removed';
     } catch (Exception $ex) {
         echo 'error';
