@@ -1,14 +1,14 @@
 
 <main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
-            
-        
+
+
         <div class="top-content">
-             <div class="col-lg-12">
-                 <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Wic Planner
-                 </h1>
-             </div>
-             </div>
+            <div class="col-lg-12">
+                <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Wic Planner
+                </h1>
+            </div>
+        </div>
 
         <div class="top-content" style="height: 480px">
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -21,7 +21,7 @@
                 <div class="col-sm-8 col-lg-offset-2 text">
                     <!--            </div>-->
                 </div>
-                
+
                 <div class="row">
 
                     <div class="col-sm-5">
@@ -45,23 +45,23 @@
 
 
                             <div class="form-bottom">
-                                    <?php
-                                    if (isset($_POST['addWic']) && !empty($_POST['name']) && !empty($_POST['city'])) {
-                                        $msg = '';
-                                        try {
-                                            #$d = getDateToDB();
-                                            $name = (filter_var($_POST ['name'], FILTER_SANITIZE_EMAIL));
-                                            $city = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
-                                            $userId = $_SESSION['id'];
-                                            $eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
-                                            $DB_Date = getDateToDBStringToDate($eventDate);
-                                            $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $DB_Date, $eventDate);
-                                            #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
-                                        } catch (Exception $ex) {
-                                            echo "ERROR!";
-                                        }
+                                <?php
+                                if (isset($_POST['addWic']) && !empty($_POST['name']) && !empty($_POST['city'])) {
+                                    $msg = '';
+                                    try {
+                                        #$d = getDateToDB();
+                                        $name = (filter_var($_POST ['name'], FILTER_SANITIZE_EMAIL));
+                                        $city = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
+                                        $userId = $_SESSION['id'];
+                                        $eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
+                                        $DB_Date = getDateToDBStringToDate($eventDate);
+                                        $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $DB_Date, $eventDate);
+                                        #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
+                                    } catch (Exception $ex) {
+                                        echo "ERROR!";
                                     }
-                                    ?>	
+                                }
+                                ?>	
 
                                 <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                     <div class="form-group"><h4 style="color: darkgray"><?php echo $msg; ?></h4>
@@ -119,71 +119,72 @@
 
                         <div class="container">
                             <div class="row">
-<!--                                <div class="col-lg-12">
-                                    <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> My WicPlanner's
-                 </h1>
+                                <!--                                <div class="col-lg-12">
+                                                                    <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;"> My WicPlanner's
+                                                 </h1>
+                                
+                                                                </div>-->
+                                <div class="form-box">
 
-                                </div>-->
-                        <div class="form-box">
-                            
-                           <div class="form-top" style="padding-bottom: 10px;">
-                                <div class="form-top-left">
-                                    <h3 style="color: darkgray"> My Wic Planner's</h3>
+                                    <div class="form-top" style="padding-bottom: 10px;">
+                                        <div class="form-top-left">
+                                            <h3 style="color: darkgray"> My Wic Planner's</h3>
 
+                                        </div>
+                                        <div class="form-top-right">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <!--                            <div class="form-top-right">
+                                                                        <i class="fa fa-key"></i>-->
+            <!--                            <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                            <input style="color: black;" class="form-username form-control" type="file">-->
+                                        <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
+
+                                    </div>
+                                    <div class="form-bottom">
+
+                                        <div id="no-more-tables">
+                                            <?= DB_getMyWICPlanners($pdo, $_SESSION['id']); ?>
+        <!--                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
+                                                <thead class="cf">
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Dia Semana</th>
+                                                        <th class="numeric">d-semana</th>	
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td data-title="Code">1</td>
+                                                        <td data-title="Company">SEGUNDA</td>
+                                                        <td data-title="Day" class="numeric">seg-feira</td>
+        
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-title="Code">2</td>
+                                                        <td data-title="Company">TERCA</td>
+                                                        <td data-title="Day" class="numeric">ter-feira</td>
+        
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-title="Code">3</td>
+                                                        <td data-title="Company">QUARTA</td>
+                                                        <td data-title="Day" class="numeric">qua-feira</td>
+        
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-title="Code">4</td>
+                                                        <td data-title="Company">QUINTA</td>
+                                                        <td data-title="Day" class="numeric">qui-feira</td>
+        
+                                                    </tr>
+                                                    <tr>
+                                                    </tr>
+                                                </tbody>
+                                            </table>-->
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-top-right">
-                                    <i class="fa fa-calendar"></i>
-                                </div>
-                                <!--                            <div class="form-top-right">
-                                                                <i class="fa fa-key"></i>-->
-    <!--                            <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                    <input style="color: black;" class="form-username form-control" type="file">-->
-                                <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
-
-                            </div>
-                            <div class="form-bottom">
-
-                                <div id="no-more-tables">
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
-                                        <thead class="cf">
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>Dia Semana</th>
-                                                <th class="numeric">d-semana</th>	
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td data-title="Code">1</td>
-                                                <td data-title="Company">SEGUNDA</td>
-                                                <td data-title="Day" class="numeric">seg-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">2</td>
-                                                <td data-title="Company">TERCA</td>
-                                                <td data-title="Day" class="numeric">ter-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">3</td>
-                                                <td data-title="Company">QUARTA</td>
-                                                <td data-title="Day" class="numeric">qua-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">4</td>
-                                                <td data-title="Company">QUINTA</td>
-                                                <td data-title="Day" class="numeric">qui-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
                             </div>
 
                         </div>

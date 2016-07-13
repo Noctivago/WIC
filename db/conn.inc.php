@@ -564,18 +564,19 @@ function DB_readOrganizationAsSelect($pdo, $userId) {
         echo 'ERROR READING ORGANIZATION TABLE';
     }
 }
-function DB_readUsersInOrganizationAsSelect($pdo,$idOrg){
-   try {
+
+function DB_readUsersInOrganizationAsSelect($pdo, $idOrg) {
+    try {
         $id = 0;
         $rows = sql($pdo, "SELECT * FROM [User_In_Organization] Where [Organization_Id] = ? and [Enabled] = 1", array($idOrg), "rows");
         return json_encode($rows);
-        /**echo "<option id ='orgId' value='0'> Choose a User</option>";
-        foreach ($rows as $row) {
-            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['User_Id']) . "</option>";
-        }*/
+        /*         * echo "<option id ='orgId' value='0'> Choose a User</option>";
+          foreach ($rows as $row) {
+          echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['User_Id']) . "</option>";
+          } */
     } catch (Exception $exc) {
         echo 'ERROR READING SUBCATEGORY TABLE';
-    } 
+    }
 }
 
 function DB_readCategoryAsSelect($pdo) {
@@ -1216,5 +1217,43 @@ function DB_sendMessage($pdo, $userId, $message, $Conversation_Id) {
            ,[Conversation_Id]) VALUES(?,?,?,?,?,?)", array($userId, $message, $d, 0, NULL, $Conversation_Id));
     } catch (Exception $exc) {
         echo 'ERROR SENDING YOUR MESSAGE!';
+    }
+}
+
+function DB_getMyWICPlanners($pdo, $userId) {
+    try {
+        $rows = sql($pdo, "SELECT [WIC_Planner].Id
+      ,[WIC_Planner].[Name]
+      ,[City].[Name]
+      ,[WIC_Planner].[Event_Date]
+        FROM [dbo].[WIC_Planner]
+         join [City]
+        on [City].[Id] = [WIC_Planner].[City_Id]
+	  WHERE [WIC_Planner].[User_Id] = ?", array($userId), "rows");
+        echo "<table class='col-md-12 table-bordered table-striped table-condensed cf'>";
+        echo '<thead class="cf">';
+        echo '<tr>';
+        echo '<th>ID</th>';
+        echo '<th>NAME</th>';
+        echo '<th>EVENT DATE</th>';
+        echo '<th class="numeric">d-semana</th>';
+        echo '</tr>';
+        echo '</thead>';
+        echo '<tbody>';
+
+        foreach ($rows as $row) {
+            echo '<tr>';
+            echo '<td data-title = "Code">4</td>';
+            echo '<td data-title = "Company">QUINTA</td>';
+            echo '<td data-title = "Day" class = "numeric">qui-feira</td>';
+            echo '</tr>';
+        }
+        echo '<tr>';
+        echo '</tr>';
+        echo '</tbody>';
+        echo '</table>';
+        //ON RETURN UPDATE -> SET DATE_MESSAGE_VIEW AND MESSAGE_VIEW
+    } catch (Exception $exc) {
+        echo 'ERROR READING YOUR MESSAGES!';
     }
 }
