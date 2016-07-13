@@ -1164,11 +1164,16 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
 }
 
 function DB_getMyConversations($pdo, $userId) {
-    $rows = sql($pdo, "SELECT [Id]
-      ,[User_Id1]
-      ,[User_Id2]
-      ,[Organization_Service]
-    FROM [dbo].[Conversation] WHERE [User_Id1] = ? OR [User_Id2] = ?", array($userId, $userId), "rows");
+    $rows = sql($pdo, "SELECT
+	[User].[Username] 
+	,[Conversation].[Id]
+        ,[Conversation].[User_Id1]
+        ,[Conversation].[User_Id2]
+        ,[Conversation].[Organization_Service]
+        FROM [dbo].[Conversation]
+	join [User]
+	on [User].[Id] = [Conversation].[User_Id2]
+	or [User].[Id] = [Conversation].[User_Id1] WHERE [User_Id1] = ? OR [User_Id2] = ?", array($userId, $userId), "rows");
     echo "<table class='table table-striped'><tr><th>ID</th><th>USER 1</th><th>USER 2</th></tr>";
     foreach ($rows as $row) {
         echo "<tr>";
