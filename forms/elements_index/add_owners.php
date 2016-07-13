@@ -29,17 +29,17 @@
                                 <h4 align="center"> Category owners</h4>
                                 <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="org" >
+                                        <select class="form-username form-control" name="org1" id="org1" onchange="fill_Users_Category()" >
                                             <?php DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="category" >
+                                        <select class="form-username form-control" name="category" id="category" >
                                             <?php DB_readCategoryAsSelect($pdo) ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="user" disabled>
+                                        <select class="form-username form-control" name="userOrg2" id="userOrg2" disabled>
                                             <?php DB_readUsersInOrganizationAsSelect($pdo) ?>
                                         </select>
                                     </div>
@@ -83,17 +83,17 @@
                                 <h4 align="center"> Sub Category owners</h4>
                                 <form role="form" action="" method="post" class="login-form">
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="org" >
+                                        <select class="form-username form-control" name="org2" id="org2" onchange="fill_Users_Sub_Category()">
                                             <?php DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="category" >
+                                        <select class="form-username form-control" name="Sub_Category" id="Sub_Category" >
                                             <?php DB_readSubCategoryAsSelect($pdo) ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="user" disabled>
+                                        <select class="form-username form-control" name="userOrg2" id="userOrg2" disabled>
                                             <?php DB_readUsersInOrganizationAsSelect($pdo) ?>
                                         </select>
                                     </div>

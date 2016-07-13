@@ -1,3 +1,12 @@
+function fill_Users_Category(){
+    alert(document.getElementById("org1").value);
+    alert(document.getElementById("category").value);
+}
+function fill_Users_Sub_Category(){
+    alert(document.getElementById("org2").value);
+    alert(document.getElementById("Sub_Category").value);
+    
+}
 //remover utilizador da organização
 function removeUserInOrganization(id) {
     var arg = 'removeUserInOrganization';
