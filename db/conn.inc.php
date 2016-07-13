@@ -1255,6 +1255,6 @@ function DB_getMyWICPlanners($pdo, $userId) {
         echo '</table>';
         //ON RETURN UPDATE -> SET DATE_MESSAGE_VIEW AND MESSAGE_VIEW
     } catch (Exception $exc) {
-        echo 'ERROR READING YOUR MESSAGES!';
+        echo 'ERROR READING YOUR WIC PLANNERS!';
     }
 }
