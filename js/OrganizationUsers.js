@@ -25,7 +25,7 @@ function fill_Users_Sub_Category() {
         var json_r = $.parseJSON(result);
         dataSelect(json_r, userSel);
         //dataSelect();
-        viewAllUsersInOrgOwners(idOrg);
+        viewAllUsersInOrgO(idOrg);
     });
 
 }
@@ -45,7 +45,26 @@ function dataSelect(json, userSel,title) {
     //select.appendChild(newSele);
     div.replaceChild(select, newSele);
 }
+function viewAllUsersInOrgO(idOrg) {
+    var div_table1 = "title-2";
+    var id_table1 = "table2";
+    var tbody1 = "body2"
+    var arg = 'viewAllUsersInOrgOwners';
+    $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
+        $("#body2").empty();
+        var json = $.parseJSON(result);
+        change_tableData(json, div_table1, id_table1, tbody1);
+        console.log(json);
+    });
 
+//    $.post("../../orgsubmit.php", {arg: arg2, id: org}, function (result) {
+//        $("#body2").empty();
+//        var json_r2 = $.parseJSON(result);
+//        change_table_data(json_r2, div_table2, id_table2, tbody2);
+//        console.log(json_r2);
+//    });
+    return false;
+}
 function viewAllUsersInOrgOwners(idOrg) {
     var div_table1 = "title-1";
     var id_table1 = "table1";
