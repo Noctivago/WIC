@@ -72,13 +72,13 @@ ini_set("display_errors", 1);
 
                         <!--                        <div class="container">-->
                         <div class="row">
-                            <div class="col-md-12" id="title-1">
+                            <div class="col-md-12" id="title-1" style = "Display: none">
                                 <h4 class="text-center">
                                     Users in organization
                                 </h4>
                             </div>
                             <div id="no-more-tables" >
-                                <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1">
+                                <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1" style = "Display: none">
                                     <thead class="cf">
                                         <tr>
                                             <th>First Name</th>
@@ -93,14 +93,14 @@ ini_set("display_errors", 1);
                             </div>
                         </div>
 
-                        <div class="col-md-12" id="title-2">
+                        <div class="col-md-12" id="title-2" style = "Display: none">
                             <h4 class="text-center">
                                 Waiting for response
                             </h4>
 
                         </div>
-                        <div id="no-more-tables">
-                            <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table2">
+                        <div id="no-more-tables" >
+                            <table class="col-md-12 table-bordered table-striped table-condensed cf " style = "Display: none" id="table2">
                                 <thead class="cf">
                                     <tr>
                                         <th>First Name</th>
