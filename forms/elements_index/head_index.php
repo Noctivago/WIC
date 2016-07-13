@@ -6,7 +6,7 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 
-<link href="../assets/assests_sidebar/css/reset.css" rel="stylesheet" type="text/css"/> <!-- CSS reset -->
+        <link href="../assets/assests_sidebar/css/reset.css" rel="stylesheet" type="text/css"/> <!-- CSS reset -->
         
 	 <link href="../assets/assests_sidebar/css/style.css" rel="stylesheet" type="text/css"/> <!-- Resource style -->
        

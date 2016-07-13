@@ -1,7 +1,7 @@
 	<header class="cd-main-header">
 
-            <!--<a href="login.php" ><img  class="logo" width="60" height="60" align="left" src="../../assets/img/backgrounds/logo.svg.png" alt="Logo"></a>-->
-            <a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
+            <a href="login.php" ><img  class="logo" width="60" height="60" align="left" src="../../assets/img/backgrounds/logo.svg.png" alt="Logo"></a>
+            
             
             
 <!--                <a href="#0" class="cd-logo" ></a>-->
