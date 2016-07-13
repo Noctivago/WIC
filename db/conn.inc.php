@@ -976,12 +976,13 @@ function DB_getCommentsOfService($pdo, $orgServId) {
             $h = explode(".", $subStr[1]);
             echo '<div class="media msg ">';
             #echo '<a class="pull-left" href="#">';
-            echo '<img class="media-object" data-src="' . $row['PP'] . '" alt="64x64" style="width: 32px; height: 32px;" src="' . $row['PP'] . '">';
+            echo '<img class="media-object" alt="64x64" style="width: 32px; height: 32px;" src="' . $row['PP'] . '">';
             #echo '</a>';
             echo '<div class="media-body">';
             echo '<small class="pull-right time"><i class="fa fa-clock-o"></i>' . ' ' . $subStr[0] . ' ' . $h[0] . '</small>';
             echo '<h5 class="media-heading">' . $row['UU'] . '</h5>';
-            echo '<small class="col-lg-10">' . $row['CC'] . '</small>';
+            #echo '<small class="col-lg-10">' . $row['CC'] . '</small>';
+            echo '<small>' . $row['CC'] . '</small>';
             echo '</div>';
             echo '</div>';
         }
