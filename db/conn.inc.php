@@ -958,29 +958,30 @@ function DB_checkIfServiceCommentsExits($pdo, $orgServId) {
 //FALTA BUTTON PARA REMOVER SE FOR DONO DO COMMENT
 function DB_getCommentsOfService($pdo, $orgServId) {
     try {
-        $rows = sql($pdo, "SELECT [User].[UserName]
-        ,[Comment].[Comment]
+        $rows = sql($pdo, "SELECT [User].[UserName] AS UU
+        ,[Comment].[Comment] AS CC
+        ,[Comment].[Date_Created] AS CDC
+	,[Profile].[Picture_Path] AS PP
         FROM [dbo].[Comment]
         join [User]
-        on [User].[Id] = [Comment].[User_Id] WHERE [Comment].[Organization_Service_Id] = ? ORDER BY [Comment].[Date_Created] DESC", array($orgServId), "rows");
+        on [User].[Id] = [Comment].[User_Id]
+	join [Profile]
+	on [Profile].[User_Id] = [User].[Id]  WHERE [Comment].[Organization_Service_Id] = ? ORDER BY [Comment].[Date_Created] DESC", array($orgServId), "rows");
         if (DB_checkIfServiceCommentsExits($pdo, $orgServId)) {
-            echo '<div class="row">
-                <div class="col-sm-12">
-                    <h3>Users Comments</h3>
-                </div>
-            </div>';
+            
         }
+        $str = $row['CDC'];
+        $subStr = explode(" ", $str);
+        $h = explode(".", $subStr);
         foreach ($rows as $row) {
-            echo '<div class="row">';
-            echo '<div class="col-sm-5" style="width: 100%">';
-            echo '<div class="panel panel-default">';
-            echo '<div class="panel-heading">';
-            echo '<strong>' . $row['UserName'] . '</strong> <span class="text-muted">commented...</span>';
-            echo '</div>';
-            echo '<div class="panel-body">';
-            echo $row['Comment'];
-            echo '</div>';
-            echo '</div>';
+            echo '<div class="media msg ">';
+            #echo '<a class="pull-left" href="#">';
+            echo '<img class="media-object" data-src="' . $row['PP'] . '" alt="64x64" style="width: 32px; height: 32px;" src="' . $row['PP'] . '">';
+            #echo '</a>';
+            echo '<div class="media-body">';
+            echo '<small class="pull-right time"><i class="fa fa-clock-o"></i>' . $h . '</small>';
+            echo '<h5 class="media-heading">' . $row['UU'] . '</h5>';
+            echo '<small class="col-lg-10">' . $row['CC'] . '</small>';
             echo '</div>';
             echo '</div>';
         }
