@@ -8,6 +8,7 @@ function fill_Users_Category() {
         var json_r = $.parseJSON(result);
         dataSelect(json_r,userSel);
         //dataSelect();
+        viewAllUsersInOrganization(idOrg);
         console.log(json_r);
     });
 }
@@ -28,6 +29,7 @@ function dataSelect(json,userSel){
          option.textContent = json[i].First_Name;
          option.value = json[i].Id;
          newSele.appendChild(option);
+        
     }
     select = newSele;
 }
@@ -46,6 +48,30 @@ function removeUserInOrganization(id) {
         }
     });
     viewAllUsersInOrganization();
+    return false;
+}
+function viewAllUsersInOrganization(org) {
+    var div_table1 = "title-1";
+    var id_table1 = "table1";
+    var tbody1 = "body1"
+    var div_table2 = "title-2";
+    var id_table2 = "table2";
+    var tbody2 = "body2"
+    var arg = 'viewAllUsersInOrganization';
+    var arg2 = 'viewAllInviteWaitingForResponse';
+    $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
+        $("#body1").empty();
+        var json_r = $.parseJSON(result);
+        change_table_data(json_r, div_table1, id_table1, tbody1);
+        console.log(json_r);
+    });
+
+    $.post("../../orgsubmit.php", {arg: arg2, id: org}, function (result) {
+        $("#body2").empty();
+        var json_r2 = $.parseJSON(result);
+        change_table_data(json_r2, div_table2, id_table2, tbody2);
+        console.log(json_r2);
+    });
     return false;
 }
 
