@@ -50,7 +50,7 @@ function removeUserInOrganization(id) {
     viewAllUsersInOrganization();
     return false;
 }
-function viewAllUsersInOrganization(org) {
+function viewAllUsersInOrganization(idOrg) {
     var div_table1 = "title-1";
     var id_table1 = "table1";
     var tbody1 = "body1"
@@ -59,7 +59,7 @@ function viewAllUsersInOrganization(org) {
 //    var tbody2 = "body2"
     var arg = 'viewAllUsersInOrganization';
 //    var arg2 = 'viewAllInviteWaitingForResponse';
-    $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
+    $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body1").empty();
         var json_r = $.parseJSON(result);
         change_table_data(json_r, div_table1, id_table1, tbody1);
