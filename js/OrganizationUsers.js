@@ -84,7 +84,7 @@ function change_table_data2(json_r, div_table, id_table, tbody) {
             btn.value = 'Remove';
             //  btn.placeholder = 'Remove';
             btn.id = 'idUserInOrg';
-            btn.addEventListener("click", removeUserInOrgOwner());
+            btn.addEventListener("click", removeUserInOrgOwner);
             td.appendChild(btn);
             tr.appendChild(td);
         } else {
