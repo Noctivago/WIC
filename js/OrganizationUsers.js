@@ -19,7 +19,7 @@ function fill_Users_Sub_Category() {
     var arg = 'viewAllUsersInOrganizationAsSelect';
     var userSel = 'userOrg2';
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
-        $("#body1").empty();
+        $("#body2").empty();
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
         dataSelect(json_r, userSel);
@@ -116,8 +116,7 @@ function change_tableData(json_r, div_table, id_table, tbody) {
             td.appendChild(btn);
             tr.appendChild(td);
         } else {
-            //td.appendChild(document.createTextNode(json_r[i].Last_Name));
-            //tr.appendChild(td)
+            
 
         }
         boddy.appendChild(tr);
