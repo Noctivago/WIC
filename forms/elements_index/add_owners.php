@@ -43,7 +43,7 @@
                                             <?php DB_readUsersInOrganizationAsSelect($pdo) ?>
                                         </select>
                                     </div>
-                                    
+                                    <button type="submit" id="request" class="btn" name="request" visible="true">Add Category Owner</button>
                                 </form>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                                             <?php DB_readUsersInOrganizationAsSelect($pdo) ?>
                                         </select>
                                     </div>
-                                    
+                                    <button type="submit" id="request" class="btn" name="request" visible="true">Add Sub Category Owner</button>
                                 </form>
                             </div>
                         </div>
