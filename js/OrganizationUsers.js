@@ -43,7 +43,7 @@ function viewAllUsersInOrganization() {
 }
 
 function removeUserInOrganization(){
-    var id = document.getElementById("idUserInOrg").value;
+    var id = document.getElementById("idUserOrg").value;
     alert(id);
 }
 
@@ -56,6 +56,11 @@ function change_table_data(json_r,div_table,id_table,tbody){
     var boddy = Tbody;
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
+        var id = document.createElement('input');
+        id.type = "hidden";
+        id.id ="idUserOrg";
+        id.value = json_r[i].Id;
+        tr.addEventListener(id);
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Email));
         tr.appendChild(td)
