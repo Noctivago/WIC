@@ -1,7 +1,7 @@
 <?php
 //FAZER GET DO ID DO SERVICE
 $orgServId = 2;
-$msg;
+$msg='';
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 ?>
