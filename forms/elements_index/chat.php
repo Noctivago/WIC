@@ -1,6 +1,12 @@
 
 <main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
+         <div class="top-content">
+            <div class="col-lg-12">
+                <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Inbox </h1> <h4 style="color: darkgray"> <?php echo $msg; ?></h4>
+
+            </div>
+        </div>
 
         <div class="top-content" style="height: 480px">
                 <link href="../../assets/assests_sidebar/css/chat.css" rel="stylesheet">
@@ -29,6 +35,8 @@
         </div>
     </div>
     <div class="row">
+        
+        <div class="col-sm-6">
 
         <div class="conversation-wrap col-lg-3">
 
@@ -99,9 +107,10 @@
                 </div>
             </div>
         </div>
+    </div>
 
-
-
+<div class="col-sm-6">
+<!--Caixa de escrever mensagens-->
         <div class="message-wrap col-lg-8">
             <div class="msg-wrap">
 
@@ -172,6 +181,9 @@
                 <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
             </div>
         </div>
+</div>
+
+<!--Caixa de escrever mensagens-->
     </div>
 </div>
 </div>
