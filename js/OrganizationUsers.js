@@ -35,7 +35,6 @@ function dataSelect(json, userSel,title) {
     var newSele = select;
     for (i = 0; i < json.length; i++) {
         var option = document.createElement('Option');
-        option.id = "idUser";
         option.textContent = json[i].Name;
         option.value = json[i].Id;
         newSele.appendChild(option);
