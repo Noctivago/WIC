@@ -1,5 +1,4 @@
 function fill_Users_Category() {
-    alert(document.getElementById("org1").value);
     var idOrg = document.getElementById("org1").value;
     var arg = 'viewAllUsersInOrganizationAsSelect';
     var userSel = 'userOrg1';
@@ -7,7 +6,6 @@ function fill_Users_Category() {
         $("#body1").empty();
         $("#"+userSel).empty();
         var json_r = $.parseJSON(result);
-        alert(json_r);
         dataSelect(json_r,userSel);
         //dataSelect();
         console.log(json_r);
@@ -31,7 +29,6 @@ function dataSelect(json,userSel){
          option.value = json[i].Id;
          newSele.appendChild(option);
     }
-    
     select = newSele;
 }
 //remover utilizador da organização
