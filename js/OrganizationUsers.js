@@ -65,7 +65,7 @@ function change_table_data(json_r,div_table,id_table,tbody){
             var btn = document.createElement('input');
             btn.type = 'button';
             btn.className ="btn";
-            btn.onclick = (removeUserInOrganzation());
+            btn.onclick = removeUserInOrganization();
         td.appendChild(btn);
         tr.appendChild(td);
         }else{
