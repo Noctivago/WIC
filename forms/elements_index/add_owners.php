@@ -39,7 +39,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="user">
+                                        <select class="form-username form-control" name="org" id="user" disable>
                                             <?php DB_readUsersInOrganizationAsSelect($pdo) ?>
                                         </select>
                                     </div>
