@@ -122,10 +122,10 @@ function viewAllUsersInOrganization() {
     return false;
 }
 function removeUserInOrgOwner() {
-    var id = document.getElementById("IdOwner1").value;
-    alert(id);
+    var id2 = document.getElementById("IdOwner1").value;
+    alert(id2);
     var arg = 'removeUserInOrgOwner';
-    $.post("../../orgsubmit.php", {arg: arg, id: id}, function (result) {
+    $.post("../../orgsubmit.php", {arg: arg, id: id2}, function (result) {
         document.location.reload(true);
     });
     return false;
