@@ -25,9 +25,11 @@ function dataSelect(json,userSel){
     var select = document.getElementById(userSel);
     select.disabled = false;
     var newSele = select;
+    var option = document.createElement('Option');
     for (i = 0; i < json.length; i++) {
-         newSele.textContent = json[i].First_Name;
-         newSele.value = json[i].Id;
+         option.textContent = json[i].First_Name;
+         option.value = json[i].Id;
+         newSele.appendChild(option);
     }
     
     select = newSele;
