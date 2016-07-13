@@ -209,7 +209,15 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'erro';
     }
-    
+    } else if ($arg === 'removeUserInOrgOwner') {
+     try {
+         $id = $_POST['id'];
+         sql($pdo,"UPDATE [dbo].[Category_Owner]
+   SET [Enabled] = 1
+ WHERE [Id] =?", array($id));
+        } catch (Exception $ex) {
+            
+        }
   } else if ($arg === 'viewAllUsersInOrgOwners') {
     try {
         $idOrg = $_POST['id'];
