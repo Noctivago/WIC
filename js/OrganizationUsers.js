@@ -42,9 +42,10 @@ function viewAllUsersInOrganization() {
     return false;
 }
 
-function removeUserInOrganization(){
-    
+function removeUserInOrganization(id){
+    alert(id);
 }
+
 function change_table_data(json_r,div_table,id_table,tbody){
     var div = document.getElementById(div_table);
     var table = document.getElementById(id_table);
@@ -65,7 +66,7 @@ function change_table_data(json_r,div_table,id_table,tbody){
             var btn = document.createElement('input');
             btn.type = 'button';
             btn.className ="btn";
-            btn.onclick = removeUserInOrganization();
+            btn.onclick = removeUserInOrganization(json_r[i].Id);
         td.appendChild(btn);
         tr.appendChild(td);
         }else{
