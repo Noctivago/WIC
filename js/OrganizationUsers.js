@@ -6,7 +6,6 @@ function fill_Users_Category() {
         $("#body1").empty();
         $("#"+userSel).empty();
         var json_r = $.parseJSON(result);
-        console.log(json_r);
         dataSelect(json_r,userSel);
         //dataSelect();
         viewAllUsersInOrganization2(idOrg);
@@ -30,10 +29,11 @@ function dataSelect(json,userSel){
          option.textContent = json[i].First_Name;
          option.value = json[i].Id;
          newSele.appendChild(option);
-        
     }
     select = newSele;
 }
+
+
 //remover utilizador da organização
 function removeUserInOrganization(id) {
     var arg = 'removeUserInOrganization';
