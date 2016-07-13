@@ -98,39 +98,46 @@ $msg;
                     <div class = "col-sm-5">
                         <!--<link rel = "stylesheet" href = "http://fontawesome.io/assets/font-awesome/css/font-awesome.css"> -->
                         <!--espaço comentários-->
-                        <div class = "container">
+                        
+<!--                        descomentar!!!-->
+
+<!--                        <div class = "container">
                             <div class = "row">
                                 <h3>Give your about this Service :D</h3>
                             </div>
                             <div class = "row">
                                 <div class = "col-md-6" style = "width: 100%">
                                     <div class = "form-bottom">
-                                        <!--<div class = "status-upload"> -->
+                                        <div class = "status-upload"> 
                                         <div class = "cd-label">
                                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                                                 <div><h4> <?php echo $msg; ?></h4>
                                                     <textarea id="userComment" name ="userComment" placeholder="Write your comment here" style="width: 100%"></textarea>
                                                 </div>
                                                 <button type="submit" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
-                                                <!--<button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>-->
+                                                <button onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class="btn" id = "addComment" name="addComment"><i class="fa fa-reply"></i>POST </button>
                                             </form>
-                                        </div><!-- Status Upload class="btn btn-success "
-                                        </div><!-- Widget Area -->
+                                        </div> Status Upload class="btn btn-success "
+                                        </div><!-- Widget Area 
                                     </div>
 
                                 </div>
                             </div>
-                            <!--/espaço comentários-->
+                            /espaço comentários
 
-                            <!--espaço comentários anteriores-->
+                            espaço comentários anteriores
 
                             <div class="container">
                                 <?= DB_getCommentsOfService($pdo, $orgServId) ?>
 
-                            </div><!-- /container -->
-                            <!--/espaço comentarios anteriores-->
+                            </div> /container 
+                            /espaço comentarios anteriores
 
-                        </div>
+                        </div>-->
+
+<!--                        descomentar!!!-->
+
+
                         <!--                        <div class="col-sm-1 middle-border"></div>-->
                         <!--                    <div class="col-sm-1"></div>
                         
