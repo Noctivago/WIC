@@ -24,7 +24,6 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'ERRO';
     }
-    
 } else if ($arg === 'orgInformation') {
     //$userid = $_SESSION['id'];
     try {
@@ -68,9 +67,9 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'viewAllOrganization') {
     try {
         $orgId = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
-            // $userid = $_POST['idUser'];
+        // $userid = $_POST['idUser'];
         //$rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [User_Boss] = ? and [Enabled] = 1 and [Validate]=1", array($userid), "rows");
-        $rows = sql($pdo,"SELECT * FROM [dbo].[Organization] WHERE [Id]=? and [Enabled] = 1 and [Validate]=1", array($orgId), "rows");
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Id]=? and [Enabled] = 1 and [Validate]=1", array($orgId), "rows");
         echo json_encode($rows);
 //        echo '<div style="display:none">';
 //        echo '<table id="mytable">';
@@ -148,7 +147,6 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'Error';
     }
-
 } else if ($arg === 'assignUserInOrganization') {
     try {
         $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
@@ -177,15 +175,14 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'removeUserInOrganization') {
     try {
         $userInOrg = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
-           sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [Enabled] = ? where [Id] = ?", array(0, $userInOrg));
-            echo 'User removed';
-        
+        sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [Enabled] = ? where [Id] = ?", array(0, $userInOrg));
+        echo 'User removed';
     } catch (Exception $ex) {
         echo 'error';
     }
 } else if ($arg === 'viewAllInviteWaitingForResponse') {
     try {
-        $idOrg = (filter_var($_POST['id'],FILTER_SANITIZE_STRING));
+        $idOrg = (filter_var($_POST['id'], FILTER_SANITIZE_STRING));
         $rows = sql($pdo, "SELECT [Profile].[First_Name]
 	  ,[Profile].[Last_Name]
 	  ,[User].[Email]
@@ -198,6 +195,14 @@ FROM [dbo].[User_In_Organization]
         echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'Error';
+    }
+} else if ($arg === 'viewAllUsersInOrganizationAsSelect') {
+    try {
+        $idOrg = $_POST['id'];
+        $msg = DB_readUsersInOrganizationAsSelect($pdo,$idOrg);
+        echo json_encode($msg);
+    } catch (Exception $ex) {
+        echo 'error';
     }
     
     
@@ -212,7 +217,7 @@ FROM [dbo].[User_In_Organization]
   on [User].[Id] = [User_In_Organization].[User_Id]
   join [Organization]
   on [dbo].[Organization].[Id] = [dbo].[User_In_Organization].[Organization_Id] where [Organization_Id]=? and [dbo].[User_In_Organization].[Enabled] = 1", array($orgId), "rows");
-       echo json_encode($rows);
+        echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'erro';
     }
