@@ -168,7 +168,7 @@ $msg = '';
                                 </div>
                                 <div class="btn-panel">
                                     <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
-                                    <a href="" onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>));" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
+                                    <a href="" onclick="addCommentToService(<?= $_SESSION['id'] ?>,<?= $orgServId ?>,<?= getDateToDB() ?>);" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
                                 </div>
                             </div>
                             <!--<div class="message-wrap col-lg-8" style=" border-style: solid; border-color: darkgray;">-->
