@@ -186,12 +186,12 @@ if ($arg === 'addOrganization') {
         $rows = sql($pdo, "SELECT [Profile].[First_Name]
 	  ,[Profile].[Last_Name]
 	  ,[User].[Email]
-FROM [dbo].[User_In_Organization]
-  join [User]
-  on [User].[Id] = [User_In_Organization].[User_Id] 
-  join [Profile]
-  on [Profile].[User_Id] = [User].[Id]
-  where [Organization_Id] = ? and [User_In_Organization].[Responded] = 0", array($idOrg), "rows");
+        FROM [dbo].[User_In_Organization]
+          join [User]
+          on [User].[Id] = [User_In_Organization].[User_Id] 
+          join [Profile]
+          on [Profile].[User_Id] = [User].[Id]
+          where [Organization_Id] = ? and [User_In_Organization].[Responded] = 0", array($idOrg), "rows");
         echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'Error';
