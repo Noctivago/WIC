@@ -26,11 +26,19 @@ function viewAllUsersInOrganization() {
     var tbody2 = "body2"
     alert(org);
     var arg = 'viewAllUsersInOrganization';
+    var arg2 = 'viewAllInviteWaitingForResponse';
     $.post("../../orgsubmit.php", {arg: arg, id: org}, function (result) {
         $("#body1").empty();
         var json_r = $.parseJSON(result);
         change_table_data(json_r,div_table1,id_table1,tbody1);
         console.log(json_r);
+    });
+    
+    $.post("../../orgsubmit.php",{arg: arg1,id:org},function(result){
+       $("#body2").empty();
+       var json_r2 = $.parseJSON(result);
+        change_table_data(json_r2,div_table2,id_table2,tbody2);
+        console.log(json_r2);
     });
     return false;
 }
