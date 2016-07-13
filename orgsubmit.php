@@ -210,7 +210,7 @@ if ($arg === 'addOrganization') {
         echo 'erro';
     }
     
-  } else if ($arg === 'viewAllUsersInOrganizationOwners') {
+  } else if ($arg === 'viewAllUsersInOrgOwners') {
     try {
         $idOrg = $_POST['id'];
         $rows = sql($pdo, "[Category_Owner].[Id]
