@@ -95,24 +95,22 @@ function change_tableData(json_r, div_table, id_table, tbody) {
         if (id_table === 'table1') {
             var dd = document.createElement('input');
             dd.type = "hidden";
-            dd.id = "idUserOrg";
+            dd.id = "idCatOwner";
             dd.value = json_r[i].Id;
             tr.appendChild(dd);
             btn.type = 'button';
             btn.className = 'btn';
-            btn.id = 'idCatOwner';
-            btn.value = json_r[i].Id;
+            btn.value = 'Remove';
             btn.addEventListener("click", removeCategoryOwner);
         } else {
             var dd = document.createElement('input');
             dd.type = "hidden";
-            dd.id = "idUserOrg";
+            dd.id = 'idSubOwner';
             dd.value = json_r[i].Id;
             tr.appendChild(dd);
-
             btn.type = 'button';
             btn.className = 'btn';
-            btn.value = json_r[i].Id;
+            btn.value = 'Remove';
             btn.id = 'idSubOwner';
             btn.addEventListener("click", removeSubCategoryOwner);
         }
