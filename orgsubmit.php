@@ -200,7 +200,6 @@ if ($arg === 'addOrganization') {
         $orgId = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
         $rows = sql($pdo, "SELECT [User].[Username]
             ,[User].[Email]
-            ,[User_In_Organization].[Id]
             FROM [dbo].[User_In_Organization]
   join [User]
   on [User].[Id] = [User_In_Organization].[User_Id]
