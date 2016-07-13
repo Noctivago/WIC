@@ -181,20 +181,34 @@ if ($arg === 'addOrganization') {
         echo 'error';
     }
 } else if ($arg === 'viewAllInviteWaitingForResponse') {
+//    try {
+//        $idOrg = (filter_var($_POST['id'], FILTER_SANITIZE_STRING));
+//        $rows = sql($pdo, "SELECT [Profile].[First_Name]
+//	  ,[Profile].[Last_Name]
+//	  ,[User].[Email]
+//        FROM [dbo].[User_In_Organization]
+//          join [User]
+//          on [User].[Id] = [User_In_Organization].[User_Id] 
+//          join [Profile]
+//          on [Profile].[User_Id] = [User].[Id]
+//          where [Organization_Id] = ? and [User_In_Organization].[Responded] = 0", array($idOrg), "rows");
+//        echo json_encode($rows);
+//    } catch (Exception $ex) {
+//        echo 'Error';
+//    }
     try {
-        $idOrg = (filter_var($_POST['id'], FILTER_SANITIZE_STRING));
-        $rows = sql($pdo, "SELECT [Profile].[First_Name]
-	  ,[Profile].[Last_Name]
-	  ,[User].[Email]
-        FROM [dbo].[User_In_Organization]
-          join [User]
-          on [User].[Id] = [User_In_Organization].[User_Id] 
-          join [Profile]
-          on [Profile].[User_Id] = [User].[Id]
-          where [Organization_Id] = ? and [User_In_Organization].[Responded] = 0", array($idOrg), "rows");
+        $orgId = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
+        $rows = sql($pdo, "SELECT [User].[Username]
+            ,[User].[Email]
+            ,[User_In_Organization].[Id]
+            FROM [dbo].[User_In_Organization]
+  join [User]
+  on [User].[Id] = [User_In_Organization].[User_Id]
+  join [Organization]
+  on [dbo].[Organization].[Id] = [dbo].[User_In_Organization].[Organization_Id] where [Organization_Id]=? and [User_In_Organization].[Responded] = 0", array($orgId), "rows");
         echo json_encode($rows);
     } catch (Exception $ex) {
-        echo 'Error';
+        echo 'erro';
     }
 } else if ($arg === 'viewAllUsersInOrganizationAsSelect') {
     try {
@@ -212,8 +226,6 @@ where [User_In_Organization].[Enabled] = 1 and [Organization_Id] = ?", array($id
     } catch (Exception $ex) {
         echo 'error';
     }
-    
-    
 } else if ($arg === 'viewAllUsersInOrganization') {
     try {
         $orgId = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
