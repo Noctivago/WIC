@@ -75,6 +75,74 @@
     </div>
     
 </div>
+                    
+                                            <div class="col-sm-1 middle-border"  >
+                        </div>                   
+                        <div class="col-sm-1"></div>
+                        
+                        <div class="col-sm-5">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left"></div>
+                            <div class="form-top-right">
+</div>
+                                <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                <input style="color: black;" class="form-username form-control" type="file">
+                                <!--<h6 style="color:black">Upload a different photo...</h6>-->
+
+                            
+                            <!--                            <div class="form-top-right">
+                                                            <i class="fa fa-key"></i>
+                                                        </div>-->
+                        </div>
+
+                        <div class="form-bottom">
+                            <form role="form" action="" method="post" class="login-form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-username">Company Name:</label>
+                                    <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Adress:</label>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Web Site:</label>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Facebook:</label>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Twitter:</label>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Linkedin:</label>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-username">Email</label>
+                                    <input type="text" style="height: 40px" name="email" placeholder="youremail@email.com" class="form-username form-control" id="form-username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Country:</label>
+                                    <input type="text" style="height: 40px" name="password" placeholder="Choose your Country" class="form-password form-control" id="form-password" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">City:</label>
+                                    <input type="password" style="height: 40px" name="password" placeholder="Choose your City" class="form-password form-control" id="form-password" required disabled="">
+                                </div>
+                                <button type="submit" class="btn" name="login">Save Changes!</button>
+
+                            </form>
+                        </div>
+
+                    </div>
+                            </div>
                             
                             
                         </div>
@@ -89,8 +157,6 @@
             </div>
 <!--        </div>-->
 
-    </div>
-</div>
 </main>
 <!--<script src="../../assets/assests_sidebar/js/js_main/bootstrap.min_main.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/js/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
