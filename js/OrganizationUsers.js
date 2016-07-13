@@ -41,6 +41,10 @@ function viewAllUsersInOrganization() {
     });
     return false;
 }
+
+function remove(id){
+    
+}
 function change_table_data(json_r,div_table,id_table,tbody){
     var div = document.getElementById(div_table);
     var table = document.getElementById(id_table);
