@@ -1184,10 +1184,11 @@ function DB_getMyConversations($pdo, $userId) {
     foreach ($rows as $row) {
         if ($row['UID'] != $userId) {
             echo '<div class="media conversation">';
-            echo '<div>';
             echo '<a class="pull-left" href="#">';
+            echo '<div>';
             echo '<a class="pull-left">';
             echo '<img class="media-object" alt="64x64" style="width: 50px; height: 50px;" src="' . $row['PP'] . '">';
+            echo '</a>';
             echo '</div>';
             echo '<div class="media-body">';
             echo '<h5 class="media-heading">' . ' > ' . $row['UUN'] . '</h5>';
