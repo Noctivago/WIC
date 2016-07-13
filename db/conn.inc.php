@@ -454,7 +454,7 @@ function DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId) {
         $count = sql($pdo, "SELECT [Organization_Id]
       ,[User_Id]
   FROM [dbo].[User_In_Organization]
-  where [User_Id] = ? and [Organization_Id] = ?", array($userId, $idOrg), "count");
+  where [User_Id] = ? and [Organization_Id] = ? and [Enabled] = 1", array($userId, $idOrg), "count");
         if ($count < 0) {
             return true;
         } else {
@@ -500,9 +500,9 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
             if (DB_checkIfUserExists($pdo, $email)) {
                 if (DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId2)) {
-                        $mss = DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId2);
                     echo 'User is already in organization!';
                     } else {
+                        //falta verificar se já tem um registo com o [enabled] = 0 se sim update responded para 0 ou seja novo convite
                     sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId2, 0, 0, 0));
                     echo 'Success';
                 
