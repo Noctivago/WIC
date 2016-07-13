@@ -29,8 +29,10 @@
                                 <h4 align="center"> Category owners</h4>
                                 <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-username">Company Name:</label>
-                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                        <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()">
+                                            <h4> <?php echo $msg; ?></h4>
+                                            <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="form-password">Adress:</label>
@@ -76,12 +78,19 @@
                                 <h4 align="center"> Sub Category owners</h4>
                                 <form role="form" action="" method="post" class="login-form">
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-username">Company Name:</label>
-                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                        <select class="form-username form-control" name="org" id="org" onchange="">
+                                            <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-password">Adress:</label>
-                                        <input type="text" style="height: 40px" name="password" placeholder="Last Name" class="form-password form-control" id="form-password" required>
+                                        <select class="form-username form-control" name="org" id="category" onchange="">
+                                            <?php DB_readCategoryAsSelect($pdo) ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-username form-control" name="org" id="user" onchange="">
+                                            <?php DB_User_In_Organization($pdo, $orgId) ?>
+                                        </select>
                                     </div>
                                     
                                 </form>
