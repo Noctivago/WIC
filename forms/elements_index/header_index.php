@@ -17,7 +17,7 @@
 			</form>
 		</div> <!-- cd-search -->
 
-		<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+		<a href="#0" class="cd-nav">Menu<span></span></a>
 
 		<nav class="cd-nav">
 			<ul class="cd-top-nav">
