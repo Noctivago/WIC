@@ -455,7 +455,7 @@ function DB_checkIfExistUserInOrganization($pdo, $idOrg, $userId) {
       ,[User_Id]
   FROM [dbo].[User_In_Organization]
   where [User_Id] = ? and [Organization_Id] = ? and [Enabled] = 1", array($userId, $idOrg), "count");
-        if ($count < 1) {
+        if ($count < 0) {
             return true;
         } else {
             return false;
@@ -495,7 +495,6 @@ function DB_CheckOrganizationInvitationAndMoveToInvites($pdo, $email) {
 
 function DB_addUserInOrganization($pdo, $email, $idOrg) {
     try {
-
         //get id do user pelo email
         $userId2 = DB_checkUserByEmail($pdo, $email);
         if (DB_checkIfOrganizationExists($pdo, $idOrg)) {
