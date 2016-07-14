@@ -1,6 +1,7 @@
 function viewAllOrganizationToValidate(){
     var arg = 'viewAllOrganizationToValidate';
     $.post("../../orgsubmit.php", {arg: arg}, function (result) {
+        $("tbody1").empty();
         var json = $.parseJSON(result);
         console.log(json);
         table_data(json);
