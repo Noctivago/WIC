@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="send-wrap ">
-                            <textarea class="form-control send-message" id = "chatMsg" rows="3" placeholder="Write a reply..."></textarea>
+                            <textarea class="form-control send-message" id = "chatMsg" rows="3" placeholder="Write a reply... Press ENTER to submit..."></textarea>
                         </div>
                         <div class="btn-panel">
                             <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
