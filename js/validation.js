@@ -52,7 +52,7 @@ function table_data(json_r) {
         td.appendChild(document.createTextNode(json_r[i].Organization_Email));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Web_Site));
+        td.appendChild(document.createTextNode(json_r[i].Website));
         tr.appendChild(td)
         var dd = document.createElement('input');
         dd.type = "hidden";
