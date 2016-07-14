@@ -37,8 +37,6 @@
 
                     <div class="conversation-wrap col-lg-3">
                         <!--GET ALL USERS IN CONVERSATION WITH THE USER-->
-                        <!--document.getElementById("COVERSATIONID").value = "My value";-->
-                        <input type="text" id ="COVERSATIONID" name="fname"><br>
                         <?= DB_getMyConversations($pdo, $_SESSION['id']); ?>
                     </div>
 
@@ -50,9 +48,6 @@
                         function myFunction() {
                             //sendMessage()
                             alert('myMessage');
-                        }
-                        function setConvId(ConvID){
-                            document.getElementById("COVERSATIONID").value = ConvID;
                         }
                     </script>
 
