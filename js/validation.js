@@ -1,7 +1,7 @@
 function viewAllOrganizationToValidate() {
     var arg = 'viewAllOrganizationToValidate';
     $.post("../../orgsubmit.php", {arg: arg}, function (result) {
-        $("tbody1").empty();
+        $("#tbody1").empty();
         var json = $.parseJSON(result);
         console.log(json);
         table_data(json);
@@ -27,7 +27,7 @@ function Reject() {
     var resp = deleteConfirmation(rej);
     if (resp == true) {
         $.post("../../orgsubmit.php", {arg: arg, id: id, resp: resp}, function (result) {
-            viewAllOrganizationToValidate()
+            viewAllOrganizationToValidate();
         });
     }
     return false;
