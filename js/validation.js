@@ -1,4 +1,4 @@
-function viewAllOrganizationToValidate(){
+function viewAllOrganizationToValidate() {
     var arg = 'viewAllOrganizationToValidate';
     $.post("../../orgsubmit.php", {arg: arg}, function (result) {
         $("tbody1").empty();
@@ -7,14 +7,14 @@ function viewAllOrganizationToValidate(){
         table_data(json);
     });
     return false;
-    
+
 }
-function Reject(){
-    var id = document.getElementById("id"+this.id).value;
+function Reject() {
+    var id = document.getElementById("id" + this.id).value;
     alert(id);
 }
-function Aprove(){
-    var id = document.getElementById("id"+this.id).value;
+function Aprove() {
+    var id = document.getElementById("id" + this.id).value;
     alert(id);
 }
 function table_data(json_r) {
@@ -54,27 +54,27 @@ function table_data(json_r) {
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Web_Site));
         tr.appendChild(td)
-            var dd = document.createElement('input');
-            dd.type = "hidden";
-            dd.id = "id"+json_r[i].Id;
-            dd.value = json_r[i].Id;
-            tr.appendChild(dd);
-            var btn = document.createElement('input');
-            btn.type = 'button';
-            btn.className = 'btn';
-            btn.value = 'Remove';
-            btn.id = 'reject';
-            btn.addEventListener("click", Reject);
-          //  tr.appendChild(td);
-            var btn = document.createElement('input');
-            btn.type = 'button';
-            btn.className = 'btn';
-            btn.value = 'Remove';
-            //  btn.placeholder = 'Remove';
-            btn.id = 'aprove';
-            btn.addEventListener("click", Aprove);
-            td.appendChild(btn);
-            tr.appendChild(td);
+        var dd = document.createElement('input');
+        dd.type = "hidden";
+        dd.id = "id" + json_r[i].Id;
+        dd.value = json_r[i].Id;
+        tr.appendChild(dd);
+        var btn = document.createElement('input');
+        btn.type = 'button';
+        btn.className = 'btn';
+        btn.value = 'Remove';
+        btn.id = 'reject';
+        btn.addEventListener("click", Reject);
+        tr.appendChild(td);
+        var btn2 = document.createElement('input');
+        btn2.type = 'button';
+        btn2.className = 'btn';
+        btn2.value = 'Remove';
+        //  btn.placeholder = 'Remove';
+        btn2.id = 'aprove';
+        btn2.addEventListener("click", Aprove);
+        td.appendChild(btn);
+        tr.appendChild(td);
         boddy.appendChild(tr);
     }
     table.replaceChild(Tbody, boddy);
