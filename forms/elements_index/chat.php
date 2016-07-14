@@ -34,12 +34,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <!--SET CONVERSATION ID-->
-<!--                    <input type="text" id ="COVERSATIONID" name="COVERSATIONID" style="visibility: hidden;display:block; height:100%; width:100%;"><br>
-                    <input type="text" id ="USERID" name="USERID" style="visibility: hidden;display:block; height:100%; width:100%;"><br>-->
-                    <input type="text" id ="COVERSATIONID" name="COVERSATIONID" style="display:block; height:100%; width:100%;"><br>
-                    <input type="text" id ="USERID" name="USERID" style="display:block; height:100%; width:100%;"><br>
-                    <input type="text" id ="CHATID" value="0" name="CHATID" style="display:block; height:100%; width:100%;"><br>
+                    <input type="text" id ="COVERSATIONID" name="COVERSATIONID" style="visibility: hidden;display:block; height:100%; width:100%;"><br>
+                    <input type="text" id ="USERID" name="USERID" style="visibility: hidden;display:block; height:100%; width:100%;"><br>
+                    <input type="text" id ="CHATID" value="0" name="CHATID" style="visibility: hidden;display:block; height:100%; width:100%;"><br>
                     <div class="conversation-wrap col-lg-3">
                         <!--GET ALL USERS IN CONVERSATION WITH THE USER-->
                         <!--document.getElementById("COVERSATIONID").value = "My value";-->
