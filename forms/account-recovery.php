@@ -131,7 +131,7 @@ include_once '../db/functions.php';
                                         </div>
                                         <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6" required></div>
                                         <br>
-                                        <button type="submit" class="btn" name="activate">Activate Account</button>
+                                        <button type="submit" class="btn" name="activate">Recovery Account</button>
 
                                     </form>
                                 </div>
