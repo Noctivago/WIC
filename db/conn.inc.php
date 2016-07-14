@@ -1210,6 +1210,7 @@ function DB_getMyConversations($pdo, $userId) {
     }
 }
 
+//ONLY LOAD FIRST 150 MSG
 function DB_getMyMessages($pdo, $Conversation_Id) {
     try {
         $rows = sql($pdo, "SELECT [Message].[Id]

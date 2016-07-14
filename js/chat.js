@@ -85,6 +85,10 @@ function get_messages() {
 function boot_chat() {
     var chatArea = $('#chatMsg');
 
+    //ARRANJAR FORMA DE CARREGAR LOGO NO LOAD
+    //DEPOIS SEMPRE QUE FAZ SEND FAZ GET
+    //FAZER GET A CADA 5 SEG
+    
     // Load the messages every 5 seconds
     setInterval(get_messages, 1000);
 
@@ -107,3 +111,5 @@ function boot_chat() {
 
 // Initialize the chat
 boot_chat();
+
+//MISSING FUNCTION TO GET CONVERSATIONS
