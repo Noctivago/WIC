@@ -15,24 +15,7 @@
 
                 <div class="row">
 
-                    <div class="col-sm-5">
-
-                        <div class="form-box">
-                            <div class="form-top">
-                                <div class="form-top-left">
-                                    <h3 style="color: darkgray"> New Wic Planner</h3>
-
-                                </div>
-                                <div class="form-top-right">
-                                    <i class="fa fa-plus-circle"></i>
-                                </div>
-                                <!--                            <div class="form-top-right">
-                                                                <i class="fa fa-key"></i>-->
-    <!--                            <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                    <input style="color: black;" class="form-username form-control" type="file">-->
-                                <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
-
-                            </div>      
+                  
                             <div class="col-md-12">
                                     <h1 class="text-center">
                                         Nome tabela
@@ -84,9 +67,7 @@
 
                         </div>
         </div>
-                            </div>
- </div>
-
+                            
     <!--        </div>-->
 
 </main>
