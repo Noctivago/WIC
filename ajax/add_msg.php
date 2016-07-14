@@ -7,6 +7,6 @@ require_once '../db/functions.php';
 //ADD MESSAGES
 //SEND MESSAGE ()
 $message = (filter_var($_POST ['msg']));
-$userId = 36;
-$Conversation_Id = 82;
+$userId = (filter_var($_POST ['usr']));
+$Conversation_Id = (filter_var($_POST ['con']));
 DB_sendMessage($pdo, $userId, $message, $Conversation_Id);

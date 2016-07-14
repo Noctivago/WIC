@@ -24,10 +24,12 @@ fbChat = {
     },
     sendMessage: function (message) {
         var that = this;
+        var usrId = document.getElementById("USERID").value;
+        var conId = document.getElementById("COVERSATIONID").value;
         $.ajax({
             url: '../ajax/add_msg.php',
             method: 'post',
-            data: {msg: message},
+            data: {msg: message, usr: usrId, con: conId},
             success: function (data) {
                 $('#chatMsg').val('');
                 that.getMessages();
@@ -55,10 +57,12 @@ fbChat = {
  * @param {string} message
  */
 function send_message(message) {
+    var usrId = document.getElementById("USERID").value;
+    var conId = document.getElementById("COVERSATIONID").value;
     $.ajax({
         url: '../ajax/add_msg.php',
         method: 'post',
-        data: {msg: message},
+        data: {msg: message, usr: usrId, con: conId},
         success: function (data) {
             $('#chatMsg').val('');
             get_messages();
@@ -88,7 +92,7 @@ function boot_chat() {
     //ARRANJAR FORMA DE CARREGAR LOGO NO LOAD
     //DEPOIS SEMPRE QUE FAZ SEND FAZ GET
     //FAZER GET A CADA 5 SEG
-    
+
     // Load the messages every 5 seconds
     setInterval(get_messages, 1000);
 
