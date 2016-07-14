@@ -1194,7 +1194,7 @@ function DB_getMyConversations($pdo, $userId) {
         if ($row['UID'] != $userId) {
             $teste = 'teste';
             //myFunction()
-            echo '<div class="media conversation" onclick="myFunction()";>';
+            echo '<div class="media conversation" style="cursor:pointer;" onclick="myFunction()";>';
             //echo '<a class="pull-left" href="#" style="display:block; height:100%; width:100%;">';
             echo '<div>';
             echo '<a class="pull-left" href="#">';
