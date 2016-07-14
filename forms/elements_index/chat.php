@@ -34,14 +34,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <input type="text" id ="COVERSATIONID" name="COVERSATIONID" style="visibility: hidden;"><br>
-                    <input type="text" id ="USERID" name="USERID" style="visibility: hidden;"><br>
-                    <input type="text" id ="CHATID" value="0" name="CHATID" style="visibility: hidden;"><br>
+                    <!--HERE-->
                     <div class="conversation-wrap col-lg-3">
                         <!--GET ALL USERS IN CONVERSATION WITH THE USER-->
                         <!--document.getElementById("COVERSATIONID").value = "My value";-->
 
                         <?= DB_getMyConversations($pdo, $_SESSION['id']); ?>
+                        <input type="text" id ="COVERSATIONID" name="COVERSATIONID" style="visibility: hidden;"><br>
+                        <input type="text" id ="USERID" name="USERID" style="visibility: hidden;"><br>
+                        <input type="text" id ="CHATID" value="0" name="CHATID" style="visibility: hidden;"><br>
                     </div>
 
                     <!--Caixa de escrever mensagens-->
