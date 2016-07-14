@@ -1,5 +1,6 @@
 // OOP Way
 fbChat = {
+  //getMessages();
   bootChat: function() {
     var chatArea = $('#chatMsg'),
             that = this;
@@ -85,7 +86,7 @@ function boot_chat() {
   var chatArea = $('#chatMsg');
 
   // Load the messages every 5 seconds
-  setInterval(get_messages, 5000);
+  setInterval(get_messages, 1000);
 
   // Bind the keyboard event
   chatArea.bind('keydown', function(event) {
