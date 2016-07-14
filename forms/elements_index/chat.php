@@ -39,12 +39,14 @@
 
 
                     <div class="conversation-wrap col-lg-3">
+                        <!--GET ALL USERS IN CONVERSATION WITH THE USER-->
                         <?= DB_getMyConversations($pdo, $_SESSION['id']); ?>
                     </div>
 
                     <!--Caixa de escrever mensagens-->
                     <div class="message-wrap col-lg-8">
                         <div class="msg-wrap">
+                            <!--GET THE MESSAGES OF A SPECIFIC CONVERSATION-->
                             <?= DB_getMyMessages($pdo, 82); ?>
                             //<?= DB_getMyMessages($pdo, $Conversation_Id); ?>
                         </div>
