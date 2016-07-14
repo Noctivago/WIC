@@ -1200,7 +1200,7 @@ function DB_getMyConversations($pdo, $userId) {
             echo '</a>';
             echo '</div>';
             echo '<div class="media-body">';
-            echo '<h5 class="media-heading">' . ' > ' . $row['UUN'] . '</h5>';
+            echo '<h5 class="media-heading">' . $row['UUN'] . '</h5>';
             echo '<h5 class="media-heading">' . ' > ' . $row['CID'] . '</h5>';
 #echo '<small>Hello</small>';
             echo '</div>';
