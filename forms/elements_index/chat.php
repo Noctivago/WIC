@@ -45,8 +45,8 @@
                     <!--SET ENABLED = FALSE; ON USER CLICK ENABLED AND GET MESSAGES FROM
                                         THAT CONVERSATION-->
                     <script type="text/javascript">
-                        function myFunction(myMessage) {
-                            alert(myMessage);
+                        function myFunction() {
+                            alert('myMessage');
                         }
                     </script>
 
@@ -64,7 +64,7 @@
                         </div>
                         <div class="btn-panel">
                             <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
-                            <a href="javascript:myFunction('You clicked!')" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
+                            <a href="javascript:myFunction()" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
                         </div>
                     </div>
 
