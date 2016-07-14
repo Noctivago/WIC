@@ -68,7 +68,7 @@ function table_data(json_r) {
         tr.appendChild(btn);
         var btn2 = document.createElement('input');
         btn2.type = 'button';
-        btn2.className = 'btn btn-sucsess';
+        btn2.className = 'btn btn-success';
         btn2.value = 'Approve';
         //  btn.placeholder = 'Remove';
         btn2.style = 'green';
