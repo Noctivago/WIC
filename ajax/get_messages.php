@@ -6,5 +6,6 @@ require_once '../forms/session.php';
 
 
 //GET MESSAGES
+//GRAB CONVERSATION ID
 
 DB_getMyMessages($pdo, 82);
