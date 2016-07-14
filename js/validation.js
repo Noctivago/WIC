@@ -26,7 +26,7 @@ function Reject() {
     var res = '0';
     var resp = deleteConfirmation(rej);
     if (resp == true) {
-        $.post("../../orgsubmit.php", {arg: arg, id: id, resp: res}, function (result) {
+        $.post("../../orgsubmit.php", {arg: arg, id: id, res: res}, function (result) {
             viewAllOrganizationToValidate();
         });
     }
@@ -40,7 +40,7 @@ function Aprove() {
     var res = '1';
     var resp = deleteConfirmation(apr);
     if (resp == true) {
-        $.post("../../orgsubmit.php", {arg: arg, id: id, resp: res}, function (result) {
+        $.post("../../orgsubmit.php", {arg: arg, id: id, res: res}, function (result) {
             viewAllOrganizationToValidate();
         });
     }

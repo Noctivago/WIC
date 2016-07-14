@@ -166,7 +166,7 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'validateOrganization') {
     try {
         $id = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
-        $data = (filter_var($_POST ['resp'], FILTER_SANITIZE_STRING));
+        $data = (filter_var($_POST ['res'], FILTER_SANITIZE_STRING));
         //Falta verificar se é admin.
         sql($pdo, "UPDATE [dbo].[Organization] SET [Validate] = 1 , [Enabled] = ? where [Id]=?", array($data, $id));
         echo 'Success';
