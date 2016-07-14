@@ -17,34 +17,39 @@ function table_data(json_r) {
     for (i = 0; i < json_r.length; i++) {
         var tr = document.createElement('TR');
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Email));
+        td.appendChild(document.createTextNode(json_r[i].Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Username || json_r[i].First_Name));
+        td.appendChild(document.createTextNode(json_r[i].Phone_Number));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Username || json_r[i].First_Name));
+        td.appendChild(document.createTextNode(json_r[i].Mobile_Number));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Username || json_r[i].First_Name));
+        td.appendChild(document.createTextNode(json_r[i].Address));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Username || json_r[i].First_Name));
+        td.appendChild(document.createTextNode(json_r[i].Date_Created));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Username || json_r[i].First_Name));
+        td.appendChild(document.createTextNode(json_r[i].Facebook));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Username || json_r[i].First_Name));
+        td.appendChild(document.createTextNode(json_r[i].Twitter));
         tr.appendChild(td)
-        
-        
-        
-        
+        var td = document.createElement('TD')
+        td.appendChild(document.createTextNode(json_r[i].Linkdin));
+        tr.appendChild(td)
+        var td = document.createElement('TD')
+        td.appendChild(document.createTextNode(json_r[i].Organization_Email));
+        tr.appendChild(td)
+        var td = document.createElement('TD')
+        td.appendChild(document.createTextNode(json_r[i].Web_Site));
+        tr.appendChild(td)
         if (id_table === "table1") {
             var dd = document.createElement('input');
             dd.type = "hidden";
-            dd.id = "idUserOrg";
+            dd.id = "id"+json_r[i].Id;
             dd.value = json_r[i].Id;
             tr.appendChild(dd);
             var btn = document.createElement('input');
@@ -52,8 +57,17 @@ function table_data(json_r) {
             btn.className = 'btn';
             btn.value = 'Remove';
             //  btn.placeholder = 'Remove';
-            btn.id = 'idUserInOrg';
-            btn.addEventListener("click", removeUserInOrganization);
+            btn.id = 'reject';
+            btn.addEventListener("click", Reject);
+            td.appendChild(btn);
+            tr.appendChild(td);
+            var btn = document.createElement('input');
+            btn.type = 'button';
+            btn.className = 'btn';
+            btn.value = 'Remove';
+            //  btn.placeholder = 'Remove';
+            btn.id = 'aprove';
+            btn.addEventListener("click", Aprove);
             td.appendChild(btn);
             tr.appendChild(td);
         } else {
