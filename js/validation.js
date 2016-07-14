@@ -65,6 +65,7 @@ function table_data(json_r) {
         btn.value = 'Remove';
         btn.id = json_r[i].Id;
         btn.addEventListener("click", Reject);
+        td.appendChild(btn);
         tr.appendChild(td);
         var btn2 = document.createElement('input');
         btn2.type = 'button';
@@ -73,7 +74,7 @@ function table_data(json_r) {
         //  btn.placeholder = 'Remove';
         btn2.id = json_r[i].Id;
         btn2.addEventListener("click", Aprove);
-        td.appendChild(btn);
+        td.appendChild(btn2);
         tr.appendChild(td);
         boddy.appendChild(tr);
     }
