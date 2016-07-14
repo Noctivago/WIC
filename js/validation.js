@@ -58,7 +58,7 @@ function table_data(json_r) {
         dd.type = "hidden";
         dd.id = "id" + json_r[i].Id;
         dd.value = json_r[i].Id;
-        td.appendChild(dd);
+        tr.appendChild(dd);
         var btn = document.createElement('input');
         btn.type = 'button';
         btn.className = 'btn';
