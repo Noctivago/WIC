@@ -63,7 +63,7 @@ function table_data(json_r) {
         btn.type = 'button';
         btn.className = 'btn';
         btn.value = 'Remove';
-        btn.style = 'red';
+        btn.backgoundColor = 'red';
         btn.id = json_r[i].Id;
         btn.addEventListener("click", Reject);
         tr.appendChild(btn);
