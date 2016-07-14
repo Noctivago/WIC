@@ -64,3 +64,7 @@
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
 <script src="../../js/validation.js" type="text/javascript"></script>
+<script>window.onload = function(){
+    viewAllOrganizationToValidate();
+}
+    </script>
