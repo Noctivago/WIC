@@ -12,10 +12,6 @@
                 <div class="col-sm-8 col-lg-offset-2 text">
                     <!--            </div>-->
                 </div>
-                <div class="row">
-
-                    <div class="col-sm-5">
-
                         <div class="form-box">
                             <div class="form-top">
                                 <div class="col-md-12">
@@ -68,15 +64,7 @@
 
 
                         </div>
-                    </div>
-                  
-
-        </div>
-
-    </div>
-        </div>
-
-    </div>
+        
     <!--        </div>-->
 
 </main>
