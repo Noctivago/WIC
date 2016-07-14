@@ -69,7 +69,7 @@ function table_data(json_r) {
         var btn2 = document.createElement('input');
         btn2.type = 'button';
         btn2.className = 'btn';
-        btn2.value = 'Remove';
+        btn2.value = 'Approve';
         //  btn.placeholder = 'Remove';
         btn2.id = json_r[i].Id;
         btn2.addEventListener("click", Aprove);
