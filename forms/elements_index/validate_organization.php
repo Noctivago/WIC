@@ -18,7 +18,6 @@
 
                         <div class="form-box">
                             <div class="form-top">
-                              <div class="row">
                                 <div class="col-md-12">
                                     <h1 class="text-center">
                                         Nome tabela
