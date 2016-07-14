@@ -7,5 +7,5 @@ require_once '../forms/session.php';
 
 //GET MESSAGES
 //GRAB CONVERSATION ID
-
+//$message = (filter_var($_POST ['CID']));
 DB_getMyMessages($pdo, 82);

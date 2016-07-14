@@ -1192,11 +1192,12 @@ function DB_getMyConversations($pdo, $userId) {
 
     foreach ($rows as $row) {
         if ($row['UID'] != $userId) {
+            //style="display:block; height:100%; width:100%;">
             //<div onclick="location.href='http://www.example.com';" style="cursor:pointer;"></div>
             echo '<div class="media conversation">';
 #echo '<a class="pull-left" href="#">';
             echo '<div>';
-            echo '<a class="pull-left" href="#">';
+            echo '<a class="pull-left" href="#" style="display:block; height:100%; width:100%;">>';
             echo '<img class="media-object" alt="64x64" style="width: 50px; height: 50px;" src="' . $row['PP'] . '">';
             echo '</a>';
             echo '</div>';
