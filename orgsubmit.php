@@ -165,10 +165,11 @@ if ($arg === 'addOrganization') {
     
 } else if ($arg === 'validateOrganization') {
     try {
-        $orgId = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
+        $id = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
+        $data = (filter_var($_POST ['resp'], FILTER_SANITIZE_STRING));
         //Falta verificar se é admin.
-        sql($pdo, "UPDATE [dbo].[Organization] SET [Validate] = ? , [Enabled] = ? where [Id]=?", array(1, 1, $orgId));
-        echo 'Organization In';
+        sql($pdo, "UPDATE [dbo].[Organization] SET [Validate] = ? , [Enabled] = ? where [Id]=?", array(1, $data, $orgId));
+        echo 'Success';
     } catch (Exception $ex) {
         echo 'Error';
     }

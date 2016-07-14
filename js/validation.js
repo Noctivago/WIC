@@ -9,13 +9,46 @@ function viewAllOrganizationToValidate() {
     return false;
 
 }
+function deleteConfirmation(data) {
+    var txt;
+    var r = confirm("You want to " + data + " ?");
+    if (r == true) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
 function Reject() {
     var id = document.getElementById("id" + this.id).value;
-    alert(id);
+    var arg = 'validateOrganization';
+    var rej = 'Reject';
+    var resp = 0;
+    var resp = deleteConfirmation(rej);
+    if (resp == true) {
+        $.post("../../orgsubmit.php", {arg: arg, id: id, resp: resp}, function (result) {
+            var json = $.parseJSON(result);
+            console.log(json);
+            viewAllOrganizationToValidate()
+        });
+    }
+    return false;
+
 }
 function Aprove() {
     var id = document.getElementById("id" + this.id).value;
-    alert(id);
+    var arg = 'validateOrganization';
+    var apr = 'Aprove';
+    var resp = 1;
+    var resp = deleteConfirmation(apr);
+    if (resp == true) {
+        $.post("../../orgsubmit.php", {arg: arg, id: id, resp: resp}, function (result) {
+            console.log(json);
+            viewAllOrganizationToValidate();
+        });
+    }
+    return false;
+
 }
 function table_data(json_r) {
     var div = document.getElementById('div1');
