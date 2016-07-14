@@ -1178,7 +1178,7 @@ function DB_getMyConversations($pdo, $userId) {
 	  ,[User].[Id] AS UID
 	  ,[User].[Username] UUN
 	  ,[Profile].[Picture_Path] AS PP
-	  ,[Conversation].[Id]
+	  ,[Conversation].[Id] AS CID
       ,[Conversation].[User_Id1]
       ,[Conversation].[User_Id2]
       ,[Conversation].[Organization_Service]
@@ -1201,6 +1201,7 @@ function DB_getMyConversations($pdo, $userId) {
             echo '</div>';
             echo '<div class="media-body">';
             echo '<h5 class="media-heading">' . ' > ' . $row['UUN'] . '</h5>';
+            echo '<h5 class="media-heading">' . ' > ' . $row['CID'] . '</h5>';
 #echo '<small>Hello</small>';
             echo '</div>';
 #echo '</a>';
