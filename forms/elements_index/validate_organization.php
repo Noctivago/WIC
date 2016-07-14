@@ -1,4 +1,4 @@
-<main class="cd-main-content">
+<main class="cd-main-content" onload="viewAllOrganizationToValidate()">
     <div class="content-wrapper" style="padding-left: 0%">
 
         <div class="top-content">
@@ -13,7 +13,7 @@
                     <!--            </div>-->
                 </div>
 
-                <div class="row" onload="viewAllOrganizationToValidate()">
+                <div class="row">
 
                   
                             <div class="col-md-12">
