@@ -102,6 +102,7 @@ function change_tableData(json_r, div_table, id_table, tbody) {
             btn.type = 'button';
             btn.className = 'btn';
             btn.value = 'Remove';
+            //ALTEREI AQUI
             btn.id = json_r[i].Id;
             btn.addEventListener("click", removeCategoryOwner);
         } else {
