@@ -1193,7 +1193,7 @@ function DB_getMyConversations($pdo, $userId) {
     foreach ($rows as $row) {
         if ($row['UID'] != $userId) {
             //<div onclick="location.href='http://www.example.com';" style="cursor:pointer;"></div>
-            echo '<div class="media conversation" onclick="alert("WOW")" style="cursor:pointer;">';
+            echo '<div class="media conversation"';
 #echo '<a class="pull-left" href="#">';
             echo '<div>';
             echo '<a class="pull-left" href="#">';
