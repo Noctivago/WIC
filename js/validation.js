@@ -23,7 +23,7 @@ function Reject() {
     var id = document.getElementById("id" + this.id).value;
     var arg = 'validateOrganization';
     var rej = 'Reject';
-    var resp = 0;
+    var resp = '0';
     var resp = deleteConfirmation(rej);
     if (resp == true) {
         $.post("../../orgsubmit.php", {arg: arg, id: id, resp: resp}, function (result) {
@@ -37,7 +37,7 @@ function Aprove() {
     var id = document.getElementById("id" + this.id).value;
     var arg = 'validateOrganization';
     var apr = 'Aprove';
-    var resp = 1;
+    var resp = '1';
     var resp = deleteConfirmation(apr);
     if (resp == true) {
         $.post("../../orgsubmit.php", {arg: arg, id: id, resp: resp}, function (result) {
