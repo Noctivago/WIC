@@ -37,9 +37,11 @@ fbChat = {
         });
     },
     getMessages: function () {
+        var conId = document.getElementById("COVERSATIONID").value;
         $.ajax({
             url: '../ajax/get_messages.php',
-            method: 'GET',
+            method: 'post',
+            data: {con: conId},
             success: function (data) {
                 $('.msg-wgt-body').html(data);
             }
@@ -74,9 +76,11 @@ function send_message(message) {
  * Get's the chat messages.
  */
 function get_messages() {
+    var conId = document.getElementById("COVERSATIONID").value;
     $.ajax({
         url: '../ajax/get_messages.php',
-        method: 'GET',
+        method: 'post',
+        data: {con: conId},
         success: function (data) {
             $('.msg-wgt-body').html(data);
         }
