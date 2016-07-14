@@ -10,10 +10,12 @@ function viewAllOrganizationToValidate(){
     
 }
 function Reject(){
-    
+    var id = document.getElementById("id"+this.id).value;
+    alert(id);
 }
 function Aprove(){
-    
+    var id = document.getElementById("id"+this.id).value;
+    alert(id);
 }
 function table_data(json_r) {
     var div = document.getElementById('div1');
