@@ -46,7 +46,6 @@ function table_data(json_r) {
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Web_Site));
         tr.appendChild(td)
-        if (id_table === "table1") {
             var dd = document.createElement('input');
             dd.type = "hidden";
             dd.id = "id"+json_r[i].Id;
@@ -70,9 +69,6 @@ function table_data(json_r) {
             btn.addEventListener("click", Aprove);
             td.appendChild(btn);
             tr.appendChild(td);
-        } else {
-
-        }
         boddy.appendChild(tr);
     }
     table.replaceChild(Tbody, boddy);
