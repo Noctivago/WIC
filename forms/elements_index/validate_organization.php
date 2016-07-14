@@ -28,6 +28,7 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Phone Number</th>
+                                                <th>Mobile Number</th>
                                                 <th>Address</th>
                                                 <th>Date Created</th>
                                                 <th>Facebook</th>
