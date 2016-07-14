@@ -1030,15 +1030,20 @@ function DB_addServiceToWicPlanner($pdo, $wicPlannerId, $orgServId) {
     }
 }
 
-//CRIAR CONVERSA ENTRE USERS 
+//CRIAR CONVERSA ENTRE USERS
 function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[Conversation] "
                 . "WHERE [User_Id1] = ? AND [User_Id2] = ? OR "
                 . "[User_Id2] = ? AND [User_Id1] = ?", array($userClient, $userOrg, $userClient, $userOrg), "count");
         if ($count < 0) {
-//HEADER LOCATION > PAGE INBOX
             echo 'CONVERSATION ALREADY EXISTS!';
+            $rows = sql($pdo, "SELECT * FROM [dbo].[Conversation] "
+                    . "WHERE [User_Id1] = ? AND [User_Id2] = ? OR "
+                    . "[User_Id2] = ? AND [User_Id1] = ?", array($userClient, $userOrg), "rows");
+            foreach ($rows as $row) {
+                DB_sendMessage($pdo, $userClient, $orgServ, $row['Id']);
+            }
         } else {
             sql($pdo, "INSERT INTO [dbo].[Conversation]
            ([User_Id1]
@@ -1051,7 +1056,6 @@ function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
         }
     } catch (PDOException $e) {
         print "ERROR READING/WRITING CONVERSATION!" . "<br/>";
-#die();
     }
 }
 
@@ -1148,19 +1152,19 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
 //SE POSSUIR CHEFE SUBCATEGORIA
     if (isset($userOnSubCat)) {
         $userOrg = $userOnSubCat;
-        //FALTA ENVIA MSG PARA USER ORG COM USERX START A CONVERSATION ABOUT SERVICEX
+//FALTA ENVIA MSG PARA USER ORG COM USERX START A CONVERSATION ABOUT SERVICEX
         return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
     } else {
 //SE NAO POSSUIR CHEFE CATEGORIA
         if (isset($userOnCat)) {
             $userOrg = $userOnCat;
-            //FALTA ENVIA MSG PARA USER ORG COM USERX START A CONVERSATION ABOUT SERVICEX
+//FALTA ENVIA MSG PARA USER ORG COM USERX START A CONVERSATION ABOUT SERVICEX
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
 //SE POSSUIR CHEFE CAT
         } else {
 //SE N POSSUIR CHEFE DE CAT OU SUBCAT USA ID_BOSS
             $userOrg = DB_checkOrgOwner($pdo, $orgId);
-            //FALTA ENVIA MSG PARA USER ORG COM USERX START A CONVERSATION ABOUT SERVICEX
+//FALTA ENVIA MSG PARA USER ORG COM USERX START A CONVERSATION ABOUT SERVICEX
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         }
     }
@@ -1231,7 +1235,7 @@ function DB_getMyMessages($pdo, $Conversation_Id) {
             echo '<div class="media-body">';
             echo '<small class="pull-right time"><i class="fa fa-clock-o"></i> ' . $subStr[0] . ' ' . $h[0] . '</small>';
             echo '<h5 class="media-heading">' . $row['UUN'] . '</h5>';
-            #echo '<small class="col-lg-10">' . $row['MMM'] . '</small>';
+#echo '<small class="col-lg-10">' . $row['MMM'] . '</small>';
             echo '<small class="col-lg-10">' . $row['MMM'] . '</small>';
             echo '</div>';
             echo '</div>';
@@ -1270,7 +1274,7 @@ WHERE [WIC_Planner].[User_Id] = ?", array($userId), "rows");
         echo "<table class = 'col-md-12 table-bordered table-striped table-condensed cf'>";
         echo '<thead class="cf">';
         echo '<tr>';
-        #echo '<th>ID</th>';
+#echo '<th>ID</th>';
         echo '<th>NAME</th>';
         echo '<th>CITY</th>';
         echo '<th>EVENT DATE</th>';
@@ -1281,7 +1285,7 @@ WHERE [WIC_Planner].[User_Id] = ?", array($userId), "rows");
             $str = $row['WICDATE'];
             $subStr = explode(" ", $str);
             echo '<tr>';
-            #echo '<td data-title = "WICID">' . $row['WICID'] . '</td>';
+#echo '<td data-title = "WICID">' . $row['WICID'] . '</td>';
             echo '<td data-title = "WICNAME">' . $row['WICNAME'] . '</td>';
             echo '<td data-title = "WICCITY">' . $row['WICCITY'] . '</td>';
             echo '<td data-title = "WICEVENTDATE">' . $subStr[0] . '</td>';
@@ -1291,7 +1295,7 @@ WHERE [WIC_Planner].[User_Id] = ?", array($userId), "rows");
         echo '</tr>';
         echo '</tbody>';
         echo '</table>';
-        //ON RETURN UPDATE -> SET DATE_MESSAGE_VIEW AND MESSAGE_VIEW
+//ON RETURN UPDATE -> SET DATE_MESSAGE_VIEW AND MESSAGE_VIEW
     } catch (Exception $exc) {
         echo 'ERROR READING YOUR WIC PLANNERS!';
     }
