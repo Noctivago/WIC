@@ -67,5 +67,5 @@
 <script src="../../js/validation.js" type="text/javascript"></script>
 <script>window.onload = function(){
     viewAllOrganizationToValidate();
-}
+};
     </script>
