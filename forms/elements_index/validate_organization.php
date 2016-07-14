@@ -1,4 +1,4 @@
-<main class="cd-main-content" onload="viewAllOrganizationToValidate()">
+<main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
         <div class="top-content">
