@@ -163,7 +163,7 @@ function removeCategoryOwner() {
 }
 
 function removeSubCategoryOwner() {
-    var id = document.getElementById("idSubOwner").value;
+    var id = document.getElementById("idSubOwner"+this.id).value;
     alert(id);
     var arg = 'removeUserInOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: id}, function (result) {
