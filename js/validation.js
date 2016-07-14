@@ -63,9 +63,9 @@ function table_data(json_r) {
         btn.type = 'button';
         btn.className = 'btn';
         btn.value = 'Remove';
-        btn.backgoundColor = 'red';
         btn.id = json_r[i].Id;
         btn.addEventListener("click", Reject);
+        btn.backgoundColor = 'FFFFFF';
         tr.appendChild(btn);
         var btn2 = document.createElement('input');
         btn2.type = 'button';
@@ -74,6 +74,7 @@ function table_data(json_r) {
         //  btn.placeholder = 'Remove';
         btn2.style = 'green';
         btn2.id = json_r[i].Id;
+        btn2.backgroudColor = '#7FFF00';
         btn2.addEventListener("click", Aprove);
         tr.appendChild(btn2);
         boddy.appendChild(tr);
