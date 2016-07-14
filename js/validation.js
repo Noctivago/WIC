@@ -1,7 +1,8 @@
 function viewAllOrganizationToValidate(){
     var arg = 'viewAllOrganizationToValidate';
     $.post("../../orgsubmit.php", {arg: arg}, function (result) {
-        alert(result);
+        var json = $.parseJSON(result);
+        alert(json);
     });
     return false;
     

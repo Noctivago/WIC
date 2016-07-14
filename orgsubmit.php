@@ -44,7 +44,7 @@ if ($arg === 'addOrganization') {
       ,[Website]
   FROM [dbo].[Organization]
   where [Validate] = 0",array(),"rows");
-    json_encode($rows);
+     echo json_encode($rows);
        
     } catch (Exception $ex) {
         
