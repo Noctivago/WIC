@@ -24,7 +24,7 @@ fbChat = {
   sendMessage: function(message) {
     var that = this;
     $.ajax({
-      url: '/ajax/add_msg.php',
+      url: '../ajax/add_msg.php',
       method: 'post',
       data: {msg: message},
       success: function(data) {
@@ -35,7 +35,7 @@ fbChat = {
   },
   getMessages: function() {
     $.ajax({
-      url: '/ajax/get_messages.php',
+      url: '../ajax/get_messages.php',
       method: 'GET',
       success: function(data) {
         $('.msg-wgt-body').html(data);
@@ -55,7 +55,7 @@ fbChat = {
  */
 function send_message(message) {
   $.ajax({
-    url: '/ajax/add_msg.php',
+    url: '../ajax/add_msg.php',
     method: 'post',
     data: {msg: message},
     success: function(data) {
@@ -70,7 +70,7 @@ function send_message(message) {
  */
 function get_messages() {
   $.ajax({
-    url: '/ajax/get_messages.php',
+    url: '../ajax/get_messages.php',
     method: 'GET',
     success: function(data) {
       $('.msg-wgt-body').html(data);
