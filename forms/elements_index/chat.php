@@ -51,6 +51,7 @@
                         function myFunction() {
                             //sendMessage()
                             alert('myMessage');
+                            //sendMessage();
                         }
                         function setConvId(ConvID) {
                             document.getElementById("COVERSATIONID").value = ConvID;
