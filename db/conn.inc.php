@@ -1148,16 +1148,19 @@ function DB_getUserToStartChat($pdo, $orgServId, $userId) {
 //SE POSSUIR CHEFE SUBCATEGORIA
     if (isset($userOnSubCat)) {
         $userOrg = $userOnSubCat;
+        //FALTA ENVIA MSG PARA USER ORG COM USERX START A CONVERSATION ABOUT SERVICEX
         return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
     } else {
 //SE NAO POSSUIR CHEFE CATEGORIA
         if (isset($userOnCat)) {
             $userOrg = $userOnCat;
+            //FALTA ENVIA MSG PARA USER ORG COM USERX START A CONVERSATION ABOUT SERVICEX
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
 //SE POSSUIR CHEFE CAT
         } else {
 //SE N POSSUIR CHEFE DE CAT OU SUBCAT USA ID_BOSS
             $userOrg = DB_checkOrgOwner($pdo, $orgId);
+            //FALTA ENVIA MSG PARA USER ORG COM USERX START A CONVERSATION ABOUT SERVICEX
             return DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ);
         }
     }
