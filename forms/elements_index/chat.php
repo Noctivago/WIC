@@ -82,11 +82,12 @@
                             <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
                             <a href="javascript:myFunction()" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
                         </div>
-                        <input type="text" id ="COVERSATIONID" name="COVERSATIONID" style="visibility: hidden;"><br>
-                        <input type="text" id ="USERID" name="USERID" style="visibility: hidden;"><br>
-                        <input type="text" id ="CHATID" value="0" name="CHATID" style="visibility: hidden;"><br>
-                    </div>
 
+                    </div>
+                    <!--IDS NECESSARIOS-->
+                    <input type="text" id ="COVERSATIONID" name="COVERSATIONID" style="visibility: hidden;"><br>
+                    <input type="text" id ="USERID" name="USERID" style="visibility: hidden;"><br>
+                    <input type="text" id ="CHATID" value="0" name="CHATID" style="visibility: hidden;"><br>
 
                     <!--Caixa de escrever mensagens-->
                 </div>
