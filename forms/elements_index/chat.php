@@ -45,19 +45,27 @@
 
                     <!--SET ENABLED = FALSE; ON USER CLICK ENABLED AND GET MESSAGES FROM
                                         THAT CONVERSATION-->
+                    <script type="text/javascript">
+                        function myFunction(myMessage) {
+                            alert(myMessage);
+                        }
+                    </script>
+
+                    <!--<a href="javascript:myFunction('You clicked!')">My link</a>-->
+
                     <div class="message-wrap col-lg-8">
-                        <div class="msg-wrap">
+                        <div class="msg-wrap msg-wgt-body">
                             <!--GET THE MESSAGES OF A SPECIFIC CONVERSATION-->
                             <?= DB_getMyMessages($pdo, 82); ?>
                             //<?= DB_getMyMessages($pdo, $Conversation_Id); ?>
                         </div>
 
                         <div class="send-wrap ">
-                            <textarea class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>
+                            <textarea class="form-control send-message" id = "chatMsg"rows="3" placeholder="Write a reply..."></textarea>
                         </div>
                         <div class="btn-panel">
                             <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
-                            <a href="" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
+                            <a href="javascript:myFunction('You clicked!')" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
                         </div>
                     </div>
 
@@ -73,6 +81,7 @@
 <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
+<script src="../../js/chat.js" type="text/javascript"></script>
 
 
 
