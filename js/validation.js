@@ -63,6 +63,7 @@ function table_data(json_r) {
         btn.type = 'button';
         btn.className = 'btn';
         btn.value = 'Remove';
+        btn.style = 'red';
         btn.id = json_r[i].Id;
         btn.addEventListener("click", Reject);
         td.appendChild(btn);
@@ -71,6 +72,7 @@ function table_data(json_r) {
         btn2.className = 'btn';
         btn2.value = 'Approve';
         //  btn.placeholder = 'Remove';
+        btn2.style = 'green';
         btn2.id = json_r[i].Id;
         btn2.addEventListener("click", Aprove);
         td.appendChild(btn2);
