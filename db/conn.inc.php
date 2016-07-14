@@ -1226,7 +1226,7 @@ function DB_getMyMessages($pdo, $Conversation_Id) {
             echo '<img class="media-object" alt="64x64" style="width: 32px; height: 32px;" src="' . $row['PP'] . '">';
             echo '</a>';
             echo '<div class="media-body">';
-            echo '<small class="pull-right time"><i class="fa fa-clock-o"></i>' . $subStr[0] . ' ' . $h[0] . '</small>';
+            echo '<small class="pull-right time"><i class="fa fa-clock-o"></i> ' . $subStr[0] . ' ' . $h[0] . '</small>';
             echo '<h5 class="media-heading">' . $row['UUN'] . '</h5>';
             echo '<small class="col-lg-10">' . $row['MMM'] . '</small>';
             echo '</div>';
