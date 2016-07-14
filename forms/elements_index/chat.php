@@ -1,6 +1,6 @@
 <script src="../../js/chat.js" type="text/javascript"></script>
 <link href="../../assets/assests_sidebar/css/chat.css" rel="stylesheet">
-<main onload="get_messages()" class="cd-main-content">
+<main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
         <!--         <div class="top-content">
                     <div class="col-lg-12">
