@@ -36,14 +36,15 @@
                 </div>
                 <div class="row">
 
-
-
                     <div class="conversation-wrap col-lg-3">
                         <!--GET ALL USERS IN CONVERSATION WITH THE USER-->
                         <?= DB_getMyConversations($pdo, $_SESSION['id']); ?>
                     </div>
 
                     <!--Caixa de escrever mensagens-->
+
+                    <!--SET ENABLED = FALSE; ON USER CLICK ENABLED AND GET MESSAGES FROM
+                                        THAT CONVERSATION-->
                     <div class="message-wrap col-lg-8">
                         <div class="msg-wrap">
                             <!--GET THE MESSAGES OF A SPECIFIC CONVERSATION-->
@@ -67,11 +68,6 @@
         </div>
     </div>
 </main>
-<!--<script src="../../assets/assests_sidebar/js/js_main/bootstrap.min_main.js" type="text/javascript"></script>
-<script src="../../assets/assests_sidebar/js/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
-<script src="../../assets/assests_sidebar/js/js_main/backstretch.min_main.js" type="text/javascript"></script>
-<script src="../../assets/assests_sidebar/js/js_main/scripts_main.js" type="text/javascript"></script>-->
-
 
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
