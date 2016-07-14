@@ -61,7 +61,7 @@ function table_data(json_r) {
         tr.appendChild(dd);
         var btn = document.createElement('input');
         btn.type = 'button';
-        btn.className = 'btn';
+        btn.className = 'btn-danger';
         btn.value = 'Remove';
         btn.id = json_r[i].Id;
         btn.addEventListener("click", Reject);
@@ -69,7 +69,7 @@ function table_data(json_r) {
         tr.appendChild(btn);
         var btn2 = document.createElement('input');
         btn2.type = 'button';
-        btn2.className = 'btn';
+        btn2.className = 'btn-sucsess';
         btn2.value = 'Approve';
         //  btn.placeholder = 'Remove';
         btn2.style = 'green';
