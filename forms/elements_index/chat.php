@@ -46,7 +46,7 @@
                                         THAT CONVERSATION-->
                     <script type="text/javascript">
                         function myFunction() {
-                            alert(this.id);
+                            alert('myMessage');
                         }
                     </script>
 
