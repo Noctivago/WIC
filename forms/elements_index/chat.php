@@ -62,6 +62,7 @@
                         function setUserId(ConvID) {
                             document.getElementById("USERID").value = ConvID;
                             //alert(ConvID);
+                            window.boot_chat = function(){return false;};
                             boot_chat();
                         }
                     </script>
