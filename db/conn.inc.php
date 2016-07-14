@@ -1222,7 +1222,7 @@ function DB_getMyMessages($pdo, $Conversation_Id) {
             $subStr = explode(" ", $str);
             $h = explode(".", $subStr[1]);
             echo '<div class="media msg">';
-            echo '<a class="pull-left" href="#">';
+            echo '<a class="pull-left">';
             echo '<img class="media-object" alt="64x64" style="width: 32px; height: 32px;" src="' . $row['PP'] . '">';
             echo '</a>';
             echo '<div class="media-body">';
