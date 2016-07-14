@@ -94,7 +94,7 @@ function change_tableData(json_r, div_table, id_table, tbody) {
         if (id_table === 'table1') {
             var dd = document.createElement('input');
             dd.type = "hidden";
-            dd.id = "idCatOwner";
+            dd.id = "idCatOwner" + json_r[i].Id;
             dd.value = json_r[i].Id;
             tr.appendChild(dd)
             var btn = document.createElement('input');
@@ -104,11 +104,12 @@ function change_tableData(json_r, div_table, id_table, tbody) {
             btn.value = 'Remove';
             //ALTEREI AQUI
             btn.id = json_r[i].Id;
-            btn.addEventListener("click", removeCategoryOwner);
+            btn.addEventListener("click", removeCategoryOwner(json_r[i].Id));
+            //btn.addEventListener("click", removeCategoryOwner);
         } else {
             var dd = document.createElement('input');
             dd.type = "hidden";
-            dd.id = 'idSubOwner';
+            dd.id = 'idSubOwner' + json_r[i].Id;
             dd.value = json_r[i].Id;
             tr.appendChild(dd)
             var btn = document.createElement('input');
@@ -151,8 +152,8 @@ function viewAllUsersInOrganization() {
     });
     return false;
 }
-function removeCategoryOwner() {
-    var id2 = document.getElementById(json_r[i].Id).value;
+function removeCategoryOwner(a) {
+    var id2 = document.getElementById("idCatOwner" + a).value;
     //var id2 = document.getElementById('idCatOwner').value;
     alert(id2);
     var arg = 'removeUserInOrgOwner';
