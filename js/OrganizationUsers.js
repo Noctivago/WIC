@@ -150,10 +150,10 @@ function viewAllUsersInOrganization() {
         change_table_data(json_r2, div_table2, id_table2, tbody2);
         console.log(json_r2);
     });
-    return false;
+    return false;   
 }
 function removeCategoryOwner(a) {
-    var id2 = document.getElementById("idCatOwner" + a).value;
+    var id2 = document.getElementById("idCatOwner" & a).value;
     //var id2 = document.getElementById('idCatOwner').value;
     alert(id2);
     var arg = 'removeUserInOrgOwner';
