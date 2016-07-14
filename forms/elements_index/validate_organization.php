@@ -26,38 +26,20 @@
                                     <table class="col-md-12 table-bordered table-striped table-condensed cf ">
                                         <thead class="cf">
                                             <tr>
-                                                <th>Id</th>
-                                                <th>Dia Semana</th>
-                                                <th class="numeric">d-semana</th>	
+                                                <th>Name</th>
+                                                <th>Phone_Number</th>
+                                                <th>Address</th>
+                                                <th>Date_Created</th>
+                                                <th>Facebook</th>
+                                                <th>Twitter</th>
+                                                <th>Linkdin</th>
+                                                <th>Organization_Email</th>
+                                                <th>Website</th>
+                                              	
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td data-title="Code">1</td>
-                                                <td data-title="Company">SEGUNDA</td>
-                                                <td data-title="Day" class="numeric">seg-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">2</td>
-                                                <td data-title="Company">TERCA</td>
-                                                <td data-title="Day" class="numeric">ter-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">3</td>
-                                                <td data-title="Company">QUARTA</td>
-                                                <td data-title="Day" class="numeric">qua-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">4</td>
-                                                <td data-title="Company">QUINTA</td>
-                                                <td data-title="Day" class="numeric">qui-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                            </tr>
+                                          
                                         </tbody>
                                     </table>
                                 </div>
