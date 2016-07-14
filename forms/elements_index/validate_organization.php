@@ -22,8 +22,8 @@
                                     </h1>
 
                                 </div>
-                                <div id="no-more-tables">
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
+                                <div id="no-more-tables" id="div1">
+                                    <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1">
                                         <thead class="cf">
                                             <tr>
                                                 <th>Name</th>
@@ -37,8 +37,8 @@
                                                 <th>Website</th>
                                               	
                                             </tr>
-                                        </thead>
-                                        <tbody>
+                                        </thead >
+                                        <tbody id="tbody1">
                                           
                                         </tbody>
                                     </table>
