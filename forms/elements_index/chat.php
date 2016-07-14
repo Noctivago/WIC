@@ -56,9 +56,8 @@
                     <div class="message-wrap col-lg-8">
                         <div class="msg-wrap msg-wgt-body">
                             <!--GET THE MESSAGES OF A SPECIFIC CONVERSATION-->
-                            //READING WITH AJAX?
-                            //<?= DB_getMyMessages($pdo, 82); ?>
-                            //<?= DB_getMyMessages($pdo, $Conversation_Id); ?>
+                            <!--WORKING ON AJAX CALL-->
+
                         </div>
 
                         <div class="send-wrap ">
