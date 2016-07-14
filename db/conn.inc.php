@@ -1053,6 +1053,7 @@ function DB_addConversation($pdo, $userClient, $userOrg, $d, $orgServ) {
            ,[Organization_Service]
            ,[Enabled_User1]
            ,[Enabled_User2]) VALUES(?,?,?,?,?,?)", array($userClient, $userOrg, $d, $orgServ, 1, 1));
+            //FALTA GRAB DO ID E START CONVERSATION
             echo 'CONVERSATION CREATED!';
         }
     } catch (PDOException $e) {
