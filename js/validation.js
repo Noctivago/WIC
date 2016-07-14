@@ -70,8 +70,6 @@ function table_data(json_r) {
         btn2.type = 'button';
         btn2.className = 'btn btn-success';
         btn2.value = 'Approve';
-        //  btn.placeholder = 'Remove';
-        btn2.style = 'green';
         btn2.id = json_r[i].Id;
         btn2.addEventListener("click", Aprove);
         tr.appendChild(btn2);
