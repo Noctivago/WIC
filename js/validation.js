@@ -23,10 +23,10 @@ function Reject() {
     var id = document.getElementById("id" + this.id).value;
     var arg = 'validateOrganization';
     var rej = 'Reject';
-    var resp = '0';
+    var res = '0';
     var resp = deleteConfirmation(rej);
     if (resp == true) {
-        $.post("../../orgsubmit.php", {arg: arg, id: id, resp: resp}, function (result) {
+        $.post("../../orgsubmit.php", {arg: arg, id: id, resp: res}, function (result) {
             viewAllOrganizationToValidate();
         });
     }
@@ -37,10 +37,10 @@ function Aprove() {
     var id = document.getElementById("id" + this.id).value;
     var arg = 'validateOrganization';
     var apr = 'Aprove';
-    var resp = '1';
+    var res = '1';
     var resp = deleteConfirmation(apr);
     if (resp == true) {
-        $.post("../../orgsubmit.php", {arg: arg, id: id, resp: resp}, function (result) {
+        $.post("../../orgsubmit.php", {arg: arg, id: id, resp: res}, function (result) {
             viewAllOrganizationToValidate();
         });
     }
