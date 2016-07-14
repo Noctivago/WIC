@@ -9,7 +9,12 @@ function viewAllOrganizationToValidate(){
     return false;
     
 }
-
+function Reject(){
+    
+}
+function Aprove(){
+    
+}
 function table_data(json_r) {
     var div = document.getElementById('div1');
     var table = document.getElementById('table1');
