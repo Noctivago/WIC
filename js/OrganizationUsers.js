@@ -94,7 +94,7 @@ function change_tableData(json_r, div_table, id_table, tbody) {
         if (id_table === 'table1') {
             var dd = document.createElement('input');
             dd.type = "hidden";
-            dd.id = "idCatOwner" + json_r[i].Id;
+            dd.id = "idCatOwner" & json_r[i].Id;
             dd.value = json_r[i].Id;
             tr.appendChild(dd)
             var btn = document.createElement('input');
