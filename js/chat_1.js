@@ -90,8 +90,8 @@ function boot_chat() {
     //FAZER GET A CADA 5 SEG
     
     // Load the messages every 5 seconds
-    setInterval(get_messages, 1000);
-
+    setInterval(get_messages, 5000);
+    alert('CHAT STARTED');
     // Bind the keyboard event
     chatArea.bind('keydown', function (event) {
         // Check if enter is pressed without pressing the shiftKey

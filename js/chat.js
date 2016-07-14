@@ -118,6 +118,6 @@ function boot_chat() {
 }
 
 // Initialize the chat
-boot_chat();
+//boot_chat();
 
 //MISSING FUNCTION TO GET CONVERSATIONS
