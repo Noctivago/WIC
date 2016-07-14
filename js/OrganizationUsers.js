@@ -111,11 +111,12 @@ function change_tableData(json_r, div_table, id_table, tbody) {
             dd.value = json_r[i].Id;
             tr.appendChild(dd)
             var btn = document.createElement('input');
-
+            //<button id="3" onClick="reply_click(this.id)">B3</button>
             btn.type = 'button';
             btn.className = 'btn';
             btn.value = 'Remove';
-            btn.id = 'idSubOwner';
+            //btn.id = 'idSubOwner';
+            btn.id = json_r[i].Id;
             btn.addEventListener("click", removeSubCategoryOwner);
         }
         td.appendChild(btn);
@@ -152,7 +153,7 @@ function viewAllUsersInOrganization() {
 }
 function removeCategoryOwner() {
     var id2 = document.getElementById('idCatOwner').value;
-    alert(id2);
+    alert(id2 + 'BTN' + this.id);
     var arg = 'removeUserInOrgOwner';
     $.post("../../orgsubmit.php", {arg: arg, id: id2}, function (result) {
         alert(result);
