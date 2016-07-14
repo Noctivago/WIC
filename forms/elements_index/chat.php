@@ -69,6 +69,7 @@
                     <!--<a href="javascript:myFunction('You clicked!')">My link</a>-->
 
                     <div class="message-wrap col-lg-8">
+                        <!--MAKE INVISABLE -> TURN VISIBLE ON MESSAGES RECEIVED-->
                         <div class="msg-wrap msg-wgt-body">
                             <!--GET THE MESSAGES OF A SPECIFIC CONVERSATION-->
                             <!--WORKING ON AJAX CALL-->
