@@ -18,34 +18,7 @@
 
                         <div class="form-box">
                             <div class="form-top">
-                                <div class="form-top-left">
-
-                                </div>
-                                <div class="form-top-right">
-                                </div>
-                                <!--                            <div class="form-top-right">
-                                                                <i class="fa fa-key"></i>-->
-                                <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                <input style="color: black;" class="form-username form-control" type="file">
-                                <!--<h6 style="color:black">Upload a different photo...</h6>  width: 370px; align:center-left;   text-left center-block well well-sm-->
-
-                            </div>
-
-
-                            <div class="form-bottom">
-                              
-                            </div>
-                        </div>
-                    </div>
-                  
-
-                    <div class="col-sm-1"></div>
-
-                    <div class="col-sm-5">
-
-
-                        <div class="container">
-                            <div class="row">
+                              <div class="row">
                                 <div class="col-md-12">
                                     <h1 class="text-center">
                                         Nome tabela
@@ -92,6 +65,23 @@
                                     </table>
                                 </div>
                             </div>
+                            </div>
+
+
+                            <div class="form-bottom">
+                              
+                            </div>
+                        </div>
+                    </div>
+                  
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-5">
+
+
+                        <div class="container">
+                            
 
                         </div>
 
@@ -116,8 +106,6 @@
     </div>
     <!--        </div>-->
 
-</div>
-</div>
 </main>
 <!--<script src="../../assets/assests_sidebar/js/js_main/bootstrap.min_main.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/js/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
