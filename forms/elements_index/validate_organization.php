@@ -27,13 +27,13 @@
                                         <thead class="cf">
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Phone_Number</th>
+                                                <th>Phone Number</th>
                                                 <th>Address</th>
-                                                <th>Date_Created</th>
+                                                <th>Date Created</th>
                                                 <th>Facebook</th>
                                                 <th>Twitter</th>
                                                 <th>Linkdin</th>
-                                                <th>Organization_Email</th>
+                                                <th>Email</th>
                                                 <th>Website</th>
                                               	
                                             </tr>
