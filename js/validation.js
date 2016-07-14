@@ -58,7 +58,7 @@ function table_data(json_r) {
         dd.type = "hidden";
         dd.id = "id" + json_r[i].Id;
         dd.value = json_r[i].Id;
-        tr.appendChild(dd);
+        td.appendChild(dd);
         var btn = document.createElement('input');
         btn.type = 'button';
         btn.className = 'btn';
@@ -66,7 +66,6 @@ function table_data(json_r) {
         btn.id = json_r[i].Id;
         btn.addEventListener("click", Reject);
         td.appendChild(btn);
-        tr.appendChild(td);
         var btn2 = document.createElement('input');
         btn2.type = 'button';
         btn2.className = 'btn';
