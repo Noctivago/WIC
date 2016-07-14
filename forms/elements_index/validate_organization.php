@@ -36,9 +36,7 @@
                                                 <th>Linkdin</th>
                                                 <th>Email</th>
                                                 <th>Website</th>
-                                                <th>Reject</th>
-                                                <th>Aprove</th>
-                                              	
+                                                <th></th>
                                             </tr>
                                         </thead >
                                         <tbody id="tbody1">
