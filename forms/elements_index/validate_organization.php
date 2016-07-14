@@ -35,6 +35,8 @@
                                                 <th>Linkdin</th>
                                                 <th>Email</th>
                                                 <th>Website</th>
+                                                <th>Reject</th>
+                                                <th>Aprove</th>
                                               	
                                             </tr>
                                         </thead >
