@@ -63,11 +63,9 @@ function table_data(json_r) {
             btn.type = 'button';
             btn.className = 'btn';
             btn.value = 'Remove';
-            //  btn.placeholder = 'Remove';
             btn.id = 'reject';
             btn.addEventListener("click", Reject);
-            td.appendChild(btn);
-            tr.appendChild(td);
+          //  tr.appendChild(td);
             var btn = document.createElement('input');
             btn.type = 'button';
             btn.className = 'btn';
