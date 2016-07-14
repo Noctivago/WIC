@@ -1211,6 +1211,7 @@ function DB_getMyConversations($pdo, $userId) {
             echo '</div>';
         }
     }
+    //TERMINOU ENTAO GET LAST CID E STARTCHAT(CID);
 }
 
 //ONLY LOAD FIRST 150 MSG
