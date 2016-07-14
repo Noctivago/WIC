@@ -24,6 +24,31 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'ERRO';
     }
+} else if ($arg === 'viewAllOrganizationToValidate') {
+    try {
+     $rows = sql($pdo,"SELECT Id,[Name]
+      ,[Phone_Number]
+      ,[Mobile_Number]
+      ,[Logotype]
+      ,[Validate]
+      ,[Address]
+      ,[Enabled]
+      ,[User_Boss]
+      ,[Date_Created]
+      ,[Facebook]
+      ,[Twitter]
+      ,[Linkdin]
+      ,[Abusive_Organization]
+      ,[Good_Organization]
+      ,[Organization_Email]
+      ,[Website]
+  FROM [dbo].[Organization]
+  where [Validate] = 0",array(),"rows");
+    json_encode($rows);
+       
+    } catch (Exception $ex) {
+        
+    }
 } else if ($arg === 'orgInformation') {
     //$userid = $_SESSION['id'];
     try {

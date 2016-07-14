@@ -13,7 +13,7 @@
                     <!--            </div>-->
                 </div>
 
-                <div class="row">
+                <div class="row" onload="viewAllOrganizationToValidate()">
 
                   
                             <div class="col-md-12">
