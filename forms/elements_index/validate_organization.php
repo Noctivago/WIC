@@ -68,31 +68,11 @@
                             </div>
 
 
-                            <div class="form-bottom">
-                              
-                            </div>
                         </div>
                     </div>
                   
 
-                    <div class="col-sm-1"></div>
-
-                    <div class="col-sm-5">
-
-
-                        <div class="container">
-                            
-
-                        </div>
-
-
-                    </div>
-
-
-                 
-
-                </div>
-            </div>
+                    
             <!--                        <div class="col-sm-1 middle-border"></div>-->
             <!--                    <div class="col-sm-1"></div>
             
@@ -101,6 +81,9 @@
 
 
 
+        </div>
+
+    </div>
         </div>
 
     </div>
