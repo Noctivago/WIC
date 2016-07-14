@@ -1218,7 +1218,7 @@ function DB_getMyMessages($pdo, $Conversation_Id) {
     on [User].[Id] = [Message].[User_Id]
     WHERE [Conversation].[Id] = ? ORDER BY [Message].[Message_Date] DESC", array($Conversation_Id), "rows");
         foreach ($rows as $row) {
-            $str = $row['CDC'];
+            $str = $row['MMD'];
             $subStr = explode(" ", $str);
             $h = explode(".", $subStr[1]);
             echo '<div class="media msg">';
