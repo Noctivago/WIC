@@ -70,6 +70,8 @@
                                         $DB_Date = getDateToDBStringToDate($eventDate);
                                         $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $DB_Date, $eventDate);
                                         #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
+                                        echo $name;
+                                        
                                     } catch (Exception $ex) {
                                         echo "ERROR!";
                                     }
