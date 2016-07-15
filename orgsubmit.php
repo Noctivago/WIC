@@ -318,7 +318,7 @@ where [User_In_Organization].[Enabled] = 1 and [Organization_Id] = ?", array($id
         $userId = $_SESSION['id'];
         $linha = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
         $response = (filter_var($_POST ['res'], FILTER_SANITIZE_NUMBER_INT));
-        if ($response === "1") {
+        if ($response === 1) {
             $enabled = 1;
         } else {
             $enabled = 0;
