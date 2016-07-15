@@ -618,7 +618,23 @@ function DB_addOrganizationService($pdo, $name, $description, $org, $subCategory
     }
 }
 
-
+function DB_AddSubCategoryOwner($pdo, $subcat, $user,$org){
+    try {
+        //$d = getDateToDB();    
+        //falta verificar já existe algum id com o user e o org
+        sql($pdo,"INSERT INTO [dbo].[Sub_Category_Owner]
+           ([User_Id]
+           ,[Sub_Category_Id]
+           ,[Enabled]
+           ,[Organization_Id])
+     VALUES
+           (?,?,?,?)", array($user,$cat,1,$org));
+    $msg ="true";
+    echo $msg;
+    } catch (Exception $ex) {
+        echo 'ERRO';
+    }
+}
 function DB_AddCategoryOwner($pdo, $cat, $user, $org) {
     try {
         //$d = getDateToDB();    

@@ -85,7 +85,22 @@
                         <div class="col-sm-1"></div>
 
                         <div class="col-sm-5">
-
+                                     <?php
+                                $userId = $_SESSION['id'];
+                                if (isset($_POST['addSubCat']) && isset($_POST['category']) && !empty($_POST['org1']) && isset($_POST['userOrg1'])) {
+                                    $msg = '';
+                                    try {
+                                        $subcat = (filter_var($_POST['Sub_Category'], FILTER_SANITIZE_STRING));
+                                        $user = (filter_var($_POST ['userOrg2'], FILTER_SANITIZE_STRING));
+                                        $org = (filter_var($_POST ['org2'], FILTER_SANITIZE_STRING));
+                                        $msg = DB_AddSubCategoryOwner($pdo, $subcat, $user,$org);
+                                        echo $msg . $user . $org . $cat;
+                                    } catch (Exception $ex) {
+                                        $msg = "ERROR!";
+                                    }
+                                } 
+                                ?>
+                            
                             <div class="form-box">
                                 <!--div class="form-top">
                                     <div class="form-top-left"></div>
@@ -96,7 +111,7 @@
 
                                 <div class="form-bottom">
                                     <h4 align="center"> Sub Category owners</h4>
-                                    <form role="form" action="" method="post" class="login-form">
+                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                         <div class="form-group">
                                             <select class="form-username form-control" name="org2" id="org2" onchange="fill_Users_Sub_Category()">
                                                 <?php DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
@@ -112,7 +127,7 @@
                                                 <option id ='user' value='0'> Choose a User</option>
                                             </select>
                                         </div>
-                                        <button type="submit" id="request" class="btn" name="request" visible="true">Add Sub Category Owner</button>
+                                        <button type="submit" id="addSubCat" class="btn" name="addSubCat" visible="true">Add Sub Category Owner</button>
                                     </form>
                                 </div>
                             </div>
