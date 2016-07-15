@@ -85,6 +85,14 @@
                         <div class="col-sm-1"></div>
 
                         <div class="col-sm-5">
+                            
+                            <div class="form-box">
+                                <!--div class="form-top">
+                                    <div class="form-top-left"></div>
+                                    <div class="form-top-right">
+                                    </div>
+
+                                </div-->
                                      <?php
                                 $userId = $_SESSION['id'];
                                 if (isset($_POST['addSubCat']) && isset($_POST['category']) && !empty($_POST['org1']) && isset($_POST['userOrg1'])) {
@@ -100,14 +108,6 @@
                                     }
                                 } 
                                 ?>
-                            
-                            <div class="form-box">
-                                <!--div class="form-top">
-                                    <div class="form-top-left"></div>
-                                    <div class="form-top-right">
-                                    </div>
-
-                                </div-->
 
                                 <div class="form-bottom">
                                     <h4 align="center"> Sub Category owners</h4>
