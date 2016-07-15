@@ -16,6 +16,9 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="fa fa-cloud" href="view_WicPlanner.php"></a>
+                        </li>
                         
                     </ul>
                 </div>
