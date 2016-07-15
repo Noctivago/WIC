@@ -203,7 +203,8 @@ function change_table_data(json_r, div_table, id_table, tbody) {
             var btn = document.createElement('input');
             btn.type = 'button';
             btn.className = 'btn btn-danger';
-            btn.value = 'Remove';
+            btn.value = json_r[i].Id;
+            btn.id = "idUserInOrg";
             btn.addEventListener("click", removeUserInOrganization);
             td.appendChild(btn);
             tr.appendChild(td);
