@@ -34,6 +34,14 @@ include_once ('../db/conn.inc.php');
         echo '<br>';
         echo "<a href='sidebar_final.php'> Main Page</a> ";
         echo '<br>';
+        echo "<a href='invites.php'> View invites</a> ";
+        echo '<br>';
+        echo "<a href='validate_organization.php'> Validate organizations</a> ";
+        echo '<br>';
+        echo "<a href='add_staff.php'> Users in organization</a> ";
+        echo '<br>';
+        echo "<a href='add_owners.php'> Add/Remove Category/Sub Category owners </a> ";
+        echo '<br>';
         
         echo "<a href='logout.php'> Logout</a> ";
         
