@@ -50,14 +50,14 @@
                     <script type="text/javascript">
                         function myFunction(x) {
                             //sendMessage()
-                            alert(x);
                             var selCon = document.getElementById(x);
                             selCon.style.backgroundColor = "yellow";
+                            alert(x);
                             //sendMessage();
                         }
                         function setConvId(ConvID) {
                             document.getElementById("COVERSATIONID").value = ConvID;
-                            alert(ConvID);
+                            //alert(ConvID);
                         }
                         function setUserId(ConvID) {
                             document.getElementById("USERID").value = ConvID;
@@ -82,7 +82,7 @@
                         </div>
                         <div class="btn-panel">
                             <!--<a href="" class=" col-lg-3 btn   send-message-btn " role="button"><i class="fa fa-cloud-upload"></i> Add Files</a>-->
-                            <a href="javascript:myFunction()" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
+                            <a href="javascript:myFunction(this.id)" class=" col-lg-4 text-right btn   send-message-btn pull-right" role="button"><i class="fa fa-plus"></i> Send Message</a>
                         </div>
 
                     </div>
