@@ -626,11 +626,10 @@ function DB_AddCategoryOwner($pdo, $cat, $user, $org) {
         sql($pdo,"INSERT INTO [dbo].[Category_Owner]
            ([User_Id]
            ,[Category_Id]
-           ,[Date_Created]
            ,[Enabled]
            ,[Organization_Id])
      VALUES
-           (?,?,?,?,?)", array($user,$cat,$d,1,$org));
+           (?,?,?,?,?)", array($user,$cat,1,$org));
     } catch (Exception $ex) {
         
     }
