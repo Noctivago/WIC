@@ -32,7 +32,7 @@
                                         $cat = (filter_var($_POST['category'], FILTER_SANITIZE_STRING));
                                         $user = (filter_var($_POST ['userOrg1'], FILTER_SANITIZE_STRING));
                                         $org = (filter_var($_POST ['org1'], FILTER_SANITIZE_STRING));
-                                        $msg = DB_AddCategoryOwner($pdo, $cat, $user,$org);
+                                        $DB_AddCategoryOwner($pdo, $cat, $user,$org);
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
@@ -42,7 +42,7 @@
                                         $subcat = (filter_var($_POST['Sub_Category'], FILTER_SANITIZE_STRING));
                                         $user = (filter_var($_POST ['userOrg2'], FILTER_SANITIZE_STRING));
                                         $org = (filter_var($_POST ['org2'], FILTER_SANITIZE_STRING));
-                                        $msg = DB_AddSubCategoryOwner($pdo, $subcat, $user,$org);
+                                        DB_AddSubCategoryOwner($pdo, $subcat, $user,$org);
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
