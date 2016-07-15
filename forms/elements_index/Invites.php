@@ -22,7 +22,7 @@
                                     </h1>
 
                                 </div>
-                    <div id="no-more-tables" id="div1" style="display: true">
+                    <div id="no-more-tables" id="div1" style="display: none">
                                     <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1">
                                         <thead class="cf">
                                             <tr>

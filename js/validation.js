@@ -1,17 +1,18 @@
-function viewAllInvites(){
+function viewAllInvites() {
     var arg = 'viewAllInvites';
     //var div = document.getElementById("div1");
     $.post("../../orgsubmit.php", {arg: arg}, function (result) {
         $("#tbody1").empty();
         var json = $.parseJSON(result);
-        if(true){
+        if (true) {
             var resposta = document.getElementById('res');
             resposta.innerHTML = "you don't have invitations";
             //  table_data(json);
-  }else{
-      document.getElementById("div1").style = "Display: true";
-        alert(json);
-        console.log(json);}
+        } else {
+            document.getElementById("div1").style = "Display: true";
+            alert(json);
+            console.log(json);
+        }
     });
     return false;
 
