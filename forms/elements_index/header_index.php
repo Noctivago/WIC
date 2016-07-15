@@ -28,6 +28,7 @@
             <li><a href="../navbar/">Default</a></li>
             <li><a href="../navbar-static-top/">Static top</a></li>
             <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+            <ul class="cd-top-nav">
             <li class="has-children account">
 					<a href="#0">
 						<img src="../../assets/img/backgrounds/logo.svg.png" alt="avatar">
@@ -43,6 +44,7 @@
                                                 
 					</ul>
 				</li>
+            </ul>
           </ul>
         </div><!--/.nav-collapse -->
 
