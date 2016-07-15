@@ -1,5 +1,5 @@
 
-<main class="cd-main-content">
+<main onload="getMyWic(<?= $_SESSION['id'] ?>)" class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
 
@@ -80,7 +80,7 @@
                                         <input type="date" name="eventDate" placeholder="Event Date" class="form-username form-control" id="eventDate" required>
                                     </div>
 
-                                    <button type="submit"  class="btn" name="addWic" visible="true">NEW Wic Planner!</button>
+                                    <button type="submit" onclick="getMyWic(<?= $_SESSION['id'] ?>)" class="btn" name="addWic" visible="true">NEW Wic Planner!</button>
                                 </form>
                             </div>
                         </div>
@@ -142,54 +142,26 @@
 
                                     </div>
                                     <div class="form-bottom">
-
+                                        <script type="text/javascript">
+                                            function getMyWic(userId) {
+                                                $.ajax({
+                                                    url: '../ajax/add_msg.php',
+                                                    method: 'post',
+                                                    data: {usrId: userId},
+                                                    success: function (data) {
+                                                        $('.no-more-tables').html(data);
+                                                    }
+                                                });
+                                            }
+                                        </script>    
                                         <div id="no-more-tables">
-                                            <?= DB_getMyWICPlanners($pdo, $_SESSION['id']); ?>
-        <!--                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
-                                                <thead class="cf">
-                                                    <tr>
-                                                        <th>Id</th>
-                                                        <th>Dia Semana</th>
-                                                        <th class="numeric">d-semana</th>	
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td data-title="Code">1</td>
-                                                        <td data-title="Company">SEGUNDA</td>
-                                                        <td data-title="Day" class="numeric">seg-feira</td>
-        
-                                                    </tr>
-                                                    <tr>
-                                                        <td data-title="Code">2</td>
-                                                        <td data-title="Company">TERCA</td>
-                                                        <td data-title="Day" class="numeric">ter-feira</td>
-        
-                                                    </tr>
-                                                    <tr>
-                                                        <td data-title="Code">3</td>
-                                                        <td data-title="Company">QUARTA</td>
-                                                        <td data-title="Day" class="numeric">qua-feira</td>
-        
-                                                    </tr>
-                                                    <tr>
-                                                        <td data-title="Code">4</td>
-                                                        <td data-title="Company">QUINTA</td>
-                                                        <td data-title="Day" class="numeric">qui-feira</td>
-        
-                                                    </tr>
-                                                    <tr>
-                                                    </tr>
-                                                </tbody>
-                                            </table>-->
+                                            <!--WICPLANNER APARECE AQUI-->
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
 
 
