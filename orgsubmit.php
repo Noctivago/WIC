@@ -323,7 +323,7 @@ where [User_In_Organization].[Enabled] = 1 and [Organization_Id] = ?", array($id
         } else {
             $enabled = 0;
         }
-        sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [User_Validation]=1,[Enabled]=?,[Responded]=1 Where [Id]=?", array($enabled, $linha));
+        sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [User_Validation]=?,[Enabled]=?,[Responded]=1 Where [Id]=?", array($enabled,$response, $linha));
         echo 'Validate Success';
     } catch (Exception $ex) {
         echo 'error';
