@@ -1,3 +1,10 @@
+function removeUserInOrganization(){
+    var art = 'removeUserInOrganization';
+    var idOwner = document.getElementById('idUserOrg').value;
+    alert(idOwner);
+}
+
+
 function fill_Users_Category() {
     var title = "title-1";
     var idOrg = document.getElementById("org1").value;
@@ -127,7 +134,6 @@ function change_tableData(json_r, div_table, id_table, tbody) {
 
 function viewAllUsersInOrganization() {
     var org = document.getElementById("org").value;
-    alert(org);
     var div_table1 = "title-1";
     var id_table1 = "table1";
     var tbody1 = "body1"
