@@ -26,7 +26,7 @@
                                 <div class="form-bottom" >
                                         <?php
                                 $userId = $_SESSION['id'];
-                                if ((isset($_POST['addCategory']) && isset($_POST['category'])) && !empty($_POST['org1'] && isset($_POST['userOrg1']))) {
+                                if (isset($_POST['addCategory']) && isset($_POST['category']) && !empty($_POST['org1']) && isset($_POST['userOrg1'])) {
                                     $msg = '';
                                     try {
                                         $cat = (filter_var($_POST['category'], FILTER_SANITIZE_STRING));
