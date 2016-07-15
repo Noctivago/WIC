@@ -1,6 +1,6 @@
 function removeUserInOrganization(){
+    var idOwner = document.getElementById('idUserOrg' + this.id).value;
     var arg = 'removeUserInOrganization';
-    var idOwner = document.getElementById('idUserOrg').value;
      $.post("../../orgsubmit.php", {arg: arg, id: idOwner}, function (result) {
         viewAllUsersInOrganization();
     });
@@ -196,7 +196,7 @@ function change_table_data(json_r, div_table, id_table, tbody) {
         if (id_table === "table1") {
             var dd = document.createElement('input');
             dd.type = "hidden";
-            dd.id = "idUserOrg";
+            dd.id = "idUserOrg"+ json_r[i].Id;
             dd.value = json_r[i].Id;
             tr.appendChild(dd);
             var btn = document.createElement('input');
