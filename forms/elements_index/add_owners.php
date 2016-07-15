@@ -120,7 +120,6 @@
                                             <button type="submit" id="addSubCat" class="btn" name="addSubCat" visible="true">Add Sub Category Owner</button>
                                         </form>
                                     </div>
-                                </div>
                                 <div id="title-2" style="Display: none">
                                     <table class="col-md-12 table-bordered table-striped table-condensed cf " style = "Display: none" id="table2">
                                         <thead class="cf">
@@ -147,6 +146,7 @@
                 </div>
 
 
+            </div>
             </div>
 
 
