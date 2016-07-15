@@ -22,31 +22,15 @@
 		<!--<a href="#0" class="cd-nav-trigger"><span></span></a>-->
 
 		<nav class="cd-nav">
-                     <div id="navbar" class="navbar-collapse collapse">
+                     
 
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar/">Default</a></li>
             <li><a href="../navbar-static-top/">Static top</a></li>
             <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
-            <ul class="cd-top-nav">
-            <li class="dropdown">
-					<a href="#0">
-						<img src="../../assets/img/backgrounds/logo.svg.png" alt="avatar">
-						Account
-					</a>
 
-					<ul>
-
-						
-                                                <li><a href="userProfile.php">My Account</a></li>
-                                                <li><a href="change_pass.php">Change Password</a></li>
-						<li><a href="logout.php">Logout</a></li>
-                                                
-					</ul>
-				</li>
-            </ul>
           </ul>
-        </div><!--/.nav-collapse -->
+
 
 
 
