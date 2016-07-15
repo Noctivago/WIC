@@ -4,14 +4,14 @@ function viewAllInvites(){
     $.post("../../orgsubmit.php", {arg: arg}, function (result) {
         $("#tbody1").empty();
         var json = $.parseJSON(result);
-        if(json.length === 0){
-            div.style = "Display: true";
-        alert(json);
-        console.log(json);
-      //  table_data(json);
+        if(json.length === 1){
+            var resposta = document.getElementById('res');
+            resposta.innerHTML = "you don't have invitations";
+            //  table_data(json);
   }else{
-            alert("ERRRRRR");
-  }
+      div.style = "Display: true";
+        alert(json);
+        console.log(json);}
     });
     return false;
 
