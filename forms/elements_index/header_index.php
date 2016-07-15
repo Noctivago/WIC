@@ -19,6 +19,9 @@
                         <li>
                             <a class="fa fa-cloud" href="view_WicPlanner.php"></a>
                         </li>
+                        <li>
+                            <a class="fa fa-user-secret" href="view_WicPlanner.php"></a>
+                        </li>
                         
                     </ul>
                 </div>
