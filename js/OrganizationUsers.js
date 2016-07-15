@@ -8,7 +8,7 @@ function fill_Users_Category() {
         $("#body1").empty();
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
-        console.log(json);
+        console.log(json_r);
         dataSelect(json_r, userSel, title);
         viewAllOwnerCategory();
     });
