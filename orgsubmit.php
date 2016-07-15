@@ -164,7 +164,17 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'viewAllInvites') {
     try {
         $userid = $_SESSION['id'];
-        $rows = sql($pdo,"SELECT * FROM [dbo].[User_In_Organization]
+        $rows = sql($pdo,"SELECT [User_In_Organization].[Id]
+		,[Organization].[Name]
+		,[Organization].[Address]
+		,[Organization].[Facebook]
+		,[Organization].[Twitter]
+		,[Organization].[Linkdin]
+		,[Organization].[Organization_Email]
+		,[Organization].[Website]
+ FROM [dbo].[User_In_Organization]
+join [Organization]
+on [Organization].[Id] = [User_In_Organization].[Organization_Id]
   where [Responded] = 0 and [User_Id] = ?", array($userid), "rows");
         echo json_encode($rows);
     } catch (Exception $ex) {
