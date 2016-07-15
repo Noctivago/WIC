@@ -1,11 +1,17 @@
 function viewAllInvites(){
     var arg = 'viewAllInvites';
+    var div = document.getElementById("div1");
     $.post("../../orgsubmit.php", {arg: arg}, function (result) {
         $("#tbody1").empty();
         var json = $.parseJSON(result);
+        if(json.length === 0){
+            div.style = "Display: true";
         alert(json);
         console.log(json);
       //  table_data(json);
+  }else{
+            alert("ERRRRRR");
+  }
     });
     return false;
 
