@@ -199,7 +199,7 @@ function change_table_data(json_r, div_table, id_table, tbody) {
             tr.appendChild(dd);
             var btn = document.createElement('input');
             btn.type = 'button';
-            btn.className = 'btn';
+            btn.className = 'btn btn-danger';
             btn.value = 'Remove';
             //  btn.placeholder = 'Remove';
             btn.id = 'idUserInOrg';
