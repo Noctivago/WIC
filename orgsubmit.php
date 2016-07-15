@@ -253,11 +253,20 @@ on [Organization].[Id] = [User_In_Organization].[Organization_Id]
     } catch (Exception $ex) {
         echo 'erro';
     }
-    } else if ($arg === 'removeUserInOrgOwner') {
+    } else if ($arg === 'removeUserInOrgSubCatOwner') {
+     try {
+         $id = $_POST['id'];
+         sql($pdo,"UPDATE [dbo].[Sub_Category_Owner]
+   SET [Enabled] = 0
+ WHERE [Id] =?", array($id));
+        } catch (Exception $ex) {
+    
+        }
+    } else if ($arg === 'removeUserInOrgCatOwner') {
      try {
          $id = $_POST['id'];
          sql($pdo,"UPDATE [dbo].[Category_Owner]
-   SET [Enabled] = 1
+   SET [Enabled] = 0
  WHERE [Id] =?", array($id));
         } catch (Exception $ex) {
             
