@@ -313,17 +313,16 @@ where [User_In_Organization].[Enabled] = 1 and [Organization_Id] = ?", array($id
     } catch (Exception $ex) {
         echo 'erro';
     }
-} else if ($arg === 'UserValidateInvite') {
-    try {
-        $orgId = (filter_var($_POST ['orgId'], FILTER_SANITIZE_STRING));
-        $userId = (filter_var($_POST ['userId'], FILTER_SANITIZE_STRING));
-        $response = (filter_var($_POST ['response'], FILTER_SANITIZE_NUMBER_INT));
+} else if ($arg === 'inviteOrganization') {
+    try {$userId = $_SESSION['id'];
+        $linha = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
+        $response = (filter_var($_POST ['res'], FILTER_SANITIZE_NUMBER_INT));
         if ($response === "1") {
             $enabled = 1;
         } else {
             $enabled = 0;
         }
-        sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [User_Validation]=?,[Enabled]=? Where [User_Id]=? and [Organization_Id]=?", array($response, $enabled, $userId, $orgId));
+        sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [User_Validation]=?,[Enabled]=?,[Responded]=? Where [User_Id]=? and [Id]=?", array($response,$enabled,$userId, $id));
         echo 'Validate Success';
     } catch (Exception $ex) {
         echo 'error';

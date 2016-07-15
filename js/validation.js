@@ -10,7 +10,7 @@ function viewAllInvites() {
             //  table_data(json);
         } else {
             //id="div1" style="display: none"
-           // document.getElementById("div1").style = "Display: true";
+            // document.getElementById("div1").style = "Display: true";
             console.log(json);
             table_data_invites(json);
         }
@@ -18,7 +18,35 @@ function viewAllInvites() {
     return false;
 
 }
+function approveInvite() {
+    var id = document.getElementById("id" + this.id).value;
+    var arg = 'inviteOrganization';
+    var apr = 'Accept';
+    var res = '1';
+    var resp = deleteConfirmation(apr);
+    if (resp == true) {
+        $.post("../../orgsubmit.php", {arg: arg, id: id, res: res}, function (result) {
+            viewAllOrganizationToValidate();
+        });
+    }
+    return false;
 
+}
+function RejectInvite() {
+    var id = document.getElementById("id" + this.id).value;
+    var arg = 'inviteOrganization';
+    var rej = 'Reject';
+    var res = '0';
+    var resp = deleteConfirmation(rej);
+    if (resp == true) {
+        $.post("../../orgsubmit.php", {arg: arg, id: id, res: res}, function (result) {
+            viewAllOrganizationToValidate();
+        });
+    }
+    return false;
+
+
+}
 
 function table_data_invites(json_r) {
     var div = document.getElementById('div1');
@@ -58,14 +86,14 @@ function table_data_invites(json_r) {
         btn.className = 'btn btn-danger';
         btn.value = 'Remove';
         btn.id = json_r[i].Id;
-        btn.addEventListener("click", Reject);
+        btn.addEventListener("click", RejectInvite);
         tr.appendChild(btn);
         var btn2 = document.createElement('input');
         btn2.type = 'button';
         btn2.className = 'btn btn-success';
         btn2.value = 'Approve';
         btn2.id = json_r[i].Id;
-        btn2.addEventListener("click", Aprove);
+        btn2.addEventListener("click", approveInvite);
         tr.appendChild(btn2);
         boddy.appendChild(tr);
     }

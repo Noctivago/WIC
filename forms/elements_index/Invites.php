@@ -34,7 +34,6 @@
                                                 <th>Email</th>
                                                 <th>Website</th>
                                                 <th>Response</th>
-                                                <th></th>
                                             </tr>
                                         </thead >
                                         <tbody id="tbody1">
