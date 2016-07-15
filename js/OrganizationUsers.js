@@ -1,5 +1,5 @@
 function removeUserInOrganization(){
-    var idOwner = document.getElementById('idUserOrg' + this.id).value;
+    var idOwner = document.getElementById("idUserOrg"+this.id).value;
     var arg = 'removeUserInOrganization';
     alert(idOwner);
      $.post("../../orgsubmit.php", {arg: arg, id: idOwner}, function (result) {
@@ -204,8 +204,6 @@ function change_table_data(json_r, div_table, id_table, tbody) {
             btn.type = 'button';
             btn.className = 'btn btn-danger';
             btn.value = 'Remove';
-            //  btn.placeholder = 'Remove';
-            btn.id = 'idUserInOrg';
             btn.addEventListener("click", removeUserInOrganization);
             td.appendChild(btn);
             tr.appendChild(td);
