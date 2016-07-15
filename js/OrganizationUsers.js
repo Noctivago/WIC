@@ -155,7 +155,7 @@ function viewAllUsersInOrganization() {
 }
 function removeCategoryOwner() {
     var id2 = document.getElementById('idCatOwner'+this.id).value;
-    //alert(id2 + 'BTN' + this.id);
+    alert(id2 + 'BTN' + this.id);
     alert(id2);
     var arg = 'removeUserInOrgOwner';
     $.post("../../orgsubmit.php", {arg: arg, id: id2}, function (result) {
