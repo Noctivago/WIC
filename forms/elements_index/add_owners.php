@@ -29,10 +29,11 @@
                                 if (isset($_POST['addCategory']) && isset($_POST['category']) && !empty($_POST['org1']) && isset($_POST['userOrg1'])) {
                                     $msg = '';
                                     try {
+                                        
                                         $cat = (filter_var($_POST['category'], FILTER_SANITIZE_STRING));
                                         $user = (filter_var($_POST ['userOrg1'], FILTER_SANITIZE_STRING));
                                         $org = (filter_var($_POST ['org1'], FILTER_SANITIZE_STRING));
-                                        $DB_AddCategoryOwner($pdo, $cat, $user,$org);
+                                        DB_AddCategoryOwner($pdo, $cat, $user,$org);
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
