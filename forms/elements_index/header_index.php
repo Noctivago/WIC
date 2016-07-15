@@ -22,7 +22,7 @@
 		<!--<a href="#0" class="cd-nav-trigger"><span></span></a>-->
 
 		<nav class="cd-nav">
-                     
+                    <ul class="cd-top-nav">
 
           <ul class="nav navbar-nav navbar-right">
             <li><a href="view_WicPlanner.php">Default</a></li>
@@ -30,6 +30,7 @@
             <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
 
           </ul>
+                    </ul>
 
 
 
