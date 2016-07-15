@@ -145,7 +145,7 @@
                                         <script type="text/javascript">
                                             function getMyWic(userId) {
                                                 $.ajax({
-                                                    url: '../ajax/add_msg.php',
+                                                    url: '../ajax/get_my_wic.php',
                                                     method: 'post',
                                                     data: {usrId: userId},
                                                     success: function (data) {
