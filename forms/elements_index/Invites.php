@@ -16,8 +16,8 @@
                 <div class="row">
 
                   
-                    <div class="col-md-12" id="res">
-                                    <h1 class="text-center">
+                    <div class="col-md-12" >
+                                    <h1 id="res" class="text-center">
                                         Invites
                                     </h1>
 
