@@ -25,6 +25,7 @@
                                <
 -->				
 <i class="fa fa-cloud" href="view_WicPlanner.php"></i>
+<span class="fa fa-user-plus" href="view_WicPlanner.php"></span>
                                 <!--<li><a href="view_WicPlanner.php"> VOC</a></li>-->
 
 				<li class="has-children account">
