@@ -22,11 +22,12 @@
 		<nav class="cd-nav">
 			<ul class="cd-top-nav">
 <!--				<li><a href="#0">Tour</a></li>
-                               <
--->				
+-->				<li><i class="fa fa-cloud" href="view_WicPlanner.php"></i></li><!--
+                               
+				
 <!--<i class="fa fa-cloud" href="view_WicPlanner.php"></i>
 <span class="fa fa-user-plus" href="view_WicPlanner.php"></span>-->
-<li><a class="fa fa-cloud" href="view_WicPlanner.php"> VOC</a></li>
+<li><a class="fa fa-cloud" href="view_WicPlanner.php"></a></li>
 
 				<li class="has-children account">
 					<a href="#0">
