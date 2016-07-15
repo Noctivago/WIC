@@ -24,6 +24,7 @@
 		<div class="cd-navigation socials">
                     <a class="fa fa-cloud" href="view_WicPlanner.php"></a>
                 </div>
+                <div class=""> 
                     <ul class="cd-top-nav">
                             
 <!--				<li><a href="#0">Tour</a></li>
@@ -50,5 +51,6 @@
 					</ul>
 				</li>
 			</ul>
+                </div>
 		</nav>
 	</header><!-- .cd-main-header -->
