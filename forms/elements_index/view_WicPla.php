@@ -1,5 +1,5 @@
 
-<main onload="getMyWic(<?= $_SESSION['id'] ?>)" class="cd-main-content">
+<main onload="getMyWic('<?= $_SESSION['id'] ?>')" class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
 
