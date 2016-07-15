@@ -617,19 +617,23 @@ function DB_addOrganizationService($pdo, $name, $description, $org, $subCategory
     }
 }
 
-function DB_AddSubCategoryOwner($pdo, $subcat, $user, $org) {
+function DB_AddSubCategoryOwner($pdo, $subCat, $user, $org) {
     try {
-        //$d = getDateToDB();    
-        //falta verificar já existe algum id com o user e o org
-        sql($pdo, "INSERT INTO [dbo].[Sub_Category_Owner]
+        if (DB_CheckIfSubCatOwnerExists($pdo, $subCat, $user, $org)) {
+            sql($pdo, "UPDATE [dbo].[Sub_Category_Owner]
+   SET [Enabled] = 1
+ WHERE [Sub_Category_Id] = ? and [User_Id] = ? and [Organization_Id] = ?", array($subCat, $user, $org));
+        } else {
+            sql($pdo, "INSERT INTO [dbo].[Sub_Category_Owner]
            ([User_Id]
            ,[Sub_Category_Id]
            ,[Enabled]
            ,[Organization_Id])
      VALUES
-           (?,?,?,?)", array($user, $subcat, 1, $org));
-        $msg = "true";
-        echo $msg;
+           (?,?,?,?)", array($user, $subCat, 1, $org));
+            $msg = "true";
+            echo $msg;
+        }
     } catch (Exception $ex) {
         echo 'ERRO';
     }
@@ -640,6 +644,21 @@ function DB_CheckIfCatOwnerExists($pdo, $cat, $user, $org) {
         $count = sql($pdo, "SELECT *
   FROM [dbo].[Category_Owner]
   where [Category_Id] = ? and [User_Id] = ? and [Organization_ID] = ?", array($cat, $user, $org), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
+function DB_CheckIfSubCatOwnerExists($pdo, $subCat, $user, $org) {
+    try {
+        $count = sql($pdo, "SELECT *
+  FROM [dbo].[Sub_Category_Owner]
+  where [Sub_Category_Id] = ? and [User_Id] = ? and [Organization_ID] = ?", array($subCat, $user, $org), "count");
         if ($count < 0) {
             return true;
         } else {
