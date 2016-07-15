@@ -821,8 +821,7 @@ function DB_addUserNewsletter($pdo, $subCategoryId, $cityId, $userId) {
 
 function DB_addWicPlanner($pdo, $name, $city, $userId, $d, $eventDate) {
     try {
-        sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [City_Id], [User_Id], [Date_Created], [Enabled], [Event_Date]) VALUES(?,?,?,?,?,?)"
-                . "", array($name, $city, $userId, $d, 1, $eventDate));
+        sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [City_Id], [User_Id], [Date_Created], [Enabled], [Event_Date]) VALUES(?,?,?,?,?,?)", array($name, $city, $userId, $d, 1, $eventDate));
         echo 'WIC Planner added!';
     } catch (PDOException $e) {
         print "Error!" . "<br/>";
