@@ -22,7 +22,7 @@
 		<nav class="cd-nav">
 			<ul class="cd-top-nav">
 <!--				<li><a href="#0">Tour</a></li>
--->				<li><i class="fa fa-cloud" href="view_WicPlanner.php"></i></li><!--
+-->				<li class="fa fa-cloud" href="view_WicPlanner.php"></li><!--
                                
 				
 <!--<i class="fa fa-cloud" href="view_WicPlanner.php"></i>
