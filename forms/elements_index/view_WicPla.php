@@ -12,7 +12,7 @@
         });
     }
 </script>    
-<main onload="getMyWic(<?= $_SESSION['id'] ?>)" class="cd-main-content">
+<main onload="getMyWic(<?= $_SESSION['id']; ?>)" class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
 
@@ -93,7 +93,7 @@
                                         <input type="date" name="eventDate" placeholder="Event Date" class="form-username form-control" id="eventDate" required>
                                     </div>
 
-                                    <button type="submit" onclick="getMyWic(<?= $_SESSION['id'] ?>)" class="btn" name="addWic" visible="true">NEW Wic Planner!</button>
+                                    <button type="submit" onclick="getMyWic(<?= $_SESSION['id']; ?>)" class="btn" name="addWic" visible="true">NEW Wic Planner!</button>
                                 </form>
                             </div>
                         </div>
