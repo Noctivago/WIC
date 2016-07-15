@@ -12,7 +12,7 @@
                     <div class="row">
 
                         <div class="col-sm-5">
-
+                                
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
@@ -25,6 +25,24 @@
                                 </div>
 
                                 <div class="form-bottom" >
+                                        <?php
+                                $userId = $_SESSION['id'];
+                                if ((isset($_POST['addCategory']) && isset($_POST['category'])) && !empty($_POST['org1'] && isset($_POST['userOrg1']))) {
+                                    $msg = '';
+                                    try {
+                                        $cat = (filter_var($_POST['category'], FILTER_SANITIZE_STRING));
+                                        $user = (filter_var($_POST ['userOrg1'], FILTER_SANITIZE_STRING));
+                                        $org = (filter_var($_POST ['org1'], FILTER_SANITIZE_STRING));
+                                        $msg = DB_AddCategoryOwner($pdo, $cat, $user,$org);
+                                        echo $msg . $user . $org . $cat;
+                                    } catch (Exception $ex) {
+                                        $msg = "ERROR!";
+                                    }
+                                } else if (isset($_POST['delete'])) {
+                                    
+                                }
+                                ?>
+                            
                                     
                                     <h4 align="center"> Category owners</h4>
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
@@ -43,7 +61,7 @@
                                                 <option id="user" value='0'> Choose a User</option>
                                             </select>
                                         </div>
-                                        <button type="submit" id="request" class="btn" name="request" visible="true">Add Category Owner</button>
+                                        <button type="submit" id="addCategory" class="btn" name="addCategory" visible="true">Add Category Owner</button>
                                     </form>
                                 </div>
                             </div>
