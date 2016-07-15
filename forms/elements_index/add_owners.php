@@ -29,11 +29,10 @@
                                 if (isset($_POST['addCategory']) && isset($_POST['category']) && !empty($_POST['org1']) && isset($_POST['userOrg1'])) {
                                     $msg = '';
                                     try {
-                                        
                                         $cat = (filter_var($_POST['category'], FILTER_SANITIZE_STRING));
                                         $user = (filter_var($_POST ['userOrg1'], FILTER_SANITIZE_STRING));
                                         $org = (filter_var($_POST ['org1'], FILTER_SANITIZE_STRING));
-                                        DB_AddCategoryOwner($pdo, $cat, $user,$org);
+                                        $msg = DB_AddCategoryOwner($pdo, $cat, $user,$org);
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
@@ -43,7 +42,7 @@
                                         $subcat = (filter_var($_POST['Sub_Category'], FILTER_SANITIZE_STRING));
                                         $user = (filter_var($_POST ['userOrg2'], FILTER_SANITIZE_STRING));
                                         $org = (filter_var($_POST ['org2'], FILTER_SANITIZE_STRING));
-                                        DB_AddSubCategoryOwner($pdo, $subcat, $user,$org);
+                                        $msg = DB_AddSubCategoryOwner($pdo, $subcat, $user,$org);
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
