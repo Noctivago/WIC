@@ -632,8 +632,6 @@ function DB_AddSubCategoryOwner($pdo, $subCat, $user, $org) {
            ,[Organization_Id])
      VALUES
            (?,?,?,?)", array($user, $subCat ,1, $org));
-            $msg = "true";
-            echo $msg;
         }
     } catch (Exception $ex) {
         echo 'ERRO';
