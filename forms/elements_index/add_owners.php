@@ -37,7 +37,7 @@
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
-                                } else if (isset($_POST['addSubCat']) && isset($_POST['category']) && !empty($_POST['org1']) && isset($_POST['userOrg1'])) {
+                                } else if (isset($_POST['addSubCat']) && isset($_POST['Sub_Category']) && !empty($_POST['org2']) && isset($_POST['userOrg2'])) {
                                     $msg = '';
                                     try {
                                         $subcat = (filter_var($_POST['Sub_Category'], FILTER_SANITIZE_STRING));
