@@ -1,6 +1,6 @@
 function viewAllInvites(){
     var arg = 'viewAllInvites';
-    var div = document.getElementById("div1");
+    //var div = document.getElementById("div1");
     $.post("../../orgsubmit.php", {arg: arg}, function (result) {
         $("#tbody1").empty();
         var json = $.parseJSON(result);
@@ -9,7 +9,7 @@ function viewAllInvites(){
             resposta.innerHTML = "you don't have invitations";
             //  table_data(json);
   }else{
-      div.style = "Display: true";
+      document.getElementById("div1").style = "Display: true";
         alert(json);
         console.log(json);}
     });
