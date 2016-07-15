@@ -38,9 +38,7 @@
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
-                                } else if (isset($_POST['delete'])) {
-                                    
-                                }
+                                } 
                                 ?>
                             
                                     
