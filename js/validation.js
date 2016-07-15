@@ -19,13 +19,13 @@ function viewAllInvites() {
 
 }
 function approveInvite() {
-    var id = document.getElementById("id" + this.id).value;
+    var id1 = document.getElementById("id" + this.id).value;
     var arg = 'inviteOrganization';
     var apr = 'Accept';
     var res = '1';
     var resp = deleteConfirmation(apr);
     if (resp == true) {
-        $.post("../../orgsubmit.php", {arg: arg, id: id, res: res}, function (result) {
+        $.post("../../orgsubmit.php", {arg: arg, id: id1, res: res}, function (result) {
             viewAllInvites();
         });
     }
@@ -33,13 +33,13 @@ function approveInvite() {
 
 }
 function RejectInvite() {
-    var id = document.getElementById("id" + this.id).value;
+    var id1 = document.getElementById("id" + this.id).value;
     var arg = 'inviteOrganization';
     var rej = 'Reject';
     var res = '0';
     var resp = deleteConfirmation(rej);
     if (resp == true) {
-        $.post("../../orgsubmit.php", {arg: arg, id: id, res: res}, function (result) {
+        $.post("../../orgsubmit.php", {arg: arg, id: id1, res: res}, function (result) {
             viewAllInvites();
         });
     }
