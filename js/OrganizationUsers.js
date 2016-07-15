@@ -1,6 +1,7 @@
 function removeUserInOrganization(){
     var idOwner = document.getElementById('idUserOrg' + this.id).value;
     var arg = 'removeUserInOrganization';
+    alert(idOwner);
      $.post("../../orgsubmit.php", {arg: arg, id: idOwner}, function (result) {
         viewAllUsersInOrganization();
     });
