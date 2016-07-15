@@ -161,7 +161,15 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'ERROR REMOVING THE ORGANIZATION!';
     }
-} else if ($arg === 'editOrganizationInformation') {
+} else if ($arg === 'viewAllInvites') {
+    try {
+        $userid = $_SESSION['id'];
+        $rows = sql($pdo,"SELECT * FROM [dbo].[User_In_Organization]
+  where [Responded] = 0 and [User_Id] = ?", array($userid), "rows");
+        echo json_encode($rows);
+    } catch (Exception $ex) {
+        echo 'Error';
+    }        
     
 } else if ($arg === 'validateOrganization') {
     try {

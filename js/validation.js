@@ -1,3 +1,16 @@
+function viewAllInvites(){
+    var arg = 'viewAllInvites';
+    $.post("../../orgsubmit.php", {arg: arg}, function (result) {
+        $("#tbody1").empty();
+        var json = $.parseJSON(result);
+        alert(json);
+        console.log(json);
+      //  table_data(json);
+    });
+    return false;
+
+}
+
 function viewAllOrganizationToValidate() {
     var arg = 'viewAllOrganizationToValidate';
     $.post("../../orgsubmit.php", {arg: arg}, function (result) {
