@@ -100,7 +100,7 @@ function change_tableData(json_r, div_table, id_table, tbody) {
             var btn = document.createElement('input');
 
             btn.type = 'button';
-            btn.className = 'btn';
+            btn.className = 'btn btn-danger';
             btn.value = 'Remove';
             btn.id = json_r[i].Id;
             btn.addEventListener("click", removeCategoryOwner);
@@ -113,7 +113,7 @@ function change_tableData(json_r, div_table, id_table, tbody) {
             var btn = document.createElement('input');
             //<button id="3" onClick="reply_click(this.id)">B3</button>
             btn.type = 'button';
-            btn.className = 'btn';
+            btn.className = 'btn btn-danger';
             btn.value = 'Remove';
             //btn.id = 'idSubOwner';
             btn.id = json_r[i].Id;
