@@ -262,7 +262,29 @@ on [Organization].[Id] = [User_In_Organization].[Organization_Id]
         } catch (Exception $ex) {
             
         }
-  } else if ($arg === 'viewAllUsersInOrgOwners') {
+        
+  } else if ($arg === 'viewAllUsersInOrgSub') {
+      try {
+        $idOrg = $_POST['id'];
+        $rows = sql($pdo, "Select [Sub_Category_Owner].[Id]
+      ,[Sub_Category].[Name]
+	  ,[Profile].[First_Name]
+	  ,[Profile].[Last_Name]
+  FROM [dbo].[Sub_Category_Owner]
+  join [User]
+  on [User].[Id] = [Sub_Category_Owner].[User_Id]
+  join [Profile]
+  on [Profile].[User_Id] = [Sub_Category_Owner].[User_Id]
+  join [Sub_Category]
+  on [Sub_Category].[Id] = [Sub_Category_Owner].[Category_Id]
+  where [Sub_Category_Owner].[Enabled] = 1 and [Sub_Category_Owner].[Organization_Id] = ?", array($idOrg), "rows");
+        echo json_encode($rows);
+    } catch (Exception $ex) {
+        echo 'error';
+    }
+    
+      
+        } else if ($arg === 'viewAllUsersInOrgOwners') {
     try {
         $idOrg = $_POST['id'];
         $rows = sql($pdo, "Select [Category_Owner].[Id]

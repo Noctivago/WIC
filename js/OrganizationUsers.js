@@ -25,7 +25,7 @@ function fill_Users_Sub_Category() {
         $("#body2").empty();
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
-        console.log(json);
+        console.log(json_r);
         dataSelect(json_r, userSel, title);
         viewAllSubCategoryOwners();
     });
@@ -52,7 +52,7 @@ function viewAllSubCategoryOwners() {
     var div_table = "title-2";
     var id_table = "table2";
     var tbody = "body2"
-    var arg = 'viewAllUsersInOrgOwners';
+    var arg = 'viewAllUsersInOrgSub';
     $.post("../../orgsubmit.php", {arg: arg, id: idOrg}, function (result) {
         $("#body2").empty();
         var json = $.parseJSON(result);
