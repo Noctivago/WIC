@@ -22,8 +22,20 @@
 		<a href="#0" class="cd-nav-trigger"><span></span></a>
 
 		<nav class="cd-nav">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="has-children account">
+
+
+
+                    <ul class="cd-top-nav">
+                            
+<!--				<li><a href="#0">Tour</a></li>
+-->				 <!--
+                               
+				
+<!--<i class="fa fa-cloud" href="view_WicPlanner.php"></i>
+<span class="fa fa-user-plus" href="view_WicPlanner.php"></span>-->
+<!--<li><a class="fa fa-cloud" href="view_WicPlanner.php"></a></li>-->
+
+				<li class="has-children account">
 					<a href="#0">
 						<img src="../../assets/img/backgrounds/logo.svg.png" alt="avatar">
 						Account
@@ -38,41 +50,7 @@
                                                 
 					</ul>
 				</li>
-                                <li>
-                                <a class="fa fa-cloud" href="view_WicPlanner.php"></a>
-                    </li>
-                    </ul>
-		<div class="cd-navigation socials">
-                    
-                </div>
-                <div class=""> 
-                    <ul class="cd-top-nav">
-                            
-<!--				<li><a href="#0">Tour</a></li>
--->				 <!--
-                               
-				
-<!--<i class="fa fa-cloud" href="view_WicPlanner.php"></i>
-<span class="fa fa-user-plus" href="view_WicPlanner.php"></span>-->
-<!--<li><a class="fa fa-cloud" href="view_WicPlanner.php"></a></li>-->
 
-<!--				<li class="has-children account">
-					<a href="#0">
-						<img src="../../assets/img/backgrounds/logo.svg.png" alt="avatar">
-						Account
-					</a>
-
-					<ul>
-
-						
-                                                <li><a href="userProfile.php">My Account</a></li>
-                                                <li><a href="change_pass.php">Change Password</a></li>
-						<li><a href="logout.php">Logout</a></li>
-                                                
-					</ul>
-				</li>-->
-			</ul>
-                </div>
 		</nav>
 	</header><!-- .cd-main-header -->
 
