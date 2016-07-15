@@ -14,16 +14,6 @@
 
                             <div class="form-box">
                                 <div class="form-top">
-                                    <div class="form-top-left">
-
-                                    </div>
-                                    <div class="form-top-right">
-                                    </div>
-
-
-                                </div>
-
-                                <div class="form-bottom" >
                                     <?php
                                     $userId = $_SESSION['id'];
                                     if (isset($_POST['addCategory']) && isset($_POST['category']) && !empty($_POST['org1']) && isset($_POST['userOrg1'])) {
@@ -50,6 +40,9 @@
                                         }
                                     }
                                     ?>
+                                    <div class="form-top-left">
+<div class="form-bottom" >
+                                    
 
 
                                     <h4 align="center"> Category owners</h4>
@@ -88,11 +81,9 @@
                                     </table>
                                 </div>
 
-                                <div class="col-sm-5">
-
-                                    <div class="form-box">
-
-                                        <div class="form-bottom">
+                                    </div>
+                                    <div class="form-top-right">
+                                    <div class="form-bottom">
                                             <h4 align="center"> Sub Category owners</h4>
                                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                                 <div class="form-group">
@@ -127,9 +118,12 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
-                            </div>
+                                    </div>
 
+
+                                </div>
+
+                                
                         </div>
 
 
@@ -143,6 +137,7 @@
 
         </div>
     </div>
+   
 
 </main>
 
