@@ -4,7 +4,7 @@ function viewAllInvites(){
     $.post("../../orgsubmit.php", {arg: arg}, function (result) {
         $("#tbody1").empty();
         var json = $.parseJSON(result);
-        if(json.length === 1){
+        if(true){
             var resposta = document.getElementById('res');
             resposta.innerHTML = "you don't have invitations";
             //  table_data(json);
