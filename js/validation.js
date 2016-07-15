@@ -26,7 +26,7 @@ function approveInvite() {
     var resp = deleteConfirmation(apr);
     if (resp == true) {
         $.post("../../orgsubmit.php", {arg: arg, id: id, res: res}, function (result) {
-            viewAllOrganizationToValidate();
+            viewAllInvites();
         });
     }
     return false;
@@ -40,7 +40,7 @@ function RejectInvite() {
     var resp = deleteConfirmation(rej);
     if (resp == true) {
         $.post("../../orgsubmit.php", {arg: arg, id: id, res: res}, function (result) {
-            viewAllOrganizationToValidate();
+            viewAllInvites();
         });
     }
     return false;
