@@ -20,7 +20,6 @@ function viewAllInvites() {
 }
 function approveInvite() {
     var id1 = document.getElementById("id" + this.id).value;
-    alert(id1);
     var arg = 'inviteOrganization';
     var apr = 'Accept';
     var res = '1';
@@ -35,7 +34,6 @@ function approveInvite() {
 }
 function RejectInvite() {
     var id1 = document.getElementById("id" + this.id).value;
-    alert(id1);
     var arg = 'inviteOrganization';
     var rej = 'Reject';
     var res = '0';
