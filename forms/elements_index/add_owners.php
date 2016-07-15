@@ -71,7 +71,7 @@
                                         <button type="submit" id="addCategory" class="btn" name="addCategory" visible="true">Add Category Owner</button>
                                     </form>
                                 </div>
-                            </div>
+                         
 
                             <div id="title-1" style = "Display: none">
                                 <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1" style = "Display: none">
@@ -90,7 +90,7 @@
 
 
 
-                        </div>
+                  
 
                         <div class="col-sm-1"></div>
 
@@ -141,6 +141,11 @@
 
             </div>
 
+
+                </div>
+
+
+            </div>
 
         </div>
     </div>
