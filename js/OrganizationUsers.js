@@ -1,8 +1,7 @@
-function removeUserInOrganization(){
-    var idOwner = document.getElementById("idUserOrg"+this.id).value;
+function removeUserInOrganization() {
+    var idOwner = document.getElementById("idUserOrg" + this.id).value;
     var arg = 'removeUserInOrganization';
-
-     $.post("../../orgsubmit.php", {arg: arg, id: idOwner}, function (result) {
+    $.post("../../orgsubmit.php", {arg: arg, id: idOwner}, function (result) {
         viewAllUsersInOrganization();
     });
 }
@@ -108,7 +107,7 @@ function change_tableData(json_r, div_table, id_table, tbody) {
             dd.value = json_r[i].Id;
             tr.appendChild(dd)
             var btn = document.createElement('input');
-                btn.type = 'button';
+            btn.type = 'button';
             btn.className = 'btn btn-danger';
             btn.value = 'Remove';
             btn.id = json_r[i].Id;
@@ -197,7 +196,7 @@ function change_table_data(json_r, div_table, id_table, tbody) {
         if (id_table === "table1") {
             var dd = document.createElement('input');
             dd.type = "hidden";
-            dd.id = "idUserOrg"+ json_r[i].Id;
+            dd.id = "idUserOrg" + json_r[i].Id;
             dd.value = json_r[i].Id;
             tr.appendChild(dd);
             var btn = document.createElement('input');

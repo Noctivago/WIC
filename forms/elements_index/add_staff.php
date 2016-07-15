@@ -39,7 +39,6 @@
                                         $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
                                         $orgId = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
                                         $msg = DB_addUserInOrganization($pdo, $email, $orgId);
-                                        echo $msg . $email;
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
