@@ -288,7 +288,7 @@ on [Organization].[Id] = [User_In_Organization].[Organization_Id]
         $rows = sql($pdo, "SELECT [User_In_Organization].[Id] as Id
 		,[Profile].[First_Name] as Name
 		,[Profile].[Last_Name] as Last
-                ,[Profile].[User_Id] as IDU
+                ,[User].Id as IDU
   FROM [dbo].[User_In_Organization]
   join [User]
   on [User].[Id] = [User_In_Organization].[User_Id]
