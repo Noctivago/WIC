@@ -624,13 +624,15 @@ function DB_AddSubCategoryOwner($pdo, $subCat, $user, $org) {
    SET [Enabled] = 1
  WHERE [Sub_Category_Id] = ? and [User_Id] = ? and [Organization_Id] = ?", array($subCat, $user, $org));
         } else {
+            $d = getDateToDB();
             sql($pdo, "INSERT INTO [dbo].[Sub_Category_Owner]
            ([User_Id]
            ,[Sub_Category_Id]
+           ,[Date_Created]
            ,[Enabled]
            ,[Organization_Id])
      VALUES
-           (?,?,?,?)", array($user, $subCat, 1, $org));
+           (?,?,?,?)", array($user, $subCat,$d ,1, $org));
             $msg = "true";
             echo $msg;
         }
@@ -678,13 +680,15 @@ function DB_AddCategoryOwner($pdo, $cat, $user, $org) {
    SET [Enabled] = 1
  WHERE [Category_Id] = ? and [User_Id] = ? and [Organization_Id] = ?", array($cat, $user, $org));
         } else {
+            $d = getDateToDB();
             sql($pdo, "INSERT INTO [dbo].[Category_Owner]
            ([User_Id]
            ,[Category_Id]
+           ,[Date_Created]
            ,[Enabled]
            ,[Organization_Id])
      VALUES
-           (?,?,?,?)", array($user, $cat, 1, $org));
+           (?,?,?,?)", array($user, $cat, $d,1, $org));
             $msg = "true";
             echo $msg;
         }
