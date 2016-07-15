@@ -8,6 +8,7 @@ function fill_Users_Category() {
         $("#body1").empty();
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
+        console.log(json);
         dataSelect(json_r, userSel, title);
         viewAllOwnerCategory();
     });
@@ -24,6 +25,7 @@ function fill_Users_Sub_Category() {
         $("#body2").empty();
         $("#" + userSel).empty();
         var json_r = $.parseJSON(result);
+        console.log(json);
         dataSelect(json_r, userSel, title);
         viewAllSubCategoryOwners();
     });
