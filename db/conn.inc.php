@@ -519,12 +519,10 @@ function DB_addUserInOrganization($pdo, $email, $idOrg) {
                     echo 'User is already in organization!';
                 } else {
                     if (DB_checkIfExistUserInOrganizationNotEnabled($pdo, $idOrg, $userId2)) {
-//update responded para 0
                         sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [Responded] = 0 where [Organization_Id] = ? and [User_Id] = ?", array($idOrg, $userId2));
-                        echo '[responded = 0]';
+                        
                     } else {
                         sql($pdo, "INSERT INTO [dbo].[User_In_Organization] ([Organization_Id],[User_Id],[User_Validation],[Enabled],[Responded])VALUES(?,?,?,?,?)", array($idOrg, $userId2, 0, 0, 0));
-                        echo 'Success';
                     }
                 }
             } else {
