@@ -63,7 +63,7 @@
                                     $msg = '';
                                     try {
                                         #$d = getDateToDB();
-                                        $name = (filter_var($_POST ['name'], FILTER_SANITIZE_EMAIL));
+                                        $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
                                         $city = (filter_var($_POST ['city'], FILTER_SANITIZE_NUMBER_INT));
                                         $userId = $_SESSION['id'];
                                         $eventDate = (filter_var($_POST ['eventDate'], FILTER_SANITIZE_STRING));
