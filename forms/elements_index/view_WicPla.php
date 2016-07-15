@@ -142,10 +142,11 @@
 
                                     </div>
                                     <div class="form-bottom">
+                                        
                                         <script type="text/javascript">
                                             function getMyWic(userId) {
                                                 $.ajax({
-                                                    url: '../ajax/get_my_wic.php',
+                                                    url: '../../ajax/get_my_wic.php',
                                                     method: 'post',
                                                     data: {usrId: userId},
                                                     success: function (data) {
