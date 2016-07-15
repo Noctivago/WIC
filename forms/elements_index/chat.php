@@ -48,9 +48,9 @@
                     <!--SET ENABLED = FALSE; ON USER CLICK ENABLED AND GET MESSAGES FROM
                                         THAT CONVERSATION-->
                     <script type="text/javascript">
-                        function myFunction() {
+                        function myFunction(x) {
                             //sendMessage()
-                            alert('myMessage');
+                            alert(x);
                             //sendMessage();
                         }
                         function setConvId(ConvID) {
@@ -85,7 +85,7 @@
 
                     </div>
                     <!--IDS NECESSARIOS-->
-                    <input type="text" id ="COVERSATIONID" name="COVERSATIONID" style="visibility: hidden;"><br>
+                    <input type="text" id ="COVERSATIONID" onchange="myFunction(this.id)" name="COVERSATIONID" style="visibility: hidden;"><br>
                     <input type="text" id ="USERID" name="USERID" style="visibility: hidden;"><br>
                     <input type="text" id ="CHATID" value="0" name="CHATID" style="visibility: hidden;"><br>
 
