@@ -20,9 +20,10 @@
 		<a href="#0" class="cd-nav-trigger"><span></span></a>
 
 		<nav class="cd-nav">
+                    <a class="fa fa-cloud" href="view_WicPlanner.php"></a>
 			<ul class="cd-top-nav">
 <!--				<li><a href="#0">Tour</a></li>
--->				<li class="fa fa-cloud" href="view_WicPlanner.php"></li><!--
+-->				 <!--
                                
 				
 <!--<i class="fa fa-cloud" href="view_WicPlanner.php"></i>
