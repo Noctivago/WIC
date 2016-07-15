@@ -37,6 +37,17 @@
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
+                                } else if (isset($_POST['addSubCat']) && isset($_POST['category']) && !empty($_POST['org1']) && isset($_POST['userOrg1'])) {
+                                    $msg = '';
+                                    try {
+                                        $subcat = (filter_var($_POST['Sub_Category'], FILTER_SANITIZE_STRING));
+                                        $user = (filter_var($_POST ['userOrg2'], FILTER_SANITIZE_STRING));
+                                        $org = (filter_var($_POST ['org2'], FILTER_SANITIZE_STRING));
+                                        $msg = DB_AddSubCategoryOwner($pdo, $subcat, $user,$org);
+                                        echo $msg . $user . $org . $cat;
+                                    } catch (Exception $ex) {
+                                        $msg = "ERROR!";
+                                    }
                                 } 
                                 ?>
                             
