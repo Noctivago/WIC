@@ -43,7 +43,6 @@ function sql($pdo, $q, $params, $return) {
     }
 }
 
-
 function DB_checkIfUserExists($pdo, $email) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "count");
@@ -618,40 +617,63 @@ function DB_addOrganizationService($pdo, $name, $description, $org, $subCategory
     }
 }
 
-function DB_AddSubCategoryOwner($pdo, $subcat, $user,$org){
+function DB_AddSubCategoryOwner($pdo, $subcat, $user, $org) {
     try {
         //$d = getDateToDB();    
         //falta verificar já existe algum id com o user e o org
-        sql($pdo,"INSERT INTO [dbo].[Sub_Category_Owner]
+        sql($pdo, "INSERT INTO [dbo].[Sub_Category_Owner]
            ([User_Id]
            ,[Sub_Category_Id]
            ,[Enabled]
            ,[Organization_Id])
      VALUES
-           (?,?,?,?)", array($user,$subcat,1,$org));
-    $msg ="true";
-    echo $msg;
+           (?,?,?,?)", array($user, $subcat, 1, $org));
+        $msg = "true";
+        echo $msg;
     } catch (Exception $ex) {
         echo 'ERRO';
     }
 }
+
+function DB_CheckIfCatOwnerExists($pdo, $cat, $user, $org) {
+    try {
+        $count = sql($pdo, "SELECT *
+  FROM [dbo].[Category_Owner]
+  where [Category_Id] = ? and [User_Id] = ? and [Organization_ID] = ?", array($cat, $user, $org), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 function DB_AddCategoryOwner($pdo, $cat, $user, $org) {
     try {
         //$d = getDateToDB();    
-        //falta verificar já existe algum id com o user e o org
-        sql($pdo,"INSERT INTO [dbo].[Category_Owner]
+        //falta verificar já existe algum id com o user e o org e cat
+        if (DB_CheckIfCatOwnerExists($pdo, $cat, $user, $org)) {
+            sql($pdo, "UPDATE [dbo].[Category_Owner]
+   SET [Enabled] = 1
+ WHERE [Category_Id] = ? and [User_Id] = ? and [Organization_Id] = ?", array($cat, $user, $org));
+        } else {
+            sql($pdo, "INSERT INTO [dbo].[Category_Owner]
            ([User_Id]
            ,[Category_Id]
            ,[Enabled]
            ,[Organization_Id])
      VALUES
-           (?,?,?,?)", array($user,$cat,1,$org));
-    $msg ="true";
-    echo $msg;
+           (?,?,?,?)", array($user, $cat, 1, $org));
+            $msg = "true";
+            echo $msg;
+        }
     } catch (Exception $ex) {
         echo 'ERRO';
     }
 }
+
 //GET SERVICE AS TABLE WHERE ORGANIZATION BELONGS TO USER
 function DB_readOrganizationServiceAsTable($pdo, $userId) {
     try {

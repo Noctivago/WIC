@@ -98,8 +98,7 @@ function change_tableData(json_r, div_table, id_table, tbody) {
             dd.value = json_r[i].Id;
             tr.appendChild(dd)
             var btn = document.createElement('input');
-
-            btn.type = 'button';
+                btn.type = 'button';
             btn.className = 'btn btn-danger';
             btn.value = 'Remove';
             btn.id = json_r[i].Id;
@@ -152,7 +151,7 @@ function viewAllUsersInOrganization() {
     return false;
 }
 function removeCategoryOwner() {
-    var id2 = document.getElementById('idCatOwner'+this.id).value;
+    var id2 = document.getElementById('idCatOwner' + this.id).value;
     var arg = 'removeUserInOrgCatOwner';
     $.post("../../orgsubmit.php", {arg: arg, id: id2}, function (result) {
         fill_Users_Category();
@@ -161,7 +160,7 @@ function removeCategoryOwner() {
 }
 
 function removeSubCategoryOwner() {
-    var id2 = document.getElementById("idSubOwner"+this.id).value;
+    var id2 = document.getElementById("idSubOwner" + this.id).value;
     var arg = 'removeUserInOrgSubCatOwner';
     $.post("../../orgsubmit.php", {arg: arg, id: id2}, function (result) {
         fill_Users_Sub_Category();
@@ -221,7 +220,7 @@ function UserValidateInvite() {
         data: dataString,
         cache: false,
         success: function (result) {
-     }
+        }
     });
     return false;
 
