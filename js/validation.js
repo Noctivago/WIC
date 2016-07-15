@@ -9,7 +9,7 @@ function viewAllInvites() {
             resposta.innerHTML = "you don't have invitations";
             //  table_data(json);
         } else {
-            document.getElementById('div1').style = "Display: true";
+            document.getElementById("div1").style = "Display: true";
             console.log(json);
             table_data_invites(json);
         }
