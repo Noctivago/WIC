@@ -48,22 +48,12 @@
                     <!--SET ENABLED = FALSE; ON USER CLICK ENABLED AND GET MESSAGES FROM
                                         THAT CONVERSATION-->
                     <script type="text/javascript">
-//                        function myFunction() {
-//                            x = document.getElementById("COVERSATIONID").value;
-//                            document.getElementById(x).style.backgroundColor = "lightblue";
-//                            alert(x);
-//                        }
                         function setConvId(ConvID) {
                             document.getElementById("COVERSATIONID").value = ConvID;
-                            //x = document.getElementById("COVERSATIONID").value;
                             document.getElementById(ConvID).style.backgroundColor = "lightblue";
-                            alert(x);
-                            //alert(ConvID);
                         }
                         function setUserId(ConvID) {
                             document.getElementById("USERID").value = ConvID;
-                            //alert(ConvID);
-                            //window.boot_chat = function(){return false;};
                             boot_chat();
                         }
                     </script>
