@@ -48,7 +48,6 @@ function dataSelect(json, userSel, title) {
 }
 function viewAllSubCategoryOwners() {
     var idOrg = document.getElementById('org2').value;
-    alert(idOrg);
     var div_table = "title-2";
     var id_table = "table2";
     var tbody = "body2"
@@ -63,7 +62,6 @@ function viewAllSubCategoryOwners() {
 }
 function viewAllOwnerCategory() {
     var idOrg = document.getElementById('org1').value;
-    alert(idOrg);
     var div_table1 = "title-1";
     var id_table1 = "table1";
     var tbody1 = "body1"
@@ -164,7 +162,6 @@ function removeCategoryOwner() {
 
 function removeSubCategoryOwner() {
     var id2 = document.getElementById("idSubOwner"+this.id).value;
-    alert(id2);
     var arg = 'removeUserInOrgSubCatOwner';
     $.post("../../orgsubmit.php", {arg: arg, id: id2}, function (result) {
         fill_Users_Sub_Category();
@@ -218,15 +215,13 @@ function UserValidateInvite() {
     var userId = $("#UserValidateInvite").val();
     var response = $("#response").val();
     var dataString = 'arg=' + arg + '&orgId=' + orgId + '&userId=' + userId + '&response=' + response;
-    alert(dataString);
     $.ajax({
         type: 'POST',
         url: "../orgsubmit.php",
         data: dataString,
         cache: false,
         success: function (result) {
-            alert(result);
-        }
+     }
     });
     return false;
 
