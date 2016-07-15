@@ -276,7 +276,7 @@ on [Organization].[Id] = [User_In_Organization].[Organization_Id]
   join [Profile]
   on [Profile].[User_Id] = [Sub_Category_Owner].[User_Id]
   join [Sub_Category]
-  on [Sub_Category].[Id] = [Sub_Category_Owner].[Category_Id]
+  on [Sub_Category].[Id] = [Sub_Category_Owner].[Sub_Category_Id]
   where [Sub_Category_Owner].[Enabled] = 1 and [Sub_Category_Owner].[Organization_Id] = ?", array($idOrg), "rows");
         echo json_encode($rows);
     } catch (Exception $ex) {
