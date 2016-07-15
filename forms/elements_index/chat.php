@@ -49,11 +49,8 @@
                                         THAT CONVERSATION-->
                     <script type="text/javascript">
                         function myFunction(x) {
-                            //sendMessage()
-                            var selCon = document.getElementById(x);
-                            selCon.style.backgroundColor = "yellow";
+                            document.getElementById(x).style.backgroundColor = "lightblue";
                             alert(x);
-                            //sendMessage();
                         }
                         function setConvId(ConvID) {
                             document.getElementById("COVERSATIONID").value = ConvID;
