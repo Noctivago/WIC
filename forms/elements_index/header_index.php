@@ -19,7 +19,7 @@
 			</form>
 		</div> <!-- cd-search -->
 
-		<a href="#0" class="cd-nav-trigger"><span></span></a>
+		<!--<a href="#0" class="cd-nav-trigger"><span></span></a>-->
 
 		<nav class="cd-nav">
                      <div id="navbar" class="navbar-collapse collapse">
