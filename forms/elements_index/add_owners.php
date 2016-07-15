@@ -14,6 +14,19 @@
 
                             <div class="form-box">
                                 <div class="form-top">
+                                    <div class="form-top-left">
+
+                                    </div>
+                                    <div class="form-top-right">
+                                    </div>
+
+ <!-- <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
+                                    -->
+                                </div>
+
+
+
+                                <div class="form-bottom">
                                     <?php
                                     $userId = $_SESSION['id'];
                                     if (isset($_POST['addCategory']) && isset($_POST['category']) && !empty($_POST['org1']) && isset($_POST['userOrg1'])) {
@@ -40,50 +53,50 @@
                                         }
                                     }
                                     ?>
-                                    <div class="form-top-left">
-<div class="form-bottom" >
-                                    
-
-
                                     <h4 align="center"> Category owners</h4>
-                                    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
-                                        <div class="form-group">
-                                            <select class="form-username form-control" name="org1" id="org1" onchange="fill_Users_Category()" >
-                                                <?php DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
-                                            </select>
+                                            <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
+                                                <div class="form-group">
+                                                    <select class="form-username form-control" name="org1" id="org1" onchange="fill_Users_Category()" >
+                                                        <?php DB_readOrganizationAsSelect($pdo, $_SESSION['id']) ?>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select class="form-username form-control" name="category" id="category" >
+                                                        <?php DB_readCategoryAsSelect($pdo) ?>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select class="form-username form-control" name="userOrg1" id="userOrg1" disabled>
+                                                        <option id="user" value='0'> Choose a User</option>
+                                                    </select>
+                                                </div>
+                                                <button type="submit" id="addCategory" class="btn" name="addCategory" visible="true">Add Category Owner</button>
+                                            </form>
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-username form-control" name="category" id="category" >
-                                                <?php DB_readCategoryAsSelect($pdo) ?>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <select class="form-username form-control" name="userOrg1" id="userOrg1" disabled>
-                                                <option id="user" value='0'> Choose a User</option>
-                                            </select>
-                                        </div>
-                                        <button type="submit" id="addCategory" class="btn" name="addCategory" visible="true">Add Category Owner</button>
-                                    </form>
-                                </div>
 
 
-                                <div id="title-1" style = "Display: none">
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1" style = "Display: none">
-                                        <thead class="cf">
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Category</th>
-                                                <th>Remove</th>	
-                                            </tr>
-                                        </thead>
-                                        <tbody id="body1">
-                                        </tbody>
-                                    </table>
-                                </div>
-
+                                        <div id="title-1" style = "Display: none">
+                                            <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1" style = "Display: none">
+                                                <thead class="cf">
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Category</th>
+                                                        <th>Remove</th>	
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="body1">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    
                                     </div>
-                                    <div class="form-top-right">
-                                    <div class="form-bottom">
+                                   
+                            <div class="col-sm-5">
+
+
+                        <!--                        <div class="container">-->
+                        <div class="row">
+                            
                                             <h4 align="center"> Sub Category owners</h4>
                                             <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
                                                 <div class="form-group">
@@ -118,12 +131,12 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    </div>
-
-
                                 </div>
 
-                                
+
+                            </div>
+
+
                         </div>
 
 
@@ -135,9 +148,7 @@
 
             </div>
 
-        </div>
-    </div>
-   
+
 
 </main>
 
