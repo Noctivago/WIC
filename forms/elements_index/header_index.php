@@ -25,7 +25,7 @@
                     <ul class="cd-top-nav">
 
           <ul class="nav navbar-nav navbar-right">
-              <li><a class="fa fa-user-secret" href="view_WicPlanner.php"></a></li>
+              <li><a class="fa fa-calendar" href="view_WicPlanner.php"></a></li>
               <li><a class="fa fa-inbox" href="chat.php"></a></li>
 <!--            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>-->
             <li class="has-children account">
