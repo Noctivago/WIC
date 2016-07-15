@@ -33,7 +33,6 @@
                                         $user = (filter_var($_POST ['userOrg1'], FILTER_SANITIZE_STRING));
                                         $org = (filter_var($_POST ['org1'], FILTER_SANITIZE_STRING));
                                         $msg = DB_AddCategoryOwner($pdo, $cat, $user,$org);
-                                        echo $msg . $user . $org . $cat;
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
@@ -44,7 +43,6 @@
                                         $user = (filter_var($_POST ['userOrg2'], FILTER_SANITIZE_STRING));
                                         $org = (filter_var($_POST ['org2'], FILTER_SANITIZE_STRING));
                                         $msg = DB_AddSubCategoryOwner($pdo, $subcat, $user,$org);
-                                        echo $msg . $user . $org . $cat;
                                     } catch (Exception $ex) {
                                         $msg = "ERROR!";
                                     }
