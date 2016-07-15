@@ -51,6 +51,8 @@
                         function myFunction(x) {
                             //sendMessage()
                             alert(x);
+                            var selCon = document.getElementById(x);
+                            selCon.style.backgroundColor = "yellow";
                             //sendMessage();
                         }
                         function setConvId(ConvID) {
