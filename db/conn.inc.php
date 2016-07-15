@@ -630,8 +630,10 @@ function DB_AddCategoryOwner($pdo, $cat, $user, $org) {
            ,[Organization_Id])
      VALUES
            (?,?,?,?)", array($user,$cat,1,$org));
+    $msg ="true";
+    echo $msg;
     } catch (Exception $ex) {
-        
+        echo 'ERRO';
     }
 }
 //GET SERVICE AS TABLE WHERE ORGANIZATION BELONGS TO USER
