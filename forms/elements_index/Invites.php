@@ -28,7 +28,6 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Address</th>
-                                                <th>Date Created</th>
                                                 <th>Facebook</th>
                                                 <th>Twitter</th>
                                                 <th>Linkdin</th>
