@@ -31,16 +31,7 @@ function table_data_invites(json_r) {
         td.appendChild(document.createTextNode(json_r[i].Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Phone_Number));
-        tr.appendChild(td)
-        var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Mobile_Number));
-        tr.appendChild(td)
-        var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Address));
-        tr.appendChild(td)
-        var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].Date_Created));
         tr.appendChild(td)
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Facebook));
