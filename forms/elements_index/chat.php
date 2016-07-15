@@ -55,6 +55,9 @@
                         }
                         function setConvId(ConvID) {
                             document.getElementById("COVERSATIONID").value = ConvID;
+                            //x = document.getElementById("COVERSATIONID").value;
+                            document.getElementById(ConvID).style.backgroundColor = "lightblue";
+                            alert(x);
                             //alert(ConvID);
                         }
                         function setUserId(ConvID) {
