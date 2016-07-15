@@ -25,22 +25,7 @@
                                 </div>
 
                                 <div class="form-bottom" >
-                                        <?php
-                                $userId = $_SESSION['id'];
-                                if ((isset($_POST['addCategory']) && isset($_POST['category'])) && !empty($_POST['org1'] && isset($_POST['userOrg1']))) {
-                                    $msg = '';
-                                    try {
-                                        $cat = (filter_var($_POST['category'], FILTER_SANITIZE_STRING));
-                                        $user = (filter_var($_POST ['userOrg1'], FILTER_SANITIZE_STRING));
-                                        $org = (filter_var($_POST ['org1'], FILTER_SANITIZE_STRING));
-                                        $msg = DB_AddCategoryOwner($pdo, $cat, $user,$org);
-                                        echo $msg . $user . $org . $cat;
-                                    } catch (Exception $ex) {
-                                        $msg = "ERROR!";
-                                    }
-                                } 
-                                ?>
-                            
+                                
                                     
                                     <h4 align="center"> Category owners</h4>
                                     <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
