@@ -48,11 +48,11 @@
                     <!--SET ENABLED = FALSE; ON USER CLICK ENABLED AND GET MESSAGES FROM
                                         THAT CONVERSATION-->
                     <script type="text/javascript">
-                        function myFunction() {
-                            x = document.getElementById("COVERSATIONID").value;
-                            document.getElementById(x).style.backgroundColor = "lightblue";
-                            alert(x);
-                        }
+//                        function myFunction() {
+//                            x = document.getElementById("COVERSATIONID").value;
+//                            document.getElementById(x).style.backgroundColor = "lightblue";
+//                            alert(x);
+//                        }
                         function setConvId(ConvID) {
                             document.getElementById("COVERSATIONID").value = ConvID;
                             //x = document.getElementById("COVERSATIONID").value;
@@ -88,7 +88,7 @@
 
                     </div>
                     <!--IDS NECESSARIOS-->
-                    <input type="text" id ="COVERSATIONID" onchange="myFunction()" name="COVERSATIONID" style="visibility: hidden;"><br>
+                    <input type="text" id ="COVERSATIONID" name="COVERSATIONID" style="visibility: hidden;"><br>
                     <input type="text" id ="USERID" name="USERID" style="visibility: hidden;"><br>
                     <input type="text" id ="CHATID" value="0" name="CHATID" style="visibility: hidden;"><br>
 
