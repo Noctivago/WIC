@@ -1,4 +1,17 @@
+<script type="text/javascript">
+    function getMyWic(userId) {
+        var ajaxDisplay = document.getElementById('no-more-tables');
 
+        $.ajax({
+            url: '../../ajax/get_my_wic.php',
+            method: 'post',
+            data: {usrId: userId},
+            success: function (data) {
+                ajaxDisplay.innerHTML = data;
+            }
+        });
+    }
+</script>    
 <main onload="getMyWic(<?= $_SESSION['id'] ?>)" class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
@@ -142,20 +155,7 @@
                                     </div>
                                     <div class="form-bottom">
 
-                                        <script type="text/javascript">
-                                            function getMyWic(userId) {
-                                                var ajaxDisplay = document.getElementById('no-more-tables');
 
-                                                $.ajax({
-                                                    url: '../../ajax/get_my_wic.php',
-                                                    method: 'post',
-                                                    data: {usrId: userId},
-                                                    success: function (data) {
-                                                        ajaxDisplay.innerHTML = data;
-                                                    }
-                                                });
-                                            }
-                                        </script>    
                                         <div id="no-more-tables">
                                             <!--WICPLANNER APARECE AQUI-->
 
