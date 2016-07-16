@@ -15,20 +15,17 @@ function readAllUserNewsletter() {
 
   function readDataOrganization() {
     var arg1 = 'GetOrganizationUser';
-    var orgId=0;
+    var orgId = 0;
     $.post("../../orgsubmit.php",{arg:arg1},function(result){
         var json = $.parseJSON(result);
-        orgId = json[0].Id;
+        console.log(json);
+        alert(json);
     })
     alert(orgId);
     
-    
-    var arg = 'viewAllOrganization';
+      var arg = 'viewAllOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
         var json = $.parseJSON(result);
-        if (json.length === 0) {
-            cleanInformation();
-        } else {
             console.log(json[0].Name);
             document.getElementById('name').value = json[0].Name;
             document.getElementById('phone').value = json[0].Phone_Number;
@@ -39,18 +36,16 @@ function readAllUserNewsletter() {
             document.getElementById('linkdin').value = json[0].Linkdin;
             document.getElementById('orgEmail').value = json[0].Organization_Email;
             document.getElementById('website').value = json[0].Website;
-            document.getElementById('addOrg').style = "display: none";
-            document.getElementById('update').style = "display: true";
-            document.getElementById('delete').style = "display: true";
-            //document.getElementById('delete').setAttribute(onclick ,removeOrganization());
+            document.getElementById('update').setAttribute(onclick, updateDataOrganization);
+//document.getElementById('delete').setAttribute(onclick ,removeOrganization());
         //    document.getElementById('cancel').style = "display: true";
         }
-    });
+    );
     return false;
 }
 
-function addOrganization() {
-var userid = $("#userid").val();
+function updateDataOrganization() {
+    var userid = $("#userid").val();
     var name = $("#name").val();
     var phone = $("#phone").val();
     var mobile = $("#mobile").val();
@@ -61,7 +56,6 @@ var userid = $("#userid").val();
     var linkdin = $("#linkdin").val();
     var orgEmail = $("#email").val();
     var website = $("#website").val();
-    var arg = 'addOrganization';
     var dataString = 'userid=' + userid + '&name=' + name + '&phone=' + phone + '&mobile=' + mobile + '&address=' + address + '&facebook=' + facebook + '&twitter=' + twitter + '&linkdin=' + linkdin + '&orgEmail=' + orgEmail + '&website=' + website + '&arg=' + arg;
     alert(dataString);
     if (name === '' || mobile === '' || address === '' || orgEmail === '') {

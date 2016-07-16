@@ -12,12 +12,25 @@
 				<input type="search" placeholder="Search Service..">
 			</form>
 		</div>  cd-search -->
-		<div class="cd-search is-hidden">
+
+
+
+<!--		<div class="cd-search is-hidden">
 			<form action="#0">
 				<input type="search" placeholder="Search Service..">
 
 			</form>
-		</div> <!-- cd-search -->
+		</div> -->
+<!-- cd-search -->
+            <div class="cd-search">
+    
+                                    <div class="cd-label">
+                                        <select class="form-username form-control" name="org" ">
+
+                                        </select>
+                                    </div>
+                            
+            </div>
 
 		<a href="#0" class="cd-nav-trigger"><span></span></a>
 
