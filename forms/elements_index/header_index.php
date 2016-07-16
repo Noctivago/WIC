@@ -49,7 +49,7 @@
                               <<div>
                                         <label class="box" for="form-password">City</label>
                                         <select type="text" name="city" placeholder="Chose a City" class="form-password form-control"  >
-                                            <?= DB_getCityAsSelect($pdo) ?>
+                                            
                                         </select>
                                     </div>
 
