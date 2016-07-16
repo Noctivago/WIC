@@ -53,7 +53,7 @@ function updateDataOrganization() {
     var twitter = $("#twitter").val();
     var linkdin = $("#linkdin").val();
     var orgEmail = $("#orgEmail").val();
-    var website = $("#Website").val();
+    var website = $("#website").val();
     $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
         var json = $.parseJSON(result);
         var orgId = json[0].Id;
