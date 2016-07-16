@@ -25,8 +25,8 @@
 					</ul>-->
 				</li>
                                 
-                                <li class=" has-children ">
-                                        <a href="#0" src="../../assets/ico/8.png" class="fa fa-space-shuttle">Space</a>
+                                <li class=" has-children fa-film ">
+                                        <a href="#0" src="../../assets/ico/8.png" >Space</a>
                                 </li>
 				                                
                                 <li class="has-children comments">
