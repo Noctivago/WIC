@@ -18,6 +18,7 @@ function readAllUserNewsletter() {
     var orgId=0;
     $.post("../../orgsubmit.php",{arg:arg1},function(result){
         var json = $.parseJSON(result);
+        console.log(json);
         orgId = json[0].Id;
     })
     alert(orgId);
