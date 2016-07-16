@@ -138,6 +138,18 @@ img { max-width: 100%; }
 
 .form-top-left h3 { margin-top: 0; }
 
+.form-top-right1 {
+	float: left;
+	width: 25%;
+	padding-top: 5px;
+	font-size: 66px;
+	color: red;
+	line-height: 100px;
+	text-align: right;
+        margin-top: 70px;
+        border-style: solid;
+        border-color: black;
+}
 .form-top-right {
 	float: left;
 	width: 25%;
