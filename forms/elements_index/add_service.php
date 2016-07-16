@@ -15,7 +15,7 @@
                 </div>
                 <div class="row">
 
-                    <div class="col-sm-7">
+                    <div class="col-sm-8">
 
                         <div class="form-box">
                             <div class="form-top">
