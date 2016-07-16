@@ -46,7 +46,7 @@
                     <ul class="nav navbar-nav" style="padding-right: 180px; padding-top: 10px;">
                           <li>
 
-                              <div class="form-control">
+                              <div >
 
                                                   <div class="cd-label">
                                                       <select class="form-username form-control" name="org">
