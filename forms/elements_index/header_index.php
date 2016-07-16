@@ -44,7 +44,7 @@
                         
                         <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                          <li class="active">
+                          <li>
 
                           <div class="cd-search">
 
