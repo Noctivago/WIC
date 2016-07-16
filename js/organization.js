@@ -36,7 +36,7 @@ function readDataOrganization() {
             document.getElementById('linkdin').value = json2[0].Linkdin;
             document.getElementById('orgEmail').value = json2[0].Organization_Email;
             document.getElementById('website').value = json2[0].Website;
-            document.getElementById('update').setAttribute(onclick, updateDataOrganization);
+           
 //document.getElementById('delete').setAttribute(onclick ,removeOrganization());
             //    document.getElementById('cancel').style = "display: true";
         }
