@@ -215,7 +215,7 @@ include_once '../db/functions.php';
                                         function myFunction() {
                                             var x = document.getElementById("countrySelect").value;
                                             //document.getElementById("demo").innerHTML = "You selected: " + x;
-                                            alert(x);
+                                            //alert(x);
                                             loadcities(x);
                                         }
                                         function loadcities(Country) {
