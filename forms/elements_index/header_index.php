@@ -76,7 +76,7 @@
                                                       <li><a href="change_pass.php">Change Password <i  class="fa fa-key" align="right"></i> </a></li>
                                                       <li><a href="#">FAQS</a></li>
                                                       <li><a href="#">Support</a></li>
-                                                      <li><a href="logout.php" >Logout</a></li>
+                                                      <li><a href="logout.php"> Logout</a></li>
 
                                                   </ul>
                                           </li>
