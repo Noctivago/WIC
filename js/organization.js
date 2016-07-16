@@ -12,13 +12,13 @@ function readAllUserNewsletter() {
     });
     return false;
 }
-function getOrgId(){
+function getOrgId() {
     var arg1 = 'GetOrganizationUser';
-$.post("../../orgsubmit.php", {arg: arg1}, function (result) {
+    $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
         var json = $.parseJSON(result);
         return json[0].Id;
-});
-        return false;
+    });
+    return false;
 }
 function readDataOrganization() {
     var arg1 = 'GetOrganizationUser';
@@ -27,64 +27,49 @@ function readDataOrganization() {
         var json = $.parseJSON(result);
         var orgId = json[0].Id;
 
-    var arg = 'viewAllOrganization';
-    $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
-        var json2 = $.parseJSON(result);
-        if (json2.length === 0)
-        {
-            alert(json2);
-        } else {
-            document.getElementById('name').value = json2[0].Name;
-            document.getElementById('phone').value = json2[0].Phone_Number;
-            document.getElementById('mobile').value = json2[0].Mobile_Number;
-            document.getElementById('address').value = json2[0].Address;
-            document.getElementById('facebook').value = json2[0].Facebook;
-            document.getElementById('twitter').value = json2[0].Twitter;
-            document.getElementById('linkdin').value = json2[0].Linkdin;
-            document.getElementById('orgEmail').value = json2[0].Organization_Email;
-            document.getElementById('website').value = json2[0].Website;
-         }
-    });
+        var arg = 'viewAllOrganization';
+        $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
+            var json2 = $.parseJSON(result);
+            if (json2.length === 0)
+            {
+                alert(json2);
+            } else {
+                document.getElementById('name').value = json2[0].Name;
+                document.getElementById('phone').value = json2[0].Phone_Number;
+                document.getElementById('mobile').value = json2[0].Mobile_Number;
+                document.getElementById('address').value = json2[0].Address;
+                document.getElementById('facebook').value = json2[0].Facebook;
+                document.getElementById('twitter').value = json2[0].Twitter;
+                document.getElementById('linkdin').value = json2[0].Linkdin;
+                document.getElementById('orgEmail').value = json2[0].Organization_Email;
+                document.getElementById('website').value = json2[0].Website;
+            }
+        });
     })
 
-        return false;
+    return false;
 }
 
 function updateDataOrganization() {
     var orgId = getOrgId();
     alert(orgId);
+    var arg = 'updateOrganizationInform';
     var name = $("#name").val();
     var phone = $("#phone").val();
     var mobile = $("#mobile").val();
-    //  var logotype = $("#logotype").val();
     var address = $("#Address").val();
     var facebook = $("#facebook").val();
     var twitter = $("#twitter").val();
     var linkdin = $("#linkdin").val();
     var orgEmail = $("#email").val();
     var website = $("#website").val();
-    var dataString = ('orgId'+ orgId '&name=' + name + '&phone=' + phone + '&mobile=' + mobile + '&address=' + address + '&facebook=' + facebook + '&twitter=' + twitter + '&linkdin=' + linkdin + '&orgEmail=' + orgEmail + '&website=' + website + '&arg=' + arg;
-    alert(dataString);
-    if (name === '' || mobile === '' || address === '' || orgEmail === '') {
-        alert('Please filld the fields required <br/>Name<br/>mobile<br/>Adress<br/>Organization Email');
-    } else
-    {
-        $.ajax({
-            type: "POST",
-            url: "orgsubmit.php",
-            data: dataString,
-            cache: false,
-            sucess: function (result) {
-                var ajaxDisplay = document.getElementById('result');
-                ajaxDisplay.innerHTML = result;
-                alert(result);
-            }
-        });
-
-        viewAllOrganization();
-        return false;
-    }
+    $.post("../../orgsubmit.php", {arg: arg, orgId: orgId, name: name, phone: phone, mobile: mobile, address: address, facebook: facebook, twitter: twitter, linkdin: linkdin, orgEmail: orgEmail, Website: website}, function (result) {
+        readDataOrganization();
+    });
+    return false;
 }
+
+
 function removeUserNewsletter($IdNews) {
     var arg = 'removeUserNewsletter';
     var dataString = 'arg=' + arg + '&idNews=' + $IdNews;
