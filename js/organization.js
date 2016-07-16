@@ -20,15 +20,11 @@ function getOrgId() {
         console.log(json);
         return json[0].Id;
     });
-    return false;
 }
 function readDataOrganization() {
     var arg1 = 'GetOrganizationUser';
-
-    $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
-        var json = $.parseJSON(result);
-        var orgId = json[0].Id;
-
+    var orgId = getOrgId();
+    alert(orgId);
         var arg = 'viewAllOrganization';
         $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
             var json2 = $.parseJSON(result);
@@ -47,7 +43,7 @@ function readDataOrganization() {
                 document.getElementById('website').value = json2[0].Website;
             }
         });
-    })
+
 
     return false;
 }
