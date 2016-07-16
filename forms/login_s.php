@@ -87,9 +87,9 @@ if (isset($_SESSION['username'])) {
                                 <div class="form-bottom">
                                     <label>
                                         <input type="radio" name="Organization" style="color:black" id="optionsRadios1" value="option1">
-      Organization
+      Supplier
       <input type="radio" name="User" id="optionsRadios1" value="option2">
-      User
+      Planner
     </label>
                                     <?php
                                     if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
