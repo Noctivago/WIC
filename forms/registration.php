@@ -148,8 +148,8 @@ include_once '../db/functions.php';
                                             </select>
                                         </div>
                                         <!--LOAD CITIES-->
-                                        <div class = "form-group" id="cities" disabled>
-                                            <select class = "form-first-name form-control loadcity">
+                                        <div class = "form-group">
+                                            <select class = "form-first-name form-control loadcity"  id="cities" disabled>
 
                                             </select>
                                         </div>
