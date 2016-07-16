@@ -22,9 +22,16 @@
 			</form>
 		</div> -->
 <!-- cd-search -->
-<div class="cd-search">
-    <select> Pick your City </select> 
-</div>
+            <div class="cd-search">
+    
+                                    <div class="form-group">
+                                        <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()">
+                                            <h4> <?php echo $msg; ?></h4>
+                                            <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
+                                        </select>
+                                    </div>
+                            
+            </div>
 
 		<a href="#0" class="cd-nav-trigger"><span></span></a>
 
