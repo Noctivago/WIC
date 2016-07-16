@@ -34,7 +34,7 @@
 					<a href="#0">Notifications<span ></span></a>
 				</li>
                                 
-                                <li class="has-children thumbnail">
+                                <li class="has-children users">
                                     <a href="">Other Usages</a>
                                     <ul>
                                         <li><a href="invites.php">Invites</a></li>
