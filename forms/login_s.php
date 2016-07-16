@@ -85,22 +85,6 @@ if (isset($_SESSION['username'])) {
                                 </div>
 
                                 <div class="form-bottom">
-                                    <ul class="payment-methods">
-  <li class="payment-method paypal">
-    <input name="payment_methods" type="radio" id="paypal">
-    <label for="paypal">PayPal</label>
-  </li>
-
-  <li class="payment-method pagseguro">
-    <input name="payment_methods" type="radio" id="pagseguro">
-    <label for="pagseguro">PagSeguro</label>
-  </li>
-
-  <li class="payment-method bankslip">
-    <input name="payment_methods" type="radio" id="bankslip">
-    <label for="bankslip">Boleto</label>
-  </li>
-</ul>
                                     <label>
                                         <input type="radio" name="Organization" style="color:black" id="optionsRadios1" value="option1">
       Supplier
