@@ -43,10 +43,10 @@
                     <ul class="cd-top-nav">
                         
                         <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav" style="padding-right: 180px; padding-top: 10px;">
+                    <ul class="nav navbar-nav">
                           <li>
 
-                              <<div class="cd-label">
+                              <<div class="navbar-middle">
                                         <!--<label class="sr-only" for="form-password">Telephone:</label>-->
                                         <select type="text" name="city" placeholder="Chose a City" class="form-password form-control"  >
                                             <?= DB_getCityAsSelect($pdo) ?>
