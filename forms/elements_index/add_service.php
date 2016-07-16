@@ -12,7 +12,9 @@
              <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-hQpvDQiCJaD2H465dQfA717v7lu5qHWtDbWNPvaTJ0ID5xnPUlVXnKzq7b8YUkbN" crossorigin="anonymous">
               <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
              <div class="container">
-
+<div class="col-sm-8 col-lg-offset-2 text">
+                    <!--            </div>-->
+                </div>
    <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-8 nopadding maindashboard" style="border-right:1px solid #ddd;">
                         <div class="col-sm-5">
