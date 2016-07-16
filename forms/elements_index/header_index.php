@@ -40,6 +40,8 @@
 						
                                             <li class="form-inline"><i class="fa fa-user"></i><a href="userProfile.php">My Account</a></li>
                                             <li><a href="change_pass.php" class="fa fa-key ">Change Password</a></li>
+                                            <li><a href="#">FAQS</a></li>
+                                            <li><a href="#">Support</a></li>
                                             <li><a href="logout.php" >Logout</a></li>
                                                 
 					</ul>
