@@ -28,7 +28,7 @@ if ($arg === 'addOrganization') {
     $user = $_SESSION['id'];
     try {
     $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($user), "rows");
-    json_encode($rows);
+    echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'error';
     }
