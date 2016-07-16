@@ -15,7 +15,7 @@
 
    <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-8 nopadding maindashboard" style="border-right:1px solid #ddd;">
-                        <div class="col-md-8 nopadding bannerimage">
+                        <div class="col-sm-6">
                             <img width="550px" height="100%"  src="images/sliderimg1.jpg">
                             <div class="left-arrow">
                                 <a href="#"><img width="100px" src="images/left-arrow.png"></a>
