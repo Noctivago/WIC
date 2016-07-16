@@ -147,10 +147,14 @@ include_once '../db/functions.php';
                                                 <?= DB_getCountryAsSelect($pdo); ?>
                                             </select>
                                         </div>
+                                        <!--LOAD CITIES-->
                                         <div class = "form-group">
                                             <select class = "form-first-name form-control loadcity">
 
                                             </select>
+                                        </div>
+                                        <div class = "form-group">
+                                            <input type="checkbox" name="signUpOption" value="1">Join as supplier?<br>
                                         </div>
                                         <div class = "form-group">
                                             <select class = "form-first-name form-control">
