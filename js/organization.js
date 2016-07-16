@@ -15,11 +15,10 @@ function readAllUserNewsletter() {
 
 function readDataOrganization() {
     var arg1 = 'GetOrganizationUser';
+
     $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
         var json = $.parseJSON(result);
         var orgId = json[0].Id;
-        alert(orgId);
-    })
 
     var arg = 'viewAllOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
@@ -42,7 +41,9 @@ function readDataOrganization() {
             //    document.getElementById('cancel').style = "display: true";
         }
     });
-    return false;
+    })
+
+        return false;
 }
 
 function updateDataOrganization() {
