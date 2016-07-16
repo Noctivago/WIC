@@ -138,10 +138,10 @@ include_once '../db/functions.php';
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-email">Email</label>
-                                            <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
+                                            <input type="email" name="email" placeholder="example@wic.club" class="form-email form-control" id="form-email"required>
                                         </div>
                                         <div class="form-group">
-                                            <select>
+                                            <select class="form-first-name form-control">
                                                 <option value="choice">PLEASE CHOOSE</option>
                                                 <option value="supplier">JOIN AS SUPPLIER</option>
                                                 <option value="planner">JOIN AS PLANNER</option>
