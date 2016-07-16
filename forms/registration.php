@@ -145,16 +145,22 @@ include_once '../db/functions.php';
                                                 <option value="choice">Country</option>
                                             </select>
                                         </div>
-                                            <div class="form-group">
+                                        <div class="form-group">
                                             <select class="form-first-name form-control">
                                                 <option value="choice">City</option>
                                             </select>
-                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <select class="form-first-name form-control">
                                                 <option value="choice">PLEASE CHOOSE</option>
                                                 <option value="supplier">JOIN AS SUPPLIER</option>
                                                 <option value="planner">JOIN AS PLANNER</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-first-name form-control">
+                                                <!--GET CATEGORY AS SELECT-->
+                                                <?= DB_getCategoryAsSelect($pdo); ?>
                                             </select>
                                         </div>
                                         <!--ON CHANGE LOAD SUPPLIER TYPE IS VALUE=SUPPLIER-->
