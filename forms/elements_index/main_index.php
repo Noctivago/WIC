@@ -15,9 +15,9 @@
                                 
 				<li class="has-children overview">
                                     
-                                        <div ">
+                                        <div >
                                             <form action="#0">
-                                                <input type="search" placeholder="Search Service.." style="color: white">
+                                                <input type="search" placeholder="Search Service.." >
 
                                             </form>
                                         </div> 

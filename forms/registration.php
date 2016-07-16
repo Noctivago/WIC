@@ -161,7 +161,7 @@ include_once '../db/functions.php';
                                             </select>
                                         </div>
                                         <div class = "form-group">
-                                            <select class = "form-first-name form-control" id="loadCat" Style="display:none;">
+                                            <select class = "form-first-name form-control" id="loadCat" style="display:none;">
                                                 <!--GET CATEGORY AS SELECT-->
                                                 <option value = "choice">PLEASE CHOOSE</option>
                                                 <?= DB_getCategoryAsSelect($pdo) ?>
@@ -238,6 +238,7 @@ include_once '../db/functions.php';
                                             if (y === 1) {
                                                 var CAT = document.getElementById('loadCat');
                                                 CAT.style.display = "block";
+                                                alert('LOADCAT');
                                             }
                                         }
 
