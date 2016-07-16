@@ -72,7 +72,7 @@
                                                   <ul>
 
 
-                                                      <li><a href="userProfile.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>My Account</a></li>
+                                                      <li><a href="userProfile.php"><span class="fa fa-user-secret"></span>My Account</a></li>
                                                       <li><a href="change_pass.php">Change Password <i  class="fa fa-key" align="right"></i> </a></li>
                                                       <li><a href="#">FAQS</a></li>
                                                       <li><a href="#">Support</a></li>
