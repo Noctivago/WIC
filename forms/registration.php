@@ -140,29 +140,31 @@ include_once '../db/functions.php';
                                             <label class="sr-only" for="form-email">Email</label>
                                             <input type="email" name="email" placeholder="example@wic.club" class="form-email form-control" id="form-email"required>
                                         </div>
-                                        <label class="sr-only" for="form-last-name">Location</label>
+
                                         <div class="form-group">
                                             <select class="form-first-name form-control">
                                                 <option value="choice">Country</option>
+                                                <?= DB_getCountryAsSelect($pdo); ?>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-first-name form-control">
-                                                <option value="choice">City</option>
+                                        <div class = "form-group">
+                                            <select class = "form-first-name form-control">
+                                                <option value = "choice">City</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-first-name form-control">
-                                                <option value="choice">PLEASE CHOOSE</option>
-                                                <option value="supplier">JOIN AS SUPPLIER</option>
-                                                <option value="planner">JOIN AS PLANNER</option>
+                                        <div class = "form-group">
+                                            <select class = "form-first-name form-control">
+                                                <option value = "choice">USER TYPE</option>
+                                                <option value = "supplier">JOIN AS SUPPLIER</option>
+                                                <option value = "planner">JOIN AS PLANNER</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-first-name form-control">
+                                        <div class = "form-group">
+                                            <select class = "form-first-name form-control">
                                                 <!--GET CATEGORY AS SELECT-->
-                                                <option value="choice">PLEASE CHOOSE</option>
-                                                <?= DB_getCategoryAsSelect($pdo); ?>
+                                                <option value = "choice">PLEASE CHOOSE</option>
+                                                <? = DB_getCategoryAsSelect($pdo);
+                                                ?>
                                             </select>
                                         </div>
                                         <!--ON CHANGE LOAD SUPPLIER TYPE IS VALUE=SUPPLIER-->
