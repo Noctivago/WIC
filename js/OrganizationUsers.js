@@ -6,7 +6,6 @@ function removeUserInOrganization() {
     });
 }
 function viewUsersInService() {
-
     var serv = document.getElementById('serv').value;
     var div_table1 = "title-1";
     var id_table1 = "table1";

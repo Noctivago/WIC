@@ -130,13 +130,41 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'viewAllUsersInService') {
     try {
-        
+        $serv = $_POST['serv'];
+        //return service name, nome user, email user
+       $rows = sql($pdo,"SELECT [User].[Email]
+      ,[Profile].[First_Name]
+	  ,[Profile].[Last_Name]
+	  ,[Organization_Service].[Name]
+  FROM [dbo].[Organization_User_In_Service]
+  join [Organization_Service]
+  on [Organization_service].[Id] = [Organization_User_In_Service].[Organization_Service_Id]
+  join [User]
+  on [User].[Id] = [Organization_User_In_Service].[User_Id]
+  join [Profile]
+  on [Profile].[User_Id] = [User].[Id]
+  where [Organization_Service_Id] = ? and [Organization_User_In_Service].[Enabled] = 1",array($serv), "rows");
+       echo json_encode($rows);
     } catch (Exception $ex) {
         
     }    
 } else if ($arg === 'viewAllUserInServiceWaitingResponse') {
     try {
-        
+        $serv = $_POST['serv'];
+        //return service name, nome user, email user
+       $rows = sql($pdo,"SELECT [User].[Email]
+      ,[Profile].[First_Name]
+	  ,[Profile].[Last_Name]
+	  ,[Organization_Service].[Name]
+  FROM [dbo].[Organization_User_In_Service]
+  join [Organization_Service]
+  on [Organization_service].[Id] = [Organization_User_In_Service].[Organization_Service_Id]
+  join [User]
+  on [User].[Id] = [Organization_User_In_Service].[User_Id]
+  join [Profile]
+  on [Profile].[User_Id] = [User].[Id]
+  where [Organization_Service_Id] = ? and [Organization_User_In_Service].[Responded] = 0",array($serv), "rows");
+       echo json_encode($rows);
     } catch (Exception $ex) {
         
     }
