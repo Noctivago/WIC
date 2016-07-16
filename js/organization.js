@@ -15,7 +15,7 @@ function readAllUserNewsletter() {
 
   function readDataOrganization() {
     var arg1 = 'GetOrganizationUser';
-    var orgId=0;
+    var orgId = 0;
     $.post("../../orgsubmit.php",{arg:arg1},function(result){
         var json = $.parseJSON(result);
         console.log(json);
@@ -26,9 +26,6 @@ function readAllUserNewsletter() {
       var arg = 'viewAllOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
         var json = $.parseJSON(result);
-        if (json.length === 0) {
-            cleanInformation();
-        } else {
             console.log(json[0].Name);
             document.getElementById('name').value = json[0].Name;
             document.getElementById('phone').value = json[0].Phone_Number;
