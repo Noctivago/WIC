@@ -86,7 +86,7 @@ if (isset($_SESSION['username'])) {
 
                                 <div class="form-bottom">
                                     <label>
-      <input type="radio" name="Organization" id="optionsRadios1" value="option1" checked>
+                                        <input type="radio" name="Organization" id="optionsRadios1" value="option1" checked style="color:black">
       Organization
       <input type="radio" name="User" id="optionsRadios1" value="option2" checked>
       User
