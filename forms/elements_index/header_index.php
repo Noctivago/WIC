@@ -46,12 +46,12 @@
                     <ul class="nav navbar-nav">
                           <li>
 
-                              <<div class="navbar-middle">
-                                        <!--<label class="sr-only" for="form-password">Telephone:</label>-->
+<!--                              <<div class="navbar-middle">
+                                        <label class="sr-only" for="form-password">Telephone:</label>
                                         <select type="text" name="city" placeholder="Chose a City" class="form-password form-control"  >
                                             <?= DB_getCityAsSelect($pdo) ?>
                                         </select>
-                                    </div>
+                                    </div>-->
 
 
                           </li>
