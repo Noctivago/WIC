@@ -25,6 +25,7 @@
                     <ul class="cd-top-nav">
 
           <ul class="nav navbar-nav navbar-right">
+              <li><a class="fa fa-bell" href="notifications.php" title="Notifications"></a></li>
               <li><a class="fa fa-calendar" href="view_WicPlanner.php" title="My Wic Planner"></a></li>
               <li><a class="fa fa-inbox" href="chat.php" title="Inbox"></a></li>
 <!--            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>-->
@@ -37,8 +38,10 @@
 					<ul>
 
 						
-                                            <li class="form-inline"><i class="fa fa-user"></i><a href="userProfile.php">My Account</a></li>
-                                            <li><a href="change_pass.php" class="fa fa-key ">Change Password</a></li>
+                                            <li><i class="fa fa-user"></i><a href="userProfile.php">&AMP;My Account</a></li>
+                                            <li><a href="change_pass.php" class="fa fa-key ">&AMP;Change Password</a></li>
+                                            <li><a href="#">FAQS</a></li>
+                                            <li><a href="#">Support</a></li>
                                             <li><a href="logout.php" >Logout</a></li>
                                                 
 					</ul>
