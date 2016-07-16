@@ -16,6 +16,15 @@
                     <!--            </div>-->
                 </div>
    <div class="row">
+         <div class="col-sm-5">
+
+                        <div class="form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+
+                                </div>
+                                <div class="form-top-right">
+                                </div>
                     <div class="col-sm-5" style="border-right:1px solid #ddd;">
 <!--                        <div class="col-sm-5">-->
                             <img width="550px" height="100%"  src="../../assets/img/logo.png">
