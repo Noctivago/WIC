@@ -8,12 +8,13 @@
                             
 				<li class="cd-label">Start Planning</li>
                                 
-                                <div class="cd-search is-hidden">
+<!--                                <div class="cd-search is-hidden">
                                 <form action="#0">
 				<input type="search" placeholder="Search Service..">
 
                                 </form>
-                                 </div> <!-- cd-search -->
+                                 </div> -->
+                                <!-- cd-search -->
                                 
                                 
                                 
@@ -87,10 +88,10 @@
 
 			</ul>
 
-			<!--<ul>-->
-<!--				<li class="cd-label">Action</li>
+			<ul>
+				<li class="cd-label">Action</li>
 				<li class="action-btn"><a href="#0">+ Button</a></li>
-			</ul>-->
+			</ul>
 		</nav>
 
 <!--		<div class="content-wrapper">
