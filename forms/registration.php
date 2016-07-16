@@ -238,6 +238,7 @@ include_once '../db/functions.php';
                                             if (y === 1) {
                                                 var CAT = document.getElementById('loadCat');
                                                 CAT.style.display = "block";
+                                                alert('LOADCAT');
                                             }
                                         }
 
