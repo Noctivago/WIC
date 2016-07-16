@@ -1,6 +1,16 @@
 	<main class="cd-main-content">
 		<nav class="cd-side-nav">
 			<ul>
+                            
+                            
+                            <div class="cd-search is-hidden">
+			<form action="#0">
+				<input type="search" placeholder="Search Service..">
+
+			</form>
+                            </div> <!-- cd-search -->
+                            
+                            
 				<li class="cd-label">Start Planning</li>
 				<li class="has-children overview">
                                         <a href="#0" src="../../assets/ico/8.png" class="fa fa-space-shuttle">Space</a>
