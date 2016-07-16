@@ -46,7 +46,7 @@
                     <ul class="nav navbar-nav" style="padding-right: 180px; padding-top: 10px;">
                           <li>
 
-                              <<div class="form-group">
+                              <<div class="cd-label">
                                         <!--<label class="sr-only" for="form-password">Telephone:</label>-->
                                         <select type="text" name="city" placeholder="Chose a City" class="form-password form-control" id="city" required>
                                             <?= DB_getCityAsSelect($pdo) ?>
