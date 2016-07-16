@@ -401,6 +401,22 @@ function DB_getCityAsSelectByCountryId($pdo, $idState) {
     }
 }
 
+function DB_getCityAsSelectByCountrySelected($pdo, $idCountry) {
+    try {
+//global $pdo;
+        $stmt = $pdo->prepare("SELECT * FROM City WHERE [Country_Id] = :stateID ORDER BY Name ASC");
+        $stmt->bindParam(':stateID', $idCountry);
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+        }
+#$dbh = null;
+    } catch (PDOException $e) {
+        echo 'ERROR READING CITY TABLE';
+        die();
+    }
+}
+
 function DB_addOrganization($pdo, $userid, $orgId, $name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $d) {
     try {
         if ($orgId === '0') {
