@@ -21,7 +21,6 @@ function readAllUserNewsletter() {
         console.log(json);
         alert(json);
     })
-    alert(orgId);
     
       var arg = 'viewAllOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
