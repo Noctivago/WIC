@@ -57,7 +57,7 @@
                                     </div>
                           </form>
                          </div>
-                            
+<!--                            
                             <div class="col-md-12 margin10ud">
                                 <a class="col-md-6" href="#" style="padding-right: 5px;">
                                     <img width="100%" src="../../assets/assests_sidebar/img/upload-profile-picture.png">
@@ -71,7 +71,7 @@
                             </div>
                             <div class="col-md-6" style="padding-left: 5px;">
                                 <input class="profile-submit-btn-sup-upload width100" type="submit" name="submit" value="UPLOAD">
-                            </div>
+                            </div>-->
 
                         </div>
 
