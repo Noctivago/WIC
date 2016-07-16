@@ -19,8 +19,8 @@ function readDataOrganization() {
     $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
         var json = $.parseJSON(result);
         var orgId = json[0].Id;
-        $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
-            var json2 = $.parseJSON(result);
+        $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result1) {
+            var json2 = $.parseJSON(result1);
             if (json2.length === 0)
             {
                 alert(json2);
@@ -42,9 +42,8 @@ function readDataOrganization() {
 }
 
 function updateDataOrganization() {
-    var orgId = getOrgId();
-    alert(orgId);
     var arg = 'updateOrganizationInform';
+    var arg1= 'GetOrganizationUser';
     var name = $("#name").val();
     var phone = $("#phone").val();
     var mobile = $("#mobile").val();
@@ -54,8 +53,12 @@ function updateDataOrganization() {
     var linkdin = $("#linkdin").val();
     var orgEmail = $("#email").val();
     var website = $("#website").val();
-    $.post("../../orgsubmit.php", {arg: arg, orgId: orgId, name: name, phone: phone, mobile: mobile, address: address, facebook: facebook, twitter: twitter, linkdin: linkdin, orgEmail: orgEmail, Website: website}, function (result) {
-        readDataOrganization();
+    $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
+        var json = $.parseJSON(result);
+        var orgId = json[0].Id;
+        $.post("../../orgsubmit.php", {arg: arg, orgId: orgId, name: name, phone: phone, mobile: mobile, address: address, facebook: facebook, twitter: twitter, linkdin: linkdin, orgEmail: orgEmail, Website: website}, function (result) {
+            readDataOrganization();
+        });
     });
     return false;
 }
