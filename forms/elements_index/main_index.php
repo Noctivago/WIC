@@ -12,7 +12,7 @@
 					<a href="#0">Reportage Photo & Video</a>
                                         
                                        
-					
+<!--					
 					<ul>
 						<li><a href="#0">Space</a></li>
 						<li><a href="#0">Food</a></li>
@@ -22,7 +22,7 @@
                                                 <li><a href="#0">Audio Visual</a></li>
                                                 <li><a href="#0">Reportage Photo & Video</a></li>
                                                 
-					</ul>
+					</ul>-->
 				</li>
 				                                
                                 <li class="has-children comments">
