@@ -148,7 +148,7 @@ include_once '../db/functions.php';
                                             </select>
                                         </div>
                                         <!--LOAD CITIES-->
-                                        <div class = "form-group" id="cities" style="display: none;">
+                                        <div class = "form-group" id="cities" disabled>
                                             <select class = "form-first-name form-control loadcity">
 
                                             </select>
@@ -222,6 +222,7 @@ include_once '../db/functions.php';
                                             //alert(x);
                                             var div = document.getElementById('cities');
                                             div.style.visibility = 'visible';
+                                            div.style.visibility = 'hidden';
                                             loadcities(x);
                                         }
                                         function loadcities(Country) {
