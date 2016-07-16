@@ -91,6 +91,9 @@ if (isset($_SESSION['username'])) {
       &nbsp;
       &nbsp;
       &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
       <input type="radio" name="User" id="optionsRadios1" value="option2">
       Planner
     </label>
