@@ -5,7 +5,11 @@ function removeUserInOrganization() {
         viewAllUsersInOrganization();
     });
 }
-
+function removeUserInService(){
+    var serv = document.getElementById('serv').value;
+    
+    alert(serv);
+}
 function viewUsersInService() {
     var serv = document.getElementById('serv').value;
     var div_table1 = "title-1";
