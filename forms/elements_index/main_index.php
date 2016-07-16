@@ -8,12 +8,12 @@
                             
 				<li class="cd-label">Start Planning</li>
                                 
-<!--                                <div class="cd-search is-hidden">
+                                <div class="cd-search image-responsive">
                                 <form action="#0">
 				<input type="search" placeholder="Search Service..">
 
                                 </form>
-                                 </div> -->
+                                 </div> 
                                 <!-- cd-search -->
                                 
                                 
