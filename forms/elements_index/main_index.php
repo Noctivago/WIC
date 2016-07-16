@@ -25,7 +25,7 @@
 					</ul>-->
 				</li>
                                 
-                                <li class=" has-children fa-film ">
+                                <li class=" has-children" src="../../assets/ico/8.png">
                                         <a href="#0"  >TEste</a>
                                 </li>
 				                                
