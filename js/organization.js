@@ -48,11 +48,11 @@ function updateDataOrganization() {
     var name = $("#name").val();
     var phone = $("#phone").val();
     var mobile = $("#mobile").val();
-    var address = $("#Address").val();
+    var address = $("#address").val();
     var facebook = $("#facebook").val();
     var twitter = $("#twitter").val();
     var linkdin = $("#linkdin").val();
-    var orgEmail = $("#email").val();
+    var orgEmail = $("#orgEmail").val();
     var website = $("#website").val();
     $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
         var json = $.parseJSON(result);
