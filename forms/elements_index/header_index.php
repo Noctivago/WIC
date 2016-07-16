@@ -23,7 +23,7 @@
 <!-- cd-search -->
 
 
-            <div class="cd-search">
+<!--            <div class="cd-search">
     
                                     <div class="cd-label">
                                         <select class="form-username form-control" name="org" ">
@@ -31,7 +31,7 @@
                                         </select>
                                     </div>
                             
-            </div>
+            </div>-->
 
 
 		<a href="#0" class="cd-nav-trigger"><span></span></a>
