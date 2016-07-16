@@ -142,15 +142,14 @@ include_once '../db/functions.php';
                                         </div>
 
                                         <div class="form-group">
-                                            <select id = "countrySelect"class="form-first-name form-control" onchange="myFunction()">
+                                            <select id = "countrySelect" class="form-first-name form-control" onchange="myFunction()">
                                                 <option value="0">Country</option>
                                                 <?= DB_getCountryAsSelect($pdo); ?>
                                             </select>
                                         </div>
                                         <div class = "form-group">
-                                            <select class = "form-first-name form-control">
-                                                <option value = "0">City</option>
-                                                <?= DB_getCityAsSelectByCountrySelected($pdo, $idCountry); ?>
+                                            <select class = "form-first-name form-control loadcity">
+
                                             </select>
                                         </div>
                                         <div class = "form-group">
@@ -217,7 +216,21 @@ include_once '../db/functions.php';
                                             var x = document.getElementById("countrySelect").value;
                                             //document.getElementById("demo").innerHTML = "You selected: " + x;
                                             alert(x);
+                                            loadcities(x);
                                         }
+                                        function loadcities(Country) {
+                                            //var Country_Id = document.getElementById(x).value;
+                                            var Country_Id = Country;
+                                            $.ajax({
+                                                url: '../ajax/get_city.php',
+                                                method: 'post',
+                                                data: {con: Country_Id},
+                                                success: function (data) {
+                                                    $('.loadcity').html(data);
+                                                }
+                                            });
+                                        }
+
         </script>
 
 
