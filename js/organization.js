@@ -13,7 +13,7 @@ function readAllUserNewsletter() {
     return false;
 }
 
-  function readDataOrganization(id) {
+  function readDataOrganization() {
     var arg1 = 'GetOrganizationUser';
     var orgId=0;
     $.post("../../orgsubmit.php",{arg:arg1},function(result){
