@@ -142,7 +142,7 @@ include_once '../db/functions.php';
                                         </div>
 
                                         <div class="form-group">
-                                            <select class="form-first-name form-control">
+                                            <select id = "countrySelect"class="form-first-name form-control" onchange="myFunction()">
                                                 <option value="choice">Country</option>
                                                 <?= DB_getCountryAsSelect($pdo); ?>
                                             </select>
@@ -210,6 +210,16 @@ include_once '../db/functions.php';
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
+
+        <script>
+                                        function myFunction() {
+                                            var x = document.getElementById("countrySelect").value;
+                                            //document.getElementById("demo").innerHTML = "You selected: " + x;
+                                            alert(x);
+                                        }
+        </script>
+
+
 
     </body>
 
