@@ -85,19 +85,7 @@ if (isset($_SESSION['username'])) {
                                 </div>
 
                                 <div class="form-bottom">
-                                    <div> <label>
-                                        <input type="radio" name="Organization" style="color:black" id="optionsRadios1" value="option1" style="color: red">
-      Supplier 
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <input type="radio" name="User" id="optionsRadios1" value="option2">
-      Planner
-    </label>
-                                    <?php
+                            <?php
                                     if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                                         $msg = '';
                                         // sua chave secreta
