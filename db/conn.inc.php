@@ -736,6 +736,7 @@ function DB_readOrganizationServiceAsSelect($pdo) {
     join [Organization]
     on [Organization_Id] = [Organization].[Id]
     where [Organization].[User_Boss] = ? and [Organization_Service].[Enabled] = 1 and [Organization].[Enabled] = 1", array($userId), "rows");
+        echo "<option value='0'>Choose service </option>";
         foreach ($rows as $row) {
             echo "<option value='" . htmlspecialchars($row['OSI']) . "'>" . htmlspecialchars($row['OSNAME']) . "</option>";
         }

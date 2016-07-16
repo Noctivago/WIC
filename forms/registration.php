@@ -222,8 +222,6 @@ include_once '../db/functions.php';
                                         function loadcities(Country) {
                                             //var Country_Id = document.getElementById(x).value;
                                             var Country_Id = Country;
-                                            var cityOp = document.getElementById('cities');
-                                            cityOp.disabled = false;
                                             $.ajax({
                                                 url: '../ajax/get_city.php',
                                                 method: 'post',
@@ -232,9 +230,12 @@ include_once '../db/functions.php';
                                                     $('.loadcity').html(data);
                                                 }
                                             });
+                                            var cityOp = document.getElementById('cities');
+                                            cityOp.disabled = false;
                                         }
                                         function FunctionCat() {
                                             var y = document.getElementById("userChoice").value;
+                                            alert(y);
                                             if (y === 1) {
                                                 var CAT = document.getElementById('loadCat');
                                                 //CAT.style.display = "inline";

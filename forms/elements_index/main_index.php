@@ -17,7 +17,7 @@
                                     
                                         <div >
                                             <form action="#0">
-                                                <input type="search" placeholder="Search Service.." >
+                                                <input type="search" placeholder=" Service.." class="img-responsive">
 
                                             </form>
                                         </div> 
