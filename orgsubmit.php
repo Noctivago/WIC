@@ -134,18 +134,16 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'updateOrganizationInform') {
     try {
-        $userid = (filter_var($_POST ['userid']));
+        $orgId = (filter_var($_POST ['orgId']));
         $name = (filter_var($_POST ['name']));
         $phone = (filter_var($_POST ['phone']));
         $mobile = (filter_var($_POST ['mobile']));
-        //     $logotype = (filter_var($_POST['logotype'],FILTER_SANITIZE_STRING));
         $address = (filter_var($_POST ['address']));
         $facebook = (filter_var($_POST ['facebook']));
         $twitter = (filter_var($_POST ['twitter']));
         $linkdin = (filter_var($_POST ['linkdin']));
         $orgEmail = (filter_var($_POST ['orgEmail']));
         $website = (filter_var($_POST ['website']));
-        $orgId = (filter_var($_POST ['orgId']));
         sql($pdo, "UPDATE [dbo].[Organization]SET [Name] =?, [Phone_Number] = ?, [Mobile_Number] = ?, [Address] = ?,[Facebook] = ? ,[Twitter] = ? ,[Linkdin] = ? , [Organization_Email] = ? ,[Website] = ? WHERE [Organization].[Id] = ?", array($name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $orgId));
         echo 'Organization information as been updated!';
     } catch (Exception $ex) {
