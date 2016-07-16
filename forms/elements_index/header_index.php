@@ -37,7 +37,12 @@
 		<a href="#0" class="cd-nav-trigger"><span></span></a>
 
 		<nav class="cd-nav">
-                    <div id="navbar" class="navbar-collapse collapse">
+                   
+         
+
+                    <ul class="cd-top-nav">
+                        
+                        <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                           <li class="active">
 
@@ -55,11 +60,6 @@
                           </li>
 
                         </ul>
-                    </div>
-
-                    <ul class="cd-top-nav">
-                        
-                       
 
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="fa fa-bell" href="notifications.php" title="Notifications"></a></li>
@@ -85,6 +85,8 @@
                                           </li>
 
                     </ul>
+                            
+                        </div>
                         
                     </ul>
 
