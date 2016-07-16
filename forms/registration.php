@@ -161,7 +161,7 @@ include_once '../db/functions.php';
                                             </select>
                                         </div>
                                         <div class = "form-group">
-                                            <select class = "form-first-name form-control" id="loadCat" hidden>
+                                            <select class = "form-first-name form-control" id="loadCat" Style="display:none;">
                                                 <!--GET CATEGORY AS SELECT-->
                                                 <option value = "choice">PLEASE CHOOSE</option>
                                                 <?= DB_getCategoryAsSelect($pdo) ?>
