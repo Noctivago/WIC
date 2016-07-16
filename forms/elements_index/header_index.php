@@ -2,16 +2,7 @@
 
             <a href="login.php" ><img  class="logo" width="60" height="60" align="left" src="../../assets/img/backgrounds/logo.svg.png" alt="Logo"></a>
            
-                <div >
-
-                                                  <div class="cd-label">
-                                                      <select class="form-username form-control" name="org">
-
-                                                      </select>
-                                                  </div>
-
-                          </div>
-            
+               
             
             
 <!--                <a href="#0" class="cd-logo" ></a>-->
@@ -54,7 +45,7 @@
                     <ul class="nav navbar-nav" style="padding-right: 180px; padding-top: 10px;">
                           <li>
 
-                              <div >
+                              <div class="cd-label" >
 
                                                   <div class="cd-label">
                                                       <select class="form-username form-control" name="org">
