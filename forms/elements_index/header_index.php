@@ -32,6 +32,7 @@
                                     </div>
                             
             </div>-->
+<span class="font-icon glyphicon glyphicon-question-sign"></span>
 
 		<a href="#0" class="cd-nav-trigger"><span></span></a>
 
@@ -45,15 +46,12 @@
                     <ul class="nav navbar-nav" style="padding-right: 180px; padding-top: 10px;">
                           <li>
 
-                              <div class="cd-label" >
-
-                                                  <div class="cd-label">
-                                                      <select class="form-username form-control" name="org">
-
-                                                      </select>
-                                                  </div>
-
-                          </div>
+                              <<div class="form-group">
+                                        <!--<label class="sr-only" for="form-password">Telephone:</label>-->
+                                        <select type="text" name="city" placeholder="Chose a City" class="form-password form-control" id="city" required>
+                                            <?= DB_getCityAsSelect($pdo) ?>
+                                        </select>
+                                    </div>
 
 
                           </li>
@@ -74,7 +72,7 @@
                                                   <ul>
 
 
-                                                      <li><a href="userProfile.php">My Account<i class="fa fa-user" align="right"></i></a></li>
+                                                      <li><a href="userProfile.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>My Account</a></li>
                                                       <li><a href="change_pass.php">Change Password <i  class="fa fa-key" align="right"></i> </a></li>
                                                       <li><a href="#">FAQS</a></li>
                                                       <li><a href="#">Support</a></li>

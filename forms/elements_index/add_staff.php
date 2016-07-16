@@ -58,8 +58,9 @@
                                 <table class="col-md-12 table-bordered table-striped table-condensed cf " id="table1" style = "Display: none">
                                     <thead class="cf">
                                         <tr>
-                                            <th>Email</th>
-                                            <th>Username</th>
+                                            <th>Service Name</th>
+                                            <th>Name</th>
+                                            <th>Email</th>	
                                             <th>Remove</th>	
                                         </tr>
                                     </thead>
@@ -79,19 +80,16 @@
                             <table class="col-md-12 table-bordered table-striped table-condensed cf " style = "Display: none" id="table2">
                                 <thead class="cf">
                                     <tr>
-<!--                                        <th>Email</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>-->
+                                        <th>Service Name</th>
+                                        <th>Name</th>
                                         <th>Email</th>
-                                        <th>Username</th>
-                                        <!--<th>Last Name</th>-->
                                     </tr>
                                 </thead>
                                 <tbody id="body2">
                                 </tbody>
                             </table>
                         </div>
-                        <!--                            </div>-->
+                        <!--                       
                     </div>
 
                 </div>
