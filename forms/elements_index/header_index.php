@@ -42,7 +42,7 @@
 
                     <ul class="cd-top-nav">
                         
-                        <div id="navbar" class="navbar-collapse collapse">
+<!--                        <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                           <li>
 
@@ -56,7 +56,7 @@
 
                           </li>
 
-                        </ul>
+                        </ul>-->
 
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="fa fa-bell" href="notifications.php" title="Notifications"></a></li>
@@ -83,7 +83,7 @@
 
                     </ul>
                             
-                        </div>
+                        <!--</div>-->
                         
                     </ul>
 
