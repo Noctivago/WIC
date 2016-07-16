@@ -53,7 +53,7 @@
                             <div class="col-md-12 col-sm-12 companydescription">
                                 <div class="col-md-12 col-sm-12">
                                     <div class="adcompany">
-                                       <img width="50px" src="images/address marker.png"> Category of the service
+                                       <img width="50px" src="../../assets/assests_sidebar/img/address marker.png"> Category of the service
                                     </div>
 
                                     <p>Lorem ipsum dolor sit amet, mea an modus dolore labitur, at idque vivendo sit, quem illud democritum ius in. Ne integre vituperata concludaturque vix. Choro gloriatur at pri, vide dissentiet at per. Mel omnium latine pertinacia id. Eos ea perpetua adversarium. Nec justo cetero iriure no.</p>
