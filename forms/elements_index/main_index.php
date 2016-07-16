@@ -26,7 +26,7 @@
 				</li>
                                 
                                 <li  <img  src="../../assets/ico/8.png">>
-                                        <a href="#0"  >Imgaem</a>
+                                        <a href="#0"  >mage</a>
                                 </li>
 				                                
                                 <li class="has-children comments">
