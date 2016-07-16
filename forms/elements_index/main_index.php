@@ -9,17 +9,11 @@
 				<li class="cd-label">Start Planning</li>
                                 
 
-                                
-                                
-                                
-                                <li class="fa-user">
-                                    <a href="#">Space</a>
-                                </li>
 				<li class="has-children overview">
                                     
-                                        <div >
+                                    <div style="display:table-cell" >
                                             <form action="#0">
-                                                <input type="search" placeholder=" Service.." >
+                                                <input type="search" placeholder=" Search Service.." >
 
                                             </form>
                                         </div> 
