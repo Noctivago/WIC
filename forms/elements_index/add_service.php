@@ -45,8 +45,8 @@
 
                                 <div class="col-md-4 col-sm-4 nopadding sendmsg">
                                     <a href="#">
-                                        <img width="35px" src="images/chat button 2-01-gery.png">
-                                        <span>Send a message</span>
+                                        <img width="35px" src="../../assets/assests_sidebar/img/chat button 2-01-gery.png" >
+                                       <span>Send a message</span>
                                     </a>
                                 </div>
                             </div>
