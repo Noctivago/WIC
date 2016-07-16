@@ -26,6 +26,69 @@
                                 <div class="form-top-right">
                                 </div>
                                 
+                                   <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                    <div class="searchpanel nopadding rightbarres-sup" style="width: 320px;">
+                        <div class="margin10ud">
+                            <span class="heading-rightsiderbar ">Upload new service</span>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="text" class="profileinput margin10ud" placeholder="Name of the service">
+                            <textarea class="profileinput inputdescription margin10ud" placeholder="Descrption of the service"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-12 margin10ud nopadding">
+                                <strong class="greyheader">Category of the service<span style="color:red;">*</span></strong>
+                            <div class = "form-group">
+                                            <select class = "form-first-name form-control">
+                                                <option value = "0">TYPE OF THE SERVICE</option>
+                                                <option value = "supplier">FOOD</option>
+                                                <option value = "planner">FUCK</option>
+                                            </select>
+                                        </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="col-md-12 margin10ud nopadding">
+                                <strong class="greyheader">Service classified as<span style="color:red;">*</span></strong>
+                            </div>
+                            <div class="col-md-12">
+                                <select class="profileinput">
+                                    <option value="">Choose...</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 margin10ud">
+                                <a class="col-md-6" href="#" style="padding-right: 5px;">
+                                    <img width="100%" src="../../assets/assests_sidebar/img/upload-profile-picture.png">
+                                </a>
+                                <a class="col-md-6" href="#" style="padding-left: 5px;">
+                                    <img width="100%" src="images/plus-profile-picture.png">
+                                </a>
+                            </div>
+                            <div class="col-md-6" style="padding-right: 5px;">
+                                <input class="add-service-submit-btn width100" type="submit" name="submit" value="ADD ANOTHER SERVICE">
+                            </div>
+                            <div class="col-md-6" style="padding-left: 5px;">
+                                <input class="profile-submit-btn-sup-upload width100" type="submit" name="submit" value="UPLOAD">
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            
+   
+    
+                                
+                                </div>
+</div>
+</div>
+                                
+                                
+                                
+                                
                     <div class="col-sm-5" style="border-right:1px solid #ddd;">
 <!--                        <div class="col-sm-5">-->
                             <img width="550px" height="100%"  src="../../assets/img/logo.png">
@@ -92,65 +155,13 @@
                     <div class="col-sm-5">
 
 
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                    <div class="searchpanel nopadding rightbarres-sup" style="width: 320px;">
-                        <div class="margin10ud">
-                            <span class="heading-rightsiderbar ">Upload new service</span>
-                        </div>
-                        <div class="col-md-12">
-                            <input type="text" class="profileinput margin10ud" placeholder="Name of the service">
-                            <textarea class="profileinput inputdescription margin10ud" placeholder="Descrption of the service"></textarea>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="col-md-12 margin10ud nopadding">
-                                <strong class="greyheader">Category of the service<span style="color:red;">*</span></strong>
-                            <div class = "form-group">
-                                            <select class = "form-first-name form-control">
-                                                <option value = "0">TYPE OF THE SERVICE</option>
-                                                <option value = "supplier">FOOD</option>
-                                                <option value = "planner">FUCK</option>
-                                            </select>
-                                        </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="col-md-12 margin10ud nopadding">
-                                <strong class="greyheader">Service classified as<span style="color:red;">*</span></strong>
-                            </div>
-                            <div class="col-md-12">
-                                <select class="profileinput">
-                                    <option value="">Choose...</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12 margin10ud">
-                                <a class="col-md-6" href="#" style="padding-right: 5px;">
-                                    <img width="100%" src="../../assets/assests_sidebar/img/upload-profile-picture.png">
-                                </a>
-                                <a class="col-md-6" href="#" style="padding-left: 5px;">
-                                    <img width="100%" src="images/plus-profile-picture.png">
-                                </a>
-                            </div>
-                            <div class="col-md-6" style="padding-right: 5px;">
-                                <input class="add-service-submit-btn width100" type="submit" name="submit" value="ADD ANOTHER SERVICE">
-                            </div>
-                            <div class="col-md-6" style="padding-left: 5px;">
-                                <input class="profile-submit-btn-sup-upload width100" type="submit" name="submit" value="UPLOAD">
-                            </div>
-
-                        </div>
-
-
                     </div>
-                </div>
-            
-   
-    
-                                
-                                </div>
-</div>
-</div>
+                        </div>
+         </div>
+         </div>
+             </div>
+        </div>
+    </div>
 </main>
 <!--<script src="../../assets/assests_sidebar/js/js_main/bootstrap.min_main.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/js/js_main/jquery_1.11.1_main.js" type="text/javascript"></script>
