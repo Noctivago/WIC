@@ -99,7 +99,7 @@ function boot_chat() {
         //FAZER GET A CADA 5 SEG
         document.getElementById("CHATID").value = '1';
         // Load the messages every 5 seconds
-        setInterval(get_messages, 1000);
+        setInterval(get_messages, 2500);
 
         // Bind the keyboard event
         chatArea.bind('keydown', function (event) {
