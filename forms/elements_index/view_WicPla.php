@@ -18,7 +18,7 @@
 
         <div class="top-content">
             <div class="col-lg-12">
-                <h1 class="page-header" style=" padding-bottom: 30px; padding-top: 20px;">  Wic Planner
+                <h1 class="page-header" style=" padding-bottom: 0px; padding-top: 0px;">  Wic Planner
                 </h1>
             </div>
         </div>
