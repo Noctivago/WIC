@@ -36,6 +36,23 @@
 
 		<nav class="cd-nav">
                     <ul class="cd-top-nav">
+          <ul class="nav navbar-nav">
+            <li class="active">
+                
+            <div class="cd-search">
+    
+                                    <div class="cd-label">
+                                        <select class="form-username form-control" name="org" ">
+
+                                        </select>
+                                    </div>
+                            
+            </div>
+            
+            
+            </li>
+
+          </ul>
 
           <ul class="nav navbar-nav navbar-right">
               <li><a class="fa fa-bell" href="notifications.php" title="Notifications"></a></li>
