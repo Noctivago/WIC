@@ -59,6 +59,8 @@
                         </div>
                     </div>
            <div class="col-sm-1"></div>
+
+                  
                             
                     <div class="col-sm-5" style="border-right:1px solid #ddd;">
                     
@@ -66,10 +68,10 @@
                            
                         
                         </div>
-                        <div class="col-sm-3">
-                            <div class="col-sm-3 ">
+                        <div class="col-md-8 col-sm-8 nopadding companyinfo">
+                            <div class="col-md-12 col-sm-12 padding5 darkgreybg">
 
-                                <div class="ol-sm-3">
+                                <div class="col-md-8 col-sm-8 ">
                                     <p class="nomargin" style="margin-bottom:5px !important;">
                                         <span class="supnamehead">Name of the Service</span>
                                         <span class="supnamesub">SupplierName</span>
@@ -89,7 +91,7 @@
                                     </p>
                                 </div>
 
-                                <div class="col-sm-3">
+                                <div class="col-md-4 col-sm-4 nopadding sendmsg">
                                     <a href="#">
                                         <img width="35px" src="../../assets/assests_sidebar/img/chat button 2-01-gery.png" >
                                        <span>Send a message</span>
