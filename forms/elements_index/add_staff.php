@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-md-12" id="title-1" style = "Display: none">
                                 <h4 class="text-center">
-                                    Users in organization
+                                    Users in Service
                                 </h4>
                             </div>
                             <div id="no-more-tables" >
