@@ -32,7 +32,7 @@
             <li class="has-children account">
 					<a href="#0">
 						<img src="../../assets/img/backgrounds/logo.svg.png" alt="avatar">
-						Account
+						aconta
 					</a>
 
 					<ul>
