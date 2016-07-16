@@ -32,19 +32,22 @@
                    
                             <h1>Upload new service</h1>
                         </div>
-                        <div class="col-md-12">
-                            <input type="text" class="profileinput margin10ud" placeholder="Name of the service">
-                            <textarea class="profileinput inputdescription margin10ud" placeholder="Descrption of the service"></textarea>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="col-md-12 margin10ud nopadding">
-                                <strong class="greyheader">Category of the service<span style="color:red;">*</span></strong>
-                            <div class = "form-group">
+                         <div class="form-bottom">
+                          <form role="form" action="" method="post" class="login-form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-username">Name of the Service:</label>
+                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    </div>
+                        <div class="form-group">
+                                        <label class="sr-only" for="form-username">Category of the Service:</label>
+                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    </div>
                                             <select class = "form-first-name form-control">
                                                 <option value = "0">TYPE OF THE SERVICE</option>
                                                 <option value = "supplier">FOOD</option>
                                                 <option value = "planner">FUCK</option>
                                             </select>
+                          </form>
                                         </div>
                         </div>
 
