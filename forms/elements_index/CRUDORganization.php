@@ -75,7 +75,7 @@
                                         <input type="text" name="website" placeholder="ORGANIZATION WEBSITE" class="form-password form-control" id="website" required>
                                     </div>
                                     <div class="form-inline" style=" width: 140px;">
-                                        <button type="submit" id="update" class="btn" name="update"  style="width: 140px;" onclick="updateDataOrganization()">Save</button>
+                                        <button type="submit" id="update" class="btn" name="update" onclick="updateDataOrganization()">Save</button>
                                     </div>
                                 </form>
                             </div>
