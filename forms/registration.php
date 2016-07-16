@@ -222,6 +222,8 @@ include_once '../db/functions.php';
                                         function loadcities(Country) {
                                             //var Country_Id = document.getElementById(x).value;
                                             var Country_Id = Country;
+                                            var cityOp = document.getElementById('cities');
+                                            cityOp.disabled = false;
                                             $.ajax({
                                                 url: '../ajax/get_city.php',
                                                 method: 'post',
@@ -230,8 +232,6 @@ include_once '../db/functions.php';
                                                     $('.loadcity').html(data);
                                                 }
                                             });
-                                            var cityOp = document.getElementById('cities');
-                                            cityOp.disabled = false;
                                         }
                                         function FunctionCat() {
                                             var y = document.getElementById("userChoice").value;
@@ -241,7 +241,11 @@ include_once '../db/functions.php';
                                                 CAT.style.display = "inline";
                                                 alert('VIS');
                                             }
-                                            else (y == 'N' or y = '0') {
+                                            if (y == 'N') {
+                                                var CAT = document.getElementById('loadCat');
+                                                CAT.style.display = "none";
+                                            }
+                                            if (y == '2') {
                                                 var CAT = document.getElementById('loadCat');
                                                 CAT.style.display = "none";
                                             }
