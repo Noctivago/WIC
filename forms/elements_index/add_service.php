@@ -16,7 +16,8 @@
    <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-8 nopadding maindashboard" style="border-right:1px solid #ddd;">
                         <div class="col-sm-5">
-                            <img width="550px" height="100%"  src="images/sliderimg1.jpg">
+                            <img width="550px" height="100%"  src="../../assets/img/logo.png">
+                           
 <!--                          
                         </div>
                         <div class="col-md-8 col-sm-8 nopadding companyinfo">
