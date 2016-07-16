@@ -109,6 +109,6 @@
 
 <script>
     window.onload() = function(){
-        readDataOrganization(<?php $_SESSION['id']?>);
+        readDataOrganization();
     }
     </script>
