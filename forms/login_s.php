@@ -83,7 +83,10 @@ if (isset($_SESSION['username'])) {
                                         <i class="fa fa-key"></i>
                                     </div>
                                 </div>
-
+<label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+      Option one is this and that&mdash;be sure to include why it's great
+    </label>
                                 <div class="form-bottom">
                                     <?php
                                     if (isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
