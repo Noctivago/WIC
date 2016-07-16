@@ -25,6 +25,7 @@ function readDataOrganization() {
             {
                 alert(json2);
             } else {
+                console.log(json2);
                 document.getElementById('name').value = json2[0].Name;
                 document.getElementById('phone').value = json2[0].Phone_Number;
                 document.getElementById('mobile').value = json2[0].Mobile_Number;
