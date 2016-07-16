@@ -47,18 +47,16 @@
                                                 <option value = "supplier">FOOD</option>
                                                 <option value = "planner">FUCK</option>
                                             </select>
+                               <div class="form-group">
+                                        <label class="sr-only" for="form-username">Service classified as</label>
+                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    </div>
+                              <div class="form-group">
+                                        <label class="sr-only" for="form-username">Choose...</label>
+                                        <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
+                                    </div>
                           </form>
-                                        </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="col-md-12 margin10ud nopadding">
-                                <strong class="greyheader">Service classified as<span style="color:red;">*</span></strong>
-                            </div>
-                            <div class="col-md-12">
-                                <select class="profileinput">
-                                    <option value="">Choose...</option>
-                                </select>
+                         </div>
                             </div>
                             <div class="col-md-12 margin10ud">
                                 <a class="col-md-6" href="#" style="padding-right: 5px;">
