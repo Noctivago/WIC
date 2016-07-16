@@ -215,11 +215,6 @@ include_once '../db/functions.php';
         <script>
                                         function myFunction() {
                                             var x = document.getElementById("countrySelect").value;
-                                            var y = document.getElementById("userChoice").value;
-                                            if (y === 1) {
-                                                var CAT = document.getElementById('loadCat');
-                                                CAT.visible = true;
-                                            }
                                             //div.style.visibility = 'visible';
                                             //div.style.visibility = 'hidden';
                                             loadcities(x);
@@ -238,8 +233,12 @@ include_once '../db/functions.php';
                                                 }
                                             });
                                         }
-                                        function FunctionCat(){
-                                            
+                                        function FunctionCat() {
+                                            var y = document.getElementById("userChoice").value;
+                                            if (y === 1) {
+                                                var CAT = document.getElementById('loadCat');
+                                                CAT.style.display = "block";
+                                            }
                                         }
 
         </script>
