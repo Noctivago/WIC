@@ -15,35 +15,35 @@ function readAllUserNewsletter() {
 
 function readDataOrganization() {
     var arg1 = 'GetOrganizationUser';
-    var orgId = 0;
+
     $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
         var json = $.parseJSON(result);
-        orgId = json[0].Id;
-        alert(orgId);
-    })
+        var orgId = json[0].Id;
 
     var arg = 'viewAllOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
-        var json = $.parseJSON(result);
-        if (json.length === 0)
+        var json2 = $.parseJSON(result);
+        if (json2.length === 0)
         {
-            alert(json);
+            alert(json2);
         } else {
-            document.getElementById('name').value = json[0].Name;
-            document.getElementById('phone').value = json[0].Phone_Number;
-            document.getElementById('mobile').value = json[0].Mobile_Number;
-            document.getElementById('address').value = json[0].Address;
-            document.getElementById('facebook').value = json[0].Facebook;
-            document.getElementById('twitter').value = json[0].Twitter;
-            document.getElementById('linkdin').value = json[0].Linkdin;
-            document.getElementById('orgEmail').value = json[0].Organization_Email;
-            document.getElementById('website').value = json[0].Website;
-            document.getElementById('update').setAttribute(onclick, updateDataOrganization);
+            document.getElementById('name').value = json2[0].Name;
+            document.getElementById('phone').value = json2[0].Phone_Number;
+            document.getElementById('mobile').value = json2[0].Mobile_Number;
+            document.getElementById('address').value = json2[0].Address;
+            document.getElementById('facebook').value = json2[0].Facebook;
+            document.getElementById('twitter').value = json2[0].Twitter;
+            document.getElementById('linkdin').value = json2[0].Linkdin;
+            document.getElementById('orgEmail').value = json2[0].Organization_Email;
+            document.getElementById('website').value = json2[0].Website;
+           
 //document.getElementById('delete').setAttribute(onclick ,removeOrganization());
             //    document.getElementById('cancel').style = "display: true";
         }
     });
-    return false;
+    })
+
+        return false;
 }
 
 function updateDataOrganization() {
