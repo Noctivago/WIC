@@ -13,20 +13,22 @@ function readAllUserNewsletter() {
     return false;
 }
 
-  function readDataOrganization() {
+function readDataOrganization() {
     var arg1 = 'GetOrganizationUser';
     var orgId = 0;
-    $.post("../../orgsubmit.php",{arg:arg1},function(result){
+    $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
         var json = $.parseJSON(result);
         console.log(json);
         alert(json);
     })
-    alert(orgId);
-    
-      var arg = 'viewAllOrganization';
+
+    var arg = 'viewAllOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
         var json = $.parseJSON(result);
-            console.log(json[0].Name);
+        if (json.length === 0)
+        {
+            alert(json);
+        } else {
             document.getElementById('name').value = json[0].Name;
             document.getElementById('phone').value = json[0].Phone_Number;
             document.getElementById('mobile').value = json[0].Mobile_Number;
@@ -38,9 +40,9 @@ function readAllUserNewsletter() {
             document.getElementById('website').value = json[0].Website;
             document.getElementById('update').setAttribute(onclick, updateDataOrganization);
 //document.getElementById('delete').setAttribute(onclick ,removeOrganization());
-        //    document.getElementById('cancel').style = "display: true";
+            //    document.getElementById('cancel').style = "display: true";
         }
-    );
+    });
     return false;
 }
 
@@ -113,11 +115,11 @@ function removeOrganization() {
     if (resp == true) {
         var arg = 'removeOrganization';
         $.post("../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
-        var json = $.parseJSON(result);
+            var json = $.parseJSON(result);
             alert(result);
-    });
-    return false;
-}
+        });
+        return false;
+    }
 }
 function cleanInformation() {
     //document.getElementById('Org-Id').value = 0;

@@ -22,6 +22,8 @@
 			</form>
 		</div> -->
 <!-- cd-search -->
+
+<!--
             <div class="cd-search">
     
                                     <div class="cd-label">
@@ -30,37 +32,54 @@
                                         </select>
                                     </div>
                             
-            </div>
+            </div>-->
 
 		<a href="#0" class="cd-nav-trigger"><span></span></a>
 
 		<nav class="cd-nav">
                     <ul class="cd-top-nav">
+                        <ul class="nav navbar-nav">
+                          <li class="active">
 
-          <ul class="nav navbar-nav navbar-right">
-              <li><a class="fa fa-bell" href="notifications.php" title="Notifications"></a></li>
-              <li><a class="fa fa-calendar" href="view_WicPlanner.php" title="My Wic Planner"></a></li>
-              <li><a class="fa fa-inbox" href="chat.php" title="Inbox"></a></li>
-<!--            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>-->
-            <li class="has-children account">
-					<a href="#0">
-						<img src="../../assets/img/backgrounds/logo.svg.png" alt="avatar">
-						Acoount
-					</a>
+                          <div class="cd-search">
 
-					<ul>
+                                                  <div class="cd-label">
+                                                      <select class="form-username form-control" name="org" ">
 
-						
-                                            <li><a href="userProfile.php">My Account<i class="fa fa-user" align="right"></i></a></li>
-                                            <li><a href="change_pass.php">Change Password <i  class="fa fa-key" align="right"></i> </a></li>
-                                            <li><a href="#">FAQS</a></li>
-                                            <li><a href="#">Support</a></li>
-                                            <li><a href="logout.php" >Logout</a></li>
-                                                
-					</ul>
-				</li>
+                                                      </select>
+                                                  </div>
 
-          </ul>
+                          </div>
+
+
+                          </li>
+
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="fa fa-bell" href="notifications.php" title="Notifications"></a></li>
+                        <li><a class="fa fa-calendar" href="view_WicPlanner.php" title="My Wic Planner"></a></li>
+                        <li><a class="fa fa-inbox" href="chat.php" title="Inbox"></a></li>
+          <!--            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>-->
+                      <li class="has-children account">
+                                                  <a href="#0">
+                                                          <img src="../../assets/img/backgrounds/logo.svg.png" alt="avatar">
+                                                          Acoount
+                                                  </a>
+
+                                                  <ul>
+
+
+                                                      <li><a href="userProfile.php">My Account<i class="fa fa-user" align="right"></i></a></li>
+                                                      <li><a href="change_pass.php">Change Password <i  class="fa fa-key" align="right"></i> </a></li>
+                                                      <li><a href="#">FAQS</a></li>
+                                                      <li><a href="#">Support</a></li>
+                                                      <li><a href="logout.php" >Logout</a></li>
+
+                                                  </ul>
+                                          </li>
+
+                    </ul>
                     </ul>
 
 
