@@ -1,0 +1,1074 @@
+
+@font-face {
+    font-family: avenirltstdbook;
+    src: url('../fonts/avenirltstd-book-webfont.ttf');
+}
+
+@font-face {
+    font-family: BebasNeue;
+    src: url('../fonts/BebasNeue.otf');
+}
+
+body{
+    font-family: avenirltstdbook !important;
+}
+
+a{
+    color:#FFF !important;
+}
+
+.nopadding{
+    padding:0px !Important;
+}
+
+.nomargin{
+    margin: 0px !important;
+}
+.displayinline li{
+    display:inline-block;
+}
+a:hover{
+    color:#FFF !important;
+    text-decoration:none !important;
+}
+
+a:active, a:focus, a:visited{
+    text-decoration: none !important;
+    border:none !important;
+}
+
+.mainbg{
+    background: url(../images/backgroundPNG-01.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    border-bottom: 5px solid #000;
+}
+
+.mainlogo{
+    margin:10px;
+}
+
+.aligncenter{
+    text-align: center;
+}
+
+.mainbanner{
+    padding-bottom:0px !important;
+}
+
+.subbanner{
+    margin-top:50px;
+    color:#FFF;
+    margin-bottom: 150px;
+}
+
+.mainbanner h1{
+    font-family: BebasNeue;
+    color:#FFF;
+    font-size:7em;
+}
+
+.offerservice{
+    padding:10px 0px;
+    color:#E84E1B;
+    font-size:13px;
+}
+
+
+.whiteborder-btn{
+    border:3px solid #FFF;
+    background:none;
+    width:100%;
+    height:80px;
+    color:#FFF;
+}
+
+.yourcity{
+    text-transform: uppercase;
+    font-size:20px;
+}
+.youcitypin{
+    position: absolute;
+    top: 18px;
+}
+
+.greenwhiteborder-btn{
+    background-color:#25C17A;
+    width:100%;
+    height:80px;
+    border: none;
+    transition: all 0.2s;
+    color:#FFF;
+}
+
+.greenwhiteborder-btn:hover{
+    background-color:#FFF;
+    color:#25C17A;
+}
+
+.homebtns button{
+    margin-bottom:20px;
+}
+
+.homeblkicon{
+    margin:55px 0px;
+}
+
+.homeblkicon img{
+    width:55px;
+    margin-left:20px;
+}
+
+.homefooter{
+    background-color: #333333;
+}
+.socialicon img{
+    margin:10px 2px;
+}
+
+.socialicon a:hover{
+    text-decoration: none;
+}
+
+.purpleblackshadow-btn{
+    width:100%;
+    background:#1E1D1E;
+    border:none;
+    border-radius: 5px;
+    height: 50px;
+    transition: all 0.2s;
+
+}
+
+.allfree{
+    text-align: right;
+    padding:0px;
+}
+
+.purpleblackshadow-btn:hover{
+    background-color:#FFF;
+    color:#000;
+}
+
+.servicefooter a{
+    color:#FFF !important;
+}
+
+.servicefooter{
+    margin-top: 10px;
+    padding: 0px 6% !important;
+}
+
+.footerdetails{
+    color:#FFF;
+    margin-top:50px;
+    font-size: 11px;
+}
+.footerdetails a {
+    color:#FFF;
+}
+
+.darkgreybg{
+    background-color:#333333;
+}
+
+.dashlogo{
+    width:100px;
+    margin: 10px;
+}
+
+.dashheadericon{
+    color:#FFF;
+    margin:10px 0px;
+}
+.callusnow{
+    font-size:24px;
+    line-height: 2;
+    text-align:right;
+}
+.phoneno{
+    font-size:20px;
+    padding:0px 10px;
+    text-align: right;
+    line-height: 3;
+
+}
+.dashheadermenu{
+    text-align:right;
+    line-height:55px;
+}
+.dashheadermenu img{
+    max-width:50px !Important;
+}
+
+.sliderimage{
+ height:100%;
+}
+.searchpanel{
+
+}
+
+.searchbtn-rightside{
+    border: 1px solid #ddd;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.searchbtnicon{
+    position:absolute;
+    right: 24px;
+    top: 27px;
+}
+.maindashboard{
+    position: relative;
+    z-index: 0;
+}
+
+.borderbtm{
+    border-bottom:1px solid #ddd;
+}
+
+.heading-rightsiderbar{
+    font-size:20px;
+    padding:0px 10px;
+    font-weight: bold;
+}
+.needhelpbox{
+    border:1px solid #ddd;
+    margin: 10px;
+    padding:5px;
+    text-align:center;
+    color:#666;
+}
+.needhelpbox strong{
+    font-size:18px;
+}
+.needhelpbox {
+    font-size: 14px;
+}
+.call{
+    border:none;
+    background:none;
+    color:#666;
+    margin-top:10px;
+    padding:2px 25px;
+}
+.call a{
+    color: #666 !important;
+}
+.sendusemail{
+    margin-top:5px;
+    background-color:#666;
+    border:3px solid #666;
+    padding:2px 0px;
+    width:75%;
+}
+.chatbar{
+    background-color:#E84F2E;
+    font-weight: bold;
+    color: #fff;
+    padding:0px 10px ;
+}
+.chatbar span{
+    position: relative;
+    top: 5px;
+    font-size: 18px;
+}
+.img-circle{
+    background-color:#000;
+    border-radius: 50%;
+    width:35px;
+    height:35px;
+    margin: 0px 10px;
+}
+.supplier{
+    padding:10px;
+}
+.black,.black:focus,.black:hover{
+    color:#000 !important;
+}
+.companyinfo{
+    color: #FFF;
+    border-right: 1px solid #DDD;
+    height: 360px;
+}
+.comlogo{
+    height:50px;
+    width:50px;
+    background-color:#FFF;
+}
+
+.supnamehead{
+    font-size:18px;
+}
+.supnamesub{
+    font-size:12px;
+    margin-left:10px;
+}
+.supversion{
+    font-size:12px;
+    margin:none;
+}
+.ratingstar img{
+    width:20px;
+    margin-left: -6px;
+}
+.ratingstar{
+    margin-left:10px;
+}
+.reviewsc{
+    font-size:12px;
+}
+
+.sendmsg{
+    text-align:right;
+    margin-top:8px;
+}
+.padding5{
+    padding: 5px;
+}
+.companydescription{
+    background-color:#F2F2F2;
+    padding:20px;
+    color:#333;
+    height: 100%;
+    border-left:1px solid #ddd;
+}
+.companydescription p{
+    margin:20px 0px;
+}
+.adcompany{
+    font-weight: bold;
+    color:#333;
+}
+
+.addtobtn{
+    font-size: 10px;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    height: 60px;
+}
+
+.favicon, .plusicon{
+    margin: 10px 0px;
+    text-align: center;
+}
+.addtobtn img{
+    margin-right:5px;
+}
+.reviewspanel{
+    font-size:10px;
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0px;
+}
+
+.reviewystar img{
+    margin-top:-3px;
+}
+.dashmainheader{
+    position:fixed;
+    width:100%;
+    top:0px;
+    z-index: 1;
+}
+.shareiconcom{
+    font-size:14px;
+    color:#333;
+}
+.shareiconcom p{
+    margin:10px 0px !important;
+}
+.conbook{
+    margin-left:30px;
+}
+
+.chatboxfixer{
+    position: relative;
+    height: 600px;
+    width: 100%;
+    display:block;
+    font-size:12px;
+}
+
+.chatboxclosed{
+    position: relative;
+    height:50px;
+    width:100%;
+}
+
+.bannerimage{
+    background-color: #000;
+    text-align: center;
+    height: 600px;
+}
+.rightbarres{
+    background-color:#fff;
+    position:fixed !important;
+    right:0px;
+    transition: all 0.5s;
+    border-left:1px solid #ddd;
+    border-top:1px solid #ddd;
+    z-index: 9;
+}
+.left-arrow{
+    position: absolute;
+    right: 0px;
+    bottom: 180px;
+}
+.right-arrow{
+    position: absolute;
+    right: 0px;
+    top: 180px;
+}
+
+.reviewtextarea{
+    resize: none;
+    width:100%;
+    border: none;
+}
+.venhotradio input{
+    margin-right:10px !important;
+}
+.venhotradio{
+    margin:30px 0px;
+}
+.servicebox{
+    border:1px solid #ddd;
+    width: 250px !important;
+    margin: 10px;
+}
+.serviceimg{
+    width:100%;
+    height:250px;
+}
+.starratingservices img{
+    margin-top:-7px;
+}
+.totalpoints{
+    margin-right:10px;
+    color:#ddd;
+}
+.totalreviews{
+    color:#ddd;
+}
+
+.servicebox{
+    font-size:12px;
+}
+.supplierlogo{
+    width:65px;
+    height: 65px;
+    border-radius:50%;
+    background-color:#000;
+    position: relative;
+    z-index:10;
+}
+.supplierstatus span{
+    margin-top:10px;
+    font-size:20px;
+    line-height: 2.5;
+}
+.supplierstatus{
+    position:relative !important;
+    padding-left:25px !important;
+    top: 5px;
+    left: -34px;
+    z-index: 0;
+}
+
+.supplierstatus:hover{
+    background-color:#eee;
+}
+#img1{
+    display:none;
+}
+#img2{
+    display:none;
+}
+#supplierstatus:hover #img1{
+    display:block !important;
+}
+#supplierstatus:hover #img2{
+    display:block !important;
+}
+.supplierstatus2 span{
+    margin-top:10px;
+    font-size:20px;
+    line-height: 2.5;
+}
+
+.supplierstatus2{
+    position:relative !important;
+    padding-left:25px !important;
+    top: 5px;
+    left: -34px;
+    z-index: 0;
+}
+.supplierstatus img{
+    float:right;
+}
+.inboxpanel{
+    height:700px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    border-bottom: 1px solid #ddd;
+}
+.tellusbox{
+    padding:10px 20px;
+    border:5px solid #bbb;
+    color:#ccc;
+}
+.tellusstars img{
+    width:30px;
+}
+.tellusbox h3{
+    margin:0px;
+}
+.greyheader{
+    color:#999999;
+}
+.chatboxpanel{
+    overflow-y:scroll;
+    overflow-x:hidden;
+    max-height:630px;
+}
+.incomingbubble{
+    background-color:#29ABE2;
+    color:#fff;
+    font-size: 14px;
+    padding: 10px;
+    border-radius:10px;
+}
+.bubblepointerincoming{
+    position: absolute;
+    top: 15px;
+    left: -8px;
+}
+.profilepicblank{
+    background-color:#000;
+    height:60px;
+    width:60px;
+    border-radius:50%;
+    border:none;
+}
+.outgoingbubble{
+    background-color:#F2F2F2;
+    color:#000;
+    font-size: 14px;
+    padding: 10px;
+    border-radius:10px;
+}
+.bubblepointeroutgoing{
+    position: absolute;
+    top: 15px;
+    right: -8px;
+}
+.chatmsgpanel{
+    border-top:1px solid #ddd;
+    padding:10px 0px !important;
+
+}
+.msgtextarea{
+    width:95%;
+    border:none;
+    resize: none;
+    font-size: 20px;
+    box-shadow: none !Important;
+    height:100%;
+    padding-left:5px;
+    border-bottom:1px solid #999;
+    border-top:1px solid #999;
+}
+.msgtextarea:focus{
+    border:none;
+    box-shadow:none;
+}
+.outgoingpadding{
+    text-align:right;
+    padding:0px 30px !important;
+}
+
+.chatbox-minis{
+    position:fixed;
+    bottom:0px;
+    right:300px;
+    width:300px;
+    height:380px;
+    background-color:#fff;
+    z-index: 9;
+    border:1px solid #ddd;
+}
+.chatboxorangebar{
+    background-color:#E84F2E;
+    color:#fff;
+    padding:5px;
+}
+.actionchatbbtn{
+    font-size:22px;
+}
+.minimizabtnchat, .closebtnchat{
+    margin:4px;
+    font-weight: bold;
+}
+.msgsview{
+    height:78%;
+    padding:10px;
+}
+.msgsview p{
+    background-color:#E84F2E;
+    font-size:12px;
+    padding:5px;
+    color:#fff;
+    border-radius: 5px;
+}
+.msgtextareamini{
+    border-top:1px solid #ddd;
+}
+.msgtextareainput{
+    width:80%;
+    border:none;
+    height: 43px;
+}
+.height45{
+    height:45px !important;
+}
+
+.profileinput{
+    width:100%;
+    border:1px solid #CCCCCC;
+    height:40px;
+    padding: 5px;
+}
+.profileinputlabel{
+    font-size:20px;
+    margin-top: 4px;
+    padding:0px !important;
+}
+.profileinputmain{
+    margin-top:20px;
+}
+.profileinputmain img{
+    margin:0px 5px;
+}
+.lightgreyheading{
+    color:#808080;
+    padding:00px 50px;
+    border-left: 1px solid #ddd;
+    height: 60px;
+}
+.eventpanel{
+    height:1400px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    border-bottom: 1px solid #ddd;
+}
+.changebtn{
+    position: absolute;
+    right: 31px;
+    bottom: -16px;
+    font-size: 10px;
+    color: #CCC;
+    cursor: pointer;
+}
+.wicpanel{
+    height:700px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+.createeventbtn{
+    background-color:#29ABE2;
+    padding:5px 0px;
+    width:200px;
+    border:none;
+    color: #fff;
+}
+.addeventicon{
+    font-size: 20px;
+    position: absolute;
+    right: 58px;
+    color: #fff;
+}
+
+.eventpointers{
+    margin:10px 0px;
+}
+.eventaction{
+    margin:5px 0px;
+    border: 2px solid #29ABE2;
+    background: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+.wicplannerdatebox{
+    background-color: #333333;
+    padding: 5px;
+    font-size: 15px;
+    width: 180px;
+    color: #FFF;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+}
+
+.profile-submit-btn{
+    background-color:#25C17A;
+    padding:10px 20px;
+    border: none;
+    transition: all 0.2s;
+    color:#FFF;
+}
+.profile-submit-btn:hover{
+    color:#25C17A;
+    background-color:#fff;
+    border: 1px solid #25C17A;
+}
+
+#eventpopup{
+    position: absolute;
+    z-index: 10;
+    top: -18px;
+    left: 75px;
+}
+
+.eventpop-btn1{
+    background-color:#29ABE2;
+    border-radius: 15px;
+    border:1px solid #29ABE2;
+    color:#fff;
+    margin:3px;
+    font-size:10px;
+    padding: 5px;
+    margin-left: -15px;
+}
+
+.eventpop-btn2{
+    background-color:#29ABE2;
+    border-radius: 15px;
+    color:#fff;
+    margin:3px;
+    font-size:10px;
+    padding: 5px;
+    border:1px solid #29ABE2;
+}
+
+.eventpop-btn-mid{
+    background-color:#29ABE2;
+    border-radius: 15px;
+    color:#fff;
+    margin:3px;
+    font-size:10px;
+    margin-left:15px;
+    padding: 5px;
+    border:1px solid #29ABE2;
+
+}
+
+.eventpop-btn1:hover, .eventpop-btn2:hover, .eventpop-btn-mid:hover{
+    background-color:#fff;
+    color:#29ABE2;
+}
+
+.uploadservices-btn{
+    background-color:#A100FF;
+    color:#fff;
+    padding:5px;
+    border:1px solid #A100FF;
+}
+.uploadservices-btn:hover{
+    background-color:#FFF;
+    color:#A100FF;
+}
+.margin10ud{
+    margin:10px 0px !important;
+}
+.margin10{
+    margin:10px;
+}
+.inputdescription{
+    height:100px;
+}
+.supclassifiedas-btn{
+    border:1px solid #ddd;
+    background:none;
+    margin:4px;
+    padding: 10px;
+    width: 136px;
+}
+.rightbarres-sup{
+    overflow-y:scroll;
+    overflow-x:hidden;
+    background-color:#fff;
+    position:fixed !important;
+    right:0px;
+    transition: all 0.5s;
+    border-left:1px solid #ddd;
+    border-top:1px solid #ddd;
+    z-index: 9;
+    height: 100%;
+}
+.width100{
+    width:100%;
+}
+.add-service-submit-btn{
+    background-color:#000;
+    padding:10px 0px;
+    border: 1px solid #000;
+    transition: all 0.2s;
+    color:#FFF;
+    font-size:8px;
+
+}
+.add-service-submit-btn:hover{
+    color:#000;
+    background-color:#fff;
+}
+
+.profile-submit-btn-sup{
+    background-color:#25C17A;
+    padding:10px 0px;
+    transition: all 0.2s;
+    color:#FFF;
+    font-size:8px;
+    padding-left: 5px;
+    border: 1px solid #25C17A;
+}
+.profile-submit-btn-sup:hover{
+    color:#25C17A;
+    background-color:#fff;
+}
+.profile-submit-btn-sup-upload{
+    background-color:#93278F;
+    padding:10px 0px;
+    transition: all 0.2s;
+    color:#FFF;
+    font-size:8px;
+    padding-left: 5px;
+    border: 1px solid #93278F;
+}
+.profile-submit-btn-sup-upload:hover{
+    color:#93278F;
+    background-color:#fff;
+}
+.comingsoonpg{
+    padding:200px !important;
+}
+.logindash{
+    border-right:1px solid #ddd;
+    border-left:1px solid #ddd;
+    height: 100%;
+}
+.darkgeyheadr{
+    color:#333;
+}
+.social-logins img{
+    width:100px;
+    height:36px;
+}
+.ormid{
+    position: absolute;
+    top: 20px;
+    background-color: #fff;
+    padding: 5px;
+    color: #ddd;
+    font-size:20px;
+}
+.loginlabel{
+    margin:15px 0px;
+    text-align:left;
+}
+.notuser{text-align:right;margin:10px 0px;}
+.notuser a{
+    color:#1E1D1E !important;
+}
+
+.loginpage-btn{
+    width:100%;
+    background-color:#A100FF;
+    padding:10px;
+    font-size:18px;
+    margin-top:30px;
+}
+.termaccept{font-weight: bold;}
+.termaccept span{
+    color:red;
+}
+.termscol{
+    text-align:left;
+    margin:10px 0px;
+}
+.loginpage-btn-g{
+    width:100%;
+    background-color:#25C17A;
+    padding:10px;
+    font-size:18px;
+    margin-top:30px;
+}
+#accordion a{
+    color:#333 !important;
+}
+.faqs{
+    height:400px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    border-bottom:1px solid #ddd;
+}
+.suggestionbox{
+    padding:10px;
+    width:100%;
+    border:1px solid #ddd;
+    height:150px;
+}
+.faqdash{
+    border-right:1px solid #ddd;
+    border-left:1px solid #ddd;
+}
+.orange-btn{
+    background-color:#E84E1B;
+    color:#fff;
+    border:none;
+}
+.purplecolor{
+    color:#A100FF !Important;
+}
+
+.purplecolor:hover{
+    color:#A100FF !Important;
+}
+
+.img-menu-chatbox {
+    width:150px;
+    height:150px;
+}
+
+.img-menu-chatbox-desktop {
+    width:70px;
+    height:70px;
+}
+
+
+.sidebar-w  {
+    float:left;
+    width:100px;
+    padding:0px;
+    border:1px solid #999999;
+}
+
+.sidebar-w-desktop {
+    float:left;
+    border-right:1px solid #999999;
+    padding:0px;
+    width:300px;
+    color: #999999;
+}
+
+.sidebar-item {
+    height:150px;
+    width:150px;
+    padding:0px;
+    margin-bottom:10px;
+    border-bottom:1px solid #999999;
+
+}
+
+.sidebar-item-desktop {
+    height:70px;
+    width:70px;
+    padding:0px;
+    margin-bottom:10px;
+    border-bottom:1px solid #999999;
+}
+
+.sidebar-item a {
+    float:left;
+    height:100%;
+    width:100%;
+}
+
+.sidebar-item-desktop a {
+    color: black;
+}
+
+.sidebar-item-desktop-last  {
+    padding:0px;
+    background-color:#666;
+    color:#FFF;
+    text-transform:uppercase;
+    line-height:50px
+}
+
+.chatbox-w-desktop {
+    float:left;
+    width:60%;
+    height:680px;
+    border-right:1px solid #999;
+    border-bottom:1px solid #999;
+}
+
+.chatmessenger-w-desktop {
+    height:630px;
+    width:100%;
+}
+
+.chatwriter-w-desktop {
+    width:100%;
+    height:50px;
+    line-height:50px;
+}
+
+.chatbox-w {
+    float:left;
+    width:100%;
+    min-height:1350px;
+    border-right:1px solid #999;
+    position:absolute;
+    padding-left:150px;
+}
+
+.chatmessenger-w {
+    min-height:1200px;
+    width:100%;
+}
+
+.chatwriter-w {
+    width:100%;
+    height:150px;
+    line-height:150px;
+    border:0px;
+}
+
+.chatboxpanel-w {
+    overflow-y:scroll;
+    overflow-x:hidden;
+    height:1200px;
+}
+
+..msgtextarea-w {
+    width:85%;
+    border:none;
+    resize: none;
+    font-size: 20px;
+    box-shadow: none !Important;
+    height:100%;
+    padding-left:5px;
+    border-bottom:1px solid #999;
+    border-top:1px solid #999;
+}
+
+.incomingbubble-w {
+    background-color:#29ABE2;
+    color:#fff;
+    font-size: 24px;
+    padding: 10px;
+    border-radius:10px;
+}
+
+.outgoingbubble-w {
+    background-color:#F2F2F2;
+    color:#000;
+    font-size: 24px;
+    padding: 10px;
+    border-radius:10px;
+}
