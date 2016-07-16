@@ -37,7 +37,7 @@
 
                 <div class="row">
 
-                    <div class="col-sm-5">
+                    <div class="col-sm-3">
 
                         <div class="form-box">
                             <div class="form-top">
@@ -129,7 +129,7 @@
 
                     <div class="col-sm-1"></div>
 
-                    <div class="col-sm-5">
+                    <div class="col-sm-7">
 
 
                         <div class="container">
