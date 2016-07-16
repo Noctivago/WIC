@@ -154,7 +154,7 @@ include_once '../db/functions.php';
                                             </select>
                                         </div>
                                         <div class = "form-group">
-                                            <select class = "form-first-name form-control" id="userChoice" onchange="myFunction()">
+                                            <select class = "form-first-name form-control" id="userChoice" onchange="FunctionCat()">
                                                 <option value = "N">USER TYPE</option>
                                                 <option value = "1">JOIN AS SUPPLIER</option>
                                                 <option value = "2">JOIN AS PLANNER</option>
@@ -237,6 +237,9 @@ include_once '../db/functions.php';
                                                     $('.loadcity').html(data);
                                                 }
                                             });
+                                        }
+                                        function FunctionCat(){
+                                            
                                         }
 
         </script>
