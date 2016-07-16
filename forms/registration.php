@@ -141,7 +141,7 @@ include_once '../db/functions.php';
                                             <input type="email" name="email" placeholder="youremail@email.com" class="form-email form-control" id="form-email"required>
                                         </div>
                                         <div class="form-group">
-                                            <select>
+                                            <select class="form-first-name form-control">
                                                 <option value="choice">PLEASE CHOOSE</option>
                                                 <option value="supplier">JOIN AS SUPPLIER</option>
                                                 <option value="planner">JOIN AS PLANNER</option>
