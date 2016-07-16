@@ -22,6 +22,8 @@
 			</form>
 		</div> -->
 <!-- cd-search -->
+
+<!--
             <div class="cd-search">
     
                                     <div class="cd-label">
@@ -30,7 +32,7 @@
                                         </select>
                                     </div>
                             
-            </div>
+            </div>-->
 
 		<a href="#0" class="cd-nav-trigger"><span></span></a>
 
