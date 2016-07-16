@@ -2,7 +2,15 @@
 
             <a href="login.php" ><img  class="logo" width="60" height="60" align="left" src="../../assets/img/backgrounds/logo.svg.png" alt="Logo"></a>
            
-                
+                <div >
+
+                                                  <div class="cd-label">
+                                                      <select class="form-username form-control" name="org">
+
+                                                      </select>
+                                                  </div>
+
+                          </div>
             
             
             
