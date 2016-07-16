@@ -56,41 +56,20 @@
                                     </div>
                           </form>
                          </div>
-<!--                            
-                            <div class="col-md-12 margin10ud">
-                                <a class="col-md-6" href="#" style="padding-right: 5px;">
-                                    <img width="100%" src="../../assets/assests_sidebar/img/upload-profile-picture.png">
-                                </a>
-                                <a class="col-md-6" href="#" style="padding-left: 5px;">
-                                    <img width="100%" src="images/plus-profile-picture.png">
-                                </a>
-                            </div>
-                            <div class="col-md-6" style="padding-right: 5px;">
-                                <input class="add-service-submit-btn width100" type="submit" name="submit" value="ADD ANOTHER SERVICE">
-                            </div>
-                            <div class="col-md-6" style="padding-left: 5px;">
-                                <input class="profile-submit-btn-sup-upload width100" type="submit" name="submit" value="UPLOAD">
-                            </div>-->
-
                         </div>
-
-
                     </div>
-  
-                                
-                                
-                                
-                                
+           <div class="col-sm-1"></div>
+                            
                     <div class="col-sm-5" style="border-right:1px solid #ddd;">
-<!--                        <div class="col-sm-5">-->
+                    
                             <img width="550px" height="100%"  src="../../assets/img/logo.png">
                            
                         
                         </div>
-                        <div class="col-md-8 col-sm-8 nopadding companyinfo">
-                            <div class="col-md-12 col-sm-12 padding5 darkgreybg">
+                        <div class="col-sm-3">
+                            <div class="col-sm-3 ">
 
-                                <div class="col-md-8 col-sm-8 ">
+                                <div class="ol-sm-3">
                                     <p class="nomargin" style="margin-bottom:5px !important;">
                                         <span class="supnamehead">Name of the Service</span>
                                         <span class="supnamesub">SupplierName</span>
@@ -110,7 +89,7 @@
                                     </p>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 nopadding sendmsg">
+                                <div class="col-sm-3">
                                     <a href="#">
                                         <img width="35px" src="../../assets/assests_sidebar/img/chat button 2-01-gery.png" >
                                        <span>Send a message</span>
