@@ -88,6 +88,9 @@ if (isset($_SESSION['username'])) {
                                     <label>
                                         <input type="radio" name="Organization" style="color:black" id="optionsRadios1" value="option1">
       Supplier
+      &nbsp;
+      &nbsp;
+      &nbsp;
       <input type="radio" name="User" id="optionsRadios1" value="option2">
       Planner
     </label>
