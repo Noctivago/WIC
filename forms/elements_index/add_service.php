@@ -53,7 +53,7 @@
                             <div class="col-md-12 col-sm-12 companydescription">
                                 <div class="col-md-12 col-sm-12">
                                     <div class="adcompany">
-                                       <img width="50px" src="../../assets/assests_sidebar/img/address marker.png"> Category of the service
+                                       <img width="50px" src="../../assets/assests_sidebar/img/address marker.png"> Description of the service
                                     </div>
 
                                     <p>Lorem ipsum dolor sit amet, mea an modus dolore labitur, at idque vivendo sit, quem illud democritum ius in. Ne integre vituperata concludaturque vix. Choro gloriatur at pri, vide dissentiet at per. Mel omnium latine pertinacia id. Eos ea perpetua adversarium. Nec justo cetero iriure no.</p>
@@ -86,11 +86,13 @@
                             <textarea class="profileinput inputdescription margin10ud" placeholder="Descrption of the service"></textarea>
                         </div>
                         <div class="col-md-12">
-                             <div class = "form-group">
+                            <div class="col-md-12 margin10ud nopadding">
+                                <strong class="greyheader">Category of the service<span style="color:red;">*</span></strong>
+                            <div class = "form-group">
                                             <select class = "form-first-name form-control">
-                                                <option value = "0">USER TYPE</option>
-                                                <option value = "supplier">JOIN AS SUPPLIER</option>
-                                                <option value = "planner">JOIN AS PLANNER</option>
+                                                <option value = "0">TYPE OF THE SERVICE</option>
+                                                <option value = "supplier">FOOD</option>
+                                                <option value = "planner">FUCK</option>
                                             </select>
                                         </div>
                         </div>
