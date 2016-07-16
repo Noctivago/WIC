@@ -218,16 +218,15 @@ include_once '../db/functions.php';
         <script>
                                         function myFunction() {
                                             var x = document.getElementById("countrySelect").value;
-                                            //document.getElementById("demo").innerHTML = "You selected: " + x;
-                                            //alert(x);
-                                            var div = document.getElementById('cities');
-                                            div.style.visibility = 'visible';
-                                            div.style.visibility = 'hidden';
+                                            //div.style.visibility = 'visible';
+                                            //div.style.visibility = 'hidden';
                                             loadcities(x);
                                         }
                                         function loadcities(Country) {
                                             //var Country_Id = document.getElementById(x).value;
                                             var Country_Id = Country;
+                                            var cityOp = document.getElementById('cities');
+                                            cityOp.disabled = false;
                                             $.ajax({
                                                 url: '../ajax/get_city.php',
                                                 method: 'post',
