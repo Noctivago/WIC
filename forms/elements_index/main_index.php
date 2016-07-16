@@ -26,7 +26,7 @@
 				</li>
                                 
                                 <li class=" fa-space-shuttle">
-                                    <a href="#0" class="fa-commenting" >TORA</a>
+                                    <a href="#0" src="../../assets/ico/8.png" >asdad</a>
                                 </li>
 				                                
                                 <li class="has-children comments">
