@@ -729,9 +729,9 @@ function DB_readOrganizationServiceAsTable($pdo, $userId) {
     }
 }
 
-function DB_readOrganizationServiceAsSelect($pdo, $userId) {
+function DB_readOrganizationServiceAsSelect($pdo) {
     try {
-        $id = 0;
+        $userId = $_SESSION['id'];
         $rows = sql($pdo, "SELECT [Organization_Service].[Id] AS OSI, [Organization_Service].[Name] AS OSNAME, [Organization_Service].[Description] AS OSDES  FROM [dbo].[Organization_Service]
     join [Organization]
     on [Organization_Id] = [Organization].[Id]

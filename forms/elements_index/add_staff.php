@@ -1,8 +1,3 @@
-<?
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
-?>
-<?php $msg = ''; ?>
 <main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
@@ -51,7 +46,7 @@
                                     <div class="form-group">
                                         <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()">
                                             <h4> <?php echo $msg; ?></h4>
-                                            <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
+                                            <?php DB_readOrganizationServiceAsSelect($pdo) ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
