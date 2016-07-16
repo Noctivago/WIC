@@ -40,7 +40,7 @@ function readAllUserNewsletter() {
 //document.getElementById('delete').setAttribute(onclick ,removeOrganization());
         //    document.getElementById('cancel').style = "display: true";
         }
-    });
+    );
     return false;
 }
 
