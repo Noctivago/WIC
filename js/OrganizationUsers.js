@@ -5,11 +5,13 @@ function removeUserInOrganization() {
         viewAllUsersInOrganization();
     });
 }
-function removeUserInService(){
+
+function removeUserInService() {
     var serv = document.getElementById('serv').value;
-    
+
     alert(serv);
 }
+
 function viewUsersInService() {
     var serv = document.getElementById('serv').value;
     var div_table1 = "title-1";
@@ -36,12 +38,6 @@ function viewUsersInService() {
     });
     return false;
 }
-
-
-
-
-
-
 
 
 function AssignUserInService() {
@@ -237,7 +233,7 @@ function change_table_data(json_r, div_table, id_table, tbody) {
         td.appendChild(document.createTextNode(json_r[i].Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
-        td.appendChild(document.createTextNode(json_r[i].First_Name +" "+ json_r[i].Last_Name));
+        td.appendChild(document.createTextNode(json_r[i].First_Name + " " + json_r[i].Last_Name));
         tr.appendChild(td)
         var td = document.createElement('TD')
         td.appendChild(document.createTextNode(json_r[i].Email));
