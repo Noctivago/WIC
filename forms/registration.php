@@ -154,7 +154,7 @@ include_once '../db/functions.php';
                                             </select>
                                         </div>
                                         <div class = "form-group">
-                                            <select class = "form-first-name form-control" id="userChoice" onchange="myFunction()">
+                                            <select class = "form-first-name form-control" id="userChoice" onchange="FunctionCat()">
                                                 <option value = "N">USER TYPE</option>
                                                 <option value = "1">JOIN AS SUPPLIER</option>
                                                 <option value = "2">JOIN AS PLANNER</option>
@@ -217,8 +217,8 @@ include_once '../db/functions.php';
                                             var x = document.getElementById("countrySelect").value;
                                             var y = document.getElementById("userChoice").value;
                                             if (y === 1) {
-                                                var cityOp = document.getElementById('loadCat');
-                                                cityOp.visible = true;
+                                                var CAT = document.getElementById('loadCat');
+                                                CAT.visible = true;
                                             }
                                             //div.style.visibility = 'visible';
                                             //div.style.visibility = 'hidden';
@@ -237,6 +237,9 @@ include_once '../db/functions.php';
                                                     $('.loadcity').html(data);
                                                 }
                                             });
+                                        }
+                                        function FunctionCat(){
+                                            
                                         }
 
         </script>
