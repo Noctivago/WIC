@@ -20,7 +20,6 @@ function getOrgId() {
         console.log(json);
         return json[0].Id;
     });
-    return false;
 }
 function readDataOrganization() {
     var arg1 = 'GetOrganizationUser';
