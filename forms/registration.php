@@ -149,7 +149,8 @@ include_once '../db/functions.php';
                                         </div>
                                         <div class = "form-group">
                                             <select class = "form-first-name form-control">
-                                                <option value = "choice">City</option>
+                                                <option value = "0">City</option>
+                                                <?= DB_getCityAsSelectByCountrySelected($pdo, $idCountry); ?>
                                             </select>
                                         </div>
                                         <div class = "form-group">
