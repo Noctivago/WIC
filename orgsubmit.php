@@ -130,7 +130,7 @@ if ($arg === 'addOrganization') {
     }
 } else if ($arg === 'viewAllUsersInService') {
     try {
-        $serv = $_POST['serv'];
+        $serv = $_POST['id'];
         //return service name, nome user, email user
        $rows = sql($pdo,"SELECT [User].[Email]
       ,[Profile].[First_Name]
@@ -150,7 +150,7 @@ if ($arg === 'addOrganization') {
     }    
 } else if ($arg === 'viewAllUserInServiceWaitingResponse') {
     try {
-        $serv = $_POST['serv'];
+        $serv = $_POST['id'];
         //return service name, nome user, email user
        $rows = sql($pdo,"SELECT [User].[Email]
       ,[Profile].[First_Name]

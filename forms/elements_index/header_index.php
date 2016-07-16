@@ -43,10 +43,10 @@
                     <ul class="cd-top-nav">
                         
                         <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav" style="padding-right: 180px; padding-top: 10px;">
+                    <ul class="nav navbar-nav">
                           <li>
 
-                              <<div class="cd-label">
+                              <<div class="navbar-middle">
                                         <!--<label class="sr-only" for="form-password">Telephone:</label>-->
                                         <select type="text" name="city" placeholder="Chose a City" class="form-password form-control"  >
                                             <?= DB_getCityAsSelect($pdo) ?>
@@ -72,7 +72,7 @@
                                                   <ul>
 
 
-                                                      <li><a href="userProfile.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>My Account</a></li>
+                                                      <li><a href="userProfile.php"><span class="fa fa-user-secret"></span>My Account</a></li>
                                                       <li><a href="change_pass.php">Change Password <i  class="fa fa-key" align="right"></i> </a></li>
                                                       <li><a href="#">FAQS</a></li>
                                                       <li><a href="#">Support</a></li>
