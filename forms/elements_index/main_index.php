@@ -25,8 +25,8 @@
 					</ul>-->
 				</li>
                                 
-                                <li  <img  src="../../assets/ico/8.png">>
-                                        <a href="#0"  >mage</a>
+                                <li class=" fa-space-shuttle">
+                                    <a href="#0" class="fa-commenting" >TORA</a>
                                 </li>
 				                                
                                 <li class="has-children comments">
