@@ -12,7 +12,14 @@ function readAllUserNewsletter() {
     });
     return false;
 }
-
+function getOrgId(){
+    var arg1 = 'GetOrganizationUser';
+$.post("../../orgsubmit.php", {arg: arg1}, function (result) {
+        var json = $.parseJSON(result);
+        return json[0].Id;
+});
+        return false;
+}
 function readDataOrganization() {
     var arg1 = 'GetOrganizationUser';
 
@@ -36,10 +43,7 @@ function readDataOrganization() {
             document.getElementById('linkdin').value = json2[0].Linkdin;
             document.getElementById('orgEmail').value = json2[0].Organization_Email;
             document.getElementById('website').value = json2[0].Website;
-           
-//document.getElementById('delete').setAttribute(onclick ,removeOrganization());
-            //    document.getElementById('cancel').style = "display: true";
-        }
+         }
     });
     })
 
@@ -47,7 +51,8 @@ function readDataOrganization() {
 }
 
 function updateDataOrganization() {
-    var userid = $("#userid").val();
+    var orgId = getOrgId();
+    alert(orgId);
     var name = $("#name").val();
     var phone = $("#phone").val();
     var mobile = $("#mobile").val();
@@ -58,7 +63,7 @@ function updateDataOrganization() {
     var linkdin = $("#linkdin").val();
     var orgEmail = $("#email").val();
     var website = $("#website").val();
-    var dataString = 'userid=' + userid + '&name=' + name + '&phone=' + phone + '&mobile=' + mobile + '&address=' + address + '&facebook=' + facebook + '&twitter=' + twitter + '&linkdin=' + linkdin + '&orgEmail=' + orgEmail + '&website=' + website + '&arg=' + arg;
+    var dataString = ('orgId'+ orgId '&name=' + name + '&phone=' + phone + '&mobile=' + mobile + '&address=' + address + '&facebook=' + facebook + '&twitter=' + twitter + '&linkdin=' + linkdin + '&orgEmail=' + orgEmail + '&website=' + website + '&arg=' + arg;
     alert(dataString);
     if (name === '' || mobile === '' || address === '' || orgEmail === '') {
         alert('Please filld the fields required <br/>Name<br/>mobile<br/>Adress<br/>Organization Email');
