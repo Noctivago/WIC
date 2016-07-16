@@ -28,7 +28,6 @@
                                                                 <i class="fa fa-key"></i>-->
                                 <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
                                 
-
                             </div>
                        </div>
                     </div>
