@@ -154,17 +154,14 @@ include_once '../db/functions.php';
                                             </select>
                                         </div>
                                         <div class = "form-group">
-                                            <input type="checkbox" name="signUpOption" value="1">Join as supplier?<br>
-                                        </div>
-                                        <div class = "form-group">
-                                            <select class = "form-first-name form-control">
-                                                <option value = "0">USER TYPE</option>
-                                                <option value = "supplier">JOIN AS SUPPLIER</option>
-                                                <option value = "planner">JOIN AS PLANNER</option>
+                                            <select class = "form-first-name form-control" id="userChoice" onchange="myFunction()">
+                                                <option value = "N">USER TYPE</option>
+                                                <option value = "1">JOIN AS SUPPLIER</option>
+                                                <option value = "2">JOIN AS PLANNER</option>
                                             </select>
                                         </div>
                                         <div class = "form-group">
-                                            <select class = "form-first-name form-control">
+                                            <select class = "form-first-name form-control" id="loadCat" visible="false">
                                                 <!--GET CATEGORY AS SELECT-->
                                                 <option value = "choice">PLEASE CHOOSE</option>
                                                 <?= DB_getCategoryAsSelect($pdo) ?>
@@ -218,6 +215,11 @@ include_once '../db/functions.php';
         <script>
                                         function myFunction() {
                                             var x = document.getElementById("countrySelect").value;
+                                            var y = document.getElementById("userChoice").value;
+                                            if (y === 1) {
+                                                var cityOp = document.getElementById('loadCat');
+                                                cityOp.visible = true;
+                                            }
                                             //div.style.visibility = 'visible';
                                             //div.style.visibility = 'hidden';
                                             loadcities(x);
