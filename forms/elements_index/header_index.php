@@ -42,21 +42,24 @@
 
                     <ul class="cd-top-nav">
                         
-<!--                        <div id="navbar" class="navbar-collapse collapse">
+                        <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                           <li>
 
-                              <<div>
-                                        <label class="box" for="form-password">City</label>
-                                        <select type="text" name="city" placeholder="Chose a City" class="form-password form-control"  >
-                                            
-                                        </select>
+                                <div class="cd-search">
+    
+                                    <div class="cd-label">
+                                                <select class="form-username form-control" name="org" ">
+
+                                                </select>
                                     </div>
+                            
+                                </div>
 
 
                           </li>
 
-                        </ul>-->
+                        </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="fa fa-bell" href="notifications.php" title="Notifications"></a></li>
