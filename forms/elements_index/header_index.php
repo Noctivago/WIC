@@ -37,8 +37,8 @@
 					<ul>
 
 						
-                                            <li><a href="userProfile.php" class="fa fa-user fa-fw">My Account</a></li>
-                                            <li><a href="change_pass.php" class="fa fa-key fa-fw">Change Password</a></li>
+                                            <li><a href="userProfile.php" class="fa fa-user ">My Account</a></li>
+                                            <li><a href="change_pass.php" class="fa fa-key ">Change Password</a></li>
                                             <li><a href="logout.php" >Logout</a></li>
                                                 
 					</ul>
