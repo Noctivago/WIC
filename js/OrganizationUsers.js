@@ -37,7 +37,7 @@ function viewUsersInService() {
 
 
 
-}
+
 
 function AssignUserInService() {
     var serv = document.getElementById('serv').value;
