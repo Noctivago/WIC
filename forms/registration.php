@@ -237,7 +237,7 @@ include_once '../db/functions.php';
                                             var y = document.getElementById("userChoice").value;
                                             if (y === 1) {
                                                 var CAT = document.getElementById('loadCat');
-                                                CAT.style.display = "block";
+                                                CAT.style.display = "inline";
                                                 alert('LOADCAT');
                                             }
                                         }
