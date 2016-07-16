@@ -238,7 +238,7 @@ include_once '../db/functions.php';
                                             alert(y);
                                             if (y == '1') {
                                                 var CAT = document.getElementById('loadCat');
-                                                //CAT.style.display = "inline";
+                                                CAT.style.display = "inline";
                                                 alert('LOADCAT');
                                             }
                                         }
