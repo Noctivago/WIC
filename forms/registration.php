@@ -163,7 +163,7 @@ include_once '../db/functions.php';
                                         <div class = "form-group">
                                             <select class = "form-first-name form-control" id="loadCat" style="display:none;">
                                                 <!--GET CATEGORY AS SELECT-->
-                                                <option value = "choice">PLEASE CHOOSE</option>
+                                                <option value = "choice">PLEASE CHOOSE A CATEGORY</option>
                                                 <?= DB_getCategoryAsSelect($pdo) ?>
                                             </select>
                                         </div>
@@ -240,6 +240,10 @@ include_once '../db/functions.php';
                                                 var CAT = document.getElementById('loadCat');
                                                 CAT.style.display = "inline";
                                                 alert('VIS');
+                                            }
+                                            else (y == 'N' or y = '0') {
+                                                var CAT = document.getElementById('loadCat');
+                                                CAT.style.display = "none";
                                             }
                                         }
 
