@@ -1,8 +1,3 @@
-<?
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
-?>
-<?php $msg = ''; ?>
 <main class="cd-main-content">
     <div class="content-wrapper" style="padding-left: 0%">
 
@@ -31,33 +26,16 @@
 
 
                             <div class="form-bottom">
-                                <?php
-                                $userId = $_SESSION['id'];
-                                if ((isset($_POST['invite']) && isset($_POST['email'])) && !empty($_POST['org'])) {
-                                    $msg = '';
-                                    try {
-                                        $email = (filter_var($_POST['email'], FILTER_SANITIZE_STRING));
-                                        $orgId = (filter_var($_POST ['org'], FILTER_SANITIZE_STRING));
-                                        $msg = DB_addUserInOrganization($pdo, $email, $orgId);
-                                    } catch (Exception $ex) {
-                                        $msg = "ERROR!";
-                                    }
-                                } else if (isset($_POST['delete'])) {
-                                    
-                                }
-                                ?>    
-
-                                <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="login-form">
+                                <form role="form" class="login-form">
                                     <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()">
-                                            <h4> <?php echo $msg; ?></h4>
-                                            <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
+                                        <select class="form-username form-control" name="org" id="serv" onchange="viewUsersInService()">
+                                            <?php DB_readOrganizationServiceAsSelect($pdo) ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <input type="email" style="height: 40px" name="email" placeholder="Email" class="form-username form-control" id="email" required autofocus>
                                     </div>
-                                    <button type="submit" id="invite" class="btn" name="invite" visible="true">Send Invite</button>
+                                    <button type="submit" id="invite" class="btn" name="invite" onclick="" visible="true">Send Invite</button>
                                 </form>
                             </div>
                         </div>
