@@ -15,9 +15,9 @@
                                 
 				<li class="has-children overview">
                                     
-                                        <div class="cd-search is-fixed">
+                                        <div ">
                                             <form action="#0">
-                                                <input type="search" placeholder="Search Service..">
+                                                <input type="search" placeholder="Search Service.." style="color: white">
 
                                             </form>
                                         </div> 
