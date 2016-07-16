@@ -18,7 +18,7 @@
 				</li>
 				                                
                                 <li class="has-children comments">
-					<li><a href="#0">Organization</a>
+					<a href="#0">Organization</a>
 					
 					<ul>
                                                 <li><a href="prof_org.php">View</a></li>
@@ -26,7 +26,7 @@
                                                 <li><a href="add_org.php">Create Service</a></li>
                                                 
 					</ul>
-                                        </li>
+                                        
 				</li>
                                 <!--<li class="has-children notifications active">-->
                                 <li class="has-children notifications">
