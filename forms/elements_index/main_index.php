@@ -25,15 +25,15 @@
 					</ul>-->
 				</li>
                                 
-                                <li  img="../../assets/ico/8.png">
-                                        <a href="#0"  >iimag</a>
+                                <li  <img  src="../../assets/ico/8.png">>
+                                        <a href="#0"  >Imgaem</a>
                                 </li>
 				                                
                                 <li class="has-children comments">
 					<a href="#0">Organization</a>
 					
 					<ul>
-                                                <li><a href="prof_org.php">View</a></li>
+                                                <li><a href="prof_org.php"> View</a></li>
                                                 <li><a href="CRUD_org.php">Create</a></li>
                                                 <li><a href="add_org.php">Create Service</a></li>
                                                 
