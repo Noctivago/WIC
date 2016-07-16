@@ -1045,7 +1045,7 @@ a:active, a:focus, a:visited{
     height:1200px;
 }
 
-..msgtextarea-w {
+.msgtextarea-w {
     width:85%;
     border:none;
     resize: none;
