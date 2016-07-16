@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="form-group">
                                         <!--<label class="sr-only" for="form-password">Adress:</label>-->
-                                        <input type="text" name="address" placeholder="ORGANIZATION ADDRESS" class="form-password form-control" id="address" >
+                                        <input type="text" name="address" placeholder="ORGANIZATION ADDRESS" class="form-password form-control" id="address">
                                     </div>
                                     <div class="form-group">
                                         <!--<label class="sr-only" for="form-password">Facebook:</label>-->
