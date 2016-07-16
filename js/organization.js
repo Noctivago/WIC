@@ -23,8 +23,7 @@ function readAllUserNewsletter() {
     })
     alert(orgId);
     
-    
-    var arg = 'viewAllOrganization';
+      var arg = 'viewAllOrganization';
     $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
         var json = $.parseJSON(result);
         if (json.length === 0) {
@@ -40,9 +39,6 @@ function readAllUserNewsletter() {
             document.getElementById('linkdin').value = json[0].Linkdin;
             document.getElementById('orgEmail').value = json[0].Organization_Email;
             document.getElementById('website').value = json[0].Website;
-            document.getElementById('addOrg').style = "display: none";
-            document.getElementById('update').style = "display: true";
-            document.getElementById('delete').style = "display: true";
             //document.getElementById('delete').setAttribute(onclick ,removeOrganization());
         //    document.getElementById('cancel').style = "display: true";
         }

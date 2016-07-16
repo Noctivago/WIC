@@ -77,7 +77,7 @@
                                     <button type="submit" id="addOrg" class="btn" name="addOrg" visible="true" >NEW ORGANIZATION!</button>
 
                                     <div class="form-inline" style=" width: 140px;">
-                                        <button type="submit" id="update" class="btn" name="update"  style="display: none; width: 140px;" >Save</button>
+                                        <button type="submit" id="update" class="btn" name="update"  style="width: 140px;" >Save</button>
                                     </div>
                                 </form>
                             </div>
