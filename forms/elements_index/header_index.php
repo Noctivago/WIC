@@ -32,7 +32,7 @@
                                     </div>
                             
             </div>-->
-<span class="font-icon glyphicon glyphicon-question-sign"></span>
+
 
 		<a href="#0" class="cd-nav-trigger"><span></span></a>
 
