@@ -3,7 +3,7 @@
 			<ul>
 				<li class="cd-label">Star Planning</li>
 				<li class="has-children overview">
-                                    <a href="#0" src="../../assets/ico/8.png" class="fa fa-space-shuttle">Space</a>
+                                        <a href="#0" src="../../assets/ico/8.png" class="fa fa-space-shuttle">Space</a>
 					<a href="#0" src="../../assets/ico/1.png">Food</a>
 					<a href="#0">Entertainement</a>
 					<a href="#0">Decoration</a>
@@ -24,6 +24,10 @@
                                                 
 					</ul>-->
 				</li>
+                                
+                                <li class="fa-space-shuttle">
+                                        <a href="#0" src="../../assets/ico/8.png" class="fa fa-space-shuttle">Space</a>
+                                </li>
 				                                
                                 <li class="has-children comments">
 					<a href="#0">Organization</a>
