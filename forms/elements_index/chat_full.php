@@ -1,5 +1,6 @@
 
-<body class="with-side-menu">
+<main class="cd-main-content">
+<div class="content-wrapper" style="padding-left: 0%">
 
 
 
@@ -393,6 +394,9 @@
 
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
+        
+</div>
+</main>
 
 
 
