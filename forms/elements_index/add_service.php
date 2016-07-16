@@ -126,7 +126,7 @@
                             </div>
                             <div class="col-md-12 margin10ud">
                                 <a class="col-md-6" href="#" style="padding-right: 5px;">
-                                    <img width="100%" src="images/upload-profile-picture.png">
+                                    <img width="100%" src="../../assets/assests_sidebar/img/upload-profile-picture.png">
                                 </a>
                                 <a class="col-md-6" href="#" style="padding-left: 5px;">
                                     <img width="100%" src="images/plus-profile-picture.png">
