@@ -163,8 +163,7 @@ include_once '../db/functions.php';
                                             <select class = "form-first-name form-control">
                                                 <!--GET CATEGORY AS SELECT-->
                                                 <option value = "choice">PLEASE CHOOSE</option>
-                                                <? = DB_getCategoryAsSelect($pdo);
-                                                ?>
+                                                <?= DB_getCategoryAsSelect($pdo) ?>
                                             </select>
                                         </div>
                                         <!--ON CHANGE LOAD SUPPLIER TYPE IS VALUE=SUPPLIER-->
