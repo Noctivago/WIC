@@ -17,9 +17,9 @@
 
                     <div class="col-sm-8">
 
-                        <div class="form-box" style="border-style:solid ; border-color: black">
-                            <div class="form-top"style="border-style:solid ; border-color: black">
-                                <div class="form-top-left">
+                        <div class="form-box1" >
+                            <div class="form-top1">
+                                <div class="form-top-left1">
 
                                 </div>
                                 <div class="form-top-right">
