@@ -25,6 +25,7 @@
                                 </div>
                                 <div class="form-top-right">
                                 </div>
+                                
                     <div class="col-sm-5" style="border-right:1px solid #ddd;">
 <!--                        <div class="col-sm-5">-->
                             <img width="550px" height="100%"  src="../../assets/img/logo.png">
@@ -86,8 +87,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3" >
-                    </div>
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-5">
+
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
                     <div class="searchpanel nopadding rightbarres-sup" style="width: 320px;">
                         <div class="margin10ud">
                             <span class="heading-rightsiderbar ">Upload new service</span>
