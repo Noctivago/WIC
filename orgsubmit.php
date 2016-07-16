@@ -27,17 +27,14 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'GetOrganizationUser') {
     $user = $_SESSION['id'];
     try {
-    $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($user), "rows");
-    echo json_encode($rows);
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Organization] WHERE [Enabled] = 1 and [Validate]= 1 and [User_Boss] = ?", array($user), "rows");
+        echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'error';
     }
-    
-    
-    
 } else if ($arg === 'viewAllOrganizationToValidate') {
     try {
-     $rows = sql($pdo,"SELECT Id,[Name]
+        $rows = sql($pdo, "SELECT Id,[Name]
       ,[Phone_Number]
       ,[Mobile_Number]
       ,[Logotype]
@@ -54,9 +51,8 @@ if ($arg === 'addOrganization') {
       ,[Organization_Email]
       ,[Website]
   FROM [dbo].[Organization]
-  where [Validate] = 0",array(),"rows");
-     echo json_encode($rows);
-       
+  where [Validate] = 0", array(), "rows");
+        echo json_encode($rows);
     } catch (Exception $ex) {
         
     }
@@ -132,6 +128,18 @@ if ($arg === 'addOrganization') {
     } catch (Exception $ex) {
         echo 'erro';
     }
+} else if ($arg === 'viewAllUsersInService') {
+    try {
+        
+    } catch (Exception $ex) {
+        
+    }    
+} else if ($arg === 'viewAllUserInServiceWaitingResponse') {
+    try {
+        
+    } catch (Exception $ex) {
+        
+    }
 } else if ($arg === 'updateOrganizationInform') {
     try {
         $orgId = (filter_var($_POST ['orgId']));
@@ -173,7 +181,7 @@ if ($arg === 'addOrganization') {
 } else if ($arg === 'viewAllInvites') {
     try {
         $userid = $_SESSION['id'];
-        $rows = sql($pdo,"SELECT [User_In_Organization].[Id]
+        $rows = sql($pdo, "SELECT [User_In_Organization].[Id]
 		,[Organization].[Name]
 		,[Organization].[Address]
 		,[Organization].[Facebook]
@@ -188,8 +196,7 @@ on [Organization].[Id] = [User_In_Organization].[Organization_Id]
         echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'Error';
-    }        
-    
+    }
 } else if ($arg === 'validateOrganization') {
     try {
         $id = (filter_var($_POST ['id'], FILTER_SANITIZE_STRING));
@@ -262,27 +269,26 @@ on [Organization].[Id] = [User_In_Organization].[Organization_Id]
     } catch (Exception $ex) {
         echo 'erro';
     }
-    } else if ($arg === 'removeUserInOrgSubCatOwner') {
-     try {
-         $id = $_POST['id'];
-         sql($pdo,"UPDATE [dbo].[Sub_Category_Owner]
+} else if ($arg === 'removeUserInOrgSubCatOwner') {
+    try {
+        $id = $_POST['id'];
+        sql($pdo, "UPDATE [dbo].[Sub_Category_Owner]
    SET [Enabled] = 0
  WHERE [Id] =?", array($id));
-        } catch (Exception $ex) {
-    
-        }
-    } else if ($arg === 'removeUserInOrgCatOwner') {
-     try {
-         $id = $_POST['id'];
-         sql($pdo,"UPDATE [dbo].[Category_Owner]
-   SET [Enabled] = 0
- WHERE [Id] =?", array($id));
-        } catch (Exception $ex) {
-            
-        }
+    } catch (Exception $ex) {
         
-  } else if ($arg === 'viewAllUsersInOrgSub') {
-      try {
+    }
+} else if ($arg === 'removeUserInOrgCatOwner') {
+    try {
+        $id = $_POST['id'];
+        sql($pdo, "UPDATE [dbo].[Category_Owner]
+   SET [Enabled] = 0
+ WHERE [Id] =?", array($id));
+    } catch (Exception $ex) {
+        
+    }
+} else if ($arg === 'viewAllUsersInOrgSub') {
+    try {
         $idOrg = $_POST['id'];
         $rows = sql($pdo, "Select [Sub_Category_Owner].[Id]
       ,[Sub_Category].[Name]
@@ -300,9 +306,7 @@ on [Organization].[Id] = [User_In_Organization].[Organization_Id]
     } catch (Exception $ex) {
         echo 'error';
     }
-    
-      
-        } else if ($arg === 'viewAllUsersInOrgOwners') {
+} else if ($arg === 'viewAllUsersInOrgOwners') {
     try {
         $idOrg = $_POST['id'];
         $rows = sql($pdo, "Select [Category_Owner].[Id]
@@ -320,8 +324,7 @@ on [Organization].[Id] = [User_In_Organization].[Organization_Id]
         echo json_encode($rows);
     } catch (Exception $ex) {
         echo 'error';
-    }  
-    
+    }
 } else if ($arg === 'viewAllUsersInOrganizationAsSelect') {
     try {
         $idOrg = $_POST['id'];
@@ -364,7 +367,7 @@ where [User_In_Organization].[Enabled] = 1 and [Organization_Id] = ?", array($id
         } else {
             $enabled = 0;
         }
-        sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [User_Validation]=?,[Enabled]=?,[Responded]=1 Where [Id]=?", array($enabled,$response, $linha));
+        sql($pdo, "UPDATE [dbo].[User_In_Organization] SET [User_Validation]=?,[Enabled]=?,[Responded]=1 Where [Id]=?", array($enabled, $response, $linha));
         echo 'Validate Success';
     } catch (Exception $ex) {
         echo 'error';
