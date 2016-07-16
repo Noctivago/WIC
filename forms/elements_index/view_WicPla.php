@@ -71,7 +71,6 @@
                                         $msg = DB_addWicPlanner($pdo, $name, $city, $userId, $DB_Date, $eventDate);
                                         #$msg = ' NOME ' . $name . ' CITY ' . $city . ' USER ' . $userId . ' DATE ' . $d . ' EVENT DATE ' . $DB_Date;
                                         echo $name;
-                                        
                                     } catch (Exception $ex) {
                                         echo "ERROR!";
                                     }
@@ -192,7 +191,7 @@
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/jquery.backstretch.js" type="text/javascript"></script>
 <script src="../../assets/assests_sidebar/css/css_main/assets/js/scripts.js" type="text/javascript"></script>
 
-<script>window.onload = function(){
-    getMyWic(<?= $_SESSION['id']?>);
-}
-    </script>
+<script>window.onload = function () {
+        getMyWic(<?= $_SESSION['id'] ?>);
+    };
+</script>
