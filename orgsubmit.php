@@ -143,7 +143,7 @@ if ($arg === 'addOrganization') {
         $twitter = (filter_var($_POST ['twitter']));
         $linkdin = (filter_var($_POST ['linkdin']));
         $orgEmail = (filter_var($_POST ['orgEmail']));
-        $website = (filter_var($_POST ['website']));
+        $website = (filter_var($_POST ['Website']));
         sql($pdo, "UPDATE [dbo].[Organization]SET [Name] =?, [Phone_Number] = ?, [Mobile_Number] = ?, [Address] = ?,[Facebook] = ? ,[Twitter] = ? ,[Linkdin] = ? , [Organization_Email] = ? ,[Website] = ? WHERE [Organization].[Id] = ?", array($name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $orgEmail, $website, $orgId));
         echo 'Organization information as been updated!';
     } catch (Exception $ex) {
