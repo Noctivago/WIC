@@ -29,8 +29,7 @@
                                    <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                    <div class="searchpanel nopadding rightbarres-sup" style="width: 320px;">
-                        <div class="margin10ud">
+                   
                             <h1>Upload new service</h1>
                         </div>
                         <div class="col-md-12">
