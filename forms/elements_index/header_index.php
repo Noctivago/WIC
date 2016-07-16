@@ -43,7 +43,7 @@
                     <ul class="cd-top-nav">
                         
                         <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" style="padding-right: 180px; padding-top: 10px;">
                           <li>
 
                           <div class="cd-search">
