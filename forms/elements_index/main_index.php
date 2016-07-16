@@ -25,8 +25,6 @@
                                         </div> 
                                     <!-- cd-search -->
                                     <br>
-                                    <br>
-                                    <br>
                                     
                                     <a href="#0"><span class="fa-user"></span>Space</a>
 					<a href="#0">Food</a>
