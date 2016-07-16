@@ -38,8 +38,8 @@
 					<ul>
 
 						
-                                            <li><a href="userProfile.php" class="fa fa-user">My Account</a></li>
-                                            <li><a href="change_pass.php">Change Pass <i  class="fa fa-key" align="right"></i> </a></li>
+                                            <li><a href="userProfile.php">My Account<img class="fa fa-user" align="right"></a></li>
+                                            <li><a href="change_pass.php">Change Password <img  class="fa fa-key" align="right"> </a></li>
                                             <li><a href="#">FAQS</a></li>
                                             <li><a href="#">Support</a></li>
                                             <li><a href="logout.php" >Logout</a></li>
