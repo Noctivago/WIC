@@ -143,18 +143,19 @@ include_once '../db/functions.php';
 
                                         <div class="form-group">
                                             <select id = "countrySelect"class="form-first-name form-control" onchange="myFunction()">
-                                                <option value="choice">Country</option>
+                                                <option value="0">Country</option>
                                                 <?= DB_getCountryAsSelect($pdo); ?>
                                             </select>
                                         </div>
                                         <div class = "form-group">
                                             <select class = "form-first-name form-control">
-                                                <option value = "choice">City</option>
+                                                <option value = "0">City</option>
+                                                <?= DB_getCityAsSelectByCountrySelected($pdo, $idCountry); ?>
                                             </select>
                                         </div>
                                         <div class = "form-group">
                                             <select class = "form-first-name form-control">
-                                                <option value = "choice">USER TYPE</option>
+                                                <option value = "0">USER TYPE</option>
                                                 <option value = "supplier">JOIN AS SUPPLIER</option>
                                                 <option value = "planner">JOIN AS PLANNER</option>
                                             </select>

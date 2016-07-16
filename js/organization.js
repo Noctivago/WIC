@@ -16,9 +16,9 @@ function getOrgId() {
     var arg1 = 'GetOrganizationUser';
     $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
         var json = $.parseJSON(result);
-        alert(json[0].Id);
+        var orgId = json[0].Id;
         console.log(json);
-        return json[0].Id;
+        return orgId;
     });
 }
 function readDataOrganization() {
