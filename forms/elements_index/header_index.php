@@ -24,10 +24,9 @@
 <!-- cd-search -->
             <div class="cd-search">
     
-                                    <div class="form-group">
-                                        <select class="form-username form-control" name="org" id="org" onchange="viewAllUsersInOrganization()">
-                                            <h4> <?php echo $msg; ?></h4>
-                                            <?php DB_readOrganizationAsSelect($pdo, $userId) ?>
+                                    <div class="form">
+                                        <select class="form-username form-control" name="org" ">
+
                                         </select>
                                     </div>
                             
