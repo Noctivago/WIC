@@ -142,6 +142,14 @@ include_once '../db/functions.php';
                                         </div>
                                         <div class="form-group">
                                             <select class="form-first-name form-control">
+                                                <option value="choice">Country</option>
+                                            </select>
+                                            <div class="form-group">
+                                            <select class="form-first-name form-control">
+                                                <option value="choice">City</option>
+                                            </select>
+                                        <div class="form-group">
+                                            <select class="form-first-name form-control">
                                                 <option value="choice">PLEASE CHOOSE</option>
                                                 <option value="supplier">JOIN AS SUPPLIER</option>
                                                 <option value="planner">JOIN AS PLANNER</option>
