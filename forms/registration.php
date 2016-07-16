@@ -239,7 +239,7 @@ include_once '../db/functions.php';
                                             if (y == '1') {
                                                 var CAT = document.getElementById('loadCat');
                                                 CAT.style.display = "inline";
-                                                alert('LOADCAT');
+                                                alert('VIS');
                                             }
                                         }
 
