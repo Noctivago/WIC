@@ -31,7 +31,7 @@
                                 <div class="col-md-12">
                     <div class="searchpanel nopadding rightbarres-sup" style="width: 320px;">
                         <div class="margin10ud">
-                            <span class="heading-rightsiderbar ">Upload new service</span>
+                            <h1>Upload new service</h1>
                         </div>
                         <div class="col-md-12">
                             <input type="text" class="profileinput margin10ud" placeholder="Name of the service">
