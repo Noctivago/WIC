@@ -16,20 +16,9 @@
                                                 
 					</ul>
 				</li>
-				
-
-				<li class="has-children comments">
-					<a href="#0">WicPlanner</a>
-					
-					<ul>
-                                            <li><a href="view_WicPlanner.php">View</a></li>
-                                            <li><a  href="add_wicplanner.php">Create</a></li>
-						
-					</ul>
-        
-				</li>
+				                                
                                 <li class="has-children comments">
-					<a href="#0">Organization</a>
+					<li><a href="#0">Organization</a>
 					
 					<ul>
                                                 <li><a href="prof_org.php">View</a></li>
@@ -43,6 +32,16 @@
 					<!--<a href="#0">Notifications<span class="count"></span></a>-->
 					<a href="#0">Notifications<span ></span></a>
 				</li>
+                                
+                                <li class="has-children comments">
+                                    <a href="">Other Usages</a>
+                                    <ul>
+                                        <li><a href="invites.php">Invites</a></li>
+                                        <li><a href="validate_organization.php">Validade Organization</a></li>
+                                        <li><a href="add_staff.php">Add Staff</a></li>
+                                        <li><a href="addNewsletterPlataform.php">Newsetter</a></li>
+                                    </ul>
+                                </li>
 			</ul>
 
 			<ul>
