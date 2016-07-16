@@ -15,10 +15,15 @@
 
    <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-8 nopadding maindashboard" style="border-right:1px solid #ddd;">
-                        
+                        <div class="col-sm-6">
                             <img width="550px" height="100%"  src="images/sliderimg1.jpg">
-                            
-                        
+<!--                            <div class="left-arrow">
+                                <a href="#"><img width="100px" src="images/left-arrow.png"></a>
+                            </div>
+                            <div class="right-arrow">
+                                <a href="#"><img width="100px" src="images/right-arrow.png"></a>
+                            </div>-->
+                        </div>
                         <div class="col-md-8 col-sm-8 nopadding companyinfo">
                             <div class="col-md-12 col-sm-12 padding5 darkgreybg">
 
