@@ -1,0 +1,130 @@
+@media screen and (max-width:1200px){
+    .sidebar-w {
+        width:400px;
+    }
+
+    .sidebar-item {
+        height:150px;
+    }
+
+}
+
+@media screen and (max-width:900px){
+
+    .mainbanner{padding:30px !important;}
+    .mainbanner h1{ font-size:5em; }
+    .subbanner{padding:30px !important;}
+    .homeblkicon img{margin:0 !important;}
+    .servicefooter{
+        padding: 0 !important;
+    }
+    
+    .chatmsgpanel {
+        bottom: 0px;
+        position: fixed;
+        float: left;
+        width: 100%;
+    }
+
+    .sidebar-w { 
+        width:150px;
+    }
+
+    .sidebar-item {
+        height:150px;
+    }
+
+    .chatbox-w-desktop {
+        width:100%;
+    }
+
+}
+
+@media screen and (max-width:786px){
+
+    .mainbanner{
+        padding: 0 !important;
+    }
+    .subbanner{
+        padding: 0 !important;
+        margin-top:0;
+    }
+    .whiteborder-btn{
+
+        width: 100%;
+    }
+    .offerservice{
+        margin:10px 0px;
+    }
+    
+    .chatmsgpanel {
+        bottom: 0px;
+        position: fixed;
+        float: left;
+        width: 100%;
+    }
+
+    .sidebar-w { 
+        width:150px;
+    }
+
+    .sidebar-item {
+        height:150px;
+    }
+
+    .chatbox-w-desktop {
+        width:100%;
+    }
+}
+
+@media screen and (max-width:1025px) {
+    #wrapper {
+        padding-left: 87px !important;
+    }
+    #sidebar-wrapper {
+        width: 88px !important;
+    }
+    #wrapper.toggled-2 #page-content-wrapper {
+        margin-left: 00px !important;
+    }
+    .addtobtn img{
+        margin:0px;
+    }
+    .navbar-default{
+        display:none;
+    }
+
+    .outgoingpadding{
+        text-align:center;
+        padding:0px !important;
+    }
+
+    .chatmsgpanel {
+        float: left;
+        width: 100%;
+    }
+
+    .sidebar-w { 
+        width:150px;
+    }
+
+    .sidebar-item {
+        height:150px;
+    }
+
+    .chatbox-w-desktop {
+        width:60%;
+    }
+}
+/*
+@media screen and (max-width:1200px) and (min-width:1020px){
+    .rightbarres{
+        width: 235px !important;
+    }
+}
+
+@media screen and (max-width:1020px) and (min-width:900px){
+    .rightbarres{
+        width: 224px !important;
+    }
+} */
