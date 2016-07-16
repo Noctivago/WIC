@@ -63,7 +63,9 @@
                   
                             
                     <div class="col-sm-5" style="border-right:1px solid #ddd;">
-                    
+                    <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
                             <img width="550px" height="100%"  src="../../assets/img/logo.png">
                            
                         
@@ -91,12 +93,6 @@
                                     </p>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 nopadding sendmsg">
-                                    <a href="#">
-                                        <img width="35px" src="../../assets/assests_sidebar/img/chat button 2-01-gery.png" >
-                                       <span>Send a message</span>
-                                    </a>
-                                </div>
                             </div>
                             <div class="col-md-12 col-sm-12 companydescription">
                                 <div class="col-md-12 col-sm-12">
@@ -110,26 +106,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-4 nopadding ">
-                            <div class="addtobtn">
-                                <div class="col-md-6 col-sm-6 nopadding favicon">
-                                    <img width="30px" src="images/plain-heart.png">
-                                    <p>Add to Favourites<p>
-                                </div>
-                                <div class="col-md-6 col-sm-6 nopadding plusicon">
-                                    <img width="30px" src="images/wic planner button-01-grey.png">
-                                    <p>Add to WiC planner<p>
-                                </div>
-                            </div>
-                        </div>
-                   
-                    <div class="col-sm-1"></div>
 
-                    <div class="col-sm-5">
-
-
-                    </div>
-                        </div>
         
          </div>
              </div>
