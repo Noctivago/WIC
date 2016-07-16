@@ -19,8 +19,8 @@ function readDataOrganization() {
     $.post("../../orgsubmit.php", {arg: arg1}, function (result) {
         var json = $.parseJSON(result);
         var orgId = json[0].Id;
-        $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result) {
-            var json2 = $.parseJSON(result);
+        $.post("../../orgsubmit.php", {arg: arg, id: orgId}, function (result1) {
+            var json2 = $.parseJSON(result1);
             if (json2.length === 0)
             {
                 alert(json2);
