@@ -8,7 +8,7 @@
                             
 				<li class="cd-label">Start Planning</li>
                                 
-                                <div class="cd-search image-responsive">
+                                <div class="cd-search is-fixed">
                                 <form action="#0">
 				<input type="search" placeholder="Search Service..">
 
