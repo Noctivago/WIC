@@ -43,7 +43,7 @@
                           <div class="cd-search">
 
                                                   <div class="cd-label">
-                                                      <select class="form-username form-control" name="org" ">
+                                                      <select class="form-username form-control" name="org">
 
                                                       </select>
                                                   </div>
