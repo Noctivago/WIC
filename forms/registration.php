@@ -235,6 +235,7 @@ include_once '../db/functions.php';
                                         }
                                         function FunctionCat() {
                                             var y = document.getElementById("userChoice").value;
+                                            alert(y);
                                             if (y === 1) {
                                                 var CAT = document.getElementById('loadCat');
                                                 //CAT.style.display = "inline";
