@@ -86,33 +86,13 @@
                             <textarea class="profileinput inputdescription margin10ud" placeholder="Descrption of the service"></textarea>
                         </div>
                         <div class="col-md-12">
-                            <div class="col-md-12 margin10ud nopadding">
-                                <strong class="greyheader">Category of the service<span style="color:red;">*</span></strong>
-                            </div>
-                            <div class="col-md-6 nopadding">
-                                <button class="supclassifiedas-btn">Venues</button>
-                            </div>
-                            <div class="col-md-6 nopadding">
-                                <button class="supclassifiedas-btn">Food's</button>
-                            </div>
-                            <div class="col-md-6 nopadding">
-                                <button class="supclassifiedas-btn">Decor</button>
-                            </div>
-                            <div class="col-md-6 nopadding">
-                                <button class="supclassifiedas-btn">Entertainment</button>
-                            </div>
-                            <div class="col-md-6 nopadding">
-                                <button class="supclassifiedas-btn">Audio Visual</button>
-                            </div>
-                            <div class="col-md-6 nopadding">
-                                <button class="supclassifiedas-btn">Teambuilding</button>
-                            </div>
-                            <div class="col-md-6 nopadding">
-                                <button class="supclassifiedas-btn">Original</button>
-                            </div>
-                            <div class="col-md-6 nopadding">
-                                <button class="supclassifiedas-btn">Photographer & Videographer</button>
-                            </div>
+                             <div class = "form-group">
+                                            <select class = "form-first-name form-control">
+                                                <option value = "0">USER TYPE</option>
+                                                <option value = "supplier">JOIN AS SUPPLIER</option>
+                                                <option value = "planner">JOIN AS PLANNER</option>
+                                            </select>
+                                        </div>
                         </div>
 
                         <div class="col-md-12">
