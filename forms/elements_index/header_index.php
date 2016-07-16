@@ -48,7 +48,7 @@
 
                               <<div class="cd-label">
                                         <!--<label class="sr-only" for="form-password">Telephone:</label>-->
-                                        <select type="text" name="city" placeholder="Chose a City" class="form-password form-control" id="city" required>
+                                        <select type="text" name="city" placeholder="Chose a City" class="form-password form-control"  >
                                             <?= DB_getCityAsSelect($pdo) ?>
                                         </select>
                                     </div>
