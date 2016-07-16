@@ -42,11 +42,13 @@
                                         <label class="sr-only" for="form-username">Category of the Service:</label>
                                         <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
                                     </div>
+                              <div>
                                             <select class = "form-first-name form-control">
                                                 <option value = "0">TYPE OF THE SERVICE</option>
                                                 <option value = "supplier">FOOD</option>
                                                 <option value = "planner">FUCK</option>
                                             </select>
+                               </div>
                                <div class="form-group">
                                         <label class="sr-only" for="form-username">Service classified as</label>
                                         <input type="text" style="height: 40px" name="email" placeholder="First Name" class="form-username form-control" id="form-username" required autofocus>
