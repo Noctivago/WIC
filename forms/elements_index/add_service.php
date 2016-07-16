@@ -11,152 +11,150 @@
               <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
              <div class="container">
 
-                <!--            <div class="row">-->
-                <div class="col-sm-8 col-lg-offset-2 text">
-                    <!--            </div>-->
-                </div>
-                <div class="row">
-
-                    <div class="col-sm-8">
-
-                        <div class="form-box1" >
-                            <div class="form-top1">
-                                <div class="form-top-left1">
-
-                                </div>
-                                <div class="form-top-right1">
-                                </div>
-                                <!--                            <div class="form-top-right">
-                                                                <i class="fa fa-key"></i>-->
-                                <img src="http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png" class="avatar img-circle img-thumbnail text-center center-block" alt="avatar">
-                                
+   <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 nopadding maindashboard" style="border-right:1px solid #ddd;">
+                        <div class="col-md-12 nopadding bannerimage">
+                            <img width="550px" height="100%"  src="images/sliderimg1.jpg">
+                            <div class="left-arrow">
+                                <a href="#"><img width="100px" src="images/left-arrow.png"></a>
                             </div>
-                       </div>
+                            <div class="right-arrow">
+                                <a href="#"><img width="100px" src="images/right-arrow.png"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-8 nopadding companyinfo">
+                            <div class="col-md-12 col-sm-12 padding5 darkgreybg">
+
+                                <div class="col-md-8 col-sm-8 ">
+                                    <p class="nomargin" style="margin-bottom:5px !important;">
+                                        <span class="supnamehead">Name of the Service</span>
+                                        <span class="supnamesub">SupplierName</span>
+                                    </p>
+                                    <p class="nomargin">
+                                        <span class="supversion">3.0</span>
+                                        <span class="ratingstar">
+                                            <img src="images/star rating button white-01.png">
+                                            <img src="images/star rating button white-01.png">
+                                            <img src="images/star rating button white-01.png">
+                                            <img src="images/Star rating button empty-01.png">
+                                            <img src="images/Star rating button empty-01.png">
+                                        </span>
+                                        <span class="reviewsc">
+                                            2 Reviews
+                                        </span>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 nopadding sendmsg">
+                                    <a href="#">
+                                        <img width="35px" src="images/chat button 2-01-gery.png">
+                                        <span>Send a message</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 companydescription">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="adcompany">
+                                       <img width="50px" src="images/address marker.png"> Category of the service
+                                    </div>
+
+                                    <p>Lorem ipsum dolor sit amet, mea an modus dolore labitur, at idque vivendo sit, quem illud democritum ius in. Ne integre vituperata concludaturque vix. Choro gloriatur at pri, vide dissentiet at per. Mel omnium latine pertinacia id. Eos ea perpetua adversarium. Nec justo cetero iriure no.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 nopadding ">
+                            <div class="addtobtn">
+                                <div class="col-md-6 col-sm-6 nopadding favicon">
+                                    <img width="30px" src="images/plain-heart.png">
+                                    <p>Add to Favourites<p>
+                                </div>
+                                <div class="col-md-6 col-sm-6 nopadding plusicon">
+                                    <img width="30px" src="images/wic planner button-01-grey.png">
+                                    <p>Add to WiC planner<p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!--post modal-->
-                    <!--<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                      <div class="modal-dialog">
-                      <div class="modal-content">
-                          <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            Update Status
-                          </div>
-                          <div class="modal-body">
-                              <form class="form center-block">
-                                <div class="form-group">
-                                  <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
-                                </div>
-                              </form>
-                          </div>
-                          <div class="modal-footer">
-                              <div>
-                              <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-                                <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-                                      </div>	
-                          </div>
-                      </div>
-                      </div>
-                    </div>-->
+                    <div class="col-lg-3 col-md-3 col-sm-3" >
+                    </div>
+                    <div class="searchpanel nopadding rightbarres-sup" style="width: 320px;">
+                        <div class="margin10ud">
+                            <span class="heading-rightsiderbar ">Upload new service</span>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="text" class="profileinput margin10ud" placeholder="Name of the service">
+                            <textarea class="profileinput inputdescription margin10ud" placeholder="Descrption of the service"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-12 margin10ud nopadding">
+                                <strong class="greyheader">Category of the service<span style="color:red;">*</span></strong>
+                            </div>
+                            <div class="col-md-6 nopadding">
+                                <button class="supclassifiedas-btn">Venues</button>
+                            </div>
+                            <div class="col-md-6 nopadding">
+                                <button class="supclassifiedas-btn">Food's</button>
+                            </div>
+                            <div class="col-md-6 nopadding">
+                                <button class="supclassifiedas-btn">Decor</button>
+                            </div>
+                            <div class="col-md-6 nopadding">
+                                <button class="supclassifiedas-btn">Entertainment</button>
+                            </div>
+                            <div class="col-md-6 nopadding">
+                                <button class="supclassifiedas-btn">Audio Visual</button>
+                            </div>
+                            <div class="col-md-6 nopadding">
+                                <button class="supclassifiedas-btn">Teambuilding</button>
+                            </div>
+                            <div class="col-md-6 nopadding">
+                                <button class="supclassifiedas-btn">Original</button>
+                            </div>
+                            <div class="col-md-6 nopadding">
+                                <button class="supclassifiedas-btn">Photographer & Videographer</button>
+                            </div>
+                        </div>
 
-                    <div class="col-sm-1"></div>
-
-                    <div class="col-sm-5">
-
-
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h1 class="text-center">
-                                        Nome tabela
-                                    </h1>
-
-                                </div>
-                                <div id="no-more-tables">
-                                    <table class="col-md-12 table-bordered table-striped table-condensed cf ">
-                                        <thead class="cf">
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>Dia Semana</th>
-                                                <th class="numeric">d-semana</th>	
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td data-title="Code">1</td>
-                                                <td data-title="Company">SEGUNDA</td>
-                                                <td data-title="Day" class="numeric">seg-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">2</td>
-                                                <td data-title="Company">TERCA</td>
-                                                <td data-title="Day" class="numeric">ter-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">3</td>
-                                                <td data-title="Company">QUARTA</td>
-                                                <td data-title="Day" class="numeric">qua-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td data-title="Code">4</td>
-                                                <td data-title="Company">QUINTA</td>
-                                                <td data-title="Day" class="numeric">qui-feira</td>
-
-                                            </tr>
-                                            <tr>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                        <div class="col-md-12">
+                            <div class="col-md-12 margin10ud nopadding">
+                                <strong class="greyheader">Service classified as<span style="color:red;">*</span></strong>
+                            </div>
+                            <div class="col-md-12">
+                                <select class="profileinput">
+                                    <option value="">Choose...</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 margin10ud">
+                                <a class="col-md-6" href="#" style="padding-right: 5px;">
+                                    <img width="100%" src="images/upload-profile-picture.png">
+                                </a>
+                                <a class="col-md-6" href="#" style="padding-left: 5px;">
+                                    <img width="100%" src="images/plus-profile-picture.png">
+                                </a>
+                            </div>
+                            <div class="col-md-6" style="padding-right: 5px;">
+                                <input class="add-service-submit-btn width100" type="submit" name="submit" value="ADD ANOTHER SERVICE">
+                            </div>
+                            <div class="col-md-6" style="padding-left: 5px;">
+                                <input class="profile-submit-btn-sup-upload width100" type="submit" name="submit" value="UPLOAD">
                             </div>
 
                         </div>
 
 
                     </div>
-
-
-                    <!--post modal-->
-                    <!--<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                      <div class="modal-dialog">
-                      <div class="modal-content">
-                          <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            Update Status
-                          </div>
-                          <div class="modal-body">
-                              <form class="form center-block">
-                                <div class="form-group">
-                                  <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
-                                </div>
-                              </form>
-                          </div>
-                          <div class="modal-footer">
-                              <div>
-                              <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-                                <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-                                      </div>	
-                          </div>
-                      </div>
-                      </div>
-                    </div>-->
-
                 </div>
             </div>
-            <!--                        <div class="col-sm-1 middle-border"></div>-->
-            <!--                    <div class="col-sm-1"></div>
-            
-                                <div class="col-sm-5">-->
-
-
-
-
         </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+    <div class="container-fluid">
 
     </div>
-    <!--        </div>-->
+    
 
 </div>
 </div>
