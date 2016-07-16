@@ -3,6 +3,7 @@
     <div class="content-wrapper" style="padding-left: 0%">
 
         <div class="top-content">
+             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
 <!--            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">-->
             <!--<link href="../../assets/assests_sidebar/css/style_inside.css" rel="stylesheet" type="text/css"/>-->
             <link rel="stylesheet"   link href="../../assets/assests_sidebar/css/service.css" rel="stylesheet" type="text/css"/>
@@ -14,7 +15,7 @@
 
    <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-8 nopadding maindashboard" style="border-right:1px solid #ddd;">
-                        <div class="col-md-12 nopadding bannerimage">
+                        <div class="col-md-8 nopadding bannerimage">
                             <img width="550px" height="100%"  src="images/sliderimg1.jpg">
                             <div class="left-arrow">
                                 <a href="#"><img width="100px" src="images/left-arrow.png"></a>
