@@ -23,12 +23,12 @@ include_once '../build/db/locations.php';
                             <h8 class="with-border m-t-lg">Address</h8>
                             <div class="row">
                                 <div >
-                                    <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
+                                    <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onclick="myFunction()">
                                         <option value="dafa">Please choose</option>
                                     </select>
                                 </div>
                                 <div >
-                                    <select id = "stateSelect"class="bootstrap-select bootstrap-select-arrow states" placeholder="State" disabled>
+                                    <select id = "stateSelect"class="bootstrap-select bootstrap-select-arrow states" placeholder="State" onclick="myFunctionC()"disabled>
                                         <option value="asd">Please choose</option>
                                     </select>
                                 </div>
@@ -57,21 +57,21 @@ include_once '../build/db/locations.php';
         </div>
     </div><!--.page-center-->
 
-<script src="js/lib/jquery/jquery.min.js"></script>
-<script src="js/lib/tether/tether.min.js"></script>
-<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="js/lib/tether/tether.min.js"></script>
+    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
 
-        <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
-	<script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
-	<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
-	<script src="js/lib/select2/select2.full.min.js"></script>
+    <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+    <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+    <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="js/lib/select2/select2.full.min.js"></script>
 
 
     <script>
-        $(function () {
-            $('#tags-editor-textarea').tagEditor();
-        });
+                                        $(function () {
+                                            $('#tags-editor-textarea').tagEditor();
+                                        });
     </script>
 
     <script>
