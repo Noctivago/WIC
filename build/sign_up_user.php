@@ -56,7 +56,7 @@ include("../build/db/dbsignup.php");
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box">
+                <form class="sign-box" role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <div class="sign-avatar no-photo">&plus;</div>
                     <header class="sign-title">Sign Up</header>
                     <div class="form-group">
