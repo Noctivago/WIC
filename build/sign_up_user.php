@@ -69,7 +69,7 @@ include("../build/db/dbsignup.php");
                         <input type="password" id="pw2" name = "pw2" class="form-control" placeholder="Repeat password" required/>
                     </div>
                     <div class="form-group">
-                        <div class="g-recaptcha" class="form-control" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6" required></div>
+                        <p class="g-recaptcha" class="form-control" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></p>
                     </div>
                     <div class="form-group">
                         <p class="form-control">  <?= $msg; ?> </p>
