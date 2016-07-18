@@ -418,11 +418,8 @@ include ("includes/head_sideMenu.php");
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
 
-	<script src="js/lib/jquery/jquery.min.js"></script>
-	<script src="js/lib/tether/tether.min.js"></script>
-	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-	<script src="js/plugins.js"></script>
-
-<script src="js/app.js"></script>
+<?php
+include("includes/basic_scripts_css.php");
+?>
 </body>
 </html>
