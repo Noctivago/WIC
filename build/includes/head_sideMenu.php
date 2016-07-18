@@ -360,48 +360,55 @@
                 
                      <header class="side-menu-title">Start Planning</header>
                    <li class="gold with-sub">
-	            <span>
+                       <a class="lbl" href="contacts.php"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
+<!--	            <span>
 	                <i class="font-icon font-icon-earth-bordered"></i>
 	                <span class="lbl">Space</span>
-	            </span>
+	            </span>-->
                    </li>
                    <li class="gold with-sub">
-	            <span>
+                       <a class="lbl" href="contacts.php"><i class="fa fa-spoon"></i> Food</a>
+<!--	            <span>
 	                <i class="fa fa-spoon " ></i>
                         
 	                <span class="lbl">Food</span>
-	            </span>
+	            </span>-->
                    </li>
                    <li class="gold with-sub">
-	            <span>
+                       <a class="lbl" href="contacts.php"><i class="fa fa-film"></i> Entertainement</a>
+<!--	            <span>
 	                <i class="fa fa-film"></i>
 	                <span class="lbl">Entertainement</span>
-	            </span>
+	            </span>-->
                    </li>
                    
                    <li class="gold with-sub">
-	            <span>
+                       <a class="lbl" href="contacts.php"><i class="fa fa-tree"></i>Decoration</a>
+<!--	            <span>
 	                <i class="fa fa-tree"></i>
 	                <span class="lbl">Decoration</span>
-	            </span>
+	            </span>-->
                    </li>
                    <li class="gold with-sub">
-	            <span>
+                       <a class="lbl" href="contacts.php"><i class="font-icon font-icon-users-group"></i>Staff</a>
+<!--	            <span>
 	                <i class="font-icon font-icon-users-group"></i>
 	                <span class="lbl">Staff</span>
-	            </span>
+	            </span>-->
                    </li>
                    <li class="gold with-sub">
-	            <span>
+                       <a class="lbl" href="contacts.php"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
+<!--	            <span>
 	                <i class="font-icon glyphicon glyphicon-film"></i>
 	                <span class="lbl">Audio Visual</span>
-	            </span>
+	            </span>-->
                    </li>
                    <li class="gold with-sub">
-	            <span>
+                       <a class="lbl" href="contacts.php"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
+<!--	            <span>
 	                <i class="font-icon font-icon-cam-photo"></i>
 	                <span class="lbl">Reportage Photo & Video</span>
-	            </span>
+	            </span>-->
                    </li>
 <!-- TER EM ATNEÇÃO AO DEFAULT NEW , POR CAUSA DAS FUNCIONALIDADES IMPORTANTES-->
 <!--	            <ul>
@@ -424,10 +431,12 @@
                 <header class="side-menu-title">My Team</header>
                 
                   <li class="blue-dirty with-sub " >
-	            <span>
+                      
+                      <a class="lbl" href="contacts.php"><i class="font-icon font-icon-edit"></i> Members of my Team</a>
+<!--	            <span>
 	                <i class="font-icon font-icon-users-group"></i>
                         <span class="lbl"  >Members of my Team<a hidden="true" href="contacts.php"></a></span>
-	            </span>
+	            </span>-->
 
                   </li>
                   
