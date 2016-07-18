@@ -11,7 +11,7 @@
                     <div class="sign-avatar no-photo">&plus;</div>
                     <header class="sign-title">Sign Up</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="E-Mail" required/>
+                        <input type="email" class="form-control" placeholder="E-Mail" required/>
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Password" required/>
