@@ -16,9 +16,6 @@ include_once '../build/db/locations.php';
                         <input type="text" class="form-control" placeholder="Organization Name"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Description"/>
-                    </div>
-                    <div class="form-group">
                         <input type="text" class="form-control" placeholder="E-Mail"/>
                     </div>
                     <section class="card box-typical-full-height">
