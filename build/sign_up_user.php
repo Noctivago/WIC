@@ -5,6 +5,8 @@ include("../build/db/functions.php");
 include("../build/db/dbsignup.php");
 ?>
 <body>
+    <!-- RECHAPTA -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <?php
     if (isset($_POST['signup']) && !empty($_POST['email']) && !empty($_POST['pw1']) && !empty($_POST['pw2'])) {
         $secret = "6LdypyQTAAAAAPaex4p6DqVY6W62Ihld7DDfCMDm";
