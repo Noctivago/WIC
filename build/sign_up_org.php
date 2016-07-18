@@ -26,9 +26,10 @@ include_once '../build/db/locations.php';
                             <h8 class="with-border m-t-lg">Address</h8>
                             <div class="row">
                                 <div >
+                                    //<?= DB_getCountryAsSelect($pdo); ?>
                                     <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
                                         <option value="0">Please select</option>
-                                        //<?= DB_getCountryAsSelect($pdo); ?>
+                                        
                                     </select>
                                 </div>
                                 <div >
