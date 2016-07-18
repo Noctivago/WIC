@@ -25,13 +25,13 @@ ini_set("display_errors", 1);
                             <h8 class="with-border m-t-lg">Address</h8>
                             <div class="row">
                                 <div >
-                                    <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onclick="myFunction()">
+                                    <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()">
                                         <option value="0">Please choose</option>
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
                                 <div >
-                                    <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow states" placeholder="State" onclick="myFunctionC()" disabled>
+                                    <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow states" placeholder="State" onchange="myFunctionC()" disabled>
                                         <option value="0">Please choose</option>
                                     </select>
                                 </div>
