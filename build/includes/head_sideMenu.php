@@ -408,7 +408,7 @@
                 
                 <section>
                 <header class="side-menu-title">My Team</header>
-                <li class="blue with-user">
+                <li class="blue with-users-group">
 	            <span>
 	                <i class="font-icon font-icon-users-group"></i>
 	                <span class="lbl">Members of my Team</span>
