@@ -40,7 +40,7 @@ include_once '../build/db/mailSend.php';
                                 . "Best regards,<br>"
                                 . "WIC<br><br>"
                                 . "Note: Please do not reply to this email! Thanks!";
-                        $msg = sendEmail($to, $subject, $body) . ' Please check your inbox for foward information!';
+                        $msg = sendEmail($to, $subject, $body) . ' Please check your inbox to foward information!';
                         #CREATE PROFILE
                         DB_CheckOrganizationInvitationAndMoveToInvites($pdo, $email);
                         //DB_createProfileOnRegistration($pdo, $email);
