@@ -359,7 +359,7 @@
                 
                 <section>
                      <header class="side-menu-title">Start Planning</header>
-	        <li class="gray with-sub">
+                   <li class="gold with-sub">
 	            <span>
 	                <i class="font-icon font-icon-earth-bordered"></i>
 	                <span class="lbl">Space</span>
