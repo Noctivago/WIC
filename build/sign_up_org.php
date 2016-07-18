@@ -31,7 +31,7 @@ ini_set("display_errors", 1);
                                     </select>
                                 </div>
                                 <div >
-                                    <select id = "stateSelect"class="bootstrap-select bootstrap-select-arrow states" placeholder="State" onclick="myFunctionC()"disabled>
+                                    <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow states" placeholder="State" onclick="myFunctionC()" disabled>
                                         <option value="0">Please choose</option>
                                     </select>
                                 </div>
