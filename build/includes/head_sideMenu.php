@@ -408,6 +408,13 @@
                 
                 <section>
                 <header class="side-menu-title">My Team</header>
+                <li class="gold with-user">
+	            <span>
+	                <i class="font-icon font-icon-edit"></i>
+	                <span class="lbl">Organization</span>
+	            </span>
+
+	        </li>
 
                 <div class="container-fluid">
                 <form class="sign-box">
