@@ -23,6 +23,8 @@
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
+        
+        
     
     
 </head>
@@ -416,16 +418,33 @@
                     <div class="form-group">
                         <input type="email" class="form-control" placeholder="E-Mail"/>
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password"/>
-                    </div>
+                                        
+                    
+                            
+                            
+                                <div class="form-group" >
+                                    <select class="bootstrap-select bootstrap-select-arrow" >
+					<option>MY WIcPlanner 1</option>
+					<option>MY WIcPlanner 2</option>
+					<option>MY WIcPlanner 3</option>
+                                        <option>MY WIcPlanner 4</option>
+                                        <option>Long long long extra long example line long long long extra long example line </option>
+                                    </select>
+				
+                                
+				</div>
+                    
+
+					<!--.row-->
+                    
+                    
                     <div class="form-group">
 
                     <button type="submit" class="btn btn-rounded">Invite</button>
                     
-                    <button type="button" class="close">
+<!--                    <button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
-                    </button>
+                    </button>-->
                 </form>
             </div>
                 </section>
@@ -664,3 +683,4 @@
 	        </ul>
 	    </section>-->
 	</nav><!--.side-menu-->
+        
