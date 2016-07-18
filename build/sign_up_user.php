@@ -17,12 +17,13 @@ include("../build/db/dbsignup.php");
             $pw1 = (filter_var($_POST ['pw1'], FILTER_SANITIZE_STRING));
             $pw2 = (filter_var($_POST ['pw2'], FILTER_SANITIZE_STRING));
             if ($pw1 != $pw2) {
-                $msg = "PASSWORD NOT MATCH!";
+                $msg = "PASSWORD & RETYPE PASSWORD NOT MATCH!";
             } else {
                 $hashPassword = hash('whirlpool', $pw1);
+                //FUNCA ATE AKI
                 if (DB_checkIfUserExists($pdo, $email)) {
                     $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
-                    $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
+                    //$forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
                     try {
                         //GERA CODIGO DE ATIVACAO DE 128car
