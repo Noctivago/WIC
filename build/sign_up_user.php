@@ -71,9 +71,7 @@ include("../build/db/dbsignup.php");
                     <div class="form-group">
                         <div class="g-recaptcha" class="form-control" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
                     </div>
-                    <div class="form-group">
                         <span class="form-control">  <?= $msg; ?> </span>
-                    </div>
                     <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Sign up</button>
                     <p class="sign-note">Already have an account? <a href="sign_in.php">Sign in</a></p>
                     <!--<button type="button" class="close">
