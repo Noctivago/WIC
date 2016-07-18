@@ -17,36 +17,39 @@ include("../build/db/dbsignup.php");
             #echo 'USERNAME ' . $rows['Username'];
             $pw1 = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
             $pw2 = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-            $hashPassword = hash('whirlpool', $pw1);
-
-            if (DB_checkIfUserExists($pdo, $email)) {
-                $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
-                $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
+            if ($pw1 != $pw2) {
+                $msg = "PASSWORD NOT MATCH!";
             } else {
-                try {
-                    //GERA CODIGO DE ATIVACAO DE 128car
-                    $code = generateActivationCode();
-                    sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
-                    $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
-                    $to = $email;
-                    $subject = "WIC #ACCOUNT CONFIRMATION";
-                    $body = "Hi! <br>"
-                            . "To start using our services you need to validate your email.<br>"
-                            . "Please use the following code to do that: " . $code . "<br>"
-                            . "You can activate your account in the following address: http://www.wic.club/<br>"
-                            . "Best regards,<br>"
-                            . "WIC<br><br>"
-                            . "Note: Please do not reply to this email! Thanks!";
-                    $msg = sendEmail($to, $subject, $body) . ' Please check your inbox for foward information!';
-                    #CREATE PROFILE
-                    DB_CheckOrganizationInvitationAndMoveToInvites($pdo, $email);
-                    DB_createProfileOnRegistration($pdo, $email);
-                } catch (Exception $ex) {
-                    echo "ERROR!";
+                $hashPassword = hash('whirlpool', $pw1);
+                if (DB_checkIfUserExists($pdo, $email)) {
+                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
+                    $forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
+                } else {
+                    try {
+                        //GERA CODIGO DE ATIVACAO DE 128car
+                        $code = generateActivationCode();
+                        sql($pdo, "INSERT INTO [dbo].[User] ([Username], [Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?, ?)", array($username, $hashPassword, $email, '0', $code, '0'));
+                        $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
+                        $to = $email;
+                        $subject = "WIC #ACCOUNT CONFIRMATION";
+                        $body = "Hi! <br>"
+                                . "To start using our services you need to validate your email.<br>"
+                                . "Please use the following code to do that: " . $code . "<br>"
+                                . "You can activate your account in the following address: http://www.wic.club/<br>"
+                                . "Best regards,<br>"
+                                . "WIC<br><br>"
+                                . "Note: Please do not reply to this email! Thanks!";
+                        $msg = sendEmail($to, $subject, $body) . ' Please check your inbox for foward information!';
+                        #CREATE PROFILE
+                        DB_CheckOrganizationInvitationAndMoveToInvites($pdo, $email);
+                        DB_createProfileOnRegistration($pdo, $email);
+                    } catch (Exception $ex) {
+                        echo "ERROR!";
+                    }
                 }
             }
         } else {
-            echo "You are a robot";
+            $msg = "You are a robot";
         }
     }
     ?>
@@ -68,7 +71,9 @@ include("../build/db/dbsignup.php");
                     <div class="form-group">
                         <div class="g-recaptcha" class="form-control" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6" required></div>
                     </div>
-
+                    <div class="form-group">
+                        <?= $msg; ?>
+                    </div>
                     <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Sign up</button>
                     <p class="sign-note">Already have an account? <a href="sign_in.php">Sign in</a></p>
                     <!--<button type="button" class="close">
