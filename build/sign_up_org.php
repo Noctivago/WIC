@@ -32,8 +32,6 @@
                                         <option>Country</option>
                                         <option>Long long long extra long example line long long long extra long example line </option>
                                     </select>
-				
-                                
 				</div>
 				<div >
                                     <select class="bootstrap-select bootstrap-select-arrow" placeholder="State">
@@ -43,8 +41,6 @@
                                         <option>STATE</option>
                                         <option>Long long long extra long example line long long long extra long example line </option>
                                     </select>
-				
-                                
 				</div>
 				<div >
                                     <select class="bootstrap-select bootstrap-select-arrow" placeholder="City">
@@ -54,8 +50,6 @@
                                         <option>CITY</option>
                                         <option>Long long long extra long example line long long long extra long example line </option>
                                     </select>
-				
-                               
 				</div>
 					</div><!--.row-->
                     </div>
