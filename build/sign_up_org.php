@@ -113,8 +113,6 @@ include_once '../build/db/locations.php';
                 }
             });
         }
-
-
     </script>
 
 
