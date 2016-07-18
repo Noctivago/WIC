@@ -436,7 +436,7 @@
                   <li class="blue-dirty with-sub">
 	            <span>
 	                <i class="font-icon font-icon-edit"></i>
-                        <a class="lbl" href="contact.php"> My Organization</a>
+                        <a class="lbl" href="contacts.php"> My Organization</a>
 	                <!--<span class="lbl"> My Organization</span>-->
 	            </span>
 
