@@ -408,10 +408,18 @@
                 
                 <section>
                 <header class="side-menu-title">My Team</header>
-                <li class="blue ">
+                <li class="blue with-sub ">
 	            <span>
 	                <i class="font-icon font-icon-users-group"></i>
 	                <span class="lbl">Members of my Team</span>
+	            </span>
+
+	        </li>
+                
+                <li class="gold with-sub">
+	            <span>
+	                <i class="font-icon font-icon-edit"></i>
+	                <span class="lbl"> My Organization</span>
 	            </span>
 
 	        </li>
@@ -459,13 +467,7 @@
                 
 	        
 
-	        <li class="gold with-sub">
-	            <span>
-	                <i class="font-icon font-icon-edit"></i>
-	                <span class="lbl">Organization</span>
-	            </span>
 
-	        </li>
 <!--	        <li class="blue-dirty">
 	            <a href="tables.html">
 	                <span class="glyphicon glyphicon-th"></span>
