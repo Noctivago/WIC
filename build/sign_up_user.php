@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <?php
-include("includes/head_singleforms.php");
-include("../build/db/functions.php");
-include("../build/db/dbsignup.php");
+include_once "includes/head_singleforms.php";
+include_once "../build/db/functions.php";
+include_once "../build/db/dbsignup.php";
+include_once '../build/db/mailSend.php';
 ?>
 <body>
 
@@ -42,7 +43,7 @@ include("../build/db/dbsignup.php");
                         $msg = sendEmail($to, $subject, $body) . ' Please check your inbox for foward information!';
                         #CREATE PROFILE
                         DB_CheckOrganizationInvitationAndMoveToInvites($pdo, $email);
-                        DB_createProfileOnRegistration($pdo, $email);
+                        //DB_createProfileOnRegistration($pdo, $email);
                     } catch (Exception $ex) {
                         echo "ERROR!";
                     }
