@@ -430,11 +430,14 @@
 	            </span>
 
                   </li>
-                
+                  
+                 
+               
                   <li class="blue-dirty with-sub">
 	            <span>
 	                <i class="font-icon font-icon-edit"></i>
-	                <span class="lbl"> My Organization</span>
+                        <a class="lbl" href="contact.php"> My Organization</a>
+	                <!--<span class="lbl"> My Organization</span>-->
 	            </span>
 
                   </li>
