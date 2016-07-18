@@ -1,6 +1,6 @@
 <?php
 
-include_once './dbconn.php';
+include_once "./dbconn.php";
 
 //DEBOLVE OS COUNTRY PARA SER USADO NA SELECT
 function DB_getCountryAsSelect($pdo) {
