@@ -7,44 +7,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 ?>
 <body>
-    <script>
-        function myFunction() {
-            var x = document.getElementById("countrySelect").value;
-            loadState(x);
-        }
-        function myFunctionC() {
-            var x = document.getElementById("stateSelect").value;
-            loadCity(x);
-        }
-        function loadState(Country) {
-            //var Country_Id = document.getElementById(x).value;
-            var Country_Id = Country;
-            var stateOp = document.getElementById('stateSelect');
-            stateOp.disabled = false;
-            $.ajax({
-                url: '../ajax/get_state.php',
-                method: 'post',
-                data: {con: Country_Id},
-                success: function (data) {
-                    $('.states').html(data);
-                }
-            });
-        }
-        function loadCity(State) {
-            //var Country_Id = document.getElementById(x).value;
-            var State_Id = State;
-            var cityOp = document.getElementById('citySelect');
-            cityOp.disabled = false;
-            $.ajax({
-                url: '../ajax/get_city.php',
-                method: 'post',
-                data: {con: State_Id},
-                success: function (data) {
-                    $('.cities').html(data);
-                }
-            });
-        }
-    </script>
+
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
@@ -114,9 +77,46 @@ ini_set("display_errors", 1);
                                         });
     </script>
 
-    <!--<script src="js/app.js"></script>-->
+    <script src="js/app.js"></script>
 
-
+    <script>
+                                        function myFunction() {
+                                            var x = document.getElementById("countrySelect").value;
+                                            loadState(x);
+                                        }
+                                        function myFunctionC() {
+                                            var x = document.getElementById("stateSelect").value;
+                                            loadCity(x);
+                                        }
+                                        function loadState(Country) {
+                                            //var Country_Id = document.getElementById(x).value;
+                                            var Country_Id = Country;
+                                            var stateOp = document.getElementById('stateSelect');
+                                            stateOp.disabled = false;
+                                            $.ajax({
+                                                url: '../ajax/get_state.php',
+                                                method: 'post',
+                                                data: {con: Country_Id},
+                                                success: function (data) {
+                                                    $('.states').html(data);
+                                                }
+                                            });
+                                        }
+                                        function loadCity(State) {
+                                            //var Country_Id = document.getElementById(x).value;
+                                            var State_Id = State;
+                                            var cityOp = document.getElementById('citySelect');
+                                            cityOp.disabled = false;
+                                            $.ajax({
+                                                url: '../ajax/get_city.php',
+                                                method: 'post',
+                                                data: {con: State_Id},
+                                                success: function (data) {
+                                                    $('.cities').html(data);
+                                                }
+                                            });
+                                        }
+    </script>
 
 
 </body>
