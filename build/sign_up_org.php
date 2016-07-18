@@ -24,18 +24,18 @@ ini_set("display_errors", 1);
                         <div class="card-block">
                             <h8 class="with-border m-t-lg">Address</h8>
                             <div class="row">
-                                <div >
+                                <div>
                                     <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()">
                                         <option value="0">Please choose</option>
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
-                                <div >
+                                <div>
                                     <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow states" placeholder="State" onchange="myFunctionC()" disabled>
                                         <option value="0">Please choose</option>
                                     </select>
                                 </div>
-                                <div >
+                                <div>
                                     <select id = "citySelect" class="bootstrap-select bootstrap-select-arrow cities" placeholder="City" disabled>
                                         <option value="0">Please choose</option>
                                     </select>
