@@ -434,11 +434,13 @@
                  
                
                   <li class="blue-dirty with-sub">
-	            <span>
+                      <i class="font-icon font-icon-edit"></i>
+                        <a class="lbl" href="contacts.php"> My Organization</a>
+<!--	            <span>
 	                <i class="font-icon font-icon-edit"></i>
                         <a class="lbl" href="contacts.php"> My Organization</a>
-	                <!--<span class="lbl"> My Organization</span>-->
-	            </span>
+	                <span class="lbl"> My Organization</span>
+	            </span>-->
 
                   </li>
                 
