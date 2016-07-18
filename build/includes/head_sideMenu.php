@@ -413,11 +413,11 @@
                 <div class="container-fluid">
                     <li class="blue with-sub ">
 	            <span>
-	                <i class="font-icon font-icon-users-group"></i>
+	                <i class="glyphicon glyphicon-th"></i>
 	                <span class="lbl">Members of my Team</span>
 	            </span>
 
-	        </li>
+                    </li>
                 
                 <li class="gold with-sub">
 	            <span>
