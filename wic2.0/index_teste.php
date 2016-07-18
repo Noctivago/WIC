@@ -693,7 +693,7 @@
 							<div class="photo">
 								<img src="img/gall-img-1.jpg" alt="">
 							</div>
-							<header class="title"><a href="#">The Jacobs Ladder of coding</a></header>
+							<header class="title"><a href="gallery.php">TESTE GALERIA!!!!!</a></header>
 							<p>That’s a great idea! I’m sure we could start this project as soon as possible. Let’s meet tomorow!</p>
 						</div>
 						<div class="card-typical-section">
