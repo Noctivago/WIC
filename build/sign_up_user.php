@@ -6,12 +6,12 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>StartUI - Premium Bootstrap 4 Admin Dashboard Template</title>
 
-	<link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
-	<link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
-	<link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
-	<link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
-	<link href="img/favicon.png" rel="icon" type="image/png">
-	<link href="img/favicon.ico" rel="shortcut icon">
+        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png">
+        <link href="img/wic_logo.png" rel="icon" type="image/png">
+        <link href="img/wic_logo.png" rel="shortcut icon">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -27,27 +27,19 @@
         <div class="page-center-in">
             <div class="container-fluid">
                 <form class="sign-box">
-                    <div class="sign-avatar">
-                        <img src="img/avatar-sign.png" alt="">
-                    </div>
-                    <header class="sign-title">Sign In</header>
+                    <div class="sign-avatar no-photo">&plus;</div>
+                    <header class="sign-title">Sign Up</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="E-Mail or Phone"/>
+                        <input type="text" class="form-control" placeholder="E-Mail"/>
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Password"/>
                     </div>
                     <div class="form-group">
-                        <div class="checkbox float-left">
-                            <input type="checkbox" id="signed-in"/>
-                            <label for="signed-in">Keep me signed in</label>
-                        </div>
-                        <div class="float-right reset">
-                            <a href="reset-password.html">Reset Password</a>
-                        </div>
+                        <input type="password" class="form-control" placeholder="Repeat password"/>
                     </div>
-                    <button type="submit" class="btn btn-rounded">Sign in</button>
-                    <p class="sign-note">New to our website? <a href="sign-up.html">Sign up</a></p>
+                    <button type="submit" class="btn btn-rounded btn-success sign-up">Sign up</button>
+                    <p class="sign-note">Already have an account? <a href="sign_in.php">Sign in</a></p>
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->
