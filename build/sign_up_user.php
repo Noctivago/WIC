@@ -14,8 +14,8 @@ include("../build/db/dbsignup.php");
         if ($response["success"] === true) {
             $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
             #echo 'USERNAME ' . $rows['Username'];
-            $pw1 = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
-            $pw2 = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
+            $pw1 = (filter_var($_POST ['pw1'], FILTER_SANITIZE_STRING));
+            $pw2 = (filter_var($_POST ['pw2'], FILTER_SANITIZE_STRING));
             if ($pw1 != $pw2) {
                 $msg = "PASSWORD NOT MATCH!";
             } else {
