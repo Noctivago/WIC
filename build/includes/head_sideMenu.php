@@ -426,7 +426,7 @@
                   <li class="blue-dirty with-sub " >
 	            <span>
 	                <i class="font-icon font-icon-users-group"></i>
-	                <span class="lbl" href="contacts.php" >Members of my Team</span>
+                        <span class="lbl"  >Members of my Team<a href="contacts.php"></a></span>
 	            </span>
 
                   </li>
