@@ -410,7 +410,7 @@
                 <header class="side-menu-title">My Team</header>
                 <li class="blue with-user">
 	            <span>
-	                <i class="font-icon font-icon-edit"></i>
+	                <i class="font-icon font-icon-users-group"></i>
 	                <span class="lbl">Members of my Team</span>
 	            </span>
 
