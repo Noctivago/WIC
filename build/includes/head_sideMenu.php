@@ -408,7 +408,10 @@
                 
                 <section>
                 <header class="side-menu-title">My Team</header>
-                <li class="blue with-sub ">
+                
+
+                <div class="container-fluid">
+                    <li class="blue with-sub ">
 	            <span>
 	                <i class="font-icon font-icon-users-group"></i>
 	                <span class="lbl">Members of my Team</span>
@@ -423,8 +426,6 @@
 	            </span>
 
 	        </li>
-
-                <div class="container-fluid">
                 <form class="sign-box">
                     <div class="sign-avatar">
                         <img src="img/avatar-sign.png" alt="">
@@ -460,9 +461,12 @@
 <!--                    <button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->
+                    </div>
                 </form>
             </div>
+                                        
                 </section>
+                
                 
                 
 	        
