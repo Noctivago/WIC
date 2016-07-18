@@ -63,6 +63,7 @@ ini_set("display_errors", 1);
                             <div class="row">
                                 <div >
                                     <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onclick="myFunction()">
+                                        <option value="0">Please choose</option>
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
