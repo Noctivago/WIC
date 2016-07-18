@@ -11,13 +11,13 @@
                     <div class="sign-avatar no-photo">&plus;</div>
                     <header class="sign-title">Sign Up</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="E-Mail"/>
+                        <input type="text" class="form-control" placeholder="E-Mail" required/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password"/>
+                        <input type="password" class="form-control" placeholder="Password" required/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Repeat password"/>
+                        <input type="password" class="form-control" placeholder="Repeat password" required/>
                     </div>
                     <button type="submit" class="btn btn-rounded btn-success sign-up">Sign up</button>
                     <p class="sign-note">Already have an account? <a href="sign_in.php">Sign in</a></p>
