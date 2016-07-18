@@ -1,6 +1,6 @@
 <?php
 
-require_once '../db/locations.php.php';
+require_once '../db/dbconn.php';
 require_once '../db/functions.php';
 
 
