@@ -410,7 +410,7 @@
                 <header class="side-menu-title">My Team</header>
                 
 
-                <div class="container-fluid">
+                <!--<div class="container-fluid">-->
                     <li class="blue with-sub ">
 	            <span>
 	                <i class="glyphicon glyphicon-th"></i>
