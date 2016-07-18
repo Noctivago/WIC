@@ -357,7 +357,7 @@
 	<nav class="side-menu">
 	    <ul class="side-menu-list">
                 
-                <section>
+                
                      <header class="side-menu-title">Start Planning</header>
                    <li class="gold with-sub">
 	            <span>
@@ -418,7 +418,7 @@
 	            </ul>-->
 
 	        
-                </section>
+                
                 
                 <section>
                 <header class="side-menu-title">My Team</header>
