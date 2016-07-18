@@ -420,8 +420,24 @@
 	        
                 
                 
-                <section>
+                
                 <header class="side-menu-title">My Team</header>
+                
+                  <li class="blue with-sub ">
+	            <span>
+	                <i class="glyphicon glyphicon-th"></i>
+	                <span class="lbl">Members of my Team</span>
+	            </span>
+
+                  </li>
+                
+                  <li class="gold with-sub">
+	            <span>
+	                <i class="font-icon font-icon-edit"></i>
+	                <span class="lbl"> My Organization</span>
+	            </span>
+
+                  </li>
                 
 
                 <div class="container-fluid">
@@ -465,23 +481,9 @@
                 </form>
             </div>
                 
-                                    <li class="blue with-sub ">
-	            <span>
-	                <i class="glyphicon glyphicon-th"></i>
-	                <span class="lbl">Members of my Team</span>
-	            </span>
 
-                    </li>
-                
-                <li class="gold with-sub">
-	            <span>
-	                <i class="font-icon font-icon-edit"></i>
-	                <span class="lbl"> My Organization</span>
-	            </span>
-
-	        </li>
                                         
-                </section>
+                
                 
                 
                 
