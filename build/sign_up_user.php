@@ -17,7 +17,7 @@ include("../build/db/dbsignup.php");
             $pw1 = (filter_var($_POST ['pw1'], FILTER_SANITIZE_STRING));
             $pw2 = (filter_var($_POST ['pw2'], FILTER_SANITIZE_STRING));
             if ($pw1 != $pw2) {
-                $msg = "PASSWORD & RETYPE PASSWORD NOT MATCH!";
+                $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
             } else {
                 $hashPassword = hash('whirlpool', $pw1);
                 //FUNCA ATE AKI
@@ -72,7 +72,7 @@ include("../build/db/dbsignup.php");
                         <div class="g-recaptcha" class="form-control" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6" required></div>
                     </div>
                     <div class="form-group">
-                        <?= $msg; ?>
+                        <p class="form-control">  <?= $msg; ?> </p>
                     </div>
                     <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Sign up</button>
                     <p class="sign-note">Already have an account? <a href="sign_in.php">Sign in</a></p>
