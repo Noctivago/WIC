@@ -391,10 +391,12 @@
 	                <span class="lbl">Staff</span>
 	            </span>
                    </li>
+                   <li class="gold with-sub">
 	            <span>
 	                <i class="font-icon glyphicon glyphicon-film"></i>
 	                <span class="lbl">Audio Visual</span>
 	            </span>
+                   </li>
                    <li class="gold with-sub">
 	            <span>
 	                <i class="font-icon font-icon-cam-photo"></i>
