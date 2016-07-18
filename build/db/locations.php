@@ -5,7 +5,7 @@ include_once "./dbconn.php";
 //DEBOLVE OS COUNTRY PARA SER USADO NA SELECT
 function DB_getCountryAsSelect($pdo) {
     try {
-        $stmt = $pdo->prepare("SELECT * FROM Country ORDER BY Name ASC");
+        $stmt = $pdo->prepare("SELECT * FROM [dbo].[Country]");
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
