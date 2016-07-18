@@ -99,7 +99,7 @@ ini_set("display_errors", 1);
                                                 method: 'post',
                                                 data: {con: Country_Id},
                                                 success: function (data) {
-                                                    $('.states').html(data);
+                                                    $('.states').innerHTML(data);
                                                 }
                                             });
                                         }
@@ -113,7 +113,7 @@ ini_set("display_errors", 1);
                                                 method: 'post',
                                                 data: {con: State_Id},
                                                 success: function (data) {
-                                                    $('.cities').html(data);
+                                                    $('.cities').innerHTML(data);
                                                 }
                                             });
                                         }
