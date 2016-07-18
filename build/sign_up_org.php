@@ -82,7 +82,7 @@ ini_set("display_errors", 1);
     <script>
                                         function myFunction() {
                                             var x = document.getElementById("countrySelect").value;
-                                            alert(x);
+                                            //alert(x);
                                             loadState(x);
                                         }
                                         function myFunctionC() {
