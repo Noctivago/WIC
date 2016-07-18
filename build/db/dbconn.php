@@ -6,7 +6,7 @@ $dbserver = "wicsqlserver.database.windows.net";
 $dbport = "1433";
 $dbpass = '#$youcandoit2017$#';
 $dbuser = "wic";
-$db = "wic";
+$db = "WIC";
 
 try {
     $pdo = new PDO("sqlsrv:server=$dbserver; Database=$db", "$dbuser", "$dbpass");
