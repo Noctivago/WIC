@@ -423,15 +423,15 @@
                 
                 <header class="side-menu-title">My Team</header>
                 
-                  <li class="blue with-sub ">
+                  <li class="orange with-sub ">
 	            <span>
-	                <i class="glyphicon glyphicon-th"></i>
+	                <i class="font-icon font-icon-users-group"></i>
 	                <span class="lbl">Members of my Team</span>
 	            </span>
 
                   </li>
                 
-                  <li class="gold with-sub">
+                  <li class="orange with-sub">
 	            <span>
 	                <i class="font-icon font-icon-edit"></i>
 	                <span class="lbl"> My Organization</span>
