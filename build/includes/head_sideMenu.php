@@ -411,7 +411,7 @@
                 <li class="blue with-user">
 	            <span>
 	                <i class="font-icon font-icon-edit"></i>
-	                <span class="lbl">Members of my team</span>
+	                <span class="lbl">Members of my Team</span>
 	            </span>
 
 	        </li>
