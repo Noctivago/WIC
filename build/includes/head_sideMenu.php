@@ -434,8 +434,8 @@
                  
                
                   <li class="blue-dirty with-sub">
-                      <i class="font-icon font-icon-edit"></i>
-                        <a class="lbl" href="contacts.php"> My Organization</a>
+                      
+                        <a class="lbl" href="contacts.php"><i class="font-icon font-icon-edit"></i> My Organization</a>
 <!--	            <span>
 	                <i class="font-icon font-icon-edit"></i>
                         <a class="lbl" href="contacts.php"> My Organization</a>
