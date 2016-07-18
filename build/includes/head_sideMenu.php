@@ -364,31 +364,43 @@
 	                <i class="font-icon font-icon-earth-bordered"></i>
 	                <span class="lbl">Space</span>
 	            </span>
+                   </li>
+                   <li class="gold with-sub">
 	            <span>
 	                <i class="fa fa-spoon " ></i>
                         
 	                <span class="lbl">Food</span>
 	            </span>
+                   </li>
+                   <li class="gold with-sub">
 	            <span>
 	                <i class="fa fa-film"></i>
 	                <span class="lbl">Entertainement</span>
 	            </span>
+                   </li>
+                   
+                   <li class="gold with-sub">
 	            <span>
 	                <i class="fa fa-tree"></i>
 	                <span class="lbl">Decoration</span>
 	            </span>
+                   </li>
+                   <li class="gold with-sub">
 	            <span>
 	                <i class="font-icon font-icon-users-group"></i>
 	                <span class="lbl">Staff</span>
 	            </span>
+                   </li>
 	            <span>
 	                <i class="font-icon glyphicon glyphicon-film"></i>
 	                <span class="lbl">Audio Visual</span>
 	            </span>
+                   <li class="gold with-sub">
 	            <span>
 	                <i class="font-icon font-icon-cam-photo"></i>
 	                <span class="lbl">Reportage Photo & Video</span>
 	            </span>
+                   </li>
 <!-- TER EM ATNEÇÃO AO DEFAULT NEW , POR CAUSA DAS FUNCIONALIDADES IMPORTANTES-->
 <!--	            <ul>
 	                <li><a href="index.html"><span class="lbl">Default</span><span class="label label-custom label-pill label-danger">new</span></a></li>
@@ -403,7 +415,7 @@
 
 	            </ul>-->
 
-	        </li>
+	        
                 </section>
                 
                 <section>
