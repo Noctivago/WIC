@@ -83,10 +83,11 @@ include_once '../build/db/mailSend.php';
         </div>
     </div><!--.page-center-->
 
-<?php
-include("includes/basic_scrpits_css.php");
-?>
-
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="js/lib/tether/tether.min.js"></script>
+    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/app.js"></script>
     <!-- RECHAPTA -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </body>
