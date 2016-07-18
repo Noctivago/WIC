@@ -13,9 +13,9 @@ include("../build/db/dbsignup.php");
         $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $_POST['g-recaptcha-response']);
         $response = json_decode($response, true);
         if ($response["success"] === true) {
-            $username = (filter_var($_POST ['username'], FILTER_SANITIZE_STRING));
             $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
             #echo 'USERNAME ' . $rows['Username'];
+            $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
             $password = (filter_var($_POST ['password'], FILTER_SANITIZE_STRING));
             $hashPassword = hash('whirlpool', $password);
 
@@ -65,7 +65,7 @@ include("../build/db/dbsignup.php");
                     <div class="form-group">
                         <input type="password" id="pw2" name = "pw2" class="form-control" placeholder="Repeat password" required/>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6" required></div>
+                    <div class="g-recaptcha" class="form-control" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6" required></div>
                     <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Sign up</button>
                     <p class="sign-note">Already have an account? <a href="sign_in.php">Sign in</a></p>
                     <!--<button type="button" class="close">
