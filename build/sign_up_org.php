@@ -27,17 +27,18 @@ include_once '../build/db/locations.php';
                             <div class="row">
                                 <div >
                                     <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
+                                        <option value="0">Please select</option>
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
                                 <div >
                                     <select id = "stateSelect"class="bootstrap-select bootstrap-select-arrow states" placeholder="State" disabled>
-
+                                        <option value="0">Please select</option>
                                     </select>
                                 </div>
                                 <div >
                                     <select id = "citySelect" class="bootstrap-select bootstrap-select-arrow cities" placeholder="City" disabled>
-
+                                        <option value="0">Please select</option>
                                     </select>
                                 </div>
                             </div><!--.row-->
