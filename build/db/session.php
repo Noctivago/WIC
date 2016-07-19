@@ -18,6 +18,7 @@ if (!isset($_SESSION['id'])) {
 
 //SENAO    
     } else {
+        session_unset();
         session_destroy();
         header('Location:../build/sign_in.php'); // Redirecting To Home Page
     }
