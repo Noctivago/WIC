@@ -233,7 +233,7 @@ function DB_checkUserByEmail($pdo, $email) {
 function DB_updateUserAccountActivationCode($pdo, $email, $code) {
     $userId = DB_checkUserByEmail($pdo, $email);
     try {
-        sql($pdo, "UPDATE [dbo].[User] SET [User_Code_Activation] = ? WHERE [Id] = ?", array($code, $userId));
+        sql($pdo, "UPDATE [dbo].[User] SET [User_Code_Activation] = ? WHERE [id] = ?", array($code, $userId));
     } catch (PDOException $e) {
         print "ERROR SETTING UP A NEW CODE!";
         die();
@@ -504,11 +504,11 @@ function sendEmail($to, $subject, $body) {
  */
 function DB_getUsersTable($pdo) {
     try {
-        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array('0'), "rows");
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [id] > ?", array('0'), "rows");
         echo "<table class='table table-striped'><tr><th>ID</th><th>EMAIL</th><th>PWD</th><th>AE</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['Email'] . "</td>";
             echo "<td>" . $row['Password'] . "</td>";
             echo "<td>" . $row['Account_Enabled'] . "</td>";
@@ -643,7 +643,7 @@ function DB_validateUserSession($pdo, $sId, $sEmail, $s_pw, $s_role) {
  */
 function DB_getUserPW($pdo, $userId, $pw) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] = ? AND [Password] = ?", array($userId, $pw), "count");
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [id] = ? AND [Password] = ?", array($userId, $pw), "count");
         if ($count < 0) {
             return true;
         } else {
@@ -662,7 +662,7 @@ function DB_getUserPW($pdo, $userId, $pw) {
  */
 function DB_changeUserPW($pdo, $pw, $userId) {
     try {
-        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Id]", array($pw, $userId));
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [id]", array($pw, $userId));
         echo "PASSWORD CHANGED!";
     } catch (Exception $exc) {
         echo "ERROR CHANGING YOUR PASSWORD!";
