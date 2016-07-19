@@ -70,6 +70,7 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         $stmt->bindParam(':countryID', $Country_Id);
         $stmt->execute();
         echo '<select id = "stateSelect" class="states bootstrap-select bootstrap-select-arrow" placeholder="City" required>';
+        echo '<option value="0">State</option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
