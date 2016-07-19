@@ -466,7 +466,8 @@
                         </div>
 
                         <div class="form-group" >
-                            <select class="bootstrap-select bootstrap-select-arrow" >
+                            <!--<select class="bootstrap-select bootstrap-select-arrow" >-->
+                            <select class="form-control">
                                 <option>MY WIcPlanner 1</option>
                                 <option>MY WIcPlanner 2</option>
                                 <option>MY WIcPlanner 3</option>
