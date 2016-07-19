@@ -136,6 +136,16 @@ function DB_addUser($pdo, $hashPassword, $email, $code) {
     }
 }
 
+//ATIVA A CONTA DE UM USER
+function DB_activateUserAccount($pdo, $email) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? ", array('1', $email));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}
+
 //DEVOLVE O ID DO USER ATRAVES DO EMAIL
 function DB_getUserId($pdo, $email) {
     try {
