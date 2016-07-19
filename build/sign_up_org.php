@@ -32,7 +32,7 @@ ini_set("display_errors", 1);
                                 </div>
                                 <div>
                                     <span>
-                                        <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()">
+                                        <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow states" placeholder="State" onchange="myFunctionC()">
                                             <option value="0">State</option>
                                         </select>
                                     </span>
