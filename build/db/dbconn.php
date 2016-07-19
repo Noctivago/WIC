@@ -152,7 +152,7 @@ function DB_addUser($pdo, $hashPassword, $email, $code) {
         DB_addUserInRole($pdo, $email);
         DB_checkIfInvitationExists($pdo, $email);
         //SE ENVIADO EXIBIR MENSAGEM
-        echo DB_sendActivationEmail($email);
+        return DB_sendActivationEmail($email);
     } catch (PDOException $e) {
         print "ERROR CREATING ACCOUNT!";
         die();
@@ -494,7 +494,7 @@ function sendEmail($to, $subject, $body) {
     if (!$mail->Send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-        echo "Message sent!";
+        return "Message sent!";
     }
 }
 
