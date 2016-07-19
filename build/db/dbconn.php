@@ -70,7 +70,9 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         $stmt->bindParam(':countryID', $Country_Id);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo '<select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()" disabled>';
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo '</select>';
         }
     } catch (PDOException $e) {
         echo 'ERROR READING STATE TABLE';

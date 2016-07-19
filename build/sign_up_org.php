@@ -29,10 +29,8 @@ ini_set("display_errors", 1);
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
-                                <div>
-                                    <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow states" placeholder="State" onchange="myFunctionC()" disabled>
-
-                                    </select>
+                                <div class ="states">
+                                   
                                 </div>
                                 <div>
                                     <select id = "citySelect" class="bootstrap-select bootstrap-select-arrow cities" placeholder="City" disabled>
