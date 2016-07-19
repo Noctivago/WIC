@@ -55,13 +55,11 @@ $msg = '';
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
-                                <div class="states">
-                                    
-                                </div>
-                                <div>
-                                    <select id = "citySelect" class="cities bootstrap-select bootstrap-select-arrow" placeholder="City" required>
+                                <div class="states bootstrap-select bootstrap-select-arrow">
 
-                                    </select>
+                                </div>
+                                <div class="cities bootstrap-select bootstrap-select-arrow">
+
                                 </div>
                             </div><!--.row-->
                         </div>
