@@ -19,7 +19,7 @@ $msg = '';
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box reset-password-box">
+                <form class="sign-box reset-password-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <!--<div class="sign-avatar">
                         <img src="img/avatar-sign.png" alt="">
                     </div>-->
