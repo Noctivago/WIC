@@ -31,12 +31,7 @@ ini_set("display_errors", 1);
                                     </select>
                                 </div>
                                 <div>
-                                    <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()">
-                                        <option value="0">State</option>
-                                        <span class="states">
-
-                                        </span>        
-                                    </select>
+                                    <span  class ="states"></span>
                                 </div>
                                 <div >
                                     <span  class ="cities">
