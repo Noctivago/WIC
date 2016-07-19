@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+session_start();
+//unset($_SESSION['username']);
+////unset($_SESSION["password"]);
+//unset($_SESSION['id']);
+#echo 'You have cleaned session';
+session_destroy();   // function that Destroys Session 
+?>
 <html>
     <head lang="en">
         <meta charset="UTF-8">
@@ -29,7 +37,7 @@
                     <div class="page-error-box">
                         <div class="error-code">LOGOUT</div>
                         <div class="error-title">HOPE TO SEE YOU AGAIN</div>
-                        <a href="sign_in.php" class="btn btn-rounded">RETURN TO WIC</a>
+                        <a href="sign_in.php" class="btn btn-rounded">RETURN TO WIC?</a>
                     </div>
                 </div>
             </div>
