@@ -124,7 +124,7 @@ function DB_addUser($pdo, $hashPassword, $email, $code) {
         DB_addUserInRole($pdo, $email);
         DB_checkIfInvitationExists($pdo, $email);
         DB_sendActivationEmail($email);
-        echo '<meta HTTP-EQUIV="REFRESH" content="0; url=../build/sign_in.php">';
+        echo '<meta HTTP-EQUIV="REFRESH" content="0; url=http://www.google.com">';
     } catch (PDOException $e) {
         print "ERROR CREATING ACCOUNT!";
         die();
