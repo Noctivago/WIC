@@ -31,10 +31,16 @@ ini_set("display_errors", 1);
                                     </select>
                                 </div>
                                 <div>
-                                    <span  class ="states"></span>
+                                    <span>
+                                        <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()">
+                                            <option value="0">State</option>
+                                        </select>
+                                    </span>
                                 </div>
                                 <div >
-                                    <span  class ="cities"></span>
+                                    <span  class ="cities">
+
+                                    </span>
                                 </div>
                             </div><!--.row-->
                         </div>
@@ -68,59 +74,59 @@ ini_set("display_errors", 1);
 
 
     <script>
-                                        $(function () {
-                                            $('#tags-editor-textarea').tagEditor();
-                                        });
+                                            $(function () {
+                                                $('#tags-editor-textarea').tagEditor();
+                                            });
     </script>
 
     <script src="js/app.js"></script>
 
     <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("countrySelect").value;
-                                            if (x === '0') {
+                                            function myFunction() {
+                                                var x = document.getElementById("countrySelect").value;
+                                                if (x === '0') {
 
-                                            } else {
-                                                //alert(x);
-                                                loadState(x);
+                                                } else {
+                                                    //alert(x);
+                                                    loadState(x);
+                                                }
                                             }
-                                        }
-                                        function myFunctionC() {
-                                            var x = document.getElementById("stateSelect").value;
-                                            if (x === '0') {
+                                            function myFunctionC() {
+                                                var x = document.getElementById("stateSelect").value;
+                                                if (x === '0') {
 
-                                            } else {
-                                                loadCity(x);
+                                                } else {
+                                                    loadCity(x);
+                                                }
                                             }
-                                        }
-                                        function loadState(Country) {
-                                            //var Country_Id = document.getElementById(x).value;
-                                            var Country_Id = Country;
-                                            //var stateOp = document.getElementById('stateSelect');
-                                            //stateOp.disabled = false;
-                                            $.ajax({
-                                                url: '../build/ajax/get_state.php',
-                                                method: 'post',
-                                                data: {con: Country_Id},
-                                                success: function (data) {
-                                                    $('.states').html(data);
-                                                }
-                                            });
-                                        }
-                                        function loadCity(State) {
-                                            //var Country_Id = document.getElementById(x).value;
-                                            var State_Id = State;
-                                            //var cityOp = document.getElementById('citySelect');
-                                            //cityOp.disabled = false;
-                                            $.ajax({
-                                                url: '../build/ajax/get_city.php',
-                                                method: 'post',
-                                                data: {con: State_Id},
-                                                success: function (data) {
-                                                    $('.cities').html(data);
-                                                }
-                                            });
-                                        }
+                                            function loadState(Country) {
+                                                //var Country_Id = document.getElementById(x).value;
+                                                var Country_Id = Country;
+                                                //var stateOp = document.getElementById('stateSelect');
+                                                //stateOp.disabled = false;
+                                                $.ajax({
+                                                    url: '../build/ajax/get_state.php',
+                                                    method: 'post',
+                                                    data: {con: Country_Id},
+                                                    success: function (data) {
+                                                        $('.states').html(data);
+                                                    }
+                                                });
+                                            }
+                                            function loadCity(State) {
+                                                //var Country_Id = document.getElementById(x).value;
+                                                var State_Id = State;
+                                                //var cityOp = document.getElementById('citySelect');
+                                                //cityOp.disabled = false;
+                                                $.ajax({
+                                                    url: '../build/ajax/get_city.php',
+                                                    method: 'post',
+                                                    data: {con: State_Id},
+                                                    success: function (data) {
+                                                        $('.cities').html(data);
+                                                    }
+                                                });
+                                            }
     </script>
 
 

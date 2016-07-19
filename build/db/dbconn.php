@@ -69,12 +69,12 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         $stmt = $pdo->prepare("SELECT * FROM State WHERE Country_Id = :countryID ORDER BY Name ASC");
         $stmt->bindParam(':countryID', $Country_Id);
         $stmt->execute();
-        echo '<select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()">';
-        echo '<option value="0">State</option>';
+        //echo '<select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()">';
+        //echo '<option value="0">State</option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
-        echo '</select>';
+        //echo '</select>';
     } catch (PDOException $e) {
         echo 'ERROR READING STATE TABLE';
         die();
