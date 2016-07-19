@@ -25,7 +25,7 @@ ini_set("display_errors", 1);
                             <h8 class="with-border m-t-lg">Address</h8>
                             <div class="row">
                                 <div>
-                                    <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()">
+                                    <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunctionC()">
                                         <option value="0">Country</option>
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
@@ -95,8 +95,7 @@ ini_set("display_errors", 1);
                                             var stateOp = document.getElementById('stateSelect');
                                             stateOp.disabled = false;
                                             $.ajax({
-                                                //url: '../build/ajax/get_state.php',
-                                                url: '../build/ajax/get_city.php',
+                                                url: '../build/ajax/get_state.php',
                                                 method: 'post',
                                                 data: {con: Country_Id},
                                                 success: function (data) {
