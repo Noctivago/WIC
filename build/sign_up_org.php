@@ -97,7 +97,6 @@ $msg = '';
                                             if (x === '0') {
 
                                             } else {
-                                                //alert(x);
                                                 loadState(x);
                                             }
                                         }
@@ -110,10 +109,7 @@ $msg = '';
                                             }
                                         }
                                         function loadState(Country) {
-                                            //var Country_Id = document.getElementById(x).value;
                                             var Country_Id = Country;
-                                            //var stateOp = document.getElementById('stateSelect');
-                                            //stateOp.disabled = false;
                                             $.ajax({
                                                 url: '../build/ajax/get_state.php',
                                                 method: 'post',
@@ -124,10 +120,7 @@ $msg = '';
                                             });
                                         }
                                         function loadCity(State) {
-                                            //var Country_Id = document.getElementById(x).value;
                                             var State_Id = State;
-                                            //var cityOp = document.getElementById('citySelect');
-                                            //cityOp.disabled = false;
                                             $.ajax({
                                                 url: '../build/ajax/get_city.php',
                                                 method: 'post',
