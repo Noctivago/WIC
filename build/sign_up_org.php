@@ -97,10 +97,7 @@ ini_set("display_errors", 1);
                                             }
                                         }
                                         function loadState(Country) {
-                                            //var Country_Id = document.getElementById(x).value;
                                             var Country_Id = Country;
-                                            //var stateOp = document.getElementById('stateSelect');
-                                            //stateOp.disabled = false;
                                             $.ajax({
                                                 url: '../build/ajax/get_state.php',
                                                 method: 'post',
