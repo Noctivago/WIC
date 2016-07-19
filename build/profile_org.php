@@ -383,26 +383,26 @@ include ("includes/head_sideMenu.php");
                                                                             </section>.skill-item
                                                                     </article>.profile-info-item-->
 
-                    <article class="profile-info-item">
-                        <header class="profile-info-item-header">
-                            <i class="font-icon font-icon-star"></i>
-                            Tags
-                        </header>
-                        <div class="profile-interests">
-                            <a href="#" class="label label-light-grey">Interest</a>
-                            <a href="#" class="label label-light-grey">Example</a>
-                            <a href="#" class="label label-light-grey">One more</a>
-                            <a href="#" class="label label-light-grey">Here is example interest</a>
-                            <a href="#" class="label label-light-grey">Interest</a>
-                            <a href="#" class="label label-light-grey">Example</a>
-                            <a href="#" class="label label-light-grey">One more</a>
-                            <a href="#" class="label label-light-grey">Here is example interest</a>
-                            <a href="#" class="label label-light-grey">Interest</a>
-                            <a href="#" class="label label-light-grey">Example</a>
-                            <a href="#" class="label label-light-grey">One more</a>
-                            <a href="#" class="label label-light-grey">Here is example interest</a>
-                        </div>
-                    </article><!--.profile-info-item-->
+                    <!--                    <article class="profile-info-item">
+                                            <header class="profile-info-item-header">
+                                                <i class="font-icon font-icon-star"></i>
+                                                Tags
+                                            </header>
+                                            <div class="profile-interests">
+                                                <a href="#" class="label label-light-grey">Interest</a>
+                                                <a href="#" class="label label-light-grey">Example</a>
+                                                <a href="#" class="label label-light-grey">One more</a>
+                                                <a href="#" class="label label-light-grey">Here is example interest</a>
+                                                <a href="#" class="label label-light-grey">Interest</a>
+                                                <a href="#" class="label label-light-grey">Example</a>
+                                                <a href="#" class="label label-light-grey">One more</a>
+                                                <a href="#" class="label label-light-grey">Here is example interest</a>
+                                                <a href="#" class="label label-light-grey">Interest</a>
+                                                <a href="#" class="label label-light-grey">Example</a>
+                                                <a href="#" class="label label-light-grey">One more</a>
+                                                <a href="#" class="label label-light-grey">Here is example interest</a>
+                                            </div>
+                                        </article>.profile-info-item-->
                 </section><!--.box-typical-->
 
 <!--					<section class="box-typical">
