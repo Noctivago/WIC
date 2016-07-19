@@ -36,13 +36,13 @@ $msg = '';
                     </div>-->
                     <header class="sign-title">New Password</header>
                     <div class="form-group">
-                        <input type="password" id="apw" name ="apw" class="form-control" placeholder="Actual Password"/>
+                        <input type="password" id="apw" name ="apw" class="form-control" placeholder="Actual Password" required/>
                     </div> 
                     <div class="form-group">
-                        <input type="password" id="pw1" name ="pw1" class="form-control" placeholder="New Password"/>
+                        <input type="password" id="pw1" name ="pw1" class="form-control" placeholder="New Password" required/>
                     </div>
                     <div class="form-group">
-                        <input type="password" id="pw2" name ="pw2" class="form-control" placeholder="Confirm New Password"/>
+                        <input type="password" id="pw2" name ="pw2" class="form-control" placeholder="Confirm New Password" required/>
                     </div>
                     <p class="sign-note">  <?= $msg; ?> </p>
                     <button type="submit" name="changePassword" class="btn btn-rounded btn-block">Submit</button>
