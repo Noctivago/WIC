@@ -239,7 +239,7 @@ function DB_resetPassword($pdo, $email) {
                 . "WIC<br><br>"
                 . "Note: Please do not reply to this email! Thanks!";
         sendEmail($to, $subject, $body);
-        return true;
+        return "AN EMAIL AS SENT WITH A NEW PASSWORD!";
     } catch (Exception $exc) {
         return false;
     }

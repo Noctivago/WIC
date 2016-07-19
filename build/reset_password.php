@@ -2,8 +2,20 @@
 <?php
 include("includes/head_singleforms.php");
 include_once './db/dbconn.php';
+$msg = '';
 ?>
 <body>
+    <?php
+    if (isset($_POST['reset']) && !empty($_POST['email'])) {
+        $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+        #echo 'USERNAME ' . $rows['Username'];
+        if (DB_checkIfUserExists($pdo, $email)) {
+            $msg = DB_resetPassword($pdo, $email);
+        } else {
+            $msg = "AN ERROR OCCURED! PLEASE TRY AGAIN!";
+        }
+    }
+    ?>
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
@@ -13,9 +25,10 @@ include_once './db/dbconn.php';
                     </div>-->
                     <header class="sign-title">Reset Password</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="E-Mail"/>
+                        <input type="text" id="email" name ="email" class="form-control" placeholder="E-Mail"/>
                     </div>
-                    <button type="submit" class="btn btn-rounded">Reset</button>
+                    <p class="sign-note">  <?= $msg; ?> </p>
+                    <button type="submit" name="reset" class="btn btn-rounded">Reset</button>
                     or <a href="sign_in.php">Sign in</a>
                 </form>
             </div>
