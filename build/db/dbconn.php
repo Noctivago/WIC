@@ -69,7 +69,7 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         $stmt = $pdo->prepare("SELECT * FROM State WHERE Country_Id = :countryID ORDER BY Name ASC");
         $stmt->bindParam(':countryID', $Country_Id);
         $stmt->execute();
-        echo '<select id = "stateSelect" class="states bootstrap-select bootstrap-select-arrow" placeholder="City" required>';
+        echo '<select id = "stateSelect" class="states bootstrap-select bootstrap-select-arrow" placeholder="City" onchange="myFunctionC()" required>';
         echo '<option value="0">State</option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
@@ -87,7 +87,7 @@ function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
         $stmt = $pdo->prepare("SELECT * FROM City WHERE State_Id = :stateID ORDER BY Name ASC");
         $stmt->bindParam(':stateID', $State_Id);
         $stmt->execute();
-        echo '<select id = "citySelect" class="cities bootstrap-select bootstrap-select-arrow" placeholder="City" onchange="myFunctionC()" required>';
+        echo '<select id = "citySelect" class="cities bootstrap-select bootstrap-select-arrow" placeholder="City" required>';
         echo '<option value="0">City</option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
