@@ -223,7 +223,9 @@ function DB_getRoleByName($pdo, $name) {
 function DB_getUserRole($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
     try {
-        $rows = sql($pdo, "SELECT * FROM [dbo].[User_In_Role] WHERE [User_Id] = ?", array($userId), "rows");
+        $rows = sql($pdo, "SELECT [Name] FROM [dbo].[Role] "
+                . "join [User_In_Role]
+                 on [Role].[Id] = [User_In_Role].[Role_id] WHERE [User_In_Role].[User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             return $row['Id'];
         }
