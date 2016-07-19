@@ -18,7 +18,6 @@ if (DB_validateUserSession($pdo, $sId, $sEmail, $s_pw, $s_role)) {
 
 //SENAO    
 } else {
-
-    //session_destroy();
-    //header('Location:../build/sign_in.php'); // Redirecting To Home Page
+    session_destroy();
+    header('Location:../build/sign_in.php'); // Redirecting To Home Page
 }
