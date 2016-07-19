@@ -223,3 +223,24 @@ function DB_sendActivationEmail($email) {
             . "Note: Please do not reply to this email! Thanks!";
     return sendEmail($to, $subject, $body);
 }
+
+//RECOVERY PASSWORD
+function DB_resetPassword($pdo, $email) {
+    $newPass = generatePassword();
+    $hashPassword = hash('whirlpool', $newPass);
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Email] = ? ", array($hashPassword, $email));
+        $to = $email;
+        $subject = "WIC #ACCOUNT CONFIRMATION";
+        $body = "Hi! <br>"
+                . "PEDISTE PASSWOD.<br>"
+                . "NEW PASSWORD: " . $newPass . "<br>"
+                . "Best regards,<br>"
+                . "WIC<br><br>"
+                . "Note: Please do not reply to this email! Thanks!";
+        sendEmail($to, $subject, $body);
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}

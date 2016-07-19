@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-    include("includes/head_singleforms.php");
+include("includes/head_singleforms.php");
+include_once './db/dbconn.php';
 ?>
 <body>
     <div class="page-center">
@@ -12,19 +13,19 @@
                     </div>-->
                     <header class="sign-title">Reset Password</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="E-Mail or Phone"/>
+                        <input type="text" class="form-control" placeholder="E-Mail"/>
                     </div>
                     <button type="submit" class="btn btn-rounded">Reset</button>
-                    or <a href="sign-in.html">Sign in</a>
+                    or <a href="sign_in.php">Sign in</a>
                 </form>
             </div>
         </div>
     </div><!--.page-center-->
 
-<script src="js/lib/jquery/jquery.min.js"></script>
-<script src="js/lib/tether/tether.min.js"></script>
-<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/app.js"></script>
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="js/lib/tether/tether.min.js"></script>
+    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
