@@ -619,11 +619,12 @@ function DB_validateUserSession($pdo, $sId, $sEmail, $s_pw, $s_role) {
     try {
 //        $role = DB_getUserRole($pdo, $sEmail);
         if (DB_validateSession($pdo, $sId, $sEmail, $s_pw)) {
-            if ($role == $s_role) {
-                return true;
-            } else {
-                return false;
-            }
+            //FALTA VALIDAR SE USER TEM O ROLE
+//            if ($role == $s_role) {
+//                return true;
+//            } else {
+//                return false;
+//            }
             return true;
         } else {
             return false;
