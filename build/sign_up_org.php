@@ -95,7 +95,8 @@ ini_set("display_errors", 1);
                                             var stateOp = document.getElementById('stateSelect');
                                             stateOp.disabled = false;
                                             $.ajax({
-                                                url: '../build/ajax/get_state.php',
+                                                //url: '../build/ajax/get_state.php',
+                                                url: '../build/ajax/get_city.php',
                                                 method: 'post',
                                                 data: {con: Country_Id},
                                                 success: function (data) {
