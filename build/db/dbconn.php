@@ -116,9 +116,10 @@ function DB_checkIfUserExists($pdo, $email) {
 
 //ADICIONA UM USER À BD
 function DB_addUser($pdo, $hashPassword, $email, $code) {
+    $d = getDateToDB();
     try {
         sql($pdo, "INSERT INTO [dbo].[User] ([Password], [Email], [Account_Enabled],"
-                . " [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?)", array($hashPassword, $email, '0', $code, '0'));
+                . " [User_Code_Activation], [Login_Failed], [Date_Created]) VALUES (?, ?, ?, ?, ?, ?)", array($hashPassword, $email, '0', $code, '0', $d));
         DB_createProfileOnRegistration($pdo, $email);
         DB_addUserInRole($pdo, $email);
         DB_checkIfInvitationExists($pdo, $email);
@@ -199,7 +200,7 @@ function DB_addUserInService($pdo, $email, $service) {
     try {
         sql($pdo, "INSERT INTO [dbo].[User_Service] ([Service_Id], [User_Id], [Enabled],"
                 . "[Data_Assigned], [Validate], [Role_Id]) VALUES(?,?,?,?,?,?)"
-                . "", array($service, $userId, 1, $d, 1, $role));
+                . "", array($service, $userId, 1, $d, 0, $role));
     } catch (PDOException $e) {
         print "ERROR CREATING USER USER IN ROLE!";
         die();
