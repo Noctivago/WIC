@@ -26,6 +26,7 @@ ini_set("display_errors", 1);
                             <div class="row">
                                 <div>
                                     <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()">
+                                        <option value="0">Country</option>
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
@@ -33,7 +34,7 @@ ini_set("display_errors", 1);
 
                                 </div>
                                 <div class ="cities">
-                                    
+
                                 </div>
                             </div><!--.row-->
                         </div>
@@ -77,12 +78,20 @@ ini_set("display_errors", 1);
     <script>
                                         function myFunction() {
                                             var x = document.getElementById("countrySelect").value;
-                                            //alert(x);
-                                            loadState(x);
+                                            if (x === '0') {
+
+                                            } else {
+                                                //alert(x);
+                                                loadState(x);
+                                            }
                                         }
                                         function myFunctionC() {
                                             var x = document.getElementById("stateSelect").value;
-                                            loadCity(x);
+                                            if (x === '0') {
+
+                                            } else {
+                                                loadCity(x);
+                                            }
                                         }
                                         function loadState(Country) {
                                             //var Country_Id = document.getElementById(x).value;
