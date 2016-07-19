@@ -16,5 +16,6 @@ $s_role = $_SESSION['role'];
 if (DB_validateUserSession($pdo, $sId, $sEmail, $s_pw, $s_role)) {
     
 } else {
+    session_destroy();
     header('Location:../sign_in.php'); // Redirecting To Home Page
 }
