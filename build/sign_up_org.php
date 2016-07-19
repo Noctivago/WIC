@@ -15,6 +15,9 @@ $msg = '';
         $city = (filter_var($_POST ['citySelect'], FILTER_SANITIZE_NUMBER_INT));
         $pw1 = (filter_var($_POST ['pw1'], FILTER_SANITIZE_STRING));
         $pw2 = (filter_var($_POST ['pw2'], FILTER_SANITIZE_STRING));
+        if ($city === 0) {
+            $msg = "PLEASE CHOOSE A CITY!";
+        }
         if ($pw1 != $pw2) {
             $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
         } else {
