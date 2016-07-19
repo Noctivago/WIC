@@ -223,7 +223,7 @@ function DB_getRoleByName($pdo, $name) {
 function DB_getUserRole($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
     try {
-        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [User_Id] = ?", array($userId), "rows");
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User_In_Role] WHERE [User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             return $row['Id'];
         }
@@ -407,7 +407,7 @@ function DB_addOrgInRole($pdo, $email) {
 function DB_getUsersTable($pdo) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array('0'), "rows");
-        echo "<table class='table table-striped'><tr><th>ID</th><th>EMAIL</th><th>PASSWORD</th><th>ACCOUNT_ENABLED</th></tr>";
+        echo "<table class='table table-striped'><tr><th>ID</th><th>EMAIL</th><th>PWD</th><th>AE</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['Id'] . "</td>";
