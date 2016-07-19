@@ -594,7 +594,7 @@ function DB_addOrgProfile($pdo, $email, $name, $city) {
  */
 function DB_validateSession($pdo, $sId, $sEmail, $s_pw) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [id] = ?, [Email] = ?, "
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [id] = ? AND [Email] = ? AND "
                 . "[Password] = ?", array($sId, $sEmail, $s_pw), "count");
         if ($count < 0) {
             return true;
@@ -617,7 +617,7 @@ function DB_validateSession($pdo, $sId, $sEmail, $s_pw) {
  */
 function DB_validateUserSession($pdo, $sId, $sEmail, $s_pw, $s_role) {
     try {
-        $role = DB_getUserRole($pdo, $sEmail);
+//        $role = DB_getUserRole($pdo, $sEmail);
         if (DB_validateSession($pdo, $sId, $sEmail, $s_pw)) {
             //FALTA VALIDAR SE ROLE PERTENCE AO USER
 //            if ($role == $s_role) {
