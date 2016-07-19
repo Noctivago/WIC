@@ -870,7 +870,7 @@ include ("includes/head_sideMenu.php");
                         <a href="#">See All (300)</a>
                     </div>
 
-                    <section>
+<!--                    <section>
                         <header class="box-typical-header-sm">More Influencer</header>
                         <div class="profile-card-slider">
                             <div class="slide">
@@ -881,8 +881,8 @@ include ("includes/head_sideMenu.php");
                                     <div class="profile-card-name">Jackie Tran</div>
                                     <div class="profile-card-status">Company Founder</div>
                                     <button type="button" class="btn btn-rounded btn-primary-outline">Follow</button>
-                                </div><!--.profile-card-->
-                            </div><!--.slide-->
+                                </div>.profile-card
+                            </div>.slide
                             <div class="slide">
                                 <div class="profile-card">
                                     <div class="profile-card-photo">
@@ -891,8 +891,8 @@ include ("includes/head_sideMenu.php");
                                     <div class="profile-card-name">Jackie Tran</div>
                                     <div class="profile-card-status">Company Founder</div>
                                     <button type="button" class="btn btn-rounded btn-primary-outline">Follow</button>
-                                </div><!--.profile-card-->
-                            </div><!--.slide-->
+                                </div>.profile-card
+                            </div>.slide
                             <div class="slide">
                                 <div class="profile-card">
                                     <div class="profile-card-photo">
@@ -901,8 +901,8 @@ include ("includes/head_sideMenu.php");
                                     <div class="profile-card-name">Sarah Sanchez</div>
                                     <div class="profile-card-status">Longnameexample<br/>corporation</div>
                                     <button type="button" class="btn btn-rounded btn-primary-outline">Follow</button>
-                                </div><!--.profile-card-->
-                            </div><!--.slide-->
+                                </div>.profile-card
+                            </div>.slide
                             <div class="slide">
                                 <div class="profile-card">
                                     <div class="profile-card-photo">
@@ -911,10 +911,10 @@ include ("includes/head_sideMenu.php");
                                     <div class="profile-card-name">Sarah Sanchez</div>
                                     <div class="profile-card-status">Longnameexample<br/>corporation</div>
                                     <button type="button" class="btn btn-rounded btn-primary-outline">Follow</button>
-                                </div><!--.profile-card-->
-                            </div><!--.slide-->
-                        </div><!--.profile-card-slider-->
-                    </section>
+                                </div>.profile-card
+                            </div>.slide
+                        </div>.profile-card-slider
+                    </section>-->
                 </section><!--.box-typical-->
 
 <!--                <section class="box-typical">
