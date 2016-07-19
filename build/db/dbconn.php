@@ -15,7 +15,7 @@ try {
     if ($pdo == false) {
         echo "Redirect to 404!";
     } else {
-        #echo "Connected!";
+#echo "Connected!";
     }
 } catch (Exception $e) {
     echo("Error -> IP NOT ALLOWED!");
@@ -26,11 +26,11 @@ function sql($pdo, $q, $params, $return) {
 
     try {
 
-        // Prepare statement
+// Prepare statement
         $stmt = $pdo->prepare($q);
-        // Execute statement
+// Execute statement
         $stmt->execute($params);
-        // Decide whether to return the rows themselves, or just count the rows
+// Decide whether to return the rows themselves, or just count the rows
         if ($return == "rows") {
             return $stmt->fetchAll();
         } elseif ($return == "row") {
@@ -125,7 +125,7 @@ function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
 function DB_checkIfUserExists($pdo, $email) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "count");
-        //IF EXISTS -1
+//IF EXISTS -1
         if ($count < 0) {
             return true;
         } else {
@@ -151,7 +151,7 @@ function DB_addUser($pdo, $hashPassword, $email, $code) {
         DB_createProfileOnRegistration($pdo, $email);
         DB_addUserInRole($pdo, $email);
         DB_checkIfInvitationExists($pdo, $email);
-        //SE ENVIADO EXIBIR MENSAGEM
+//SE ENVIADO EXIBIR MENSAGEM
         return DB_sendActivationEmail($email);
     } catch (PDOException $e) {
         print "ERROR CREATING ACCOUNT!";
@@ -443,7 +443,7 @@ function DB_sendActivationEmail($email) {
  * @return boolean|string
  */
 function DB_resetPassword($pdo, $email) {
-    //include_once './functions.php';
+//include_once './functions.php';
     $newPass = md5(uniqid(mt_rand(), true));
     $hashPassword = hash('whirlpool', $newPass);
     try {
@@ -470,15 +470,15 @@ function DB_resetPassword($pdo, $email) {
  * @param type $body Mensagem
  */
 function sendEmail($to, $subject, $body) {
-    #error_reporting(E_STRICT);
-    #configura o fuso horario
+#error_reporting(E_STRICT);
+#configura o fuso horario
     date_default_timezone_set('Europe/Lisbon');
-    #faz os includes necessarios das bibliotecas
+#faz os includes necessarios das bibliotecas
     require("class.phpmailer.php");
-    #cria uma nova instancia do PHPMailer
+#cria uma nova instancia do PHPMailer
     $mail = new PHPMailer();
     $mail->IsSMTP(); // telling the class to use SMTP
-    #$mail->SMTPDebug = 2;                     // enables SMTP debug information (for testing)
+#$mail->SMTPDebug = 2;                     // enables SMTP debug information (for testing)
     $mail->SMTPAuth = true;                  // enable SMTP authentication
     $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
     $mail->Host = "iberweb4a.ibername.com";      // sets GMAIL as the SMTP server
@@ -488,7 +488,7 @@ function sendEmail($to, $subject, $body) {
     $mail->SetFrom('donotreply@wic.club', 'WIC #Please do not reply!');
     $mail->AddReplyTo("donotreply@wic.club", "WIC");
     $mail->Subject = $subject;
-    #$mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+#$mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
     $mail->MsgHTML($body);
     $mail->AddAddress($to);
     if (!$mail->Send()) {
@@ -533,9 +533,9 @@ function DB_addOrg($pdo, $hashPassword, $email, $name, $code, $city) {
     try {
         sql($pdo, "INSERT INTO [dbo].[User] ([Password], [Email], [Account_Enabled],"
                 . " [User_Code_Activation], [Login_Failed], [Date_Created]) VALUES (?, ?, ?, ?, ?, ?)", array($hashPassword, $email, '1', $code, '0', $d));
-        //ATRIBUI ROLE
+//ATRIBUI ROLE
         DB_addOrgInRole($pdo, $email);
-        //CRIA PROFILE
+//CRIA PROFILE
         DB_addOrgProfile($pdo, $email, $name, $city);
         echo DB_sendActivationEmail($email);
     } catch (PDOException $e) {
@@ -619,7 +619,7 @@ function DB_validateUserSession($pdo, $sId, $sEmail, $s_pw, $s_role) {
     try {
 //        $role = DB_getUserRole($pdo, $sEmail);
         if (DB_validateSession($pdo, $sId, $sEmail, $s_pw)) {
-            //FALTA VALIDAR SE USER TEM O ROLE < ESTA A DAR ERRO :S
+//FALTA VALIDAR SE USER TEM O ROLE < ESTA A DAR ERRO :S
 //            if ($role == $s_role) {
 //                return true;
 //            } else {
@@ -666,5 +666,33 @@ function DB_changeUserPW($pdo, $pw, $userId) {
         return "PASSWORD CHANGED!";
     } catch (Exception $exc) {
         echo "ERROR CHANGING YOUR PASSWORD!";
+    }
+}
+
+/**
+ * RETORNA A INFO DO PROFILE DO USER PARA O SEU PERFIL (SMALL INFO)
+ * @param type $pdo
+ * @param type $userId
+ */
+function db_getUserIndexInfo($pdo, $userId) {
+    try {
+        $rows = sql($pdo, "SELECT 
+        [User_Profile].[First_Name] AS UFN
+        ,[User_Profile].[Last_Name] AS ULN
+        ,[User_Profile].[Picture_Path] AS UPP
+        ,[User].[Email] AS UEM
+        FROM [dbo].[User] 
+        join [User_Profile]
+        on [User_Profile].[User_Id] = [User].[id]
+        WHERE [User].[id] = ?", array($userId), "rows");
+        foreach ($rows as $row) {
+            echo '<div class="profile-card-photo">';
+            echo '<img src="' . $row['UPP'] . '" alt="Profile Pic"/>';
+            echo '</div>';
+            echo '<div class = "profile-card-name">' . $row['UFN'] . ' ' . $row['ULN'] . '</div>';
+            echo '<div class = "profile-card-location">' . $row['UEM'] . '</div>';
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING USER PROFILE';
     }
 }
