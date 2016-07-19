@@ -25,8 +25,9 @@ if (isset($_SESSION['id'])) {
             //2 se existir verifica se enabled / CONTA N BLOQUEADA
             if (DB_checkIfUserEnabled($pdo, $email)) {
                 $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "rows");
-                #$msg = 'EMAIL FOUND';
+                //SE EXISTIR
                 foreach ($rows as $row) {
+                    //SE ENCONTRAR USER
                     if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
                         //ADICIONAR PASSWORD
                         $_SESSION['valid'] = true;
@@ -38,17 +39,42 @@ if (isset($_SESSION['id'])) {
                         $msg = 'Welcome ' . $row['Username'];
                         //SET [Login_failed] = 0
                         if (DB_setLoginFailed($pdo, $email)) {
-                            header('Location: profile.php');
+                            //header('Location: profile.php');
                         }
                     } else {
-                        //SE ENABLED = 0
-                        $msg = "Please activate your account!";
+                        $val = DB_getLoginFailedValue($pdo, $email);
+                        if ($val < 3) {
+                            $value = $val + 1;
+                            DB_setLoginFailed($pdo, $email, $value);
+                            $msg = 'Wrong email or password';
+                        } else {
+                            //BLOCK ACCOUNT
+                            DB_setLoginFailed($pdo, $email);
+                            DB_setBlockAccount($pdo, $email);
+                            //ENVIAR EMAIL COM INSTRUÇÔES DE DESBLOQUEIO
+                            $msg = 'Account blocked!';
+                            $to = $email;
+                            $subject = "WIC #ACCOUNT BLOCKED";
+                            $code = generateActivationCode();
+                            DB_updateUserAccountActivationCode($pdo, $email, $code);
+                            $body = "Hi! <br>"
+                                    . "Your account was blocked due severed failed logins.<br>"
+                                    . "Use the following code to unblock your account: " . $code . "<br>"
+                                    . "Plase use the following URL to unlock: http://www.wic.club<br>"
+                                    . "Best regards,<br>"
+                                    . "WIC<br><br>"
+                                    . "Note: Please do not reply to this email! Thanks!";
+                            sendEmail($to, $subject, $body);
+                        }
                     }
                 }
-                //SE USER N EXISTS
             } else {
-                $msg = "Wrong email or password!";
+                //SE ENABLED = 0
+                $msg = "Please activate your account!";
             }
+        } else {
+            //SE USER N EXISTS
+            $msg = "Wrong email or password!";
         }
     }
     ?>

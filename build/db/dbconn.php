@@ -160,6 +160,17 @@ function DB_createProfileOnRegistration($pdo, $email) {
     }
 }
 
+//ATRIBUI NOVO CODIGO DE VALIDACAO AO USER
+function DB_updateUserAccountActivationCode($pdo, $email, $code) {
+    $userId = DB_checkUserByEmail($pdo, $email);
+    try {
+        sql($pdo, "UPDATE [dbo].[User] SET [User_Code_Activation] = ? WHERE [Id] = ?", array($code, $userId));
+    } catch (PDOException $e) {
+        print "ERROR SETTING UP A NEW CODE!";
+        die();
+    }
+}
+
 //ADICIONA UM ROLE AO USER
 function DB_addUserInRole($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
@@ -236,6 +247,16 @@ function DB_getLoginFailedValue($pdo, $email) {
         }
     } catch (Exception $exc) {
         echo '';
+    }
+}
+
+//ATRIBUI VALOR AO CAMPO LOGIN FAILED
+function DB_setLoginFailed($pdo, $email, $value = '0') {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Login_Failed] = ? WHERE [Email] = ? ", array($value, $email));
+        return true;
+    } catch (Exception $exc) {
+        return false;
     }
 }
 
