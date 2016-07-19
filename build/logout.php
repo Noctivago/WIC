@@ -35,8 +35,8 @@ session_destroy();   // function that Destroys Session
             <div class="page-center-in">
                 <div class="container-fluid">
                     <div class="page-error-box">
-                        <div class="error-code">LOGOUT</div>
-                        <div class="error-title">HOPE TO SEE YOU AGAIN</div>
+                        <div class="error-title">LOGOUT</div>
+                        <div class="error-title">HOPE TO SEE YOU AGAIN!</div>
                         <a href="sign_in.php" class="btn btn-rounded">RETURN TO WIC?</a>
                     </div>
                 </div>
