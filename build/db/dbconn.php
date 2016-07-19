@@ -218,6 +218,20 @@ function DB_getRoleByName($pdo, $name) {
     }
 }
 
+//DEVOLVE O ROLE DE UM USER
+//DEVOLVE UM ROLE ATRAVES DO NOME
+function DB_getUserRole($pdo, $email) {
+    $userId = DB_getUserId($pdo, $email);
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [User_Id] = ?", array($userId), "rows");
+        foreach ($rows as $row) {
+            return $row['Id'];
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING ROLE!';
+    }
+}
+
 //VERIFICA SE O USER TEM CONVITES
 function DB_checkIfInvitationExists($pdo, $email) {
     try {
