@@ -219,7 +219,6 @@ function DB_getRoleByName($pdo, $name) {
 }
 
 //DEVOLVE O ROLE DE UM USER
-//DEVOLVE UM ROLE ATRAVES DO NOME
 function DB_getUserRole($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
     try {
