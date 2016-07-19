@@ -87,6 +87,7 @@ include_once './db/session.php';
                 <section class="box-typical">
                     <header class="box-typical-header-sm">Messenger</header>
                     <div class="friends-list stripped">
+                        <!--COMEÇA AQUI-->
                         <article class="friends-list-item">
                             <div class="user-card-row">
                                 <div class="tbl-row">
@@ -105,7 +106,7 @@ include_once './db/session.php';
                                 </div>
                             </div>
                         </article>
-                        <article class="friends-list-item">
+<!--                        <article class="friends-list-item">
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <div class="tbl-cell tbl-cell-photo">
@@ -177,7 +178,7 @@ include_once './db/session.php';
                                 </div>
                             </div>
                         </article>
-                    </div>
+                    </div>-->
 
                     <div class="see-all">
                         <a href="#">See All (300)</a>

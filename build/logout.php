@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <?php
 session_start();
-//unset($_SESSION['username']);
-////unset($_SESSION["password"]);
-//unset($_SESSION['id']);
-#echo 'You have cleaned session';
 session_destroy();   // function that Destroys Session 
 ?>
 <html>
