@@ -3,7 +3,6 @@
 include_once 'includes/head_singleforms.php';
 include_once '../build/db/functions.php';
 include_once '../build/db/dbconn.php';
-include_once '../build/db/mailSend.php';
 ?>
 <body>
 
@@ -24,22 +23,10 @@ include_once '../build/db/mailSend.php';
                 //FUNCA ATE AKI
                 if (DB_checkIfUserExists($pdo, $email)) {
                     $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
-                    //$forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
                     try {
                         $code = generateActivationCode();
                         DB_addUser($pdo, $hashPassword, $email, $code);
-                        $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
-                        $to = $email;
-                        $subject = "WIC #ACCOUNT CONFIRMATION";
-                        $body = "Hi! <br>"
-                                . "To start using our services you need to validate your email.<br>"
-                                . "Please use the following code to do that: " . $code . "<br>"
-                                . "You can activate your account in the following address: http://www.wic.club/<br>"
-                                . "Best regards,<br>"
-                                . "WIC<br><br>"
-                                . "Note: Please do not reply to this email! Thanks!";
-                        $msg = sendEmail($to, $subject, $body) . ' Please check your inbox to foward information!';
                     } catch (Exception $ex) {
                         echo "ERROR!";
                     }

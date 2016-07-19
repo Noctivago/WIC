@@ -123,7 +123,8 @@ function DB_addUser($pdo, $hashPassword, $email, $code) {
         DB_createProfileOnRegistration($pdo, $email);
         DB_addUserInRole($pdo, $email);
         DB_checkIfInvitationExists($pdo, $email);
-        echo 'ACCOUNT CREATED!';
+        DB_sendActivationEmail($email);
+        echo '<meta HTTP-EQUIV="REFRESH" content="0; url=../build/sign_in.php">';
     } catch (PDOException $e) {
         print "ERROR CREATING ACCOUNT!";
         die();
@@ -205,4 +206,20 @@ function DB_addUserInService($pdo, $email, $service) {
         print "ERROR CREATING USER USER IN ROLE!";
         die();
     }
+}
+
+//ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA
+function DB_sendActivationEmail($email) {
+    include_once './mailSend.php';
+    $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
+    $to = $email;
+    $subject = "WIC #ACCOUNT CONFIRMATION";
+    $body = "Hi! <br>"
+            . "To start using our services you need to validate your email.<br>"
+            . "Please use the following code to do that: " . $code . "<br>"
+            . "You can activate your account in the following address: http://www.wic.club/<br>"
+            . "Best regards,<br>"
+            . "WIC<br><br>"
+            . "Note: Please do not reply to this email! Thanks!";
+    $msg = sendEmail($to, $subject, $body) . ' Please check your inbox to foward information!';
 }
