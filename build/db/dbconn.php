@@ -123,6 +123,7 @@ function DB_addUser($pdo, $hashPassword, $email, $code) {
         DB_createProfileOnRegistration($pdo, $email);
         DB_addUserInRole($pdo, $email);
         DB_checkIfInvitationExists($pdo, $email);
+        //SE ENVIADO EXIBIR MENSAGEM
         echo DB_sendActivationEmail($email);
     } catch (PDOException $e) {
         print "ERROR CREATING ACCOUNT!";
