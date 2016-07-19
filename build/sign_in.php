@@ -40,6 +40,7 @@ if (isset($_SESSION['id'])) {
                         //SET [Login_failed] = 0
                         if (DB_setLoginFailed($pdo, $email)) {
                             //header('Location: profile.php');
+                            $msg = "LOGIN OK! FALTA BUSCAR ROLE E DEPOIS LOCATION";
                         }
                     } else {
                         $val = DB_getLoginFailedValue($pdo, $email);
