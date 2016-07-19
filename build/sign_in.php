@@ -19,20 +19,11 @@ if (isset($_SESSION['id'])) {
     if (isset($_POST['signin']) && !empty($_POST['email']) && !empty($_POST['pw'])) {
         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
         $pw = (filter_var($_POST ['pw'], FILTER_SANITIZE_STRING));
-        if ($pw1 != $pw2) {
-            $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
-        } else {
-            $hashPassword = hash('whirlpool', $pw1);
-            //FUNCA ATE AKI
-            if (DB_checkIfUserExists($pdo, $email)) {
-                $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
-            } else {
-                try {
-                    $code = generateActivationCode();
-                    DB_addUser($pdo, $hashPassword, $email, $code);
-                } catch (Exception $ex) {
-                    echo "ERROR!";
-                }
+        //1 verifica se user exist
+        if (DB_checkIfUserExists($pdo, $email)) {
+            //2 se existir verifica se enabled
+            if (DB_checkIfUserEnabled($pdo, $email)) {
+                
             }
         }
     }

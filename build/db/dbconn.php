@@ -213,6 +213,20 @@ function DB_addUserInService($pdo, $email, $service) {
     }
 }
 
+//VERIFICA SE CONTA VALIDADA
+function DB_checkIfUserEnabled($pdo, $email) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [Account_Enabled] = ?", array($email, 1), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
 //ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA
 function DB_sendActivationEmail($email) {
     include_once './mailSend.php';
