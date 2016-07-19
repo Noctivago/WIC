@@ -237,7 +237,7 @@ function DB_getRoleName($pdo, $email) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [Id] = ?", array($Roleid), "rows");
         foreach ($rows as $row) {
-            return $row['Id'];
+            return $row['Name'];
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ROLE!';
