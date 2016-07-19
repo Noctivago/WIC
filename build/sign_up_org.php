@@ -30,13 +30,11 @@ ini_set("display_errors", 1);
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
-                                <div>
-                                    <span  class ="states"></span>
-                                </div>
-                                <div >
-                                    <span  class ="cities">
+                                <div  class ="states">
 
-                                    </span>
+                                </div>
+                                <div class ="cities">
+
                                 </div>
                             </div><!--.row-->
                         </div>
