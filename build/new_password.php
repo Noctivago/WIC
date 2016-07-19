@@ -5,12 +5,12 @@ include_once './db/dbconn.php';
 include_once './db/session.php';
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
-$msg;
 ?>
 
 <body>
     <?php
     if (isset($_POST['changePassword']) && !empty($_POST['apw']) && !empty($_POST['pw1']) && !empty($_POST['pw2'])) {
+        $msg = '';
         $aPW = (filter_var($_POST ['apw'], FILTER_SANITIZE_STRING));
         $PW1 = (filter_var($_POST ['pw1'], FILTER_SANITIZE_STRING));
         $PW2 = (filter_var($_POST ['pw2'], FILTER_SANITIZE_STRING));
