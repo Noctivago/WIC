@@ -497,6 +497,28 @@ function sendEmail($to, $subject, $body) {
 }
 
 /**
+ * DEVOLVE UMA TABELA C/ TODOS OS USERS < PARA TESTES
+ * @param type $pdo
+ */
+function DB_getUsersTable($pdo) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array('0'), "rows");
+        echo "<table class='table table-striped'><tr><th>ID</th><th>EMAIL</th><th>PWD</th><th>AE</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Email'] . "</td>";
+            echo "<td>" . $row['Password'] . "</td>";
+            echo "<td>" . $row['Account_Enabled'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING USERS';
+    }
+}
+
+/**
  * ADICIONA UMA ORG À BD
  * @param type $pdo
  * @param type $hashPassword Pw
@@ -509,8 +531,6 @@ function DB_addOrg($pdo, $hashPassword, $email, $code, $city) {
     try {
         sql($pdo, "INSERT INTO [dbo].[User] ([Password], [Email], [Account_Enabled],"
                 . " [User_Code_Activation], [Login_Failed], [Date_Created]) VALUES (?, ?, ?, ?, ?, ?)", array($hashPassword, $email, '0', $code, '0', $d));
-        //DB_createORG <- MISSING;
-
         DB_addOrgInRole($pdo, $email);
         //SE ENVIADO EXIBIR MENSAGEM
         echo DB_sendActivationEmail($email);
@@ -533,45 +553,6 @@ function DB_addOrgInRole($pdo, $email) {
                 . "", array($userId, $role, 1));
     } catch (PDOException $e) {
         print "ERROR CREATING ORG USER IN ROLE!";
-        die();
-    }
-}
-
-/**
- * DEVOLVE UMA TABELA C/ TODOS OS USERS < PARA TESTES
- * @param type $pdo
- */
-function DB_getUsersTable($pdo) {
-    try {
-        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array('0'), "rows");
-        echo "<table class='table table-striped'><tr><th>ID</th><th>EMAIL</th><th>PWD</th><th>AE</th></tr>";
-        foreach ($rows as $row) {
-            echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
-            echo "<td>" . $row['Email'] . "</td>";
-            echo "<td>" . $row['Password'] . "</td>";
-            echo "<td>" . $row['Account_Enabled'] . "</td>";
-            echo "<tr>";
-        }
-        echo "</table>";
-    } catch (Exception $exc) {
-        echo 'ERROR READING USERS';
-    }
-}
-
-//ORG FUNC
-//ADICIONA UM USER À BD
-function DB_addUserOrg($pdo, $hashPassword, $email, $code) {
-    $d = getDateToDB();
-    try {
-        sql($pdo, "INSERT INTO [dbo].[User] ([Password], [Email], [Account_Enabled],"
-                . " [User_Code_Activation], [Login_Failed], [Date_Created]) VALUES (?, ?, ?, ?, ?, ?)", array($hashPassword, $email, '0', $code, '0', $d));
-        //DB_createOrgProfileOnRegistration($pdo, $email);
-        //DB_addOrgInRole($pdo, $email);
-        //SE ENVIADO EXIBIR MENSAGEM
-        echo DB_sendActivationEmail($email);
-    } catch (PDOException $e) {
-        print "ERROR CREATING ACCOUNT!";
         die();
     }
 }
