@@ -27,9 +27,8 @@ include_once '../build/db/mailSend.php';
                     //$forgotPassword = '<a href=account-recovery.php>Forgot your account details?</a>';
                 } else {
                     try {
-                        //GERA CODIGO DE ATIVACAO DE 128car
                         $code = generateActivationCode();
-                        sql($pdo, "INSERT INTO [dbo].[User] ([Password], [Email], [Account_Enabled], [User_Code_Activation], [Login_Failed]) VALUES (?, ?, ?, ?, ?)", array($hashPassword, $email, '0', $code, '0'));
+                        DB_addUser($pdo, $hashPassword, $email, $code);
                         $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
                         $to = $email;
                         $subject = "WIC #ACCOUNT CONFIRMATION";
@@ -41,9 +40,6 @@ include_once '../build/db/mailSend.php';
                                 . "WIC<br><br>"
                                 . "Note: Please do not reply to this email! Thanks!";
                         $msg = sendEmail($to, $subject, $body) . ' Please check your inbox to foward information!';
-                        #CREATE PROFILE
-                        DB_CheckOrganizationInvitationAndMoveToInvites($pdo, $email);
-                        //DB_createProfileOnRegistration($pdo, $email);
                     } catch (Exception $ex) {
                         echo "ERROR!";
                     }

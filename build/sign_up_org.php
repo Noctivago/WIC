@@ -26,18 +26,18 @@ ini_set("display_errors", 1);
                             <div class="row">
                                 <div>
                                     <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()">
-                                        <option value="0">Please choose</option>
+                                        <option value="0">Country</option>
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
                                 <div>
                                     <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow states" placeholder="State" onchange="myFunctionC()" disabled>
-                                        <option value="0">Please choose</option>
+                                        <option value="0">State</option>
                                     </select>
                                 </div>
                                 <div>
                                     <select id = "citySelect" class="bootstrap-select bootstrap-select-arrow cities" placeholder="City" disabled>
-                                        <option value="0">Please choose</option>
+                                        <option value="0">City</option>
                                     </select>
                                 </div>
                             </div><!--.row-->
