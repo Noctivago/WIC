@@ -377,3 +377,21 @@ function DB_addOrgInRole($pdo, $email) {
         die();
     }
 }
+
+function DB_getUsersTable($pdo) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array('0'), "rows");
+        echo "<table class='table table-striped'><tr><th>ID</th><th>EMAIL</th><th>PASSWORD</th><th>ACCOUNT_ENABLED</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Email'] . "</td>";
+            echo "<td>" . $row['Password'] . "</td>";
+            echo "<td>" . $row['Account_Enabled'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING USERS';
+    }
+}
