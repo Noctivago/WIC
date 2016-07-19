@@ -282,7 +282,7 @@ function sendEmail($to, $subject, $body) {
     }
 }
 
-//ADICIONA UM USER À BD
+//ADICIONA UMA ORG À BD
 function DB_addOrg($pdo, $hashPassword, $email, $code, $city) {
     $d = getDateToDB();
     try {
@@ -307,7 +307,7 @@ function DB_addOrgInRole($pdo, $email) {
         sql($pdo, "INSERT INTO [dbo].[User_In_Role] ([User_Id], [Role_Id], [Enabled]) VALUES(?,?,?)"
                 . "", array($userId, $role, 1));
     } catch (PDOException $e) {
-        print "ERROR CREATING USER USER IN ROLE!";
+        print "ERROR CREATING ORG USER IN ROLE!";
         die();
     }
 }
