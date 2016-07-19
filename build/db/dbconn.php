@@ -69,11 +69,12 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         $stmt = $pdo->prepare("SELECT * FROM State WHERE Country_Id = :countryID ORDER BY Name ASC");
         $stmt->bindParam(':countryID', $Country_Id);
         $stmt->execute();
+        echo '<select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()">';
+        echo '<option value="0">State</option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()">';
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
-            echo '</select>';
         }
+        echo '</select>';
     } catch (PDOException $e) {
         echo 'ERROR READING STATE TABLE';
         die();
@@ -86,11 +87,12 @@ function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
         $stmt = $pdo->prepare("SELECT * FROM City WHERE State_Id = :stateID ORDER BY Name ASC");
         $stmt->bindParam(':stateID', $State_Id);
         $stmt->execute();
+        echo '<select id = "citySelect" class="bootstrap-select bootstrap-select-arrow cities" placeholder="City">';
+        echo '<option value="0">City</option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<select id = "citySelect" class="bootstrap-select bootstrap-select-arrow cities" placeholder="City">';
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
-            echo '</select>';
         }
+        echo '</select>';
     } catch (PDOException $e) {
         echo 'ERROR READING CITY TABLE';
         die();
