@@ -52,7 +52,7 @@ function sql($pdo, $q, $params, $return) {
 //DEVOLVE OS COUNTRY PARA SER USADO NA SELECT
 function DB_getCountryAsSelect($pdo) {
     try {
-        $stmt = $pdo->prepare("SELECT * FROM [dbo].[Country]");
+        $stmt = $pdo->prepare("SELECT * FROM [dbo].[Country] ORDER BY NAME ASC");
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
