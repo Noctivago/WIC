@@ -9,8 +9,8 @@ $msg = '';
 ?>
 <body>
     <?php
-    if (isset($_POST['signup']) && !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['citySelect']) && !empty($_POST['pw1']) && !empty($_POST['pw2'])) {
-        $nameOrg = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
+    if (isset($_POST['signup']) && !empty($_POST['Orgname']) && !empty($_POST['email']) && !empty($_POST['citySelect']) && !empty($_POST['pw1']) && !empty($_POST['pw2'])) {
+        $nameOrg = (filter_var($_POST ['Orgname'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
         $city = (filter_var($_POST ['citySelect'], FILTER_SANITIZE_NUMBER_INT));
         $pw1 = (filter_var($_POST ['pw1'], FILTER_SANITIZE_STRING));
@@ -20,16 +20,6 @@ $msg = '';
         } else {
             $hashPassword = hash('whirlpool', $pw1);
             //FUNCA ATE AKI
-            if (DB_checkIfUserExists($pdo, $email)) {
-                $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
-            } else {
-                try {
-                    $code = generateActivationCode();
-                    DB_addUser($pdo, $hashPassword, $email, $code);
-                } catch (Exception $ex) {
-                    echo "ERROR!";
-                }
-            }
         }
     }
     ?>
@@ -40,7 +30,7 @@ $msg = '';
                     <div class="sign-avatar no-photo">&plus;</div>
                     <header class="sign-title">Sign Up</header>
                     <div class="form-group">
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Organization Name" required/>
+                        <input type="text" id="Orgname" name="Orgname" class="form-control" placeholder="Organization Name" required/>
                     </div>
                     <div class="form-group">
                         <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
