@@ -25,7 +25,7 @@ ini_set("display_errors", 1);
                             <h8 class="with-border m-t-lg">Address</h8>
                             <div class="row">
                                 <div>
-                                    <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunctionC()">
+                                    <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()">
                                         <option value="0">Country</option>
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
