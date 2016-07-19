@@ -181,7 +181,7 @@ include_once './db/session.php';
                     </div>-->
 
                     <div class="see-all">
-                        <a href="#">See All (300)</a>
+                        <a href="#">See All</a>
                     </div>
 
                 </section>
