@@ -662,7 +662,7 @@ function DB_getUserPW($pdo, $userId, $pw) {
  */
 function DB_changeUserPW($pdo, $pw, $userId) {
     try {
-        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [id]", array($pw, $userId));
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [id] = ?", array($pw, $userId));
         echo "PASSWORD CHANGED!";
     } catch (Exception $exc) {
         echo "ERROR CHANGING YOUR PASSWORD!";
