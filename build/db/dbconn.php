@@ -170,6 +170,18 @@ function DB_createProfileOnRegistration($pdo, $email) {
     }
 }
 
+//GET USER ID FROM EMAIL
+function DB_checkUserByEmail($pdo, $email) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
+        foreach ($rows as $row) {
+            return $row['id'];
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING USER';
+    }
+}
+
 //ATRIBUI NOVO CODIGO DE VALIDACAO AO USER
 function DB_updateUserAccountActivationCode($pdo, $email, $code) {
     $userId = DB_checkUserByEmail($pdo, $email);
