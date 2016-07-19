@@ -6,12 +6,18 @@ include_once '../build/db/dbconn.php';
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
 $msg = '';
-
 ob_start();
 session_start();
-if (isset($_SESSION['id'])) {
-    //CHECK ROLE
-    header("location: profile.php");
+if (isset($_SESSION['email']) && isset($_SESSION['role'])) {
+    if ($_SESSION['role'] === 'user') {
+        header("location: profile_admin.php");
+    }
+    if ($_SESSION['role'] === 'organization') {
+        header("location: profile_org.php");
+    }
+    if ($_SESSION['role'] === 'admin') {
+        header("location: profile_user.php");
+    }
 }
 ?>
 <body>

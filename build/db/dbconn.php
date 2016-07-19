@@ -539,7 +539,7 @@ function DB_addOrg($pdo, $hashPassword, $email, $name, $code, $city) {
         DB_addOrgProfile($pdo, $email, $name, $city);
         echo DB_sendActivationEmail($email);
     } catch (PDOException $e) {
-        print "ERROR CREATING ORGANIZATION ACCOUNT!";
+        echo "ERROR CREATING ORGANIZATION ACCOUNT!";
         die();
     }
 }
@@ -556,7 +556,7 @@ function DB_addOrgInRole($pdo, $email) {
         sql($pdo, "INSERT INTO [dbo].[User_In_Role] ([User_Id], [Role_Id], [Enabled]) VALUES(?,?,?)"
                 . "", array($userId, $role, 1));
     } catch (PDOException $e) {
-        print "ERROR CREATING ORG USER IN ROLE!";
+        echo "ERROR CREATING ORG USER IN ROLE!";
         die();
     }
 }
@@ -578,7 +578,56 @@ function DB_addOrgProfile($pdo, $email, $name, $city) {
                 . " VALUES(?,?,?,?,?,?)"
                 . "", array($name, $email, $userId, $city, 1, $d));
     } catch (PDOException $e) {
-        print "ERROR CREATING ORGANTIZATION PROFILE!";
+        echo "ERROR CREATING ORGANTIZATION PROFILE!";
         die();
+    }
+}
+
+/**
+ * FUNCAO AUXILLIAR QUE VALIDA SE OS VALORES DA SESSION ESTAO CORRETOS OU SE FORAM ALTERADOS
+ * @param type $pdo
+ * @param type $sId
+ * @param type $sEmail
+ * @param type $s_pw
+ * @param type $s_role
+ * @return boolean
+ */
+function DB_validateSession($pdo, $sId, $sEmail, $s_pw) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] = ?, [Email] = ?, "
+                . "[Password] = ?", array($sId, $sEmail, $s_pw), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        print "ERROR VALIDATING YOUR SESSION!";
+    }
+}
+
+/**
+ * VALIDA SE OS VALORES DA SESSION ESTAO CORRETOS OU SE FORAM ALTERADOS
+ * @param type $pdo
+ * @param type $sId
+ * @param type $sEmail
+ * @param type $s_pw
+ * @param type $s_role
+ * @return boolean
+ */
+function DB_validateUserSession($pdo, $sId, $sEmail, $s_pw, $s_role) {
+    try {
+        $role = DB_getUserRole($pdo, $sEmail);
+        if (DB_validateSession($pdo, $sId, $sEmail, $s_pw)) {
+            if ($role === $s_role) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        print "ERROR VALIDATING YOUR SESSION!";
     }
 }
