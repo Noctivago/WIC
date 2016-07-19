@@ -540,7 +540,7 @@ include ("includes/head_sideMenu.php");
 						</div><!--.recomendations-slider-->
 					</section><!--.box-typical-->
 
-					<section class="box-typical">
+<!--					<section class="box-typical">
 						<header class="box-typical-header-sm">Following</header>
 						<div class="profile-following">
 							<div class="profile-following-grid">
@@ -610,8 +610,8 @@ include ("includes/head_sideMenu.php");
 								</div>
 							</div>
 							<a href="#" class="btn btn-rounded btn-primary-outline">See all (20)</a>
-						</div><!--.profile-following-->
-					</section><!--.box-typical-->
+						</div>.profile-following
+					</section>.box-typical-->
 				</div><!--.col- -->
 
 				<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
@@ -623,7 +623,7 @@ include ("includes/head_sideMenu.php");
 							<div class="profile-card-name">Sarah Sanchez</div>
 							<div class="profile-card-status">Company Founder</div>
 							<div class="profile-card-location">Greater Seattle Area</div>
-							<button type="button" class="btn btn-rounded">Follow</button>
+<!--							<button type="button" class="btn btn-rounded">Follow</button>
 							<div class="btn-group">
 								<button type="button"
 										class="btn btn-rounded btn-primary-outline dropdown-toggle"
@@ -639,10 +639,10 @@ include ("includes/head_sideMenu.php");
 									<a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer Test</a>
 									<a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third Party Test</a>
 								</div>
-							</div>
+							</div>-->
 						</div><!--.profile-card-->
 
-						<div class="profile-statistic tbl">
+<!--						<div class="profile-statistic tbl">
 							<div class="tbl-row">
 								<div class="tbl-cell">
 									<b>200</b>
@@ -653,7 +653,7 @@ include ("includes/head_sideMenu.php");
 									Followers
 								</div>
 							</div>
-						</div>
+						</div>-->
 
 						<ul class="profile-links-list">
 							<li class="nowrap">
@@ -676,11 +676,11 @@ include ("includes/head_sideMenu.php");
 								<i class="font-icon font-icon-tw-fill"></i>
 								<a href="#">twitter.com/example</a>
 							</li>
-							<li class="divider"></li>
+<!--							<li class="divider"></li>
 							<li>
 								<i class="font-icon font-icon-pdf-fill"></i>
 								<a href="#">Export page as PDF</a>
-							</li>
+							</li>-->
 						</ul>
 					</section><!--.box-typical-->
 
