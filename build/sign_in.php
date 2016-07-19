@@ -19,11 +19,35 @@ if (isset($_SESSION['id'])) {
     if (isset($_POST['signin']) && !empty($_POST['email']) && !empty($_POST['pw'])) {
         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
         $pw = (filter_var($_POST ['pw'], FILTER_SANITIZE_STRING));
+        $hashPassword = hash('whirlpool', $pw);
         //1 verifica se user exist
         if (DB_checkIfUserExists($pdo, $email)) {
-            //2 se existir verifica se enabled
+            //2 se existir verifica se enabled / CONTA N BLOQUEADA
             if (DB_checkIfUserEnabled($pdo, $email)) {
-                
+                $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "rows");
+                #$msg = 'EMAIL FOUND';
+                foreach ($rows as $row) {
+                    if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
+                        //ADICIONAR PASSWORD
+                        $_SESSION['valid'] = true;
+                        $_SESSION['timeout'] = time();
+                        $_SESSION['id'] = $row['Id'];
+                        //$_SESSION['username'] = $row['Username'];
+                        $_SESSION['email'] = $row['Email'];
+                        $_SESSION['password'] = $row['Password'];
+                        $msg = 'Welcome ' . $row['Username'];
+                        //SET [Login_failed] = 0
+                        if (DB_setLoginFailed($pdo, $email)) {
+                            header('Location: profile.php');
+                        }
+                    } else {
+                        //SE ENABLED = 0
+                        $msg = "Please activate your account!";
+                    }
+                }
+                //SE USER N EXISTS
+            } else {
+                $msg = "Wrong email or password!";
             }
         }
     }

@@ -227,6 +227,28 @@ function DB_checkIfUserEnabled($pdo, $email) {
     }
 }
 
+//DEVOLVE NUMERO DE TENTATIVAS FALHADAS NO LOGIN
+function DB_getLoginFailedValue($pdo, $email) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
+        foreach ($rows as $row) {
+            return $row['Login_Failed'];
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
+//BLOQUEIA CONTA
+function DB_setBlockAccount($pdo, $email) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? ", array('0', $email));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}
+
 //ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA
 function DB_sendActivationEmail($email) {
     include_once './mailSend.php';
