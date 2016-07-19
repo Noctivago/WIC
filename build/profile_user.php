@@ -460,8 +460,8 @@ include ("includes/head_sideMenu.php");
                                                                             </section>.skill-item
                                                                     </article>.profile-info-item-->
 
-                    <article class="profile-info-item">
-                        <!--                        <header class="profile-info-item-header">
+<!--                    <article class="profile-info-item">
+                                                <header class="profile-info-item-header">
                                                     <i class="font-icon font-icon-star"></i>
                                                     More interest
                                                 </header>
@@ -478,9 +478,9 @@ include ("includes/head_sideMenu.php");
                                                     <a href="#" class="label label-light-grey">Example</a>
                                                     <a href="#" class="label label-light-grey">One more</a>
                                                     <a href="#" class="label label-light-grey">Here is example interest</a>
-                                                </div>-->
-                    </article><!--.profile-info-item-->
-                </section><!--.box-typical-->
+                                                </div>
+                    </article>.profile-info-item
+                </section>.box-typical-->
 
                 <!--Reviews-->
 
