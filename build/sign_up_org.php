@@ -30,8 +30,11 @@ ini_set("display_errors", 1);
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
-                                <div  class ="states">
+                                <div  >
+                                    <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()">
+                                        <option value="0">State</option>
 
+                                    </select>
                                 </div>
                                 <div class ="cities">
 
@@ -102,8 +105,9 @@ ini_set("display_errors", 1);
                                                 url: '../build/ajax/get_state.php',
                                                 method: 'post',
                                                 data: {con: Country_Id},
-                                                success: function (data) {
-                                                    $('.states').html(data);
+                                                succes s: function (data) {
+                                                    //$('.states').html(data);
+                                                    $('.stateSelect').html(data);
                                                 }
                                             });
                                         }
