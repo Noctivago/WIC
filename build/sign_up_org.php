@@ -56,7 +56,7 @@ $msg = '';
                                     </select>
                                 </div>
                                 <div>
-                                    <select id = "citySelect" class="bootstrap-select bootstrap-select-arrow states" placeholder="City" required>
+                                    <select id = "citySelect" class="states bootstrap-select bootstrap-select-arrow" placeholder="City" required>
 
                                     </select>
                                 </div>
