@@ -38,7 +38,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['role'])) {
                         //ADICIONAR PASSWORD
                         $_SESSION['valid'] = true;
                         $_SESSION['timeout'] = time();
-                        $_SESSION['id'] = $row['Id'];
+                        $_SESSION['id'] = $row['id'];
                         $_SESSION['email'] = $row['Email'];
                         $_SESSION['password'] = $row['Password'];
                         $_SESSION['role'] = DB_getUserRole($pdo, $email);
