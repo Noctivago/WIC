@@ -21,8 +21,17 @@ $msg = '';
             if ($pw1 != $pw2) {
                 $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
             } else {
-                $hashPassword = hash('whirlpool', $pw1);
-                //FUNCA ATE AKI
+                if (DB_checkIfUserExists($pdo, $email)) {
+                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
+                } else {
+                    $hashPassword = hash('whirlpool', $pw1);
+                    try {
+                        $code = generateActivationCode();
+                        DB_addOrg($pdo, $hashPassword, $email, $nameOrg, $code, $city);
+                    } catch (Exception $ex) {
+                        echo "ERROR!";
+                    }
+                }
             }
         }
     }

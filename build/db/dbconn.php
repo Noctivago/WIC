@@ -526,16 +526,18 @@ function DB_getUsersTable($pdo) {
  * @param type $code Codigo de Ativação
  * @param type $city Cidade
  */
-function DB_addOrg($pdo, $hashPassword, $email, $code, $city) {
+function DB_addOrg($pdo, $hashPassword, $email, $name, $code, $city) {
     $d = getDateToDB();
     try {
         sql($pdo, "INSERT INTO [dbo].[User] ([Password], [Email], [Account_Enabled],"
                 . " [User_Code_Activation], [Login_Failed], [Date_Created]) VALUES (?, ?, ?, ?, ?, ?)", array($hashPassword, $email, '0', $code, '0', $d));
+        //ATRIBUI ROLE
         DB_addOrgInRole($pdo, $email);
-        //SE ENVIADO EXIBIR MENSAGEM
+        //CRIA PROFILE
+        DB_addOrgProfile($pdo, $email, $name, $city);
         echo DB_sendActivationEmail($email);
     } catch (PDOException $e) {
-        print "ERROR CREATING ACCOUNT!";
+        print "ERROR CREATING ORGANIZATION ACCOUNT!";
         die();
     }
 }
@@ -553,6 +555,28 @@ function DB_addOrgInRole($pdo, $email) {
                 . "", array($userId, $role, 1));
     } catch (PDOException $e) {
         print "ERROR CREATING ORG USER IN ROLE!";
+        die();
+    }
+}
+
+/**
+ * ADICIONA UM PROFILE A ORG AQUANDO DO SIGNUP
+ * @param type $pdo
+ * @param type $email Email da Org
+ * @param type $name Nome da Org
+ * @param type $city CityId
+ */
+function DB_addOrgProfile($pdo, $email, $name, $city) {
+    $d = getDateToDB();
+    $userId = DB_getUserId($pdo, $email);
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Organization] ([Name], [Organization_Email], "
+                . "[User_Boss], [City_id], [Enabled],"
+                . "[Date_Created])"
+                . " VALUES(?,?,?,?,?,?)"
+                . "", array($name, $email, $userId, $city, 1, $d));
+    } catch (PDOException $e) {
+        print "ERROR CREATING ORGANTIZATION PROFILE!";
         die();
     }
 }
