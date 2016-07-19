@@ -133,9 +133,9 @@ function DB_addUser($pdo, $hashPassword, $email, $code) {
 //DEVOLVE O ID DO USER ATRAVES DO EMAIL
 function DB_getUserId($pdo, $email) {
     try {
-        $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
+        $rows = sql($pdo, "SELECT [id] FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
         foreach ($rows as $row) {
-            return $row['Id'];
+            return $row['id'];
         }
     } catch (Exception $exc) {
         echo 'ERROR READING USER!';
@@ -146,7 +146,7 @@ function DB_getUserId($pdo, $email) {
 function DB_createProfileOnRegistration($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
     try {
-        sql($pdo, "INSERT INTO [dbo].[Profile] ([User_Id], [Enabled], [Picture_Path]) VALUES(?,?, 'http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png')"
+        sql($pdo, "INSERT INTO [dbo].[User_Profile] ([User_Id], [Enabled], [Picture_Path]) VALUES(?,?, 'http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png')"
                 . "", array($userId, 1));
     } catch (PDOException $e) {
         print "ERROR CREATING USER PROFILE!";
@@ -157,7 +157,7 @@ function DB_createProfileOnRegistration($pdo, $email) {
 //ADICIONA UM ROLE AO USER
 function DB_addUserInRole($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
-    $role = DB_getRoleByName($pdo, 'user');
+    $role = DB_getRoleByName($pdo, "user");
     try {
         sql($pdo, "INSERT INTO [dbo].[User_In_Role] ([User_Id], [Role_Id], [Enabled]) VALUES(?,?,?)"
                 . "", array($userId, $role, 1));
@@ -170,7 +170,7 @@ function DB_addUserInRole($pdo, $email) {
 //DEVOLVE UM ROLE ATRAVES DO NOME
 function DB_getRoleByName($pdo, $name) {
     try {
-        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [Name] = ? AND [Enabled] = 1", array($email), "rows");
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [Name] = ? AND [Enabled] = 1", array($name), "rows");
         foreach ($rows as $row) {
             return $row['Id'];
         }
@@ -196,7 +196,7 @@ function DB_checkIfInvitationExists($pdo, $email) {
 function DB_addUserInService($pdo, $email, $service) {
     $userId = DB_getUserId($pdo, $email);
     $d = getDateToDB();
-    $role = DB_getRoleByName($pdo, 'user');
+    $role = DB_getRoleByName($pdo, "user");
     try {
         sql($pdo, "INSERT INTO [dbo].[User_Service] ([Service_Id], [User_Id], [Enabled],"
                 . "[Data_Assigned], [Validate], [Role_Id]) VALUES(?,?,?,?,?,?)"
