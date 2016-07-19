@@ -1,8 +1,4 @@
 <html>
-    <?php
-    include_once './db/dbconn.php';
-    include_once './db/session.php';
-    ?>
     <head lang="en">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
