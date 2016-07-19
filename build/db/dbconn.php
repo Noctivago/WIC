@@ -226,6 +226,7 @@ function DB_sendActivationEmail($email) {
 
 //RECOVERY PASSWORD
 function DB_resetPassword($pdo, $email) {
+    include_once './functions.php';
     $newPass = generatePassword();
     $hashPassword = hash('whirlpool', $newPass);
     try {
