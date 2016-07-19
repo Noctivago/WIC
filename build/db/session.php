@@ -2,7 +2,8 @@
 
 include_once './dbconn.php';
 session_start(); // Starting Session
-
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 if (!isset($_SESSION['email'])) {
     header('Location:../build/sign_in.php'); // Redirecting To Home Page
 }
@@ -17,6 +18,7 @@ if (DB_validateUserSession($pdo, $sId, $sEmail, $s_pw, $s_role)) {
 
 //SENAO    
 } else {
-    session_destroy();
-    header('Location:../build/sign_in.php'); // Redirecting To Home Page
+
+    //session_destroy();
+    //header('Location:../build/sign_in.php'); // Redirecting To Home Page
 }
