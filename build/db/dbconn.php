@@ -281,3 +281,33 @@ function sendEmail($to, $subject, $body) {
         echo "Message sent!";
     }
 }
+
+//ADICIONA UM USER À BD
+function DB_addOrg($pdo, $hashPassword, $email, $code, $city) {
+    $d = getDateToDB();
+    try {
+        sql($pdo, "INSERT INTO [dbo].[User] ([Password], [Email], [Account_Enabled],"
+                . " [User_Code_Activation], [Login_Failed], [Date_Created]) VALUES (?, ?, ?, ?, ?, ?)", array($hashPassword, $email, '0', $code, '0', $d));
+        //DB_createORG <- MISSING;
+
+        DB_addOrgInRole($pdo, $email);
+        //SE ENVIADO EXIBIR MENSAGEM
+        echo DB_sendActivationEmail($email);
+    } catch (PDOException $e) {
+        print "ERROR CREATING ACCOUNT!";
+        die();
+    }
+}
+
+//ADICIONA UM ROLE A ORG
+function DB_addOrgInRole($pdo, $email) {
+    $userId = DB_getUserId($pdo, $email);
+    $role = DB_getRoleByName($pdo, "organization");
+    try {
+        sql($pdo, "INSERT INTO [dbo].[User_In_Role] ([User_Id], [Role_Id], [Enabled]) VALUES(?,?,?)"
+                . "", array($userId, $role, 1));
+    } catch (PDOException $e) {
+        print "ERROR CREATING USER USER IN ROLE!";
+        die();
+    }
+}
