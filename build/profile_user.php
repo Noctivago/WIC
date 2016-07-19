@@ -702,7 +702,7 @@ include ("includes/head_sideMenu.php");
                         <div class="profile-card-name">Sarah Sanchez</div>
                         <div class="profile-card-status">Company Founder</div>
                         <div class="profile-card-location">Greater Seattle Area</div>
-                        <button type="button" class="btn btn-rounded">Follow</button>
+                        <!--<button type="button" class="btn btn-rounded">Follow</button>-->
                         <!--<div class="btn-group">
                                                     <button type="button"
                                                             class="btn btn-rounded btn-primary-outline dropdown-toggle"
