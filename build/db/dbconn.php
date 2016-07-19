@@ -220,5 +220,5 @@ function DB_sendActivationEmail($email) {
             . "Best regards,<br>"
             . "WIC<br><br>"
             . "Note: Please do not reply to this email! Thanks!";
-    $msg = sendEmail($to, $subject, $body) . ' Please check your inbox to foward information!';
+    return sendEmail($to, $subject, $body);
 }
