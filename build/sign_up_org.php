@@ -30,14 +30,13 @@ ini_set("display_errors", 1);
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
                                 </div>
-                                <div  >
-                                    <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow stateSelect" placeholder="State" onchange="myFunctionC()">
-                                        <option value="0">State</option>
+                                <div  class ="states">
 
-                                    </select>
                                 </div>
-                                <div class ="cities">
+                                <div >
+                                    <span  class ="cities">
 
+                                    </span>
                                 </div>
                             </div><!--.row-->
                         </div>
@@ -97,14 +96,16 @@ ini_set("display_errors", 1);
                                             }
                                         }
                                         function loadState(Country) {
+                                            //var Country_Id = document.getElementById(x).value;
                                             var Country_Id = Country;
+                                            //var stateOp = document.getElementById('stateSelect');
+                                            //stateOp.disabled = false;
                                             $.ajax({
                                                 url: '../build/ajax/get_state.php',
                                                 method: 'post',
                                                 data: {con: Country_Id},
-                                                succes s: function (data) {
-                                                    //$('.states').html(data);
-                                                    $('.stateSelect').html(data);
+                                                success: function (data) {
+                                                    $('.states').html(data);
                                                 }
                                             });
                                         }
