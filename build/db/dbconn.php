@@ -248,11 +248,11 @@ function DB_resetPassword($pdo, $email) {
 
 //EMAIL SEND
 function sendEmail($to, $subject, $body) {
-#error_reporting(E_STRICT);
-#configura o fuso horario
+    #error_reporting(E_STRICT);
+    #configura o fuso horario
     date_default_timezone_set('Europe/Lisbon');
     #faz os includes necessarios das bibliotecas
-    require_once '../maiSender/class.phpmailer.php';
+    require_once "../_mail/class.phpmailer.php";
     #cria uma nova instancia do PHPMailer
     $mail = new PHPMailer();
     $mail->IsSMTP(); // telling the class to use SMTP
