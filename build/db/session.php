@@ -14,7 +14,8 @@ $s_role = $_SESSION['role'];
 
 //SE TUDO OK C/ A SESSION
 if (DB_validateUserSession($pdo, $sId, $sEmail, $s_pw, $s_role)) {
-    
+
+//SENAO    
 } else {
     session_destroy();
     header('Location:../sign_in.php'); // Redirecting To Home Page
