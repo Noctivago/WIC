@@ -530,7 +530,7 @@ function DB_addOrg($pdo, $hashPassword, $email, $name, $code, $city) {
     $d = getDateToDB();
     try {
         sql($pdo, "INSERT INTO [dbo].[User] ([Password], [Email], [Account_Enabled],"
-                . " [User_Code_Activation], [Login_Failed], [Date_Created]) VALUES (?, ?, ?, ?, ?, ?)", array($hashPassword, $email, '0', $code, '0', $d));
+                . " [User_Code_Activation], [Login_Failed], [Date_Created]) VALUES (?, ?, ?, ?, ?, ?)", array($hashPassword, $email, '1', $code, '0', $d));
         //ATRIBUI ROLE
         DB_addOrgInRole($pdo, $email);
         //CRIA PROFILE
