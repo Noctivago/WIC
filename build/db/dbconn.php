@@ -227,7 +227,7 @@ function DB_sendActivationEmail($email) {
 //RECOVERY PASSWORD
 function DB_resetPassword($pdo, $email) {
     //include_once './functions.php';
-    $newPass = generatePassword();
+    $newPass = md5(uniqid(mt_rand(), true));
     $hashPassword = hash('whirlpool', $newPass);
     try {
         $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Email] = ? ", array($hashPassword, $email));
