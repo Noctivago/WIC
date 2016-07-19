@@ -2,4 +2,4 @@
 
 include_once '../db/dbconn.php';
 
-DB_
+DB_activateUserAccount($pdo, "prcunha.383@gmail.com");
