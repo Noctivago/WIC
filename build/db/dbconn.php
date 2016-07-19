@@ -199,7 +199,7 @@ function DB_getUserId($pdo, $email) {
 function DB_createProfileOnRegistration($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
     try {
-        sql($pdo, "INSERT INTO [dbo].[User_Profile] ([User_Id], [Enabled], [Picture_Path]) VALUES(?,?, 'http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png')"
+        sql($pdo, "INSERT INTO [dbo].[User_Profile] ([User_Id], [Enabled], [Picture_Path], [First_Name], [Last_Name]) VALUES(?,?, 'http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png', 'FirstName', 'LastName')"
                 . "", array($userId, 1));
     } catch (PDOException $e) {
         print "ERROR CREATING USER PROFILE!";
