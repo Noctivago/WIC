@@ -631,3 +631,38 @@ function DB_validateUserSession($pdo, $sId, $sEmail, $s_pw, $s_role) {
         print "ERROR VALIDATING YOUR SESSION!";
     }
 }
+
+/**
+ * DEVOLVE A PASSWORD ATUAL DO USER
+ * @param type $pdo
+ * @param type $userId UserId
+ * @param type $pw Password Atual do User
+ * @return boolean Devolve T or F
+ */
+function DB_getUserPW($pdo, $userId, $pw) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] = ? AND [Password] = ?", array($userId, $pw), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo "ERROR READING USER TABLE!";
+    }
+}
+
+/**
+ * FUNCAO PARA ALTERAR A PW DO USER
+ * @param type $pdo
+ * @param type $pw NOVA PW
+ * @param type $userId UserId
+ */
+function DB_changeUserPW($pdo, $pw, $userId) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Id]", array($pw, $userId));
+        echo "PASSWORD CHANGED!";
+    } catch (Exception $exc) {
+        echo "ERROR CHANGING YOUR PASSWORD!";
+    }
+}

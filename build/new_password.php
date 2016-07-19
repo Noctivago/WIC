@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <?php
-include("includes/head_singleforms.php");
+include_once 'includes/head_singleforms.php';
+include_once './db/dbconn.php';
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
+//$msg = '';
 ?>
 
 <body>
+    <?php
+    if (isset($_POST['changePassword']) && !empty($_POST['apw']) && !empty($_POST['pw1']) && !empty($_POST['pw2'])) {
+        $aPW = (filter_var($_POST ['apw'], FILTER_SANITIZE_STRING));
+        $PW1 = (filter_var($_POST ['pw1'], FILTER_SANITIZE_STRING));
+        $PW2 = (filter_var($_POST ['pw2'], FILTER_SANITIZE_STRING));
+        $sId = $_SESSION['id'];
+        if ($PW1 != $PW2) {
+            $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
+        } else {
+            $hashPassword = hash('whirlpool', $aPW);
+            if (DB_getUserPW($pdo, $sId, $hashPassword)) {
+                $msg = DB_changeUserPW($pdo, $hashPassword, $sId);
+            } else {
+                $msg = "ATUAL PASSWORD IS NOT CORRECT!";
+            }
+        }
+    }
+    ?>
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box reset-password-box">
+                <form class="sign-box reset-password-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <!--<div class="sign-avatar">
                         <img src="img/avatar-sign.png" alt="">
                     </div>-->
                     <header class="sign-title">New Password</header>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Actual Password"/>
+                        <input type="password" id="apw" name ="apw" class="form-control" placeholder="Actual Password"/>
                     </div> 
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="New Password"/>
+                        <input type="password" id="pw1" name ="pw1" class="form-control" placeholder="New Password"/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Confirm New Password"/>
+                        <input type="password" id="pw2" name ="pw2" class="form-control" placeholder="Confirm New Password"/>
                     </div>
-                    <button type="submit" class="btn btn-rounded btn-block">Submit</button>
+                    <p class="sign-note">  <?= $msg; ?> </p>
+                    <button type="submit" name="changePassword" class="btn btn-rounded btn-block">Submit</button>
                 </form>
             </div>
         </div>
