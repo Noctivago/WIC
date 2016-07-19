@@ -19,8 +19,9 @@ $msg;
             $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
         } else {
             $hashPassword = hash('whirlpool', $aPW);
+            $newPassword = hash('whirlpool', $PW1);
             if (DB_getUserPW($pdo, $sId, $hashPassword)) {
-                $msg = DB_changeUserPW($pdo, $hashPassword, $sId);
+                $msg = DB_changeUserPW($pdo, $newPassword, $sId);
             } else {
                 $msg = "ATUAL PASSWORD IS NOT CORRECT!";
             }
