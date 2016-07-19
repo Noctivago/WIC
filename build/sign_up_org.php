@@ -107,7 +107,7 @@ ini_set("display_errors", 1);
                                                 data: {con: Country_Id},
                                                 succes s: function (data) {
                                                     //$('.states').html(data);
-                                                    $('.stateSelect').append(data);
+                                                    $('.stateSelect').html(data);
                                                 }
                                             });
                                         }
