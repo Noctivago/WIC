@@ -5,27 +5,28 @@ include_once 'includes/head_singleforms.php';
 include_once '../build/db/dbconn.php';
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
+$msg = '';
 ?>
 <body>
 
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box">
+                <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <div class="sign-avatar no-photo">&plus;</div>
                     <header class="sign-title">Sign Up</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Organization Name"/>
+                        <input type="text" class="form-control" placeholder="Organization Name" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="E-Mail"/>
+                        <input type="email" class="form-control" placeholder="E-Mail" required/>
                     </div>
                     <section class="card box-typical-full-height">
                         <div class="card-block">
                             <h8 class="with-border m-t-lg">Address</h8>
                             <div class="row">
                                 <div>
-                                    <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()">
+                                    <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
                                         <option value="0">Country</option>
                                         <?= DB_getCountryAsSelect($pdo); ?>
                                     </select>
@@ -44,11 +45,11 @@ ini_set("display_errors", 1);
                         </div>
                     </section>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password"/>
+                        <input type="password" class="form-control" placeholder="Password" required/>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Repeat password"/>
+                        <input type="password" class="form-control" placeholder="Repeat password" required/>
                     </div>
                     <button type="submit" class="btn btn-rounded btn-success sign-up">Sign up</button>
                     <p class="sign-note">Already have an account? <a href="sign_in.php">Sign in</a></p>
