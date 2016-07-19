@@ -49,7 +49,10 @@ function sql($pdo, $q, $params, $return) {
 //
 //
 //
-//DEVOLVE OS COUNTRY PARA SER USADO NA SELECT
+/**
+ * DEVOLVE OS COUNTRY PARA SER USADO NA SELECT
+ * @param type $pdo
+ */
 function DB_getCountryAsSelect($pdo) {
     try {
         $stmt = $pdo->prepare("SELECT * FROM [dbo].[Country] ORDER BY NAME ASC");
@@ -63,7 +66,11 @@ function DB_getCountryAsSelect($pdo) {
     }
 }
 
-//DEVOLVE OS STATE PARA SEREM USADOS NUMA SELECT <- A PARTIR DO COUNTRY ID
+/**
+ * DEVOLVE OS STATE PARA SEREM USADOS NUMA SELECT <- A PARTIR DO COUNTRY ID
+ * @param type $pdo
+ * @param type $Country_Id Id do Country
+ */
 function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
     try {
         $stmt = $pdo->prepare("SELECT * FROM State WHERE Country_Id = :countryID ORDER BY Name ASC");
@@ -81,7 +88,11 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
     }
 }
 
-//DEVOLVE AS CITIES PARA SEREM USADAS NUMA SELECT <- A PARTIR DO STATE ID
+/**
+ * DEVOLVE AS CITIES PARA SEREM USADAS NUMA SELECT
+ * @param type $pdo
+ * @param type $State_Id StateId
+ */
 function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
     try {
         $stmt = $pdo->prepare("SELECT * FROM City WHERE State_Id = :stateID ORDER BY Name ASC");
@@ -105,7 +116,12 @@ function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
 //
 //
 //
-//VERIFICA SE O USER JA SE ENCONTRA REGISTADO
+/**
+ * Verifica se o User ja existe
+ * @param type $pdo
+ * @param type $email Email para verificação
+ * @return boolean Devolve T or F
+ */
 function DB_checkIfUserExists($pdo, $email) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? ", array($email), "count");
@@ -120,7 +136,13 @@ function DB_checkIfUserExists($pdo, $email) {
     }
 }
 
-//ADICIONA UM USER À BD
+/**
+ * Adiciona um User à BD
+ * @param type $pdo
+ * @param type $hashPassword password
+ * @param type $email Email do User
+ * @param type $code Codigo para ativação
+ */
 function DB_addUser($pdo, $hashPassword, $email, $code) {
     $d = getDateToDB();
     try {
@@ -137,7 +159,12 @@ function DB_addUser($pdo, $hashPassword, $email, $code) {
     }
 }
 
-//ATIVA A CONTA DE UM USER
+/**
+ * ATIVA A CONTA DE UM USER
+ * @param type $pdo
+ * @param type $email Ativa um user a partir do seu email
+ * @return boolean
+ */
 function DB_activateUserAccount($pdo, $email) {
     try {
         $count = sql($pdo, "UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? ", array('1', $email));
@@ -147,7 +174,12 @@ function DB_activateUserAccount($pdo, $email) {
     }
 }
 
-//DEVOLVE O ID DO USER ATRAVES DO EMAIL
+/**
+ * DEVOLVE O ID DO USER ATRAVES DO EMAIL
+ * @param type $pdo
+ * @param type $email Email do User
+ * @return type UserId
+ */
 function DB_getUserId($pdo, $email) {
     try {
         $rows = sql($pdo, "SELECT [id] FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
@@ -159,7 +191,11 @@ function DB_getUserId($pdo, $email) {
     }
 }
 
-//NO REGISTO DO USER CRIA O SEU PERFIL
+/**
+ * NO REGISTO DO USER CRIA O SEU PERFIL
+ * @param type $pdo
+ * @param type $email Utiliza o email para procurar o UserId
+ */
 function DB_createProfileOnRegistration($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
     try {
@@ -171,7 +207,12 @@ function DB_createProfileOnRegistration($pdo, $email) {
     }
 }
 
-//GET USER ID FROM EMAIL
+/**
+ * DEVOLVE USER ID FROM EMAIL
+ * @param type $pdo
+ * @param type $email Email para pesquisar User
+ * @return type
+ */
 function DB_checkUserByEmail($pdo, $email) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
@@ -183,7 +224,12 @@ function DB_checkUserByEmail($pdo, $email) {
     }
 }
 
-//ATRIBUI NOVO CODIGO DE VALIDACAO AO USER
+/**
+ * ATRIBUI NOVO CODIGO DE VALIDACAO AO USER
+ * @param type $pdo
+ * @param type $email Email do user para obter UserId
+ * @param type $code Novo codigo de ativação
+ */
 function DB_updateUserAccountActivationCode($pdo, $email, $code) {
     $userId = DB_checkUserByEmail($pdo, $email);
     try {
@@ -194,7 +240,11 @@ function DB_updateUserAccountActivationCode($pdo, $email, $code) {
     }
 }
 
-//ADICIONA UM ROLE AO USER
+/**
+ * ADICIONA UM ROLE AO USER
+ * @param type $pdo
+ * @param type $email Usa o email para obter o UserId
+ */
 function DB_addUserInRole($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
     $role = DB_getRoleByName($pdo, "user");
@@ -207,7 +257,12 @@ function DB_addUserInRole($pdo, $email) {
     }
 }
 
-//DEVOLVE UM ROLE ATRAVES DO NOME
+/**
+ * DEVOLVE UM ROLE ATRAVES DO NOME
+ * @param type $pdo
+ * @param type $name Nome do Role
+ * @return type Retorna RoleId
+ */
 function DB_getRoleByName($pdo, $name) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[Role] WHERE [Name] = ? AND [Enabled] = 1", array($name), "rows");
@@ -219,7 +274,12 @@ function DB_getRoleByName($pdo, $name) {
     }
 }
 
-//DEVOLVE O ROLE DE UM USER
+/**
+ * DEVOLVE O ROLE DE UM USER
+ * @param type $pdo
+ * @param type $email Email do User
+ * @return type Retorna UserId
+ */
 function DB_getUserRole($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
     try {
@@ -232,7 +292,12 @@ function DB_getUserRole($pdo, $email) {
     }
 }
 
-//DEVOLVE O NOME DE UM ROLE ATRAVES DO SEU ID
+/**
+ * DEVOLVE O NOME DE UM ROLE DE UM USER ATRAVES DO SEU ID
+ * @param type $pdo
+ * @param type $email Email do User
+ * @return type
+ */
 function DB_getRoleName($pdo, $email) {
     $Roleid = DB_getUserRole($pdo, $email);
     try {
@@ -245,7 +310,11 @@ function DB_getRoleName($pdo, $email) {
     }
 }
 
-//VERIFICA SE O USER TEM CONVITES
+/**
+ * VERIFICA SE O USER TEM CONVITES
+ * @param type $pdo
+ * @param type $email NO registo verifica se o user tem convites
+ */
 function DB_checkIfInvitationExists($pdo, $email) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[Organization_Invites] WHERE [Email] = ? AND [Enabled] = 1", array($email), "rows");
@@ -258,7 +327,12 @@ function DB_checkIfInvitationExists($pdo, $email) {
     }
 }
 
-//VINCULA UM USER A UM SERVIÇO
+/**
+ * VINCULA UM USER A UM SERVIÇO
+ * @param type $pdo
+ * @param type $email Email do User
+ * @param type $service ServiceId
+ */
 function DB_addUserInService($pdo, $email, $service) {
     $userId = DB_getUserId($pdo, $email);
     $d = getDateToDB();
@@ -273,7 +347,12 @@ function DB_addUserInService($pdo, $email, $service) {
     }
 }
 
-//VERIFICA SE CONTA VALIDADA
+/**
+ * VERIFICA SE CONTA VALIDADA
+ * @param type $pdo
+ * @param type $email Email do User
+ * @return boolean Retorna T or F
+ */
 function DB_checkIfUserEnabled($pdo, $email) {
     try {
         $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [Account_Enabled] = ?", array($email, 1), "count");
@@ -287,7 +366,12 @@ function DB_checkIfUserEnabled($pdo, $email) {
     }
 }
 
-//DEVOLVE NUMERO DE TENTATIVAS FALHADAS NO LOGIN
+/**
+ * DEVOLVE NUMERO DE TENTATIVAS FALHADAS NO LOGIN
+ * @param type $pdo
+ * @param type $email Email do User
+ * @return type Numero de falhas de login
+ */
 function DB_getLoginFailedValue($pdo, $email) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ?", array($email), "rows");
@@ -299,7 +383,13 @@ function DB_getLoginFailedValue($pdo, $email) {
     }
 }
 
-//ATRIBUI VALOR AO CAMPO LOGIN FAILED
+/**
+ * ATRIBUI VALOR AO CAMPO LOGIN FAILED
+ * @param type $pdo
+ * @param type $email Email do User
+ * @param type $value Valor a atribuir
+ * @return boolean
+ */
 function DB_setLoginFailed($pdo, $email, $value = '0') {
     try {
         $count = sql($pdo, "UPDATE [dbo].[User] SET [Login_Failed] = ? WHERE [Email] = ? ", array($value, $email));
@@ -309,7 +399,12 @@ function DB_setLoginFailed($pdo, $email, $value = '0') {
     }
 }
 
-//BLOQUEIA CONTA
+/**
+ * BLOQUEIA CONTA DE UM USER
+ * @param type $pdo
+ * @param type $email Email do User
+ * @return boolean
+ */
 function DB_setBlockAccount($pdo, $email) {
     try {
         $count = sql($pdo, "UPDATE [dbo].[User] SET [Account_Enabled] = ? WHERE [Email] = ? ", array('0', $email));
@@ -319,7 +414,11 @@ function DB_setBlockAccount($pdo, $email) {
     }
 }
 
-//ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA
+/**
+ * ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA
+ * @param type $email Email do User
+ * @return type
+ */
 function DB_sendActivationEmail($email) {
     include_once './mailSend.php';
     $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
@@ -335,7 +434,12 @@ function DB_sendActivationEmail($email) {
     return sendEmail($to, $subject, $body);
 }
 
-//RECOVERY PASSWORD
+/**
+ * RECOVERY PASSWORD > Envia nova pw ao user via Email
+ * @param type $pdo
+ * @param type $email Email do User
+ * @return boolean|string
+ */
 function DB_resetPassword($pdo, $email) {
     //include_once './functions.php';
     $newPass = md5(uniqid(mt_rand(), true));
@@ -357,7 +461,12 @@ function DB_resetPassword($pdo, $email) {
     }
 }
 
-//EMAIL SEND
+/**
+ * Função para envio de Email
+ * @param type $to Destinatario
+ * @param type $subject Assunto
+ * @param type $body Mensagem
+ */
 function sendEmail($to, $subject, $body) {
     #error_reporting(E_STRICT);
     #configura o fuso horario
@@ -387,7 +496,14 @@ function sendEmail($to, $subject, $body) {
     }
 }
 
-//ADICIONA UMA ORG À BD
+/**
+ * ADICIONA UMA ORG À BD
+ * @param type $pdo
+ * @param type $hashPassword Pw
+ * @param type $email Email da Org
+ * @param type $code Codigo de Ativação
+ * @param type $city Cidade
+ */
 function DB_addOrg($pdo, $hashPassword, $email, $code, $city) {
     $d = getDateToDB();
     try {
@@ -404,7 +520,11 @@ function DB_addOrg($pdo, $hashPassword, $email, $code, $city) {
     }
 }
 
-//ADICIONA UM ROLE A ORG
+/**
+ * ADICIONA UM ROLE A ORG
+ * @param type $pdo
+ * @param type $email Email da Org
+ */
 function DB_addOrgInRole($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
     $role = DB_getRoleByName($pdo, "organization");
@@ -417,6 +537,10 @@ function DB_addOrgInRole($pdo, $email) {
     }
 }
 
+/**
+ * DEVOLVE UMA TABELA C/ TODOS OS USERS < PARA TESTES
+ * @param type $pdo
+ */
 function DB_getUsersTable($pdo) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] > ?", array('0'), "rows");
@@ -432,5 +556,22 @@ function DB_getUsersTable($pdo) {
         echo "</table>";
     } catch (Exception $exc) {
         echo 'ERROR READING USERS';
+    }
+}
+
+//ORG FUNC
+//ADICIONA UM USER À BD
+function DB_addUserOrg($pdo, $hashPassword, $email, $code) {
+    $d = getDateToDB();
+    try {
+        sql($pdo, "INSERT INTO [dbo].[User] ([Password], [Email], [Account_Enabled],"
+                . " [User_Code_Activation], [Login_Failed], [Date_Created]) VALUES (?, ?, ?, ?, ?, ?)", array($hashPassword, $email, '0', $code, '0', $d));
+        //DB_createOrgProfileOnRegistration($pdo, $email);
+        //DB_addOrgInRole($pdo, $email);
+        //SE ENVIADO EXIBIR MENSAGEM
+        echo DB_sendActivationEmail($email);
+    } catch (PDOException $e) {
+        print "ERROR CREATING ACCOUNT!";
+        die();
     }
 }

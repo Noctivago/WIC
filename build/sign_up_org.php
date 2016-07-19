@@ -17,12 +17,13 @@ $msg = '';
         $pw2 = (filter_var($_POST ['pw2'], FILTER_SANITIZE_STRING));
         if ($city === 0) {
             $msg = "PLEASE CHOOSE A CITY!";
-        }
-        if ($pw1 != $pw2) {
-            $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
         } else {
-            $hashPassword = hash('whirlpool', $pw1);
-            //FUNCA ATE AKI
+            if ($pw1 != $pw2) {
+                $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
+            } else {
+                $hashPassword = hash('whirlpool', $pw1);
+                //FUNCA ATE AKI
+            }
         }
     }
     ?>
