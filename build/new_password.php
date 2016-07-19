@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    include("includes/head_singleforms.php");
+include("includes/head_singleforms.php");
 ?>
 
 <body>
@@ -13,6 +13,9 @@
                     </div>-->
                     <header class="sign-title">New Password</header>
                     <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Actual Password"/>
+                    </div> 
+                    <div class="form-group">
                         <input type="password" class="form-control" placeholder="New Password"/>
                     </div>
                     <div class="form-group">
@@ -24,11 +27,11 @@
         </div>
     </div><!--.page-center-->
 
-<script src="js/lib/jquery/jquery.min.js"></script>
-<script src="js/lib/tether/tether.min.js"></script>
-<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/app.js"></script>
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="js/lib/tether/tether.min.js"></script>
+    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 </html>
