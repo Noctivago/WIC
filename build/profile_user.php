@@ -461,24 +461,24 @@ include ("includes/head_sideMenu.php");
                                                                     </article>.profile-info-item-->
 
                     <article class="profile-info-item">
-                        <header class="profile-info-item-header">
-                            <i class="font-icon font-icon-star"></i>
-                            More interest
-                        </header>
-                        <div class="profile-interests">
-                            <a href="#" class="label label-light-grey">Interest</a>
-                            <a href="#" class="label label-light-grey">Example</a>
-                            <a href="#" class="label label-light-grey">One more</a>
-                            <a href="#" class="label label-light-grey">Here is example interest</a>
-                            <a href="#" class="label label-light-grey">Interest</a>
-                            <a href="#" class="label label-light-grey">Example</a>
-                            <a href="#" class="label label-light-grey">One more</a>
-                            <a href="#" class="label label-light-grey">Here is example interest</a>
-                            <a href="#" class="label label-light-grey">Interest</a>
-                            <a href="#" class="label label-light-grey">Example</a>
-                            <a href="#" class="label label-light-grey">One more</a>
-                            <a href="#" class="label label-light-grey">Here is example interest</a>
-                        </div>
+                        <!--                        <header class="profile-info-item-header">
+                                                    <i class="font-icon font-icon-star"></i>
+                                                    More interest
+                                                </header>
+                                                <div class="profile-interests">
+                                                    <a href="#" class="label label-light-grey">Interest</a>
+                                                    <a href="#" class="label label-light-grey">Example</a>
+                                                    <a href="#" class="label label-light-grey">One more</a>
+                                                    <a href="#" class="label label-light-grey">Here is example interest</a>
+                                                    <a href="#" class="label label-light-grey">Interest</a>
+                                                    <a href="#" class="label label-light-grey">Example</a>
+                                                    <a href="#" class="label label-light-grey">One more</a>
+                                                    <a href="#" class="label label-light-grey">Here is example interest</a>
+                                                    <a href="#" class="label label-light-grey">Interest</a>
+                                                    <a href="#" class="label label-light-grey">Example</a>
+                                                    <a href="#" class="label label-light-grey">One more</a>
+                                                    <a href="#" class="label label-light-grey">Here is example interest</a>
+                                                </div>-->
                     </article><!--.profile-info-item-->
                 </section><!--.box-typical-->
 
