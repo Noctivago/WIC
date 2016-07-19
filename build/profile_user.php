@@ -755,11 +755,11 @@ include ("includes/head_sideMenu.php");
                             <i class="font-icon font-icon-tw-fill"></i>
                             <a href="#">twitter.com/example</a>
                         </li>
-                        <li class="divider"></li>
-                        <li>
-                            <i class="font-icon font-icon-pdf-fill"></i>
-                            <a href="#">Export page as PDF</a>
-                        </li>
+                        <!--                        <li class="divider"></li>
+                                                <li>
+                                                    <i class="font-icon font-icon-pdf-fill"></i>
+                                                    <a href="#">Export page as PDF</a>
+                                                </li>-->
                     </ul>
 
                 </section><!--.box-typical-->
