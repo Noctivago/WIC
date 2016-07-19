@@ -594,7 +594,7 @@ function DB_addOrgProfile($pdo, $email, $name, $city) {
  */
 function DB_validateSession($pdo, $sId, $sEmail, $s_pw) {
     try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Id] = ?, [Email] = ? AND "
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [id] = ?, [Email] = ?, "
                 . "[Password] = ?", array($sId, $sEmail, $s_pw), "count");
         if ($count < 0) {
             return true;
