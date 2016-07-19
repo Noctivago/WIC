@@ -71,7 +71,7 @@ if (isset($_SESSION['id'])) {
                 }
             } else {
                 //SE ENABLED = 0
-                $msg = "Please activate your account!";
+                $msg = "Your account is not activated or blocked!";
             }
         } else {
             //SE USER N EXISTS
