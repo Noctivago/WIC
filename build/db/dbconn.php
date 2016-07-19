@@ -70,7 +70,7 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         $stmt->bindParam(':countryID', $Country_Id);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()" disabled>';
+            echo '<select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunctionC()">';
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
             echo '</select>';
         }
@@ -87,7 +87,9 @@ function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
         $stmt->bindParam(':stateID', $State_Id);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo '<select id = "citySelect" class="bootstrap-select bootstrap-select-arrow cities" placeholder="City">';
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo '</select>';
         }
     } catch (PDOException $e) {
         echo 'ERROR READING CITY TABLE';
