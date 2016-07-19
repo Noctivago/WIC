@@ -734,7 +734,7 @@ include ("includes/head_sideMenu.php");
                                                                             </div>
                                                                     </div>-->
 
-                    <ul class="profile-links-list">
+<!--                    <ul class="profile-links-list">
                         <li class="nowrap">
                             <i class="font-icon font-icon-earth-bordered"></i>
                             <a href="#">example.com</a>
@@ -754,7 +754,7 @@ include ("includes/head_sideMenu.php");
                         <li class="nowrap">
                             <i class="font-icon font-icon-tw-fill"></i>
                             <a href="#">twitter.com/example</a>
-                        </li>
+                        </li>-->
                         <!--                        <li class="divider"></li>
                                                 <li>
                                                     <i class="font-icon font-icon-pdf-fill"></i>
