@@ -283,9 +283,12 @@ function DB_getRoleByName($pdo, $name) {
 function DB_getUserRole($pdo, $email) {
     $userId = DB_getUserId($pdo, $email);
     try {
-        $rows = sql($pdo, "SELECT * FROM [dbo].[User_In_Role] WHERE [User_Id] = ?", array($userId), "rows");
+        $rows = sql($pdo, "SELECT [Role].[Name] AS RN FROM [User_In_Role]
+        join [Role]
+        on [User_In_Role].[Role_Id] = [Role].[Id]
+        Where [User_In_Role].[User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-            return $row['Id'];
+            return $row['RN'];
         }
     } catch (Exception $exc) {
         echo 'ERROR READING ROLE!';
@@ -420,7 +423,6 @@ function DB_setBlockAccount($pdo, $email) {
  * @return type
  */
 function DB_sendActivationEmail($email) {
-    include_once './mailSend.php';
     $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
     $to = $email;
     $subject = "WIC #ACCOUNT CONFIRMATION";

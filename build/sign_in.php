@@ -3,8 +3,8 @@
 include_once 'includes/head_singleforms.php';
 include_once '../build/db/functions.php';
 include_once '../build/db/dbconn.php';
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
 $msg = '';
 
 ob_start();
@@ -33,14 +33,14 @@ if (isset($_SESSION['id'])) {
                         $_SESSION['valid'] = true;
                         $_SESSION['timeout'] = time();
                         $_SESSION['id'] = $row['Id'];
-                        //$_SESSION['username'] = $row['Username'];
                         $_SESSION['email'] = $row['Email'];
                         $_SESSION['password'] = $row['Password'];
+                        $_SESSION['role'] = DB_getUserRole($pdo, $email);
                         $msg = 'Welcome ' . $row['Username'];
                         //SET [Login_failed] = 0
                         if (DB_setLoginFailed($pdo, $email)) {
                             //header('Location: profile.php');
-                            $msg = "LOGIN OK! FALTA BUSCAR ROLE E DEPOIS LOCATION";
+                            $msg = "LOGIN OK! FALTA HEADER LOCATION";
                         }
                     } else {
                         $val = DB_getLoginFailedValue($pdo, $email);
