@@ -1,7 +1,7 @@
 <?php
 include ("includes/head_sideMenu.php");
 include_once './db/dbconn.php';
-//include_once './db/session.php';
+include_once './db/session.php';
 ?>
 
 <div class="page-content">
