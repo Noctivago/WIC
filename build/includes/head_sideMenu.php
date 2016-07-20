@@ -296,7 +296,7 @@
                                 </div>
                                 
                     <div class="dropdown dropdown-typical">
-                            <h8 class="with-border m-t-lg">Adress</h8>
+                            <h8 class="with-border m-t-lg">Choose your City</h8>
                             <div class="row">
 				<div >
                                     <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
