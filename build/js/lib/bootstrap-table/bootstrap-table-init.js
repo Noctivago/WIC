@@ -226,7 +226,7 @@ $(document).ready(function () {
                     valign: 'middle'
                 },
                 {
-                    title: 'Item ID',
+                    title: 'Service ID',
                     field: 'id',
                     rowspan: 2,
                     align: 'center',
@@ -235,7 +235,8 @@ $(document).ready(function () {
                     footerFormatter: totalTextFormatter
                 },
                 {
-                    title: 'Item Detail',
+                    //COLOCAR NOME DO WIC
+                    title: 'WIC PLANNER NAME',
                     colspan: 3,
                     align: 'center'
                 }
@@ -243,7 +244,7 @@ $(document).ready(function () {
             [
                 {
                     field: 'name',
-                    title: 'Status',
+                    title: 'SERVICE NAME',
                     sortable: true,
                     editable: true,
                     formatter: statusFormatter,
@@ -252,14 +253,14 @@ $(document).ready(function () {
                 },
                 {
                     field: 'price',
-                    title: 'Item Price',
+                    title: 'ORGANIZATION SERVICE',
                     sortable: true,
                     align: 'center',
                     footerFormatter: totalPriceFormatter
                 },
                 {
                     field: 'operate',
-                    title: 'Item Operate',
+                    title: 'DELETE',
                     align: 'center',
                     events: operateEvents,
                     formatter: operateFormatter
