@@ -2,6 +2,7 @@
 include_once 'includes/head_sideMenu.php';
 include_once '../build/db/functions.php';
 include_once '../build/db/dbconn.php';
+include_once '../build/db/session.php';
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
 $msg = '';
