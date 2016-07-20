@@ -136,6 +136,15 @@ $(document).ready(function () {
 //                    align: 'center',
 //                    valign: 'middle'
 //                },
+
+                {
+                    //COLOCAR NOME DO WIC
+                    title: 'WIC PLANNER NAME',
+                    colspan: 8,
+                    align: 'center'
+                }
+            ],
+            [
                 {
                     title: 'Service ID',
                     field: 'id',
@@ -145,14 +154,6 @@ $(document).ready(function () {
                     sortable: true,
                     footerFormatter: totalTextFormatter
                 },
-                {
-                    //COLOCAR NOME DO WIC
-                    title: 'WIC PLANNER NAME',
-                    colspan: 3,
-                    align: 'center'
-                }
-            ],
-            [
                 {
                     field: 'name',
                     title: 'SERVICE NAME',
