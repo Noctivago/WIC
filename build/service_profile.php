@@ -669,24 +669,22 @@ include ("includes/head_sideMenu.php");
 							<div class="profile-card-photo">
 								<img src="img/photo-220-1.jpg" alt=""/>
 							</div>
-							<div class="profile-card-name">Sarah Sanchez</div>
-							<div class="profile-card-status">Company Founder</div>
+							<div class="profile-card-name">Service Name</div>
+							<div class="profile-card-status">Supplier</div>
 							<div class="profile-card-location">Greater Seattle Area</div>
-							<button type="button" class="btn btn-rounded">Follow</button>
+							<!--<button type="button" class="btn btn-rounded">Follow</button>-->
 							<div class="btn-group">
 								<button type="button"
 										class="btn btn-rounded btn-primary-outline dropdown-toggle"
 										data-toggle="dropdown"
 										aria-haspopup="true"
 										aria-expanded="false">
-									Connect
+									Options
 								</button>
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant and Verbal</a>
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real Gmat Test</a>
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep Official App</a>
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer Test</a>
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third Party Test</a>
+									<a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Deal With Supplier</a>
+									<a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Add to my Wic planner</a>
+									
 								</div>
 							</div>
 						</div><!--.profile-card-->
