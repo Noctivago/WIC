@@ -295,7 +295,7 @@
                                                                         </div>-->
                                 </div>
                                 
-                    <div class="dropdown dropdown-typical">
+                    <div class="dropdown dropdown-divider">
                             <h8 class="with-border m-t-lg">Choose your City</h8>
                             <div class="row">
 				<div >
