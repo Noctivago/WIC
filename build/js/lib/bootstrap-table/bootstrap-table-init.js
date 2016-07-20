@@ -92,7 +92,7 @@ $(document).ready(function () {
     var data = [
         {
             "id": 0,
-            "name": "Draft",
+            "name": "TESTE",
             "price": "$0"
         },
         {
