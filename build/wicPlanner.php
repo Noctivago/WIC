@@ -8,8 +8,8 @@ include ("includes/head_sideMenu.php");
 
 			<section class="box-typical">
 				<div id="toolbar">
-					<button id="remove" class="btn btn-danger remove" disabled>
-						<i class="font-icon font-icon-close-2"></i> Delete
+					<button id="remove" class="btn btn-danger remove" enabled>
+						<i class="font-icon font-icon-close-2"></i> Delete WIC
 					</button>
 				</div>
 				<div class="table-responsive">
