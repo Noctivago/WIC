@@ -62,15 +62,15 @@
                                                    data-toggle="tab"
                                                    href="messenger.php"
                                                    role="tab">
-                                                    Inbox
-                                                    <span class="label label-pill label-danger">8</span>
+                                                    Wic Planner
+                                                    <!--<span class="label label-pill label-danger"></span>-->
                                                 </a>
                                             </li>
 
                                         </ul>
-                                        <!--<button type="button" class="create">
+                                        <button type="button" class="create">
                                             <i class="font-icon font-icon-pen-square"></i>
-                                        </button>-->
+                                        </button>
                                     </div>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab-incoming" role="tabpanel">
