@@ -750,6 +750,7 @@ function DB_GetOrgIdByUserBossId($pdo, $idUser) {
 
 //falta dar o orgid
 // Dá o numero de pessoas em todos os servicos
+//esta a dar algum erro por isso não conta
 function DB_CountPeopleInOrg($pdo) {
     try {
         $count = 1;
