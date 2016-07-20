@@ -394,7 +394,7 @@ $msg = '';
 
 	
 	<script src="js/lib/tether/tether.min.js"></script>
-	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+-->	<script src="js/lib/bootstrap/bootstrap.min.js"></script><!--
 	<script src="js/plugins.js"></script>-->
 
 	<script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
@@ -407,14 +407,7 @@ $msg = '';
 
         
         
-        
-        
-        
-        <!--
-        
-        
-        
-        
+  
         
         
 	<script>
@@ -513,7 +506,7 @@ $msg = '';
 				$('.dahsboard-column').matchHeight();
 			});
 		});
-	</script>-->
+	</script>
         
         <!--scrpit-messenger-->
         <script>
