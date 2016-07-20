@@ -49,6 +49,12 @@ $msg = '';
     <script src="js/lib/bootstrap/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/app.js"></script>
+    
+    <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+    
+    
+    
+    
     <!-- RECHAPTA -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </body>
