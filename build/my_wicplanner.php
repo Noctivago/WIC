@@ -59,7 +59,7 @@ $msg = '';
 								</tr>
 								<tr class="table-check">
 									
-									<td><a href="#">Nome</a></td>
+									<td><a href="#">pareco</a></td>
 									<td>Daata</td>
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
