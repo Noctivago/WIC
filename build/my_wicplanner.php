@@ -23,15 +23,7 @@ $msg = '';
 				<div class="box-typical-body">
 					<div class="table-responsive">
 						<table class="table table-hover">
-                                                    <thead>
-				<tr>
-                                        <th></th>
-                                        <th>Name</th>
-                                        <th>data</th>
-                                        <th></th>
-                                   
-				</tr>
-				</thead>
+                  
 							<tbody>
 								
 								
