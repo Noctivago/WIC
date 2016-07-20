@@ -23,14 +23,13 @@ $msg = '';
                     <div class="form-group">
                         <input type="text" id ="pw1" name="City" class="form-control" placeholder="City" required/>
                     </div>
-                    <div class="form-group">
-                        <input type="date" id="pw2" name = "date" class="form-control" placeholder="Date" required/>
-                    </div>
+                    
+                    
                     <div class='input-group date'>
-									<input id="daterange3" type="text" value="10/24/1984" class="form-control">
-									<span class="input-group-addon">
-										<i class="font-icon font-icon-calend"></i>
-									</span>
+			<input id="daterange3" type="text" value="10/24/1984" class="form-control">
+			<span class="input-group-addon">
+				<i class="font-icon font-icon-calend"></i>
+			</span>
                     </div>
                     
                     <p class="sign-note">  <?= $msg; ?> </p>
