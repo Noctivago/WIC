@@ -28,20 +28,23 @@ $msg = '';
                             <option>City</option>
                             <option>Long long long extra long example line long long long extra long example line </option>
                         </select>
-                        <select class="bootstrap-select bootstrap-select-arrow" placeholder="State">
+                          <select class="bootstrap-select bootstrap-select-arrow" placeholder="State">
                             <option>State</option>
                             <option>City</option>
                             <option>City</option>
                             <option>City</option>
                             <option>Long long long extra long example line long long long extra long example line </option>
                         </select>
+                    </div>
+
+                    <div class="form-group">
                         <select class="bootstrap-select bootstrap-select-arrow" placeholder="City">
                             <option>City</option>
                             <option>City</option>
                             <option>City</option>
                             <option>City</option>
                             <option>Long long long extra long example line long long long extra long example line </option>
-                        </select>                       
+                        </select>
                     </div>
                     <div class='input-group date'>
                         <input id="daterange3" type="text" value="01/08/2016" class="form-control">
