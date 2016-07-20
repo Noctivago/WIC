@@ -229,8 +229,7 @@ $(document).ready(function(){
 					valign: 'middle',
 					sortable: true,
 					footerFormatter: totalTextFormatter
-				}
-//                                ,
+				},
 //				{
 //					title: 'Item Detail',
 //					colspan: 3,
