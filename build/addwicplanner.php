@@ -25,9 +25,16 @@ $msg = '';
                     <div class="form-group">
                         <input type="date" id="pw2" name = "date" class="form-control" placeholder="Date" required/>
                     </div>
+                    <div class='input-group date'>
+									<input id="daterange3" type="text" value="10/24/1984" class="form-control">
+									<span class="input-group-addon">
+										<i class="font-icon font-icon-calend"></i>
+									</span>
+                    </div>
                     
                     <p class="sign-note">  <?= $msg; ?> </p>
                     <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
+                    
                     
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
