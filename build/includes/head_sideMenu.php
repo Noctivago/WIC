@@ -1,4 +1,10 @@
+<?php
+include_once './db/dbconn.php';
+include_once './db/session.php';
+?>
+
 <!DOCTYPE html>
+
 <html>
     <head lang="en">
         <meta charset="UTF-8">

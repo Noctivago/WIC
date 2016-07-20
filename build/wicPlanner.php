@@ -1,7 +1,6 @@
 <?php
 include ("includes/head_sideMenu.php");
-include_once './db/dbconn.php';
-include_once './db/session.php';
+
 ?>
 <link rel="stylesheet" href="css/lib/bootstrap-table/bootstrap-table.min.css">
 	<div class="page-content">
