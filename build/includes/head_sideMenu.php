@@ -69,7 +69,7 @@
 
                                         </ul>
                                         <button type="button" class="create">
-                                            <i class="font-icon font-icon-pen-square"></i>
+                                            <i class="font-icon font-icon-pen-square" alt="Create a new Wic Planner"></i>
                                         </button>
                                     </div>
                                     <div class="tab-content">
