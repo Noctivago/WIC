@@ -52,7 +52,7 @@ $msg = '';
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                                                         </td>
-                                                                        <td>
+                                                                        <td class="table-photo">
                                                                             
                                                                                 <a href="#" class="font-icon font-icon-pencil">
                                                                                     </a>
@@ -61,7 +61,7 @@ $msg = '';
                                                                             
 
                                                                         </td>
-                                                                         <td>
+                                                                        <td class="table-photo">
  
                                                                             
                                                                                 <a href="#" class="font-icon font-icon-del">
