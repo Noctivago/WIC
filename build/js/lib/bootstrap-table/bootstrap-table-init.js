@@ -146,8 +146,8 @@ $(document).ready(function () {
             ],
             [
                 {
-                    field: 'name',
-                    title: 'SERVICE NAME',
+                    field: 'id',
+                    title: 'SERVICE ID',
                     sortable: true,
                     editable: true,
                     //formatter: statusFormatter,
