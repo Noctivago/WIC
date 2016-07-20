@@ -836,7 +836,15 @@ function DB_GetOrgInformation($pdo) {
             echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
             echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
             echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
+            
+//            <div class="profile-card-photo">
+//                            <img src="img/photo-220-1.jpg" alt=""/>
+//                        </div>
+//                        <div class="profile-card-name">Sarah Sanchez</div>
+//                        <div class="profile-card-status">Company Founder</div>
+//                        <div class="profile-card-location">Greater Seattle Area</div>
 //        echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
+//        
 //        echo '     <ul class="profile-links-list">';
 //        echo '             <li class="nowrap">';
 //        echo '                  <i class="font-icon font-icon-earth-bordered"></i>';
