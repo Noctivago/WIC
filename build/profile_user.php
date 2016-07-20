@@ -15,7 +15,7 @@ include_once './db/session.php';
                             <!--MOSTRAR APENAS 8-->
                             <?= DB_getMyWICs($pdo, $_SESSION['id']); ?>
                         </div>
-                        <a href="#" class="btn btn-rounded btn-primary-outline">See all (20)</a>
+                        <a href="#" class="btn btn-rounded btn-primary-outline">See all</a>
                     </div>
                 </section>
 
