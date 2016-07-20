@@ -10,7 +10,9 @@ $msg = '';
 
 <div class="page-content" style="height: 817px;">
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row" style="
+    height: 700px;
+">
 				
                             <div class="col-lg-6">
                             
@@ -24,7 +26,7 @@ $msg = '';
 						</div>
 					</div>
 				</header>
-                                                                <div class="box-typical-body" style="overflow: auto">
+                                <div class="box-typical-body" style="overflow: hidden; padding: 0px; height: 700px; width: 504px;">
 					<div class="table-responsive">
 						<table class="table table-hover">
                                                     
