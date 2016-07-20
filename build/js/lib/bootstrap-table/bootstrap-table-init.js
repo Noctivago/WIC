@@ -222,33 +222,24 @@ $(document).ready(function () {
                 {
                     field: 'state',
                     checkbox: true,
-                    rowspan: 2,
+                    //rowspan: 2,
                     align: 'center',
                     valign: 'middle'
                 },
-//                {
-//                    title: 'Service ID',
-//                    field: 'id',
-//                    rowspan: 2,
-//                    align: 'center',
-//                    valign: 'middle',
-//                    sortable: true,
-//                    footerFormatter: totalTextFormatter
-//                },
+                {
+                    title: 'Service ID',
+                    field: 'id',
+                    //rowspan: 2,
+                    align: 'center',
+                    valign: 'middle',
+                    sortable: true,
+                    footerFormatter: totalTextFormatter
+                },
                 {
                     //COLOCAR NOME DO WIC
                     title: 'WIC PLANNER NAME',
                     colspan: 3,
                     align: 'center'
-                },
-                {
-                    title: 'Service ID',
-                    field: 'id',
-                    rowspan: 2,
-                    align: 'center',
-                    valign: 'middle',
-                    sortable: true,
-                    footerFormatter: totalTextFormatter
                 }
             ],
             [
