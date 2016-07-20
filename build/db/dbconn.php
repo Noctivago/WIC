@@ -809,7 +809,7 @@ function DB_getUsersInServiceOrganization($pdo) {
                 echo '             </a>';
                 echo '         </div>';
                 echo '        <div class="tbl-cell">';
-                echo '            <p class="user-card-row-name status-online"><a href="#">' . $row['First_Name'] . " " . $row['Last_Name'] . '</a></p>';
+                echo '            <p class="user-card-row-name"><a>' . $row['First_Name'] . " " . $row['Last_Name'] . '</a></p>';
                 echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
                 echo '         </div>';
                 echo '  </div>';
