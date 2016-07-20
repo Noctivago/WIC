@@ -47,14 +47,13 @@
 
                             <div class="dropdown dropdown-notification add-customers-screen-user">
                                 <a href="#"
-                                   
+                                   class="header-alarm dropdown-toggle disabled"
                                    id="dd-messages"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
                                     <i class="font-icon-plus"></i>
                                 </a>
-                                <!--class="header-alarm dropdown-toggle active"-->
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages">
                                     <div class="dropdown-menu-messages-header">
                                         <ul class="nav" role="tablist">
