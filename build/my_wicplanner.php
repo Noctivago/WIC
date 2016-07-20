@@ -44,7 +44,7 @@ $msg = '';
                                 </thead>
 
                                 <tbody>
-                                    <?= db_getUserMessengerWithOrgs($pdo, $_SESSION['id']); ?>
+                                    
 <!--                                    <tr class="table-check">
                                         <td><a href="#">Nome</a></td>
                                         <td>Daata</td>
