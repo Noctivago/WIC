@@ -296,23 +296,7 @@
                                                                         </div>-->
                                 </div>
                                 
-                                <div class="dropdown dropdown-menu-col">
-                            <h8 class="with-border m-t-lg">Choose a City</h8>
-                            <div class="row">
-				<div >
-                                    <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
-					<option>Country</option>
-					<option>Country</option>
-					<option>Country</option>
-                                        <option>Country</option>
-                                        <option>Long long long extra long example line long long long extra long example line </option>
-                                    </select>
-				
                                 
-				</div>
-				
-                            </div><!--.row-->
-                    </div>
                                 
                     
                                 
@@ -806,4 +790,26 @@
         </ul>
     </section>-->
         </nav><!--.side-menu-->
+        <div class="page-content">
+		<div class="container-fluid">
+        
+        <div class="dropdown dropdown-menu-col">
+                            <h8 class="with-border m-t-lg">Choose a City</h8>
+                            <div class="row">
+				<div >
+                                    <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
+					<option>Country</option>
+					<option>Country</option>
+					<option>Country</option>
+                                        <option>Country</option>
+                                        <option>Long long long extra long example line long long long extra long example line </option>
+                                    </select>
+				
+                                
+				</div>
+				
+                            </div><!--.row-->
+                    </div>
+                </div>
+        </div>
 
