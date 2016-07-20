@@ -1,6 +1,7 @@
 <?php
 
 include_once '../db/dbconn.php';
+include_once '../db/session.php';
 ob_start();
 session_start();
 
