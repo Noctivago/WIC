@@ -650,13 +650,11 @@ include_once '../build/db/dbconn.php';
                             <a href="#">twitter.com/example</a>
 
                         </li>
-                        <!--                        							<li class="divider"></li>
-                                                                                                        <li>
-                                                                                                                <i class="font-icon font-icon-pdf-fill"></i>
-                                                                                                                <a href="#">Export page as PDF</a>
-                                                                                                        </li>>-->
+
                     </ul>
-                   <header class="box-typical-header-sm">
+                </section>
+                <section class="box-typical">
+                    <header class="box-typical-header-sm">
                         People in our organization
                         &nbsp;
                         <!--a href="#" class="full-count"><--?php db_CountPeopleInOrg($pdo)?></a-->
