@@ -29,35 +29,35 @@ $(document).ready(function () {
                 classDropup = '',
                 pageSize = 10;
 
-        if (data === 'Draft')
-            classBtn = 'btn-danger';
-        if (data === 'Pending')
-            classBtn = 'btn-primary';
-        if (data === 'Moderation')
-            classBtn = 'btn-warning';
-        if (data === 'Published')
-            classBtn = 'btn-success';
+//        if (data === 'Draft')
+//            classBtn = 'btn-danger';
+//        if (data === 'Pending')
+//            classBtn = 'btn-primary';
+//        if (data === 'Moderation')
+//            classBtn = 'btn-warning';
+//        if (data === 'Published')
+//            classBtn = 'btn-success';
 
         if (index >= pageSize / 2) {
             classDropup = 'dropup';
         }
 
-        return	'<div class="dropdown dropdown-status ' +
-                classDropup +
-                ' ">' +
-                '<button class="btn ' +
-                classBtn +
-                ' dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
-                data +
-                '</button>' +
-                '<div class="dropdown-menu">' +
-                '<a class="dropdown-item" href="#">Draft</a>' +
-                '<a class="dropdown-item" href="#">Pending</a>' +
-                '<a class="dropdown-item" href="#">Moderation</a>' +
-                '<a class="dropdown-item" href="#">Published</a>' +
-                '<div class="dropdown-divider"></div>' +
-                '<a class="dropdown-item" href="#">Move to Trash</a>' +
-                '</div></div>';
+//        return	'<div class="dropdown dropdown-status ' +
+//                classDropup +
+//                ' ">' +
+//                '<button class="btn ' +
+//                classBtn +
+//                ' dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+//                data +
+//                '</button>' +
+//                '<div class="dropdown-menu">' +
+//                '<a class="dropdown-item" href="#">Draft</a>' +
+//                '<a class="dropdown-item" href="#">Pending</a>' +
+//                '<a class="dropdown-item" href="#">Moderation</a>' +
+//                '<a class="dropdown-item" href="#">Published</a>' +
+//                '<div class="dropdown-divider"></div>' +
+//                '<a class="dropdown-item" href="#">Move to Trash</a>' +
+//                '</div></div>';
     }
 
     window.operateEvents = {
