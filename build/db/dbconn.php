@@ -757,6 +757,7 @@ function DB_CountPeopleInOrg($pdo) {
   FROM [Service]
   where [Organization_Id] = ? and [Enabled] = 1", array(2), "rows");
         foreach ($Services as $Service) {
+            $idService = $Service['Id'];
             $query = sql($pdo, "SELECT count([User_Service].[Id]) as contador
   FROM [dbo].[User_Service]
   join [User]
@@ -767,7 +768,7 @@ function DB_CountPeopleInOrg($pdo) {
   on [Service].[Id] = [User_Service].[Service_Id]
   join [Role]
   on [Role].[Id] = [User_Service].[Role_Id]
-  where [Service_Id] = ?", array($Service['Id']));
+  where [Service_Id] = ?", array($idService));
             $count += $query['contador'];
         }
         echo $count;
