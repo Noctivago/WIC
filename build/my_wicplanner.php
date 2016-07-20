@@ -10,7 +10,7 @@ $msg = '';
 	<div class="page-content">
 		<div class="container-fluid" style="overflow: auto">
 			
-                    <div class="col-sm-5 .col-md-6 ">
+                    <div class=".col-xs-12 .col-sm-6 .col-lg-8">
 
                         <table id="table-edit" class="table table-bordered table-hover" >
 				<thead>
@@ -126,6 +126,126 @@ $msg = '';
 				</tbody>
 			</table>
                     </div>
+                    
+                    
+                    <div class=".col-xs-6 .col-lg-4">
+
+                        <table id="table-edit" class="table table-bordered table-hover" >
+				<thead>
+				<tr>
+					<th width="1">
+						ID
+					</th>
+					<th>Name</th>
+					<th width="120">Date Created</th>
+					<th></th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+                    </div>
+                    
+                    
 
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
