@@ -72,40 +72,10 @@ include ("includes/head_sideMenu.php");
 										</div>
 									</article>
 								</div>
-								<div class="col">
-									<article class="follow-group">
-										<div class="follow-group-logo">
-											<a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
-										</div>
-										<div class="follow-group-name">
-											<a href="#">KIPP Foundation</a>
-										</div>
-										<div class="follow-group-link">
-											<a href="#">
-												<span class="plus-link-circle"><span>&plus;</span></span>
-												Follow
-											</a>
-										</div>
-									</article>
-								</div>
-								<div class="col">
-									<article class="follow-group">
-										<div class="follow-group-logo">
-											<a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
-										</div>
-										<div class="follow-group-name">
-											<a href="#">KIPP Foundation</a>
-										</div>
-										<div class="follow-group-link">
-											<a href="#">
-												<span class="plus-link-circle"><span>&plus;</span></span>
-												Follow
-											</a>
-										</div>
-									</article>
-								</div>
+
+	
 							</div>
-							<a href="#" class="btn btn-rounded btn-primary-outline">See all (20)</a>
+                                                    <a href="gallery.php" class="btn btn-rounded btn-primary-outline">See All</a>
 						</div><!--.profile-following-->
 					</section>
 
