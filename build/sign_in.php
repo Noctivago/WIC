@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 include_once 'includes/head_singleforms.php';
-
 ?>
 <body>
     <?php
