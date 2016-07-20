@@ -15,22 +15,20 @@ $msg = '';
             <div class="container-fluid">
                 <form class="sign-box" action="" method="post">
                     <div class="sign-avatar no-photo">&plus;</div>
-                    <header class="sign-title">Sign Up</header>
+                    <header class="sign-title">Add new Wic Planner</header>
                     <div class="form-group">
-                        <input type="email" id = "email" name ="email" class="form-control" placeholder="E-Mail" required/>
+                        <input type="text" id = "email" name ="Wic Planner Name" class="form-control" placeholder="Wic Planner Name" required/>
                     </div>
                     <div class="form-group">
-                        <input type="password" id ="pw1" name="pw1" class="form-control" placeholder="Password" required/>
+                        <input type="text" id ="pw1" name="City" class="form-control" placeholder="City" required/>
                     </div>
                     <div class="form-group">
-                        <input type="password" id="pw2" name = "pw2" class="form-control" placeholder="Repeat password" required/>
+                        <input type="date" id="pw2" name = "date" class="form-control" placeholder="Date" required/>
                     </div>
-                    <div class="form-group">
-                        <div class="g-recaptcha" class="form-control" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
-                    </div>
+                    
                     <p class="sign-note">  <?= $msg; ?> </p>
-                    <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Sign up</button>
-                    <p class="sign-note">Already have an account? <a href="sign_in.php">Sign in</a></p>
+                    <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
+                    
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->
