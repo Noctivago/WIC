@@ -7,7 +7,7 @@ include_once '../build/db/dbconn.php';
 $msg = '';
 ?>
 
-<header class="site-header">
+
 	    <div class="container-fluid">
 
 <table id="table-edit" class="table table-bordered table-hover">
@@ -98,4 +98,3 @@ $msg = '';
 				</tbody>
 			</table>
             </div>
-</header>
