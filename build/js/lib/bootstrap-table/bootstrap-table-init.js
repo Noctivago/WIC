@@ -60,17 +60,17 @@ $(document).ready(function () {
                 '</div></div>';
     }
 
-//    window.operateEvents = {
-//        'click .like': function (e, value, row, index) {
-//            alert('You click like action, row: ' + JSON.stringify(row));
-//        },
-//        'click .remove': function (e, value, row, index) {
-//            $table.bootstrapTable('remove', {
-//                field: 'id',
-//                values: [row.id]
-//            });
-//        }
-//    };
+    window.operateEvents = {
+        'click .like': function (e, value, row, index) {
+            alert('You click like action, row: ' + JSON.stringify(row));
+        },
+        'click .remove': function (e, value, row, index) {
+            $table.bootstrapTable('remove', {
+                field: 'id',
+                values: [row.id]
+            });
+        }
+    };
 
     function operateFormatter(value, row, index) {
         return [
