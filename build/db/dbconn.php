@@ -826,9 +826,10 @@ function DB_getUsersInServiceOrganization($pdo) {
 function DB_GetOrgInformation($pdo) {
     try {
         $id = 2;
-        $row = sql($pdo, "SELECT *
+        $rows = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
   where [Id] = ?", array($id), "rows");
+        foreach ($rows as $row) {
         echo '<div class="profile-card-photo">';
         echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
         echo '                  </div>';
@@ -856,6 +857,7 @@ function DB_GetOrgInformation($pdo) {
 //        echo '        <a href="#">' . $row['Twitter'] . '</a>';
 //        echo '    </li>';
 //        echo '    </ul>';
+        }
     } catch (Exception $ex) {
         echo 'error';
     }
