@@ -95,7 +95,7 @@
                                         </div>
                                     </div>
                                     <div class="dropdown-menu-notif-more">
-                                        <a href="mywicplanners.php">See My Wic Planners</a>
+                                        <a href="my_wicplanners.php">See My Wic Planners</a>
                                     </div>
                                 </div>
                             </div>
