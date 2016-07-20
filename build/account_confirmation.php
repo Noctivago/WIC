@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <?php
 include("includes/head_singleforms.php");
+include("../build/db/dbconn.php");
 ?>
 <body>
-
+    <?php
+    $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_SPECIAL_CHARS));
+    $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+    //SE EMAIL EXISTE
+    if (DB_checkIfUserExists($pdo, $email)) {
+        //VERIFICA SE O ACTIVATION CODE PERTENCE AO EMAIL
+        if (DB_compareActivationCode($pdo, $email, $code)) {
+            //SE TRUE ATIVA CONTA
+            if (DB_activateUserAccount($pdo, $email)) {
+                $msg = 'ACCOUNT SUCESSUFULLY ACTIVATED';
+                $to = $email;
+                $subject = "WIC #ACCOUNT ACTIVATED";
+                $body = "Hi! <br>"
+                        . "Your account was successfully activated!<br>"
+                        . "You can now login and make the best event for you!<br>"
+                        . "Best regards,<br>"
+                        . "WIC<br><br>"
+                        . "Note: Please do not reply to this email! Thanks!";
+                $msg = sendEmail($to, $subject, $body) . ' Account successfully activated!';
+            } else {
+                //SENAO
+                $msg = 'AN ERROR OCCURED WHILE ACTIVATING ACCOUNT';
+            }
+        } else {
+            //SENAO INFORMA
+            $msg = 'WRONG ACTIVATION CODE!';
+        }
+    } else {
+        //SENAO INFORMA
+        $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
+    }
+    ?>
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
@@ -13,25 +45,13 @@ include("includes/head_singleforms.php");
                     </div>
                     <header class="sign-title">Confirm Your Account</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="E-Mail" required/>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail" required/>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Validation Code" required/>
-                    </div>
-                    <!--                    <div class="form-group">
-                                            <div class="checkbox float-left">
-                                                <input type="checkbox" id="signed-in"/>
-                                                <label for="signed-in">Keep me signed in</label>
-                                            </div>
-                                            <div class="float-right reset">
-                                                <a href="reset-password.html">Reset Password</a>
-                                            </div>
-                                        </div>-->
-                    <button type="submit" class="btn btn-rounded">Validate account</button>
-                    <p class="sign-note">New to our website? <a href="sign_up.php">Sign up</a></p>
-                    <!--<button type="button" class="close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>-->
+                    <div class="form-group" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                        <input type="text" name="activateText" id="activateText" class="form-control" placeholder="Validation Code" required/>
+                        <p class="sign-note">  <?= $msg; ?> </p>
+                        <button type="submit" class="btn btn-rounded">Validate account</button>
+                        <p class="sign-note">New to our website? <a href="sign_up.php">Sign up</a></p>
                 </form>
             </div>
         </div>

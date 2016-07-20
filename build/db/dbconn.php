@@ -887,3 +887,23 @@ function DB_GetOrgInformation2($pdo, $org) {
         echo 'error';
     }
 }
+
+/**
+ * VERIFICA SE CODIGO INTRODUZIDO CONFERE COM O DA BD
+ * @param type $pdo
+ * @param type $email
+ * @param type $code
+ * @return boolean
+ */
+function DB_compareActivationCode($pdo, $email, $code) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [User_Code_Activation] = ?", array($email, $code), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
