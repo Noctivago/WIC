@@ -8,7 +8,9 @@ $msg = '';
 ?>
 
 
-	    <div class="container-fluid">
+<div class="page-content">
+		<header class="page-content-header">
+			<div class="container-fluid">
 
 <table id="table-edit" class="table table-bordered table-hover">
 				<thead>
@@ -97,4 +99,6 @@ $msg = '';
 					</tr>
 				</tbody>
 			</table>
-            </div>
+                        </div>
+                </header>
+</div>
