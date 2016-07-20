@@ -9,7 +9,7 @@ include ("includes/head_sideMenu.php");
 			<section class="box-typical">
 				<div id="toolbar">
 					<button id="remove" class="btn btn-danger remove" enabled>
-						<i class="font-icon font-icon-close-2"></i> Delete WIC
+						<i class="font-icon font-icon-close-2"></i> Delete My WIC Planner
 					</button>
 				</div>
 				<div class="table-responsive">
