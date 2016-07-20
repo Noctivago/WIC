@@ -20,6 +20,13 @@ $msg = '';
                     <div class="form-group">
                         <input type="text" id = "email" name ="Wic Planner Name" class="form-control" placeholder="Wic Planner Name" required/>
                     </div>
+                    <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
+					<option>Country</option>
+					<option>Country</option>
+					<option>Country</option>
+                                        <option>Country</option>
+                                        <option>Long long long extra long example line long long long extra long example line </option>
+                    </select>
                     <div class="form-group">
                         <input type="text" id ="pw1" name="City" class="form-control" placeholder="City" required/>
                     </div>
@@ -54,6 +61,18 @@ $msg = '';
 	<script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
 	<script src="js/lib/daterangepicker/daterangepicker.js"></script>
 	<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+        
+        
+                <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+	<script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+	<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+	<script src="js/lib/select2/select2.full.min.js"></script>
+        
+        	<script>
+		$(function() {
+			$('#tags-editor-textarea').tagEditor();
+		});
+	</script>
     
     
     
