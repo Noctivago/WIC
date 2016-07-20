@@ -829,7 +829,7 @@ function DB_GetOrgInformation($pdo) {
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
   where [Id] = ?", array($id), "rows");
-        foreach ($rows as $row) {
+//        foreach ($rows as $row) {
             echo '<div class="profile-card-photo">';
             echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
             echo '                  </div>';
@@ -866,13 +866,13 @@ function DB_GetOrgInformation($pdo) {
 //            echo '    </ul>';
             echo '     <ul class="profile-links-list">';
             echo '             <li class="nowrap">';
-//            echo '                  <i class="font-icon font-icon-earth-bordered"><a href="' . $row['Website'] . '"/></i>';
-//            echo '                  <i class="font-icon font-icon-fb-fill"><a href="' . $row['Facebook'] . '"/></i>';
-//            echo '                  <i class="font-icon font-icon-in-fill"><a href="' . $row['Linkdin'] . '"/></i>';
-//            echo '                  <i class="font-icon font-icon-tw-fill"><a href="' . $row['Twitter'] . '"/></i>';
+            echo '                  <i class="font-icon font-icon-earth-bordered"><a href="' . $row['Website'] . '"/></i>';
+            echo '                  <i class="font-icon font-icon-fb-fill"><a href="' . $row['Facebook'] . '"/></i>';
+            echo '                  <i class="font-icon font-icon-in-fill"><a href="' . $row['Linkdin'] . '"/></i>';
+            echo '                  <i class="font-icon font-icon-tw-fill"><a href="' . $row['Twitter'] . '"/></i>';
             echo '         </li>';
             echo '    </ul>';
-        }
+//        }
     } catch (Exception $ex) {
         echo 'error';
     }
