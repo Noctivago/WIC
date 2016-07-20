@@ -42,6 +42,9 @@ include ("includes/head_sideMenu.php");
 
 					<section class="box-typical">
 						<header class="box-typical-header-sm">Album</header>
+                                                
+                                                
+                                                <article class="box-typical profile-post">
                                                 		<div class="profile-post-content">
 										<p class="profile-post-content-note">Added 4 new pictures</p>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -78,6 +81,9 @@ include ("includes/head_sideMenu.php");
 											</div>
 										</div>
 									</div>
+                                                    
+                                                    
+                                                </article>
                                                 
                                                 
                                                 
