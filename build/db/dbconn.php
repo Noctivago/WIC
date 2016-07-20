@@ -1106,7 +1106,7 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
             echo '<td><a href="#">' . $row['WPN'] . '</a></td>';
             echo '<td>' . $row['WPED'] . '</td>';
             echo '<td class="table-photo">';
-            echo '<img src="img/photo-64-1.jpg" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
+            echo '<img src="' . $row['UPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
             echo '</td>';
             echo '<td class="table-photo">';
             echo '<a href="#" class="font-icon font-icon-pencil">';
@@ -1153,7 +1153,7 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
             echo '<td><a href="#">' . $row['WPN'] . '</a></td>';
             echo '<td>' . $row['WPED'] . '</td>';
             echo '<td class="table-photo">';
-            echo '<img src="img/photo-64-1.jpg" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
+            echo '<img src="' . $row['UPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
             echo '</td>';
             echo '<td class="table-photo">';
             echo '<a href="#" class="font-icon font-icon-pencil">';
