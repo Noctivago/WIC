@@ -40,12 +40,7 @@ $msg = '';
                                                                         </td>
                                                                         <td>
                                                                             <div class="tbl-cell tbl-cell-action">
-											<a href="#" class="plus-link-circle"><span>&plus;</span></a>
-										</div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="tbl-cell tbl-cell-action">
-											<a href="#" class="plus-link-circle"><span>&plus;</span></a>
+                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
 										</div>
                                                                         </td>
                                                                         
@@ -60,14 +55,10 @@ $msg = '';
                                                                         </td>
                                                                           <td>
                                                                             <div class="tbl-cell tbl-cell-action">
-											<a href="#" class="plus-link-circle"><span>&plus;</span></a>
+                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
 										</div>
                                                                         </td>
-                                                                        <td>
-                                                                            <div class="tbl-cell tbl-cell-action">
-											<a href="#" class="plus-link-circle"><span>&plus;</span></a>
-										</div>
-                                                                        </td>
+                                                                       
 								
 								</tr>
 								<tr class="table-check">
@@ -77,14 +68,10 @@ $msg = '';
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                                                         </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        <td>
+                                                                            <div class="tbl-cell tbl-cell-action">
+                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
+										</div>
                                                                         </td>
 								
 								</tr>
@@ -94,6 +81,25 @@ $msg = '';
 									<td>Daata</td>
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tbl-cell tbl-cell-action">
+                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
+										</div>
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tbl-cell tbl-cell-action">
+                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
+										</div>
                                                                         </td>
 								
 								</tr>
@@ -223,6 +229,11 @@ $msg = '';
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                                                         </td>
+                                                                        <td>
+                                                                            <div class="tbl-cell tbl-cell-action">
+                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
+										</div>
+                                                                        </td>
 								
 								</tr>
 								<tr class="table-check">
@@ -231,6 +242,11 @@ $msg = '';
 									<td>Daata</td>
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tbl-cell tbl-cell-action">
+                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
+										</div>
                                                                         </td>
 								
 								</tr>
