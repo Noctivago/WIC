@@ -1,6 +1,7 @@
 <?php
 
 include_once './dbconn.php';
+ob_start();
 session_start(); // Starting Session
 //VERIFICA SE SESSION NAO EXISTE
 if (!isset($_SESSION['id'])) {
