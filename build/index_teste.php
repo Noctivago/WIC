@@ -30,7 +30,7 @@ include ("includes/head_sideMenu.php");
 							<div class="photo">
 								<img src="img/gall-img-1.jpg" alt="">
 							</div>
-							<header class="title"><a href="gallery.php">TESTE GALERIA!!!!!</a></header>
+                                                    <header class="title"><a href="service_profile.php">TESTE GALERIA!!!!!</a></header>
 							<p>That’s a great idea! I’m sure we could start this project as soon as possible. Let’s meet tomorow!</p>
 						</div>
 						<div class="card-typical-section">
