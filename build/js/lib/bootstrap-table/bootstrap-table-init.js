@@ -146,13 +146,13 @@ $(document).ready(function () {
             ],
             [
                 {
-                    title: 'Service ID',
-                    field: 'id',
-                    rowspan: 2,
-                    align: 'center',
-                    valign: 'middle',
+                    field: 'name',
+                    title: 'SERVICE NAME',
                     sortable: true,
-                    footerFormatter: totalTextFormatter
+                    editable: true,
+                    //formatter: statusFormatter,
+                    footerFormatter: totalNameFormatter,
+                    align: 'center'
                 },
                 {
                     field: 'name',
