@@ -215,6 +215,18 @@ $msg = '';
 				<div class="box-typical-body">
 					<div class="table-responsive">
 						<table class="table table-hover">
+                                                    <thead>
+								<tr>
+									<th >
+										Event name
+									</th>
+									<th>Date</th>
+									<th>User</th>
+									
+								
+									<th></th>
+								</tr>
+							</thead>
                   
 							<tbody>
 								
@@ -231,7 +243,7 @@ $msg = '';
                                                                         </td>
                                                                         <td>
                                                                             <div class="tbl-cell tbl-cell-action">
-                                                                                <a href="#" class="plus-link-circle"><span>&xopf;</span></a>
+                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
 										</div>
                                                                         </td>
 								
