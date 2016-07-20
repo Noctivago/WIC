@@ -38,6 +38,12 @@ $msg = '';
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                                                         </td>
+                                                                        <td>
+                                                                            <div class="tbl-cell tbl-cell-action">
+											<a href="#" class="plus-link-circle"><span>&plus;</span></a>
+										</div>
+                                                                        </td>
+                                                                        
 								
 								</tr>
 								<tr class="table-check">
