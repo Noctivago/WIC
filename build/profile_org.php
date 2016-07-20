@@ -1,5 +1,6 @@
 <?php
 include ("includes/head_sideMenu.php");
+include_once '../build/db/dbconn.php';
 ?>
 
 <div class="page-content">
@@ -686,12 +687,13 @@ include ("includes/head_sideMenu.php");
 
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
-                        Friends
+                        People in our organization
                         &nbsp;
                         <a href="#" class="full-count">268</a>
                     </header>
                     <div class="friends-list">
-                        <article class="friends-list-item">
+                        <?php DB_getUsersInServiceOrganization($pdo) ?>
+                        <!--article class="friends-list-item">
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <div class="tbl-cell tbl-cell-photo">
@@ -705,8 +707,8 @@ include ("includes/head_sideMenu.php");
                                     </div>
                                 </div>
                             </div>
-                        </article>
-                        <article class="friends-list-item">
+                        </article-->
+<!--                        <article class="friends-list-item">
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <div class="tbl-cell tbl-cell-photo">
@@ -765,7 +767,7 @@ include ("includes/head_sideMenu.php");
                                     </div>
                                 </div>
                             </div>
-                        </article>
+                        </article>-->
                     </div>
                 </section><!--.box-typical-->
             </div><!--.col- -->
