@@ -15,7 +15,7 @@ include_once '../build/db/session.php';
                             <!--MOSTRAR APENAS 8-->
                             <?= DB_getMyWICs($pdo, $_SESSION['id']); ?>
                         </div>
-                        <a href="#" class="btn btn-rounded btn-primary-outline">See all</a>
+                        <a href="#" class="btn btn-rounded btn-primary-outline">See more</a>
                     </div>
                 </section>
 
@@ -65,7 +65,7 @@ include_once '../build/db/session.php';
                         <?= db_getUserMessengerWithOrgs($pdo, $_SESSION['id']); ?>
 
                         <div class="see-all">
-                            <a href="#">See All</a>
+                            <a href="#">See more</a>
                         </div>
 
                 </section>
