@@ -725,9 +725,7 @@ include ("includes/head_sideMenu.php");
 							<div class="profile-card-photo">
                                                             <img src="img/a_tasca.jpg2" alt=""/>
 							</div>
-                                                     <br>
-                                                            <br>
-                                                            <br>
+                                                
 							<div class="profile-card-name">Service Name</div>
 							<div class="profile-card-status">Categorie</div>
 							<div class="profile-card-location">Supplier</div>
