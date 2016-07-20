@@ -31,7 +31,7 @@ include ("includes/head_sideMenu.php");
 								<img class="gallery-picture" src="img/gall-img-1.jpg" alt="" height="158">
 								<div class="gallery-hover-layout">
 									<div class="gallery-hover-layout-in">
-										<p class="gallery-item-title">The boxed castle</p>
+										<p class="gallery-item-title preview">The boxed castle</p>
 										<p>by Alban Wamigo</p>
 										<div class="btn-group">
 											<button type="button" class="btn">
