@@ -622,7 +622,7 @@ include_once '../build/db/session.php';
                         <?php DB_GetOrgInformation($pdo);?>
                         
 <!--                    </div>-->
-                    <ul class="profile-links-list">
+<!--                    <ul class="profile-links-list">
                         <li class="nowrap">
                             <i class="font-icon font-icon-earth-bordered"></i>
                             <a href="#">example.com</a>
@@ -648,7 +648,7 @@ include_once '../build/db/session.php';
                             <i class="font-icon font-icon-pdf-fill"></i>
                             <a href="#">Export page as PDF</a>
                         </li>
-                    </ul>
+                    </ul>-->
                 </section>
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
