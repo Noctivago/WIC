@@ -54,7 +54,12 @@ $msg = '';
                                                                         <td>
                                                                             <div class="tbl-cell tbl-cell-action">
                                                                                 <a href="#" class="font-icon font-icon-pencil">
-                                                                                    <i class="font-icon font-icon-pencil"></i></a>
+                                                                                    </a>
+                                                                                    <!--<span>&cross;</span></a>-->
+										</div>
+                                                                            <div class="tbl-cell tbl-cell-action">
+                                                                                <a href="#" class="font-icon font-icon-del-circle">
+                                                                                    </a>
                                                                                     <!--<span>&cross;</span></a>-->
 										</div>
                                                                         </td>
