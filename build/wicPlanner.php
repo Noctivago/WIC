@@ -1,5 +1,8 @@
 <?php
 include ("includes/head_sideMenu.php");
+//FAZER GET DO WICPLANNER ID
+$WicPlannerId = $_SERVER['QUERY_STRING'];
+//VALIDAR SE USER E DONO DO WIC PLANNER
 ?>
 <link rel="stylesheet" href="css/lib/bootstrap-table/bootstrap-table.min.css">
 <div class="page-content">
@@ -7,7 +10,7 @@ include ("includes/head_sideMenu.php");
 
         <section class="box-typical">
             <div id="toolbar">
-                <button id="remove" class="btn btn-danger remove" enabled>
+                <button id="remove" class="btn btn-danger remove" onclick="removeWic(<?= $WicPlannerId; ?>)" enabled>
                     <i class="font-icon font-icon-close-2"></i> Delete My WIC Planner
                 </button>
             </div>
@@ -47,7 +50,20 @@ include ("includes/head_sideMenu.php");
 <!--TABELA AQUI-->
 <!--<script src="js/lib/bootstrap-table/bootstrap-table-init.js"></script>-->
 <script src="js/lib/bootstrap-table/bootstrap-table-init_WicPlannerService.js"></script>
-
 <script src="js/app.js"></script>
+
+<script type="text/javascript">
+                    function removeWic(wicId) {
+                        var WIC_Id = wicId;
+                        $.ajax({
+                            url: 'ajax/remove_wic_planner.php',
+                            method: 'post',
+                            data: {con: WIC_Id},
+                            success: function (data) {
+                                //$('.states').html(data);
+                            }
+                        });
+                    }
+</script>
 </body>
 </html>
