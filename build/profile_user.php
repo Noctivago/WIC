@@ -9,7 +9,7 @@ include_once '../build/db/session.php';
         <div class="row">
             <div class="col-lg-6 col-lg-push-3 col-md-12">
                 <section class="box-typical">
-                    <header class="box-typical-header-sm">My Wic Planners</header>
+                    <header class="box-typical-header-sm">My Events #WIC Planner</header>
                     <div class="profile-following">
                         <div class="profile-following-grid">
                             <!--MOSTRAR APENAS 8-->
