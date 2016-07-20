@@ -2,7 +2,6 @@
 include_once 'includes/head_sideMenu.php';
 include_once '../build/db/functions.php';
 include_once '../build/db/dbconn.php';
-include_once '../build/db/session.php';
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
 $msg = '';
@@ -44,8 +43,8 @@ $msg = '';
                                 </thead>
 
                                 <tbody>
-                                    
-<!--                                    <tr class="table-check">
+
+                                    <tr class="table-check">
                                         <td><a href="#">Nome</a></td>
                                         <td>Daata</td>
                                         <td class="table-photo">
@@ -61,9 +60,9 @@ $msg = '';
 
                                             <a href="#" class="font-icon font-icon-del">
                                             </a>
-                                            <span>&cross;</span></a>
+                                            <!--<span>&cross;</span></a>-->
                                         </td>
-                                    </tr>-->
+                                    </tr>
 
                                 </tbody>
                             </table>
