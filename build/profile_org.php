@@ -1,6 +1,7 @@
 <?php
 include ("includes/head_sideMenu.php");
-//include_once '../build/db/dbconn.php';
+include_once '../build/db/dbconn.php';
+include_once '../build/db/session.php';
 ?>
 
 <div class="page-content">
@@ -618,7 +619,7 @@ include ("includes/head_sideMenu.php");
             <div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
                 <section class="box-typical">
                     <div class="profile-card">
-                        <?php DB_GetOrgInformation($pdo)?>
+                        <?php DB_GetOrgInformation($pdo);?>
                         
                     </div>
                     <ul class="profile-links-list">
@@ -656,7 +657,7 @@ include ("includes/head_sideMenu.php");
                         <!--a href="#" class="full-count"><--?php db_CountPeopleInOrg($pdo)?></a-->
                     </header>
                     <div class="friends-list">
-                        <?php DB_getUsersInServiceOrganization($pdo) ?>
+                        <?php DB_getUsersInServiceOrganization($pdo); ?>
                         <!--article class="friends-list-item">
                             <div class="user-card-row">
                                 <div class="tbl-row">
