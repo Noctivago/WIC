@@ -44,6 +44,7 @@ $msg = '';
 
                                 <tbody>
                                     <?= db_getMyWicPlannerToWICCrud($pdo, $SESSION['id']); ?>
+                                    <?= db_getThirdWicPlannerToWICCrud($pdo, $SESSION['id']); ?>
 <!--                                    <tr class="table-check">
                                         <td><a href="#">Nome</a></td>
                                         <td>Daata</td>
