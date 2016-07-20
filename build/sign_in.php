@@ -3,7 +3,6 @@
 include_once 'includes/head_singleforms.php';
 include_once '../build/db/functions.php';
 include_once '../build/db/dbconn.php';
-
 ?>
 <body>
     <?php
@@ -19,6 +18,7 @@ include_once '../build/db/dbconn.php';
                 //SE EXISTIR
                 foreach ($rows as $row) {
                     //SE ENCONTRAR USER
+                    ob_start();
                     if ($row['Email'] == $email && $row['Password'] == $hashPassword) {
                         //ADICIONAR PASSWORD
                         $_SESSION['valid'] = true;
