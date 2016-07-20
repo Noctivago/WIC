@@ -781,11 +781,12 @@ function DB_CountPeopleInOrg($pdo) {
 
 //Todos os utilizadores que estão associados a um servico 
 //Falta colocar o id da org
-function DB_getUsersInServiceOrganization($pdo) {
+function DB_getUsersInServiceOrganization($pdo,$org) {
     try {
+        $id = $_POST['org'];
         $Services = sql($pdo, "SELECT *
   FROM [Service]
-  where [Organization_Id] = ? and [Enabled] = 1", array(2), "rows");
+  where [Organization_Id] = ? and [Enabled] = 1", array($id), "rows");
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
             $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
@@ -851,16 +852,14 @@ function DB_GetOrgInformation($pdo) {
     }
 }
 
-function DB_GetOrgInformation2($pdo) {
+function DB_GetOrgInformation2($pdo,$org) {
     try {
 
-        $id = 2;
+        $id = $_POST['org'];
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
   where [Id] = ?", array($id), "rows");
         foreach ($rows as $row) {
-
-
             echo '<div class="text-block text-block-typical">';
             echo '<p>' . $row['Description'] . ' </p>';
             echo '</div>';
@@ -869,9 +868,6 @@ function DB_GetOrgInformation2($pdo) {
             echo '      </section>';
             echo '<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">';
             echo '        <section class="box-typical">  ';
-
-
-
             echo '<div class="profile-card">';
             echo '<div class="profile-card-photo">';
             echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';

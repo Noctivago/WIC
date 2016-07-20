@@ -2,6 +2,7 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
+$org = $_POST['Organization'];
 ?>
 
 <div class="page-content">
@@ -218,9 +219,9 @@ include_once '../build/db/session.php';
                     <article class="profile-info-item">
                         <header class="profile-info-item-header">
                             <i class="font-icon font-icon-notebook-bird"></i>
-                            Summary
+                            Description
                         </header>
-                        <?php DB_GetOrgInformation2($pdo); ?>
+                        <?php DB_GetOrgInformation2($pdo,$org); ?>
 <!--                        <div class="text-block text-block-typical">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
@@ -243,7 +244,7 @@ include_once '../build/db/session.php';
                         <!--a href="#" class="full-count"><--?php db_CountPeopleInOrg($pdo)?></a-->
                     </header>
                     <div class="friends-list">
-                        <?php DB_getUsersInServiceOrganization($pdo); ?>
+                        <?php DB_getUsersInServiceOrganization($pdo,$org); ?>
                         <!--article class="friends-list-item">
                             <div class="user-card-row">
                                 <div class="tbl-row">
