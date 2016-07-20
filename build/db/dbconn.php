@@ -837,18 +837,11 @@ function DB_GetOrgInformation($pdo) {
             echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
             echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
             echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
-//            echo '     <ul class="profile-links-list">';
-//            echo '             <li class="nowrap">';
-//            echo '             <i class="font-icon font-icon-earth-bordered"><a  href="' . $row['Website'] . '"/></i>';
-//            echo '             <i class="font-icon font-icon-fb-fill"> <a  href="' . $row['Facebook'] . '"/></i>';
-//                echo '          <i class="font-icon font-icon-in-fill"><a  href="' . $row['Linkdin'] . '"/></i>';
-//                echo '          <i class="font-icon font-icon-tw-fill"><a  href="' . $row['Twitter'] . '"/></i>';
-            echo '            <a  href="' . $row['Facebook'] . '" target="_blank"> <i class="font-icon font-icon-earth-bordered"></i></a>';
+            echo '            <a  href="' . $row['Website'] . '" target="_blank"> <i class="font-icon font-icon-earth-bordered"></i></a>';
             echo '           <a  href="' . $row['Facebook'] . '" target="_blank">  <i class="font-icon font-icon-fb-fill"></i></a>';
-            echo '        <a  href="' . $row['Facebook'] . '" target="_blank">  <i class="font-icon font-icon-in-fill"></i></a>';
-            echo '         <a  href="' . $row['Facebook'] . '" target="_blank"> <i class="font-icon font-icon-tw-fill"></i></a>';
-//            echo '         </li>';
-//            echo '    </ul>';
+            echo '        <a  href="' . $row['Linkdin'] . '" target="_blank">  <i class="font-icon font-icon-in-fill"></i></a>';
+            echo '         <a  href="' . $row['Twitter'] . '" target="_blank"> <i class="font-icon font-icon-tw-fill"></i></a>';
+
             echo '</div>';
         }
     } catch (Exception $ex) {
