@@ -723,7 +723,10 @@ include ("includes/head_sideMenu.php");
 					<section class="box-typical">
 						<div class="profile-card">
 							<div class="profile-card-photo">
-                                                            <img src="img/a_tasca.jpg" alt=""/>
+                                                            <img src="img/a_tasca.jpg2" alt=""/>
+                                                            <br>
+                                                            <br>
+                                                            <br>
 							</div>
 							<div class="profile-card-name">Service Name</div>
 							<div class="profile-card-status">Categorie</div>
