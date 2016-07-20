@@ -46,6 +46,7 @@ include_once './db/session.php';
 	<script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
 	<script src="js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>
 	<script src="js/lib/bootstrap-table/tableExport.min.js"></script>
+        <!--TABELA AQUI-->
 	<script src="js/lib/bootstrap-table/bootstrap-table-init.js"></script>
 
 <script src="js/app.js"></script>
