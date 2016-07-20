@@ -45,14 +45,14 @@
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
 
-                            <div class="dropdown dropdown-notification plus-link-circle">
+                            <div class="dropdown dropdown-notification add-customers-screen-user">
                                 <a href="#"
                                    class="header-alarm dropdown-toggle active"
                                    id="dd-messages"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <i class="font-icon-plus-1"></i>
+                                    <i class="font-icon-plus"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages">
                                     <div class="dropdown-menu-messages-header">
