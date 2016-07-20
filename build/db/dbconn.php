@@ -930,10 +930,48 @@ function DB_GetNumberServiceComments($pdo, $idService) {
 }
 
 function DB_GetServiceInformation($pdo, $idService) {
-    $msg = sql($pdo, "SELECT *
+    try {
+
+//        $msg = sql($pdo, "SELECT *
+//  FROM [dbo].[Service]
+//  where [Organization_Id] =?", array($idService), "rows");
+        $stmt = $pdo->prepare("SELECT *
   FROM [dbo].[Service]
-  where [Organization_Id] =?", array($idService), "rows");
-    echo $msg;
+  where [Organization_Id]:id");
+        $stmt->bindParam(':id', $idService);
+        $stmt->execute();
+        $userInfo = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            $userInfo["Name"] = $row["Name"];
+            $userInfo["Description"] = $row["Description"];
+            //   $userInfo["Country_Id"] = $row["Country_Id"];
+        }
+        return $userInfo;
+    } catch (PDOException $e) {
+        print "ERROR READING USER PROFILE INFO!<br/>";
+#die();
+    }$serviceInfo = array();
+}
+
+function DB_getUserProfileInfo($pdo, $UserId) {
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM [dbo].[Profile] WHERE [User_Id]=:id");
+        $stmt->bindParam(':id', $UserId);
+        $stmt->execute();
+        $userInfo = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            $userInfo["Id"] = $row["Id"];
+            $userInfo["First_Name"] = $row["First_Name"];
+            $userInfo["Last_Name"] = $row["Last_Name"];
+//            $userInfo["Country_Id"] = $row["Country_Id"];
+        }
+        return $userInfo;
+    } catch (PDOException $e) {
+        print "ERROR READING USER PROFILE INFO!<br/>";
+#die();
+    }
 }
 
 //preencher seccao services no profile org
@@ -945,10 +983,12 @@ function DB_GetOrganizationServices($pdo, $org) {
         $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
         $views = DB_GetNumberServiceViews($pdo, $idService);
         $comments = DB_GetNumberServiceComments($pdo, $idService);
-        echo $ServiceInfo;
-        echo $Multi;
-        echo $views;
-        echo $comments;
-    } catch (Exception $ex) {
+        echo $ServiceInfo['Name'];
+        echo $ServiceInfo['Description'];
+//        echo $Multi;
+//        echo $views;
+//        echo $comments;
+//    } catch (Exception $ex) {
+        
     }
 }
