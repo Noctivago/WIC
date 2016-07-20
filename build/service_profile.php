@@ -46,6 +46,7 @@ include ("includes/head_sideMenu.php");
 											<a href="#" class="follow-group-logo-in fancybox " rel="gall-1" href="img/a_tasca.jpg"><img src="img/a_tasca.jpg"alt=""></a>
 										</div>
 										<div class="follow-group-name">
+                                                                                    <img src="../../WIC_FINALE/build/img/a_tasca.jpg" alt=""/>
                                                                                     <a href="#"> asd</a>
 										</div>
 										<div class="follow-group-link">
