@@ -10,7 +10,7 @@ $msg = '';
 	<div class="page-content">
 		<div class="container-fluid">
 			
-
+                    <div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
 
 			<table id="table-edit" class="table table-bordered table-hover">
 				<thead>
@@ -99,6 +99,7 @@ $msg = '';
 					</tr>
 				</tbody>
 			</table>
+                    </div>
 
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
