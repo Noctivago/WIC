@@ -642,7 +642,7 @@ include_once '../build/db/dbconn.php';
                                                                                                 <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third Party Test</a>
                                                                                         </div>
                                                                                 </div>-->
-                    </div><!--.profile-card-->
+                    <!--/div--><!--.profile-card-->
 
                     <!--						<div class="profile-statistic tbl">
                                                                             <div class="tbl-row">
@@ -657,8 +657,7 @@ include_once '../build/db/dbconn.php';
                                                                             </div>
                                                                     </div>-->
 
-                    <ul class="profile-links-list">
-                        <?php DB_GetOrgInformation()?>
+                    <!--ul class="profile-links-list">
                         <!--li class="nowrap">
                             <i class="font-icon font-icon-earth-bordered"></i>
                             <a href="#">example.com</a>
@@ -683,8 +682,8 @@ include_once '../build/db/dbconn.php';
                                                                                 <li>
                                                                                         <i class="font-icon font-icon-pdf-fill"></i>
                                                                                         <a href="#">Export page as PDF</a>
-                                                                                </li>-->
-                    </ul>
+                                                                                </li>>
+                    </ul-->
                 </section><!--.box-typical-->
 
                 <section class="box-typical">

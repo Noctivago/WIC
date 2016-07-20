@@ -833,6 +833,7 @@ function DB_GetOrgInformation($pdo) {
         echo '                <div class="profile-card-status">'.$row['Phone_Number'].'</div>';
         echo '                <div class="profile-card-location">'.$row['Address'].'</div-->';
         echo '                <div class="profile-card-location">'.$row['Organization_Email'].'</div-->';
+        echo '</div>';
 
         echo '     <ul class="profile-links-list">';
         echo '             <li class="nowrap">';
@@ -851,6 +852,8 @@ function DB_GetOrgInformation($pdo) {
         echo '         <i class="font-icon font-icon-tw-fill"></i>';
         echo '        <a href="#">'.$row['Twitter'].'</a>';
         echo '    </li>';
+        echo '    </ul>';
+        
     } catch (Exception $ex) {
         
     }
