@@ -825,7 +825,9 @@ function DB_getUsersInServiceOrganization($pdo) {
 
 function DB_GetOrgInformation($pdo) {
     try {
-        $row = sql($pdo,"", array(2), "rows");
+        $row = sql($pdo,"SELECT *
+  FROM [dbo].[Organization]
+  where [Id] = ?", array(2), "rows");
         echo '<div class="profile-card-photo">';
         echo '                      <img src="'.$row['Picture_Path'].'" alt=""/>';
         echo '                  </div>';
