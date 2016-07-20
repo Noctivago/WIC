@@ -810,9 +810,9 @@ function DB_getUsersInServiceOrganization($pdo) {
                 echo '             </a>';
                 echo '         </div>';
                 echo '        <div class="tbl-cell">';
-                echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
-                echo '            <p class="user-card-row-name">' . $row['Last_name'] . '</p>';
-                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
+                echo '            <p class="user-card-row-name">' . $row['First_Name'] . 'ooo</p>';
+                echo '            <p class="user-card-row-name">' . $row['Last_name'] . 'ooo</p>';
+                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . 'ooo</p>';
                 echo '         </div>';
                 echo '  </div>';
                 echo ' </article>';
