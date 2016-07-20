@@ -10,10 +10,10 @@ include ("includes/head_sideMenu.php");
 				<div class="tbl">
 					<div class="tbl-row">
 						<div class="tbl-cell">
-							<h3>Designers <small class="text-muted">23 candidates</small></h3>
+							<h3>Designers <small class="text-muted">My Wic Planners</small></h3>
 						</div>
 						<div class="tbl-cell tbl-cell-action">
-							<a href="#" class="btn btn-rounded">Add member</a>
+							<a href="#" class="btn btn-rounded">Add Wic Planner</a>
 						</div>
 					</div>
 				</div>
