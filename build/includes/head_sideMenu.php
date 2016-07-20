@@ -791,7 +791,7 @@
     </section>-->
         </nav><!--.side-menu-->
         <div class="page-content">
-		<div class="container-fluid">
+		
         
         <div class="dropdown dropdown-menu-col">
                             <h8 class="with-border m-t-lg">Choose a City</h8>
@@ -810,6 +810,6 @@
 				
                             </div><!--.row-->
                     </div>
-                </div>
+                
         </div>
 
