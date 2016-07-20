@@ -13,34 +13,160 @@ $msg = '';
 			<div class="row">
 				<div class="col-lg-6 col-lg-push-3 col-md-12">
                                     
-                                    <!--form para postar algo-->
-                                    
-<!--					<form class="box-typical">
-						<input type="text" class="write-something" placeholder="Write Something..."/>
-						<div class="box-typical-footer">
-							<div class="tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell">
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-earth"></i>
-										</button>
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-picture"></i>
-										</button>
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-calend"></i>
-										</button>
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-video-fill"></i>
-										</button>
-									</div>
-									<div class="tbl-cell tbl-cell-action">
-										<button type="submit" class="btn btn-rounded">Send</button>
-									</div>
-								</div>
-							</div>
+                                                            <section class="box-typical box-typical-max-280">
+				<header class="box-typical-header">
+					<div class="tbl-row">
+						<div class="tbl-cell tbl-cell-title">
+							<h3>My Events - Wic Planner</h3>
 						</div>
-					</form>.box-typical-->
+					</div>
+				</header>
+				<div class="box-typical-body">
+					<div class="table-responsive">
+						<table class="table table-hover">
+                  
+							<tbody>
+								
+								
+								
+								
+								
+								<tr class="table-check">
+									
+									<td><a href="#">Nome</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">Nome</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">Nome</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+							
+								
+								
+								
+		
+							</tbody>
+						</table>
+					</div>
+				</div><!--.box-typical-body-->
+			</section>
 
 					<section class="box-typical">
 						<header class="box-typical-header-sm">My Wic Planners</header>
@@ -116,183 +242,7 @@ $msg = '';
 					</section>
 
 
-<!--					<section class="box-typical">
-						<header class="box-typical-header-sm">
-							Posts
-							<div class="slider-arrs">
-								<button type="button" class="posts-slider-prev">
-									<i class="font-icon font-icon-arrow-left"></i>
-								</button>
-								<button type="button" class="posts-slider-next">
-									<i class="font-icon font-icon-arrow-right"></i>
-								</button>
-							</div>
-						</header>
-						<div class="posts-slider">
-							<div class="slide">
-								<article class="post-announce">
-									<div class="post-announce-pic">
-										<a href="#">
-											<img src="img/post-1.jpeg" alt="">
-										</a>
-									</div>
-									<div class="post-announce-title">
-										<a href="#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>
-									</div>
-									<div class="post-announce-date">Februrary 19, 2016</div>
-									<ul class="post-announce-meta">
-										<li>
-											<i class="font-icon font-icon-eye"></i>
-											18
-										</li>
-										<li>
-											<i class="font-icon font-icon-heart"></i>
-											5K
-										</li>
-										<li>
-											<i class="font-icon font-icon-comment"></i>
-											3K
-										</li>
-									</ul>
-								</article>
-							</div>.slide
-							<div class="slide">
-								<article class="post-announce">
-									<div class="post-announce-pic">
-										<a href="#">
-											<img src="img/post-2.jpg" alt="">
-										</a>
-									</div>
-									<div class="post-announce-title">
-										<a href="#">How Much Do We Spend on How Much Do We Spend on How Much Do We Spend on </a>
-									</div>
-									<div class="post-announce-date">January 21, 2016</div>
-									<ul class="post-announce-meta">
-										<li>
-											<i class="font-icon font-icon-eye"></i>
-											18
-										</li>
-										<li>
-											<i class="font-icon font-icon-heart"></i>
-											5K
-										</li>
-										<li>
-											<i class="font-icon font-icon-comment"></i>
-											3K
-										</li>
-									</ul>
-								</article>
-							</div>.slide
-							<div class="slide">
-								<article class="post-announce">
-									<div class="post-announce-pic">
-										<a href="#">
-											<img src="img/post-3.jpeg" alt="">
-										</a>
-									</div>
-									<div class="post-announce-title">
-										<a href="#">Good News You Might Have Good News You Might Have Good News You Might Have </a>
-									</div>
-									<div class="post-announce-date">December 30, 2016</div>
-									<ul class="post-announce-meta">
-										<li>
-											<i class="font-icon font-icon-eye"></i>
-											18
-										</li>
-										<li>
-											<i class="font-icon font-icon-heart"></i>
-											5K
-										</li>
-										<li>
-											<i class="font-icon font-icon-comment"></i>
-											3K
-										</li>
-									</ul>
-								</article>
-							</div>.slide
-							<div class="slide">
-								<article class="post-announce">
-									<div class="post-announce-pic">
-										<a href="#">
-											<img src="img/post-1.jpeg" alt="">
-										</a>
-									</div>
-									<div class="post-announce-title">
-										<a href="#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>
-									</div>
-									<div class="post-announce-date">Februrary 19, 2016</div>
-									<ul class="post-announce-meta">
-										<li>
-											<i class="font-icon font-icon-eye"></i>
-											18
-										</li>
-										<li>
-											<i class="font-icon font-icon-heart"></i>
-											5K
-										</li>
-										<li>
-											<i class="font-icon font-icon-comment"></i>
-											3K
-										</li>
-									</ul>
-								</article>
-							</div>.slide
-							<div class="slide">
-								<article class="post-announce">
-									<div class="post-announce-pic">
-										<a href="#">
-											<img src="img/post-2.jpg" alt="">
-										</a>
-									</div>
-									<div class="post-announce-title">
-										<a href="#">How Much Do We Spend on How Much Do We Spend on How Much Do We Spend on </a>
-									</div>
-									<div class="post-announce-date">January 21, 2016</div>
-									<ul class="post-announce-meta">
-										<li>
-											<i class="font-icon font-icon-eye"></i>
-											18
-										</li>
-										<li>
-											<i class="font-icon font-icon-heart"></i>
-											5K
-										</li>
-										<li>
-											<i class="font-icon font-icon-comment"></i>
-											3K
-										</li>
-									</ul>
-								</article>
-							</div>.slide
-							<div class="slide">
-								<article class="post-announce">
-									<div class="post-announce-pic">
-										<a href="#">
-											<img src="img/post-3.jpeg" alt="">
-										</a>
-									</div>
-									<div class="post-announce-title">
-										<a href="#">Good News You Might Have Good News You Might Have Good News You Might Have </a>
-									</div>
-									<div class="post-announce-date">December 30, 2016</div>
-									<ul class="post-announce-meta">
-										<li>
-											<i class="font-icon font-icon-eye"></i>
-											18
-										</li>
-										<li>
-											<i class="font-icon font-icon-heart"></i>
-											5K
-										</li>
-										<li>
-											<i class="font-icon font-icon-comment"></i>
-											3K
-										</li>
-									</ul>
-								</article>
-							</div>.slide
-						</div>.posts-slider
-					</section>.box-typical-->
+
 
 					<section class="box-typical">
 						<header class="box-typical-header-sm">Personal Info</header>
@@ -307,396 +257,10 @@ $msg = '';
 							</div>
 						</article><!--.profile-info-item-->
 
-<!--						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-case"></i>
-								Experience
-							</header>
-							<ul class="exp-timeline">
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">2000 President</div>
-												<div class="exp-timeline-status">Co-founder, Chairman</div>
-												<div class="exp-timeline-location"><a href="#">Company</a></div>
-											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">1992–1999</div>
-												<div class="exp-timeline-status">Senior Developer</div>
-												<div class="exp-timeline-location"><a href="#">YouTube</a></div>
-											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">2000 President</div>
-												<div class="exp-timeline-status">Co-founder, Chairman</div>
-												<div class="exp-timeline-location"><a href="#">Company</a></div>
-											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</article>.profile-info-item
 
-						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-award"></i>
-								Edication
-							</header>
-							<ul class="exp-timeline">
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">1973 – 1975</div>
-												<div class="exp-timeline-status">Harvard University</div>
-												<div class="exp-timeline-location"><a href="#">BS Computer Science</a></div>
-											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">1960 – 1973</div>
-												<div class="exp-timeline-status">Lakeside Scool, Seattle</div>
-											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</article>.profile-info-item
-
-						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-lamp"></i>
-								Skills
-							</header>
-
-							<section class="skill-item tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell tbl-cell-num">
-										<div class="skill-circle skill-circle-num">74</div>
-									</div>
-									<div class="tbl-cell tbl-cell-txt">Social Media Marketing</div>
-									<div class="tbl-cell tbl-cell-users">
-										<img class="skill-user-photo" src="img/avatar-1-64.png" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-3.jpg" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-4.jpg" alt=""/>
-										<div class="skill-circle skill-circle-users">+74</div>
-									</div>
-								</div>
-							</section>.skill-item
-
-							<section class="skill-item tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell tbl-cell-num">
-										<div class="skill-circle skill-circle-num">67</div>
-									</div>
-									<div class="tbl-cell tbl-cell-txt">Web Development</div>
-									<div class="tbl-cell tbl-cell-users">
-										<img class="skill-user-photo" src="img/avatar-2-64.png" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-2.jpg" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-3.jpg" alt=""/>
-										<div class="skill-circle skill-circle-users">+82</div>
-									</div>
-								</div>
-							</section>.skill-item
-
-							<section class="skill-item tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell tbl-cell-num">
-										<div class="skill-circle skill-circle-num">25</div>
-									</div>
-									<div class="tbl-cell tbl-cell-txt">Search Engine Optimization</div>
-									<div class="tbl-cell tbl-cell-users">
-										<img class="skill-user-photo" src="img/avatar-3-64.png" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-1.jpg" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-2.jpg" alt=""/>
-										<div class="skill-circle skill-circle-users">+4</div>
-									</div>
-								</div>
-							</section>.skill-item
-
-							<section class="skill-item tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell tbl-cell-num">
-										<div class="skill-circle skill-circle-num">20</div>
-									</div>
-									<div class="tbl-cell tbl-cell-txt">User Experience Design</div>
-									<div class="tbl-cell tbl-cell-users">
-										<img class="skill-user-photo" src="img/photo-64-3.jpg" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-4.jpg" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-1.jpg" alt=""/>
-										<div class="skill-circle skill-circle-users">+13</div>
-									</div>
-								</div>
-							</section>.skill-item
-						</article>.profile-info-item-->
-
-						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-star"></i>
-								More interest
-							</header>
-							<div class="profile-interests">
-								<a href="#" class="label label-light-grey">Interest</a>
-								<a href="#" class="label label-light-grey">Example</a>
-								<a href="#" class="label label-light-grey">One more</a>
-								<a href="#" class="label label-light-grey">Here is example interest</a>
-								<a href="#" class="label label-light-grey">Interest</a>
-								<a href="#" class="label label-light-grey">Example</a>
-								<a href="#" class="label label-light-grey">One more</a>
-								<a href="#" class="label label-light-grey">Here is example interest</a>
-								<a href="#" class="label label-light-grey">Interest</a>
-								<a href="#" class="label label-light-grey">Example</a>
-								<a href="#" class="label label-light-grey">One more</a>
-								<a href="#" class="label label-light-grey">Here is example interest</a>
-							</div>
-						</article><!--.profile-info-item-->
 					</section><!--.box-typical-->
 
-                                        <!--Reviews-->
-                                        
-<!--					<section class="box-typical">
-						<header class="box-typical-header-sm">
-							Recomendations
-							<div class="slider-arrs">
-								<button type="button" class="recomendations-slider-prev">
-									<i class="font-icon font-icon-arrow-left"></i>
-								</button>
-								<button type="button" class="recomendations-slider-next">
-									<i class="font-icon font-icon-arrow-right"></i>
-								</button>
-							</div>
-						</header>
-						<div class="recomendations-slider">
-							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-3.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-										</div>
-									</div>
-								</div>
-							</div>.slide
 
-							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-1.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-										</div>
-									</div>
-								</div>
-							</div>.slide
-
-							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-2.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-										</div>
-									</div>
-								</div>
-							</div>.slide
-
-							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-4.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-										</div>
-									</div>
-								</div>
-							</div>.slide
-
-							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-2.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-										</div>
-									</div>
-								</div>
-							</div>.slide
-
-							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-4.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-										</div>
-									</div>
-								</div>
-							</div>.slide
-						</div>.recomendations-slider
-					</section>.box-typical-->
-
-<!--					<section class="box-typical">
-						<header class="box-typical-header-sm">My Wic Planners</header>
-						<div class="profile-following">
-							<div class="profile-following-grid">
-								<div class="col">
-									<article class="follow-group">
-										<div class="follow-group-logo">
-											<a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
-										</div>
-										<div class="follow-group-name">
-											<a href="#">KIPP Foundation</a>
-										</div>
-										<div class="follow-group-link">
-											<a href="#">
-												<span class="plus-link-circle"><span>&plus;</span></span>
-												Follow
-											</a>
-										</div>
-									</article>
-								</div>
-								<div class="col">
-									<article class="follow-group">
-										<div class="follow-group-logo">
-											<a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
-										</div>
-										<div class="follow-group-name">
-											<a href="#">KIPP Foundation</a>
-										</div>
-										<div class="follow-group-link">
-											<a href="#">
-												<span class="plus-link-circle"><span>&plus;</span></span>
-												Follow
-											</a>
-										</div>
-									</article>
-								</div>
-								<div class="col">
-									<article class="follow-group">
-										<div class="follow-group-logo">
-											<a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
-										</div>
-										<div class="follow-group-name">
-											<a href="#">KIPP Foundation</a>
-										</div>
-										<div class="follow-group-link">
-											<a href="#">
-												<span class="plus-link-circle"><span>&plus;</span></span>
-												Follow
-											</a>
-										</div>
-									</article>
-								</div>
-								<div class="col">
-									<article class="follow-group">
-										<div class="follow-group-logo">
-											<a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
-										</div>
-										<div class="follow-group-name">
-											<a href="#">KIPP Foundation</a>
-										</div>
-										<div class="follow-group-link">
-											<a href="#">
-												<span class="plus-link-circle"><span>&plus;</span></span>
-												Follow
-											</a>
-										</div>
-									</article>
-								</div>
-							</div>
-							<a href="#" class="btn btn-rounded btn-primary-outline">See all (20)</a>
-						</div>.profile-following
-					</section>.box-typical-->
 				</div><!--.col- -->
 
 				<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
