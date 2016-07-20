@@ -856,6 +856,6 @@ function DB_GetOrgInformation($pdo) {
         echo '    </li>';
         echo '    </ul>';
     } catch (Exception $ex) {
-        
+        echo 'error';
     }
 }
