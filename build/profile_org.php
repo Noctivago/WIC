@@ -618,13 +618,13 @@ include_once '../build/db/dbconn.php';
             <div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
                 <section class="box-typical">
                     <div class="profile-card">
-                         <?php DB_GetOrgInformation($pdo) ?>   
-<!--                        <div class="profile-card-photo">
-                            <img src="img/photo-220-1.jpg" alt=""/>
-                        </div>
-                        <div class="profile-card-name">Sarah Sanchez</div>
-                        <div class="profile-card-status">Company Founder</div>
-                        <div class="profile-card-location">Greater Seattle Area</div>-->
+                        <?php DB_GetOrgInformation($pdo) ?>   
+                        <!--                        <div class="profile-card-photo">
+                                                    <img src="img/photo-220-1.jpg" alt=""/>
+                                                </div>
+                                                <div class="profile-card-name">Sarah Sanchez</div>
+                                                <div class="profile-card-status">Company Founder</div>
+                                                <div class="profile-card-location">Greater Seattle Area</div>-->
 
                     </div><!--.profile-card-->
 
@@ -656,92 +656,89 @@ include_once '../build/db/dbconn.php';
                                                                                                                 <a href="#">Export page as PDF</a>
                                                                                                         </li>>-->
                     </ul>
-                </section>
-
-                <section class="box-typical">
-                    <header class="box-typical-header-sm">
+                   <header class="box-typical-header-sm">
                         People in our organization
                         &nbsp;
-                <!--a href="#" class="full-count"><--?php db_CountPeopleInOrg($pdo)?></a-->
-                </header>
-                <div class="friends-list">
-                    <?php DB_getUsersInServiceOrganization($pdo) ?>
-                    <!--article class="friends-list-item">
-                        <div class="user-card-row">
-                            <div class="tbl-row">
-                                <div class="tbl-cell tbl-cell-photo">
-                                    <a href="#">
-                                        <img src="img/photo-64-2.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="tbl-cell">
-                                    <p class="user-card-row-name status-online"><a href="#">Dan Cederholm</a></p>
-                                    <p class="user-card-row-location">New York</p>
+                        <!--a href="#" class="full-count"><--?php db_CountPeopleInOrg($pdo)?></a-->
+                    </header>
+                    <div class="friends-list">
+                        <?php DB_getUsersInServiceOrganization($pdo) ?>
+                        <!--article class="friends-list-item">
+                            <div class="user-card-row">
+                                <div class="tbl-row">
+                                    <div class="tbl-cell tbl-cell-photo">
+                                        <a href="#">
+                                            <img src="img/photo-64-2.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="tbl-cell">
+                                        <p class="user-card-row-name status-online"><a href="#">Dan Cederholm</a></p>
+                                        <p class="user-card-row-location">New York</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </article-->
-                    <!--                        <article class="friends-list-item">
-                                                <div class="user-card-row">
-                                                    <div class="tbl-row">
-                                                        <div class="tbl-cell tbl-cell-photo">
-                                                            <a href="#">
-                                                                <img src="img/photo-64-1.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="tbl-cell">
-                                                            <p class="user-card-row-name"><a href="#">Oykun Yilmaz</a></p>
-                                                            <p class="user-card-row-location">Los Angeles</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            <article class="friends-list-item">
-                                                <div class="user-card-row">
-                                                    <div class="tbl-row">
-                                                        <div class="tbl-cell tbl-cell-photo">
-                                                            <a href="#">
-                                                                <img src="img/photo-64-3.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="tbl-cell">
-                                                            <p class="user-card-row-name"><a href="#">Bill S Kenney</a></p>
-                                                            <p class="user-card-row-location">Cardiff</p>
+                        </article-->
+                        <!--                        <article class="friends-list-item">
+                                                    <div class="user-card-row">
+                                                        <div class="tbl-row">
+                                                            <div class="tbl-cell tbl-cell-photo">
+                                                                <a href="#">
+                                                                    <img src="img/photo-64-1.jpg" alt="">
+                                                                </a>
+                                                            </div>
+                                                            <div class="tbl-cell">
+                                                                <p class="user-card-row-name"><a href="#">Oykun Yilmaz</a></p>
+                                                                <p class="user-card-row-location">Los Angeles</p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </article>
-                                            <article class="friends-list-item">
-                                                <div class="user-card-row">
-                                                    <div class="tbl-row">
-                                                        <div class="tbl-cell tbl-cell-photo">
-                                                            <a href="#">
-                                                                <img src="img/photo-64-4.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="tbl-cell">
-                                                            <p class="user-card-row-name"><a href="#">Maggy Smith</a></p>
-                                                            <p class="user-card-row-location">Dusseldorf</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            <article class="friends-list-item">
-                                                <div class="user-card-row">
-                                                    <div class="tbl-row">
-                                                        <div class="tbl-cell tbl-cell-photo">
-                                                            <a href="#">
-                                                                <img src="img/photo-64-2.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="tbl-cell">
-                                                            <p class="user-card-row-name"><a href="#">Dan Cederholm</a></p>
-                                                            <p class="user-card-row-location">New York</p>
+                                                </article>
+                                                <article class="friends-list-item">
+                                                    <div class="user-card-row">
+                                                        <div class="tbl-row">
+                                                            <div class="tbl-cell tbl-cell-photo">
+                                                                <a href="#">
+                                                                    <img src="img/photo-64-3.jpg" alt="">
+                                                                </a>
+                                                            </div>
+                                                            <div class="tbl-cell">
+                                                                <p class="user-card-row-name"><a href="#">Bill S Kenney</a></p>
+                                                                <p class="user-card-row-location">Cardiff</p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </article>-->
-                </div>
+                                                </article>
+                                                <article class="friends-list-item">
+                                                    <div class="user-card-row">
+                                                        <div class="tbl-row">
+                                                            <div class="tbl-cell tbl-cell-photo">
+                                                                <a href="#">
+                                                                    <img src="img/photo-64-4.jpg" alt="">
+                                                                </a>
+                                                            </div>
+                                                            <div class="tbl-cell">
+                                                                <p class="user-card-row-name"><a href="#">Maggy Smith</a></p>
+                                                                <p class="user-card-row-location">Dusseldorf</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                                <article class="friends-list-item">
+                                                    <div class="user-card-row">
+                                                        <div class="tbl-row">
+                                                            <div class="tbl-cell tbl-cell-photo">
+                                                                <a href="#">
+                                                                    <img src="img/photo-64-2.jpg" alt="">
+                                                                </a>
+                                                            </div>
+                                                            <div class="tbl-cell">
+                                                                <p class="user-card-row-name"><a href="#">Dan Cederholm</a></p>
+                                                                <p class="user-card-row-location">New York</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>-->
+                    </div>
                 </section><!--.box-typical-->
             </div><!--.col- -->
 
