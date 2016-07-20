@@ -192,56 +192,50 @@ $(document).ready(function () {
         paginationPreText: '<i class="font-icon font-icon-arrow-left"></i>',
         paginationNextText: '<i class="font-icon font-icon-arrow-right"></i>',
         data: data,
-        columns: [
-            [
-                {
-                    field: 'state',
-                    checkbox: true,
-                    rowspan: 2,
-                    align: 'center',
-                    valign: 'middle'
-                },
-                {
-                    title: 'Item ID',
-                    field: 'id',
-                    rowspan: 2,
-                    align: 'center',
-                    valign: 'middle',
-                    sortable: true,
-                    footerFormatter: totalTextFormatter
-                },
-//                                ,
-//				{
-//					title: 'Item Detail',
-//					colspan: 3,
-//					align: 'center'
-//				}
-
-                {
-                    field: 'name',
-                    title: 'Status',
-                    sortable: true,
-                    editable: true,
-                    formatter: statusFormatter,
-                    footerFormatter: totalNameFormatter,
-                    align: 'center'
-                },
-                {
-                    field: 'price',
-                    title: 'Item Price',
-                    sortable: true,
-                    align: 'center',
-                    footerFormatter: totalPriceFormatter
-                },
-                {
-                    field: 'operate',
-                    title: 'Item Operate',
-                    align: 'center',
-                    events: operateEvents,
-                    formatter: operateFormatter
-                }
-            ]
-        ]
+        columns:
+                [
+                    [
+                        {
+                            field: 'state',
+                            checkbox: true,
+                            rowspan: 2,
+                            align: 'center',
+                            valign: 'middle'
+                        },
+                        {
+                            title: 'Item ID',
+                            field: 'id',
+                            rowspan: 2,
+                            align: 'center',
+                            valign: 'middle',
+                            sortable: true,
+                            footerFormatter: totalTextFormatter
+                        },
+                        {
+                            field: 'name',
+                            title: 'Status',
+                            sortable: true,
+                            editable: true,
+                            formatter: statusFormatter,
+                            footerFormatter: totalNameFormatter,
+                            align: 'center'
+                        },
+                        {
+                            field: 'price',
+                            title: 'Item Price',
+                            sortable: true,
+                            align: 'center',
+                            footerFormatter: totalPriceFormatter
+                        },
+                        {
+                            field: 'operate',
+                            title: 'Item Operate',
+                            align: 'center',
+                            events: operateEvents,
+                            formatter: operateFormatter
+                        }
+                    ]
+                ]
     });
 
     $table.on('check.bs.table uncheck.bs.table ' +
