@@ -51,8 +51,10 @@ include ("includes/head_sideMenu.php");
 
 						<div class="gallery-col">
 							<article class="gallery-item">
+                                                            <a class="fancybox" rel="gall-1" href="img/gall-img-2.jpg">
 								<img class="gallery-picture" src="img/gall-img-2.jpg" alt="" height="158">
-								<div class="gallery-hover-layout">
+                                                            </a>
+<!--								<div class="gallery-hover-layout">
 									<div class="gallery-hover-layout-in">
 										<p class="gallery-item-title">The boxed castle</p>
 										<p>by Alban Wamigo</p>
@@ -66,14 +68,16 @@ include ("includes/head_sideMenu.php");
 										</div>
 										<p>3 days ago</p>
 									</div>
-								</div>
+								</div>-->
 							</article>
 						</div><!--.gallery-col-->
 
 						<div class="gallery-col">
 							<article class="gallery-item">
-								<img class="gallery-picture" src="img/gall-img-3.jpg" alt="" height="158">
-								<div class="gallery-hover-layout">
+                                                            <a class="fancybox" rel="gall-1" href="img/a_tasca.jpg">
+                                                                <img class="gallery-picture" src="img/a_tasca.jpg" alt="" height="158">
+                                                             </a>
+<!--								<div class="gallery-hover-layout">
 									<div class="gallery-hover-layout-in">
 										<p class="gallery-item-title">The boxed castle the boxed castle the boxed castle the boxed castle the boxed castle the</p>
 										<p>by Alban Wamigo</p>
@@ -87,7 +91,7 @@ include ("includes/head_sideMenu.php");
 										</div>
 										<p>3 days ago</p>
 									</div>
-								</div>
+								</div>-->
 							</article>
 						</div><!--.gallery-col-->
 
