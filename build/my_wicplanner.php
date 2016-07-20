@@ -100,7 +100,7 @@ $msg = '';
 			
                     
 
-                        <table id="table-edit" class="table table-bordered table-hover" >
+<!--                        <table id="table-edit" class="table table-bordered table-hover" >
 				<thead>
 				<tr>
 					<th width="1">
@@ -212,7 +212,7 @@ $msg = '';
 						</td>
 					</tr>
 				</tbody>
-			</table>
+			</table>-->
                     
                     </div>
                     
