@@ -209,9 +209,10 @@ $(document).ready(function () {
             refresh: 'font-icon-refresh',
             toggle: 'font-icon-list-square',
             columns: 'font-icon-list-rotate',
-            export: 'font-icon-download',
-            detailOpen: 'font-icon-plus',
-            detailClose: 'font-icon-minus-1'
+//            export: 'font-icon-download',
+//            detailOpen: 'font-icon-plus',
+//            detailClose: 'font-icon-minus-1'
+            export: 'font-icon-download'
         },
         paginationPreText: '<i class="font-icon font-icon-arrow-left"></i>',
         paginationNextText: '<i class="font-icon font-icon-arrow-right"></i>',
