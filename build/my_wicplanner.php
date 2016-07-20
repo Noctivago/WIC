@@ -60,7 +60,7 @@ $msg = '';
                                                                             <br>
                                                                             <br>
                                                                             <div class="tbl-cell tbl-cell-action">
-                                                                                <a href="#" class="font-icon font-icon-del-circle">
+                                                                                <a href="#" class="font-icon font-icon-del">
                                                                                     </a>
                                                                                     <!--<span>&cross;</span></a>-->
 										</div>
