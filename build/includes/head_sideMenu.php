@@ -296,23 +296,7 @@
                                 </div>
                                 
                                 
-                            <div class="dropdown dropdown-typical">
-                            <h8 class="with-border m-t-lg">Chose your City</h8>
-                            <div class="row">
-				<div >
-                                    <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
-					<option>Country</option>
-					<option>Country</option>
-					<option>Country</option>
-                                        <option>Country</option>
-                                        <option>Long long long extra long example line long long long extra long example line </option>
-                                    </select>
-				
-                                
-				</div>
 
-                            </div><!--.row-->
-                    </div>
                                 
                                 
                                 
