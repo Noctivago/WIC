@@ -44,7 +44,7 @@ include ("includes/head_sideMenu.php");
 						<header class="box-typical-header-sm">Album</header>
                                                 
                                                 
-                                                <article class="box-typical profile-post">
+<!--                                                <article class="box-typical profile-post">
                                                 		<div class="profile-post-content">
 										<p class="profile-post-content-note">Added 4 new pictures</p>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -83,7 +83,7 @@ include ("includes/head_sideMenu.php");
 									</div>
                                                     
                                                     
-                                                </article>
+                                                </article>-->
                                                 
                                                 
                                                 
@@ -94,10 +94,10 @@ include ("includes/head_sideMenu.php");
 								<div class="col">
 									<article class="follow-group">
 										<div class="follow-group-logo">
-											<a href="#" class="follow-group-logo-in fancybox " rel="gall-1" href="img/a_tasca.jpg"><img src="img/a_tasca.jpg"alt=""></a>
+											<a href="#" class="follow-group-logo-in " ><img src="img/a_tasca.jpg"alt=""></a>
 										</div>
 										<div class="follow-group-name">
-                                                                                    <img src="../../WIC_FINALE/build/img/a_tasca.jpg" alt=""/>
+                                                                                    
                                                                                     <a href="#"> asd</a>
 										</div>
 										<div class="follow-group-link">
