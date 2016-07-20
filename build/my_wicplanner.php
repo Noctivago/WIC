@@ -35,9 +35,9 @@ $msg = '';
 
                                 <thead>
                                     <tr>
-                                        <th>Owner</th>
+                                        <th>Event</th>
                                         <th>Date</th>
-                                        <th>User</th>
+                                        <th>Owner</th>
                                         <th></th>
                                         <th></th>
                                     </tr>
@@ -108,8 +108,7 @@ $msg = '';
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Event name</th>
-                                        <th>Date</th>
+                                        <th>Service</th>
                                         <th>Organization</th><th></th>
                                         <th></th>
                                     </tr>
@@ -117,7 +116,6 @@ $msg = '';
                                 <tbody>
                                     <tr class="table-check">
                                         <td><a href="#">Nome</a></td>
-                                        <td>Daata</td>
                                         <td class="table-photo">
                                             <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                         </td>
