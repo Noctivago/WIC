@@ -35,6 +35,7 @@ $msg = '';
 									
 								
 									<th></th>
+									<th></th>
 								</tr>
                                                     </thead>
                   
@@ -57,8 +58,11 @@ $msg = '';
                                                                                     </a>
                                                                                     <!--<span>&cross;</span></a>-->
 										</div>
-                                                                            <br>
-                                                                            <br>
+                                                                            
+
+                                                                        </td>
+                                                                         <td>
+ 
                                                                             <div class="tbl-cell tbl-cell-action">
                                                                                 <a href="#" class="font-icon font-icon-del">
                                                                                     </a>
