@@ -769,7 +769,8 @@ function DB_CountPeopleInOrg($pdo) {
   join [Role]
   on [Role].[Id] = [User_Service].[Role_Id]
   where [Service_Id] = ?", array($idService),"rows");
-            $count += $query['contador'];
+            $cont = $query['contador'];
+            $count += $cont;
         }
         echo $count;
     } catch (Exception $ex) {
