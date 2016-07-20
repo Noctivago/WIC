@@ -100,12 +100,12 @@ include ("includes/head_sideMenu.php");
                                                                                     
                                                                                     <a href="#"> asd</a>
 										</div>
-										<div class="follow-group-link">
+<!--										<div class="follow-group-link">
 											<a href="#">
 												<span class="plus-link-circle"><span>&plus;</span></span>
 												Follow
 											</a>
-										</div>
+										</div>-->
 									</article>
 								</div>
 								<div class="col">
@@ -116,12 +116,12 @@ include ("includes/head_sideMenu.php");
 										<div class="follow-group-name">
 											<a href="#">KIPP Foundation</a>
 										</div>
-										<div class="follow-group-link">
+<!--										<div class="follow-group-link">
 											<a href="#">
 												<span class="plus-link-circle"><span>&plus;</span></span>
 												Follow
 											</a>
-										</div>
+										</div>-->
 									</article>
 								</div>
 
