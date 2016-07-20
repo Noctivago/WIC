@@ -21,7 +21,7 @@ $(document).ready(function () {
         $.each(data, function (i, row) {
             total += +(row.price.substring(1));
         });
-        return '$' + total;
+        return total;
     }
 
     function statusFormatter(data, rowData, index) {
@@ -248,7 +248,7 @@ $(document).ready(function () {
                     title: 'SERVICE NAME',
                     sortable: true,
                     editable: true,
-                    formatter: statusFormatter,
+                    //formatter: statusFormatter,
                     footerFormatter: totalNameFormatter,
                     align: 'center'
                 },
