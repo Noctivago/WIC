@@ -670,8 +670,8 @@ include ("includes/head_sideMenu.php");
 								<img src="img/photo-220-1.jpg" alt=""/>
 							</div>
 							<div class="profile-card-name">Service Name</div>
-							<div class="profile-card-status">Supplier</div>
-							<div class="profile-card-location">Greater Seattle Area</div>
+							<div class="profile-card-status">Categorie</div>
+							<div class="profile-card-location">Supplier</div>
 							<!--<button type="button" class="btn btn-rounded">Follow</button>-->
 							<div class="btn-group">
 								<button type="button"
