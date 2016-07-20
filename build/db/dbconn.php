@@ -1088,11 +1088,10 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
         $rows = sql($pdo, "SELECT [WIC_Planner].[Id]
         ,[WIC_Planner].[Name] AS WPN
         ,[WIC_Planner].[Event_Date] AS WPED
-        ,[City].[Name]
-        ,[Event_Date]
+        ,[City].[Name] AS CNA
             ,[User_Profile].[First_Name] AS UFN
             ,[User_Profile].[Last_Name] AS ULN
-            ,[User_Profile].[Picture_Path]
+            ,[User_Profile].[Picture_Path] AS UPP
         FROM [dbo].[WIC_Planner]
         join [User]
         on [User].[id] = [WIC_Planner].[User_Id]
@@ -1132,12 +1131,12 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
 function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT [WIC_Planner].[Id]
-      ,[WIC_Planner].[Name]
-      ,[City].[Name]
-      ,[Event_Date]
-	  ,[User_Profile].[First_Name]
-	  ,[User_Profile].[Last_Name]  
-	  ,[User_Profile].[Picture_Path]
+      ,[WIC_Planner].[Name] AS WPN
+      ,[City].[Name] AS CNA
+      ,[Event_Date] AS WPED
+	  ,[User_Profile].[First_Name] AS UFN
+	  ,[User_Profile].[Last_Name]  AS ULN 
+	  ,[User_Profile].[Picture_Path] AS UPP
         FROM [dbo].[WIC_Planner]
         join [User]
         on [User].[id] = [WIC_Planner].[User_Id]
