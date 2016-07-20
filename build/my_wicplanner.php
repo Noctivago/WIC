@@ -43,8 +43,8 @@ $msg = '';
                                 </thead>
 
                                 <tbody>
-
-                                    <tr class="table-check">
+                                    <?= db_getMyWicPlannerToWICCrud($pdo, $SESSION['id']); ?>
+<!--                                    <tr class="table-check">
                                         <td><a href="#">Nome</a></td>
                                         <td>Daata</td>
                                         <td class="table-photo">
@@ -60,9 +60,9 @@ $msg = '';
 
                                             <a href="#" class="font-icon font-icon-del">
                                             </a>
-                                            <!--<span>&cross;</span></a>-->
+                                            <span>&cross;</span></a>
                                         </td>
-                                    </tr>
+                                    </tr>-->
 
                                 </tbody>
                             </table>
