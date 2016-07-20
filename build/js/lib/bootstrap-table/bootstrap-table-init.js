@@ -88,112 +88,90 @@ $(document).ready(function(){
 	var data = [
 		{
 			"id": 0,
-			"name": "Draft",
 			"price": "$0"
 		},
 		{
 			"id": 1,
-			"name": "Pending",
 			"price": "$20"
 		},
 		{
 			"id": 2,
-			"name": "Moderation",
 			"price": "$55"
 		},
 		{
 			"id": 3,
-			"name": "Published",
 			"price": "$120"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		},
 		{
 			"id": 4,
-			"name": "Pending",
 			"price": "$63"
 		}
 	];
