@@ -294,6 +294,28 @@
                                                                             <a class="dropdown-item" href="#">Subscribtions</a>
                                                                         </div>-->
                                 </div>
+                                
+                                
+                            <div class="card-block">
+                            <h8 class="with-border m-t-lg">Adress</h8>
+                            <div class="row">
+				<div >
+                                    <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
+					<option>Country</option>
+					<option>Country</option>
+					<option>Country</option>
+                                        <option>Country</option>
+                                        <option>Long long long extra long example line long long long extra long example line </option>
+                                    </select>
+				
+                                
+				</div>
+
+                            </div><!--.row-->
+                    </div>
+                                
+                                
+                                
                                 <!--	                        <div class="dropdown dropdown-typical">
                                                                     <a class="dropdown-toggle" id="dd-header-social" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                         <span class="font-icon font-icon-share"></span>
