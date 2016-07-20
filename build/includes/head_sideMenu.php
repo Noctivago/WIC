@@ -100,7 +100,7 @@
                             
 
 
-                            <div class="dropdown dropdown-notification notif">
+<!--                            <div class="dropdown dropdown-notification notif">
                                 <a href="#"
                                    class="header-alarm dropdown-toggle active"
                                    id="dd-notification"
@@ -128,7 +128,7 @@
                                         <a href="#">See more</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="dropdown dropdown-notification messages">
                                 <a href="#"
