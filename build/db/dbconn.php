@@ -717,10 +717,10 @@ function DB_getMyWICs($pdo, $userId) {
         foreach ($rows as $row) {
             echo '<div class="col">';
             echo '<article class="follow-group">';
-            echo '<div class="follow-group-logo">';
+            //echo '<div class="follow-group-logo">';
             //FALTA ID/LINK PARA REMETER ON CLICK PARA VER SERVIÇOS DESTE WIC PLANNER
-            echo '<a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt="WIC Logo"></a>';
-            echo '</div>';
+            //echo '<a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt="WIC Logo"></a>';
+            //echo '</div>';
             echo '<div class="follow-group-name">';
             echo '<a href="#">' . $row['WPN'] . ' @' . $row['WPC'] . '</a>';
             $str = $row['WPD'];
