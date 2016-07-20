@@ -68,27 +68,7 @@ $msg = '';
                                             <!--<span>&cross;</span></a>-->
                                         </td>
                                     </tr>
-                                    <tr class="table-check">
 
-                                        <td><a href="#">Nome</a></td>
-                                        <td>Daata</td>
-                                        <td class="table-photo">
-                                            <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                        </td>
-
-                                        <td class="table-photo">
-
-                                            <a href="#" class="font-icon font-icon-pencil">
-                                            </a>
-                                            <!--<span>&cross;</span></a>-->
-
-                                        </td>
-                                        <td class="table-photo">
-                                            <a href="#" class="font-icon font-icon-del">
-                                            </a>
-                                            <!--<span>&cross;</span></a>-->
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -136,79 +116,23 @@ $msg = '';
                                             Event name
                                         </th>
                                         <th>Date</th>
-                                        <th>User</th>
-
-
-                                        <th></th>
+                                        <th>User</th><th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
-
-
-
-
-
                                     <tr class="table-check">
-
                                         <td><a href="#">Nome</a></td>
                                         <td>Daata</td>
                                         <td class="table-photo">
                                             <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                         </td>
-
                                         <td class="table-photo">
-
-                                            <a href="#" class="font-icon font-icon-pencil">
-                                            </a>
-                                            <!--<span>&cross;</span></a>-->
-
-
-
-                                        </td>
-                                        <td class="table-photo">
-
-
                                             <a href="#" class="font-icon font-icon-del">
                                             </a>
                                             <!--<span>&cross;</span></a>-->
-
                                         </td>
-
                                     </tr>
-                                    <tr class="table-check">
-
-                                        <td><a href="#">Nome</a></td>
-                                        <td>Daata</td>
-                                        <td class="table-photo">
-                                            <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                        </td>
-
-                                        <td class="table-photo">
-
-                                            <a href="#" class="font-icon font-icon-pencil">
-                                            </a>
-                                            <!--<span>&cross;</span></a>-->
-
-
-
-                                        </td>
-                                        <td class="table-photo">
-
-
-                                            <a href="#" class="font-icon font-icon-del">
-                                            </a>
-                                            <!--<span>&cross;</span></a>-->
-
-                                        </td>
-
-                                    </tr>
-
-
-
-
-
 
                                 </tbody>
                             </table>
