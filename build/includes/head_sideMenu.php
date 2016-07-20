@@ -45,7 +45,7 @@
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
 
-                            <div class="dropdown dropdown-notification plus-link-circle">
+                            <div class="dropdown dropdown-notification add-customers-screen">
                                 <a href="#"
                                    class="header-alarm  "
                                    id="dd-messages"
