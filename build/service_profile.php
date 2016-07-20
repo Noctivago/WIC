@@ -724,7 +724,6 @@ include ("includes/head_sideMenu.php");
 						<div class="profile-card">
 							<div class="profile-card-photo">
                                                             <img src="img/a_tasca.jpg2" alt=""/>
-                                                           
 							</div>
                                                      <br>
                                                             <br>
