@@ -31,12 +31,7 @@ $msg = '';
 								
 								
 								<tr class="table-check">
-									<td class="table-check">
-										<div class="checkbox checkbox-only">
-											<input type="checkbox" id="tbl-check-6"/>
-											<label for="tbl-check-6"></label>
-										</div>
-									</td>
+									
 									<td><a href="#">Nome</a></td>
 									<td>Daata</td>
                                                                         <td class="table-photo">
@@ -45,12 +40,7 @@ $msg = '';
 								
 								</tr>
 								<tr class="table-check">
-									<td class="table-check">
-										<div class="checkbox checkbox-only">
-											<input type="checkbox" id="tbl-check-6"/>
-											<label for="tbl-check-6"></label>
-										</div>
-									</td>
+									
 									<td><a href="#">Nome</a></td>
 									<td>Daata</td>
                                                                         <td class="table-photo">
@@ -59,12 +49,7 @@ $msg = '';
 								
 								</tr>
 								<tr class="table-check">
-									<td class="table-check">
-										<div class="checkbox checkbox-only">
-											<input type="checkbox" id="tbl-check-6"/>
-											<label for="tbl-check-6"></label>
-										</div>
-									</td>
+									
 									<td><a href="#">Nome</a></td>
 									<td>Daata</td>
                                                                         <td class="table-photo">
@@ -73,12 +58,7 @@ $msg = '';
 								
 								</tr>
 								<tr class="table-check">
-									<td class="table-check">
-										<div class="checkbox checkbox-only">
-											<input type="checkbox" id="tbl-check-6"/>
-											<label for="tbl-check-6"></label>
-										</div>
-									</td>
+									
 									<td><a href="#">Nome</a></td>
 									<td>Daata</td>
                                                                         <td class="table-photo">
