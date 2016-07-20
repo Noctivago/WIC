@@ -91,7 +91,7 @@
                                         </div>
                                     </div>
                                     <div class="dropdown-menu-notif-more">
-                                        <a href="messenger.php">See more</a>
+                                        <a href="wicPlanner.php">See My Wic Planners</a>
                                     </div>
                                 </div>
                             </div>
