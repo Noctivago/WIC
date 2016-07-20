@@ -713,7 +713,7 @@ function DB_getMyWICs($pdo, $userId) {
         join [City]
         on [WIC_Planner].[City_Id]=[City].[Id]
         WHERE [WIC_Planner].[Enabled]= 1 
-        AND [WIC_Planner].[User_Id] = ?", array($userId), "rows");
+        AND [WIC_Planner].[User_Id] = ? ORDER BY WPD ASC", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<div class="col">';
             echo '<article class="follow-group">';
