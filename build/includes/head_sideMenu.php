@@ -295,7 +295,7 @@
                                                                         </div>-->
                                 </div>
                                 
-                    <div class="dropdown dropdown-more">
+                    <div class="dropdown dropdown-typical">
                             <h8 class="with-border m-t-lg">Adress</h8>
                             <div class="row">
 				<div >
