@@ -46,7 +46,7 @@ include ("includes/head_sideMenu.php");
 											<a href="#" class="follow-group-logo " rel="gall-1" href="img/logo-2.png"><img src="img/logo-2.png" alt=""></a>
 										</div>
 										<div class="follow-group-name">
-                                                                                    <a href="#"> asdaa</a>
+                                                                                    <a href="#"> torta</a>
 										</div>
 										<div class="follow-group-link">
 											<a href="#">
