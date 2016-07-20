@@ -10,9 +10,9 @@ $msg = '';
 	<div class="page-content">
 		<div class="container-fluid" style="overflow: auto">
                     
-                    <div id="table-edit" class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6" >
+                    <div id="table-edit"  >
                     
-                    			<section class="box-typical box-typical-max-280">
+                        <section class="box-typical box-typical">
 				<header class="box-typical-header">
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
