@@ -95,7 +95,7 @@ include_once '../build/db/dbconn.php';
                     </div>
                     <p class="sign-note">  <?= $msg; ?> </p>
                     <button type="submit" name="signin" class="btn btn-rounded">Sign in</button>
-                    <p class="sign-note">New to our website? <a href="sign_up.php">Sign up</a></p>
+                    <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as a user</a><a href="sign_up_org.php"> Sign up as a Organization</a></p>
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->
