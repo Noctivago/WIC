@@ -47,7 +47,7 @@
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
 
-                            <div class="dropdown dropdown-notification add-customers-screen-user" >
+                            <div class="dropdown dropdown-notification add-customers-screen-user"  >
                                 <a href="#"
                                    class="header-alarm  "
                                    id="dd-messages"
@@ -294,6 +294,25 @@
                                                                             <a class="dropdown-item" href="#">Subscribtions</a>
                                                                         </div>-->
                                 </div>
+                                
+                    <div class="dropdown dropdown-more">
+                            <h8 class="with-border m-t-lg">Adress</h8>
+                            <div class="row">
+				<div >
+                                    <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
+					<option>Country</option>
+					<option>Country</option>
+					<option>Country</option>
+                                        <option>Country</option>
+                                        <option>Long long long extra long example line long long long extra long example line </option>
+                                    </select>
+				
+                                
+				</div>
+				
+                            </div><!--.row-->
+                    </div>
+                                
                                 
                                 
 
