@@ -642,7 +642,7 @@ include_once '../build/db/dbconn.php';
                                                                                                 <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third Party Test</a>
                                                                                         </div>
                                                                                 </div>-->
-                    <!--/div--><!--.profile-card-->
+                    </div><!--.profile-card-->
 
                     <!--						<div class="profile-statistic tbl">
                                                                             <div class="tbl-row">
