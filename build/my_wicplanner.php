@@ -258,6 +258,20 @@ $msg = '';
 
 				</div><!--.col- -->
 
+                                
+                                
+                                
+                                
+                                
+                                
+                                <!--A PUTA COMEÇA AQUI-->
+                                
+                                
+                                
+                                
+                                
+                                
+                                
                                 <div class="col-lg-6">
 				<!--<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">-->
 					
@@ -282,6 +296,7 @@ $msg = '';
 									
 								
 									<th></th>
+									<th></th>
 								</tr>
                                                     </thead>
                   
@@ -298,11 +313,7 @@ $msg = '';
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                                                         </td>
-                                                                        <td>
-                                                                            <div class="tbl-cell tbl-cell-action">
-                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
-										</div>
-                                                                        </td>
+  
                                                                         <td class="table-photo">
                                                                             
                                                                                 <a href="#" class="font-icon font-icon-pencil">
@@ -329,11 +340,7 @@ $msg = '';
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                                                         </td>
-                                                                        <td>
-                                                                            <div class="tbl-cell tbl-cell-action">
-                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
-										</div>
-                                                                        </td>
+
                                                                         <td class="table-photo">
                                                                             
                                                                                 <a href="#" class="font-icon font-icon-pencil">
