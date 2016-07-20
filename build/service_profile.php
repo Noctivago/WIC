@@ -43,10 +43,10 @@ include ("includes/head_sideMenu.php");
 								<div class="col">
 									<article class="follow-group">
 										<div class="follow-group-logo">
-											<a href="#" class="fancybox follow-group-logo"><img src="img/logo-2.png" alt=""></a>
+											<a href="#" class="follow-group-logo fancybox" rel="gall-1" href="img/logo-2.png"><img src="img/logo-2.png" alt=""></a>
 										</div>
 										<div class="follow-group-name">
-                                                                                    <a href="#"> FOOOOOOOOOOD</a>
+                                                                                    <a href="#"> asdaa</a>
 										</div>
 										<div class="follow-group-link">
 											<a href="#">
