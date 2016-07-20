@@ -219,13 +219,13 @@ $(document).ready(function () {
         data: data,
         columns: [
             [
-                {
-                    field: 'state',
-                    checkbox: true,
-                    rowspan: 2,
-                    align: 'center',
-                    valign: 'middle'
-                },
+//                {
+//                    field: 'state',
+//                    checkbox: true,
+//                    rowspan: 2,
+//                    align: 'center',
+//                    valign: 'middle'
+//                },
                 {
                     title: 'Service ID',
                     field: 'id',
@@ -272,12 +272,13 @@ $(document).ready(function () {
 
     $table.on('check.bs.table uncheck.bs.table ' +
             'check-all.bs.table uncheck-all.bs.table', function () {
-                $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
+                $remove.prop('enabled', !$table.bootstrapTable('getSelections').length);
                 // save your data, here just save the current page
                 selections = getIdSelections();
                 // push or splice the selections if you want to save all data selections
             });
 
+    //BOTAO VERMELHO DE REMOCAO
     $remove.click(function () {
         var ids = getIdSelections();
         $table.bootstrapTable('remove', {
