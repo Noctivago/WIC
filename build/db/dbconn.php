@@ -839,10 +839,10 @@ function DB_GetOrgInformation($pdo) {
             echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
             echo '     <ul class="profile-links-list">';
             echo '             <li class="nowrap">';
-            echo '          <a class="font-icon font-icon-earth-bordered" href="' . $row['Website'] . '"/>';
-            echo '          <a class="font-icon font-icon-fb-fill" href="' . $row['Facebook'] . '"/>';
-            echo '          <a class="font-icon font-icon-in-fill" href="' . $row['Linkdin'] . '"/>';
-            echo '          <a class="font-icon font-icon-tw-fill" href="' . $row['Twitter'] . '"/>';
+            echo '          <i class="font-icon font-icon-earth-bordered"><a  href="' . $row['Website'] . '"/>';
+            echo '         <i class="font-icon font-icon-fb-fill"> <a  href="' . $row['Facebook'] . '"/>';
+            echo '          <i class="font-icon font-icon-in-fill"><a  href="' . $row['Linkdin'] . '"/>';
+            echo '          <i class="font-icon font-icon-tw-fill"><a  href="' . $row['Twitter'] . '"/>';
             echo '         </li>';
             echo '    </ul>';
             echo '</div>';
