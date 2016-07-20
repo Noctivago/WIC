@@ -696,3 +696,39 @@ function db_getUserIndexInfo($pdo, $userId) {
         echo 'ERROR READING USER PROFILE';
     }
 }
+
+/**
+ * FUNÇAO QUE DEVOLVE WICs PLANNER PARA PERFIL USER
+ * @param type $pdo
+ * @param type $userId
+ */
+function DB_getMyWICs($pdo, $userId) {
+
+    try {
+        $rows = sql($pdo, "SELECT [WIC_Planner].[Id]
+        ,[WIC_Planner].[Name] AS WPN
+        ,[City].[Name] AS WPC
+        ,[WIC_Planner].[Event_Date] AS WPD
+        FROM [dbo].[WIC_Planner]
+        join [City]
+        on [WIC_Planner].[City_Id]=[City].[Id]
+        WHERE [WIC_Planner].[Enabled]= 1 
+        AND [WIC_Planner].[User_Id] = ?", array($userId), "rows");
+        foreach ($rows as $row) {
+            echo '<div class="col">';
+            echo '<article class="follow-group">';
+            echo '<div class="follow-group-logo">';
+            //FALTA ID/LINK PARA REMETER ON CLICK PARA VER SERVIÇOS DESTE WIC PLANNER
+            echo '<a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt="WIC Logo"></a>';
+            echo '</div>';
+            echo '<div class="follow-group-name">';
+            echo '<a href="#">#' . $row['WPN'] . ' @ ' . $row['WPC'] . '</a>';
+            echo '<p>#' . $row['WPD'] . '</p>';
+            echo '</div>';
+            echo '</article>';
+            echo '</div>';
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING WIC PLANNER!';
+    }
+}
