@@ -3,6 +3,11 @@
 include_once 'includes/head_singleforms.php';
 include_once '../build/db/functions.php';
 include_once '../build/db/dbconn.php';
+ob_start();
+session_start();
+if (isset($_SESSION['id'])) {
+    header("location: ../build/profile_user.php");
+}
 ?>
 <body>
     <?php
