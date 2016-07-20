@@ -689,7 +689,7 @@ include_once '../build/db/dbconn.php';
                     <header class="box-typical-header-sm">
                         People in our organization
                         &nbsp;
-                        <a href="#" class="full-count">268</a>
+                        <a href="#" class="full-count"><?php db_CountPeopleInOrg($pdo)?></a>
                     </header>
                     <div class="friends-list">
                         <?php DB_getUsersInServiceOrganization($pdo) ?>

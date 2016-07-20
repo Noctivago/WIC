@@ -748,13 +748,41 @@ function DB_GetOrgIdByUserBossId($pdo, $idUser) {
     }
 }
 
+//falta dar o orgid
+// Dá o numero de pessoas em todos os servicos
+function DB_CountPeopleInOrg($pdo) {
+    try {
+        $count = 1;
+        $Services = sql($pdo, "SELECT *
+  FROM [Service]
+  where [Organization_Id] = ? and [Enabled] = 1", array(2), "rows");
+        foreach ($Services as $Service) {
+            $contador = sql($pdo, "SELECT count([User_Service].[Id]) as contador
+  FROM [dbo].[User_Service]
+  join [User]
+  on [User].[Id] = [User_Service].[User_Id]
+  join [User_Profile]
+  on [User_Profile].[User_Id] = [User].[Id]
+  join [Service]
+  on [Service].[Id] = [User_Service].[Service_Id]
+  join [Role]
+  on [Role].[Id] = [User_Service].[Role_Id]
+  where [Service_Id] = ?", array($Service['Id']));
+            $count += $contador;
+        }
+        echo $count;
+    } catch (Exception $ex) {
+        
+    }
+}
+
 //Todos os utilizadores que estão associados a um servico 
 //Falta colocar o id da org
 function DB_getUsersInServiceOrganization($pdo) {
     try {
         $Services = sql($pdo, "SELECT *
   FROM [Service]
-  where [Organization_Id] = ?", array(2), "rows");
+  where [Organization_Id] = ? and [Enabled] = 1", array(2), "rows");
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
             $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name]
@@ -779,8 +807,8 @@ function DB_getUsersInServiceOrganization($pdo) {
                 echo '             </a>';
                 echo '         </div>';
                 echo '        <div class="tbl-cell">';
-                echo '            <p class="user-card-row-name status-online"><a href="#">'.$row[First_Name]." ".$row['Last_Name'].'</a></p>';
-                echo '            <p class="user-card-row-location">'.$row[ServiceName].'</p>';
+                echo '            <p class="user-card-row-name status-online"><a href="#">' . $row[First_Name] . " " . $row['Last_Name'] . '</a></p>';
+                echo '            <p class="user-card-row-location">' . $row[ServiceName] . '</p>';
                 echo '         </div>';
                 echo '  </div>';
                 echo ' </article>';
