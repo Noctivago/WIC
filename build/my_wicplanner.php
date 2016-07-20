@@ -12,7 +12,7 @@ $msg = '';
 			
                     <div class="col-lg-3 ">
 
-			<table id="table-edit" class="table table-bordered table-hover">
+                        <table id="table-edit" class="table table-bordered table-hover" style="overflow: auto">
 				<thead>
 				<tr>
 					<th width="1">
@@ -24,6 +24,51 @@ $msg = '';
 				</tr>
 				</thead>
 				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Last quarter revene</td>
+						
+						<td class="table-date">6 minets ago</td>
+						<td class="table-photo">
+							<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+						</td>
+					</tr>
 					<tr>
 						<td>1</td>
 						<td>Last quarter revene</td>
