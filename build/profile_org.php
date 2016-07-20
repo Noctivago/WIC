@@ -656,7 +656,8 @@ include_once '../build/db/dbconn.php';
                                                                                     </div>
                                                                             </div>
                                                                     </div>-->
-
+                    </section>
+                    <section>
                     <ul class="profile-links-list">
                         <li class="nowrap">
                             <i class="font-icon font-icon-earth-bordered"></i>
