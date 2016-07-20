@@ -783,7 +783,7 @@ function DB_CountPeopleInOrg($pdo) {
 //Falta colocar o id da org
 function DB_getUsersInServiceOrganization($pdo,$org) {
     try {
-        $id = $_POST['org'];
+        $id = $org;
         $Services = sql($pdo, "SELECT *
   FROM [Service]
   where [Organization_Id] = ? and [Enabled] = 1", array($id), "rows");
@@ -855,7 +855,7 @@ function DB_GetOrgInformation($pdo) {
 function DB_GetOrgInformation2($pdo,$org) {
     try {
 
-        $id = $_POST['org'];
+        $id = $org;
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
   where [Id] = ?", array($id), "rows");
