@@ -29,35 +29,10 @@ $(document).ready(function () {
                 classDropup = '',
                 pageSize = 10;
 
-//        if (data === 'Draft')
-//            classBtn = 'btn-danger';
-//        if (data === 'Pending')
-//            classBtn = 'btn-primary';
-//        if (data === 'Moderation')
-//            classBtn = 'btn-warning';
-//        if (data === 'Published')
-//            classBtn = 'btn-success';
-
         if (index >= pageSize / 2) {
             classDropup = 'dropup';
         }
 
-//        return	'<div class="dropdown dropdown-status ' +
-//                classDropup +
-//                ' ">' +
-//                '<button class="btn ' +
-//                classBtn +
-//                ' dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
-//                data +
-//                '</button>' +
-//                '<div class="dropdown-menu">' +
-//                '<a class="dropdown-item" href="#">Draft</a>' +
-//                '<a class="dropdown-item" href="#">Pending</a>' +
-//                '<a class="dropdown-item" href="#">Moderation</a>' +
-//                '<a class="dropdown-item" href="#">Published</a>' +
-//                '<div class="dropdown-divider"></div>' +
-//                '<a class="dropdown-item" href="#">Move to Trash</a>' +
-//                '</div></div>';
     }
 
     window.operateEvents = {
@@ -74,9 +49,6 @@ $(document).ready(function () {
 
     function operateFormatter(value, row, index) {
         return [
-//            '<a class="like" href="javascript:void(0)" title="Like">',
-//            '<i class="glyphicon glyphicon-heart"></i>',
-//            '</a>  ',
             '<a class="remove" href="javascript:void(0)" title="Remove">',
             '<i class="glyphicon glyphicon-remove"></i>',
             '</a>'
@@ -119,9 +91,6 @@ $(document).ready(function () {
             refresh: 'font-icon-refresh',
             toggle: 'font-icon-list-square',
             columns: 'font-icon-list-rotate',
-//            export: 'font-icon-download',
-//            detailOpen: 'font-icon-plus',
-//            detailClose: 'font-icon-minus-1'
             export: 'font-icon-download'
         },
         paginationPreText: '<i class="font-icon font-icon-arrow-left"></i>',
@@ -172,24 +141,6 @@ $(document).ready(function () {
             ]
         ]
     });
-
-//    $table.on('check.bs.table uncheck.bs.table ' +
-//            'check-all.bs.table uncheck-all.bs.table', function () {
-//                $remove.prop('enabled', !$table.bootstrapTable('getSelections').length);
-//                // save your data, here just save the current page
-//                selections = getIdSelections();
-//                // push or splice the selections if you want to save all data selections
-//            });
-//
-//    //BOTAO VERMELHO DE REMOCAO
-//    $remove.click(function () {
-//        var ids = getIdSelections();
-//        $table.bootstrapTable('remove', {
-//            field: 'id',
-//            values: ids
-//        });
-//        $remove.prop('enabled', true);
-//    });
 
     $('#toolbar').find('select').change(function () {
         $table.bootstrapTable('refreshOptions', {
