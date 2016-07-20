@@ -24,6 +24,7 @@ $msg = '';
 						<div class="tbl-cell tbl-cell-title">
 							<h3> My Events - Wic Planner</h3>
 						</div>
+                                            <a class="font-icon font-icon-plus" href="add_wicplanner.php">	</a>
 					</div>
 				</header>
                                 <div class="box-typical-body" style="overflow: hidden; padding: 0px; height: 700px; width: 504px;">
@@ -279,7 +280,7 @@ $msg = '';
 				<header class="box-typical-header">
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
-                                                    <a class="font-icon font-icon-plus" href="add_wicplanner.php"	<h3> Services in "Event Name"</h3></a>
+                                                    <h3> Services in "Event Name"</h3>
 						</div>
 					</div>
 				</header>
