@@ -13,7 +13,7 @@ include ("includes/head_sideMenu.php");
 							<h3>Designers <small class="text-muted">23 candidates</small></h3>
 						</div>
 						<div class="tbl-cell tbl-cell-action">
-							<a href="#" class="btn btn-rounded">Add member</a>
+                                                    <a href="addwicplanner.php" class="btn btn-rounded">Add member</a>
 						</div>
 					</div>
 				</div>
