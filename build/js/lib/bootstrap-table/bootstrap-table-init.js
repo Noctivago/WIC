@@ -277,16 +277,16 @@ $(document).ready(function () {
 //                selections = getIdSelections();
 //                // push or splice the selections if you want to save all data selections
 //            });
-
-    //BOTAO VERMELHO DE REMOCAO
-    $remove.click(function () {
-        var ids = getIdSelections();
-        $table.bootstrapTable('remove', {
-            field: 'id',
-            values: ids
-        });
-        $remove.prop('enabled', true);
-    });
+//
+//    //BOTAO VERMELHO DE REMOCAO
+//    $remove.click(function () {
+//        var ids = getIdSelections();
+//        $table.bootstrapTable('remove', {
+//            field: 'id',
+//            values: ids
+//        });
+//        $remove.prop('enabled', true);
+//    });
 
     $('#toolbar').find('select').change(function () {
         $table.bootstrapTable('refreshOptions', {
