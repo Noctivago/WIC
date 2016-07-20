@@ -23,6 +23,15 @@ $msg = '';
 				<div class="box-typical-body">
 					<div class="table-responsive">
 						<table class="table table-hover">
+                                                    <thead>
+				<tr>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>data</th>
+                                        <th></th>
+                                   
+				</tr>
+				</thead>
 							<tbody>
 								
 								
@@ -36,27 +45,12 @@ $msg = '';
 											<label for="tbl-check-6"></label>
 										</div>
 									</td>
-									<td><a href="#">State</a></td>
-									<td>Text</td>
-									<td width="150">
-										<div class="progress-with-amount">
-											<progress class="progress progress-success progress-no-margin" value="25" max="100">25%</progress>
-											<div class="progress-with-amount-number">25%</div>
-										</div>
-									</td>
-									<td nowrap="nowrap">12.423<span class="caret color-red"></span></td>
-									<td>
-										<div class="font-11 color-blue-grey-lighter uppercase">NULL</div>
-										0%
-									</td>
-									<td>
-										<div class="font-11 color-blue-grey-lighter uppercase">Unique values</div>
-										72
-									</td>
-									<td>
-										<div class="font-11 color-blue-grey-lighter uppercase">Most commons</div>
-										Florida (13%)
-									</td>
+									<td><a href="#">Nome</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
 								</tr>
 								<tr class="table-check">
 									<td class="table-check">
@@ -65,28 +59,42 @@ $msg = '';
 											<label for="tbl-check-6"></label>
 										</div>
 									</td>
-									<td><a href="#">State</a></td>
-									<td>Text</td>
-									<td width="150">
-										<div class="progress-with-amount">
-											<progress class="progress progress-success progress-no-margin" value="25" max="100">25%</progress>
-											<div class="progress-with-amount-number">25%</div>
+									<td><a href="#">Nome</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									<td class="table-check">
+										<div class="checkbox checkbox-only">
+											<input type="checkbox" id="tbl-check-6"/>
+											<label for="tbl-check-6"></label>
 										</div>
 									</td>
-									<td nowrap="nowrap">12.423<span class="caret color-red"></span></td>
-									<td>
-										<div class="font-11 color-blue-grey-lighter uppercase">NULL</div>
-										0%
-									</td>
-									<td>
-										<div class="font-11 color-blue-grey-lighter uppercase">Unique values</div>
-										72
-									</td>
-									<td>
-										<div class="font-11 color-blue-grey-lighter uppercase">Most commons</div>
-										Florida (13%)
-									</td>
+									<td><a href="#">Nome</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
 								</tr>
+								<tr class="table-check">
+									<td class="table-check">
+										<div class="checkbox checkbox-only">
+											<input type="checkbox" id="tbl-check-6"/>
+											<label for="tbl-check-6"></label>
+										</div>
+									</td>
+									<td><a href="#">Nome</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+							
 								
 								
 								
