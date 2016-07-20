@@ -38,6 +38,7 @@ $org = $_POST['Organization'];
 
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
+                        <?php DB_GetOrganizationServices($pdo, $org)?>
                         Services
                         <div class="slider-arrs">
                             <button type="button" class="posts-slider-prev">

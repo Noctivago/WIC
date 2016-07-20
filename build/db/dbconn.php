@@ -907,3 +907,48 @@ function DB_compareActivationCode($pdo, $email, $code) {
         echo '';
     }
 }
+
+function DB_GetServiceMultimediaUnit($pdo, $idService) {
+    $msg = sql($pdo, " Select top(1) *
+From [Multimedia]
+where [Service_Id] = ?", array($idService), "rows");
+    echo $msg;
+}
+
+function DB_GetNumberServiceViews($pdo, $idService) {
+    $msg = sql($pdo, "Select count([Service_View].[Id])as NumView
+From [Service_View]
+where [Service_Id] = ?", array($idService), "rows");
+    echo $msg['NumView'];
+}
+
+function DB_GetNumberServiceComments($pdo, $idService) {
+    $msg = sql($pdo, "SELECT count([Comment].[Id]) as NumComment
+  FROM [dbo].[Comment]
+  where [Service_Id] = ?", array($idService), "rows");
+    echo $msg['NumComment'];
+}
+
+function DB_GetServiceInformation($pdo, $idService) {
+    $msg = sql($pdo, "SELECT *
+  FROM [dbo].[Service]
+  where [Organization_Id] =?", array($idService), "rows");
+    echo $msg;
+}
+
+//preencher seccao services no profile org
+//falta passar o id da org
+function DB_GetOrganizationServices($pdo, $org) {
+    try {
+        $idServoce = 2;
+        $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+        $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+        $views = DB_GetNumberServiceViews($pdo, $idService);
+        $comments = DB_GetNumberServiceComments($pdo, $idService);
+        echo $ServiceInfo;
+        echo $Multi;
+        echo $views;
+        echo $comments;
+    } catch (Exception $ex) {
+    }
+}
