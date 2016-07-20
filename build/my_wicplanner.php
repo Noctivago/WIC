@@ -25,6 +25,9 @@ $msg = '';
                                                     <h3> My Events - Wic Planner <span><a class="font-icon font-icon-plus" style="align:rigth" href="add_wicplanner.php">	</a></span></h3> 
                                                         
 						</div>
+                                            <div class="tbl-cell tbl-people">
+                                                <span><a class="font-icon font-icon-plus" style="align:rigth" href="add_wicplanner.php">	</a></span>
+                                            </div>
                                             
 					</div>
 				</header>
