@@ -837,7 +837,7 @@ function DB_GetOrgInformation($pdo) {
             echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
             echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
             echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
-            echo '</div>';
+            
 //            <div class="profile-card-photo">
 //                            <img src="img/photo-220-1.jpg" alt=""/>
 //                        </div>
@@ -877,6 +877,7 @@ function DB_GetOrgInformation($pdo) {
 //            echo '                  <i class="font-icon font-icon-tw-fill"><a href="' . $row['Twitter'] . '"/></i>';
             echo '         </li>';
             echo '    </ul>';
+            echo '</div>';
         }
     } catch (Exception $ex) {
         echo 'error';
