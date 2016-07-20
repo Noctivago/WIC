@@ -1104,7 +1104,11 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
         foreach ($rows as $row) {
             echo '<tr class="table-check">';
             echo '<td><a href="#">' . $row['WPN'] . '</a></td>';
-            echo '<td>' . $row['WPED'] . '</td>';
+            $str = $row['WPED'];
+            //SEPARA A DATA DAS HORAS
+            $subStr = explode(" ", $str);
+            //IMPRIME DATA
+            echo '<td>' . $subStr[0] . '</td>';
             echo '<td class="table-photo">';
             echo '<img src="' . $row['UPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
             echo '</td>';
@@ -1151,7 +1155,11 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
         foreach ($rows as $row) {
             echo '<tr class="table-check">';
             echo '<td><a href="#">' . $row['WPN'] . '</a></td>';
-            echo '<td>' . $row['WPED'] . '</td>';
+            $str = $row['WPED'];
+            //SEPARA A DATA DAS HORAS
+            $subStr = explode(" ", $str);
+            //IMPRIME DATA
+            echo '<td>' . $subStr[0] . '</td>';
             echo '<td class="table-photo">';
             echo '<img src="' . $row['UPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
             echo '</td>';
