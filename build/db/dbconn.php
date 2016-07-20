@@ -983,8 +983,8 @@ function DB_GetOrganizationServices($pdo, $org) {
         $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
         $views = DB_GetNumberServiceViews($pdo, $idService);
         $comments = DB_GetNumberServiceComments($pdo, $idService);
-        echo $ServiceInfo['Name'];
-        echo $ServiceInfo['Description'];
+        echo $ServiceInfo[0];
+        echo $ServiceInfo[1];
 //        echo $Multi;
 //        echo $views;
 //        echo $comments;
