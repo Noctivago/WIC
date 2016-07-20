@@ -699,7 +699,7 @@ $msg = '';
 					</section>.box-typical-->
 				</div><!--.col- -->
 
-				<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="col-lg-8 col-lg-pull-9 col-md-9 col-sm-9">
 					
                         <section class="box-typical box-typical-max-280">
 				<header class="box-typical-header">
