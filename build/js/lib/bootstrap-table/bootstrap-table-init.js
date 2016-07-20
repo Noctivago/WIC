@@ -74,6 +74,9 @@ $(document).ready(function () {
 
     function operateFormatter(value, row, index) {
         return [
+            '<a class="like" href="javascript:void(0)" title="Like">',
+            '<i class="glyphicon glyphicon-heart"></i>',
+            '</a>  ',
             '<a class="remove" href="javascript:void(0)" title="Remove">',
             '<i class="glyphicon glyphicon-remove"></i>',
             '</a>'
@@ -86,94 +89,115 @@ $(document).ready(function () {
         });
     }
 
-    //VALORES A APRESENTAR
     var data = [
         {
             "id": 0,
+            "name": "Draft",
             "price": "$0"
         },
         {
             "id": 1,
+            "name": "Pending",
             "price": "$20"
         },
         {
             "id": 2,
+            "name": "Moderation",
             "price": "$55"
         },
         {
             "id": 3,
+            "name": "Published",
             "price": "$120"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         },
         {
             "id": 4,
+            "name": "Pending",
             "price": "$63"
         }
     ];
@@ -192,50 +216,56 @@ $(document).ready(function () {
         paginationPreText: '<i class="font-icon font-icon-arrow-left"></i>',
         paginationNextText: '<i class="font-icon font-icon-arrow-right"></i>',
         data: data,
-        columns:
-                [
-                    [
-                        {
-                            field: 'state',
-                            checkbox: true,
-                            rowspan: 2,
-                            align: 'center',
-                            valign: 'middle'
-                        },
-                        {
-                            title: 'Item ID',
-                            field: 'id',
-                            rowspan: 2,
-                            align: 'center',
-                            valign: 'middle',
-                            sortable: true,
-                            footerFormatter: totalTextFormatter
-                        },
-                        {
-                            field: 'name',
-                            title: 'Status',
-                            sortable: true,
-                            editable: true,
-                            formatter: statusFormatter,
-                            footerFormatter: totalNameFormatter,
-                            align: 'center'
-                        },
-                        {
-                            field: 'price',
-                            title: 'Item Price',
-                            sortable: true,
-                            align: 'center',
-                            footerFormatter: totalPriceFormatter
-                        },
-                        {
-                            field: 'operate',
-                            title: 'Item Operate',
-                            align: 'center',
-                            events: operateEvents,
-                            formatter: operateFormatter
-                        }
-                    ]
-                ]
+        columns: [
+            [
+                {
+                    field: 'state',
+                    checkbox: true,
+                    rowspan: 2,
+                    align: 'center',
+                    valign: 'middle'
+                },
+                {
+                    title: 'Item ID',
+                    field: 'id',
+                    rowspan: 2,
+                    align: 'center',
+                    valign: 'middle',
+                    sortable: true,
+                    footerFormatter: totalTextFormatter
+                },
+                {
+                    title: 'Item Detail',
+                    colspan: 3,
+                    align: 'center'
+                }
+            ],
+            [
+                {
+                    field: 'name',
+                    title: 'Status',
+                    sortable: true,
+                    editable: true,
+                    formatter: statusFormatter,
+                    footerFormatter: totalNameFormatter,
+                    align: 'center'
+                },
+                {
+                    field: 'price',
+                    title: 'Item Price',
+                    sortable: true,
+                    align: 'center',
+                    footerFormatter: totalPriceFormatter
+                },
+                {
+                    field: 'operate',
+                    title: 'Item Operate',
+                    align: 'center',
+                    events: operateEvents,
+                    formatter: operateFormatter
+                }
+            ]
+        ]
     });
 
     $table.on('check.bs.table uncheck.bs.table ' +
