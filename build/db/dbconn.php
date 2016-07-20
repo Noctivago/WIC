@@ -723,7 +723,9 @@ function DB_getMyWICs($pdo, $userId) {
             echo '</div>';
             echo '<div class="follow-group-name">';
             $str = $row['WPD'];
+            //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
+            //IMPRIME DATA
             echo '<a href="#">' . $subStr[0] . ' @' . $row['WPC'] . '</a>';
             echo '<p>#' . $row['WPD'] . '</p>';
             echo '</div>';
