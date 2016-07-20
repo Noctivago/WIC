@@ -621,7 +621,7 @@ include_once '../build/db/session.php';
                     <div class="profile-card">
                         <?php DB_GetOrgInformation($pdo);?>
                         
-                    </div>
+<!--                    </div>-->
                     <ul class="profile-links-list">
                         <li class="nowrap">
                             <i class="font-icon font-icon-earth-bordered"></i>

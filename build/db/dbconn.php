@@ -836,7 +836,7 @@ function DB_GetOrgInformation($pdo) {
             echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
             echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
             echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
-            
+            echo '</div>';
 //            <div class="profile-card-photo">
 //                            <img src="img/photo-220-1.jpg" alt=""/>
 //                        </div>
@@ -845,24 +845,24 @@ function DB_GetOrgInformation($pdo) {
 //                        <div class="profile-card-location">Greater Seattle Area</div>
 //        echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
 //        
-//        echo '     <ul class="profile-links-list">';
-//        echo '             <li class="nowrap">';
-//        echo '                  <i class="font-icon font-icon-earth-bordered"></i>';
-//        echo '              <a href="#">' . $row['Website'] . '</a>';
-//        echo '         </li>';
-//        echo '        <li class="nowrap">';
-//        echo '           <i class="font-icon font-icon-fb-fill"></i>';
-//        echo '            <a href="#">' . $row['Facebook'] . '</a>';
-//        echo '      </li>';
-//        echo '      <li class="nowrap">';
-//        echo '         <i class="font-icon font-icon-in-fill"></i>';
-//        echo '        <a href="#">' . $row['Linkdin'] . '</a>';
-//        echo '     </li>';
-//        echo '     <li class="nowrap">';
-//        echo '         <i class="font-icon font-icon-tw-fill"></i>';
-//        echo '        <a href="#">' . $row['Twitter'] . '</a>';
-//        echo '    </li>';
-//        echo '    </ul>';
+        echo '     <ul class="profile-links-list">';
+        echo '             <li class="nowrap">';
+        echo '                  <i class="font-icon font-icon-earth-bordered"></i>';
+        echo '              <a href="#">' . $row['Website'] . '</a>';
+        echo '         </li>';
+        echo '        <li class="nowrap">';
+        echo '           <i class="font-icon font-icon-fb-fill"></i>';
+        echo '            <a href="#">' . $row['Facebook'] . '</a>';
+        echo '      </li>';
+        echo '      <li class="nowrap">';
+        echo '         <i class="font-icon font-icon-in-fill"></i>';
+        echo '        <a href="#">' . $row['Linkdin'] . '</a>';
+        echo '     </li>';
+        echo '     <li class="nowrap">';
+        echo '         <i class="font-icon font-icon-tw-fill"></i>';
+        echo '        <a href="#">' . $row['Twitter'] . '</a>';
+        echo '    </li>';
+        echo '    </ul>';
         }
     } catch (Exception $ex) {
         echo 'error';
