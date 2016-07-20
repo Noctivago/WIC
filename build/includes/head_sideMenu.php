@@ -258,6 +258,7 @@
                                     </a>
                                     <br>
                                     <br>
+                                    
 
                                     <!--	                            <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
                                                                             <a class="dropdown-item" href="#">Current Search</a>
@@ -295,8 +296,8 @@
                                                                         </div>-->
                                 </div>
                                 
-                    <div class="dropdown dropdown-menu-col">
-                            <h8 class="with-border m-t-lg">Choose your City</h8>
+                                <div class="dropdown dropdown-menu-col">
+                            <h8 class="with-border m-t-lg">Choose a City</h8>
                             <div class="row">
 				<div >
                                     <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
@@ -312,6 +313,8 @@
 				
                             </div><!--.row-->
                     </div>
+                                
+                    
                                 
                                 
                                 
