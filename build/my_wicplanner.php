@@ -11,7 +11,10 @@ $msg = '';
 <div class="page-content">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-6 col-lg-push-3 col-md-12">
+				
+                            <div class=".col-md-8">
+                            
+                            <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
                                     
                                                             <section class="box-typical box-typical-max-280">
 				<header class="box-typical-header">
@@ -79,10 +82,23 @@ $msg = '';
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                                                         </td>
-                                                                          <td>
-                                                                            <div class="tbl-cell tbl-cell-action">
-                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
-										</div>
+
+                                                                        <td class="table-photo">
+                                                                            
+                                                                                <a href="#" class="font-icon font-icon-pencil">
+                                                                                    </a>
+                                                                                    <!--<span>&cross;</span></a>-->
+										
+                                                                            
+
+                                                                        </td>
+                                                                        <td class="table-photo">
+ 
+                                                                            
+                                                                                <a href="#" class="font-icon font-icon-del">
+                                                                                    </a>
+                                                                                    <!--<span>&cross;</span></a>-->
+										
                                                                         </td>
                                                                        
 								
@@ -94,10 +110,22 @@ $msg = '';
                                                                         <td class="table-photo">
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                                                         </td>
-                                                                        <td>
-                                                                            <div class="tbl-cell tbl-cell-action">
-                                                                                <a href="#" class="plus-link-circle"><span>&cross;</span></a>
-										</div>
+                                                                        <td class="table-photo">
+                                                                            
+                                                                                <a href="#" class="font-icon font-icon-pencil">
+                                                                                    </a>
+                                                                                    <!--<span>&cross;</span></a>-->
+										
+                                                                            
+
+                                                                        </td>
+                                                                        <td class="table-photo">
+ 
+                                                                            
+                                                                                <a href="#" class="font-icon font-icon-del">
+                                                                                    </a>
+                                                                                    <!--<span>&cross;</span></a>-->
+										
                                                                         </td>
 								
 								</tr>
