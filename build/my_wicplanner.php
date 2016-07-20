@@ -16,7 +16,7 @@ $msg = '';
 				<thead>
 				<tr>
 					<th width="1">
-						#
+						ID
 					</th>
 					<th>Name</th>
 					<th width="120">Date Created</th>
