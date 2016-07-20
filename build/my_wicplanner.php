@@ -35,7 +35,7 @@ $msg = '';
 
                                 <thead>
                                     <tr>
-                                        <th>Event</th>
+                                        <th>Owner</th>
                                         <th>Date</th>
                                         <th>User</th>
                                         <th></th>
