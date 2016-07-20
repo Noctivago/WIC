@@ -28,7 +28,9 @@ include ("includes/head_sideMenu.php");
 					<div class="gallery-grid">
 						<div class="gallery-col">
 							<article class="gallery-item">
-								<img class="gallery-picture preview" src="img/gall-img-1.jpg" alt="" height="158">
+                                                            <a class="fancybox" rel="gall-1" href="img/gall-img-1.jpg">
+								<img class="gallery-picture " src="img/gall-img-1.jpg" alt="" height="158">
+                                                            </a>
 <!--								<div class="gallery-hover-layout">
 									<div class="gallery-hover-layout-in">
 										<p class="gallery-item-title ">The boxed castle</p>
