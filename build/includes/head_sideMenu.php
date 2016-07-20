@@ -47,7 +47,7 @@
 
                             <div class="dropdown dropdown-notification add-customers-screen-user">
                                 <a href="#"
-                                   class="header-alarm dropdown-toggle disabled"
+                                   class="header-alarm dropdown-toggle "
                                    id="dd-messages"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
