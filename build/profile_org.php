@@ -618,7 +618,7 @@ include_once '../build/db/session.php';
 
             <div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
                 <section class="box-typical">
-                    <div class="profile-card">
+<!--                    <div class="profile-card">-->
                         <?php DB_GetOrgInformation($pdo);?>
                         
 <!--                    </div>-->
