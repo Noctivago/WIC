@@ -10,7 +10,7 @@ $msg = '';
 	<div class="page-content">
 		<div class="container-fluid" style="overflow: auto">
 			
-                    <div class="col-lg-3 ">
+                    <div class="col-sm-5 .col-md-6 ">
 
                         <table id="table-edit" class="table table-bordered table-hover" >
 				<thead>
