@@ -8,7 +8,7 @@ $msg = '';
 ?>
 
 
-<div class="page-content">
+<div class="page-content" style="height: 817px;">
 		<div class="container-fluid">
 			<div class="row">
 				
