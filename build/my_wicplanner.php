@@ -701,7 +701,7 @@ $msg = '';
 
 				<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
 					
-<section class="box-typical box-typical">
+                        <section class="box-typical box-typical-max-280">
 				<header class="box-typical-header">
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
