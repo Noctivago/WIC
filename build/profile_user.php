@@ -12,6 +12,7 @@ include_once './db/session.php';
                     <header class="box-typical-header-sm">My Wic Planners</header>
                     <div class="profile-following">
                         <div class="profile-following-grid">
+                            <!--MOSTRAR APENAS 8-->
                             <div class="col">
                                 <article class="follow-group">
                                     <div class="follow-group-logo">
