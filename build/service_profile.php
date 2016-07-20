@@ -37,7 +37,7 @@ include ("includes/head_sideMenu.php");
 					</form>.box-typical-->
 
 					<section class="box-typical">
-						<header class="box-typical-header-sm">My Wic Planners</header>
+						<header class="box-typical-header-sm">Album</header>
 						<div class="profile-following">
 							<div class="profile-following-grid">
 								<div class="col">
