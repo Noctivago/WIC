@@ -22,7 +22,7 @@ $msg = '';
 				<header class="box-typical-header">
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
-							<h3> Services in "Event Name"</h3>
+							<h3> My Events - Wic Planner</h3>
 						</div>
 					</div>
 				</header>
@@ -265,7 +265,7 @@ $msg = '';
 				<header class="box-typical-header">
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
-							<h3>My Events - Wic Planner</h3>
+							<h3> Services in "Event Name"</h3>
 						</div>
 					</div>
 				</header>
@@ -319,114 +319,7 @@ $msg = '';
                                                                         </td>
 								
 								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">Nome</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
-								<tr class="table-check">
-									
-									<td><a href="#">pareco</a></td>
-									<td>Daata</td>
-                                                                        <td class="table-photo">
-                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                                                        </td>
-								
-								</tr>
+	
 							
 								
 								
