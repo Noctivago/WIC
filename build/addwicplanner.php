@@ -20,16 +20,14 @@ $msg = '';
                     <div class="form-group">
                         <input type="text" id = "email" name ="Wic Planner Name" class="form-control" placeholder="Wic Planner Name" required/>
                     </div>
-                    <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
-					<option>Country</option>
-					<option>Country</option>
-					<option>Country</option>
-                                        <option>Country</option>
+                    <select class="bootstrap-select bootstrap-select-arrow" placeholder="City">
+					<option>City</option>
+					<option>City</option>
+					<option>City</option>
+                                        <option>City</option>
                                         <option>Long long long extra long example line long long long extra long example line </option>
                     </select>
-                    <div class="form-group">
-                        <input type="text" id ="pw1" name="City" class="form-control" placeholder="City" required/>
-                    </div>
+                    
                     
                     
                     <div class='input-group date'>
