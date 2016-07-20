@@ -781,7 +781,7 @@ function DB_CountPeopleInOrg($pdo) {
 
 //Todos os utilizadores que estão associados a um servico 
 //Falta colocar o id da org
-function DB_getUsersInServiceOrganization($pdo,$org) {
+function DB_getUsersInServiceOrganization($pdo, $org) {
     try {
         $id = 2;
         $Services = sql($pdo, "SELECT *
@@ -852,9 +852,8 @@ function DB_GetOrgInformation($pdo) {
     }
 }
 
-function DB_GetOrgInformation2($pdo,$org) {
+function DB_GetOrgInformation2($pdo, $org) {
     try {
-
         $id = 2;
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
@@ -888,35 +887,3 @@ function DB_GetOrgInformation2($pdo,$org) {
         echo 'error';
     }
 }
-
-//            <div class="profile-card-photo">
-//                            <img src="img/photo-220-1.jpg" alt=""/>
-//                        </div>
-//                        <div class="profile-card-name">Sarah Sanchez</div>
-//                        <div class="profile-card-status">Company Founder</div>
-//                        <div class="profile-card-location">Greater Seattle Area</div>
-//        echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
-//        
-//            echo '     <ul class="profile-links-list">';
-//            echo '             <li class="nowrap">';
-//            echo '                  <i class="font-icon font-icon-earth-bordered"></i>';
-//            echo '              <a href="#">' . $row['Website'] . '</a>';
-//            
-//            echo '         </li>';
-//            echo '        <li class="nowrap">';
-//            echo '           <i class="font-icon font-icon-fb-fill"><a href="' . $row['Facebook'] . '"/></i>';
-////            echo '            <a href="#">' . $row['Facebook'] . '</a>';
-//            echo '      </li>';
-//            echo '      <li class="nowrap">';
-//            echo '         <i class="font-icon font-icon-in-fill"><a href="' . $row['Linkdin'] . '"/></i>';
-////            echo '        <a href="#">' . $row['Linkdin'] . '</a>';
-//            echo '     </li>';
-//            echo '     <li class="nowrap">';
-//            echo '         <i class="font-icon font-icon-tw-fill"><a href="' . $row['Twitter'] . '"/></i>';
-////            echo '        <a href="#">' . $row['Twitter'] . '</a>';
-//            echo '    </li>';
-//            echo '    </ul>';
-//            echo '                  <i class="font-icon font-icon-earth-bordered">';
-//            echo '                  <i class="font-icon font-icon-fb-fill"><a href="' . $row['Facebook'] . '"/></i>';
-//            echo '                  <i class="font-icon font-icon-in-fill"><a href="' . $row['Linkdin'] . '"/></i>';
-//            echo '                  <i class="font-icon font-icon-tw-fill"><a href="' . $row['Twitter'] . '"/></i>';
