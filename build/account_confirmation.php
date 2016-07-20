@@ -5,7 +5,7 @@ include("../build/db/dbconn.php");
 ?>
 <body>
     <?php
-    $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_SPECIAL_CHARS));
+    $code = (filter_var($_POST ['activateText'], FILTER_SANITIZE_STRING));
     $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
     //SE EMAIL EXISTE
     if (DB_checkIfUserExists($pdo, $email)) {
@@ -39,7 +39,7 @@ include("../build/db/dbconn.php");
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box">
+                <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <div class="sign-avatar">
                         <img src="img/avatar-sign.png" alt="">
                     </div>
@@ -47,7 +47,7 @@ include("../build/db/dbconn.php");
                     <div class="form-group">
                         <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail" required/>
                     </div>
-                    <div class="form-group" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                    <div class="form-group">
                         <input type="text" name="activateText" id="activateText" class="form-control" placeholder="Validation Code" required/>
                         <p class="sign-note">  <?= $msg; ?> </p>
                         <button type="submit" class="btn btn-rounded">Validate account</button>
