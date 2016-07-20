@@ -15,7 +15,7 @@ include_once './db/session.php';
                             <div class="col">
                                 <article class="follow-group">
                                     <div class="follow-group-logo">
-                                        <a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
+                                        <a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt=""></a>
                                     </div>
                                     <div class="follow-group-name">
                                         <a href="#">KIPP Foundation</a>
@@ -26,7 +26,7 @@ include_once './db/session.php';
                             <div class="col">
                                 <article class="follow-group">
                                     <div class="follow-group-logo">
-                                        <a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
+                                        <a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt=""></a>
                                     </div>
                                     <div class="follow-group-name">
                                         <a href="#">KIPP Foundation</a>
@@ -37,7 +37,7 @@ include_once './db/session.php';
                             <div class="col">
                                 <article class="follow-group">
                                     <div class="follow-group-logo">
-                                        <a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
+                                        <a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt=""></a>
                                     </div>
                                     <div class="follow-group-name">
                                         <a href="#">KIPP Foundation</a>
@@ -48,7 +48,7 @@ include_once './db/session.php';
                             <div class="col">
                                 <article class="follow-group">
                                     <div class="follow-group-logo">
-                                        <a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
+                                        <a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt=""></a>
                                     </div>
                                     <div class="follow-group-name">
                                         <a href="#">KIPP Foundation</a>
