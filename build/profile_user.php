@@ -55,11 +55,8 @@ include_once '../build/db/session.php';
                                         </a>
                                     </div>
                                     <div class="tbl-cell">
-                                        <p class="user-card-row-name status-online"><a href="#">Dan Cederholm</a></p>
+                                        <p class="user-card-row-name"><a href="#">Dan Cederholm</a></p>
                                         <p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
-                                    </div>
-                                    <div class="tbl-cell tbl-cell-action">
-                                        <a href="#" class="plus-link-circle"><span>&plus;</span></a>
                                     </div>
                                 </div>
                             </div>
