@@ -837,7 +837,6 @@ function DB_GetOrgInformation($pdo) {
         echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
         echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
         echo '</div>';
-        echo '</div>';
         
 //        echo '     <ul class="profile-links-list">';
 //        echo '             <li class="nowrap">';
