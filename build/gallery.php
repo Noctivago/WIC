@@ -33,14 +33,14 @@ include ("includes/head_sideMenu.php");
 									<div class="gallery-hover-layout-in">
 										<p class="gallery-item-title preview">The boxed castle</p>
 										<p>by Alban Wamigo</p>
-										<div class="btn-group">
+<!--										<div class="btn-group">
 											<button type="button" class="btn">
 												<i class="font-icon font-icon-cloud"></i>
 											</button>
 											<button type="button" class="btn">
 												<i class="font-icon font-icon-trash"></i>
 											</button>
-										</div>
+										</div>-->
 										<p>3 days ago</p>
 									</div>
 								</div>
