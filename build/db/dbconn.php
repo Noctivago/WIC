@@ -787,8 +787,8 @@ function DB_getUsersInServiceOrganization($pdo) {
   where [Organization_Id] = ? and [Enabled] = 1", array(2), "rows");
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
-            $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name]
-,[Service].[Name] as ServiceName,[Role].[Name]
+            $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
+,[Service].[Name],[Role].[Name]
   FROM [dbo].[User_Service]
   join [User]
   on [User].[Id] = [User_Service].[User_Id]
@@ -805,7 +805,7 @@ function DB_getUsersInServiceOrganization($pdo) {
                 echo '      <div class="tbl-row">';
                 echo '          <div class="tbl-cell tbl-cell-photo">';
                 echo '              <a href="#">';
-                echo '                 <img src="img/photo-64-2.jpg" alt="">';
+                echo '                 <img src='.$row['Picture_Path'].' alt="">';
                 echo '             </a>';
                 echo '         </div>';
                 echo '        <div class="tbl-cell">';
