@@ -618,12 +618,13 @@ include_once '../build/db/dbconn.php';
             <div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
                 <section class="box-typical">
                     <div class="profile-card">
-                        <div class="profile-card-photo">
+                        <?php DB_GetOrgInformation($pdo)?>
+                        <!--div class="profile-card-photo">
                             <img src="img/photo-220-1.jpg" alt=""/>
                         </div>
                         <div class="profile-card-name">Sarah Sanchez</div>
                         <div class="profile-card-status">Company Founder</div>
-                        <div class="profile-card-location">Greater Seattle Area</div>
+                        <div class="profile-card-location">Greater Seattle Area</div-->
                         <!--							<button type="button" class="btn btn-rounded">Follow</button>
                                                                                 <div class="btn-group">
                                                                                         <button type="button"
@@ -657,7 +658,8 @@ include_once '../build/db/dbconn.php';
                                                                     </div>-->
 
                     <ul class="profile-links-list">
-                        <li class="nowrap">
+                        <?php DB_GetOrgInformation()?>
+                        <!--li class="nowrap">
                             <i class="font-icon font-icon-earth-bordered"></i>
                             <a href="#">example.com</a>
                         </li>
@@ -676,7 +678,7 @@ include_once '../build/db/dbconn.php';
                         <li class="nowrap">
                             <i class="font-icon font-icon-tw-fill"></i>
                             <a href="#">twitter.com/example</a>
-                        </li>
+                        </li-->
                         <!--							<li class="divider"></li>
                                                                                 <li>
                                                                                         <i class="font-icon font-icon-pdf-fill"></i>
