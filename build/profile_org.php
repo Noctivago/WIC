@@ -684,7 +684,7 @@ include_once '../build/db/dbconn.php';
                                                                                         <i class="font-icon font-icon-pdf-fill"></i>
                                                                                         <a href="#">Export page as PDF</a>
                                                                                 </li>>-->
-                    </ul
+                    </ul>
                 </section><!--.box-typical
 
                 <section class="box-typical">
