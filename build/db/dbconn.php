@@ -722,7 +722,9 @@ function DB_getMyWICs($pdo, $userId) {
             echo '<a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt="WIC Logo"></a>';
             echo '</div>';
             echo '<div class="follow-group-name">';
-            echo '<a href="#">' . $row['WPN'] . ' @' . $row['WPC'] . '</a>';
+            $str = $row['WPD'];
+            $subStr = explode(" ", $str);
+            echo '<a href="#">' . $subStr[0] . ' @' . $row['WPC'] . '</a>';
             echo '<p>#' . $row['WPD'] . '</p>';
             echo '</div>';
             echo '</article>';
