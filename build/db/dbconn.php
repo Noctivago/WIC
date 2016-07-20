@@ -1016,7 +1016,61 @@ function db_getUserMessengerWithUsers($pdo, $userId) {
             if ($row['UID'] === $userId) {
                 
             } else {
+                echo '<article class="friends-list-item">';
+                echo '<div class="user-card-row">';
+                echo '<div class="tbl-row">';
+                echo '<div class="tbl-cell tbl-cell-photo">';
+                echo '<a href="#">';
+                echo '<img src="' . $row['UPP'] . '" alt="Avatar">';
+                echo '</a>';
+                echo '</div>';
+                echo '<div class="tbl-cell">';
+                echo '<p class="user-card-row-name"><a href="#">' . $row['UFN'] . ' ' . $row['ULN'] . '</a></p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</article>';
+            }
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING CONVERSATIONS';
+    }
+}
+
+/**
+ * DEVOLVE CONVERSAS COM ORGS 
+ * @param type $pdo
+ * @param type $userId
+ */
+function db_getUserMessengerWithOrgs($pdo, $userId) {
+    try {
+        $rows = sql($pdo, "Select 
+        [Organization].[Picture_Path] OPP
+        ,[Organization].[Name] AS ONA
+        From [Conversation]
+        join [User]
+        on [Conversation].[User_Id1] = [User].[id] or [Conversation].[User_Id2] = [User].[id]
+        join Organization
+        on [Organization].[User_Boss] = [User].[id]
+        Where [Conversation].[User_Id1] = ? or [Conversation].[User_Id2] = ?", array($userId, $userId), "rows");
+        foreach ($rows as $row) {
+            if ($row['UID'] === $userId) {
                 
+            } else {
+                echo '<article class="friends-list-item">';
+                echo '<div class="user-card-row">';
+                echo '<div class="tbl-row">';
+                echo '<div class="tbl-cell tbl-cell-photo">';
+                echo '<a href="#">';
+                echo '<img src="' . $row['OPP'] . '" alt="Avatar">';
+                echo '</a>';
+                echo '</div>';
+                echo '<div class="tbl-cell">';
+                echo '<p class="user-card-row-name"><a href="#">' . $row['ONA'] . '</a></p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</article>';
             }
         }
     } catch (Exception $exc) {
