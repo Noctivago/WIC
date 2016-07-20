@@ -22,11 +22,11 @@ $msg = '';
 				<header class="box-typical-header">
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
-                                                    <h3> My Events - Wic Planner <span><a class="font-icon font-icon-plus" style="align:rigth" href="add_wicplanner.php">	</a></span></h3> 
+                                                    <h3> My Events - Wic Planner </h3> 
                                                         
 						</div>
                                             <div class="tbl-cell tbl-people">
-                                                <span><a class="font-icon font-icon-plus" style="align:rigth" href="add_wicplanner.php">	</a></span>
+                                                <span><a class="font-icon font-icon-plus" style="align:rigth" href="add_wicplanner.php">Add a new Event	</a></span>
                                             </div>
                                             
 					</div>
