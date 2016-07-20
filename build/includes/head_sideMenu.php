@@ -52,7 +52,7 @@
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <i class="font-icon-mail"></i>
+                                    <i class="font-icon-plus-1"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages">
                                     <div class="dropdown-menu-messages-header">
