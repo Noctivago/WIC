@@ -879,7 +879,7 @@ include ("includes/head_sideMenu.php");
 
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<section class="box-typical">
-						<header class="box-typical-header-sm">Messenger</header>
+						<header class="box-typical-header-sm">People in responsible  </header>
 						<div class="friends-list stripped">
 							<article class="friends-list-item">
 								<div class="user-card-row">
