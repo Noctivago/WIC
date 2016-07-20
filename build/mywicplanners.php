@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+
 <?php
 include ("includes/head_sideMenu.php");
 ?>
