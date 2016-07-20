@@ -9,7 +9,7 @@ $org = $_POST['Organization'];
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 col-lg-push-3 col-md-12">
-                <form class="box-typical">
+<!--                <form class="box-typical">
                     <input type="text" class="write-something" placeholder="Write a Review..."/>
                     <div class="box-typical-footer">
                         <div class="tbl">
@@ -34,7 +34,7 @@ $org = $_POST['Organization'];
                             </div>
                         </div>
                     </div>
-                </form><!--.box-typical-->
+                </form>.box-typical-->
 
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
