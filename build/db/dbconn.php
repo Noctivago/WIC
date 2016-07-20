@@ -768,7 +768,7 @@ function DB_CountPeopleInOrg($pdo) {
   on [Service].[Id] = [User_Service].[Service_Id]
   join [Role]
   on [Role].[Id] = [User_Service].[Role_Id]
-  where [Service_Id] = ?", array($idService),"rows");
+  where [Service_Id] = ?", array($idService), "rows");
             $cont = $query['contador'];
             $count += $cont;
         }
@@ -805,11 +805,12 @@ function DB_getUsersInServiceOrganization($pdo) {
                 echo '      <div class="tbl-row">';
                 echo '          <div class="tbl-cell tbl-cell-photo">';
                 echo '              <a href="#">';
-                echo '                 <img src='.$row['Picture_Path'].' alt="">';
+                echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
                 echo '             </a>';
                 echo '         </div>';
                 echo '        <div class="tbl-cell">';
-                echo '            <p class="user-card-row-name"><a>' . $row['First_Name'] . " " . $row['Last_Name'] . '</a></p>';
+                echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
+                echo '            <p class="user-card-row-name">' . $row['Last_name'] . '</p>';
                 echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
                 echo '         </div>';
                 echo '  </div>';
