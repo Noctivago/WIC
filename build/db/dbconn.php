@@ -726,8 +726,8 @@ function DB_getMyWICs($pdo, $userId) {
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
             //IMPRIME DATA
-            echo '<a href="#">' . $subStr[0] . ' @' . $row['WPC'] . '</a>';
-            echo '<p>#' . $row['WPD'] . '</p>';
+            echo '<a href="#">' . $row['WPN'] . ' @' . $row['WPC'] . '</a>';
+            echo '<p>#' . $subStr[0] . '</p>';
             echo '</div>';
             echo '</article>';
             echo '</div>';
