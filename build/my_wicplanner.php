@@ -256,7 +256,7 @@ $msg = '';
 
 				</div><!--.col- -->
 
-                                <div class=".col-xs-6"
+                                <div class=".col-xs-6">
 				<!--<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">-->
 					
                         <section class="box-typical box-typical-max-280">
