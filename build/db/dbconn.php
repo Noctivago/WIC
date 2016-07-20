@@ -978,6 +978,7 @@ function DB_getUserProfileInfo($pdo, $UserId) {
 //falta passar o id da org
 function DB_GetOrganizationServices($pdo, $org) {
     try {
+        $serviceInfo = array();
         $idServoce = 2;
         $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
         $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
