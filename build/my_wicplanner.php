@@ -279,7 +279,7 @@ $msg = '';
 				<header class="box-typical-header">
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
-							<h3> Services in "Event Name"</h3>
+                                                    <a class="font-icon font-icon-plus" href="add_wicplanner.php"	<h3> Services in "Event Name"</h3></a>
 						</div>
 					</div>
 				</header>
