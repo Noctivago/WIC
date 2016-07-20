@@ -574,8 +574,8 @@ function DB_addOrgProfile($pdo, $email, $name, $city) {
     try {
         sql($pdo, "INSERT INTO [dbo].[Organization] ([Name], [Organization_Email], "
                 . "[User_Boss], [City_id], [Enabled],"
-                . "[Date_Created])"
-                . " VALUES(?,?,?,?,?,?)"
+                . "[Date_Created], [Picture_Path])"
+                . " VALUES(?,?,?,?,?,?, 'http://lyco.com.br/site/empresa/images/icone_grande_empresa-2.png')"
                 . "", array($name, $email, $userId, $city, 1, $d));
     } catch (PDOException $e) {
         echo "ERROR CREATING ORGANTIZATION PROFILE!";
