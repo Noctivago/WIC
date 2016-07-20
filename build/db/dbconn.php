@@ -830,15 +830,13 @@ function DB_GetOrgInformation($pdo) {
   FROM [dbo].[Organization]
   where [Id] = ?", array($id), "rows");
         foreach ($rows as $row) {
-        echo '<div class="profile-card-photo">';
-        echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
-        echo '                  </div>';
-        echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
-        echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
-        echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
+            echo '<div class="profile-card-photo">';
+            echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
+            echo '                  </div>';
+            echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
+            echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
+            echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
 //        echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
-
-
 //        echo '     <ul class="profile-links-list">';
 //        echo '             <li class="nowrap">';
 //        echo '                  <i class="font-icon font-icon-earth-bordered"></i>';

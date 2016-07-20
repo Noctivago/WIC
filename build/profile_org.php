@@ -618,13 +618,13 @@ include_once '../build/db/dbconn.php';
             <div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
                 <section class="box-typical">
                     <div class="profile-card">
-                        <?phpDB_GetOrgInformation($pdo)?>
-<!--                        <div class="profile-card-photo">
+                        
+                        <div class="profile-card-photo">
                             <img src="img/photo-220-1.jpg" alt=""/>
                         </div>
                         <div class="profile-card-name">Sarah Sanchez</div>
                         <div class="profile-card-status">Company Founder</div>
-                        <div class="profile-card-location">Greater Seattle Area</div>-->
+                        <div class="profile-card-location">Greater Seattle Area</div>
                     </div>
                     <ul class="profile-links-list">
                         <li class="nowrap">
