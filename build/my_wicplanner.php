@@ -8,11 +8,11 @@ $msg = '';
 ?>
 
 	<div class="page-content">
-		<div class="container-fluid">
+		<div class="container-fluid" style="overflow: auto">
 			
                     <div class="col-lg-3 ">
 
-                        <table id="table-edit" class="table table-bordered table-hover" style="overflow: auto">
+                        <table id="table-edit" class="table table-bordered table-hover" >
 				<thead>
 				<tr>
 					<th width="1">
