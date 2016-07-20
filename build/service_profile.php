@@ -1137,10 +1137,46 @@ include ("includes/head_sideMenu.php");
         
 
 	<script src="js/lib/salvattore/salvattore.min.js"></script>
+<script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 
+<script>
         
         
-        
+        $(document).ready(function(){
+			$("#range-slider-1").ionRangeSlider({
+				min: 0,
+				max: 100,
+				from: 30,
+				hide_min_max: true,
+				hide_from_to: true
+			});
+
+			$("#range-slider-2").ionRangeSlider({
+				min: 0,
+				max: 100,
+				from: 30,
+				hide_min_max: true,
+				hide_from_to: true
+			});
+
+			$("#range-slider-3").ionRangeSlider({
+				min: 0,
+				max: 100,
+				from: 30,
+				hide_min_max: true,
+				hide_from_to: true
+			});
+
+			$("#range-slider-4").ionRangeSlider({
+				min: 0,
+				max: 100,
+				from: 30,
+				hide_min_max: true,
+				hide_from_to: true
+			});
+
+		});
+	</script>
         
         
         
