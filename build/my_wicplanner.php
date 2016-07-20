@@ -493,22 +493,7 @@ $msg = '';
 		});
 	</script>
         
-        <!--scrpit-messenger-->
-        <script>
-    $(function() {
-        $('.chat-settings .change-bg-color label').on('click', function() {
-            var color = $(this).data('color');
 
-            $('.messenger-message-container.from').each(function() {
-                $(this).removeClass(function (index, css) {
-                    return (css.match (/(^|\s)bg-\S+/g) || []).join(' ');
-                });
-
-                $(this).addClass('bg-' + color);
-            });
-        });
-    });
-</script>
 
 
 <script src="js/app.js"></script>
