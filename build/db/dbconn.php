@@ -1077,3 +1077,49 @@ function db_getUserMessengerWithOrgs($pdo, $userId) {
         echo 'ERROR READING CONVERSATIONS';
     }
 }
+
+/**
+ * FUNCAO QUE DEVOLVE OS MEUS WICPLANNERS
+ * @param type $pdo
+ * @param type $userId
+ */
+function db_getUserMessengerWithOrgs($pdo, $userId) {
+    try {
+        $rows = sql($pdo, "SELECT [WIC_Planner].[Id]
+        ,[WIC_Planner].[Name] AS WPN
+        ,[WIC_Planner].[Event_Date] AS WPED
+        ,[City].[Name]
+        ,[Event_Date]
+            ,[User_Profile].[First_Name] AS UFN
+            ,[User_Profile].[Last_Name] AS ULN
+            ,[User_Profile].[Picture_Path]
+        FROM [dbo].[WIC_Planner]
+        join [User]
+        on [User].[id] = [WIC_Planner].[User_Id]
+        join [City]
+        on [WIC_Planner].[City_Id] = [City].[Id]  
+        join [User_Profile]
+        on [WIC_Planner].[User_Id] = [User_Profile].[User_Id]
+        WHERE [WIC_Planner].[Enabled] = 1
+        AND [WIC_Planner].[User_Id] = ?", array($userId), "rows");
+        foreach ($rows as $row) {
+            echo '<tr class="table-check">';
+            echo '<td><a href="#">' . $row['WPN'] . '</a></td>';
+            echo '<td>' . $row['WPED'] . '</td>';
+            echo '<td class="table-photo">';
+            echo '<img src="img/photo-64-1.jpg" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
+            echo '</td>';
+            echo '<td class="table-photo">';
+            echo '<a href="#" class="font-icon font-icon-pencil">';
+            echo '</a>';
+            echo '</td>';
+            echo '<td class="table-photo">';
+            echo '<a href="#" class="font-icon font-icon-del">';
+            echo '</a>';
+            echo '</td>';
+            echo '</tr>';
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING MY WIC PLANNERS';
+    }
+}

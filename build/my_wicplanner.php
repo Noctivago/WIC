@@ -2,6 +2,7 @@
 include_once 'includes/head_sideMenu.php';
 include_once '../build/db/functions.php';
 include_once '../build/db/dbconn.php';
+include_once '../build/db/session.php';
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
 $msg = '';
@@ -10,9 +11,7 @@ $msg = '';
 
 <div class="page-content" style="height: 817px;">
     <div class="container-fluid">
-        <div class="row" style="
-             height: 700px;
-             ">
+        <div class="row" style="height: 700px;">
 
             <div class="col-lg-6">
 
@@ -22,8 +21,7 @@ $msg = '';
                     <header class="box-typical-header">
                         <div class="tbl-row">
                             <div class="tbl-cell tbl-cell-title">
-                                <h3> My Events - Wic Planner </h3> 
-
+                                <h3>My Events #WIC Planner</h3> 
                             </div>
                             <div class="tbl-cell tbl-people">
                                 <span><a class="font-icon font-icon-plus" style="align:rigth" href="addwicplanner.php">Add a new Event	</a></span>
@@ -37,9 +35,7 @@ $msg = '';
 
                                 <thead>
                                     <tr>
-                                        <th >
-                                            Event name
-                                        </th>
+                                        <th>Event</th>
                                         <th>Date</th>
                                         <th>User</th>
                                         <th></th>
@@ -48,8 +44,8 @@ $msg = '';
                                 </thead>
 
                                 <tbody>
-
-                                    <tr class="table-check">
+                                    <?= db_getUserMessengerWithOrgs($pdo, $_SESSION['id']); ?>
+<!--                                    <tr class="table-check">
                                         <td><a href="#">Nome</a></td>
                                         <td>Daata</td>
                                         <td class="table-photo">
@@ -65,9 +61,9 @@ $msg = '';
 
                                             <a href="#" class="font-icon font-icon-del">
                                             </a>
-                                            <!--<span>&cross;</span></a>-->
+                                            <span>&cross;</span></a>
                                         </td>
-                                    </tr>
+                                    </tr>-->
 
                                 </tbody>
                             </table>
@@ -98,7 +94,6 @@ $msg = '';
 
             <div class="col-lg-6">
                 <!--<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">-->
-
                 <section class="box-typical box-typical-max-280">
                     <header class="box-typical-header">
                         <div class="tbl-row">
@@ -126,7 +121,6 @@ $msg = '';
                                             <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                         </td>
                                         <td class="table-photo">
-
                                         </td>
                                         <td class="table-photo">
                                             <a href="#" class="font-icon font-icon-del">
@@ -134,7 +128,6 @@ $msg = '';
                                             <!--<span>&cross;</span></a>-->
                                         </td>
                                     </tr>
-
                                 </tbody>
                             </table>
                         </div>
