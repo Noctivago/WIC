@@ -47,23 +47,25 @@
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
 
-                            <div class="dropdown dropdown-notification add-customers-screen-user">
+                            <div class="dropdown dropdown-notification add-customers-screen-user" >
                                 <a href="#"
                                    class="header-alarm  "
                                    id="dd-messages"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <i class="font-icon-plus"></i>
+                                    <i class="font-icon-plus" ></i>
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages">
-                                    <div class="dropdown-menu-messages-header">
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages" alt="WIC Planner">
+                                    <div class="dropdown-menu-messages-header" >
                                         <ul class="nav" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link active"
                                                    data-toggle="tab"
                                                    href="messenger.php"
-                                                   role="tab">
+                                                   role="tab"
+                                                   
+                                                   >
                                                     Wic Planner
                                                     <!--<span class="label label-pill label-danger"></span>-->
                                                 </a>
