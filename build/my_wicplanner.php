@@ -303,6 +303,23 @@ $msg = '';
                                                                                 <a href="#" class="plus-link-circle"><span>&cross;</span></a>
 										</div>
                                                                         </td>
+                                                                        <td class="table-photo">
+                                                                            
+                                                                                <a href="#" class="font-icon font-icon-pencil">
+                                                                                    </a>
+                                                                                    <!--<span>&cross;</span></a>-->
+										
+                                                                            
+
+                                                                        </td>
+                                                                        <td class="table-photo">
+ 
+                                                                            
+                                                                                <a href="#" class="font-icon font-icon-del">
+                                                                                    </a>
+                                                                                    <!--<span>&cross;</span></a>-->
+										
+                                                                        </td>
 								
 								</tr>
 								<tr class="table-check">
@@ -316,6 +333,23 @@ $msg = '';
                                                                             <div class="tbl-cell tbl-cell-action">
                                                                                 <a href="#" class="plus-link-circle"><span>&cross;</span></a>
 										</div>
+                                                                        </td>
+                                                                        <td class="table-photo">
+                                                                            
+                                                                                <a href="#" class="font-icon font-icon-pencil">
+                                                                                    </a>
+                                                                                    <!--<span>&cross;</span></a>-->
+										
+                                                                            
+
+                                                                        </td>
+                                                                        <td class="table-photo">
+ 
+                                                                            
+                                                                                <a href="#" class="font-icon font-icon-del">
+                                                                                    </a>
+                                                                                    <!--<span>&cross;</span></a>-->
+										
                                                                         </td>
 								
 								</tr>
