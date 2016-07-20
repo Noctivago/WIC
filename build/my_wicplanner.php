@@ -112,9 +112,7 @@ $msg = '';
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th >
-                                            Event name
-                                        </th>
+                                        <th>Event name</th>
                                         <th>Date</th>
                                         <th>User</th><th></th>
                                         <th></th>
@@ -126,6 +124,9 @@ $msg = '';
                                         <td>Daata</td>
                                         <td class="table-photo">
                                             <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                        </td>
+                                        <td class="table-photo">
+
                                         </td>
                                         <td class="table-photo">
                                             <a href="#" class="font-icon font-icon-del">
@@ -149,14 +150,6 @@ $msg = '';
         </div><!--.row-->
     </div><!--.container-fluid-->
 </div><!--.page-content-->
-
-
-
-
-
-
-
-
 
 <script>
     $(document).ready(function () {
