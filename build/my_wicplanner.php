@@ -17,7 +17,7 @@ $msg = '';
 				<header class="box-typical-header">
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
-							<h3>My Events - Wic Planner</h3>
+							<h3> Services in "Event Name"</h3>
 						</div>
 					</div>
 				</header>
