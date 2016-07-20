@@ -56,6 +56,17 @@ include_once './db/session.php';
 
                                 </article>
                             </div>
+                            <div class="col">
+                                <article class="follow-group">
+                                    <div class="follow-group-logo">
+                                        <a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt=""></a>
+                                    </div>
+                                    <div class="follow-group-name">
+                                        <a href="#">KIPP Foundation</a>
+                                    </div>
+
+                                </article>
+                            </div>
                         </div>
                         <a href="#" class="btn btn-rounded btn-primary-outline">See all (20)</a>
                     </div>
