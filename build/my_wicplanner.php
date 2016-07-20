@@ -53,21 +53,21 @@ $msg = '';
                                                                                 <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
                                                                         </td>
                                                                         <td>
-                                                                            <div class="tbl-cell tbl-cell-action">
+                                                                            
                                                                                 <a href="#" class="font-icon font-icon-pencil">
                                                                                     </a>
                                                                                     <!--<span>&cross;</span></a>-->
-										</div>
+										
                                                                             
 
                                                                         </td>
                                                                          <td>
  
-                                                                            <div class="tbl-cell tbl-cell-action">
+                                                                            
                                                                                 <a href="#" class="font-icon font-icon-del">
                                                                                     </a>
                                                                                     <!--<span>&cross;</span></a>-->
-										</div>
+										
                                                                         </td>
                                                                         
 								
