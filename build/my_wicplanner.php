@@ -110,7 +110,7 @@ $msg = '';
                                     <tr>
                                         <th>Event name</th>
                                         <th>Date</th>
-                                        <th>User</th><th></th>
+                                        <th>Organization</th><th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
