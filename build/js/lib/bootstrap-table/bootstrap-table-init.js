@@ -284,7 +284,7 @@ $(document).ready(function () {
             field: 'id',
             values: ids
         });
-        $remove.prop('disabled', true);
+        $remove.prop('enabled', true);
     });
 
     $('#toolbar').find('select').change(function () {
