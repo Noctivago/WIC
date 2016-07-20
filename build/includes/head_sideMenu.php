@@ -296,8 +296,8 @@
                                 </div>
                                 
                                 
-                            <div class="card-block">
-                            <h8 class="with-border m-t-lg">Adress</h8>
+                            <div class="dropdown dropdown-typical">
+                            <h8 class="with-border m-t-lg">Chose your City</h8>
                             <div class="row">
 				<div >
                                     <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
