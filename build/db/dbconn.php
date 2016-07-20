@@ -788,7 +788,7 @@ function DB_getUsersInServiceOrganization($pdo) {
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
             $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
-,[Service].[Name],[Role].[Name]
+,[Service].[Name] as ServiceName,[Role].[Name]
   FROM [dbo].[User_Service]
   join [User]
   on [User].[Id] = [User_Service].[User_Id]
