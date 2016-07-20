@@ -988,7 +988,7 @@ function DB_GetOrganizationServices($pdo, $org) {
 //        echo $Multi;
 //        echo $views;
 //        echo $comments;
-//    } catch (Exception $ex) {
+    } catch (Exception $ex) {
         
     }
 }
