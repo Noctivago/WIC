@@ -830,6 +830,7 @@ function DB_GetOrgInformation($pdo) {
   FROM [dbo].[Organization]
   where [Id] = ?", array($id), "rows");
         foreach ($rows as $row) {
+            echo '<div class="profile-card">';
             echo '<div class="profile-card-photo">';
             echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
             echo '                  </div>';
