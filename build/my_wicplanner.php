@@ -24,6 +24,19 @@ $msg = '';
 				<div class="box-typical-body">
 					<div class="table-responsive">
 						<table class="table table-hover">
+                                                    
+                                                    <thead>
+								<tr>
+									<th >
+										Event name
+									</th>
+									<th>Date</th>
+									<th>User</th>
+									
+								
+									<th></th>
+								</tr>
+                                                    </thead>
                   
 							<tbody>
 								
@@ -226,7 +239,7 @@ $msg = '';
 								
 									<th></th>
 								</tr>
-							</thead>
+                                                    </thead>
                   
 							<tbody>
 								
