@@ -98,7 +98,7 @@ include ("includes/head_sideMenu.php");
 										</div>
 										<div class="follow-group-name">
                                                                                     
-                                                                                    <a href="#"> asd</a>
+                                                                                    <a href="#"> Our space</a>
 										</div>
 <!--										<div class="follow-group-link">
 											<a href="#">
