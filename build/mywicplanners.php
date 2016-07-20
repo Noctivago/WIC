@@ -13,7 +13,7 @@ include ("includes/head_sideMenu.php");
 							<h3>My Wic Planners <small class="text-muted"> Name user</small></h3>
 						</div>
 						<div class="tbl-cell tbl-cell-action">
-							<a href="#" class="btn btn-rounded">Add Wic Planner</a>
+							<a href="addwicplanner.php" class="btn btn-rounded">Add Wic Planner</a>
 						</div>
 					</div>
 				</div>
