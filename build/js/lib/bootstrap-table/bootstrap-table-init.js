@@ -222,14 +222,14 @@ $(document).ready(function () {
                 {
                     field: 'state',
                     checkbox: true,
-                    //rowspan: 2,
+                    rowspan: 1,
                     align: 'center',
                     valign: 'middle'
                 },
                 {
                     title: 'Service ID',
                     field: 'id',
-                    //rowspan: 2,
+                    rowspan: 1,
                     align: 'center',
                     valign: 'middle',
                     sortable: true,
