@@ -24,7 +24,7 @@ $msg = '';
 						</div>
 					</div>
 				</header>
-				<div class="box-typical-body">
+                                                                <div class="box-typical-body" style="overflow: auto">
 					<div class="table-responsive">
 						<table class="table table-hover">
                                                     
