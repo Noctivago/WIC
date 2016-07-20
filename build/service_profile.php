@@ -36,8 +36,53 @@ include ("includes/head_sideMenu.php");
 						</div>
 					</form>.box-typical-->
 
+
+
+
+
 					<section class="box-typical">
 						<header class="box-typical-header-sm">Album</header>
+                                                		<div class="profile-post-content">
+										<p class="profile-post-content-note">Added 4 new pictures</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<div class="profile-post-gall-fluid profile-post-gall-grid" data-columns>
+											<div class="col">
+												<a class="fancybox" rel="gall-1" href="img/gall-img-1.jpg">
+													<img src="img/gall-img-1.jpg" alt="">
+												</a>
+											</div>
+											<div class="col">
+												<a class="fancybox" rel="gall-1" href="img/gall-img-2.jpg">
+													<img src="img/gall-img-2.jpg" alt="">
+												</a>
+											</div>
+											<div class="col">
+												<a class="fancybox" rel="gall-1" href="img/gall-img-3.jpg">
+													<img src="img/gall-img-3.jpg" alt="">
+												</a>
+											</div>
+											<div class="col">
+												<a class="fancybox" rel="gall-1" href="img/gall-img-4.jpg">
+													<img src="img/gall-img-4.jpg" alt="">
+												</a>
+											</div>
+											<div class="col">
+												<a class="fancybox" rel="gall-1" href="img/gall-img-5.jpg">
+													<img src="img/gall-img-5.jpg" alt="">
+												</a>
+											</div>
+											<div class="col">
+												<a class="fancybox" rel="gall-1" href="img/gall-img-6.jpg">
+													<img src="img/gall-img-6.jpg" alt="">
+												</a>
+											</div>
+										</div>
+									</div>
+                                                
+                                                
+                                                
+                                                
+                                                
 						<div class="profile-following">
 							<div class="profile-following-grid">
 								<div class="col">
@@ -79,6 +124,10 @@ include ("includes/head_sideMenu.php");
                                                     <a href="gallery.php" class="btn btn-rounded btn-primary-outline">See All</a>
 						</div><!--.profile-following-->
 					</section>
+
+
+
+
 
 
 <!--					<section class="box-typical">
