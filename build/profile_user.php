@@ -56,7 +56,7 @@ include_once '../build/db/session.php';
                                     </div>
                                     <div class="tbl-cell">
                                         <p class="user-card-row-name"><a href="#">Dan Cederholm</a></p>
-                                        <p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
+                                        <!--<p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>-->
                                     </div>
                                 </div>
                             </div>

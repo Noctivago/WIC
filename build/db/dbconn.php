@@ -993,3 +993,33 @@ function DB_GetOrganizationServices($pdo, $org) {
         
     }
 }
+
+/**
+ * DEVOLVE CONVERSAS COM OUTROS USERS
+ * @param type $pdo
+ * @param type $userId
+ */
+function db_getUserMessengerWithUsers($pdo, $userId) {
+    try {
+        $rows = sql($pdo, "Select 
+        [User_Profile].[Picture_Path] AS UPP
+        ,[User_Profile].[First_Name] AS UFN
+        ,[User_Profile].[Last_Name] AS ULN
+        ,[User].[id] AS UID
+        From [Conversation]
+        join [User]
+        on [Conversation].[User_Id1] = [User].[id] or [Conversation].[User_Id2] = [User].[id]
+        join [User_Profile]
+        on [User_Profile].[User_Id] = [User].[id]
+        Where [Conversation].[User_Id1] = ? or [Conversation].[User_Id2] = ?", array($userId, $userId), "rows");
+        foreach ($rows as $row) {
+            if ($row['UID'] === $userId) {
+                
+            } else {
+                
+            }
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING CONVERSATIONS';
+    }
+}
