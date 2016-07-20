@@ -700,160 +700,73 @@ $msg = '';
 				</div><!--.col- -->
 
 				<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
-					<section class="box-typical">
-						<div class="profile-card">
-							<div class="profile-card-photo">
-								<img src="img/photo-220-1.jpg" alt=""/>
-							</div>
-							<div class="profile-card-name">Sarah Sanchez</div>
-							<div class="profile-card-status">Company Founder</div>
-							<div class="profile-card-location">Greater Seattle Area</div>
-							<button type="button" class="btn btn-rounded">Follow</button>
-							<div class="btn-group">
-								<button type="button"
-										class="btn btn-rounded btn-primary-outline dropdown-toggle"
-										data-toggle="dropdown"
-										aria-haspopup="true"
-										aria-expanded="false">
-									Connect
-								</button>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant and Verbal</a>
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real Gmat Test</a>
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep Official App</a>
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer Test</a>
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third Party Test</a>
-								</div>
-							</div>
-						</div><!--.profile-card-->
-
-<!--						<div class="profile-statistic tbl">
-							<div class="tbl-row">
-								<div class="tbl-cell">
-									<b>200</b>
-									Connections
-								</div>
-								<div class="tbl-cell">
-									<b>1.9M</b>
-									Followers
-								</div>
-							</div>
-						</div>-->
-
-						<ul class="profile-links-list">
-							<li class="nowrap">
-								<i class="font-icon font-icon-earth-bordered"></i>
-								<a href="#">example.com</a>
-							</li>
-							<li class="nowrap">
-								<i class="font-icon font-icon-fb-fill"></i>
-								<a href="#">facebook.com/example</a>
-							</li>
-							<li class="nowrap">
-								<i class="font-icon font-icon-vk-fill"></i>
-								<a href="#">vk.com/example</a>
-							</li>
-							<li class="nowrap">
-								<i class="font-icon font-icon-in-fill"></i>
-								<a href="#">linked.in/example</a>
-							</li>
-							<li class="nowrap">
-								<i class="font-icon font-icon-tw-fill"></i>
-								<a href="#">twitter.com/example</a>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<i class="font-icon font-icon-pdf-fill"></i>
-								<a href="#">Export page as PDF</a>
-							</li>
-						</ul>
-
-					</section><!--.box-typical-->
-
-<!--					<section class="box-typical">
-						<header class="box-typical-header-sm">
-							Friends
-							&nbsp;
-							<a href="#" class="full-count">268</a>
-						</header>
-						<div class="friends-list">
-							<article class="friends-list-item">
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-2.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name status-online"><a href="#">Dan Cederholm</a></p>
-											<p class="user-card-row-location">New York</p>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="friends-list-item">
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-1.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Oykun Yilmaz</a></p>
-											<p class="user-card-row-location">Los Angeles</p>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="friends-list-item">
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-3.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Bill S Kenney</a></p>
-											<p class="user-card-row-location">Cardiff</p>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="friends-list-item">
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-4.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Maggy Smith</a></p>
-											<p class="user-card-row-location">Dusseldorf</p>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="friends-list-item">
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-2.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Dan Cederholm</a></p>
-											<p class="user-card-row-location">New York</p>
-										</div>
-									</div>
-								</div>
-							</article>
+					
+<section class="box-typical box-typical">
+				<header class="box-typical-header">
+					<div class="tbl-row">
+						<div class="tbl-cell tbl-cell-title">
+							<h3>My Events - Wic Planner</h3>
 						</div>
-					</section>.box-typical-->
+					</div>
+				</header>
+				<div class="box-typical-body">
+					<div class="table-responsive">
+						<table class="table table-hover">
+                  
+							<tbody>
+								
+								
+								
+								
+								
+								<tr class="table-check">
+									
+									<td><a href="#">Nome</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">Nome</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">Nome</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+								<tr class="table-check">
+									
+									<td><a href="#">pareco</a></td>
+									<td>Daata</td>
+                                                                        <td class="table-photo">
+                                                                                <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                                                        </td>
+								
+								</tr>
+							
+								
+								
+								
+		
+							</tbody>
+						</table>
+					</div>
+				</div><!--.box-typical-body-->
+			</section><!--.box-typical-->
+
+
 				</div><!--.col- -->
 
 				<div class="col-lg-3 col-md-6 col-sm-6">
