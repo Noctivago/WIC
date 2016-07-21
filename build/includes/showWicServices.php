@@ -1,8 +1,8 @@
 <?php
 //FUNCA X) NA QUERY VERIFICAR SE O USER PERTENCE A ESTE WIC PLANNER; SE SIM MOSTRA
-//$wicPlannerId = $_GET["id"];
+$wicPlannerId = $_GET["id"];
 //$UserId = $_GET["uId"];
-//var_dump($wicPlannerId);
+var_dump($wicPlannerId);
 ?>
 
 <section class="box-typical box-typical-max-280">
@@ -19,7 +19,7 @@
                 <thead>
                     <tr>
                         <th>Service</th>
-                        <th>Organization</th><th></th>
+                        <th>Owner</th><th></th>
                         <th></th>
                     </tr>
                 </thead>
