@@ -984,7 +984,6 @@ function DB_GetServiceInformation($pdo, $idService) {
     }$serviceInfo = array();
 }
 
-
 function getAllOrganizationServices($pdo, $org) {
     try {
         $stmt = $pdo->prepare("SELECT *
@@ -994,8 +993,7 @@ function getAllOrganizationServices($pdo, $org) {
         $stmt->execute();
         $OrgServices = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $OrgServices["Id"] = $row["Id"];
-//            $userInfo["Country_Id"] = $row["Country_Id"];
+            array_push($OrgServices, $row) = $row["Id"];
         }
         return $OrgServices;
     } catch (PDOException $e) {
