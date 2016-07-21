@@ -24,7 +24,6 @@ $msg = '';
                     <i class="font-icon font-icon-calend"></i>
                 </span>
             </div>
-            <p class="sign-note">  <?= $msg; ?> </p>
             <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
         </form>
     </div>

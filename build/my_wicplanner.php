@@ -58,7 +58,7 @@ $msg = '';
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
             <div id="include" class="col-lg-6">
-               
+
             </div>
         </div><!--.container-fluid-->
     </div><!--.page-content-->
@@ -69,10 +69,9 @@ $msg = '';
         $("#include").load("addwicplanner.php");
     }
     function showAddWicFormEditMode(idWicPlanner) {
-        //PASSAR USERID > FAZER UPDATE WHERE USERID = USERID
-//        alert('EDIT WIC PLANNER FORM');
-//        var x = idWicPlanner;
-//        $("#include").load("includes/addWicForm.php?id=" + x);
+        alert('EDIT WIC PLANNER FORM');
+        var x = idWicPlanner;
+        $("#include").load("addwicplanner.php?id=" + x);
     }
     function showWicServicesForm(idWicPlanner) {
 //        var x = idWicPlanner;
