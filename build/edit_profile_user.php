@@ -38,7 +38,7 @@ include ("includes/head_sideMenu.php");
                         
 						<div class="form-control-wrapper form-control-icon-left" >
 							<textarea rows="4" class="form-control" placeholder="Personal Info"></textarea>
-                                                        <i class="font-icon font-icon-user"
+                                                        <i class="font-icon font-icon-user"></i>
 						</div>
                     </div>
                     <div class="form-group">
