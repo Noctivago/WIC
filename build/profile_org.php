@@ -330,7 +330,7 @@ $org = $_POST['Organization'];
                 <section class="box-typical">
                     <header class="box-typical-header-sm">People also viewed</header>
                     <div class="friends-list stripped">
-                        
+                        <?php DB_getPeopleViewServicesOrg($pdo, $org)?>
                         
 <!--                        <article class="friends-list-item">
                             <div class="user-card-row">
