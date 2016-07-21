@@ -4,7 +4,8 @@
 //$UserId = $_GET["uId"];
 //var_dump($wicPlannerId);
 ?>
-<div class="col-lg-6">
+<!--<div class="col-lg-6">-->
+<div class="col-lg-12">
     <section class="box-typical box-typical-max-280">
         <header class="box-typical-header">
             <div class="tbl-row">
