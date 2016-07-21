@@ -996,7 +996,7 @@ function DB_GetOrganizationServices($pdo, $org) {
        // echo $ServiceInfo["Name"];
        // echo $ServiceInfo["Description"];
         //echo $Multi['Multimedia_Path'];
-        echo $views['NumComment'];
+        echo $comments['NumComment'];
       //  echo $comments['comment'];
     } catch (Exception $ex) {
         
