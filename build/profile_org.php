@@ -2,8 +2,6 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
-$org = (filter_var($_GET['Organization']));
-echo 'idddd'.$org;
 ?>
 
 <div class="page-content">
@@ -23,7 +21,10 @@ echo 'idddd'.$org;
                         </div>
                     </header>
                     <div class="posts-slider">
-<?php DB_GetOrganizationServices($pdo, $org) ?>
+                        
+<?php  $org = (filter_var($_GET['Organization']));
+echo 'idddd'.$org;
+DB_GetOrganizationServices($pdo, $org) ?>
                     </div><!--.posts-slider-->
                 </section><!--.box-typical-->
 
