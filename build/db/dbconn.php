@@ -1004,7 +1004,7 @@ function DB_GetServiceInformation($pdo, $idService) {
     }$serviceInfo = array();
 }
 
-function getOrganizationServices($pdo, $org) {
+function getAllOrganizationServices($pdo, $org) {
     try {
         $stmt = $pdo->prepare("SELECT *
   FROM [dbo].[Service]
@@ -1029,14 +1029,14 @@ function getOrganizationServices($pdo, $org) {
 function DB_GetOrganizationServices($pdo, $org) {
     try {
         //falta buscar o id da org
-        $services = DB_GetOrganizationServices($pdo, $orgId);
+        $services = getAllOrganizationServices($pdo, $orgId);
       //  $idService = 2;
       foreach ($services as $service){ 
           $idService = $service['Id'];
-     //   $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-    //    $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-  //      $views = DB_GetNumberServiceViews($pdo, $idService);
-//        $comments = DB_GetNumberServiceComments($pdo, $idService);
+        $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+        $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+        $views = DB_GetNumberServiceViews($pdo, $idService);
+        $comments = DB_GetNumberServiceComments($pdo, $idService);
             echo $idService;
         echo '<div class = "slide">';
 
