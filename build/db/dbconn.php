@@ -1036,7 +1036,7 @@ function DB_getPeopleViewServicesOrg($pdo, $org) {
                     <br><br>
 Free for 3 Months</header>';
             echo '<div align="center">';
-            echo '<button type="submit" class="btn btn-rounded btn-success sign-up" align="center">Activate</button><br><br>';
+            echo '<button type="submit" class="btn btn-rounded btn-success sign-up" align="center" onClick="subscribe('.$org.')" >Activate</button><br><br>';
             echo '</div>';
 //falta dar o id da org
         } else {

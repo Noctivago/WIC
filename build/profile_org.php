@@ -62,7 +62,6 @@ echo '    </section><!--.box-typical-->';
 </div><!--.container-fluid-->
 </div><!--.page-content-->
 
-
 <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
 
@@ -79,8 +78,12 @@ echo '    </section><!--.box-typical-->';
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 
-
-
+<script>function subscribe(org){
+    $.post("ajax/Subscription.php",{org:org},function(result){
+        
+    });
+    
+}</script>
 
 
 
