@@ -1035,7 +1035,7 @@ function DB_getPeopleViewServicesOrg($pdo, $org,$idUser) {
   on [Organization].[Id] = [Service].[Organization_Id]
   Where [Organization_Id] = ?
   order by [Service_View].[Date_View] DESC", array($OrgId), "rows");
-        echo ' <header class="box-typical-header-sm">People also viewed'.$_SESSION['id'].'</header>';
+        echo ' <header class="box-typical-header-sm">People also viewed'.$idUser.'</header>';
         foreach ($rows as $row) {
             echo '<article class="friends-list-item">';
             echo '<div class="user-card-row">';
