@@ -6,4 +6,4 @@ include_once '../db/session.php';
 //$email = "paulo.cunha@esprominho.pt";
 print 'SESSION INFO <br>';
 print 'ID > ' . $_SESSION['id'] . '<br>';
-var_dump($SESSION);
+var_dump($_SESSION);
