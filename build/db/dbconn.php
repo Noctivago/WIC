@@ -782,6 +782,12 @@ function DB_CountPeopleInOrg($pdo) {
 //Falta colocar o id da org
 function DB_getUsersInServiceOrganization($pdo, $org) {
     try {
+        echo '<section class="box-typical">
+                    <header class="box-typical-header-sm">
+                        People in our organization
+                        &nbsp;
+                    </header>
+                    <div class="friends-list">';
         $id = 2;
         $Services = sql($pdo, "SELECT *
   FROM [Service]
@@ -817,6 +823,8 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
                 echo '  </div>';
                 echo ' </article>';
             }
+            echo '</div>
+                </section>';
         }
     } catch (Exception $ex) {
         

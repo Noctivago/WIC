@@ -35,16 +35,15 @@ $org = $_POST['Organization'];
                         </header>
                         <?php DB_GetOrgInformation2($pdo, $org); ?>
                 </section>
-                <section class="box-typical">
+<!--                <section class="box-typical">
                     <header class="box-typical-header-sm">
                         People in our organization
                         &nbsp;
-                        <!--a href="#" class="full-count"><--?php db_CountPeopleInOrg($pdo)?></a-->
                     </header>
-                    <div class="friends-list">
+                    <div class="friends-list">-->
                         <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
-                    </div>
-                </section><!--.box-typical-->
+<!--                    </div>
+                </section>.box-typical-->
             </div><!--.col- -->
 
             <div class="col-lg-3 col-md-6 col-sm-6">
