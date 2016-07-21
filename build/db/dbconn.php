@@ -990,18 +990,62 @@ function getAllOrganizationServices($pdo, $org) {
         $stmt->execute();
         $OrgServices = array();
         $rows = $stmt->fetchALL();
-        foreach($rows as $row ){
+        foreach ($rows as $row) {
             array_push($OrgServices, $row['Id']);
         }
         //while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 //            $service['Name'] = $row['Name'];
 //            $service['Id'] = $row['Id'];
-         //   array_push($OrgServices, $row['Id']);
-       // }
+        //   array_push($OrgServices, $row['Id']);
+        // }
         return $OrgServices;
     } catch (PDOException $e) {
         print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
+    }
+}
+
+function DB_getPeopleViewServicesOrg($pdo, $org) {
+    try {
+        //falta dar o id da org
+        $OrgId = 2;
+        $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
+  FROM [dbo].[Service_View]
+  join [User]
+  on [User].[Id] = [Service_View].[User_Id]
+  join [User_Profile]
+  on [User_Profile].[User_Id] = [User].[Id]
+  join [Service]
+  on [Service].[Id] = [Service_View].[Service_Id]
+  join [Organization]
+  on [Organization].[Id] = [Service].[Organization_Id]
+  Where [Organization_Id] = ?
+  order by [Service_View].[Date_View] DESC", array($orgId), "rows");
+        foreach ($rows as $row) {
+
+
+            echo '<article class="friends-list-item">';
+            echo '<div class="user-card-row">';
+            echo '<div class="tbl-row">';
+            echo '<div class="tbl-cell tbl-cell-photo">';
+            echo '<a href = "#">';
+            echo '<img src="img/photo-64-2.jpg" alt="">';
+            echo '</a>';
+            echo '</div>';
+            echo '<div class = "tbl-cell">';
+            echo '<p class="user-card-row-name status-online"><a href="#">Dan Cederholm</a></p>';
+            echo '<p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>';
+            echo '</div>';
+            echo '<div class="tbl-cell tbl-cell-action">';
+            echo '<a href = "#" class = "plus-link-circle"><span>&plus;
+            </span></a>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo ' </article>';
+        }
+    } catch (Exception $ex) {
+        
     }
 }
 
@@ -1029,7 +1073,7 @@ function DB_GetOrganizationServices($pdo, $org) {
             echo '<div class = "post-announce-title">';
             echo '<a href = "#">' . $ServiceInfo['Name'] . '</a>';
             echo '</div>';
-            echo '<div class = "post-announce-date">'.$ServiceInfo['Date_Created'].'</div>';
+            echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
             echo '<ul class = "post-announce-meta">';
             echo '<li>';
             echo '<i class = "font-icon font-icon-eye"></i>';

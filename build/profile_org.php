@@ -330,7 +330,9 @@ $org = $_POST['Organization'];
                 <section class="box-typical">
                     <header class="box-typical-header-sm">People also viewed</header>
                     <div class="friends-list stripped">
-                        <article class="friends-list-item">
+                        
+                        
+<!--                        <article class="friends-list-item">
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <div class="tbl-cell tbl-cell-photo">
@@ -419,7 +421,7 @@ $org = $_POST['Organization'];
                                     </div>
                                 </div>
                             </div>
-                        </article>
+                        </article>-->
                     </div>
 <!--                    <section>
                         <header class="box-typical-header-sm">More Influencer</header>
