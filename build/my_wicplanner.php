@@ -57,7 +57,7 @@ $msg = '';
 
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
-            <div id = "include" class="col-lg-6">
+            <div class="col-lg-6 include">
 
             </div>
         </div><!--.container-fluid-->
@@ -81,7 +81,7 @@ $msg = '';
             method: 'post',
             data: {con: x},
             success: function (data) {
-                $('#include').load(data);
+                $('.include').html(data);
                 // $("#include")
             }
         });
