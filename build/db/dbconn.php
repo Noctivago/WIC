@@ -1020,6 +1020,8 @@ function getAllOrganizationServices($pdo, $org) {
 
 function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
+        $idUser = $_SESSION['id'];
+        echo $idUser;
         //falta dar o id da org
         $OrgId = 2;
         $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
