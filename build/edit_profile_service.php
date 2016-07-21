@@ -20,6 +20,7 @@ include_once '../build/db/session.php';
 				<input type="file"/>
                         </button>
                     </div>
+                    <button type="submit" class="btn btn-rounded btn-file">Change Picture </button>
                     <header class="sign-title">Edit Service Profile</header>
                     
                     <div class="form-group">
