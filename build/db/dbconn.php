@@ -918,7 +918,7 @@ function DB_GetNumberServiceComments($pdo, $idService) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $comm['NumComment'] = $row['NumComment'];
         }
-        return $userInfo;
+        return $comm;
     } catch (PDOException $e) {
         print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
@@ -954,7 +954,6 @@ where [Service_Id] =:id");
         $multi = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $multi['Multimedia_Path'] = $row['Multimedia_Path'];
-            //   $userInfo["Country_Id"] = $row["Country_Id"];
         }
         return $multi;
     } catch (PDOException $e) {
@@ -974,7 +973,6 @@ function DB_GetServiceInformation($pdo, $idService) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $service['Name'] = $row['Name'];
             $service['Description'] = $row['Description'];
-            $service['Id'] = $row['Id'];
             //   $userInfo["Country_Id"] = $row["Country_Id"];
         }
         return $service;
@@ -1012,11 +1010,13 @@ function DB_GetOrganizationServices($pdo, $org) {
         //  $idService = 2;
         foreach ($services as $service) {
             $idService = $service['Id'];
-            echo $idService;
             $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
             $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
             $views = DB_GetNumberServiceViews($pdo, $idService);
             $comments = DB_GetNumberServiceComments($pdo, $idService);
+            echo $comments['NumComment'];
+            echo $views['NumView'];
+            echo $ServiceInfo['Name'];
             echo '<div class = "slide">';
             echo '<article class = "post-announce">';
             echo '<div class = "post-announce-pic">';
@@ -1025,7 +1025,7 @@ function DB_GetOrganizationServices($pdo, $org) {
             echo '</a>';
             echo ' </div>';
             echo '<div class = "post-announce-title">';
-            echo '<a href = "#">' . $ServiceInfo["Name"] . '</a>';
+            echo '<a href = "#">' . $ServiceInfo['Name'] . '</a>';
             echo '</div>';
             echo '<div class = "post-announce-date">Februrary 19, 2016</div>';
             echo '<ul class = "post-announce-meta">';
