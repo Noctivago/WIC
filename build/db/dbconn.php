@@ -1048,7 +1048,7 @@ function DB_ValidateSubscription($pdo, $org) {
 function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
 
-        if (TRUE) {
+        if (DB_ValidateSubscription($pdo, $org)) {
             echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
                     <br><br>
 Free for 3 Months</header>';
