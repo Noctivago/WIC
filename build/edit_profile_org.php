@@ -10,7 +10,7 @@ include ("includes/head_sideMenu.php");
 
     <div class="page-center">
         <div class="page-center-in">
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding-top: 100px;">
                 <form class="sign-box">
                     <div class="sign-avatar no-photo">&plus;</div>
                     <header class="sign-title">Edit Organization Profile</header>
