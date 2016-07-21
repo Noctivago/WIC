@@ -993,11 +993,12 @@ function DB_GetOrganizationServices($pdo, $org) {
         $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
         $views = DB_GetNumberServiceViews($pdo, $idService);
         $comments = DB_GetNumberServiceComments($pdo, $idService);
-        echo $ServiceInfo["Name"];
-        echo $ServiceInfo["Description"];
-        echo $Multi['Multimedia_Path'];
-        echo $comments['NumComment'];
-    } catch (Exception $ex) {
+        
+//        echo $ServiceInfo["Name"] . " ". $ServiceInfo["Description"] ." " .$Multi['Multimedia_Path']." " .$comments['NumComment'];
+//        echo $ServiceInfo["Description"];
+//        echo $Multi['Multimedia_Path'];
+//        echo $comments['NumComment'];
+ } catch (Exception $ex) {
         
     }
 }
