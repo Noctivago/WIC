@@ -65,7 +65,6 @@ $msg = '';
 </div>
 <script>
     function showAddWicForm() {
-        alert("INCLUDING ADD WIC PLANNER!");
         $("#include").load("includes/addWicForm.php");
     }
 </script>
