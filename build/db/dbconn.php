@@ -1043,7 +1043,7 @@ function DB_getPeopleViewServicesOrg($pdo, $org) {
                 echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
                     <br><br>
 Free for 3 Months</header>';
-                echo '<input type="Button">Active subscription</input>';
+                echo '<input type="Button" placeholder="Activate subscription"></input>';
             } else {
 
 //falta dar o id da org
