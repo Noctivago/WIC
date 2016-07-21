@@ -36,7 +36,10 @@ $org = $_POST['Organization'];
                         <?php DB_GetOrgInformation2($pdo, $org); ?>
                 </section>
                 <section class="box-typical">
-                   
+                    <header class="box-typical-header-sm">
+                        People in our organization
+                        &nbsp;
+                    </header>
                     <div class="friends-list">
                         <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
                     </div>
@@ -45,7 +48,7 @@ $org = $_POST['Organization'];
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <section class="box-typical">
-                    <header class="box-typical-header-sm">People also viewed</header>
+                   
                     <div class="friends-list stripped">
                         <?php DB_getPeopleViewServicesOrg($pdo, $org) ?>
                     </div>
