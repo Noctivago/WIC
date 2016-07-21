@@ -1018,9 +1018,7 @@ function DB_GetOrganizationServices($pdo, $org) {
             $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
             $views = DB_GetNumberServiceViews($pdo, $idService);
             $comments = DB_GetNumberServiceComments($pdo, $idService);
-            echo $idService;
             echo '<div class = "slide">';
-
             echo '<article class = "post-announce">';
             echo '<div class = "post-announce-pic">';
             echo '<a href = "#">';

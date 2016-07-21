@@ -53,166 +53,166 @@ $org = $_POST['Organization'];
                         <?php DB_GetOrganizationServices($pdo, $org) ?>
                         <!--div class="slide"-->
 
-                            <!--                            <article class="post-announce">
-                                <div class="post-announce-pic">
-                                    <a href="#">
-                                        <img src="img/post-1.jpeg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-announce-title">
-                                    <a href="#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>
-                                </div>
-                                <div class="post-announce-date">Februrary 19, 2016</div>
-                                <ul class="post-announce-meta">
-                                    <li>
-                                        <i class="font-icon font-icon-eye"></i>
+                        <!--                            <article class="post-announce">
+                            <div class="post-announce-pic">
+                                <a href="#">
+                                    <img src="img/post-1.jpeg" alt="">
+                                </a>
+                            </div>
+                            <div class="post-announce-title">
+                                <a href="#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>
+                            </div>
+                            <div class="post-announce-date">Februrary 19, 2016</div>
+                            <ul class="post-announce-meta">
+                                <li>
+                                    <i class="font-icon font-icon-eye"></i>
 
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-heart"></i>
-                                        5K
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-comment"></i>
-                                        3K
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>.slide
-                        <div class="slide">
-                            <article class="post-announce">
-                                <div class="post-announce-pic">
-                                    <a href="#">
-                                        <img src="img/post-2.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-announce-title">
-                                    <a href="#">How Much Do We Spend on How Much Do We Spend on How Much Do We Spend on </a>
-                                </div>
-                                <div class="post-announce-date">January 21, 2016</div>
-                                <ul class="post-announce-meta">
-                                    <li>
-                                        <i class="font-icon font-icon-eye"></i>
-                                        18
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-heart"></i>
-                                        5K
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-comment"></i>
-                                        3K
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>.slide
-                        <div class="slide">
-                            <article class="post-announce">
-                                <div class="post-announce-pic">
-                                    <a href="#">
-                                        <img src="img/post-3.jpeg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-announce-title">
-                                    <a href="#">Good News You Might Have Good News You Might Have Good News You Might Have </a>
-                                </div>
-                                <div class="post-announce-date">December 30, 2016</div>
-                                <ul class="post-announce-meta">
-                                    <li>
-                                        <i class="font-icon font-icon-eye"></i>
-                                        18
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-heart"></i>
-                                        5K
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-comment"></i>
-                                        3K
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>.slide
-                        <div class="slide">
-                            <article class="post-announce">
-                                <div class="post-announce-pic">
-                                    <a href="#">
-                                        <img src="img/post-1.jpeg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-announce-title">
-                                    <a href="#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>
-                                </div>
-                                <div class="post-announce-date">Februrary 19, 2016</div>
-                                <ul class="post-announce-meta">
-                                    <li>
-                                        <i class="font-icon font-icon-eye"></i>
-                                        18
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-heart"></i>
-                                        5K
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-comment"></i>
-                                        3K
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>.slide
-                        <div class="slide">
-                            <article class="post-announce">
-                                <div class="post-announce-pic">
-                                    <a href="#">
-                                        <img src="img/post-2.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-announce-title">
-                                    <a href="#">How Much Do We Spend on How Much Do We Spend on How Much Do We Spend on </a>
-                                </div>
-                                <div class="post-announce-date">January 21, 2016</div>
-                                <ul class="post-announce-meta">
-                                    <li>
-                                        <i class="font-icon font-icon-eye"></i>
-                                        18
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-heart"></i>
-                                        5K
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-comment"></i>
-                                        3K
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>.slide
-                        <div class="slide">
-                            <article class="post-announce">
-                                <div class="post-announce-pic">
-                                    <a href="#">
-                                        <img src="img/post-3.jpeg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-announce-title">
-                                    <a href="#">Good News You Might Have Good News You Might Have Good News You Might Have </a>
-                                </div>
-                                <div class="post-announce-date">December 30, 2016</div>
-                                <ul class="post-announce-meta">
-                                    <li>
-                                        <i class="font-icon font-icon-eye"></i>
-                                        18
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-heart"></i>
-                                        5K
-                                    </li>
-                                    <li>
-                                        <i class="font-icon font-icon-comment"></i>
-                                        3K
-                                    </li>
-                                </ul>
-                            </article>-->
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-heart"></i>
+                                    5K
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-comment"></i>
+                                    3K
+                                </li>
+                            </ul>
+                        </article>
+                    </div>.slide
+                    <div class="slide">
+                        <article class="post-announce">
+                            <div class="post-announce-pic">
+                                <a href="#">
+                                    <img src="img/post-2.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="post-announce-title">
+                                <a href="#">How Much Do We Spend on How Much Do We Spend on How Much Do We Spend on </a>
+                            </div>
+                            <div class="post-announce-date">January 21, 2016</div>
+                            <ul class="post-announce-meta">
+                                <li>
+                                    <i class="font-icon font-icon-eye"></i>
+                                    18
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-heart"></i>
+                                    5K
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-comment"></i>
+                                    3K
+                                </li>
+                            </ul>
+                        </article>
+                    </div>.slide
+                    <div class="slide">
+                        <article class="post-announce">
+                            <div class="post-announce-pic">
+                                <a href="#">
+                                    <img src="img/post-3.jpeg" alt="">
+                                </a>
+                            </div>
+                            <div class="post-announce-title">
+                                <a href="#">Good News You Might Have Good News You Might Have Good News You Might Have </a>
+                            </div>
+                            <div class="post-announce-date">December 30, 2016</div>
+                            <ul class="post-announce-meta">
+                                <li>
+                                    <i class="font-icon font-icon-eye"></i>
+                                    18
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-heart"></i>
+                                    5K
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-comment"></i>
+                                    3K
+                                </li>
+                            </ul>
+                        </article>
+                    </div>.slide
+                    <div class="slide">
+                        <article class="post-announce">
+                            <div class="post-announce-pic">
+                                <a href="#">
+                                    <img src="img/post-1.jpeg" alt="">
+                                </a>
+                            </div>
+                            <div class="post-announce-title">
+                                <a href="#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>
+                            </div>
+                            <div class="post-announce-date">Februrary 19, 2016</div>
+                            <ul class="post-announce-meta">
+                                <li>
+                                    <i class="font-icon font-icon-eye"></i>
+                                    18
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-heart"></i>
+                                    5K
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-comment"></i>
+                                    3K
+                                </li>
+                            </ul>
+                        </article>
+                    </div>.slide
+                    <div class="slide">
+                        <article class="post-announce">
+                            <div class="post-announce-pic">
+                                <a href="#">
+                                    <img src="img/post-2.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="post-announce-title">
+                                <a href="#">How Much Do We Spend on How Much Do We Spend on How Much Do We Spend on </a>
+                            </div>
+                            <div class="post-announce-date">January 21, 2016</div>
+                            <ul class="post-announce-meta">
+                                <li>
+                                    <i class="font-icon font-icon-eye"></i>
+                                    18
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-heart"></i>
+                                    5K
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-comment"></i>
+                                    3K
+                                </li>
+                            </ul>
+                        </article>
+                    </div>.slide
+                    <div class="slide">
+                        <article class="post-announce">
+                            <div class="post-announce-pic">
+                                <a href="#">
+                                    <img src="img/post-3.jpeg" alt="">
+                                </a>
+                            </div>
+                            <div class="post-announce-title">
+                                <a href="#">Good News You Might Have Good News You Might Have Good News You Might Have </a>
+                            </div>
+                            <div class="post-announce-date">December 30, 2016</div>
+                            <ul class="post-announce-meta">
+                                <li>
+                                    <i class="font-icon font-icon-eye"></i>
+                                    18
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-heart"></i>
+                                    5K
+                                </li>
+                                <li>
+                                    <i class="font-icon font-icon-comment"></i>
+                                    3K
+                                </li>
+                            </ul>
+                        </article>-->
                     </div><!--.posts-slider-->
                 </section><!--.box-typical-->
 
