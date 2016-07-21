@@ -56,10 +56,9 @@ $msg = '';
 
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
-            <div id = "include" class="col-lg-6">
-
+            <div id="include">
+                
             </div>
-
         </div><!--.container-fluid-->
     </div><!--.page-content-->
 </div>
@@ -69,7 +68,8 @@ $msg = '';
     }
     function showWicServicesForm(idWicPlanner) {
         var x = idWicPlanner;
-        $("#include").load("includes/showWicServices.php?id=" + x);
+        var u = <?= $_SESSION['id'] ?>
+        $("#include").load("includes/showWicServices.php?id=" + x + '&uId=' + u);
     }
 </script>
 
