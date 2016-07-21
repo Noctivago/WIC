@@ -15,24 +15,37 @@ include ("includes/head_sideMenu.php");
                     <div class="sign-avatar no-photo">&plus;</div>
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
+                        <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Name"/>
+                        <i class="font-icon font-icon-user"></i>
                     </div>
                     <div class="form-group">
+                        <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Telephone Number"/>
+                        <i class="font-icon font-icon-phone"></i>
+                        </div>
                     </div>
                     <div class="form-group">
+                        <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="My WebSite"/>
+                        <i class="font-icon font-icon-earth-bordered"></i>
+                        </div>
                     </div>
                     <div class="form-group">
+                        <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Facebook Account"/>
+                        <i class="font-icon font-icon-facebook"></i>
                     </div>
                     <div class="form-group">
-                         
+                         <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Linkedin Account"/>
+                        <i class="font-icon font-icon-linkedin"></i>
+                        </div>
                     </div>
                     <div class="form-group">
-                         
+                         <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Twitter Account"/>
+                        <i class="font-icon font-icon-twitter"></i>
                     </div>
                    <div class="form-group row">
                         
@@ -41,11 +54,9 @@ include ("includes/head_sideMenu.php");
                                                         <i class="font-icon font-icon-user"></i>
 						</div>
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Repeat password"/>
-                    </div>
-                    <button type="submit" class="btn btn-rounded btn-success sign-up">Sign up</button>
-                    <p class="sign-note">Already have an account? <a href="sign_in.php">Sign in</a></p>
+                    
+                    <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>
+                    
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->
