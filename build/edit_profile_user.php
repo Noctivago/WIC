@@ -48,6 +48,8 @@ include ("includes/head_sideMenu.php");
                         <input type="text" class="form-control" placeholder="Twitter Account"/>
                         <i class="font-icon font-icon-twitter"></i>
                         </div>
+                        <br>
+                        
                    <div class="form-group row">
                         
 						<div class="form-control-wrapper form-control-icon-left" >
