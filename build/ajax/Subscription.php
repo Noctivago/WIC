@@ -15,4 +15,3 @@ sql($pdo,"INSERT INTO [dbo].[Organization_Subscription]
            ,[Enabled])
      VALUES
            (?,?,?,?)", array($orgId,$d,$effectiveDate,1));
-echo $effectiveDate;
