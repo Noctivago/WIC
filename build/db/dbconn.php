@@ -964,7 +964,7 @@ where [Service_Id] =:id");
 
 function DB_GetServiceInformation($pdo, $idService) {
     try {
-        $stmt = $pdo->prepare("SELECT [Name]
+        $stmt = $pdo->prepare("SELECT [Name],[Date_Created]
   FROM [dbo].[Service]
   where [Id] =:id");
         $stmt->bindParam(':id', $idService);
@@ -972,6 +972,7 @@ function DB_GetServiceInformation($pdo, $idService) {
         $serv = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $serv['Name'] = $row['Name'];
+            $serv['Date_Created'] = $row['Date_Created'];
         }
         return $serv;
     } catch (PDOException $e) {
@@ -1018,11 +1019,6 @@ function DB_GetOrganizationServices($pdo, $org) {
             $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
             $views = DB_GetNumberServiceViews($pdo, $idService);
             $comments = DB_GetNumberServiceComments($pdo, $idService);
-            echo $ServiceInfo['Name'];
-            echo $comments['NumComment'];
-            echo $views['NumView'];
-           // echo $Service[0];
-           // echo $service[1];
             echo '<div class = "slide">';
             echo '<article class = "post-announce">';
             echo '<div class = "post-announce-pic">';
@@ -1033,7 +1029,7 @@ function DB_GetOrganizationServices($pdo, $org) {
             echo '<div class = "post-announce-title">';
             echo '<a href = "#">' . $ServiceInfo['Name'] . '</a>';
             echo '</div>';
-            echo '<div class = "post-announce-date">Februrary 19, 2016</div>';
+            echo '<div class = "post-announce-date">'.$ServiceInfo['Date_Created'].'</div>';
             echo '<ul class = "post-announce-meta">';
             echo '<li>';
             echo '<i class = "font-icon font-icon-eye"></i>';
