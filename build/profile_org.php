@@ -82,7 +82,7 @@ echo '    </section><!--.box-typical-->';
     $.post("ajax/Subscription.php",{org:org},function(result){
     alert(result);
     });
-    location.reload();
+    //location.reload();
 }</script>
 
 
