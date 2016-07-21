@@ -9,7 +9,7 @@ $msg = '';
 ?>
 
 
-<div class="page-content" style="height: 817px;">
+<div onload="loadMyWics()"class="page-content" style="height: 817px;">
     <div class="container-fluid">
         <div class="row" style="height: 700px;">
 
@@ -44,7 +44,7 @@ $msg = '';
                                     </tr>
                                 </thead>
 
-                                <tbody>
+                                <tbody class="WICS">
                                     <!--COLOCAR VIA AJAX-->
                                     <?= db_getMyWicPlannerToWICCrud($pdo, $_SESSION['id']); ?>
                                     <?= db_getThirdWicPlannerToWICCrud($pdo, $_SESSION['id']); ?>
@@ -64,6 +64,16 @@ $msg = '';
     </div><!--.page-content-->
 </div>
 <script>
+    function loadMyWics() {
+        $.ajax({
+            url: '../build/ajax/get_state.php',
+            method: 'post',
+            data: {},
+            success: function (data) {
+                $('.WICS').html(data);
+            }
+        });
+    }
     function showAddWicForm() {
         alert('SHOW WIC PLANNER FORM');
         $("#include").load("addwicplanner.php");
