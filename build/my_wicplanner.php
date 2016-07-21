@@ -56,8 +56,8 @@ $msg = '';
 
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
-            <div id="include">
-                
+            <div id="include" class="col-lg-6">
+
             </div>
         </div><!--.container-fluid-->
     </div><!--.page-content-->

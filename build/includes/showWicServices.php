@@ -1,13 +1,8 @@
 <?php
-//FUNCA X)
+//FUNCA X) NA QUERY VERIFICAR SE O USER PERTENCE A ESTE WIC PLANNER; SE SIM MOSTRA
 //$wicPlannerId = $_GET["id"];
 //$UserId = $_GET["uId"];
 //var_dump($wicPlannerId);
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 ?>
 <div class="col-lg-6">
     <section class="box-typical box-typical-max-280">
