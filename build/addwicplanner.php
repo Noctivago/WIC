@@ -25,7 +25,7 @@ $msg = 'ID >' . $id;
                     <i class="font-icon font-icon-calend"></i>
                 </span>
             </div>
-            <?= $msg = ''; ?>
+            <?= $msg; ?>
             <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
         </form>
     </div>
