@@ -964,7 +964,7 @@ where [Service_Id] =:id");
 
 function DB_GetServiceInformation($pdo, $idService) {
     try {
-        $stmt = $pdo->prepare("SELECT *
+        $stmt = $pdo->prepare("SELECT [Name]
   FROM [dbo].[Service]
   where [Organization_Id] =:id");
         $stmt->bindParam(':id', $idService);
@@ -972,7 +972,7 @@ function DB_GetServiceInformation($pdo, $idService) {
         $service = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $service['Name'] = $row['Name'];
-            $service['Description'] = $row['Description'];
+           // $service['Description'] = $row['Description'];
             //   $userInfo["Country_Id"] = $row["Country_Id"];
         }
         return $service;
