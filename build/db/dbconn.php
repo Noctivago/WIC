@@ -1031,13 +1031,12 @@ function DB_CheckIfBossOrg($pdo, $org, $idUser) {
     }
 }
 
-function DB_getPeopleViewServicesOrg($pdo, $org, $idUser) {
+function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
+        $idUser = 9;
         $OrgId = 2;
-        $response = DB_CheckIfBossOrg($pdo, $OrgId, $idUser);
         //check boss 
-        if ($response) {
-            echo $idUser;
+        if (DB_CheckIfBossOrg($pdo, $OrgId, $idUser)) {
             //falta dar o id da org
             $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
   FROM [dbo].[Service_View]
