@@ -914,9 +914,9 @@ function DB_GetNumberServiceComments($pdo, $idService) {
   where [Service_Id] =:id");
         $stmt->bindParam(':id', $idService);
         $stmt->execute();
-        $userInfo = array();
+        $comm = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $userInfo['NumComment'] = $row['NumComment'];
+            $comm['NumComment'] = $row['NumComment'];
         }
         return $userInfo;
     } catch (PDOException $e) {
@@ -932,12 +932,12 @@ From [Service_View]
 where [Service_Id] =:id");
         $stmt->bindParam(':id', $idService);
         $stmt->execute();
-        $userInfo = array();
+        $views = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-            $userInfo['NumView'] = $row['NumView'];
+            $views['NumView'] = $row['NumView'];
         }
-        return $userInfo;
+        return $views;
     } catch (PDOException $e) {
         print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
@@ -951,12 +951,12 @@ From [Multimedia]
 where [Service_Id] =:id");
         $stmt->bindParam(':id', $idService);
         $stmt->execute();
-        $userInfo = array();
+        $multi = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $userInfo['Multimedia_Path'] = $row['Multimedia_Path'];
+            $multi['Multimedia_Path'] = $row['Multimedia_Path'];
             //   $userInfo["Country_Id"] = $row["Country_Id"];
         }
-        return $userInfo;
+        return $multi;
     } catch (PDOException $e) {
         print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
@@ -987,11 +987,11 @@ function DB_getUserProfileInfo($pdo, $UserId) {
 //falta passar o id da org
 function DB_GetOrganizationServices($pdo, $org) {
     try {
-      $idService = 2;
-    //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-    //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-   // $views = DB_GetNumberServiceViews($pdo, $idService);
-  //  $comments = DB_GetNumberServiceComments($pdo, $idService);
+        $idService = 2;
+        //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+        $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+        $views = DB_GetNumberServiceViews($pdo, $idService);
+        $comments = DB_GetNumberServiceComments($pdo, $idService);
 
         echo '<div class = "slide">';
 
@@ -1008,11 +1008,6 @@ function DB_GetOrganizationServices($pdo, $org) {
         echo '<ul class = "post-announce-meta">';
         echo '<li>';
         echo '<i class = "font-icon font-icon-eye"></i>';
-
-        echo '</li>';
-        echo '<li>';
-        echo '<i class = "font-icon font-icon-heart"></i>';
-        echo ' 5K';
         echo '</li>';
         echo '<li>';
         echo '<i class = "font-icon font-icon-comment"></i>';
