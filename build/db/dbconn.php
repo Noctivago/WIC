@@ -1021,7 +1021,7 @@ function DB_CheckIfBossOrg($pdo, $org, $idUser) {
         $count = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
   where [Id] =? and [User_Boss] = ?", array($org, $idUser), "count");
-        if ($Count < 0) {
+        if ($count < 0) {
             return true;
         } else {
             return false;
