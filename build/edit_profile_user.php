@@ -18,7 +18,7 @@ include ("includes/head_sideMenu.php");
                         <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Name"/>
                         <i class="font-icon font-icon-user"></i>
-                    </div>
+                        </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Telephone Number"/>
@@ -35,6 +35,7 @@ include ("includes/head_sideMenu.php");
                         <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Facebook Account"/>
                         <i class="font-icon font-icon-facebook"></i>
+                        </div>
                     </div>
                     <div class="form-group">
                          <div class="form-control-wrapper form-control-icon-left" >
@@ -46,7 +47,7 @@ include ("includes/head_sideMenu.php");
                          <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Twitter Account"/>
                         <i class="font-icon font-icon-twitter"></i>
-                    </div>
+                        </div>
                    <div class="form-group row">
                         
 						<div class="form-control-wrapper form-control-icon-left" >
