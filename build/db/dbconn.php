@@ -1019,8 +1019,8 @@ function DB_GetOrganizationServices($pdo, $org) {
             $comments = DB_GetNumberServiceComments($pdo, $idService);
             echo $comments['NumComment'];
             echo $views['NumView'];
-            echo $Service['Name'];
-            echo $service['Id'];
+            echo $Service[0];
+            echo $service[1];
             echo '<div class = "slide">';
             echo '<article class = "post-announce">';
             echo '<div class = "post-announce-pic">';
