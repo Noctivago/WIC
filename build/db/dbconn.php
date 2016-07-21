@@ -907,43 +907,57 @@ function DB_compareActivationCode($pdo, $email, $code) {
     }
 }
 
-function DB_GetServiceMultimediaUnit($pdo, $idService) {
-    $msg = sql($pdo, " Select top(1) *
-From [Multimedia]
-where [Service_Id] = ?", array($idService), "rows");
-    echo $msg;
+function DB_GetNumberServiceComments($pdo, $idService) {
+    try {
+        $stmt = $pdo->prepare("SELECT count([Comment].[Id]) as NumComment
+  FROM [dbo].[Comment]
+  where [Service_Id] =:id");
+        $stmt->bindParam(':id', $idService);
+        $stmt->execute();
+        $userInfo = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $userInfo['comment'] = $row['NumComment'];
+        }
+        return $userInfo;
+    } catch (PDOException $e) {
+        print "ERROR READING USER PROFILE INFO!<br/>";
+#die();
+    }$serviceInfo = array();
 }
 
 function DB_GetNumberServiceViews($pdo, $idService) {
-    $msg = sql($pdo, "Select count([Service_View].[Id])as NumView
-From [Service_View]
-where [Service_Id] = ?", array($idService), "rows");
-    echo $msg['NumView'];
-}
-
-function DB_GetNumberServiceComments($pdo, $idService) {
-    $msg = sql($pdo, "SELECT count([Comment].[Id]) as NumComment
-  FROM [dbo].[Comment]
-  where [Service_Id] = ?", array($idService), "rows");
-    echo $msg['NumComment'];
-}
-
-function DB_GetServiceInformation($pdo, $idService) {
     try {
-
-//        $msg = sql($pdo, "SELECT *
-//  FROM [dbo].[Service]
-//  where [Organization_Id] =?", array($idService), "rows");
-        $stmt = $pdo->prepare("SELECT *
-  FROM [dbo].[Service]
-  where [Organization_Id]=:id");
+        $stmt = $pdo->prepare("Select count([Service_View].[Id])as NumView
+From [Service_View]
+where [Service_Id] =:id");
         $stmt->bindParam(':id', $idService);
         $stmt->execute();
         $userInfo = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-            $userInfo["Name"] = $row["Name"];
-            $userInfo["Description"] = $row["Description"];
+            $userInfo['views'] = $row['NumView'];
+        }
+        return $userInfo;
+    } catch (PDOException $e) {
+        print "ERROR READING USER PROFILE INFO!<br/>";
+#die();
+    }$serviceInfo = array();
+}
+
+function DB_GetServiceMultimediaUnit($pdo, $idService) {
+    try {
+
+//        $msg = sql($pdo, "SELECT *
+//  FROM [dbo].[Service]
+//  where [Organization_Id] =?", array($idService), "rows");
+        $stmt = $pdo->prepare("Select top(1) *
+From [Multimedia]
+where [Enabled] = 1 and [Service_Id] =:id");
+        $stmt->bindParam(':id', $idService);
+        $stmt->execute();
+        $userInfo = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $userInfo['Path'] = $row['Multimedia_Path'];
             //   $userInfo["Country_Id"] = $row["Country_Id"];
         }
         return $userInfo;
@@ -980,14 +994,14 @@ function DB_GetOrganizationServices($pdo, $org) {
         $serviceInfo = array();
         $idService = 2;
         $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-        //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-        //$views = DB_GetNumberServiceViews($pdo, $idService);
-        //$comments = DB_GetNumberServiceComments($pdo, $idService);
+        $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+        $views = DB_GetNumberServiceViews($pdo, $idService);
+        $comments = DB_GetNumberServiceComments($pdo, $idService);
         echo $ServiceInfo["Name"];
         echo $ServiceInfo["Description"];
-//        echo $Multi;
-//        echo $views;
-//        echo $comments;
+        echo $Multi['Path'];
+        echo $views['views'];
+        echo $comments['comment'];
     } catch (Exception $ex) {
         
     }
