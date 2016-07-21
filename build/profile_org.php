@@ -21,10 +21,12 @@ include_once '../build/db/session.php';
                         </div>
                     </header>
                     <div class="posts-slider">
-                        
-<?php  $org = (filter_var($_GET['Organization']));
-    $idUser = $_SESSION['id'];
-DB_GetOrganizationServices($pdo, $org) ?>
+
+                        <?php
+                        $org = (filter_var($_GET['Organization']));
+                        $idUser = $_SESSION['id'];
+                        DB_GetOrganizationServices($pdo, $org)
+                        ?>
                     </div><!--.posts-slider-->
                 </section><!--.box-typical-->
 
@@ -35,7 +37,7 @@ DB_GetOrganizationServices($pdo, $org) ?>
                             <i class="font-icon font-icon-notebook-bird"></i>
                             Description
                         </header>
-<?php DB_GetOrgInformation2($pdo, $org); ?>
+                        <?php DB_GetOrgInformation2($pdo, $org); ?>
                 </section>
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
@@ -43,20 +45,20 @@ DB_GetOrganizationServices($pdo, $org) ?>
                         &nbsp;
                     </header>
                     <div class="friends-list">
-<?php DB_getUsersInServiceOrganization($pdo, $org); ?>
+                        <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
                     </div>
                 </section>
             </div><!--.col- -->
-<?php
-if(DB_CheckIfBossOrg($pdo, $org, $idUser)){
-echo '<div class="col-lg-3 col-md-6 col-sm-6" >';
-echo ' <section class="box-typical">';
-echo '  <div class="friends-list stripped">';
-DB_getPeopleViewServicesOrg($pdo, $org);
-echo '         </div>';
-echo '    </section><!--.box-typical-->';
-}
-?>
+            <?php
+            if (DB_CheckIfBossOrg($pdo, $org, $idUser)) {
+                echo '<div class="col-lg-3 col-md-6 col-sm-6" >';
+                echo ' <section class="box-typical">';
+                echo '  <div class="friends-list stripped">';
+                DB_getPeopleViewServicesOrg($pdo, $org);
+                echo '         </div>';
+                echo '    </section><!--.box-typical-->';
+            }
+            ?>
         </div><!--.col- -->
     </div><!--.row-->
 </div><!--.container-fluid-->
@@ -78,11 +80,11 @@ echo '    </section><!--.box-typical-->';
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 
-<script>function subscribe(org){
-    $.post("ajax/Subscription.php",{org:org},function(result){
-    });
-    location.reload();
-}</script>
+<script>function subscribe(org) {
+        $.post("ajax/Subscription.php", {org: org}, function (result) {
+        });
+        location.reload();
+    }</script>
 
 
 
