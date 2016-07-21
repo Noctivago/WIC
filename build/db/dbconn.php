@@ -1263,7 +1263,7 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
             echo '</a>';
             echo '</td>';
             echo '<td class="table-photo">';
-            echo '<a onclick="removeWic()"class="font-icon font-icon-del" id=' . $row['WID'] . '>';
+            echo '<a onclick="removeWic(this.id)"class="font-icon font-icon-del" id=' . $row['WID'] . '>';
             echo '</a>';
             echo '</td>';
             echo '</tr>';
