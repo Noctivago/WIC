@@ -1,6 +1,7 @@
 <?php
-$wicPlannerId = $_GET["id"];
-var_dump($wicPlannerId);
+//FUNCA X)
+//$wicPlannerId = $_GET["id"];
+//var_dump($wicPlannerId);
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
