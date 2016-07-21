@@ -28,7 +28,7 @@ include_once '../build/db/session.php';
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Service Supplier"/>
-                        <i class="font-icon font-icon-phone"></i>
+                        <i class="font-icon font-icon-home"></i>
                         </div>
                     </div>
 <!--                    <div class="form-group">
