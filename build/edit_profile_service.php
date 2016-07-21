@@ -5,6 +5,8 @@ include_once '../build/db/session.php';
 ?>
 
 <body>
+    	<link rel="stylesheet" href="css/lib/ion-range-slider/ion.rangeSlider.css">
+	<link rel="stylesheet" href="css/lib/ion-range-slider/ion.rangeSlider.skinHTML5.css">
 
     <div class="page-center">
         <div class="page-center-in">
