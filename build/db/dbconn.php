@@ -1036,7 +1036,7 @@ function DB_getPeopleViewServicesOrg($pdo, $org) {
                     <br><br>
 Free for 3 Months</header>';
             echo '<div align="center">';
-            echo '<button type="submit" class="btn btn-rounded btn-success sign-up" align="center" onClick="subscribe('.$org.')" >Activate</button><br><br>';
+            echo '<button type="submit" class="btn btn-rounded btn-success sign-up" align="center" onClick="subscribe(' . $org . ')" >Activate</button><br><br>';
             echo '</div>';
 //falta dar o id da org
         } else {
@@ -1310,5 +1310,72 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
         }
     } catch (Exception $exc) {
         echo 'ERROR READING THIRD WIC PLANNERS';
+    }
+}
+
+/**
+ * Função que devolve os serviços do meu WIC Planner
+ * @param type $pdo
+ * @param type $wicPlannerId
+ * @param type $userId
+ */
+function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
+    try {
+        $rows = sql($pdo, "SELECT [Service].[Id] AS SID
+	  ,[Service].[Name] AS SNA
+          ,[Organization].[Name] AS ONA
+          ,[Organization].[Id] AS OID
+	  ,[Organization].[Picture_Path] AS OPP
+          ,[WIC_Planner].[Name] AS WNA
+  FROM [dbo].[WIC_Planner_Service]
+  join [Service]
+  on [Service].[Id] = [WIC_Planner_Service].[Service_Id]
+  join [WIC_Planner]
+   on [WIC_Planner].[Id] = [WIC_Planner_Service].[Service_Id]
+  join [Organization]
+  on [Service].[Organization_Id] = [Organization].[Id]
+  WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
+  AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
+        foreach ($rows as $row) {
+            echo '<section class="box-typical box-typical-max-280">';
+            echo '<header class="box-typical-header">';
+            echo '<div class="tbl-row">';
+            echo '<div class="tbl-cell tbl-cell-title">';
+            echo '<h3> Services in "' . $row['WNA'] . '"</h3>';
+            echo '</div>';
+            echo '</div>';
+            echo '</header>';
+            echo '<div class="box-typical-body" style="overflow: hidden; padding: 0px; height: 700px; width: 504px;">';
+            echo '<div class="table-responsive">';
+            echo '<table class="table table-hover">';
+            echo '<thead>';
+            echo '<tr>';
+            echo '<th>Service</th>';
+            echo '<th>Owner</th><th></th>';
+            echo '<th></th>';
+            echo '</tr>';
+            echo '</thead>';
+            echo '<tbody>';
+            echo '<tr class="table-check">';
+            //echo '<td><a href="../profile_org.php?Organization=' . $row['OID'] . '">Nome</a></td>';
+            echo '<td><a href="../profile_org.php?Organization=' . $row['OID'] . '">' . $row['SNA'] . '</a></td>';
+            echo '<td class="table-photo">';
+            echo '<img src="' . $row['OPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['ONA'] . '">';
+            echo '</td>';
+            echo '<td class="table-photo">';
+            echo '</td>';
+            echo '<td class="table-photo">';
+            echo '<a href="#" class="font-icon font-icon-del">';
+            echo '</a>';
+            echo '</td>';
+            echo '</tr>';
+            echo '</tbody>';
+            echo '</table>';
+            echo '</div>';
+            echo '</div>';
+            echo '</section>';
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING SERVICES OF WIC PLANNER!';
     }
 }
