@@ -831,6 +831,14 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
     }
 }
 
+//<!--            <header class="box-typical-header-sm">
+//                        People in our organization
+//                        &nbsp;
+//                    </header>
+//                    <div class="friends-list">-->
+//                        
+//                    <!--/div-->
+
 function DB_GetOrgInformation($pdo) {
     try {
         $id = 2;
