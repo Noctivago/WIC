@@ -74,6 +74,7 @@ $msg = '';
         $("#include").load("includes/addWicForm.php?id=" + x);
     }
     function showWicServicesForm(idWicPlanner) {
+         alert('SHOW WIC PLANNER SERVICES');
         var x = idWicPlanner;
         var u = <?= $_SESSION['id'] ?>;
         $("#include").load("includes/showWicServices.php?id=" + x + "&uId=" + u);
