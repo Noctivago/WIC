@@ -1111,7 +1111,7 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
             echo '<img src="' . $row['UPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
             echo '</td>';
             echo '<td class="table-photo">';
-            echo '<a onclick="showWicServicesForm(' . $row['WID'] . ')" class="font-icon font-icon-pencil">';
+            echo '<a onclick="showAddWicFormEditMode(' . $row['WID'] . ')" class="font-icon font-icon-pencil">';
             echo '</a>';
             echo '</td>';
             echo '<td class="table-photo">';
