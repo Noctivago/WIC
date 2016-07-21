@@ -1012,6 +1012,7 @@ function DB_GetOrganizationServices($pdo, $org) {
         //  $idService = 2;
         foreach ($services as $service) {
             $idService = $service['Id'];
+            echo $idService;
             $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
             $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
             $views = DB_GetNumberServiceViews($pdo, $idService);
