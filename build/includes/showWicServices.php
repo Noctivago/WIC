@@ -6,4 +6,5 @@ $wicPlannerId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $userId = filter_input(INPUT_GET, 'uId', FILTER_SANITIZE_NUMBER_INT);
 //var_dump($wicPlannerId);
 echo db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId);
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
