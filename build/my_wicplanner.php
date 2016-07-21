@@ -56,11 +56,10 @@ $msg = '';
 </div>
 <script>
     function loadMyWics() {
-        var org = '1';
         $.ajax({
             url: 'ajax/getMyWics.php',
             method: 'post',
-            data: {org: org},
+            data: {},
             success: function (data) {
                 $('.WICS').html(data);
             }
