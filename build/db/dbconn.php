@@ -946,18 +946,14 @@ where [Service_Id] =:id");
 
 function DB_GetServiceMultimediaUnit($pdo, $idService) {
     try {
-
-//        $msg = sql($pdo, "SELECT *
-//  FROM [dbo].[Service]
-//  where [Organization_Id] =?", array($idService), "rows");
-        $stmt = $pdo->prepare("Select top(1) *
+  $stmt = $pdo->prepare("Select top(1) *
 From [Multimedia]
-where [Enabled] = 1 and [Service_Id] =:id");
+where [Service_Id] =:id");
         $stmt->bindParam(':id', $idService);
         $stmt->execute();
         $userInfo = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $userInfo['Path'] = $row['Multimedia_Path'];
+            $userInfo['Multimedia_Path'] = $row['Multimedia_Path'];
             //   $userInfo["Country_Id"] = $row["Country_Id"];
         }
         return $userInfo;
@@ -993,15 +989,15 @@ function DB_GetOrganizationServices($pdo, $org) {
     try {
         $serviceInfo = array();
         $idService = 2;
-        $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+      //  $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
         $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-        $views = DB_GetNumberServiceViews($pdo, $idService);
-        $comments = DB_GetNumberServiceComments($pdo, $idService);
-        echo $ServiceInfo["Name"];
-        echo $ServiceInfo["Description"];
-        echo $Multi['Path'];
-        echo $views['views'];
-        echo $comments['comment'];
+       // $views = DB_GetNumberServiceViews($pdo, $idService);
+      //  $comments = DB_GetNumberServiceComments($pdo, $idService);
+       // echo $ServiceInfo["Name"];
+       // echo $ServiceInfo["Description"];
+        echo $Multi['Multimedia_Path'];
+      //  echo $views['views'];
+      //  echo $comments['comment'];
     } catch (Exception $ex) {
         
     }
