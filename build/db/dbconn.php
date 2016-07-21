@@ -990,12 +990,15 @@ function getAllOrganizationServices($pdo, $org) {
         $stmt->bindParam(':id', $org);
         $stmt->execute();
         $OrgServices = array();
-        $service = null;
-        while ($row = $stmt->fetchALL(PDO::FETCH_ASSOC)) {
-//            $service['Name'] = $row['Name'];
-//            $service['Id'] = $row['Id'];
+        $rows = $stmt->fetchALL();
+        foreach($rows as $row ){
             array_push($OrgServices, $row['Id']);
         }
+        //while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+//            $service['Name'] = $row['Name'];
+//            $service['Id'] = $row['Id'];
+         //   array_push($OrgServices, $row['Id']);
+       // }
         return $OrgServices;
     } catch (PDOException $e) {
         print "ERROR READING USER PROFILE INFO!<br/>";
