@@ -1,10 +1,9 @@
 <?php
 
+include_once '../db/dbconn.php';
 include_once '../db/session.php';
-//include_once '../db/dbconn.php';
-//include_once '../db/functions.php';
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-//$userId = $_SESSION['id'];
-//getMyWics($pdo, $userId);
-echo 'TTF';
+//DB_activateUserAccount($pdo, "prcunha.383@gmail.com");
+//$email = "paulo.cunha@esprominho.pt";
+print 'SESSION INFO <br>';
+print 'ID > ' . $_SESSION['id'] . '<br>';
+var_dump($_SESSION);
