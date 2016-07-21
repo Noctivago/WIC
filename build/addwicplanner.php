@@ -6,10 +6,7 @@ include_once '../build/db/dbconn.php';
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
 $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
-
-if (isset($id)) {
-    $msg = 'ID >' . $id;
-}
+$msg = 'ID >' . $id;
 ?>
 <body>
     <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
