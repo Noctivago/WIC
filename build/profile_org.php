@@ -4,7 +4,8 @@ include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 $org = $_POST['Organization'];
 ?>
-
+ <?php DB_GetOrganizationServices($pdo, $org)?>
+                
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
