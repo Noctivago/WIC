@@ -1047,17 +1047,14 @@ function DB_ValidateSubscription($pdo, $org) {
 
 function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
-        //falta verificar se tem subscricao ativa 
-
-        if (!DB_ValidateSubscription($pdo, $org)) {
+       if (DB_ValidateSubscription($pdo, $org)) {
             echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
                     <br><br>
 Free for 3 Months</header>';
             echo '<div align="center">';
             echo '<button type="submit" class="btn btn-rounded btn-success sign-up" align="center" onClick="subscribe(' . $org . ')" >Activate</button><br><br>';
             echo '</div>';
-//falta dar o id da org
-        } else {
+      } else {
             $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
   FROM [dbo].[Service_View]
   join [User]
