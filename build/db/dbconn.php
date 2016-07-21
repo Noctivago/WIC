@@ -988,7 +988,7 @@ function DB_getUserProfileInfo($pdo, $UserId) {
 function DB_GetOrganizationServices($pdo, $org) {
     try {
       $idService = 2;
-    $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+    //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
     //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
    // $views = DB_GetNumberServiceViews($pdo, $idService);
   //  $comments = DB_GetNumberServiceComments($pdo, $idService);
