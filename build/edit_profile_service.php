@@ -14,7 +14,7 @@ include_once '../build/db/session.php';
                 <form class="sign-box"    style="max-width: 600px; width: 600px;">
                     <div class="sign-avatar no-photo">&plus;</div>
                     <div class="form-group">
-                        <button type="button" class="change-cover">
+                        <button type="button" class="change">
 				<i class="font-icon font-icon-picture-double"></i>
 				Change Picture
 				<input type="file"/>
