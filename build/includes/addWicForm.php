@@ -6,6 +6,7 @@
  */
 ?>
 <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
+
 <form class="sign-box" action="" method="post">
     <div class="sign-avatar no-photo">&plus;</div>
     <header class="sign-title">Add new Wic Planner</header>
@@ -46,6 +47,10 @@
     <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
 </form>
 
+<script src="js/lib/jquery/jquery.min.js"></script>
+<script src="js/lib/tether/tether.min.js"></script>
+<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
 <script src="js/app.js"></script>
 <script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
 <script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
