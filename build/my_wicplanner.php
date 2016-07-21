@@ -115,8 +115,6 @@ $msg = '';
                         </div>
                     </div><!--.box-typical-body-->
                 </section><!--.box-typical-->
-
-
             </div>
 
         </div><!--.container-fluid-->
