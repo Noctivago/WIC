@@ -24,7 +24,7 @@ $msg = '';
                                 <h3>My Events #WIC Planner</h3> 
                             </div>
                             <div class="tbl-cell tbl-people">
-                                <span><a class="font-icon font-icon-plus" style="align:rigth" href="addwicplanner.php">Add a new Event	</a></span>
+                                <span><a class="font-icon font-icon-plus" style="align:rigth" href="addwicplanner.php"> Add a new Event	</a></span>
                             </div>
 
                         </div>
@@ -70,31 +70,13 @@ $msg = '';
                             </table>
                         </div>
                     </div><!--.box-typical-body-->
-                </section>
-
-
-
-                </section><!--.box-typical-->
-
-
+                </section> </section><!--.box-typical-->
             </div><!--.col- -->
-
-
-
-
-
-
 
             <!--A PUTA COMEÇA AQUI-->
 
-
-
-
-
-
-
-            <div class="col-lg-6">
-                <!--<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">-->
+<!--            <div class="col-lg-6">
+                <div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
                 <section class="box-typical box-typical-max-280">
                     <header class="box-typical-header">
                         <div class="tbl-row">
@@ -124,17 +106,16 @@ $msg = '';
                                         <td class="table-photo">
                                             <a href="#" class="font-icon font-icon-del">
                                             </a>
-                                            <!--<span>&cross;</span></a>-->
+                                            <span>&cross;</span></a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                    </div><!--.box-typical-body-->
-                </section><!--.box-typical-->
+                    </div>.box-typical-body
+                </section>.box-typical
 
-
-            </div><!--.col- -->
+            </div>.col- -->
 
             <!--				<div class="col-lg-3 col-md-6 col-sm-6">
             
