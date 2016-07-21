@@ -782,12 +782,9 @@ function DB_CountPeopleInOrg($pdo) {
 //Falta colocar o id da org
 function DB_getUsersInServiceOrganization($pdo, $org) {
     try {
-
-
-        $id = 2;
         $Services = sql($pdo, "SELECT *
   FROM [Service]
-  where [Organization_Id] = ? and [Enabled] = 1", array($id), "rows");
+  where [Organization_Id] = ? and [Enabled] = 1", array($org), "rows");
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
             $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
@@ -864,10 +861,9 @@ function DB_GetOrgInformation($pdo) {
 
 function DB_GetOrgInformation2($pdo, $org) {
     try {
-        $id = 2;
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
-  where [Id] = ?", array($id), "rows");
+  where [Id] = ?", array($org), "rows");
         foreach ($rows as $row) {
             echo '<div class="text-block text-block-typical">';
             echo '<p>' . $row['Description'] . ' </p>';
@@ -1092,10 +1088,7 @@ Free for 3 Months</header>';
 //falta passar o id da org
 function DB_GetOrganizationServices($pdo, $org) {
     try {
-        //falta buscar o id da org
-        $orgId = 2;
-        $services = getAllOrganizationServices($pdo, $orgId);
-        //  $idService = 2;
+        $services = getAllOrganizationServices($pdo, $org);
         foreach ($services as $service) {
             $idService = $service['Id'];
             $ServiceInfo = DB_GetServiceInformation($pdo, $idService);

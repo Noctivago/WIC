@@ -23,7 +23,6 @@ include_once '../build/db/session.php';
                     <div class="posts-slider">
                         
 <?php  $org = (filter_var($_GET['Organization']));
-echo 'idddd'.$org;
 DB_GetOrganizationServices($pdo, $org) ?>
                     </div><!--.posts-slider-->
                 </section><!--.box-typical-->
@@ -48,7 +47,7 @@ DB_GetOrganizationServices($pdo, $org) ?>
                 </section>
             </div><!--.col- -->
 <?php
-if(DB_CheckIfBossOrg($pdo, 2, 9)){
+if(DB_CheckIfBossOrg($pdo, $org, 9)){
 echo '<div class="col-lg-3 col-md-6 col-sm-6" >';
 echo ' <section class="box-typical">';
 echo '  <div class="friends-list stripped">';
