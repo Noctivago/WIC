@@ -983,26 +983,7 @@ function DB_GetServiceInformation($pdo, $idService) {
 #die();
     }$serviceInfo = array();
 }
-function DB_GetServiceInformation($pdo, $idService) {
-    try {
-        $stmt = $pdo->prepare("SELECT *
-  FROM [dbo].[Service]
-  where [Organization_Id] =:id");
-        $stmt->bindParam(':id', $idService);
-        $stmt->execute();
-        $service = array();
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $service['Name'] = $row['Name'];
-            $service['Description'] = $row['Description'];
-            $service['Id'] = $row['Id'];
-            //   $userInfo["Country_Id"] = $row["Country_Id"];
-        }
-        return $service;
-    } catch (PDOException $e) {
-        print "ERROR READING USER PROFILE INFO!<br/>";
-#die();
-    }$serviceInfo = array();
-}
+
 
 function getAllOrganizationServices($pdo, $org) {
     try {
@@ -1013,7 +994,6 @@ function getAllOrganizationServices($pdo, $org) {
         $stmt->execute();
         $OrgServices = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
             $OrgServices["Id"] = $row["Id"];
 //            $userInfo["Country_Id"] = $row["Country_Id"];
         }
@@ -1031,39 +1011,39 @@ function DB_GetOrganizationServices($pdo, $org) {
         //falta buscar o id da org
         $orgId = 2;
         $services = getAllOrganizationServices($pdo, $orgId);
-      //  $idService = 2;
-      foreach ($services as $service){ 
-          $idService = $service['Id'];
-        $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-        $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-        $views = DB_GetNumberServiceViews($pdo, $idService);
-        $comments = DB_GetNumberServiceComments($pdo, $idService);
+        //  $idService = 2;
+        foreach ($services as $service) {
+            $idService = $service['Id'];
+            $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+            $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+            $views = DB_GetNumberServiceViews($pdo, $idService);
+            $comments = DB_GetNumberServiceComments($pdo, $idService);
             echo $idService;
-        echo '<div class = "slide">';
+            echo '<div class = "slide">';
 
-        echo '<article class = "post-announce">';
-        echo '<div class = "post-announce-pic">';
-        echo '<a href = "#">';
-        echo ' <img src = "'.$Multi['Multimedia_Path'].'" alt = "">';
-        echo '</a>';
-        echo ' </div>';
-        echo '<div class = "post-announce-title">';
-        echo '<a href = "#">'.$ServiceInfo["Name"].'</a>';
-        echo '</div>';
-        echo '<div class = "post-announce-date">Februrary 19, 2016</div>';
-        echo '<ul class = "post-announce-meta">';
-        echo '<li>';
-        echo '<i class = "font-icon font-icon-eye"></i>';
-        echo $views['NumView'];
-        echo '</li>';
-        echo '<li>';
-        echo '<i class = "font-icon font-icon-comment"></i>';
-        echo $comments['NumComment'];
-        echo '</li>';
-        echo '</ul>';
-        echo '</article>';
-        echo '</div>';
-      }
+            echo '<article class = "post-announce">';
+            echo '<div class = "post-announce-pic">';
+            echo '<a href = "#">';
+            echo ' <img src = "' . $Multi['Multimedia_Path'] . '" alt = "">';
+            echo '</a>';
+            echo ' </div>';
+            echo '<div class = "post-announce-title">';
+            echo '<a href = "#">' . $ServiceInfo["Name"] . '</a>';
+            echo '</div>';
+            echo '<div class = "post-announce-date">Februrary 19, 2016</div>';
+            echo '<ul class = "post-announce-meta">';
+            echo '<li>';
+            echo '<i class = "font-icon font-icon-eye"></i>';
+            echo $views['NumView'];
+            echo '</li>';
+            echo '<li>';
+            echo '<i class = "font-icon font-icon-comment"></i>';
+            echo $comments['NumComment'];
+            echo '</li>';
+            echo '</ul>';
+            echo '</article>';
+            echo '</div>';
+        }
 //        echo $ServiceInfo["Name"] . " ". $ServiceInfo["Description"] ." " .$Multi['Multimedia_Path']." " .$comments['NumComment'];
 //        echo $ServiceInfo["Description"];
 //        echo $Multi['Multimedia_Path'];
