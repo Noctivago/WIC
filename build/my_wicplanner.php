@@ -45,6 +45,7 @@ $msg = '';
                                 </thead>
 
                                 <tbody>
+                                    <!--COLOCAR VIA AJAX-->
                                     <?= db_getMyWicPlannerToWICCrud($pdo, $_SESSION['id']); ?>
                                     <?= db_getThirdWicPlannerToWICCrud($pdo, $_SESSION['id']); ?>
                                 </tbody>
@@ -64,10 +65,11 @@ $msg = '';
 </div>
 <script>
     function showAddWicForm() {
-        //alert('WIC PLANNER FORM');
+        alert('ADD WIC PLANNER FORM');
         $("#include").load("includes/addWicForm.php");
     }
     function showAddWicFormEditMode(idWicPlanner) {
+        alert('EDIT WIC PLANNER FORM');
         var x = idWicPlanner;
         $("#include").load("includes/addWicForm.php?id=" + x);
     }
