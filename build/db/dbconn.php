@@ -1080,7 +1080,7 @@ function DB_getPeopleViewServicesOrg($pdo, $org, $idUser) {
                 echo ' </article>';
             }
         } else {
-            echo ' <header class="box-typical-header-sm">People also viewed' . $idUser . '</header>';
+//            echo ' <header class="box-typical-header-sm">People also viewed' . $idUser . '</header>';
         }
     } catch (Exception $ex) {
         
