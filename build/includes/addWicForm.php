@@ -1,7 +1,9 @@
 <?php
 $wicPlannerId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+if (isset($wicPlannerId)) {
+    var_dump($wicPlannerId);
+}
 //$UserId = $_GET["uId"];
-var_dump($wicPlannerId);
 ?>
 <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
 
