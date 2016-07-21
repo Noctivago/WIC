@@ -56,7 +56,7 @@ $msg = '';
 
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
-            <div id = "include" class="col-lg-6">
+            <div id = "include">
 
             </div>
 
