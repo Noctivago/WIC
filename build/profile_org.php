@@ -41,7 +41,7 @@ $org = $_POST['Organization'];
                         &nbsp;
                     </header>
                     <div class="friends-list">
-                        <?php DB_getUsersInServiceOrganization($pdo, $org,9); ?>
+                        <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
                     </div>
                 </section>
             </div><!--.col- -->
@@ -50,7 +50,7 @@ $org = $_POST['Organization'];
                 <section class="box-typical">
                    
                     <div class="friends-list stripped">
-                        <?php DB_getPeopleViewServicesOrg($pdo, $org) ?>
+                        <?php DB_getPeopleViewServicesOrg($pdo, $org,9) ?>
                     </div>
                 </section><!--.box-typical-->
 
