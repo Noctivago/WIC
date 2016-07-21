@@ -1032,9 +1032,9 @@ function DB_ValidateSubscription($pdo, $org) {
         $count = sql($pdo, "SELECT *
   FROM [dbo].[Organization_Subscription]
   where [Organization_Id] = ? and [Date_Finish] > GETDATE()", array($org), "count");
-        if($count<0){
+        if ($count < 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
     } catch (Exception $ex) {
@@ -1323,6 +1323,16 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
     } catch (Exception $exc) {
         echo 'ERROR READING THIRD WIC PLANNERS';
     }
+}
+
+/**
+ * DEVOLVE TODOS OS WIC ONDE SE ENCONTRA O USER
+ * @param type $pdo
+ * @param type $userId
+ */
+function getMyWics($pdo, $userId) {
+    db_getMyWicPlannerToWICCrud($pdo, $userId);
+    db_getThirdWicPlannerToWICCrud($pdo, $userId);
 }
 
 /**
