@@ -980,11 +980,11 @@ function DB_GetOrganizationServices($pdo, $org) {
         $serviceInfo = array();
         $idService = 2;
         $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-        $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-        $views = DB_GetNumberServiceViews($pdo, $idService);
-        $comments = DB_GetNumberServiceComments($pdo, $idService);
-        echo $ServiceInfo[0];
-        echo $ServiceInfo[1];
+        //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+        //$views = DB_GetNumberServiceViews($pdo, $idService);
+        //$comments = DB_GetNumberServiceComments($pdo, $idService);
+        echo $ServiceInfo["Name"];
+        echo $ServiceInfo["Description"];
 //        echo $Multi;
 //        echo $views;
 //        echo $comments;
