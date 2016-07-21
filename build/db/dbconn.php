@@ -962,6 +962,7 @@ where [Service_Id] =:id");
 #die();
     }$serviceInfo = array();
 }
+
 function DB_GetServiceInformation($pdo, $idService) {
     try {
         $stmt = $pdo->prepare("SELECT *
@@ -1018,31 +1019,25 @@ function DB_GetOrganizationServices($pdo, $org) {
         echo '<article class = "post-announce">';
         echo '<div class = "post-announce-pic">';
         echo '<a href = "#">';
-        echo ' <img src = "img/post-1.jpeg" alt = "">';
+        echo ' <img src = "'.$Multi['Multimedia_Path'].'" alt = "">';
         echo '</a>';
         echo ' </div>';
         echo '<div class = "post-announce-title">';
-        echo '<a href = "#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>';
+        echo '<a href = "#">'.$ServiceInfo["Name"].'</a>';
         echo '</div>';
         echo '<div class = "post-announce-date">Februrary 19, 2016</div>';
         echo '<ul class = "post-announce-meta">';
         echo '<li>';
         echo '<i class = "font-icon font-icon-eye"></i>';
+        echo $views['view'];
         echo '</li>';
         echo '<li>';
         echo '<i class = "font-icon font-icon-comment"></i>';
-        echo '3K';
+        echo $comments['NumComment'];
         echo '</li>';
         echo '</ul>';
         echo '</article>';
         echo '</div>';
-
-//    $serviceInfo = array();
-//    $idService = 2;
-//    $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-//    $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-//    $views = DB_GetNumberServiceViews($pdo, $idService);
-//    $comments = DB_GetNumberServiceComments($pdo, $idService);
 //        echo $ServiceInfo["Name"] . " ". $ServiceInfo["Description"] ." " .$Multi['Multimedia_Path']." " .$comments['NumComment'];
 //        echo $ServiceInfo["Description"];
 //        echo $Multi['Multimedia_Path'];
