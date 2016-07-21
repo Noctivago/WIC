@@ -25,7 +25,7 @@ $msg = '';
                             </div>
                             <div class="tbl-cell tbl-people">
                                 <!--<span><a class="font-icon font-icon-plus" style="align:rigth" href="addwicplanner.php"> Add a new Event	</a></span>-->
-                                <span><a class="font-icon font-icon-plus" style="align:rigth"> New Event?</a></span>
+                                <span><a class="font-icon font-icon-plus" onclick="showAddWicForm()" style="align:rigth"> New Event?</a></span>
                             </div>
 
                         </div>
@@ -63,6 +63,13 @@ $msg = '';
         </div><!--.container-fluid-->
     </div><!--.page-content-->
 </div>
+<script>
+    function showAddWicForm() {
+        alert("INCLUDING ADD WIC PLANNER!");
+        $("#include").load("includes/addWicForm.php");
+    }
+</script>
+
 <script>
     $(document).ready(function () {
         $('.panel').lobiPanel({
