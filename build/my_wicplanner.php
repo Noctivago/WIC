@@ -57,7 +57,7 @@ $msg = '';
 
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
-            <div class="col-lg-6 include">
+            <div id="include" class="col-lg-6">
 
             </div>
         </div><!--.container-fluid-->
@@ -81,9 +81,10 @@ $msg = '';
             method: 'post',
             data: {con: x},
             success: function (data) {
-                $('.include').html(data);
+                $('#include').html(data);
                 // $("#include")
-            }
+            },
+            error: alert('TTF');
         });
     }
 </script>
@@ -93,7 +94,6 @@ $msg = '';
         $('.panel').lobiPanel({
             sortable: true
         });
-
         google.charts.load('current', {'packages': ['corechart']});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
@@ -113,7 +113,6 @@ $msg = '';
                 ['MON', 220, '220'],
                 ['TUE', 220, ' ']
             ]);
-
             var options = {
                 height: 314,
                 legend: 'none',
@@ -170,7 +169,6 @@ $msg = '';
                     isHtml: true
                 }
             };
-
             var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
             chart.draw(dataTable, options);
         }
@@ -179,12 +177,10 @@ $msg = '';
             setTimeout(function () {
             }, 1000);
         });
-
         $('.panel').on('dragged.lobiPanel', function (ev, lobiPanel) {
             $('.dahsboard-column').matchHeight();
         });
-    });
-</script>
+    });</script>
 
 <script src="js/app.js"></script>
 
