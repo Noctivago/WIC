@@ -70,7 +70,7 @@ $msg = '';
     function showWicServicesForm(idWicPlanner) {
         var x = idWicPlanner;
         var u = <?= $_SESSION['id'] ?>
-        $("#include").load("includes/showWicServices.php?id=" + x + '&uId=' + u);
+        $("#include").load("includes/showWicServices.php?id=" + x + "&uId=" + u);
     }
 </script>
 
