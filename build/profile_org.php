@@ -46,7 +46,7 @@ $org = $_POST['Organization'];
                 </section>
             </div><!--.col- -->
 
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-3 col-md-6 col-sm-6" style="Display:none">
                 <section class="box-typical">
                    
                     <div class="friends-list stripped">
