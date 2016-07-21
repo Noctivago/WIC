@@ -58,7 +58,7 @@ $msg = '';
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
             <div id="include" class="col-lg-6">
-
+               
             </div>
         </div><!--.container-fluid-->
     </div><!--.page-content-->
@@ -66,7 +66,7 @@ $msg = '';
 <script>
     function showAddWicForm() {
         alert('ADD WIC PLANNER FORM');
-        $("#include").load("./addwicplanner.php");
+        $("#include").load("addwicplanner.php");
     }
     function showAddWicFormEditMode(idWicPlanner) {
         //PASSAR USERID > FAZER UPDATE WHERE USERID = USERID
