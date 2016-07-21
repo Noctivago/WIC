@@ -15,7 +15,7 @@ include_once '../build/db/session.php';
                     
                         <button type="button" class="change-cover">
 				<i class="font-icon font-icon-picture-double"></i>
-				Change cover
+				Change Picture
 				<input type="file"/>
                         </button>
                     <div class="form-group">
