@@ -12,11 +12,7 @@ $msg = '';
 <div onload="loadMyWics()"class="page-content" style="height: 817px;">
     <div class="container-fluid">
         <div class="row" style="height: 700px;">
-
             <div class="col-lg-6">
-
-                <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
-
                 <section class="box-typical box-typical-max-280">
                     <header class="box-typical-header">
                         <div class="tbl-row">
@@ -28,7 +24,6 @@ $msg = '';
                                 <!--<span><a class="font-icon font-icon-plus" onclick="showAddWicForm()" style="align:rigth"> New Event?</a></span>-->
                                 <span><a class="font-icon font-icon-plus" onclick="loadMyWics()" style="align:rigth"> New Event?</a></span>
                             </div>
-
                         </div>
                     </header>
                     <div class="box-typical-body" style="overflow: hidden; padding: 0px; height: 700px; width: 504px;">
@@ -44,17 +39,14 @@ $msg = '';
                                         <th></th>
                                     </tr>
                                 </thead>
-
                                 <tbody class="WICS">
-                                    <!--COLOCAR VIA AJAX-->
-                                    
+                                    <!--COLOCAR VIA AJAX-->                                   
                                 </tbody>
                             </table>
                         </div>
                     </div><!--.box-typical-body-->
                 </section><!--.box-typical-->
             </div><!--.col- -->
-
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
             <div id="include" class="col-lg-6">
