@@ -1027,15 +1027,18 @@ function DB_getPeopleViewServicesOrg($pdo, $org) {
             echo '<div class="tbl-row">';
             echo '<div class="tbl-cell tbl-cell-photo">';
             echo '<a href = "#">';
-            echo '<img src="'.$row['Picture_Path'].'" alt="">';
+            echo '<img src="' . $row['Picture_Path'] . '" alt="">';
             echo '</a>';
             echo '</div>';
             echo '<div class = "tbl-cell">';
-            echo '<p class="user-card-row-name"><a href="#"'.$row['First_Name'].'</a></p>';
-            echo '<p class="user-card-row-status">Service <a href="#">'.$row['Name'].'</a></p>';
+            echo '<p class="user-card-row-name"><a href="#"' . $row['First_Name'] . '</a></p>';
+
+//falta colocar o link para ver o servico
+            echo '<p class="user-card-row-status">Service <a href="#">' . $row['Name'] . '</a></p>';
             echo '</div>';
             echo '<div class="tbl-cell tbl-cell-action">';
-            //falta inserir o iniciar chat
+
+//falta inserir o iniciar chat
             echo '<a href = "#" class = "plus-link-circle"><span>&plus;
             </span></a>';
             echo '</div>';
