@@ -3,7 +3,7 @@ include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 $org = (filter_var($_POST['Organization']));
-echo $org;
+echo 'idddd'.$org;
 ?>
 
 <div class="page-content">
