@@ -19,6 +19,7 @@ include ("includes/head_sideMenu.php");
                         <input type="text" class="form-control" placeholder="Name"/>
                         <i class="font-icon font-icon-user"></i>
                         </div>
+                    </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder="Telephone Number"/>
@@ -48,7 +49,7 @@ include ("includes/head_sideMenu.php");
                         <input type="text" class="form-control" placeholder="Twitter Account"/>
                         <i class="font-icon font-icon-twitter"></i>
                         </div>
-                        <br>
+                    </div>
                         
                    <div class="form-group row">
                         
