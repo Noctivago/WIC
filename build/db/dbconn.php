@@ -1029,6 +1029,7 @@ function getAllOrganizationServices($pdo, $org) {
 function DB_GetOrganizationServices($pdo, $org) {
     try {
         //falta buscar o id da org
+        $orgId = 2;
         $services = getAllOrganizationServices($pdo, $orgId);
       //  $idService = 2;
       foreach ($services as $service){ 
