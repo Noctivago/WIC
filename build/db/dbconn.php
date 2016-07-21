@@ -1358,7 +1358,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             echo '<tbody>';
             echo '<tr class="table-check">';
             //echo '<td><a href="../profile_org.php?Organization=' . $row['OID'] . '">Nome</a></td>';
-            echo '<td><a href="../profile_org.php?Organization=' . $row['OID'] . '">' . $row['SNA'] . '</a></td>';
+            echo '<td><a href="../service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>';
             echo '<td class="table-photo">';
             echo '<img src="' . $row['OPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['ONA'] . '">';
             echo '</td>';
