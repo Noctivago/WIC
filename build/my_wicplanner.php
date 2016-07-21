@@ -69,11 +69,13 @@ $msg = '';
         $("#include").load("includes/addWicForm.php");
     }
     function showAddWicFormEditMode(idWicPlanner) {
+        //PASSAR USERID > FAZER UPDATE WHERE USERID = USERID
         alert('EDIT WIC PLANNER FORM');
         var x = idWicPlanner;
         $("#include").load("includes/addWicForm.php?id=" + x);
     }
     function showWicServicesForm(idWicPlanner) {
+        //VERIFICAR SE USER PERTENCE AO WIC PLANNER OU SE WIC PLANNER E DO USER
          alert('SHOW WIC PLANNER SERVICES');
         var x = idWicPlanner;
         var u = <?= $_SESSION['id'] ?>;
