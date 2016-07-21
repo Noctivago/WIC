@@ -707,11 +707,10 @@ function DB_getMyWICs($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT [WIC_Planner].[Id]
         ,[WIC_Planner].[Name] AS WPN
-        ,[City].[Name] AS WPC
+        
         ,[WIC_Planner].[Event_Date] AS WPD
         FROM [dbo].[WIC_Planner]
-        join [City]
-        on [WIC_Planner].[City_Id]=[City].[Id]
+        
         WHERE [WIC_Planner].[Enabled]= 1 
         AND [WIC_Planner].[User_Id] = ? ORDER BY WPD DESC", array($userId), "rows");
         foreach ($rows as $row) {
@@ -722,7 +721,7 @@ function DB_getMyWICs($pdo, $userId) {
             //echo '<a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt="WIC Logo"></a>';
             //echo '</div>';
             echo '<div class="follow-group-name">';
-            echo '<a href="#">' . $row['WPN'] . ' @' . $row['WPC'] . '</a>';
+            echo '<a href="#">' . $row['WPN'] . '</a>';
             $str = $row['WPD'];
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
@@ -1088,15 +1087,14 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
         $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
         ,[WIC_Planner].[Name] AS WPN
         ,[WIC_Planner].[Event_Date] AS WPED
-        ,[City].[Name] AS CNA
+        
             ,[User_Profile].[First_Name] AS UFN
             ,[User_Profile].[Last_Name] AS ULN
             ,[User_Profile].[Picture_Path] AS UPP
         FROM [dbo].[WIC_Planner]
         join [User]
         on [User].[id] = [WIC_Planner].[User_Id]
-        join [City]
-        on [WIC_Planner].[City_Id] = [City].[Id]  
+       
         join [User_Profile]
         on [WIC_Planner].[User_Id] = [User_Profile].[User_Id]
         WHERE [WIC_Planner].[Enabled] = 1
@@ -1136,7 +1134,7 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
       ,[WIC_Planner].[Name] AS WPN
-      ,[City].[Name] AS CNA
+      
       ,[Event_Date] AS WPED
 	  ,[User_Profile].[First_Name] AS UFN
 	  ,[User_Profile].[Last_Name]  AS ULN 
@@ -1144,8 +1142,7 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
         FROM [dbo].[WIC_Planner]
         join [User]
         on [User].[id] = [WIC_Planner].[User_Id]
-        join [City]
-        on [WIC_Planner].[City_Id] = [City].[Id]  
+        
         join [User_Profile]
         on [WIC_Planner].[User_Id] = [User_Profile].[User_Id]
         join [WIC_Planner_User]
