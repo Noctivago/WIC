@@ -47,7 +47,7 @@ DB_GetOrganizationServices($pdo, $org) ?>
                 </section>
             </div><!--.col- -->
 <?php
-if(DB_CheckIfBossOrg($pdo, $org, 9)){
+if(DB_CheckIfBossOrg($pdo, $org, 8)){
 echo '<div class="col-lg-3 col-md-6 col-sm-6" >';
 echo ' <section class="box-typical">';
 echo '  <div class="friends-list stripped">';
