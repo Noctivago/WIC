@@ -990,8 +990,11 @@ function getAllOrganizationServices($pdo, $org) {
         $stmt->bindParam(':id', $org);
         $stmt->execute();
         $OrgServices = array();
+        $service = null;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            array_push($OrgServices, $row["Id"]);
+            $service['Name'] = $row['Name'];
+            $service['Id'] = $row['Id'];
+            array_push($OrgServices, $service);
         }
         return $OrgServices;
     } catch (PDOException $e) {
@@ -1010,13 +1013,14 @@ function DB_GetOrganizationServices($pdo, $org) {
         //  $idService = 2;
         foreach ($services as $service) {
             $idService = $service['Id'];
-            $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+            //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
             $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
             $views = DB_GetNumberServiceViews($pdo, $idService);
             $comments = DB_GetNumberServiceComments($pdo, $idService);
             echo $comments['NumComment'];
             echo $views['NumView'];
-            echo $ServiceInfo['Name'];
+            echo $Service['Name'];
+            echo $service['Id'];
             echo '<div class = "slide">';
             echo '<article class = "post-announce">';
             echo '<div class = "post-announce-pic">';
