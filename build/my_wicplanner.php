@@ -65,7 +65,7 @@ $msg = '';
 <script>
     function loadMyWics() {
         $.ajax({
-            url: '../build/ajax/get_state.php',
+            url: 'ajax/getMyWics.php',
             method: 'post',
             data: {},
             success: function (data) {
