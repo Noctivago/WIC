@@ -4,7 +4,6 @@ include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 $org = $_POST['Organization'];
 ?>
- <?php DB_GetOrganizationServices($pdo, $org)?>
                 
 <div class="page-content">
     <div class="container-fluid">
@@ -64,7 +63,8 @@ $org = $_POST['Organization'];
                                 <ul class="post-announce-meta">
                                     <li>
                                         <i class="font-icon font-icon-eye"></i>
-                                        18
+                                         <?php DB_GetOrganizationServices($pdo, $org)?>
+
                                     </li>
                                     <li>
                                         <i class="font-icon font-icon-heart"></i>
