@@ -21,6 +21,7 @@ function getDateToDB() {
     return $now->format('Y-m-d H:i:s');
 }
 
+
 function getDateToDBStringToDate($date) {
     $ymd = DateTime::createFromFormat('Y-m-d', $date)->format('Y-m-d H:i:s');
     return $ymd;
