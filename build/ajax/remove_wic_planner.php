@@ -8,4 +8,4 @@ $WicPlannerId = (filter_var($_POST ['con']));
 $userId = $SESSION['id'];
 
 //REMOVE WICPLANNER
-DB_getCityAsSelectByStateSelected($pdo, $State_Id);
+DB_removeWICPlanner($pdo, $userId, $WicPlannerId);

@@ -1335,6 +1335,25 @@ function DB_getMyWicsAjax($pdo, $userId) {
     echo db_getThirdWicPlannerToWICCrud($pdo, $userId);
 }
 
+function DB_removeWICPlanner($pdo, $userId, $wicId) {
+    try {
+        $stmt = $pdo->prepare("UPDATE [WIC_Planner]
+        SET [WIC_Planner].[Enabled]=0 WHERE [WIC_Planner].[Id]= :WICID 
+        AND [WIC_Planner].[User_Id]= :UID ");
+        $stmt->bindParam(':WICID', $wicId);
+        $stmt->bindParam(':UID', $userId);
+        $stmt->execute();
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (PDOException $e) {
+        echo 'ERROR REMOVING WIC PLANNER! :(';
+        die();
+    }
+}
+
 /**
  * Função que devolve os serviços do meu WIC Planner
  * @param type $pdo

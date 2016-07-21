@@ -8,7 +8,7 @@ ini_set("display_errors", 1);
 $msg = '';
 ?>
 
-<div onload="loadMyWics()" class="page-content" style="height: 817px;">
+<div class="page-content" style="height: 817px;">
     <div class="container-fluid">
         <div class="row" style="height: 700px;">
             <div class="col-lg-6">
@@ -62,6 +62,18 @@ $msg = '';
             data: {},
             success: function (data) {
                 $('.WICS').html(data);
+            }
+        });
+    }
+    function removeWic() {
+        var id = this.id;
+        alert(id);
+        $.ajax({
+            url: 'ajax/remove_wic_planner.php',
+            method: 'post',
+            data: {con: id},
+            success: function (data) {
+                loadMyWics();
             }
         });
     }
