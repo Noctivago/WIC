@@ -1330,7 +1330,7 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
  * @param type $pdo
  * @param type $userId
  */
-function getMyWics($pdo, $userId) {
+function DB_getMyWicsAjax($pdo, $userId) {
     echo db_getMyWicPlannerToWICCrud($pdo, $userId);
     echo db_getThirdWicPlannerToWICCrud($pdo, $userId);
 }
