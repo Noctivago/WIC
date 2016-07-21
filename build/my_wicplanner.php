@@ -73,7 +73,8 @@ $msg = '';
             method: 'post',
             data: {con: id},
             success: function (data) {
-                loadMyWics();
+                //loadMyWics(),
+                alert(data);
             }
         });
     }
