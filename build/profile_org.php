@@ -35,7 +35,6 @@ $org = $_POST['Organization'];
                         </div>
                     </div>
                 </form>.box-typical-->
-                 <?php DB_GetOrganizationServices($pdo, $org)?>
                        
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
