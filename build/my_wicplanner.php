@@ -81,7 +81,7 @@ $msg = '';
             method: 'post',
             data: {con: x},
             success: function (data) {
-                $('.include').html(data);
+                $('#include').load(data);
                 // $("#include")
             }
         });
