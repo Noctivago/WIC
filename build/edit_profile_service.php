@@ -13,11 +13,11 @@ include_once '../build/db/session.php';
                     <div class="sign-avatar no-photo">&plus;</div>
                     <header class="sign-title">Edit Service Profile</header>
                     
-                    <button type="button" class="change-cover">
+                        <button type="button" class="change-cover">
 				<i class="font-icon font-icon-picture-double"></i>
 				Change cover
 				<input type="file"/>
-			</button>
+                        </button>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder=" Service Name"/>
