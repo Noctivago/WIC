@@ -75,10 +75,16 @@ $msg = '';
         $("#include").load("includes/addWicForm.php?id=" + x);
     }
     function showWicServicesForm(idWicPlanner) {
-        //VERIFICAR SE USER PERTENCE AO WIC PLANNER OU SE WIC PLANNER E DO USER
-        alert('SHOW WIC PLANNER SERVICES');
         var x = idWicPlanner;
-        $("#include").load("includes/showWicServices.php?id=" + x);
+        $.ajax({
+            url: '../ajax/showWicServices.php',
+            method: 'post',
+            data: {con: x},
+            success: function (data) {
+                $('.include').html(data);
+                // $("#include")
+            }
+        });
     }
 </script>
 
