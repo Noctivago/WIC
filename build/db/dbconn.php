@@ -1160,6 +1160,7 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
             echo '<td class="table-photo">';
             echo '<img src="' . $row['UPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
             echo '</td>';
+//COMO USER E CONVIDADO APENAS PODE VER/REMOVER E ADICIONAR SERVIÇOS            
 //            echo '<td class="table-photo">';
 //            echo '<a href="#" class="font-icon font-icon-pencil">';
 //            echo '</a>';
@@ -1171,6 +1172,6 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
             echo '</tr>';
         }
     } catch (Exception $exc) {
-        echo 'ERROR READING MY WIC PLANNERS';
+        echo 'ERROR READING THIRD WIC PLANNERS';
     }
 }
