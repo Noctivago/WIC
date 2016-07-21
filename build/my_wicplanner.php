@@ -51,7 +51,7 @@ $msg = '';
                             </table>
                         </div>
                     </div><!--.box-typical-body-->
-                </section> </section><!--.box-typical-->
+                </section><!--.box-typical-->
             </div><!--.col- -->
 
             <!--A PUTA COMEÇA AQUI-->
