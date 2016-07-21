@@ -721,7 +721,7 @@ function DB_getMyWICs($pdo, $userId) {
             //echo '<a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt="WIC Logo"></a>';
             //echo '</div>';
             echo '<div class="follow-group-name">';
-            echo '<a href="#">' . $row['WPN'] . '</a>';
+            echo '<a href="my_wicplanner.php">' . $row['WPN'] . '</a>';
             $str = $row['WPD'];
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
@@ -1030,7 +1030,7 @@ function DB_CheckIfBossOrg($pdo, $org, $idUser) {
 function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
         //falta verificar se tem subscricao ativa 
-        
+
         if (true) {
             echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
                     <br><br>
