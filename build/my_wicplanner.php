@@ -25,7 +25,7 @@ $msg = '';
                             </div>
                             <div class="tbl-cell tbl-people">
                                 <!--<span><a class="font-icon font-icon-plus" style="align:rigth" href="addwicplanner.php"> Add a new Event	</a></span>-->
-                                <span><a class="font-icon font-icon-plus" onclick="showAddForm()" style="align:rigth"> New Event?</a></span>
+                                <span><a class="font-icon font-icon-plus" style="align:rigth"> New Event?</a></span>
                             </div>
 
                         </div>
@@ -47,16 +47,36 @@ $msg = '';
                                 <tbody>
                                     <?= db_getMyWicPlannerToWICCrud($pdo, $_SESSION['id']); ?>
                                     <?= db_getThirdWicPlannerToWICCrud($pdo, $_SESSION['id']); ?>
+<!--                                    <tr class="table-check">
+                                        <td><a href="#">Nome</a></td>
+                                        <td>Daata</td>
+                                        <td class="table-photo">
+                                            <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+                                        </td>
+                                        <td class="table-photo">
+
+                                            <a href="#" class="font-icon font-icon-pencil">
+                                            </a>
+
+                                        </td>
+                                        <td class="table-photo">
+
+                                            <a href="#" class="font-icon font-icon-del">
+                                            </a>
+                                            <span>&cross;</span></a>
+                                        </td>
+                                    </tr>-->
+
                                 </tbody>
                             </table>
                         </div>
                     </div><!--.box-typical-body-->
-                </section><!--.box-typical-->
+                </section> </section><!--.box-typical-->
             </div><!--.col- -->
 
             <!--A PUTA COMEÇA AQUI-->
 
-            <div class="col-lg-6">
+            <!--            <div class="col-lg-6">
                             <div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
                             <section class="box-typical box-typical-max-280">
                                 <header class="box-typical-header">
@@ -96,7 +116,7 @@ $msg = '';
                                 </div>.box-typical-body
                             </section>.box-typical
             
-                        </div>
+                        </div>.col- -->
 
             <!--				<div class="col-lg-3 col-md-6 col-sm-6">
             
@@ -203,15 +223,16 @@ $msg = '';
     });
 </script>
 
-<script>
-    function showAddForm() {
-        alert("I am an alert box!");
-    }
-</script>
+
+
+
 <script src="js/app.js"></script>
+
+
 
 <!--        <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>-->
         <!--<script src="js/lib/tether/tether.min.js" type="text/javascript"></script>-->
+
 
 <!--<script src="js/lib/tether/tether.min.js"></script>-->
 <!--<script src="js/lib/bootstrap/bootstrap.min.js"></script>-->
@@ -222,7 +243,11 @@ $msg = '';
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+
 <script src="js/lib/salvattore/salvattore.min.js"></script>
+
+
+
 
 <script src="js/lib/jquery/jquery.min.js"></script>
 <script src="js/lib/tether/tether.min.js"></script>
