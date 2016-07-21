@@ -25,7 +25,7 @@ $msg = '';
                             </div>
                             <div class="tbl-cell tbl-people">
                                 <!--<span><a class="font-icon font-icon-plus" style="align:rigth" href="addwicplanner.php"> Add a new Event	</a></span>-->
-                                <span><a class="font-icon font-icon-plus" onclick="myFunction()" style="align:rigth"> New Event?</a></span>
+                                <span><a class="font-icon font-icon-plus" onclick="showAddForm()" style="align:rigth"> New Event?</a></span>
                             </div>
 
                         </div>
@@ -204,7 +204,7 @@ $msg = '';
 </script>
 
 <script>
-    function myFunction() {
+    function showAddForm() {
         alert("I am an alert box!");
     }
 </script>
