@@ -1,6 +1,6 @@
 <?php
 //FUNCA X) NA QUERY VERIFICAR SE O USER PERTENCE A ESTE WIC PLANNER; SE SIM MOSTRA
-$wicPlannerId = $_GET["id"];
+$wicPlannerId = INPUT_GET($_GET["id"]);
 //$UserId = $_GET["uId"];
 var_dump($wicPlannerId);
 ?>
