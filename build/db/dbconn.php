@@ -1029,18 +1029,13 @@ function DB_CheckIfBossOrg($pdo, $org, $idUser) {
 
 function DB_ValidateSubscription($pdo, $org) {
     try {
-        $rows = sql($pdo, "SELECT *
+        $count = sql($pdo, "SELECT *
   FROM [dbo].[Organization_Subscription]
-  where [Organization_Id] = ?", array($org), "rows");
-        foreach ($rows as $row) {
-            $d = new DateTime('now');
-            $datetime2 = $row['Date_Finish'];
-            //$interval = $d->diff($datetime2);
-            if($interval<0){
-                return FALSE;
-            }else{
-                return TRUE;
-            }
+  where [Organization_Id] = ? and [Date_Finish] > GETDATE()", array($org), "count");
+        if($count<0){
+            return true;
+        }else{
+            return false;
         }
     } catch (Exception $ex) {
         
@@ -1049,9 +1044,7 @@ function DB_ValidateSubscription($pdo, $org) {
 
 function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
-        $d = new DateTime('now');
-        echo 'daaaataaa'.$d;
-        if (TRUE) {
+        if (DB_ValidateSubscription($pdo, $org)) {
             echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
                     <br><br>
 Free for 3 Months</header>';
