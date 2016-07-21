@@ -47,26 +47,6 @@ $msg = '';
                                 <tbody>
                                     <?= db_getMyWicPlannerToWICCrud($pdo, $_SESSION['id']); ?>
                                     <?= db_getThirdWicPlannerToWICCrud($pdo, $_SESSION['id']); ?>
-<!--                                    <tr class="table-check">
-                                        <td><a href="#">Nome</a></td>
-                                        <td>Daata</td>
-                                        <td class="table-photo">
-                                            <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                        </td>
-                                        <td class="table-photo">
-
-                                            <a href="#" class="font-icon font-icon-pencil">
-                                            </a>
-
-                                        </td>
-                                        <td class="table-photo">
-
-                                            <a href="#" class="font-icon font-icon-del">
-                                            </a>
-                                            <span>&cross;</span></a>
-                                        </td>
-                                    </tr>-->
-
                                 </tbody>
                             </table>
                         </div>
@@ -75,7 +55,7 @@ $msg = '';
             </div><!--.col- -->
 
             <!--A PUTA COMEÇA AQUI-->
-
+            <!--SECÇAO PARA INCLUDES-->
             <div id = "include" class="col-lg-6">
 
             </div>
