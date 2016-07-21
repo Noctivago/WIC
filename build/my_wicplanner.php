@@ -66,7 +66,7 @@ $msg = '';
 <script>
     function showAddWicForm() {
         alert('ADD WIC PLANNER FORM');
-        $("#include").load("includes/addWicForm.php");
+        $("#include").load("./addwicplanner.php");
     }
     function showAddWicFormEditMode(idWicPlanner) {
         //PASSAR USERID > FAZER UPDATE WHERE USERID = USERID
