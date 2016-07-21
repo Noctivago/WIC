@@ -5,7 +5,11 @@ include_once '../build/db/functions.php';
 include_once '../build/db/dbconn.php';
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
-$msg = '';
+$id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+
+if (isset($id)) {
+    $msg = 'ID >' . $id;
+}
 ?>
 <body>
     <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
@@ -24,6 +28,7 @@ $msg = '';
                     <i class="font-icon font-icon-calend"></i>
                 </span>
             </div>
+            <?= $msg = ''; ?>
             <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
         </form>
     </div>
