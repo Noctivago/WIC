@@ -966,7 +966,7 @@ function DB_GetServiceInformation($pdo, $idService) {
     try {
         $stmt = $pdo->prepare("SELECT [Name]
   FROM [dbo].[Service]
-  where [Organization_Id] =:id");
+  where [Id] =:id");
         $stmt->bindParam(':id', $idService);
         $stmt->execute();
         $serv = array();
