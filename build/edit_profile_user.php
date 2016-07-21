@@ -27,17 +27,18 @@ include ("includes/head_sideMenu.php");
                         <input type="text" class="form-control" placeholder="Facebook Account"/>
                     </div>
                     <div class="form-group">
-                         <label for="exampleSelect" class="col-sm-2 form-control-label">Linkedin Account</label>
+                         
                         <input type="text" class="form-control" placeholder="Linkedin Account"/>
                     </div>
                     <div class="form-group">
-                         <label for="exampleSelect" class="col-sm-2 form-control-label">Twitter Account</label>
+                         
                         <input type="text" class="form-control" placeholder="Twitter Account"/>
                     </div>
                    <div class="form-group row">
-                        <label for="exampleSelect" class="col-sm-2 form-control-label">Personal Info</label>
-						<div >
+                        
+						<div class="form-control-wrapper form-control-icon-left" >
 							<textarea rows="4" class="form-control" placeholder="Personal Info"></textarea>
+                                                        <i class="font-icon font-icon-user"
 						</div>
                     </div>
                     <div class="form-group">
