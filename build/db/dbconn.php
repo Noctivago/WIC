@@ -962,6 +962,26 @@ where [Service_Id] =:id");
 #die();
     }$serviceInfo = array();
 }
+function DB_GetServiceInformation($pdo, $idService) {
+    try {
+        $stmt = $pdo->prepare("SELECT *
+  FROM [dbo].[Service]
+  where [Organization_Id] =:id");
+        $stmt->bindParam(':id', $idService);
+        $stmt->execute();
+        $service = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $service['Name'] = $row['Name'];
+            $service['Description'] = $row['Description'];
+            $service['Id'] = $row['Id'];
+            //   $userInfo["Country_Id"] = $row["Country_Id"];
+        }
+        return $service;
+    } catch (PDOException $e) {
+        print "ERROR READING USER PROFILE INFO!<br/>";
+#die();
+    }$serviceInfo = array();
+}
 
 function DB_getUserProfileInfo($pdo, $UserId) {
     try {
@@ -988,7 +1008,7 @@ function DB_getUserProfileInfo($pdo, $UserId) {
 function DB_GetOrganizationServices($pdo, $org) {
     try {
         $idService = 2;
-        //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+        $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
         $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
         $views = DB_GetNumberServiceViews($pdo, $idService);
         $comments = DB_GetNumberServiceComments($pdo, $idService);
