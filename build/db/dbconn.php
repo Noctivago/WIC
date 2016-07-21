@@ -1033,11 +1033,11 @@ function DB_GetOrganizationServices($pdo, $org) {
       //  $idService = 2;
       foreach ($services as $service){ 
           $idService = $service['Id'];
-        $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-        $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-        $views = DB_GetNumberServiceViews($pdo, $idService);
-        $comments = DB_GetNumberServiceComments($pdo, $idService);
-
+     //   $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+    //    $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+  //      $views = DB_GetNumberServiceViews($pdo, $idService);
+//        $comments = DB_GetNumberServiceComments($pdo, $idService);
+            echo $idService;
         echo '<div class = "slide">';
 
         echo '<article class = "post-announce">';
