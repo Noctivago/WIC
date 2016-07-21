@@ -66,7 +66,7 @@ $msg = '';
         });
     }
     function removeWic(x) {
-        var id = x;
+        var id = x.id;
         alert(id);
         $.ajax({
             url: 'ajax/remove_wic_planner.php',
