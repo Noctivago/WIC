@@ -1018,11 +1018,28 @@ function getAllOrganizationServices($pdo, $org) {
     }
 }
 
+function DB_CheckIfBossOrg($pdo,$org,$idUser){
+try {
+    $count =sql($pdo,"SELECT *
+  FROM [dbo].[Organization]
+  where [Id] =? and [User_Boss] = ?",array($org,$idUser),"count");
+    if($Count < 0 ){
+    return true;
+    }else{
+        return false;
+    }
+} catch (Exception $ex) {}
+}
+
+
 function DB_getPeopleViewServicesOrg($pdo, $org,$idUser) {
     try {
+       $OrgId = 2;
+        $response = DB_CheckIfBossOrg($pdo,$org,$idUser);
+        //check boss 
+        if($response){
         echo $idUser;
         //falta dar o id da org
-        $OrgId = 2;
         $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
   FROM [dbo].[Service_View]
   join [User]
@@ -1062,6 +1079,10 @@ function DB_getPeopleViewServicesOrg($pdo, $org,$idUser) {
             echo '</div>';
             echo '</div>';
             echo ' </article>';
+        }
+        
+        }else{
+            echo ' <header class="box-typical-header-sm">People also viewed'.$idUser.'</header>';
         }
     } catch (Exception $ex) {
         
