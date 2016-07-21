@@ -983,21 +983,41 @@ function DB_GetServiceInformation($pdo, $idService) {
 #die();
     }$serviceInfo = array();
 }
-
-function DB_getUserProfileInfo($pdo, $UserId) {
+function DB_GetServiceInformation($pdo, $idService) {
     try {
-        $stmt = $pdo->prepare("SELECT * FROM [dbo].[Profile] WHERE [User_Id]=:id");
-        $stmt->bindParam(':id', $UserId);
+        $stmt = $pdo->prepare("SELECT *
+  FROM [dbo].[Service]
+  where [Organization_Id] =:id");
+        $stmt->bindParam(':id', $idService);
         $stmt->execute();
-        $userInfo = array();
+        $service = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $service['Name'] = $row['Name'];
+            $service['Description'] = $row['Description'];
+            $service['Id'] = $row['Id'];
+            //   $userInfo["Country_Id"] = $row["Country_Id"];
+        }
+        return $service;
+    } catch (PDOException $e) {
+        print "ERROR READING USER PROFILE INFO!<br/>";
+#die();
+    }$serviceInfo = array();
+}
+
+function getOrganizationServices($pdo, $org) {
+    try {
+        $stmt = $pdo->prepare("SELECT *
+  FROM [dbo].[Service]
+  where [Enabled]=1 and [organization_id] =:id");
+        $stmt->bindParam(':id', $org);
+        $stmt->execute();
+        $OrgServices = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-            $userInfo["Id"] = $row["Id"];
-            $userInfo["First_Name"] = $row["First_Name"];
-            $userInfo["Last_Name"] = $row["Last_Name"];
+            $OrgServices["Id"] = $row["Id"];
 //            $userInfo["Country_Id"] = $row["Country_Id"];
         }
-        return $userInfo;
+        return $OrgServices;
     } catch (PDOException $e) {
         print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
@@ -1008,7 +1028,11 @@ function DB_getUserProfileInfo($pdo, $UserId) {
 //falta passar o id da org
 function DB_GetOrganizationServices($pdo, $org) {
     try {
-        $idService = 2;
+        //falta buscar o id da org
+        $services = DB_GetOrganizationServices($pdo, $orgId);
+      //  $idService = 2;
+      foreach ($services as $service){ 
+          $idService = $service['Id'];
         $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
         $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
         $views = DB_GetNumberServiceViews($pdo, $idService);
@@ -1038,6 +1062,7 @@ function DB_GetOrganizationServices($pdo, $org) {
         echo '</ul>';
         echo '</article>';
         echo '</div>';
+      }
 //        echo $ServiceInfo["Name"] . " ". $ServiceInfo["Description"] ." " .$Multi['Multimedia_Path']." " .$comments['NumComment'];
 //        echo $ServiceInfo["Description"];
 //        echo $Multi['Multimedia_Path'];
