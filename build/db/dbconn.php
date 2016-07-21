@@ -1134,7 +1134,7 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
  */
 function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
     try {
-        $rows = sql($pdo, "SELECT [WIC_Planner].[Id]
+        $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
       ,[WIC_Planner].[Name] AS WPN
       ,[City].[Name] AS CNA
       ,[Event_Date] AS WPED
@@ -1154,7 +1154,7 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
         AND [WIC_Planner_User].[User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<tr class="table-check">';
-            echo '<td><a href="#">' . $row['WPN'] . '</a></td>';
+            echo '<td><a onclick="showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
             $str = $row['WPED'];
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
