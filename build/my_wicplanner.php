@@ -67,6 +67,10 @@ $msg = '';
         //alert('WIC PLANNER FORM');
         $("#include").load("includes/addWicForm.php");
     }
+    function showAddWicFormEditMode(idWicPlanner) {
+        var x = idWicPlanner;
+        $("#include").load("includes/addWicForm.php?id=" + x);
+    }
     function showWicServicesForm(idWicPlanner) {
         var x = idWicPlanner;
         var u = <?= $_SESSION['id'] ?>;
