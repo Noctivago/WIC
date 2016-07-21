@@ -2,7 +2,8 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
-$org = $_POST['Organization'];
+$org = (filter_var($_POST['Organization']));
+echo $org;
 ?>
 
 <div class="page-content">
@@ -53,8 +54,6 @@ echo '  <div class="friends-list stripped">';
 DB_getPeopleViewServicesOrg($pdo, $org);
 echo '         </div>';
 echo '    </section><!--.box-typical-->';
-}else{
-    
 }
 ?>
         </div><!--.col- -->
