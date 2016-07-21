@@ -48,7 +48,7 @@ $msg = '';
             </div><!--.col- -->
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
-            <div id="include" class="col-lg-6">
+            <div class="col-lg-6 INCLUDE">
 
             </div>
         </div><!--.container-fluid-->
@@ -96,6 +96,7 @@ $msg = '';
             data: {con: x},
             success: function (data) {
                 alert(data);
+                $('.INCLUDE').html(data);
             }
         });
     }
