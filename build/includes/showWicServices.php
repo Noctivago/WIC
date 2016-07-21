@@ -2,8 +2,8 @@
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-include_once '../../build/db/session.php';
-include_once '../../build/db/dbconn.php';
+include_once '../db/session.php';
+include_once '../db/dbconn.php';
 
 //FUNCA X) NA QUERY VERIFICAR SE O USER PERTENCE A ESTE WIC PLANNER; SE SIM MOSTRA
 //$wicPlannerId = INPUT_GET($_GET["id"]);
