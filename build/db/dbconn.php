@@ -1235,8 +1235,7 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
         ,[WIC_Planner].[Name] AS WPN
-        ,[WIC_Planner].[Event_Date] AS WPED
-        
+        ,[WIC_Planner].[Event_Date] AS WPED        
             ,[User_Profile].[First_Name] AS UFN
             ,[User_Profile].[Last_Name] AS ULN
             ,[User_Profile].[Picture_Path] AS UPP
@@ -1264,7 +1263,7 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
             echo '</a>';
             echo '</td>';
             echo '<td class="table-photo">';
-            echo '<a href="#" class="font-icon font-icon-del">';
+            echo '<a onclick="removeWic()"class="font-icon font-icon-del" id=' . $row['WID'] . '>';
             echo '</a>';
             echo '</td>';
             echo '</tr>';
