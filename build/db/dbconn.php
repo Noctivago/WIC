@@ -782,12 +782,12 @@ function DB_CountPeopleInOrg($pdo) {
 //Falta colocar o id da org
 function DB_getUsersInServiceOrganization($pdo, $org) {
     try {
-        echo '<section class="box-typical">
-                    <header class="box-typical-header-sm">
-                        People in our organization
-                        &nbsp;
-                    </header>
-                    <div class="friends-list">';
+        echo '<section class="box-typical">';
+        echo '           <header class="box-typical-header-sm">';
+        echo '               People in our organization';
+        echo '               &nbsp;';
+        echo '           </header>';
+        echo '           <div class="friends-list">';
         $id = 2;
         $Services = sql($pdo, "SELECT *
   FROM [Service]
@@ -823,8 +823,8 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
                 echo '  </div>';
                 echo ' </article>';
             }
-            echo '</div>
-                </section>';
+            echo '</div>';
+            echo '</section>';
         }
     } catch (Exception $ex) {
         
@@ -1039,7 +1039,7 @@ function DB_getPeopleViewServicesOrg($pdo, $org) {
             echo '</a>';
             echo '</div>';
             echo '<div class = "tbl-cell">';
-            
+
 //falta link para o perfil do user
             echo '<p class="user-card-row-name"><a href="#">' . $row['First_Name'] . '</a></p>';
 
