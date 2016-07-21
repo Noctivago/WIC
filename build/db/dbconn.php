@@ -1031,6 +1031,8 @@ function DB_getPeopleViewServicesOrg($pdo, $org) {
             echo '</a>';
             echo '</div>';
             echo '<div class = "tbl-cell">';
+            
+//falta link para o perfil do user
             echo '<p class="user-card-row-name"><a href="#">' . $row['First_Name'] . '</a></p>';
 
 //falta colocar o link para ver o servico
