@@ -935,7 +935,7 @@ where [Service_Id] =:id");
         $userInfo = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-            $userInfo['views'] = $row['NumView'];
+            $userInfo['NumView'] = $row['NumView'];
         }
         return $userInfo;
     } catch (PDOException $e) {
@@ -990,13 +990,13 @@ function DB_GetOrganizationServices($pdo, $org) {
         $serviceInfo = array();
         $idService = 2;
       //  $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-        $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-       // $views = DB_GetNumberServiceViews($pdo, $idService);
+        //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+        $views = DB_GetNumberServiceViews($pdo, $idService);
       //  $comments = DB_GetNumberServiceComments($pdo, $idService);
        // echo $ServiceInfo["Name"];
        // echo $ServiceInfo["Description"];
-        echo $Multi['Multimedia_Path'];
-      //  echo $views['views'];
+        //echo $Multi['Multimedia_Path'];
+        echo $views['NumView'];
       //  echo $comments['comment'];
     } catch (Exception $ex) {
         
