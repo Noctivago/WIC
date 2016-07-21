@@ -9,7 +9,7 @@ $msg = '';
 ?>
 
 
-<div onload="loadMyWics()"class="page-content" style="height: 817px;">
+<div class="page-content" style="height: 817px;">
     <div class="container-fluid">
         <div class="row" style="height: 700px;">
             <div class="col-lg-6">
