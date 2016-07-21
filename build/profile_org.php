@@ -9,7 +9,7 @@ $org = $_POST['Organization'];
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 col-lg-push-3 col-md-12">
-                  <section class="box-typical">
+                <section class="box-typical">
                     <header class="box-typical-header-sm">
                         Services
                         <div class="slider-arrs">
@@ -36,8 +36,13 @@ $org = $_POST['Organization'];
                         <?php DB_GetOrgInformation2($pdo, $org); ?>
                 </section>
                 <section class="box-typical">
-                    <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
-        
+                    <header class="box-typical-header-sm">
+                        People in our organization
+                        &nbsp;
+                    </header>';
+                    <div class="friends-list">
+                        <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
+                    </div>
                 </section>
             </div><!--.col- -->
 
