@@ -38,7 +38,8 @@ $org = $_POST['Organization'];
                        
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
-                        Services
+                                                                 <?php DB_GetOrganizationServices($pdo, $org)?>
+Services
                         <div class="slider-arrs">
                             <button type="button" class="posts-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
@@ -63,7 +64,6 @@ $org = $_POST['Organization'];
                                 <ul class="post-announce-meta">
                                     <li>
                                         <i class="font-icon font-icon-eye"></i>
-                                         <?php DB_GetOrganizationServices($pdo, $org)?>
 
                                     </li>
                                     <li>
