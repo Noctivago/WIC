@@ -946,7 +946,7 @@ where [Service_Id] =:id");
 
 function DB_GetServiceMultimediaUnit($pdo, $idService) {
     try {
-  $stmt = $pdo->prepare("Select top(1) *
+        $stmt = $pdo->prepare("Select top(1) *
 From [Multimedia]
 where [Service_Id] =:id");
         $stmt->bindParam(':id', $idService);
@@ -986,19 +986,49 @@ function DB_getUserProfileInfo($pdo, $UserId) {
 //preencher seccao services no profile org
 //falta passar o id da org
 function DB_GetOrganizationServices($pdo, $org) {
-    try {
-        $serviceInfo = array();
-        $idService = 2;
-        $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-        $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-        $views = DB_GetNumberServiceViews($pdo, $idService);
-        $comments = DB_GetNumberServiceComments($pdo, $idService);
-        
+    try
+    {
+    echo '<div class = "slide">';
+
+    echo '<article class = "post-announce">';
+    echo '<div class = "post-announce-pic">';
+    echo '<a href = "#">';
+   echo ' <img src = "img/post-1.jpeg" alt = "">';
+    echo '</a>';
+   echo ' </div>';
+    echo '<div class = "post-announce-title">';
+    echo '<a href = "#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>';
+    echo '</div>';
+    echo '<div class = "post-announce-date">Februrary 19, 2016</div>';
+    echo '<ul class = "post-announce-meta">';
+    echo '<li>';
+    echo '<i class = "font-icon font-icon-eye"></i>';
+
+    echo '</li>';
+    echo '<li>';
+    echo '<i class = "font-icon font-icon-heart"></i>';
+   echo ' 5K';
+    echo '</li>';
+    echo '<li>';
+    echo '<i class = "font-icon font-icon-comment"></i>';
+    echo '3K';
+    echo '</li>';
+    echo '</ul>';
+    echo '</article>';
+    echo '</div>.slide';
+
+//    $serviceInfo = array();
+//    $idService = 2;
+//    $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+//    $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+//    $views = DB_GetNumberServiceViews($pdo, $idService);
+//    $comments = DB_GetNumberServiceComments($pdo, $idService);
+
 //        echo $ServiceInfo["Name"] . " ". $ServiceInfo["Description"] ." " .$Multi['Multimedia_Path']." " .$comments['NumComment'];
 //        echo $ServiceInfo["Description"];
 //        echo $Multi['Multimedia_Path'];
 //        echo $comments['NumComment'];
- } catch (Exception $ex) {
+    } catch (Exception $ex) {
         
     }
 }

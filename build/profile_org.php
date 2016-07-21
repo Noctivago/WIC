@@ -4,42 +4,41 @@ include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 $org = $_POST['Organization'];
 ?>
-                
+
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 col-lg-push-3 col-md-12">
-<!--                <form class="box-typical">
-                    <input type="text" class="write-something" placeholder="Write a Review..."/>
-                    <div class="box-typical-footer">
-                        <div class="tbl">
-                            <div class="tbl-row">
-                                <div class="tbl-cell">
-                                    <button type="button" class="btn-icon">
-                                        <i class="font-icon font-icon-earth"></i>
-                                    </button>
-                                    <button type="button" class="btn-icon">
-                                        <i class="font-icon font-icon-picture"></i>
-                                    </button>
-                                    <button type="button" class="btn-icon">
-                                        <i class="font-icon font-icon-calend"></i>
-                                    </button>
-                                    <button type="button" class="btn-icon">
-                                        <i class="font-icon font-icon-video-fill"></i>
-                                    </button>
-                                </div>
-                                <div class="tbl-cell tbl-cell-action">
-                                    <button type="submit" class="btn btn-rounded">Send</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>.box-typical-->
-                       
+                <!--                <form class="box-typical">
+                                    <input type="text" class="write-something" placeholder="Write a Review..."/>
+                                    <div class="box-typical-footer">
+                                        <div class="tbl">
+                                            <div class="tbl-row">
+                                                <div class="tbl-cell">
+                                                    <button type="button" class="btn-icon">
+                                                        <i class="font-icon font-icon-earth"></i>
+                                                    </button>
+                                                    <button type="button" class="btn-icon">
+                                                        <i class="font-icon font-icon-picture"></i>
+                                                    </button>
+                                                    <button type="button" class="btn-icon">
+                                                        <i class="font-icon font-icon-calend"></i>
+                                                    </button>
+                                                    <button type="button" class="btn-icon">
+                                                        <i class="font-icon font-icon-video-fill"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="tbl-cell tbl-cell-action">
+                                                    <button type="submit" class="btn btn-rounded">Send</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>.box-typical-->
+
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
-                                                                 <?php DB_GetOrganizationServices($pdo, $org)?>
-Services
+                        Services
                         <div class="slider-arrs">
                             <button type="button" class="posts-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
@@ -50,8 +49,11 @@ Services
                         </div>
                     </header>
                     <div class="posts-slider">
-                        <div class="slide">
-                            <article class="post-announce">
+
+                        <?php DB_GetOrganizationServices($pdo, $org) ?>
+                        <!--div class="slide"-->
+
+                            <!--                            <article class="post-announce">
                                 <div class="post-announce-pic">
                                     <a href="#">
                                         <img src="img/post-1.jpeg" alt="">
@@ -76,7 +78,7 @@ Services
                                     </li>
                                 </ul>
                             </article>
-                        </div><!--.slide-->
+                        </div>.slide
                         <div class="slide">
                             <article class="post-announce">
                                 <div class="post-announce-pic">
@@ -103,7 +105,7 @@ Services
                                     </li>
                                 </ul>
                             </article>
-                        </div><!--.slide-->
+                        </div>.slide
                         <div class="slide">
                             <article class="post-announce">
                                 <div class="post-announce-pic">
@@ -130,7 +132,7 @@ Services
                                     </li>
                                 </ul>
                             </article>
-                        </div><!--.slide-->
+                        </div>.slide
                         <div class="slide">
                             <article class="post-announce">
                                 <div class="post-announce-pic">
@@ -157,7 +159,7 @@ Services
                                     </li>
                                 </ul>
                             </article>
-                        </div><!--.slide-->
+                        </div>.slide
                         <div class="slide">
                             <article class="post-announce">
                                 <div class="post-announce-pic">
@@ -184,7 +186,7 @@ Services
                                     </li>
                                 </ul>
                             </article>
-                        </div><!--.slide-->
+                        </div>.slide
                         <div class="slide">
                             <article class="post-announce">
                                 <div class="post-announce-pic">
@@ -210,7 +212,7 @@ Services
                                         3K
                                     </li>
                                 </ul>
-                            </article>
+                            </article>-->
                         </div><!--.slide-->
                     </div><!--.posts-slider-->
                 </section><!--.box-typical-->
@@ -222,20 +224,20 @@ Services
                             <i class="font-icon font-icon-notebook-bird"></i>
                             Description
                         </header>
-                        <?php DB_GetOrgInformation2($pdo,$org); ?>
-<!--                        <div class="text-block text-block-typical">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-                        </div>
-                    </article>
+                        <?php DB_GetOrgInformation2($pdo, $org); ?>
+                        <!--                        <div class="text-block text-block-typical">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+                                                </div>
+                                            </article>
+                        
+                                        </section>
+                                    </div>-->
 
-                </section>
-            </div>-->
+                        <!--            <div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
+                                        <section class="box-typical">-->
 
-<!--            <div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
-                <section class="box-typical">-->
-
-                    <?php// DB_GetOrgInformation($pdo); ?>
+                        <?php // DB_GetOrgInformation($pdo); ?>
 
                 </section>
                 <section class="box-typical">
@@ -245,7 +247,7 @@ Services
                         <!--a href="#" class="full-count"><--?php db_CountPeopleInOrg($pdo)?></a-->
                     </header>
                     <div class="friends-list">
-                        <?php DB_getUsersInServiceOrganization($pdo,$org); ?>
+                        <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
                         <!--article class="friends-list-item">
                             <div class="user-card-row">
                                 <div class="tbl-row">
