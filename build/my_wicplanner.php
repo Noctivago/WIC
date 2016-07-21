@@ -70,22 +70,22 @@ $msg = '';
     }
     function showAddWicFormEditMode(idWicPlanner) {
         //PASSAR USERID > FAZER UPDATE WHERE USERID = USERID
-        alert('EDIT WIC PLANNER FORM');
-        var x = idWicPlanner;
-        $("#include").load("includes/addWicForm.php?id=" + x);
+//        alert('EDIT WIC PLANNER FORM');
+//        var x = idWicPlanner;
+//        $("#include").load("includes/addWicForm.php?id=" + x);
     }
     function showWicServicesForm(idWicPlanner) {
-        var x = idWicPlanner;
-        $.ajax({
-            url: '../ajax/showWicServices.php',
-            method: 'post',
-            data: {con: x},
-            success: function (data) {
-                $('#include').html(data);
-                // $("#include")
-            },
-            error: alert('TTF');
-        });
+//        var x = idWicPlanner;
+//        $.ajax({
+//            url: '../ajax/showWicServices.php',
+//            method: 'post',
+//            data: {con: x},
+//            success: function (data) {
+//                $('#include').html(data);
+//                // $("#include")
+//            },
+//            error: alert('TTF');
+//        });
     }
 </script>
 
