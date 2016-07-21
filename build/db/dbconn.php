@@ -1029,7 +1029,7 @@ function DB_GetOrganizationServices($pdo, $org) {
         echo '<ul class = "post-announce-meta">';
         echo '<li>';
         echo '<i class = "font-icon font-icon-eye"></i>';
-        echo $views['view'];
+        echo $views['NumView'];
         echo '</li>';
         echo '<li>';
         echo '<i class = "font-icon font-icon-comment"></i>';
