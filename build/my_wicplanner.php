@@ -78,8 +78,7 @@ $msg = '';
         //VERIFICAR SE USER PERTENCE AO WIC PLANNER OU SE WIC PLANNER E DO USER
         alert('SHOW WIC PLANNER SERVICES');
         var x = idWicPlanner;
-        var u = <?= $_SESSION['id'] ?>;
-        $("#include").load("includes/showWicServices.php?id=" + x + "&uId=" + u);
+        $("#include").load("includes/showWicServices.php?id=" + x);
     }
 </script>
 
