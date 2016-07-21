@@ -1049,9 +1049,9 @@ function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
 
         if (TRUE) {
-//            $d = new Date();
+            $d = new Date();
 //            $d->format('Y-m-d');
-//            echo $d;
+            echo $d;
             echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
                     <br><br>
 Free for 3 Months</header>';
