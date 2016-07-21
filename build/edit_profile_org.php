@@ -11,6 +11,9 @@ include_once '../build/db/session.php';
             <div class="container-fluid" style="padding-top: 100px;">
                 <form class="sign-box"    style="max-width: 600px; width: 600px;">
                     <div class="sign-avatar no-photo">&plus;</div>
+                    
+                    <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
+                    
                     <header class="sign-title">Edit Organization Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
