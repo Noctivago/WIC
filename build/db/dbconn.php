@@ -1033,9 +1033,9 @@ function DB_ValidateSubscription($pdo, $org) {
   FROM [dbo].[Organization_Subscription]
   where [Organization_Id] = ?", array($org), "rows");
         foreach ($rows as $row) {
-            $d = getDateToDB();
+            $d = new DateTime('now');
             $datetime2 = $row['Date_Finish'];
-            $interval = $d->diff($datetime2);
+            //$interval = $d->diff($datetime2);
             if($interval<0){
                 return FALSE;
             }else{
@@ -1049,8 +1049,9 @@ function DB_ValidateSubscription($pdo, $org) {
 
 function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
-
-        if (DB_ValidateSubscription($pdo, $org)) {
+        $d = new DateTime('now');
+        echo 'daaaataaa'.$d;
+        if (TRUE) {
             echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
                     <br><br>
 Free for 3 Months</header>';
