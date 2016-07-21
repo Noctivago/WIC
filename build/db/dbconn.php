@@ -782,7 +782,7 @@ function DB_CountPeopleInOrg($pdo) {
 //Falta colocar o id da org
 function DB_getUsersInServiceOrganization($pdo, $org) {
     try {
-        echo '<section class="box-typical">';
+    
         echo '           <header class="box-typical-header-sm">';
         echo '               People in our organization';
         echo '               &nbsp;';
@@ -824,7 +824,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
                 echo ' </article>';
             }
             echo '</div>';
-            echo '</section>';
+
         }
     } catch (Exception $ex) {
         
