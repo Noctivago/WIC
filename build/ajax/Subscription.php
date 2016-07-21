@@ -14,5 +14,5 @@ sql($pdo,"INSERT INTO [dbo].[Organization_Subscription]
            ,[Date_Finish]
            ,[Enabled])
      VALUES
-           (?,?,?,?)", array($orgId,$d,'2016/07/03',1));
+           (?,?,?,?)", array($orgId,$d,$effectiveDate,1));
 echo 'go';
