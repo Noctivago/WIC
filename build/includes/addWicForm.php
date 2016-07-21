@@ -1,9 +1,7 @@
 <?php
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+$wicPlannerId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+//$UserId = $_GET["uId"];
+var_dump($wicPlannerId);
 ?>
 <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
 
