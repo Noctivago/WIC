@@ -916,7 +916,7 @@ function DB_GetNumberServiceComments($pdo, $idService) {
         $stmt->execute();
         $userInfo = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $userInfo['comment'] = $row['NumComment'];
+            $userInfo['NumComment'] = $row['NumComment'];
         }
         return $userInfo;
     } catch (PDOException $e) {
@@ -991,12 +991,12 @@ function DB_GetOrganizationServices($pdo, $org) {
         $idService = 2;
       //  $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
         //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-        $views = DB_GetNumberServiceViews($pdo, $idService);
-      //  $comments = DB_GetNumberServiceComments($pdo, $idService);
+      //  $views = DB_GetNumberServiceViews($pdo, $idService);
+        $comments = DB_GetNumberServiceComments($pdo, $idService);
        // echo $ServiceInfo["Name"];
        // echo $ServiceInfo["Description"];
         //echo $Multi['Multimedia_Path'];
-        echo $views['NumView'];
+        echo $views['NumComment'];
       //  echo $comments['comment'];
     } catch (Exception $ex) {
         
