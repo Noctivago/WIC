@@ -1034,10 +1034,12 @@ function DB_ValidateSubscription($pdo, $org) {
   where [Organization_Id] = ?", array($org), "rows");
         foreach ($rows as $row) {
             $d = getDateToDB();
-            if ($d < $row['Date_Finish']) {
-                return TRUE;
-            } else {
+            $datetime2 = $row['Date_Finish'];
+            $interval = $d->diff($datetime2);
+            if($interval<0){
                 return FALSE;
+            }else{
+                return TRUE;
             }
         }
     } catch (Exception $ex) {
