@@ -1027,11 +1027,29 @@ function DB_CheckIfBossOrg($pdo, $org, $idUser) {
     }
 }
 
+function DB_ValidateSubscription($pdo, $org) {
+    try {
+        $rows = sql($pdo, "SELECT *
+  FROM [dbo].[Organization_Subscription]
+  where [Organization_Id] = ?", array($org), "rows");
+        foreach ($rows as $row) {
+            $d = getDateToDB();
+            if ($d < $row['Date_Finish']) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
         //falta verificar se tem subscricao ativa 
 
-        if (true) {
+        if (!DB_ValidateSubscription($pdo, $org)) {
             echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
                     <br><br>
 Free for 3 Months</header>';
