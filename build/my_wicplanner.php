@@ -46,8 +46,7 @@ $msg = '';
 
                                 <tbody class="WICS">
                                     <!--COLOCAR VIA AJAX-->
-                                    <?= db_getMyWicPlannerToWICCrud($pdo, $_SESSION['id']); ?>
-                                    <?= db_getThirdWicPlannerToWICCrud($pdo, $_SESSION['id']); ?>
+                                    
                                 </tbody>
                             </table>
                         </div>
