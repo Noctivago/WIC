@@ -89,6 +89,7 @@ $msg = '';
     }
     function showWicServicesForm(idWicPlanner) {
         var x = idWicPlanner;
+        alert(x);
         $.ajax({
             url: 'ajax/showWicServices.php',
             method: 'post',
