@@ -1331,8 +1331,8 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
  * @param type $userId
  */
 function getMyWics($pdo, $userId) {
-    db_getMyWicPlannerToWICCrud($pdo, $userId);
-    db_getThirdWicPlannerToWICCrud($pdo, $userId);
+    echo db_getMyWicPlannerToWICCrud($pdo, $userId);
+    echo db_getThirdWicPlannerToWICCrud($pdo, $userId);
 }
 
 /**
