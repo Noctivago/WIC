@@ -1341,7 +1341,7 @@ function DB_removeWICPlanner($pdo, $userId, $wicId) {
         AND [WIC_Planner].[User_Id]= :UID ");
         $stmt->bindParam(':WICID', $wicId);
         $stmt->bindParam(':UID', $userId);
-        $stmt->execute();
+        //$stmt->execute();
         if ($stmt->execute()) {
             return "WIC PLANNER REMOVED!";
         } else {
