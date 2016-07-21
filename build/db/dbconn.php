@@ -1020,23 +1020,22 @@ function DB_getPeopleViewServicesOrg($pdo, $org) {
   join [Organization]
   on [Organization].[Id] = [Service].[Organization_Id]
   Where [Organization_Id] = ?
-  order by [Service_View].[Date_View] DESC", array($orgId), "rows");
+  order by [Service_View].[Date_View] DESC", array($OrgId), "rows");
         foreach ($rows as $row) {
-
-
             echo '<article class="friends-list-item">';
             echo '<div class="user-card-row">';
             echo '<div class="tbl-row">';
             echo '<div class="tbl-cell tbl-cell-photo">';
             echo '<a href = "#">';
-            echo '<img src="img/photo-64-2.jpg" alt="">';
+            echo '<img src="'.$row['Date_View'].'" alt="">';
             echo '</a>';
             echo '</div>';
             echo '<div class = "tbl-cell">';
-            echo '<p class="user-card-row-name status-online"><a href="#">Dan Cederholm</a></p>';
-            echo '<p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>';
+            echo '<p class="user-card-row-name"><a href="#"'.$row['First_Name'].'</a></p>';
+            echo '<p class="user-card-row-status">Service <a href="#">'.$row['Name'].'</a></p>';
             echo '</div>';
             echo '<div class="tbl-cell tbl-cell-action">';
+            //falta inserir o iniciar chat
             echo '<a href = "#" class = "plus-link-circle"><span>&plus;
             </span></a>';
             echo '</div>';
