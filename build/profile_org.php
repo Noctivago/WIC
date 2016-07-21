@@ -213,7 +213,6 @@ $org = $_POST['Organization'];
                                     </li>
                                 </ul>
                             </article>-->
-                        </div><!--.slide-->
                     </div><!--.posts-slider-->
                 </section><!--.box-typical-->
 
