@@ -95,7 +95,6 @@ $msg = '';
             method: 'post',
             data: {con: x},
             success: function (data) {
-                //loadMyWics(),
                 alert(data);
             }
         });
