@@ -11,7 +11,7 @@ include ("includes/head_sideMenu.php");
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box">
+                 <form class="sign-box"    style="max-width: 600px; width: 600px;">
                     <div class="sign-avatar no-photo">&plus;</div>
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
