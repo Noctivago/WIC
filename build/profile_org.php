@@ -80,7 +80,7 @@ echo '    </section><!--.box-typical-->';
 
 <script>function subscribe(org){
     $.post("ajax/Subscription.php",{org:org},function(result){
-        
+        alert(result);
     });
     
 }</script>

@@ -12,3 +12,4 @@ sql($pdo,"INSERT INTO [dbo].[Organization_Subscription]
            ,[Enabled])
      VALUES
            (?,?,?,?)", array($orgId,'2016/04/03','2016/07/03',1));
+echo 'go';
