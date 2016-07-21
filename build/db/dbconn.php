@@ -1027,7 +1027,7 @@ function DB_getPeopleViewServicesOrg($pdo, $org) {
             echo '<div class="tbl-row">';
             echo '<div class="tbl-cell tbl-cell-photo">';
             echo '<a href = "#">';
-            echo '<img src="'.$row['Date_View'].'" alt="">';
+            echo '<img src="'.$row['Picture_Path'].'" alt="">';
             echo '</a>';
             echo '</div>';
             echo '<div class = "tbl-cell">';
