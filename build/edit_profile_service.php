@@ -85,5 +85,8 @@ include_once '../build/db/session.php';
 <script src="js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/app.js"></script>
+
+	<script src="js/lib/salvattore/salvattore.min.js"></script>
+	<script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 </body>
 </html>
