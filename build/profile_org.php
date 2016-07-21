@@ -22,7 +22,7 @@ $org = $_POST['Organization'];
                         </div>
                     </header>
                     <div class="posts-slider">
-                        <?php DB_GetOrganizationServices($pdo, $org) ?>
+<?php DB_GetOrganizationServices($pdo, $org) ?>
                     </div><!--.posts-slider-->
                 </section><!--.box-typical-->
 
@@ -33,7 +33,7 @@ $org = $_POST['Organization'];
                             <i class="font-icon font-icon-notebook-bird"></i>
                             Description
                         </header>
-                        <?php DB_GetOrgInformation2($pdo, $org); ?>
+<?php DB_GetOrgInformation2($pdo, $org); ?>
                 </section>
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
@@ -41,22 +41,25 @@ $org = $_POST['Organization'];
                         &nbsp;
                     </header>
                     <div class="friends-list">
-                        <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
+<?php DB_getUsersInServiceOrganization($pdo, $org); ?>
                     </div>
                 </section>
             </div><!--.col- -->
-
-            <div class="col-lg-3 col-md-6 col-sm-6" style="Display:none">
-                <section class="box-typical">
-                   
-                    <div class="friends-list stripped">
-                        <?php DB_getPeopleViewServicesOrg($pdo, $org) ?>
-                    </div>
-                </section><!--.box-typical-->
-
-            </div><!--.col- -->
-        </div><!--.row-->
-    </div><!--.container-fluid-->
+<?php
+if(DB_CheckIfBossOrg($pdo, 2, 9)){
+echo '<div class="col-lg-3 col-md-6 col-sm-6" >';
+echo ' <section class="box-typical">';
+echo '  <div class="friends-list stripped">';
+DB_getPeopleViewServicesOrg($pdo, $org);
+echo '         </div>';
+echo '    </section><!--.box-typical-->';
+}else{
+    
+}
+?>
+        </div><!--.col- -->
+    </div><!--.row-->
+</div><!--.container-fluid-->
 </div><!--.page-content-->
 
 
@@ -72,7 +75,7 @@ $org = $_POST['Organization'];
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+<script src="js/Org.js" type="text/javascript"></script>
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 

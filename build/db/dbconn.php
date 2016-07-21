@@ -1033,21 +1033,15 @@ function DB_CheckIfBossOrg($pdo, $org, $idUser) {
 
 function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
-        $idUser = 9;
         $OrgId = 2;
-        //check boss 
-        if (DB_CheckIfBossOrg($pdo, $OrgId, $idUser)) {
-
-            //verificar se tem subscricao !DB_CheckSubscription($pdo, $OrgId)
-            if (true) {
-                echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
+        //falta verificar se tem subscricao ativa 
+        if (true) {
+            echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
                     <br><br>
 Free for 3 Months</header>';
-                echo '<input type="Button" placeholder="Activate subscription"></input>';
-            } else {
-
+            echo '<input type="Button" placeholder="Activate subscription"></input>';
 //falta dar o id da org
-                $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
+            $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
   FROM [dbo].[Service_View]
   join [User]
   on [User].[Id] = [Service_View].[User_Id]
@@ -1059,38 +1053,36 @@ Free for 3 Months</header>';
   on [Organization].[Id] = [Service].[Organization_Id]
   Where [Organization_Id] = ?
   order by [Service_View].[Date_View] DESC", array($OrgId), "rows");
-                echo ' <header class="box-typical-header-sm">People also viewed</header>';
-                foreach ($rows as $row) {
-                    echo '<article class="friends-list-item">';
-                    echo '<div class="user-card-row">';
-                    echo '<div class="tbl-row">';
-                    echo '<div class="tbl-cell tbl-cell-photo">';
-                    echo '<a href = "#">';
-                    echo '<img src="' . $row['Picture_Path'] . '" alt="">';
-                    echo '</a>';
-                    echo '</div>';
-                    echo '<div class = "tbl-cell">';
+            echo ' <header class="box-typical-header-sm">People also viewed</header>';
+            foreach ($rows as $row) {
+                echo '<article class="friends-list-item">';
+                echo '<div class="user-card-row">';
+                echo '<div class="tbl-row">';
+                echo '<div class="tbl-cell tbl-cell-photo">';
+                echo '<a href = "#">';
+                echo '<img src="' . $row['Picture_Path'] . '" alt="">';
+                echo '</a>';
+                echo '</div>';
+                echo '<div class = "tbl-cell">';
 
 //falta link para o perfil do user
-                    echo '<p class="user-card-row-name"><a href="#">' . $row['First_Name'] . '</a></p>';
+                echo '<p class="user-card-row-name"><a href="#">' . $row['First_Name'] . '</a></p>';
 
 //falta colocar o link para ver o servico
-                    echo '<p class="user-card-row-status">Service <a href="#">' . $row['Name'] . '</a></p>';
-                    echo '</div>';
-                    echo '<div class="tbl-cell tbl-cell-action">';
+                echo '<p class="user-card-row-status">Service <a href="#">' . $row['Name'] . '</a></p>';
+                echo '</div>';
+                echo '<div class="tbl-cell tbl-cell-action">';
 
 //falta inserir o iniciar chat
-                    echo '<a href = "#" class = "plus-link-circle"><span>&plus;
+                echo '<a href = "#" class = "plus-link-circle"><span>&plus;
             </span></a>';
-                    echo '</div>';
-                    echo '</div>';
-                    echo '</div>';
-                    echo ' </article>';
-                }
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo ' </article>';
             }
         } else {
-
-//            echo ' <header class="box-typical-header-sm">People also viewed' . $idUser . '</header>';
+            echo ' <header class="box-typical-header-sm">People also viewed' . $idUser . '</header>';
         }
     } catch (Exception $ex) {
         
