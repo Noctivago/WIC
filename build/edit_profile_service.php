@@ -13,14 +13,8 @@ include_once '../build/db/session.php';
             <div class="container-fluid" style="padding-top: 100px;">
                 <form class="sign-box"    style="max-width: 600px; width: 600px;">
                     <div class="sign-avatar no-photo">&plus;</div>
-                    <div class="form-group">
-                        <button type="button" class="change">
-				<i class="font-icon font-icon-picture-double"></i>
-				Change Picture
-				<input type="file"/>
-                        </button>
-                    </div>
-                    <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
+                    
+                    <button type="submit" class="btn btn-rounded btn-file"> <i class="font-icon font-icon-picture"></i>Change Picture <input class="btn-file" type="file"/> </button>
                     <header class="sign-title">Edit Service Profile</header>
                     
                     <div class="form-group">
