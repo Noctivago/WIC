@@ -1085,7 +1085,7 @@ function db_getUserMessengerWithOrgs($pdo, $userId) {
  */
 function db_getMyWicPlannerToWICCrud($pdo, $userId) {
     try {
-        $rows = sql($pdo, "SELECT [WIC_Planner].[Id]
+        $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
         ,[WIC_Planner].[Name] AS WPN
         ,[WIC_Planner].[Event_Date] AS WPED
         ,[City].[Name] AS CNA
@@ -1103,7 +1103,7 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
         AND [WIC_Planner].[User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<tr class="table-check">';
-            echo '<td><a href="#">' . $row['WPN'] . '</a></td>';
+            echo '<td><a onclick="showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
             $str = $row['WPED'];
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);

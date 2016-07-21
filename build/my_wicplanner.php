@@ -67,6 +67,10 @@ $msg = '';
     function showAddWicForm() {
         $("#include").load("includes/addWicForm.php");
     }
+    function showWicServicesForm(idWicPlanner) {
+        var x = idWicPlanner;
+        $("#include").load("includes/showWicServices.php?id=" + x);
+    }
 </script>
 
 <script>
