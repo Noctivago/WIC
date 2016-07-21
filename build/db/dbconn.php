@@ -802,6 +802,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
   join [Role]
   on [Role].[Id] = [User_Service].[Role_Id]
   where [Service_Id] = ?", array($idService), "rows");
+            echo ' <header class="box-typical-header-sm">People also viewed</header>';
             foreach ($rows as $row) {
                 echo '<article class="friends-list-item">';
                 echo '    <div class="user-card-row">';
