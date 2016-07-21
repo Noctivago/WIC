@@ -1249,7 +1249,7 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
         AND [WIC_Planner].[User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<tr class="table-check">';
-            echo '<td><a onclick="showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
+            echo '<td><a onclick="return showWicServicesForm(' . $row['WID'] . ');">' . $row['WPN'] . '</a></td>';
             $str = $row['WPED'];
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
@@ -1299,7 +1299,7 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
         AND [WIC_Planner_User].[User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<tr class="table-check">';
-            echo '<td><a onclick="showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
+            echo '<td><a onclick="return showWicServicesForm(' . $row['WID'] . ');">' . $row['WPN'] . '</a></td>';
             $str = $row['WPED'];
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
