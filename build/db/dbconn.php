@@ -993,7 +993,7 @@ function getAllOrganizationServices($pdo, $org) {
         $stmt->execute();
         $OrgServices = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            array_push($OrgServices, $row) = $row["Id"];
+            array_push($OrgServices, $row["Id"]);
         }
         return $OrgServices;
     } catch (PDOException $e) {
