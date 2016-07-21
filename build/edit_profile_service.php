@@ -14,7 +14,7 @@ include_once '../build/db/session.php';
                 <form class="sign-box"    style="max-width: 600px; width: 600px;">
                     <div class="sign-avatar no-photo">&plus;</div>
                     
-                    <button type="submit" class="btn btn-rounded btn-file"> <i class="font-icon font-icon-picture"></i>Change Picture <input class="btn-file" type="file"/> </button>
+                    <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
                     <header class="sign-title">Edit Service Profile</header>
                     
                     <div class="form-group">
