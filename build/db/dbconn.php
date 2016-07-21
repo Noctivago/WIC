@@ -969,13 +969,11 @@ function DB_GetServiceInformation($pdo, $idService) {
   where [Organization_Id] =:id");
         $stmt->bindParam(':id', $idService);
         $stmt->execute();
-        $service = array();
+        $serv = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $service['Name'] = $row['Name'];
-           // $service['Description'] = $row['Description'];
-            //   $userInfo["Country_Id"] = $row["Country_Id"];
+            $serv['Name'] = $row['Name'];
         }
-        return $service;
+        return $serv;
     } catch (PDOException $e) {
         print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
