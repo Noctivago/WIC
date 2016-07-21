@@ -1035,12 +1035,13 @@ function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
         $OrgId = 2;
         //falta verificar se tem subscricao ativa 
-        if (true) {
+        if (!true) {
             echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
                     <br><br>
 Free for 3 Months</header>';
             echo '<input type="Button" placeholder="Activate subscription"></input>';
 //falta dar o id da org
+        } else {
             $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
   FROM [dbo].[Service_View]
   join [User]
@@ -1081,8 +1082,6 @@ Free for 3 Months</header>';
                 echo '</div>';
                 echo ' </article>';
             }
-        } else {
-            echo ' <header class="box-typical-header-sm">People also viewed' . $idUser . '</header>';
         }
     } catch (Exception $ex) {
         
