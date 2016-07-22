@@ -1457,7 +1457,7 @@ function DB_UserProfile($pdo, $userId) {
             echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
                     </div>
-                    <button id="images" name="images" type="submit" class="btn btn-rounded btn-file" >Change Picture <input class="btn-file" type="file"/> </button>
+                    <input type="file" name="images" id="images">
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
