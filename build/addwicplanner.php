@@ -12,7 +12,7 @@ if (isset($id)) {
 ?>
 <!--<body>-->
     
-    <!--    <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
+        <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
     <!--    <div class="page-center">
             <div class="page-center-in">-->
     <div class="container-fluid">
