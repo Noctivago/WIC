@@ -16,6 +16,8 @@ $eventDate = (filter_var($_POST ['eDate']));
 //VERIFICAR SE EXISTE; SE SIM UPDATE
 if (DB_checkIfWicPlannerExits($pdo, $name, $eventDate, $userId)) {
     //SE EXISTIR
+    $wicId = DB_getWicPlannerId($pdo, $name, $eventDate, $userId);
+    DB_updateWicPlanner($pdo, $wicId, $userId, $name, $eventDate);
 } else {
     DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate);
 }
