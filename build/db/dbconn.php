@@ -1812,8 +1812,8 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                         <div class="photo">
                                 <img src="img/gall-img-1.jpg" alt="">
                             </div>
-                            <header class="title"><a href="service_profile.php?service=' . $row['SID'] . '"></a></header>
-                            <p>"' . $row['SDE'] . '"</p>
+                            <header class="title"><a href="service_profile.php?service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
+                            <p>' . $row['SDE'] . '</p>
                         </div>
                         <div class="card-typical-section">
                             <a href="service_profile.php?service=' . $ror['SID'] . '" class="card-typical-likes">
