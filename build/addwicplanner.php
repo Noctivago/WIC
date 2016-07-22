@@ -10,7 +10,8 @@ if (isset($id)) {
     $wicId = $id;
     $msg = 'ID >' . $id;
     $userId = $_SESSION['id'];
-    $wicInfo = DB_getWicPlannerInfo($pdo, $wicId, $userId);
+    $wicInfo = array();
+//    $wicInfo = DB_getWicPlannerInfo($pdo, $wicId, $userId);
 }
 ?>
 <!--<body>-->
