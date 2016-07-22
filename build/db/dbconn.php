@@ -1377,43 +1377,42 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
   WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
   AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
         foreach ($rows as $row) {
-            echo '<section class="box-typical box-typical-max-280">';
-            echo '<header class="box-typical-header">';
-            echo '<div class="tbl-row">';
-            echo '<div class="tbl-cell tbl-cell-title">';
-            echo '<h3> Services in "' . $row['WNA'] . '"</h3>';
-            echo '</div>';
-            echo '</div>';
-            echo '</header>';
-            echo '<div class="box-typical-body" style="overflow: hidden; padding: 0px; height: 700px; width: 504px;">';
-            echo '<div class="table-responsive">';
-            echo '<table class="table table-hover">';
-            echo '<thead>';
-            echo '<tr>';
-            echo '<th>Service</th>';
-            echo '<th>Owner</th><th></th>';
-            echo '<th></th>';
-            echo '</tr>';
-            echo '</thead>';
-            echo '<tbody>';
-            echo '<tr class="table-check">';
-            //echo '<td><a href="../profile_org.php?Organization=' . $row['OID'] . '">Nome</a></td>';
-            echo '<td><a href="../service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>';
-            echo '<td class="table-photo">';
-            echo '<img src="' . $row['OPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['ONA'] . '">';
-            echo '</td>';
-            echo '<td class="table-photo">';
-            echo '</td>';
-            echo '<td class="table-photo">';
-            echo '<a href="#" class="font-icon font-icon-del">';
-            echo '</a>';
-            echo '</td>';
-            echo '</tr>';
-            echo '</tbody>';
-            echo '</table>';
-            echo '</div>';
-            echo '</div>';
-            echo '</section>';
+            echo '<section class="box-typical box-typical-max-280">
+            <header class="box-typical-header">
+            <div class="tbl-row">
+            <div class="tbl-cell tbl-cell-title">
+            <h3> Services in "' . $row['WNA'] . '"</h3>
+            </div>
+            </div>
+            </header>
+            <div class="box-typical-body" style="overflow: hidden; padding: 0px; height: 700px; width: 504px;">
+            <div class="table-responsive">
+            <table class="table table-hover">
+            <thead>
+            <tr>
+            <th>Service</th>
+            <th>Owner</th><th></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-check">
+            <td><a href="../service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
+            <td class="table-photo">
+            <img src="' . $row['OPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['ONA'] . '">
+            </td>
+            <td class="table-photo">
+            </td>
+            <td class="table-photo">
+            <a href="#" class="font-icon font-icon-del">
+            </a>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </section>';
         }
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICES OF WIC PLANNER!';
