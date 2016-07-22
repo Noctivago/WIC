@@ -1430,7 +1430,7 @@ function DB_UserProfile($pdo, $userId) {
                         <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
                         <div id="images_preview"></div>
                     </div>
-                    <button type="submit" class="btn btn-rounded btn-file" >Change Picture <input class="btn-file" type="file"/> </button>
+                     <input type="file" class="btn btn-rounded btn-file" name="images[]" id="images">
                     <div class="uploading none">
                             <label>&nbsp;</label>
                             <img src="uploading.gif"/>
