@@ -1439,7 +1439,8 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             </table>
             </div>
             </div>
-            </section>';
+            </section>
+            </div>';
         }
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICES OF WIC PLANNER!
