@@ -1520,7 +1520,7 @@ function DB_OrgProfile($pdo, $userId) {
 						</div>
                     </div>
                     
-                    <button type="submit" name="save" class="btn btn-rounded btn-success sign-up">Save Changes</button>';
+                    <button type="submit" id="save" name="save" class="btn btn-rounded btn-success sign-up">Save Changes</button>';
         }
     } catch (Exception $ex) {
         

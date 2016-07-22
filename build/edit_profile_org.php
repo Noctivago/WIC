@@ -31,7 +31,7 @@ $msg = '';
             <div class="container-fluid" style="padding-top: 100px;">
                 <form class="sign-box"    style="max-width: 600px; width: 600px;">
                     <?php $org = 2;
- echo $msg;
+ echo 'iii'.$msg;
                     DB_OrgProfile($pdo, $userId)
                     ?>
                 </form>
