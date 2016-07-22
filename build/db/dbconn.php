@@ -706,11 +706,9 @@ function DB_getMyWICs($pdo, $userId) {
 
     try {
         $rows = sql($pdo, "SELECT [WIC_Planner].[Id]
-        ,[WIC_Planner].[Name] AS WPN
-        
+        ,[WIC_Planner].[Name] AS WPN        
         ,[WIC_Planner].[Event_Date] AS WPD
         FROM [dbo].[WIC_Planner]
-        
         WHERE [WIC_Planner].[Enabled]= 1 
         AND [WIC_Planner].[User_Id] = ? ORDER BY WPD DESC", array($userId), "rows");
         foreach ($rows as $row) {
