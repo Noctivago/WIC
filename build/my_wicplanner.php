@@ -57,6 +57,51 @@ $msg = '';
 
 
 <script>
+    function loadMyWics() {
+        $.ajax({
+            url: 'ajax/getMyWics.php',
+            method: 'post',
+            data: {},
+            success: function (data) {
+                $('.WICS').html(data);
+            }
+        });
+    }
+    function removeWic(x) {
+        var id = x.id;
+        $.ajax({
+            url: 'ajax/remove_wic_planner.php',
+            method: 'post',
+            data: {con: id},
+            success: function (data) {
+                loadMyWics();
+                //alert(data);
+            }
+        });
+    }
+    function showAddWicForm() {
+        alert('SHOW WIC PLANNER FORM');
+        $("#include").load("addwicplanner.php");
+    }
+    function showAddWicFormEditMode(idWicPlanner) {
+        alert('EDIT WIC PLANNER FORM');
+        var x = idWicPlanner;
+        $(".include").load("addwicplanner.php?id=" + x);
+    }
+    function showWicServicesForm(idWicPlanner) {
+        var x = idWicPlanner;
+        $.ajax({
+            url: 'ajax/showWicServices.php',
+            method: 'post',
+            data: {con: x},
+            success: function (data) {
+                $('.INCLUDE').html(data);
+            }
+        });
+    }
+</script>
+
+<script>
     $(document).ready(function () {
         $('.panel').lobiPanel({
             sortable: true
@@ -164,50 +209,6 @@ $msg = '';
 <script src="js/app.js"></script>
 
 
-<script>
-    function loadMyWics() {
-        $.ajax({
-            url: 'ajax/getMyWics.php',
-            method: 'post',
-            data: {},
-            success: function (data) {
-                $('.WICS').html(data);
-            }
-        });
-    }
-    function removeWic(x) {
-        var id = x.id;
-        $.ajax({
-            url: 'ajax/remove_wic_planner.php',
-            method: 'post',
-            data: {con: id},
-            success: function (data) {
-                loadMyWics();
-                //alert(data);
-            }
-        });
-    }
-    function showAddWicForm() {
-        alert('SHOW WIC PLANNER FORM');
-        $("#include").load("addwicplanner.php");
-    }
-    function showAddWicFormEditMode(idWicPlanner) {
-        alert('EDIT WIC PLANNER FORM');
-        var x = idWicPlanner;
-        $(".include").load("addwicplanner.php?id=" + x);
-    }
-    function showWicServicesForm(idWicPlanner) {
-        var x = idWicPlanner;
-        $.ajax({
-            url: 'ajax/showWicServices.php',
-            method: 'post',
-            data: {con: x},
-            success: function (data) {
-                $('.INCLUDE').html(data);
-            }
-        });
-    }
-</script>
 
 
 </body>
