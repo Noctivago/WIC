@@ -6,50 +6,44 @@ include_once '../build/db/session.php';
 //ini_set("display_errors", 1);
 //$msg = "";
 ?>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#images').on('change', function () {
-            $('#multiple_upload_form').ajaxForm({
-                target: '#images_preview',
-                beforeSubmit: function (e) {
-                    $('.uploading').show();
-                },
-                success: function (e) {
-                    $('.uploading').hide();
-                },
-                error: function (e) {
-                }
-            }).submit();
-        });
-    });
-</script>
 <body>
     <?php
     //falta alterar foto
     $userId = $_SESSION['id'];
     if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
+
         $firstName = (filter_var($_POST ['first'], FILTER_SANITIZE_STRING));
         $lastName = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
-        $images_arr = array();
-        foreach ($_FILES['images']['name'] as $key => $val) {
-            $image_name = $_FILES['images']['name'][$key];
-            $tmp_name = $_FILES['images']['tmp_name'][$key];
-            $size = $_FILES['images']['size'][$key];
-            $type = $_FILES['images']['type'][$key];
-            $error = $_FILES['images']['error'][$key];
 
-            ############ Remove comments if you want to upload and stored images into the "uploads/" folder #############
-
-            $target_dir = "uploadsPP/";
-            $target_file = $target_dir . $_FILES['images']['name'][$key];
-            if (move_uploaded_file($_FILES['images']['tmp_name'][$key], $target_file)) {
-                $images_arr[] = $target_file;
+        $uploadDir = 'uploadsPP/'; //Image Upload Folder
+        $fileName = $_FILES['images']['name'];
+        $tmpName = $_FILES['images']['tmp_name'];
+        $fileSize = $_FILES['images']['size'];
+        //FALTA VALIDAR FILE TIPE E FILE SIZE
+        $fileType = $_FILES['images']['type'];
+        $temp = explode(".", $_FILES["file"]["name"]);
+        $type = mime_content_type($fileName);
+        if (strstr($type, 'image/')) {
+            //echo 'is image';
+            $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
+            #$filePath = $uploadDir . $fileName;
+            $filePath = $uploadDir . $newfilename;
+            #$result = move_uploaded_file($tmpName, $filePath);
+            $result = move_uploaded_file($tmpName, $filePath);
+            $pic = $filePath;
+            if (!$result) {
+                $msg = "Error uploading file";
+                exit;
+            } else {
+                if (!get_magic_quotes_gpc()) {
+                    $fileName = addslashes($fileName);
+                    $filePath = addslashes($filePath);
+                }
+                //REMOVE ATUAL
+                #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
+                $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
             }
-
-            //display images without stored
-            //$extra_info = getimagesize($_FILES['images']['tmp_name'][$key]);
-            //$images_arr[] = "data:" . $extra_info["mime"] . ";base64," . base64_encode(file_get_contents($_FILES['images']['tmp_name'][$key]));
         }
     }
     ?>
