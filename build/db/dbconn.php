@@ -1341,7 +1341,7 @@ function DB_removeWICPlanner($pdo, $userId, $wicId) {
             WHERE [WIC_Planner].[Enabled]=1 
             AND [WIC_Planner].[Id]= ? 
             AND [WIC_Planner].[User_Id] = ?", array($wicId, $userId));
-        echo "SUCCESSFULLY REMOVED! > " . $wicId . " UID > " . $userId;
+        echo "SUCCESSFULLY REMOVED!";
     } catch (PDOException $e) {
         print "ERROR REMOVING WIC PLANNER :(!";
         die();
@@ -1353,26 +1353,28 @@ function DB_removeWICPlanner($pdo, $userId, $wicId) {
  * @param type $pdo
  * @param type $wicPlannerId
  * @param type $userId
+
+
  */
 function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
     try {
         $rows = sql($pdo, "SELECT [Service].[Id] AS SID
-	  ,[Service].[Name] AS SNA
-          ,[Organization].[Name] AS ONA
-          ,[Organization].[Id] AS OID
-	  ,[Organization].[Picture_Path] AS OPP
-          ,[WIC_Planner].[Name] AS WNA
-  FROM [dbo].[WIC_Planner_Service]
-  join [Service]
-  on [Service].[Id] = [WIC_Planner_Service].[Service_Id]
-  join [WIC_Planner]
-   on [WIC_Planner].[Id] = [WIC_Planner_Service].[Service_Id]
-  join [Organization]
-  on [Service].[Organization_Id] = [Organization].[Id]
-  WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
-  AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
+                , [Service].[Name] AS SNA
+                , [Organization].[Name] AS ONA
+                , [Organization].[Id] AS OID
+                , [Organization].[Picture_Path] AS OPP
+                , [WIC_Planner].[Name] AS WNA
+                FROM [dbo].[WIC_Planner_Service]
+                join [Service]
+                on [Service].[Id] = [WIC_Planner_Service].[Service_Id]
+                join [WIC_Planner]
+                on [WIC_Planner].[Id] = [WIC_Planner_Service].[Service_Id]
+                join [Organization]
+                on [Service].[Organization_Id] = [Organization].[Id]
+                WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
+                AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
         foreach ($rows as $row) {
-            echo '<section class="box-typical box-typical-max-280">
+            echo '<section class="box-typical box-typical-max -280">
             <header class="box-typical-header">
             <div class="tbl-row">
             <div class="tbl-cell tbl-cell-title">
@@ -1380,7 +1382,11 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             </div>
             </div>
             </header>
-            <div class="box-typical-body" style="overflow: hidden; padding: 0px; height: 700px; width: 504px;">
+            <div class="box-typical-body" style="overflow: hidden;
+                padding: 0px;
+                height: 700px;
+                width: 504px;
+                ">
             <div class="table-responsive">
             <table class="table table-hover">
             <thead>
@@ -1392,7 +1398,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             </thead>
             <tbody>
             <tr class="table-check">
-            <td><a href="../service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
+            <td><a href="../service_profile.php?Service = ' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
             <td class="table-photo">
             <img src="' . $row['OPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['ONA'] . '">
             </td>
@@ -1400,17 +1406,19 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             </td>
             <td class="table-photo">
             <a href="#" class="font-icon font-icon-del">
-            </a>
-            </td>
-            </tr>
-            </tbody>
-            </table>
-            </div>
-            </div>
-            </section>';
+        </a>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        </div>
+        </section>';
         }
     } catch (Exception $exc) {
-        echo 'ERROR READING SERVICES OF WIC PLANNER!';
+        echo 'ERROR READING SERVICES OF WIC PLANNER!
+
+         ';
     }
 }
 
