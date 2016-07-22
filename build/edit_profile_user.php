@@ -10,7 +10,7 @@ include_once '../build/db/session.php';
         <div class="page-center-in">
             <div class="container-fluid">
                  <?php $userId = $_SESSION['id'];
-                 DB_UserProfile($pdo,$userId);?>
+                 DB_UserProfile($pdo,$userId) ?>
             </div>
         </div>
     </div><!--.page-center-->
