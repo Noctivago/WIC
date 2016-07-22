@@ -24,25 +24,24 @@ $msg = "";
         $fileType = $_FILES['images']['type'];
         $temp = explode(".", $_FILES["file"]["name"]);
         $type = mime_content_type($fileName);
-        if (strstr($type, 'image/')) {
-            //echo 'is image';
-            $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
-            #$filePath = $uploadDir . $fileName;
-            $filePath = $uploadDir . $newfilename;
-            #$result = move_uploaded_file($tmpName, $filePath);
-            $result = move_uploaded_file($tmpName, $filePath);
-            $pic = $filePath;
-            if (!$result) {
-                $msg = "Error uploading file";
-                exit;
-            } else {
-                if (!get_magic_quotes_gpc()) {
-                    $fileName = addslashes($fileName);
-                    $filePath = addslashes($filePath);
-                }
-                //FALTA REMOVE ATUAL
-                $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
+
+        //echo 'is image';
+        $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
+        #$filePath = $uploadDir . $fileName;
+        $filePath = $uploadDir . $newfilename;
+        #$result = move_uploaded_file($tmpName, $filePath);
+        $result = move_uploaded_file($tmpName, $filePath);
+        $pic = $filePath;
+        if (!$result) {
+            $msg = "Error uploading file";
+            exit;
+        } else {
+            if (!get_magic_quotes_gpc()) {
+                $fileName = addslashes($fileName);
+                $filePath = addslashes($filePath);
             }
+            //FALTA REMOVE ATUAL
+            $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
         }
     }
     ?>
