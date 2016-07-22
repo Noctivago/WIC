@@ -14,7 +14,7 @@ include_once '../build/db/session.php';
                 <form class="sign-box"    style="max-width: 600px; width: 600px;">
                     <div class="sign-avatar no-photo">&plus;</div>
                     
-                    <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
+                    <button type="submit" class="btn btn-rounded btn-file">add picture <input class="btn-file" type="file"/> </button>
                     <header class="sign-title">Add a new Service </header>
                     
                     <div class="form-group">
@@ -24,6 +24,30 @@ include_once '../build/db/session.php';
                         </div>
                     </div>
 
+                    
+                    <div >
+                                    <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
+					<option>Country</option>
+					<option>Country</option>
+					<option>Country</option>
+                                        <option>Country</option>
+                                        <option>Long long long extra long example line long long long extra long example line </option>
+                                    </select>
+				
+                                
+                    </div>
+                    
+                    <div>
+                                    <select class="bootstrap-select bootstrap-select-arrow" placeholder="Country">
+					<option>Country</option>
+					<option>Country</option>
+					<option>Country</option>
+                                        <option>Country</option>
+                                        <option>Long long long extra long example line long long long extra long example line </option>
+                                    </select>
+				
+                                
+                    </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
                         <input type="text" class="form-control" placeholder=" Service Categorie"/>
