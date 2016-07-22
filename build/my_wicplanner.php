@@ -177,7 +177,6 @@ $msg = '';
     }
     function removeWic(x) {
         var id = x.id;
-        //alert(id);
         $.ajax({
             url: 'ajax/remove_wic_planner.php',
             method: 'post',
@@ -204,7 +203,6 @@ $msg = '';
             method: 'post',
             data: {con: x},
             success: function (data) {
-                alert(data);
                 $('.INCLUDE').html(data);
             }
         });
