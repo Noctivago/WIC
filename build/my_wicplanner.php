@@ -103,8 +103,7 @@ $msg = '';
         var wicName = document.getElementById("name").value;
         var wicDate = document.getElementById("daterange3").value;
         var wId = wicId;
-        if (wicName != "") {
-            alert(wicName + ' ' + wicDate);
+        if (wicName !== "") {
             $.ajax({
                 url: 'ajax/addWicP.php',
                 method: 'post',
