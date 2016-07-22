@@ -1342,11 +1342,12 @@ function DB_removeWICPlanner($pdo, $userId, $wicId) {
         $stmt->bindParam(':WICID', $wicId);
         $stmt->bindParam(':UserId', $userId);
         $stmt->execute();
-        if ($stmt->execute()) {
-            return "WIC PLANNER REMOVED!";
-        } else {
-            return "ERROR REMOVING WIC PLANNER! :(";
-        }
+//        if ($stmt->execute()) {
+//            return "WIC PLANNER REMOVED!";
+//        } else {
+//            return "ERROR REMOVING WIC PLANNER! :(";
+//        }
+        echo "WIC PLANNER REMOVED!";
     } catch (PDOException $e) {
         echo 'ERROR REMOVING WIC PLANNER! :(';
         //die();
