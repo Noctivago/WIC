@@ -53,11 +53,8 @@ $msg = '';
 
             </div>
         </div><!--.container-fluid-->
-    </div><!--.page-content-->
+    </div><!--.page-content--> 
 </div>
-<script type="text/javascript">
-    loadMyWics();
-</script>
 
 <script>
     function loadMyWics() {
@@ -261,6 +258,10 @@ $msg = '';
     });
 </script>
 
+<script type="text/javascript">
+    loadMyWics();
+</script>
+
 <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
@@ -283,7 +284,6 @@ $msg = '';
 <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
 <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
 <script src="js/lib/select2/select2.full.min.js"></script>
-
 
 </body>
 </html>
