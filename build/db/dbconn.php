@@ -1452,8 +1452,22 @@ function DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate) {
     try {
         sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [User_Id], [Date_Created],"
                 . " [Enabled], [Event_Date]) VALUES (?, ?, ?, ?, ?)", array($name, $userId, $d, 1, $eventDate));
-        echo $name . " CREATED!";
+        echo $name . " created!";
     } catch (PDOException $e) {
         echo "ERROR CREATING WIC PLANNER!";
+    }
+}
+
+function DB_editWicPlanner($pdo, $wicId) {
+    try {
+        $rows = sql($pdo, "SELECT [Name], [] FROM [dbo].[WIC_Planner] WHERE [Id] = ?", array($wicId), "rows");
+        $wicInfo = array();
+        foreach ($rows as $row) {
+            $wicInfo["Name"] = $row["Name"];
+            $wicInfo["Event_Date"] = $row["Event_Date"];
+        }
+        return $wicInfo;
+    } catch (Exception $exc) {
+        echo 'ERROR READING WIC PLANNER!';
     }
 }
