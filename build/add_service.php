@@ -15,7 +15,7 @@ include_once '../build/db/session.php';
                     <div class="sign-avatar no-photo">&plus;</div>
                     
                     <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
-                    <header class="sign-title">Edit Service Profile</header>
+                    <header class="sign-title">Add a new Service </header>
                     
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
@@ -69,7 +69,7 @@ include_once '../build/db/session.php';
 						</div>
                     </div>
                     
-                    <button type="submit" class="btn btn-rounded btn-success sign-up">Add a new service</button>
+                    <button type="submit" class="btn btn-rounded btn-success sign-up">Add a new service!</button>
                     
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
