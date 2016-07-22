@@ -1566,8 +1566,8 @@ function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
             $wicInfo["Name"] = $row["Name"];
-//            $wicInfo["Event_Date"] = $subStr[0];
-            $wicInfo["Event_Date"] = $row['Event_Date'];
+            $wicInfo["Event_Date"] = $subStr[0];
+            //$wicInfo["Event_Date"] = $row['Event_Date'];
         }
         return $wicInfo;
     } catch (Exception $exc) {
