@@ -79,7 +79,7 @@ $msg = '';
             }
         });
     }
-    function removeWicService(x,y) {
+    function removeWicService(x, y) {
         var id = x.id;
         var id = y;
         $.ajax({
@@ -87,7 +87,7 @@ $msg = '';
             method: 'post',
             data: {con: id, conId: sid},
             success: function (data) {
-                loadMyWics();
+                showWicServicesForm(id);
                 //alert(data);
             }
         });
@@ -117,7 +117,7 @@ $msg = '';
             }
         });
     }
-    
+
     function addWic(wicId) {
         var wicName = document.getElementById("name").value;
         var wicDate = document.getElementById("daterange3").value;
