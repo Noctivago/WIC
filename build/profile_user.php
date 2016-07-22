@@ -105,6 +105,7 @@ include_once '../build/db/session.php';
     $.post("ajax/serviceInvite.php",{invite: id, resp : accept},function(result){
         alert(id);
         alert('accept');
+        alert(result);
     });
     return false;
     }
@@ -114,6 +115,7 @@ include_once '../build/db/session.php';
     $.post("ajax/serviceInvite.php",{invite: id,resp : reject},function(result){
         alert(id);
         alert('Reject!!');
+        alert(result);
     });
         return false;
     }
