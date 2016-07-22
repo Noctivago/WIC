@@ -42,6 +42,17 @@ include_once '../build/db/session.php';
                 }
                 //REMOVE ATUAL
                 #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
+                /*
+                 * 
+                  function DB_addUserProfilePicture($pdo, $pic, $userId) {
+                  try {
+                  sql($pdo, "UPDATE [dbo].[Profile] SET [Picture_Path] = ? WHERE [User_Id] = ?", array($pic, $userId));
+                  echo 'Picture sucessufully changed!';
+                  } catch (PDOException $e) {
+                  echo "ERROR UPDATING PROFILE PICTURE!";
+                  }
+                  }
+                 */
                 $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
             }
         }
