@@ -36,11 +36,7 @@ if (isset($id)) {
     <!--        </div>
         </div>.page-center-->
 
-    <script src="js/lib/jquery/jquery.min.js"></script>
-    <script src="js/lib/tether/tether.min.js"></script>
-    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/app.js"></script>
+   
     <script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
     <script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
     <script src="js/lib/daterangepicker/daterangepicker.js"></script>
@@ -50,75 +46,10 @@ if (isset($id)) {
     <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="js/lib/select2/select2.full.min.js"></script>
 
-    <script>
-                $(function () {
-                    $('#tags-editor-textarea').tagEditor();
-                });
-    </script>
+   
 
-    <script>
-        function addWic() {
-            var wicName = document.getElementById("name").value;
-            var wicDate = document.getElementById("daterange3").value;
-            if (wicName != "") {
-                alert(wicName + ' ' + wicDate);
-                $.ajax({
-                    url: 'ajax/addWicP.php',
-                    method: 'post',
-                    data: {name: wicName, eDate: wicDate},
-                    success: function (data) {
-                        var x = document.getElementById("confirmation");
-                        x.innerHTML(data)
-                    }
-                });
-                wicName.innerHTML = "";
-                wicDate.innerHTML = "";
-            } else {
-                var x = document.getElementById("confirmation");
-                x.innerHTML("Please fill all fields!");
-            }
-        }
-    </script>
+   
 
-    <script>
-        $(function () {
-            function cb(start, end) {
-                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-            }
-            cb(moment().subtract(29, 'days'), moment());
-
-            $('#daterange').daterangepicker({
-                "timePicker": true,
-                ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                },
-                "linkedCalendars": false,
-                "autoUpdateInput": false,
-                "alwaysShowCalendars": true,
-                "showWeekNumbers": true,
-                "showDropdowns": true,
-                "showISOWeekNumbers": true
-            });
-
-            $('#daterange2').daterangepicker();
-
-            $('#daterange3').daterangepicker({
-                singleDatePicker: true,
-                showDropdowns: true
-            });
-
-            $('#daterange').on('show.daterangepicker', function (ev, picker) {
-                /*$('.daterangepicker select').selectpicker({
-                 size: 10
-                 });*/
-            });
-        });
-    </script>
 
 </body>
 </html>
