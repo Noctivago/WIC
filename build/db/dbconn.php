@@ -330,37 +330,35 @@ function DB_checkIfInvitationExists($pdo, $email) {
     }
 }
 
-function DB_checkInvitesWaiting($pdo, $idUser){
+function DB_checkInvitesWaiting($pdo, $idUser) {
     try {
-        $rows = sql($pdo,"SELECT [Service].[Name] as ServName,[Service].[Id] as ServId,[Organization].[Name] as OrgName,[Organization].[Picture_Path],[User_Service].[ID]
+        $rows = sql($pdo, "SELECT [Service].[Name] as ServName,[Service].[Id] as ServId,[Organization].[Name] as OrgName,[Organization].[Picture_Path],[User_Service].[ID]
   FROM [dbo].[User_Service]
   join [Service]
   on [Service].[Id] = [User_Service].[Service_Id]
   join [Organization]
   on [Organization].[Id] = [Service].[Organization_Id]
-  where [validate] = 0 and [User_ID] = ?",array($idUser),"rows");
-        foreach ($rows as $row){
+  where [validate] = 0 and [User_ID] = ?", array($idUser), "rows");
+        foreach ($rows as $row) {
             echo '<article class="friends-list-item">';
-                echo '<div class="user-card-row">';
-                echo '<div class="tbl-row">';
-                echo '<div class="tbl-cell tbl-cell-photo">';
-                echo '<a href="#">';
-                echo '<img src="' . $row['Picture_Path'] . '" alt="Avatar">';
-                echo '</a>';
-                echo '</div>';
-                echo '<div class="tbl-cell">';
-                echo '<p class="user-card-row-name"><a href="#">'.$row['OrgName'].' invited you to the service '.$row['ServName'] .'</a></p>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '</article>';
+            echo '<div class="user-card-row">';
+            echo '<div class="tbl-row">';
+            echo '<div class="tbl-cell tbl-cell-photo">';
+            echo '<a href="#">';
+            echo '<img src="' . $row['Picture_Path'] . '" alt="Avatar">';
+            echo '</a>';
+            echo '</div>';
+            echo '<div class="tbl-cell">';
+            echo '<p class="user-card-row-name"><a href="#">' . $row['OrgName'] . ' invited you to the service ' . $row['ServName'] . '</a></p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</article>';
         }
     } catch (Exception $ex) {
         
     }
 }
-
-
 
 /**
  * VINCULA UM USER A UM SERVIÇO
@@ -1656,5 +1654,20 @@ function DB_updateWicPlanner($pdo, $wicId, $userId, $name, $eventDate) {
             print "ERROR UPDATING WIC PLANNER :(!";
             die();
         }
+    }
+}
+
+/**
+ * Função que alterar a imagem de perfil do user
+ * @param type $pdo
+ * @param type $pic
+ * @param type $userId
+ */
+function DB_addUserProfilePicture($pdo, $pic, $userId) {
+    try {
+        sql($pdo, "UPDATE [dbo].[Profile] SET [Picture_Path] = ? WHERE [User_Id] = ?", array($pic, $userId));
+        echo 'Picture sucessufully changed!';
+    } catch (PDOException $e) {
+        echo "ERROR UPDATING PROFILE PICTURE!";
     }
 }
