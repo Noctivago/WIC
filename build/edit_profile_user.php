@@ -5,23 +5,23 @@ include_once '../build/db/session.php';
 ?>
 
 <body>
-
-    <div class="page-center">
-        <div class="page-center-in">
-            <div class="container-fluid">
-                <?php
-                if (isset($_POST['save']) && isset($_POST['first-name']) && isset($_POST['last-name'])) {
-                    echo 'ja foste';
-                    //$foto
-                    $first = (filter_var($_POST ['first-name'], FILTER_SANITIZE_STRING));
-                    $last = (filter_var($_POST ['last-name'], FILTER_SANITIZE_STRING));
-                    $sId = $_SESSION['id'];
-                    sql($pdo, "UPDATE [dbo].[User_Profile]
+    <?php
+    if (isset($_POST['save']) && !empty($_POST['first-name']) && !empty($_POST['last-name'])) {
+        echo 'ja foste';
+        //$foto
+        $first = (filter_var($_POST ['first-name'], FILTER_SANITIZE_STRING));
+        $last = (filter_var($_POST ['last-name'], FILTER_SANITIZE_STRING));
+        $sId = $_SESSION['id'];
+        sql($pdo, "UPDATE [dbo].[User_Profile]
    SET [First_Name] = ?
       ,[Last_Name] = ?
  WHERE [User_Id] =? ", array($first, $last, $sId));
-                }  
-                ?>
+    }
+    ?>
+    <div class="page-center">
+        <div class="page-center-in">
+            <div class="container-fluid">
+
                 <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"  style="max-width: 600px; width: 600px;">
                     <?php
                     $userId = $_SESSION['id'];
