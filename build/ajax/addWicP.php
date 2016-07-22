@@ -14,10 +14,11 @@ $name = (filter_var($_POST ['name']));
 $eventDate = (filter_var($_POST ['eDate']));
 $wicId = (filter_var($_POST ['wicId']));
 
+if (isset($name) && isset($eventDate)) {
 //VERIFICAR SE EXISTE; SE SIM UPDATE
-if (isset($wicId)) {
-    DB_updateWicPlanner($pdo, $wicId, $userId, $name, $eventDate);
-} else {
-    DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate);
+    if (isset($wicId)) {
+        DB_updateWicPlanner($pdo, $wicId, $userId, $name, $eventDate);
+    } else {
+        DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate);
+    }
 }
-    
