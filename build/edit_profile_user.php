@@ -6,8 +6,9 @@ include_once '../build/db/session.php';
 
 <body>
     <?php
+    echo $msg;
     if (isset($_POST['save']) && !empty($_POST['first-name']) && !empty($_POST['last-name'])) {
-        echo 'ja foste';
+        $msg = 'ja foste';
         //$foto
         $first = (filter_var($_POST ['first-name'], FILTER_SANITIZE_STRING));
         $last = (filter_var($_POST ['last-name'], FILTER_SANITIZE_STRING));
