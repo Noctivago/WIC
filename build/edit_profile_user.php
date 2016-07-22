@@ -46,13 +46,12 @@ $msg = "";
             } else {
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                     $msg = "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+                    $msg = DB_addUserProfilePicture($pdo, $target_file, $userId) . ' > ' . $target_file;
                 } else {
                     $msg = "Sorry, there was an error uploading your file.";
                 }
             }
         }
-
-        $msg = DB_addUserProfilePicture($pdo, $target_file, $userId) . ' > ' . $target_file;
     }
     ?>
     <div class="page-center">
