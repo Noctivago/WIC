@@ -6,7 +6,7 @@ include_once '../db/functions.php';
 $invite = (filter_var($_POST['invite']));
 $resp = (filter_var($_POST['resp']));
 $userId = $_SESSION['id'];
-
+echo $userId ."  ". $resp . "  ". $invite;
 if($resp ==0){
     sql($pdo,"UPDATE [dbo].[User_Service]
    SET [Enabled] = 0
