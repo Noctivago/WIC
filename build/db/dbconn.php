@@ -1420,10 +1420,10 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 function DB_UserProfile($pdo, $userId) {
     try {
 
-        $rows = sql($pdo, "SELECT *
+        $rowss = sql($pdo, "SELECT *
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
-        foreach ($rows as $row) {
+        foreach ($rowss as $row) {
             echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="" alt=""/>&plus;
                     </div>
