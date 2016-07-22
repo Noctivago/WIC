@@ -1458,7 +1458,7 @@ function DB_OrgProfile($pdo, $userId) {
                     <header class="sign-title">Edit Organization Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" name="Name" id="Name" placeholder=" Organization Name" value="' . $row['Name'] . '"/>
+                        <input type="text" class="form-control" name="name" id="name" placeholder=" Organization Name" value="' . $row['Name'] . '"/>
                         <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>
