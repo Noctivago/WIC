@@ -6,5 +6,5 @@ include_once '../db/session.php';
 $WicPlannerId = (filter_var($_POST ['con']));
 $serviceId = (filter_var($_POST ['conId']));
 
-//REMOVE WICPLANNER
-DB_removeWICPlanner($pdo, $userId, $WicPlannerId);
+//REMOVE SERVICE FROM WICPLANNER
+DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId);

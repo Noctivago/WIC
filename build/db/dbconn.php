@@ -1673,3 +1673,23 @@ function DB_addUserProfilePicture($pdo, $pic, $userId) {
         echo "ERROR UPDATING PROFILE PICTURE!";
     }
 }
+
+/**
+ * Função para remover serviço do wic planner
+ * @param type $pdo
+ * @param type $serviceId
+ * @param type $WicPlannerId
+ * @return boolean
+ */
+function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
+    //SE PASSARMOS O USERID PODEMOS VERIFICARA SE O USER ESTA NESTE WIC PLANNER
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[WIC_Planner_Service] "
+                . "SET [Enabled]=0 "
+                . "WHERE [Service_Id] = ? "
+                . "AND [WIC_Planner_Id] = ?", array($serviceId, $WicPlannerId));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}
