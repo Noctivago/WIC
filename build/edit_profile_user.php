@@ -9,8 +9,11 @@ $msg = "";
 
 <body>
     <?php
+    $userId = $_SESSION['id'];
     if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
-        $msg = 'olaaa';
+    $firstName = (filter_var($_POST ['first'], FILTER_SANITIZE_STRING));
+    $lastName = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
+    $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);   
     }
     ?>
     <div class="page-center">
@@ -19,7 +22,6 @@ $msg = "";
                 <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"  style="max-width: 600px; width: 600px;">
                     <?php
                     echo 'iii' . $msg;
-                    $userId = $_SESSION['id'];
                     DB_UserProfile($pdo, $userId);
                     ?>
                     <!--                    <div class="sign-avatar no-photo" >
