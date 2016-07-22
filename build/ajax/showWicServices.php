@@ -1,7 +1,7 @@
 <?php
 
-include_once '../db/session.php';
 require_once '../db/dbconn.php';
+include_once '../db/session.php';
 
 $wicPlannerId = (filter_var($_POST ['con']));
 $userId = $_SESSION['id'];
