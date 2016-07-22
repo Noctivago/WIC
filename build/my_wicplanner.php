@@ -98,8 +98,9 @@ $msg = '';
                     if (data != '') {
                         $('.INCLUDE').html(data);
                     } else {
+                        alert('Falta Link do index dos services');
                         $(".INCLUDE").load("addTowicplanner.php");
-                        }
+                    }
                     }
             );
         }
