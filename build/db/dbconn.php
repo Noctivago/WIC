@@ -366,6 +366,17 @@ function DB_checkInvitesWaiting($pdo, $idUser) {
     }
 }
 
+function DB_updateinvite($pdo, $resp, $invite, $userId) {
+    try {
+        sql($pdo, "UPDATE [dbo].[User_Service]
+   SET [Enabled] = ?
+      ,[Validate] = 1
+ WHERE [Id] = ? and [User_Id] = ?", array($resp, $invite, $userId));
+    } catch (Exception $ex) {
+        
+    }
+}
+
 /**
  * VINCULA UM USER A UM SERVIÇO
  * @param type $pdo
