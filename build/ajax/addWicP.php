@@ -16,7 +16,7 @@ $wicId = (filter_var($_POST ['wicId']));
 
 if (isset($name) && isset($eventDate)) {
 //VERIFICAR SE EXISTE; SE SIM UPDATE
-    if (isset($wicId)) {
+    if (isset($wicId) && $wicId != 0) {
         DB_updateWicPlanner($pdo, $wicId, $userId, $name, $eventDate);
     } else {
         DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate);

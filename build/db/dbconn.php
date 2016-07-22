@@ -1584,15 +1584,17 @@ function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
  * @param type $eventDate
  */
 function DB_updateWicPlanner($pdo, $wicId, $userId, $name, $eventDate) {
-    try {
-        sql($pdo, "UPDATE [WIC_Planner]
+    if ($wicId != 0) {
+        try {
+            sql($pdo, "UPDATE [WIC_Planner]
             SET [WIC_Planner].[Name] = ?,
             SET [WIC_Planner].[Event_Date] = ?
             WHERE [WIC_Planner].[Id]= ? 
             AND [WIC_Planner].[User_Id] = ?", array($name, $eventDate, $wicId, $userId));
-        echo "Event updated!";
-    } catch (PDOException $e) {
-        print "ERROR UPDATING WIC PLANNER :(!";
-        die();
+            echo "Event updated!";
+        } catch (PDOException $e) {
+            print "ERROR UPDATING WIC PLANNER :(!";
+            die();
+        }
     }
 }
