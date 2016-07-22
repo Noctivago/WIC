@@ -29,7 +29,7 @@ $msg = 'ID >' . $id;
             <?= $msg; ?>
             <button onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
         </div>
-        <p id="confirmation"> </p>
+        <p id="confirmation" name="confirmation"> </p>
     </div>
     <!--        </div>
         </div>.page-center-->
@@ -75,11 +75,6 @@ $msg = 'ID >' . $id;
             }
         }
     </script>
-
-
-
-    <!-- RECHAPTA -->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script>
         $(function () {
