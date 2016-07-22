@@ -1448,7 +1448,7 @@ function DB_UserProfile($pdo, $userId) {
 }
 function DB_OrgProfile($pdo,$org){
     try {
-        $row = sql($pdo,"SELECT * FROM [Organization] Where [Id] = ?", array($org),"rows");
+        $row = sql($pdo,"SELECT * FROM [Organization] Where [Id] = ?", array(2),"rows");
         foreach ($rows as $row){
     echo '<div class="sign-avatar no-photo">&plus;</div>
                     
