@@ -40,6 +40,7 @@ include_once '../build/db/session.php';
 
                 </section>
             </div><!--.col- -->
+           
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <section class="box-typical">
@@ -61,6 +62,20 @@ include_once '../build/db/session.php';
                                                         </div>
                                                     </div>
                                                 </article>-->
+                        <?= db_getUserMessengerWithUsers($pdo, $_SESSION['id']); ?>
+                        <?= db_getUserMessengerWithOrgs($pdo, $_SESSION['id']); ?>
+
+                        <div class="see-all">
+                            <a href="#">See more</a>
+                        </div>
+
+                </section>
+            </div><!--.col- -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <section class="box-typical">
+                    <header class="box-typical-header-sm">Messenger</header>
+                    <div class="friends-list stripped">
+                      
                         <?= db_getUserMessengerWithUsers($pdo, $_SESSION['id']); ?>
                         <?= db_getUserMessengerWithOrgs($pdo, $_SESSION['id']); ?>
 
