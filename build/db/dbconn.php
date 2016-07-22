@@ -1547,8 +1547,11 @@ function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
         $rows = sql($pdo, "SELECT * FROM [dbo].[WIC_Planner] WHERE [Id] = ? and [User_Id] = ?", array($wicId, $userId), "rows");
         $wicInfo = array();
         foreach ($rows as $row) {
+            $str = $row['Event_Date'];
+            //SEPARA A DATA DAS HORAS
+            $subStr = explode(" ", $str);
             $wicInfo["Name"] = $row["Name"];
-            $wicInfo["Event_Date"] = $row["Event_Date"];
+            $wicInfo["Event_Date"] = $subStr[0];
         }
         return $wicInfo;
     } catch (Exception $exc) {
