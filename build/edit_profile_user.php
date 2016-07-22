@@ -11,8 +11,6 @@ $msg = "";
 
     <?php
     if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
-        $msg = 'ja foste';
-        //$foto
         $first = (filter_var($_POST ['first'], FILTER_SANITIZE_STRING));
         $last = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
         $sId = $_SESSION['id'];
