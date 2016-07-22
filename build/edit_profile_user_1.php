@@ -47,7 +47,7 @@ $msg = "";
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data"  style="max-width: 600px; width: 600px;">
+                <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data"  style="max-width: 100%; width: 100%;">
                     <?php
                     DB_UserProfile($pdo, $userId);
                     ?>
