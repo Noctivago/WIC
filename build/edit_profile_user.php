@@ -9,17 +9,6 @@ $msg = "";
 
 <body>
 
-    <?php
-    if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
-        $first = (filter_var($_POST ['first'], FILTER_SANITIZE_STRING));
-        $last = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
-        $sId = $_SESSION['id'];
-        $msg = DB_UpdateUserInformation($pdo, $sId, $first, $last);
-        echo $msg;
-    }  else {
-        $msg ='não executa';
-    }
-    ?>
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
