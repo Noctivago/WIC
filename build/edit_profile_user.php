@@ -39,9 +39,7 @@ include_once '../build/db/session.php';
     <script src="js/plugins.js"></script>
     <script src="js/app.js"></script>
     <script>
-    window.onload(function(){
-        
-    })
+    
     </script>
 </body>
 </html>
