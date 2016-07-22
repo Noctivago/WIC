@@ -10,18 +10,20 @@ include_once '../build/db/session.php';
         <div class="page-center-in">
             <div class="container-fluid">
                 <form class="sign-box"    style="max-width: 600px; width: 600px;">
-                    <div class="sign-avatar no-photo">&plus;</div>
+                    <div class="sign-avatar no-photo" >
+                        <img id="image" src="" alt=""/>&plus;
+                    </div>
                     <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" class="form-control" placeholder="First Name"/>
+                            <input type="text" id="first-name" class="form-control" placeholder="First Name"/>
                             <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" class="form-control" placeholder="Last Name"/>
+                            <input type="text" id="last-name" class="form-control" placeholder="Last Name"/>
                             <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>
@@ -36,5 +38,10 @@ include_once '../build/db/session.php';
     <script src="js/lib/bootstrap/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/app.js"></script>
+    <script>
+    window.onload(function(){
+        
+    })
+    </script>
 </body>
 </html>
