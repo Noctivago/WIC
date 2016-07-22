@@ -1341,7 +1341,7 @@ function DB_removeWICPlanner($pdo, $userId, $wicId) {
             WHERE [WIC_Planner].[Enabled]=1 
             AND [WIC_Planner].[Id]= ? 
             AND [WIC_Planner].[User_Id] = ?", array($wicId, $userId));
-        echo "WIC PLANNER REMOVED!";
+        echo "SUCCESSFULLY REMOVED!";
     } catch (PDOException $e) {
         print "ERROR REMOVING WIC PLANNER :(!";
         die();
@@ -1420,7 +1420,7 @@ function DB_UserProfile($pdo, $userId) {
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-           
+            
         }
     } catch (Exception $ex) {
         
