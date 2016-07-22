@@ -1452,8 +1452,8 @@ function DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate) {
     try {
         sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [User_Id], [Date_Created],"
                 . " [Enabled], [Event_Date]) VALUES (?, ?, ?, ?, ?)", array($name, $userId, $d, 1, $eventDate));
-        echo "WIC PLANNER " . $name . " CREATED!";
+        echo $name . " CREATED!";
     } catch (PDOException $e) {
-        echo  "ERROR CREATING WIC PLANNER!";
+        echo "ERROR CREATING WIC PLANNER!";
     }
 }
