@@ -1420,7 +1420,6 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             <tr>
             <th>Service</th>
             <th>Owner</th><th></th>
-            <th></th>
             </tr>
             </thead>
             <tbody>
