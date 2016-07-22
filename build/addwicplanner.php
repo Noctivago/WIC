@@ -40,7 +40,6 @@ if (isset($id) && isset($uid)) {
                 <i class="font-icon font-icon-calend"></i>
             </span>
         </div>
-        <?= $msg; ?>
         <span id="textelement" class="form-control" style="border:0px"></span>
         <button onclick="addWic(<?= $wicId; ?>);" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
     </div>
