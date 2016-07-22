@@ -1508,7 +1508,7 @@ function DB_OrgProfile($pdo, $org) {
                    <div class="form-group row">
                         
 						<div class="form-control-wrapper form-control-icon-left" >
-							<textarea rows="8" class="form-control" placeholder="Organization Info" value="' . $row['Description'] . '"></textarea>
+							<textarea rows="8" class="form-control" placeholder="Organization Info">' . $row['Description'] . '</textarea>
                                                         <i class="font-icon font-icon-user"></i>
 						</div>
                     </div>
