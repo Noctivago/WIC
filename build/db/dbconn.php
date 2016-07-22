@@ -1368,7 +1368,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 join [Service]
                 on [Service].[Id] = [WIC_Planner_Service].[Service_Id]
                 join [WIC_Planner]
-                on [WIC_Planner].[Id] = [WIC_Planner_Service].[Service_Id]
+                on [WIC_Planner].[Id] = [WIC_Planner_Service].[WIC_Planner_Id]
                 join [Organization]
                 on [Service].[Organization_Id] = [Organization].[Id]
                 WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
@@ -1406,14 +1406,14 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             </td>
             <td class="table-photo">
             <a href="#" class="font-icon font-icon-del">
-        </a>
-        </td>
-        </tr>
-        </tbody>
-        </table>
-        </div>
-        </div>
-        </section>';
+            </a>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </section>';
         }
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICES OF WIC PLANNER!
