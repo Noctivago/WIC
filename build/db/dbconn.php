@@ -1376,16 +1376,48 @@ function DB_removeWICPlanner($pdo, $userId, $wicId) {
 }
 
 /**
+ * Verifica se o Wic Planner tem serviços
+ * @param type $pdo
+ * @param type $email
+ * @return boolean
+ */
+function DB_checkIfWicPlannerHaveServices($pdo, $wicPlannerId, $userId) {
+    try {
+        $count = sql($pdo, "SELECT [Service].[Id] AS SID
+                , [Service].[Name] AS SNA
+                , [Organization].[Name] AS ONA
+                , [Organization].[Id] AS OID
+                , [Organization].[Picture_Path] AS OPP
+                , [WIC_Planner].[Name] AS WNA
+                FROM [dbo].[WIC_Planner_Service]
+                join [Service]
+                on [Service].[Id] = [WIC_Planner_Service].[Service_Id]
+                join [WIC_Planner]
+                on [WIC_Planner].[Id] = [WIC_Planner_Service].[WIC_Planner_Id]
+                join [Organization]
+                on [Service].[Organization_Id] = [Organization].[Id]
+                WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
+                AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo '';
+    }
+}
+
+/**
  * Função que devolve os serviços do meu WIC Planner
  * @param type $pdo
  * @param type $wicPlannerId
  * @param type $userId
-
-
  */
 function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
     try {
-        $rows = sql($pdo, "SELECT [Service].[Id] AS SID
+        if (DB_checkIfWicPlannerHaveServices) {
+            $rows = sql($pdo, "SELECT [Service].[Id] AS SID
                 , [Service].[Name] AS SNA
                 , [Organization].[Name] AS ONA
                 , [Organization].[Id] AS OID
@@ -1400,7 +1432,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 on [Service].[Organization_Id] = [Organization].[Id]
                 WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
                 AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
-        echo '<section class="box-typical box-typical-max-280">
+            echo '<section class="box-typical box-typical-max-280">
             <header class="box-typical-header">
             <div class="tbl-row">
             <div class="tbl-cell tbl-cell-title">
@@ -1422,8 +1454,8 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             </tr>
             </thead>
             <tbody>';
-        foreach ($rows as $row) {
-            echo '
+            foreach ($rows as $row) {
+                echo '
             <tr class="table-check">
             <td><a href="../service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
             <td class="table-photo">
@@ -1436,17 +1468,18 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             </a>
             </td>
             </tr>';
-        }
-        echo '</tbody>
+            }
+            echo '</tbody>
             </table>
             </div>
             </div>
             </section>
             </div>';
+        } else {
+            
+        }
     } catch (Exception $exc) {
-        echo 'ERROR READING SERVICES OF WIC PLANNER!
-
-         ';
+        echo 'ERROR READING SERVICES OF WIC PLANNER!';
     }
 }
 
