@@ -81,12 +81,12 @@ $msg = '';
     }
     function showAddWicForm() {
         alert('SHOW WIC PLANNER FORM');
-        $("#include").load("addwicplanner.php");
+        $(".INCLUDE").load("addwicplanner.php");
     }
     function showAddWicFormEditMode(idWicPlanner) {
         alert('EDIT WIC PLANNER FORM');
         var x = idWicPlanner;
-        $(".include").load("addwicplanner.php?id=" + x);
+        $(".INCLUDE").load("addwicplanner.php?id=" + x);
     }
     function showWicServicesForm(idWicPlanner) {
         var x = idWicPlanner;
