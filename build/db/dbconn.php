@@ -1308,20 +1308,19 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
 function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
-      ,[WIC_Planner].[Name] AS WPN
-      ,[Event_Date] AS WPED
-	  ,[User_Profile].[First_Name] AS UFN
-	  ,[User_Profile].[Last_Name]  AS ULN 
-	  ,[User_Profile].[Picture_Path] AS UPP
+        ,[WIC_Planner].[Name] AS WPN
+        ,[WIC_Planner].[Event_Date] AS WPED        
+            ,[User_Profile].[First_Name] AS UFN
+            ,[User_Profile].[Last_Name] AS ULN
+            ,[User_Profile].[Picture_Path] AS UPP
         FROM [dbo].[WIC_Planner]
         join [User]
         on [User].[id] = [WIC_Planner].[User_Id]
         join [User_Profile]
         on [WIC_Planner].[User_Id] = [User_Profile].[User_Id]
         join [WIC_Planner_User]
-        on [WIC_Planner_User].[Wic_Planner_Id] = [WIC_Planner].[Id]
-        WHERE [WIC_Planner].[Enabled] = 1
-        AND [WIC_Planner_User].[User_Id] = ?", array($userId), "rows");
+        on [WIC_Planner_User].[Wic_Planner_ID] = [Wic_Planner].[Id]
+        WHERE [WIC_Planner].[Enabled] = 1 and [Wic_Planner_User].[User_Id] = ? and [WIC_Planner_User].[Enabled] = 1", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<tr class="table-check">';
             echo '<td><a onclick="showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
