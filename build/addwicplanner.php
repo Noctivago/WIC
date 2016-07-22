@@ -11,7 +11,7 @@ if (isset($id)) {
     $msg = 'ID >' . $id;
     $userId = $_SESSION['id'];
     $wicInfo = array();
-//    $wicInfo = DB_getWicPlannerInfo($pdo, $wicId, $userId);
+    $wicInfo = DB_getWicPlannerInfo($pdo, $wicId, $userId);
 }
 ?>
 <!--<body>-->
