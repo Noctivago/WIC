@@ -1426,17 +1426,17 @@ function DB_UserProfile($pdo, $userId) {
             echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="' . $row['Picture_Path'] . '" alt=""/>&plus;
                     </div>
-                    <button type="submit" class="btn btn-rounded btn-file" onselect="change()">Change Picture <input class="btn-file" type="file"/> </button>
+                    <button type="submit" class="btn btn-rounded btn-file" >Change Picture <input class="btn-file" type="file"/> </button>
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" id="first-name" class="form-control" placeholder="First Name" value="' . $row['First_Name'] . '"/>
+                            <input type="text" id="first" class="form-control" placeholder="First Name" value="' . $row['First_Name'] . '"/>
                             <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" id="last-name" class="form-control" placeholder="Last Name" value="' . $row['Last_Name'] . '"/>
+                            <input type="text" id="last" class="form-control" placeholder="Last Name" value="' . $row['Last_Name'] . '"/>
                             <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>
