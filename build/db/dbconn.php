@@ -1460,7 +1460,7 @@ function DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate) {
     }
 }
 
-function DB_editWicPlanner($pdo, $wicId, $userId) {
+function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
     try {
         $rows = sql($pdo, "SELECT [Name], [Event_Date] FROM [dbo].[WIC_Planner] WHERE [Id] = ? and [User_Id] = ?", array($wicId, $userId), "rows");
         $wicInfo = array();
