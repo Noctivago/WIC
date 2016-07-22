@@ -13,7 +13,7 @@ $msg ="";
         <div class="page-center-in">
             <div class="container-fluid">
                  <?php
-    if (isset($_POST['save']) && !empty($_POST['first-name']) && !empty($_POST['last-name'])) {
+    if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
         $msg = 'ja foste';
         //$foto
         $first = (filter_var($_POST ['first'], FILTER_SANITIZE_STRING));
