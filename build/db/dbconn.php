@@ -1422,7 +1422,8 @@ function DB_UserProfile($pdo, $userId) {
         $rowss = sql($pdo, "SELECT *
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
-echo '<div class="sign-avatar no-photo" >
+        echo $rowss['First_Name'];
+        echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="" alt=""/>&plus;
                     </div>
                     <button type="submit" class="btn btn-rounded btn-file" onselect="change()">Change Picture <input class="btn-file" type="file"/> </button>
@@ -1440,10 +1441,8 @@ echo '<div class="sign-avatar no-photo" >
                         </div>
                     </div>
                     <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>';
-        
-        foreach ($rowss as $row) {
-            
-        }
+
+      
     } catch (Exception $ex) {
         
     }
