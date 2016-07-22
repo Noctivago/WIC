@@ -75,21 +75,18 @@ $msg = '';
             data: {con: id},
             success: function (data) {
                 loadMyWics();
-                //alert(data);
             }
         });
     }
     function removeWicService(x, y) {
         var id = x.id;
         var sid = y;
-        alert(id + ',' + sid)
         $.ajax({
             url: 'ajax/remove_wic_planner_service.php',
             method: 'post',
             data: {con: id, conId: sid},
             success: function (data) {
                 showWicServicesForm(id);
-                //alert(data);
             }
         });
     }
@@ -100,8 +97,7 @@ $msg = '';
         var x = idWicPlanner;
         $(".INCLUDE").load("addwicplanner.php?id=" + x + "&uid=" + <?= $_SESSION['id']; ?>);
     }
-    //SE DATA VIER VAZIO COLOCAR AVISO!
-    //OU 1 INCLUDE
+
     function showWicServicesForm(idWicPlanner) {
         var x = idWicPlanner;
         $.ajax({
