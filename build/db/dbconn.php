@@ -1440,11 +1440,24 @@ function DB_UserProfile($pdo, $userId) {
                             <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>';
+                    <button type="submit" name="save" class="btn btn-rounded btn-success sign-up">Save Changes</button>';
         }
         
 
       
+    } catch (Exception $ex) {
+        
+    }
+}
+
+function DB_UpdateUserInformation($pdo,$sId,$first,$last){
+    try {
+        sql($pdo,"UPDATE [dbo].[User_Profile]
+   SET [First_Name] = ?
+      ,[Last_Name] = ?
+ WHERE [User_Id] =? ", array($first,$last,$sId));
+        
+        
     } catch (Exception $ex) {
         
     }
