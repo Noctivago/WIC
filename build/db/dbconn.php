@@ -1424,6 +1424,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 , [Organization].[Id] AS OID
                 , [Organization].[Picture_Path] AS OPP
                 , [WIC_Planner].[Name] AS WNA
+                , [WIC_Planner].[Id] AS WID
                 FROM [dbo].[WIC_Planner_Service]
                 join [Service]
                 on [Service].[Id] = [WIC_Planner_Service].[Service_Id]
