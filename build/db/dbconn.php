@@ -1423,10 +1423,20 @@ function DB_UserProfile($pdo, $userId) {
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rowss as $row) {
-            echo '<div class="sign-avatar no-photo" >
-                        <img id="image" src="' . $row['Picture_Path'] . '" alt=""/>
+            echo '<div class="upload_div">
+                <form method="post" id="multiple_upload_form" action="upload.php">
+                <input type="hidden" name="image_form_submit" value="1"/>
+                    <div class="sign-avatar no-photo" >
+                        <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
+                        <div id="images_preview"></div>
                     </div>
                     <button type="submit" class="btn btn-rounded btn-file" >Change Picture <input class="btn-file" type="file"/> </button>
+                    <div class="uploading none">
+                            <label>&nbsp;</label>
+                            <img src="uploading.gif"/>
+                        </div>
+                    </form>
+                    </div>
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
@@ -1539,9 +1549,9 @@ function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
     }
 }
 
-function DB_UpdateOrgInformation($pdo,$name,$email,$address,$phone,$mobile,$website,$facebook,$linkdin,$twitter,$description,$userId){
+function DB_UpdateOrgInformation($pdo, $name, $email, $address, $phone, $mobile, $website, $facebook, $linkdin, $twitter, $description, $userId) {
     try {
-        sql($pdo,"UPDATE [dbo].[Organization]
+        sql($pdo, "UPDATE [dbo].[Organization]
    SET [Name] = ?
       ,[Phone_Number] = ?
       ,[Mobile_Number] = ?
@@ -1553,14 +1563,12 @@ function DB_UpdateOrgInformation($pdo,$name,$email,$address,$phone,$mobile,$webs
       ,[Website] = ?
 	  ,[Picture_Path] = ?
       ,[Description] = ?
- WHERE [User_Boss] = ?", array($name,$phone,$mobile,$address,$facebook,$twitter,$linkdin,$email,$website,NULL,$description,$userId));
+ WHERE [User_Boss] = ?", array($name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $email, $website, NULL, $description, $userId));
         echo 'Updated';
     } catch (Exception $ex) {
         echo 'error';
     }
 }
-        
-
 
 /**
  * Adiciona um WIC Planner
