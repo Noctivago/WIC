@@ -54,53 +54,7 @@ $msg = '';
         </div><!--.container-fluid-->
     </div><!--.page-content-->
 </div>
-<script>
-    function loadMyWics() {
-        $.ajax({
-            url: 'ajax/getMyWics.php',
-            method: 'post',
-            data: {},
-            success: function (data) {
-                $('.WICS').html(data);
-            }
-        });
-    }
-    function removeWic(x) {
-        var id = x.id;
-        alert(id);
-        $.ajax({
-            url: 'ajax/remove_wic_planner.php',
-            method: 'post',
-            data: {con: id},
-            success: function (data) {
-                //loadMyWics(),
-                alert(data);
-            }
-        });
-    }
-    function showAddWicForm() {
-        alert('SHOW WIC PLANNER FORM');
-        $("#include").load("addwicplanner.php");
-    }
-    function showAddWicFormEditMode(idWicPlanner) {
-        alert('EDIT WIC PLANNER FORM');
-        var x = idWicPlanner;
-        $(".include").load("addwicplanner.php?id=" + x);
-    }
-    function showWicServicesForm(idWicPlanner) {
-        var x = idWicPlanner;
-        alert(x);
-        $.ajax({
-            url: 'ajax/showWicServices.php',
-            method: 'post',
-            data: {con: x},
-            success: function (data) {
-                alert(data);
-                $('.INCLUDE').html(data);
-            }
-        });
-    }
-</script>
+
 
 <script>
     $(document).ready(function () {
@@ -195,15 +149,6 @@ $msg = '';
         });
     });</script>
 
-<!--<script src="js/app.js"></script>-->
-
-<!--        <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>-->
-        <!--<script src="js/lib/tether/tether.min.js" type="text/javascript"></script>-->
-
-<!--<script src="js/lib/tether/tether.min.js"></script>-->
-<!--<script src="js/lib/bootstrap/bootstrap.min.js"></script>-->
-<!--<script src="js/plugins.js"></script>-->
-
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
@@ -216,19 +161,57 @@ $msg = '';
 <script src="js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
 
-<!--	<script src="js/lib/table-edit/jquery.tabledit.min.js"></script>
-        <script>
-                $(function () {
-                        $('#table-edit').Tabledit({
-                                url: 'example.php',
-                                columns: {
-                                        identifier: [0, 'id'],
-                                        editable: [[1, 'name'], [2, 'description']]
-                                }
-                        });
-                });
-        </script>-->
-
 <script src="js/app.js"></script>
+
+
+<script>
+    function loadMyWics() {
+        $.ajax({
+            url: 'ajax/getMyWics.php',
+            method: 'post',
+            data: {},
+            success: function (data) {
+                $('.WICS').html(data);
+            }
+        });
+    }
+    function removeWic(x) {
+        var id = x.id;
+        alert(id);
+        $.ajax({
+            url: 'ajax/remove_wic_planner.php',
+            method: 'post',
+            data: {con: id},
+            success: function (data) {
+                //loadMyWics(),
+                alert(data);
+            }
+        });
+    }
+    function showAddWicForm() {
+        alert('SHOW WIC PLANNER FORM');
+        $("#include").load("addwicplanner.php");
+    }
+    function showAddWicFormEditMode(idWicPlanner) {
+        alert('EDIT WIC PLANNER FORM');
+        var x = idWicPlanner;
+        $(".include").load("addwicplanner.php?id=" + x);
+    }
+    function showWicServicesForm(idWicPlanner) {
+        var x = idWicPlanner;
+        alert(x);
+        $.ajax({
+            url: 'ajax/showWicServices.php',
+            method: 'post',
+            data: {con: x},
+            success: function (data) {
+                alert(data);
+                $('.INCLUDE').html(data);
+            }
+        });
+    }
+</script>
+
+
 </body>
 </html>
