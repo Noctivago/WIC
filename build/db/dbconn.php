@@ -1336,21 +1336,15 @@ function DB_getMyWicsAjax($pdo, $userId) {
 
 function DB_removeWICPlanner($pdo, $userId, $wicId) {
     try {
-        $stmt = $pdo->prepare("UPDATE [WIC_Planner]
-        SET [WIC_Planner].[Enabled]=0 WHERE [WIC_Planner].[Id]= :WICID 
-        AND [WIC_Planner].[User_Id]= :UserId");
-        $stmt->bindParam(':WICID', $wicId);
-        $stmt->bindParam(':UserId', $userId);
-        $stmt->execute();
-//        if ($stmt->execute()) {
-//            return "WIC PLANNER REMOVED!";
-//        } else {
-//            return "ERROR REMOVING WIC PLANNER! :(";
-//        }
+        sql($pdo, "UPDATE [WIC_Planner]
+            SET [WIC_Planner].[Enabled]=0
+            WHERE [WIC_Planner].[Enabled]=1 
+            AND [WIC_Planner].[Id]= ? 
+            AND [WIC_Planner].[User_Id] = ?", array($wicId, $userId));
         echo "WIC PLANNER REMOVED!";
     } catch (PDOException $e) {
-        echo 'ERROR REMOVING WIC PLANNER! :(';
-        //die();
+        print "ERROR REMOVING WIC PLANNER :(!";
+        die();
     }
 }
 
