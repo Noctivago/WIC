@@ -1,6 +1,7 @@
 <html>
     <?php
     include ("includes/head_sideMenu.php");
+    include ("./db/dbconn.php");
     ?>
 
     <div class="page-content">
@@ -42,7 +43,7 @@
                         </div>
                     </article><!--.card-typical-->
                 </div><!--.card-grid-col-->
-
+                <?= DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city); ?>
 
 
             </div><!--.card-grid-->
