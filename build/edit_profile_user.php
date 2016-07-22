@@ -6,15 +6,31 @@ include_once '../build/db/session.php';
 //ini_set("display_errors", 1);
 //$msg = "";
 ?>
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#images').on('change', function () {
+            $('#multiple_upload_form').ajaxForm({
+                target: '#images_preview',
+                beforeSubmit: function (e) {
+                    $('.uploading').show();
+                },
+                success: function (e) {
+                    $('.uploading').hide();
+                },
+                error: function (e) {
+                }
+            }).submit();
+        });
+    });
+</script>
 <body>
     <?php
     //falta alterar foto
     $userId = $_SESSION['id'];
     if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
-    $firstName = (filter_var($_POST ['first'], FILTER_SANITIZE_STRING));
-    $lastName = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
-    $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);   
+        $firstName = (filter_var($_POST ['first'], FILTER_SANITIZE_STRING));
+        $lastName = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
+        $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
     }
     ?>
     <div class="page-center">
