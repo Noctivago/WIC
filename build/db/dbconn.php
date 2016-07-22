@@ -1451,8 +1451,7 @@ function DB_OrgProfile($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT * FROM [Organization] Where [User_Boss] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-            echo '<div class="sign-avatar no-photo" ><img id="image" src="' . $row['Picture_Path'] . '" alt=""/>
-                    &plus</div>
+            echo '<div class="sign-avatar no-photo" ><img id="image" src="' . $row['Picture_Path'] . '" alt=""/> </div>
                     
                     <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
                     
