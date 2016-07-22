@@ -73,13 +73,10 @@ include_once '../build/db/session.php';
             </div><!--.col- -->
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <section class="box-typical">
-                    <header class="box-typical-header-sm">Messenger</header>
+                    <header class="box-typical-header-sm">Invites</header>
                     <div class="friends-list stripped">
                       <?PHP DB_checkInvitesWaiting($pdo, $_SESSION['id']);?>
-                        <div class="see-all">
-                            <a href="#">See more</a>
-                        </div>
-
+                      
                 </section>
             </div><!--.col- -->
         </div><!--.row-->
