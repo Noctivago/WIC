@@ -2,13 +2,14 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-$msg = "";
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
+//$msg = "";
 ?>
 
 <body>
     <?php
+    //falta alterar foto
     $userId = $_SESSION['id'];
     if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
     $firstName = (filter_var($_POST ['first'], FILTER_SANITIZE_STRING));
@@ -21,7 +22,6 @@ $msg = "";
             <div class="container-fluid">
                 <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"  style="max-width: 600px; width: 600px;">
                     <?php
-                    echo 'iii' . $msg;
                     DB_UserProfile($pdo, $userId);
                     ?>
                     <!--                    <div class="sign-avatar no-photo" >
