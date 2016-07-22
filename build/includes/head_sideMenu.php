@@ -524,11 +524,12 @@
 
                 </li>
 
-
-                <div class="container-fluid">
-
+    <?php DB_GetServicesAsSelect($pdo,$userId);?>
+<!--                <div class="container-fluid">
+                    
                     <form class="sign-box">
-                        <div class="sign-avatar">
+                    -->
+<!--                        <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
                         </div>
                         <header class="sign-title">Invite Members</header>
@@ -537,27 +538,23 @@
                         </div>
 
                         <div class="form-group" >
-                            <!--<select class="bootstrap-select bootstrap-select-arrow" >-->
-                            <select class="form-control">
-                                <option>MY WIcPlanner 1</option>
-                                <option>MY WIcPlanner 2</option>
-                                <option>MY WIcPlanner 3</option>
-                                <option>MY WIcPlanner 4</option>
+                            <select class="bootstrap-select bootstrap-select-arrow" >
+                            <select class="form-control"
                             </select>
                         </div>
 
 
-                        <!--.row-->
+                        .row
 
 
                         <div class="form-group">
 
                             <button type="submit" class="btn btn-rounded">Invite</button>
 
-                            <!--                    <button type="button" class="close">
+                                                <button type="button" class="close">
                                                     <span aria-hidden="true">&times;</span>
-                                                </button>-->
-                        </div>
+                                                </button>
+                        </div>-->
                     </form>
                 </div>
 

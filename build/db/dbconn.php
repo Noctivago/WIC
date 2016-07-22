@@ -1143,7 +1143,40 @@ Free for 3 Months</header>';
         
     }
 }
+function DB_GetServicesAsSelect($pdo,$userId){
+    echo '<div class="container-fluid">
+                    
+                    <form class="sign-box">
+                    <div class="sign-avatar">
+                            <img src="img/avatar-sign.png" alt="">
+                        </div>
+                        <header class="sign-title">Invite Members</header>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="E-Mail"/>
+                        </div>
 
+                        <div class="form-group" >
+                            <!--<select class="bootstrap-select bootstrap-select-arrow" >-->
+                            <select class="form-control">
+                            <?php DB_GetServicesAsSelect($pdo,$userId)?>
+                            </select>
+                        </div>
+
+
+                        <!--.row-->
+
+
+                        <div class="form-group">
+
+                            <button type="submit" class="btn btn-rounded">Invite</button>
+
+                            <!--                    <button type="button" class="close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>-->
+                        </div>
+                        </form>
+                </div>';
+                        }
 //preencher seccao services no profile org
 //falta passar o id da org
 function DB_GetOrganizationServices($pdo, $org) {
