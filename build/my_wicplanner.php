@@ -21,7 +21,7 @@ $msg = '';
                             <div class="tbl-cell tbl-people">
                                 <!--<span><a class="font-icon font-icon-plus" style="align:rigth" href="addwicplanner.php"> Add a new Event	</a></span>-->
                                 <!--<span><a class="font-icon font-icon-plus" onclick="showAddWicForm()" style="align:rigth"> New Event?</a></span>-->
-                                <span><a class="font-icon font-icon-plus" onclick="showAddWicForm();" style="align:rigth"> New Event?</a></span>
+                                <span><a class="font-icon font-icon-plus" onclick="loadMyWics();showAddWicForm();" style="align:rigth"> New Event?</a></span>
                             </div>
                         </div>
                     </header>
@@ -258,10 +258,6 @@ $msg = '';
     });
 </script>
 
-<script type="text/javascript">
-    loadMyWics();
-</script>
-
 <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
@@ -274,7 +270,6 @@ $msg = '';
 <script src="js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/app.js"></script>
-
 
 <script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
 <script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
