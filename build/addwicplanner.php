@@ -21,17 +21,17 @@ if (isset($id)) {
         <div class="sign-avatar no-photo">&plus;</div>
         <header class="sign-title">#Wic Planner</header>
         <div class="form-group">
-            <input type="text" id = "name" name ="name" class="form-control" placeholder="Wic Planner Name" required/>
+            <input type="text" id = "name" class="form-control" placeholder="Wic Planner Name" required/>
         </div>
         <div class='input-group date'>
-            <input id="daterange3" name="daterange3" type="text" value="01/08/2016" class="form-control" required>
+            <input id="daterange3" type="text" value="01/08/2016" class="form-control" required>
             <span class="input-group-addon">
                 <i class="font-icon font-icon-calend"></i>
             </span>
         </div>
         <?= $msg; ?>
-        <button onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
         <span id="textelement" class="form-control" style="border:0px"></span>
+        <button onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
     </div>
 </div>
 <!--        </div>

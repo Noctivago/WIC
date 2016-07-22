@@ -109,12 +109,12 @@ $msg = '';
                 method: 'post',
                 data: {name: wicName, eDate: wicDate},
                 success: function (data) {
+                    wicName.innerHTML = '';
+                    wicDate.innerHTML = '';
                     loadMyWics();
                     document.getElementById("textelement").innerHTML = data;
                 }
             });
-            wicName.innerHTML = "";
-            wicDate.innerHTML = "";
         } else {
             document.getElementById("textelement").innerHTML = "Please fill all fields!";
         }
