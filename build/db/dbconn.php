@@ -1532,6 +1532,36 @@ function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
     }
 }
 
+/**
+ * Verifica se o WICPlanner existe
+ * @param type $pdo
+ * @param type $wicId
+ * @param type $userId
+ * @return type
+ */
+function DB_checkIfWicPlannerExits($pdo, $name, $eventDate, $userId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM [dbo].[WIC_Planner] WHERE [Name] = ? "
+                . "and [User_Id] = ? "
+                . "and [Event_Date] = ?", array($name, $userId, $eventDate), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING WIC PLANNERS!';
+    }
+}
+
+/**
+ * Adiciona um WIC Planner
+ * @param type $pdo
+ * @param type $name
+ * @param type $userId
+ * @param type $d
+ * @param type $eventDate
+ */
 function DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate) {
     try {
         sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [User_Id], [Date_Created],"
@@ -1542,6 +1572,13 @@ function DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate) {
     }
 }
 
+/**
+ * Devolve informação sobre um Wic Planner
+ * @param type $pdo
+ * @param type $wicId
+ * @param type $userId
+ * @return type
+ */
 function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[WIC_Planner] WHERE [Id] = ? and [User_Id] = ?", array($wicId, $userId), "rows");
@@ -1551,7 +1588,8 @@ function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
             $wicInfo["Name"] = $row["Name"];
-            $wicInfo["Event_Date"] = $subStr[0];
+//            $wicInfo["Event_Date"] = $subStr[0];
+            $wicInfo["Event_Date"] = $row['Event_Date'];
         }
         return $wicInfo;
     } catch (Exception $exc) {
