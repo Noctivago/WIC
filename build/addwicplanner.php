@@ -8,12 +8,15 @@ ini_set("display_errors", 1);
 //include_once './db/session.php';
 $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 $uid = filter_input(INPUT_GET, "uid", FILTER_VALIDATE_INT);
-if (isset($id)) {
+if (isset($id) && isset($uid)) {
     $wicId = $id;
     $userId = $uid;
     $msg = 'WID >' . $wicId . ' UID > ' . $userId;
-//    $wicInfo = array();
-//    $wicInfo = DB_getWicPlannerInfo($pdo, $wicId, $userId);
+    $wicInfo = array();
+    $wicInfo = DB_getWicPlannerInfo($pdo, $wicId, $userId);
+} else {
+    $wicInfo["Name"] = 'Event Name';
+    $wicInfo["Event_Date"] = '01/08/2016';
 }
 ?>
 <!--<body>-->
@@ -27,12 +30,10 @@ if (isset($id)) {
         <div class="sign-avatar no-photo">&plus;</div>
         <header class="sign-title">#Wic Planner</header>
         <div class="form-group">
-            <!--<input type="text" id = "name" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name" required/>-->
-            <input type="text" id = "name" class="form-control" placeholder="Event Name" required/>
+            <input type="text" id = "name" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name" required/>
         </div>
         <div class='input-group date'>
-            <!--<input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control" required>-->
-            <input id="daterange3" type="text" value="01-08-2016" class="form-control" required>
+            <input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control" required>
             <span class="input-group-addon">
                 <i class="font-icon font-icon-calend"></i>
             </span>
