@@ -29,9 +29,7 @@ $msg = 'ID >' . $id;
             <?= $msg; ?>
             <button onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
         </form>
-        <div class="INCLUDE">
-
-        </div>
+        <p id="confirmation"> </p>
     </div>
     <!--        </div>
         </div>.page-center-->
@@ -67,13 +65,13 @@ $msg = 'ID >' . $id;
                     method: 'post',
                     data: {name: wicName, eDate: wicDate},
                     success: function (data) {
-                        $('.INCLUDE').html('<p>' + data + '</p>');
+                        document.getElementById("confirmation").innerHTML(data);
                     }
                 });
                 wicName.innerHTML = "";
                 wicDate.innerHTML = "";
             } else {
-                $('.INCLUDE').html("<p>Please fill all fields!</p>");
+                document.getElementById("confirmation").innerHTML("Please fill all fields!");
             }
         }
     </script>
