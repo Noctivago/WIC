@@ -109,6 +109,7 @@ $msg = '';
                 method: 'post',
                 data: {name: wicName, eDate: wicDate},
                 success: function (data) {
+                    loadMyWics();
                     var x = document.getElementById("confirmation");
                     x.innerHTML(data)
                 }
