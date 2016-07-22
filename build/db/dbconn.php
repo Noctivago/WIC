@@ -1446,60 +1446,61 @@ function DB_UserProfile($pdo, $userId) {
         
     }
 }
-function DB_OrgProfile($pdo,$org){
+
+function DB_OrgProfile($pdo, $org) {
     try {
-        $row = sql($pdo,"SELECT * FROM [Organization] Where [Id] = ?", array(2),"rows");
-        foreach ($rows as $row){
-    echo '<div class="sign-avatar no-photo">&plus;</div>
+        $rows = sql($pdo, "SELECT * FROM [Organization] Where [Id] = ?", array(2), "rows");
+        foreach ($rows as $row) {
+            echo '<div class="sign-avatar no-photo">&plus;</div>
                     
                     <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
                     
                     <header class="sign-title">Edit Organization Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" placeholder=" Organization Name"value="'.$row['Name'].'"/>
+                        <input type="text" class="form-control" placeholder=" Organization Name"value="' . $row['Name'] . '"/>
                         <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" placeholder=" Organization Email"value="'.$row['Organization_Email'].'"/>
+                        <input type="text" class="form-control" placeholder=" Organization Email"value="' . $row['Organization_Email'] . '"/>
                         <i class="font-icon font-icon-mail"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" placeholder=" Organization Adress"value="'.$row['Address'].'"/>
+                        <input type="text" class="form-control" placeholder=" Organization Adress"value="' . $row['Address'] . '"/>
                         <i class="font-icon font-icon-earth"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" placeholder="Telephone Number"value="'.$row['Phone_Number'].'"/>
+                        <input type="text" class="form-control" placeholder="Telephone Number"value="' . $row['Phone_Number'] . '"/>
                         <i class="font-icon font-icon-phone"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" placeholder="My WebSite"value="'.$row['Website'].'"/>
+                        <input type="text" class="form-control" placeholder="My WebSite"value="' . $row['Website'] . '"/>
                         <i class="font-icon font-icon-earth-bordered"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" placeholder="Facebook Account"value="'.$row['Facebook'].'"/>
+                        <input type="text" class="form-control" placeholder="Facebook Account"value="' . $row['Facebook'] . '"/>
                         <i class="font-icon font-icon-facebook"></i>
                         </div>
                     </div>
                     <div class="form-group">
                          <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" placeholder="Linkedin Account"value="'.$row['Linkdin'].'"/>
+                        <input type="text" class="form-control" placeholder="Linkedin Account"value="' . $row['Linkdin'] . '"/>
                         <i class="font-icon font-icon-linkedin"></i>
                         </div>
                     </div>
                     <div class="form-group">
                          <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" placeholder="Twitter Account"value="'.$row['Twitter'].'"/>
+                        <input type="text" class="form-control" placeholder="Twitter Account"value="' . $row['Twitter'] . '"/>
                         <i class="font-icon font-icon-twitter"></i>
                         </div>
                     </div>
@@ -1507,7 +1508,7 @@ function DB_OrgProfile($pdo,$org){
                    <div class="form-group row">
                         
 						<div class="form-control-wrapper form-control-icon-left" >
-							<textarea rows="8" class="form-control" placeholder="Organization Info" value="'.$row['Description'].'"></textarea>
+							<textarea rows="8" class="form-control" placeholder="Organization Info" value="' . $row['Description'] . '"></textarea>
                                                         <i class="font-icon font-icon-user"></i>
 						</div>
                     </div>
@@ -1517,16 +1518,14 @@ function DB_OrgProfile($pdo,$org){
     } catch (Exception $ex) {
         
     }
-    
-    
-    }
+}
 
-function DB_UpdateUserInformation($pdo,$sId,$first,$last){
+function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
     try {
-        sql($pdo,"UPDATE [dbo].[User_Profile]
+        sql($pdo, "UPDATE [dbo].[User_Profile]
    SET [First_Name] = ?
       ,[Last_Name] = ?
- WHERE [User_Id] =? ", array($first,$last,$sId));
+ WHERE [User_Id] =? ", array($first, $last, $sId));
         echo 'Updated';
     } catch (Exception $ex) {
         echo 'Error';
