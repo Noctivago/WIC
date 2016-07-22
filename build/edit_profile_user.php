@@ -50,30 +50,7 @@ $msg = "";
             }
         }
 
-//        $uploadDir = './img/pics/'; //Image Upload Folder
-//        $fileName = $_FILES['Photo']['name'];
-//        $tmpName = $_FILES['Photo']['tmp_name'];
-//        $fileSize = $_FILES['Photo']['size'];
-//        //FALTA VALIDAR FILE TIPE E FILE SIZE
-//        $fileType = $_FILES['Photo']['type'];
-//        $temp = explode(".", $_FILES["file"]["name"]);
-//        $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
-//        #$filePath = $uploadDir . $fileName;
-//        $filePath = $uploadDir . $newfilename;
-//        #$result = move_uploaded_file($tmpName, $filePath);
-//        $result = move_uploaded_file($tmpName, $filePath);
-//        $pic = $filePath;
-//        if (!$result) {
-//            $msg = "Error uploading file";
-//            exit;
-//        } else {
-//            if (!get_magic_quotes_gpc()) {
-//                $fileName = addslashes($fileName);
-//                $filePath = addslashes($filePath);
-//            }
-//            //REMOVE ATUAL
-//            #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
-//            $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
+        $msg = DB_addUserProfilePicture($pdo, $target_file, $userId) . ' > ' . $userId;
     }
     ?>
     <div class="page-center">
@@ -82,7 +59,6 @@ $msg = "";
                 <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data"  style="max-width: 600px; width: 600px;">
                     <?php
                     DB_UserProfile($pdo, $userId);
-                    echo $msg;
                     ?>
                     <!--                    <div class="sign-avatar no-photo" >
                                             <img id="image" src="" alt=""/>&plus;
@@ -102,7 +78,9 @@ $msg = "";
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>-->
+
                 </form>
+                <?= $msg; ?>
             </div>
         </div>
     </div><!--.page-center-->
