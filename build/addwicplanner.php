@@ -37,20 +37,4 @@ if (isset($id)) {
         <button onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
     </div>
 </div>
-<!--        </div>
-    </div>.page-center-->
 
-
-<!--    <script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
- <script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
- <script src="js/lib/daterangepicker/daterangepicker.js"></script>
- <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
- <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
- <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
- <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
- <script src="js/lib/select2/select2.full.min.js"></script>-->
-
-
-
-<!--</body>
-</html>-->
