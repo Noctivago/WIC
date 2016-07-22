@@ -17,31 +17,45 @@ $msg = "";
         $lastName = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
 
-        $uploadDir = './img/pics/'; //Image Upload Folder
-        $fileName = $_FILES['Photo']['name'];
-        $tmpName = $_FILES['Photo']['tmp_name'];
-        $fileSize = $_FILES['Photo']['size'];
-        //FALTA VALIDAR FILE TIPE E FILE SIZE
-        $fileType = $_FILES['Photo']['type'];
-        $temp = explode(".", $_FILES["file"]["name"]);
-        $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
-        #$filePath = $uploadDir . $fileName;
-        $filePath = $uploadDir . $newfilename;
-        #$result = move_uploaded_file($tmpName, $filePath);
-        $result = move_uploaded_file($tmpName, $filePath);
-        $pic = $filePath;
-        if (!$result) {
-            $msg = "Error uploading file";
-            exit;
-        } else {
-            if (!get_magic_quotes_gpc()) {
-                $fileName = addslashes($fileName);
-                $filePath = addslashes($filePath);
+        $target_file = $target_dir . basename($_FILES["Photo"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+        if (isset($_POST["submit"])) {
+            $check = getimagesize($_FILES["Photo"]["tmp_name"]);
+            if ($check !== false) {
+                echo "File is an image - " . $check["mime"] . ".";
+                $uploadOk = 1;
+            } else {
+                echo "File is not an image.";
+                $uploadOk = 0;
             }
-            //REMOVE ATUAL
-            #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
-            $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
         }
+
+//        $uploadDir = './img/pics/'; //Image Upload Folder
+//        $fileName = $_FILES['Photo']['name'];
+//        $tmpName = $_FILES['Photo']['tmp_name'];
+//        $fileSize = $_FILES['Photo']['size'];
+//        //FALTA VALIDAR FILE TIPE E FILE SIZE
+//        $fileType = $_FILES['Photo']['type'];
+//        $temp = explode(".", $_FILES["file"]["name"]);
+//        $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
+//        #$filePath = $uploadDir . $fileName;
+//        $filePath = $uploadDir . $newfilename;
+//        #$result = move_uploaded_file($tmpName, $filePath);
+//        $result = move_uploaded_file($tmpName, $filePath);
+//        $pic = $filePath;
+//        if (!$result) {
+//            $msg = "Error uploading file";
+//            exit;
+//        } else {
+//            if (!get_magic_quotes_gpc()) {
+//                $fileName = addslashes($fileName);
+//                $filePath = addslashes($filePath);
+//            }
+//            //REMOVE ATUAL
+//            #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
+//            $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
     }
     ?>
     <div class="page-center">
