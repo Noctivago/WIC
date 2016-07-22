@@ -60,15 +60,21 @@ $msg = 'ID >' . $id;
         function addWic() {
             var wicName = document.getElementById("name").value;
             var wicDate = document.getElementById("daterange3").value;
-            alert(wicName + ' ' + wicDate);
-            $.ajax({
-                url: 'ajax/addWicP.php',
-                method: 'post',
-                data: {name: wicName, eDate: wicDate},
-                success: function (data) {
-                    $('.INCLUDE').html(data);
-                }
-            });
+            if (wicName != "") {
+                alert(wicName + ' ' + wicDate);
+                $.ajax({
+                    url: 'ajax/addWicP.php',
+                    method: 'post',
+                    data: {name: wicName, eDate: wicDate},
+                    success: function (data) {
+                        $('.INCLUDE').html(data);
+                    }
+                });
+                wicName.innerHTML = "";
+                wicDate.innerHTML = "";
+            } else {
+                $('.INCLUDE').html("Please fill all fields!");
+            }
         }
     </script>
 
