@@ -1667,7 +1667,7 @@ function DB_updateWicPlanner($pdo, $wicId, $userId, $name, $eventDate) {
  */
 function DB_addUserProfilePicture($pdo, $pic, $userId) {
     try {
-        sql($pdo, "UPDATE [dbo].[Profile_User] SET [Picture_Path] = ? WHERE [User_Id] = ?", array($pic, $userId));
+        sql($pdo, "UPDATE [dbo].[User_Profile] SET [Picture_Path] = ? WHERE [User_Id] = ?", array($pic, $userId));
         echo 'Picture sucessufully changed!';
     } catch (PDOException $e) {
         echo "ERROR UPDATING PROFILE PICTURE!";
