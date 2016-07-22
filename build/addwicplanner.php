@@ -32,7 +32,7 @@ if (isset($id)) {
         <?= $msg; ?>
         <button onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
     </div>
-    <p id="confirmation" name="confirmation"> </p>
+    <p id="textelement"></p>
 </div>
 <!--        </div>
     </div>.page-center-->
