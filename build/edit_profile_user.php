@@ -17,7 +17,7 @@ $msg = "";
         $lastName = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
 
-        $target_dir = "./img/pics/";
+        $target_dir = "pics/";
         $target_file = $target_dir . basename($_FILES["Photo"]["name"]);
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
