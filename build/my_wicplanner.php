@@ -183,8 +183,8 @@ $msg = '';
             method: 'post',
             data: {con: id},
             success: function (data) {
-                //loadMyWics(),
-                alert(data);
+                loadMyWics();
+                //alert(data);
             }
         });
     }
