@@ -13,4 +13,5 @@ $d = getDateToDB();
 $name = (filter_var($_POST ['name']));
 $eventDate = (filter_var($_POST ['eDate']));
 
+//VERIFICAR SE EXISTE; SE SIM UPDATE
 DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate);
