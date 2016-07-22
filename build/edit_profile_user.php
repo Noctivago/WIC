@@ -50,7 +50,7 @@ $msg = "";
             }
         }
 
-        $msg = DB_addUserProfilePicture($pdo, $target_file, $userId) . ' > ' . $userId;
+        $msg = DB_addUserProfilePicture($pdo, $target_file, $userId) . ' > ' . $target_file;
     }
     ?>
     <div class="page-center">
