@@ -351,8 +351,10 @@ function DB_checkInvitesWaiting($pdo, $idUser) {
             echo '<div class="tbl-cell">';
             echo '<p class="user-card-row-name"><a href="#">' . $row['OrgName'] . ' invited you to the service ' . $row['ServName'] . '</a></p>';
             echo '<div>';
+            echo '<div align="center">';
             echo '<a class="font-icon font-icon-ok" onclick="accept(' . $row['ID'] . ')"></a>';
             echo '<a class="font-icon font-icon-del" onclick="reject(' . $row['ID'] . ')"></a>';
+            echo '</div>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
