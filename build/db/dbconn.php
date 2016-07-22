@@ -1464,7 +1464,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             <td class="table-photo">
             </td>
             <td class="table-photo">
-            <a onclick="removeWicService(this, ' . $row['SID'] . ')"class="font-icon font-icon-del" id=' . $row['WID'] . '>
+            <a onclick="removeWicService(' . $row['WID'] . ',' . $row['SID'] . ')" class="font-icon font-icon-del" id=' . $row['WID'] . '>
             </a>
             </td>
             </tr>';
