@@ -41,7 +41,7 @@ if (isset($id) && isset($uid)) {
         </div>
         <?= $msg; ?>
         <span id="textelement" class="form-control" style="border:0px"></span>
-        <button onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
+        <button onclick="addWic(<?= $wicId; ?>);" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
     </div>
 </div>
 

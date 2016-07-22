@@ -99,15 +99,16 @@ $msg = '';
             }
         });
     }
-    function addWic() {
+    function addWic(wicId) {
         var wicName = document.getElementById("name").value;
         var wicDate = document.getElementById("daterange3").value;
+        var wId = wicId;
         if (wicName != "") {
             alert(wicName + ' ' + wicDate);
             $.ajax({
                 url: 'ajax/addWicP.php',
                 method: 'post',
-                data: {name: wicName, eDate: wicDate},
+                data: {name: wicName, eDate: wicDate, wicId: wId},
                 success: function (data) {
                     wicName.innerHTML = '';
                     wicDate.innerHTML = '';
