@@ -9,8 +9,8 @@ include_once '../build/db/session.php';
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                 <?php $userId = $_SESSION['id'];
-                 DB_UserProfile($pdo,$userId) ?>
+                 <?php //$userId = $_SESSION['id'];
+//                 DB_UserProfile($pdo,$userId) ?>
                 
                 <form class="sign-box"    style="max-width: 600px; width: 600px;">
                              <div class="sign-avatar no-photo">&plus;</div>
