@@ -6,6 +6,7 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 //include_once './db/session.php';
+$msg = '';
 $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 $uid = filter_input(INPUT_GET, "uid", FILTER_VALIDATE_INT);
 if (isset($id) && isset($uid)) {
