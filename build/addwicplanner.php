@@ -18,7 +18,7 @@ if (isset($id)) {
         <!--DIV ESTAVA COMO FORM-->
         <div class="sign-box">
             <div class="sign-avatar no-photo">&plus;</div>
-            <header class="sign-title">Add new Wic Planner</header>
+            <header class="sign-title">#Wic Planner</header>
             <div class="form-group">
                 <input type="text" id = "name" name ="name" class="form-control" placeholder="Wic Planner Name" required/>
             </div>
@@ -29,7 +29,7 @@ if (isset($id)) {
                 </span>
             </div>
             <?= $msg; ?>
-            <button onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
+            <button onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
         </div>
         <p id="confirmation" name="confirmation"> </p>
     </div>
@@ -67,13 +67,15 @@ if (isset($id)) {
                     method: 'post',
                     data: {name: wicName, eDate: wicDate},
                     success: function (data) {
-                        document.getElementById("confirmation").innerHTML(data);
+                        var x = document.getElementById("confirmation");
+                        x.innerHTML(data)
                     }
                 });
                 wicName.innerHTML = "";
                 wicDate.innerHTML = "";
             } else {
-                document.getElementById("confirmation").innerHTML("Please fill all fields!");
+                var x = document.getElementById("confirmation");
+                x.innerHTML("Please fill all fields!");
             }
         }
     </script>
