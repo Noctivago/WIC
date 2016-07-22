@@ -96,8 +96,29 @@ include_once '../build/db/session.php';
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+
 <script src="js/lib/salvattore/salvattore.min.js"></script>  
 
+<script>
+    function accept(id){
+        var accept = 1;
+    $.post("ajax/serviceInvite.php",{invite: id, resp : accept},function(result){
+        alert('accept')
+    });
+    
+    }
+    
+    function reject(id){
+        var reject = 0;
+    $.post("ajax/serviceInvite.php",{invite: id,resp : reject},function(result){
+        alert('Reject!!');
+    });
+        
+    }
+    
+    
+    </script>
+    
 <script>
     $(document).ready(function () {
         $('.panel').lobiPanel({
