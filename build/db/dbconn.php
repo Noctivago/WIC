@@ -1430,13 +1430,13 @@ function DB_UserProfile($pdo, $userId) {
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" id="first" class="form-control" placeholder="First Name" value="' . $row['First_Name'] . '"/>
+                            <input type="text" id="first" name="first" class="form-control" placeholder="First Name" value="' . $row['First_Name'] . '"/>
                             <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" id="last" class="form-control" placeholder="Last Name" value="' . $row['Last_Name'] . '"/>
+                            <input type="text" id="last" name="last" class="form-control" placeholder="Last Name" value="' . $row['Last_Name'] . '"/>
                             <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>

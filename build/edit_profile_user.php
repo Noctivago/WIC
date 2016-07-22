@@ -8,9 +8,9 @@ $msg = "";
 ?>
 
 <body>
-    <?php if(isset($_POST['save'])&&!empty($_POST['first'])&&!empty($_POST['last'])){
+    <?php
+    if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
         $msg = 'olaaa';
-        
     }
     ?>
     <div class="page-center">
