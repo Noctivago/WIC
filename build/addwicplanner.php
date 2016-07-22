@@ -17,17 +17,20 @@ $msg = 'ID >' . $id;
             <div class="sign-avatar no-photo">&plus;</div>
             <header class="sign-title">Add new Wic Planner</header>
             <div class="form-group">
-                <input type="text" id = "email" name ="Wic Planner Name" class="form-control" placeholder="Wic Planner Name" required/>
+                <input type="text" id = "name" name ="name" class="form-control" placeholder="Wic Planner Name" required/>
             </div>
             <div class='input-group date'>
-                <input id="daterange3" type="text" value="01/08/2016" class="form-control">
+                <input id="daterange3" name="daterange3" type="text" value="01/08/2016" class="form-control" required>
                 <span class="input-group-addon">
                     <i class="font-icon font-icon-calend"></i>
                 </span>
             </div>
             <?= $msg; ?>
-            <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
+            <button type="submit" onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
         </form>
+        <div class="INCLUDE">
+
+        </div>
     </div>
     <!--        </div>
         </div>.page-center-->
@@ -47,11 +50,27 @@ $msg = 'ID >' . $id;
     <script src="js/lib/select2/select2.full.min.js"></script>
 
     <script>
-        $(function () {
-            $('#tags-editor-textarea').tagEditor();
-        });
+                $(function () {
+                    $('#tags-editor-textarea').tagEditor();
+                });
     </script>
 
+    <script>
+        function addWic() {
+            var id = x.id;
+            var wicName = document.getElementById("name").value;
+            var wicDate = document.getElementById("daterange3").value;
+            alert(wicName + ' ' + wicDate);
+            $.ajax({
+                url: 'ajax/addWicP.php',
+                method: 'post',
+                data: {name: wicName, eDate: wicDate},
+                success: function (data) {
+                    $('.INCLUDE').html(data);
+                }
+            });
+        }
+    </script>
 
 
 

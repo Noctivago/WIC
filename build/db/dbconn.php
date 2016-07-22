@@ -1447,3 +1447,14 @@ function DB_UserProfile($pdo, $userId) {
         
     }
 }
+
+function DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate) {
+    try {
+        sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [User_Id], [Date_Created],"
+                . " [Enabled], [Event_Date]) VALUES (?, ?, ?, ?, ?)", array($name, $userId, $d, 1, $eventDate));
+        return "WIC PLANNER " . $name . " CREATED!";
+    } catch (PDOException $e) {
+        print "ERROR CREATING WIC PLANNER!";
+        die();
+    }
+}
