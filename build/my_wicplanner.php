@@ -12,9 +12,6 @@ $msg = '';
     <div class="container-fluid">
         <div class="row" style="height: 700px;">
             <div class="col-lg-6">
-                <script type="text/javascript">
-                    loadMyWics();
-                </script>
                 <section class="box-typical box-typical-max-280">
                     <header class="box-typical-header">
                         <div class="tbl-row">
@@ -58,7 +55,9 @@ $msg = '';
         </div><!--.container-fluid-->
     </div><!--.page-content-->
 </div>
-
+<script type="text/javascript">
+    loadMyWics();
+</script>
 
 <script>
     function loadMyWics() {
