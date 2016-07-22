@@ -91,15 +91,19 @@ $msg = '';
     function showWicServicesForm(idWicPlanner) {
         var x = idWicPlanner;
         $.ajax({
-            url: 'ajax/showWicServices.php',
-            method: 'post',
-            data: {con: x},
-            success: function (data) {
-                $('.INCLUDE').html(data);
-            }
-        });
-    }
-    function addWic(wicId) {
+        url: 'ajax/showWicServices.php',
+                method: 'post',
+                data: {con: x},
+                success: function (data) {
+                    if (data != '') {
+                        $('.INCLUDE').html(data);
+                    } else {
+                        $(".INCLUDE").load("addTowicplanner.php");
+                        }
+                    }
+            );
+        }
+        function addWic(wicId) {
         var wicName = document.getElementById("name").value;
         var wicDate = document.getElementById("daterange3").value;
         var wId = wicId;
