@@ -1420,10 +1420,8 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
     }
 }
 
-
-function DB_UserProfile($pdo){
-    $idUser = $_SESSION['id'];
-    echo $idUser;
+function DB_UserProfile($pdo, $userId) {
+    echo $userId;
 }
 
 //<form class="sign-box"    style="max-width: 600px; width: 600px;">
