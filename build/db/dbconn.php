@@ -1416,7 +1416,7 @@ function DB_checkIfWicPlannerHaveServices($pdo, $wicPlannerId, $userId) {
  */
 function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
     try {
-        if (DB_checkIfWicPlannerHaveServices) {
+        if (DB_checkIfWicPlannerHaveServices($pdo, $wicPlannerId, $userId)) {
             $rows = sql($pdo, "SELECT [Service].[Id] AS SID
                 , [Service].[Name] AS SNA
                 , [Organization].[Name] AS ONA
