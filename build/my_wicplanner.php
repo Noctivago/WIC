@@ -81,7 +81,6 @@ $msg = '';
         });
     }
     function showAddWicForm() {
-        alert('SHOW WIC PLANNER FORM');
         $(".INCLUDE").load("addwicplanner.php");
     }
     function showAddWicFormEditMode(idWicPlanner) {
