@@ -17,14 +17,13 @@ $msg = "";
         $lastName = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
 
-        $uploadDir = './uploadsPP/'; //Image Upload Folder
-        $fileName = $_FILES['images']['name'];
-        $tmpName = $_FILES['images']['tmp_name'];
-        $fileSize = $_FILES['images']['size'];
+        $uploadDir = 'uploadsPP/'; //Image Upload Folder
+        $fileName = $_FILES['Photo']['name'];
+        $tmpName = $_FILES['Photo']['tmp_name'];
+        $fileSize = $_FILES['Photo']['size'];
         //FALTA VALIDAR FILE TIPE E FILE SIZE
-        $fileType = $_FILES['images']['type'];
+        $fileType = $_FILES['Photo']['type'];
         $temp = explode(".", $_FILES["file"]["name"]);
-        //echo 'is image';
         $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
         #$filePath = $uploadDir . $fileName;
         $filePath = $uploadDir . $newfilename;
@@ -39,7 +38,8 @@ $msg = "";
                 $fileName = addslashes($fileName);
                 $filePath = addslashes($filePath);
             }
-            //FALTA REMOVE ATUAL
+            //REMOVE ATUAL
+            #$msg = DB_addUserProfilePicture($pdo, $filePath, $userId);
             $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
         }
     }
