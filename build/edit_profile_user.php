@@ -8,7 +8,11 @@ $msg ="";
 ?>
 
 <body>
-    <?php
+   
+    <div class="page-center">
+        <div class="page-center-in">
+            <div class="container-fluid">
+                 <?php
     if (isset($_POST['save']) && !empty($_POST['first-name']) && !empty($_POST['last-name'])) {
         $msg = 'ja foste';
         //$foto
@@ -20,10 +24,6 @@ $msg ="";
         
     }
     ?>
-    <div class="page-center">
-        <div class="page-center-in">
-            <div class="container-fluid">
-
                 <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"  style="max-width: 600px; width: 600px;">
                     <?php
                         echo $msg;
