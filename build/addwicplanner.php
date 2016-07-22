@@ -13,7 +13,7 @@ $msg = 'ID >' . $id;
     <!--    <div class="page-center">
             <div class="page-center-in">-->
     <div class="container-fluid">
-        <form class="sign-box">
+        <div class="sign-box">
             <div class="sign-avatar no-photo">&plus;</div>
             <header class="sign-title">Add new Wic Planner</header>
             <div class="form-group">
@@ -27,7 +27,7 @@ $msg = 'ID >' . $id;
             </div>
             <?= $msg; ?>
             <button type="submit" onclick="addWic();" name="signup" class="btn btn-rounded btn-success sign-up">Add Wic Planner</button>
-        </form>
+        </div>
         <div class="INCLUDE">
 
         </div>
