@@ -83,7 +83,7 @@ $msg = '';
         var id = x.id;
         var sid = y;
         $.ajax({
-            url: 'ajax/remove_wic_planner.php',
+            url: 'ajax/remove_wic_planner_service.php',
             method: 'post',
             data: {con: id, conId: sid},
             success: function (data) {
