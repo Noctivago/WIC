@@ -9,6 +9,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 if (isset($id)) {
     $wicId = $id;
     $msg = 'ID >' . $id;
+    $userId = $_SESSION['id'];
     $wicInfo = DB_editWicPlanner($pdo, $wicId);
 }
 ?>
@@ -26,7 +27,7 @@ if (isset($id)) {
             <input type="text" id = "name" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Wic Planner Name" required/>
         </div>
         <div class='input-group date'>
-            <input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" value="01/08/2016" class="form-control" required>
+            <input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control" required>
             <span class="input-group-addon">
                 <i class="font-icon font-icon-calend"></i>
             </span>
