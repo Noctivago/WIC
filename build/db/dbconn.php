@@ -1419,12 +1419,10 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 
 function DB_UserProfile($pdo, $userId) {
     try {
-
         $rowss = sql($pdo, "SELECT *
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
-        foreach ($rowss as $row) {
-            echo '<div class="sign-avatar no-photo" >
+echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="" alt=""/>&plus;
                     </div>
                     <button type="submit" class="btn btn-rounded btn-file" onselect="change()">Change Picture <input class="btn-file" type="file"/> </button>
@@ -1442,6 +1440,9 @@ function DB_UserProfile($pdo, $userId) {
                         </div>
                     </div>
                     <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>';
+        
+        foreach ($rowss as $row) {
+            
         }
     } catch (Exception $ex) {
         
