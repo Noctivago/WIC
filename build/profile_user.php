@@ -103,21 +103,15 @@ include_once '../build/db/session.php';
     function accept(id){
         var accept = 1;
     $.post("ajax/serviceInvite.php",{invite: id, resp : accept},function(result){
-        alert(id);
-        alert(accept);
-        alert(result);
     });
-    return false;
+    window.location.reload(1);
     }
     
     function reject(id){
         var reject = 0;
     $.post("ajax/serviceInvite.php",{invite: id,resp : reject},function(result){
-        alert(id);
-        alert(reject);
-        alert(result);
     });
-        return false;
+    window.location.reload(1);
     }
     
     
