@@ -10,9 +10,8 @@ $msg = '';
     <?php
     //falta alterar foto
     $userId = $_SESSION['id'];
-//    isset($_POST['save']) && !empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['email'])
-    if (true) {
-        $msg = 'ok';
+  //&& !empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['email'])
+    if (isset($_POST['save'])) {
         $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_STRING));
         $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
