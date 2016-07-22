@@ -4,29 +4,28 @@ include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-$msg ="";
+$msg = "";
 ?>
 
 <body>
-   
-    <div class="page-center">
-        <div class="page-center-in">
-            <div class="container-fluid">
-                 <?php
+
+    <?php
     if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
         $msg = 'ja foste';
         //$foto
         $first = (filter_var($_POST ['first'], FILTER_SANITIZE_STRING));
         $last = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
         $sId = $_SESSION['id'];
-        $msg = DB_UpdateUserInformation($pdo,$sId,$first,$last);
+        $msg = DB_UpdateUserInformation($pdo, $sId, $first, $last);
         echo $msg;
-        
     }
     ?>
+    <div class="page-center">
+        <div class="page-center-in">
+            <div class="container-fluid">
                 <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"  style="max-width: 600px; width: 600px;">
                     <?php
-                        echo 'iii'.$msg;
+                    echo 'iii' . $msg;
                     $userId = $_SESSION['id'];
                     DB_UserProfile($pdo, $userId);
                     ?>
