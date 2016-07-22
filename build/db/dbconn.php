@@ -1803,7 +1803,7 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                                         </a>
                                     </div>
                                     <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $row['OID'] . '">"' . $row['ONA'] . '"</a></p>
+                                        <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $row['OID'] . '"></a></p>
                                     </div>
                                 </div>
                             </div>
