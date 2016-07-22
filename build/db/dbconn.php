@@ -1242,11 +1242,10 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
         FROM [dbo].[WIC_Planner]
         join [User]
         on [User].[id] = [WIC_Planner].[User_Id]
-       
         join [User_Profile]
         on [WIC_Planner].[User_Id] = [User_Profile].[User_Id]
         WHERE [WIC_Planner].[Enabled] = 1
-        AND [WIC_Planner].[User_Id] = ?", array($userId), "rows");
+        AND [User].[id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<tr class="table-check">';
             echo '<td><a onclick="showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
@@ -1282,7 +1281,6 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
       ,[WIC_Planner].[Name] AS WPN
-      
       ,[Event_Date] AS WPED
 	  ,[User_Profile].[First_Name] AS UFN
 	  ,[User_Profile].[Last_Name]  AS ULN 
@@ -1290,7 +1288,6 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
         FROM [dbo].[WIC_Planner]
         join [User]
         on [User].[id] = [WIC_Planner].[User_Id]
-        
         join [User_Profile]
         on [WIC_Planner].[User_Id] = [User_Profile].[User_Id]
         join [WIC_Planner_User]
