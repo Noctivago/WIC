@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 $msg = '';
 ?>
-<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
+<!--<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
 <div class="page-content" style="height: 817px;">
     <div class="container-fluid">
         <div class="row" style="height: 700px;">
@@ -48,6 +48,7 @@ $msg = '';
             </div><!--.col- -->
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
+            <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
             <div class="col-lg-6 INCLUDE">
 
             </div>

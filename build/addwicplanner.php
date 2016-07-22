@@ -10,8 +10,9 @@ if (isset($id)) {
     $msg = 'ID >' . $id;
 }
 ?>
-<body>
-    <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
+<!--<body>-->
+    
+    <!--    <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
     <!--    <div class="page-center">
             <div class="page-center-in">-->
     <div class="container-fluid">
@@ -48,5 +49,5 @@ if (isset($id)) {
 
 
 
-</body>
-</html>
+<!--</body>
+</html>-->
