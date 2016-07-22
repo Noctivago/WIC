@@ -372,8 +372,9 @@ function DB_updateinvite($pdo, $resp, $invite, $userId) {
    SET [Enabled] = ?
       ,[Validate] = 1
  WHERE [Id] = ? and [User_Id] = ?", array($resp, $invite, $userId));
+        echo 'Updated';
     } catch (Exception $ex) {
-        
+        echo 'Error';
     }
 }
 
