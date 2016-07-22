@@ -8,7 +8,11 @@ $msg = "";
 ?>
 
 <body>
-
+    <?php if(true){
+        $msg = 'olaaa';
+        
+    }
+    ?>
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
