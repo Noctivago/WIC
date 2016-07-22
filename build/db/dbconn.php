@@ -1438,7 +1438,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             <header class="box-typical-header">
             <div class="tbl-row">
             <div class="tbl-cell tbl-cell-title">
-            <h3> Services in ' . $rows['WNA'] . '</h3>
+            <h3> Services in your Event</h3>
             </div>
             </div>
             </header>
