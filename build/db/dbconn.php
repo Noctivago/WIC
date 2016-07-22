@@ -1426,54 +1426,7 @@ function DB_UserProfile($pdo, $userId) {
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-            echo '<form class="sign-box"    style="max-width: 600px; width: 600px;">';
-            echo '                    <div class="sign-avatar no-photo">&plus;</div>';
-            echo '                    <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>';
-            echo '                    <header class="sign-title">Edit Profile</header>';
-            echo '                    <div class="form-group">';
-            echo '                        <div class="form-control-wrapper form-control-icon-left" >';
-            echo '                        <input type="text" class="form-control" placeholder="Name"/>';
-            echo '                        <i class="font-icon font-icon-user"></i>';
-            echo '                        </div>';
-            echo '                    </div>';
-            echo '                    <div class="form-group">';
-            echo '                        <div class="form-control-wrapper form-control-icon-left" >';
-            echo '                        <input type="text" class="form-control" placeholder="Telephone Number"/>';
-            echo '                        <i class="font-icon font-icon-phone"></i>';
-            echo '                        </div>';
-            echo '                    </div>';
-            echo '                    <div class="form-group">';
-            echo '                        <div class="form-control-wrapper form-control-icon-left" >';
-            echo '                        <input type="text" class="form-control" placeholder="My WebSite"/>';
-            echo '                        <i class="font-icon font-icon-earth-bordered"></i>';
-            echo '                        </div>';
-            echo '                   </div>';
-            echo '                   <div class="form-group">';
-            echo '                       <div class="form-control-wrapper form-control-icon-left" >';
-            echo '                        <input type="text" class="form-control" placeholder="Facebook Account"/>';
-            echo '                        <i class="font-icon font-icon-facebook"></i>';
-            echo '                        </div>';
-            echo '                    </div>';
-            echo '                    <div class="form-group">';
-            echo '                         <div class="form-control-wrapper form-control-icon-left" >';
-            echo '                        <input type="text" class="form-control" placeholder="Linkedin Account"/>';
-            echo '                        <i class="font-icon font-icon-linkedin"></i>';
-            echo '                        </div>';
-            echo '                    </div>';
-            echo '                    <div class="form-group">';
-            echo '                         <div class="form-control-wrapper form-control-icon-left" >';
-            echo '                        <input type="text" class="form-control" placeholder="Twitter Account"/>';
-            echo '                        <i class="font-icon font-icon-twitter"></i>';
-            echo '                        </div>';
-            echo '                    </div>';
-            echo '                   <div class="form-group row">';
-            echo '						<div class="form-control-wrapper form-control-icon-left" >';
-            echo '							<textarea rows="8" class="form-control" placeholder="Personal Info"></textarea>';
-            echo '                                                        <i class="font-icon font-icon-user"></i>';
-            echo '						</div>';
-            echo '                    </div>';
-            echo '                    <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>';
-            echo '                </form>';
+           
         }
     } catch (Exception $ex) {
         
