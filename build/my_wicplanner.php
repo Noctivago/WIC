@@ -79,6 +79,19 @@ $msg = '';
             }
         });
     }
+    function removeWicService(x,y) {
+        var id = x.id;
+        var id = y;
+        $.ajax({
+            url: 'ajax/remove_wic_planner.php',
+            method: 'post',
+            data: {con: id, conId: sid},
+            success: function (data) {
+                loadMyWics();
+                //alert(data);
+            }
+        });
+    }
     function showAddWicForm() {
         $(".INCLUDE").load("addwicplanner.php");
     }

@@ -1401,7 +1401,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
                 AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
         foreach ($rows as $row) {
-            echo '<section class="box-typical box-typical-max -280">
+            echo '<section class="box-typical box-typical-max-280">
             <header class="box-typical-header">
             <div class="tbl-row">
             <div class="tbl-cell tbl-cell-title">
@@ -1432,7 +1432,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             <td class="table-photo">
             </td>
             <td class="table-photo">
-            <a href="#" class="font-icon font-icon-del">
+            <a onclick="removeWicService(this, ' . $row['SID'] . ')"class="font-icon font-icon-del" id=' . $row['WID'] . '>
             </a>
             </td>
             </tr>
