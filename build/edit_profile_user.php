@@ -37,7 +37,7 @@ $msg ="";
                                         <header class="sign-title">Edit Profile</header>
                                         <div class="form-group">
                                             <div class="form-control-wrapper form-control-icon-left" >
-                                                <input type="text" id="first-name" class="form-control" placeholder="First Name"/>
+                                                    <input type="text" id="first-name" class="form-control" placeholder="First Name"/>
                                                 <i class="font-icon font-icon-user"></i>
                                             </div>
                                         </div>
