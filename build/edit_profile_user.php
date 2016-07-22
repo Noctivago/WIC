@@ -17,7 +17,7 @@ $msg = "";
         $lastName = (filter_var($_POST ['last'], FILTER_SANITIZE_STRING));
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
 
-        $uploadDir = 'uploadsPP/'; //Image Upload Folder
+        $uploadDir = './uploadsPP/'; //Image Upload Folder
         $fileName = $_FILES['images']['name'];
         $tmpName = $_FILES['images']['tmp_name'];
         $fileSize = $_FILES['images']['size'];
