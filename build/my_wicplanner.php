@@ -82,6 +82,7 @@ $msg = '';
     function removeWicService(x, y) {
         var id = x.id;
         var sid = y;
+        alert(id + ',' + sid)
         $.ajax({
             url: 'ajax/remove_wic_planner_service.php',
             method: 'post',
