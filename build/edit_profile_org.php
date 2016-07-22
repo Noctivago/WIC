@@ -23,7 +23,6 @@ $msg = '';
         $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
         $description = (filter_var($_POST ['description'], FILTER_SANITIZE_STRING));
         $msg = DB_UpdateOrgInformation($pdo,$name,$email,$address,$phone,$mobile,$website,$facebook,$linkdin,$twitter,$description,$userId);
-        
     }
     ?>
 
