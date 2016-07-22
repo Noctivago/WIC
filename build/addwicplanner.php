@@ -13,7 +13,7 @@ $msg = 'ID >' . $id;
     <!--    <div class="page-center">
             <div class="page-center-in">-->
     <div class="container-fluid">
-        <form class="sign-box" action="" method="">
+        <form class="sign-box">
             <div class="sign-avatar no-photo">&plus;</div>
             <header class="sign-title">Add new Wic Planner</header>
             <div class="form-group">
