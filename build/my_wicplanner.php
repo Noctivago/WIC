@@ -86,6 +86,8 @@ $msg = '';
         var x = idWicPlanner;
         $(".INCLUDE").load("addwicplanner.php?id=" + x);
     }
+    //SE DATA VIER VAZIO COLOCAR AVISO!
+    //OU 1 INCLUDE
     function showWicServicesForm(idWicPlanner) {
         var x = idWicPlanner;
         $.ajax({
