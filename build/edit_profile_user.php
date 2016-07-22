@@ -2,11 +2,12 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 
 <body>
     <?php
-    echo $msg;
     if (isset($_POST['save']) && !empty($_POST['first-name']) && !empty($_POST['last-name'])) {
         $msg = 'ja foste';
         //$foto
@@ -24,6 +25,7 @@ include_once '../build/db/session.php';
 
                 <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"  style="max-width: 600px; width: 600px;">
                     <?php
+                        echo $msg;
                     $userId = $_SESSION['id'];
                     DB_UserProfile($pdo, $userId);
                     ?>
