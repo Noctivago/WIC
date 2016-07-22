@@ -1400,8 +1400,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 on [Service].[Organization_Id] = [Organization].[Id]
                 WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
                 AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
-        foreach ($rows as $row) {
-            echo '<section class="box-typical box-typical-max-280">
+        echo '<section class="box-typical box-typical-max-280">
             <header class="box-typical-header">
             <div class="tbl-row">
             <div class="tbl-cell tbl-cell-title">
@@ -1422,7 +1421,9 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             <th>Owner</th><th></th><th></th>
             </tr>
             </thead>
-            <tbody>
+            <tbody>';
+        foreach ($rows as $row) {
+            echo '
             <tr class="table-check">
             <td><a href="../service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
             <td class="table-photo">
@@ -1434,14 +1435,14 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             <a onclick="removeWicService(this, ' . $row['SID'] . ')"class="font-icon font-icon-del" id=' . $row['WID'] . '>
             </a>
             </td>
-            </tr>
-            </tbody>
+            </tr>';
+        }
+        echo '</tbody>
             </table>
             </div>
             </div>
             </section>
             </div>';
-        }
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICES OF WIC PLANNER!
 
