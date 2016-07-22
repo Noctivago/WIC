@@ -6,6 +6,8 @@ $msg = "";
 ?>
 <body>
     <?php
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
     //falta alterar foto
     $userId = $_SESSION['id'];
     if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
@@ -52,8 +54,6 @@ $msg = "";
                   }
                  */
                 $msg = DB_addUserProfilePicture($pdo, $pic, $userId) . ' > ' . $userId;
-                error_reporting(E_ALL);
-                ini_set("display_errors", 1);
             }
         }
     }
