@@ -84,7 +84,7 @@ $msg = '';
     }
     function showAddWicFormEditMode(idWicPlanner) {
         var x = idWicPlanner;
-        $(".INCLUDE").load("addwicplanner.php?id=" + x);
+        $(".INCLUDE").load("addwicplanner.php?id=" + x + "&uid=" + <?= $_SESSION['id']; ?>);
     }
     //SE DATA VIER VAZIO COLOCAR AVISO!
     //OU 1 INCLUDE

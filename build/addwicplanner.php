@@ -7,9 +7,10 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 //include_once './db/session.php';
 $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+$uid = filter_input(INPUT_GET, "uid", FILTER_VALIDATE_INT);
 if (isset($id)) {
     $wicId = $id;
-    $userId = $_SESSION['id'];
+    $userId = $uid;
     $msg = 'WID >' . $wicId . ' UID > ' . $userId;
 //    $wicInfo = array();
 //    $wicInfo = DB_getWicPlannerInfo($pdo, $wicId, $userId);
@@ -31,7 +32,7 @@ if (isset($id)) {
         </div>
         <div class='input-group date'>
             <!--<input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control" required>-->
-            <input id="daterange3" type="text" value="01-08-2016>" class="form-control" required>
+            <input id="daterange3" type="text" value="01-08-2016" class="form-control" required>
             <span class="input-group-addon">
                 <i class="font-icon font-icon-calend"></i>
             </span>
