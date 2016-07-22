@@ -38,7 +38,7 @@
                                         if (isset($_POST["changePic"])) {
                                             $userId = $_SESSION['id'];
                                             //pasta do user para guardar a foto de perfil
-                                            $uploadDir = '../pics/'; //Image Upload Folder
+                                            $uploadDir = 'uploadsPP/'; //Image Upload Folder
                                             $fileName = $_FILES['Photo']['name'];
                                             $tmpName = $_FILES['Photo']['tmp_name'];
                                             $fileSize = $_FILES['Photo']['size'];
