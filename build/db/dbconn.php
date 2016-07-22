@@ -353,6 +353,7 @@ function DB_checkInvitesWaiting($pdo, $idUser) {
             echo '<div>';
             echo '<div align="center">';
             echo '<a class="font-icon font-icon-ok" onclick="accept(' . $row['ID'] . ')"></a>';
+            echo '&nbsp;';
             echo '<a class="font-icon font-icon-del" onclick="reject(' . $row['ID'] . ')"></a>';
             echo '</div>';
             echo '</div>';
