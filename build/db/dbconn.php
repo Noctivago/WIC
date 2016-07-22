@@ -1423,20 +1423,23 @@ function DB_UserProfile($pdo, $userId) {
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rowss as $row) {
-            echo '<div class="upload_div">
-                <form method="post" id="multiple_upload_form" action="upload.php">
-                <input type="hidden" name="image_form_submit" value="1"/>
+            echo '
+                <div style="margin-top:50px;">
+                    <div class="upload_div">
+                        <form method="post" name="multiple_upload_form" id="multiple_upload_form" enctype="multipart/form-data" action="upload.php">
+                            <input type="hidden" name="image_form_submit" value="1"/>
+                                <label>Choose Image</label>
+                                <input type="file" name="images[]" id="images" multiple >
+                            <div class="uploading none">
+                                <label>&nbsp;</label>
+                                <img src="uploading.gif"/>
+                            </div>
+                        </form>
+                    </div>
+                <div class="gallery" id="images_preview"></div>
+
                     <div class="sign-avatar no-photo" >
                         <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
-                        <div id="images_preview"></div>
-                    </div>
-                     <input type="file" class="btn btn-rounded btn-file" name="images[]" id="images">
-                    <div class="uploading none">
-                            <label>&nbsp;</label>
-                            <img src="uploading.gif"/>
-                        </div>
-                    </form>
-                    </div>
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
