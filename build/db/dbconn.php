@@ -1575,11 +1575,19 @@ function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
     }
 }
 
+/**
+ * Funcção que atualiza o wicplanner
+ * @param type $pdo
+ * @param type $wicId
+ * @param type $userId
+ * @param type $name
+ * @param type $eventDate
+ */
 function DB_updateWicPlanner($pdo, $wicId, $userId, $name, $eventDate) {
     try {
         sql($pdo, "UPDATE [WIC_Planner]
             SET [WIC_Planner].[Name] = ?,
-            SET [WIC_Planner].[Event_Date] = ?,
+            SET [WIC_Planner].[Event_Date] = ?
             WHERE [WIC_Planner].[Id]= ? 
             AND [WIC_Planner].[User_Id] = ?", array($name, $eventDate, $wicId, $userId));
         echo "Event updated!";
