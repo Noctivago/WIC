@@ -1424,7 +1424,7 @@ function DB_UserProfile($pdo, $userId) {
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rowss as $row) {
             echo '<div class="sign-avatar no-photo" >
-                        <img id="image" src="' . $row['Picture_Path'] . '" alt=""/>&plus
+                        <img id="image" src="' . $row['Picture_Path'] . '" alt=""/>
                     </div>
                     <button type="submit" class="btn btn-rounded btn-file" >Change Picture <input class="btn-file" type="file"/> </button>
                     <header class="sign-title">Edit Profile</header>
