@@ -10,7 +10,9 @@ include_once '../build/db/session.php';
         <div class="page-center-in">
             <div class="container-fluid" style="padding-top: 100px;">
                 <form class="sign-box"    style="max-width: 600px; width: 600px;">
-                    <div class="sign-avatar no-photo">&plus;</div>
+                 <?php $org = 2;    
+                 DB_OrgProfile($pdo,$org) ?>
+<!--                    <div class="sign-avatar no-photo">&plus;</div>
                     
                     <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
                     
@@ -72,7 +74,7 @@ include_once '../build/db/session.php';
 						</div>
                     </div>
                     
-                    <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>
+                    <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>-->
                     
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
