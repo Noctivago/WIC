@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 $msg = '';
 ?>
-
+<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
 <div class="page-content" style="height: 817px;">
     <div class="container-fluid">
         <div class="row" style="height: 700px;">
