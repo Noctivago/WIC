@@ -8,7 +8,7 @@ $msg = "";
 ?>
 
 <body>
-    <?php if(true){
+    <?php if(isset($_POST['save'])&&!empty($_POST['first'])&&!empty($_POST['last'])){
         $msg = 'olaaa';
         
     }
