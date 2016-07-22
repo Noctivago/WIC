@@ -1398,7 +1398,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
             </thead>
             <tbody>
             <tr class="table-check">
-            <td><a href="../service_profile.php?Service = ' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
+            <td><a href="../service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
             <td class="table-photo">
             <img src="' . $row['OPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['ONA'] . '">
             </td>
