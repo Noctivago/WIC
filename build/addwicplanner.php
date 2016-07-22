@@ -67,13 +67,13 @@ $msg = 'ID >' . $id;
                     method: 'post',
                     data: {name: wicName, eDate: wicDate},
                     success: function (data) {
-                        $('.INCLUDE').html(data);
+                        $('.INCLUDE').html('<p>' + data + '</p>');
                     }
                 });
                 wicName.innerHTML = "";
                 wicDate.innerHTML = "";
             } else {
-                $('.INCLUDE').html("Please fill all fields!");
+                $('.INCLUDE').html("<p>Please fill all fields!</p>");
             }
         }
     </script>
