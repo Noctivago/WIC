@@ -2,6 +2,7 @@
 
 include_once '../db/dbconn.php';
 include_once '../db/session.php';
+include_once '../db/functions.php';
 //DB_activateUserAccount($pdo, "prcunha.383@gmail.com");
 //$email = "paulo.cunha@esprominho.pt";
 //print 'SESSION INFO <br>';
