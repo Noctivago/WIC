@@ -8,8 +8,8 @@
 $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 if (isset($id)) {
     $wicId = $id;
-    $msg = 'ID >' . $id;
     $userId = $_SESSION['id'];
+    $msg = 'WID >' . $wicId . ' UID > ' . $userId;
     $wicInfo = array();
     $wicInfo = DB_getWicPlannerInfo($pdo, $wicId, $userId);
 }
