@@ -75,7 +75,7 @@ include_once '../build/db/session.php';
                 <section class="box-typical">
                     <header class="box-typical-header-sm">Messenger</header>
                     <div class="friends-list stripped">
-                      <?PHP                        DB_checkInvitesWaiting($pdo, $_SESSION['id']);?>
+                      <?PHP DB_checkInvitesWaiting($pdo, $_SESSION['id']);?>
                         <div class="see-all">
                             <a href="#">See more</a>
                         </div>
