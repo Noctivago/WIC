@@ -26,7 +26,7 @@ $msg ="";
     ?>
                 <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"  style="max-width: 600px; width: 600px;">
                     <?php
-                        echo $msg;
+                        echo 'iii'.$msg;
                     $userId = $_SESSION['id'];
                     DB_UserProfile($pdo, $userId);
                     ?>
