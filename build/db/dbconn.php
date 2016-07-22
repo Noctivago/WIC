@@ -1744,3 +1744,54 @@ function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
         return false;
     }
 }
+
+function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
+    try {
+        $rows = sql($pdo, "SELECT 
+        [Service].[Name] AS SNA,
+        [Service].[Id] AS SID,
+        [Service].[Description] AS SDE,
+        [Organization].[Name] AS ONA,
+        [Organization].[Id] AS OID,
+        [Organization].[Picture_Path] AS OPP
+        FROM [Service]
+        join [Organization]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        AND [Organization].[Enabled] = 1 AND [Service].[Enabled] = 1", array(), "rows");
+        foreach ($rows as $row) {
+            echo '<div class="card-grid-col">
+                    <article class="card-typical">
+                        <div class="card-typical-section">
+                            <div class="user-card-row">
+                                <div class="tbl-row">
+                                    <div class="tbl-cell tbl-cell-photo">
+                                        <a href="' . $row['OID'] . '">
+                                            <img src="' . $row['OPP'] . '" alt="Avatar">
+                                        </a>
+                                    </div>
+                                    <div class="tbl-cell">
+                                        <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $row['OID'] . '">"' . $row['ONA'] . '"</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-typical-section card-typical-content">
+                        <div class="photo">
+                                <img src="img/gall-img-1.jpg" alt="">
+                            </div>
+                            <header class="title"><a href="service_profile.php?service=' . $row['SID'] . '"></a></header>
+                            <p>"' . $row['SDE'] . '"</p>
+                        </div>
+                        <div class="card-typical-section">
+                            <a href="service_profile.php?service=' . $ror['SID'] . '" class="card-typical-likes">
+                                <i class="font-icon font-icon-heart"></i>
+                                123
+                            </a>
+                        </div>
+                    </article>
+                </div>';
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING SERVICE TABLE!';
+    }
+}
