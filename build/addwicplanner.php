@@ -17,7 +17,7 @@ if (isset($id) && isset($uid)) {
     $wicInfo = DB_getWicPlannerInfo($pdo, $wicId, $userId);
 } else {
     $wicInfo["Name"] = 'Event Name';
-    $wicInfo["Event_Date"] = '01/08/2016';
+    $wicInfo["Event_Date"] = '2016-08-01';
 }
 ?>
 <!--<body>-->
