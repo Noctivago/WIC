@@ -1243,7 +1243,7 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
         join [User_Profile]
         on [WIC_Planner].[User_Id] = [User_Profile].[User_Id]
         WHERE [WIC_Planner].[Enabled] = 1
-        AND [User].[id] = ?", array($userId), "rows");
+        AND [User].[id] = ? ORDER BY WPED DESC", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<tr class="table-check">';
             echo '<td><a onclick="showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
