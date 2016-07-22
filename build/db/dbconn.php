@@ -1453,10 +1453,9 @@ function DB_UpdateUserInformation($pdo,$sId,$first,$last){
    SET [First_Name] = ?
       ,[Last_Name] = ?
  WHERE [User_Id] =? ", array($first,$last,$sId));
-        
-        
+        echo 'Updated';
     } catch (Exception $ex) {
-        
+        echo 'Error';
     }
 }
 

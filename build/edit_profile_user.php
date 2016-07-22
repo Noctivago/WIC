@@ -13,10 +13,9 @@ include_once '../build/db/session.php';
         $first = (filter_var($_POST ['first-name'], FILTER_SANITIZE_STRING));
         $last = (filter_var($_POST ['last-name'], FILTER_SANITIZE_STRING));
         $sId = $_SESSION['id'];
-        sql($pdo, "UPDATE [dbo].[User_Profile]
-   SET [First_Name] = ?
-      ,[Last_Name] = ?
- WHERE [User_Id] =? ", array($first, $last, $sId));
+        $msg = DB_UpdateUserInformation($pdo,$sId,$first,$last);
+        echo $msg;
+        
     }
     ?>
     <div class="page-center">
