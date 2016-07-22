@@ -13,7 +13,7 @@ $msg = '';
   //&& !empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['email'])
     if (isset($_POST['save'])&& !empty($_POST['name']) &&!empty($_POST['address']) &&!empty($_POST['email'])) {
         $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
-        $email = (filter_var($_POST ['email'], FILTER_SANITIZE_STRING));
+        $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
         $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
         $phone = (filter_var($_POST ['phone'], FILTER_SANITIZE_STRING));
         $mobile = (filter_var($_POST ['mobile'], FILTER_SANITIZE_STRING));
