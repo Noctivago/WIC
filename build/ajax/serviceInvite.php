@@ -2,6 +2,7 @@
 
 include_once '../db/dbconn.php';
 include_once '../db/functions.php';
+include_once '../db/session.php';
 
 $invite = $_POST['invite'];
 $resp = $_POST['resp'];
