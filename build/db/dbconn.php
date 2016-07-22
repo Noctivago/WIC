@@ -1423,7 +1423,7 @@ function DB_UserProfile($pdo, $userId) {
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rowss as $row){
-            echo $row['First_Name'];
+            echo 'iiii'.$row['First_Name'];
         }
         echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="" alt=""/>&plus;
