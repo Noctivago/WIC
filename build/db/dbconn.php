@@ -1422,29 +1422,26 @@ function DB_UserProfile($pdo, $userId) {
         $rowss = sql($pdo, "SELECT *
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
-        foreach ($rowss as $row){
+        foreach ($rowss as $row) {
             echo '<div class="sign-avatar no-photo" >
-                        <img id="image" src="'.$row['Picture_Path'].'" alt=""/>&plus;
+                        <img id="image" src="' . $row['Picture_Path'] . '" alt=""/>&plus;
                     </div>
                     <button type="submit" class="btn btn-rounded btn-file" onselect="change()">Change Picture <input class="btn-file" type="file"/> </button>
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" id="first-name" class="form-control" placeholder="First Name" value="'.$row['First_Name'].'"/>
+                            <input type="text" id="first-name" class="form-control" placeholder="First Name" value="' . $row['First_Name'] . '"/>
                             <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" id="last-name" class="form-control" placeholder="Last Name" value="'.$row['Last_Name'].'"/>
+                            <input type="text" id="last-name" class="form-control" placeholder="Last Name" value="' . $row['Last_Name'] . '"/>
                             <i class="font-icon font-icon-user"></i>
                         </div>
                     </div>
                     <button type="submit" name="save" class="btn btn-rounded btn-success sign-up">Save Changes</button>';
         }
-        
-
-      
     } catch (Exception $ex) {
         
     }
@@ -1475,7 +1472,7 @@ function DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate) {
 
 function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
     try {
-        $rows = sql($pdo, "SELECT [Name], [Event_Date] FROM [dbo].[WIC_Planner] WHERE [Id] = ? and [User_Id] = ?", array($wicId, $userId), "rows");
+        $rows = sql($pdo, "SELECT * FROM [dbo].[WIC_Planner] WHERE [Id] = ? and [User_Id] = ?", array($wicId, $userId), "rows");
         $wicInfo = array();
         foreach ($rows as $row) {
             $wicInfo["Name"] = $row["Name"];
