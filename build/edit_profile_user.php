@@ -24,8 +24,6 @@ $msg = "";
         //FALTA VALIDAR FILE TIPE E FILE SIZE
         $fileType = $_FILES['images']['type'];
         $temp = explode(".", $_FILES["file"]["name"]);
-        $type = mime_content_type($tmpName);
-
         //echo 'is image';
         $newfilename = generateActivationCode() . '_' . $userId . '.jpg';
         #$filePath = $uploadDir . $fileName;
