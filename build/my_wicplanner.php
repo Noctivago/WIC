@@ -195,7 +195,7 @@ $msg = '';
         });
     });</script>
 
-<script src="js/app.js"></script>
+<!--<script src="js/app.js"></script>-->
 
 <!--        <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>-->
         <!--<script src="js/lib/tether/tether.min.js" type="text/javascript"></script>-->
