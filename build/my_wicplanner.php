@@ -111,7 +111,7 @@ $msg = '';
                 success: function (data) {
                     loadMyWics();
                     var x = document.getElementById("confirmation");
-                    x.innerHTML(data)
+                    x.innerHTML(data);
                 }
             });
             wicName.innerHTML = "";
