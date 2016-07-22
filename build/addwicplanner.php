@@ -58,7 +58,6 @@ $msg = 'ID >' . $id;
 
     <script>
         function addWic() {
-            var id = x.id;
             var wicName = document.getElementById("name").value;
             var wicDate = document.getElementById("daterange3").value;
             alert(wicName + ' ' + wicDate);
