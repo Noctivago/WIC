@@ -1145,6 +1145,7 @@ Free for 3 Months</header>';
 }
 
 function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
+    echo $userId;
     echo ' <div class="form-group" >
                                                     <select class="bootstrap-select bootstrap-select-arrow" >
                                                     <option>dass</option>
