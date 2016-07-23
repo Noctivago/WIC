@@ -179,10 +179,7 @@ include ("includes/head_sideMenu.php");
 						</article>
 
 						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-star"></i>
-								More interest
-							</header>
+							
 							
 						</article><!--.profile-info-item-->
 					</section>
