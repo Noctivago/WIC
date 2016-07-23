@@ -53,7 +53,7 @@ include("../build/db/dbconn.php");
                         <input type="text" name="activateText" id="activateText" class="form-control" placeholder="Validation Code" required/>
                         <p class="sign-note">  <?= $msg; ?> </p>
                         <button type="submit" name="activate" id="activate" class="btn btn-rounded">Validate account</button>
-                        <p class="sign-note">New to our website? <a href="sign_up.php">Sign up</a></p>
+                        <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as an user</a><a href="sign_up_org.php"> Sign up as an Organization</a></p>
                 </form>
             </div>
         </div>
