@@ -78,7 +78,7 @@ $msg = '';
 									<td class="table-check">
 										<div class="checkbox checkbox-only">
 											<input type="checkbox" id="table-check-1"/>
-											<label for="table-check-1"></label>
+											<label for="table-check-2"></label>
 										</div>
 									</td>
 									<td>
@@ -103,7 +103,7 @@ $msg = '';
 									<td class="table-check">
 										<div class="checkbox checkbox-only">
 											<input type="checkbox" id="table-check-1"/>
-											<label for="table-check-1"></label>
+											<label for="table-check-3"></label>
 										</div>
 									</td>
 									<td>

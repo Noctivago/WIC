@@ -570,17 +570,18 @@ include '../build/db/session.php';
                         $idUser = DB_checkUserByEmail($pdo, $email);
                         if (DB_checkIfUserInService($pdo, $userId, $serviceId, 1)) {
                             // update validate para 0
-                            echo 'enable a 1 existe no servico e ativo' . $serviceId;
+                            echo 'enable a 1 existe no servico e ativo Não faz nada....' . $serviceId;
                         } else {
                             if (DB_checkIfUserInService($pdo, $userId, $serviceId, 0)) {
-                                echo 'enable está a 0 esta disable' .$serviceId;
+                                echo 'enable está a 0 esta disable  Update  o validate para 0' . $serviceId;
+                            } else {
+                                // insert in user service
+                                echo 'nao esta enable nem disable nao existe insert' . $serviceId;
                             }
-                            // insert in user service
-                            echo 'nao esta enable nem disable nao existe' . $serviceId;
                         }
                     } else {
                         //insert in organization invite
-                        echo 'eeee' . $email;
+                        echo 'inserir no organization ' . $email;
                     }
                 }
                 ?>
