@@ -127,8 +127,8 @@ include ("includes/head_sideMenu.php");
 
 	
 							</div>
-                                                    <a href="gallery.php" class="btn btn-rounded btn-primary-outline">See All</a>
-						</div><!--.profile-following-->
+<!--                                                    <a href="gallery.php" class="btn btn-rounded btn-primary-outline">See All</a>
+						</div>.profile-following
 					</section>
 
 
@@ -136,7 +136,7 @@ include ("includes/head_sideMenu.php");
 
 
 
-<!--					<section class="box-typical">
+					<section class="box-typical">
 						<header class="box-typical-header-sm">
 							Posts
 							<div class="slider-arrs">
