@@ -1728,7 +1728,7 @@ function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
             //SEPARA DIA MES ANO
-            $subSubStr = explode("-", $subStr);
+            $subSubStr = explode("-", $subStr[0]);
             $wicInfo["Name"] = $row["Name"];
             $wicInfo["Event_Date"] = $subSubStr[1] . '-' . $subSubStr[2] . '-' . $subSubStr[0];
             //$wicInfo["Event_Date"] = $row['Event_Date'];
