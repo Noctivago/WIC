@@ -5,7 +5,7 @@ include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
-$wicSelected = (filter_var($_POST ['id']));
+//$wicSelected = (filter_var($_POST ['id']));
 $msg = '';
 ?>
 <!--<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
@@ -60,11 +60,12 @@ $msg = '';
     function load() {
         console.log("load event detected!");
         loadMyWics();
-        if (<?= $wicSelected; ?> !== '') {
-            showWicServicesForm(<?= $wicSelected; ?>);
-        } else {
-            showAddWicForm();
-        }
+        showAddWicForm();
+//        if (<?= $wicSelected; ?> !== '') {
+//            showWicServicesForm(<?= $wicSelected; ?>);
+//        } else {
+//            showAddWicForm();
+//        }
     }
     window.onload = load;
 </script>
