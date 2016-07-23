@@ -49,7 +49,7 @@ $msg = '';
             </div><!--.col- -->
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
-            <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
+            <!--<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
             <div class="col-lg-6 INCLUDE">
 
             </div>
