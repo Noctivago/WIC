@@ -1024,7 +1024,7 @@ include ("includes/head_sideMenu.php");
 						</section>
 					</section>.box-typical
 
-					<section class="box-typical">
+<!--					<section class="box-typical">
 						<header class="box-typical-header-sm">People you may know</header>
 						<div class="people-rel-list">
 							<div class="people-rel-list-name"><a href="#">Jackie Tran Anh</a>  /  Designer</div>
@@ -1054,7 +1054,7 @@ include ("includes/head_sideMenu.php");
 								<div class="overlay"></div>
 							</form>
 						</div>
-					</section>.box-typical
+					</section>.box-typical-->
 				</div>
 			</div><!--.row-->
 		</div><!--.container-fluid-->
