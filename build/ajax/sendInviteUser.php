@@ -14,10 +14,10 @@ if(DB_checkIfUserExists($pdo, $email)){
 //    if(DB_checkIfUserInService($pdo,$userId,$serviceId)){
         $userId = DB_checkUserByEmail($pdo, $email);
 
-        sql($pdo,"UPDATE [dbo].[User_Service]
-   SET [Enabled] = 0
-      ,[Validate] = 0
-     where [User_Id] = ? and [Service_Id] = ?",array($userId,$serviceId));
+//        sql($pdo,"UPDATE [dbo].[User_Service]
+//   SET [Enabled] = 0
+//      ,[Validate] = 0
+//     where [User_Id] = ? and [Service_Id] = ?",array($userId,$serviceId));
 //    }else{
     sql($pdo,"INSERT INTO [dbo].[User_Service]
            ([Service_Id]
