@@ -66,33 +66,8 @@ $msg = '';
 									<td class="color-blue-grey-lighter">Revene for last quarter in state America for year 2013, whith...</td>
 									
 									<td class="table-icon-cell">
-										<i class="font-icon font-icon-comment"></i>
-										24
-									</td>
-									
-									<td class="table-photo">
-										<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-									</td>
-								</tr>
-								<tr>
-									<td class="table-check">
-										<div class="checkbox checkbox-only">
-											<input type="checkbox" id="table-check-1"/>
-											<label for="table-check-1"></label>
-										</div>
-									</td>
-									<td>
-										Last quarter revene
-										<span class="hint-circle"
-											  data-toggle="tooltip"
-											  data-placement="top"
-											  title="Help">?</span>
-									</td>
-									<td class="color-blue-grey-lighter">Revene for last quarter in state America for year 2013, whith...</td>
-									
-									<td class="table-icon-cell">
-										<i class="font-icon font-icon-comment"></i>
-										24
+										<i class="font-icon font-icon-mail"></i>
+										TODOSMANSOS@GMAIL.COM
 									</td>
 									
 									<td class="table-photo">
@@ -117,7 +92,32 @@ $msg = '';
 									
 									<td class="table-icon-cell">
 										<i class="font-icon font-icon-mail"></i>
-										24
+										TODOSMANSOS@GMAIL.COM
+									</td>
+									
+									<td class="table-photo">
+										<img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
+									</td>
+								</tr>
+								<tr>
+									<td class="table-check">
+										<div class="checkbox checkbox-only">
+											<input type="checkbox" id="table-check-1"/>
+											<label for="table-check-1"></label>
+										</div>
+									</td>
+									<td>
+										Last quarter revene
+										<span class="hint-circle"
+											  data-toggle="tooltip"
+											  data-placement="top"
+											  title="Help">?</span>
+									</td>
+									<td class="color-blue-grey-lighter">Revene for last quarter in state America for year 2013, whith...</td>
+									
+									<td class="table-icon-cell">
+										<i class="font-icon font-icon-mail"></i>
+										TODOSMANSOS@GMAIL.COM
 									</td>
 									
 									<td class="table-photo">
@@ -132,6 +132,7 @@ $msg = '';
 			</section><!--.box-typical-->
                         
     </div>
+    <!--9234-->
 </div>
                         
                         
