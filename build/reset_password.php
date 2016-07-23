@@ -27,7 +27,7 @@ include_once './db/dbconn.php';
                     </div>-->
                     <header class="sign-title">Reset Password</header>
                     <div class="form-group">
-                        <input type="text" id="email" name ="email" class="form-control" placeholder="E-Mail"/>
+                        <input type="text" id="email" name ="email" class="form-control" placeholder="E-Mail" required="required"/>
                     </div>
                     <p class="sign-note">  <?= $msg; ?> </p>
                     <button type="submit" name="reset" class="btn btn-rounded">Reset</button>
