@@ -1786,20 +1786,21 @@ function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
  */
 function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
     try {
-        $rows = sql($pdo, "SELECT 
+        $rows = sql($pdo, "SELECT TOP 1 
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
         [Organization].[Picture_Path] AS OPP,
-        [Multimedia].[Multimedia_Path] AS MPP
+        [Multimedia].[Multimedia_Path]
         FROM [Service]
         join [Organization]
         on [Organization].[Id] = [Service].[Organization_Id]
         join [Multimedia]
         on [Multimedia].[Service_Id] = [Service].[Id]
-        AND [Organization].[Enabled] = 1 AND [Service].[Enabled] = 1", array(), "rows");
+        AND [Organization].[Enabled] = 1 AND [Service].[Enabled] = 1 
+        AND [Multimedia].[Enabled] = 1", array(), "rows");
         foreach ($rows as $row) {
             echo '<div class="card-grid-col">
                     <article class="card-typical">
