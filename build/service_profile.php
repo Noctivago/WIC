@@ -281,10 +281,8 @@ include ("includes/head_sideMenu.php");
 							</article>
 						</div>
                                                             <br>
-                                                            <br>
-                                                            <br>
-                                                            <br>
-
+                                                            
+                                        </section>
                                         <section class="box-typical">
 						<div class="profile-card">
 							<div class="profile-card-photo">
