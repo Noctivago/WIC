@@ -1837,7 +1837,7 @@ function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
         $Services = sql($pdo, "SELECT *
         FROM [Service]
         where [Enabled] = 1 and [Id] = ?", array($servideId), "rows");
-        echo $Services;
+        echo  $Service['Id'];
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
             $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
