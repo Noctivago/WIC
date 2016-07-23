@@ -569,18 +569,39 @@ include '../build/db/session.php';
                     if (DB_checkIfUserExists($pdo, $email)) {
                         $idUser = DB_checkUserByEmail($pdo, $email);
                         if (DB_checkIfUserInService($pdo, $userId, $serviceId, 1)) {
-                            // update validate para 0
-                            echo 'enable a 1 existe no servico e ativo Não faz nada....' . $serviceId;
+                            echo 'User is already in service';
                         } else {
                             if (DB_checkIfUserInService($pdo, $userId, $serviceId, 0)) {
-                                echo 'enable está a 0 esta disable  Update  o validate para 0' . $serviceId;
+                                sql($pdo, "UPDATE [dbo].[User_Service]
+   SET [Enabled] = 0
+      ,[Validate] = 0
+ WHERE [User_Id] = ? and [Service_id] = ?", array($userId, $serviceId));
+                                echo 'enable está a 0 esta disable  Update  o validate para 0' . $serviceId . "   ". $userId;
                             } else {
+                                sql($pdo,"INSERT INTO [dbo].[User_Service]
+           ([Service_Id]
+           ,[User_Id]
+           ,[Enabled]
+           ,[Validate])
+     VALUES
+           (?
+           ,?
+           ,0
+           ,0)", array($serviceId,$userId));
                                 // insert in user service
-                                echo 'nao esta enable nem disable nao existe insert' . $serviceId;
+                                echo 'nao esta enable nem disable nao existe insert' . $serviceId . "   ". $userId;
                             }
                         }
                     } else {
                         //insert in organization invite
+                        sql($pdo,"INSERT INTO [dbo].[Organization_Invites]
+           ([Email]
+           ,[Enabled]
+           ,[Service_Id])
+     VALUES
+           (?
+           ,0
+           ,?)",array($email,  $serviceId));
                         echo 'inserir no organization ' . $email;
                     }
                 }
