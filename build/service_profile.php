@@ -197,16 +197,14 @@ $serviceId = (filter_var($_GET['Service']));
                                         function addServiceComment(serviceId) {
                                             var comment = document.getElementById("userComment").value;
                                             var sId = serviceId;
-                                            alert(comment + '-' + sId);
+                                            alert(comment + '<->' + sId);
                                             if (comment !== "") {
                                                 $.ajax({
                                                     url: 'ajax/addServiceComment.php',
                                                     method: 'post',
                                                     data: {comment: comment, sId: sId},
                                                     success: function (data) {
-
                                                         alert(data);
-
                                                     }
                                                 });
                                             } else {

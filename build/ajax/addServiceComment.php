@@ -12,7 +12,7 @@ $userId = $_SESSION['id'];
 $Comment = (filter_var($_POST ['comment']));
 $ServiceId = (filter_var($_POST ['sId']));
 
-if (isset($comment) && isset($serviceId)) {
+if (isset($Comment) && isset($ServiceId)) {
     DB_addCommentsToService($pdo, $userId, $Comment, $ServiceId);
 } else {
     echo 'Empty!';
