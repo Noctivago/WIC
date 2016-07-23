@@ -24,7 +24,7 @@ include_once '../build/db/session.php';
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
-                                    $service = $_POST['Service'];
+                                    $service = $_GET['Service'];
                                     $user = $_SESSION['id'];
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     echo 'aaaaa'.$service;
