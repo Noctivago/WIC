@@ -36,64 +36,29 @@ include ("includes/head_sideMenu.php");
 							</div><!--.slide-->
 
 							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
+								
 								<div class="user-card-row">
-									<div class="tbl-row">
-									
-									</div>
-								</div>
-							</div><!--.slide-->
-
-							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
-								<div class="user-card-row">
-									<div class="tbl-row">
-										
-										<div class="tbl-cell">
+									<div class="tbl-cell">
 											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
 											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
 										</div>
-									</div>
 								</div>
 							</div><!--.slide-->
 
 							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
 								
+								<div class="user-card-row">
+									<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>								</div>
 							</div><!--.slide-->
 
-							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
-								<div class="user-card-row">
-									
-								</div>
-							</div><!--.slide-->
+							
 
-							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
-								<div class="user-card-row">
-									<div class="tbl-row">
-										
-									
-									</div>
-								</div>
-							</div><!--.slide-->
-						</div><!--.recomendations-slider-->
+							
+
+							</div><!--.recomendations-slider-->
 					</section><!--.box-typical-->
 
 
