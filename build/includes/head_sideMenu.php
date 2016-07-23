@@ -11,8 +11,8 @@ include '../build/db/session.php';
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>StartUI - Premium Bootstrap 4 Admin Dashboard Template</title>
-
+<!--        <title>StartUI - Premium Bootstrap 4 Admin Dashboard Template</title>-->
+        <title>WIC</title>
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
@@ -229,8 +229,16 @@ include '../build/db/session.php';
                                     <img src="img/avatar-2-64.png" alt="">
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
-                                    <a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
-                                    <a class="dropdown-item" href="profile-edit.html"><span class="font-icon glyphicon glyphicon-cog"></span>Settings</a>
+                                    <?php
+                                    if ($_SESSION['role'] === 'organization') {
+                                        echo '<a class="dropdown-item" href="profile_org.php?Organization=' . DB_GetOrgIdByUserBossId($pdo, $_SESSION['id']) . '"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
+                                        echo '<a class="dropdown-item" href="edit_profile_org.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
+                                    } else {
+                                        echo '<a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
+                                        echo '<a class="dropdown-item" href="edit_profile_user.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
+                                    }
+                                    ?>
+                                    <a class="dropdown-item" href="change_password.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>Change password</a>
                                     <a class="dropdown-item" href="faq.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>Help</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="logout.php"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
@@ -268,12 +276,12 @@ include '../build/db/session.php';
                                         <!--<span class="font-icon font-icon-cogwheel"></span>-->
                                         <!--                                        <h4 style="color: darkgray; font-family: cursive">You can event, event your life</h4>-->
                                         <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<select>
-  <option value="Choose your City">Choose your City</option>
-</select></span>
+                                                <option value="Choose your City">Choose your City</option>
+                                            </select></span>
                                     </a>
                                     <br>
                                     <br>
-                                    
+
 
 
                                     <!--	                            <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
@@ -421,20 +429,20 @@ include '../build/db/session.php';
 
 
                                 <div class="site-header-search-container">
-                                    
-                                    
-            <ul class="side-menu-list">
-               
-			
 
-                                    
-                                    <form class="site-header-search closed">
-                                        <input type="text" placeholder="Search a Service.."/>
-                                        <button type="submit">
-                                            <span class="font-icon-search"></span>
-                                        </button>
-                                        <div class="overlay"></div>
-                                    </form>
+
+                                    <ul class="side-menu-list">
+
+
+
+
+                                        <form class="site-header-search closed">
+                                            <input type="text" placeholder="Search a Service.."/>
+                                            <button type="submit">
+                                                <span class="font-icon-search"></span>
+                                            </button>
+                                            <div class="overlay"></div>
+                                        </form>
                                 </div>
                             </div><!--.site-header-collapsed-in-->
                         </div><!--.site-header-collapsed-->
@@ -447,26 +455,26 @@ include '../build/db/session.php';
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <div class="col-md-10">
-			<label class="form-label">Advanced Search</label>
+                    <label class="form-label">Advanced Search</label>
 
-                            <div class="typeahead-container">
-                                <div class="typeahead-field">
-                                    <span class="typeahead-query">
-					<input id="categories"
-						  class="form-control"
-						   name="q"
-						  type="search"
-						  autocomplete="off">
-                                    </span>
-                                    <span class="typeahead-button">
-					<button type="submit">
-                                            <span class="font-icon-search"></span>
-					</button>
-                                    </span>
-				</div>
-                            </div>
+                    <div class="typeahead-container">
+                        <div class="typeahead-field">
+                            <span class="typeahead-query">
+                                <input id="categories"
+                                       class="form-control"
+                                       name="q"
+                                       type="search"
+                                       autocomplete="off">
+                            </span>
+                            <span class="typeahead-button">
+                                <button type="submit">
+                                    <span class="font-icon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-		
+
 
 
                 <header class="side-menu-title">Start Planning</header>
@@ -607,7 +615,6 @@ include '../build/db/session.php';
    SET [Enabled] = 0
       ,[Validate] = 0
  WHERE [User_Id] = ? and [Service_id] = ?", array($idUser, $serviceId));
-                               
                             } else {
                                 sql($pdo, "INSERT INTO [dbo].[User_Service]
            ([Service_Id]
@@ -920,15 +927,15 @@ include '../build/db/session.php';
             }
         </script>
 
-        
-        	<script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
-	<script src="js/lib/select2/select2.full.min.js"></script>
-	<script src="js/lib/typeahead/typeahead-init.js"></script>
-        
-     <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
-    <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
-    <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="js/lib/select2/select2.full.min.js"></script>
+
+        <script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
+        <script src="js/lib/select2/select2.full.min.js"></script>
+        <script src="js/lib/typeahead/typeahead-init.js"></script>
+
+        <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+        <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+        <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="js/lib/select2/select2.full.min.js"></script>
 
 
 
