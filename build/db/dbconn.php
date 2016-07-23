@@ -116,11 +116,11 @@ function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
 //
 //
 //
-function DB_checkIfUserInService($pdo,$userId,$serviceId){
+function DB_checkIfUserInService($pdo,$userId,$serviceId,$enabled){
     try {
     $count = sql($pdo,"SELECT *
   FROM [dbo].[User_Service]
-  where [User_Id] = ? and [Service_Id] = ? and [Enabled] = 0",array($userId,$serviceId),"count");  
+  where [User_Id] = ? and [Service_Id] = ? and [Enabled] = ?",array($userId,$serviceId,$enabled),"count");  
     if($count<0){
         return true;
     }else{
