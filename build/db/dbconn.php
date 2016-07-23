@@ -1781,6 +1781,13 @@ function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
     }
 }
 
+/**
+ * Função que devolve os serviços para o index
+ * @param type $pdo
+ * @param type $Category
+ * @param type $SubCategoty
+ * @param type $city
+ */
 function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
     try {
         $rows = sql($pdo, "SELECT 
@@ -1801,12 +1808,13 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <div class="tbl-cell tbl-cell-photo">
-                                        <a href="' . $row['OID'] . '">
+                                    
+                                        <a href="profile_org.php?Organization=' . $row['OID'] . '">
                                             <img src="' . $row['OPP'] . '" alt="Avatar">
                                         </a>
                                     </div>
                                     <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $row['OID'] . '"></a></p>
+                                        <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1815,7 +1823,7 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                         <div class="photo">
                                 <img src="img/gall-img-1.jpg" alt="">
                             </div>
-                            <header class="title"><a href="service_profile.php?service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
+                            <header class="title"><a href="service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
                             <p>' . $row['SDE'] . '</p>
                         </div>
                         <div class="card-typical-section">
