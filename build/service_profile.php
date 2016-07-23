@@ -973,7 +973,7 @@ include ("includes/head_sideMenu.php");
 							</article>
 						</div>
 
-						<div class="see-all">
+<!--						<div class="see-all">
 							<a href="#">See All (300)</a>
 						</div>
 
@@ -1022,7 +1022,7 @@ include ("includes/head_sideMenu.php");
 								</div>.slide
 							</div>.profile-card-slider
 						</section>
-					</section>.box-typical
+					</section>.box-typical-->
 
 <!--					<section class="box-typical">
 						<header class="box-typical-header-sm">People you may know</header>
