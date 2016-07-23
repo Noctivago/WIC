@@ -137,7 +137,7 @@ $serviceId = (filter_var($_GET['Service']));
                                                         </div>
                                                     </div>
                                                 </div>.slide-->
-                        <?= DB_getServiceCommentFromUsers($pdo, $servideId); ?>
+                        <?= DB_getServiceCommentFromUsers($pdo, $serviceId); ?>
 
                     </div><!--.recomendations-slider-->
                 </section><!--.box-typical-->

@@ -1885,8 +1885,7 @@ function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
  */
 function DB_getServiceCommentFromUsers($pdo, $servideId) {
     try {
-        $rows = sql($pdo, "/****** Script for SelectTopNRows command from SSMS  ******/
-        SELECT [User_Profile].[First_Name] AS UFN
+        $rows = sql($pdo, "SELECT [User_Profile].[First_Name] AS UFN
                   ,[User_Profile].[Last_Name] AS ULN
                   ,[User_Profile].[Picture_Path] AS UPP
               ,[Comment] AS CCC
