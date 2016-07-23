@@ -810,10 +810,15 @@ function DB_GetOrgIdByUserBossId($pdo, $idUser) {
 
 function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
     try {
-        $row = sql($pdo, "SELECT * From [Organization] Where [User_Boss] = ? and [Enabled] = 1", array($idUser), "rows");
-        foreach ($rows as $row) {
-            echo $row;
+        $stmt = $pdo->prepare("SELECT * From [Organization] Where [Enabled] = 1 and [User_Boss] = :id");
+        $stmt->bindParam(':id', $idUser);
+        $stmt->execute();
+        $organization = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $organization['Name'] = $row['Name'];
+            $organization['Picture_Path'] = $row['Picture_Path'];
         }
+        return $organization;
     } catch (Exception $ex) {
         echo 'error';
     }

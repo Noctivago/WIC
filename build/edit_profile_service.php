@@ -34,7 +34,7 @@ include_once '../build/db/session.php';
                                         echo $user;
                                         $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                        // $OrganizationInformation =  DB_GetOrgInformation2($pdo, $org);
-                                        echo 'aaaaaaaaaaaa'.$org . '   '. $OrganizationInformation['id'];
+                                        echo 'aaaaaaaaaaaa'.$org['Name'] . '   '. $OrganizationInformation['id'];
                                         ?>
                                         <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
                                         <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
