@@ -1173,7 +1173,7 @@ function DB_GetServicesAsSelect($pdo, $userId) {
                         </div>
                         <header class="sign-title">Invite to my services</header>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail"/>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
                         </div>
                         ';
         DB_GetServicesOrganizationAsSelect($pdo, $userId);
