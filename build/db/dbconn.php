@@ -1152,11 +1152,13 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Service]
   where [Organization_Id] = ? and [Enabled] = 1", array($orgId), "rows");
+        echo '<div class="form-group" >';
         echo '<select class="bootstrap-select bootstrap-select-arrow" >';
         foreach ($rows as $row) {
             echo '<option>' . $row['Id'] . '</option>';
         }
-        echo ' </select>';
+        echo ' </select> ';
+        echo '</div>';
     } catch (Exception $ex) {
         
     }
@@ -1175,9 +1177,9 @@ function DB_GetServicesAsSelect($pdo, $userId) {
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="E-Mail"/>
                         </div>
-                        <div class="form-group" >';
+                        ';
         DB_GetServicesOrganizationAsSelect($pdo, $userId);
-        echo '</div> 
+        echo ' 
             <div class="form-group">
                             <button type="submit" class="btn btn-rounded">Invite</button>
                         </div>
