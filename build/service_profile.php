@@ -89,7 +89,7 @@ $serviceId = (filter_var($_GET['Service']));
                     </article><!--.profile-info-item-->
                 </section>
 
-                <form class="box-typical">
+                <div class="box-typical">
                     <input type="text" id="userComment" name="userComment" class="write-something" placeholder="Write a Review..." required/>
                     <div class="box-typical-footer">
                         <div class="tbl">
@@ -103,7 +103,7 @@ $serviceId = (filter_var($_GET['Service']));
                             </div>
                         </div>
                     </div>
-                </form><!--.box-typical-->
+                </div><!--.box-typical-->
 
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
