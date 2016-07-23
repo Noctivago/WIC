@@ -14,18 +14,98 @@ include ("includes/head_sideMenu.php");
                                         </section>                                         
                                     <section class="box-typical" style="height: 90px;" >
                                          
-                                             <div class="citate-speech-bubble">
+                                          <div class="slide">
+								<div class="citate-speech-bubble">
 									<i class="font-icon-quote"></i>
-									123
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 								</div>
-                                                                <div class="citate-speech-bubble">
+								<div class="user-card-row">
+									<div class="tbl-row">
+										<div class="tbl-cell tbl-cell-photo">
+											<a href="#">
+												<img src="img/photo-64-1.jpg" alt="">
+											</a>
+										</div>
+										<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>
+									</div>
+								</div>
+							</div><!--.slide-->
+
+							<div class="slide">
+								<div class="citate-speech-bubble">
 									<i class="font-icon-quote"></i>
-									456
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 								</div>
-                                        <div class="citate-speech-bubble">
+								<div class="user-card-row">
+									<div class="tbl-row">
+										<div class="tbl-cell tbl-cell-photo">
+											<a href="#">
+												<img src="img/photo-64-2.jpg" alt="">
+											</a>
+										</div>
+										<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>
+									</div>
+								</div>
+							</div><!--.slide-->
+
+							<div class="slide">
+								<div class="citate-speech-bubble">
 									<i class="font-icon-quote"></i>
-									789
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 								</div>
+								<div class="user-card-row">
+									<div class="tbl-row">
+										<div class="tbl-cell tbl-cell-photo">
+											<a href="#">
+												<img src="img/photo-64-4.jpg" alt="">
+											</a>
+										</div>
+										<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>
+									</div>
+								</div>
+							</div><!--.slide-->
+
+							<div class="slide">
+								<div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								</div>
+								<div class="user-card-row">
+									<div class="tbl-row">
+										<div class="tbl-cell tbl-cell-photo">
+											<a href="#">
+												<img src="img/photo-64-2.jpg" alt="">
+											</a>
+										</div>
+										<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>
+									</div>
+								</div>
+							</div><!--.slide-->
+
+							<div class="slide">
+								<div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								</div>
+								<div class="user-card-row">
+									<div class="tbl-row">
+										
+										
+								</div>
+							</div><!--.slide-->
+						</div><!--.recomendations-slider-->
                                           	
 					</section>
 
