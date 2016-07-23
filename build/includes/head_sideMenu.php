@@ -271,6 +271,12 @@ include '../build/db/session.php';
                                     </a>
                                     <br>
                                     <br>
+                                    <select>
+  <option value="loira">Loira</option>
+  <option value="morena">Morena</option>
+  <option value="ruiva">Ruiva</option>
+  <option value="quantidade">So interassa quantidade</option>
+</select>
 
 
                                     <!--	                            <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
