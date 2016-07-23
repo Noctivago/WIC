@@ -815,7 +815,7 @@ function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
         $stmt->execute();
         $organization = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            
+
             $organization['Id'] = $row['Id'];
             $organization['Name'] = $row['Name'];
             $organization['Picture_Path'] = $row['Picture_Path'];
@@ -1974,6 +1974,8 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
   where [Id] = ?", array($id), "rows");
+        echo '<header class="box-typical-header-sm">People in responsible  </header>
+                    <div class="friends-list stripped">';
         foreach ($rows as $row) {
             echo '<div class="profile-card">';
             echo '<div class="profile-card-photo">';
@@ -1991,6 +1993,7 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
 
             echo '</div>';
         }
+        echo '</div>';
     } catch (Exception $ex) {
         echo 'error';
     }
