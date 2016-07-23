@@ -6,10 +6,10 @@ include_once '../db/functions.php';
 
 $email = (filter_var($_POST['email']));
 $serviceId = (filter_var($_POST['serv']));
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 $userId = DB_checkUserByEmail($pdo, $email);
-sql($pdo,"INSERT INTO [dbo].[User_Service]
+sql($pdo, "INSERT INTO [dbo].[User_Service]
            ([Service_Id]
            ,[User_Id]
            ,[Enabled]
@@ -18,7 +18,7 @@ sql($pdo,"INSERT INTO [dbo].[User_Service]
            (?
            ,?
            ,0
-    ,0)", array($serviceId,$userId));
+    ,0)", array($serviceId, $userId));
 //if(DB_checkIfUserExists($pdo, $email)){
 ////    if(DB_checkIfUserInService($pdo,$userId,$serviceId)){
 //        $userId = DB_checkUserByEmail($pdo, $email);
