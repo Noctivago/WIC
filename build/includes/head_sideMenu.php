@@ -229,6 +229,9 @@ include '../build/db/session.php';
                                     <img src="img/avatar-2-64.png" alt="">
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
+                                    <?php if($_SESSION['role']=='organization'){
+ echo ' <a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
+                                    } ?>
                                     <a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
                                     <a class="dropdown-item" href="edit_profile_user.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a
                                     <a class="dropdown-item" href="change_password.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>Change password</a>
