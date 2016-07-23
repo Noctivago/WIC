@@ -90,7 +90,7 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
 
                 <form class="box-typical">
-                    <input type="text" class="write-something" placeholder="Write a Review..." required/>
+                    <input onclick="addServiceComment(<?= $serviceId; ?>);" id="userComment" name="userComment" class="write-something" placeholder="Write a Review..." required/>
                     <div class="box-typical-footer">
                         <div class="tbl">
                             <div class="tbl-row">
@@ -118,25 +118,7 @@ $serviceId = (filter_var($_GET['Service']));
                         </div>
                     </header>
                     <div class="recomendations-slider">
-                        <!--                        <div class="slide">
-                                                    <div class="citate-speech-bubble">
-                                                        <i class="font-icon-quote"></i>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                    </div>
-                                                    <div class="user-card-row">
-                                                        <div class="tbl-row">
-                                                            <div class="tbl-cell tbl-cell-photo">
-                                                                <a href="#">
-                                                                    <img src="img/photo-64-3.jpg" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="tbl-cell">
-                                                                <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                                                <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>.slide-->
+
                         <?= DB_getServiceCommentFromUsers($pdo, $serviceId); ?>
 
                     </div><!--.recomendations-slider-->
@@ -146,24 +128,7 @@ $serviceId = (filter_var($_GET['Service']));
             <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
                 <section class="box-typical">
                     <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
-                    <!--<article class="friends-list-item">
-                        <div class="user-card-row">
-                            <div class="tbl-row">
-                                <div class="tbl-cell tbl-cell-photo">
-                                    <a href="#">
-                                        <img src="img/photo-64-2.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="tbl-cell">
-                                    <p class="user-card-row-name"><a href="#">Susan Andrews</a></p>
-                                    <p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
-                                </div>
-                                <div class="tbl-cell tbl-cell-action">
-                                    <a href="#" class="plus-link-circle"><span>&plus;</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>-->
+
                 </section>
 
                 <section class="box-typical">
@@ -261,6 +226,27 @@ $serviceId = (filter_var($_GET['Service']));
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 
 <script>
+                        function addServiceComment(serviceId) {
+                            var comment = document.getElementById("userComment").value;
+                            var sId = serviceId;
+                            if (comment !== "") {
+                                $.ajax({
+                                    url: 'ajax/addServiceComment.php',
+                                    method: 'post',
+                                    data: {comment: comment, sId: sId},
+                                    success: function (data) {
+
+                                        alert(data);
+
+                                    }
+                                });
+                            } else {
+
+                            }
+                        }
+</script>
+
+<script>
 
 
     $(document).ready(function () {
@@ -298,14 +284,6 @@ $serviceId = (filter_var($_GET['Service']));
 
     });
 </script>
-
-
-
-
-
-
-
-
 
 <script>
     $(document).ready(function () {

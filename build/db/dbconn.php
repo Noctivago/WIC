@@ -807,11 +807,12 @@ function DB_GetOrgIdByUserBossId($pdo, $idUser) {
         echo 'error';
     }
 }
+
 function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
     try {
         $row = sql($pdo, "SELECT * From [Organization] Where [User_Boss] = ?", array($idUser), "rows");
-        foreach ($rows as $row){
-        echo $row['Id'];
+        foreach ($rows as $row) {
+            echo $row['Id'];
         }
     } catch (Exception $ex) {
         echo 'error';
@@ -1934,5 +1935,23 @@ function DB_getServiceCommentFromUsers($pdo, $servideId) {
         //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
+    }
+}
+
+/**
+ * Função para adicionar comentarios aos serviços
+ * @param type $pdo
+ * @param type $email
+ */
+function DB_addCommentsToService($pdo, $userId, $Comment, $ServiceId) {
+    $d = getDateToDB();
+    try {
+        sql($pdo, "INSERT INTO [dbo].[Comment] ([User_Id],[Comment],[Service_Id],[Date_Created],[Enabled]) "
+                . "VALUES(?,?,?,?,?)"
+                . "", array($userId, $Comment, $ServiceId, $d, 1));
+        print 'Added!';
+    } catch (PDOException $e) {
+        print "ERROR ADDING YOUR REVIEW!";
+        die();
     }
 }
