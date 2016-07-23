@@ -47,7 +47,7 @@ if (isset($id) && isset($uid)) {
 
 
 
-<!--	<script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
+	<script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
 	<script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
         <script src="js/lib/daterangepicker/daterangepicker.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
@@ -91,6 +91,6 @@ if (isset($id) && isset($uid)) {
 				});*/
 			});
 		});
-	</script>-->
+	</script>
 
 
