@@ -90,7 +90,7 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
 
                 <div class="box-typical">
-                    <input type="text" id="userComment" name="userComment" class="write-something" placeholder="Write a Review..." required/>
+                    <input type="text" id="userComment" name="userComment" class="write-something userComment" placeholder="Write a Review..." required/>
                     <div class="box-typical-footer">
                         <div class="tbl">
                             <div class="tbl-row">
@@ -119,7 +119,7 @@ $serviceId = (filter_var($_GET['Service']));
                     </header>
                     <div class="recomendations-slider COMMENTS">
 
-                        <?= DB_getServiceCommentFromUsers($pdo, $serviceId); ?>
+                        
 
                     </div><!--.recomendations-slider-->
                 </section><!--.box-typical-->
@@ -174,8 +174,6 @@ $serviceId = (filter_var($_GET['Service']));
     </div>
 </div>
 
-
-
 <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
 
@@ -189,10 +187,8 @@ $serviceId = (filter_var($_GET['Service']));
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
-
 <script>
     function addServiceComment(serviceId) {
         var comment = document.getElementById("userComment").value;
@@ -205,6 +201,7 @@ $serviceId = (filter_var($_GET['Service']));
                 success: function (data) {
                     alert(data);
                     loadComments();
+                    $("userComment").empty();
                 }
             });
         } 
