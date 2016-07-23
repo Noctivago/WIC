@@ -126,6 +126,15 @@ include ("includes/head_sideMenu.php");
                         <i class="font-icon font-icon-home"></i>
                         </div>
                     </div>
+                     <div class="form-group row">
+                        
+						<div class="form-control-wrapper form-control-icon-left" >
+							<textarea rows="8" class="form-control" placeholder="Service Info"></textarea>
+                                                        <i class="font-icon font-icon-user"></i>
+						</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>
                                         </section>
                                         
                                    
