@@ -1140,7 +1140,7 @@ Free for 3 Months</header>';
                 echo '<p class="user-card-row-name"><a href="#">' . $row['First_Name'] . '</a></p>';
 
 //falta colocar o link para ver o servico
-                echo '<p class="user-card-row-status">Service <a href="#">' . $row['Name'] . '</a></p>';
+                echo '<p class="user-card-row-status">Service <a href="service_profile.php?Service='.$row['Id'].'">' . $row['Name'] . '</a></p>';
                 echo '</div>';
                 echo '<div class="tbl-cell tbl-cell-action">';
 
