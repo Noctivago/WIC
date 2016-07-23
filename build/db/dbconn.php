@@ -1972,9 +1972,12 @@ function DB_addCommentsToService($pdo, $userId, $Comment, $ServiceId) {
 function DB_GetOrgInformationForService($pdo, $serviceId) {
     try {
         $id = 2;
-        $rows = sql($pdo, "SELECT *
-  FROM [dbo].[Organization]
-  where [Id] = ?", array($id), "rows");
+        $rows = sql($pdo, "SELECT  * 
+        FROM [dbo].[Organization]
+        join [Service]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        AND [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
+        AND [Service].[Id] = ?", array($serviceId), "rows");
         echo '<header class="box-typical-header-sm">People in responsible  </header>
                     <div class="friends-list stripped">';
         foreach ($rows as $row) {
