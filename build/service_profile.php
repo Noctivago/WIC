@@ -11,7 +11,7 @@ include ("includes/head_sideMenu.php");
 						                                                          
  <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
                                                          
-                                                          
+                                        </section>                                         
                                       <section class="box-typical">
 						<header class="box-typical-header-sm">Personal Info</header>
 						<article class="profile-info-item">
