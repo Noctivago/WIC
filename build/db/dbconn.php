@@ -1822,7 +1822,7 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                         </div>
                         <div class="card-typical-section card-typical-content">
                         <div class="photo">
-                                <img src="' . $row['MPP'] . '" alt="Avatar"  height="109.047" width="184,984">
+                                <img src="' . $row['MPP'] . '" alt="Service Pic"  height="109.047" width="184,984">
                             </div>
                             <header class="title"><a href="service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
                             <p>' . $row['SDE'] . '</p>
