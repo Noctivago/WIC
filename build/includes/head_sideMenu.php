@@ -573,10 +573,11 @@ include '../build/db/session.php';
                             echo 'enable a 1 existe no servico e ativo' . $serviceId;
                         } else {
                             if (DB_checkIfUserInService($pdo, $userId, $serviceId, 0)) {
-                                echo 'enable está a 0 esta disable' .$serviceId;
+                                echo 'enable está a 0 esta disable' . $serviceId;
+                            } else {
+                                // insert in user service
+                                echo 'nao esta enable nem disable nao existe' . $serviceId;
                             }
-                            // insert in user service
-                            echo 'nao esta enable nem disable nao existe' . $serviceId;
                         }
                     } else {
                         //insert in organization invite
