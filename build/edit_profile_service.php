@@ -54,7 +54,7 @@ include_once '../build/db/session.php';
 
                     <div class = "slide">
                         <div class = "user-card-row">
-                            <?php                                echo '<p>Category: <br> Sub category : </p>' ;?>
+                            <?php                                echo '<p>Category: '.'<br> Sub category : </p>'.$data['Sub_Category_Id'] ;?>
                             <div class = "tbl-cell">
                             </div> </div>
                     </div><!--.slide-->

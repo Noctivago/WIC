@@ -1050,7 +1050,7 @@ where [Service_Id] =:id");
 
 function DB_GetServiceInformation($pdo, $idService) {
     try {
-        $stmt = $pdo->prepare("SELECT [Name],[Date_Created],[Description]
+        $stmt = $pdo->prepare("SELECT [Name],[Date_Created],[Description],[Sub_Category_Id]
   FROM [dbo].[Service]
   where [Id] =:id");
         $stmt->bindParam(':id', $idService);
@@ -1060,6 +1060,7 @@ function DB_GetServiceInformation($pdo, $idService) {
             $serv['Name'] = $row['Name'];
             $serv['Date_Created'] = $row['Date_Created'];
             $serv['Description'] = $row['Description'];
+            $serv['Sub_Category_Id'] = $row['Sub_Category_Id'];
         }
         return $serv;
     } catch (PDOException $e) {
