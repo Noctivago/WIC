@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
 //include_once '../includes/head_singleforms.php';
-require_once '../build/db/dbconn.php';
-require_once '../build/db/functions.php';
-require_once '../db/session.php';
+include '../build/db/dbconn.php';
+include '../build/db/functions.php';
+include '../db/session.php';
 ?>
 
 <html>
