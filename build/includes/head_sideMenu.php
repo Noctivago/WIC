@@ -446,7 +446,7 @@ include '../build/db/session.php';
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
             <ul class="side-menu-list">
-                
+                <div class="col-md-10">
 			<label class="form-label">Advanced Search</label>
 
                             <div class="typeahead-container">
@@ -465,6 +465,7 @@ include '../build/db/session.php';
                                     </span>
 				</div>
                             </div>
+                </div>
 		
 
 
