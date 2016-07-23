@@ -40,7 +40,7 @@ include_once '../build/db/session.php';
 
                 </section>
             </div><!--.col- -->
-           
+
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <section class="box-typical">
@@ -66,7 +66,7 @@ include_once '../build/db/session.php';
                         <?= db_getUserMessengerWithOrgs($pdo, $_SESSION['id']); ?>
 
                         <div class="see-all">
-                            <a href="#">See more</a>
+                            <a href="my_wicplanner.php">See more</a>
                         </div>
 
                 </section>
@@ -75,8 +75,8 @@ include_once '../build/db/session.php';
                 <section class="box-typical">
                     <header class="box-typical-header-sm">Invites</header>
                     <div class="friends-list stripped">
-                      <?PHP DB_checkInvitesWaiting($pdo, $_SESSION['id']);?>
-                      
+                        <?PHP DB_checkInvitesWaiting($pdo, $_SESSION['id']); ?>
+
                 </section>
             </div><!--.col- -->
         </div><!--.row-->
@@ -100,23 +100,23 @@ include_once '../build/db/session.php';
 <script src="js/lib/salvattore/salvattore.min.js"></script>  
 
 <script>
-    function accept(id){
+    function accept(id) {
         var accept = 1;
-    $.post("ajax/serviceInvite.php",{invite: id, resp : accept},function(result){
-    });
-    window.location.reload(1);
+        $.post("ajax/serviceInvite.php", {invite: id, resp: accept}, function (result) {
+        });
+        window.location.reload(1);
     }
-    
-    function reject(id){
+
+    function reject(id) {
         var reject = 0;
-    $.post("ajax/serviceInvite.php",{invite: id,resp : reject},function(result){
-    });
-    window.location.reload(1);
+        $.post("ajax/serviceInvite.php", {invite: id, resp: reject}, function (result) {
+        });
+        window.location.reload(1);
     }
-    
-    
-    </script>
-    
+
+
+</script>
+
 <script>
     $(document).ready(function () {
         $('.panel').lobiPanel({
