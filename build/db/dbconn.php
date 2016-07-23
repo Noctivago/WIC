@@ -1168,8 +1168,8 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
 
 function DB_GetServicesAsSelect($pdo, $userId) {
     try {
-
-
+        $OrgId = DB_GetOrgIdByUserBossId($pdo, $userId);
+        echo $OrgId;
         echo ' <div class="container-fluid">
                  <form class="sign-box">
                     <div class="sign-avatar">
