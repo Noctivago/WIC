@@ -68,14 +68,14 @@ include_once '../build/db/session.php';
 
 
             <section class = "box-typical">
-                <header class = "box-typical-header-sm">Personal Info</header>
+                <header class = "box-typical-header-sm">Service Information</header>
                 <article class = "profile-info-item">
                     <header class = "profile-info-item-header">
                         <i class = "font-icon font-icon-notebook-bird"></i>
-                        Summary
+                        Description
                     </header>
                     <div class = "text-block text-block-typical">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <?php echo '<p id="description">'.$data['Description'].'</p>';?>
                     </div>
                 </article>
 
