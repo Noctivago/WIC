@@ -1155,7 +1155,7 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
         echo '<select class="bootstrap-select bootstrap-select-arrow" >';
 //            echo '<select class="form-control">';       
         foreach ($rows as $row) {
-            echo '<option>tass bem</option>';
+            echo '<option value ="'.$row['Id'].'">'.$row['Name'].'</option>';
         }
         echo ' </select> ';
         echo '</div>';
