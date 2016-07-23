@@ -349,9 +349,8 @@ include ("includes/head_sideMenu.php");
 							</div>
 						</article><!--.profile-info-item-->
 					</section>	
-                                    
-                                    		<section class="box-typical">
-						<header class="box-typical-header-sm">Comments</header>
+		<section class="box-typical">
+						<header class="box-typical-header-sm">Personal Info</header>
 						<article class="profile-info-item">
 							<header class="profile-info-item-header">
 								<i class="font-icon font-icon-notebook-bird"></i>
@@ -369,9 +368,11 @@ include ("includes/head_sideMenu.php");
 								<i class="font-icon font-icon-star"></i>
 								More interest
 							</header>
-							
+						
 						</article><!--.profile-info-item-->
-					</section>    
+					</section>
+                                                            Skills
+							</header>
 
 							<section class="skill-item tbl">
 								<div class="tbl-row">
