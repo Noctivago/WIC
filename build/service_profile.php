@@ -51,8 +51,8 @@ $serviceId = (filter_var($_GET['Service']));
                                 </div>								</div>
                         </div><!--.slide-->
 
-                    </div><!--.recomendations-slider-->
-                </section><!--.box-typical-->
+                    </div>
+                </section>
 
                 <section class="box-typical">
                     <header class="box-typical-header-sm">Personal Info</header>
@@ -66,27 +66,6 @@ $serviceId = (filter_var($_GET['Service']));
                             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
                         </div>
                     </article>
-
-                    <article class="profile-info-item">
-                        <header class="profile-info-item-header">
-                            <i class="font-icon font-icon-star"></i>
-                            More interest
-                        </header>
-                        <div class="profile-interests">
-                            <a href="#" class="label label-light-grey">Interest</a>
-                            <a href="#" class="label label-light-grey">Example</a>
-                            <a href="#" class="label label-light-grey">One more</a>
-                            <a href="#" class="label label-light-grey">Here is example interest</a>
-                            <a href="#" class="label label-light-grey">Interest</a>
-                            <a href="#" class="label label-light-grey">Example</a>
-                            <a href="#" class="label label-light-grey">One more</a>
-                            <a href="#" class="label label-light-grey">Here is example interest</a>
-                            <a href="#" class="label label-light-grey">Interest</a>
-                            <a href="#" class="label label-light-grey">Example</a>
-                            <a href="#" class="label label-light-grey">One more</a>
-                            <a href="#" class="label label-light-grey">Here is example interest</a>
-                        </div>
-                    </article><!--.profile-info-item-->
                 </section>
 
                 <div class="box-typical">
@@ -119,7 +98,7 @@ $serviceId = (filter_var($_GET['Service']));
                     </header>
                     <div class="recomendations-slider COMMENTS">
 
-                        
+
 
                     </div><!--.recomendations-slider-->
                 </section><!--.box-typical-->
@@ -190,37 +169,37 @@ $serviceId = (filter_var($_GET['Service']));
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 <script>
-    function addServiceComment(serviceId) {
-        var comment = document.getElementById("userComment").value;
-        var sId = serviceId;
-        if (comment !== '') {
-            $.ajax({
-                url: 'ajax/addServiceComment.php',
-                method: 'post',
-                data: {comment: comment, sId: sId},
-                success: function (data) {
-                    alert(data);
-                    loadComments();
-                    $("userComment").empty();
-                }
-            });
-        } 
-    }
-    function loadComments() {
-        $.ajax({
-            url: 'ajax/getServiceComment.php',
-            method: 'post',
-            data: {sId: <?= $serviceId; ?>},
-            success: function (data) {
-                $('.COMMENTS').html(data);
-            }
-        });
-    }
-    function load() {
-        console.log("load comments");
-        loadComments();
-    }
-    window.onload = load;
+                                        function addServiceComment(serviceId) {
+                                            var comment = document.getElementById("userComment").value;
+                                            var sId = serviceId;
+                                            if (comment !== '') {
+                                                $.ajax({
+                                                    url: 'ajax/addServiceComment.php',
+                                                    method: 'post',
+                                                    data: {comment: comment, sId: sId},
+                                                    success: function (data) {
+                                                        alert(data);
+                                                        loadComments();
+                                                        $("userComment").empty();
+                                                    }
+                                                });
+                                            }
+                                        }
+                                        function loadComments() {
+                                            $.ajax({
+                                                url: 'ajax/getServiceComment.php',
+                                                method: 'post',
+                                                data: {sId: <?= $serviceId; ?>},
+                                                success: function (data) {
+                                                    $('.COMMENTS').html(data);
+                                                }
+                                            });
+                                        }
+                                        function load() {
+                                            console.log("load comments");
+                                            loadComments();
+                                        }
+                                        window.onload = load;
 </script>
 
 <script>
