@@ -865,9 +865,9 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
                 echo '    <div class="user-card-row">';
                 echo '      <div class="tbl-row">';
                 echo '          <div class="tbl-cell tbl-cell-photo">';
-                echo '              <a href="#">';
+         //       echo '              <a href="#">';
                 echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
-                echo '             </a>';
+         //       echo '             </a>';
                 echo '         </div>';
                 echo '        <div class="tbl-cell">';
                 echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
