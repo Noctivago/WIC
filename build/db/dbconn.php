@@ -1158,42 +1158,9 @@ Free for 3 Months</header>';
     }
 }
 
-function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
-    try {
-        $rows = sql($pdo, "SELECT [Service].[Id], [Service].[Name]
-  FROM [dbo].[Service]
-  join [Organization]
-  on [Organization].[Id] = [Service].[Organization_id]
-  where [Organization].[User_Boss] = ? and [Organization].[Enabled] = 1 and [Service].[Enabled] = 1", array($userId), "rows");
-        echo '<div class="form-group" >';
-        echo '<select class="bootstrap-select bootstrap-select-arrow" >';
-//            echo '<select class="form-control">';       
-        foreach ($rows as $row) {
-            echo '<option id="service" name="service" value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
-        }
-        echo ' </select> ';
-        echo '</div>';
-    } catch (Exception $ex) {
-        
-    }
-}
 
-function DB_GetServicesAsSelect($pdo, $userId) {
-    try {
-        echo '      <div class="sign-avatar">
-                            <img src="img/avatar-sign.png" alt="">
-                        </div>
-                        <header class="sign-title">Invite to my services</header>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
-                        </div>
-                        ';
-        DB_GetServicesOrganizationAsSelect($pdo, $userId);
 
-    } catch (Exception $ex) {
-        
-    }
-}
+
 
 //preencher seccao services no profile org
 //falta passar o id da org
