@@ -1149,7 +1149,7 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
         echo '<div class="form-group" >';
         echo '<select class="bootstrap-select bootstrap-select-arrow" >';
         echo '<select class="form-control">';
-        echo '<option>' . $row['Id'] . '</option>';
+        echo '<option>tass bem</option>';
         echo ' </select> ';
         echo '</div>';
         echo 'iii' . DB_GetOrgIdByUserBossId($pdo, $idUser);
@@ -1168,8 +1168,8 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
 
 function DB_GetServicesAsSelect($pdo, $userId) {
     try {
-
-
+        $OrgId = DB_GetOrgIdByUserBossId($pdo, $userId);
+        echo $OrgId;
         echo ' <div class="container-fluid">
                  <form class="sign-box">
                     <div class="sign-avatar">
