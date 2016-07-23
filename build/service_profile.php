@@ -5,7 +5,7 @@ include ("includes/head_sideMenu.php");
 <div class="page-content">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-9 col-lg col-md-12">
+				<div class="col-lg-8 col-lg col-md-12">
                                     
                                     <!--form para postar algo-->
                                     
@@ -40,7 +40,7 @@ include ("includes/head_sideMenu.php");
 
 
 
-					<section class="box-typical" style="height: 500px;">
+					<section class="box-typical" style="height: 400.05px;">
 						<header class="box-typical-header-sm">Album</header>
                                                 
                                                 
@@ -131,6 +131,188 @@ include ("includes/head_sideMenu.php");
 						</div><!--.profile-following-->
 					</section>
 
+
+
+
+
+
+<!--					<section class="box-typical">
+						<header class="box-typical-header-sm">
+							Posts
+							<div class="slider-arrs">
+								<button type="button" class="posts-slider-prev">
+									<i class="font-icon font-icon-arrow-left"></i>
+								</button>
+								<button type="button" class="posts-slider-next">
+									<i class="font-icon font-icon-arrow-right"></i>
+								</button>
+							</div>
+						</header>
+						<div class="posts-slider">
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-1.jpeg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>
+									</div>
+									<div class="post-announce-date">Februrary 19, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div>.slide
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-2.jpg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">How Much Do We Spend on How Much Do We Spend on How Much Do We Spend on </a>
+									</div>
+									<div class="post-announce-date">January 21, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div>.slide
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-3.jpeg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">Good News You Might Have Good News You Might Have Good News You Might Have </a>
+									</div>
+									<div class="post-announce-date">December 30, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div>.slide
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-1.jpeg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>
+									</div>
+									<div class="post-announce-date">Februrary 19, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div>.slide
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-2.jpg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">How Much Do We Spend on How Much Do We Spend on How Much Do We Spend on </a>
+									</div>
+									<div class="post-announce-date">January 21, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div>.slide
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-3.jpeg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">Good News You Might Have Good News You Might Have Good News You Might Have </a>
+									</div>
+									<div class="post-announce-date">December 30, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div>.slide
+						</div>.posts-slider
+					</section>.box-typical-->
 
 					<section class="box-typical">
 						<header class="box-typical-header-sm">Personal Info</header>
@@ -240,7 +422,14 @@ include ("includes/head_sideMenu.php");
 						<article class="profile-info-item">
 							<header class="profile-info-item-header">
 								<i class="font-icon font-icon-lamp"></i>
-										</div>
+								Skills
+							</header>
+
+							<section class="skill-item tbl">
+								<div class="tbl-row">
+									<div class="tbl-cell tbl-cell-num">
+										<div class="skill-circle skill-circle-num">74</div>
+									</div>
 									<div class="tbl-cell tbl-cell-txt">Social Media Marketing</div>
 									<div class="tbl-cell tbl-cell-users">
 										<img class="skill-user-photo" src="img/avatar-1-64.png" alt=""/>
@@ -317,14 +506,7 @@ include ("includes/head_sideMenu.php");
 								<a href="#" class="label label-light-grey">Here is example interest</a>
 							</div>
 						</article><!--.profile-info-item-->
-					</section>		Skills
-							</header>
-
-							<section class="skill-item tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell tbl-cell-num">
-										<div class="skill-circle skill-circle-num">74</div>
-					<!--.box-typical-->
+					</section><!--.box-typical-->
 
                                         <!--Reviews-->
                                         
