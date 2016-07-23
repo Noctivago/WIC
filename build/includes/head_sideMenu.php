@@ -531,7 +531,7 @@ include_once  '../db/session.php';
                 </li>-->
                         <!--?php $userId = $_SESSION['id'];
  echo 'aaaaaa'.$userId;
-                        --><?php DB_GetServicesAsSelect($pdo, $userId); ?>
+                        --><?php DB_GetServicesAsSelect($pdo, $_SESSION['id']); ?>
 
 <!--                
 <div class="container-fluid">
