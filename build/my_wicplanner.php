@@ -56,7 +56,10 @@ $msg = '';
     </div><!--.page-content--> 
 </div>
 <script>
-    window.onload = loadMyWics;
+    function load() {
+        console.log("load event detected!");
+    }
+    window.onload = load;
 </script>
 <script>
     function loadMyWics() {
