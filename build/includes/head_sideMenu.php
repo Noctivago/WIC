@@ -576,33 +576,33 @@ include '../build/db/session.php';
    SET [Enabled] = 0
       ,[Validate] = 0
  WHERE [User_Id] = ? and [Service_id] = ?", array($userId, $serviceId));
-                                echo 'enable está a 0 esta disable  Update  o validate para 0' . $serviceId . "   ". $userId;
+                                echo 'enable está a 0 esta disable  Update  o validate para 0' . $serviceId . "   " . $userId;
                             } else {
-                                sql($pdo,"INSERT INTO [dbo].[User_Service]
+                                sql($pdo, "INSERT INTO [dbo].[User_Service]
            ([Service_Id]
            ,[User_Id]
            ,[Enabled]
-           ,[Validate])
+           ,[Validate],[Role_id])
      VALUES
            (?
            ,?
            ,0
-           ,0)", array($serviceId,$userId));
+           ,0)", array($serviceId, $userId,2));
                                 // insert in user service
-                                echo 'nao esta enable nem disable nao existe insert' . $serviceId . "   ". $userId;
+                                echo 'nao esta enable nem disable nao existe insert' . $serviceId . "   " . $userId;
                             }
                         }
                     } else {
                         //insert in organization invite
-                        sql($pdo,"INSERT INTO [dbo].[Organization_Invites]
+                        sql($pdo, "INSERT INTO [dbo].[Organization_Invites]
            ([Email]
            ,[Enabled]
            ,[Service_Id])
      VALUES
            (?
            ,0
-           ,?)",array($email,  $serviceId));
-                        echo 'inserir no organization ' . $email;
+           ,?)", array($email, $serviceId));
+                        //enviar email.
                     }
                 }
                 ?>
