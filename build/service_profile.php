@@ -196,7 +196,7 @@ $serviceId = (filter_var($_GET['Service']));
 <script>
                                         function load() {
                                             console.log("load event detected!");
-                                            loadComments;
+                                            loadComments();
                                         }
                                         window.onload = load;
 </script>
