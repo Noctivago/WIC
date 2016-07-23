@@ -1822,14 +1822,14 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                         </div>
                         <div class="card-typical-section card-typical-content">
                         <div class="photo">
-                                <img src="' . $row['MPP'] . '" alt="Avatar">
+                                <img src="' . $row['MPP'] . '" alt="Avatar"  height="109.047" width="184,984">
                             </div>
                             <header class="title"><a href="service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
                             <p>' . $row['SDE'] . '</p>
                         </div>
                         <div class="card-typical-section">
                             <a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-                                <i class="font-icon font-icon-heart">' . DB_GetNumberServiceViews($pdo, $idService) . '</i> 
+                                <i class="font-icon font-icon-heart">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
                             </a>
                         </div>
                     </article>
