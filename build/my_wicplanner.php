@@ -8,7 +8,7 @@ include_once '../build/db/session.php';
 $msg = '';
 ?>
 <!--<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
-<div onload="loadMyWics();" class="page-content" style="height: 817px;">
+<div class="page-content" style="height: 817px;">
     <div class="container-fluid">
         <div class="row" style="height: 700px;">
             <div class="col-lg-6">
@@ -139,6 +139,7 @@ $msg = '';
 
 <script>
     $(document).ready(function () {
+        loadMyWics();
         $('.panel').lobiPanel({
             sortable: true
         });
