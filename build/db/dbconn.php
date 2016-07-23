@@ -1793,7 +1793,7 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
         [Organization].[Picture_Path] AS OPP,
-        [Multimedia].[Multimedia_Path]
+        [Multimedia].[Multimedia_Path] AS MPP
         FROM [Service]
         join [Organization]
         on [Organization].[Id] = [Service].[Organization_Id]
@@ -1807,7 +1807,6 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <div class="tbl-cell tbl-cell-photo">
-                                    
                                         <a href="profile_org.php?Organization=' . $row['OID'] . '">
                                             <img src="' . $row['OPP'] . '" alt="Avatar">
                                         </a>
@@ -1820,7 +1819,7 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                         </div>
                         <div class="card-typical-section card-typical-content">
                         <div class="photo">
-                                <img src="img/gall-img-1.jpg" alt="">
+                                <img src="' . $row['MPP'] . '" alt="Avatar">
                             </div>
                             <header class="title"><a href="service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
                             <p>' . $row['SDE'] . '</p>
