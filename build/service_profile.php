@@ -280,10 +280,9 @@ include ("includes/head_sideMenu.php");
 								</div>
 							</article>
 						</div>
-                                                            <br>
-                                                            
                                         </section>
-                                        <section class="box-typical">
+                                        
+                                    <section class="box-typical">
 						<div class="profile-card">
 							<div class="profile-card-photo">
                                                             <img src="img/a_tasca.jpg" alt=""/>
