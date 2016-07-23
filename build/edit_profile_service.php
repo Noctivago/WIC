@@ -95,18 +95,18 @@ include_once '../build/db/session.php';
 
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "text" class = "form-control" value='<?=$data['Name']?>' placeholder = " Service Name"/>
+                            <input type = "text" class = "form-control" id="cName" value='<?=$data['Name']?>' placeholder = " Service Name"/>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
-
+<!--
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
                             <input type = "text" class = "form-control" value='<?= $data['Name']?>' placeholder = " Service Categorie"/>
                             <i class = "font-icon font-icon-earth"></i>
                         </div>
                     </div>
-                    <div class = "form-group">
+                    <div class = "form-group">-->
                         <div class = "form-control-wrapper form-control-icon-left" >
                             <input type = "text" class = "form-control" value='<?= $data['Name'] ?>' placeholder = "Service Sub Categories"/>
                             <i class = "font-icon font-icon-home"></i>
@@ -115,7 +115,7 @@ include_once '../build/db/session.php';
                     <div class = "form-group row">
 
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <textarea onchange="reloadDescription()" id="teste"rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
+                            <textarea onchange="reloadDescription()" id="cDescription" rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
@@ -131,7 +131,13 @@ include_once '../build/db/session.php';
 
 <script>
     function reloadDescription(){
-        document.getElementById('description').innerHTML = document.getElementById('teste').value;
+        document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
+    }
+    function reloadName(){
+        document.getElementById('Name').innerHTML = document.getElementById('cName').value;
+    }
+    function reloadPhoto(){
+        
     }
     </script>
 
