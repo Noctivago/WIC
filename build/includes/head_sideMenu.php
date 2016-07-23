@@ -576,7 +576,7 @@ include '../build/db/session.php';
    SET [Enabled] = 0
       ,[Validate] = 0
  WHERE [User_Id] = ? and [Service_id] = ?", array($userId, $serviceId));
-                                echo 'enable está a 0 esta disable  Update  o validate para 0' . $serviceId . "   " . $userId;
+                                //echo 'enable está a 0 esta disable  Update  o validate para 0' . $serviceId . "   " . $userId;
                             } else {
                                 sql($pdo, "INSERT INTO [dbo].[User_Service]
            ([Service_Id]
@@ -588,10 +588,10 @@ include '../build/db/session.php';
            ,?
            ,0
            ,0,2)", array($serviceId, $userId));
-                               
                             }
                         }
                     } else {
+
                         //insert in organization invite
                         sql($pdo, "INSERT INTO [dbo].[Organization_Invites]
            ([Email]
