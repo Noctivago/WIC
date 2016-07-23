@@ -1181,8 +1181,8 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
 
 function DB_GetServicesAsSelect($pdo, $userId) {
     try {
-        echo ' <div class="container-fluid">
-                 <form class="sign-box">
+        echo '<div class="container-fluid">
+                 <form class="sign-box" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="post">
                     <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
                         </div>
