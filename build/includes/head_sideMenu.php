@@ -3,7 +3,7 @@
 //include_once '../includes/head_singleforms.php';
 include '../build/db/dbconn.php';
 include '../build/db/functions.php';
-include '../db/session.php';
+include '../build/db/session.php';
 ?>
 
 <html>
@@ -530,7 +530,7 @@ include '../db/session.php';
                                 </li>-->
                 <!--?php $userId = $_SESSION['id'];
 echo 'aaaaaa'.$userId;
-                <!--?php DB_GetServicesAsSelect($pdo, $_SESSION['id']); ?-->
+                <?php DB_GetServicesAsSelect($pdo, $_SESSION['id']); ?>
                 <?= DB_getLoginFailedValue($pdo, 'prcunha.383@gmail.com'); ?>
 
                 <!--                
