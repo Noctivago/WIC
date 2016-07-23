@@ -465,7 +465,7 @@ include '../build/db/session.php';
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
             <ul class="side-menu-list">
-                <div class="col-md-10">
+                
 			<label class="form-label">Categories</label>
 
                             <div class="typeahead-container">
@@ -484,7 +484,7 @@ include '../build/db/session.php';
                                     </span>
 				</div>
                             </div>
-		</div>
+		
 
 
                 <header class="side-menu-title">Start Planning</header>
@@ -942,6 +942,11 @@ include '../build/db/session.php';
         	<script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
 	<script src="js/lib/select2/select2.full.min.js"></script>
 	<script src="js/lib/typeahead/typeahead-init.js"></script>
+        
+     <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+    <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+    <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="js/lib/select2/select2.full.min.js"></script>
 
 
 

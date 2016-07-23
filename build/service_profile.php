@@ -1,6 +1,6 @@
 <?php
 include ("includes/head_sideMenu.php");
-$serviceId = (filter_var($_POST ['Service']));
+$serviceId = (filter_var($_GET['Service']));
 ?>
 
 <div class="page-content">
@@ -256,7 +256,7 @@ $serviceId = (filter_var($_POST ['Service']));
                 <section class="box-typical">
                     <header class="box-typical-header-sm">People in responsible  </header>
                     <div class="friends-list stripped">
-                        <?= DB_getUsersInServiceOrganizationByService($pdo, $servideId); ?>
+                        <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
                         <!--<article class="friends-list-item">
                             <div class="user-card-row">
                                 <div class="tbl-row">

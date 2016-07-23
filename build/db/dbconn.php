@@ -866,9 +866,9 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
                 echo '    <div class="user-card-row">';
                 echo '      <div class="tbl-row">';
                 echo '          <div class="tbl-cell tbl-cell-photo">';
-         //       echo '              <a href="#">';
+                //       echo '              <a href="#">';
                 echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
-         //       echo '             </a>';
+                //       echo '             </a>';
                 echo '         </div>';
                 echo '        <div class="tbl-cell">';
                 echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
@@ -1141,7 +1141,7 @@ Free for 3 Months</header>';
                 echo '<p class="user-card-row-name"><a href="#">' . $row['First_Name'] . '</a></p>';
 
 //falta colocar o link para ver o servico
-                echo '<p class="user-card-row-status">Service <a href="service_profile.php?Service='.$row['Id'].'">' . $row['Name'] . '</a></p>';
+                echo '<p class="user-card-row-status">Service <a href="service_profile.php?Service=' . $row['Id'] . '">' . $row['Name'] . '</a></p>';
                 echo '</div>';
                 echo '<div class="tbl-cell tbl-cell-action">';
 
@@ -1173,12 +1173,12 @@ function DB_GetOrganizationServices($pdo, $org) {
             echo '<div class = "slide">';
             echo '<article class = "post-announce">';
             echo '<div class = "post-announce-pic">';
-            echo '<a href = "#">';
+            echo '<a href = "service_profile.php?Service=' . $idService . '">';
             echo ' <img src = "' . $Multi['Multimedia_Path'] . '" alt = "">';
             echo '</a>';
             echo ' </div>';
             echo '<div class = "post-announce-title">';
-            echo '<a href = "#">' . $ServiceInfo['Name'] . '</a>';
+            echo '<a href = "service_profile.php?Service=' . $idService . '">' . $ServiceInfo['Name'] . '</a>';
             echo '</div>';
             echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
             echo '<ul class = "post-announce-meta">';
@@ -1837,6 +1837,7 @@ function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
         $Services = sql($pdo, "SELECT *
         FROM [Service]
         where [Enabled] = 1 and [Id] = ?", array($servideId), "rows");
+        echo  $Service['Id'];
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
             $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
