@@ -42,49 +42,11 @@ include ("includes/head_sideMenu.php");
 
 					<section class="box-typical" style="height: 400.05px;">
 						<header class="box-typical-header-sm">Album</header>
-                                                
-                                                
 
-<!--						<div class="profile-following">
-							<div class="profile-following-grid">
-								<div class="col">
-									<article class="follow-group">
-										<div class="follow-group-logo">
-											<a href="#" class="follow-group-logo-in " ><img src="img/a_tasca.jpg"alt=""></a>
-										</div>
-										<div class="follow-group-name">
-                                                                                    
-                                                                                    <a href="#"> Our space</a>
-										</div>
-										<div class="follow-group-link">
-											<a href="#">
-												<span class="plus-link-circle"><span>&plus;</span></span>
-												Follow
-											</a>
-										</div>
-									</article>
-								</div>
-								<div class="col">
-									<article class="follow-group">
-										<div class="follow-group-logo">
-											<a href="#" class="follow-group-logo-in "><img src="img/logo-2.png" alt=""></a>
-										</div>
-										<div class="follow-group-name">
-											<a href="#">KIPP Foundation</a>
-										</div>
-										<div class="follow-group-link">
-											<a href="#">
-												<span class="plus-link-circle"><span>&plus;</span></span>
-												Follow
-											</a>
-										</div>
-									</article>
-								</div>
+					</section>
+                                        <section class="box-typical" style="height: 50.05px;">
+                                            <p>teste>
 
-	
-							</div>
-                                                    <a href="gallery.php" class="btn btn-rounded btn-primary-outline">See All</a>
-						</div>.profile-following-->
 					</section>
 
 					<section class="box-typical">
