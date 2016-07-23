@@ -550,9 +550,9 @@ include '../build/db/session.php';
   on [Organization].[Id] = [Service].[Organization_id]
   where [Organization].[User_Boss] = ? and [Organization].[Enabled] = 1 and [Service].[Enabled] = 1", array($userId), "rows");
                     echo '<div class="form-group" >';
-                    echo '<select class="bootstrap-select bootstrap-select-arrow" >';
+                    echo '<select class="bootstrap-select bootstrap-select-arrow" id="service" name="service">';
                     foreach ($rows as $row) {
-                        echo '<option id="service" name="service" value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+                        echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
                     }
                     echo ' </select> ';
                     echo '</div>';
