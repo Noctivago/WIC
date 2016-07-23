@@ -50,7 +50,9 @@ $msg = '';
             <!--SECÇAO PARA INCLUDES-->
             <link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">
             <div class="col-lg-6 INCLUDE">
-
+                <script type="text/javascript">
+                    loadMyWics();
+                </script>
             </div>
         </div><!--.container-fluid-->
     </div><!--.page-content--> 
@@ -139,7 +141,6 @@ $msg = '';
 
 <script>
     $(document).ready(function () {
-        loadMyWics();
         $('.panel').lobiPanel({
             sortable: true
         });
