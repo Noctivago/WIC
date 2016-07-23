@@ -31,6 +31,7 @@ include_once '../build/db/session.php';
                                     <div class="tbl-cell">
                                         <?php
                                         $user = $_SESSION['id'];
+                                        echo $user;
                                         $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                        // $OrganizationInformation =  DB_GetOrgInformation2($pdo, $org);
                                         echo 'aaaaaaaaaaaa'.$org . '   '. $OrganizationInformation['id'];

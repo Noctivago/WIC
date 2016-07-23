@@ -810,7 +810,7 @@ function DB_GetOrgIdByUserBossId($pdo, $idUser) {
 
 function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
     try {
-        $row = sql($pdo, "SELECT * From [Organization] Where [User_Boss] = ?", array($idUser), "rows");
+        $row = sql($pdo, "SELECT * From [Organization] Where [User_Boss] = ? and [Enabled] = 1", array($idUser), "rows");
         foreach ($rows as $row) {
             echo $row;
         }
