@@ -205,6 +205,7 @@ $serviceId = (filter_var($_GET['Service']));
                                                     data: {comment: comment, sId: sId},
                                                     success: function (data) {
                                                         alert(data);
+                                                        document.getElementById("userComment").empty;
                                                     }
                                                 });
                                             } else {
