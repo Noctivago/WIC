@@ -40,7 +40,7 @@ include ("includes/head_sideMenu.php");
 
 
 
-					<section class="box-typical">
+					<section class="box-typical" style="height: 400px;">
 						<header class="box-typical-header-sm">Album</header>
                                                 
                                                 
