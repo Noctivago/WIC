@@ -4,7 +4,7 @@ include_once '../includes/head_singleforms.php';
 include_once  '../build/db/dbconn.php';
 include_once  '../build/db/functions.php';
 include_once  '../db/session.php';
-
+echo DB_getLoginFailedValue($pdo, 'prcunha.383@gmail.com');
 ?>
 
 <html>
