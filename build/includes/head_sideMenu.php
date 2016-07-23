@@ -2,6 +2,7 @@
 include_once 'includes/head_singleforms.php';
 include_once '../build/db/dbconn.php';
 include_once '../build/db/functions.php';
+include_once '../db/session.php';
 ?>
 <!DOCTYPE html>
 
