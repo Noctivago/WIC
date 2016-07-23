@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
 //include_once '../includes/head_singleforms.php';
-//include '../db/dbconn.php';
-//include '../db/functions.php';
+include '../db/dbconn.php';
+include '../db/functions.php';
 include '../db/session.php';
 ?>
 
