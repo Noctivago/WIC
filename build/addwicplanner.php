@@ -18,7 +18,7 @@ if (isset($id) && isset($uid)) {
 } else {
     $wicId = 0;
     $wicInfo["Name"] = 'Event Name';
-//    $wicInfo["Event_Date"] = '2016-08-01';
+    $wicInfo["Event_Date"] = '2016-08-01';
 }
 ?>
 <!--<body>-->
@@ -56,7 +56,7 @@ if (isset($id) && isset($uid)) {
 	<script>
 		$(function() {
 			function cb(start, end) {
-				$('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+				$('#reportrange span').html(start.format('YYYY, MMMM D') + ' - ' + end.format('YYYY, MMMM D'));
 			}
 			cb(moment().subtract(29, 'days'), moment());
 
