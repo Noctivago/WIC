@@ -60,6 +60,7 @@ $msg = '';
     function load() {
         console.log("load event detected!");
         loadMyWics();
+        showAddWicForm();
 //        if (<?= $wicSelected; ?> !== '') {
 //            showWicServicesForm(<?= $wicSelected; ?>);
 //        } else {
