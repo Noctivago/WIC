@@ -238,7 +238,6 @@ function DB_checkUserByEmail($pdo, $email) {
     }
 }
 
-
 /**
  * ATRIBUI NOVO CODIGO DE VALIDACAO AO USER
  * @param type $pdo
@@ -1170,7 +1169,7 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
         echo '<select class="bootstrap-select bootstrap-select-arrow" >';
 //            echo '<select class="form-control">';       
         foreach ($rows as $row) {
-            echo '<option id="service" name="service" value ="'.$row['Id'].'">'.$row['Name'].'</option>';
+            echo '<option id="service" name="service" value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
         }
         echo ' </select> ';
         echo '</div>';
@@ -1728,8 +1727,10 @@ function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
             $str = $row['Event_Date'];
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
+            //SEPARA DIA MES ANO
+            $subSubStr = explode("-", $subStr[0]);
             $wicInfo["Name"] = $row["Name"];
-            $wicInfo["Event_Date"] = $subStr[0];
+            $wicInfo["Event_Date"] = $subSubStr[1] . '-' . $subSubStr[2] . '-' . $subSubStr[0];
             //$wicInfo["Event_Date"] = $row['Event_Date'];
         }
         return $wicInfo;

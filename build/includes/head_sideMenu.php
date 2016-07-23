@@ -563,6 +563,9 @@ include '../build/db/session.php';
                         </div>
                         </form>';
                 }
+                if(isset($_POST['sendInvite'])&&!empty($_POST['email']) && !empty($_POST['service'])){
+                    echo $_POST['email'] . "  ". $_POST['service'];
+                }
                 ?>
 
                 <!--                
