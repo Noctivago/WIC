@@ -1143,35 +1143,51 @@ Free for 3 Months</header>';
         
     }
 }
+function  DB_GetServicesByOrgId($pdo,$orgId){
+    
+}
+
 
 function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
-    echo ' <div class="form-group" >
-                                                    <select class="bootstrap-select bootstrap-select-arrow" >
-                                                    <option>dass</option>
-                                                    </select>
-                                                </div>';
+    try {
+        $orgId = DB_GetOrgIdByUserBossId($pdo, $idUser);
+        $rows = sql($pdo,"SELECT *
+  FROM [dbo].[Service]
+  where [Organization_Id] = ? and [Enabled] = 1",array($orgId),"rows");
+          echo ' <div class="form-group" >
+                 <select class="bootstrap-select bootstrap-select-arrow" >';
+          foreach ($rows as $row){
+              echo '<option>'.$row['Id'].'</option>';
+          }
+          echo ' </select>
+               </div>';
+    } catch (Exception $ex) {
+        
+    }
 }
 
 function DB_GetServicesAsSelect($pdo, $userId) {
-    echo ' <div class="container-fluid">
+    try {
 
-                    <form class="sign-box">
-<div class="sign-avatar">
+
+        echo ' <div class="container-fluid">
+                 <form class="sign-box">
+                    <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
                         </div>
                         <header class="sign-title">Invite to my services</header>
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="E-Mail"/>
-                        </div>
-
-                        ';
-    DB_GetServicesOrganizationAsSelect($pdo, $userId);
-    echo ' 
-                        <div class="form-group">
+                        </div>';
+        DB_GetServicesOrganizationAsSelect($pdo, $userId);
+        echo ' <div class="form-group">
                             <button type="submit" class="btn btn-rounded">Invite</button>
                         </div>
                         </div>
                         </form>';
+    } catch (Exception $ex) {
+        
+    }
 }
 
 //preencher seccao services no profile org
