@@ -8,7 +8,8 @@ include_once '../build/db/session.php';
 //$wicSelected = (filter_var($_POST ['id']));
 $msg = '';
 ?>			
-
+<div class="page-content">
+    <div class="container-fluid">
 <section class="box-typical">
 				<header class="box-typical-header">
 					<div class="tbl-row">
@@ -175,6 +176,9 @@ $msg = '';
 					</div>
 				</div><!--.box-typical-body-->
 			</section><!--.box-typical-->
+                        
+    </div>
+</div>
                         
                         
                         
