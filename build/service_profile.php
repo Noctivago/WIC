@@ -90,7 +90,7 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
 
                 <form class="box-typical">
-                    <input onclick="addServiceComment(<?= $serviceId; ?>);" id="userComment" name="userComment" class="write-something" placeholder="Write a Review..." required/>
+                    <input type="text" id="userComment" name="userComment" class="write-something" placeholder="Write a Review..." required/>
                     <div class="box-typical-footer">
                         <div class="tbl">
                             <div class="tbl-row">
@@ -98,7 +98,7 @@ $serviceId = (filter_var($_GET['Service']));
 
                                 </div>
                                 <div class="tbl-cell tbl-cell-action">
-                                    <button type="submit" class="btn btn-rounded">Send</button>
+                                    <button onclick="addServiceComment(<?= $serviceId; ?>);" class="btn btn-rounded">Send</button>
                                 </div>
                             </div>
                         </div>
@@ -226,24 +226,24 @@ $serviceId = (filter_var($_GET['Service']));
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 
 <script>
-                        function addServiceComment(serviceId) {
-                            var comment = document.getElementById("userComment").value;
-                            var sId = serviceId;
-                            if (comment !== "") {
-                                $.ajax({
-                                    url: 'ajax/addServiceComment.php',
-                                    method: 'post',
-                                    data: {comment: comment, sId: sId},
-                                    success: function (data) {
+                                        function addServiceComment(serviceId) {
+                                            var comment = document.getElementById("userComment").value;
+                                            var sId = serviceId;
+                                            if (comment !== "") {
+                                                $.ajax({
+                                                    url: 'ajax/addServiceComment.php',
+                                                    method: 'post',
+                                                    data: {comment: comment, sId: sId},
+                                                    success: function (data) {
 
-                                        alert(data);
+                                                        alert(data);
 
-                                    }
-                                });
-                            } else {
+                                                    }
+                                                });
+                                            } else {
 
-                            }
-                        }
+                                            }
+                                        }
 </script>
 
 <script>
