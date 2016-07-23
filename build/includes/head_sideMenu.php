@@ -278,7 +278,7 @@ include '../build/db/session.php';
                                     <a class="header" id="dd-header-marketing" data-target="#" href="#" >
                                         <!--<span class="font-icon font-icon-cogwheel"></span>-->
                                         <!--                                        <h4 style="color: darkgray; font-family: cursive">You can event, event your life</h4>-->
-                                        <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<select class="bootstrap-select bootstrap-select-arrow" >
+                                        <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<select class="bootstrap-select bootstrap-select-arrow" style=" width: 200px;" >
 					<option>Chose Your City</option>
 					<option>MY WIcPlanner 2</option>
 					<option>MY WIcPlanner 3</option>
