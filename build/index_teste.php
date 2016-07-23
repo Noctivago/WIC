@@ -36,7 +36,7 @@
                         </div>
                         <div class="card-typical-section">
                             <div class="card-typical-linked">in <a href="#">Coders Life</a></div>
-                            <a href="#" class="card-typical-">
+                            <a href="#" class="card-typical-likes">
                                 <i class="font-icon font-icon-heart"></i>
                                 123
                             </a>
