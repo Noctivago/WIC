@@ -719,7 +719,7 @@ include ("includes/head_sideMenu.php");
 					</section>.box-typical-->
 				</div><!--.col- -->
 
-				<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
+<!--				<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">
 					<section class="box-typical">
 						<div class="profile-card">
 							<div class="profile-card-photo">
@@ -731,7 +731,7 @@ include ("includes/head_sideMenu.php");
 							<div class="profile-card-name">Service Name</div>
 							<div class="profile-card-status">Categorie</div>
 							<div class="profile-card-location">Supplier</div>
-							<!--<button type="button" class="btn btn-rounded">Follow</button>-->
+							<button type="button" class="btn btn-rounded">Follow</button>
 							<div class="btn-group">
 								<button type="button"
 										class="btn btn-rounded btn-primary-outline dropdown-toggle"
@@ -746,9 +746,9 @@ include ("includes/head_sideMenu.php");
 									
 								</div>
 							</div>
-						</div><!--.profile-card-->
+						</div>.profile-card
 
-<!--						<div class="profile-statistic tbl">
+						<div class="profile-statistic tbl">
 							<div class="tbl-row">
 								<div class="tbl-cell">
 									<b>200</b>
@@ -759,7 +759,7 @@ include ("includes/head_sideMenu.php");
 									Followers
 								</div>
 							</div>
-						</div>-->
+						</div>
 
 						<ul class="profile-links-list">
 							<li class="nowrap">
@@ -789,9 +789,9 @@ include ("includes/head_sideMenu.php");
 							</li>
 						</ul>
 
-					</section><!--.box-typical-->
+					</section>.box-typical
 
-<!--					<section class="box-typical">
+					<section class="box-typical">
 						<header class="box-typical-header-sm">
 							Friends
 							&nbsp;
@@ -874,10 +874,10 @@ include ("includes/head_sideMenu.php");
 								</div>
 							</article>
 						</div>
-					</section>.box-typical-->
-				</div><!--.col- -->
+					</section>.box-typical
+				</div>.col- -->
 
-				<div class="col-lg-3 col-md-6 col-sm-6">
+<!--				<div class="col-lg-3 col-md-6 col-sm-6">
 					<section class="box-typical">
 						<header class="box-typical-header-sm">People in responsible  </header>
 						<div class="friends-list stripped">
@@ -977,7 +977,7 @@ include ("includes/head_sideMenu.php");
 							<a href="#">See All (300)</a>
 						</div>
 
-<!--						<section>
+						<section>
 							<header class="box-typical-header-sm">More Influencer</header>
 							<div class="profile-card-slider">
 								<div class="slide">
@@ -1021,10 +1021,10 @@ include ("includes/head_sideMenu.php");
 									</div>.profile-card
 								</div>.slide
 							</div>.profile-card-slider
-						</section>-->
-					</section><!--.box-typical-->
+						</section>
+					</section>.box-typical
 
-<!--					<section class="box-typical">
+					<section class="box-typical">
 						<header class="box-typical-header-sm">People you may know</header>
 						<div class="people-rel-list">
 							<div class="people-rel-list-name"><a href="#">Jackie Tran Anh</a>  /  Designer</div>
@@ -1054,8 +1054,8 @@ include ("includes/head_sideMenu.php");
 								<div class="overlay"></div>
 							</form>
 						</div>
-					</section>.box-typical-->
-				</div><!--.col- -->
+					</section>.box-typical
+				</div>.col- -->
 			</div><!--.row-->
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
