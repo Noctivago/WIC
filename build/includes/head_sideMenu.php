@@ -4,8 +4,6 @@ include_once '../includes/head_singleforms.php';
 include_once '../build/db/dbconn.php';
 include_once '../build/db/functions.php';
 include_once '../db/session.php';
-echo DB_getLoginFailedValue($pdo, 'prcunha.383@gmail.com');
-echo '<br>' . $_SESSION['id'];
 ?>
 
 <html>
@@ -533,6 +531,8 @@ echo '<br>' . $_SESSION['id'];
                 <!--?php $userId = $_SESSION['id'];
 echo 'aaaaaa'.$userId;
                 <!--?php DB_GetServicesAsSelect($pdo, $_SESSION['id']); ?-->
+                <?= DB_getLoginFailedValue($pdo, 'prcunha.383@gmail.com'); ?>
+                <br> <?= $_SESSION['id']; ?>
 
                 <!--                
                 <div class="container-fluid">
