@@ -1146,20 +1146,19 @@ Free for 3 Months</header>';
 
 function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
     try {
-
         $rows = sql($pdo, "SELECT [Service].[Id], [Service].[Name]
   FROM [dbo].[Service]
   join [Organization]
   on [Organization].[Id] = [Service].[Organization_id]
   where [Organization].[User_Boss] = ? and [Organization].[Enabled] = 1 and [Service].[Enabled] = 1", array($userId), "rows");
+        echo '<div class="form-group" >';
+        echo '<select class="bootstrap-select bootstrap-select-arrow" >';
+//            echo '<select class="form-control">';       
         foreach ($rows as $row) {
-            echo '<div class="form-group" >';
-            echo '<select class="bootstrap-select bootstrap-select-arrow" >';
-            echo '<select class="form-control">';
             echo '<option>tass bem</option>';
-            echo ' </select> ';
-            echo '</div>';
         }
+        echo ' </select> ';
+        echo '</div>';
     } catch (Exception $ex) {
         
     }
@@ -1178,6 +1177,7 @@ function DB_GetServicesAsSelect($pdo, $userId) {
                         </div>
                         ';
         DB_GetServicesOrganizationAsSelect($pdo, $userId);
+
         echo ' 
             <div class="form-group">
                             <button type="submit" class="btn btn-rounded">Invite</button>
