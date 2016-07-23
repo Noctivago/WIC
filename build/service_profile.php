@@ -1022,7 +1022,7 @@ include ("includes/head_sideMenu.php");
 								</div>.slide
 							</div>.profile-card-slider
 						</section>
-					</section>.box-typical
+					</section>
 
 					<section class="box-typical">
 						<header class="box-typical-header-sm">People you may know</header>
@@ -1054,8 +1054,8 @@ include ("includes/head_sideMenu.php");
 								<div class="overlay"></div>
 							</form>
 						</div>
-					</section>.box-typical
-				</div>.col-
+					</section>
+				</div>
 			</div><!--.row-->
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
