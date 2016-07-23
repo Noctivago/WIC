@@ -7,7 +7,7 @@ include ("includes/head_sideMenu.php");
 			<div class="row">
 				<div class="col-lg-9 col-lg col-md-12">
                                    
-					<section class="box-typical" style="height: 400.05px;">
+					<section class="box-typical" style="height: 500px;">
 						                                                          
  <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
                                                          
