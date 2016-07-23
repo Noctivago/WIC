@@ -14,9 +14,18 @@ include ("includes/head_sideMenu.php");
                                         </section>                                         
                                     <section class="box-typical" style="height: 90px;" >
                                          
-                                              <div class="col-lg-3 col-lg col-md-12"style="border-style:solid;"><p>teste11111111111111</p></div>
-                                              <div class="col-lg-3 col-lg col-md-12"style="border-style:solid;"><p>teste22222222222222</p></div>
-                                              <div class="col-lg-3 col-lg col-md-12"style="border-style:solid;"><p>teste33333333333333</p></div>
+                                             <div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									123
+								</div>
+                                                                <div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									456
+								</div>
+                                        <div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									789
+								</div>
                                           	
 					</section>
 
