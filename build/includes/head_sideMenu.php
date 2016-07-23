@@ -536,7 +536,7 @@ include '../build/db/session.php';
                 <?php
                 $userId = $_SESSION['id'];
                 if ($_SESSION['role'] === 'organization') {
-                if(isset($_POST["sendInvite"]) && !empty($_POST["email"]) && !empty($_POST["service"])){
+                if(isset($_POST['sendInvite'])){
                     echo 'trueeeee';
                     }
                     DB_GetServicesAsSelect($pdo, $userId);
