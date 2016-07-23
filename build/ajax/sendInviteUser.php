@@ -20,7 +20,7 @@ sql($pdo,"INSERT INTO [dbo].[User_Service]
            (?
            ,?
            ,0
-           ,0)", array($serviceId,$userId), "rows");
+           ,0)", array($serviceId,$userId));
 //if(DB_checkIfUserExists($pdo, $email)){
 //    $id = DB_checkUserByEmail($pdo, $email);
 //    echo $id;
