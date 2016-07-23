@@ -57,7 +57,7 @@ if (isset($id) && isset($uid)) {
 	<script>
 		$(function() {
 			function cb(start, end) {
-				$('#reportrange span').html(start.format('YYYY MMMM D') + ' - ' + end.format('YYYY MMMM D'));
+				$('#reportrange span').html(start.format('YYYY MMMM, D') + ' - ' + end.format('YYYY MMMM, D'));
 			}
 			cb(moment().subtract(29, 'days'), moment());
 
