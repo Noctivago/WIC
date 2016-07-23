@@ -46,7 +46,7 @@ $serviceId = $_POST['Service'];
                         <div class="user-card-row">
                             <div class="tbl-cell">
                                 <?php
-                                echo '<p class="user-card-row-name"><a href="/profile_org.php?Organization='.$org['Id'].'">'.$org['Name'].'</a></p>';?>
+                                echo '<p class="user-card-row-name"><a href="profile_org.php?Organization='.$org['Id'].'">'.$org['Name'].'</a></p>';?>
                             </div>
                         </div>
                     </div><!--.slide-->
