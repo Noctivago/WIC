@@ -116,20 +116,21 @@ function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
 //
 //
 //
-function DB_checkIfUserInService($pdo,$userId,$serviceId,$enabled){
+function DB_checkIfUserInService($pdo, $userId, $serviceId, $enabled) {
     try {
-    $count = sql($pdo,"SELECT *
+        $count = sql($pdo, "SELECT *
   FROM [dbo].[User_Service]
-  where [User_Id] = ? and [Service_Id] = ? and [Enabled] = ?",array($userId,$serviceId,$enabled),"count");  
-    if($count<0){
-        return true;
-    }else{
-        return false;
-    }
+  where [User_Id] = ? and [Service_Id] = ? and [Enabled] = ?", array($userId, $serviceId, $enabled), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
     } catch (Exception $ex) {
         
     }
 }
+
 /**
  * Verifica se o User ja existe
  * @param type $pdo
@@ -1140,7 +1141,7 @@ Free for 3 Months</header>';
                 echo '<p class="user-card-row-name"><a href="#">' . $row['First_Name'] . '</a></p>';
 
 //falta colocar o link para ver o servico
-                echo '<p class="user-card-row-status">Service <a href="#">' . $row['Name'] . '</a></p>';
+                echo '<p class="user-card-row-status">Service <a href="service_profile.php?Service='.$row['Id'].'">' . $row['Name'] . '</a></p>';
                 echo '</div>';
                 echo '<div class="tbl-cell tbl-cell-action">';
 
@@ -1157,10 +1158,6 @@ Free for 3 Months</header>';
         
     }
 }
-
-
-
-
 
 //preencher seccao services no profile org
 //falta passar o id da org
@@ -1822,11 +1819,60 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                     </article>
                 </div>';
         }
-        
+
         //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
         //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-                            
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
+    }
+}
+
+/**
+ * Devolve os users de um serviço/org side
+ * @param type $pdo
+ * @param type $org
+ */
+function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
+    try {
+        $Services = sql($pdo, "SELECT *
+        FROM [Service]
+        where [Enabled] = 1 and [Id] = ?", array($servideId), "rows");
+        foreach ($Services as $Service) {
+            $idService = $Service['Id'];
+            $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
+,[Service].[Name] as ServiceName,[Role].[Name]
+  FROM [dbo].[User_Service]
+  join [User]
+  on [User].[Id] = [User_Service].[User_Id]
+  join [User_Profile]
+  on [User_Profile].[User_Id] = [User].[Id]
+  join [Service]
+  on [Service].[Id] = [User_Service].[Service_Id]
+  join [Role]
+  on [Role].[Id] = [User_Service].[Role_Id]
+  where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
+            echo '<header class="box-typical-header-sm">People in responsible  </header>
+                    <div class="friends-list stripped">';
+            foreach ($rows as $row) {
+                echo '<article class="friends-list-item">';
+                echo '    <div class="user-card-row">';
+                echo '      <div class="tbl-row">';
+                echo '          <div class="tbl-cell tbl-cell-photo">';
+                echo '              <a href="#">';
+                echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
+                echo '             </a>';
+                echo '         </div>';
+                echo '        <div class="tbl-cell">';
+                echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
+                echo '            <p class="user-card-row-name">' . $row['Last_name'] . '</p>';
+                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
+                echo '         </div>';
+                echo '  </div>';
+                echo ' </article>';
+            }
+            echo '</div>';
+        }
+    } catch (Exception $ex) {
+        
     }
 }
