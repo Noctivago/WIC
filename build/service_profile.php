@@ -12,8 +12,11 @@ include ("includes/head_sideMenu.php");
  <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
                                                          
                                         </section>                                         
-                                      <section class="col-lg-1 col-lg col-md-2">
-						<header class="box-typical-header-sm">Supplier</header>
+                                      <section class="box-typical">
+                                          <div>
+                                              <p>teste</p>
+                                          </div>
+						<header class="box-typical-header-sm">Personal Info</header>
 						<article class="profile-info-item">
 							<header class="profile-info-item-header">
 								<i class="font-icon font-icon-notebook-bird"></i>
