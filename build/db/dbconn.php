@@ -116,6 +116,20 @@ function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
 //
 //
 //
+function DB_checkIfUserInService($pdo,$userId,$serviceId){
+    try {
+    $count = sql($pdo,"SELECT *
+  FROM [dbo].[User_Service]
+  where [User_Id] = ? and [Service_Id] = ? and [Enabled] = 0",array($userId,$serviceId),"count");  
+    if($count<0){
+        return true;
+    }else{
+        return false;
+    }
+    } catch (Exception $ex) {
+        
+    }
+}
 /**
  * Verifica se o User ja existe
  * @param type $pdo

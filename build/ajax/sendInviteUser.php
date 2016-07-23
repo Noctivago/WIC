@@ -7,11 +7,16 @@ include_once '../db/functions.php';
 $email = (filter_var($_POST['email']));
 $serviceId = (filter_var($_POST['serv']));
 
-// ver se existe alguma linha na bd com o id do user e id servico se exister update validation 0 
-// se nao existir insere
-//se o user nao existir enviar email e inserir no organization invites.
+
 $userId = DB_checkUserByEmail($pdo, $email);
-sql($pdo,"INSERT INTO [dbo].[User_Service]
+if(DB_checkIfUserExists($pdo, $email)){
+    if(DB_checkIfUserInService($pdo,$userId,$serviceId)){
+        sql($pdo,"UPDATE [dbo].[User_Service]
+   SET [Enabled] = 0
+      ,[Validate] = 0
+     where [User_Id] = ? and [Service_Id] = ?",array($userId,$serviceId));
+    }else{
+    sql($pdo,"INSERT INTO [dbo].[User_Service]
            ([Service_Id]
            ,[User_Id]
            ,[Enabled]
@@ -20,11 +25,17 @@ sql($pdo,"INSERT INTO [dbo].[User_Service]
            (?
            ,?
            ,0
-           ,0)", array($serviceId,$userId));
-//if(DB_checkIfUserExists($pdo, $email)){
-//    $id = DB_checkUserByEmail($pdo, $email);
-//    echo $id;
-//}  else {
-//    echo 'eroroororor';
-//    //insert organization invites
-//}
+    ,0)", array($serviceId,$userId));
+    
+    }
+}else{
+    sql($pdo,"INSERT INTO [dbo].[Organization_Invites]
+           ([Email]
+           ,[Enabled]
+           ,[Service_Id])
+     VALUES
+           (?
+           ,0
+           ,?)",array($email,$serviceId));
+}
+
