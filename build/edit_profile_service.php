@@ -27,6 +27,7 @@ include_once '../build/db/session.php';
                                     $serviceId = $_POST['Service'];
                                     $user = $_SESSION['id'];
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+                                    echo $serviceId;
                                     $data = DB_GetServiceInformation($pdo, $serviceId);
                                     echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
