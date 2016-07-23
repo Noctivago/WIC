@@ -24,11 +24,11 @@ include_once '../build/db/session.php';
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
-                                    $serviceId = $_POST['Service'];
+                                    $service = $_POST['Service'];
                                     $user = $_SESSION['id'];
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
-                                    echo 'aaaaa'.$serviceId;
-                                    $data = DB_GetServiceInformation($pdo, $serviceId);
+                                    echo 'aaaaa'.$service;
+                                    $data = DB_GetServiceInformation($pdo, $service);
                                     echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
                                             <img src="' . $org['Picture_Path'] . '" alt="">
