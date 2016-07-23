@@ -425,35 +425,16 @@ include '../build/db/session.php';
                                     
             <ul class="side-menu-list">
                
-			<label class="form-label">Categories</label>
+			
 
-                            
-                                <div class="typeahead-field">
-                                    <span class="typeahead-query">
-					<input id="categories"
-						  class="form-control"
-						   name="q"
-						  type="search"
-						  autocomplete="off">
-                                    </span>
-                                    <span class="typeahead-button">
-					<button type="submit">
-                                            <span class="font-icon-search"></span>
-					</button>
-                                    </span>
-				</div>
-                            
-		
                                     
-                                    
-                                    
-<!--                                    <form class="site-header-search closed">
+                                    <form class="site-header-search closed">
                                         <input type="text" placeholder="Search a Service.."/>
                                         <button type="submit">
                                             <span class="font-icon-search"></span>
                                         </button>
                                         <div class="overlay"></div>
-                                    </form>-->
+                                    </form>
                                 </div>
                             </div><!--.site-header-collapsed-in-->
                         </div><!--.site-header-collapsed-->
