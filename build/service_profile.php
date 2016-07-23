@@ -13,11 +13,11 @@ include ("includes/head_sideMenu.php");
                                                          
                                         </section>                                         
                                       <section class="box-typical">
-                                          <div>
-                                              <div class="col-lg-3 col-lg col-md-12"><p>teste1</p></div>
-                                              <div class="col-lg-3 col-lg col-md-12"><p>teste2</p></div>
-                                              <div class="col-lg-3 col-lg col-md-12"><p>teste3</p></div>
-                                          </div>	
+                                         
+                                              <div class="col-lg-3 col-lg col-md-12"><p>teste11111111111111</p></div>
+                                              <div class="col-lg-3 col-lg col-md-12"><p>teste22222222222222</p></div>
+                                              <div class="col-lg-3 col-lg col-md-12"><p>teste33333333333333</p></div>
+                                          	
 					</section>
 
 
