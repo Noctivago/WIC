@@ -53,8 +53,8 @@ include_once '../build/db/session.php';
                     </div><!--.slide-->
 
                     <div class = "slide">
-
                         <div class = "user-card-row">
+                            <?php                                echo '<p>Category: <br> Sub category : </p>' ;?>
                             <div class = "tbl-cell">
                             </div> </div>
                     </div><!--.slide-->
@@ -99,13 +99,13 @@ include_once '../build/db/session.php';
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
-<!--
+
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
                             <input type = "text" class = "form-control" value='<?= $data['Name']?>' placeholder = " Service Categorie"/>
                             <i class = "font-icon font-icon-earth"></i>
                         </div>
-                    </div>-->
+                    </div>
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
                             <input type = "text" class = "form-control" value='<?= $data['Name'] ?>' placeholder = "Service Sub Categories"/>
