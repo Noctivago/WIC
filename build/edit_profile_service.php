@@ -2,7 +2,6 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
-$serviceId = $_POST['Service'];
 ?>
 
 <div class="page-content">
@@ -25,6 +24,7 @@ $serviceId = $_POST['Service'];
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
+                                    $serviceId = $_POST['Service'];
                                     $user = $_SESSION['id'];
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $data = DB_GetServiceInformation($pdo, $serviceId);
@@ -45,8 +45,7 @@ $serviceId = $_POST['Service'];
 
                         <div class="user-card-row">
                             <div class="tbl-cell">
-                                <?php
-                                echo '<p class="user-card-row-name"><a href="profile_org.php?Organization='.$org['Id'].'">'.$org['Name'].'</a></p>';?>
+                                <?php echo '<p class="user-card-row-name"><a href="profile_org.php?Organization=' . $org['Id'] . '">' . $org['Name'] . '</a></p>'; ?>
                             </div>
                         </div>
                     </div><!--.slide-->
