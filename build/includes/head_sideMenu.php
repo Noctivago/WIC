@@ -172,7 +172,11 @@ include '../build/db/session.php';
                                                     <span class="mess-item-name">Tim Collins</span>
                                                     <span class="mess-item-txt">Morgan was bothering about something!</span>
                                                 </a>
-
+                                                <a href="#" class="mess-item">
+                                                    <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
+                                                    <span class="mess-item-name">Tim Collins</span>
+                                                    <span class="mess-item-txt">Morgan was bothering about something!</span>
+                                                </a>
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="tab-outgoing" role="tabpanel">
@@ -528,9 +532,12 @@ include '../build/db/session.php';
                                 </span>
                 
                                 </li>-->
-                <?php $userId = $_SESSION['id'];
-                if($_SESSION['role']==='organization'){
-                DB_GetServicesAsSelect($pdo, $userId);} ?>
+                <?php
+                $userId = $_SESSION['id'];
+                if ($_SESSION['role'] === 'organization') {
+                    DB_GetServicesAsSelect($pdo, $userId);
+                }
+                ?>
 
                 <!--                
                 <div class="container-fluid">
