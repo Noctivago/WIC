@@ -86,7 +86,7 @@ include_once '../build/db/session.php';
         <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
             <section class = "box-typical">
                 <header class = "box-typical-header-sm">Edit Service </header>
-                <form class = "sign-box">
+                <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <div class = "sign-avatar no-photo">&plus;
                     </div>
 
@@ -95,7 +95,7 @@ include_once '../build/db/session.php';
 
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "text" class = "form-control" id="cName" value='<?=$data['Name']?>' placeholder = " Service Name"/>
+                            <input type = "text" class = "form-control" id="cName" name="cName" value='<?=$data['Name']?>' placeholder = " Service Name"/>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
@@ -105,8 +105,8 @@ include_once '../build/db/session.php';
                             <input type = "text" class = "form-control" value='<?= $data['Name']?>' placeholder = " Service Categorie"/>
                             <i class = "font-icon font-icon-earth"></i>
                         </div>
-                    </div>
-                    <div class = "form-group">-->
+                    </div>-->
+                    <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
                             <input type = "text" class = "form-control" value='<?= $data['Name'] ?>' placeholder = "Service Sub Categories"/>
                             <i class = "font-icon font-icon-home"></i>
@@ -115,12 +115,12 @@ include_once '../build/db/session.php';
                     <div class = "form-group row">
 
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <textarea onchange="reloadDescription()" id="cDescription" rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
+                            <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
 
-                    <button type = "submit" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
+                    <button type = "submit" name="saveChanges" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
             </section>
 
 
