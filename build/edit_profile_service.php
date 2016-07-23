@@ -95,7 +95,7 @@ include_once '../build/db/session.php';
 
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "text" class = "form-control" id="cName" name="cName" value='<?=$data['Name']?>' placeholder = " Service Name"/>
+                            <input type = "text" class = "form-control" onchange="reloadName()"id="cName" name="cName" value='<?=$data['Name']?>' placeholder = " Service Name"/>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
