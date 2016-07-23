@@ -9,5 +9,6 @@ include_once '../db/functions.php';
 //print 'ID > ' . $_SESSION['id'] . '<br>';
 //var_dump($_SESSION);
 $ServiceId = (filter_var($_POST ['sId']));
-
-DB_getServiceCommentFromUsers($pdo, $ServiceId);
+if (isset($ServiceId)) {
+    DB_getServiceCommentFromUsers($pdo, $ServiceId);
+}
