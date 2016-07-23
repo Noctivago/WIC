@@ -58,6 +58,8 @@ $msg = '';
 <script>
     function load() {
         console.log("load event detected!");
+        loadMyWics();
+        showAddWicForm();
     }
     window.onload = load;
 </script>
