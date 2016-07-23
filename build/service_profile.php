@@ -16,10 +16,7 @@ include ("includes/head_sideMenu.php");
       <section class="box-typical">
 						<div class="recomendations-slider">
 							<div class="slide">
-								<div class="citate-speech-bubble">
-									<i class="font-icon-quote"></i>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</div>
+								
 								<div class="user-card-row">
 									<div class="tbl-row">
 										<div class="tbl-cell tbl-cell-photo">
