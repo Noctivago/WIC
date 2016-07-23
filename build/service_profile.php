@@ -142,36 +142,8 @@ $serviceId = (filter_var($_GET['Service']));
                         <div class="profile-card-name">Service Name</div>
                         <div class="profile-card-status">Categorie</div>
                         <div class="profile-card-location">Supplier</div>
-                        <button type="button" class="btn btn-rounded">Follow</button>
-                        <div class="btn-group">
-                            <button type="button"
-                                    class="btn btn-rounded btn-primary-outline dropdown-toggle"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false">
-                                Options
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Deal With Supplier</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Add to my Wic planner</a>
-
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="profile-statistic tbl">
-                        <div class="tbl-row">
-                            <div class="tbl-cell">
-                                <b>200</b>
-                                Connections
-                            </div>
-                            <div class="tbl-cell">
-                                <b>1.9M</b>
-                                Followers
-                            </div>
-                        </div>
-                    </div>
-
+                    
                     <ul class="profile-links-list">
                         <li class="nowrap">
                             <i class="font-icon font-icon-earth-bordered"></i>
@@ -194,17 +166,13 @@ $serviceId = (filter_var($_GET['Service']));
                             <a href="#">twitter.com/example</a>
                         </li>
                         <li class="divider"></li>
-                        <li>
-                            <i class="font-icon font-icon-pdf-fill"></i>
-                            <a href="#">Export page as PDF</a>
-                        </li>
                     </ul>
 
                 </section>
             </div>
-        </div><!--.row-->
-    </div><!--.container-fluid-->
-</div><!--.page-content-->
+        </div>
+    </div>
+</div>
 
 
 
