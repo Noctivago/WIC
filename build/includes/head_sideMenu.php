@@ -529,7 +529,8 @@ include '../build/db/session.php';
                 
                                 </li>-->
                 <?php $userId = $_SESSION['id'];
-               DB_GetServicesAsSelect($pdo, $userId); ?>
+                if($_SESSION['role']==='Organization'){
+                DB_GetServicesAsSelect($pdo, $userId);} ?>
 
                 <!--                
                 <div class="container-fluid">
