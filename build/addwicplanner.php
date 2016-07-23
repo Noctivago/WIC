@@ -91,4 +91,4 @@ if (isset($id) && isset($uid)) {
 		});
 	</script>
 
-<script src="js/app.js"></script>
+
