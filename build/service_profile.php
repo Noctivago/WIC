@@ -12,7 +12,7 @@ include ("includes/head_sideMenu.php");
  <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
                                                          
                                         </section>                                         
-                                      <section class="box-typical">
+                                    <section class="box-typical" style="height: 90px" >
                                          
                                               <div class="col-lg-3 col-lg col-md-12"><p>teste11111111111111</p></div>
                                               <div class="col-lg-3 col-lg col-md-12"><p>teste22222222222222</p></div>
