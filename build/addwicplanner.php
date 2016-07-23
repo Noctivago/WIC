@@ -87,9 +87,9 @@ if (isset($id) && isset($uid)) {
 			});
 
 			$('#daterange').on('show.daterangepicker', function(ev, picker) {
-				/*$('.daterangepicker select').selectpicker({
+				$('.daterangepicker select').selectpicker({
 					size: 10
-				});*/
+				});
 			});
 		});
 	</script>
