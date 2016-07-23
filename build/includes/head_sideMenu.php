@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+//include_once '../includes/head_singleforms.php';
+//include_once '../../build/db/dbconn.php';
+//include_once '../../build/db/functions.php';
+//include_once '../db/session.php';
+
+?>
 
 <html>
     <head lang="en">
@@ -522,9 +529,9 @@
                 </span>
 
                 </li>-->
-                        <?php $userId = $_SESSION['id'];
+                        <!--?php $userId = $_SESSION['id'];
  echo 'aaaaaa'.$userId;
-                        DB_GetServicesAsSelect($pdo, $userId); ?>
+                        DB_GetServicesAsSelect($pdo, $userId); ?-->
 
 <!--                
 <div class="container-fluid">
