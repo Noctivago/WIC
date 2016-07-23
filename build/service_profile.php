@@ -96,12 +96,12 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>
                     </header>
-                    
-                        <!--DISPLAY COMMENTS-->
-                        <div class="COMMENTS">
 
-                        </div>
-                   
+                    <!--DISPLAY COMMENTS-->
+                    <div class="COMMENTS">
+
+                    </div>
+
                 </section>
             </div>
 
@@ -306,19 +306,19 @@ $serviceId = (filter_var($_GET['Service']));
 
 <!--scrpit-messenger-->
 <script>
-    $(function () {
-        $('.chat-settings .change-bg-color label').on('click', function () {
-            var color = $(this).data('color');
-
-            $('.messenger-message-container.from').each(function () {
-                $(this).removeClass(function (index, css) {
-                    return (css.match(/(^|\s)bg-\S+/g) || []).join(' ');
-                });
-
-                $(this).addClass('bg-' + color);
-            });
-        });
-    });
+//    $(function () {
+//        $('.chat-settings .change-bg-color label').on('click', function () {
+//            var color = $(this).data('color');
+//
+//            $('.messenger-message-container.from').each(function () {
+//                $(this).removeClass(function (index, css) {
+//                    return (css.match(/(^|\s)bg-\S+/g) || []).join(' ');
+//                });
+//
+//                $(this).addClass('bg-' + color);
+//            });
+//        });
+//    });
 </script>
 
 <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
