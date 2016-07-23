@@ -1831,9 +1831,6 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                             <a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
                                 <i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
                             </a>
-                            <a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-                                <i class="font-icon font-icon-comment">' . DB_GetNumberServiceComments($pdo, ['SID']) . '</i> 
-                            </a>
                         </div>
                     </article>
                 </div>';
