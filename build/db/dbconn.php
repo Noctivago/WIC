@@ -1816,13 +1816,16 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                             <p>' . $row['SDE'] . '</p>
                         </div>
                         <div class="card-typical-section">
-                            <a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-                                <i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-                            </a>
+                        
+                        </a>
                         </div>
                     </article>
                 </div>';
         }
+        
+        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+                            
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
