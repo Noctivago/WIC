@@ -14,5 +14,6 @@ if(DB_checkIfUserExists($pdo, $email)){
     $id = DB_checkUserByEmail($pdo, $email);
     echo $id;
 }  else {
+    echo 'eroroororor';
     //insert organization invites
 }
