@@ -29,6 +29,7 @@ if(DB_checkIfUserExists($pdo, $email)){
     
     }
 }else{
+    
     sql($pdo,"INSERT INTO [dbo].[Organization_Invites]
            ([Email]
            ,[Enabled]
