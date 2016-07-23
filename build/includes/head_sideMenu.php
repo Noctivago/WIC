@@ -231,7 +231,7 @@ include '../build/db/session.php';
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
                                     <?php
                                     $user = $_SESSION['id'];
-                                    echo $user;
+                                    echo 'iii'.DB_GetOrgIdByUserBossId($pdo, $user);
                                     if ($_SESSION['role'] == 'organization') {
                                         echo ' <a class="dropdown-item" href="profile_org.php?Organization="><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
                                         echo ' <a class="dropdown-item" href="edit_profile_org.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
