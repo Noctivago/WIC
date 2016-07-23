@@ -254,8 +254,6 @@ $serviceId = (filter_var($_GET['Service']));
 
             <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
                 <section class="box-typical">
-                    <header class="box-typical-header-sm">People in responsible  </header>
-                    <div class="friends-list stripped">
                         <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
                         <!--<article class="friends-list-item">
                             <div class="user-card-row">
@@ -275,7 +273,6 @@ $serviceId = (filter_var($_GET['Service']));
                                 </div>
                             </div>
                         </article>-->
-                    </div>
                 </section>
 
                 <section class="box-typical">
