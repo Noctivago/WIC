@@ -343,7 +343,7 @@ include ("includes/head_sideMenu.php");
 									
 								</div>
 							</div>
-						</div>.profile-card
+						</div>
 
 						<div class="profile-statistic tbl">
 							<div class="tbl-row">
