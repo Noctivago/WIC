@@ -1144,10 +1144,7 @@ Free for 3 Months</header>';
     }
 }
 function DB_GetServicesAsSelect($pdo,$userId){
-    echo '<div class="container-fluid">
-                    
-                    <form class="sign-box">
-                    <div class="sign-avatar">
+    echo ' <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
                         </div>
                         <header class="sign-title">Invite Members</header>
@@ -1174,8 +1171,7 @@ function DB_GetServicesAsSelect($pdo,$userId){
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>-->
                         </div>
-                        </form>
-                </div>';
+                      ';
                         }
 //preencher seccao services no profile org
 //falta passar o id da org
