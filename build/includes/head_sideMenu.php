@@ -563,7 +563,7 @@ include '../build/db/session.php';
                         </div>
                         </form>';
                 }
-                if(isset($_POST['sendinvite'])){
+                if(isset($_POST['sendInvite'])){
                     echo "HEEEEELOOOOO";
                 }
                 ?>
