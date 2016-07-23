@@ -44,8 +44,6 @@
                                     </article>.card-typical
                                 </div>.card-grid-col-->
                 <?= DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city); ?>
-
-
             </div><!--.card-grid-->
             <div class="clear"></div>
 
