@@ -1193,9 +1193,8 @@ function DB_GetServicesAsSelect($pdo, $userId) {
                         ';
         DB_GetServicesOrganizationAsSelect($pdo, $userId);
 
-        echo ' 
-            <div class="form-group">
-                            <button type="submit" onclick="sendInvite()" class="btn btn-rounded">Invite</button>
+        echo '<div class="form-group">
+                            <button type="submit" name="sendInvite" id="sendInvite" class="btn btn-rounded">Invite</button>
                         </div>
                         </div>
                         </form>';
