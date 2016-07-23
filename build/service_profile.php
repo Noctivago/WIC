@@ -44,51 +44,7 @@ include ("includes/head_sideMenu.php");
 						<header class="box-typical-header-sm">Album</header>
                                                 
                                                 
-<!--                                                <article class="box-typical profile-post">
-                                                		<div class="profile-post-content">
-										<p class="profile-post-content-note">Added 4 new pictures</p>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-										<div class="profile-post-gall-fluid profile-post-gall-grid" data-columns>
-											<div class="col">
-												<a class="fancybox" rel="gall-1" href="img/gall-img-1.jpg">
-													<img src="img/gall-img-1.jpg" alt="">
-												</a>
-											</div>
-											<div class="col">
-												<a class="fancybox" rel="gall-1" href="img/gall-img-2.jpg">
-													<img src="img/gall-img-2.jpg" alt="">
-												</a>
-											</div>
-											<div class="col">
-												<a class="fancybox" rel="gall-1" href="img/gall-img-3.jpg">
-													<img src="img/gall-img-3.jpg" alt="">
-												</a>
-											</div>
-											<div class="col">
-												<a class="fancybox" rel="gall-1" href="img/gall-img-4.jpg">
-													<img src="img/gall-img-4.jpg" alt="">
-												</a>
-											</div>
-											<div class="col">
-												<a class="fancybox" rel="gall-1" href="img/gall-img-5.jpg">
-													<img src="img/gall-img-5.jpg" alt="">
-												</a>
-											</div>
-											<div class="col">
-												<a class="fancybox" rel="gall-1" href="img/gall-img-6.jpg">
-													<img src="img/gall-img-6.jpg" alt="">
-												</a>
-											</div>
-										</div>
-									</div>
-                                                    
-                                                    
-                                                </article>-->
-                                                
-                                                
-                                                
-                                                
-                                                
+<!--
 						<div class="profile-following">
 							<div class="profile-following-grid">
 								<div class="col">
@@ -100,12 +56,12 @@ include ("includes/head_sideMenu.php");
                                                                                     
                                                                                     <a href="#"> Our space</a>
 										</div>
-<!--										<div class="follow-group-link">
+										<div class="follow-group-link">
 											<a href="#">
 												<span class="plus-link-circle"><span>&plus;</span></span>
 												Follow
 											</a>
-										</div>-->
+										</div>
 									</article>
 								</div>
 								<div class="col">
@@ -116,14 +72,14 @@ include ("includes/head_sideMenu.php");
 										<div class="follow-group-name">
 											<a href="#">KIPP Foundation</a>
 										</div>
-<!--										<div class="follow-group-link">
+										<div class="follow-group-link">
 											<a href="#">
 												<span class="plus-link-circle"><span>&plus;</span></span>
 												Follow
 											</a>
-										</div>-->
+										</div>
 									</article>
-								</div>
+								</div>-->
 
 	
 							</div>
