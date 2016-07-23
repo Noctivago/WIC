@@ -18,8 +18,8 @@ if (isset($id) && isset($uid)) {
 } else {
     $wicId = 0;
     $wicInfo["Name"] = 'Event Name';
-//    $wicInfo["Event_Date"] = '2016-08-01';
-    $wicInfo["Event_Date"] = '2016/08/01';
+    $wicInfo["Event_Date"] = '2016-08-01';
+//    $wicInfo["Event_Date"] = '2016/08/01';
 }
 ?>
 <!--<body>-->
@@ -57,7 +57,7 @@ if (isset($id) && isset($uid)) {
 	<script>
 		$(function() {
 			function cb(start, end) {
-				$('#reportrange span').html(start.format('YYYY, MMMM D') + ' - ' + end.format('YYYY, MMMM D'));
+				$('#reportrange span').html(start.format('YYYY MMMM D') + ' - ' + end.format('YYYY MMMM D'));
 			}
 			cb(moment().subtract(29, 'days'), moment());
 
@@ -87,9 +87,9 @@ if (isset($id) && isset($uid)) {
 			});
 
 			$('#daterange').on('show.daterangepicker', function(ev, picker) {
-				$('.daterangepicker select').selectpicker({
-					size: 10
-				});
+//				$('.daterangepicker select').selectpicker({
+//					size: 10
+//				});
 			});
 		});
 	</script>
