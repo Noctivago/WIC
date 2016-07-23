@@ -12,7 +12,7 @@ include ("includes/head_sideMenu.php");
  <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
                                                          
                                         </section>                                         
-                                    <section class="box-typical" style="height: 90px;" >
+                                   
       <section class="box-typical">
 						<div class="recomendations-slider">
 							<div class="slide">
