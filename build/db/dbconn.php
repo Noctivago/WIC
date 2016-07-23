@@ -1147,8 +1147,8 @@ Free for 3 Months</header>';
 
 function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
     try {
+        echo 'iii'.DB_GetOrgIdByUserBossId($pdo, $idUser);
         $orgId = DB_GetOrgIdByUserBossId($pdo, $idUser);
-        echo 'iiii'.orgId;
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Service]
   where [Organization_Id] = ? and [Enabled] = 1", array($orgId), "rows");
