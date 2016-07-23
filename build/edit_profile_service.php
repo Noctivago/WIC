@@ -95,27 +95,27 @@ include_once '../build/db/session.php';
 
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "text" class = "form-control" placeholder = " Service Name"/>
+                            <input type = "text" class = "form-control" value='<?=$data['Name']?>' placeholder = " Service Name"/>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
 
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "text" class = "form-control" placeholder = " Service Categorie"/>
+                            <input type = "text" class = "form-control" value='<?=$data['Name']?>' placeholder = " Service Categorie"/>
                             <i class = "font-icon font-icon-earth"></i>
                         </div>
                     </div>
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "text" class = "form-control" placeholder = "Service Supplier"/>
+                            <input type = "text" class = "form-control" value='<?=$data['Name']?>' placeholder = "Service Sub Categories"/>
                             <i class = "font-icon font-icon-home"></i>
                         </div>
                     </div>
                     <div class = "form-group row">
 
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <textarea rows = "8" class = "form-control" placeholder = "Service Info"></textarea>
+                            <textarea rows = "8" class = "form-control" value='<?=$data['Description']?> 'placeholder = "Service Info"></textarea>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
