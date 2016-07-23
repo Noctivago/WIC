@@ -117,7 +117,7 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>
                     </header>
-                    <div class="recomendations-slider">
+                    <div class="recomendations-slider COMMENTS">
 
                         <?= DB_getServiceCommentFromUsers($pdo, $serviceId); ?>
 
@@ -194,24 +194,42 @@ $serviceId = (filter_var($_GET['Service']));
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 
 <script>
-                                        function addServiceComment(serviceId) {
-                                            var comment = document.getElementById("userComment").value;
-                                            var sId = serviceId;
-                                            alert(comment + '<->' + sId);
-                                            if (comment !== "") {
-                                                $.ajax({
-                                                    url: 'ajax/addServiceComment.php',
-                                                    method: 'post',
-                                                    data: {comment: comment, sId: sId},
-                                                    success: function (data) {
-                                                        alert(data);
-                                                        document.getElementById("userComment").empty;
-                                                    }
-                                                });
-                                            } else {
-
-                                            }
+                                        function load() {
+                                            console.log("load event detected!");
+                                            loadComments;
                                         }
+                                        window.onload = load;
+</script>
+
+<script>
+    function addServiceComment(serviceId) {
+        var comment = document.getElementById("userComment").value;
+        var sId = serviceId;
+        alert(comment + '<->' + sId);
+        if (comment !== "") {
+            $.ajax({
+                url: 'ajax/addServiceComment.php',
+                method: 'post',
+                data: {comment: comment, sId: sId},
+                success: function (data) {
+                    alert(data);
+                    document.getElementById("userComment").empty;
+                }
+            });
+        } else {
+
+        }
+    }
+    function loadComments() {
+        $.ajax({
+            url: 'ajax/getServiceComment.php',
+            method: 'post',
+            data: {sId: <?= $serviceId; ?>},
+            success: function (data) {
+                $('.COMMENTS').html(data);
+            }
+        });
+    }
 </script>
 
 <script>
