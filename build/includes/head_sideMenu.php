@@ -530,7 +530,7 @@ include '../build/db/session.php';
                                 </li>-->
                 <!--?php $userId = $_SESSION['id'];
 echo 'aaaaaa'.$userId;
-                <!--?php DB_GetServicesAsSelect($pdo, $_SESSION['id']); ?-->
+                <?php DB_GetServicesAsSelect($pdo, $_SESSION['id']); ?>
                 <?= DB_getLoginFailedValue($pdo, 'prcunha.383@gmail.com'); ?>
 
                 <!--                
