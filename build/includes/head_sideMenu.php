@@ -267,16 +267,16 @@ include '../build/db/session.php';
                                     <a class="header" id="dd-header-marketing" data-target="#" href="#" >
                                         <!--<span class="font-icon font-icon-cogwheel"></span>-->
                                         <!--                                        <h4 style="color: darkgray; font-family: cursive">You can event, event your life</h4>-->
-                                        <span style="color: darkgray; width: 200px;">You can event, event your life!</span>
-                                    </a>
-                                    <br>
-                                    <br>
-                                    <select>
+                                        <span style="color: darkgray; width: 200px;">You can event, event your life! <select>
   <option value="loira">Loira</option>
   <option value="morena">Morena</option>
   <option value="ruiva">Ruiva</option>
-  <option value="quantidade">So interassa quantidade</option>
-</select>
+  <option value="quantidade">So interessa quantidade</option>
+</select></span>
+                                    </a>
+                                    <br>
+                                    <br>
+                                    
 
 
                                     <!--	                            <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
