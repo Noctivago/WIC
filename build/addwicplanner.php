@@ -45,10 +45,7 @@ if (isset($id) && isset($uid)) {
     </div>
 </div>
 
-<script src="js/lib/jquery/jquery.min.js"></script>
-	<script src="js/lib/tether/tether.min.js"></script>
-	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-	<script src="js/plugins.js"></script>
+
 
 	<script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
 	<script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
