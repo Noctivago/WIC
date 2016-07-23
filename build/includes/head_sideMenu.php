@@ -12,7 +12,7 @@ include '../build/db/session.php';
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>StartUI - Premium Bootstrap 4 Admin Dashboard Template</title>
-  
+
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
@@ -229,11 +229,14 @@ include '../build/db/session.php';
                                     <img src="img/avatar-2-64.png" alt="">
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
-                                    <?php if($_SESSION['role']=='organization'){
- echo ' <a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
-                                    } ?>
+                                    <?php
+                                    if ($_SESSION['role'] == 'organization') {
+                                        echo ' <a class="dropdown-item" href="profile_org.php?Organization='.  DB_GetOrgIdByUserBossId($pdo, $_SESSION['id']).'"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
+                                        echo ' <a class="dropdown-item" href="edit_profile_org.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
+                                    }
+                                    ?>
                                     <a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
-                                    <a class="dropdown-item" href="edit_profile_user.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a
+                                    <a class="dropdown-item" href="edit_profile_user.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>
                                     <a class="dropdown-item" href="change_password.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>Change password</a>
                                     <a class="dropdown-item" href="faq.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>Help</a>
                                     <div class="dropdown-divider"></div>
