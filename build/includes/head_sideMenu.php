@@ -564,7 +564,9 @@ include '../build/db/session.php';
                         </form>';
                 }
                 if(isset($_POST['sendInvite'])&&!empty($_POST['email']) && !empty($_POST['service'])){
-                    echo $_POST['email'] . "  ". $_POST['service'];
+                    $idUser = DB_checkUserByEmail($pdo, $email);
+                    echo $idUser;
+                    
                 }
                 ?>
 
