@@ -1960,3 +1960,35 @@ function DB_addCommentsToService($pdo, $userId, $Comment, $ServiceId) {
         die();
     }
 }
+
+/**
+ * Devolve informação da Org para display no service
+ * @param type $pdo
+ */
+function DB_GetOrgInformationForService($pdo, $serviceId) {
+    try {
+        $id = 2;
+        $rows = sql($pdo, "SELECT *
+  FROM [dbo].[Organization]
+  where [Id] = ?", array($id), "rows");
+        foreach ($rows as $row) {
+            echo '<div class="profile-card">';
+            echo '<div class="profile-card-photo">';
+            echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
+            echo '                  </div>';
+            echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
+            echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
+            echo '                <div class="profile-card-status">' . $row['Mobile_Number'] . '</div>';
+            echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
+            echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
+            echo '            <a  href="' . $row['Website'] . '" target="_blank"> <i class="font-icon font-icon-earth-bordered"></i></a>';
+            echo '           <a  href="' . $row['Facebook'] . '" target="_blank">  <i class="font-icon font-icon-fb-fill"></i></a>';
+            echo '        <a  href="' . $row['Linkdin'] . '" target="_blank">  <i class="font-icon font-icon-in-fill"></i></a>';
+            echo '         <a  href="' . $row['Twitter'] . '" target="_blank"> <i class="font-icon font-icon-tw-fill"></i></a>';
+
+            echo '</div>';
+        }
+    } catch (Exception $ex) {
+        echo 'error';
+    }
+}
