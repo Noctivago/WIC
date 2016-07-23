@@ -502,31 +502,31 @@ include_once '../build/db/functions.php';
 
 
 
-
+<!--
                 <header class="side-menu-title">My Team</header>
 
                 <li class="blue-dirty with-sub " >
 
                     <a class="lbl" href="contacts.php"><i class="font-icon font-icon-edit"></i> Members of my Team</a>
-<!--	            <span>
+	            <span>
                       <i class="font-icon font-icon-users-group"></i>
                       <span class="lbl"  >Members of my Team<a hidden="true" href="contacts.php"></a></span>
-                  </span>-->
+                  </span>
 
-                </li>
+                </li>-->
 
 
 
-                <li class="blue-dirty with-sub">
+<!--                <li class="blue-dirty with-sub">
 
                     <a class="lbl" href="contacts.php"><i class="font-icon font-icon-edit"></i> My Organization</a>
-<!--	            <span>
+	            <span>
                     <i class="font-icon font-icon-edit"></i>
                     <a class="lbl" href="contacts.php"> My Organization</a>
                     <span class="lbl"> My Organization</span>
-                </span>-->
+                </span>
 
-                </li>
+                </li>-->
                         <?php DB_GetServicesAsSelect($pdo, $userId); ?>
 
 <!--                
