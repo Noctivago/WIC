@@ -127,8 +127,8 @@ include ("includes/head_sideMenu.php");
 
 	
 							</div>
-<!--                                                    <a href="gallery.php" class="btn btn-rounded btn-primary-outline">See All</a>
-						</div>.profile-following
+                                                    <a href="gallery.php" class="btn btn-rounded btn-primary-outline">See All</a>
+						</div><!--.profile-following-->
 					</section>
 
 
@@ -136,7 +136,7 @@ include ("includes/head_sideMenu.php");
 
 
 
-					<section class="box-typical">
+<!--					<section class="box-typical">
 						<header class="box-typical-header-sm">
 							Posts
 							<div class="slider-arrs">
@@ -1022,9 +1022,9 @@ include ("includes/head_sideMenu.php");
 								</div>.slide
 							</div>.profile-card-slider
 						</section>
-					</section>
+					</section>.box-typical
 
-<!--					<section class="box-typical">
+					<section class="box-typical">
 						<header class="box-typical-header-sm">People you may know</header>
 						<div class="people-rel-list">
 							<div class="people-rel-list-name"><a href="#">Jackie Tran Anh</a>  /  Designer</div>
@@ -1054,8 +1054,8 @@ include ("includes/head_sideMenu.php");
 								<div class="overlay"></div>
 							</form>
 						</div>
-					</section>-->
-				</div>
+					</section>.box-typical
+				</div>.col
 			</div><!--.row-->
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
