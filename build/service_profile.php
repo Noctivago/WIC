@@ -10,7 +10,8 @@ include ("includes/head_sideMenu.php");
 					<section class="box-typical" style="height: 400.05px;">
 						<header class="box-typical-header-sm">Photo Profile</header>
                                                           <div>
- <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg"/>
+ <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
+                                                         
                                                           </div>
                                         </section>
                                         <section class="box-typical" style="height: 50.05px;">
