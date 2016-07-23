@@ -527,7 +527,7 @@ include_once '../build/db/functions.php';
                 </span>
 
                 </li>-->
-                        <?php DB_GetServicesAsSelect($pdo, $userId); ?>
+                        <?php DB_GetServicesAsSelect($pdo, $_SESSION['id']); ?>
 
 <!--                
 <div class="container-fluid">

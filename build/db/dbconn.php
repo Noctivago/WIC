@@ -1144,40 +1144,35 @@ Free for 3 Months</header>';
     }
 }
 
+function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
+    echo ' <div class="form-group" >
+                                                    <select class="bootstrap-select bootstrap-select-arrow" >
+                                                    <select class="form-control"
+                                                    </select>
+                                                </div>';
+}
+
 function DB_GetServicesAsSelect($pdo, $userId) {
+    
     echo ' <div class="container-fluid">
 
                     <form class="sign-box">
 <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
                         </div>
-                        <header class="sign-title">Invite Members</header>
+                        <header class="sign-title">Invite to my services</header>
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="E-Mail"/>
                         </div>
 
-                        <div class="form-group" >
-                            <!--<select class="bootstrap-select bootstrap-select-arrow" >-->
-                            <select class="form-control">
-                            <?php DB_GetServicesAsSelect($pdo,$userId)?>
-                            </select>
-                        </div>
-
-
-                        <!--.row-->
-
-
+                        ';
+    DB_GetServicesOrganizationAsSelect($pdo, $userId);
+    echo ' 
                         <div class="form-group">
-
                             <button type="submit" class="btn btn-rounded">Invite</button>
-
-                            <!--                    <button type="button" class="close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>-->
                         </div>
                         </div>
-                                            </form>
-                      ';
+                        </form>';
 }
 
 //preencher seccao services no profile org
