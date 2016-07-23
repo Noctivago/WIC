@@ -267,7 +267,7 @@ include '../build/db/session.php';
                                     <a class="header" id="dd-header-marketing" data-target="#" href="#" >
                                         <!--<span class="font-icon font-icon-cogwheel"></span>-->
                                         <!--                                        <h4 style="color: darkgray; font-family: cursive">You can event, event your life</h4>-->
-                                        <span style="color: darkgray; width: 200px;">You can event, event your life! &nbsp;&nbsp;&nbsp;&nbsp;<select>
+                                        <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<select>
   <option value="Choose your City">Choose your City</option>
 </select></span>
                                     </a>
