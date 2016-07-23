@@ -1792,10 +1792,13 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
         [Service].[Description] AS SDE,
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
-        [Organization].[Picture_Path] AS OPP
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path]
         FROM [Service]
         join [Organization]
         on [Organization].[Id] = [Service].[Organization_Id]
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
         AND [Organization].[Enabled] = 1 AND [Service].[Enabled] = 1", array(), "rows");
         foreach ($rows as $row) {
             echo '<div class="card-grid-col">
