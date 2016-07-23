@@ -527,13 +527,14 @@ include_once '../build/db/functions.php';
                 </span>-->
 
                 </li>
-
-                <div class="container-fluid">
-
-                    <form class="sign-box">
-
                         <?php DB_GetServicesAsSelect($pdo, $userId); ?>
-                        <!--                        <div class="sign-avatar">
+
+<!--                
+<div class="container-fluid">
+
+                    <form class="sign-box">-->
+
+  <!--                        <div class="sign-avatar">
                                                     <img src="img/avatar-sign.png" alt="">
                                                 </div>
                                                 <header class="sign-title">Invite Members</header>
@@ -558,8 +559,8 @@ include_once '../build/db/functions.php';
                                                                         <button type="button" class="close">
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
--->                                                </div>
-                                            </form><!--
+                                             </div>
+                                            </form--><!--
                                         </div>-->
 
 
