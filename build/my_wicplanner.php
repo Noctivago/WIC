@@ -57,12 +57,6 @@ $msg = '';
 </div>
 
 <script>
-    $(window).bind("load", function () {
-        loadMyWics();
-    });
-</script>
-
-<script>
     function loadMyWics() {
         $.ajax({
             url: 'ajax/getMyWics.php',
@@ -145,6 +139,7 @@ $msg = '';
 
 <script>
     $(document).ready(function () {
+        loadMyWics();
         $('.panel').lobiPanel({
             sortable: true
         });
