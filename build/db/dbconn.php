@@ -1793,7 +1793,7 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
         [Organization].[Picture_Path] AS OPP,
-        [Multimedia].[Multimedia_Path]
+        [Multimedia].[Multimedia_Path] AS MPP
         FROM [Service]
         join [Organization]
         on [Organization].[Id] = [Service].[Organization_Id]
