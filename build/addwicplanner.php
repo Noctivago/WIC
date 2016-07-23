@@ -18,8 +18,8 @@ if (isset($id) && isset($uid)) {
 } else {
     $wicId = 0;
     $wicInfo["Name"] = 'Event Name';
-//    $wicInfo["Event_Date"] = '2016-08-01';
-    $wicInfo["Event_Date"] = '2016/08/01';
+    $wicInfo["Event_Date"] = '01-08-2016';
+//    $wicInfo["Event_Date"] = '2016/08/01';
 }
 ?>
 <!--<body>-->
@@ -87,9 +87,9 @@ if (isset($id) && isset($uid)) {
 			});
 
 			$('#daterange').on('show.daterangepicker', function(ev, picker) {
-				$('.daterangepicker select').selectpicker({
-					size: 10
-				});
+//				$('.daterangepicker select').selectpicker({
+//					size: 10
+//				});
 			});
 		});
 	</script>
