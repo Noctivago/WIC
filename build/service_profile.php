@@ -143,7 +143,7 @@ $serviceId = (filter_var($_GET['Service']));
                         <div class="profile-card-status">Categorie</div>
                         <div class="profile-card-location">Supplier</div>
                     </div>
-                    
+
                     <ul class="profile-links-list">
                         <li class="nowrap">
                             <i class="font-icon font-icon-earth-bordered"></i>
@@ -197,6 +197,7 @@ $serviceId = (filter_var($_GET['Service']));
                                         function addServiceComment(serviceId) {
                                             var comment = document.getElementById("userComment").value;
                                             var sId = serviceId;
+                                            alert(comment + '-' + sId);
                                             if (comment !== "") {
                                                 $.ajax({
                                                     url: 'ajax/addServiceComment.php',
