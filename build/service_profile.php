@@ -41,7 +41,7 @@ include ("includes/head_sideMenu.php");
 
 
 					<section class="box-typical" style="height: 400.05px;">
-						<header class="box-typical-header-sm">Album</header>
+						<header class="box-typical-header-sm">Photo Profile</header>
 
 					</section>
                                         <section class="box-typical" style="height: 50.05px;">
