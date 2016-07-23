@@ -14,14 +14,11 @@ include ("includes/head_sideMenu.php");
                                         </section>                                         
                                       <section class="box-typical">
                                           <div>
-                                              <p>teste</p>
+                                             <table border="1">
+   <tr><td>Linha 1, Coluna 1</td> <td> Linha 1, Coluna 2 </td>  <td> Linha 1, Coluna 3 </td> </tr>
+</table>
                                           </div>
-						<header class="box-typical-header-sm">Personal Info</header>
-						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-notebook-bird"></i>
-								Summary
-							</header>
+						
 							
 					</section>
 
