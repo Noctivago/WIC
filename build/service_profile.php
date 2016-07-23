@@ -45,7 +45,7 @@ include ("includes/head_sideMenu.php");
 
 					</section>
                                         <section class="box-typical" style="height: 50.05px;">
-                                            <p>teste</p>>
+                                            <p>teste</p>
 
 					</section>
 
