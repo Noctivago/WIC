@@ -204,6 +204,7 @@ $serviceId = (filter_var($_GET['Service']));
                 data: {comment: comment, sId: sId},
                 success: function (data) {
                     alert(data);
+                    loadComments();
                 }
             });
         } 
@@ -219,7 +220,7 @@ $serviceId = (filter_var($_GET['Service']));
         });
     }
     function load() {
-        console.log("load event detected!");
+        console.log("load comments");
         loadComments();
     }
     window.onload = load;
