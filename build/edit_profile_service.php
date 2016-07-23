@@ -30,7 +30,7 @@ $serviceId = $_POST['Service'];
                                     $data = DB_GetServiceInformation($pdo, $serviceId);
                                     echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
-                                            <img src="'.$org['Picture_Path'].'" alt="">
+                                            <img src="' . $org['Picture_Path'] . '" alt="">
                                         </a>
                                     </div>
                                     <div class="tbl-cell">
@@ -45,19 +45,19 @@ $serviceId = $_POST['Service'];
 
                         <div class="user-card-row">
                             <div class="tbl-cell">
-                                <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+                                <?php
+                                echo '<p class="user-card-row-name"><a href="/profile_org.php?Organization='.$org['Id'].'">'.$org['Name'].'</a></p>';?>
                             </div>
                         </div>
                     </div><!--.slide-->
 
-                    <div class="slide">
+                    <div class = "slide">
 
-                        <div class="user-card-row">
-                            <div class="tbl-cell">
-                                <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                            </div>								</div>
+                        <div class = "user-card-row">
+                            <div class = "tbl-cell">
+                                <p class = "user-card-row-name"><a href = "#">Molly Bridjet</a></p>
+                                <p class = "user-card-row-status"><a href = "#">PatchworkLabs</a></p>
+                            </div> </div>
                     </div><!--.slide-->
 
 
@@ -68,14 +68,14 @@ $serviceId = $_POST['Service'];
             </section><!--.box-typical-->
 
 
-            <section class="box-typical">
-                <header class="box-typical-header-sm">Personal Info</header>
-                <article class="profile-info-item">
-                    <header class="profile-info-item-header">
-                        <i class="font-icon font-icon-notebook-bird"></i>
+            <section class = "box-typical">
+                <header class = "box-typical-header-sm">Personal Info</header>
+                <article class = "profile-info-item">
+                    <header class = "profile-info-item-header">
+                        <i class = "font-icon font-icon-notebook-bird"></i>
                         Summary
                     </header>
-                    <div class="text-block text-block-typical">
+                    <div class = "text-block text-block-typical">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </article>
@@ -84,43 +84,44 @@ $serviceId = $_POST['Service'];
 
         </div>
 
-        <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
-            <section class="box-typical">
-                <header class="box-typical-header-sm">Edit Service  </header>
-                <form class="sign-box">
-                    <div class="sign-avatar no-photo">&plus;</div>
+        <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
+            <section class = "box-typical">
+                <header class = "box-typical-header-sm">Edit Service </header>
+                <form class = "sign-box">
+                    <div class = "sign-avatar no-photo">&plus;
+                    </div>
 
-                    <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
-                    <header class="sign-title">Edit Service Profile</header>
+                    <button type = "submit" class = "btn btn-rounded btn-file">Change Picture <input class = "btn-file" type = "file"/> </button>
+                    <header class = "sign-title">Edit Service Profile</header>
 
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" class="form-control" placeholder=" Service Name"/>
-                            <i class="font-icon font-icon-user"></i>
+                    <div class = "form-group">
+                        <div class = "form-control-wrapper form-control-icon-left" >
+                            <input type = "text" class = "form-control" placeholder = " Service Name"/>
+                            <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" class="form-control" placeholder=" Service Categorie"/>
-                            <i class="font-icon font-icon-earth"></i>
+                    <div class = "form-group">
+                        <div class = "form-control-wrapper form-control-icon-left" >
+                            <input type = "text" class = "form-control" placeholder = " Service Categorie"/>
+                            <i class = "font-icon font-icon-earth"></i>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" class="form-control" placeholder="Service Supplier"/>
-                            <i class="font-icon font-icon-home"></i>
+                    <div class = "form-group">
+                        <div class = "form-control-wrapper form-control-icon-left" >
+                            <input type = "text" class = "form-control" placeholder = "Service Supplier"/>
+                            <i class = "font-icon font-icon-home"></i>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class = "form-group row">
 
-                        <div class="form-control-wrapper form-control-icon-left" >
-                            <textarea rows="8" class="form-control" placeholder="Service Info"></textarea>
-                            <i class="font-icon font-icon-user"></i>
+                        <div class = "form-control-wrapper form-control-icon-left" >
+                            <textarea rows = "8" class = "form-control" placeholder = "Service Info"></textarea>
+                            <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>
+                    <button type = "submit" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
             </section>
 
 
@@ -131,7 +132,7 @@ $serviceId = $_POST['Service'];
 
 
 
-<script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
+<script src = "js/lib/jquery/jquery.min.js" type = "text/javascript"></script>
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
 
 
