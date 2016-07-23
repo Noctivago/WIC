@@ -90,7 +90,7 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
 
                 <form class="box-typical">
-                    <input type="text" class="write-something" placeholder="Write a Review..."/>
+                    <input type="text" class="write-something" placeholder="Write a Review..." required/>
                     <div class="box-typical-footer">
                         <div class="tbl">
                             <div class="tbl-row">
