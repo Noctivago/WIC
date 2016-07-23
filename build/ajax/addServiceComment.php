@@ -14,4 +14,6 @@ $ServiceId = (filter_var($_POST ['sId']));
 
 if (isset($comment) && isset($serviceId)) {
  DB_addCommentsToService($pdo, $userId, $Comment, $ServiceId);
+} else {
+    return 'Empty!';
 }
