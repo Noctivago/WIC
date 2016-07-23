@@ -132,6 +132,7 @@ $msg = '';
 			</section><!--.box-typical-->
                         
     </div>
+    <!--9234-->
 </div>
                         
                         
