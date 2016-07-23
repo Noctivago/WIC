@@ -4,7 +4,6 @@
 include '../build/db/dbconn.php';
 include '../build/db/functions.php';
 include '../build/db/session.php';
-
 ?>
 
 <html>
@@ -536,10 +535,17 @@ include '../build/db/session.php';
                 <?php
                 $userId = $_SESSION['id'];
                 if ($_SESSION['role'] === 'organization') {
-                if(isset($_POST['sendInvite'])){
-                    echo 'trueeeee';
+                    echo '<div class="container-fluid">
+                 <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">';
+                    if (isset($_POST['sendInvite'])) {
+                        echo 'trueeeee';
                     }
                     DB_GetServicesAsSelect($pdo, $userId);
+                    echo '<div class="form-group">
+                            <button type="submit" name="sendInvite" id="sendInvite" class="btn btn-rounded">Invite</button>
+                        </div>
+                        </div>
+                        </form>';
                 }
                 ?>
 
@@ -815,18 +821,18 @@ include '../build/db/session.php';
 
 
         <script>
-            function sendInvite(){
+            function sendInvite() {
                 var email = document.getElementById("email").value;
                 var service = document.getElementById("service").value;
-                
-                $.post("../ajax/sendInviteUser.php",{email:email,serv:service},function(result){
+
+                $.post("../ajax/sendInviteUser.php", {email: email, serv: service}, function (result) {
                     alert(result);
                 });
-                
-            }
-            </script>
 
-            
+            }
+        </script>
+
+
 
 
 

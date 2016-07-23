@@ -1181,9 +1181,7 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
 
 function DB_GetServicesAsSelect($pdo, $userId) {
     try {
-        echo '<div class="container-fluid">
-                 <form class="sign-box" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="post">
-                    <div class="sign-avatar">
+        echo '      <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
                         </div>
                         <header class="sign-title">Invite to my services</header>
@@ -1193,11 +1191,6 @@ function DB_GetServicesAsSelect($pdo, $userId) {
                         ';
         DB_GetServicesOrganizationAsSelect($pdo, $userId);
 
-        echo '<div class="form-group">
-                            <button type="submit" name="sendInvite" id="sendInvite" class="btn btn-rounded">Invite</button>
-                        </div>
-                        </div>
-                        </form>';
     } catch (Exception $ex) {
         
     }
