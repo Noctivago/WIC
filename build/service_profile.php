@@ -98,9 +98,9 @@ $serviceId = (filter_var($_GET['Service']));
                     </header>
 
                     <!--DISPLAY COMMENTS-->
-                    <spann class="COMMENTS">
+                    <div class="COMMENTS">
 
-                    </spann>
+                    </div>
 
                 </section>
             </div>
