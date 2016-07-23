@@ -809,7 +809,12 @@ include '../build/db/session.php';
 
 
 
-
+        <script>
+            function sendInvite(){
+                alert(document.getElementById("email").value);
+                alert(document.getElementById("service").value);
+            }
+            </script>
 
 
 
