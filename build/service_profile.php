@@ -877,7 +877,7 @@ include ("includes/head_sideMenu.php");
 					</section>.box-typical
 				</div>.col- -->
 
-<!--				<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="col-lg-3 col-md-6 col-sm-6">
 					<section class="box-typical">
 						<header class="box-typical-header-sm">People in responsible  </header>
 						<div class="friends-list stripped">
@@ -1055,7 +1055,7 @@ include ("includes/head_sideMenu.php");
 							</form>
 						</div>
 					</section>.box-typical
-				</div>.col- -->
+				</div>.col-
 			</div><!--.row-->
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
