@@ -1154,7 +1154,7 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
 }
 
 function DB_GetServicesAsSelect($pdo, $userId) {
-    echo 'iiiiii'.$userId;
+    echo 'iiiiii' . $userId;
     echo ' <div class="container-fluid">
 
                     <form class="sign-box">
@@ -1828,9 +1828,8 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                             <p>' . $row['SDE'] . '</p>
                         </div>
                         <div class="card-typical-section">
-                            <a href="service_profile.php?service=' . $ror['SID'] . '" class="card-typical-likes">
-                                <i class="font-icon font-icon-heart"></i>'
-            . DB_GetNumberServiceViews($pdo, $idService) . '
+                            <a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+                                <i class="font-icon font-icon-heart">' . DB_GetNumberServiceViews($pdo, $idService) . '</i> 
                             </a>
                         </div>
                     </article>
