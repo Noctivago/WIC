@@ -532,7 +532,6 @@ include_once '../db/session.php';
 echo 'aaaaaa'.$userId;
                 <!--?php DB_GetServicesAsSelect($pdo, $_SESSION['id']); ?-->
                 <?= DB_getLoginFailedValue($pdo, 'prcunha.383@gmail.com'); ?>
-                <br> <?= $_SESSION['id']; ?>
 
                 <!--                
                 <div class="container-fluid">
