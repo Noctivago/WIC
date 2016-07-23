@@ -528,10 +528,9 @@ include '../build/db/session.php';
                                 </span>
                 
                                 </li>-->
-                <!--?php $userId = $_SESSION['id'];
+                <?php $userId = $_SESSION['id'];
 echo 'aaaaaa'.$userId;
-                <?php DB_GetServicesAsSelect($pdo, $_SESSION['id']); ?>
-                <?= DB_getLoginFailedValue($pdo, 'prcunha.383@gmail.com'); ?>
+               DB_GetServicesAsSelect($pdo, $userId); ?>
 
                 <!--                
                 <div class="container-fluid">
