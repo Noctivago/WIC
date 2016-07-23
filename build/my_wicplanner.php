@@ -251,7 +251,7 @@ $msg = '';
 
         
 	
-	<script>
+<!--	<script>
 		$(function() {
 			function cb(start, end) {
 				$('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
@@ -297,7 +297,7 @@ $msg = '';
 	<script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
         <script src="js/lib/daterangepicker/daterangepicker.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
-        
+        -->
         
         
         
@@ -314,10 +314,10 @@ $msg = '';
 <script src="js/plugins.js"></script>
 <script src="js/app.js"></script>
 
-<script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
+<!--<script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
 <script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
 <script src="js/lib/daterangepicker/daterangepicker.js"></script>
-<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>-->
 <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
 <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
 <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
