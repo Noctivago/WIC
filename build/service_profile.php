@@ -84,23 +84,140 @@ include ("includes/head_sideMenu.php");
 						</article><!--.profile-info-item-->
 					</section>
 
-                                        <section class="box-typical">
-						<header class="box-typical-header-sm">Comments</header>
-						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-notebook-bird"></i>
-								Summary
-							</header>
-							<div class="text-block text-block-typical">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								
-						</article>
+                                     <section class="box-typical">
+						<header class="box-typical-header-sm">
+							Recomendations
+							<div class="slider-arrs">
+								<button type="button" class="recomendations-slider-prev">
+									<i class="font-icon font-icon-arrow-left"></i>
+								</button>
+								<button type="button" class="recomendations-slider-next">
+									<i class="font-icon font-icon-arrow-right"></i>
+								</button>
+							</div>
+						</header>
+						<div class="recomendations-slider">
+							<div class="slide">
+								<div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								</div>
+								<div class="user-card-row">
+									<div class="tbl-row">
+										<div class="tbl-cell tbl-cell-photo">
+											<a href="#">
+												<img src="img/photo-64-3.jpg" alt="">
+											</a>
+										</div>
+										<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>
+									</div>
+								</div>
+							</div><!--.slide-->
 
-						<article class="profile-info-item">
-							
-							
-						</article><!--.profile-info-item-->
-					</section>
+							<div class="slide">
+								<div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								</div>
+								<div class="user-card-row">
+									<div class="tbl-row">
+										<div class="tbl-cell tbl-cell-photo">
+											<a href="#">
+												<img src="img/photo-64-1.jpg" alt="">
+											</a>
+										</div>
+										<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>
+									</div>
+								</div>
+							</div><!--.slide-->
+
+							<div class="slide">
+								<div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								</div>
+								<div class="user-card-row">
+									<div class="tbl-row">
+										<div class="tbl-cell tbl-cell-photo">
+											<a href="#">
+												<img src="img/photo-64-2.jpg" alt="">
+											</a>
+										</div>
+										<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>
+									</div>
+								</div>
+							</div><!--.slide-->
+
+							<div class="slide">
+								<div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								</div>
+								<div class="user-card-row">
+									<div class="tbl-row">
+										<div class="tbl-cell tbl-cell-photo">
+											<a href="#">
+												<img src="img/photo-64-4.jpg" alt="">
+											</a>
+										</div>
+										<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>
+									</div>
+								</div>
+							</div><!--.slide-->
+
+							<div class="slide">
+								<div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								</div>
+								<div class="user-card-row">
+									<div class="tbl-row">
+										<div class="tbl-cell tbl-cell-photo">
+											<a href="#">
+												<img src="img/photo-64-2.jpg" alt="">
+											</a>
+										</div>
+										<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>
+									</div>
+								</div>
+							</div><!--.slide-->
+
+							<div class="slide">
+								<div class="citate-speech-bubble">
+									<i class="font-icon-quote"></i>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								</div>
+								<div class="user-card-row">
+									<div class="tbl-row">
+										<div class="tbl-cell tbl-cell-photo">
+											<a href="#">
+												<img src="img/photo-64-4.jpg" alt="">
+											</a>
+										</div>
+										<div class="tbl-cell">
+											<p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+											<p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+										</div>
+									</div>
+								</div>
+							</div><!--.slide-->
+						</div><!--.recomendations-slider-->
+					</section><!--.box-typical-->
 				</div>
 
 				<div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
