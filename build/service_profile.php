@@ -325,166 +325,8 @@ include ("includes/head_sideMenu.php");
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
 							</div>
-						</article><!--.profile-info-item-->
+						</article>>
 
-<!--						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-case"></i>
-								Experience
-							</header>
-							<ul class="exp-timeline">
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">2000 President</div>
-												<div class="exp-timeline-status">Co-founder, Chairman</div>
-												<div class="exp-timeline-location"><a href="#">Company</a></div>
-											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">1992–1999</div>
-												<div class="exp-timeline-status">Senior Developer</div>
-												<div class="exp-timeline-location"><a href="#">YouTube</a></div>
-											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">2000 President</div>
-												<div class="exp-timeline-status">Co-founder, Chairman</div>
-												<div class="exp-timeline-location"><a href="#">Company</a></div>
-											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</article>.profile-info-item
-
-						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-award"></i>
-								Edication
-							</header>
-							<ul class="exp-timeline">
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">1973 – 1975</div>
-												<div class="exp-timeline-status">Harvard University</div>
-												<div class="exp-timeline-location"><a href="#">BS Computer Science</a></div>
-											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">1960 – 1973</div>
-												<div class="exp-timeline-status">Lakeside Scool, Seattle</div>
-											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</article>.profile-info-item
-
-						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-lamp"></i>
-								Skills
-							</header>
-
-							<section class="skill-item tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell tbl-cell-num">
-										<div class="skill-circle skill-circle-num">74</div>
-									</div>
-									<div class="tbl-cell tbl-cell-txt">Social Media Marketing</div>
-									<div class="tbl-cell tbl-cell-users">
-										<img class="skill-user-photo" src="img/avatar-1-64.png" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-3.jpg" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-4.jpg" alt=""/>
-										<div class="skill-circle skill-circle-users">+74</div>
-									</div>
-								</div>
-							</section>.skill-item
-
-							<section class="skill-item tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell tbl-cell-num">
-										<div class="skill-circle skill-circle-num">67</div>
-									</div>
-									<div class="tbl-cell tbl-cell-txt">Web Development</div>
-									<div class="tbl-cell tbl-cell-users">
-										<img class="skill-user-photo" src="img/avatar-2-64.png" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-2.jpg" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-3.jpg" alt=""/>
-										<div class="skill-circle skill-circle-users">+82</div>
-									</div>
-								</div>
-							</section>.skill-item
-
-							<section class="skill-item tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell tbl-cell-num">
-										<div class="skill-circle skill-circle-num">25</div>
-									</div>
-									<div class="tbl-cell tbl-cell-txt">Search Engine Optimization</div>
-									<div class="tbl-cell tbl-cell-users">
-										<img class="skill-user-photo" src="img/avatar-3-64.png" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-1.jpg" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-2.jpg" alt=""/>
-										<div class="skill-circle skill-circle-users">+4</div>
-									</div>
-								</div>
-							</section>.skill-item
-
-							<section class="skill-item tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell tbl-cell-num">
-										<div class="skill-circle skill-circle-num">20</div>
-									</div>
-									<div class="tbl-cell tbl-cell-txt">User Experience Design</div>
-									<div class="tbl-cell tbl-cell-users">
-										<img class="skill-user-photo" src="img/photo-64-3.jpg" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-4.jpg" alt=""/>
-										<img class="skill-user-photo" src="img/photo-64-1.jpg" alt=""/>
-										<div class="skill-circle skill-circle-users">+13</div>
-									</div>
-								</div>
-							</section>.skill-item
-						</article>.profile-info-item-->
 
 						<article class="profile-info-item">
 							<header class="profile-info-item-header">
@@ -506,7 +348,36 @@ include ("includes/head_sideMenu.php");
 								<a href="#" class="label label-light-grey">Here is example interest</a>
 							</div>
 						</article><!--.profile-info-item-->
-					</section><!--.box-typical-->
+					</section>	
+                                    
+                                    		<section class="box-typical">
+						<header class="box-typical-header-sm">Comments</header>
+						<article class="profile-info-item">
+							<header class="profile-info-item-header">
+								<i class="font-icon font-icon-notebook-bird"></i>
+								Summary
+							</header>
+							<div class="text-block text-block-typical">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+							</div>
+						</article>>
+
+
+						<article class="profile-info-item">
+							<header class="profile-info-item-header">
+								<i class="font-icon font-icon-star"></i>
+								More interest
+							</header>
+							
+						</article><!--.profile-info-item-->
+					</section>    
+
+							<section class="skill-item tbl">
+								<div class="tbl-row">
+									<div class="tbl-cell tbl-cell-num">
+										<div class="skill-circle skill-circle-num">74</div>
+					<!--.box-typical-->
 
                                         <!--Reviews-->
                                         
