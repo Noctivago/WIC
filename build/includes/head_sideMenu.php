@@ -447,7 +447,7 @@ include '../build/db/session.php';
         <nav class="side-menu">
             <ul class="side-menu-list">
                 
-			<label class="form-label">Categories</label>
+			<label class="form-label">Advanced Search</label>
 
                             <div class="typeahead-container">
                                 <div class="typeahead-field">
