@@ -95,7 +95,7 @@ $serviceId = (filter_var($_GET['Service']));
                         <div class="tbl">
                             <div class="tbl-row">
                                 <div class="tbl-cell">
-                                    
+
                                 </div>
                                 <div class="tbl-cell tbl-cell-action">
                                     <button type="submit" class="btn btn-rounded">Send</button>
@@ -118,150 +118,52 @@ $serviceId = (filter_var($_GET['Service']));
                         </div>
                     </header>
                     <div class="recomendations-slider">
-                        <div class="slide">
-                            <div class="citate-speech-bubble">
-                                <i class="font-icon-quote"></i>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </div>
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="#">
-                                            <img src="img/photo-64-3.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                        <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--.slide-->
+                        <!--                        <div class="slide">
+                                                    <div class="citate-speech-bubble">
+                                                        <i class="font-icon-quote"></i>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                    </div>
+                                                    <div class="user-card-row">
+                                                        <div class="tbl-row">
+                                                            <div class="tbl-cell tbl-cell-photo">
+                                                                <a href="#">
+                                                                    <img src="img/photo-64-3.jpg" alt="">
+                                                                </a>
+                                                            </div>
+                                                            <div class="tbl-cell">
+                                                                <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+                                                                <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>.slide-->
 
-                        <div class="slide">
-                            <div class="citate-speech-bubble">
-                                <i class="font-icon-quote"></i>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </div>
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="#">
-                                            <img src="img/photo-64-1.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                        <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--.slide-->
 
-                        <div class="slide">
-                            <div class="citate-speech-bubble">
-                                <i class="font-icon-quote"></i>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </div>
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="#">
-                                            <img src="img/photo-64-2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                        <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--.slide-->
-
-                        <div class="slide">
-                            <div class="citate-speech-bubble">
-                                <i class="font-icon-quote"></i>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </div>
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="#">
-                                            <img src="img/photo-64-4.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                        <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--.slide-->
-
-                        <div class="slide">
-                            <div class="citate-speech-bubble">
-                                <i class="font-icon-quote"></i>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </div>
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="#">
-                                            <img src="img/photo-64-2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                        <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--.slide-->
-
-                        <div class="slide">
-                            <div class="citate-speech-bubble">
-                                <i class="font-icon-quote"></i>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </div>
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="#">
-                                            <img src="img/photo-64-4.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                        <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--.slide-->
                     </div><!--.recomendations-slider-->
                 </section><!--.box-typical-->
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
                 <section class="box-typical">
-                        <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
-                        <!--<article class="friends-list-item">
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="#">
-                                            <img src="img/photo-64-2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="#">Susan Andrews</a></p>
-                                        <p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
-                                    </div>
-                                    <div class="tbl-cell tbl-cell-action">
-                                        <a href="#" class="plus-link-circle"><span>&plus;</span></a>
-                                    </div>
+                    <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
+                    <!--<article class="friends-list-item">
+                        <div class="user-card-row">
+                            <div class="tbl-row">
+                                <div class="tbl-cell tbl-cell-photo">
+                                    <a href="#">
+                                        <img src="img/photo-64-2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="tbl-cell">
+                                    <p class="user-card-row-name"><a href="#">Susan Andrews</a></p>
+                                    <p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
+                                </div>
+                                <div class="tbl-cell tbl-cell-action">
+                                    <a href="#" class="plus-link-circle"><span>&plus;</span></a>
                                 </div>
                             </div>
-                        </article>-->
+                        </div>
+                    </article>-->
                 </section>
 
                 <section class="box-typical">

@@ -1837,7 +1837,7 @@ function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
         $Services = sql($pdo, "SELECT *
         FROM [Service]
         where [Enabled] = 1 and [Id] = ?", array($servideId), "rows");
-        echo  $Service['Id'];
+        echo $Service['Id'];
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
             $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
@@ -1875,5 +1875,55 @@ function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
         }
     } catch (Exception $ex) {
         
+    }
+}
+
+/**
+ * Função que devolve os comentários de um serviço
+ * @param type $pdo
+ * @param type $servideId
+ */
+function DB_getServiceCommentFromUsers($pdo, $servideId) {
+    try {
+        $rows = sql($pdo, "/****** Script for SelectTopNRows command from SSMS  ******/
+        SELECT [User_Profile].[First_Name] AS UFN
+                  ,[User_Profile].[Last_Name] AS ULN
+                  ,[User_Profile].[Picture_Path] AS UPP
+              ,[Comment] AS CCC
+              ,[Service_Id]
+              ,[Comment].[Date_Created]
+          FROM [dbo].[Comment]
+          join [User]
+          on [User].[id] = [Comment].[User_Id]
+          join [User_Profile]
+          on [User_Profile].[User_Id] = [User].[id]
+          AND [Comment].[Enabled] = 1 and [User].[Account_Enabled] = 1
+          WHERE [Comment].[Service_Id] = ?
+          ORDER BY [Comment].[Date_Created] DESC", array($servideId), "rows");
+        foreach ($rows as $row) {
+            echo '<div class="slide">
+                        <div class="citate-speech-bubble">
+                            <i class="font-icon-quote"></i>"'
+            . $row['CCC'] .
+            '"</div>
+                        <div class="user-card-row">
+                            <div class="tbl-row">
+                                <div class="tbl-cell tbl-cell-photo">
+                                    <a>
+                                        <img src="' . $row['UPP'] . '" alt="Avatar">
+                                    </a>
+                                </div>
+                                <div class="tbl-cell">
+                                <p class="user-card-row-name"><a>' . $row['UFN'] . ' ' . $row['ULN'] . '</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+        }
+
+        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+    } catch (Exception $exc) {
+        echo 'ERROR READING SERVICE TABLE!';
     }
 }
