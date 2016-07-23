@@ -86,14 +86,6 @@ include_once '../build/db/session.php';
         location.reload();
     }</script>
 
-
-
-
-
-
-
-
-
 <script>
     $(document).ready(function () {
         $('.panel').lobiPanel({

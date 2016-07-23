@@ -1918,13 +1918,13 @@ function DB_getServiceCommentFromUsers($pdo, $servideId) {
           AND [Comment].[Enabled] = 1 and [User].[Account_Enabled] = 1
           WHERE [Comment].[Service_Id] = ?
           ORDER BY [Comment].[Date_Created] DESC", array($servideId), "rows");
-        echo '<div class="recomendations-slider">';
+        //echo '<div class="recomendations-slider">';
         foreach ($rows as $row) {
             echo '<div class="slide">
                         <div class="citate-speech-bubble">
                             <i class="font-icon-quote"></i>"'
-            . $row['CCC'] .
-            '"</div>
+                        . $row['CCC'] .
+                        '"</div>
                         <div class="user-card-row">
                             <div class="tbl-row">
                                 <div class="tbl-cell tbl-cell-photo">
@@ -1937,9 +1937,9 @@ function DB_getServiceCommentFromUsers($pdo, $servideId) {
                                 </div>
                             </div>
                         </div>
-                    </div>';
+                </div>';
         }
-        echo '</div>';
+        //echo '</div>';
         //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
         //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
