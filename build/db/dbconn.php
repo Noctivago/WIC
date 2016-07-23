@@ -1154,7 +1154,7 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
 }
 
 function DB_GetServicesAsSelect($pdo, $userId) {
-    
+    echo $userId;
     echo ' <div class="container-fluid">
 
                     <form class="sign-box">
