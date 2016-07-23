@@ -57,7 +57,8 @@ $serviceId = (filter_var($_GET['Service']));
                                 <div class="tbl-cell">
                                     <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
                                     <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                </div>								</div>
+                                </div>								
+                            </div>
                         </div><!--.slide-->
 
                     </div>
