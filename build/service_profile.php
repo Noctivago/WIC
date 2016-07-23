@@ -1,6 +1,6 @@
 <?php
 include ("includes/head_sideMenu.php");
-$serviceId = (filter_var($_POST ['Service']));
+$serviceId = (filter_var($_GET['Service']));
 ?>
 
 <div class="page-content">
