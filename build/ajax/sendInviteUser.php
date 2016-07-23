@@ -6,7 +6,8 @@ include_once '../db/functions.php';
 
 $email = (filter_var($_POST['email']));
 $serviceId = (filter_var($_POST['serv']));
-
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
 $userId = DB_checkUserByEmail($pdo, $email);
 echo $userId;
