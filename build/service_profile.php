@@ -96,10 +96,10 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>
                     </header>
-                    <div class="recomendations-slider COMMENTS">
+                    <div class="recomendations-slider">
+                        <div class="COMMENTS">
 
-
-
+                        </div>
                     </div><!--.recomendations-slider-->
                 </section><!--.box-typical-->
             </div>
