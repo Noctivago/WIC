@@ -115,7 +115,7 @@ include_once '../build/db/session.php';
                     <div class = "form-group row">
 
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <textarea rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
+                            <textarea onchange="reloadDescription()" id="teste"rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
@@ -129,7 +129,11 @@ include_once '../build/db/session.php';
 </div><!--.container-fluid-->
 </div><!--.page-content-->
 
-
+<script>
+    function reloadDescription(){
+        document.getElementById('description').innerHTML = document.getElementById('teste').value;
+    }
+    </script>
 
 <script src = "js/lib/jquery/jquery.min.js" type = "text/javascript"></script>
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
