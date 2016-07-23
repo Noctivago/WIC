@@ -165,6 +165,41 @@ include ("includes/head_sideMenu.php");
 							</div>
 						</article><!--.profile-info-item-->
 					</section>
+
+                                        <section class="box-typical">
+						<header class="box-typical-header-sm">Personal Info</header>
+						<article class="profile-info-item">
+							<header class="profile-info-item-header">
+								<i class="font-icon font-icon-notebook-bird"></i>
+								Summary
+							</header>
+							<div class="text-block text-block-typical">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+							</div>
+						</article>
+
+						<article class="profile-info-item">
+							<header class="profile-info-item-header">
+								<i class="font-icon font-icon-star"></i>
+								More interest
+							</header>
+							<div class="profile-interests">
+								<a href="#" class="label label-light-grey">Interest</a>
+								<a href="#" class="label label-light-grey">Example</a>
+								<a href="#" class="label label-light-grey">One more</a>
+								<a href="#" class="label label-light-grey">Here is example interest</a>
+								<a href="#" class="label label-light-grey">Interest</a>
+								<a href="#" class="label label-light-grey">Example</a>
+								<a href="#" class="label label-light-grey">One more</a>
+								<a href="#" class="label label-light-grey">Here is example interest</a>
+								<a href="#" class="label label-light-grey">Interest</a>
+								<a href="#" class="label label-light-grey">Example</a>
+								<a href="#" class="label label-light-grey">One more</a>
+								<a href="#" class="label label-light-grey">Here is example interest</a>
+							</div>
+						</article><!--.profile-info-item-->
+					</section>
 				</div>
 
 				<div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
