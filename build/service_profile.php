@@ -13,6 +13,7 @@ include ("includes/head_sideMenu.php");
                                                          
                                                           
                                         </section>
+                                </div>
                                         <section class="box-typical" style="height: 50.05px;">
                                             <p>teste</p>
 
