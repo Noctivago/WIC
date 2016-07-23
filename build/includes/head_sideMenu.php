@@ -418,13 +418,39 @@ include '../build/db/session.php';
 
 
                                 <div class="site-header-search-container">
-                                    <form class="site-header-search closed">
+                                    
+                                    
+            <ul class="side-menu-list">
+                <div class="col-md-10">
+			<label class="form-label">Categories</label>
+
+                            <div class="typeahead-container">
+                                <div class="typeahead-field">
+                                    <span class="typeahead-query">
+					<input id="categories"
+						  class="form-control"
+						   name="q"
+						  type="search"
+						  autocomplete="off">
+                                    </span>
+                                    <span class="typeahead-button">
+					<button type="submit">
+                                            <span class="font-icon-search"></span>
+					</button>
+                                    </span>
+				</div>
+                            </div>
+		</div>
+                                    
+                                    
+                                    
+<!--                                    <form class="site-header-search closed">
                                         <input type="text" placeholder="Search a Service.."/>
                                         <button type="submit">
                                             <span class="font-icon-search"></span>
                                         </button>
                                         <div class="overlay"></div>
-                                    </form>
+                                    </form>-->
                                 </div>
                             </div><!--.site-header-collapsed-in-->
                         </div><!--.site-header-collapsed-->
@@ -436,6 +462,26 @@ include '../build/db/session.php';
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
             <ul class="side-menu-list">
+                <div class="col-md-10">
+			<label class="form-label">Categories</label>
+
+                            <div class="typeahead-container">
+                                <div class="typeahead-field">
+                                    <span class="typeahead-query">
+					<input id="categories"
+						  class="form-control"
+						   name="q"
+						  type="search"
+						  autocomplete="off">
+                                    </span>
+                                    <span class="typeahead-button">
+					<button type="submit">
+                                            <span class="font-icon-search"></span>
+					</button>
+                                    </span>
+				</div>
+                            </div>
+		</div>
 
 
                 <header class="side-menu-title">Start Planning</header>
