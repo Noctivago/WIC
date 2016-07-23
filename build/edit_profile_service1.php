@@ -101,170 +101,34 @@ include ("includes/head_sideMenu.php");
 				<div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
 					<section class="box-typical">
 						<header class="box-typical-header-sm">Edit Service  </header>
-						<div class="friends-list stripped">
-							<article class="friends-list-item">
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-2.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name status-online"><a href="#">Dan Cederholm</a></p>
-											<p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
-										</div>
-										<div class="tbl-cell tbl-cell-action">
-											<a href="#" class="plus-link-circle"><span>&plus;</span></a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="friends-list-item">
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-1.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Oykun Yilmaz</a></p>
-											<p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
-										</div>
-										<div class="tbl-cell tbl-cell-action">
-											<a href="#" class="plus-link-circle"><span>&plus;</span></a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="friends-list-item">
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-3.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Bill S Kenney</a></p>
-											<p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
-										</div>
-										<div class="tbl-cell tbl-cell-action">
-											<a href="#" class="plus-link-circle"><span>&plus;</span></a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="friends-list-item">
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-4.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Maggy Smith</a></p>
-											<p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
-										</div>
-										<div class="tbl-cell tbl-cell-action">
-											<a href="#" class="plus-link-circle"><span>&plus;</span></a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="friends-list-item">
-								<div class="user-card-row">
-									<div class="tbl-row">
-										<div class="tbl-cell tbl-cell-photo">
-											<a href="#">
-												<img src="img/photo-64-2.jpg" alt="">
-											</a>
-										</div>
-										<div class="tbl-cell">
-											<p class="user-card-row-name"><a href="#">Susan Andrews</a></p>
-											<p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
-										</div>
-										<div class="tbl-cell tbl-cell-action">
-											<a href="#" class="plus-link-circle"><span>&plus;</span></a>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
+						<form class="sign-box">
+                    <div class="sign-avatar no-photo">&plus;</div>
+                    
+                    <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
+                    <header class="sign-title">Edit Service Profile</header>
+                    
+                    <div class="form-group">
+                        <div class="form-control-wrapper form-control-icon-left" >
+                        <input type="text" class="form-control" placeholder=" Service Name"/>
+                        <i class="font-icon font-icon-user"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-control-wrapper form-control-icon-left" >
+                        <input type="text" class="form-control" placeholder=" Service Categorie"/>
+                        <i class="font-icon font-icon-earth"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-control-wrapper form-control-icon-left" >
+                        <input type="text" class="form-control" placeholder="Service Supplier"/>
+                        <i class="font-icon font-icon-home"></i>
+                        </div>
+                    </div>
                                         </section>
                                         
-                                    <section class="box-typical">
-						<div class="profile-card">
-							<div class="profile-card-photo">
-                                                            <img src="img/a_tasca.jpg" alt=""/>
-							</div>
-                                                     <br>
-                                                            <br>
-                                                            <br>
-							<div class="profile-card-name">Service Name</div>
-							<div class="profile-card-status">Categorie</div>
-							<div class="profile-card-location">Supplier</div>
-							<button type="button" class="btn btn-rounded">Follow</button>
-							<div class="btn-group">
-								<button type="button"
-										class="btn btn-rounded btn-primary-outline dropdown-toggle"
-										data-toggle="dropdown"
-										aria-haspopup="true"
-										aria-expanded="false">
-									Options
-								</button>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Deal With Supplier</a>
-									<a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Add to my Wic planner</a>
-									
-								</div>
-							</div>
-						</div>
-
-						<div class="profile-statistic tbl">
-							<div class="tbl-row">
-								<div class="tbl-cell">
-									<b>200</b>
-									Connections
-								</div>
-								<div class="tbl-cell">
-									<b>1.9M</b>
-									Followers
-								</div>
-							</div>
-						</div>
-
-						<ul class="profile-links-list">
-							<li class="nowrap">
-								<i class="font-icon font-icon-earth-bordered"></i>
-								<a href="#">example.com</a>
-							</li>
-							<li class="nowrap">
-								<i class="font-icon font-icon-fb-fill"></i>
-								<a href="#">facebook.com/example</a>
-							</li>
-							<li class="nowrap">
-								<i class="font-icon font-icon-vk-fill"></i>
-								<a href="#">vk.com/example</a>
-							</li>
-							<li class="nowrap">
-								<i class="font-icon font-icon-in-fill"></i>
-								<a href="#">linked.in/example</a>
-							</li>
-							<li class="nowrap">
-								<i class="font-icon font-icon-tw-fill"></i>
-								<a href="#">twitter.com/example</a>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<i class="font-icon font-icon-pdf-fill"></i>
-								<a href="#">Export page as PDF</a>
-							</li>
-						</ul>
-
-					</section>
+                                   
 				</div>
 			</div><!--.row-->
 		</div><!--.container-fluid-->
