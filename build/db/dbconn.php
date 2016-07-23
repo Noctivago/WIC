@@ -807,6 +807,16 @@ function DB_GetOrgIdByUserBossId($pdo, $idUser) {
         echo 'error';
     }
 }
+function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
+    try {
+        $row = sql($pdo, "SELECT * From [Organization] Where [User_Boss] = ?", array($idUser), "rows");
+        foreach ($rows as $row){
+        echo $row;
+        }
+    } catch (Exception $ex) {
+        echo 'error';
+    }
+}
 
 //falta dar o orgid
 // Dá o numero de pessoas em todos os servicos
