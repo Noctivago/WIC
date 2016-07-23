@@ -100,7 +100,7 @@ include '../build/db/session.php';
                                         </div>
                                     </div>
                                     <div class="dropdown-menu-notif-more">
-                                        <a href="my_wicplanner  .php">See My Wic Planners</a>
+                                        <a href="my_wicplanner.php">See My Wic Planners</a>
                                     </div>
                                 </div>
                             </div>
