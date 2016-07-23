@@ -587,7 +587,7 @@ include '../build/db/session.php';
            (?
            ,?
            ,0
-           ,0)", array($serviceId, $userId,2));
+           ,0,2)", array($serviceId, $userId));
                                 // insert in user service
                                 echo 'nao esta enable nem disable nao existe insert' . $serviceId . "   " . $userId;
                             }
