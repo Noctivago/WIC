@@ -5,7 +5,7 @@ include ("includes/head_sideMenu.php");
 <div class="page-content">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-9 col-lg-push-6 col-md-12">
+				<div class="col-lg-9 col-lg-push-0 col-md-12">
 
                                     <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
                                    
