@@ -2003,3 +2003,5 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
         echo 'error';
     }
 }
+
+function DB_get
