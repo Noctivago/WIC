@@ -27,7 +27,6 @@ include_once '../build/db/session.php';
                                     $service = $_GET['Service'];
                                     $user = $_SESSION['id'];
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
-                                    echo 'aaaaa'.$service;
                                     $data = DB_GetServiceInformation($pdo, $service);
                                     echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
@@ -35,6 +34,7 @@ include_once '../build/db/session.php';
                                         </a>
                                     </div>
                                     <div class="tbl-cell">
+                                    <p>Service Name</p>
                                     <p id="serviceName" class="user-card-row-name">' . $data['Name'] . '</p>';
                                     ?>
                                 </div>
@@ -46,7 +46,8 @@ include_once '../build/db/session.php';
 
                         <div class="user-card-row">
                             <div class="tbl-cell">
-                                <?php echo '<p class="user-card-row-name"><a href="profile_org.php?Organization=' . $org['Id'] . '">' . $org['Name'] . '</a></p>'; ?>
+                                <?php echo '<p>Organization Name</p>
+                                 <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $org['Id'] . '">' . $org['Name'] . '</a></p>'; ?>
                             </div>
                         </div>
                     </div><!--.slide-->
@@ -55,8 +56,6 @@ include_once '../build/db/session.php';
 
                         <div class = "user-card-row">
                             <div class = "tbl-cell">
-                                <p class = "user-card-row-name"><a href = "#">Molly Bridjet</a></p>
-                                <p class = "user-card-row-status"><a href = "#">PatchworkLabs</a></p>
                             </div> </div>
                     </div><!--.slide-->
 
