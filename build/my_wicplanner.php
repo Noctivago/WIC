@@ -17,7 +17,7 @@ $msg = '';
                     <header class="box-typical-header">
                         <div class="tbl-row">
                             <div class="tbl-cell tbl-cell-title">
-                                <h3>WiC Planner The notepad for events</h3> 
+                                <h3>WiC Planner The notepad for event planners</h3> 
                             </div>
                             <div class="tbl-cell tbl-people">
                                 <!--<span><a class="font-icon font-icon-plus" style="align:rigth" href="addwicplanner.php"> Add a new Event	</a></span>-->
