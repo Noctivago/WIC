@@ -14,12 +14,12 @@ include ("includes/head_sideMenu.php");
                                         </section>                                         
                                       <section class="box-typical">
                                           <div>
-                                              <div class="col-lg-9 col-lg col-md-12"><p>teste1</p></div>
-                                              <div class="col-lg-4 col-lg col-md-12"><p>teste2</p></div>
-                                              <div class="col-lg-4 col-lg col-md-12"><p>teste3</p></div>
+                                              <div class="col-lg-3 col-lg col-md-12"><p>teste1</p></div>
+                                              <div class="col-lg-3 col-lg col-md-12"><p>teste2</p></div>
+                                              <div class="col-lg-3 col-lg col-md-12"><p>teste3</p></div>
                                           </div>
 						
-							
+                                </div>	
 					</section>
 
 
