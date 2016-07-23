@@ -96,56 +96,23 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>
                     </header>
-                    <div class="recomendations-slider">
+                    
+                        <!--DISPLAY COMMENTS-->
                         <div class="COMMENTS">
 
                         </div>
-                    </div><!--.recomendations-slider-->
-                </section><!--.box-typical-->
+                   
+                </section>
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
                 <section class="box-typical">
+                    <!--DISPLAY SERVICE USERS-->
                     <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
-
                 </section>
 
                 <section class="box-typical">
-                    <!--                    <div class="profile-card">
-                                            <div class="profile-card-photo">
-                                                <img src="img/a_tasca.jpg" alt=""/>
-                                            </div>
-                                            <br>
-                                            <br>
-                                            <br>
-                                            <div class="profile-card-name">Service Name</div>
-                                            <div class="profile-card-status">Categorie</div>
-                                            <div class="profile-card-location">Supplier</div>
-                                        </div>
-                    
-                                        <ul class="profile-links-list">
-                                            <li class="nowrap">
-                                                <i class="font-icon font-icon-earth-bordered"></i>
-                                                <a href="#">example.com</a>
-                                            </li>
-                                            <li class="nowrap">
-                                                <i class="font-icon font-icon-fb-fill"></i>
-                                                <a href="#">facebook.com/example</a>
-                                            </li>
-                                            <li class="nowrap">
-                                                <i class="font-icon font-icon-vk-fill"></i>
-                                                <a href="#">vk.com/example</a>
-                                            </li>
-                                            <li class="nowrap">
-                                                <i class="font-icon font-icon-in-fill"></i>
-                                                <a href="#">linked.in/example</a>
-                                            </li>
-                                            <li class="nowrap">
-                                                <i class="font-icon font-icon-tw-fill"></i>
-                                                <a href="#">twitter.com/example</a>
-                                            </li>
-                                            <li class="divider"></li>
-                                        </ul>-->
+                    <!--DISPLAY ORG INFO-->
                     <?= DB_GetOrgInformationForService($pdo, $serviceId); ?>
                 </section>
             </div>
