@@ -530,6 +530,7 @@ include_once '../db/session.php';
 
                 </li>-->
                         <?php $userId = $_SESSION['id'];
+ echo $userId;
                         DB_GetServicesAsSelect($pdo, $userId); ?>
 
 <!--                
