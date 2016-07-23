@@ -812,7 +812,7 @@ function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
     try {
         $row = sql($pdo, "SELECT * From [Organization] Where [User_Boss] = ?", array($idUser), "rows");
         foreach ($rows as $row) {
-            echo $row['Id'];
+            echo $row;
         }
     } catch (Exception $ex) {
         echo 'error';
