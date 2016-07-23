@@ -529,9 +529,9 @@
                 </span>
 
                 </li>-->
-                        <?php $userId = $_SESSION['id'];
+                        <!--?php $userId = $_SESSION['id'];
  echo 'aaaaaa'.$userId;
-                        DB_GetServicesAsSelect($pdo, $userId); ?>
+                        DB_GetServicesAsSelect($pdo, $userId); ?-->
 
 <!--                
 <div class="container-fluid">
