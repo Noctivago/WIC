@@ -116,7 +116,7 @@ $msg = '';
 									<td class="color-blue-grey-lighter">Revene for last quarter in state America for year 2013, whith...</td>
 									
 									<td class="table-icon-cell">
-										<i class="font-icon font-icon-comment"></i>
+										<i class="font-icon font-icon-mail"></i>
 										24
 									</td>
 									
