@@ -536,15 +536,21 @@ include '../build/db/session.php';
                 $userId = $_SESSION['id'];
                 if ($_SESSION['role'] === 'organization') {
                     echo '<div class="container-fluid">
-                 <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">';
-
+                 <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
+<div class="sign-avatar">
+                            <img src="img/avatar-sign.png" alt="">
+                        </div>
+                        <header class="sign-title">Invite to my services</header>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
+                        </div>';
                     $rows = sql($pdo, "SELECT [Service].[Id], [Service].[Name]
   FROM [dbo].[Service]
   join [Organization]
   on [Organization].[Id] = [Service].[Organization_id]
   where [Organization].[User_Boss] = ? and [Organization].[Enabled] = 1 and [Service].[Enabled] = 1", array($userId), "rows");
                     echo '<div class="form-group" >';
-                    echo '<select class="bootstrap-select bootstrap-select-arrow" >';       
+                    echo '<select class="bootstrap-select bootstrap-select-arrow" >';
                     foreach ($rows as $row) {
                         echo '<option id="service" name="service" value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
                     }
