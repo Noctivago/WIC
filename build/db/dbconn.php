@@ -224,6 +224,7 @@ function DB_checkUserByEmail($pdo, $email) {
     }
 }
 
+
 /**
  * ATRIBUI NOVO CODIGO DE VALIDACAO AO USER
  * @param type $pdo

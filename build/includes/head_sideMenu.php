@@ -805,14 +805,21 @@ include '../build/db/session.php';
             </li>
         </ul>
     </section>-->
+
         </nav><!--.side-menu-->
 
 
 
         <script>
             function sendInvite(){
+                var email = document.getElementById("email").value;
+                var service = document.getElementById("service").value;
                 alert(document.getElementById("email").value);
                 alert(document.getElementById("service").value);
+                $.post("../ajax/sendInviteUser.php",{email:email,serv:service},function(result){
+                    alert(result);
+                });
+                
             }
             </script>
 
