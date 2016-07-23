@@ -563,14 +563,24 @@ include '../build/db/session.php';
                         </div>
                         </form>';
                 }
-                if(isset($_POST['sendInvite'])&&!empty($_POST['email']) && !empty($_POST['service'])){
+                if (isset($_POST['sendInvite']) && !empty($_POST['email']) && !empty($_POST['service'])) {
                     $email = $_POST['email'];
-                    $idUser = DB_checkUserByEmail($pdo, $email);
-                    echo 'iiiii'.$idUser;
-                    if(DB_checkIfUserExists($pdo, $email)){
-                    
-                    }else{
-                        
+                    $serviceId = $_POST['service'];
+                    if (DB_checkIfUserExists($pdo, $email)) {
+                        $idUser = DB_checkUserByEmail($pdo, $email);
+                        if (DB_checkIfUserInService($pdo, $userId, $serviceId, 1)) {
+                            // update validate para 0
+                            echo 'enable a 1 existe no servico e ativo' . $serviceId;
+                        } else {
+                            if (DB_checkIfUserInService($pdo, $userId, $serviceId, 0)) {
+                                echo 'enable está a 0 esta disable' .$serviceId;
+                            }
+                            // insert in user service
+                            echo 'nao esta enable nem disable nao existe' . $serviceId;
+                        }
+                    } else {
+                        //insert in organization invite
+                        echo 'eeee' . $email;
                     }
                 }
                 ?>
