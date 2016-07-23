@@ -537,10 +537,20 @@ include '../build/db/session.php';
                 if ($_SESSION['role'] === 'organization') {
                     echo '<div class="container-fluid">
                  <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">';
-                    if (isset($_POST['sendInvite'])) {
-                        echo 'trueeeee';
+
+                    $rows = sql($pdo, "SELECT [Service].[Id], [Service].[Name]
+  FROM [dbo].[Service]
+  join [Organization]
+  on [Organization].[Id] = [Service].[Organization_id]
+  where [Organization].[User_Boss] = ? and [Organization].[Enabled] = 1 and [Service].[Enabled] = 1", array($userId), "rows");
+                    echo '<div class="form-group" >';
+                    echo '<select class="bootstrap-select bootstrap-select-arrow" >';       
+                    foreach ($rows as $row) {
+                        echo '<option id="service" name="service" value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
                     }
-                    DB_GetServicesAsSelect($pdo, $userId);
+                    echo ' </select> ';
+                    echo '</div>';
+//                    DB_GetServicesAsSelect($pdo, $userId);
                     echo '<div class="form-group">
                             <button type="submit" name="sendInvite" id="sendInvite" class="btn btn-rounded">Invite</button>
                         </div>
