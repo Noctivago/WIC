@@ -13,7 +13,7 @@ include ("includes/head_sideMenu.php");
                                                          
                                         </section>                                         
                                       <section class="col-lg-1 col-lg col-md-2">
-						<header class="box-typical-header-sm">Personal Info</header>
+						<header class="box-typical-header-sm">Supplier</header>
 						<article class="profile-info-item">
 							<header class="profile-info-item-header">
 								<i class="font-icon font-icon-notebook-bird"></i>
