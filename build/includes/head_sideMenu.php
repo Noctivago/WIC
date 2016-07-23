@@ -565,7 +565,7 @@ include '../build/db/session.php';
                 }
                 if(isset($_POST['sendInvite'])&&!empty($_POST['email']) && !empty($_POST['service'])){
                     $idUser = DB_checkUserByEmail($pdo, $email);
-                    echo $idUser['Id'];
+                    echo 'iiiii'.$idUser['Id'];
                     if(DB_checkIfUserExists($pdo, $email)){
                     
                     }else{
