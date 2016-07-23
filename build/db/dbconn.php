@@ -1144,24 +1144,23 @@ Free for 3 Months</header>';
     }
 }
 
-
 function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
     try {
         echo '<div class="form-group" >';
         echo '<select class="bootstrap-select bootstrap-select-arrow" >';
+        echo '<select class="form-control">';
         echo '<option>' . $row['Id'] . '</option>';
-         echo ' </select> ';
+        echo ' </select> ';
         echo '</div>';
-        echo 'iii'.DB_GetOrgIdByUserBossId($pdo, $idUser);
+        echo 'iii' . DB_GetOrgIdByUserBossId($pdo, $idUser);
         $orgId = DB_GetOrgIdByUserBossId($pdo, $idUser);
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Service]
   where [Organization_Id] = ? and [Enabled] = 1", array($orgId), "rows");
-        
+
         foreach ($rows as $row) {
             
         }
-       
     } catch (Exception $ex) {
         
     }
