@@ -1055,7 +1055,7 @@ include ("includes/head_sideMenu.php");
 							</form>
 						</div>
 					</section>.box-typical
-				</div>.col
+				</div>
 			</div><!--.row-->
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
