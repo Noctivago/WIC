@@ -588,8 +588,7 @@ include '../build/db/session.php';
            ,?
            ,0
            ,0,2)", array($serviceId, $userId));
-                                // insert in user service
-                                echo 'nao esta enable nem disable nao existe insert' . $serviceId . "   " . $userId;
+                               
                             }
                         }
                     } else {
@@ -602,7 +601,7 @@ include '../build/db/session.php';
            (?
            ,0
            ,?)", array($email, $serviceId));
-                        //enviar email.
+                        //falta enviar email.
                     }
                 }
                 ?>
