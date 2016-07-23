@@ -17,9 +17,7 @@ include ("includes/head_sideMenu.php");
                                               <div class="col-lg-3 col-lg col-md-12"><p>teste1</p></div>
                                               <div class="col-lg-3 col-lg col-md-12"><p>teste2</p></div>
                                               <div class="col-lg-3 col-lg col-md-12"><p>teste3</p></div>
-                                          </div>
-						
-                                </div>	
+                                          </div>	
 					</section>
 
 
