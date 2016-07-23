@@ -167,7 +167,7 @@ include ("includes/head_sideMenu.php");
 					</section>
 
                                         <section class="box-typical">
-						<header class="box-typical-header-sm">Personal Info</header>
+						<header class="box-typical-header-sm">Comments</header>
 						<article class="profile-info-item">
 							<header class="profile-info-item-header">
 								<i class="font-icon font-icon-notebook-bird"></i>
@@ -184,20 +184,7 @@ include ("includes/head_sideMenu.php");
 								<i class="font-icon font-icon-star"></i>
 								More interest
 							</header>
-							<div class="profile-interests">
-								<a href="#" class="label label-light-grey">Interest</a>
-								<a href="#" class="label label-light-grey">Example</a>
-								<a href="#" class="label label-light-grey">One more</a>
-								<a href="#" class="label label-light-grey">Here is example interest</a>
-								<a href="#" class="label label-light-grey">Interest</a>
-								<a href="#" class="label label-light-grey">Example</a>
-								<a href="#" class="label label-light-grey">One more</a>
-								<a href="#" class="label label-light-grey">Here is example interest</a>
-								<a href="#" class="label label-light-grey">Interest</a>
-								<a href="#" class="label label-light-grey">Example</a>
-								<a href="#" class="label label-light-grey">One more</a>
-								<a href="#" class="label label-light-grey">Here is example interest</a>
-							</div>
+							
 						</article><!--.profile-info-item-->
 					</section>
 				</div>
