@@ -115,7 +115,7 @@ include_once '../build/db/session.php';
                     <div class = "form-group row">
 
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <textarea rows = "8" class = "form-control" value='<?= $data['Description'] ?> 'placeholder = "Service Info"></textarea>
+                            <textarea rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
