@@ -1786,7 +1786,7 @@ function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
  */
 function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
     try {
-        $rows = sql($pdo, "SELECT TOP 1 
+        $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
@@ -1799,8 +1799,10 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
         on [Organization].[Id] = [Service].[Organization_Id]
         join [Multimedia]
         on [Multimedia].[Service_Id] = [Service].[Id]
-        AND [Organization].[Enabled] = 1 AND [Service].[Enabled] = 1 
-        AND [Multimedia].[Enabled] = 1", array(), "rows");
+        AND [Organization].[Enabled] = 1 
+        AND [Service].[Enabled] = 1 
+        AND [Multimedia].[Enabled] = 1  
+        AND [Multimedia].[First_Page] =  1", array(), "rows");
         foreach ($rows as $row) {
             echo '<div class="card-grid-col">
                     <article class="card-typical">
@@ -1827,8 +1829,8 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                         </div>
                         <div class="card-typical-section">
                             <a href="service_profile.php?service=' . $ror['SID'] . '" class="card-typical-likes">
-                                <i class="font-icon font-icon-heart"></i>
-                                123
+                                <i class="font-icon font-icon-heart"></i>'
+            . DB_GetNumberServiceViews($pdo, $idService) . '
                             </a>
                         </div>
                     </article>
