@@ -6,40 +6,7 @@ include ("includes/head_sideMenu.php");
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-9 col-lg col-md-12">
-                                    
-                                    <!--form para postar algo-->
-                                    
-<!--					<form class="box-typical">
-						<input type="text" class="write-something" placeholder="Write Something..."/>
-						<div class="box-typical-footer">
-							<div class="tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell">
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-earth"></i>
-										</button>
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-picture"></i>
-										</button>
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-calend"></i>
-										</button>
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-video-fill"></i>
-										</button>
-									</div>
-									<div class="tbl-cell tbl-cell-action">
-										<button type="submit" class="btn btn-rounded">Send</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</form>.box-typical-->
-
-
-
-
-
+                                   
 					<section class="box-typical" style="height: 400.05px;">
 						<header class="box-typical-header-sm">Photo Profile</header>
                                                 <!--<img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg"/>-->
