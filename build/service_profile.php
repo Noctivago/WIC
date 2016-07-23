@@ -125,7 +125,7 @@ include ("includes/head_sideMenu.php");
 
 					<section class="box-typical">
 						<header class="box-typical-header-sm">
-							Recomendations
+							Reviews
 							<div class="slider-arrs">
 								<button type="button" class="recomendations-slider-prev">
 									<i class="font-icon font-icon-arrow-left"></i>
