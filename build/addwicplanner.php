@@ -45,3 +45,6 @@ if (isset($id) && isset($uid)) {
     </div>
 </div>
 
+<script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
+<script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
+<script src="js/lib/daterangepicker/daterangepicker.js"></script>
