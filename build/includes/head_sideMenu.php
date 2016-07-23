@@ -529,6 +529,8 @@ include '../build/db/session.php';
                 
                                 </li>-->
                 <?php $userId = $_SESSION['id'];
+                $role = $_SESSION['role'];
+                echo $role;
                 if($_SESSION['role']==='Organization'){
                 DB_GetServicesAsSelect($pdo, $userId);} ?>
 
