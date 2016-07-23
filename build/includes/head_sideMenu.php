@@ -568,15 +568,15 @@ include '../build/db/session.php';
                     $serviceId = $_POST['service'];
                     if (DB_checkIfUserExists($pdo, $email)) {
                         $idUser = DB_checkUserByEmail($pdo, $email);
-                        if (DB_checkIfUserInService($pdo, $userId, $serviceId, 1)) {
+                        if (DB_checkIfUserInService($pdo, $idUser, $serviceId, 1)) {
                             echo 'User is already in service';
                         } else {
-                            if (DB_checkIfUserInService($pdo, $userId, $serviceId, 0)) {
+                            if (DB_checkIfUserInService($pdo, $idUser, $serviceId, 0)) {
                                 sql($pdo, "UPDATE [dbo].[User_Service]
    SET [Enabled] = 0
       ,[Validate] = 0
- WHERE [User_Id] = ? and [Service_id] = ?", array($userId, $serviceId));
-                                //echo 'enable está a 0 esta disable  Update  o validate para 0' . $serviceId . "   " . $userId;
+ WHERE [User_Id] = ? and [Service_id] = ?", array($idUser, $serviceId));
+                               
                             } else {
                                 sql($pdo, "INSERT INTO [dbo].[User_Service]
            ([Service_Id]
@@ -587,7 +587,7 @@ include '../build/db/session.php';
            (?
            ,?
            ,0
-           ,0,2)", array($serviceId, $userId));
+           ,0,2)", array($serviceId, $idUser));
                             }
                         }
                     } else {
