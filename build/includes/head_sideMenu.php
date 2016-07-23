@@ -421,10 +421,10 @@ include '../build/db/session.php';
                                     
                                     
             <ul class="side-menu-list">
-                <div class="col-md-10">
+               
 			<label class="form-label">Categories</label>
 
-                            <div class="typeahead-container">
+                            
                                 <div class="typeahead-field">
                                     <span class="typeahead-query">
 					<input id="categories"
@@ -439,8 +439,8 @@ include '../build/db/session.php';
 					</button>
                                     </span>
 				</div>
-                            </div>
-		</div>
+                            
+		
                                     
                                     
                                     
