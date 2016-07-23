@@ -815,6 +815,8 @@ function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
         $stmt->execute();
         $organization = array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            
+            $organization['Id'] = $row['Id'];
             $organization['Name'] = $row['Name'];
             $organization['Picture_Path'] = $row['Picture_Path'];
         }
@@ -1057,6 +1059,7 @@ function DB_GetServiceInformation($pdo, $idService) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $serv['Name'] = $row['Name'];
             $serv['Date_Created'] = $row['Date_Created'];
+            $serv['Description'] = $row['Description'];
         }
         return $serv;
     } catch (PDOException $e) {

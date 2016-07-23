@@ -2,6 +2,7 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
+$serviceId = $_POST['Service'];
 ?>
 
 <div class="page-content">
@@ -23,112 +24,109 @@ include_once '../build/db/session.php';
 
                             <div class="user-card-row">
                                 <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
+                                    <?php
+                                    $user = $_SESSION['id'];
+                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+                                    $data = DB_GetServiceInformation($pdo, $serviceId);
+                                    echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
-                                            <img src="img/photo-64-3.jpg" alt="">
+                                            <img src="'.$org['Picture_Path'].'" alt="">
                                         </a>
                                     </div>
                                     <div class="tbl-cell">
-                                        <?php
-                                        $user = $_SESSION['id'];
-                                        echo $user;
-                                        $org = DB_GetOrgIdByUserBossId2($pdo, $user);
-                                       // $OrganizationInformation =  DB_GetOrgInformation2($pdo, $org);
-                                        echo 'aaaaaaaaaaaa'.$org['Name'] . '   '. $OrganizationInformation['id'];
-                                        ?>
-                                        <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                        <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                    </div>
+                                    <p id="serviceName" class="user-card-row-name">' . $data['Name'] . '</p>';
+                                    ?>
                                 </div>
                             </div>
-                        </div><!--.slide-->
-
-                        <div class="slide">
-
-                            <div class="user-card-row">
-                                <div class="tbl-cell">
-                                    <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                    <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                </div>
-                            </div>
-                        </div><!--.slide-->
-
-                        <div class="slide">
-
-                            <div class="user-card-row">
-                                <div class="tbl-cell">
-                                    <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                    <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                </div>								</div>
-                        </div><!--.slide-->
-
-
-
-
-
-                    </div><!--.recomendations-slider-->
-                </section><!--.box-typical-->
-
-
-                <section class="box-typical">
-                    <header class="box-typical-header-sm">Personal Info</header>
-                    <article class="profile-info-item">
-                        <header class="profile-info-item-header">
-                            <i class="font-icon font-icon-notebook-bird"></i>
-                            Summary
-                        </header>
-                        <div class="text-block text-block-typical">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
-                    </article>
+                    </div><!--.slide-->
 
-                </section>
+                    <div class="slide">
 
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
-                <section class="box-typical">
-                    <header class="box-typical-header-sm">Edit Service  </header>
-                    <form class="sign-box">
-                        <div class="sign-avatar no-photo">&plus;</div>
-
-                        <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
-                        <header class="sign-title">Edit Service Profile</header>
-
-                        <div class="form-group">
-                            <div class="form-control-wrapper form-control-icon-left" >
-                                <input type="text" class="form-control" placeholder=" Service Name"/>
-                                <i class="font-icon font-icon-user"></i>
+                        <div class="user-card-row">
+                            <div class="tbl-cell">
+                                <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+                                <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
                             </div>
                         </div>
+                    </div><!--.slide-->
 
-                        <div class="form-group">
-                            <div class="form-control-wrapper form-control-icon-left" >
-                                <input type="text" class="form-control" placeholder=" Service Categorie"/>
-                                <i class="font-icon font-icon-earth"></i>
-                            </div>
+                    <div class="slide">
+
+                        <div class="user-card-row">
+                            <div class="tbl-cell">
+                                <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+                                <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+                            </div>								</div>
+                    </div><!--.slide-->
+
+
+
+
+
+            </div><!--.recomendations-slider-->
+            </section><!--.box-typical-->
+
+
+            <section class="box-typical">
+                <header class="box-typical-header-sm">Personal Info</header>
+                <article class="profile-info-item">
+                    <header class="profile-info-item-header">
+                        <i class="font-icon font-icon-notebook-bird"></i>
+                        Summary
+                    </header>
+                    <div class="text-block text-block-typical">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </article>
+
+            </section>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
+            <section class="box-typical">
+                <header class="box-typical-header-sm">Edit Service  </header>
+                <form class="sign-box">
+                    <div class="sign-avatar no-photo">&plus;</div>
+
+                    <button type="submit" class="btn btn-rounded btn-file">Change Picture <input class="btn-file" type="file"/> </button>
+                    <header class="sign-title">Edit Service Profile</header>
+
+                    <div class="form-group">
+                        <div class="form-control-wrapper form-control-icon-left" >
+                            <input type="text" class="form-control" placeholder=" Service Name"/>
+                            <i class="font-icon font-icon-user"></i>
                         </div>
-                        <div class="form-group">
-                            <div class="form-control-wrapper form-control-icon-left" >
-                                <input type="text" class="form-control" placeholder="Service Supplier"/>
-                                <i class="font-icon font-icon-home"></i>
-                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-control-wrapper form-control-icon-left" >
+                            <input type="text" class="form-control" placeholder=" Service Categorie"/>
+                            <i class="font-icon font-icon-earth"></i>
                         </div>
-                        <div class="form-group row">
-
-                            <div class="form-control-wrapper form-control-icon-left" >
-                                <textarea rows="8" class="form-control" placeholder="Service Info"></textarea>
-                                <i class="font-icon font-icon-user"></i>
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-control-wrapper form-control-icon-left" >
+                            <input type="text" class="form-control" placeholder="Service Supplier"/>
+                            <i class="font-icon font-icon-home"></i>
                         </div>
+                    </div>
+                    <div class="form-group row">
 
-                        <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>
-                </section>
+                        <div class="form-control-wrapper form-control-icon-left" >
+                            <textarea rows="8" class="form-control" placeholder="Service Info"></textarea>
+                            <i class="font-icon font-icon-user"></i>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>
+            </section>
 
 
-            </div>
-        </div><!--.row-->
-    </div><!--.container-fluid-->
+        </div>
+    </div><!--.row-->
+</div><!--.container-fluid-->
 </div><!--.page-content-->
 
 
