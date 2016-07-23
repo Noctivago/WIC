@@ -858,7 +858,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
   on [Service].[Id] = [User_Service].[Service_Id]
   join [Role]
   on [Role].[Id] = [User_Service].[Role_Id]
-  where [Service_Id] = ?", array($idService), "rows");
+  where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
 
             foreach ($rows as $row) {
                 echo '<article class="friends-list-item">';
