@@ -1155,7 +1155,7 @@ function DB_GetServicesOrganizationAsSelect($pdo, $userId) {
         echo '<select class="bootstrap-select bootstrap-select-arrow" >';
 //            echo '<select class="form-control">';       
         foreach ($rows as $row) {
-            echo '<option value ="'.$row['Id'].'">'.$row['Name'].'</option>';
+            echo '<option id="service" name="service" value ="'.$row['Id'].'">'.$row['Name'].'</option>';
         }
         echo ' </select> ';
         echo '</div>';
@@ -1173,14 +1173,14 @@ function DB_GetServicesAsSelect($pdo, $userId) {
                         </div>
                         <header class="sign-title">Invite to my services</header>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="E-Mail"/>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail"/>
                         </div>
                         ';
         DB_GetServicesOrganizationAsSelect($pdo, $userId);
 
         echo ' 
             <div class="form-group">
-                            <button type="submit" class="btn btn-rounded">Invite</button>
+                            <button type="submit" onclick="sendInvite()" class="btn btn-rounded">Invite</button>
                         </div>
                         </div>
                         </form>';
