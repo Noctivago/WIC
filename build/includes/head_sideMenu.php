@@ -3,6 +3,7 @@ include_once 'includes/head_singleforms.php';
 include_once '../build/db/dbconn.php';
 include_once '../build/db/functions.php';
 include_once '../db/session.php';
+$userId = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
 
@@ -528,7 +529,7 @@ include_once '../db/session.php';
                 </span>
 
                 </li>-->
-                        <?php DB_GetServicesAsSelect($pdo, $_SESSION['id']); ?>
+                        <?php DB_GetServicesAsSelect($pdo, $userId); ?>
 
 <!--                
 <div class="container-fluid">
