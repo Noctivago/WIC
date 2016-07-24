@@ -2,13 +2,11 @@
 include ("includes/head_sideMenu.php");
 $serviceId = (filter_var($_GET['Service']));
 ?>
-
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
 
-                <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
                 <section class="box-typical">
                     <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
                 </section>                                         
@@ -40,7 +38,7 @@ $serviceId = (filter_var($_GET['Service']));
                                     <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
                                 </div>								
                             </div>
-                        </div><!--.slide-->
+                        </div>
 
                     </div>
                 </section>
@@ -116,21 +114,6 @@ $serviceId = (filter_var($_GET['Service']));
 <script src="js/lib/select2/select2.full.min.js"></script>
 <script src="js/app.js"></script>
 
-<script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
-<script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
-
-
-<script src="js/lib/tether/tether.min.js"></script>
-<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
-
-<script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
-<script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-<script src="js/lib/salvattore/salvattore.min.js"></script>
-<script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 
 
 <script>
@@ -299,6 +282,21 @@ $serviceId = (filter_var($_GET['Service']));
     }
     window.onload = load;
 </script>
+<script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
+<script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
+
+
+<script src="js/lib/tether/tether.min.js"></script>
+<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+
+<script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
+<script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script src="js/lib/salvattore/salvattore.min.js"></script>
+<script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 
 
 
