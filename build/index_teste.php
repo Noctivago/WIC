@@ -32,9 +32,7 @@ include ("./db/dbconn.php");
 
 <script>
     function popupCenter(pageURL) {
-        function myFunction() {
             window.open(pageURL);
-        }
     }
 </script>
 
