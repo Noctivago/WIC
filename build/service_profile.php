@@ -29,6 +29,15 @@ $serviceId = (filter_var($_GET['Service']));
                                 </div>
                             </div>
                         </div><!--.slide-->
+                        
+                        <div class="slide">
+                            <div class="user-card-row">
+                                <div class="tbl-cell">
+                                    <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+                                    <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+                                </div>								
+                            </div>
+                        </div>
 
                         <div class="slide">
                             <!--BOTOES CHAT + WIC-->
