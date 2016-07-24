@@ -855,9 +855,11 @@ function DB_getSubCategoryAsSelectCat($pdo, $idCat) {
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Sub_Category]
   where [Enabled]=1 and [Category_Id] = ?", array($idCat), "rows");
+        echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">';
         foreach ($rows as $row) {
             echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
         }
+        echo '</select> ';
     } catch (Exception $ex) {
         
     }
