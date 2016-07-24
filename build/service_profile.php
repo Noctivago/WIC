@@ -8,22 +8,7 @@ $serviceId = (filter_var($_GET['Service']));
             <div class="col-lg-9 col-lg-push-0 col-md-12">
 
                 <section class="box-typical">
-                    <div class="slide">
-                        <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
-                    </div>
-                    <div class="slide">
-                        <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL21hcmRlaW1vdmVpcy5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMDgvcHJhaWEtdHJvcGljYWwtZGVzZXJ0YS13YWxscGFwZXIuanBn.jpg" style="width: 100%"/>
-                    </div>
-                    <header class="box-typical-header-sm">
-                        <div class="slider-arrs">
-                            <button type="button" class="recomendations-slider-prev">
-                                <i class="font-icon font-icon-arrow-left"></i>
-                            </button>
-                            <button type="button" class="recomendations-slider-next">
-                                <i class="font-icon font-icon-arrow-right"></i>
-                            </button>
-                        </div>
-                    </header>
+                    <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
                 </section>                                         
 
                 <section class="box-typical">
