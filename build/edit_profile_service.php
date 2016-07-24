@@ -30,11 +30,8 @@ include_once '../build/db/session.php';
                                     $user = $_SESSION['id'];
                                     //check se é userboss do servico
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
-                                    
                                     $idOg = $org['Id'];
-                                    echo 'aaaa'.$idOg;
-                                 //   if(db_checkServiceOrgBossPermission($pdo,$serv,$service,$user)){
-                                  //  $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+                                    if(db_checkServiceOrgBossPermission($pdo,$serv,$service,$idOg)){
                                     
                                         if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                         $cname = $_POST['cName'];
@@ -46,7 +43,8 @@ include_once '../build/db/session.php';
                                     <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service='+<?= $serv ?></script>
                                     viewS(<?php  echo $serv; ?>)
                                         <?php
-                                   // }
+                                    }
+                                    
                                     
 
                                     $data = DB_GetServiceInformation($pdo, $service);

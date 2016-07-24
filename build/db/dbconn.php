@@ -852,8 +852,9 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
     }
 }
 
-function db_checkServiceOrgBossPermission($pdo,$serv,$service,$user){
+function db_checkServiceOrgBossPermission($pdo,$serv,$service,$idOg){
     try {
+        $count = sql($pdo, $q, $params, "count");
         
     } catch (Exception $ex) {
         
