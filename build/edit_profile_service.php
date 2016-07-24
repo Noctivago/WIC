@@ -107,23 +107,23 @@ include_once '../build/db/session.php';
 
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">
+<!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
                                 <?php
                                 $idCat = $CatSubCatData['CatId'];
                                 DB_getCatgoryAsSelect($pdo, $idCat);
                                 ?>
-                            </select> 
+<!--                            </select> -->
 
                         </div>
                         <div class = "form-group">
                             <div class = "form-control-wrapper form-control-icon-left" >
-                                <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">
+                                <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
 
                                     <?php
                                     $idSubCat = $CatSubCatData['SubCatId'];
                                     DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
                                     ?>
-                                </select> 
+<!--                                </select> -->
 
                             </div>
                         </div>
@@ -150,7 +150,7 @@ include_once '../build/db/session.php';
         document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
     }
     function reloadName() {
-        document.getElementById('Name').innerHTML = document.getElementById('cName').value;
+        document.getElementById('serviceName').innerHTML = document.getElementById('cName').value;
     }
     function reloadPhoto() {
 
@@ -165,10 +165,9 @@ include_once '../build/db/session.php';
         var value = sel.options[sel.selectedIndex].value;
         $.post("ajax/SubCategories.php", {value: value}, function (result) {
             alert(result);
-            $('.cSubCat').children('option').empty();
-            $('.cSubCat').append(result);
-//        $('#cSubCat').append(result);
-        //    document.getElementById('cSubCat').appendChild().textContent = result;
+            document.getElementById('cSubCat') = result;
+            
+            $('cSubCat').html(result);
         });
 
         return false;
