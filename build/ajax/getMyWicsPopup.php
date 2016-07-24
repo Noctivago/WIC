@@ -41,6 +41,7 @@ $userId = $_SESSION['id'];
             </div>
             <span id="textelement" class="form-control" style="border:0px"></span>
             <button onclick="alert('OK');" name="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
+            <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close this window">
         </div>
 
 
