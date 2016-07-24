@@ -106,7 +106,7 @@ include_once '../build/db/session.php';
 
 
                     <div class = "form-group">
-                        <div class = "form-control-wrapper form-control-icon-left" >
+                        <div class = "form-control-wrapper form-control-icon-left" id="cc">
 <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
                                 <?php
                                 $idCat = $CatSubCatData['CatId'];
@@ -116,7 +116,7 @@ include_once '../build/db/session.php';
 
                         </div>
                         <div class = "form-group">
-                            <div class = "form-control-wrapper form-control-icon-left" >
+                            <div class = "form-control-wrapper form-control-icon-left" id="sc">
                                 <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
 
                                     <?php
