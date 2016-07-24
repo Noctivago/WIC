@@ -14,8 +14,8 @@ include_once '../build/db/session.php';
 
                 <section class="box-typical" id="gallery">
 
-                    <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
-
+                    <!--<img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>-->
+                    
                 </section>                                         
 
                 <section class="box-typical">
@@ -103,22 +103,6 @@ include_once '../build/db/session.php';
                 </section>
 
             </div>
-            <script>
-                                            $('#photo').on('submit', function (e) {
-                                                e.preventDefault();
-                                                $.ajax({
-                                                    url: 'ajax/uploadImage.php',
-                                                    type: POST,
-                                                    data: new FormData(this),
-                                                    contentType: false,
-                                                    success: function (data) {
-                                                        $('#gallery').html(data);
-                                                        alert("image uploaded");
-                                                    }
-                                                })
-                                            });
-            </script>
-
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Edit Service </header>
@@ -187,6 +171,22 @@ include_once '../build/db/session.php';
 <script type="text/javascript">function viewS(id) {
         location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service=' + id;
     }</script>
+
+            <script>
+                                            $('#photo').on('submit', function (e) {
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: 'ajax/uploadImage.php',
+                                                    type: POST,
+                                                    data: new FormData(this),
+                                                    contentType: false,
+                                                    success: function (data) {
+                                                        $('#gallery').html(data);
+                                                        alert("image uploaded");
+                                                    }
+                                                })
+                                            });
+            </script>
 
 <script>
     function reloadDescription() {
