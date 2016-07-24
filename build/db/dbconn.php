@@ -853,7 +853,7 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
 }
 
 
-function DB_UpdateServiceInformation($pdo, $service, $org,$user, $cname, $cDescription, $cSub) {
+function DB_UpdateServiceInformation($pdo, $service, $cname, $cDescription, $cSub) {
     try {
         //verificar se o user é boss da cat com o servico X
        
