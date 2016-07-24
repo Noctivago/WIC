@@ -5,11 +5,11 @@ include_once '../build/db/session.php';
 ?>
 
 <div class="page-content">
-    
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
-                
+
                 <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
 
                 <section class="box-typical">
@@ -25,11 +25,15 @@ include_once '../build/db/session.php';
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
-                                    if(isset($_POST['saveChanges'])&&!empty($_POST['cName'])){
-                                        echo 'AAAAAAAAAAA'.$_POST['cName'];
-                                    }
                                     $service = $_GET['Service'];
                                     $user = $_SESSION['id'];
+                                    if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
+                                        $cname = $_POST['cName'];
+                                        $cDescription =$_POST['cDescription'];
+                                        $cSub = $_POST['cSubCat'];
+                                        echo 'name '.$cname."  desc ".$cDescription . '    sub caat  ' .$cSub;
+                                    }
+
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $data = DB_GetServiceInformation($pdo, $service);
                                     echo '<div class="tbl-cell tbl-cell-photo">
@@ -169,9 +173,9 @@ include_once '../build/db/session.php';
         var value = sel.options[sel.selectedIndex].value;
         var idSub = document.getElementById('cSubCat').value;
         $.post("ajax/SubCategories.php", {value: value, idSub: idSub}, function (result) {
-           // $('#sc').find('select').remove().end();
-        //    $('#sc').html(result);
-             document.getElementById('sc').innerHTML = result;
+            // $('#sc').find('select').remove().end();
+            //    $('#sc').html(result);
+            document.getElementById('sc').innerHTML = result;
 
         });
 
