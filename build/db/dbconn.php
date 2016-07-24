@@ -836,6 +836,7 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Category]
   where [Enabled]=?", array(1), "rows");
+        echo ' <div class = "form-control-wrapper form-control-icon-left" id="cc">';
         echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">';
         foreach ($rows as $row) {
             if ($row['Id'] === $idCat) {
@@ -845,6 +846,7 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
             }
         }
         echo '</select>';
+        echo '</div>';
     } catch (Exception $ex) {
         
     }
@@ -870,6 +872,7 @@ function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Sub_Category]
   where [Enabled]=1 and [Category_Id]=?", array($idCat), "rows");
+        echo '<div class = "form-control-wrapper form-control-icon-left" id="sc">';
         echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">';
         foreach ($rows as $row) {
             if ($row['Id'] === $idSubCat) {
@@ -879,6 +882,7 @@ function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
             }
         }
         echo '</select> ';
+        echo '</div>';
     } catch (Exception $ex) {
         
     }
