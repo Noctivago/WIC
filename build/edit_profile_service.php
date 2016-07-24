@@ -105,7 +105,7 @@ include_once '../build/db/session.php';
                     </div>
 
 
-                    <div class = "form-group row">
+                    <div class = "form-group">
                         <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
                         <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
                         <?php
