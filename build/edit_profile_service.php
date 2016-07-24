@@ -31,8 +31,9 @@ include_once '../build/db/session.php';
                                         $cname = $_POST['cName'];
                                         $cDescription =$_POST['cDescription'];
                                         $cSub = $_POST['cSubCat'];
-                                        echo 'name '.$cname."  desc ".$cDescription . '    sub caat  ' .$cSub;
-                                    }
+                                        echo $cSub . "  ". $service;
+                                        DB_UpdateServiceInformation($pdo,$service,$user,$cname,$cDescription,$cSub);
+                                        }
 
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $data = DB_GetServiceInformation($pdo, $service);
@@ -104,6 +105,12 @@ include_once '../build/db/session.php';
 
                     <button type = "submit" class = "btn btn-rounded btn-file">Change Picture <input class = "btn-file" type = "file"/> </button>
                     <header class = "sign-title">Edit Service Profile</header>
+                    <div class = "form-group" Style="display: none">
+                        <div class = "form-control-wrapper form-control-icon-left" >
+                            <input type = "hidden" class = "form-control" id="Service" name="cName" value='<?= $service?>'/>
+                            <i class = "font-icon font-icon-user"></i>
+                        </div>
+                    </div>
 
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
