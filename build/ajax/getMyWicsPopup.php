@@ -35,7 +35,7 @@ $serviceId = (filter_var($_GET ['id']));
             <div class="form-group">
                 <?= DB_getMyWicsAsPopup($pdo, $userId); ?>
             </div>
-            <button onclick="alert('OK');" name="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
+            <button onclick="alert(<?= $serviceId; ?>);" name="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
             <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">
         </div>
 
