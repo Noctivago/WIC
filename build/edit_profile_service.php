@@ -53,7 +53,6 @@ include_once '../build/db/session.php';
                                     <div class="tbl-cell">
                                     <p>Service Name</p>
                                     <p id="serviceName" class="user-card-row-name">' . $data['Name'] . '</p>';
-                                    }
                                     ?>
                                 </div>
                             </div>
@@ -162,7 +161,7 @@ include_once '../build/db/session.php';
 
                     <button type = "submit" name="saveChanges" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
             </section>
-
+                                    <?php } ?>
 
         </div>
     </div><!--.row-->
