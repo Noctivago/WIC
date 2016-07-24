@@ -847,6 +847,20 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
         
     }
 }
+function DB_getSubCategoryAsSelectCat($pdo, $idCat) {
+    try {
+        $rows = sql($pdo, "SELECT *
+  FROM [dbo].[Sub_Category]
+  where [Enabled]=? and [Category_Id] = ?", array(1,$idCat), "rows");
+        foreach ($rows as $row) {
+            if ($row['Id'] === $idSubCat) {
+                 echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            }
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
 
 function DB_getSubCategoryAsSelect($pdo, $idSubCat) {
     try {
@@ -864,6 +878,7 @@ function DB_getSubCategoryAsSelect($pdo, $idSubCat) {
         
     }
 }
+
 
 function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
     try {
