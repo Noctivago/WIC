@@ -9,12 +9,12 @@ $serviceId = (filter_var($_GET['Service']));
 
                 <section class="box-typical">
                     <div class="recomendations-slider">
-                        <div class="slide">
+                        <!--<div class="slide">-->
                             <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
-                        </div>
-                        <div class="slide">
+                        <!--</div>-->
+                        <!--<div class="slide">-->
                             <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL21hcmRlaW1vdmVpcy5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMDgvcHJhaWEtdHJvcGljYWwtZGVzZXJ0YS13YWxscGFwZXIuanBn.jpg" style="width: 100%"/>
-                        </div>
+                        <!--</div>-->
                         <header class="box-typical-header-sm">
                             <div class="slider-arrs">
                                 <button type="button" class="recomendations-slider-prev">
