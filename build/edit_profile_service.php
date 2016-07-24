@@ -12,7 +12,7 @@ include_once '../build/db/session.php';
 
                 <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
 
-                <section class="box-typical">
+                <section class="box-typical" id="gallery">
 
                     <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
 
@@ -53,115 +53,132 @@ include_once '../build/db/session.php';
                                     <div class="tbl-cell">
                                     <p>Service Name</p>
                                     <p id="serviceName" class="user-card-row-name">' . $data['Name'] . '</p>';
-                                    ?>
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div><!--.slide-->
+                        </div><!--.slide-->
 
-                    <div class="slide">
+                        <div class="slide">
 
-                        <div class="user-card-row">
-                            <div class="tbl-cell">
-                                <?php echo '<p>Organization Name</p>
+                            <div class="user-card-row">
+                                <div class="tbl-cell">
+                                    <?php echo '<p>Organization Name</p>
                                  <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $org['Id'] . '">' . $org['Name'] . '</a></p>'; ?>
+                                </div>
+                            </div>
+                        </div><!--.slide-->
+
+                        <div class = "slide">
+                            <div class = "user-card-row">
+                                <?php
+                                $subId = $data['Sub_Category_Id'];
+                                $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo, $subId);
+                                echo '<b>Category: </b><b id="Cat">' . $CatSubCatData['CatName'] . '</b><br><b> Sub category : </b> <b id="SubCat">' . $CatSubCatData['SubCatName'] . ' </b>';
+                                ?>
+                                <div class = "tbl-cell">
+                                </div> </div>
+                        </div><!--.slide-->
+
+
+
+
+
+                </div><!--.recomendations-slider-->
+                </section><!--.box-typical-->
+
+
+                <section class = "box-typical">
+                    <header class = "box-typical-header-sm">Service Information</header>
+                    <article class = "profile-info-item">
+                        <header class = "profile-info-item-header">
+                            <i class = "font-icon font-icon-notebook-bird"></i>
+                            Description
+                        </header>
+                        <div class = "text-block text-block-typical">
+                            <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
+                        </div>
+                    </article>
+
+                </section>
+
+            </div>
+            <script>
+                                            $('#photo').on('submit', function (e) {
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: 'ajax/uploadImage.php',
+                                                    type: POST,
+                                                    data: new FormData(this),
+                                                    contentType: false,
+                                                    success: function (data) {
+                                                        $('#gallery').html(data);
+                                                        alert("image uploaded");
+                                                    }
+                                                })
+                                            });
+            </script>
+
+            <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
+                <section class = "box-typical">
+                    <header class = "box-typical-header-sm">Edit Service </header>
+                    <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                        <div class = "sign-avatar no-photo">&plus;
+                        </div>
+                        <input name="files[]" id="file" class = "btn-file" type = "file"/> 
+                        <button id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
+                        </button>
+
+                        <header class = "sign-title">Edit Service Profile</header>
+                        <div class = "form-group" Style="display: none">
+                            <div class = "form-control-wrapper form-control-icon-left" >
+                                <input type = "hidden" class = "form-control" id="Serv" name="Serv" value='<?= $service ?>'/>
+                                <i class = "font-icon font-icon-user"></i>
                             </div>
                         </div>
-                    </div><!--.slide-->
 
-                    <div class = "slide">
-                        <div class = "user-card-row">
-                            <?php
-                            $subId = $data['Sub_Category_Id'];
-                            $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo, $subId);
-                            echo '<b>Category: </b><b id="Cat">' . $CatSubCatData['CatName'] . '</b><br><b> Sub category : </b> <b id="SubCat">' . $CatSubCatData['SubCatName'] . ' </b>';
-                            ?>
-                            <div class = "tbl-cell">
-                            </div> </div>
-                    </div><!--.slide-->
-
-
-
-
-
-            </div><!--.recomendations-slider-->
-            </section><!--.box-typical-->
-
-
-            <section class = "box-typical">
-                <header class = "box-typical-header-sm">Service Information</header>
-                <article class = "profile-info-item">
-                    <header class = "profile-info-item-header">
-                        <i class = "font-icon font-icon-notebook-bird"></i>
-                        Description
-                    </header>
-                    <div class = "text-block text-block-typical">
-<?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
-                    </div>
-                </article>
-
-            </section>
-
-        </div>
-
-        <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
-            <section class = "box-typical">
-                <header class = "box-typical-header-sm">Edit Service </header>
-                <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-                    <div class = "sign-avatar no-photo">&plus;
-                    </div>
-
-                    <button type = "submit" class = "btn btn-rounded btn-file">Change Picture <input class = "btn-file" type = "file"/> </button>
-                    <header class = "sign-title">Edit Service Profile</header>
-                    <div class = "form-group" Style="display: none">
-                        <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "hidden" class = "form-control" id="Serv" name="Serv" value='<?= $service ?>'/>
-                            <i class = "font-icon font-icon-user"></i>
-                        </div>
-                    </div>
-
-                    <div class = "form-group">
-                        <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "text" class = "form-control" onchange="reloadName()"id="cName" name="cName" value='<?= $data['Name'] ?>' placeholder = " Service Name"/>
-                            <i class = "font-icon font-icon-user"></i>
-                        </div>
-                    </div>
-
-
-                    <div class = "form-group">
-                        <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
-                        <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
-                        <?php
-                        $idCat = $CatSubCatData['CatId'];
-                        DB_getCatgoryAsSelect($pdo, $idCat);
-                        ?>
-                        <!--                            </select> -->
-
-                        <!--                        </div>-->
                         <div class = "form-group">
-                            <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
-                                <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
+                            <div class = "form-control-wrapper form-control-icon-left" >
+                                <input type = "text" class = "form-control" onchange="reloadName()"id="cName" name="cName" value='<?= $data['Name'] ?>' placeholder = " Service Name"/>
+                                <i class = "font-icon font-icon-user"></i>
+                            </div>
+                        </div>
 
+
+                        <div class = "form-group">
+                            <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
+                            <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
                             <?php
-                            $idSubCat = $CatSubCatData['SubCatId'];
-                            DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
+                            $idCat = $CatSubCatData['CatId'];
+                            DB_getCatgoryAsSelect($pdo, $idCat);
                             ?>
-                            <!--                                </select> -->
+                            <!--                            </select> -->
 
-                            <!--                            </div>-->
+                            <!--                        </div>-->
+                            <div class = "form-group">
+                                <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
+                                    <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
+
+                                <?php
+                                $idSubCat = $CatSubCatData['SubCatId'];
+                                DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
+                                ?>
+                                <!--                                </select> -->
+
+                                <!--                            </div>-->
+                            </div>
                         </div>
-                    </div>
-                    <div class = "form-group row">
+                        <div class = "form-group row">
 
-                        <div class = "form-control-wrapper form-control-icon-left" >
-                            <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
-                            <i class = "font-icon font-icon-user"></i>
+                            <div class = "form-control-wrapper form-control-icon-left" >
+                                <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
+                                <i class = "font-icon font-icon-user"></i>
+                            </div>
                         </div>
-                    </div>
 
-                    <button type = "submit" name="saveChanges" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
-            </section>
-                                    <?php } ?>
+                        <button type = "submit" name="saveChanges" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
+                </section>
+            <?php } ?>
 
         </div>
     </div><!--.row-->
