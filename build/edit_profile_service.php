@@ -109,7 +109,7 @@ include_once '../build/db/session.php';
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                         <div class = "sign-avatar no-photo">&plus;
                         </div>
-                        <input name="files[]" id="file" class = "btn-file" type = "file"/> 
+                        <input name="files[]" id="file" class = "btn-file" type = "file" multiple /> 
                         <button id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                         </button>
 
