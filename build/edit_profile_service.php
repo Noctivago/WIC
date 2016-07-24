@@ -154,10 +154,10 @@ include_once '../build/db/session.php';
 
     }
     function reloadServ(){
-        document.getElementById('SubCat').innerHTML = document.getElementById('cSubCat').textContent;
+        document.getElementById('SubCat').innerHTML = document.getElementById('cSubCat').text;
     }
     function reloadSubCat(){
-        document.getElementById('Cat').innerHTML = document.getElementById('cCat').textContent;
+        document.getElementById('Cat').innerHTML = document.getElementById('cCat').text;
     }
 </script>
 
