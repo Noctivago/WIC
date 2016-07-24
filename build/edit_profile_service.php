@@ -57,7 +57,7 @@ include_once '../build/db/session.php';
                             <?php
                             $subId = $data['Sub_Category_Id'];
                             $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo, $subId);
-                            echo '<b>Category: </b><b id="Cat">' . $CatSubCatData['CatName'] . '</b><br><b> Sub category : <b> <b id="SubCat">' . $CatSubCatData['SubCatName'] . ' </b>';
+                            echo '<b>Category: </b><b id="Cat">' . $CatSubCatData['CatName'] . '</b><br><b> Sub category : </b> <b id="SubCat">' . $CatSubCatData['SubCatName'] . ' </b>';
                             ?>
                             <div class = "tbl-cell">
                             </div> </div>
@@ -119,7 +119,7 @@ include_once '../build/db/session.php';
                                 <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">
 
                                     <?php $idSubCat = $CatSubCatData['SubCatId'];
-                                    DB_getSubCategoryAsSelect($pdo, $idSubCat);
+                                    DB_getSubCategoryAsSelect($pdo,$idCat, $idSubCat);
                                     ?>
                                 </select> 
 
@@ -162,9 +162,10 @@ include_once '../build/db/session.php';
         var value = sel.options[sel.selectedIndex].value;
         alert(value);
         $.post("ajax/SubCategories.php",{value:value},function(result){
+            alert(result);
         $('#cSubCat').empty();   
         $('#cSubCat').append(result);
-      //  document.getElementById('cSubCat').innerHTML = result;
+        document.getElementById('cSubCat').innerHTML = result;
         });
         return false;
         
