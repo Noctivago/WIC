@@ -35,8 +35,9 @@ include_once '../build/db/session.php';
                                         $cSub = $_POST['cSubCat'];
                                         $serv = $_POST['Serv'];
                                         $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub);
-                                        header("Location: http://www.yourwebsite.com/user.php"); /* Redirect browser */
-exit();                                        }
+                                        
+                                        
+                                    }
                                     
 
                                     $data = DB_GetServiceInformation($pdo, $service);
