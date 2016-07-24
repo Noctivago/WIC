@@ -854,18 +854,18 @@ function DB_getSubCategoryAsSelectCat($pdo, $idCat) {
   FROM [dbo].[Sub_Category]
   where [Enabled]=1 and [Category_Id] = ?", array($idCat), "rows");
         foreach ($rows as $row) {
-                 echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
         }
     } catch (Exception $ex) {
         
     }
 }
 
-function DB_getSubCategoryAsSelect($pdo,$idCat ,$idSubCat) {
+function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
     try {
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Sub_Category]
-  where [Enabled]=1 and [Category_Id]=?" , array($idCat), "rows");
+  where [Enabled]=1 and [Category_Id]=?", array($idCat), "rows");
         foreach ($rows as $row) {
             if ($row['Id'] === $idSubCat) {
                 echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
@@ -877,7 +877,6 @@ function DB_getSubCategoryAsSelect($pdo,$idCat ,$idSubCat) {
         
     }
 }
-
 
 function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
     try {
@@ -2045,6 +2044,7 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
     try {
         $rows = sql($pdo, "SELECT  
         [Organization].[Name]
+        ,[Organization].[Picture_Path]
         ,[Organization].[Phone_Number]
         ,[Organization].[Mobile_Number]
         ,[Organization].[Organization_Email]
