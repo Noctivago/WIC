@@ -5,5 +5,5 @@ include_once '../db/session.php';
 include_once '../db/functions.php';
 
 $idCat = (filter_var($_POST['value']));
-
-DB_getSubCategoryAsSelecCat($pdo, $idCat);
+$idSubCat = (filter_var($_POST['idSub']));
+DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
