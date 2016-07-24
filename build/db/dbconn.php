@@ -2171,3 +2171,23 @@ function DB_GetServiceLocAndDescription($pdo, $serviceId) {
         echo 'error';
     }
 }
+
+Function DB_getMyWicsAsPopup($pdo, $userId) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM
+        [WIC_Planner]
+        WHERE [Enabled] = 1
+        AND [User_Id] = ?", array($userId), "rows");
+        echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="myWics" name="myWics">';
+        foreach ($rows as $row) {
+            if ($row['Id'] === $idSubCat) {
+                echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            } else {
+                echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            }
+        }
+        echo '</select> ';
+    } catch (Exception $ex) {
+        
+    }
+}
