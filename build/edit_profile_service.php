@@ -109,7 +109,7 @@ include_once '../build/db/session.php';
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                         <div class = "sign-avatar no-photo">&plus;
                         </div>
-                        <input name="files[]" id="file" class = "btn-file" type = "file" multiple /> 
+                        <input name="files[]" id="file" class = "btn-file" type = "file" multiple onselect="load()" /> 
                         <button id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                         </button>
 
@@ -173,6 +173,7 @@ include_once '../build/db/session.php';
     }</script>
 
             <script>
+            function load(){
                                             $('#photo').on('submit', function (e) {
                                                 e.preventDefault();
                                                 $.ajax({
@@ -186,6 +187,7 @@ include_once '../build/db/session.php';
                                                     }
                                                 })
                                             });
+                                        }
             </script>
 
 <script>
