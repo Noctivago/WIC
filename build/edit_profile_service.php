@@ -158,14 +158,15 @@ include_once '../build/db/session.php';
     }
     function reloadSubCat(sel){
         var val = sel.options[sel.selectedIndex].text;
+        document.getElementById('Cat').innerHTML = val;
         var value = sel.options[sel.selectedIndex].value;
         alert(value);
         $.post("ajax/SubCategories.php",{value:value},function(result){
-            alert(result);
+            $('cSubCat').empty();
             document.getElementById('cSubCat').innerHTML = result;
         });
         return false;
-        document.getElementById('Cat').innerHTML = val;
+        
     }
 </script>
 
