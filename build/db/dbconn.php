@@ -1967,7 +1967,7 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                             <p>' . $row['SDE'] . '</p>
                         </div>
                         <div class="card-typical-section">
-                        <button onclick="popupCenter("www.google.com");" class="font-icon font-icon-plus"></button> 
+                        <button onclick="popupCenter("http://www.google.com");" class="font-icon font-icon-plus"></button> 
                         </div>
                     </article>
                 </div>';
