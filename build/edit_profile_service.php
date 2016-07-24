@@ -166,7 +166,7 @@ include_once '../build/db/session.php';
         $.post("ajax/SubCategories.php", {value: value}, function (result) {
             alert(result);
             document.getElementById('cSubCat').innerHTML = result;
-            alert(document.getElementById('cSubCat').childNodes);
+            a
             $('cSubCat').html(result);
         });
 
