@@ -7,7 +7,7 @@ include_once '../db/session.php';
 //print 'ID > ' . $_SESSION['id'] . '<br>';
 //var_dump($_SESSION);
 $userId = $_SESSION['id'];
-//$wicPlannerId = (filter_var($_GET ['id']));
+$serviceId = (filter_var($_GET ['id']));
 //DB_getMyWicsAsPopup($pdo, $userId);
 ?>
 <html>
@@ -27,10 +27,6 @@ $userId = $_SESSION['id'];
         <link href="../css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="../css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="../css/main.css" rel="stylesheet" type="text/css"/>
-
-
-
-
     </head>
     <body>
         <div class="sign-box">
@@ -40,7 +36,7 @@ $userId = $_SESSION['id'];
                 <?= DB_getMyWicsAsPopup($pdo, $userId); ?>
             </div>
             <button onclick="alert('OK');" name="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
-            <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close this window">
+            <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">
         </div>
 
 

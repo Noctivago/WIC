@@ -852,37 +852,35 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
     }
 }
 
-function db_checkServiceOrgBossPermission($pdo,$serv,$service,$idOg){
+function db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg) {
     try {
         $count = sql($pdo, "SELECT *
   FROM [dbo].[Service]
-  where [Id] = ? or [Id] = ? and [Organization_Id] = ?", array($serv,$service,$idOg), "count");
-        if($count<0){
+  where [Id] = ? or [Id] = ? and [Organization_Id] = ?", array($serv, $service, $idOg), "count");
+        if ($count < 0) {
             return true;
-        }  else {
+        } else {
             return false;
         }
-        
     } catch (Exception $ex) {
         
     }
 }
+
 function DB_UpdateServiceInformation($pdo, $service, $cname, $cDescription, $cSub) {
     try {
         //verificar se o user é boss da cat com o servico X
-       
-        sql($pdo,"UPDATE [dbo].[Service]
+
+        sql($pdo, "UPDATE [dbo].[Service]
    SET [Name] = ?
       ,[Description] = ?
       ,[Sub_Category_Id] = ?
- WHERE [Id] = ?", array($cname,$cDescription,$cSub,$service));
+ WHERE [Id] = ?", array($cname, $cDescription, $cSub, $service));
         echo 'true';
     } catch (Exception $ex) {
         
     }
-
-    
-    }
+}
 
 function DB_getSubCategoryAsSelecCat($pdo, $idCat) {
     try {
@@ -1967,7 +1965,7 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                             <p>' . $row['SDE'] . '</p>
                         </div>
                         <div class="card-typical-section">
-                        <button onclick="popup();" class="font-icon font-icon-plus"></button> 
+                        <input type=button class="font-icon font-icon-plus" onClick=window.open("../ajax/getMyWicsPopup.php?id="' . $row['SID'] . ',"Add to WiC","width=550,height=300,left=150,top=200,toolbar=0,status=0,");>
                         </div>
                     </article>
                 </div>';
