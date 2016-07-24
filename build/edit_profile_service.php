@@ -57,7 +57,7 @@ include_once '../build/db/session.php';
                             <?php
                             $subId = $data['Sub_Category_Id'];
                             $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo, $subId);
-                            echo '<p id="Cat">Category: ' . $CatSubCatData['CatName'] . '</p><br><p id="SubCat"> Sub category : ' . $CatSubCatData['SubCatName'] . ' </p>';
+                            echo '<p>Category: </p><p id="Cat">' . $CatSubCatData['CatName'] . '</p><br><p> Sub category : </p><p id="SubCat">' . $CatSubCatData['SubCatName'] . ' </p>';
                             ?>
                             <div class = "tbl-cell">
                             </div> </div>
