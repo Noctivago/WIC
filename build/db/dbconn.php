@@ -2149,7 +2149,7 @@ function DB_GetServiceLocAndDescription($pdo, $serviceId) {
                     <article class="profile-info-item">
                         <header class="profile-info-item-header">
                             <i class="font-icon font-icon-earth-bordered"></i>
-                            ' . $row['ODA'] . ', ' . $row['CNA'] . '
+                            ' . $row['OAD'] . ', ' . $row['CNA'] . '
                         </header>
                         <header class="profile-info-item-header">
                             <i class="font-icon font-icon-notebook-bird"></i>
