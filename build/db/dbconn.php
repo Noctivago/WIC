@@ -2233,7 +2233,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         [WIC_Planner]
         WHERE [Enabled] = 1
         AND [User_Id] = ?", array($userId), "rows");
-        echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="myWics" name="myWics">';
+        echo '<select class="bootstrap-select bootstrap-select-arrow" id="myWics" name="myWics">';
         foreach ($rows as $row) {
             if ($row['Id'] === $idSubCat) {
                 echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
@@ -2244,5 +2244,21 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         echo '</select> ';
     } catch (Exception $ex) {
         
+    }
+}
+
+/**
+ * Adiciona um serviço ao Wic Planner do User
+ * @param type $pdo
+ * @param type $wicId
+ * @param type $serviceId
+ */
+function DB_addServiceToWicPlanner($pdo, $wicId, $serviceId) {
+    try {
+        sql($pdo, "INSERT INTO [dbo].[WIC_Planner_Service] ([Service_Id], [WIC_Planner_Id], [Enabled]) "
+                . "VALUES (?, ?, ?)", array($serviceId, $wicId, 1));
+        echo "Service added to your WiC planner!";
+    } catch (PDOException $e) {
+        echo "ERROR ADDDING SERVIVE TO WIC PLANNER!";
     }
 }
