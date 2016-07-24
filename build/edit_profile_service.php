@@ -104,21 +104,27 @@ include_once '../build/db/session.php';
                         </div>
                     </div>
 
-                    
+
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
                             <select class="bootstrap-select bootstrap-select-arrow" id="service" name="service">
-                                <?php $idCat = $CatSubCatData['CatId']; 
-                                DB_getCatgoryAsSelect($pdo,$idCat); ?>
+                                <?php $idCat = $CatSubCatData['CatId'];
+                                DB_getCatgoryAsSelect($pdo, $idCat);
+                                ?>
                             </select> 
 
                         </div>
-                    <div class = "form-group">
-                        <div class = "form-control-wrapper form-control-icon-left" >
-                            <?php $idSubCat = $CatSubCatData['SubCatId'];
-                            DB_getSubCategoryAsSelect($pdo,$idSubCat);?>
+                        <div class = "form-group">
+                            <div class = "form-control-wrapper form-control-icon-left" >
+                                <select class="bootstrap-select bootstrap-select-arrow" id="service" name="service">
+
+                                    <?php $idSubCat = $CatSubCatData['SubCatId'];
+                                    DB_getSubCategoryAsSelect($pdo, $idSubCat);
+                                    ?>
+                                </select> 
+
+                            </div>
                         </div>
-                    </div>
                     </div>
                     <div class = "form-group row">
 
