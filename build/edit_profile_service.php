@@ -150,7 +150,7 @@ include_once '../build/db/session.php';
         document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
     }
     function reloadName() {
-        document.getElementById('Name').innerHTML = document.getElementById('cName').value;
+        document.getElementById('serviceName').innerHTML = document.getElementById('cName').value;
     }
     function reloadPhoto() {
 
