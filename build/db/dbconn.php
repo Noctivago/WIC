@@ -847,6 +847,7 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
         
     }
 }
+
 function DB_getSubCategoryAsSelectCat($pdo, $idCat) {
     try {
         $rows = sql($pdo, "SELECT *
