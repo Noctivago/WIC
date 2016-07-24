@@ -5,10 +5,11 @@ include_once '../build/db/session.php';
 ?>
 
 <div class="page-content">
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
-
+                
                 <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
 
                 <section class="box-typical">
@@ -24,6 +25,9 @@ include_once '../build/db/session.php';
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
+                                    if(isset($_POST['saveChanges'])&&!empty($_POST['cName'])){
+                                        echo 'AAAAAAAAAAA'.$_POST['cName'];
+                                    }
                                     $service = $_GET['Service'];
                                     $user = $_SESSION['id'];
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
