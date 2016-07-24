@@ -164,11 +164,11 @@ include_once '../build/db/session.php';
             document.getElementById('Cat').innerHTML = val;
             var value = sel.options[sel.selectedIndex].value;
             $.post("ajax/SubCategories.php", {value:value}, function(result){
-
-
-            $('.SubCat').html(result);
+                alert(result);
+            $('#SubCat').find('option').remove().end().append(result);
+        //    $('.SubCat').html(result);
 //        $('#cSubCat').append(result);
-//        document.getElementById('cSubCat').appendChild().textContent = result;
+        document.getElementById('cSubCat').appendChild().textContent = result;
         });
                     return false;
             }
