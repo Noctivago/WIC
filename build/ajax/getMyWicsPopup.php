@@ -7,6 +7,7 @@ include_once '../db/session.php';
 //print 'ID > ' . $_SESSION['id'] . '<br>';
 //var_dump($_SESSION);
 $userId = $_SESSION['id'];
+$wicPlannerId = (filter_var($_GET ['id']));
 //DB_getMyWicsAsPopup($pdo, $userId);
 ?>
 <div class="sign-box">
