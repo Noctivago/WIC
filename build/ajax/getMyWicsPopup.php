@@ -8,10 +8,14 @@ include_once '../db/session.php';
 //var_dump($_SESSION);
 $msg = '';
 $userId = $_SESSION['id'];
+if($_SESSION['role'] !== 'user') {
+    //header('Location: http://www.example.com/');
+}
+
 //DB_getMyWicsAsPopup($pdo, $userId);
-if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
+if (isset($_GET['add2WiC']) && isset($_GET ['id'])) {
     $serviceId = (filter_var($_GET ['id']));
-    $wicId = $_POST['myWics'];
+    $wicId = $_GET['myWics'];
     //INSERIR SERVIÇO NO WIC
     $msg = DB_addServiceToWicPlanner($pdo, $wicId, $serviceId);
 }
