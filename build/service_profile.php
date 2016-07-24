@@ -79,7 +79,7 @@ $serviceId = (filter_var($_GET['Service']));
 
                     <!--DISPLAY COMMENTS-->
                     <div class="COMMENTS">
-                        <?= DB_getServiceCommentFromUsers($pdo, $ServiceId); ?>
+                        <?= DB_getServiceCommentFromUsers($pdo, $serviceId); ?>
                     </div>
 
                 </section>
