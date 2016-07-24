@@ -2056,7 +2056,7 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
             echo '<div class="profile-card-photo">';
             echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
             echo '                  </div>';
-            echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
+            echo '                <div class="profile-card-name">' . $row['Organization.Name'] . '</div>';
             echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
             echo '                <div class="profile-card-status">' . $row['Mobile_Number'] . '</div>';
             echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
