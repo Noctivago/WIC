@@ -41,8 +41,7 @@ include_once '../build/db/session.php';
                                             <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>
                                             <?php
                                         }
-                                        if (isset($_POST['photos'])) {
-
+             
 
 
                                             $data = DB_GetServiceInformation($pdo, $service);
@@ -172,7 +171,7 @@ include_once '../build/db/session.php';
 
                         <button type = "submit" name="saveChanges" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
                     </section>
-                    <?php } } ?>
+                    <?php  } ?>
 
         </div>
     </div><!--.row-->
