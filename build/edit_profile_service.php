@@ -26,28 +26,26 @@ include_once '../build/db/session.php';
                                 <div class="tbl-row">
                                     <?php
                                     $service = $_GET['Service'];
-                                     $serv = $_POST['Serv'];
+                                    $serv = $_POST['Serv'];
                                     $user = $_SESSION['id'];
-                                    //check se é userboss do servico
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $idOg = $org['Id'];
-                                    if(db_checkServiceOrgBossPermission($pdo,$serv,$service,$idOg)){
+                                    if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg)) {
                                         if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
-                                        $cname = $_POST['cName'];
-                                        $cDescription = $_POST['cDescription'];
-                                        $cSub = $_POST['cSubCat'];
-                                   //     $serv = $_POST['Serv'];
-                                        $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub);
-                                        ?> 
-                                    <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service='+<?= $serv ?></script>
-                                    viewS(<?php  echo $serv; ?>)
-                                        <?php
-                                    }
-                                    
-                                    
+                                            $cname = $_POST['cName'];
+                                            $cDescription = $_POST['cDescription'];
+                                            $cSub = $_POST['cSubCat'];
+                                            //     $serv = $_POST['Serv'];
+                                            $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub);
+                                            ?> 
+                                            <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>
+                                            <?php
+                                        }
 
-                                    $data = DB_GetServiceInformation($pdo, $service);
-                                    echo '<div class="tbl-cell tbl-cell-photo">
+
+
+                                        $data = DB_GetServiceInformation($pdo, $service);
+                                        echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
                                             <img src="' . $org['Picture_Path'] . '" alt="">
                                         </a>
@@ -55,7 +53,8 @@ include_once '../build/db/session.php';
                                     <div class="tbl-cell">
                                     <p>Service Name</p>
                                     <p id="serviceName" class="user-card-row-name">' . $data['Name'] . '</p>';
-                                    }?>
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +97,7 @@ include_once '../build/db/session.php';
                         Description
                     </header>
                     <div class = "text-block text-block-typical">
-                        <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
+<?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
                     </div>
                 </article>
 
@@ -169,10 +168,10 @@ include_once '../build/db/session.php';
     </div><!--.row-->
 </div><!--.container-fluid-->
 </div><!--.page-content-->
-<script type="text/javascript">function viewS(id){
-    location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service='+id;
-}</script>
-    
+<script type="text/javascript">function viewS(id) {
+        location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service=' + id;
+    }</script>
+
 <script>
     function reloadDescription() {
         document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
