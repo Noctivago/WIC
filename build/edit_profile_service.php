@@ -165,7 +165,7 @@ include_once '../build/db/session.php';
         var value = sel.options[sel.selectedIndex].value;
         $.post("ajax/SubCategories.php", {value: value}, function (result) {
             alert(result);
-            $('cSubCat').empty();
+            document.getElementById('cSubCat').innerHTML = result;
             $('cSubCat').html(result);
         });
 
