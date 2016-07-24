@@ -2125,3 +2125,43 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
         echo 'error';
     }
 }
+
+/**
+ * Devolve a barra do serviço que se encontra abaixo da imagem
+ * @param type $pdo
+ */
+function DB_GetServiceLocAndDescription($pdo, $serviceId) {
+    try {
+        $rows = sql($pdo, "SELECT  
+        [Service].[Name] AS SNA 
+        ,[Service].[Description] AS SDE
+        ,[Organization].[Address] AS OAD
+        ,[City].[Name] AS CNA
+        FROM [dbo].[Organization]
+        join [Service]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        join [City]
+        on [City].[Id] = [Organization].[City_Id]
+        WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
+        AND [Service].[Id] = ?", array($serviceId), "rows");
+        foreach ($rows as $row) {
+            echo '<section class="box-typical">
+                    <article class="profile-info-item">
+                        <header class="profile-info-item-header">
+                            <i class="font-icon font-icon-earth-bordered"></i>
+                            ' . $row['ODA'] . ', ' . $row['CNA'] . '
+                        </header>
+                        <header class="profile-info-item-header">
+                            <i class="font-icon font-icon-notebook-bird"></i>
+                            Description
+                        </header>
+                        <div class="text-block text-block-typical">
+                            <p>' . $row['SDE'] . '</p>                           
+                        </div>
+                    </article>
+                </section>';
+        }
+    } catch (Exception $ex) {
+        echo 'error';
+    }
+}

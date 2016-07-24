@@ -26,8 +26,9 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
 
                 <!--DESCR SERVICE-->
-                <section class="box-typical">
-                    <!--<header class="box-typical-header-sm">Personal Info</header>-->
+                <?= DB_GetServiceLocAndDescription($pdo, $serviceId); ?>
+<!--                <section class="box-typical">
+                    <header class="box-typical-header-sm">Personal Info</header>
                     <article class="profile-info-item">
                         <header class="profile-info-item-header">
                             <i class="font-icon font-icon-earth-bordered"></i>
@@ -42,7 +43,7 @@ $serviceId = (filter_var($_GET['Service']));
                             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
                         </div>
                     </article>
-                </section>
+                </section>-->
 
                 <div class="box-typical">
                     <input type="text" id="userComment" name="userComment" class="write-something userComment" placeholder="Write a Review..." required/>
