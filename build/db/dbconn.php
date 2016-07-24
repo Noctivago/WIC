@@ -2094,7 +2094,7 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <div class="tbl-cell tbl-cell-photo">
-                                        <a href="profile_org.php?Organization=' . $row['OID'] . '>
+                                        <a href="profile_org.php?Organization=' . $row['OID'] . '">
                                             <img src="' . $row['OPP'] . '" alt="Avatar">
                                         </a>
                                     </div>
@@ -2107,7 +2107,7 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
                <div class="slide">
                             <div class="user-card-row">
                                 <div class="tbl-cell">
-                                    <p class="user-card-row-status"><a href="profile_org.php?Organization=' . $row['OID'] . '>' . $row['ONA'] . '</a></p>
+                                    <p class="user-card-row-status"><a href="profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
                                 </div>								
                             </div>
                </div>';
