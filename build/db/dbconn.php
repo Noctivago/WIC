@@ -2090,8 +2090,6 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
         on [Organization].[Id] = [Service].[Organization_Id]
         AND [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
         AND [Service].[Id] = ?", array($serviceId), "rows");
-        echo '<header class="box-typical-header-sm">/SUPPLIER  </header>
-                    <div class="friends-list stripped">';
         foreach ($rows as $row) {
             echo '<div class="slide">
                             <div class="user-card-row">
