@@ -26,8 +26,8 @@ include_once '../build/db/session.php';
                                 <div class="tbl-row">
                                     <?php
                                     $service = $_GET['Service'];
-                                    $serv = $_POST['Service'];
-                                    echo $service . "www";
+                                    $serv = $_POST['Serv'];
+                                    echo $serv;
                                     $user = $_SESSION['id'];
                                     if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                         $cname = $_POST['cName'];
@@ -108,7 +108,7 @@ include_once '../build/db/session.php';
                     <header class = "sign-title">Edit Service Profile</header>
                     <div class = "form-group" Style="display: none">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "hidden" class = "form-control" id="Service" name="cName" value='<?= $service?>'/>
+                            <input type = "hidden" class = "form-control" id="Serv" name="Serv" value='<?= $service?>'/>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
