@@ -12,7 +12,7 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>                                         
 
                 <section class="box-typical">
-                    <div class="recomendations-slider">
+                    <div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">
                         <!--                        <div class="slide">
                         
                                                     <div class="user-card-row">
