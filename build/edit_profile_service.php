@@ -165,7 +165,7 @@ include_once '../build/db/session.php';
             alert(result);
         $('#cSubCat').empty();   
         $('#cSubCat').append(result);
-        document.getElementById('cSubCat').innerHTML = result;
+        document.getElementById('cSubCat').appendChild().textContent = result;
         });
         return false;
         
