@@ -107,7 +107,7 @@ include_once '../build/db/session.php';
 
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat()" id="cCat" name="cCat">
+                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">
                                 <?php $idCat = $CatSubCatData['CatId'];
                                 DB_getCatgoryAsSelect($pdo, $idCat);
                                 ?>
@@ -116,7 +116,7 @@ include_once '../build/db/session.php';
                         </div>
                         <div class = "form-group">
                             <div class = "form-control-wrapper form-control-icon-left" >
-                                <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ()" id="cSubCat" name="cSubCat">
+                                <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">
 
                                     <?php $idSubCat = $CatSubCatData['SubCatId'];
                                     DB_getSubCategoryAsSelect($pdo, $idSubCat);
@@ -153,11 +153,12 @@ include_once '../build/db/session.php';
     function reloadPhoto() {
 
     }
-    function reloadServ(){
-        document.getElementById('SubCat').innerHTML = document.getElementById('cSubCat').text;
+    function reloadServ(sel){
+        document.getElementById('SubCat').innerHTML = sel.options[sel.selectedIndex].text;
     }
-    function reloadSubCat(){
-        document.getElementById('Cat').innerHTML = document.getElementById('cCat').text;
+    function reloadSubCat(sel){
+        var val = sel.options[sel.selectedIndex].text;
+        document.getElementById('Cat').innerHTML = val;
     }
 </script>
 
