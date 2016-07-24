@@ -6,6 +6,7 @@ include_once '../db/session.php';
 //print 'SESSION INFO <br>';
 //print 'ID > ' . $_SESSION['id'] . '<br>';
 //var_dump($_SESSION);
+$msg = '';
 $userId = $_SESSION['id'];
 $serviceId = (filter_var($_GET ['id']));
 //DB_getMyWicsAsPopup($pdo, $userId);
@@ -35,6 +36,7 @@ $serviceId = (filter_var($_GET ['id']));
             <div class="form-group">
                 <?= DB_getMyWicsAsPopup($pdo, $userId); ?>
             </div>
+            <p class="sign-note">  <?= $msg; ?> </p>
             <button onclick="alert(<?= $serviceId; ?>);" name="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
             <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">
         </div>
