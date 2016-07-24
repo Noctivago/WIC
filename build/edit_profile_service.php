@@ -156,16 +156,18 @@ include_once '../build/db/session.php';
     function reloadServ(sel){
         document.getElementById('SubCat').innerHTML = sel.options[sel.selectedIndex].text;
     }
+    
     function reloadSubCat(sel){
         var val = sel.options[sel.selectedIndex].text;
         document.getElementById('Cat').innerHTML = val;
         var value = sel.options[sel.selectedIndex].value;
         $.post("ajax/SubCategories.php",{value:value},function(result){
             alert(result);
-        $('#cSubCat').empty();   
-        $('#cSubCat').append(result);
-        document.getElementById('cSubCat').appendChild().textContent = result;
-        });
+            
+        $('#cSubCat').find('option').remove().end().append(result.toString());   
+//        $('#cSubCat').append(result);
+//        document.getElementById('cSubCat').appendChild().textContent = result;
+//        });
         return false;
         
     }
