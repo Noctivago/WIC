@@ -162,8 +162,9 @@ include_once '../build/db/session.php';
         var value = sel.options[sel.selectedIndex].value;
         alert(value);
         $.post("ajax/SubCategories.php",{value:value},function(result){
-            $('cSubCat').empty();
-            document.getElementById('cSubCat').innerHTML = result;
+        $('#cSubCat').empty();   
+        $('#cSubCat').append(result);
+      //  document.getElementById('cSubCat').innerHTML = result;
         });
         return false;
         
