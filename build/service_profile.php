@@ -45,7 +45,9 @@ $serviceId = (filter_var($_GET['Service']));
                     </article>
                 </section>-->
 
-                <div class="box-typical">
+                <?php
+                if ($_SESSION['role'] === 'user') {
+                    echo '<div class="box-typical">
                     <input type="text" id="userComment" name="userComment" class="write-something userComment" placeholder="Write a Review..." required/>
                     <div class="box-typical-footer">
                         <div class="tbl">
@@ -54,13 +56,14 @@ $serviceId = (filter_var($_GET['Service']));
 
                                 </div>
                                 <div class="tbl-cell tbl-cell-action">
-                                    <button onclick="addServiceComment(<?= $serviceId; ?>);" class="btn btn-rounded">Send</button>
+                                    <button onclick="addServiceComment(' . $serviceId . ');" class="btn btn-rounded">Send</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><!--.box-typical-->
-
+                </div><!--.box-typical-->';
+                }
+                ?>
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
                         Reviews
@@ -76,7 +79,7 @@ $serviceId = (filter_var($_GET['Service']));
 
                     <!--DISPLAY COMMENTS-->
                     <div class="COMMENTS">
-
+                        <?= DB_getServiceCommentFromUsers($pdo, $ServiceId); ?>
                     </div>
 
                 </section>
@@ -126,7 +129,7 @@ $serviceId = (filter_var($_GET['Service']));
     }
     function load() {
         console.log("load comments");
-        loadComments();
+        //loadComments();
     }
     window.onload = load;
 </script>
