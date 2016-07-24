@@ -25,12 +25,13 @@ $serviceId = (filter_var($_GET['Service']));
                     </div>
                 </section>
 
+                <!--ADDRESS-->
                 <section class="box-typical">
                     <!--<header class="box-typical-header-sm">Personal Info</header>-->
                     <article class="profile-info-item">
                         <header class="profile-info-item-header">
-                            <i class="font-icon font-icon-map"></i>
-                            Address
+                            <i class="font-icon font-icon-earth-bordered"></i>
+
                         </header>
                         <div class="text-block text-block-typical">
                             <p>Somerville, USA.</p>
@@ -39,6 +40,7 @@ $serviceId = (filter_var($_GET['Service']));
                     </article>
                 </section>
 
+                <!--DESCR SERVICE-->
                 <section class="box-typical">
                     <!--<header class="box-typical-header-sm">Personal Info</header>-->
                     <article class="profile-info-item">
