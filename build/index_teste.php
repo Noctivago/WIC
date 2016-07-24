@@ -16,13 +16,6 @@ include ("./db/dbconn.php");
     </div>
 </div>
 
-<script>
-    function popupCenter() {
-        var myWindow = window.open("", "MsgWindow", "width=200,height=100");
-        myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>
-    }
-</script>
-
 <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
 
@@ -146,6 +139,13 @@ include ("./db/dbconn.php");
     $(function () {
         $('#tags-editor-textarea').tagEditor();
     });
+</script>
+
+<script type="text/javascript">
+    function popupCenter() {
+        var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+        myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>
+    }
 </script>
 
 </body>
