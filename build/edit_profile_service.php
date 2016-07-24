@@ -14,8 +14,8 @@ include_once '../build/db/session.php';
 
                 <section class="box-typical" id="gallery">
 
-                    <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
-
+                    <!--<img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>-->
+                    
                 </section>                                         
 
                 <section class="box-typical">
@@ -103,29 +103,13 @@ include_once '../build/db/session.php';
                 </section>
 
             </div>
-            <script>
-                                            $('#photo').on('submit', function (e) {
-                                                e.preventDefault();
-                                                $.ajax({
-                                                    url: 'ajax/uploadImage.php',
-                                                    type: POST,
-                                                    data: new FormData(this),
-                                                    contentType: false,
-                                                    success: function (data) {
-                                                        $('#gallery').html(data);
-                                                        alert("image uploaded");
-                                                    }
-                                                })
-                                            });
-            </script>
-
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Edit Service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                         <div class = "sign-avatar no-photo">&plus;
                         </div>
-                        <input name="files[]" id="file" class = "btn-file" type = "file"/> 
+                        <input name="files[]" id="file" class = "btn-file" type = "file" multiple onselect="load()" /> 
                         <button id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                         </button>
 
@@ -187,6 +171,24 @@ include_once '../build/db/session.php';
 <script type="text/javascript">function viewS(id) {
         location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service=' + id;
     }</script>
+
+            <script>
+            function load(){
+                                            $('#photo').on('submit', function (e) {
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: 'ajax/uploadImage.php',
+                                                    type: POST,
+                                                    data: new FormData(this),
+                                                    contentType: false,
+                                                    success: function (data) {
+                                                        $('#gallery').html(data);
+                                                        alert("image uploaded");
+                                                    }
+                                                })
+                                            });
+                                        }
+            </script>
 
 <script>
     function reloadDescription() {
