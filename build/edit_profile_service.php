@@ -164,7 +164,7 @@ include_once '../build/db/session.php';
         $.post("ajax/SubCategories.php",{value:value},function(result){
             alert(result);
             
-        $('#cSubCat').find('option').remove().end().append(result.toString());   
+        $('#cSubCat').find('option').remove().end().append(result);   
 //        $('#cSubCat').append(result);
 //        document.getElementById('cSubCat').appendChild().textContent = result;
 //        });
