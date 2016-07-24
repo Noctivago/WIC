@@ -167,7 +167,7 @@ include_once '../build/db/session.php';
         $.post("ajax/SubCategories.php", {value: value, idSub: idSub}, function (result) {
             alert(result);
             $('#sc').empty();
-            $('#sc').html(result);
+        //    $('#sc').html(result);
              document.getElementById('sc').innerHTML = result;
 
         });
