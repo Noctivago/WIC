@@ -31,7 +31,7 @@ include_once '../build/db/session.php';
                                     //check se é userboss do servico
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     
-                                    $idOg = $org['id'];
+                                    $idOg = $org['Id'];
                                     echo 'aaaa'.$idOg;
                                  //   if(db_checkServiceOrgBossPermission($pdo,$serv,$service,$user)){
                                   //  $org = DB_GetOrgIdByUserBossId2($pdo, $user);
