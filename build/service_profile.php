@@ -10,10 +10,10 @@ $serviceId = (filter_var($_GET['Service']));
                 <section class="box-typical">
                     <div class="recomendations-slider">
                         <!--<div class="slide">-->
-                            <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
+                        <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
                         <!--</div>-->
                         <!--<div class="slide">-->
-                            <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL21hcmRlaW1vdmVpcy5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMDgvcHJhaWEtdHJvcGljYWwtZGVzZXJ0YS13YWxscGFwZXIuanBn.jpg" style="width: 100%"/>
+                        <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL21hcmRlaW1vdmVpcy5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMDgvcHJhaWEtdHJvcGljYWwtZGVzZXJ0YS13YWxscGFwZXIuanBn.jpg" style="width: 100%"/>
                         <!--</div>-->
                         <header class="box-typical-header-sm">
                             <div class="slider-arrs">
@@ -322,8 +322,9 @@ $serviceId = (filter_var($_GET['Service']));
         console.log("load comments");
         loadComments();
     }
-//    window.onload = load;
+    window.onload = load;
 </script>
+
 <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
 <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
 <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
