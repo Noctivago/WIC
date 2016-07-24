@@ -25,21 +25,14 @@ $serviceId = (filter_var($_GET['Service']));
                     </div>
                 </section>
 
-                <!--ADDRESS-->
-                <section class="box-typical" style="opacity: 1;width: 726px;left: 0px;height: 36px;">
+                <!--DESCR SERVICE-->
+                <section class="box-typical">
                     <!--<header class="box-typical-header-sm">Personal Info</header>-->
                     <article class="profile-info-item">
                         <header class="profile-info-item-header">
                             <i class="font-icon font-icon-earth-bordered"></i>
                             Somerville, USA
                         </header>
-                    </article>
-                </section>
-
-                <!--DESCR SERVICE-->
-                <section class="box-typical">
-                    <!--<header class="box-typical-header-sm">Personal Info</header>-->
-                    <article class="profile-info-item">
                         <header class="profile-info-item-header">
                             <i class="font-icon font-icon-notebook-bird"></i>
                             Description
