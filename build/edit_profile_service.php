@@ -36,6 +36,7 @@ include_once '../build/db/session.php';
                                         $serv = $_POST['Serv'];
                                         $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub);
                                         ?> 
+                                    <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php';</script>
                                     viewS(<?php  echo $serv; ?>)
                                         <?php
                                     }
