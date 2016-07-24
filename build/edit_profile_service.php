@@ -27,13 +27,12 @@ include_once '../build/db/session.php';
                                     <?php
                                     $service = $_GET['Service'];
                                     $serv = $_POST['Service'];
-                                    echo $serv;
+                                    echo $serv . "www";
                                     $user = $_SESSION['id'];
                                     if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                         $cname = $_POST['cName'];
                                         $cDescription =$_POST['cDescription'];
                                         $cSub = $_POST['cSubCat'];
-                                        echo $cSub . "  ". $service;
                                         DB_UpdateServiceInformation($pdo,$service,$user,$cname,$cDescription,$cSub);
                                         }
 
