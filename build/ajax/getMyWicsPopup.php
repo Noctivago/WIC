@@ -8,7 +8,8 @@ include_once '../db/session.php';
 //var_dump($_SESSION);
 $msg = '';
 $userId = $_SESSION['id'];
-if($_SESSION['role'] !== 'user') {
+$serviceId = $_GET ['id'];
+if ($_SESSION['role'] !== 'user') {
     //header('Location: http://www.example.com/');
 }
 
@@ -33,7 +34,7 @@ if (isset($_GET['add2WiC']) && isset($_GET ['id'])) {
         <link href="../css/main.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get">
+        <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . '?id=' . $serviceId); ?>" method="get">
             <div class="sign-box">
                 <div class="sign-avatar no-photo">&plus;</div>
                 <header class="sign-title">#Add Service to WiC Planner?</header>
