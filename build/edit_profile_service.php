@@ -32,7 +32,6 @@ include_once '../build/db/session.php';
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $idOg = $org['Id'];
                                     if(db_checkServiceOrgBossPermission($pdo,$serv,$service,$idOg)){
-                                    
                                         if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                         $cname = $_POST['cName'];
                                         $cDescription = $_POST['cDescription'];

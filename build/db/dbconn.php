@@ -854,7 +854,14 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
 
 function db_checkServiceOrgBossPermission($pdo,$serv,$service,$idOg){
     try {
-        $count = sql($pdo, $q, $params, "count");
+        $count = sql($pdo, "SELECT *
+  FROM [dbo].[Service]
+  where [Id] = ? or [Id] = ? and [Organization_Id] = ?", array($serv,$service,$idOg), "count");
+        if($count<0){
+            return true;
+        }  else {
+            return false;
+        }
         
     } catch (Exception $ex) {
         
