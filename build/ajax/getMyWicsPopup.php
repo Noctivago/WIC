@@ -10,7 +10,6 @@ $msg = '';
 $userId = $_SESSION['id'];
 //DB_getMyWicsAsPopup($pdo, $userId);
 if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
-
     $serviceId = (filter_var($_GET ['id']));
     $wicId = $_POST['myWics'];
     //INSERIR SERVIÇO NO WIC
@@ -36,7 +35,7 @@ if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
         <link href="../css/main.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+        <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get">
             <div class="sign-box">
                 <div class="sign-avatar no-photo">&plus;</div>
                 <header class="sign-title">#Add Service to WiC Planner?</header>
@@ -44,7 +43,7 @@ if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
                     <?= DB_getMyWicsAsPopup($pdo, $userId); ?>
                 </div>
                 <p class="sign-note">  <?= $msg; ?> </p>
-                <button type="submit" name="add2WiC" id="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
+                <button type="submit name="add2WiC" id="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
                 <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">
             </div>
         </form>
