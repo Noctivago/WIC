@@ -35,7 +35,7 @@ include_once '../build/db/session.php';
                                         $cSub = $_POST['cSubCat'];
                                         $serv = $_POST['Serv'];
                                         $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub);
-                                        ?> viewS(<?=$service?>);<?php
+                                        ?> viewS(<?=$service?>)<?php
                                         
                                     }
                                     
