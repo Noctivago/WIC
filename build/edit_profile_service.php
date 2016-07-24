@@ -35,7 +35,7 @@ include_once '../build/db/session.php';
                                         $cSub = $_POST['cSubCat'];
                                         $serv = $_POST['Serv'];
                                         $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub);
-                                        
+                                        ?> viewS(<?=$service?>);<?php
                                         
                                     }
                                     
@@ -163,7 +163,10 @@ include_once '../build/db/session.php';
     </div><!--.row-->
 </div><!--.container-fluid-->
 </div><!--.page-content-->
-
+<script type="text/javascript">function viewS(id){
+    location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service='+id;
+}</script>
+    
 <script>
     function reloadDescription() {
         document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
