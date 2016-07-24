@@ -123,6 +123,8 @@
             </fieldset>
         </form>
     </div>
+    
+    <button id="create-user">Create new user</button>
 
     <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
