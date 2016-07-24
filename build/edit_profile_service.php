@@ -26,20 +26,27 @@ include_once '../build/db/session.php';
                                 <div class="tbl-row">
                                     <?php
                                     $service = $_GET['Service'];
+                                     $serv = $_POST['Serv'];
                                     $user = $_SESSION['id'];
-                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     //check se é userboss do servico
-                                    if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
+                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+                                    
+                                    $idOg = $org['id'];
+                                    echo $idOg;
+                                 //   if(db_checkServiceOrgBossPermission($pdo,$serv,$service,$user)){
+                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+                                    
+                                        if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                         $cname = $_POST['cName'];
                                         $cDescription = $_POST['cDescription'];
                                         $cSub = $_POST['cSubCat'];
-                                        $serv = $_POST['Serv'];
+                                   //     $serv = $_POST['Serv'];
                                         $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub);
                                         ?> 
                                     <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service='+<?= $serv ?></script>
                                     viewS(<?php  echo $serv; ?>)
                                         <?php
-                                    }
+                                   // }
                                     
 
                                     $data = DB_GetServiceInformation($pdo, $service);
@@ -51,7 +58,7 @@ include_once '../build/db/session.php';
                                     <div class="tbl-cell">
                                     <p>Service Name</p>
                                     <p id="serviceName" class="user-card-row-name">' . $data['Name'] . '</p>';
-                                    ?>
+                                    }?>
                                 </div>
                             </div>
                         </div>

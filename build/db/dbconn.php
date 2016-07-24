@@ -852,7 +852,13 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
     }
 }
 
-
+function db_checkServiceOrgBossPermission($pdo,$serv,$service,$user){
+    try {
+        
+    } catch (Exception $ex) {
+        
+    }
+}
 function DB_UpdateServiceInformation($pdo, $service, $cname, $cDescription, $cSub) {
     try {
         //verificar se o user é boss da cat com o servico X
