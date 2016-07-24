@@ -103,20 +103,20 @@ include_once '../build/db/session.php';
                 </section>
 
             </div>
-        <script>
-            $('#photo').on('submit',function(e){
-               e.preventDefault();
-               $.ajax({
-                   url: 'ajax/uploadImage.php',
-                   type : POST,
-                   data: new FormData(this),
-                   contentType : false,
-                   success: function(data){
-                       $('#gallery').html(data);
-                       alert("image uploaded");
-                   }
-               })
-            });
+            <script>
+                                            $('#photo').on('submit', function (e) {
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: 'ajax/uploadImage.php',
+                                                    type: POST,
+                                                    data: new FormData(this),
+                                                    contentType: false,
+                                                    success: function (data) {
+                                                        $('#gallery').html(data);
+                                                        alert("image uploaded");
+                                                    }
+                                                })
+                                            });
             </script>
 
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
@@ -125,9 +125,10 @@ include_once '../build/db/session.php';
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                         <div class = "sign-avatar no-photo">&plus;
                         </div>
+                        <input name="files[]" id="file" class = "btn-file" type = "file"/> 
                         <button id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
-                            <input name="files[]" id="file" class = "btn-file" type = "file"/> 
                         </button>
+
                         <header class = "sign-title">Edit Service Profile</header>
                         <div class = "form-group" Style="display: none">
                             <div class = "form-control-wrapper form-control-icon-left" >
