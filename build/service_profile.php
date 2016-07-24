@@ -31,10 +31,7 @@ $serviceId = (filter_var($_GET['Service']));
                     <article class="profile-info-item">
                         <header class="profile-info-item-header">
                             <i class="font-icon font-icon-earth-bordered"></i>
-                            <div class="text-block text-block-typical">
-                                <p>Somerville, USA.</p>
-
-                            </div>
+                            <p text-block text-block-typical>Somerville, USA.</p>
                         </header>
                     </article>
                 </section>

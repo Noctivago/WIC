@@ -2043,12 +2043,21 @@ function DB_addCommentsToService($pdo, $userId, $Comment, $ServiceId) {
  */
 function DB_GetOrgInformationForService($pdo, $serviceId) {
     try {
-        $rows = sql($pdo, "SELECT  * 
+        $rows = sql($pdo, "SELECT  
+        [Organization].[Name]
+        ,[Organization].[Phone_Number]
+        ,[Organization].[Mobile_Number]
+        ,[Organization].[Organization_Email]
+        ,[Organization].[Address]
+        ,[Organization].[Website]
+        ,[Organization].[Facebook]
+        ,[Organization].[Linkdin]
+        ,[Organization].[Twitter]
         FROM [dbo].[Organization]
         join [Service]
         on [Organization].[Id] = [Service].[Organization_Id]
         AND [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
-        AND [Service].[Id] = ?", array($serviceId), "rows");
+        AND [Service].[Id] =  ?", array($serviceId), "rows");
         echo '<header class="box-typical-header-sm">/Supplier  </header>
                     <div class="friends-list stripped">';
         foreach ($rows as $row) {
@@ -2056,7 +2065,7 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
             echo '<div class="profile-card-photo">';
             echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
             echo '                  </div>';
-            echo '                <div class="profile-card-name">' . $row['Organization.Name'] . '</div>';
+            echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
             echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
             echo '                <div class="profile-card-status">' . $row['Mobile_Number'] . '</div>';
             echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
