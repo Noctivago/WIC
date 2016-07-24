@@ -1909,7 +1909,7 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                             <p>' . $row['SDE'] . '</p>
                         </div>
                         <div class="card-typical-section">
-                        <button onclick="popupCenter("ajax/getMyWicsPopup.php?id=' . $row['SID'] . '");" class="font-icon font-icon-plus"></button> 
+                        <button onclick="popupCenter(./ajax/getMyWicsPopup.php?id=' . $row['SID'] . ');" class="font-icon font-icon-plus"></button> 
                         </a>
                         </div>
                     </article>
