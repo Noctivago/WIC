@@ -26,6 +26,8 @@ include_once '../build/db/session.php';
                                 <div class="tbl-row">
                                     <?php
                                     $service = $_GET['Service'];
+                                    $serv = $_POST['Service'];
+                                    echo $serv;
                                     $user = $_SESSION['id'];
                                     if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                         $cname = $_POST['cName'];
