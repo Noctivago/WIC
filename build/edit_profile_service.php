@@ -57,7 +57,7 @@ include_once '../build/db/session.php';
                             <?php
                             $subId = $data['Sub_Category_Id'];
                             $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo, $subId);
-                            echo 'Category: <p id="Cat">' . $CatSubCatData['CatName'] . '</p><br> Sub category : <p id="SubCat">' . $CatSubCatData['SubCatName'] . ' </p>';
+                            echo '<b>Category: </b><b id="Cat">' . $CatSubCatData['CatName'] . '</b><br><b> Sub category : <b> <b id="SubCat">' . $CatSubCatData['SubCatName'] . ' </b>';
                             ?>
                             <div class = "tbl-cell">
                             </div> </div>
@@ -158,14 +158,15 @@ include_once '../build/db/session.php';
     }
     function reloadSubCat(sel){
         var val = sel.options[sel.selectedIndex].text;
+        document.getElementById('Cat').innerHTML = val;
         var value = sel.options[sel.selectedIndex].value;
         alert(value);
         $.post("ajax/SubCategories.php",{value:value},function(result){
-            alert(result);
+            $('cSubCat').empty();
             document.getElementById('cSubCat').innerHTML = result;
         });
         return false;
-        document.getElementById('Cat').innerHTML = val;
+        
     }
 </script>
 
