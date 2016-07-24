@@ -837,11 +837,12 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
   FROM [dbo].[Category]
   where [Enabled]=?", array(1), "rows");
         foreach ($rows as $row) {
-        if ($row['Id'] === $idCat) {
+            if ($row['Id'] === $idCat) {
                 echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
             } else {
                 echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
-            }}
+            }
+        }
     } catch (Exception $ex) {
         
     }
@@ -1975,6 +1976,7 @@ function DB_getServiceCommentFromUsers($pdo, $servideId) {
           AND [Comment].[Enabled] = 1 and [User].[Account_Enabled] = 1
           WHERE [Comment].[Service_Id] = ?
           ORDER BY [Comment].[Date_Created] DESC", array($servideId), "rows");
+        echo '<section class="box-typical">';
         echo '<div class="recomendations-slider">';
         foreach ($rows as $row) {
             echo '<div class="slide">
@@ -1997,6 +1999,7 @@ function DB_getServiceCommentFromUsers($pdo, $servideId) {
                 </div>';
         }
         echo '</div>';
+        echo '</section>';
         //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
         //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
@@ -2028,7 +2031,6 @@ function DB_addCommentsToService($pdo, $userId, $Comment, $ServiceId) {
  */
 function DB_GetOrgInformationForService($pdo, $serviceId) {
     try {
-        $id = 2;
         $rows = sql($pdo, "SELECT  * 
         FROM [dbo].[Organization]
         join [Service]
