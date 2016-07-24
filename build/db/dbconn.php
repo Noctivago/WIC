@@ -808,6 +808,31 @@ function DB_GetOrgIdByUserBossId($pdo, $idUser) {
     }
 }
 
+function DB_getCategoryAndSubCategoryData($pdo,$subId){
+    try {
+        $stmt = $pdo->prepare("Select [Category].[Id] as CatId,[Category].[Name] as CatName,[Sub_Category].[Id] as SubCatId,[Sub_Category].[Name] as SubCatName
+from [Sub_Category]
+join [Category]
+on [Category].[Id] = [Sub_Category].[Category_Id]
+where [Category].[Enabled] = 1 and  [Sub_Category].[Enabled]=1 and [Sub_Category].[Id] = :id");
+        $stmt->bindParam(':id', $subId);
+        $stmt->execute();
+        $CatSubData = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            $CatSubData['CatId'] = $row['CatId'];
+            $CatSubData['CatName'] = $row['CatName'];
+            $CatSubData['SubCatId'] = $row['SubCatId'];
+            $CatSubData['SubCatName'] = $row['SubCatName'];
+        }
+        return $CatSubData;
+    
+        
+    } catch (Exception $ex) {
+        
+    }
+}
+
 function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
     try {
         $stmt = $pdo->prepare("SELECT * From [Organization] Where [Enabled] = 1 and [User_Boss] = :id");

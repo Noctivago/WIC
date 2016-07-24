@@ -54,7 +54,9 @@ include_once '../build/db/session.php';
 
                     <div class = "slide">
                         <div class = "user-card-row">
-                            <?php                                echo '<p>Category: '.'<br> Sub category : </p>'.$data['Sub_Category_Id'] ;?>
+                            <?php $subId = $data['Sub_Category_Id'];  
+                            $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo,$subId);                       
+                            echo '<p>Category: '.$CatSubCatData['CatName'].'<br> Sub category : '.$CatSubCatData['SubCatName'].' </p>' ;?>
                             <div class = "tbl-cell">
                             </div> </div>
                     </div><!--.slide-->
