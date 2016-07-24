@@ -847,15 +847,14 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
         
     }
 }
+
 function DB_getSubCategoryAsSelectCat($pdo, $idCat) {
     try {
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Sub_Category]
-  where [Enabled]=? and [Category_Id] = ?", array(1,$idCat), "rows");
+  where [Enabled]=1 and [Category_Id] = ?", array($idCat), "rows");
         foreach ($rows as $row) {
-            if ($row['Id'] === $idSubCat) {
                  echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
-            }
         }
     } catch (Exception $ex) {
         
