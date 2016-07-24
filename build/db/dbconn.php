@@ -850,7 +850,7 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
     }
 }
 
-function DB_getSubCategoryAsSelectCat($pdo, $idCat) {
+function DB_getSubCategoryAsSelecCat($pdo, $idCat) {
     try {
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Sub_Category]
