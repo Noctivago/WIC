@@ -37,7 +37,7 @@ include_once '../build/db/session.php';
                                         $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub);
                                         header("Location: http://www.yourwebsite.com/user.php"); /* Redirect browser */
 exit();                                        }
-                                    }
+                                    
 
                                     $data = DB_GetServiceInformation($pdo, $service);
                                     echo '<div class="tbl-cell tbl-cell-photo">
