@@ -13,32 +13,32 @@ $serviceId = (filter_var($_GET['Service']));
 
                 <section class="box-typical">
                     <div class="recomendations-slider">
-                        <div class="slide">
-
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="#">
-                                            <img src="img/photo-64-3.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                        <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--.slide-->
+                        <!--                        <div class="slide">
                         
-                        <div class="slide">
-                            <div class="user-card-row">
-                                <div class="tbl-cell">
-                                    <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                    <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
-                                </div>								
-                            </div>
-                        </div>
-
+                                                    <div class="user-card-row">
+                                                        <div class="tbl-row">
+                                                            <div class="tbl-cell tbl-cell-photo">
+                                                                <a href="#">
+                                                                    <img src="img/photo-64-3.jpg" alt="">
+                                                                </a>
+                                                            </div>
+                                                            <div class="tbl-cell">
+                                                                <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+                                                                <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>.slide
+                                                
+                                                <div class="slide">
+                                                    <div class="user-card-row">
+                                                        <div class="tbl-cell">
+                                                            <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+                                                            <p class="user-card-row-status"><a href="#">PatchworkLabs</a></p>
+                                                        </div>								
+                                                    </div>
+                                                </div>-->
+                        <?= DB_GetServiceInfoBar($pdo, $serviceId); ?>
                         <div class="slide">
                             <!--BOTOES CHAT + WIC-->
                             <div class="user-card-row">

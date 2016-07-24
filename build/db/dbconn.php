@@ -2059,3 +2059,48 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
         echo 'error';
     }
 }
+
+/**
+ * Devolve a barra do serviço que se encontra abaixo da imagem
+ * @param type $pdo
+ */
+function DB_GetServiceInfoBar($pdo, $serviceId) {
+    try {
+        $rows = sql($pdo, "SELECT  [Service].[Name] AS SNA
+        ,[Organization].[Picture_Path] AS OPP
+        ,[Organization].[Name] AS ONA
+        ,[Organization].[Id] AS OID
+        FROM [dbo].[Organization]
+        join [Service]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        AND [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
+        AND [Service].[Id] = ?", array($serviceId), "rows");
+        echo '<header class="box-typical-header-sm">/SUPPLIER  </header>
+                    <div class="friends-list stripped">';
+        foreach ($rows as $row) {
+            echo '<div class="slide">
+                            <div class="user-card-row">
+                                <div class="tbl-row">
+                                    <div class="tbl-cell tbl-cell-photo">
+                                        <a href="profile_org.php?Organization="' . $row['OID'] . '>
+                                            <img src="' . $row['OPP'] . '" alt="Avatar">
+                                        </a>
+                                    </div>
+                                    <div class="tbl-cell">
+                                        <p class="user-card-row-name"><a>' . $row['SNA'] . '</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+               <div class="slide">
+                            <div class="user-card-row">
+                                <div class="tbl-cell">
+                                    <p class="user-card-row-status"><a href="profile_org.php?Organization="' . $row['OID'] . '>' . $row['ONA'] . '</a></p>
+                                </div>								
+                            </div>
+               </div>';
+        }
+    } catch (Exception $ex) {
+        echo 'error';
+    }
+}
