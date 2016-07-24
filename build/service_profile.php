@@ -26,7 +26,7 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
 
                 <!--ADDRESS-->
-                <section class="box-typical">
+                <section class="box-typical" style="opacity: 1;width: 726px;left: 0px;height: 36px;">
                     <!--<header class="box-typical-header-sm">Personal Info</header>-->
                     <article class="profile-info-item">
                         <header class="profile-info-item-header">
