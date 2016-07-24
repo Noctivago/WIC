@@ -1965,7 +1965,7 @@ function DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city) {
                             <p>' . $row['SDE'] . '</p>
                         </div>
                         <div class="card-typical-section">
-                        <input type=button class="font-icon font-icon-plus" onClick=window.open("../ajax/getMyWicsPopup.php?id=' . $row['SID'] . ',"Add to WiC","width=550,height=300,left=150,top=200,toolbar=0,status=0,");>
+                        <input type=button class="font-icon font-icon-plus" onClick=window.open("../ajax/getMyWicsPopup.php?id=' . $row['SID'] . '","Add to WiC","width=550,height=300,left=150,top=200,toolbar=0,status=0,");>
                         </div>
                     </article>
                 </div>';
