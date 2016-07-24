@@ -35,9 +35,8 @@ include_once '../build/db/session.php';
                                         $cSub = $_POST['cSubCat'];
                                         $serv = $_POST['Serv'];
                                         $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub);
-                                        if($msg){
-                                            ?><script>window.location.replace("http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service"+<?=$service?>)</script> <?php
-                                        }
+                                        header("Location: http://www.yourwebsite.com/user.php"); /* Redirect browser */
+exit();                                        }
                                     }
 
                                     $data = DB_GetServiceInformation($pdo, $service);
