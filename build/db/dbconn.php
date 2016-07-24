@@ -866,7 +866,27 @@ function DB_getSubCategoryAsSelecCat($pdo, $idCat) {
         
     }
 }
-
+function DB_getSubCategoryAsSelectAA($pdo, $idCat, $idSubCat) {
+    try {
+        $rows = sql($pdo, "SELECT *
+  FROM [dbo].[Sub_Category]
+  where [Enabled]=1 and [Category_Id]=?", array($idCat), "rows");
+        
+        echo '<div class = "form-control-wrapper form-control-icon-left" id="sc">';
+        echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">';
+        foreach ($rows as $row) {
+            if ($row['Id'] === $idSubCat) {
+                echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            } else {
+                echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            }
+        }
+        echo '</select> ';
+        echo '</div>';
+    } catch (Exception $ex) {
+        
+    }
+}
 function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
     try {
         $rows = sql($pdo, "SELECT *
