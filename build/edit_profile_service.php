@@ -105,27 +105,27 @@ include_once '../build/db/session.php';
                     </div>
 
 
-                    <div class = "form-group">
-<!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
-<!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
-                                <?php
-                                $idCat = $CatSubCatData['CatId'];
-                                DB_getCatgoryAsSelect($pdo, $idCat);
-                                ?>
-<!--                            </select> -->
+                    <div class = "form-group row">
+                        <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
+                        <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
+                        <?php
+                        $idCat = $CatSubCatData['CatId'];
+                        DB_getCatgoryAsSelect($pdo, $idCat);
+                        ?>
+                        <!--                            </select> -->
 
-<!--                        </div>-->
+                        <!--                        </div>-->
                         <div class = "form-group">
                             <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
                                 <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
 
-                                    <?php
-                                    $idSubCat = $CatSubCatData['SubCatId'];
-                                    DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
-                                    ?>
-<!--                                </select> -->
+                            <?php
+                            $idSubCat = $CatSubCatData['SubCatId'];
+                            DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
+                            ?>
+                            <!--                                </select> -->
 
-<!--                            </div>-->
+                            <!--                            </div>-->
                         </div>
                     </div>
                     <div class = "form-group row">
@@ -164,12 +164,12 @@ include_once '../build/db/session.php';
         document.getElementById('Cat').innerHTML = val;
         var value = sel.options[sel.selectedIndex].value;
         var idSub = document.getElementById('cSubCat').value;
-        $.post("ajax/SubCategories.php", {value: value,idSub:idSub}, function (result) {
+        $.post("ajax/SubCategories.php", {value: value, idSub: idSub}, function (result) {
             alert(result);
             $('#sc').empty();
             $('#sc').html(result);
-           // document.getElementById('cSubCat').innerHTML = result;
-            
+            // document.getElementById('cSubCat').innerHTML = result;
+
         });
 
         return false;
