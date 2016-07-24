@@ -852,6 +852,24 @@ function DB_getCatgoryAsSelect($pdo, $idCat) {
     }
 }
 
+
+function DB_UpdateServiceInformation($pdo, $service, $org,$user, $cname, $cDescription, $cSub) {
+    try {
+        //verificar se o user é boss da cat com o servico X
+       
+        sql($pdo,"UPDATE [dbo].[Service]
+   SET [Name] = ?
+      ,[Description] = ?
+      ,[Sub_Category_Id] = ?
+ WHERE [Id] = ?", array($cname,$cDescription,$cSub,$service));
+        echo 'true';
+    } catch (Exception $ex) {
+        
+    }
+
+    
+    }
+
 function DB_getSubCategoryAsSelecCat($pdo, $idCat) {
     try {
         $rows = sql($pdo, "SELECT *
@@ -866,12 +884,13 @@ function DB_getSubCategoryAsSelecCat($pdo, $idCat) {
         
     }
 }
+
 function DB_getSubCategoryAsSelectAA($pdo, $idCat, $idSubCat) {
     try {
         $rows = sql($pdo, "SELECT *
   FROM [dbo].[Sub_Category]
   where [Enabled]=1 and [Category_Id]=?", array($idCat), "rows");
-        
+
         echo '<div class = "form-control-wrapper form-control-icon-left" id="sc">';
         echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">';
         foreach ($rows as $row) {
@@ -887,6 +906,7 @@ function DB_getSubCategoryAsSelectAA($pdo, $idCat, $idSubCat) {
         
     }
 }
+
 function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
     try {
         $rows = sql($pdo, "SELECT *

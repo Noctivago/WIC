@@ -26,17 +26,18 @@ include_once '../build/db/session.php';
                                 <div class="tbl-row">
                                     <?php
                                     $service = $_GET['Service'];
-                                    $serv = $_POST['Serv'];
-                                    echo $serv;
                                     $user = $_SESSION['id'];
+                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+                                    //check se é userboss do servico
                                     if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                         $cname = $_POST['cName'];
-                                        $cDescription =$_POST['cDescription'];
+                                        $cDescription = $_POST['cDescription'];
                                         $cSub = $_POST['cSubCat'];
-                                        DB_UpdateServiceInformation($pdo,$service,$user,$cname,$cDescription,$cSub);
-                                        }
+                                        $serv = $_POST['Serv'];
+                                        $msg = DB_UpdateServiceInformation($pdo, $service,$org, $user, $cname, $cDescription, $cSub);
+                                        echo $msg;
+                                    }
 
-                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $data = DB_GetServiceInformation($pdo, $service);
                                     echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
@@ -108,7 +109,7 @@ include_once '../build/db/session.php';
                     <header class = "sign-title">Edit Service Profile</header>
                     <div class = "form-group" Style="display: none">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "hidden" class = "form-control" id="Serv" name="Serv" value='<?= $service?>'/>
+                            <input type = "hidden" class = "form-control" id="Serv" name="Serv" value='<?= $service ?>'/>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
