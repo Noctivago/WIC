@@ -808,7 +808,7 @@ function DB_GetOrgIdByUserBossId($pdo, $idUser) {
     }
 }
 
-function DB_getCategoryAndSubCategoryData($pdo,$subId){
+function DB_getCategoryAndSubCategoryData($pdo, $subId) {
     try {
         $stmt = $pdo->prepare("Select [Category].[Id] as CatId,[Category].[Name] as CatName,[Sub_Category].[Id] as SubCatId,[Sub_Category].[Name] as SubCatName
 from [Sub_Category]
@@ -826,8 +826,39 @@ where [Category].[Enabled] = 1 and  [Sub_Category].[Enabled]=1 and [Sub_Category
             $CatSubData['SubCatName'] = $row['SubCatName'];
         }
         return $CatSubData;
-    
+    } catch (Exception $ex) {
         
+    }
+}
+
+function DB_getCatgoryAsSelect($pdo, $idCat) {
+    try {
+        $rows = sql($pdo, "SELECT *
+  FROM [dbo].[Category]
+  where [Enabled]=?", array(1), "rows");
+        foreach ($rows as $row) {
+        if ($row['Id'] === $idCat) {
+                echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            } else {
+                echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            }}
+    } catch (Exception $ex) {
+        
+    }
+}
+
+function DB_getSubCategoryAsSelect($pdo, $idSubCat) {
+    try {
+        $rows = sql($pdo, "SELECT *
+  FROM [dbo].[Sub_Category]
+  where [Enabled]=?", array(1), "rows");
+        foreach ($rows as $row) {
+            if ($row['Id'] === $idSubCat) {
+                echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            } else {
+                echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            }
+        }
     } catch (Exception $ex) {
         
     }
@@ -1949,8 +1980,8 @@ function DB_getServiceCommentFromUsers($pdo, $servideId) {
             echo '<div class="slide">
                         <div class="citate-speech-bubble">
                             <i class="font-icon-quote"></i>"'
-                        . $row['CCC'] .
-                        '"</div>
+            . $row['CCC'] .
+            '"</div>
                         <div class="user-card-row">
                             <div class="tbl-row">
                                 <div class="tbl-cell tbl-cell-photo">
