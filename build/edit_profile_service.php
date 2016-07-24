@@ -54,9 +54,11 @@ include_once '../build/db/session.php';
 
                     <div class = "slide">
                         <div class = "user-card-row">
-                            <?php $subId = $data['Sub_Category_Id'];  
-                            $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo,$subId);                       
-                            echo '<p>Category: '.$CatSubCatData['CatName'].'<br> Sub category : '.$CatSubCatData['SubCatName'].' </p>' ;?>
+                            <?php
+                            $subId = $data['Sub_Category_Id'];
+                            $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo, $subId);
+                            echo '<p>Category: ' . $CatSubCatData['CatName'] . '<br> Sub category : ' . $CatSubCatData['SubCatName'] . ' </p>';
+                            ?>
                             <div class = "tbl-cell">
                             </div> </div>
                     </div><!--.slide-->
@@ -77,7 +79,7 @@ include_once '../build/db/session.php';
                         Description
                     </header>
                     <div class = "text-block text-block-typical">
-                    <?php echo '<p id="description">'.$data['Description'].'</p>';?>
+                        <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
                     </div>
                 </article>
 
@@ -97,21 +99,25 @@ include_once '../build/db/session.php';
 
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "text" class = "form-control" onchange="reloadName()"id="cName" name="cName" value='<?=$data['Name']?>' placeholder = " Service Name"/>
+                            <input type = "text" class = "form-control" onchange="reloadName()"id="cName" name="cName" value='<?= $data['Name'] ?>' placeholder = " Service Name"/>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                     </div>
 
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "text" class = "form-control" value='<?= $data['Name']?>' placeholder = " Service Categorie"/>
+                            <input type = "text" class = "form-control"  placeholder = " Service Categorie"/>
                             <i class = "font-icon font-icon-earth"></i>
                         </div>
                     </div>
                     <div class = "form-group">
                         <div class = "form-control-wrapper form-control-icon-left" >
-                            <input type = "text" class = "form-control" value='<?= $data['Name'] ?>' placeholder = "Service Sub Categories"/>
-                            <i class = "font-icon font-icon-home"></i>
+                            <select class="bootstrap-select bootstrap-select-arrow" id="service" name="service">
+                                <option  value ="1"> asdas</option>
+                                <option  value ="2"> asdas</option>
+                                <option  value ="3"> asdas</option>
+                            </select> 
+
                         </div>
                     </div>
                     <div class = "form-group row">
@@ -132,16 +138,16 @@ include_once '../build/db/session.php';
 </div><!--.page-content-->
 
 <script>
-    function reloadDescription(){
+    function reloadDescription() {
         document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
     }
-    function reloadName(){
+    function reloadName() {
         document.getElementById('Name').innerHTML = document.getElementById('cName').value;
     }
-    function reloadPhoto(){
-        
+    function reloadPhoto() {
+
     }
-    </script>
+</script>
 
 <script src = "js/lib/jquery/jquery.min.js" type = "text/javascript"></script>
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
