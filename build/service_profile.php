@@ -9,6 +9,17 @@ $serviceId = (filter_var($_GET['Service']));
 
                 <section class="box-typical">
                     <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
+                    <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL21hcmRlaW1vdmVpcy5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMDgvcHJhaWEtdHJvcGljYWwtZGVzZXJ0YS13YWxscGFwZXIuanBn.jpg" style="width: 100%"/>
+                    <header class="box-typical-header-sm">
+                        <div class="slider-arrs">
+                            <button type="button" class="recomendations-slider-prev">
+                                <i class="font-icon font-icon-arrow-left"></i>
+                            </button>
+                            <button type="button" class="recomendations-slider-next">
+                                <i class="font-icon font-icon-arrow-right"></i>
+                            </button>
+                        </div>
+                    </header>
                 </section>                                         
 
                 <section class="box-typical">
