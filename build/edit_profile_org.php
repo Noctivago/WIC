@@ -6,7 +6,6 @@ include_once '../build/db/session.php';
 if ($_SESSION['role'] === 'user') {
     header("location: ../build/edit_profile_user.php");
 }
-?>
 $msg = '';
 ?>
 
