@@ -71,10 +71,10 @@ include_once '../build/db/session.php';
                                 ?>
                                 <div class = "tbl-cell">
                                 </div> </div>
-                        </div><!--.slide-->
+                        </div>
 
-                    </div><!--.recomendations-slider-->
-                </section><!--.box-typical-->
+                    </div>
+                </section>
 
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Service Information</header>
@@ -97,11 +97,11 @@ include_once '../build/db/session.php';
                         <!--                        <div class = "sign-avatar no-photo">&plus;
                                                 </div>-->
                         <div id="imagePreview"></div>
-                        <input id="uploadFile" type="file" name="image" class="img" />
-                        <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
+                        <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
+                        <button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
-                        <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
+                        <button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
                         <header class = "sign-title">Fill the fields below</header>
@@ -129,27 +129,21 @@ include_once '../build/db/session.php';
                                 </div>    
                             </div>
                             <div class = "form-group">
-                                <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
-                                <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
-                                <?php
-                                $idCat = $CatSubCatData['CatId'];
-                                DB_getCatgoryAsSelect($pdo, $idCat);
-                                ?>
-                                <!--                            </select> -->
-
-                                <!--                        </div>-->
-                                <div class = "form-group">
-                                    <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
-                                        <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
+                                <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">
 
                                     <?php
-                                    $idSubCat = $CatSubCatData['SubCatId'];
-                                    DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
+                                    $idCat = $CatSubCatData['CatId'];
+                                    DB_getCatgoryAsSelect($pdo, $idCat);
                                     ?>
-                                    <!--                                </select> -->
 
-                                    <!--                            </div>-->
-                                </div>
+                                    <div class = "form-group">
+
+                                        <?php
+                                        $idSubCat = $CatSubCatData['SubCatId'];
+                                        DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
+                                        ?>
+
+                                    </div>
                             </div>
                             <div class = "form-group row">
 
@@ -158,10 +152,8 @@ include_once '../build/db/session.php';
                                     <i class = "font-icon font-icon-user"></i>
                                 </div>
                             </div>
-
                             <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">New Service</button>
                             </section>
-
 
                         </div>
                         </div><!--.row-->
