@@ -877,7 +877,7 @@ function DB_UpdateServiceInformation($pdo, $service, $cname, $cDescription, $cSu
    SET [Name] = ?
       ,[Description] = ?
       ,[Sub_Category_Id] = ?
-      ,[City_Id]
+      ,[City_Id] = ?
  WHERE [Id] = ?", array($cname, $cDescription, $cSub,$city, $service));
         echo 'true';
     } catch (Exception $ex) {
