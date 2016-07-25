@@ -126,9 +126,15 @@ include ("includes/head_sideMenu.php");
 									
 									<p>Joining WiC’s platform brings you several benefits:</p>
                                                                         <br>
-                                                                        <p>1.	More visibility</p>
-                                                                        <p>2.	Easy communication with your clients using a web chat with:</p>
-                                                                        <p>&nbsp;&nbsp;a.	Text Messages</p>
+                                                                        <p>1.&nbsp;	More visibility</p>
+                                                                        <p>2.&nbsp;	Easy communication with your clients using a web chat with:</p>
+                                                                        <p>&nbsp;&nbsp;&nbsp;   a.	Text Messages</p>
+                                                                        <p>&nbsp;&nbsp;&nbsp;   b.	Calls</p>
+                                                                        <p>&nbsp;&nbsp;&nbsp;   c.	File Exchange</p>
+                                                                        <p>3.&nbsp;	All your conversations/negotiations are saved, so that everything you deal with your client is registered.</p>
+                                                                        <p>4.&nbsp;	Present your services to your clients in a simple and effective way</p>
+                                                                        <p>5.&nbsp;	Increase your contact network with more clients and other event suppliers</p>
+                                                                        <p>6.&nbsp;	Manage all your activity using just one platform</p>
 								</div>
 							</div>
 						</article>
