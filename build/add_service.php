@@ -90,17 +90,9 @@ include_once '../build/db/session.php';
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
                         <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
-                        <!--<div id="wrapper" style="margin-top: 20px;">-->
-                        <!--OTHER PICTURES-->
-                        <!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
                         Files: <input type="file" id="files" name="files" multiple><br/>
 
                         <div id="selectedFiles"></div>
-                                        <!--<input id="files2Upload" multiple="multiple" type="file"/>--> 
-                        <!--<div id="image-holder" class="thumb-image" style="height: 75px;width: 75px;"></div>-->
-                        <!--<div id="image-holder" class="thumbimage"></div>-->
-                        </div>
-
 
                         <header class = "sign-title">Fill the fields below</header>
 
@@ -145,12 +137,14 @@ include_once '../build/db/session.php';
                         </div>
                         <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
                         </div>
+                    </form>
                 </section>
             </div>
         </div>
     </div>
 </div>
 
+<!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
 <style>
     #selectedFiles img {
         max-width: 100px;
@@ -245,6 +239,7 @@ include_once '../build/db/session.php';
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 
+<!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
 <script>
     var selDiv = "";
     var storedFiles = [];
@@ -452,41 +447,6 @@ include_once '../build/db/session.php';
         });
     });
 </script>
-
-<!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
-<!--<script>
-    $(document).ready(function () {
-        $("#files2Upload").on('change', function () {
-            //Get count of selected files
-            var countFiles = $(this)[0].files.length;
-            var imgPath = $(this)[0].value;
-            var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
-            var image_holder = $("#image-holder");
-            image_holder.empty();
-            if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
-                if (typeof (FileReader) != "undefined") {
-                    //loop for each file selected for uploaded.
-                    for (var i = 0; i < countFiles; i++)
-                    {
-                        var reader = new FileReader();
-                        reader.onload = function (e) {
-                            $("<img />", {
-                                "src": e.target.result,
-                                "class": "thumbimage"
-                            }).appendTo(image_holder);
-                        }
-                        image_holder.show();
-                        reader.readAsDataURL($(this)[0].files[i]);
-                    }
-                } else {
-                    alert("This browser does not support FileReader.");
-                }
-            } else {
-                alert("Pls select only images");
-            }
-        });
-    });
-</script>-->
 
 <!--PIC SERVICE PROF-->
 <script>
