@@ -21,12 +21,12 @@ if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
     $msg = DB_addServiceToWicPlanner($pdo, $wicId, $serviceId);
 }
 //DB_getMyWicsAsPopup($pdo, $userId);
-if (isset($_POST['add2WiC'])) {
-    $serviceId = (filter_var($_GET ['id']));
-    $wicId = $_POST['myWics'];
-    //INSERIR SERVIÇO NO WIC
-    $msg = 'Sid > ' . $serviceId . ' WicId > ' . $wicId;
-}
+//if (isset($_POST['add2WiC'])) {
+//    $serviceId = (filter_var($_GET ['id']));
+//    $wicId = $_POST['myWics'];
+//    //INSERIR SERVIÇO NO WIC
+//    $msg = 'Sid > ' . $serviceId . ' WicId > ' . $wicId;
+//}
 ?>
 <html>
     <head lang="en">
