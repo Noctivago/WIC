@@ -34,10 +34,8 @@ include_once '../build/db/session.php';
                                             $cname = $_POST['cName'];
                                             $cDescription = $_POST['cDescription'];
                                             $cSub = $_POST['cSubCat'];
-                                              $city = $_POST['citySelect'];
-                                      
-                                            //     $serv = $_POST['Serv'];
-                                            $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub,$city);
+                                            $city = $_POST['citySelect'];
+                                            $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub, $city);
                                             ?> 
                                             <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>
                                             <?php
@@ -127,25 +125,25 @@ include_once '../build/db/session.php';
                                 <i class = "font-icon font-icon-user"></i>
                             </div>
                         </div>
-                      
+
                         <div class = "form-control-wrapper form-control-icon-left">
-                                <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
-                                    <option value="0">Country</option>
-                                    <?php DB_getCountryAsSelect($pdo) ?>
-                                </select>
+                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
+                                <option value="0">Country</option>
+                                <?php DB_getCountryAsSelect($pdo) ?>
+                            </select>
+                        </div>
+
+                        <div class = "form-group" >
+                            <div class = "form-control-wrapper form-control-icon-left" id="state">
+
+
                             </div>
+                        </div>
+                        <div class = "form-group" >
+                            <div class = "form-control-wrapper form-control-icon-left" id="cities">
 
-                            <div class = "form-group" >
-                                <div class = "form-control-wrapper form-control-icon-left" id="state">
-
-
-                                </div>
-                            </div>
-                            <div class = "form-group" >
-                                <div class = "form-control-wrapper form-control-icon-left" id="cities">
-
-                                </div>    
-                            </div>
+                            </div>    
+                        </div>
 
 
                         <div class = "form-group">
@@ -219,46 +217,46 @@ include_once '../build/db/session.php';
     });
 </script>
 
-                        <script>
-                            function myFunction() {
-                                var x = document.getElementById("countrySelect").value;
-                                if (x === '0') {
+<script>
+    function myFunction() {
+        var x = document.getElementById("countrySelect").value;
+        if (x === '0') {
 
-                                } else {
-                                    loadState(x);
-                                }
-                            }
-                            function myFunctionC() {
-                                var x = document.getElementById("stateSelect").value;
-                                if (x === '0') {
+        } else {
+            loadState(x);
+        }
+    }
+    function myFunctionC() {
+        var x = document.getElementById("stateSelect").value;
+        if (x === '0') {
 
-                                } else {
-                                    loadCity(x);
-                                }
-                            }
-                            function loadState(Country) {
-                                var Country_Id = Country;
-                                $.ajax({
-                                    url: '../build/ajax/get_state.php',
-                                    method: 'post',
-                                    data: {con: Country_Id},
-                                    success: function (data) {
-                                        $('#state').html(data);
-                                    }
-                                });
-                            }
-                            function loadCity(State) {
-                                var State_Id = State;
-                                $.ajax({
-                                    url: '../build/ajax/get_city.php',
-                                    method: 'post',
-                                    data: {con: State_Id},
-                                    success: function (data) {
-                                        $('#cities').html(data);
-                                    }
-                                });
-                            }
-                        </script>
+        } else {
+            loadCity(x);
+        }
+    }
+    function loadState(Country) {
+        var Country_Id = Country;
+        $.ajax({
+            url: '../build/ajax/get_state.php',
+            method: 'post',
+            data: {con: Country_Id},
+            success: function (data) {
+                $('#state').html(data);
+            }
+        });
+    }
+    function loadCity(State) {
+        var State_Id = State;
+        $.ajax({
+            url: '../build/ajax/get_city.php',
+            method: 'post',
+            data: {con: State_Id},
+            success: function (data) {
+                $('#cities').html(data);
+            }
+        });
+    }
+</script>
 
 <script>
     function reloadDescription() {
