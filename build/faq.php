@@ -8,6 +8,19 @@ include ("includes/head_sideMenu.php");
 				<h1 class="text-center">F.A.Q.</h1>
 				<br/>
 				<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-left"><span class="ladda-label">expand-left</span></button>
+
+								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">expand-right</span></button>
+
+								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-up"><span class="ladda-label">expand-up</span></button>
+
+								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">What is WiC?</span></button>
+							</div>
+						</div>
+					</div>
+                                    
 					<div class="col-md-6">
 						<article class="faq-item">
                                                         <button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">What is WiC?</span></button>
