@@ -99,11 +99,11 @@ if ($_SESSION['role'] === "user") {
                         <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
-                        <header class = "sign-title">Fill all fields</header>
+                        <header class = "sign-title">Fill the fields below</header>
 
                         <div class = "form-group">
                             <div class = "form-control-wrapper form-control-icon-left" >
-                                <input type = "text" class = "form-control" onchange="reloadName()"id="cName" name="cName"  placeholder = " Service Name"/>
+                                <input type = "text" class = "form-control" onchange="reloadName()"id="cName" name="cName" required  placeholder = " Service Name"/>
                                 <i class = "font-icon font-icon-user"></i>
                             </div>
                         </div>
@@ -149,7 +149,7 @@ if ($_SESSION['role'] === "user") {
                             <div class = "form-group row">
 
                                 <div class = "form-control-wrapper form-control-icon-left" >
-                                    <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
+                                    <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  required placeholder = "Service Info"><?= $data['Description'] ?></textarea>
                                     <i class = "font-icon font-icon-user"></i>
                                 </div>
                             </div>
