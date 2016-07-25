@@ -95,10 +95,7 @@ include_once '../build/db/session.php';
                             <input id="files2Upload" multiple="multiple" type="file"/> 
                             <div id="image-holder" style="thumb-image{float:left;width:100px;position:relative;padding:5px;}"></div>
                         </div>
-                        <!--<button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
-                           <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
-                        </button>-->
-                        <!--<input id="upFiles" name="upFiles" type="file" name="images" class="imgs" />-->
+                      
                         <header class = "sign-title">Fill the fields below</header>
 
                         <div class = "form-group">
