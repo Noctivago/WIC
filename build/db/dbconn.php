@@ -1701,7 +1701,12 @@ function DB_UserProfile($pdo, $userId) {
             echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
                     </div>
-                   <input class="btn btn-rounded btn-file" type="file" id="file_upload" name="file_upload">
+                    
+                    <button class="btn btn-rounded btn-file" >
+                    Change Picture
+                    
+                   <input  type="file" id="file_upload" accept="images/*" name="file_upload">
+                   </button>
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
@@ -1726,9 +1731,13 @@ function DB_OrgProfile($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT * FROM [Organization] Where [User_Boss] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-            echo '<div class="sign-avatar no-photo" ><img id="image" src="' . $row['Picture_Path'] . '" alt=""/> </div>
+            echo '<div class="sign-avatar no-photo" ><img id="image" src="' . $row['Picture_Path'] . '" alt="" style="max-width: 96px;"/> </div>
+                    <button class="btn btn-rounded btn-file" >
+                    Change Picture
                     
-                    <input class="btn btn-rounded btn-file" type="file" id="file_upload" name="file_upload">
+                   <input  type="file" id="file_upload" accept="images/*" name="file_upload">
+                   </button>
+                    
                     <header class="sign-title">Edit Organization Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >

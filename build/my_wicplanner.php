@@ -26,7 +26,11 @@ $msg = '';
                             </div>
                         </div>
                     </header>
-                    <div class="box-typical-body" style="overflow: hidden; padding: 0px; height: 700px; width: 504px;">
+                    <div class="box-typical-body" style="
+                overflow: hidden;
+                padding: 0px;
+                height: 700px;
+                width: 484px;">
                         <div class="table-responsive">
                             <table class="table table-hover">
 
