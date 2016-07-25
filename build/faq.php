@@ -18,7 +18,9 @@ include ("includes/head_sideMenu.php");
 					
         <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
         <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
-
+        <script src="js/lib/ladda-button/spin.min.js"></script>
+	<script src="js/lib/ladda-button/ladda.min.js"></script>
+	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
 	
 	<script src="js/lib/tether/tether.min.js"></script>
 	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
