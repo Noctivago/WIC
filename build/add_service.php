@@ -10,7 +10,8 @@ include_once '../build/db/session.php';
             <div class="col-lg-9 col-lg-push-0 col-md-12">
 
                 <section class="box-typical">
-                    <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
+                    <div id="imagePreview" style="width: 100%"></div>
+                    <!--<img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>-->
 
                 </section>                                         
                 <section class="box-typical">
@@ -91,7 +92,7 @@ include_once '../build/db/session.php';
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Add new service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
-                        <div id="imagePreview"></div>
+                        <!--                        <div id="imagePreview"></div>-->
                         <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
                         <!--<button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
                            <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
