@@ -81,9 +81,10 @@ include_once '../build/db/session.php';
                             <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
                         </div>
                     </article>
+                    <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
                 </section>
-                <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
-                
+
+
             </div>
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">

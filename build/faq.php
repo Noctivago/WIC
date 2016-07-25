@@ -95,7 +95,7 @@ include ("includes/head_sideMenu.php");
 										</div>
 									</div>
 									
-									<p>Send an email to support@wic.club and our team will solve any problem within 24 hours.</p>
+									<p>Send an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a> and our team will solve any problem within 24 hours.</p>
 								</div>
 							</div>
 						</article>
