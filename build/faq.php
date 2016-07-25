@@ -99,6 +99,39 @@ include ("includes/head_sideMenu.php");
 								</div>
 							</div>
 						</article>
+                                                <article class="panel">
+							<div class="panel-heading" role="tab" id="headingFour">
+								<a class="collapsed"
+								   data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseFour"
+								   aria-expanded="false"
+								   aria-controls="collapseFour">
+									How can you help me?
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												
+											</div>
+											<div class="tbl-cell">
+												
+											</div>
+										</div>
+									</div>
+									
+									<p>Joining WiC’s platform brings you several benefits:</p>
+                                                                        <br>
+                                                                        <p>1.	More visibility</p>
+                                                                        <p>2.	Easy communication with your clients using a web chat with:</p>
+                                                                        <p>&nbsp;&nbsp;a.	Text Messages</p>
+								</div>
+							</div>
+						</article>
 					</section>
                                                 </div>
              
