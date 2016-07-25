@@ -42,14 +42,12 @@ include_once '../build/db/session.php';
                                     <div class="tbl-cell">
                                         <p>Service Name</p>
                                         <p id="serviceName" class="user-card-row-name"></p>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="slide">
-
                             <div class="user-card-row">
                                 <div class="tbl-cell">
                                     <?php echo '<p>Organization Name</p>
@@ -114,7 +112,6 @@ include_once '../build/db/session.php';
                         <div class = "form-group" >
                             <div class = "form-control-wrapper form-control-icon-left" id="state">
 
-
                             </div>
                         </div>
                         <div class = "form-group" >
@@ -144,7 +141,7 @@ include_once '../build/db/session.php';
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                         </div>
-                        <!--<button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">New Service</button>-->
+                        <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
                 </section>
 
             </div>
