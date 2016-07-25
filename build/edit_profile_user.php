@@ -59,7 +59,6 @@ $msg = "";
                     ?>
                 </form>
                 <?= $msg; ?>
-                <img src="pics/1.gif" alt=""/>
             </div>
         </div>
     </div><!--.page-center-->
