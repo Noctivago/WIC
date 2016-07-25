@@ -94,8 +94,8 @@ include_once '../build/db/session.php';
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Add new service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
-<!--                        <div class = "sign-avatar no-photo">&plus;
-                        </div>-->
+                        <!--                        <div class = "sign-avatar no-photo">&plus;
+                                                </div>-->
                         <div id="imagePreview"></div>
                         <input id="uploadFile" type="file" name="image" class="img" />
                         <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
@@ -227,6 +227,17 @@ include_once '../build/db/session.php';
                                 });
                             });
                         </script>
+
+                        <style>
+                            #imagePreview {
+                                width: 180px;
+                                height: 180px;
+                                background-position: center center;
+                                background-size: cover;
+                                -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+                                display: inline-block;
+                            }
+                        </style>
 
                         <script>
                             function reloadDescription() {
