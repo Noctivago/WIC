@@ -34,7 +34,8 @@ if (isset($_GET['add2WiC']) && isset($_GET ['id'])) {
         <link href="../css/main.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?id=<?= $serviceId; ?>" method="post">
+        <!--<form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?id=<?= $serviceId; ?>" method="post">-->
+        <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <div class="sign-box">
                 <div class="sign-avatar no-photo">&plus;</div>
                 <header class="sign-title">#Choose a WiC Planner?</header>
