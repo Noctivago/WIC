@@ -16,7 +16,6 @@ include_once '../build/db/session.php';
                     <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
 
                 </section>                                         
-
                 <section class="box-typical">
                     <div class="recomendations-slider">
                         <div class="slide">
@@ -33,7 +32,7 @@ include_once '../build/db/session.php';
                                         $cSub = $_POST['cSubCat'];
                                         $city = $_POST['citySelect'];
                                         //     $serv = $_POST['Serv'];
-                                        $msg = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg , $city);
+                                        $msg = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg, $city);
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
@@ -71,13 +70,8 @@ include_once '../build/db/session.php';
                                 </div> </div>
                         </div><!--.slide-->
 
-
-
-
-
                     </div><!--.recomendations-slider-->
                 </section><!--.box-typical-->
-
 
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Service Information</header>
@@ -90,7 +84,6 @@ include_once '../build/db/session.php';
                             <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
                         </div>
                     </article>
-
                 </section>
 
             </div>
@@ -121,16 +114,12 @@ include_once '../build/db/session.php';
 
                             <div class = "form-group" >
                                 <div class = "form-control-wrapper form-control-icon-left" id="state">
-
-
                                 </div>
                             </div>
                             <div class = "form-group" >
                                 <div class = "form-control-wrapper form-control-icon-left" id="cities">
-
                                 </div>    
                             </div>
-
                             <div class = "form-group">
                                 <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
                                 <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
@@ -170,9 +159,6 @@ include_once '../build/db/session.php';
                         </div><!--.row-->
                         </div><!--.container-fluid-->
                         </div><!--.page-content-->
-
-
-
 
                         <script>
                             function myFunction() {
