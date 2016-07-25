@@ -23,14 +23,9 @@ include_once '../build/db/session.php';
                     <div class="posts-slider">
 
                         <?php
-                        //SE TIVER USERINSERVICE
-                        if (isset(filter_var($_GET['UserInService']))) {
-                            
-                        } else {
-                            $org = (filter_var($_GET['Organization']));
-                            $idUser = $_SESSION['id'];
-                            DB_GetOrganizationServices($pdo, $org, $idUser);
-                        }
+                        $org = (filter_var($_GET['Organization']));
+                        $idUser = $_SESSION['id'];
+                        DB_GetOrganizationServices($pdo, $org, $idUser);
                         ?>
                     </div><!--.posts-slider-->
                 </section><!--.box-typical-->
@@ -50,7 +45,14 @@ include_once '../build/db/session.php';
                         &nbsp;
                     </header>
                     <div class="friends-list">
-                        <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
+                        <?php
+//                        SE CLICAR NUM USER IN ORG
+                        if (isset(filter_var($_GET['UserInService']))) {
+                            
+                        } else {
+                            DB_getUsersInServiceOrganization($pdo, $org);
+                        }
+                        ?>
                     </div>
                 </section>
             </div><!--.col- -->
