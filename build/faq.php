@@ -16,7 +16,7 @@ include ("includes/head_sideMenu.php");
 
 								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-up"><span class="ladda-label">expand-up</span></button>
 
-								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">expand-down</span></button>
+								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">What is WiC?</span></button>
 							</div>
 						</div>
 					</div>
