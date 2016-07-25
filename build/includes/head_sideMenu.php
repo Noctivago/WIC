@@ -466,22 +466,23 @@ include '../build/db/session.php';
 
 
 
-                                <div class="site-header-search-container">
+                                <div class="site-header-search">
 
 
                                     <ul class="side-menu-list">
 
-                                            <form>
+                                        <form class="site-header-search ">
                                                 <div class="col-md-10">
                                                     <!--<label class="form-label">Advanced Search</label>-->
 
                                                     <div class="typeahead-container">
                                                         <div class="typeahead-field">
                                                             <span class="typeahead-query">
-                                                                <input id="categories"
+                                                                <input placeholder="Chose your City"
+                                                                    id="categories"
                                                                        class="form-control"
                                                                        name="name"
-                                                                       type="search"
+                                                                       type="text"
                                                                        autocomplete="on">
 
                                                             </span>
