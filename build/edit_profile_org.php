@@ -54,7 +54,7 @@ $msg = '';
                 } else {
                     $picture_path = 'pics/' . $newfilename;
                     //filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
-                    DB_UpdateOrgPictureInformationPictureInformation($pdo, $userId, $picture_path);
+                    DB_UpdateOrgPictureInformation($pdo, $userId, $picture_path);
                     $msg = ('File uploaded successfully.');
                 }
             }
