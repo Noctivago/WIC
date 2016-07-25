@@ -486,11 +486,11 @@ include '../build/db/session.php';
                                                                        autocomplete="on">
 
                                                             </span>
-                                                            <span class="typeahead-button">
+                                                            <!--<span class="typeahead-button">-->
                                                                 <button type="submit">
                                                                     <span class="font-icon-search"></span>
                                                                 </button>
-                                                            </span>
+                                                            <!--</span>-->
                                                         </div>
                                                     </div>
                                                 </div>
