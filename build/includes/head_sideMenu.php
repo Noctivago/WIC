@@ -11,7 +11,7 @@ include '../build/db/session.php';
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>StartUI - Premium Bootstrap 4 Admin Dashboard Template</title>
+        <title>Wic</title>
 
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
