@@ -1701,7 +1701,7 @@ function DB_UserProfile($pdo, $userId) {
             echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
                     </div>
-                    <input type="file" name="files[]" id="files">
+                    <input type="file" name="Photo" id="Photo">
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >

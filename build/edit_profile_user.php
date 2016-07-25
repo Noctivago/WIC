@@ -18,12 +18,12 @@ $msg = "";
 
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
         //FALTA ACERTAR NISTO
-        $target_dir = "build/pics/";
+        $target_dir = "uploads/";
         $target_file = $target_dir . basename($_FILES["Photo"]["name"]);
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
         // Check if image file is a actual image or fake image
-        if (isset($_POST["submit"])) {
+        if (isset($_POST["Photo"])) {
             $check = getimagesize($_FILES["Photo"]["tmp_name"]);
             if ($check !== false) {
                 $msg = "File is an image - " . $check["mime"] . ".";
@@ -61,25 +61,6 @@ $msg = "";
                     <?php
                     DB_UserProfile($pdo, $userId);
                     ?>
-                    <!--                    <div class="sign-avatar no-photo" >
-                                            <img id="image" src="" alt=""/>&plus;
-                                        </div>
-                                        <button type="submit" class="btn btn-rounded btn-file" onselect="change()">Change Picture <input class="btn-file" type="file"/> </button>
-                                        <header class="sign-title">Edit Profile</header>
-                                        <div class="form-group">
-                                            <div class="form-control-wrapper form-control-icon-left" >
-                                                    <input type="text" id="first-name" class="form-control" placeholder="First Name"/>
-                                                <i class="font-icon font-icon-user"></i>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="form-control-wrapper form-control-icon-left" >
-                                                <input type="text" id="last-name" class="form-control" placeholder="Last Name"/>
-                                                <i class="font-icon font-icon-user"></i>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>-->
-
                 </form>
                 <?= $msg; ?>
             </div>
