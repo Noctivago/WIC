@@ -2227,6 +2227,11 @@ function DB_GetServiceLocAndDescription($pdo, $serviceId) {
     }
 }
 
+/**
+ * retorna os wicplanners do user para um select utilizado no popup
+ * @param type $pdo
+ * @param type $userId
+ */
 Function DB_getMyWicsAsPopup($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT * FROM
@@ -2255,10 +2260,38 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
  */
 function DB_addServiceToWicPlanner($pdo, $wicId, $serviceId) {
     try {
-        sql($pdo, "INSERT INTO [dbo].[WIC_Planner_Service] ([Service_Id], [WIC_Planner_Id], [Enabled]) "
-                . "VALUES (?, ?, ?)", array($serviceId, $wicId, 1));
-        echo "Service added to your WiC planner!";
+        if (DB_checkIfServiceExistsOnWicPlanner($pdo, $wicId, $serviceId)) {
+            echo 'Service already exists in that WiC planner';
+        } else {
+            sql($pdo, "INSERT INTO [dbo].[WIC_Planner_Service] ([Service_Id], [WIC_Planner_Id], [Enabled]) "
+                    . "VALUES (?, ?, ?)", array($serviceId, $wicId, 1));
+            echo "Service added to your WiC planner!";
+        }
     } catch (PDOException $e) {
         echo "ERROR ADDDING SERVIVE TO WIC PLANNER!";
+    }
+}
+
+/**
+ * Verifica se o serviço ja existe, ou nao, num determinado wic planner
+ * @param type $pdo
+ * @param type $wicId
+ * @param type $serviceId
+ * @return boolean
+ */
+Function DB_checkIfServiceExistsOnWicPlanner($pdo, $wicId, $serviceId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM
+        [WIC_Planner_Service]
+        WHERE [Enabled] = 1
+        AND [Service_Id] = ? 
+        AND WIC_Planner_Id = ? ", array($serviceId, $wicId), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $ex) {
+        
     }
 }
