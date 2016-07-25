@@ -409,8 +409,8 @@ include_once '../build/db/session.php';
 
                         <style>
                             #imagePreview {
-                                width: 180px;
-                                height: 180px;
+                                width: 664px;
+                                height: 415px;
                                 background-position: center center;
                                 background-size: cover;
                                 -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
