@@ -113,7 +113,7 @@ $msg = '';
             method: 'post',
             data: {con: x},
             success: function (data) {
-                if (data != '') {
+                if (data !== '') {
                     $('.INCLUDE').html(data);
                 } else {
                     alert('Falta Link do index dos services');
