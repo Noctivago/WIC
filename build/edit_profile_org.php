@@ -2,7 +2,10 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
-
+if ($_SESSION['role'] === 'user') {
+    header("location: ../build/edit_profile_user.php");
+}
+?>
 $msg = '';
 ?>
 
@@ -10,8 +13,8 @@ $msg = '';
     <?php
     //falta alterar foto
     $userId = $_SESSION['id'];
-  //&& !empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['email'])
-    if (isset($_POST['save'])&& !empty($_POST['name']) &&!empty($_POST['address']) &&!empty($_POST['email'])) {
+    //&& !empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['email'])
+    if (isset($_POST['save']) && !empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['email'])) {
         $name = (filter_var($_POST ['name'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
         $address = (filter_var($_POST ['address'], FILTER_SANITIZE_STRING));
@@ -22,7 +25,7 @@ $msg = '';
         $linkdin = (filter_var($_POST ['linkdin'], FILTER_SANITIZE_STRING));
         $twitter = (filter_var($_POST ['twitter'], FILTER_SANITIZE_STRING));
         $description = (filter_var($_POST ['description'], FILTER_SANITIZE_STRING));
-        $msg = DB_UpdateOrgInformation($pdo,$name,$email,$address,$phone,$mobile,$website,$facebook,$linkdin,$twitter,$description,$userId);
+        $msg = DB_UpdateOrgInformation($pdo, $name, $email, $address, $phone, $mobile, $website, $facebook, $linkdin, $twitter, $description, $userId);
     }
     ?>
 
