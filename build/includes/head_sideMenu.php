@@ -285,10 +285,10 @@ include '../build/db/session.php';
                                         <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
                                             
 <!--                                            <form>
-                                                <div class="col-md-10">-->
-<!--                                                    <label class="form-label">Advanced Search</label>-->
+                                                <div class="col-md-10">
+                                                    <label class="form-label">Advanced Search</label>
 
-                                                    <!--<div class="typeahead-container">-->
+                                                    <div class="typeahead-container">
                                                         <div class="typeahead-field">
                                                             <span class="typeahead-query">
                                                                 <input id="categories"
@@ -296,8 +296,8 @@ include '../build/db/session.php';
                                                                        name="name"
                                                                        type="search"
                                                                        autocomplete="on">
-                                                                <!--autocomplete estava como OFF-->
-                                                                <!--name estava como q-->
+                                                                autocomplete estava como OFF
+                                                                name estava como q
                                                             </span>
                                                             <span class="typeahead-button">
                                                                 <button type="submit">
@@ -305,8 +305,8 @@ include '../build/db/session.php';
                                                                 </button>
                                                             </span>
                                                         </div>
-                                                    <!--</div>-->
-<!--                                                </div>
+                                                    </div>
+                                                </div>
                                             </form>-->
 
 <!--                                            <select class="bootstrap-select bootstrap-select-arrow" style=" width:10px;" >
@@ -471,16 +471,40 @@ include '../build/db/session.php';
 
                                     <ul class="side-menu-list">
 
+                                            <form>
+                                                <div class="col-md-10">
+                                                    <label class="form-label">Advanced Search</label>
+
+                                                    <div class="typeahead-container">
+                                                        <div class="typeahead-field">
+                                                            <span class="typeahead-query">
+                                                                <input id="categories"
+                                                                       class="form-control"
+                                                                       name="name"
+                                                                       type="search"
+                                                                       autocomplete="on">
+                                                                autocomplete estava como OFF
+                                                                name estava como q
+                                                            </span>
+                                                            <span class="typeahead-button">
+                                                                <button type="submit">
+                                                                    <span class="font-icon-search"></span>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="overlay"></div>
+                                            </form>
 
 
-
-                                        <form class="site-header-search closed">
+<!--                                        <form class="site-header-search closed">
                                             <input type="text" placeholder="Search a Service.."/>
                                             <button type="submit">
                                                 <span class="font-icon-search"></span>
                                             </button>
                                             <div class="overlay"></div>
-                                        </form>
+                                        </form>-->
                                 </div>
                             </div><!--.site-header-collapsed-in-->
                         </div><!--.site-header-collapsed-->
