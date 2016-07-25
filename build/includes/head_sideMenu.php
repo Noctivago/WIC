@@ -469,7 +469,7 @@ include '../build/db/session.php';
                                 <div class="site-header-search-container">
 
 
-                                    <ul class="side-menu-list">
+<!--                                    <ul class="side-menu-list">-->
 
 
 
