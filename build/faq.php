@@ -9,11 +9,8 @@ include ("includes/head_sideMenu.php");
 				<br/>
 				<div class="row">
 						<div class="col-md-12">
-<!--							<div class="form-group">
-								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">What is WiC?</span></button>
-                                                                <p>TEREWREWFREWFRW</p>
-                                                        </div>-->
-						</div>
+
+						
                                     <div class="btn-group">
 								<button type="button" class="btn btn-inline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									Action
@@ -25,7 +22,7 @@ include ("includes/head_sideMenu.php");
 								
 								</div>
 							</div>
-                                    
+                                                </div>
 					</div>
                                     
 					
