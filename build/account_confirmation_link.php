@@ -38,19 +38,26 @@ include("../build/db/dbconn.php");
         }
     }
     ?>
-    <div class="page-center">
+     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-
-                <header class="sign-title">Confirm Your Account</header>
-                <div class="form-group">
-                    <p class="sign-note">  <?= $msg; ?> </p>
-                    <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as an user</a><a href="sign_up_org.php"> Sign up as an Organization</a></p>
-                </div>
-
+                <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                    <div class="sign-avatar">
+                        <img src="img/avatar-sign.png" alt="">
+                    </div>
+                    <header class="sign-title">Confirm Your Account</header>
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail" required/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="activateText" id="activateText" class="form-control" placeholder="Validation Code" required/>
+                        <p class="sign-note">  <?= $msg; ?> </p>
+                        <button type="submit" name="activate" id="activate" class="btn btn-rounded">Validate account</button>
+                        <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as an user</a><a href="sign_up_org.php"> Sign up as an Organization</a></p>
+                </form>
             </div>
         </div>
-    </div>
+    </div><!--.page-center-->
 
     <script src="js/lib/jquery/jquery.min.js"></script>
     <script src="js/lib/tether/tether.min.js"></script>
