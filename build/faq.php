@@ -71,18 +71,15 @@ include ("includes/head_sideMenu.php");
 									<div class="user-card-row">
 										<div class="tbl-row">
 											<div class="tbl-cell tbl-cell-photo">
-												<a href="#">
-													<img src="img/avatar-2-64.png" alt="">
-												</a>
+												
 											</div>
 											<div class="tbl-cell">
-												<p class="user-card-row-name"><a href="#">Maurico Estrella</a></p>
-												<p class="user-card-row-location">Associate Creative Director @EF</p>
+												
 											</div>
 										</div>
 									</div>
-									<header class="title">How a password changed my life</header>
-									<p>«How could she do something like this to me?» said a voice in my head. All the time. Every day... <a href="#">More</a></p>
+									
+									<p>teste</p>
 								</div>
 							</div>
 						</article>
