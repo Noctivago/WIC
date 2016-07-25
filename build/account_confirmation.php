@@ -6,8 +6,8 @@ include("../build/db/dbconn.php");
 <body>
     <?php
     if (!empty($_GET['User_Code_Activation']) && !empty($_GET['email'])) {
-        $code = (filter_var($_POST ['User_Code_Activation'], FILTER_SANITIZE_STRING));
-        $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+        $code = (filter_var(email ['User_Code_Activation'], FILTER_SANITIZE_STRING));
+        $email = (filter_var(email ['email'], FILTER_SANITIZE_EMAIL));
         //SE EMAIL EXISTE
         if (DB_checkIfUserExists($pdo, $email)) {
             //VERIFICA SE O ACTIVATION CODE PERTENCE AO EMAIL
