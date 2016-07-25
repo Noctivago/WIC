@@ -41,7 +41,7 @@ if (isset($_SESSION['id'])) {
                         //SET [Login_failed] = 0
                         if (DB_setLoginFailed($pdo, $email)) {
                             //header('Location: profile.php');
-                            $msg = "LOGIN OK! FALTA HEADER LOCATION";
+                            $msg = "LOGIN OK! HEADER LOCATION";
                             if ($_SESSION['role'] === 'organization') {
                                 header("location: ../build/profile_org.php");
                             }
