@@ -19,6 +19,8 @@ if (isset($_GET['add2WiC']) && isset($_GET ['id'])) {
     $wicId = $_POST['myWics'];
     //INSERIR SERVIÇO NO WIC
     $msg = DB_addServiceToWicPlanner($pdo, $wicId, $serviceId);
+} else {
+    $msg = 'PKP';
 }
 ?>
 <html>
