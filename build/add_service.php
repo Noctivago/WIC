@@ -8,16 +8,14 @@ include_once '../build/db/session.php';
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
-
+                <!--IMAGEM PERFIL SERVICE-->
                 <section class="box-typical">
-                    <div id="imagePreview" style="width: 100%"></div>
-                    <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
-
-                </section>                                         
+                    <div id="imagePreview" style="width: 100%"></div>                    
+                </section>    
+                
                 <section class="box-typical">
                     <div class="recomendations-slider">
                         <div class="slide">
-
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
@@ -37,7 +35,7 @@ include_once '../build/db/session.php';
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
-                                        <a href="#">
+                                        <a>
                                             <img src="<?php echo $org['Picture_Path']; ?>" alt="">
                                         </a>
                                     </div>
@@ -48,7 +46,7 @@ include_once '../build/db/session.php';
                                     </div>
                                 </div>
                             </div>
-                        </div><!--.slide-->
+                        </div>
 
                         <div class="slide">
 
@@ -58,7 +56,7 @@ include_once '../build/db/session.php';
                                  <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $org['Id'] . '">' . $org['Name'] . '</a></p>'; ?>
                                 </div>
                             </div>
-                        </div><!--.slide-->
+                        </div>
 
                         <div class = "slide">
                             <div class = "user-card-row">

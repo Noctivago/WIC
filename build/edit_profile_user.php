@@ -63,6 +63,7 @@ $msg = "";
                 </form>
                 <?= $msg; ?>
             </div>
+            
         </div>
     </div><!--.page-center-->
 
