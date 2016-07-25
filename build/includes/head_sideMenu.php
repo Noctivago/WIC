@@ -488,14 +488,14 @@ include '../build/db/session.php';
 
                 <header class="side-menu-title">Start Planning</header>
                 <li class="gold with-sub">
-                    <a class="lbl" href="contacts.php"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
+                    <a class="lbl" href="index_teste.php?Category=1"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
 <!--	            <span>
                      <i class="font-icon font-icon-earth-bordered"></i>
                      <span class="lbl">Space</span>
                  </span>-->
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="contacts.php"><i class="fa fa-spoon"></i> Food</a>
+                    <a class="lbl" href="index_teste.php?Category=2"><i class="fa fa-spoon"></i> Food</a>
 <!--	            <span>
                      <i class="fa fa-spoon " ></i>
                      
@@ -503,7 +503,7 @@ include '../build/db/session.php';
                  </span>-->
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="contacts.php"><i class="fa fa-film"></i> Entertainement</a>
+                    <a class="lbl" href="index_teste.php?Category=3"><i class="fa fa-film"></i> Entertainement</a>
 <!--	            <span>
                      <i class="fa fa-film"></i>
                      <span class="lbl">Entertainement</span>
@@ -511,28 +511,28 @@ include '../build/db/session.php';
                 </li>
 
                 <li class="gold with-sub">
-                    <a class="lbl" href="contacts.php"><i class="fa fa-tree"></i>Decoration</a>
+                    <a class="lbl" href="index_teste.php?Category=4"><i class="fa fa-tree"></i>Decoration</a>
 <!--	            <span>
                      <i class="fa fa-tree"></i>
                      <span class="lbl">Decoration</span>
                  </span>-->
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="contacts.php"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                    <a class="lbl" href="index_teste.php?Category=5"><i class="font-icon font-icon-users-group"></i>Staff</a>
 <!--	            <span>
                      <i class="font-icon font-icon-users-group"></i>
                      <span class="lbl">Staff</span>
                  </span>-->
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="contacts.php"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
+                    <a class="lbl" href="index_teste.php?Category=6"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
 <!--	            <span>
                      <i class="font-icon glyphicon glyphicon-film"></i>
                      <span class="lbl">Audio Visual</span>
                  </span>-->
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="contacts.php"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
+                    <a class="lbl" href="index_teste.php?Category=7"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
 <!--	            <span>
                      <i class="font-icon font-icon-cam-photo"></i>
                      <span class="lbl">Reportage Photo & Video</span>
