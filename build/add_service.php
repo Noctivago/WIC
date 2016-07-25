@@ -96,10 +96,12 @@ include_once '../build/db/session.php';
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <div class = "sign-avatar no-photo">&plus;
                         </div>
+                        <div id="imagePreview"></div>
+                        <input id="uploadFile" type="file" name="image" class="img" />
                         <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
-                         <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
+                        <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
                         <header class = "sign-title">Fill the fields below</header>
@@ -205,6 +207,26 @@ include_once '../build/db/session.php';
                                     }
                                 });
                             }
+                        </script>
+
+                        <script type="text/javascript">
+                            $(function () {
+                                $("#uploadFile").on("change", function ()
+                                {
+                                    var files = !!this.files ? this.files : [];
+                                    if (!files.length || !window.FileReader)
+                                        return; // no file selected, or no FileReader support
+
+                                    if (/^image/.test(files[0].type)) { // only image file
+                                        var reader = new FileReader(); // instance of the FileReader
+                                        reader.readAsDataURL(files[0]); // read the local file
+
+                                        reader.onloadend = function () { // set image data as background of div
+                                            $("#imagePreview").css("background-image", "url(" + this.result + ")");
+                                        }
+                                    }
+                                });
+                            });
                         </script>
 
                         <script>
