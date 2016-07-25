@@ -473,9 +473,9 @@ include '../build/db/session.php';
                                 <span class="typeahead-query">
                                     <input id="categories"
                                            class="form-control"
-                                           name="q"
+                                           name="name"
                                            type="search"
-                                           autocomplete="off">
+                                           autocomplete="on">
                                 </span>
                                 <span class="typeahead-button">
                                     <button type="submit">
