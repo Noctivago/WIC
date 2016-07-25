@@ -286,7 +286,7 @@ include '../build/db/session.php';
                                             
                                             <form>
                                                 <div class="col-md-10">
-                                                    <label class="form-label">Advanced Search</label>
+<!--                                                    <label class="form-label">Advanced Search</label>-->
 
                                                     <div class="typeahead-container">
                                                         <div class="typeahead-field">
