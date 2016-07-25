@@ -41,7 +41,7 @@ $msg = '';
                     die('Please ensure you are uploading an image.');
                 }
                 // Check filetype
-                if ($_FILES['file_upload']['type'] != 'image/jpg' || $_FILES['file_upload']['type'] != 'image/png') {
+                if ($_FILES['file_upload']['type'] != 'image/jpg') {
                     $msg = 'Unsupported filetype uploaded.';
                 }
                 // Check filesize
@@ -66,6 +66,7 @@ $msg = '';
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid" style="padding-top: 100px;">
+                <?= $msg; ?>
                 <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
                     <?php
                     DB_OrgProfile($pdo, $userId);
