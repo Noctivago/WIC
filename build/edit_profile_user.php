@@ -25,16 +25,14 @@ $msg = "";
                     $targetPath = "upload/" . $idUser . "/" . $new_name;
                     if (move_uploaded_file($sourcePath, $targetPath)) {
                         $output .= '<img src="' . $targetPath . '/>';
-                        $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName,$targetPath);
-
-                        }
+                        $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName, $targetPath);
+                    }
                 }
             }
         }
+    }
 
-
-        $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
-
+//        $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
 //        //FALTA ACERTAR NISTO
 //        $target_dir = "build/pics/";
 //        $target_file = $target_dir . basename($_FILES["Photo"]["name"]);
@@ -71,35 +69,35 @@ $msg = "";
 //            }
 //        }
 //    }
-        ?>
-        <div class="page-center">
-            <div class="page-center-in">
-                <div class="container-fluid">
-                    <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
-                        <?php
-                        DB_UserProfile($pdo, $userId);
-                        ?>
-                        <!--                    <div class="sign-avatar no-photo" >
-                                                <img id="image" src="" alt=""/>&plus;
+    ?>
+    <div class="page-center">
+        <div class="page-center-in">
+            <div class="container-fluid">
+                <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
+<?php
+DB_UserProfile($pdo, $userId);
+?>
+                    <!--                    <div class="sign-avatar no-photo" >
+                                            <img id="image" src="" alt=""/>&plus;
+                                        </div>
+                                        <button type="submit" class="btn btn-rounded btn-file" onselect="change()">Change Picture <input class="btn-file" type="file"/> </button>
+                                        <header class="sign-title">Edit Profile</header>
+                                        <div class="form-group">
+                                            <div class="form-control-wrapper form-control-icon-left" >
+                                                    <input type="text" id="first-name" class="form-control" placeholder="First Name"/>
+                                                <i class="font-icon font-icon-user"></i>
                                             </div>
-                                            <button type="submit" class="btn btn-rounded btn-file" onselect="change()">Change Picture <input class="btn-file" type="file"/> </button>
-                                            <header class="sign-title">Edit Profile</header>
-                                            <div class="form-group">
-                                                <div class="form-control-wrapper form-control-icon-left" >
-                                                        <input type="text" id="first-name" class="form-control" placeholder="First Name"/>
-                                                    <i class="font-icon font-icon-user"></i>
-                                                </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-control-wrapper form-control-icon-left" >
+                                                <input type="text" id="last-name" class="form-control" placeholder="Last Name"/>
+                                                <i class="font-icon font-icon-user"></i>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="form-control-wrapper form-control-icon-left" >
-                                                    <input type="text" id="last-name" class="form-control" placeholder="Last Name"/>
-                                                    <i class="font-icon font-icon-user"></i>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>-->
+                                        </div>
+                                        <button type="submit" class="btn btn-rounded btn-success sign-up">Save Changes</button>-->
 
-                    </form>
-                    <?= $msg; ?>
+                </form>
+<?= $msg; ?>
             </div>
         </div>
     </div><!--.page-center-->
