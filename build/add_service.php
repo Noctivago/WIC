@@ -88,11 +88,12 @@ include_once '../build/db/session.php';
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Add new service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
-                        <!--                        <div id="imagePreview"></div>-->
+                        <!--PROFILE SERVICE PIC-->
                         <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
                         <div id="wrapper" style="margin-top: 20px;">
+                            <!--OTHER PICTURES-->
                             <input id="files2Upload" multiple="multiple" type="file"/> 
-                            <div id="image-holder"></div>
+                            <div id="image-holder" style=".thumb-image{float:left;width:100px;position:relative;padding:5px;}"></div>
                         </div>
                         <!--<button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
                            <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
