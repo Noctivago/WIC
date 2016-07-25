@@ -496,7 +496,7 @@ include '../build/db/session.php';
 
                 <header class="side-menu-title">Start Planning</header>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?Category=1"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
+                    <a class="lbl" href="index_teste.php?Category=1"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
 <!--	            <span>
                      <i class="font-icon font-icon-earth-bordered"></i>
                      <span class="lbl">Space</span>
