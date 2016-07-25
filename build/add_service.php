@@ -392,13 +392,13 @@ include_once '../build/db/session.php';
                                 $("#uploadFile").change(function () {
                                     var files = !!this.files ? this.files : [];
                                     if (!files.length || !window.FileReader)
-                                        return; // no file selected, or no FileReader support
+                                        return; 
 
-                                    if (/^image/.test(files[0].type)) { // only image file
-                                        var reader = new FileReader(); // instance of the FileReader
-                                        reader.readAsDataURL(files[0]); // read the local file
+                                    if (/^image/.test(files[0].type)) { 
+                                        var reader = new FileReader(); 
+                                        reader.readAsDataURL(files[0]); e
 
-                                        reader.onloadend = function () { // set image data as background of div
+                                        reader.onloadend = function () { 
                                             $("#imagePreview").css("background-image", "url(" + this.result + ")");
                                         };
                                     }
