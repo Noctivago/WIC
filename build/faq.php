@@ -13,11 +13,12 @@ include ("includes/head_sideMenu.php");
 						
                                     <div class="btn-group">
 								<button type="button" class="btn btn-inline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Action
+									What is WiC?
 								</button>
 								<div class="dropdown-menu">
-                                                                    <a class="dropdown-item" <p>teste</p> 
-                                                                        <p>1234566</p>
+                                                                    <a class="dropdown-item" <p>WiC is the first events and entertainment global brand.</p> 
+                                                                        <p></p>
+                                                                        <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat where you can send text messages and bargain the price of the service on the go.</p>
                                                                     </a>
 								
 								</div>
