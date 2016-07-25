@@ -284,8 +284,8 @@ include '../build/db/session.php';
                                         <!--                                        <h4 style="color: darkgray; font-family: cursive">You can event, event your life</h4>-->
                                         <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
                                             
-                                            <form>
-                                                <div class="col-md-10">
+<!--                                            <form>
+                                                <div class="col-md-10">-->
 <!--                                                    <label class="form-label">Advanced Search</label>-->
 
                                                     <div class="typeahead-container">
@@ -306,8 +306,8 @@ include '../build/db/session.php';
                                                             </span>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </form>
+<!--                                                </div>
+                                            </form>-->
 
 <!--                                            <select class="bootstrap-select bootstrap-select-arrow" style=" width:10px;" >
                                                 <option>Chose Your City</option>
