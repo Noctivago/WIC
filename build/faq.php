@@ -43,7 +43,7 @@ include ("includes/head_sideMenu.php");
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
-							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-collapse-in">
                                                                     <div class="tbl-row">
                                                                     <p>If you’re a supplier: Register here (link here)<br></p>
