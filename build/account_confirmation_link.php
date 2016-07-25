@@ -6,6 +6,8 @@ include("../build/db/dbconn.php");
 <body>
     <?php
     if (!empty($_GET['AC']) && !empty($_GET['EM'])) {
+        //AC Account_Activation_Code
+        //EM Email
         $code = (filter_var($_GET ['AC'], FILTER_SANITIZE_STRING));
         $email = (filter_var($_GET ['EM'], FILTER_SANITIZE_EMAIL));
         //SE EMAIL EXISTE
