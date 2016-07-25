@@ -1338,7 +1338,7 @@ Free for 3 Months</header>';
 
 //preencher seccao services no profile org
 //falta passar o id da org
-function DB_GetOrganizationServices($pdo, $org ,$idUser) {
+function DB_GetOrganizationServices($pdo, $org, $idUser) {
     try {
         $services = getAllOrganizationServices($pdo, $org);
         foreach ($services as $service) {
@@ -1701,7 +1701,7 @@ function DB_UserProfile($pdo, $userId) {
             echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
                     </div>
-                    <input type="file" name="file_upload">
+                    <input type="file" id="file_upload" name="file_upload">
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >

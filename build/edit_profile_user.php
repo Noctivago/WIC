@@ -18,37 +18,30 @@ $msg = "";
 
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
         //FALTA ACERTAR NISTO
-        // Check if image file is a actual image or fake image
         if ($_POST["file_upload"] != '') {
             // Check for errors
             if ($_FILES['file_upload']['error'] > 0) {
                 $msg = ('An error ocurred when uploading.');
             }
-
             if (!getimagesize($_FILES['file_upload']['tmp_name'])) {
                 $msg = ('Please ensure you are uploading an image.');
             }
-
             // Check filetype
             if ($_FILES['file_upload']['type'] != 'image/png') {
                 $msg = ('Unsupported filetype uploaded.');
             }
-
             // Check filesize
             if ($_FILES['file_upload']['size'] > 500000) {
                 $msg = ('File uploaded exceeds maximum upload size.');
             }
-
             // Check if the file exists
             if (file_exists('upload/' . $_FILES['file_upload']['name'])) {
                 $msg = ('File with that name already exists.');
             }
-
             // Upload file
             if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'upload/' . $_FILES['file_upload']['name'])) {
                 $msg = ('Error uploading file - check destination is writeable.');
             }
-
             $msg = ('File uploaded successfully.');
         }
     }
