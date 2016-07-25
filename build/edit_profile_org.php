@@ -55,6 +55,7 @@ $msg = '';
                     $picture_path = 'pics/' . $newfilename;
                     //filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
                     DB_UpdateOrgPictureInformation($pdo, $userId, $picture_path);
+                    $fname = '';
                     $msg = ('File uploaded successfully.');
                 }
             }
