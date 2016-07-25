@@ -26,11 +26,6 @@ include_once '../build/db/session.php';
                         $org = (filter_var($_GET['Organization']));
                         $idUser = $_SESSION['id'];
                         DB_GetOrganizationServices($pdo, $org, $idUser);
-                        if (isset(filter_var($_GET['UserInService']))) {
-                            
-                        } else {
-                            DB_GetOrganizationServices($pdo, $org, $idUser);
-                        }
                         ?>
                     </div><!--.posts-slider-->
                 </section><!--.box-typical-->
