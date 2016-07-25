@@ -7,8 +7,8 @@ $msg = '';
 
 <body>
     <?php
-//    error_reporting(E_ALL);
-//    ini_set("display_errors", 1);
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
     //FUTURAMENTE COLOCAR SE USER IN SERVICE PODE EDITAR
     if ($_SESSION['role'] === 'user') {
         header("location: ../build/index.php");
@@ -41,8 +41,8 @@ $msg = '';
                     die('Please ensure you are uploading an image.');
                 }
                 // Check filetype
-                if ($_FILES['file_upload']['type'] != 'image/png') {
-                    die('Unsupported filetype uploaded.');
+                if ($_FILES['file_upload']['type'] != 'image/jpg') {
+                    $msg = 'Unsupported filetype uploaded.';
                 }
                 // Check filesize
                 if ($_FILES['file_upload']['size'] > 500000) {
@@ -66,6 +66,7 @@ $msg = '';
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid" style="padding-top: 100px;">
+                <?= $msg; ?>
                 <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
                     <?php
                     DB_OrgProfile($pdo, $userId);

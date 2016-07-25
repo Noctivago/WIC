@@ -24,34 +24,50 @@ include ("includes/head_sideMenu.php");
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-collapse-in">
-                                                                     <div class="tbl-row">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												
+											</div>
+											<div class="tbl-cell">
+											
+											</div>
+										</div>
+									</div>
                                                                     <p>WiC is the first events and entertainment global brand.<br></p>
                                                   
                                                                     <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat where you can send text messages and bargain the price of the service on the go.</p>
-								</div>
-								</div>
+							</div>
 							</div>
 						</article>
 						<article class="panel">
-							<div class="panel-heading" role="tab" id="headingOne">
-								<a data-toggle="collapse"
+							<div class="panel-heading" role="tab" id="headingTwo">
+								<a class="collapsed"
+								   data-toggle="collapse"
 								   data-parent="#accordion"
-								   href="#collapseOne"
-								   aria-expanded="true"
-								   aria-controls="collapseOne">
+								   href="#collapseTwo"
+								   aria-expanded="false"
+								   aria-controls="collapseTwo">
 									How can I join WiC community?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
-							<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 								<div class="panel-collapse-in">
-                                                                    <div class="tbl-row">
-                                                                    <p>If you’re a supplier: Register here (link here)<br></p>
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+											
+											</div>
+											<div class="tbl-cell">
+											
+											</div>
+										</div>
+									</div>
+								    <p>If you’re a supplier: Register here (link here)<br></p>
                                                                     <p>If you’re a user: Register here (link here)<br></p>
                                                                     <p>You can use your email address to register or login using your Facebook account.</p>
-								
-                                                                    </div>
-                                                                    </div>
+						</div>
 							</div>
 						</article>
 						<article class="panel">
@@ -62,7 +78,7 @@ include ("includes/head_sideMenu.php");
 								   href="#collapseThree"
 								   aria-expanded="false"
 								   aria-controls="collapseThree">
-									Collapsible Group Item #3
+									How can you help me?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
@@ -79,7 +95,7 @@ include ("includes/head_sideMenu.php");
 										</div>
 									</div>
 									
-									<p>teste</p>
+									<p>Send an email to support@wic.club and our team will solve any problem within 24 hours.</p>
 								</div>
 							</div>
 						</article>
