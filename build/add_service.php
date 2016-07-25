@@ -111,14 +111,14 @@ include_once '../build/db/session.php';
                             </div>
                         </div>
                         <div class = "form-group">
-                            <div class = "form-control-wrapper form-control-icon-left" id="cc">
+                            <div class = "form-control-wrapper form-control-icon-left">
                                 <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
                                     <option value="0">Country</option>
                                     <?php DB_getCountryAsSelect($pdo) ?>
                                 </select>
 
                                 <div class = "form-group" id="state">
-                                    
+                                 
                                     <div class = "form-group" id="cities">
                                     
                                         <div class = "form-group">
@@ -188,7 +188,7 @@ include_once '../build/db/session.php';
                                     method: 'post',
                                     data: {con: Country_Id},
                                     success: function (data) {
-                                        $('#states').html(data);
+                                        $('#state').html(data);
                                     }
                                 });
                             }
