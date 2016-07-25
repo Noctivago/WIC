@@ -7,52 +7,121 @@ include ("includes/head_sideMenu.php");
 			<div class="box-typical box-typical-padding">
 				<h1 class="text-center">F.A.Q.</h1>
 				<br/>
-				<div class="row">
+				
 						<div class="col-md-12">
-
-						
-                                    <div class="btn-group">
-								<button type="button" class="btn btn-inline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                     <section class="widget widget-accordion" id="accordion" role="tablist" aria-multiselectable="true">
+						<article class="panel">
+							<div class="panel-heading" role="tab" id="headingOne">
+								<a data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseOne"
+								   aria-expanded="true"
+								   aria-controls="collapseOne">
 									What is WiC?
-								</button>
-								<div class="dropdown-menu">
-                                                                    <a class="dropdown-item" <p>WiC is the first events and entertainment global brand.</p> 
-                                                                        <p></p>
-                                                                        <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat <br>where you can send text messages and bargain the price of the service on the go.</p>
-                                                                    </a>
-								
-								</div>
-                                        
-                                        <button type="button" class="btn btn-inline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									How can I join WiC community?
-								</button>
-								<div class="dropdown-menu">
-                                                                    <a class="dropdown-item" <p>WiC is the first events and entertainment global brand.</p> 
-                                                                        <p></p>
-                                                                        <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat <br>where you can send text messages and bargain the price of the service on the go.</p>
-                                                                    </a>
-								
-								</div>
-                                        <button type="button" class="btn btn-inline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									How can you help me?
-								</button>
-								<div class="dropdown-menu">
-                                                                    <a class="dropdown-item" <p>WiC is the first events and entertainment global brand.</p> 
-                                                                        <p></p>
-                                                                        <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat <br>where you can send text messages and bargain the price of the service on the go.</p>
-                                                                    </a>
-								
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												<a href="#">
+													<img src="img/photo-64-2.jpg" alt="">
+												</a>
+											</div>
+											<div class="tbl-cell">
+												
+												<p class="user-card-row-location">Associate Creative Director @EF</p>
+											</div>
+										</div>
+									</div>
+									<header class="title">How a password changed my life</header>
+									<p>«How could she do something like this to me?» said a voice in my head. All the time. Every day... <a href="#">More</a></p>
 								</div>
 							</div>
+						</article>
+						<article class="panel">
+							<div class="panel-heading" role="tab" id="headingTwo">
+								<a class="collapsed"
+								   data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseTwo"
+								   aria-expanded="false"
+								   aria-controls="collapseTwo">
+									Collapsible Group Item #2
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												<a href="#">
+													<img src="img/avatar-3-64.png" alt="">
+												</a>
+											</div>
+											<div class="tbl-cell">
+												<p class="user-card-row-name"><a href="#">Michelle Lewis</a></p>
+												<p class="user-card-row-location">Company Founder</p>
+											</div>
+										</div>
+									</div>
+									<header class="title">How a password changed my life</header>
+									<p>«How could she do something like this to me?» said a voice in my head. All the time. Every day... <a href="#">More</a></p>
+								</div>
+							</div>
+						</article>
+						<article class="panel">
+							<div class="panel-heading" role="tab" id="headingThree">
+								<a class="collapsed"
+								   data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseThree"
+								   aria-expanded="false"
+								   aria-controls="collapseThree">
+									Collapsible Group Item #3
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												<a href="#">
+													<img src="img/avatar-2-64.png" alt="">
+												</a>
+											</div>
+											<div class="tbl-cell">
+												<p class="user-card-row-name"><a href="#">Maurico Estrella</a></p>
+												<p class="user-card-row-location">Associate Creative Director @EF</p>
+											</div>
+										</div>
+									</div>
+									<header class="title">How a password changed my life</header>
+									<p>«How could she do something like this to me?» said a voice in my head. All the time. Every day... <a href="#">More</a></p>
+								</div>
+							</div>
+						</article>
+					</section>
                                                 </div>
-					</div>
+					
                                     
 					
 	<script src="js/lib/jquery/jquery.min.js"></script>
 	<script src="js/lib/tether/tether.min.js"></script>
 	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
 	<script src="js/plugins.js"></script>
+        <script src="js/lib/jquery/jquery.min.js"></script>
+	<script src="js/lib/tether/tether.min.js"></script>
+	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
 
+	<script src="js/lib/select2/select2.full.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
 	<script src="js/lib/ladda-button/spin.min.js"></script>
 	<script src="js/lib/ladda-button/ladda.min.js"></script>
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
