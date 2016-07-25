@@ -27,23 +27,6 @@ $serviceId = (filter_var($_GET['Service']));
 
                 <!--DESCR SERVICE-->
                 <?= DB_GetServiceLocAndDescription($pdo, $serviceId); ?>
-<!--                <section class="box-typical">
-                    <header class="box-typical-header-sm">Personal Info</header>
-                    <article class="profile-info-item">
-                        <header class="profile-info-item-header">
-                            <i class="font-icon font-icon-earth-bordered"></i>
-                            Somerville, USA
-                        </header>
-                        <header class="profile-info-item-header">
-                            <i class="font-icon font-icon-notebook-bird"></i>
-                            Description
-                        </header>
-                        <div class="text-block text-block-typical">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-                        </div>
-                    </article>
-                </section>-->
 
                 <?php
                 if ($_SESSION['role'] === 'user') {
@@ -64,6 +47,7 @@ $serviceId = (filter_var($_GET['Service']));
                 </div><!--.box-typical-->';
                 }
                 ?>
+                
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
                         Reviews
@@ -84,44 +68,73 @@ $serviceId = (filter_var($_GET['Service']));
 
                 </section>
             </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
+            <?php
+            if (db_checkServiceOrgBossPermission($pdo, $serv, $serviceId, $_SESSION['id'])) {
+                echo '<div class="box-typical">
+                    <div class="box-typical-footer">
+                        <div class="tbl">
+                            <div class="tbl-row">
+                                <div class="tbl-cell">
+                                </div>
+                                <div class="tbl-cell tbl-cell-action">
+                                    <a href="edit_profile_service.php?Service=' . $serviceId . ' class="btn btn-rounded" role="button">Edit Service</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--.box-typical-->';
+                ?>
                 <section class="box-typical">
-                    <!--DISPLAY SERVICE USERS-->
-                    <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
+                    <div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">
+                        <?= DB_GetServiceInfoBar($pdo, $serviceId); ?>
+                        <div class="slide">
+                            <!--BOTOES CHAT + WIC-->
+                            <div class="user-card-row">
+                                <div class="tbl-cell">
+                                    <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+                                </div>								
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <section class="box-typical">
-                    <!--DISPLAY ORG INFO-->
-                    <?= DB_GetOrgInformationForService($pdo, $serviceId); ?>
-                </section>
+                <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
+                    <section class="box-typical">
+                        <!--DISPLAY SERVICE USERS-->
+                        <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
+                    </section>
+
+                    <section class="box-typical">
+                        <!--DISPLAY ORG INFO-->
+                        <?= DB_GetOrgInformationForService($pdo, $serviceId); ?>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script type="text/javascript">
-    function addServiceComment(serviceId) {
-        var comment = document.getElementById("userComment").value;
-        var sId = serviceId;
-        if (comment !== '') {
-            $.ajax({
-                url: 'ajax/addServiceComment.php',
-                method: 'post',
-                data: {comment: comment, sId: sId},
-                success: function (data) {
-                    //alert(data);
-                    loadComments();
-                    $("#userComment").empty();
-                }
-            });
+    <script type="text/javascript">
+        function addServiceComment(serviceId) {
+            var comment = document.getElementById("userComment").value;
+            var sId = serviceId;
+            if (comment !== '') {
+                $.ajax({
+                    url: 'ajax/addServiceComment.php',
+                    method: 'post',
+                    data: {comment: comment, sId: sId},
+                    success: function (data) {
+                        //alert(data);
+                        loadComments();
+                        $("#userComment").empty();
+                    }
+                });
+            }
         }
-    }
-    function loadComments() {
-        $.ajax({
-            url: 'ajax/getServiceComment.php',
-            method: 'post',
-            data: {sId: <?= $serviceId; ?>},
+        function loadComments() {
+            $.ajax({
+                url: 'ajax/getServiceComment.php',
+                method: 'post',
+                data: {sId: <?= $serviceId; ?>},
             success: function (data) {
                 $('.COMMENTS').html(data);
             }
