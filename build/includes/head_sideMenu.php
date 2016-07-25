@@ -475,7 +475,10 @@ include '../build/db/session.php';
                                            class="form-control"
                                            name="name"
                                            type="search"
+
                                            autocomplete="on">
+                                    <!--autocomplete estava como OFF-->
+                                    <!--name estava como q-->
                                 </span>
                                 <span class="typeahead-button">
                                     <button type="submit">
