@@ -70,7 +70,7 @@ $serviceId = (filter_var($_GET['Service']));
             </div>
 
             <?php
-            if (db_checkServiceOrgBossPermission($pdo, $serv, $serviceId, $_SESSION['id'])) {
+            if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])) {
                 echo '<div class="box-typical">
                     <div class="box-typical-footer">
                         <div class="tbl">

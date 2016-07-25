@@ -66,8 +66,6 @@ function DB_getCountryAsSelect($pdo) {
     }
 }
 
-
-
 /**
  * DEVOLVE OS STATE PARA SEREM USADOS NUMA SELECT <- A PARTIR DO COUNTRY ID
  * @param type $pdo
@@ -869,10 +867,34 @@ function db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg) {
     }
 }
 
+/**
+ * Verifica se user é dono do serviço
+ * @param type $pdo
+ * @param type $service
+ * @param type $idOg
+ * @return boolean
+ */
+function db_checkServiceOrgBossServicePermission($pdo, $service, $idOg) {
+    try {
+        $count = sql($pdo, "SELECT *
+  FROM [dbo].[Service]
+  join [Organization]
+  on [Organization].[Id] = [Service].[Organization_Id]
+  where [Organization].[User_Boss] = ? AND [Service].[Id] = ?", array($idOg, $service), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 function DB_UpdateServiceInformation($pdo, $service, $cname, $cDescription, $cSub, $city) {
     try {
         //verificar se o user é boss da cat com o servico X
-        
+
         sql($pdo, "UPDATE [dbo].[Service]
    SET [Name] = ?
       ,[Description] = ?
@@ -1780,7 +1802,7 @@ function DB_OrgProfile($pdo, $userId) {
     }
 }
 
-function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org,$city) {
+function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
     try {
         $d = getDateToDB();
         sql($pdo, "INSERT INTO [dbo].[Service]
@@ -1798,7 +1820,7 @@ function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org,$city) {
            ,?
            ,?
            ,?
-           ,?)", array($cname, $cDescription, $org, $d, 1, $cSub,$city));
+           ,?)", array($cname, $cDescription, $org, $d, 1, $cSub, $city));
         echo 'true';
     } catch (Exception $ex) {
         
