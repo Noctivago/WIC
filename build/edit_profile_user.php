@@ -41,7 +41,7 @@ $msg = "";
                     $msg = ('File with that name already exists.');
                 }
                 // Upload file
-                if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], './upload/' . $_FILES['file_upload']['name'])) {
+                if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], '../upload/' . $_FILES['file_upload']['name'])) {
                     $msg = ('Error uploading file - check destination is writeable.');
                 }
                 $msg = ('File uploaded successfully.');
