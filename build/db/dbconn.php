@@ -1701,7 +1701,7 @@ function DB_UserProfile($pdo, $userId) {
             echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
                     </div>
-                   <input class="btn btn-rounded btn-file" type="file" id="file_upload" name="file_upload">
+                   <input class="btn btn-rounded btn-file" type="file" id="file_upload" accept="images/*" name="file_upload">
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
@@ -1728,7 +1728,7 @@ function DB_OrgProfile($pdo, $userId) {
         foreach ($rows as $row) {
             echo '<div class="sign-avatar no-photo" ><img id="image" src="' . $row['Picture_Path'] . '" alt=""/> </div>
                     
-                    <input class="btn btn-rounded btn-file" type="file" id="file_upload" name="file_upload">
+                    <input class="btn btn-rounded btn-file" type="file" id="file_upload" accept="images/*" name="file_upload">
                     <header class="sign-title">Edit Organization Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
