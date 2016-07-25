@@ -38,7 +38,7 @@ include_once '../build/db/session.php';
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
-                                            <img src="' . $org['Picture_Path'] . '" alt="">
+                                            <img src="<?php echo  $org['Picture_Path'];  ?>" alt="">
                                         </a>
                                     </div>
                                     <div class="tbl-cell">
