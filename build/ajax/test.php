@@ -7,3 +7,4 @@ include_once '../db/session.php';
 print 'SESSION INFO <br>';
 print 'ID > ' . $_SESSION['id'] . '<br>';
 var_dump($_SESSION);
+DB_getUsersTable($pdo);
