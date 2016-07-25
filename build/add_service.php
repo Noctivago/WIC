@@ -90,13 +90,13 @@ include_once '../build/db/session.php';
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
                         <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
-                        <div id="wrapper" style="margin-top: 20px;">
-                            <!--OTHER PICTURES-->
-                            <!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
+                        <!--<div id="wrapper" style="margin-top: 20px;">-->
+                        <!--OTHER PICTURES-->
+                        <!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
 <!--                            <input id="files2Upload" multiple="multiple" type="file"/> 
-                            <div id="image-holder" class="thumb-image" style="height: 75px;width: 75px;"></div>
-                            <div id="image-holder" class="thumbimage"></div>-->
-                        </div>
+                        <div id="image-holder" class="thumb-image" style="height: 75px;width: 75px;"></div>
+                        <div id="image-holder" class="thumbimage"></div>-->
+                        <!--</div>-->
 
                         <input type="file" id="attachfile" name="replyFiles" multiple> <!--File Element for multiple intput-->
                         <div id="#filelist"></div>
@@ -162,16 +162,6 @@ include_once '../build/db/session.php';
                                 $("body").on("click", ".removefile", removeFile);
                             })
                         </script>
-
-                        <!--CSS RESTANTES PICS-->
-                        <style type="text/css">
-                            .thumbimage {
-                                float:left;
-                                width:100px;
-                                position:relative;
-                                padding:5px;
-                            }
-                        </style>
 
                         <header class = "sign-title">Fill the fields below</header>
 
