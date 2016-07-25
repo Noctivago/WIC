@@ -499,12 +499,13 @@ include '../build/db/session.php';
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
+                <header class="side-menu-title">Advanced Search</header>
                 <form>
                     <div class="col-md-10">
                         
                         <header class="side-menu-title">Advanced Search</header>
                         
-                        <label class="form-label">Advanced Search</label>
+                        <!--<label class="form-label">Advanced Search</label>-->
 
                         <div class="typeahead-container">
                             <div class="typeahead-field">
