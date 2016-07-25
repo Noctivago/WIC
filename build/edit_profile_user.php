@@ -23,46 +23,48 @@ $msg = "";
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
         // Check if image file is a actual image or fake image
-        if ($_POST["Photo"] != '') {
-            $check = getimagesize($_FILES["Photo"]["tmp_name"]);
-            if ($check !== false) {
-                $msg = "File is an image - " . $check["mime"] . ".";
-                $uploadOk = 1;
-            } else {
-                $msg = "File is not an image.";
-                $uploadOk = 0;
+        if ($_POST["file_upload"] != '') {
+            // Check for errors
+            if ($_FILES['file_upload']['error'] > 0) {
+                $msg = ('An error ocurred when uploading.');
             }
-            if ($_FILES["Photo"]["size"] > 500000) {
-                $msg = "Sorry, your file is too large.";
-                $uploadOk = 0;
+
+            if (!getimagesize($_FILES['file_upload']['tmp_name'])) {
+                $msg = ('Please ensure you are uploading an image.');
             }
-            if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-                $msg = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-                $uploadOk = 0;
+
+            // Check filetype
+            if ($_FILES['file_upload']['type'] != 'image/png') {
+                $msg = ('Unsupported filetype uploaded.');
             }
-            // Check if $uploadOk is set to 0 by an error
-            if ($uploadOk == 0) {
-                $msg = "Sorry, your file was not uploaded.";
-            } else {
-                if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    $msg = "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
-                    $msg = DB_addUserProfilePicture($pdo, $target_file, $userId) . ' > ' . $target_file;
-                } else {
-                    $msg = "Sorry, there was an error uploading your file.";
-                }
+
+            // Check filesize
+            if ($_FILES['file_upload']['size'] > 500000) {
+                $msg = ('File uploaded exceeds maximum upload size.');
             }
+
+            // Check if the file exists
+            if (file_exists('upload/' . $_FILES['file_upload']['name'])) {
+                $msg = ('File with that name already exists.');
+            }
+
+            // Upload file
+            if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'upload/' . $_FILES['file_upload']['name'])) {
+                $msg = ('Error uploading file - check destination is writeable.');
+            }
+
+            $msg = ('File uploaded successfully.');
         }
-    }
-    ?>
-    <div class="page-center">
-        <div class="page-center-in">
-            <div class="container-fluid">
-                <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
-                    <?php
-                    DB_UserProfile($pdo, $userId);
-                    ?>
-                </form>
-                <?= $msg; ?>
+        ?>
+        <div class="page-center">
+            <div class="page-center-in">
+                <div class="container-fluid">
+                    <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
+                        <?php
+                        DB_UserProfile($pdo, $userId);
+                        ?>
+                    </form>
+                    <?= $msg; ?>
             </div>
         </div>
     </div><!--.page-center-->

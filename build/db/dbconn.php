@@ -1701,7 +1701,7 @@ function DB_UserProfile($pdo, $userId) {
             echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
                     </div>
-                    <input type="file" name="Photo" id="Photo">
+                    <input type="file" name="file_upload">
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
@@ -1827,6 +1827,13 @@ function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
     }
 }
 
+/**
+ * Atualiza dados do user | profile
+ * @param type $pdo
+ * @param type $sId
+ * @param type $first
+ * @param type $last
+ */
 function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
     try {
         sql($pdo, "UPDATE [dbo].[User_Profile]
