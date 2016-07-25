@@ -1737,7 +1737,7 @@ function DB_OrgProfile($pdo, $userId) {
                     
                    <input  type="file" id="file_upload" accept="images/*" name="file_upload">
                    </button>
-                    <
+                    
                     <header class="sign-title">Edit Organization Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
