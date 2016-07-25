@@ -33,17 +33,17 @@ include ("includes/head_sideMenu.php");
 							</div>
 						</article>
 						<article class="panel">
-							<div class="panel-heading" role="tab" id="headingOne">
+							<div class="panel-heading" role="tab" id="headingTwo">
 								<a data-toggle="collapse"
 								   data-parent="#accordion"
-								   href="#collapseOne"
+								   href="#collapseTwo"
 								   aria-expanded="true"
-								   aria-controls="collapseOne">
+								   aria-controls="collapseTwo">
 									How can I join WiC community?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
-							<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
 								<div class="panel-collapse-in">
                                                                     <div class="tbl-row">
                                                                     <p>If you’re a supplier: Register here (link here)<br></p>
