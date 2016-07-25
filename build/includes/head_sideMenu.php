@@ -471,7 +471,7 @@ include '../build/db/session.php';
 
                                     <ul class="side-menu-list">
 
-                                        <form class="site-header-search ">
+                                        <form class="site-header-search-container ">
                                                 <div class="col-md-10">
                                                     <!--<label class="form-label">Advanced Search</label>-->
 
