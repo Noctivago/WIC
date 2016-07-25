@@ -8,7 +8,8 @@ include ("includes/head_sideMenu.php");
 				<h1 class="text-center">F.A.Q.</h1>
 				<br/>
 				
-						<div class="col-md-12">
+		           </div>
+                </div>				<div class="col-md-12">
                                                      <section class="widget widget-accordion" id="accordion" role="tablist" aria-multiselectable="true">
 						<article class="panel">
 							<div class="panel-heading" role="tab" id="headingOne">
@@ -23,9 +24,9 @@ include ("includes/head_sideMenu.php");
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-collapse-in">
-                                                                    <p>WiC is the first events and entertainment global brand.<br><br></p>
+                                                                    <p>WiC is the first events and entertainment global brand.<br></p>
                                                   
-<p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat where you can send text messages and bargain the price of the service on the go.</p>
+                                                                    <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat where you can send text messages and bargain the price of the service on the go.</p>
 								</div>
 							</div>
 						</article>
@@ -37,7 +38,7 @@ include ("includes/head_sideMenu.php");
 								   href="#collapseTwo"
 								   aria-expanded="false"
 								   aria-controls="collapseTwo">
-									Collapsible Group Item #2
+									How can I join WiC community?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
@@ -95,8 +96,7 @@ include ("includes/head_sideMenu.php");
 						</article>
 					</section>
                                                 </div>
-                        </div>
-                </div>
+             
                                     
 					
 	<script src="js/lib/jquery/jquery.min.js"></script>
