@@ -13,8 +13,8 @@ include_once '../build/db/session.php';
                 <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
 
                 <section class="box-typical">
-                   <img id="gallery" src="#"/>
-                    <!--<img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>-->
+                    <img id="gallery" src="#"/>
+                     <!--<img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>-->
 
                 </section>                                         
 
@@ -41,11 +41,11 @@ include_once '../build/db/session.php';
                                             <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>
                                             <?php
                                         }
-             
 
 
-                                            $data = DB_GetServiceInformation($pdo, $service);
-                                            echo '<div class="tbl-cell tbl-cell-photo">
+
+                                        $data = DB_GetServiceInformation($pdo, $service);
+                                        echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
                                             <img src="' . $org['Picture_Path'] . '" alt="">
                                         </a>
@@ -53,76 +53,65 @@ include_once '../build/db/session.php';
                                     <div class="tbl-cell">
                                     <p>Service Name</p>
                                     <p id="serviceName" class="user-card-row-name">' . $data['Name'] . '</p>';
-                                            ?>
-                                        </div>
+                                        ?>
                                     </div>
                                 </div>
-                            </div><!--.slide-->
+                            </div>
+                        </div><!--.slide-->
 
-                            <div class="slide">
+                        <div class="slide">
 
-                                <div class="user-card-row">
-                                    <div class="tbl-cell">
-                                        <?php echo '<p>Organization Name</p>
+                            <div class="user-card-row">
+                                <div class="tbl-cell">
+                                    <?php echo '<p>Organization Name</p>
                                  <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $org['Id'] . '">' . $org['Name'] . '</a></p>'; ?>
-                                    </div>
                                 </div>
-                            </div><!--.slide-->
-
-                            <div class = "slide">
-                                <div class = "user-card-row">
-                                    <?php
-                                    $subId = $data['Sub_Category_Id'];
-                                    $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo, $subId);
-                                    echo '<b>Category: </b><b id="Cat">' . $CatSubCatData['CatName'] . '</b><br><b> Sub category : </b> <b id="SubCat">' . $CatSubCatData['SubCatName'] . ' </b>';
-                                    ?>
-                                    <div class = "tbl-cell">
-                                    </div> </div>
-                            </div><!--.slide-->
-
-
-
-
-
-                    </div><!--.recomendations-slider-->
-                    </section><!--.box-typical-->
-
-
-                    <section class = "box-typical">
-                        <header class = "box-typical-header-sm">Service Information</header>
-                        <article class = "profile-info-item">
-                            <header class = "profile-info-item-header">
-                                <i class = "font-icon font-icon-notebook-bird"></i>
-                                Description
-                            </header>
-                            <div class = "text-block text-block-typical">
-                                <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
                             </div>
-                        </article>
+                        </div><!--.slide-->
 
-                    </section>
+                        <div class = "slide">
+                            <div class = "user-card-row">
+                                <?php
+                                $subId = $data['Sub_Category_Id'];
+                                $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo, $subId);
+                                echo '<b>Category: </b><b id="Cat">' . $CatSubCatData['CatName'] . '</b><br><b> Sub category : </b> <b id="SubCat">' . $CatSubCatData['SubCatName'] . ' </b>';
+                                ?>
+                                <div class = "tbl-cell">
+                                </div> </div>
+                        </div><!--.slide-->
 
-                </div>
-                <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
-                    <section class = "box-typical">
-                        <header class = "box-typical-header-sm">Edit Service </header>
-                        <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
-                            <div class = "sign-avatar no-photo">&plus;
-                            </div>
-                              <input name="files[]" id="file" class = "btn-file" type = "file" onchange="readURL(this);" multiple />
-                              <input type="submit" name="submit" value="addimage" onclick="loadImage()"/>
-                              <div class="uploading none" style="display: none">
-                                <label>&nbsp;</label>
-                                <img src="uploading.gif" alt="uploading......"/>
-                            </div>
-                           
-                            <!--                         
-<button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
 
-                            </button>-->
+
+
+
+                </div><!--.recomendations-slider-->
+                </section><!--.box-typical-->
+
+
+                <section class = "box-typical">
+                    <header class = "box-typical-header-sm">Service Information</header>
+                    <article class = "profile-info-item">
+                        <header class = "profile-info-item-header">
+                            <i class = "font-icon font-icon-notebook-bird"></i>
+                            Description
+                        </header>
+                        <div class = "text-block text-block-typical">
+                            <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
+                        </div>
+                    </article>
+
+                </section>
+
+            </div>
+            <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
+                <section class = "box-typical">
+                    <header class = "box-typical-header-sm">Edit Service </header>
+                    <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
+                        <div class = "sign-avatar no-photo">&plus;
+                        </div>
+                        <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                             <input type="file" name="images[]" id="images" multiple >
-                            
-                        </form>
+                        </button>
                         <header class = "sign-title">Edit Service Profile</header>
                         <div class = "form-group" Style="display: none">
                             <div class = "form-control-wrapper form-control-icon-left" >
@@ -171,8 +160,8 @@ include_once '../build/db/session.php';
                         </div>
 
                         <button type = "submit" name="saveChanges" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
-                    </section>
-                    <?php  } ?>
+                </section>
+            <?php } ?>
 
         </div>
     </div><!--.row-->
@@ -182,16 +171,16 @@ include_once '../build/db/session.php';
         location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service=' + id;
     }</script>
 <script>
-function readURL(this){
-    if(input.files && input.files[0]){
-        var reader = new FileReader();
-        reader.onload = function(e){
-            $('#gallery').attr('src', e.target.result).width(150).height(200);
-        };
-        reader.readAsDataURL(input.Files[0]);
-    }
+    function readURL(this) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#gallery').attr('src', e.target.result).width(150).height(200);
+            };
+            reader.readAsDataURL(input.Files[0]);
+        }
 
-}
+    }
 </script>
 
 <script>
