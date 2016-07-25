@@ -9,6 +9,9 @@ $msg = "";
     <?php
     //falta alterar foto
     $userId = $_SESSION['id'];
+    if ($_SESSION['role'] === 'organization') {
+        header("location: ../build/edit_profile_org.php");
+    }
     if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
 
         $firstName = (filter_var($_POST ['first'], FILTER_SANITIZE_STRING));
