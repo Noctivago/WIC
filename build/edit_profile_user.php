@@ -19,6 +19,7 @@ $msg = "";
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
         //FALTA ACERTAR NISTO
         $name = $_FILES['file_upload']['name'];
+        $newfilename = $userId . '.jpg';
         if (isset($name)) {
             if (!empty($name)) {
                 // Check for errors
@@ -41,7 +42,8 @@ $msg = "";
                     $msg = ('File with that name already exists.');
                 }
                 // Upload file
-                if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $_FILES['file_upload']['name'])) {
+//                if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $_FILES['file_upload']['name'])) {
+                if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $newfilename)) {
                     $msg = ('Error uploading file - check destination is writeable.');
                 } else {
                     $msg = ('File uploaded successfully.');
