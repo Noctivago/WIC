@@ -84,7 +84,6 @@ $serviceId = (filter_var($_GET['Service']));
                         echo '         </div>';
                         echo '  </div>';
                         echo ' </article>';
-                        echo '</div>';
                     }
                     ?>
                 </section>
