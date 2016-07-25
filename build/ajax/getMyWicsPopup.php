@@ -1,11 +1,7 @@
 <?php
 include_once '../db/dbconn.php';
 include_once '../db/session.php';
-//DB_activateUserAccount($pdo, "prcunha.383@gmail.com");
-//$email = "paulo.cunha@esprominho.pt";
-//print 'SESSION INFO <br>';
-//print 'ID > ' . $_SESSION['id'] . '<br>';
-//var_dump($_SESSION);
+
 $userId = $_SESSION['id'];
 $serviceId = (filter_var($_GET ['id']));
 if ($_SESSION['role'] !== 'user') {
@@ -19,13 +15,6 @@ if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
     //INSERIR SERVIÇO NO WIC
     $msg = DB_addServiceToWicPlanner($pdo, $wicId, $serviceId);
 }
-//DB_getMyWicsAsPopup($pdo, $userId);
-//if (isset($_POST['add2WiC'])) {
-//    $serviceId = (filter_var($_GET ['id']));
-//    $wicId = $_POST['myWics'];
-//    //INSERIR SERVIÇO NO WIC
-//    $msg = 'Sid > ' . $serviceId . ' WicId > ' . $wicId;
-//}
 ?>
 <html>
     <head lang="en">
@@ -47,7 +36,7 @@ if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
                 <div class="form-group">
                     <?= DB_getMyWicsAsPopup($pdo, $userId); ?>
                 </div>
-                <p class="sign-note">  <?= $msg; ?> </p>
+                <p class="form-group">  <?= $msg; ?> </p>
                 <button type="submit" name="add2WiC" id="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
                 <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">
             </div>
