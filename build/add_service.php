@@ -222,7 +222,7 @@ include_once '../build/db/session.php';
 
                                         reader.onloadend = function () { // set image data as background of div
                                             $("#imagePreview").css("background-image", "url(" + this.result + ")");
-                                        }
+                                        };
                                     }
                                 });
                             });
