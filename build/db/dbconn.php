@@ -1833,7 +1833,7 @@ function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
    SET [First_Name] = ?
       ,[Last_Name] = ?
  WHERE [User_Id] =? ", array($first, $last, $sId));
-        echo 'Updated';
+        echo 'Your profile was updated';
     } catch (Exception $ex) {
         echo 'Error';
     }
