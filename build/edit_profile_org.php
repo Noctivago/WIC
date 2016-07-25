@@ -41,9 +41,9 @@ $msg = '';
                     die('Please ensure you are uploading an image.');
                 }
                 // Check filetype
-                if ($_FILES['file_upload']['type'] != 'image/jpg') {
-                    $msg = 'Unsupported filetype uploaded.';
-                }
+//                if ($_FILES['file_upload']['type'] != 'image/jpg') {
+//                    $msg = 'Unsupported filetype uploaded.';
+//                }
                 // Check filesize
                 if ($_FILES['file_upload']['size'] > 500000) {
                     die('File uploaded exceeds maximum upload size.');
