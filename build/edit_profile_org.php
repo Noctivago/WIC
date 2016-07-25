@@ -2,16 +2,15 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
-ob_start();
-//FUTURAMENTE COLOCAR SE USER IN SERVICE PODE EDITAR
-if ($_SESSION['role'] === "user") {
-    header("location: ../build/index.php");
-}
 $msg = '';
 ?>
 
 <body>
     <?php
+    //FUTURAMENTE COLOCAR SE USER IN SERVICE PODE EDITAR
+    if ($_SESSION['role'] === "user") {
+        header("location: ../build/index.php");
+    }
     //falta alterar foto
     $userId = $_SESSION['id'];
     //&& !empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['email'])

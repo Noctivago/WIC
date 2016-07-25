@@ -2,10 +2,6 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
-ob_start();
-if ($_SESSION['role'] === "user") {
-    header("location: ../build/index.php");
-}
 ?>
 
 <div class="page-content">
@@ -27,6 +23,9 @@ if ($_SESSION['role'] === "user") {
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
+                                    if ($_SESSION['role'] === "user") {
+                                        header("location: ../build/index.php");
+                                    }
                                     $user = $_SESSION['id'];
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $idOrg = $org['Id'];
