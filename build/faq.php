@@ -9,16 +9,28 @@ include ("includes/head_sideMenu.php");
 				<br/>
 				<div class="row">
 						<div class="col-md-12">
-							<div class="form-group">
+<!--							<div class="form-group">
 								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">What is WiC?</span></button>
                                                                 <p>TEREWREWFREWFRW</p>
-                                                        </div>
+                                                        </div>-->
 						</div>
+                                    <div class="btn-group">
+								<button type="button" class="btn btn-inline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Action
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Separated link</a>
+								</div>
+							</div>
+                                    
 					</div>
                                     
 					
-
-        <script src="js/lib/jquery/jquery.min.js"></script>
+	<script src="js/lib/jquery/jquery.min.js"></script>
 	<script src="js/lib/tether/tether.min.js"></script>
 	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
 	<script src="js/plugins.js"></script>
@@ -28,25 +40,6 @@ include ("includes/head_sideMenu.php");
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.contextMenu.min.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>
-	<script>src="js/lib/tether/tether.min.js"></script>
-	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-	<script src="js/plugins.js"></script>
-
-	<script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
-	<script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        
-
-	<script src="js/lib/salvattore/salvattore.min.js"></script>
-        
-        
-        
-        
-        
-        
-        
-        
 	<script>
 		$(document).ready(function() {
 			$('.panel').lobiPanel({
