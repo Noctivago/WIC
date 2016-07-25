@@ -38,9 +38,9 @@ $msg = "";
                     die('File uploaded exceeds maximum upload size.');
                 }
                 // Check if the file exists
-                if (file_exists('pics/' . $_FILES['file_upload']['name'])) {
-                    die('File with that name already exists.');
-                }
+//                if (file_exists('pics/' . $_FILES['file_upload']['name'])) {
+//                    die('File with that name already exists.');
+//                }
                 // Upload file
 //                if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $_FILES['file_upload']['name'])) {
                 if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $newfilename)) {
