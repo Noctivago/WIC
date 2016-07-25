@@ -11,7 +11,7 @@ include '../build/db/session.php';
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>StartUI - Premium Bootstrap 4 Admin Dashboard Template</title>
+        <title>WIC</title>
 
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
@@ -284,7 +284,7 @@ include '../build/db/session.php';
                                         <!--                                        <h4 style="color: darkgray; font-family: cursive">You can event, event your life</h4>-->
                                         <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 
-                                            <select class="bootstrap-select bootstrap-select-arrow" style="width: 200px;" >
+                                            <select class="bootstrap-select bootstrap-select-arrow" style=" width:10px;" >
                                                 <option>Chose Your City</option>
                                                 <option>MY WIcPlanner 2</option>
                                                 <option>MY WIcPlanner 3</option>

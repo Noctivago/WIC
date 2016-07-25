@@ -96,7 +96,10 @@ include_once '../build/db/session.php';
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <div class = "sign-avatar no-photo">&plus;
                         </div>
-                        <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
+                        <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
+                            <input type="file" name="images[]" id="images" multiple >
+                        </button>
+                         <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
                         <header class = "sign-title">Fill the fields below</header>
