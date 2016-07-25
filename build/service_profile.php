@@ -69,20 +69,6 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
             </div>
 
-            <section class="box-typical">
-                <div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">
-                    <?= DB_GetServiceInfoBar($pdo, $serviceId); ?>
-                    <div class="slide">
-                        <!--BOTOES CHAT + WIC-->
-                        <div class="user-card-row">
-                            <div class="tbl-cell">
-                                <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                            </div>								
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <?php
             if (db_checkServiceOrgBossPermission($pdo, $serv, $serviceId, $_SESSION['id'])) {
                 echo '<div class="box-typical">
