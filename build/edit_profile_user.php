@@ -7,8 +7,8 @@ $msg = "";
 ?>
 <body>
     <?php
-    error_reporting(E_ALL);
-    ini_set("display_errors", 1);
+//    error_reporting(E_ALL);
+//    ini_set("display_errors", 1);
     //falta alterar foto
     $userId = $_SESSION['id'];
     if (isset($_POST['save']) && !empty($_POST['first']) && !empty($_POST['last'])) {
@@ -40,7 +40,7 @@ $msg = "";
                 $msg = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                 $uploadOk = 0;
             }
-           // Check if $uploadOk is set to 0 by an error
+            // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
                 $msg = "Sorry, your file was not uploaded.";
             } else {
