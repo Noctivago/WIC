@@ -12,7 +12,7 @@ include_once '../build/db/session.php';
                 <section class="box-typical">
                     <div id="imagePreview" style="width: 100%"></div>                    
                 </section>    
-                
+
                 <section class="box-typical">
                     <div class="recomendations-slider">
                         <div class="slide">
@@ -82,7 +82,8 @@ include_once '../build/db/session.php';
                         </div>
                     </article>
                 </section>
-
+                <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
+                
             </div>
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
@@ -141,9 +142,7 @@ include_once '../build/db/session.php';
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                         </div>
-                        <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
                 </section>
-
             </div>
         </div>
     </div>
