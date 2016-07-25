@@ -471,31 +471,6 @@ include '../build/db/session.php';
 
                                     <ul class="side-menu-list">
 
-<!--                                        <form class="site-header-search-container ">
-                                                <div class="col-md-10">
-                                                    <label class="form-label">Advanced Search</label>
-
-                                                    <div class="typeahead-container">
-                                                        <div class="typeahead-field">
-                                                            <span class="typeahead-query">
-                                                                <input placeholder="Chose your City"
-                                                                    id="categories"
-                                                                       class="form-control"
-                                                                       name="name"
-                                                                       type="text"
-                                                                       autocomplete="on">
-
-                                                            </span>
-                                                            <span class="typeahead-button">
-                                                                <button type="submit">
-                                                                    <span class="font-icon-search"></span>
-                                                                </button>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="overlay"></div>
-                                            </form>-->
 
 
                                         <form class="site-header-search ">
