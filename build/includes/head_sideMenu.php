@@ -471,7 +471,7 @@ include '../build/db/session.php';
 
                                     <ul class="side-menu-list">
 
-                                        <form class="site-header-search ">
+                                        <form class="site-header-search-container ">
                                                 <div class="col-md-10">
                                                     <!--<label class="form-label">Advanced Search</label>-->
 
@@ -486,11 +486,11 @@ include '../build/db/session.php';
                                                                        autocomplete="on">
 
                                                             </span>
-                                                            <span class="typeahead-button">
+                                                            <!--<span class="typeahead-button">-->
                                                                 <button type="submit">
                                                                     <span class="font-icon-search"></span>
                                                                 </button>
-                                                            </span>
+                                                            <!--</span>-->
                                                         </div>
                                                     </div>
                                                 </div>
