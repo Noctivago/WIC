@@ -33,12 +33,12 @@ include ("includes/head_sideMenu.php");
 							</div>
 						</article>
 						<article class="panel">
-							<div class="panel-heading" role="tab" id="headingOne">
+							<div class="panel-heading" role="tab" id="headingTwo">
 								<a data-toggle="collapse"
 								   data-parent="#accordion"
-								   href="#collapseOne"
+								   href="#collapseTwo"
 								   aria-expanded="true"
-								   aria-controls="collapseOne">
+								   aria-controls="collapseTwo">
 									How can I join WiC community?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
