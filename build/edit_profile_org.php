@@ -7,8 +7,8 @@ $msg = '';
 
 <body>
     <?php
-//    error_reporting(E_ALL);
-//    ini_set("display_errors", 1);
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
     //FUTURAMENTE COLOCAR SE USER IN SERVICE PODE EDITAR
     if ($_SESSION['role'] === 'user') {
         header("location: ../build/index.php");
