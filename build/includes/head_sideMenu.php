@@ -473,7 +473,7 @@ include '../build/db/session.php';
 
 
 
-                                        <form class="site-header-search  ">
+                                        <form class="site-header-search opened  ">
                                             <input type="text" placeholder="Choose your City.."
                                                     id="categories"
                                                     class="form-control"
