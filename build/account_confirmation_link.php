@@ -45,7 +45,7 @@ include("../build/db/dbconn.php");
                     <div class="sign-avatar">
                         <img src="img/avatar-sign.png" alt="">
                     </div>
-                    <header class="sign-title">Confirm Your Account</header>
+                    <header class="sign-title">Account Confirmation</header>
                     <div class="form-group">
                         <p class="sign-note">  <?= $msg; ?> </p>
                         <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as an user</a><a href="sign_up_org.php"> Sign up as an Organization</a></p>
