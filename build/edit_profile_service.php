@@ -24,6 +24,9 @@ include_once '../build/db/session.php';
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
+                                    if ($_SESSION['role'] === 'user') {
+                                        header("location: ../build/index.php");
+                                    }
                                     $service = $_GET['Service'];
                                     $serv = $_POST['Serv'];
                                     $user = $_SESSION['id'];
