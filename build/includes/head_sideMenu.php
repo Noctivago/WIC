@@ -466,14 +466,14 @@ include '../build/db/session.php';
 
 
 
-                                <div class="site-header-search">
+                                <div class="site-header-search-container">
 
 
                                     <ul class="side-menu-list">
 
 
 
-                                        <form class="site-header-search ">
+                                        <form class="site-header-search closed ">
                                             <input type="text" placeholder="Search a Service.."
                                                     id="categories"
                                                     class="form-control"

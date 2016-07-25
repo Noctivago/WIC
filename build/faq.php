@@ -11,7 +11,8 @@ include ("includes/head_sideMenu.php");
 						<div class="col-md-12">
 							<div class="form-group">
 								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">What is WiC?</span></button>
-							</div>
+                                                                <p>TEREWREWFREWFRW</p>
+                                                        </div>
 						</div>
 					</div>
                                     
@@ -27,9 +28,7 @@ include ("includes/head_sideMenu.php");
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.contextMenu.min.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>
-	<script>
-	
-	<script src="js/lib/tether/tether.min.js"></script>
+	<script>src="js/lib/tether/tether.min.js"></script>
 	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
 	<script src="js/plugins.js"></script>
 
