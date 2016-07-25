@@ -1368,13 +1368,6 @@ function DB_GetOrganizationServices($pdo, $org ,$idUser) {
             echo $comments['NumComment'];
             echo '</li>';
             echo '</ul>';
-            if(DB_CheckIfBossOrg($pdo, $org, $idUser)){
-            echo '<li>';
-            echo '<i class = "font-icon font-icon-edit"><a href="edit_profile_service.php?Service=' . $idService . '"</i>';
-           // echo '<input type=button href="edit_profile_service.php?Service=' . $idService . '" value="Edit"/>';
-            echo '</li>';
-            echo '</ul>';
-            }
             echo '</article>';
             echo '</div>';
         }
