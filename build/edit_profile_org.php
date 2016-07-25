@@ -8,7 +8,7 @@ $msg = '';
 <body>
     <?php
     //FUTURAMENTE COLOCAR SE USER IN SERVICE PODE EDITAR
-    if ($_SESSION['role'] === "user") {
+    if ($_SESSION['role'] === 'user') {
         header("location: ../build/index.php");
     }
     //falta alterar foto

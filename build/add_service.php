@@ -23,7 +23,7 @@ include_once '../build/db/session.php';
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
-                                    if ($_SESSION['role'] === "user") {
+                                    if ($_SESSION['role'] === 'user') {
                                         header("location: ../build/index.php");
                                     }
                                     $user = $_SESSION['id'];
