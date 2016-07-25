@@ -2298,10 +2298,6 @@ function DB_GetServiceLocAndDescription($pdo, $serviceId) {
             echo '<section class="box-typical">
                     <article class="profile-info-item">
                         <header class="profile-info-item-header">
-                            <i class="font-icon font-icon-earth-bordered"></i>
-                            ' . $row['OAD'] . ', ' . $row['CNA'] . '
-                        </header>
-                        <header class="profile-info-item-header">
                             <i class="font-icon font-icon-notebook-bird"></i>
                             Description
                         </header>
