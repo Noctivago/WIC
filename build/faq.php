@@ -10,9 +10,7 @@ include ("includes/head_sideMenu.php");
 				<div class="row">
 					<div class="col-md-6">
 						<article class="faq-item">
-							 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-target
-  </button>
+                                                        <button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">What is WiC?</span></button>
                                                         <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat where you can send text messages and bargain the price of the service on the go.</p>
                                                 </article>
 					</div>
