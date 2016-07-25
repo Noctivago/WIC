@@ -6,7 +6,7 @@
     <div class="sign-box">
         <!--<div class="sign-avatar no-photo">&plus;</div>-->
         <header class="sign-title">#No services in this Event!</header>
-        <button   class="btn btn-rounded btn-success sign-up">Start Planning</button>
+        <button href="#" class="btn btn-rounded btn-success sign-up">Start Planning</button>
     </div>
 </div>
 

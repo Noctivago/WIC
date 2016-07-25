@@ -61,11 +61,6 @@ $msg = '';
         console.log("load event detected!");
         loadMyWics();
         showAddWicForm();
-//        if (<?= $wicSelected; ?> !== '') {
-//            showWicServicesForm(<?= $wicSelected; ?>);
-//        } else {
-//            showAddWicForm();
-//        }
     }
     window.onload = load;
 </script>
