@@ -55,16 +55,17 @@ $msg = "";
 
             $msg = ('File uploaded successfully.');
         }
-        ?>
-        <div class="page-center">
-            <div class="page-center-in">
-                <div class="container-fluid">
-                    <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
-                        <?php
-                        DB_UserProfile($pdo, $userId);
-                        ?>
-                    </form>
-                    <?= $msg; ?>
+    }
+    ?>
+    <div class="page-center">
+        <div class="page-center-in">
+            <div class="container-fluid">
+                <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
+                    <?php
+                    DB_UserProfile($pdo, $userId);
+                    ?>
+                </form>
+                <?= $msg; ?>
             </div>
         </div>
     </div><!--.page-center-->
