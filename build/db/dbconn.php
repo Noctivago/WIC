@@ -1776,6 +1776,29 @@ function DB_OrgProfile($pdo, $userId) {
         
     }
 }
+function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org){
+    try {
+        $d = getDateToDB();
+        sql($pdo,"INSERT INTO [dbo].[Service]
+           ([Name]
+           ,[Description]
+           ,[Organization_Id]
+           ,[Date_Created]
+           ,[Enabled]
+           ,[Sub_Category_Id])
+		   VALUES
+           (?
+           ,?
+           ,?
+           ,?
+           ,?
+           ,?)", array($cname,$cDescription,$org,$d,1,$cSub));
+        echo 'true';
+    } catch (Exception $ex) {
+
+    }
+    
+}
 
 function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
     try {

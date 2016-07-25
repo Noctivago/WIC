@@ -23,9 +23,19 @@ include_once '../build/db/session.php';
 
                             <div class="user-card-row">
                                 <div class="tbl-row">
-<?php                                                                        $user = $_SESSION['id'];
+                                    <?php
+                                    $user = $_SESSION['id'];
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
-?>
+                                    $idOrg = $org['Id'];
+                                    if(isset($_POST['addservice']) && !empty($_POST['cName']) && !empty($_POST['cDescription']) && !empty($_POST['cSubCat'])) {
+                                            $cname = $_POST['cName'];
+                                            $cDescription = $_POST['cDescription'];
+                                            $cSub = $_POST['cSubCat'];
+                                            //     $serv = $_POST['Serv'];
+                                            $msg = DB_AddNewService($pdo, $cname, $cDescription, $cSub,$idOrg);
+                                            
+                                    }
+                                    ?> 
                                     <div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
                                             <img src="' . $org['Picture_Path'] . '" alt="">
@@ -34,7 +44,7 @@ include_once '../build/db/session.php';
                                     <div class="tbl-cell">
                                         <p>Service Name</p>
                                         <p id="serviceName" class="user-card-row-name"></p>
-                                        ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +104,7 @@ include_once '../build/db/session.php';
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
                         <header class = "sign-title">Add Profile</header>
-                        
+
                         <div class = "form-group">
                             <div class = "form-control-wrapper form-control-icon-left" >
                                 <input type = "text" class = "form-control" onchange="reloadName()"id="cName" name="cName"  placeholder = " Service Name"/>
@@ -134,17 +144,14 @@ include_once '../build/db/session.php';
                             </div>
                         </div>
 
-                        <button type = "submit" name="saveChanges" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
+                        <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">New Service</button>
                 </section>
-                
+
 
             </div>
         </div><!--.row-->
     </div><!--.container-fluid-->
 </div><!--.page-content-->
-<script type="text/javascript">function viewS(id) {
-        location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service=' + id;
-    }</script>
 
 <script>
     function reloadDescription() {
