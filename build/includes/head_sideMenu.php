@@ -284,7 +284,7 @@ include '../build/db/session.php';
                                         <!--                                        <h4 style="color: darkgray; font-family: cursive">You can event, event your life</h4>-->
                                         <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 
-                                            <select class="bootstrap-select bootstrap-select-arrow" style="width: 200px;" >
+                                            <select class="bootstrap-select bootstrap-select-arrow" style=" width:10px;" >
                                                 <option>Chose Your City</option>
                                                 <option>MY WIcPlanner 2</option>
                                                 <option>MY WIcPlanner 3</option>
