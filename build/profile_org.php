@@ -25,7 +25,11 @@ include_once '../build/db/session.php';
                         <?php
                         $org = (filter_var($_GET['Organization']));
                         $idUser = $_SESSION['id'];
-                        DB_GetOrganizationServices($pdo, $org, $idUser);
+                        if (isset(filter_var($_GET['UserInService']))) {
+                            
+                        } else {
+                            DB_GetOrganizationServices($pdo, $org, $idUser);
+                        }
                         ?>
                     </div><!--.posts-slider-->
                 </section><!--.box-typical-->
@@ -45,14 +49,7 @@ include_once '../build/db/session.php';
                         &nbsp;
                     </header>
                     <div class="friends-list">
-                        <?php
-//                        SE CLICAR NUM USER IN ORG
-                        if (isset(filter_var($_GET['UserInService']))) {
-                            
-                        } else {
-                            DB_getUsersInServiceOrganization($pdo, $org);
-                        }
-                        ?>
+                        <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
                     </div>
                 </section>
             </div><!--.col- -->
