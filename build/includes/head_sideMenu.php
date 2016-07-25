@@ -503,7 +503,7 @@ include '../build/db/session.php';
                 <form>
                     <div class="col-md-10">
                         
-                        <header class="side-menu-title">Advanced Search</header>
+                        <!--<header class="side-menu-title">Advanced Search</header>-->
                         
                         <!--<label class="form-label">Advanced Search</label>-->
 
