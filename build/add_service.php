@@ -93,7 +93,8 @@ include_once '../build/db/session.php';
                         <div id="wrapper" style="margin-top: 20px;">
                             <!--OTHER PICTURES-->
                             <input id="files2Upload" multiple="multiple" type="file"/> 
-                            <div id="image-holder" class="thumb-image" style="height: 75px;width: 75px;"></div>
+                            <!--<div id="image-holder" class="thumb-image" style="height: 75px;width: 75px;"></div>-->
+                            <div id="image-holder" class="thumb-image"></div>
                         </div>
 
                         <header class = "sign-title">Fill the fields below</header>
