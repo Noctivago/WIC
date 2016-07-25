@@ -94,17 +94,17 @@ include_once '../build/db/session.php';
                             <!--OTHER PICTURES-->
                             <input id="files2Upload" multiple="multiple" type="file"/> 
                             <!--<div id="image-holder" class="thumb-image" style="height: 75px;width: 75px;"></div>-->
-                            <div id="image-holder" class="thumb-image"></div>
+                            <div id="image-holder" class="thumbimage"></div>
                         </div>
 
-                        <script type="text/css">
-                            .thumb-image img {
-                                border: 1px solid green;
-                                margin: 0;
-                                height: 75px;
-                                width: 75px;
+                        <style type="text/css">
+                            .thumbimage {
+                                float:left;
+                                width:100px;
+                                position:relative;
+                                padding:5px;
                             }
-                        </script>
+                        </style>
 
                         <header class = "sign-title">Fill the fields below</header>
 
@@ -400,7 +400,7 @@ include_once '../build/db/session.php';
                         reader.onload = function (e) {
                             $("<img />", {
                                 "src": e.target.result,
-                                "class": "thumb-image"
+                                "class": "thumbimage"
                             }).appendTo(image_holder);
                         }
                         image_holder.show();
