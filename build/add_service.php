@@ -92,10 +92,10 @@ include_once '../build/db/session.php';
                     <header class = "box-typical-header-sm">Add new service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <div id="imagePreview"></div>
-                        <!--<input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />-->
-                        <!--<button class = "btn btn-rounded btn-file">Service Profile Picture--> 
+                        <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
+                        <!--<button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
                            <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
-                        <!--</button>-->
+                        </button>-->
                         <button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
@@ -392,13 +392,13 @@ include_once '../build/db/session.php';
                                 $("#uploadFile").change(function () {
                                     var files = !!this.files ? this.files : [];
                                     if (!files.length || !window.FileReader)
-                                        return; 
+                                        return; // no file selected, or no FileReader support
 
-                                    if (/^image/.test(files[0].type)) { 
-                                        var reader = new FileReader(); 
-                                        reader.readAsDataURL(files[0]); e
+                                    if (/^image/.test(files[0].type)) { // only image file
+                                        var reader = new FileReader(); // instance of the FileReader
+                                        reader.readAsDataURL(files[0]); // read the local file
 
-                                        reader.onloadend = function () { 
+                                        reader.onloadend = function () { // set image data as background of div
                                             $("#imagePreview").css("background-image", "url(" + this.result + ")");
                                         };
                                     }
@@ -408,8 +408,8 @@ include_once '../build/db/session.php';
 
                         <style>
                             #imagePreview {
-                                width: 200px;
-                                height: 200px;
+                                width: 180px;
+                                height: 180px;
                                 background-position: center center;
                                 background-size: cover;
                                 -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
