@@ -93,9 +93,9 @@ include_once '../build/db/session.php';
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <div id="imagePreview"></div>
                         <!--<input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />-->
-                        <button class = "btn btn-rounded btn-file">Service Profile Picture 
+                        <!--<button class = "btn btn-rounded btn-file">Service Profile Picture--> 
                            <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
-                        </button>
+                        <!--</button>-->
                         <button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
