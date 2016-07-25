@@ -482,7 +482,7 @@ include '../build/db/session.php';
                                                                     id="categories"
                                                                        class="form-control"
                                                                        name="name"
-                                                                       type="search"
+                                                                       type="text"
                                                                        autocomplete="on">
 
                                                             </span>
