@@ -24,9 +24,11 @@ include ("includes/head_sideMenu.php");
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-collapse-in">
+                                                                     <div class="tbl-row">
                                                                     <p>WiC is the first events and entertainment global brand.<br></p>
                                                   
                                                                     <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat where you can send text messages and bargain the price of the service on the go.</p>
+								</div>
 								</div>
 							</div>
 						</article>
@@ -37,16 +39,19 @@ include ("includes/head_sideMenu.php");
 								   href="#collapseOne"
 								   aria-expanded="true"
 								   aria-controls="collapseOne">
-									What is WiC?
+									How can I join WiC community?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-collapse-in">
+                                                                    <div class="tbl-row">
                                                                     <p>If you’re a supplier: Register here (link here)<br></p>
                                                                     <p>If you’re a user: Register here (link here)<br></p>
                                                                     <p>You can use your email address to register or login using your Facebook account.</p>
-								</div>
+								
+                                                                    </div>
+                                                                    </div>
 							</div>
 						</article>
 						<article class="panel">
