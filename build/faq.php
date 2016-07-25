@@ -24,12 +24,20 @@ include ("includes/head_sideMenu.php");
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-collapse-in">
-                                                                     <div class="tbl-row">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												
+											</div>
+											<div class="tbl-cell">
+											
+											</div>
+										</div>
+									</div>
                                                                     <p>WiC is the first events and entertainment global brand.<br></p>
                                                   
                                                                     <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat where you can send text messages and bargain the price of the service on the go.</p>
-								</div>
-								</div>
+							</div>
 							</div>
 						</article>
 						<article class="panel">
