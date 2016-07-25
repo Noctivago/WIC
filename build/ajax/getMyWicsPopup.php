@@ -6,7 +6,6 @@ include_once '../db/session.php';
 //print 'SESSION INFO <br>';
 //print 'ID > ' . $_SESSION['id'] . '<br>';
 //var_dump($_SESSION);
-$msg = '';
 $userId = $_SESSION['id'];
 $serviceId = (filter_var($_GET ['id']));
 if ($_SESSION['role'] !== 'user') {
