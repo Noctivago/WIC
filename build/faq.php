@@ -34,24 +34,32 @@ include ("includes/head_sideMenu.php");
 						</article>
 						<article class="panel">
 							<div class="panel-heading" role="tab" id="headingTwo">
-								<a data-toggle="collapse"
+								<a class="collapsed"
+								   data-toggle="collapse"
 								   data-parent="#accordion"
 								   href="#collapseTwo"
-								   aria-expanded="true"
+								   aria-expanded="false"
 								   aria-controls="collapseTwo">
 									How can I join WiC community?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
-							<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 								<div class="panel-collapse-in">
-                                                                    <div class="tbl-row">
-                                                                    <p>If you’re a supplier: Register here (link here)<br></p>
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+											
+											</div>
+											<div class="tbl-cell">
+											
+											</div>
+										</div>
+									</div>
+								    <p>If you’re a supplier: Register here (link here)<br></p>
                                                                     <p>If you’re a user: Register here (link here)<br></p>
                                                                     <p>You can use your email address to register or login using your Facebook account.</p>
-								
-                                                                    </div>
-                                                                    </div>
+						</div>
 							</div>
 						</article>
 						<article class="panel">
