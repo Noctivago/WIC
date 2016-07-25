@@ -466,7 +466,7 @@ include '../build/db/session.php';
 
 
 
-                                <div class="site-header-search-container">
+                                <div class="site-header-search">
 
 
                                     <ul class="side-menu-list">
