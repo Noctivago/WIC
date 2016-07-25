@@ -869,16 +869,16 @@ function db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg) {
     }
 }
 
-function DB_UpdateServiceInformation($pdo, $service, $cname, $cDescription, $cSub,$city) {
+function DB_UpdateServiceInformation($pdo, $service, $cname, $cDescription, $cSub, $city) {
     try {
         //verificar se o user é boss da cat com o servico X
-
+        
         sql($pdo, "UPDATE [dbo].[Service]
    SET [Name] = ?
       ,[Description] = ?
       ,[Sub_Category_Id] = ?
-      ,[City_Id]
- WHERE [Id] = ?", array($cname, $cDescription, $cSub,$city, $service));
+      ,[City_Id] = ?
+ WHERE [Id] = ?", array($cname, $cDescription, $cSub, $city, $service));
         echo 'true';
     } catch (Exception $ex) {
         
