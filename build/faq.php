@@ -78,7 +78,7 @@ include ("includes/head_sideMenu.php");
 								   href="#collapseThree"
 								   aria-expanded="false"
 								   aria-controls="collapseThree">
-									Collapsible Group Item #3
+									How can you help me?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
@@ -95,7 +95,7 @@ include ("includes/head_sideMenu.php");
 										</div>
 									</div>
 									
-									<p>teste</p>
+									<p>Send an email to support@wic.club and our team will solve any problem within 24 hours.</p>
 								</div>
 							</div>
 						</article>
