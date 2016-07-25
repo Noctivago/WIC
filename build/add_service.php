@@ -90,12 +90,15 @@ include_once '../build/db/session.php';
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
                         <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
-                        <div id="wrapper" style="margin-top: 20px;">
+                        <!--<div id="wrapper" style="margin-top: 20px;">-->
                         <!--OTHER PICTURES-->
                         <!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
-                            <input id="files2Upload" multiple="multiple" type="file"/> 
+                        Files: <input type="file" id="files" name="files" multiple><br/>
+
+                        <div id="selectedFiles"></div>
+                                        <!--<input id="files2Upload" multiple="multiple" type="file"/>--> 
                         <!--<div id="image-holder" class="thumb-image" style="height: 75px;width: 75px;"></div>-->
-                        <div id="image-holder" class="thumbimage"></div>
+                        <!--<div id="image-holder" class="thumbimage"></div>-->
                         </div>
 
 
@@ -147,6 +150,15 @@ include_once '../build/db/session.php';
         </div>
     </div>
 </div>
+
+<style>
+    #selectedFiles img {
+        max-width: 100px;
+        max-height: 100px;
+        float: left;
+        margin-bottom:10px;
+    }
+</style>
 
 <!--GET Country / State / City-->
 <script>
@@ -232,6 +244,73 @@ include_once '../build/db/session.php';
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
+
+<script>
+    var selDiv = "";
+    var storedFiles = [];
+
+    $(document).ready(function () {
+        $("#files").on("change", handleFileSelect);
+
+        selDiv = $("#selectedFiles");
+        $("#myForm").on("submit", handleForm);
+
+        $("body").on("click", ".selFile", removeFile);
+    });
+
+    function handleFileSelect(e) {
+        var files = e.target.files;
+        var filesArr = Array.prototype.slice.call(files);
+        filesArr.forEach(function (f) {
+
+            if (!f.type.match("image.*")) {
+                return;
+            }
+            storedFiles.push(f);
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var html = "<div><img src=\"" + e.target.result + "\" data-file='" + f.name + "' class='selFile' title='Click to remove'>X<br clear=\"left\"/></div>";
+                selDiv.append(html);
+
+            }
+            reader.readAsDataURL(f);
+        });
+
+    }
+
+    function handleForm(e) {
+        e.preventDefault();
+        var data = new FormData();
+
+        for (var i = 0, len = storedFiles.length; i < len; i++) {
+            data.append('files', storedFiles[i]);
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'handler.cfm', true);
+
+        xhr.onload = function (e) {
+            if (this.status == 200) {
+                console.log(e.currentTarget.responseText);
+                alert(e.currentTarget.responseText + ' items uploaded.');
+            }
+        }
+
+        xhr.send(data);
+    }
+
+    function removeFile(e) {
+        var file = $(this).data("file");
+        for (var i = 0; i < storedFiles.length; i++) {
+            if (storedFiles[i].name === file) {
+                storedFiles.splice(i, 1);
+                break;
+            }
+        }
+        $(this).parent().remove();
+    }
+</script>
 
 <script>
     $(document).ready(function () {
@@ -375,7 +454,7 @@ include_once '../build/db/session.php';
 </script>
 
 <!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
-<script>
+<!--<script>
     $(document).ready(function () {
         $("#files2Upload").on('change', function () {
             //Get count of selected files
@@ -407,7 +486,7 @@ include_once '../build/db/session.php';
             }
         });
     });
-</script>
+</script>-->
 
 <!--PIC SERVICE PROF-->
 <script>
