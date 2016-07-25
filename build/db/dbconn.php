@@ -1338,7 +1338,7 @@ Free for 3 Months</header>';
 
 //preencher seccao services no profile org
 //falta passar o id da org
-function DB_GetOrganizationServices($pdo, $org) {
+function DB_GetOrganizationServices($pdo, $org ,$idUser) {
     try {
         $services = getAllOrganizationServices($pdo, $org);
         foreach ($services as $service) {
@@ -1368,11 +1368,13 @@ function DB_GetOrganizationServices($pdo, $org) {
             echo $comments['NumComment'];
             echo '</li>';
             echo '</ul>';
+            if(DB_CheckIfBossOrg($pdo, $org, $idUser)){
             echo '<li>';
-            echo '<i class = "font-icon font-icon-edit"></i>';
-            echo '<input type=button href="edit_profile_service.php?Service=' . $idService . '" value="Edit"/>';
+            echo '<i class = "font-icon font-icon-edit"><a href="edit_profile_service.php?Service=' . $idService . '"</i>';
+           // echo '<input type=button href="edit_profile_service.php?Service=' . $idService . '" value="Edit"/>';
             echo '</li>';
             echo '</ul>';
+            }
             echo '</article>';
             echo '</div>';
         }
