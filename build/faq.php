@@ -12,8 +12,9 @@ include ("includes/head_sideMenu.php");
 						<article class="faq-item">
 							<button type="button" class="btn btn-default-outline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									What is WiC?
+                                                                        <p>WiC is the first events and entertainment global brand.</p>
 								</button>
-                                                        <p>WiC is the first events and entertainment global brand.</p>
+                                                        
                                                         <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat where you can send text messages and bargain the price of the service on the go.</p>
                                                 </article>
 					</div>
