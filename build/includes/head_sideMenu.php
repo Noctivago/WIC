@@ -283,14 +283,39 @@ include '../build/db/session.php';
                                         <!--<span class="font-icon font-icon-cogwheel"></span>-->
                                         <!--                                        <h4 style="color: darkgray; font-family: cursive">You can event, event your life</h4>-->
                                         <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                                            
+<!--                                            <form>
+                                                <div class="col-md-10">
+                                                    <label class="form-label">Advanced Search</label>
 
-                                            <select class="bootstrap-select bootstrap-select-arrow" style=" width:10px;" >
+                                                    <div class="typeahead-container">
+                                                        <div class="typeahead-field">
+                                                            <span class="typeahead-query">
+                                                                <input id="categories"
+                                                                       class="form-control"
+                                                                       name="name"
+                                                                       type="search"
+                                                                       autocomplete="on">
+                                                                autocomplete estava como OFF
+                                                                name estava como q
+                                                            </span>
+                                                            <span class="typeahead-button">
+                                                                <button type="submit">
+                                                                    <span class="font-icon-search"></span>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>-->
+
+<!--                                            <select class="bootstrap-select bootstrap-select-arrow" style=" width:10px;" >
                                                 <option>Chose Your City</option>
                                                 <option>MY WIcPlanner 2</option>
                                                 <option>MY WIcPlanner 3</option>
                                                 <option>MY WIcPlanner 4</option>
                                                 <option>Long long long extra long example line long long long extra long example line </option>
-                                            </select>
+                                            </select>-->
                                     </a>
                                     <br>
                                     <br>
@@ -446,16 +471,40 @@ include '../build/db/session.php';
 
                                     <ul class="side-menu-list">
 
+                                            <form>
+                                                <div class="col-md-10">
+                                                    <label class="form-label">Advanced Search</label>
+
+                                                    <div class="typeahead-container">
+                                                        <div class="typeahead-field">
+                                                            <span class="typeahead-query">
+                                                                <input id="categories"
+                                                                       class="form-control"
+                                                                       name="name"
+                                                                       type="search"
+                                                                       autocomplete="on">
+                                                                autocomplete estava como OFF
+                                                                name estava como q
+                                                            </span>
+                                                            <span class="typeahead-button">
+                                                                <button type="submit">
+                                                                    <span class="font-icon-search"></span>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="overlay"></div>
+                                            </form>
 
 
-
-                                        <form class="site-header-search closed">
+<!--                                        <form class="site-header-search closed">
                                             <input type="text" placeholder="Search a Service.."/>
                                             <button type="submit">
                                                 <span class="font-icon-search"></span>
                                             </button>
                                             <div class="overlay"></div>
-                                        </form>
+                                        </form>-->
                                 </div>
                             </div><!--.site-header-collapsed-in-->
                         </div><!--.site-header-collapsed-->
