@@ -107,7 +107,8 @@ include ("includes/head_sideMenu.php");
 						</article>
 					</section>
                                                 </div>
-					
+                        </div>
+                </div>
                                     
 					
 	<script src="js/lib/jquery/jquery.min.js"></script>
