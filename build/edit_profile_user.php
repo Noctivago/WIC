@@ -1,5 +1,5 @@
 <?php
-//include ("includes/head_sideMenu.php");
+include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 include_once '../build/db/functions.php';
@@ -47,6 +47,7 @@ $msg = "";
                     die('Error uploading file - check destination is writeable.');
                 } else {
                     $picture_path = 'pics/' . $newfilename;
+                    //filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
                     DB_UpdateUserPictureInformation($pdo, $userId, $picture_path);
                     $msg = ('File uploaded successfully.');
                 }
