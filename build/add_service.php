@@ -97,6 +97,15 @@ include_once '../build/db/session.php';
                             <div id="image-holder" class="thumb-image"></div>
                         </div>
 
+                        <script type="text/css">
+                            .thumb-image img {
+                                border: 1px solid green;
+                                margin: 0;
+                                height: 75px;
+                                width: 75px;
+                            }
+                        </script>
+
                         <header class = "sign-title">Fill the fields below</header>
 
                         <div class = "form-group">
