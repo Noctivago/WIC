@@ -12,8 +12,8 @@ include_once '../build/db/session.php';
 
                 <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
 
-                <section class="box-typical" id="gallery">
-
+                <section class="box-typical">
+                   <img id="gallery" src="#"/>
                     <!--<img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>-->
 
                 </section>                                         
@@ -109,8 +109,9 @@ include_once '../build/db/session.php';
                         <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                             <div class = "sign-avatar no-photo">&plus;
                             </div>
-                              <input name="files[]" id="file" class = "btn-file" type = "file" multiple /> 
-                            <div class="uploading none">
+                              <input name="files[]" id="file" class = "btn-file" type = "file" onchange="readURL(this);" multiple />
+                              <input type="submit" name="submit" value="addimage" onclick="loadImage()"/>
+                              <div class="uploading none" style="display: none">
                                 <label>&nbsp;</label>
                                 <img src="uploading.gif" alt="uploading......"/>
                             </div>
@@ -180,6 +181,18 @@ include_once '../build/db/session.php';
 <script type="text/javascript">function viewS(id) {
         location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service=' + id;
     }</script>
+<script>
+function readURL(this){
+    if(input.files && input.files[0]){
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $('#gallery').attr('src', e.target.result).width(150).height(200);
+        };
+        reader.readAsDataURL(input.Files[0]);
+    }
+
+}
+</script>
 
 <script>
     $('#formm').on('submit', function (e) {
