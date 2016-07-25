@@ -9,24 +9,21 @@ include ("includes/head_sideMenu.php");
 				<br/>
 				<div class="row">
 						<div class="col-md-12">
-<!--							<div class="form-group">
-								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">What is WiC?</span></button>
-                                                                <p>TEREWREWFREWFRW</p>
-                                                        </div>-->
-						</div>
+
+						
                                     <div class="btn-group">
 								<button type="button" class="btn btn-inline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Action
+									What is WiC?
 								</button>
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									<a class="dropdown-item" href="#">Something else here</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Separated link</a>
+                                                                    <a class="dropdown-item" <p>WiC is the first events and entertainment global brand.</p> 
+                                                                        <p></p>
+                                                                        <p>WiC is an online platform that helps you plan your event. In just a few steps, look for the services you need and talk with our suppliers using a web chat <br>where you can send text messages and bargain the price of the service on the go.</p>
+                                                                    </a>
+								
 								</div>
 							</div>
-                                    
+                                                </div>
 					</div>
                                     
 					

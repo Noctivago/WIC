@@ -466,14 +466,14 @@ include '../build/db/session.php';
 
 
 
-                                <div class="site-header-search-container">
+                                <div class="site-header-search-container" style="width: 250px;">
 
 
 <!--                                    <ul class="side-menu-list">-->
 
 
 
-                                        <form class="site-header-search  ">
+                                        <form class="site-header-search opened  ">
                                             <input type="text" placeholder="Choose your City.."
                                                     id="categories"
                                                     class="form-control"
@@ -499,9 +499,13 @@ include '../build/db/session.php';
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
+                <header class="side-menu-title">Advanced Search</header>
                 <form>
                     <div class="col-md-10">
-                        <label class="form-label">Advanced Search</label>
+                        
+                        <!--<header class="side-menu-title">Advanced Search</header>-->
+                        
+                        <!--<label class="form-label">Advanced Search</label>-->
 
                         <div class="typeahead-container">
                             <div class="typeahead-field">
@@ -523,6 +527,7 @@ include '../build/db/session.php';
                         </div>
                     </div>
                 </form>
+                <br>
 
 
                 <header class="side-menu-title">Start Planning</header>
