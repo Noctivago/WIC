@@ -83,7 +83,6 @@ include_once '../build/db/session.php';
                     </article>
                 </section>
 
-
             </div>
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
