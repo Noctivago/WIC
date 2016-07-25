@@ -24,10 +24,10 @@ include_once '../build/db/session.php';
 
                         <?php
                         $org = (filter_var($_GET['Organization']));
-                        $user = (filter_var($_GET['UserInService']));
+//                        $user = (filter_var($_GET['UserInService']));
                         $idUser = $_SESSION['id'];
 
-                        if (isset($user)) {
+                        if (isset($_GET['UserInService'])) {
                             
                         } else {
                             DB_GetOrganizationServices($pdo, $org, $idUser);
