@@ -13,8 +13,7 @@ include_once '../build/db/session.php';
                 <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
 
                 <section class="box-typical">
-                    <img id="gallery" src="#"/>
-                     <!--<img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>-->
+                    <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
 
                 </section>                                         
 
