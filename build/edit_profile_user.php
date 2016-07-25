@@ -18,10 +18,6 @@ $msg = "";
 
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
         //FALTA ACERTAR NISTO
-        $target_dir = "uploads/";
-        $target_file = $target_dir . basename($_FILES["Photo"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
         // Check if image file is a actual image or fake image
         if ($_POST["file_upload"] != '') {
             // Check for errors
