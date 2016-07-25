@@ -1777,13 +1777,12 @@ function DB_OrgProfile($pdo, $userId) {
     }
 }
 
-function DB_UpdateUserInformation($pdo, $sId, $first, $last, $picture_Path) {
+function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
     try {
         sql($pdo, "UPDATE [dbo].[User_Profile]
    SET [First_Name] = ?
       ,[Last_Name] = ?
-      ,[Picture_Path] = ?
- WHERE [User_Id] =? ", array($first, $last, $sId,$picture_Path));
+ WHERE [User_Id] =? ", array($first, $last, $sId));
         echo 'Updated';
     } catch (Exception $ex) {
         echo 'Error';
