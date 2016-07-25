@@ -37,7 +37,7 @@ if (isset($_GET['add2WiC']) && isset($_GET ['id'])) {
         <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?id=<?= $serviceId; ?>" method="post">
             <div class="sign-box">
                 <div class="sign-avatar no-photo">&plus;</div>
-                <header class="sign-title">#Add Service to WiC Planner?</header>
+                <header class="sign-title">#Choose a WiC Planner?</header>
                 <div class="form-group">
                     <?= DB_getMyWicsAsPopup($pdo, $userId); ?>
                 </div>
