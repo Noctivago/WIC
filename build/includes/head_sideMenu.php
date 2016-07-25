@@ -466,15 +466,15 @@ include '../build/db/session.php';
 
 
 
-                                <div class="site-header-search">
+                                <div class="site-header-search-container">
 
 
-                                    <ul class="side-menu-list">
+<!--                                    <ul class="side-menu-list">-->
 
 
 
-                                        <form class="site-header-search ">
-                                            <input type="text" placeholder="Search a Service.."
+                                        <form class="site-header-search  ">
+                                            <input type="text" placeholder="Choose your City.."
                                                     id="categories"
                                                     class="form-control"
                                                     name="name"
