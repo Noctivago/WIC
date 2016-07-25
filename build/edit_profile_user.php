@@ -37,7 +37,7 @@ $msg = "";
                     $msg = ('File uploaded exceeds maximum upload size.');
                 }
                 // Check if the file exists
-                if (file_exists('upload/' . $_FILES['file_upload']['name'])) {
+                if (file_exists('pics/' . $_FILES['file_upload']['name'])) {
                     $msg = ('File with that name already exists.');
                 }
                 // Upload file
