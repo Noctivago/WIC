@@ -7,12 +7,17 @@ include ("./db/dbconn.php");
     <div class="container-fluid">
         <div class="cards-grid" data-columns>
 
-            <?= DB_getServicesForIndex($pdo, $Category, $SubCategoty, $city); ?>
+            <?php
+            if (isset($_GET ['Category'])) {
+                $CategoryId = (filter_var($_GET ['Category']));
+                DB_getServicesForIndexByCategory($pdo, $CategoryId);
+            } else {
+                DB_getServicesForIndex($pdo);
+            }
+            ?>
+
         </div><!--.card-grid-->
         <div class="clear"></div>
-
-
-
     </div>
 </div>
 
