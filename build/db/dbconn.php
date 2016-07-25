@@ -568,7 +568,7 @@ function sendEmail($to, $subject, $body) {
 function DB_getUsersTable($pdo) {
     try {
         $rows = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [id] > ?", array('0'), "rows");
-        echo "<table class='table table-striped'><tr><th>ID</th><th>EMAIL</th><th>PWD</th><th>AE</th></tr>";
+        echo "<table class='table table-striped'><tr><th>ID</th><th>EMAIL</th><th>UAC</th><th>AE</th></tr>";
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['id'] . "</td>";
