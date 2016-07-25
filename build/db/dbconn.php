@@ -1076,7 +1076,7 @@ function DB_GetOrgInformation($pdo) {
         foreach ($rows as $row) {
             echo '<div class="profile-card">';
             echo '<div class="profile-card-photo">';
-            echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
+            echo '                      <img src="' . $row['Picture_Path'] . '" alt="" style="max-width:110px; max-height: 110px;"/>';
             echo '                  </div>';
             echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
             echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
