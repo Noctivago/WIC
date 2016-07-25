@@ -81,7 +81,6 @@ include_once '../build/db/session.php';
                             <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
                         </div>
                     </article>
-                    <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
                 </section>
 
 
@@ -121,27 +120,23 @@ include_once '../build/db/session.php';
 
                             </div>    
                         </div>
-
                         <div class = "form-group">
                             <?php
                             $idCat = $CatSubCatData['CatId'];
                             DB_getCatgoryAsSelect($pdo, $idCat);
                             ?>
-
                             <div class = "form-group">
-
                                 <?php
                                 $idSubCat = $CatSubCatData['SubCatId'];
                                 DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
                                 ?>
-
                             </div>
                         </div>
-
                         <div class = "form-control-wrapper form-control-icon-left" >
                             <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  required placeholder = "Service Info"><?= $data['Description'] ?></textarea>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
+                        <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
                         </div>
                 </section>
             </div>
