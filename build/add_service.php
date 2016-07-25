@@ -147,8 +147,8 @@ include_once '../build/db/session.php';
 <!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
 <style>
     #selectedFiles img {
-        max-width: 100px;
-        max-height: 100px;
+        max-width: 70px;
+        max-height: 70px;
         float: left;
         margin-bottom:10px;
     }
