@@ -71,19 +71,17 @@ $serviceId = (filter_var($_GET['Service']));
 
             <?php
             if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])) {
-                echo '<div class="box-typical">
-                    <div class="box-typical-footer">
-                        <div class="tbl">
-                            <div class="tbl-row">
-                                <div class="tbl-cell">
-                                </div>
-                                <div class="tbl-cell tbl-cell-action">
-                                    <a href="edit_profile_service.php?Service=' . $serviceId . ' class="btn btn-rounded" role="button">Edit Service</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--.box-typical-->';
+                echo '<header class="box-typical-header-sm">People in responsible  </header>
+                    <div class="friends-list stripped">';
+                echo '<article class="friends-list-item">';
+                echo '    <div class="user-card-row">';
+                echo '      <div class="tbl-row">';
+                echo '        <div class="tbl-cell">';
+                echo '            <a href="edit_profile_service.php?Service=' . $serviceId . ' class="btn btn-rounded" role="button">Edit Service</a>';
+                echo '         </div>';
+                echo '  </div>';
+                echo ' </article>';
+                echo '</div>';
             }
             ?>
 
