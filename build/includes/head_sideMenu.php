@@ -236,7 +236,7 @@ include '../build/db/session.php';
 
 //                                    echo 'iii'.DB_GetOrgIdByUserBossId2($pdo, $user);
                                     if ($_SESSION['role'] == 'organization') {
-                                        echo ' <a class="dropdown-item" href="profile_org.php?Organization="'.$idOrg.'><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
+                                        echo ' <a class="dropdown-item" href="profile_org.php?Organization='.$idOrg.'"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
                                         echo ' <a class="dropdown-item" href="edit_profile_org.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
                                     } else {
                                         echo '<a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
