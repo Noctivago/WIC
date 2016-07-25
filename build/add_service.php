@@ -11,7 +11,7 @@ include_once '../build/db/session.php';
 
                 <section class="box-typical">
                     <div id="imagePreview" style="width: 100%"></div>
-                    <!--<img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>-->
+                    <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
 
                 </section>                                         
                 <section class="box-typical">
@@ -90,7 +90,6 @@ include_once '../build/db/session.php';
             </div>
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
-                    <div id="imageThumbnails" style="width: 100%"></div>
                     <header class = "box-typical-header-sm">Add new service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--                        <div id="imagePreview"></div>-->
@@ -98,7 +97,7 @@ include_once '../build/db/session.php';
                         <!--<button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
                            <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
                         </button>-->
-                        <input id="upFiles" name="upFiles" type="file" name="images" class="imgs" />
+                        <!--<input id="upFiles" name="upFiles" type="file" name="images" class="imgs" />-->
                         <header class = "sign-title">Fill the fields below</header>
 
                         <div class = "form-group">
@@ -151,9 +150,9 @@ include_once '../build/db/session.php';
                 </section>
 
             </div>
-        </div><!--.row-->
-    </div><!--.container-fluid-->
-</div><!--.page-content-->
+        </div>
+    </div>
+</div>
 
 <!--GET Country / State / City-->
 <script>
@@ -407,26 +406,7 @@ include_once '../build/db/session.php';
     });
 </script>
 <!--MULTIPICS-->
-<script>
-    $("#upFiles").change(, function (e) {
-        for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-            var file = e.originalEvent.srcElement.files[i];
-            var img = document.createElement("img");
-            var reader = new FileReader();
-            reader.onloadend = function () {
-                img.src = reader.result;
-            };
-            img.width = "50";
-            reader.readAsDataURL(file);
-            if ($(this).next().hasClass('imageThumbnails')) {
-                $(this).next('.imageThumbnails').html('').append(img);
-            } else {
-                $(this).after('<div class="imageThumbnails"></div>');
-                $(this).next('.imageThumbnails').append(img);
-            }
-        }
-    });
-</script>
+
 
 <style>
     #imagePreview {
