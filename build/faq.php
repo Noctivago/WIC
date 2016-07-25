@@ -8,7 +8,8 @@ include ("includes/head_sideMenu.php");
 				<h1 class="text-center">F.A.Q.</h1>
 				<br/>
 				<div class="row">
-                                    <div class="form-group">
+						<div class="col-md-12">
+							<div class="form-group">
 								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-left"><span class="ladda-label">expand-left</span></button>
 
 								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">expand-right</span></button>
@@ -17,6 +18,8 @@ include ("includes/head_sideMenu.php");
 
 								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">expand-down</span></button>
 							</div>
+						</div>
+					</div>
                                     
 					<div class="col-md-6">
 						<article class="faq-item">
