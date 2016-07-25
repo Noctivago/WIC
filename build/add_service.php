@@ -92,10 +92,10 @@ include_once '../build/db/session.php';
                     <header class = "box-typical-header-sm">Add new service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <div id="imagePreview"></div>
-                        <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
-                        <!--<button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
-                            <input type="file" name="images[]" id="images" multiple >
-                        </button>-->
+                        <!--<input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />-->
+                        <button class = "btn btn-rounded btn-file">Service Profile Picture 
+                           <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
+                        </button>
                         <button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
@@ -389,7 +389,6 @@ include_once '../build/db/session.php';
 
                         <script>
                             $(function () {
-//                                $("#uploadFile").on("change", function ()
                                 $("#uploadFile").change(function () {
                                     var files = !!this.files ? this.files : [];
                                     if (!files.length || !window.FileReader)
