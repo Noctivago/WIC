@@ -99,7 +99,7 @@ if ($_SESSION['role'] === 'user') {
                         <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
-                        <header class = "sign-title">Add Profile</header>
+                        <header class = "sign-title">Fill all fields</header>
 
                         <div class = "form-group">
                             <div class = "form-control-wrapper form-control-icon-left" >
