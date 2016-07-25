@@ -107,7 +107,7 @@ include ("includes/head_sideMenu.php");
 								   href="#collapseFour"
 								   aria-expanded="false"
 								   aria-controls="collapseFour">
-									How can you help me?
+									As a supplier, what are my benefits for joining WiC?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
