@@ -501,6 +501,9 @@ include '../build/db/session.php';
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <form>
                     <div class="col-md-10">
+                        
+                        <header class="side-menu-title">Advanced Search</header>
+                        
                         <label class="form-label">Advanced Search</label>
 
                         <div class="typeahead-container">
@@ -523,6 +526,7 @@ include '../build/db/session.php';
                         </div>
                     </div>
                 </form>
+                <br>
 
 
                 <header class="side-menu-title">Start Planning</header>
