@@ -16,11 +16,18 @@ include ("includes/head_sideMenu.php");
 					</div>
                                     
 					
-        <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
-        <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
-        <script src="js/lib/ladda-button/spin.min.js"></script>
+
+        <script src="js/lib/jquery/jquery.min.js"></script>
+	<script src="js/lib/tether/tether.min.js"></script>
+	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+
+	<script src="js/lib/ladda-button/spin.min.js"></script>
 	<script src="js/lib/ladda-button/ladda.min.js"></script>
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.contextMenu.min.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>
+	<script>
 	
 	<script src="js/lib/tether/tether.min.js"></script>
 	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
