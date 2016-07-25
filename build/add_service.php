@@ -389,8 +389,8 @@ include_once '../build/db/session.php';
 
                         <script>
                             $(function () {
-                                $("#uploadFile").on("change", function ()
-                                {
+//                                $("#uploadFile").on("change", function ()
+                                $("#uploadFile").change(function () {
                                     var files = !!this.files ? this.files : [];
                                     if (!files.length || !window.FileReader)
                                         return; // no file selected, or no FileReader support
