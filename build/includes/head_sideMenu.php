@@ -471,14 +471,15 @@ include '../build/db/session.php';
 
                                     <ul class="side-menu-list">
 
-                                            <form>
+                                        <form class="site-header-search closed">
                                                 <div class="col-md-10">
                                                     <!--<label class="form-label">Advanced Search</label>-->
 
                                                     <div class="typeahead-container">
                                                         <div class="typeahead-field">
                                                             <span class="typeahead-query">
-                                                                <input id="categories"
+                                                                <input placeholder="Chose your City"
+                                                                    id="categories"
                                                                        class="form-control"
                                                                        name="name"
                                                                        type="search"
