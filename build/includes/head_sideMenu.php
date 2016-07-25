@@ -473,7 +473,7 @@ include '../build/db/session.php';
 
                                             <form>
                                                 <div class="col-md-10">
-                                                    <label class="form-label">Advanced Search</label>
+                                                    <!--<label class="form-label">Advanced Search</label>-->
 
                                                     <div class="typeahead-container">
                                                         <div class="typeahead-field">
@@ -483,8 +483,7 @@ include '../build/db/session.php';
                                                                        name="name"
                                                                        type="search"
                                                                        autocomplete="on">
-                                                                autocomplete estava como OFF
-                                                                name estava como q
+
                                                             </span>
                                                             <span class="typeahead-button">
                                                                 <button type="submit">
