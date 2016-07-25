@@ -24,11 +24,17 @@ include_once '../build/db/session.php';
 
                         <?php
                         $org = (filter_var($_GET['Organization']));
+                        $user = (filter_var($_GET['UserInService']));
                         $idUser = $_SESSION['id'];
-                        DB_GetOrganizationServices($pdo, $org, $idUser);
+
+                        if (isset($user)) {
+                            
+                        } else {
+                            DB_GetOrganizationServices($pdo, $org, $idUser);
+                        }
                         ?>
-                    </div><!--.posts-slider-->
-                </section><!--.box-typical-->
+                    </div>
+                </section>
 
                 <section class="box-typical">
                     <header class="box-typical-header-sm">Organization Information</header>
@@ -59,10 +65,10 @@ include_once '../build/db/session.php';
                 echo '    </section><!--.box-typical-->';
             }
             ?>
-        </div><!--.col- -->
-    </div><!--.row-->
-</div><!--.container-fluid-->
-</div><!--.page-content-->
+        </div>
+    </div>
+</div>
+</div>
 
 <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
