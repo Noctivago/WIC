@@ -235,12 +235,12 @@ include '../build/db/session.php';
                                     if ($_SESSION['role'] == 'organization') {
                                         echo ' <a class="dropdown-item" href="profile_org.php?Organization="><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
                                         echo ' <a class="dropdown-item" href="edit_profile_org.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
-                                    }  else {
+                                    } else {
                                         echo '<a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
-                                    <a class="dropdown-item" href="edit_profile_user.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';    
+                                    <a class="dropdown-item" href="edit_profile_user.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
                                     }
                                     ?>
-                                    
+
                                     <a class="dropdown-item" href="change_password.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>Change password</a>
                                     <a class="dropdown-item" href="faq.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>Help</a>
                                     <div class="dropdown-divider"></div>
@@ -279,14 +279,14 @@ include '../build/db/session.php';
                                         <!--<span class="font-icon font-icon-cogwheel"></span>-->
                                         <!--                                        <h4 style="color: darkgray; font-family: cursive">You can event, event your life</h4>-->
                                         <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                            
-                                    <select class="bootstrap-select bootstrap-select-arrow" style="width: 200px;" >
-					<option>Chose Your City</option>
-					<option>MY WIcPlanner 2</option>
-					<option>MY WIcPlanner 3</option>
-                                        <option>MY WIcPlanner 4</option>
-                                        <option>Long long long extra long example line long long long extra long example line </option>
-                                    </select>
+
+                                            <select class="bootstrap-select bootstrap-select-arrow" style="width: 200px;" >
+                                                <option>Chose Your City</option>
+                                                <option>MY WIcPlanner 2</option>
+                                                <option>MY WIcPlanner 3</option>
+                                                <option>MY WIcPlanner 4</option>
+                                                <option>Long long long extra long example line long long long extra long example line </option>
+                                            </select>
                                     </a>
                                     <br>
                                     <br>
@@ -463,27 +463,29 @@ include '../build/db/session.php';
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
             <ul class="side-menu-list">
-                <div class="col-md-10">
-                    <label class="form-label">Advanced Search</label>
+                <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
+                <form>
+                    <div class="col-md-10">
+                        <label class="form-label">Advanced Search</label>
 
-                    <div class="typeahead-container">
-                        <div class="typeahead-field">
-                            <span class="typeahead-query">
-                                <input id="categories"
-                                       class="form-control"
-                                       name="q"
-                                       type="search"
-                                       autocomplete="off">
-                            </span>
-                            <span class="typeahead-button">
-                                <button type="submit">
-                                    <span class="font-icon-search"></span>
-                                </button>
-                            </span>
+                        <div class="typeahead-container">
+                            <div class="typeahead-field">
+                                <span class="typeahead-query">
+                                    <input id="categories"
+                                           class="form-control"
+                                           name="q"
+                                           type="search"
+                                           autocomplete="off">
+                                </span>
+                                <span class="typeahead-button">
+                                    <button type="submit">
+                                        <span class="font-icon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                </form>
 
 
                 <header class="side-menu-title">Start Planning</header>
