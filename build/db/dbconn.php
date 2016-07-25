@@ -1779,7 +1779,7 @@ function DB_OrgProfile($pdo, $userId) {
     }
 }
 
-function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org) {
+function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org,$city) {
     try {
         $d = getDateToDB();
         sql($pdo, "INSERT INTO [dbo].[Service]
@@ -1788,14 +1788,16 @@ function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org) {
            ,[Organization_Id]
            ,[Date_Created]
            ,[Enabled]
-           ,[Sub_Category_Id])
+           ,[Sub_Category_Id]
+           ,[City_Id])
 		   VALUES
            (?
            ,?
            ,?
            ,?
            ,?
-           ,?)", array($cname, $cDescription, $org, $d, 1, $cSub));
+           ,?
+           ,?)", array($cname, $cDescription, $org, $d, 1, $cSub,$city));
         echo 'true';
     } catch (Exception $ex) {
         

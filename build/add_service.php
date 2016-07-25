@@ -31,8 +31,9 @@ include_once '../build/db/session.php';
                                         $cname = $_POST['cName'];
                                         $cDescription = $_POST['cDescription'];
                                         $cSub = $_POST['cSubCat'];
+                                        $city = $_POST['citySelect'];
                                         //     $serv = $_POST['Serv'];
-                                        $msg = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg);
+                                        $msg = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg , $city);
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
