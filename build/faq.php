@@ -31,34 +31,21 @@ include ("includes/head_sideMenu.php");
 							</div>
 						</article>
 						<article class="panel">
-							<div class="panel-heading" role="tab" id="headingTwo">
-								<a class="collapsed"
-								   data-toggle="collapse"
+							<div class="panel-heading" role="tab" id="headingOne">
+								<a data-toggle="collapse"
 								   data-parent="#accordion"
-								   href="#collapseTwo"
-								   aria-expanded="false"
-								   aria-controls="collapseTwo">
-									How can I join WiC community?
+								   href="#collapseOne"
+								   aria-expanded="true"
+								   aria-controls="collapseOne">
+									What is WiC?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
-							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-collapse-in">
-									<div class="user-card-row">
-										<div class="tbl-row">
-											<div class="tbl-cell tbl-cell-photo">
-												<a href="#">
-													<img src="img/avatar-3-64.png" alt="">
-												</a>
-											</div>
-											<div class="tbl-cell">
-												<p class="user-card-row-name"><a href="#">Michelle Lewis</a></p>
-												<p class="user-card-row-location">Company Founder</p>
-											</div>
-										</div>
-									</div>
-									<header class="title">How a password changed my life</header>
-									<p>«How could she do something like this to me?» said a voice in my head. All the time. Every day... <a href="#">More</a></p>
+                                                                    <p>If you’re a supplier: Register here (link here)<br></p>
+                                                                    <p>If you’re a user: Register here (link here)<br></p>
+                                                                    <p>You can use your email address to register or login using your Facebook account.</p>
 								</div>
 							</div>
 						</article>
