@@ -96,7 +96,7 @@ function DB_getStateAsSelectByCountrySelected2($pdo, $Country_Id) {
     }
 }
 
-function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
+function DB_getCityAsSelectByStateSelected2($pdo, $State_Id) {
     try {
         $stmt = $pdo->prepare("SELECT * FROM City WHERE State_Id = :stateID ORDER BY Name ASC");
         $stmt->bindParam(':stateID', $State_Id);
