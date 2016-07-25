@@ -30,7 +30,7 @@ include_once './db/session.php';
     ?>
     <div class="page-center">
         <div class="page-center-in">
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding-top: 300px;">
                 <form class="sign-box reset-password-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <!--<div class="sign-avatar">
                         <img src="img/avatar-sign.png" alt="">
@@ -56,6 +56,15 @@ include_once './db/session.php';
     <script src="js/lib/tether/tether.min.js"></script>
     <script src="js/lib/bootstrap/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
+    
+    
+    <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+    <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+    <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="js/lib/select2/select2.full.min.js"></script>
+    
+    
+    
     <script src="js/app.js"></script>
 </body>
 </html>
