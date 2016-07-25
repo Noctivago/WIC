@@ -18,7 +18,7 @@ $msg = "";
 
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
         //FALTA ACERTAR NISTO
-        if ($_POST["file_upload"] != '') {
+        if ($_POST['file_upload'] != '') {
             // Check for errors
             if ($_FILES['file_upload']['error'] > 0) {
                 $msg = ('An error ocurred when uploading.');
