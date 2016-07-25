@@ -1844,11 +1844,34 @@ function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
     }
 }
 
+/**
+ * Funcao para alterar pic profile user
+ * @param type $pdo
+ * @param type $sId
+ * @param type $picture_path
+ */
 function DB_UpdateUserPictureInformation($pdo, $sId, $picture_path) {
     try {
         sql($pdo, "UPDATE [dbo].[User_Profile]
    SET [Picture_Path] = ?
  WHERE [User_Id] =? ", array($picture_path, $sId));
+        echo 'Your profile picture was updated';
+    } catch (Exception $ex) {
+        echo 'Error';
+    }
+}
+
+/**
+ * Funcao para alterar pic profile org
+ * @param type $pdo
+ * @param type $sId
+ * @param type $picture_path
+ */
+function DB_UpdateOrgPictureInformation($pdo, $sId, $picture_path) {
+    try {
+        sql($pdo, "UPDATE [dbo].[Organization]
+   SET [Picture_Path] = ?
+ WHERE [User_Boss] =? ", array($picture_path, $sId));
         echo 'Your profile picture was updated';
     } catch (Exception $ex) {
         echo 'Error';
