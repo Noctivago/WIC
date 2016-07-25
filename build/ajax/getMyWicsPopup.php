@@ -14,16 +14,16 @@ if ($_SESSION['role'] !== 'user') {
 }
 
 //DB_getMyWicsAsPopup($pdo, $userId);
-if (isset($_GET['add2WiC']) && isset($_GET ['id'])) {
+if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
     $serviceId = (filter_var($_GET ['id']));
-    $wicId = $_GET['myWics'];
+    $wicId = $_POST['myWics'];
     //INSERIR SERVIÇO NO WIC
     $msg = DB_addServiceToWicPlanner($pdo, $wicId, $serviceId);
 }
 //DB_getMyWicsAsPopup($pdo, $userId);
-if (isset($_GET['add2WiC'])) {
+if (isset($_POST['add2WiC'])) {
     $serviceId = (filter_var($_GET ['id']));
-    $wicId = $_GET['myWics'];
+    $wicId = $_POST['myWics'];
     //INSERIR SERVIÇO NO WIC
     $msg = 'Sid > ' . $serviceId . ' WicId > ' . $wicId;
 }
@@ -41,7 +41,7 @@ if (isset($_GET['add2WiC'])) {
         <link href="../css/main.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?id=<?= $serviceId; ?>" method="get">
+        <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?id=<?= $serviceId; ?>" method="post">
             <div class="sign-box">
                 <div class="sign-avatar no-photo">&plus;</div>
                 <header class="sign-title">#Choose a WiC Planner?</header>
