@@ -46,7 +46,7 @@ $msg = '';
                 if ($_FILES['file_upload']['size'] > 500000) {
                     die('File uploaded exceeds maximum upload size.');
                 }
-                
+
                 if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $newfilename)) {
                     die('Error uploading file - check destination is writeable.');
                 } else {
@@ -63,9 +63,9 @@ $msg = '';
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid" style="padding-top: 100px;">
-                <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
                     <?php
-                    DB_OrgProfile($pdo, $userId)
+                    DB_OrgProfile($pdo, $userId);
                     ?>
                 </form>
             </div>
