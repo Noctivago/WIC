@@ -2,6 +2,10 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
+
+if ($_SESSION['role'] === 'organization') {
+    header("location: ../build/profile_org.php");
+}
 ?>
 
 <div class="page-content">
@@ -233,10 +237,10 @@ include_once '../build/db/session.php';
 </script>
 
 
-                <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
-    <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
-    <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="js/lib/select2/select2.full.min.js"></script>
+<script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+<script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="js/lib/select2/select2.full.min.js"></script>
 
 <script src="js/app.js"></script>
 </body>

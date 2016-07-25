@@ -6,7 +6,12 @@ include_once '../build/db/dbconn.php';
 ob_start();
 session_start();
 if (isset($_SESSION['id'])) {
-    header("location: ../build/profile_user.php");
+    if ($_SESSION['role'] === 'organization') {
+        header("location: ../build/profile_org.php");
+    }
+    if ($_SESSION['role'] === 'user') {
+        header("location: ../build/index.php");
+    }
 }
 ?>
 <body>
@@ -37,6 +42,12 @@ if (isset($_SESSION['id'])) {
                         if (DB_setLoginFailed($pdo, $email)) {
                             //header('Location: profile.php');
                             $msg = "LOGIN OK! FALTA HEADER LOCATION";
+                            if ($_SESSION['role'] === 'organization') {
+                                header("location: ../build/profile_org.php");
+                            }
+                            if ($_SESSION['role'] === 'user') {
+                                header("location: ../build/index.php");
+                            }
                         }
                     } else {
                         $val = DB_getLoginFailedValue($pdo, $email);
