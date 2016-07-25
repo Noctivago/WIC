@@ -1578,7 +1578,7 @@ function DB_checkIfWicPlannerHaveServices($pdo, $wicPlannerId, $userId) {
                 on [WIC_Planner].[Id] = [WIC_Planner_Service].[WIC_Planner_Id]
                 join [Organization]
                 on [Service].[Organization_Id] = [Organization].[Id]
-                WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
+                WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
                 AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "count");
         if ($count < 0) {
             return true;
