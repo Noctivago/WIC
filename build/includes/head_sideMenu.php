@@ -498,13 +498,20 @@ include '../build/db/session.php';
                                             </form>
 
 
-<!--                                        <form class="site-header-search closed">
-                                            <input type="text" placeholder="Search a Service.."/>
+                                        <form class="site-header-search closed">
+                                            <input type="text" placeholder="Search a Service.."
+                                                    id="categories"
+                                                    class="form-control"
+                                                    name="name"
+                                                    type="text"
+                                                    autocomplete="on"
+                                                   
+                                                   />
                                             <button type="submit">
                                                 <span class="font-icon-search"></span>
                                             </button>
                                             <div class="overlay"></div>
-                                        </form>-->
+                                        </form>
                                 </div>
                             </div><!--.site-header-collapsed-in-->
                         </div><!--.site-header-collapsed-->
