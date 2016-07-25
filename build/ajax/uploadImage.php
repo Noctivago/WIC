@@ -14,9 +14,9 @@ if (is_array($_FILES)) {
             $sourcePath = $_FILES['files']['tmp_name'][$name];
             $targetPath = "upload/".$idUser."/".$new_name;
         if(move_uploaded_file($sourcePath, $targetPath)){
-            $output .= '<img src="'.$targetPath.'/>'; 
+            $output .= '<img src="'.$targetPath.'/>';
+            DB_UpdateUserInformation($pdo, $sId, $first, $last,$targetPath);
         }
-            
         }
     }
 }
