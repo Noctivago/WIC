@@ -99,6 +99,45 @@ include ("includes/head_sideMenu.php");
 								</div>
 							</div>
 						</article>
+                                                <article class="panel">
+							<div class="panel-heading" role="tab" id="headingFour">
+								<a class="collapsed"
+								   data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseFour"
+								   aria-expanded="false"
+								   aria-controls="collapseFour">
+									How can you help me?
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												
+											</div>
+											<div class="tbl-cell">
+												
+											</div>
+										</div>
+									</div>
+									
+									<p>Joining WiC’s platform brings you several benefits:</p>
+                                                                        <br>
+                                                                        <p>1.&nbsp;	More visibility</p>
+                                                                        <p>2.&nbsp;	Easy communication with your clients using a web chat with:</p>
+                                                                        <p>&nbsp;&nbsp;&nbsp;   a.	Text Messages</p>
+                                                                        <p>&nbsp;&nbsp;&nbsp;   b.	Calls</p>
+                                                                        <p>&nbsp;&nbsp;&nbsp;   c.	File Exchange</p>
+                                                                        <p>3.&nbsp;	All your conversations/negotiations are saved, so that everything you deal with your client is registered.</p>
+                                                                        <p>4.&nbsp;	Present your services to your clients in a simple and effective way</p>
+                                                                        <p>5.&nbsp;	Increase your contact network with more clients and other event suppliers</p>
+                                                                        <p>6.&nbsp;	Manage all your activity using just one platform</p>
+								</div>
+							</div>
+						</article>
 					</section>
                                                 </div>
              
