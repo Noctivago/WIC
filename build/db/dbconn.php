@@ -66,6 +66,56 @@ function DB_getCountryAsSelect($pdo) {
     }
 }
 
+function DB_getCountryAsSelect2($pdo) {
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM [dbo].[Country] ORDER BY NAME ASC");
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+        }
+    } catch (PDOException $e) {
+        echo 'ERROR READING COUNTRY TABLE';
+        die();
+    }
+}
+
+function DB_getStateAsSelectByCountrySelected2($pdo, $Country_Id) {
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM State WHERE Country_Id = :countryID ORDER BY Name ASC");
+        $stmt->bindParam(':countryID', $Country_Id);
+        $stmt->execute();
+        echo '<select id = "stateSelect" name="stateSelect" class="states bootstrap-select bootstrap-select-arrow" placeholder="City" onchange="myFunctionC()" required>';
+        echo '<option value="0">State</option>';
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+        }
+        echo '</select>';
+    } catch (PDOException $e) {
+        echo 'ERROR READING STATE TABLE';
+        die();
+    }
+}
+
+function DB_getCityAsSelectByStateSelected2($pdo, $State_Id) {
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM City WHERE State_Id = :stateID ORDER BY Name ASC");
+        $stmt->bindParam(':stateID', $State_Id);
+        $stmt->execute();
+        echo '<select id = "citySelect" name="citySelect" class="cities bootstrap-select bootstrap-select-arrow" placeholder="City" required>';
+        echo '<option value="0">City</option>';
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+        }
+        echo '</select>';
+    } catch (PDOException $e) {
+        echo 'ERROR READING CITY TABLE';
+        die();
+    }
+}
+
+
+
+
 /**
  * DEVOLVE OS STATE PARA SEREM USADOS NUMA SELECT <- A PARTIR DO COUNTRY ID
  * @param type $pdo
@@ -1775,6 +1825,29 @@ function DB_OrgProfile($pdo, $userId) {
     } catch (Exception $ex) {
         
     }
+}
+function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org){
+    try {
+        $d = getDateToDB();
+        sql($pdo,"INSERT INTO [dbo].[Service]
+           ([Name]
+           ,[Description]
+           ,[Organization_Id]
+           ,[Date_Created]
+           ,[Enabled]
+           ,[Sub_Category_Id])
+		   VALUES
+           (?
+           ,?
+           ,?
+           ,?
+           ,?
+           ,?)", array($cname,$cDescription,$org,$d,1,$cSub));
+        echo 'true';
+    } catch (Exception $ex) {
+
+    }
+    
 }
 
 function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
