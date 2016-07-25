@@ -116,49 +116,58 @@ include_once '../build/db/session.php';
                                     <option value="0">Country</option>
                                     <?php DB_getCountryAsSelect($pdo) ?>
                                 </select>
+                            </div>
 
-                                <div class = "form-group" id="state">
-                                 
-                                    <div class = "form-group" id="cities">
-                                    
-                                        <div class = "form-group">
-                                            <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
-                                            <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
-                                            <?php
-                                            $idCat = $CatSubCatData['CatId'];
-                                            DB_getCatgoryAsSelect($pdo, $idCat);
-                                            ?>
-                                            <!--                            </select> -->
-
-                                            <!--                        </div>-->
-                                            <div class = "form-group">
-                                                <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
-                                                    <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
-
-                                                <?php
-                                                $idSubCat = $CatSubCatData['SubCatId'];
-                                                DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
-                                                ?>
-                                                <!--                                </select> -->
-
-                                                <!--                            </div>-->
-                                            </div>
-                                        </div>
-                                        <div class = "form-group row">
-
-                                            <div class = "form-control-wrapper form-control-icon-left" >
-                                                <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
-                                                <i class = "font-icon font-icon-user"></i>
-                                            </div>
-                                        </div>
-
-                                        <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">New Service</button>
-                                        </section>
+                            <div class = "form-group" >
+                                <div class = "form-control-wrapper form-control-icon-left" id="state">
 
 
-                                    </div>
-                                </div><!--.row-->
-                            </div><!--.container-fluid-->
+                                </div>
+                            </div>
+                            <div class = "form-group" >
+                                <div class = "form-control-wrapper form-control-icon-left" id="cities">
+
+                                </div>    
+                            </div>
+
+                            <div class = "form-group">
+                                <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
+                                <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
+                                <?php
+                                $idCat = $CatSubCatData['CatId'];
+                                DB_getCatgoryAsSelect($pdo, $idCat);
+                                ?>
+                                <!--                            </select> -->
+
+                                <!--                        </div>-->
+                                <div class = "form-group">
+                                    <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
+                                        <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
+
+                                    <?php
+                                    $idSubCat = $CatSubCatData['SubCatId'];
+                                    DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
+                                    ?>
+                                    <!--                                </select> -->
+
+                                    <!--                            </div>-->
+                                </div>
+                            </div>
+                            <div class = "form-group row">
+
+                                <div class = "form-control-wrapper form-control-icon-left" >
+                                    <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
+                                    <i class = "font-icon font-icon-user"></i>
+                                </div>
+                            </div>
+
+                            <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">New Service</button>
+                            </section>
+
+
+                        </div>
+                        </div><!--.row-->
+                        </div><!--.container-fluid-->
                         </div><!--.page-content-->
 
 
