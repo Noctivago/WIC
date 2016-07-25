@@ -5,9 +5,9 @@ include("../build/db/dbconn.php");
 ?>
 <body>
     <?php
-    if (!empty($_POST['AC']) && !empty($_POST['EM'])) {
-        $code = (filter_var($_POST ['AC'], FILTER_SANITIZE_STRING));
-        $email = (filter_var($_POST ['EM'], FILTER_SANITIZE_EMAIL));
+    if (!empty($_GET['AC']) && !empty($_GET['EM'])) {
+        $code = (filter_var($_GET ['AC'], FILTER_SANITIZE_STRING));
+        $email = (filter_var($_GET ['EM'], FILTER_SANITIZE_EMAIL));
         //SE EMAIL EXISTE
         if (DB_checkIfUserExists($pdo, $email)) {
             //VERIFICA SE O ACTIVATION CODE PERTENCE AO EMAIL
