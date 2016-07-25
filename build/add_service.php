@@ -5,12 +5,9 @@ include_once '../build/db/session.php';
 ?>
 
 <div class="page-content">
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
-
-                <!--<div class="col-lg-6 col-lg-push-3 col-md-12">-->
 
                 <section class="box-typical">
                     <img src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" style="width: 100%"/>
@@ -198,36 +195,6 @@ include_once '../build/db/session.php';
                                 });
                             }
                         </script>
-                        <script>
-                            $(function () {
-                                $("#uploadFile").on("change", function ()
-                                {
-                                    var files = !!this.files ? this.files : [];
-                                    if (!files.length || !window.FileReader)
-                                        return; // no file selected, or no FileReader support
-
-                                    if (/^image/.test(files[0].type)) { // only image file
-                                        var reader = new FileReader(); // instance of the FileReader
-                                        reader.readAsDataURL(files[0]); // read the local file
-
-                                        reader.onloadend = function () { // set image data as background of div
-                                            $("#imagePreview").css("background-image", "url(" + this.result + ")");
-                                        };
-                                    }
-                                });
-                            });
-                        </script>
-
-                        <style>
-                            #imagePreview {
-                                width: 180px;
-                                height: 180px;
-                                background-position: center center;
-                                background-size: cover;
-                                -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
-                                display: inline-block;
-                            }
-                        </style>
 
                         <script>
                             function reloadDescription() {
@@ -308,14 +275,8 @@ include_once '../build/db/session.php';
                                     hide_min_max: true,
                                     hide_from_to: true
                                 });
-                            });</script>
-
-
-
-
-
-
-
+                            });
+                        </script>
 
 
                         <script>
@@ -409,9 +370,9 @@ include_once '../build/db/session.php';
                                 $('.panel').on('dragged.lobiPanel', function (ev, lobiPanel) {
                                     $('.dahsboard-column').matchHeight();
                                 });
-                            });</script>
+                            });
+                        </script>
 
-                        <!--scrpit-messenger-->
                         <script>
                             $(function () {
                                 $('.chat-settings .change-bg-color label').on('click', function () {
@@ -423,15 +384,44 @@ include_once '../build/db/session.php';
                                         $(this).addClass('bg-' + color);
                                     });
                                 });
-                            });</script>
+                            });
+                        </script>
 
+                        <script>
+                            $(function () {
+                                $("#uploadFile").on("change", function ()
+                                {
+                                    var files = !!this.files ? this.files : [];
+                                    if (!files.length || !window.FileReader)
+                                        return; // no file selected, or no FileReader support
+
+                                    if (/^image/.test(files[0].type)) { // only image file
+                                        var reader = new FileReader(); // instance of the FileReader
+                                        reader.readAsDataURL(files[0]); // read the local file
+
+                                        reader.onloadend = function () { // set image data as background of div
+                                            $("#imagePreview").css("background-image", "url(" + this.result + ")");
+                                        };
+                                    }
+                                });
+                            });
+                        </script>
+
+                        <style>
+                            #imagePreview {
+                                width: 180px;
+                                height: 180px;
+                                background-position: center center;
+                                background-size: cover;
+                                -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+                                display: inline-block;
+                            }
+                        </style>
 
                         <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
                         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
                         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
                         <script src="js/lib/select2/select2.full.min.js"></script>
-
-
                         <script src="js/app.js"></script>
                         </body>
                         </html>
