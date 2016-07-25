@@ -126,28 +126,19 @@ include_once '../build/db/session.php';
                             </div>    
                         </div>
 
-
                         <div class = "form-group">
-                            <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
-                            <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
                             <?php
                             $idCat = $CatSubCatData['CatId'];
                             DB_getCatgoryAsSelect($pdo, $idCat);
                             ?>
-                            <!--                            </select> -->
 
-                            <!--                        </div>-->
                             <div class = "form-group">
-                                <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
-                                    <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
 
                                 <?php
                                 $idSubCat = $CatSubCatData['SubCatId'];
                                 DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
                                 ?>
-                                <!--                                </select> -->
 
-                                <!--                            </div>-->
                             </div>
                         </div>
 
@@ -423,14 +414,14 @@ include_once '../build/db/session.php';
             var reader = new FileReader();
             reader.onloadend = function () {
                 img.src = reader.result;
-            }
+            };
             img.width = "50";
             reader.readAsDataURL(file);
-            if ($(this).next().hasClass('image_place')) {
-                $(this).next('.image_place').html('').append(img);
+            if ($(this).next().hasClass('imageThumbnails')) {
+                $(this).next('.imageThumbnails').html('').append(img);
             } else {
-                $(this).after('<div class="image_place"></div>');
-                $(this).next('.image_place').append(img);
+                $(this).after('<div class="imageThumbnails"></div>');
+                $(this).next('.imageThumbnails').append(img);
             }
         }
     });
