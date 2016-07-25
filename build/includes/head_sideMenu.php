@@ -657,7 +657,15 @@ include '../build/db/session.php';
            (?
            ,0
            ,?)", array($email, $serviceId));
-                        //falta enviar email.
+                        $to = $email;
+                        $subject = "WIC #INVITATION";
+                        $body = "Hi! <br>"
+                                . "You have been invited to be part of an Organization.<br>"
+                                . "To do that you must sign up at: http://www.wic.club/<br>"
+                                . "Best regards,<br>"
+                                . "WIC<br><br>"
+                                . "Note: Please do not reply to this email! Thanks!";
+                        sendEmail($to, $subject, $body);
                     }
                 }
                 ?>
