@@ -11,7 +11,8 @@ include ("includes/head_sideMenu.php");
 						<div class="col-md-12">
 							<div class="form-group">
 								<button class="btn btn-inline btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">What is WiC?</span></button>
-							</div>
+                                                                <p>TEREWREWFREWFRW</p>
+                                                        </div>
 						</div>
 					</div>
                                     
