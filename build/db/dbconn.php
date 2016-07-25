@@ -1046,6 +1046,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
                 //       echo '             </a>';
                 echo '         </div>';
                 echo '        <div class="tbl-cell">';
+//COLOCAR LINK PARA POST ?Organization=x&UserInService=Y                
                 echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
                 echo '            <p class="user-card-row-name">' . $row['Last_name'] . '</p>';
 //                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
