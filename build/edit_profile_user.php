@@ -24,27 +24,27 @@ $msg = "";
             if (!empty($name)) {
                 // Check for errors
                 if ($_FILES['file_upload']['error'] > 0) {
-                    $msg = ('An error ocurred when uploading.');
+                    die('An error ocurred when uploading.');
                 }
                 if (!getimagesize($_FILES['file_upload']['tmp_name'])) {
-                    $msg = ('Please ensure you are uploading an image.');
+                    die('Please ensure you are uploading an image.');
                 }
                 // Check filetype
                 if ($_FILES['file_upload']['type'] != 'image/png') {
-                    $msg = ('Unsupported filetype uploaded.');
+                    die('Unsupported filetype uploaded.');
                 }
                 // Check filesize
                 if ($_FILES['file_upload']['size'] > 500000) {
-                    $msg = ('File uploaded exceeds maximum upload size.');
+                    die('File uploaded exceeds maximum upload size.');
                 }
                 // Check if the file exists
                 if (file_exists('pics/' . $_FILES['file_upload']['name'])) {
-                    $msg = ('File with that name already exists.');
+                    die('File with that name already exists.');
                 }
                 // Upload file
 //                if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $_FILES['file_upload']['name'])) {
                 if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $newfilename)) {
-                    $msg = ('Error uploading file - check destination is writeable.');
+                    die('Error uploading file - check destination is writeable.');
                 } else {
                     $msg = ('File uploaded successfully.');
                 }
