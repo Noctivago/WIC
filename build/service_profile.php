@@ -17,9 +17,11 @@ $serviceId = (filter_var($_GET['Service']));
                         <div class="slide">
                             <!--BOTOES CHAT + WIC-->
                             <div class="user-card-row">
-                                <div class="tbl-cell">
-                                    <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
-                                </div>								
+                                <?php
+                                echo '<div class="card-typical-section">
+                                <input type=button onClick=window.open("./ajax/getMyWicsPopup.php?id=' . $serviceId . '","AddToWiC","width=550,height=500,left=30,top=30,toolbar=0,status=0,"); value="+">
+                                </div>';
+                                ?>
                             </div>
                         </div>
                     </div>
