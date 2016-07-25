@@ -1676,7 +1676,7 @@ function DB_UserProfile($pdo, $userId) {
             echo '<div class="sign-avatar no-photo" >
                         <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
                     </div>
-                    <input type="file" name="Photo" id="Photo">
+                    <input type="file" name="files[]" id="files">
                     <header class="sign-title">Edit Profile</header>
                     <div class="form-group">
                         <div class="form-control-wrapper form-control-icon-left" >
@@ -1777,13 +1777,12 @@ function DB_OrgProfile($pdo, $userId) {
     }
 }
 
-function DB_UpdateUserInformation($pdo, $sId, $first, $last, $picture_Path) {
+function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
     try {
         sql($pdo, "UPDATE [dbo].[User_Profile]
    SET [First_Name] = ?
       ,[Last_Name] = ?
-      ,[Picture_Path] = ?
- WHERE [User_Id] =? ", array($first, $last, $sId,$picture_Path));
+ WHERE [User_Id] =? ", array($first, $last, $sId));
         echo 'Updated';
     } catch (Exception $ex) {
         echo 'Error';
