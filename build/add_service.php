@@ -90,6 +90,7 @@ include_once '../build/db/session.php';
             </div>
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
+                    <div id="imageThumbnails" style="width: 100%"></div>
                     <header class = "box-typical-header-sm">Add new service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--                        <div id="imagePreview"></div>-->
@@ -97,9 +98,7 @@ include_once '../build/db/session.php';
                         <!--<button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Service Profile Picture 
                            <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
                         </button>-->
-                        <button name="photo" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
-                            <input type="file" name="images[]" id="images" multiple >
-                        </button>
+                        <input id="upFiles" name="upFiles" type="file" name="images" class="imgs" />
                         <header class = "sign-title">Fill the fields below</header>
 
                         <div class = "form-group">
@@ -416,10 +415,42 @@ include_once '../build/db/session.php';
     });
 </script>
 
+<script>
+    $("#upFiles").change(, function (e) {
+        for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+            var file = e.originalEvent.srcElement.files[i];
+            var img = document.createElement("img");
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                img.src = reader.result;
+            }
+            img.width = "50";
+            reader.readAsDataURL(file);
+            if ($(this).next().hasClass('image_place')) {
+                $(this).next('.image_place').html('').append(img);
+            } else {
+                $(this).after('<div class="image_place"></div>');
+                $(this).next('.image_place').append(img);
+            }
+        }
+    });
+</script>
+
 <style>
     #imagePreview {
         width: 664px;
         height: 415px;
+        background-position: center center;
+        background-size: cover;
+        -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+        display: inline-block;
+    }
+</style>
+
+<style>
+    #imageThumbnails {
+        width: 50px;
+        height: 50px;
         background-position: center center;
         background-size: cover;
         -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
