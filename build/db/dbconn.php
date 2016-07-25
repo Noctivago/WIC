@@ -1846,6 +1846,17 @@ function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
     }
 }
 
+function DB_UpdateUserPictureInformation($pdo, $sId, $picture_path) {
+    try {
+        sql($pdo, "UPDATE [dbo].[User_Profile]
+   SET [Picture_Path] = ?
+ WHERE [User_Id] =? ", array($picture_path, $sId));
+        echo 'Your profile picture was updated';
+    } catch (Exception $ex) {
+        echo 'Error';
+    }
+}
+
 function DB_UpdateOrgInformation($pdo, $name, $email, $address, $phone, $mobile, $website, $facebook, $linkdin, $twitter, $description, $userId) {
     try {
         sql($pdo, "UPDATE [dbo].[Organization]

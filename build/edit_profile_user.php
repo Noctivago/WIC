@@ -46,6 +46,8 @@ $msg = "";
                 if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $newfilename)) {
                     die('Error uploading file - check destination is writeable.');
                 } else {
+                    $picture_path = 'pics/' . $newfilename;
+                    DB_UpdateUserPictureInformation($pdo, $userId, $picture_path);
                     $msg = ('File uploaded successfully.');
                 }
             }
