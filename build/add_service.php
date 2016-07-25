@@ -147,7 +147,7 @@ include_once '../build/db/session.php';
                             <i class = "font-icon font-icon-user"></i>
                         </div>
                         </div>
-                        <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">New Service</button>
+                        <!--<button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">New Service</button>-->
                 </section>
 
             </div>
@@ -155,6 +155,7 @@ include_once '../build/db/session.php';
     </div><!--.container-fluid-->
 </div><!--.page-content-->
 
+<!--GET Country / State / City-->
 <script>
     function myFunction() {
         var x = document.getElementById("countrySelect").value;
@@ -196,6 +197,7 @@ include_once '../build/db/session.php';
     }
 </script>
 
+<!--Atualiza preview-->
 <script>
     function reloadDescription() {
         document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
@@ -277,7 +279,6 @@ include_once '../build/db/session.php';
         });
     });
 </script>
-
 
 <script>
     $(document).ready(function () {
@@ -386,7 +387,7 @@ include_once '../build/db/session.php';
         });
     });
 </script>
-
+<!--PIC SERVICE PROF-->
 <script>
     $(function () {
         $("#uploadFile").change(function () {
@@ -405,7 +406,7 @@ include_once '../build/db/session.php';
         });
     });
 </script>
-
+<!--MULTIPICS-->
 <script>
     $("#upFiles").change(, function (e) {
         for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
