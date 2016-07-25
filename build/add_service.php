@@ -27,18 +27,17 @@ include_once '../build/db/session.php';
                                     $user = $_SESSION['id'];
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $idOrg = $org['Id'];
-                                    if(isset($_POST['addservice']) && !empty($_POST['cName']) && !empty($_POST['cDescription']) && !empty($_POST['cSubCat'])) {
-                                            $cname = $_POST['cName'];
-                                            $cDescription = $_POST['cDescription'];
-                                            $cSub = $_POST['cSubCat'];
-                                            //     $serv = $_POST['Serv'];
-                                            $msg = DB_AddNewService($pdo, $cname, $cDescription, $cSub,$idOrg);
-                                            
+                                    if (isset($_POST['addservice']) && !empty($_POST['cName']) && !empty($_POST['cDescription']) && !empty($_POST['cSubCat'])) {
+                                        $cname = $_POST['cName'];
+                                        $cDescription = $_POST['cDescription'];
+                                        $cSub = $_POST['cSubCat'];
+                                        //     $serv = $_POST['Serv'];
+                                        $msg = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg);
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
-                                            <img src="<?php echo  $org['Picture_Path'];  ?>" alt="">
+                                            <img src="<?php echo $org['Picture_Path']; ?>" alt="">
                                         </a>
                                     </div>
                                     <div class="tbl-cell">
@@ -111,128 +110,132 @@ include_once '../build/db/session.php';
                                 <i class = "font-icon font-icon-user"></i>
                             </div>
                         </div>
-
-
                         <div class = "form-group">
-                            <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
-                            <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
-                            <?php
-                            $idCat = $CatSubCatData['CatId'];
-                            DB_getCatgoryAsSelect($pdo, $idCat);
-                            ?>
-                            <!--                            </select> -->
-
-                            <!--                        </div>-->
+<?php DB_getCountryAsSelect($pdo)?>
+                        <div class = "form-group">
+<?php DB_getStateAsSelectByCountrySelected($pdo, $Country_Id)?>
                             <div class = "form-group">
-                                <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
-                                    <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
+                                <?php                                    DB_getCityAsSelectByStateSelected($pdo, $State_Id);?>
+                                <div class = "form-group">
+                                    <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
+                                    <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
+                                    <?php
+                                    $idCat = $CatSubCatData['CatId'];
+                                    DB_getCatgoryAsSelect($pdo, $idCat);
+                                    ?>
+                                    <!--                            </select> -->
 
-                                <?php
-                                $idSubCat = $CatSubCatData['SubCatId'];
-                                DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
-                                ?>
-                                <!--                                </select> -->
+                                    <!--                        </div>-->
+                                    <div class = "form-group">
+                                        <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
+                                            <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
 
-                                <!--                            </div>-->
+                                        <?php
+                                        $idSubCat = $CatSubCatData['SubCatId'];
+                                        DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
+                                        ?>
+                                        <!--                                </select> -->
+
+                                        <!--                            </div>-->
+                                    </div>
+                                </div>
+                                <div class = "form-group row">
+
+                                    <div class = "form-control-wrapper form-control-icon-left" >
+                                        <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
+                                        <i class = "font-icon font-icon-user"></i>
+                                    </div>
+                                </div>
+
+                                <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">New Service</button>
+                                </section>
+
+
                             </div>
-                        </div>
-                        <div class = "form-group row">
+                        </div><!--.row-->
+                        </div><!--.container-fluid-->
+                        </div><!--.page-content-->
 
-                            <div class = "form-control-wrapper form-control-icon-left" >
-                                <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  placeholder = "Service Info"><?= $data['Description'] ?></textarea>
-                                <i class = "font-icon font-icon-user"></i>
-                            </div>
-                        </div>
+                        <script>
+                            function reloadDescription() {
+                                document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
+                            }
+                            function reloadName() {
+                                document.getElementById('serviceName').innerHTML = document.getElementById('cName').value;
+                            }
+                            function reloadPhoto() {
 
-                        <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">New Service</button>
-                </section>
+                            }
+                            function reloadServ(sel) {
+                                document.getElementById('SubCat').innerHTML = sel.options[sel.selectedIndex].text;
+                            }
 
+                            function reloadSubCat(sel) {
+                                var val = sel.options[sel.selectedIndex].text;
+                                document.getElementById('Cat').innerHTML = val;
+                                var value = sel.options[sel.selectedIndex].value;
+                                var idSub = document.getElementById('cSubCat').value;
+                                $.post("ajax/SubCategories.php", {value: value, idSub: idSub}, function (result) {
+                                    // $('#sc').find('select').remove().end();
+                                    //    $('#sc').html(result);
+                                    document.getElementById('sc').innerHTML = result;
 
-            </div>
-        </div><!--.row-->
-    </div><!--.container-fluid-->
-</div><!--.page-content-->
+                                });
 
-<script>
-    function reloadDescription() {
-        document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
-    }
-    function reloadName() {
-        document.getElementById('serviceName').innerHTML = document.getElementById('cName').value;
-    }
-    function reloadPhoto() {
+                                return false;
+                            }
+                        </script>
 
-    }
-    function reloadServ(sel) {
-        document.getElementById('SubCat').innerHTML = sel.options[sel.selectedIndex].text;
-    }
-
-    function reloadSubCat(sel) {
-        var val = sel.options[sel.selectedIndex].text;
-        document.getElementById('Cat').innerHTML = val;
-        var value = sel.options[sel.selectedIndex].value;
-        var idSub = document.getElementById('cSubCat').value;
-        $.post("ajax/SubCategories.php", {value: value, idSub: idSub}, function (result) {
-            // $('#sc').find('select').remove().end();
-            //    $('#sc').html(result);
-            document.getElementById('sc').innerHTML = result;
-
-        });
-
-        return false;
-    }
-</script>
-
-<script src = "js/lib/jquery/jquery.min.js" type = "text/javascript"></script>
-<script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
+                        <script src = "js/lib/jquery/jquery.min.js" type = "text/javascript"></script>
+                        <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
 
 
-<script src="js/lib/tether/tether.min.js"></script>
-<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
+                        <script src="js/lib/tether/tether.min.js"></script>
+                        <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+                        <script src="js/plugins.js"></script>
 
-<script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
-<script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
-<script src="js/lib/salvattore/salvattore.min.js"></script>
-<script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
-
-<script>
+                        <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
+                        <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
+                        <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
+                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
-    $(document).ready(function () {
-        $("#range-slider-1").ionRangeSlider({
-            min: 0,
-            max: 100,
-            from: 30,
-            hide_min_max: true,
-            hide_from_to: true
-        });
-        $("#range-slider-2").ionRangeSlider({
-            min: 0,
-            max: 100,
-            from: 30,
-            hide_min_max: true,
-            hide_from_to: true
-        });
-        $("#range-slider-3").ionRangeSlider({
-            min: 0,
-            max: 100,
-            from: 30,
-            hide_min_max: true,
-            hide_from_to: true
-        });
-        $("#range-slider-4").ionRangeSlider({
-            min: 0,
-            max: 100,
-            from: 30,
-            hide_min_max: true,
-            hide_from_to: true
-        });
-    });</script>
+                        <script src="js/lib/salvattore/salvattore.min.js"></script>
+                        <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
+
+                        <script>
+
+
+                            $(document).ready(function () {
+                                $("#range-slider-1").ionRangeSlider({
+                                    min: 0,
+                                    max: 100,
+                                    from: 30,
+                                    hide_min_max: true,
+                                    hide_from_to: true
+                                });
+                                $("#range-slider-2").ionRangeSlider({
+                                    min: 0,
+                                    max: 100,
+                                    from: 30,
+                                    hide_min_max: true,
+                                    hide_from_to: true
+                                });
+                                $("#range-slider-3").ionRangeSlider({
+                                    min: 0,
+                                    max: 100,
+                                    from: 30,
+                                    hide_min_max: true,
+                                    hide_from_to: true
+                                });
+                                $("#range-slider-4").ionRangeSlider({
+                                    min: 0,
+                                    max: 100,
+                                    from: 30,
+                                    hide_min_max: true,
+                                    hide_from_to: true
+                                });
+                            });</script>
 
 
 
@@ -242,120 +245,120 @@ include_once '../build/db/session.php';
 
 
 
-<script>
-    $(document).ready(function () {
-        $('.panel').lobiPanel({
-            sortable: true
-        });
-        google.charts.load('current', {'packages': ['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var dataTable = new google.visualization.DataTable();
-            dataTable.addColumn('string', 'Day');
-            dataTable.addColumn('number', 'Values');
-            // A column for custom tooltip content
-            dataTable.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
-            dataTable.addRows([
-                ['MON', 130, ' '],
-                ['TUE', 130, '130'],
-                ['WED', 180, '180'],
-                ['THU', 175, '175'],
-                ['FRI', 200, '200'],
-                ['SAT', 170, '170'],
-                ['SUN', 250, '250'],
-                ['MON', 220, '220'],
-                ['TUE', 220, ' ']
-            ]);
-            var options = {
-                height: 314,
-                legend: 'none',
-                areaOpacity: 0.18,
-                axisTitlesPosition: 'out',
-                hAxis: {
-                    title: '',
-                    textStyle: {
-                        color: '#fff',
-                        fontName: 'Proxima Nova',
-                        fontSize: 11,
-                        bold: true,
-                        italic: false
-                    },
-                    textPosition: 'out'
-                },
-                vAxis: {
-                    minValue: 0,
-                    textPosition: 'out',
-                    textStyle: {
-                        color: '#fff',
-                        fontName: 'Proxima Nova',
-                        fontSize: 11,
-                        bold: true,
-                        italic: false
-                    },
-                    baselineColor: '#16b4fc',
-                    ticks: [0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350],
-                    gridlines: {
-                        color: '#1ba0fc',
-                        count: 15
-                    },
-                },
-                lineWidth: 2,
-                colors: ['#fff'],
-                curveType: 'function',
-                pointSize: 5,
-                pointShapeType: 'circle',
-                pointFillColor: '#f00',
-                backgroundColor: {
-                    fill: '#008ffb',
-                    strokeWidth: 0,
-                },
-                chartArea: {
-                    left: 0,
-                    top: 0,
-                    width: '100%',
-                    height: '100%'
-                },
-                fontSize: 11,
-                fontName: 'Proxima Nova',
-                tooltip: {
-                    trigger: 'selection',
-                    isHtml: true
-                }
-            };
-            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-            chart.draw(dataTable, options);
-        }
-        $(window).resize(function () {
-            drawChart();
-            setTimeout(function () {
-            }, 1000);
-        });
-        $('.panel').on('dragged.lobiPanel', function (ev, lobiPanel) {
-            $('.dahsboard-column').matchHeight();
-        });
-    });</script>
+                        <script>
+                            $(document).ready(function () {
+                                $('.panel').lobiPanel({
+                                    sortable: true
+                                });
+                                google.charts.load('current', {'packages': ['corechart']});
+                                google.charts.setOnLoadCallback(drawChart);
+                                function drawChart() {
+                                    var dataTable = new google.visualization.DataTable();
+                                    dataTable.addColumn('string', 'Day');
+                                    dataTable.addColumn('number', 'Values');
+                                    // A column for custom tooltip content
+                                    dataTable.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+                                    dataTable.addRows([
+                                        ['MON', 130, ' '],
+                                        ['TUE', 130, '130'],
+                                        ['WED', 180, '180'],
+                                        ['THU', 175, '175'],
+                                        ['FRI', 200, '200'],
+                                        ['SAT', 170, '170'],
+                                        ['SUN', 250, '250'],
+                                        ['MON', 220, '220'],
+                                        ['TUE', 220, ' ']
+                                    ]);
+                                    var options = {
+                                        height: 314,
+                                        legend: 'none',
+                                        areaOpacity: 0.18,
+                                        axisTitlesPosition: 'out',
+                                        hAxis: {
+                                            title: '',
+                                            textStyle: {
+                                                color: '#fff',
+                                                fontName: 'Proxima Nova',
+                                                fontSize: 11,
+                                                bold: true,
+                                                italic: false
+                                            },
+                                            textPosition: 'out'
+                                        },
+                                        vAxis: {
+                                            minValue: 0,
+                                            textPosition: 'out',
+                                            textStyle: {
+                                                color: '#fff',
+                                                fontName: 'Proxima Nova',
+                                                fontSize: 11,
+                                                bold: true,
+                                                italic: false
+                                            },
+                                            baselineColor: '#16b4fc',
+                                            ticks: [0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350],
+                                            gridlines: {
+                                                color: '#1ba0fc',
+                                                count: 15
+                                            },
+                                        },
+                                        lineWidth: 2,
+                                        colors: ['#fff'],
+                                        curveType: 'function',
+                                        pointSize: 5,
+                                        pointShapeType: 'circle',
+                                        pointFillColor: '#f00',
+                                        backgroundColor: {
+                                            fill: '#008ffb',
+                                            strokeWidth: 0,
+                                        },
+                                        chartArea: {
+                                            left: 0,
+                                            top: 0,
+                                            width: '100%',
+                                            height: '100%'
+                                        },
+                                        fontSize: 11,
+                                        fontName: 'Proxima Nova',
+                                        tooltip: {
+                                            trigger: 'selection',
+                                            isHtml: true
+                                        }
+                                    };
+                                    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                                    chart.draw(dataTable, options);
+                                }
+                                $(window).resize(function () {
+                                    drawChart();
+                                    setTimeout(function () {
+                                    }, 1000);
+                                });
+                                $('.panel').on('dragged.lobiPanel', function (ev, lobiPanel) {
+                                    $('.dahsboard-column').matchHeight();
+                                });
+                            });</script>
 
-<!--scrpit-messenger-->
-<script>
-    $(function () {
-        $('.chat-settings .change-bg-color label').on('click', function () {
-            var color = $(this).data('color');
-            $('.messenger-message-container.from').each(function () {
-                $(this).removeClass(function (index, css) {
-                    return (css.match(/(^|\s)bg-\S+/g) || []).join(' ');
-                });
-                $(this).addClass('bg-' + color);
-            });
-        });
-    });</script>
-
-
-<script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
-<script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
-<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
-<script src="js/lib/select2/select2.full.min.js"></script>
+                        <!--scrpit-messenger-->
+                        <script>
+                            $(function () {
+                                $('.chat-settings .change-bg-color label').on('click', function () {
+                                    var color = $(this).data('color');
+                                    $('.messenger-message-container.from').each(function () {
+                                        $(this).removeClass(function (index, css) {
+                                            return (css.match(/(^|\s)bg-\S+/g) || []).join(' ');
+                                        });
+                                        $(this).addClass('bg-' + color);
+                                    });
+                                });
+                            });</script>
 
 
-<script src="js/app.js"></script>
-</body>
-</html>
+                        <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+                        <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+                        <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+                        <script src="js/lib/select2/select2.full.min.js"></script>
+
+
+                        <script src="js/app.js"></script>
+                        </body>
+                        </html>
