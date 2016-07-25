@@ -526,6 +526,7 @@ include '../build/db/session.php';
                         </div>
                     </div>
                 </form>
+                <br>
 
 
                 <header class="side-menu-title">Start Planning</header>
