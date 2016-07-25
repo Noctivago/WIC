@@ -471,9 +471,9 @@ include '../build/db/session.php';
 
                                     <ul class="side-menu-list">
 
-                                        <form class="site-header-search-container ">
+<!--                                        <form class="site-header-search-container ">
                                                 <div class="col-md-10">
-                                                    <!--<label class="form-label">Advanced Search</label>-->
+                                                    <label class="form-label">Advanced Search</label>
 
                                                     <div class="typeahead-container">
                                                         <div class="typeahead-field">
@@ -486,25 +486,32 @@ include '../build/db/session.php';
                                                                        autocomplete="on">
 
                                                             </span>
-                                                            <!--<span class="typeahead-button">-->
+                                                            <span class="typeahead-button">
                                                                 <button type="submit">
                                                                     <span class="font-icon-search"></span>
                                                                 </button>
-                                                            <!--</span>-->
+                                                            </span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="overlay"></div>
-                                            </form>
+                                            </form>-->
 
 
-<!--                                        <form class="site-header-search closed">
-                                            <input type="text" placeholder="Search a Service.."/>
+                                        <form class="site-header-search ">
+                                            <input type="text" placeholder="Search a Service.."
+                                                    id="categories"
+                                                    class="form-control"
+                                                    name="name"
+                                                    type="text"
+                                                    autocomplete="on"
+                                                   
+                                                   />
                                             <button type="submit">
                                                 <span class="font-icon-search"></span>
                                             </button>
                                             <div class="overlay"></div>
-                                        </form>-->
+                                        </form>
                                 </div>
                             </div><!--.site-header-collapsed-in-->
                         </div><!--.site-header-collapsed-->
