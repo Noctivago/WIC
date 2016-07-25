@@ -29,10 +29,10 @@ $msg = '';
         $description = (filter_var($_POST ['description'], FILTER_SANITIZE_STRING));
         $msg = DB_UpdateOrgInformation($pdo, $name, $email, $address, $phone, $mobile, $website, $facebook, $linkdin, $twitter, $description, $userId);
         //FALTA ACERTAR NISTO
-        $name = $_FILES['file_upload']['name'];
+        $fname = $_FILES['file_upload']['name'];
         $newfilename = $userId . '.jpg';
-        if (isset($name)) {
-            if (!empty($name)) {
+        if (isset($fname)) {
+            if (!empty($fname)) {
                 // Check for errors
                 if ($_FILES['file_upload']['error'] > 0) {
                     die('An error ocurred when uploading.');
@@ -55,7 +55,6 @@ $msg = '';
                     $picture_path = 'pics/' . $newfilename;
                     //filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
                     DB_UpdateOrgPictureInformation($pdo, $userId, $picture_path);
-                    $name = '';
                     $msg = ('File uploaded successfully.');
                 }
             }
