@@ -92,11 +92,78 @@ include_once '../build/db/session.php';
                         <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
                         <div id="wrapper" style="margin-top: 20px;">
                             <!--OTHER PICTURES-->
-                            <input id="files2Upload" multiple="multiple" type="file"/> 
-                            <!--<div id="image-holder" class="thumb-image" style="height: 75px;width: 75px;"></div>-->
-                            <div id="image-holder" class="thumbimage"></div>
+                            <!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
+<!--                            <input id="files2Upload" multiple="multiple" type="file"/> 
+                            <div id="image-holder" class="thumb-image" style="height: 75px;width: 75px;"></div>
+                            <div id="image-holder" class="thumbimage"></div>-->
                         </div>
 
+                        <input type="file" id="attachfile" name="replyFiles" multiple> <!--File Element for multiple intput-->
+                        <div id="#filelist"></div>
+                        <script>
+                            var selDiv = "";
+                            var storedFiles = []; //store the object of the all files
+
+                            document.addEventListener("DOMContentLoaded", init, false);
+
+                            function init() {
+                                //To add the change listener on over file element
+                                document.querySelector('#attachfile').addEventListener('change', handleFileSelect, false);
+                                //allocate division where you want to print file name
+                                selDiv = document.querySelector("#filelist");
+                            }
+
+                            //function to handle the file select listenere
+                            function handleFileSelect(e) {
+                                //to check that even single file is selected or not
+                                if (!e.target.files)
+                                    return;
+
+                                //for clear the value of the selDiv
+                                selDiv.innerHTML = "";
+
+                                //get the array of file object in files variable
+                                var files = e.target.files;
+                                var filesArr = Array.prototype.slice.call(files);
+
+                                //print if any file is selected previosly 
+                                for (var i = 0; i < storedFiles.length; i++)
+                                {
+                                    selDiv.innerHTML += "<div class='filename'> <span class='removefile'  data-file='" + storedFiles[i].name + "'> " + storedFiles[i].name + "</span></div>";
+                                }
+                                filesArr.forEach(function (f) {
+                                    //add new selected files into the array list
+                                    storedFiles.push(f);
+                                    //print new selected files into the given division
+                                    selDiv.innerHTML += "<div class='filename'> <span class='removefile'  data-file='" + storedFiles[i].name + "'> " + f.name + "</span></div>";
+                                });
+
+                                //store the array of file in our element this is send to other page by form submit
+                                $("input[name=replyfiles]").val(storedFiles);
+                            }
+
+                            //This function is used to remove the file form the selection   
+                            function removeFile(e) {
+                                var file = $(this).data("file"); //To take the name of the file
+
+                                for (var i = 0; i < storedFiles.length; i++) { //for find the file from the array
+                                    if (storedFiles[i].name === file) {
+                                        storedFiles.splice(i, 1);   //remove file from the list
+                                        break;
+                                    }
+                                }
+
+                                //now store the list of the all remaining file in our element name which will submit with the form
+                                $("input[name=replyfiles]").val(storedFiles);
+                                $(this).parent().remove();
+                            }
+
+                            $(document).ready(function () {
+                                $("body").on("click", ".removefile", removeFile);
+                            })
+                        </script>
+
+                        <!--CSS RESTANTES PICS-->
                         <style type="text/css">
                             .thumbimage {
                                 float:left;
@@ -382,7 +449,7 @@ include_once '../build/db/session.php';
 </script>
 
 <!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
-<script>
+<!--<script>
     $(document).ready(function () {
         $("#files2Upload").on('change', function () {
             //Get count of selected files
@@ -414,7 +481,7 @@ include_once '../build/db/session.php';
             }
         });
     });
-</script>
+</script>-->
 
 <!--PIC SERVICE PROF-->
 <script>
