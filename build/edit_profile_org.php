@@ -3,7 +3,7 @@ include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 //FUTURAMENTE COLOCAR SE USER IN SERVICE PODE EDITAR
-if ($_SESSION['role'] === 'user') {
+if ($_SESSION['role'] === "user") {
     header("location: ../build/index.php");
 }
 $msg = '';
