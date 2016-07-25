@@ -41,23 +41,21 @@ include("../build/db/dbconn.php");
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <div class="sign-box">
-                    <div class="sign-avatar">
-                        <img src="img/avatar-sign.png" alt="">
-                    </div>
-                    <header class="sign-title">Confirm Your Account</header>
-                    <div class="form-group">
-                        <p class="sign-note">  <?= $msg; ?> </p>
-                        <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as an user</a><a href="sign_up_org.php"> Sign up as an Organization</a></p>
-                    </div>
-                </div>
-            </div>
-        </div><!--.page-center-->
 
-        <script src="js/lib/jquery/jquery.min.js"></script>
-        <script src="js/lib/tether/tether.min.js"></script>
-        <script src="js/lib/bootstrap/bootstrap.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/app.js"></script>
+                <header class="sign-title">Confirm Your Account</header>
+                <div class="form-group">
+                    <p class="sign-note">  <?= $msg; ?> </p>
+                    <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as an user</a><a href="sign_up_org.php"> Sign up as an Organization</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="js/lib/tether/tether.min.js"></script>
+    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
