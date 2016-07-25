@@ -51,12 +51,11 @@ include_once './db/session.php';
             </div>
         </div>
     </div><!--.page-center-->
-
+    
     <script src="js/lib/jquery/jquery.min.js"></script>
     <script src="js/lib/tether/tether.min.js"></script>
     <script src="js/lib/bootstrap/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/app.js"></script>
-
 </body>
 </html>
