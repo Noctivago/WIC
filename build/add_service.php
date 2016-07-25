@@ -99,6 +99,9 @@ include_once '../build/db/session.php';
                         <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
                             <input type="file" name="images[]" id="images" multiple >
                         </button>
+                         <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
+                            <input type="file" name="images[]" id="images" multiple >
+                        </button>
                         <header class = "sign-title">Fill the fields below</header>
 
                         <div class = "form-group">
