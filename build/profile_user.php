@@ -52,7 +52,7 @@ if ($_SESSION['role'] === 'organization') {
                     <header class="box-typical-header-sm">Invites</header>
                     <div class="friends-list stripped">
                         <?PHP DB_checkInvitesWaiting($pdo, $_SESSION['id']); ?>
-
+                    </div>
                 </section>
 
                 <section class="box-typical">
