@@ -1850,7 +1850,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <th>Owner</th><th></th><th></th>
 </tr>
 </thead>
-<tbody class="WICS">';
+<tbody>';
             foreach ($rows as $row) {
                 echo '
 <tr class = "table-check">
