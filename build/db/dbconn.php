@@ -1812,7 +1812,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 WHERE [Service].[Enabled] = 1 AND [WIC_Planner_Service].[Enabled] = 1 
                 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
                 AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
-            echo '<section class = "box-typical box-typical-max-280">
+            echo '<section class = "box-typical box-typical-max-280" style="width: 102%;">
 <header class = "box-typical-header">
 <div class = "tbl-row">
 <div class = "tbl-cell tbl-cell-title">
