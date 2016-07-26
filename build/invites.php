@@ -16,15 +16,13 @@ $msg = '';
 						<div class="tbl-cell tbl-cell-title">
 							<h3>Invites</h3>
 						</div>
-						<div class="tbl-cell tbl-cell-action-bordered">
+                                            <!-- Botoes edit-->
+<!--						<div class="tbl-cell tbl-cell-action-bordered">
 							<button type="button" class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
 						</div>
 						<div class="tbl-cell tbl-cell-action-bordered">
-							<button type="button" class="action-btn"><i class="font-icon font-icon-re"></i></button>
-						</div>
-						<div class="tbl-cell tbl-cell-action-bordered">
 							<button type="button" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
-						</div>
+						</div>-->
 					</div>
 				</header>
 				<div class="box-typical-body">
@@ -32,36 +30,34 @@ $msg = '';
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th class="table-check">
+<!--									<th class="table-check">
 										<div class="checkbox checkbox-only">
 											<input type="checkbox" id="table-check-head"/>
 											<label for="table-check-head"></label>
 										</div>
-									</th>
+									</th-->
 									<th> User Name</th>
 									<th> Service Name</th>
-									<th> Email</th>
-									<th class="table-icon-cell">
+									<th> Role</th>
+                                                                        <th> Edit </th>
+                                                                        <th> Remove </th>
+<!--									<th class="table-icon-cell">
 										<i class="font-icon font-icon-del"></i>
-									</th>
+									</th>-->
 									
-									<th></th>
+									<!--<th></th>-->
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td class="table-check">
+<!--									<td class="table-check">
 										<div class="checkbox checkbox-only">
 											<input type="checkbox" id="table-check-1"/>
 											<label for="table-check-1"></label>
 										</div>
-									</td>
+									</td>-->
 									<td>
 										Last quarter revene
-										<span class="hint-circle"
-											  data-toggle="tooltip"
-											  data-placement="top"
-											  title="Help">?</span>
 									</td>
 									<td class="color-blue-grey-lighter">Revene for last quarter in state America for year 2013, whith...</td>
 									
