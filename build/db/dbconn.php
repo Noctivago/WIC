@@ -482,9 +482,9 @@ function DB_setBlockAccount($pdo, $email) {
 
 function DB_GetRolesOrganizationServiceAsSelect($pdo) {
     try {
-        $rows =  sql($pdo,"SELECT [ID],[Name]
+        $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
-WHERE [Enabled] = ? and [Organization] = ?", array(1,1),"rows");
+WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
         foreach ($rows as $row) {
             echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
         }
@@ -1141,30 +1141,21 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
           join [Role]
           on [Role].[Id] = [User_Service].[Role_Id]
           where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
-            $usersInService = array();
             foreach ($rows as $row) {
-                $arrlength = count($usersInService);
-                for ($x = 0; $x < $arrlength; $x++) {
-                    if ($usersInService[$x] === $row['UID']) {
-                        
-                    } else {
-                        array_push($usersInService, $row['UID']);
-                        echo '<article class="friends-list-item">';
-                        echo '    <div class="user-card-row">';
-                        echo '      <div class="tbl-row">';
-                        echo '          <div class="tbl-cell tbl-cell-photo">';
-                        echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
-                        echo '         </div>';
-                        echo '        <div class="tbl-cell">';
-                        $a = htmlspecialchars($_SERVER['PHP_SELF']);
-                        echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
-                        echo '<br>';
-                        echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['Last_name'] . '</a>';
-                        echo ' </div>';
-                        echo ' </div>';
-                        echo ' </article>';
-                    }
-                }
+                echo '<article class="friends-list-item">';
+                echo '    <div class="user-card-row">';
+                echo '      <div class="tbl-row">';
+                echo '          <div class="tbl-cell tbl-cell-photo">';
+                echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
+                echo '         </div>';
+                echo '        <div class="tbl-cell">';
+                $a = htmlspecialchars($_SERVER['PHP_SELF']);
+                echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
+                echo '<br>';
+                echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['Last_name'] . '</a>';
+                echo ' </div>';
+                echo ' </div>';
+                echo ' </article>';
             }
         }
     } catch (Exception $ex) {
