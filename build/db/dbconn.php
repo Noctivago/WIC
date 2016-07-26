@@ -1954,24 +1954,6 @@ function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
     } catch (Exception $ex) {
         echo 'ERROR ADDING SERVICE';
     }
-//    try {
-//        $d = getDateToDB();
-//        $stmt = $pdo->prepare("INSERT INTO [dbo].[Service] ([Name], [Description], [Organization_Id],
-//            [Date_Created], [Enabled], [Sub_Category_Id], [City_Id]) 
-//        VALUES (:cname, :cdescription, :corg_Id, :cdCreated, 1, cidSub, cidCity)");
-//        $stmt->bindParam(':cname', $cname);
-//        $stmt->bindParam(':cdescription', $cDescription);
-//        $stmt->bindParam(':corg_Id', $org);
-//        $stmt->bindParam(':cdCreated', $d);
-//        $stmt->bindParam(':cidSub', $cSub);
-//        $stmt->bindParam(':cidCity', $city);
-//        $stmt->execute();
-//        $lastId = $pdo->lastInsertId();
-//        return $lastId;
-//    } catch (PDOException $e) {
-//        echo 'ERROR ADDING SERVICE';
-//        die();
-//    }
 }
 
 /**

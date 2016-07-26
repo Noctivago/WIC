@@ -14,7 +14,6 @@ include_once '../build/db/session.php';
                 <section class="box-typical" stye="background-color:black">
                     <div id="imagePreview" style="width: 100%"></div>                    
                 </section>    
-
                 <section class="box-typical">
                     <div class="recomendations-slider">
                         <div class="slide">
@@ -33,7 +32,32 @@ include_once '../build/db/session.php';
                                         $cSub = $_POST['cSubCat'];
                                         $city = $_POST['citySelect'];
                                         //     $serv = $_POST['Serv'];
-                                        $msg = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg, $city);
+                                        $last_Id = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg, $city);
+                                        $name = $_FILES['uploadFile']['name'];
+                                        $newfilename = $last_Id . '.jpg';
+                                        if (isset($name)) {
+                                            if (!empty($name)) {
+                                                // Check for errors
+                                                if ($_FILES['uploadFile']['error'] > 0) {
+                                                    die('An error ocurred when uploading.');
+                                                }
+                                                if (!getimagesize($_FILES['uploadFile']['tmp_name'])) {
+                                                    die('Please ensure you are uploading an image.');
+                                                }
+                                                // Check filesize
+                                                if ($_FILES['uploadFile']['size'] > 500000) {
+                                                    die('File uploaded exceeds maximum upload size.');
+                                                }
+                                                if (!move_uploaded_file($_FILES['uploadFile']['tmp_name'], 'pics/' . $newfilename)) {
+                                                    die('Error uploading file - check destination is writeable.');
+                                                } else {
+                                                    $picture_path = 'pics_service/' . $newfilename;
+                                                    //INSERIR NA TABELA MULTIMEDIA
+                                                    
+                                                    $msg = ('File uploaded successfully.');
+                                                }
+                                            }
+                                        }
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
@@ -92,8 +116,8 @@ include_once '../build/db/session.php';
                     <?= $msg; ?>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
-                        <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
-                        Files: <input type="file" id="files" name="files" multiple><br/>
+                        <input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
+                        Files: <input type="file" id="files" accept = "images/*" name="files" multiple><br/>
 
                         <div id="selectedFiles"></div>
 
