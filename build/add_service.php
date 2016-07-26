@@ -34,7 +34,7 @@ include_once '../build/db/session.php';
                                         //     $serv = $_POST['Serv'];
                                         $last_Id = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg, $city);
                                         $name = $_FILES['uploadFile']['name'];
-                                        $newfilename = $last_Id . '.jpg';
+                                        $newfilename = $last_Id . generateActivationCode() . '.jpg';
                                         if (isset($name)) {
                                             if (!empty($name)) {
                                                 // Check for errors

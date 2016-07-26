@@ -1956,6 +1956,26 @@ function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
     }
 }
 
+function DB_AddNewServiceFirstPagePicture($pdo, $ServiceId, $UserId, $PicturePath, $FirstPage) {
+    try {
+        $d = getDateToDB();
+        sql($pdo, "INSERT INTO [dbo].[Multimedia]
+           ([Multimedia_Type_Id]
+           ,[Service_Id]
+           ,[User_Created_Id]
+           ,[Enabled]
+           ,[Multimedia_Path]
+           ,[First_Page])
+            VALUES
+           (?,?,?,?,?,?)", array(1, $ServiceId, $UserId, 1, $PicturePath, $FirstPage));
+        $lastId = $pdo->lastInsertId();
+//        echo 'true';
+        echo $lastId;
+    } catch (Exception $ex) {
+        echo 'ERROR ADDING SERVICE';
+    }
+}
+
 /**
  * Atualiza dados do user | profile
  * @param type $pdo
