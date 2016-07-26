@@ -50,7 +50,7 @@ $msg = '';
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
             <!--<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
-            <div class="col-lg-6 INCLUDE">
+            <div class="col-lg-6 INCLUDE" style="width:50%">
 
             </div>
         </div><!--.container-fluid-->
