@@ -2520,6 +2520,27 @@ Description
 }
 
 /**
+ * Verifica se o user tem wp criados
+ * @param type $pdo
+ * @param type $userId
+ * @return boolean
+ */
+Function DB_checkIfUserHaveWicPlanner($pdo, $userId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM
+        [WIC_Planner]
+        WHERE [User_Id] = ? AND [Enabled] = 1", array($userId), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
+/**
  * retorna os wicplanners do user para um select utilizado no popup
  * @param type $pdo
  * @param type $userId
@@ -2530,8 +2551,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         [WIC_Planner]
         WHERE [Enabled] = 1
         AND [User_Id] = ?", array($userId), "rows");
-        $number_of_rows = $stmt->rowCount();
-        if ($number_of_rows > 0) {
+        if (DB_checkIfUserHaveWicPlanner($pdo, $userId)) {
             echo '<select class = "bootstrap-select bootstrap-select-arrow" id = "myWics" name = "myWics">';
             foreach ($rows as $row) {
                 echo '<option value = "' . $row['Id'] . '">' . $row['Name'] . '</option>';
