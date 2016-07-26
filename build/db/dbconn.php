@@ -1182,7 +1182,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
         where [Organization_Id] = ? and [Enabled] = 1", array($org), "rows");
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
-            $rows = sql($pdo, "SELECT [Email],[User].[Id] AS UID,[User_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
+            $rows = sql($pdo, "SELECT [Email], distinct([User].[Id]) AS UID,[User_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
         ,[Service].[Name] as ServiceName,[Role].[Name]
           FROM [dbo].[User_Service]
           join [User]
