@@ -167,7 +167,7 @@ function DB_addUser($pdo, $hashPassword, $email, $code) {
         DB_addUserInRole($pdo, $email);
         DB_checkIfInvitationExists($pdo, $email);
 //SE ENVIADO EXIBIR MENSAGEM
-        return DB_sendActivationEmail($email, $code);
+        return DB_sendActivationEmailUser($email, $code);
     } catch (PDOException $e) {
         print "ERROR CREATING ACCOUNT!";
         die();
@@ -481,15 +481,34 @@ function DB_setBlockAccount($pdo, $email) {
 }
 
 /**
- * ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA
+ * ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA USER
  * @param type $email Email do User
  * @return type
  */
-function DB_sendActivationEmail($email, $code) {
+function DB_sendActivationEmailUser($email, $code) {
     $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
     $to = $email;
     $subject = "WIC #ACCOUNT CONFIRMATION";
     $body = "Hi! <br>"
+            . "To start using our services you need to validate your email.<br>"
+            . "Please use the following code to do that: " . $code . "<br>"
+            . "You can activate your account in the following address: http://www.wic.club/<br>"
+            . "Best regards,<br>"
+            . "WIC<br><br>"
+            . "Note: Please do not reply to this email! Thanks!";
+    return sendEmail($to, $subject, $body);
+}
+
+/**
+ * ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA ORG
+ * @param type $email Email do User
+ * @return type
+ */
+function DB_sendActivationEmailOrg($email, $name, $code) {
+    $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
+    $to = $email;
+    $subject = "WIC #ACCOUNT CONFIRMATION";
+    $body = "Hi ' . $name . '! <br>"
             . "To start using our services you need to validate your email.<br>"
             . "Please use the following code to do that: " . $code . "<br>"
             . "You can activate your account in the following address: http://www.wic.club/<br>"
@@ -640,7 +659,7 @@ function DB_addOrg($pdo, $hashPassword, $email, $name, $code, $city) {
         DB_addOrgInRole($pdo, $email);
 //CRIA PROFILE
         DB_addOrgProfile($pdo, $email, $name, $city);
-        echo DB_sendActivationEmail($email);
+        echo DB_sendActivationEmailOrg($email, $name, $code);
     } catch (PDOException $e) {
         echo "ERROR CREATING ORGANIZATION ACCOUNT!";
         die();
