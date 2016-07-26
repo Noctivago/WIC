@@ -1117,27 +1117,30 @@ function DB_CountPeopleInOrg($pdo) {
     }
 }
 
-//Todos os utilizadores que estão associados a um servico 
-//Falta colocar o id da org
+/**
+ * Devolve users associados a um service de uma org
+ * @param type $pdo
+ * @param type $org
+ */
 function DB_getUsersInServiceOrganization($pdo, $org) {
     try {
         $Services = sql($pdo, "SELECT *
-  FROM [Service]
-  where [Organization_Id] = ? and [Enabled] = 1", array($org), "rows");
+        FROM [Service]
+        where [Organization_Id] = ? and [Enabled] = 1", array($org), "rows");
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
             $rows = sql($pdo, "SELECT [Email],[User].[Id] AS UID,[User_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
-,[Service].[Name] as ServiceName,[Role].[Name]
-  FROM [dbo].[User_Service]
-  join [User]
-  on [User].[Id] = [User_Service].[User_Id]
-  join [User_Profile]
-  on [User_Profile].[User_Id] = [User].[Id]
-  join [Service]
-  on [Service].[Id] = [User_Service].[Service_Id]
-  join [Role]
-  on [Role].[Id] = [User_Service].[Role_Id]
-  where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
+        ,[Service].[Name] as ServiceName,[Role].[Name]
+          FROM [dbo].[User_Service]
+          join [User]
+          on [User].[Id] = [User_Service].[User_Id]
+          join [User_Profile]
+          on [User_Profile].[User_Id] = [User].[Id]
+          join [Service]
+          on [Service].[Id] = [User_Service].[Service_Id]
+          join [Role]
+          on [Role].[Id] = [User_Service].[Role_Id]
+          where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
             $usersInService = array();
             foreach ($rows as $row) {
                 $arrlength = count($usersInService);
@@ -1153,8 +1156,6 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
                         echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
                         echo '         </div>';
                         echo '        <div class="tbl-cell">';
-//                
-//                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
                         $a = htmlspecialchars($_SERVER['PHP_SELF']);
                         echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
                         echo '<br>';
@@ -1199,7 +1200,6 @@ function DB_GetOrgInformation($pdo) {
             echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
             echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
             echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
-
             echo '</div>';
         }
     } catch (Exception $ex) {
