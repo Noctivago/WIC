@@ -82,21 +82,12 @@ $serviceId = (filter_var($_GET['Service']));
                         echo '    <div class="user-card-row">';
                         echo '      <div class="tbl-row">';
                         echo '        <div class="tbl-cell">';
-                        echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" role="button">Edit your service</a> <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" role="button">Delete your service</a>';
+                        echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" style="margin-top: 10px;" role="button">Edit your service</a> <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" style="margin-top: 10px;" role="button">Delete your service</a>';
                         echo '         </div>';
                         echo '  </div>';
                         echo ' </article>';
                         
-                        echo '<br>';
-                        
-                        echo '<article class="friends-list-item">';
-                        echo '    <div class="user-card-row">';
-                        echo '      <div class="tbl-row">';
-                        echo '        <div class="tbl-cell">';
-                        echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" role="button">Delete your service</a>';
-                        echo '         </div>';
-                        echo '  </div>';
-                        echo ' </article>';
+
                         
 
                     }
