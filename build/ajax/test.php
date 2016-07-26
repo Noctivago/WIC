@@ -13,4 +13,6 @@ DB_getMultimediaTable($pdo);
 echo '<br>';
 DB_getUserProfileTable($pdo);
 echo '<br>';
-echo $_SERVER["DOCUMENT_ROOT"];
+echo filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
+echo '<br>';
+echo __DIR__;
