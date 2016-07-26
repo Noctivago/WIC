@@ -60,6 +60,7 @@ include_once '../build/db/session.php';
                         &nbsp;
                     </header>
                     <div class="friends-list">
+                        <!--ERRO NO ARRAY-->
                         <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
                     </div>
                 </section>

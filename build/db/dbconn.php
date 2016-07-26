@@ -480,11 +480,74 @@ function DB_setBlockAccount($pdo, $email) {
     }
 }
 
+function DB_BuildInvitesTable($pdo, $userId) {
+    try {
+        $org = DB_GetOrgIdByUserBossId2($pdo, $userId);
+
+        $idOrg = $org['Id'];
+
+        $rows = sql($pdo, "SELECT [User_Service].[ID],
+        [Service].[Id],
+        [Service].[Name],
+		[User_Profile].[First_Name],
+		[User_Profile].[Last_Name],
+		[User_Profile].[Picture_Path]
+          FROM [dbo].[Service]
+          join [User_Service]
+          on [User_Service].[Service_Id] = [Service].[Id]
+          join [User]
+          on [User].[id] = [User_Service].[User_Id]
+          join [User_Profile]
+          on [User_Profile].[User_Id] = [User].[id]
+          where [Service].[Enabled] = 1  and [User_Service].[Enabled]= 1 and [organization_id] = ?", array($idOrg), "rows");
+        foreach ($rows as $row) {
+            echo ' <tr>
+                                <td class="table-photo">
+                                    <img src="' . $row['Picture_Path'] . '" alt="" data-toggle="tooltip" data-placement="bottom" title="' . $row['First_Name'] . '">
+                                </td>
+<td>
+                                    ' . $row['Last_Name'] . '
+                                </td>
+                                <td class="color-blue-grey-lighter">' . $row['Name'] . '</td>
+
+                                <td class="table-icon-cell">
+                                    <div class="form-group" >
+                                        <select class="bootstrap-select bootstrap-select-arrow" id="Role" name="Role">
+                                            ';
+            $rows = sql($pdo, "SELECT [ID],[Name]
+  FROM [dbo].[Role]
+WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
+            foreach ($rows as $row) {
+                echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            }
+
+            echo '
+                                        </select>
+</div>
+                                </td>
+                                <td>
+
+                                    <div class="tbl-cell tbl-cell-action-bordered">
+                                        <button type="button" onclick ="EditRole(' . $row['ID'] . ');"class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
+                                    </div>
+                                </td>
+                                <td>  
+                                    <div class="tbl-cell tbl-cell-action-bordered">
+                                        <button type="button" onclick="remove(' . $row['ID'] . ');" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>';
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 function DB_GetRolesOrganizationServiceAsSelect($pdo) {
     try {
-        $rows =  sql($pdo,"SELECT [ID],[Name]
+        $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
-WHERE [Enabled] = ? and [Organization] = ?", array(1,1),"rows");
+WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
         foreach ($rows as $row) {
             echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
         }
@@ -1129,7 +1192,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
         where [Organization_Id] = ? and [Enabled] = 1", array($org), "rows");
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
-            $rows = sql($pdo, "SELECT [Email],[User].[Id] AS UID,[User_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
+            $rows = sql($pdo, "SELECT distinct [User].[Id] AS UID, [Email], [User_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
         ,[Service].[Name] as ServiceName,[Role].[Name]
           FROM [dbo].[User_Service]
           join [User]
@@ -1141,30 +1204,21 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
           join [Role]
           on [Role].[Id] = [User_Service].[Role_Id]
           where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
-            $usersInService = array();
             foreach ($rows as $row) {
-                $arrlength = count($usersInService);
-                for ($x = 0; $x < $arrlength; $x++) {
-                    if ($usersInService[$x] === $row['UID']) {
-                        
-                    } else {
-                        array_push($usersInService, $row['UID']);
-                        echo '<article class="friends-list-item">';
-                        echo '    <div class="user-card-row">';
-                        echo '      <div class="tbl-row">';
-                        echo '          <div class="tbl-cell tbl-cell-photo">';
-                        echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
-                        echo '         </div>';
-                        echo '        <div class="tbl-cell">';
-                        $a = htmlspecialchars($_SERVER['PHP_SELF']);
-                        echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
-                        echo '<br>';
-                        echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['Last_name'] . '</a>';
-                        echo ' </div>';
-                        echo ' </div>';
-                        echo ' </article>';
-                    }
-                }
+                echo '<article class="friends-list-item">';
+                echo '    <div class="user-card-row">';
+                echo '      <div class="tbl-row">';
+                echo '          <div class="tbl-cell tbl-cell-photo">';
+                echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
+                echo '         </div>';
+                echo '        <div class="tbl-cell">';
+                $a = htmlspecialchars($_SERVER['PHP_SELF']);
+                echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
+                echo '<br>';
+                echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['Last_name'] . '</a>';
+                echo ' </div>';
+                echo ' </div>';
+                echo ' </article>';
             }
         }
     } catch (Exception $ex) {
