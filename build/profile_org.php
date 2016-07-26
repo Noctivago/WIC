@@ -24,12 +24,14 @@ include_once '../build/db/session.php';
 
                         <?php
                         $org = (filter_var($_GET['Organization']));
-//                        $user = (filter_var($_GET['UserInService']));
                         $idUser = $_SESSION['id'];
 
                         if (isset($_GET['UserInService'])) {
-                            
+//                            DEVOLVE OS SERVIÇOS DA ORG DE UM DETERMINADO USER
+                            $UserInService = (filter_var($_GET['UserInService']));
+                            DB_GetOrganizationServicesByUserInService($pdo, $org, $UserInService);
                         } else {
+//                            DEVOLVE TODOS OS SERVIÇOS DAS ORG
                             DB_GetOrganizationServices($pdo, $org, $idUser);
                         }
                         ?>

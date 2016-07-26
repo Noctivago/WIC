@@ -1231,6 +1231,12 @@ function DB_GetServiceInformation($pdo, $idService) {
     }$serviceInfo = array();
 }
 
+/**
+ * Devolve todos os serviços de uma organização
+ * @param type $pdo
+ * @param type $org
+ * @return array
+ */
 function getAllOrganizationServices($pdo, $org) {
     try {
         $stmt = $pdo->prepare("SELECT *
@@ -1243,15 +1249,36 @@ function getAllOrganizationServices($pdo, $org) {
         foreach ($rows as $row) {
             array_push($OrgServices, $row['Id']);
         }
-        //while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//            $service['Name'] = $row['Name'];
-//            $service['Id'] = $row['Id'];
-        //   array_push($OrgServices, $row['Id']);
-        // }
         return $OrgServices;
     } catch (PDOException $e) {
         print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
+    }
+}
+
+function getAllOrganizationServicesByUser($pdo, $org, $userId) {
+    try {
+        $stmt = $pdo->prepare("SELECT *
+  FROM [dbo].[Service]
+  join [User_Service]
+  on [User_Service].[Service_Id] = [Service].[Id]
+  join [User]
+  on [User].[id] = [User_Service].[User_Id]
+  join [User_Profile]
+  on [User_Profile].[User_Id] = [User].[id]
+  where [Service].[Enabled] = 1  and [User_Service].[Enabled]= 1 and [organization_id] =:id
+  and [User_Service].[User_Id] =:uid");
+        $stmt->bindParam(':id', $org);
+        $stmt->bindParam(':uid', $userId);
+        $stmt->execute();
+        $OrgServices = array();
+        $rows = $stmt->fetchALL();
+        foreach ($rows as $row) {
+            array_push($OrgServices, $row['Id']);
+        }
+        return $OrgServices;
+    } catch (PDOException $e) {
+        print "ERROR READING USER PROFILE INFO!<br/>";
     }
 }
 
@@ -1341,11 +1368,63 @@ Free for 3 Months</header>';
     }
 }
 
-//preencher seccao services no profile org
-//falta passar o id da org
+/**
+ * Preenche seção de serviços no perfil da org
+ * @param type $pdo
+ * @param type $org
+ * @param type $idUser
+ */
 function DB_GetOrganizationServices($pdo, $org, $idUser) {
     try {
         $services = getAllOrganizationServices($pdo, $org);
+        foreach ($services as $service) {
+            $idService = $service['Id'];
+            $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+            $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+            $views = DB_GetNumberServiceViews($pdo, $idService);
+            $comments = DB_GetNumberServiceComments($pdo, $idService);
+            echo '<div class = "slide">';
+            echo '<article class = "post-announce">';
+            echo '<div class = "post-announce-pic">';
+            echo '<a href = "service_profile.php?Service=' . $idService . '">';
+            echo ' <img src = "' . $Multi['Multimedia_Path'] . '" alt = "">';
+            echo '</a>';
+            echo ' </div>';
+            echo '<div class = "post-announce-title">';
+            echo '<a href = "service_profile.php?Service=' . $idService . '">' . $ServiceInfo['Name'] . '</a>';
+            echo '</div>';
+            echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
+            echo '<ul class = "post-announce-meta">';
+            echo '<li>';
+            echo '<i class = "font-icon font-icon-eye"></i>';
+            echo $views['NumView'];
+            echo '</li>';
+            echo '<li>';
+            echo '<i class = "font-icon font-icon-comment"></i>';
+            echo $comments['NumComment'];
+            echo '</li>';
+            echo '</ul>';
+            echo '</article>';
+            echo '</div>';
+        }
+//        echo $ServiceInfo["Name"] . " ". $ServiceInfo["Description"] ." " .$Multi['Multimedia_Path']." " .$comments['NumComment'];
+//        echo $ServiceInfo["Description"];
+//        echo $Multi['Multimedia_Path'];
+//        echo $comments['NumComment'];
+    } catch (Exception $ex) {
+        
+    }
+}
+
+/**
+ * Preenche seção de serviços no perfil da org a cargo de um determinado user
+ * @param type $pdo
+ * @param type $org
+ * @param type $idUser
+ */
+function DB_GetOrganizationServicesByUserInService($pdo, $org, $idUser) {
+    try {
+        $services = getAllOrganizationServicesByUser($pdo, $org, $idUser);
         foreach ($services as $service) {
             $idService = $service['Id'];
             $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
