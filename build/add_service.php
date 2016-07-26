@@ -8,8 +8,10 @@ include_once '../build/db/session.php';
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
+                <!--$stmt->execute();-->
+                <!--$lastId = $dbh->lastInsertId();-->
                 <!--IMAGEM PERFIL SERVICE-->
-                <section class="box-typical">
+                <section class="box-typical" stye="background-color:black">
                     <div id="imagePreview" style="width: 100%"></div>                    
                 </section>    
 
