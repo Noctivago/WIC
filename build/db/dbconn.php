@@ -1463,7 +1463,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             echo '<article class = "post-announce">';
             echo '<div class = "post-announce-pic">';
             echo '<a href = "service_profile.php?Service=' . $idService . '">';
-            echo ' <img src = "' . $Multi['Multimedia_Path'] . '" alt = "">';
+            echo ' <img src = "' . $Multi['Multimedia_Path'] . '" alt = "Avatar">';
             echo '</a>';
             echo ' </div>';
             echo '<div class = "post-announce-title">';
@@ -1483,10 +1483,6 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             echo '</article>';
             echo '</div>';
         }
-//        echo $ServiceInfo["Name"] . " ". $ServiceInfo["Description"] ." " .$Multi['Multimedia_Path']." " .$comments['NumComment'];
-//        echo $ServiceInfo["Description"];
-//        echo $Multi['Multimedia_Path'];
-//        echo $comments['NumComment'];
     } catch (Exception $ex) {
         
     }
