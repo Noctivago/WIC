@@ -74,26 +74,26 @@ $serviceId = (filter_var($_GET['Service']));
 
 
             <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
-                <section class="box-typical">
+                <section class="">
                     <!--DISPLAY BOTAO EDIT AO BOSS-->
                     <?php
                     if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])) {
-//                        echo '<article class="friends-list-item">';
-//                        echo '    <div class="user-card-row">';
-//                        echo '      <div class="tbl-row">';
-//                        echo '        <div class="tbl-cell">';
-//                        echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" role="button">click here to edit your service</a>';
-//                        echo '         </div>';
-//                        echo '  </div>';
-//                        echo ' </article>';
-                        
-                        
-                        echo '        <div class="btn btn-rounded">';
+                        echo '<article class="friends-list-item">';
+                        echo '    <div class="user-card-row">';
+                        echo '      <div class="tbl-row">';
+                        echo '        <div class="tbl-cell">';
                         echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" role="button">click here to edit your service</a>';
                         echo '         </div>';
+                        echo '  </div>';
+                        echo ' </article>';
+                        
+                        
+
                     }
                     ?>
                 </section>
+                <br>
+                <br>
 
                 <section class="box-typical">
                     <!--DISPLAY SERVICE USERS-->
