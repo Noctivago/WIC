@@ -15,4 +15,4 @@ DB_getUserProfileTable($pdo);
 echo '<br>';
 echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 echo '<br>';
-echo 'http://' . $_SERVER['HTTP_HOST'];
+echo 'http://' . $_SERVER['HTTP_HOST'] . '/build/reset_password.php';
