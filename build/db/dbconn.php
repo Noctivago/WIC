@@ -488,13 +488,13 @@ function DB_setBlockAccount($pdo, $email) {
 function DB_sendActivationEmailUser($email, $code) {
     $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
     $to = $email;
-    $subject = "WIC #ACCOUNT CONFIRMATION";
-    $body = "Hi! <br>"
-            . "To start using our services you need to validate your email.<br>"
-            . "Please use the following code to do that: " . $code . "<br>"
-            . "You can activate your account in the following address: http://www.wic.club/<br>"
-            . "Best regards,<br>"
-            . "WIC<br><br>"
+    $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/account_confirmation_link.php?EM=' . $email . '&AC=' . $code . '';
+    $subject = "Welcome to the biggest community of events";
+    $body = "Hi, <br><br>"
+            . "Welcome to Wic the biggest community of events and entertainment on earth.<br>"
+            . "Talk, dead and start planning the event of your dreams.<br>"
+            . "Click on the following link to validate your account:" . $link . " <br><br>"
+            . "Event your life ! You Can Event ! <br><br>"
             . "Note: Please do not reply to this email! Thanks!";
     return sendEmail($to, $subject, $body);
 }
@@ -507,13 +507,13 @@ function DB_sendActivationEmailUser($email, $code) {
 function DB_sendActivationEmailOrg($email, $name, $code) {
     $msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
     $to = $email;
-    $subject = "WIC #ACCOUNT CONFIRMATION";
-    $body = "Hi ' . $name . '! <br>"
-            . "To start using our services you need to validate your email.<br>"
-            . "Please use the following code to do that: " . $code . "<br>"
-            . "You can activate your account in the following address: http://www.wic.club/<br>"
-            . "Best regards,<br>"
-            . "WIC<br><br>"
+    $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/account_confirmation_link.php?EM=' . $email . '&AC=' . $code . '';
+    $subject = "Welcome to the biggest community of events";
+    $body = "Hi " . $name . ", <br><br>"
+            . "Welcome to Wic the biggest community of events and entertainment on earth.<br>"
+            . "Talk, dead and start planning the event of your dreams.<br>"
+            . "Click on the following link to validate your account:" . $link . " <br><br>"
+            . "Event your life ! You Can Event ! <br><br>"
             . "Note: Please do not reply to this email! Thanks!";
     return sendEmail($to, $subject, $body);
 }
