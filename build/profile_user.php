@@ -47,39 +47,24 @@ if ($_SESSION['role'] === 'organization') {
 
 
             <div class="col-lg-3 col-md-6 col-sm-6">
+
+                <section class="box-typical">
+                    <header class="box-typical-header-sm">Invites</header>
+                    <div class="friends-list stripped">
+                        <?PHP DB_checkInvitesWaiting($pdo, $_SESSION['id']); ?>
+
+                </section>
+
                 <section class="box-typical">
                     <header class="box-typical-header-sm">Messenger</header>
                     <div class="friends-list stripped">
-                        <!--COMEÇA AQUI-->
-                        <!--                        <article class="friends-list-item">
-                                                    <div class="user-card-row">
-                                                        <div class="tbl-row">
-                                                            <div class="tbl-cell tbl-cell-photo">
-                                                                <a href="#">
-                                                                    <img src="img/photo-64-2.jpg" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="tbl-cell">
-                                                                <p class="user-card-row-name"><a href="#">Dan Cederholm</a></p>
-                                                                <p class="user-card-row-status">Co-founder of <a href="#">Company</a></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>-->
+
                         <?= db_getUserMessengerWithUsers($pdo, $_SESSION['id']); ?>
                         <?= db_getUserMessengerWithOrgs($pdo, $_SESSION['id']); ?>
 
                         <div class="see-all">
                             <a href="#">See more</a>
                         </div>
-
-                </section>
-            </div><!--.col- -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <section class="box-typical">
-                    <header class="box-typical-header-sm">Invites</header>
-                    <div class="friends-list stripped">
-                        <?PHP DB_checkInvitesWaiting($pdo, $_SESSION['id']); ?>
 
                 </section>
             </div><!--.col- -->
