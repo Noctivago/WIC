@@ -513,7 +513,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
                                 <td class="table-icon-cell">
                                     <div class="form-group" >
                                         <select class="bootstrap-select bootstrap-select-arrow" id="Role" name="Role">
-                                            <?= DB_GetRolesOrganizationServiceAsSelect($pdo) ?>
+                                            '. DB_GetRolesOrganizationServiceAsSelect($pdo).'
                                         </select>
 </div>
                                 </td>
