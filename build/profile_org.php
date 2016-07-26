@@ -45,7 +45,14 @@ include_once '../build/db/session.php';
                             <i class="font-icon font-icon-notebook-bird"></i>
                             Description
                         </header>
-                        <?php DB_GetOrgInformation2($pdo, $org); ?>
+                        <?php
+                        if (isset($_GET['UserInService'])) {
+                            $UserInService = (filter_var($_GET['UserInService']));
+                            db_getUserIndexInfo($pdo, $UserInService);
+                        } else {
+                            DB_GetOrgInformation2($pdo, $org);
+                        }
+                        ?>
                 </section>
                 <section class="box-typical">
                     <header class="box-typical-header-sm">

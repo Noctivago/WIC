@@ -470,6 +470,8 @@ include_once '../build/db/session.php';
 <!--MULTIPICS-->
 
 
+<!--PENSO QUE SE PODEM REMOVER OS PROXIMOS DOIS SCRIPTS TESTAR PRIMEIRO-->
+
 <style>
     #imagePreview {
         width: 664px;
