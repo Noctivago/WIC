@@ -53,8 +53,8 @@ include_once '../build/db/session.php';
                                                 } else {
                                                     $picture_path = 'pics_service/' . $newfilename;
                                                     //INSERIR NA TABELA MULTIMEDIA - FirstPage
-                                                    DB_AddNewServiceFirstPagePicture($pdo, $last_Id, $user, $picture_path, 1);
-                                                    $msg = ('File uploaded successfully.');
+                                                    $msg = DB_AddNewServiceFirstPagePicture($pdo, $last_Id, $user, $picture_path, 1);
+                                                    //$msg = ('File uploaded successfully.');
                                                 }
                                             }
                                         }

@@ -1969,7 +1969,7 @@ function DB_AddNewServiceFirstPagePicture($pdo, $ServiceId, $UserId, $PicturePat
             VALUES
            (?,?,?,?,?,?)", array(1, $ServiceId, $UserId, 1, $PicturePath, $FirstPage));
         $lastId = $pdo->lastInsertId();
-//        echo 'true';
+        echo 'OKI > MULTIMEDIA OKI';
         echo $lastId;
     } catch (Exception $ex) {
         echo 'ERROR ADDING MULTIMEDIA TO SERVICE';
