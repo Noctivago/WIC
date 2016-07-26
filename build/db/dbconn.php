@@ -1049,7 +1049,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
 //COLOCAR LINK PARA POST ?Organization=x&UserInService=Y                
 //                echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
 //                echo '            <p class="user-card-row-name">' . $row['Last_name'] . '</p>';
-//                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
+                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
                 $a = htmlspecialchars($_SERVER['PHP_SELF']);
                 echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
                 echo '<br>';
@@ -1267,7 +1267,7 @@ function getAllOrganizationServicesByUser($pdo, $org, $userId) {
   join [User_Profile]
   on [User_Profile].[User_Id] = [User].[id]
   where [Service].[Enabled] = 1  and [User_Service].[Enabled]= 1 and [organization_id] =:id
-  and [User_Service].[User_Id] =:uid");
+  and [User_Service].[User_Id] = :uid");
         $stmt->bindParam(':id', $org);
         $stmt->bindParam(':uid', $userId);
         $stmt->execute();
@@ -1455,10 +1455,7 @@ function DB_GetOrganizationServicesByUserInService($pdo, $org, $idUser) {
             echo '</article>';
             echo '</div>';
         }
-//        echo $ServiceInfo["Name"] . " ". $ServiceInfo["Description"] ." " .$Multi['Multimedia_Path']." " .$comments['NumComment'];
-//        echo $ServiceInfo["Description"];
-//        echo $Multi['Multimedia_Path'];
-//        echo $comments['NumComment'];
+
     } catch (Exception $ex) {
         
     }
