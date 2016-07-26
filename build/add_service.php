@@ -89,6 +89,7 @@ include_once '../build/db/session.php';
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Add new service </header>
+                    <?= $msg; ?>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
                         <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />

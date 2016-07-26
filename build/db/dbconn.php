@@ -1927,27 +1927,44 @@ Change Picture
 }
 
 function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
+//    try {
+//        $d = getDateToDB();
+//        sql($pdo, "INSERT INTO [dbo].[Service]
+//           ([Name]
+//           ,[Description]
+//           ,[Organization_Id]
+//           ,[Date_Created]
+//           ,[Enabled]
+//           ,[Sub_Category_Id]
+//           ,[City_Id])
+//		   VALUES
+//           (?
+//           ,?
+//           ,?
+//           ,?
+//           ,?
+//           ,?
+//           ,?)", array($cname, $cDescription, $org, $d, 1, $cSub, $city));
+//        echo 'true';
+//    } catch (Exception $ex) {
+//        
+//    }
     try {
-        $d = getDateToDB();
-        sql($pdo, "INSERT INTO [dbo].[Service]
-           ([Name]
-           ,[Description]
-           ,[Organization_Id]
-           ,[Date_Created]
-           ,[Enabled]
-           ,[Sub_Category_Id]
-           ,[City_Id])
-		   VALUES
-           (?
-           ,?
-           ,?
-           ,?
-           ,?
-           ,?
-           ,?)", array($cname, $cDescription, $org, $d, 1, $cSub, $city));
-        echo 'true';
-    } catch (Exception $ex) {
-        
+        $stmt = $pdo->prepare("INSERT INTO [dbo].[Service] ([Name], [Description], [Organization_Id],
+            [Date_Created], [Enabled], [Sub_Category_Id], [City_Id]) 
+        VALUES (:name, :description, :org_Id, :dCreated, 1, idSub, idCity)");
+        $stmt->bindParam(':name', $cname);
+        $stmt->bindParam(':description', $cDescription);
+        $stmt->bindParam(':org_Id', $org);
+        $stmt->bindParam(':dCreated', getDateToDB());
+        $stmt->bindParam(':idSub', $cSub);
+        $stmt->bindParam(':idCity', $city);
+        $stmt->execute();
+        $lastId = $pdo->lastInsertId();
+        return $lastId;
+    } catch (PDOException $e) {
+        echo 'ERROR ADDING SERVICE';
+        die();
     }
 }
 
