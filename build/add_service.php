@@ -52,7 +52,7 @@ ini_set("display_errors", 1);
                                                 if (!move_uploaded_file($_FILES['uploadFile']['tmp_name'], 'pics/' . $newfilename)) {
                                                     die('Error uploading file - check destination is writeable.');
                                                 } else {
-                                                    $picture_path = 'pics_service/' . $newfilename;
+                                                    $picture_path = 'pics/' . $newfilename;
                                                     //INSERIR NA TABELA MULTIMEDIA - FirstPage
                                                     $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $picture_path, 1);
                                                     //$msg = ('File uploaded successfully.');
