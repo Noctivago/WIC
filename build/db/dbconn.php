@@ -490,7 +490,7 @@ function DB_sendActivationEmailUser($email, $code) {
     $to = $email;
     $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/account_confirmation_link.php?EM=' . $email . '&AC=' . $code . '';
     $subject = "Welcome to the biggest community of events";
-    $body = "Hi, <br><br>"
+    $body = "Hello, <br><br>"
             . "Welcome to Wic the biggest community of events and entertainment on earth.<br>"
             . "Talk, dead and start planning the event of your dreams.<br>"
             . "Click on the following link to validate your account:" . $link . " <br><br>"
@@ -509,7 +509,7 @@ function DB_sendActivationEmailOrg($email, $name, $code) {
     $to = $email;
     $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/account_confirmation_link.php?EM=' . $email . '&AC=' . $code . '';
     $subject = "Welcome to the biggest community of events";
-    $body = "Hi " . $name . ", <br><br>"
+    $body = "Hello " . $name . ", <br><br>"
             . "Welcome to Wic the biggest community of events and entertainment on earth.<br>"
             . "Talk, dead and start planning the event of your dreams.<br>"
             . "Click on the following link to validate your account:" . $link . " <br><br>"
@@ -531,12 +531,11 @@ function DB_resetPassword($pdo, $email) {
     try {
         $count = sql($pdo, "UPDATE [dbo].[User] SET [Password] = ? WHERE [Email] = ? ", array($hashPassword, $email));
         $to = $email;
-        $subject = "WIC #ACCOUNT CONFIRMATION";
-        $body = "Hi! <br>"
-                . "PEDISTE PASSWOD.<br>"
-                . "NEW PASSWORD: " . $newPass . "<br>"
-                . "Best regards,<br>"
-                . "WIC<br><br>"
+        $subject = "Reset your password";
+        $body = "Hello! <br>"
+                . "You requested a password reset .<br>"
+                . "Your new password is: " . $newPass . "<br>"
+                . "Please change the password on your next login.<br><br>"
                 . "Note: Please do not reply to this email! Thanks!";
         sendEmail($to, $subject, $body);
         return "AN EMAIL AS SENT WITH A NEW PASSWORD!";

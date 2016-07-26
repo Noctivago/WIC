@@ -19,7 +19,7 @@ include("../build/db/dbconn.php");
                     $msg = 'ACCOUNT SUCESSUFULLY ACTIVATED';
                     $to = $email;
                     $subject = "Account Successfully Activated";
-                    $body = "Hi! <br><br>"
+                    $body = "Hello! <br><br>"
                             . "WiC Team welcomes you,<br><br>"
                             . "Thank you to making our dream happen.<br>"
                             . "Event your life ! You Can Event !<br><br>"
