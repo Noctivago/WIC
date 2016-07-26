@@ -25,10 +25,18 @@ include_once '../build/db/session.php';
                         <?php
                         $org = (filter_var($_GET['Organization']));
                         $idUser = $_SESSION['id'];
-                        DB_GetOrganizationServices($pdo, $org, $idUser)
+
+                        if (isset($_GET['UserInService'])) {
+//                            DEVOLVE OS SERVIÇOS DA ORG DE UM DETERMINADO USER
+                            $UserInService = (filter_var($_GET['UserInService']));
+                            DB_GetOrganizationServicesByUserInService($pdo, $org, $UserInService);
+                        } else {
+//                            DEVOLVE TODOS OS SERVIÇOS DAS ORG
+                            DB_GetOrganizationServices($pdo, $org, $idUser);
+                        }
                         ?>
-                    </div><!--.posts-slider-->
-                </section><!--.box-typical-->
+                    </div>
+                </section>
 
                 <section class="box-typical">
                     <header class="box-typical-header-sm">Organization Information</header>
@@ -37,7 +45,14 @@ include_once '../build/db/session.php';
                             <i class="font-icon font-icon-notebook-bird"></i>
                             Description
                         </header>
-                        <?php DB_GetOrgInformation2($pdo, $org); ?>
+                        <?php
+                        if (isset($_GET['UserInService'])) {
+                            $UserInService = (filter_var($_GET['UserInService']));
+                            db_getUserIndexInfoForOrgProfile($pdo, $UserInService);
+                        } else {
+                            DB_GetOrgInformation2($pdo, $org);
+                        }
+                        ?>
                 </section>
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
@@ -59,25 +74,21 @@ include_once '../build/db/session.php';
                 echo '    </section><!--.box-typical-->';
             }
             ?>
-        </div><!--.col- -->
-    </div><!--.row-->
-</div><!--.container-fluid-->
-</div><!--.page-content-->
+        </div>
+    </div>
+</div>
+</div>
 
 <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
-
-
 <script src="js/lib/tether/tether.min.js"></script>
 <script src="js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
-
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="js/Org.js" type="text/javascript"></script>
-
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 
 <script>function subscribe(org) {

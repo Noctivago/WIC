@@ -16,12 +16,11 @@ include("../build/db/dbconn.php");
                 if (DB_activateUserAccount($pdo, $email)) {
                     $msg = 'ACCOUNT SUCESSUFULLY ACTIVATED';
                     $to = $email;
-                    $subject = "WIC #ACCOUNT ACTIVATED";
-                    $body = "Hi! <br>"
-                            . "Your account was successfully activated!<br>"
-                            . "You can now login and make the best event for you!<br>"
-                            . "Best regards,<br>"
-                            . "WIC<br><br>"
+                    $subject = "Account Successfully Activated";
+                    $body = "Hello! <br><br>"
+                            . "WiC Team welcomes you,<br><br>"
+                            . "Thank you to making our dream happen.<br>"
+                            . "Event your life ! You Can Event !<br><br>"
                             . "Note: Please do not reply to this email! Thanks!";
                     $msg = sendEmail($to, $subject, $body) . ' Account successfully activated!';
                 } else {

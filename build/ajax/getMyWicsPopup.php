@@ -31,14 +31,14 @@ if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
     <body>
         <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?id=<?= $serviceId; ?>" method="post">
             <div class="sign-box">
-                <div class="sign-avatar no-photo">&plus;</div>
-                <header class="sign-title">#Choose a WiC Planner?</header>
-                <div class="form-group">
+<!--                <div class="sign-avatar no-photo">&plus;</div>
+                <header class="sign-title">#Choose a WiC Planner?</header>-->
+                <!--<div class="form-group">-->
                     <?= DB_getMyWicsAsPopup($pdo, $userId); ?>
-                </div>
+<!--                </div>
                 <p class="form-group">  <?= $msg; ?> </p>
                 <button type="submit" name="add2WiC" id="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
-                <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">
+                <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">-->
             </div>
         </form>
 

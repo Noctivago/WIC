@@ -62,15 +62,16 @@ if (isset($_SESSION['id'])) {
                             //ENVIAR EMAIL COM INSTRUÇÔES DE DESBLOQUEIO
                             $msg = 'Account blocked!';
                             $to = $email;
-                            $subject = "WIC #ACCOUNT BLOCKED";
+                            $subject = "Account Blocked";
                             $code = generateActivationCode();
                             DB_updateUserAccountActivationCode($pdo, $email, $code);
-                            $body = "Hi! <br>"
-                                    . "Your account was blocked due severed failed logins.<br>"
-                                    . "Use the following code to unblock your account: " . $code . "<br>"
-                                    . "Plase use the following URL to unlock: http://www.wic.club<br>"
-                                    . "Best regards,<br>"
-                                    . "WIC<br><br>"
+                            $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/account_confirmation_link.php?EM=' . $email . '&AC=' . $code . '';
+                            $linkRP = 'http://' . $_SERVER['HTTP_HOST'] . '/build/reset_password.php';
+                            $body = "Hello! <br>"
+                                    . "Your account was blocked due several failed logins.<br>"
+                                    . "Click on the following link to reactivate your account:" . $link . " <br>"
+                                    . "After the previous step if you don't remember your password you can ask for a new one in: $linkRP <br>"
+                                    . "Event your life ! You Can Event ! <br><br>"
                                     . "Note: Please do not reply to this email! Thanks!";
                             sendEmail($to, $subject, $body);
                         }

@@ -2,6 +2,9 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
+$msg = '';
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 
 <div class="page-content">
@@ -9,10 +12,9 @@ include_once '../build/db/session.php';
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
                 <!--IMAGEM PERFIL SERVICE-->
-                <section class="box-typical">
+                <section class="box-typical" stye="background-color:black">
                     <div id="imagePreview" style="width: 100%"></div>                    
                 </section>    
-
                 <section class="box-typical">
                     <div class="recomendations-slider">
                         <div class="slide">
@@ -31,7 +33,34 @@ include_once '../build/db/session.php';
                                         $cSub = $_POST['cSubCat'];
                                         $city = $_POST['citySelect'];
                                         //     $serv = $_POST['Serv'];
-                                        $msg = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg, $city);
+                                        $last_Id = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg, $city);
+                                        $sID = $last_Id;
+                                        $name = $_FILES['uploadFile']['name'];
+                                        $newfilename = $sID . '_' . generateActivationCode() . '.jpg';
+                                        if (isset($name)) {
+                                            if (!empty($name)) {
+                                                // Check for errors
+                                                if ($_FILES['uploadFile']['error'] > 0) {
+                                                    die('An error ocurred when uploading.');
+                                                }
+                                                if (!getimagesize($_FILES['uploadFile']['tmp_name'])) {
+                                                    die('Please ensure you are uploading an image.');
+                                                }
+                                                // Check filesize
+                                                if ($_FILES['uploadFile']['size'] > 500000) {
+                                                    die('File uploaded exceeds maximum upload size.');
+                                                }
+                                                if (!move_uploaded_file($_FILES['uploadFile']['tmp_name'], 'pics/' . $newfilename)) {
+                                                    die('Error uploading file - check destination is writeable.');
+                                                } else {
+                                                    $picture_path = 'pics/' . $newfilename;
+                                                    //INSERIR NA TABELA MULTIMEDIA - FirstPage
+                                                    $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $picture_path, 1);
+                                                    //$msg = ('File uploaded successfully.');
+                                                }
+                                            }
+                                        }
+//                                        FAZER LOOP PARA RESTANTES FOTOS
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
@@ -87,15 +116,14 @@ include_once '../build/db/session.php';
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Add new service </header>
+                    <?= $msg; ?>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
-                        <input id="uploadFile" name="uploadFile" type="file" name="image" class="img" />
-                        <div id="wrapper" style="margin-top: 20px;">
-                            <!--OTHER PICTURES-->
-                            <input id="files2Upload" multiple="multiple" type="file"/> 
-                            <div id="image-holder" style="thumb-image{float:left;width:25px;position:relative;padding:5px;}"></div>
-                        </div>
-                      
+                        <input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
+                        Files: <input type="file" id="files" accept = "images/*" name="files" multiple><br/>
+
+                        <div id="selectedFiles"></div>
+
                         <header class = "sign-title">Fill the fields below</header>
 
                         <div class = "form-group">
@@ -139,11 +167,22 @@ include_once '../build/db/session.php';
                         </div>
                         <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
                         </div>
+                    </form>
                 </section>
             </div>
         </div>
     </div>
 </div>
+
+<!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
+<style>
+    #selectedFiles img {
+        max-width: 70px;
+        max-height: 70px;
+        float: left;
+        margin-bottom:10px;
+    }
+</style>
 
 <!--GET Country / State / City-->
 <script>
@@ -229,6 +268,74 @@ include_once '../build/db/session.php';
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
+
+<!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
+<script>
+    var selDiv = "";
+    var storedFiles = [];
+
+    $(document).ready(function () {
+        $("#files").on("change", handleFileSelect);
+
+        selDiv = $("#selectedFiles");
+        $("#myForm").on("submit", handleForm);
+
+        $("body").on("click", ".selFile", removeFile);
+    });
+
+    function handleFileSelect(e) {
+        var files = e.target.files;
+        var filesArr = Array.prototype.slice.call(files);
+        filesArr.forEach(function (f) {
+
+            if (!f.type.match("image.*")) {
+                return;
+            }
+            storedFiles.push(f);
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var html = "<div><img src=\"" + e.target.result + "\" data-file='" + f.name + "' class='selFile' title='Click to remove'>X<br clear=\"left\"/></div>";
+                selDiv.append(html);
+
+            }
+            reader.readAsDataURL(f);
+        });
+
+    }
+
+    function handleForm(e) {
+        e.preventDefault();
+        var data = new FormData();
+
+        for (var i = 0, len = storedFiles.length; i < len; i++) {
+            data.append('files', storedFiles[i]);
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'handler.cfm', true);
+
+        xhr.onload = function (e) {
+            if (this.status == 200) {
+                console.log(e.currentTarget.responseText);
+                alert(e.currentTarget.responseText + ' items uploaded.');
+            }
+        }
+
+        xhr.send(data);
+    }
+
+    function removeFile(e) {
+        var file = $(this).data("file");
+        for (var i = 0; i < storedFiles.length; i++) {
+            if (storedFiles[i].name === file) {
+                storedFiles.splice(i, 1);
+                break;
+            }
+        }
+        $(this).parent().remove();
+    }
+</script>
 
 <script>
     $(document).ready(function () {
@@ -371,41 +478,6 @@ include_once '../build/db/session.php';
     });
 </script>
 
-<!--PREVIEW DAS RESTANTES PICS DO SERVICE-->
-<script>
-    $(document).ready(function () {
-        $("#files2Upload").on('change', function () {
-            //Get count of selected files
-            var countFiles = $(this)[0].files.length;
-            var imgPath = $(this)[0].value;
-            var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
-            var image_holder = $("#image-holder");
-            image_holder.empty();
-            if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
-                if (typeof (FileReader) != "undefined") {
-                    //loop for each file selected for uploaded.
-                    for (var i = 0; i < countFiles; i++)
-                    {
-                        var reader = new FileReader();
-                        reader.onload = function (e) {
-                            $("<img />", {
-                                "src": e.target.result,
-                                "class": "thumb-image"
-                            }).appendTo(image_holder);
-                        }
-                        image_holder.show();
-                        reader.readAsDataURL($(this)[0].files[i]);
-                    }
-                } else {
-                    alert("This browser does not support FileReader.");
-                }
-            } else {
-                alert("Pls select only images");
-            }
-        });
-    });
-</script>
-
 <!--PIC SERVICE PROF-->
 <script>
     $(function () {
@@ -427,6 +499,8 @@ include_once '../build/db/session.php';
 </script>
 <!--MULTIPICS-->
 
+
+<!--PENSO QUE SE PODEM REMOVER OS PROXIMOS DOIS SCRIPTS TESTAR PRIMEIRO-->
 
 <style>
     #imagePreview {
