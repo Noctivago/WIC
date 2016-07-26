@@ -26,7 +26,7 @@ $msg = '';
                             </div>
                         </div>
                     </header>
-                    <div class="box-typical-body" style="overflow: hidden; padding: 0px; height: 700px; width: 484px;">
+                    <div class="box-typical-body" style="overflow: hidden; padding: 0px; height: 700px;">
                         <div class="table-responsive">
                             <table class="table table-hover">
 
@@ -50,7 +50,7 @@ $msg = '';
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
             <!--<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
-            <div class="col-lg-6">
+            <div class="col-lg-6 INCLUDE">
 
             </div>
         </div><!--.container-fluid-->
