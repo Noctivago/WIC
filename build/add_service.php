@@ -33,6 +33,7 @@ include_once '../build/db/session.php';
                                         $city = $_POST['citySelect'];
                                         //     $serv = $_POST['Serv'];
                                         $last_Id = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg, $city);
+                                        $sID = $last_Id;
                                         $name = $_FILES['uploadFile']['name'];
                                         $newfilename = $last_Id . generateActivationCode() . '.jpg';
                                         if (isset($name)) {
@@ -53,7 +54,7 @@ include_once '../build/db/session.php';
                                                 } else {
                                                     $picture_path = 'pics_service/' . $newfilename;
                                                     //INSERIR NA TABELA MULTIMEDIA - FirstPage
-                                                    $msg = DB_AddNewServiceFirstPagePicture($pdo, $last_Id, $user, $picture_path, 1);
+                                                    $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $picture_path, 1);
                                                     //$msg = ('File uploaded successfully.');
                                                 }
                                             }
