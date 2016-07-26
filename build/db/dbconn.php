@@ -483,9 +483,9 @@ function DB_setBlockAccount($pdo, $email) {
 function DB_BuildInvitesTable($pdo, $userId) {
     try {
         $org = DB_GetOrgIdByUserBossId2($pdo, $userId);
-        
+
         $idOrg = $org['Id'];
-        echo $idOrg;
+
         $rows = sql($pdo, "SELECT [User_Service].[ID],
         [Service].[Id],
         [Service].[Name],
@@ -513,19 +513,27 @@ function DB_BuildInvitesTable($pdo, $userId) {
                                 <td class="table-icon-cell">
                                     <div class="form-group" >
                                         <select class="bootstrap-select bootstrap-select-arrow" id="Role" name="Role">
-                                            '. DB_GetRolesOrganizationServiceAsSelect($pdo).'
+                                            ';
+            $rows = sql($pdo, "SELECT [ID],[Name]
+  FROM [dbo].[Role]
+WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
+            foreach ($rows as $row) {
+                echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            }
+
+            echo '
                                         </select>
 </div>
                                 </td>
                                 <td>
 
                                     <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" onclick ="EditRole('.$row['ID'].');"class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
+                                        <button type="button" onclick ="EditRole(' . $row['ID'] . ');"class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
                                     </div>
                                 </td>
                                 <td>  
                                     <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" onclick="remove('.$row['ID'].');" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
+                                        <button type="button" onclick="remove(' . $row['ID'] . ');" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
                                     </div>
                                 </td>
                             </tr>';
