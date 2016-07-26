@@ -13,7 +13,7 @@ $msg = '';
     <div class="container-fluid">
         <div class="row" style="height: 700px;">
             <div class="col-lg-6">
-                <section class="box-typical box-typical-max-280" style="width: 102%;">
+                <section class="box-typical box-typical-max-280">
                     <header class="box-typical-header">
                         <div class="tbl-row">
                             <div class="tbl-cell tbl-cell-title">
@@ -50,7 +50,7 @@ $msg = '';
             <!--A PUTA COMEÇA AQUI-->
             <!--SECÇAO PARA INCLUDES-->
             <!--<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
-            <div class="col-lg-6 INCLUDE" style="width:50%">
+            <div class="col-lg-6 INCLUDE">
 
             </div>
         </div><!--.container-fluid-->
