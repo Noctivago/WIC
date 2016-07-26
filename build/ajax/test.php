@@ -12,3 +12,5 @@ echo '<br>';
 DB_getMultimediaTable($pdo);
 echo '<br>';
 DB_getUserProfileTable($pdo);
+echo '<br>';
+echo $_SERVER["DOCUMENT_ROOT"];
