@@ -13,8 +13,4 @@ DB_getMultimediaTable($pdo);
 echo '<br>';
 DB_getUserProfileTable($pdo);
 echo '<br>';
-echo filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
-echo '<br>';
-echo __DIR__;
-echo '<br>';
 echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
