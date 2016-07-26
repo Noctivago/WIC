@@ -26,7 +26,9 @@ $msg = '';
                 </div>
             </header>
             <div class="box-typical-body">
+                
                 <div class="table-responsive">
+                    
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -39,37 +41,10 @@ $msg = '';
                             </tr>
                         </thead>
                         <tbody>
-
-                            <tr>
-                                <td class="table-photo">
-                                    <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
-                                </td>
-
-                                <td>
-                                    Last quarter revene
-                                </td>
-                                <td class="color-blue-grey-lighter">Revene for last quarter in state America for year 2013, whith...</td>
-
-                                <td class="table-icon-cell">
-                                    <div class="form-group" >
-                                        <select class="bootstrap-select bootstrap-select-arrow" id="Role" name="Role">
-                                            <?= DB_GetRolesOrganizationServiceAsSelect($pdo) ?>
-                                        </select>
-
-                                    </div>
-                                </td>
-                                <td>
-
-                                    <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
-                                    </div>
-                                </td>
-                                <td>  
-                                    <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
+                            <?php $userId = $_SESSION['id']; 
+                            DB_BuildInvitesTable($pdo,$userId);
+                            ?>
+                                
                         </tbody>
                     </table>
                 </div>
