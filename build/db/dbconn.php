@@ -2530,7 +2530,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         [WIC_Planner]
         WHERE [Enabled] = 1
         AND [User_Id] = ?", array($userId), "rows");
-        $number_of_rows = $rows->fetchColumn();
+        $number_of_rows = $stmt->rowCount();
         if ($number_of_rows > 0) {
             echo '<select class = "bootstrap-select bootstrap-select-arrow" id = "myWics" name = "myWics">';
             foreach ($rows as $row) {
