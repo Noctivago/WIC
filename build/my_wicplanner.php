@@ -13,7 +13,7 @@ $msg = '';
     <div class="container-fluid">
         <div class="row" style="height: 700px;">
             <div class="col-lg-6">
-                <section class="box-typical box-typical-max-280">
+                <section class="box-typical box-typical-max-280"style="width: 504px;">
                     <header class="box-typical-header">
                         <div class="tbl-row">
                             <div class="tbl-cell tbl-cell-title">
