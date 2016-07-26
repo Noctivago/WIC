@@ -480,6 +480,19 @@ function DB_setBlockAccount($pdo, $email) {
     }
 }
 
+function DB_GetRolesOrganizationServiceAsSelect($pdo) {
+    try {
+        $rows =  sql($pdo,"SELECT [ID],[Name]
+  FROM [dbo].[Role]
+WHERE [Enabled] = ? and [Organization] = ?", array(1,1),"rows");
+        foreach ($rows as $row) {
+            echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 /**
  * ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA USER
  * @param type $email Email do User
@@ -1125,28 +1138,32 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
   join [Role]
   on [Role].[Id] = [User_Service].[Role_Id]
   where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
-
+            $usersInService = array();
             foreach ($rows as $row) {
-                echo '<article class="friends-list-item">';
-                echo '    <div class="user-card-row">';
-                echo '      <div class="tbl-row">';
-                echo '          <div class="tbl-cell tbl-cell-photo">';
-//       echo '              <a href="#">';
-                echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
-//       echo '             </a>';
-                echo '         </div>';
-                echo '        <div class="tbl-cell">';
-//COLOCAR LINK PARA POST ?Organization=x&UserInService=Y                
-//                echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
-//                echo '            <p class="user-card-row-name">' . $row['Last_name'] . '</p>';
+                $arrlength = count($usersInService);
+                for ($x = 0; $x < $arrlength; $x++) {
+                    if ($usersInService[$x] == $row['UID']) {
+                        
+                    } else {
+                        array_push($usersInService, $row['UID']);
+                        echo '<article class="friends-list-item">';
+                        echo '    <div class="user-card-row">';
+                        echo '      <div class="tbl-row">';
+                        echo '          <div class="tbl-cell tbl-cell-photo">';
+                        echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
+                        echo '         </div>';
+                        echo '        <div class="tbl-cell">';
+//                
 //                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
-                $a = htmlspecialchars($_SERVER['PHP_SELF']);
-                echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
-                echo '<br>';
-                echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['Last_name'] . '</a>';
-                echo ' </div>';
-                echo ' </div>';
-                echo ' </article>';
+                        $a = htmlspecialchars($_SERVER['PHP_SELF']);
+                        echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
+                        echo '<br>';
+                        echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['Last_name'] . '</a>';
+                        echo ' </div>';
+                        echo ' </div>';
+                        echo ' </article>';
+                    }
+                }
             }
         }
     } catch (Exception $ex) {

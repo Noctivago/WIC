@@ -39,6 +39,7 @@ $msg = '';
                             </tr>
                         </thead>
                         <tbody>
+
                             <tr>
                                 <td class="table-photo">
                                     <img src="img/photo-64-1.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Nicholas<br/>Barrett">
@@ -50,7 +51,13 @@ $msg = '';
                                 <td class="color-blue-grey-lighter">Revene for last quarter in state America for year 2013, whith...</td>
 
                                 <td class="table-icon-cell">
-                                    TODOSMANSOS@GMAIL.COM
+                                    <div class="form-group" >
+                                        <select class="bootstrap-select bootstrap-select-arrow" id="Role" name="Role">
+                                            <?= DB_GetRolesOrganizationServiceAsSelect($pdo) ?>
+
+                                        </select>
+
+                                    </div>
                                 </td>
                                 <td>
 
