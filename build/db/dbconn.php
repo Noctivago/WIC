@@ -2529,7 +2529,7 @@ Function DB_checkIfUserHaveWicPlanner($pdo, $userId) {
     try {
         $count = sql($pdo, "SELECT * FROM
         [WIC_Planner]
-        WHERE [User_Id] = ? ", array($userId), "count");
+        WHERE [User_Id] = ? AND [Enabled] = 1", array($userId), "count");
         if ($count < 0) {
             return true;
         } else {
