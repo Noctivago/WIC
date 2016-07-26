@@ -606,6 +606,23 @@ function DB_getMultimediaTable($pdo) {
     }
 }
 
+function DB_getUserProfileTable($pdo) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[User_Profile] WHERE [id] > ?", array('0'), "rows");
+        echo "<table class='table table-striped'><tr><th>ID</th><th>UID</th><th>PP</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['User_Id'] . "</td>";
+            echo "<td>" . $row['Picture_Path'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING USERS';
+    }
+}
+
 /**
  * ADICIONA UMA ORG À BD
  * @param type $pdo

@@ -10,3 +10,5 @@ var_dump($_SESSION);
 DB_getUsersTable($pdo);
 echo '<br>';
 DB_getMultimediaTable($pdo);
+echo '<br>';
+DB_getUserProfileTable($pdo);
