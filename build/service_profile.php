@@ -93,7 +93,7 @@ $serviceId = (filter_var($_GET['Service']));
                     ?>
                 </section>
                 <br>
-                <br>
+                
 
                 <section class="box-typical">
                     <!--DISPLAY SERVICE USERS-->
