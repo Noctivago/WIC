@@ -1145,7 +1145,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
             foreach ($rows as $row) {
                 $arrlength = count($usersInService);
                 for ($x = 0; $x < $arrlength; $x++) {
-                    if ($usersInService[$x] == $row['UID']) {
+                    if ($usersInService[$x] === $row['UID']) {
                         
                     } else {
                         array_push($usersInService, $row['UID']);
