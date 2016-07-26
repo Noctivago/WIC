@@ -2552,14 +2552,24 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         WHERE [Enabled] = 1
         AND [User_Id] = ?", array($userId), "rows");
         if (DB_checkIfUserHaveWicPlanner($pdo, $userId)) {
+            echo '<div class="sign-avatar no-photo">&plus;</div>
+                <header class="sign-title">#Choose a WiC Planner?</header>';
+            echo '<div class="form-group">';
             echo '<select class = "bootstrap-select bootstrap-select-arrow" id = "myWics" name = "myWics">';
             foreach ($rows as $row) {
                 echo '<option value = "' . $row['Id'] . '">' . $row['Name'] . '</option>';
             }
             echo '</select> ';
+            echo '</div>
+                <p class="form-group">  <?= $msg; ?> </p>
+                <button type="submit" name="add2WiC" id="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
+                <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">';
         } else {
             $linkAWP = 'http://' . $_SERVER['HTTP_HOST'] . '/build/my_wicplanner.php';
-            echo '<button type="submit" class="btn btn-rounded btn-success sign-up">Save</button>';
+             echo '<div class="sign-avatar no-photo">&plus;</div>
+                <header class="sign-title">#You don\'t have a WiC Planner?</header>';
+            echo '<button type="submit" class="btn btn-rounded btn-success sign-up">Create</button>';
+            echo '<input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">';
         }
     } catch (Exception $ex) {
         
