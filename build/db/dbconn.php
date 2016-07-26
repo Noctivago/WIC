@@ -567,7 +567,7 @@ function sendEmail($to, $subject, $body) {
     $mail->Port = 465;                   // set the SMTP port for the GMAIL server
     $mail->Username = "donotreply@wic.club";  // GMAIL username
     $mail->Password = '#$youcandoit2017$#';            // GMAIL password
-    $mail->SetFrom('donotreply@wic.club', 'WIC #Please do not reply!');
+    $mail->SetFrom('donotreply@wic.club', 'Please do not reply!');
     $mail->AddReplyTo("donotreply@wic.club", "WIC");
     $mail->Subject = $subject;
 #$mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test

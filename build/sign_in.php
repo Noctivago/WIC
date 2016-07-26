@@ -66,7 +66,7 @@ if (isset($_SESSION['id'])) {
                             $code = generateActivationCode();
                             DB_updateUserAccountActivationCode($pdo, $email, $code);
                             $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/account_confirmation_link.php?EM=' . $email . '&AC=' . $code . '';
-                            $linkRP = 'http://' . $_SERVER['HTTP_HOST'] . '/build/build/reset_password.php';
+                            $linkRP = 'http://' . $_SERVER['HTTP_HOST'] . '/build/reset_password.php';
                             $body = "Hello! <br>"
                                     . "Your account was blocked due several failed logins.<br>"
                                     . "Click on the following link to reactivate your account:" . $link . " <br>"
