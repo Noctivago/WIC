@@ -2530,15 +2530,17 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         [WIC_Planner]
         WHERE [Enabled] = 1
         AND [User_Id] = ?", array($userId), "rows");
-        echo '<select class = "bootstrap-select bootstrap-select-arrow" id = "myWics" name = "myWics">';
-        foreach ($rows as $row) {
-            if ($row['Id'] === $idSubCat) {
-                echo '<option selected = "selected" value = "' . $row['Id'] . '">' . $row['Name'] . '</option>';
-            } else {
+        $number_of_rows = $rows->fetchColumn();
+        if ($number_of_rows > 0) {
+            echo '<select class = "bootstrap-select bootstrap-select-arrow" id = "myWics" name = "myWics">';
+            foreach ($rows as $row) {
                 echo '<option value = "' . $row['Id'] . '">' . $row['Name'] . '</option>';
             }
+            echo '</select> ';
+        } else {
+            $linkAWP = 'http://' . $_SERVER['HTTP_HOST'] . '/build/my_wicplanner.php';
+            echo '<button type="submit" class="btn btn-rounded btn-success sign-up">Save</button>';
         }
-        echo '</select> ';
     } catch (Exception $ex) {
         
     }
