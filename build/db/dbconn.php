@@ -584,6 +584,29 @@ function DB_getUsersTable($pdo) {
 }
 
 /**
+ * PARA TESTES
+ * @param type $pdo
+ */
+function DB_getMultimediaTable($pdo) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Multimedia] WHERE [id] > ?", array('0'), "rows");
+        echo "<table class='table table-striped'><tr><th>ID</th><th>SID</th><th>ON</th><th>FP?</th><th>MP</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['Service_Id'] . "</td>";
+            echo "<td>" . $row['Enabled'] . "</td>";
+            echo "<td>" . $row['First_Page'] . "</td>";
+            echo "<td>" . $row['Multimedia_Path'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING USERS';
+    }
+}
+
+/**
  * ADICIONA UMA ORG À BD
  * @param type $pdo
  * @param type $hashPassword Pw
@@ -1969,7 +1992,7 @@ function DB_AddNewServiceFirstPagePicture($pdo, $ServiceId, $UserId, $PicturePat
             VALUES
            (?,?,?,?,?,?)", array(1, $ServiceId, $UserId, 1, $PicturePath, $FirstPage));
         $lastId = $pdo->lastInsertId();
-        echo 'OKI > MULTIMEDIA OKI';
+        echo 'OKI > MULTIMEDIA OKI > ';
         echo $lastId;
     } catch (Exception $ex) {
         echo 'ERROR ADDING MULTIMEDIA TO SERVICE';

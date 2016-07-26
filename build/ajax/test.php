@@ -8,3 +8,5 @@ print 'SESSION INFO <br>';
 print 'ID > ' . $_SESSION['id'] . '<br>';
 var_dump($_SESSION);
 DB_getUsersTable($pdo);
+echo '<br>';
+DB_getMultimediaTable($pdo);
