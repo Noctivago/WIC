@@ -480,11 +480,64 @@ function DB_setBlockAccount($pdo, $email) {
     }
 }
 
+function DB_BuildInvitesTable($pdo, $userId) {
+    try {
+        $org = DB_GetOrgIdByUserBossId2($pdo, $idUser);
+        $idOrg = $org['Id'];
+        $rows = sql($pdo, "SELECT [User_Service].[ID],
+        [Service].[Id],
+        [Service].[Name],
+		[User_Profile].[First_Name],
+		[User_Profile].[Last_Name],
+		[User_Profile].[Picture_Path]
+          FROM [dbo].[Service]
+          join [User_Service]
+          on [User_Service].[Service_Id] = [Service].[Id]
+          join [User]
+          on [User].[id] = [User_Service].[User_Id]
+          join [User_Profile]
+          on [User_Profile].[User_Id] = [User].[id]
+          where [Service].[Enabled] = 1  and [User_Service].[Enabled]= 1 and [organization_id] = ?", array($idOrg), "rows");
+        foreach ($rows as $row) {
+            echo ' <tr>
+                                <td class="table-photo">
+                                    <img src="' . $row['Picture_Path'] . '" alt="" data-toggle="tooltip" data-placement="bottom" title="' . $row['First_Name'] . '">
+                                </td>
+<td>
+                                    ' . $row['Last_Name'] . '
+                                </td>
+                                <td class="color-blue-grey-lighter">' . $row['Name'] . '</td>
+
+                                <td class="table-icon-cell">
+                                    <div class="form-group" >
+                                        <select class="bootstrap-select bootstrap-select-arrow" id="Role" name="Role">
+                                            <?= DB_GetRolesOrganizationServiceAsSelect($pdo) ?>
+                                        </select>
+</div>
+                                </td>
+                                <td>
+
+                                    <div class="tbl-cell tbl-cell-action-bordered">
+                                        <button type="button" onclick ="EditRole('.$row['ID'].');"class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
+                                    </div>
+                                </td>
+                                <td>  
+                                    <div class="tbl-cell tbl-cell-action-bordered">
+                                        <button type="button" onclick="remove('.$row['ID'].');" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>';
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 function DB_GetRolesOrganizationServiceAsSelect($pdo) {
     try {
-        $rows =  sql($pdo,"SELECT [ID],[Name]
+        $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
-WHERE [Enabled] = ? and [Organization] = ?", array(1,1),"rows");
+WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
         foreach ($rows as $row) {
             echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
         }
