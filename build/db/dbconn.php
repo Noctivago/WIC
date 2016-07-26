@@ -1052,6 +1052,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
 //                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
                 $a = htmlspecialchars($_SERVER['PHP_SELF']);
                 echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
+                echo '<br>';
                 echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['Last_name'] . '</a>';
                 echo ' </div>';
                 echo ' </div>';
