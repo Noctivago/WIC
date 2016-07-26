@@ -533,9 +533,10 @@ function DB_resetPassword($pdo, $email) {
         $to = $email;
         $subject = "Reset your password";
         $body = "Hello! <br>"
-                . "You requested a password reset .<br>"
+                . "You requested a password reset.<br>"
                 . "Your new password is: " . $newPass . "<br>"
                 . "Please change the password on your next login.<br><br>"
+                . "Event your life ! You Can Event ! <br><br>"
                 . "Note: Please do not reply to this email! Thanks!";
         sendEmail($to, $subject, $body);
         return "AN EMAIL AS SENT WITH A NEW PASSWORD!";

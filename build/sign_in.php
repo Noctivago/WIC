@@ -70,7 +70,8 @@ if (isset($_SESSION['id'])) {
                             $body = "Hello! <br>"
                                     . "Your account was blocked due several failed logins.<br>"
                                     . "Click on the following link to reactivate your account:" . $link . " <br>"
-                                    . "After the previous step if you don't remember your password you can ask for a new one in: $linkRP <br><br>"
+                                    . "After the previous step if you don't remember your password you can ask for a new one in: $linkRP <br>"
+                                    . "Event your life ! You Can Event ! <br><br>"
                                     . "Note: Please do not reply to this email! Thanks!";
                             sendEmail($to, $subject, $body);
                         }
