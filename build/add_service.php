@@ -35,7 +35,7 @@ ini_set("display_errors", 1);
                                         $last_Id = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg, $city);
                                         $sID = $last_Id;
                                         $name = $_FILES['uploadFile']['name'];
-                                        $newfilename = $sID . generateActivationCode() . '.jpg';
+                                        $newfilename = $sID . '_' . generateActivationCode() . '.jpg';
                                         if (isset($name)) {
                                             if (!empty($name)) {
                                                 // Check for errors
@@ -59,6 +59,7 @@ ini_set("display_errors", 1);
                                                 }
                                             }
                                         }
+//                                        FAZER LOOP PARA RESTANTES FOTOS
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
