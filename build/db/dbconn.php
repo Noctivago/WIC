@@ -480,6 +480,19 @@ function DB_setBlockAccount($pdo, $email) {
     }
 }
 
+function DB_GetRolesOrganizationServiceAsSelect($pdo) {
+    try {
+        $rows =  sql($pdo,"SELECT [ID],[Name]
+  FROM [dbo].[Role]
+WHERE [Enabled] = ? and [Organization] = ?", array(1,1),"rows");
+        foreach ($rows as $row) {
+            echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 /**
  * ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA USER
  * @param type $email Email do User
