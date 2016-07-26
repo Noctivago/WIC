@@ -1950,13 +1950,14 @@ function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
 //        
 //    }
     try {
+        $d = getDateToDB();
         $stmt = $pdo->prepare("INSERT INTO [dbo].[Service] ([Name], [Description], [Organization_Id],
             [Date_Created], [Enabled], [Sub_Category_Id], [City_Id]) 
         VALUES (:name, :description, :org_Id, :dCreated, 1, idSub, idCity)");
         $stmt->bindParam(':name', $cname);
         $stmt->bindParam(':description', $cDescription);
         $stmt->bindParam(':org_Id', $org);
-        $stmt->bindParam(':dCreated', getDateToDB());
+        $stmt->bindParam(':dCreated', $d);
         $stmt->bindParam(':idSub', $cSub);
         $stmt->bindParam(':idCity', $city);
         $stmt->execute();
