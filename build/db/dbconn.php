@@ -777,16 +777,16 @@ function DB_getMyWICs($pdo, $userId) {
         foreach ($rows as $row) {
             echo '<div class="col">';
             echo '<article class="follow-group">';
-            //echo '<div class="follow-group-logo">';
-            //FALTA ID/LINK PARA REMETER ON CLICK PARA VER SERVIÇOS DESTE WIC PLANNER
-            //echo '<a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt="WIC Logo"></a>';
-            //echo '</div>';
+//echo '<div class="follow-group-logo">';
+//FALTA ID/LINK PARA REMETER ON CLICK PARA VER SERVIÇOS DESTE WIC PLANNER
+//echo '<a href="#" class="follow-group-logo-in"><img src="img/wic_logo.png" alt="WIC Logo"></a>';
+//echo '</div>';
             echo '<div class="follow-group-name">';
             echo '<a href="my_wicplanner.php">' . $row['WPN'] . '</a>';
             $str = $row['WPD'];
-            //SEPARA A DATA DAS HORAS
+//SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
-            //IMPRIME DATA
+//IMPRIME DATA
             echo '<p>#' . $subStr[0] . '</p>';
             echo '</div>';
             echo '</article>';
@@ -893,7 +893,7 @@ function db_checkServiceOrgBossServicePermission($pdo, $service, $idOg) {
 
 function DB_UpdateServiceInformation($pdo, $service, $cname, $cDescription, $cSub, $city) {
     try {
-        //verificar se o user é boss da cat com o servico X
+//verificar se o user é boss da cat com o servico X
 
         sql($pdo, "UPDATE [dbo].[Service]
    SET [Name] = ?
@@ -1023,7 +1023,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
   where [Organization_Id] = ? and [Enabled] = 1", array($org), "rows");
         foreach ($Services as $Service) {
             $idService = $Service['Id'];
-            $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
+            $rows = sql($pdo, "SELECT [Email],[User].[Id] AS UID,[User_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
 ,[Service].[Name] as ServiceName,[Role].[Name]
   FROM [dbo].[User_Service]
   join [User]
@@ -1041,17 +1041,20 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
                 echo '    <div class="user-card-row">';
                 echo '      <div class="tbl-row">';
                 echo '          <div class="tbl-cell tbl-cell-photo">';
-                //       echo '              <a href="#">';
+//       echo '              <a href="#">';
                 echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
-                //       echo '             </a>';
+//       echo '             </a>';
                 echo '         </div>';
                 echo '        <div class="tbl-cell">';
 //COLOCAR LINK PARA POST ?Organization=x&UserInService=Y                
-                echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
-                echo '            <p class="user-card-row-name">' . $row['Last_name'] . '</p>';
+//                echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
+//                echo '            <p class="user-card-row-name">' . $row['Last_name'] . '</p>';
 //                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
-                echo '         </div>';
-                echo '  </div>';
+                $a = htmlspecialchars($_SERVER['PHP_SELF']);
+                echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
+                echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['Last_name'] . '</a>';
+                echo ' </div>';
+                echo ' </div>';
                 echo ' </article>';
             }
         }
@@ -1075,19 +1078,19 @@ function DB_GetOrgInformation($pdo) {
   FROM [dbo].[Organization]
   where [Id] = ?", array($id), "rows");
         foreach ($rows as $row) {
-            echo '<div class="profile-card">';
-            echo '<div class="profile-card-photo">';
-            echo '                      <img src="' . $row['Picture_Path'] . '" alt="" style="max-width: 110px; max-height: 110px;"/>';
-            echo '                  </div>';
-            echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
-            echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
-            echo '                <div class="profile-card-status">' . $row['Mobile_Number'] . '</div>';
-            echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
-            echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
-            echo '            <a  href="' . $row['Website'] . '" target="_blank"> <i class="font-icon font-icon-earth-bordered"></i></a>';
-            echo '           <a  href="' . $row['Facebook'] . '" target="_blank">  <i class="font-icon font-icon-fb-fill"></i></a>';
-            echo '        <a  href="' . $row['Linkdin'] . '" target="_blank">  <i class="font-icon font-icon-in-fill"></i></a>';
-            echo '         <a  href="' . $row['Twitter'] . '" target="_blank"> <i class="font-icon font-icon-tw-fill"></i></a>';
+            echo '<div class = "profile-card">';
+            echo '<div class = "profile-card-photo">';
+            echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height: 110px;"/>';
+            echo ' </div>';
+            echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
+            echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
+            echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
+            echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
+            echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
+            echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
+            echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
+            echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
+            echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
 
             echo '</div>';
         }
@@ -1102,27 +1105,27 @@ function DB_GetOrgInformation2($pdo, $org) {
   FROM [dbo].[Organization]
   where [Id] = ?", array($org), "rows");
         foreach ($rows as $row) {
-            echo '<div class="text-block text-block-typical">';
+            echo '<div class = "text-block text-block-typical">';
             echo '<p>' . $row['Description'] . ' </p>';
             echo '</div>';
             echo ' </div>';
-            echo '       </article>';
-            echo '      </section>';
-            echo '<div class="col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">';
-            echo '        <section class="box-typical">  ';
-            echo '<div class="profile-card">';
-            echo '<div class="profile-card-photo">';
-            echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
-            echo '                  </div>';
-            echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
-            echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
-            echo '                <div class="profile-card-status">' . $row['Mobile_Number'] . '</div>';
-            echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
-            echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
-            echo '            <a  href="' . $row['Website'] . '" target="_blank"> <i class="font-icon font-icon-earth-bordered"></i></a>';
-            echo '           <a  href="' . $row['Facebook'] . '" target="_blank">  <i class="font-icon font-icon-fb-fill"></i></a>';
-            echo '        <a  href="' . $row['Linkdin'] . '" target="_blank">  <i class="font-icon font-icon-in-fill"></i></a>';
-            echo '         <a  href="' . $row['Twitter'] . '" target="_blank"> <i class="font-icon font-icon-tw-fill"></i></a>';
+            echo ' </article>';
+            echo ' </section>';
+            echo '<div class = "col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">';
+            echo ' <section class = "box-typical"> ';
+            echo '<div class = "profile-card">';
+            echo '<div class = "profile-card-photo">';
+            echo ' <img src = "' . $row['Picture_Path'] . '" alt = ""/>';
+            echo ' </div>';
+            echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
+            echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
+            echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
+            echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
+            echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
+            echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
+            echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
+            echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
+            echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
 
             echo '</div>';
         }
@@ -1284,11 +1287,11 @@ function DB_ValidateSubscription($pdo, $org) {
 function DB_getPeopleViewServicesOrg($pdo, $org) {
     try {
         if (!DB_ValidateSubscription($pdo, $org)) {
-            echo ' <header class="box-typical-header-sm">Activate the subscription below to see the users who saw your services
-                    <br><br>
+            echo ' <header class = "box-typical-header-sm">Activate the subscription below to see the users who saw your services
+<br><br>
 Free for 3 Months</header>';
-            echo '<div align="center">';
-            echo '<button type="submit" class="btn btn-rounded btn-success sign-up" align="center" onClick="subscribe(' . $org . ')" >Activate</button><br><br>';
+            echo '<div align = "center">';
+            echo '<button type = "submit" class = "btn btn-rounded btn-success sign-up" align = "center" onClick = "subscribe(' . $org . ')" >Activate</button><br><br>';
             echo '</div>';
         } else {
             $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
@@ -1303,29 +1306,29 @@ Free for 3 Months</header>';
   on [Organization].[Id] = [Service].[Organization_Id]
   Where [Organization_Id] = ?
   order by [Service_View].[Date_View] DESC", array($org), "rows");
-            echo ' <header class="box-typical-header-sm">People also viewed</header>';
+            echo ' <header class = "box-typical-header-sm">People also viewed</header>';
             foreach ($rows as $row) {
-                echo '<article class="friends-list-item">';
-                echo '<div class="user-card-row">';
-                echo '<div class="tbl-row">';
-                echo '<div class="tbl-cell tbl-cell-photo">';
+                echo '<article class = "friends-list-item">';
+                echo '<div class = "user-card-row">';
+                echo '<div class = "tbl-row">';
+                echo '<div class = "tbl-cell tbl-cell-photo">';
                 echo '<a href = "#">';
-                echo '<img src="' . $row['Picture_Path'] . '" alt="">';
+                echo '<img src = "' . $row['Picture_Path'] . '" alt = "">';
                 echo '</a>';
                 echo '</div>';
                 echo '<div class = "tbl-cell">';
 
 //falta link para o perfil do user
-                echo '<p class="user-card-row-name"><a href="#">' . $row['First_Name'] . '</a></p>';
+                echo '<p class = "user-card-row-name"><a href = "#">' . $row['First_Name'] . '</a></p>';
 
 //falta colocar o link para ver o servico
-                echo '<p class="user-card-row-status">Service <a href="service_profile.php?Service=' . $row['Id'] . '">' . $row['Name'] . '</a></p>';
+                echo '<p class = "user-card-row-status">Service <a href = "service_profile.php?Service=' . $row['Id'] . '">' . $row['Name'] . '</a></p>';
                 echo '</div>';
-                echo '<div class="tbl-cell tbl-cell-action">';
+                echo '<div class = "tbl-cell tbl-cell-action">';
 
 //falta inserir o iniciar chat
                 echo '<a href = "#" class = "plus-link-circle"><span>&plus;
-            </span></a>';
+</span></a>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -1403,16 +1406,16 @@ function db_getUserMessengerWithUsers($pdo, $userId) {
             if ($row['UID'] === $userId) {
                 
             } else {
-                echo '<article class="friends-list-item">';
-                echo '<div class="user-card-row">';
-                echo '<div class="tbl-row">';
-                echo '<div class="tbl-cell tbl-cell-photo">';
-                echo '<a href="#">';
-                echo '<img src="' . $row['UPP'] . '" alt="Avatar">';
+                echo '<article class = "friends-list-item">';
+                echo '<div class = "user-card-row">';
+                echo '<div class = "tbl-row">';
+                echo '<div class = "tbl-cell tbl-cell-photo">';
+                echo '<a href = "#">';
+                echo '<img src = "' . $row['UPP'] . '" alt = "Avatar">';
                 echo '</a>';
                 echo '</div>';
-                echo '<div class="tbl-cell">';
-                echo '<p class="user-card-row-name"><a href="#">' . $row['UFN'] . ' ' . $row['ULN'] . '</a></p>';
+                echo '<div class = "tbl-cell">';
+                echo '<p class = "user-card-row-name"><a href = "#">' . $row['UFN'] . ' ' . $row['ULN'] . '</a></p>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -1444,16 +1447,16 @@ function db_getUserMessengerWithOrgs($pdo, $userId) {
             if ($row['UID'] === $userId) {
                 
             } else {
-                echo '<article class="friends-list-item">';
-                echo '<div class="user-card-row">';
-                echo '<div class="tbl-row">';
-                echo '<div class="tbl-cell tbl-cell-photo">';
-                echo '<a href="#">';
-                echo '<img src="' . $row['OPP'] . '" alt="Avatar">';
+                echo '<article class = "friends-list-item">';
+                echo '<div class = "user-card-row">';
+                echo '<div class = "tbl-row">';
+                echo '<div class = "tbl-cell tbl-cell-photo">';
+                echo '<a href = "#">';
+                echo '<img src = "' . $row['OPP'] . '" alt = "Avatar">';
                 echo '</a>';
                 echo '</div>';
-                echo '<div class="tbl-cell">';
-                echo '<p class="user-card-row-name"><a href="#">' . $row['ONA'] . '</a></p>';
+                echo '<div class = "tbl-cell">';
+                echo '<p class = "user-card-row-name"><a href = "#">' . $row['ONA'] . '</a></p>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -1486,22 +1489,22 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
         WHERE [WIC_Planner].[Enabled] = 1
         AND [User].[id] = ? ORDER BY WPED DESC", array($userId), "rows");
         foreach ($rows as $row) {
-            echo '<tr class="table-check">';
-            echo '<td><a onclick="showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
+            echo '<tr class = "table-check">';
+            echo '<td><a onclick = "showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
             $str = $row['WPED'];
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
             //IMPRIME DATA
             echo '<td>' . $subStr[0] . '</td>';
-            echo '<td class="table-photo">';
-            echo '<img src="' . $row['UPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
+            echo '<td class = "table-photo">';
+            echo '<img src = "' . $row['UPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
             echo '</td>';
-            echo '<td class="table-photo">';
-            echo '<a onclick="showAddWicFormEditMode(' . $row['WID'] . ')" class="font-icon font-icon-pencil">';
+            echo '<td class = "table-photo">';
+            echo '<a onclick = "showAddWicFormEditMode(' . $row['WID'] . ')" class = "font-icon font-icon-pencil">';
             echo '</a>';
             echo '</td>';
-            echo '<td class="table-photo">';
-            echo '<a onclick="removeWic(this)"class="font-icon font-icon-del" id=' . $row['WID'] . '>';
+            echo '<td class = "table-photo">';
+            echo '<a onclick = "removeWic(this)"class = "font-icon font-icon-del" id = ' . $row['WID'] . '>';
             echo '</a>';
             echo '</td>';
             echo '</tr>';
@@ -1533,23 +1536,23 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
         on [WIC_Planner_User].[Wic_Planner_ID] = [Wic_Planner].[Id]
         WHERE [WIC_Planner].[Enabled] = 1 and [Wic_Planner_User].[User_Id] = ? and [WIC_Planner_User].[Enabled] = 1", array($userId), "rows");
         foreach ($rows as $row) {
-            echo '<tr class="table-check">';
-            echo '<td><a onclick="showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
+            echo '<tr class = "table-check">';
+            echo '<td><a onclick = "showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
             $str = $row['WPED'];
             //SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
             //IMPRIME DATA
             echo '<td>' . $subStr[0] . '</td>';
-            echo '<td class="table-photo">';
-            echo '<img src="' . $row['UPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
+            echo '<td class = "table-photo">';
+            echo '<img src = "' . $row['UPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
             echo '</td>';
 //COMO USER E CONVIDADO APENAS PODE VER/REMOVER E ADICIONAR SERVIÇOS            
-//            echo '<td class="table-photo">';
-//            echo '<a href="#" class="font-icon font-icon-pencil">';
+//            echo '<td class = "table-photo">';
+//            echo '<a href = "#" class = "font-icon font-icon-pencil">';
 //            echo '</a>';
 //            echo '</td>';
-//            echo '<td class="table-photo">';
-//            echo '<a href="#" class="font-icon font-icon-del">';
+//            echo '<td class = "table-photo">';
+//            echo '<a href = "#" class = "font-icon font-icon-del">';
 //            echo '</a>';
 //            echo '</td>';
             echo '</tr>';
@@ -1642,49 +1645,49 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 WHERE [Service].[Enabled] = 1 AND [WIC_Planner_Service].[Enabled] = 1 
                 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
                 AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
-            echo '<section class="box-typical box-typical-max-280">
-            <header class="box-typical-header">
-            <div class="tbl-row">
-            <div class="tbl-cell tbl-cell-title">
-            <h3> Services in your Event</h3>
-            </div>
-            </div>
-            </header>
-            <div class="box-typical-body" style="overflow: hidden;
+            echo '<section class = "box-typical box-typical-max-280">
+<header class = "box-typical-header">
+<div class = "tbl-row">
+<div class = "tbl-cell tbl-cell-title">
+<h3> Services in your Event</h3>
+</div>
+</div>
+</header>
+<div class = "box-typical-body" style = "overflow: hidden;
                 padding: 0px;
                 height: 700px;
                 width: 504px;
                 ">
-            <div class="table-responsive">
-            <table class="table table-hover">
-            <thead>
-            <tr>
-            <th>Service</th>
-            <th>Owner</th><th></th><th></th>
-            </tr>
-            </thead>
-            <tbody>';
+<div class = "table-responsive">
+<table class = "table table-hover">
+<thead>
+<tr>
+<th>Service</th>
+<th>Owner</th><th></th><th></th>
+</tr>
+</thead>
+<tbody>';
             foreach ($rows as $row) {
                 echo '
-            <tr class="table-check">
-            <td><a href="./service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
-            <td class="table-photo">
-            <img src="' . $row['OPP'] . '" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="' . $row['ONA'] . '">
-            </td>
-            <td class="table-photo">
-            </td>
-            <td class="table-photo">
-            <a onclick="removeWicService(this,' . $row['SID'] . ')" class="font-icon font-icon-del" id=' . $row['WID'] . '>
-            </a>
-            </td>
-            </tr>';
+<tr class = "table-check">
+<td><a href = "./service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
+<td class = "table-photo">
+<img src = "' . $row['OPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['ONA'] . '">
+</td>
+<td class = "table-photo">
+</td>
+<td class = "table-photo">
+<a onclick = "removeWicService(this,' . $row['SID'] . ')" class = "font-icon font-icon-del" id = ' . $row['WID'] . '>
+</a>
+</td>
+</tr>';
             }
             echo '</tbody>
-            </table>
-            </div>
-            </div>
-            </section>
-            </div>';
+</table>
+</div>
+</div>
+</section>
+</div>';
         } else {
             
         }
@@ -1699,29 +1702,29 @@ function DB_UserProfile($pdo, $userId) {
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rowss as $row) {
-            echo '<div class="sign-avatar no-photo" >
-                        <img id="image" src="' . $row['Picture_Path'] . '" alt="Avatar"/>
-                    </div>
-                    
-                    <button class="btn btn-rounded btn-file" >
-                    Change Picture
-                    
-                   <input  type="file" id="file_upload" accept="images/*" name="file_upload">
-                   </button>
-                    <header class="sign-title">Edit Profile</header>
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" id="first" name="first" class="form-control" placeholder="First Name" value="' . $row['First_Name'] . '"/>
-                            <i class="font-icon font-icon-user"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                            <input type="text" id="last" name="last" class="form-control" placeholder="Last Name" value="' . $row['Last_Name'] . '"/>
-                            <i class="font-icon font-icon-user"></i>
-                        </div>
-                    </div>
-                    <button type="submit" name="save" class="btn btn-rounded btn-success sign-up">Save Changes</button>';
+            echo '<div class = "sign-avatar no-photo" >
+<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "Avatar"/>
+</div>
+
+<button class = "btn btn-rounded btn-file" >
+Change Picture
+
+<input type = "file" id = "file_upload" accept = "images/*" name = "file_upload">
+</button>
+<header class = "sign-title">Edit Profile</header>
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" id = "first" name = "first" class = "form-control" placeholder = "First Name" value = "' . $row['First_Name'] . '"/>
+<i class = "font-icon font-icon-user"></i>
+</div>
+</div>
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" id = "last" name = "last" class = "form-control" placeholder = "Last Name" value = "' . $row['Last_Name'] . '"/>
+<i class = "font-icon font-icon-user"></i>
+</div>
+</div>
+<button type = "submit" name = "save" class = "btn btn-rounded btn-success sign-up">Save Changes</button>';
         }
     } catch (Exception $ex) {
         
@@ -1732,79 +1735,79 @@ function DB_OrgProfile($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT * FROM [Organization] Where [User_Boss] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-            echo '<div class="sign-avatar no-photo" ><img id="image" src="' . $row['Picture_Path'] . '" alt="" style="max-width: 96px; max-height:96px;"/> </div>
-                    <button class="btn btn-rounded btn-file" >
-                    Change Picture
-                    
-                   <input  type="file" id="file_upload" accept="images/*" name="file_upload">
-                   </button>
-                    
-                    <header class="sign-title">Edit Organization Profile</header>
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" name="name" id="name" placeholder=" Organization Name" value="' . $row['Name'] . '"/>
-                        <i class="font-icon font-icon-user"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" id="email" name="email" placeholder=" Organization Email "value="' . $row['Organization_Email'] . '"/>
-                        <i class="font-icon font-icon-mail"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" id="address" name="address" placeholder=" Organization Adress"value="' . $row['Address'] . '"/>
-                        <i class="font-icon font-icon-earth"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Telephone Number"value="' . $row['Phone_Number'] . '"/>
-                        <i class="font-icon font-icon-phone"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number"value="' . $row['Mobile_Number'] . '"/>
-                        <i class="font-icon font-icon-phone"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" id="website" name="website" placeholder="My WebSite"value="' . $row['Website'] . '"/>
-                        <i class="font-icon font-icon-earth-bordered"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" id="facebook" name="facebook" placeholder="Facebook Account"value="' . $row['Facebook'] . '"/>
-                        <i class="font-icon font-icon-facebook"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                         <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" id="linkdin" name="linkdin" placeholder="Linkedin Account"value="' . $row['Linkdin'] . '"/>
-                        <i class="font-icon font-icon-linkedin"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                         <div class="form-control-wrapper form-control-icon-left" >
-                        <input type="text" class="form-control" id="twitter" name="twitter" placeholder="Twitter Account"value="' . $row['Twitter'] . '"/>
-                        <i class="font-icon font-icon-twitter"></i>
-                        </div>
-                    </div>
-                        
-                   <div class="form-group row">
-                        
-						<div class="form-control-wrapper form-control-icon-left" >
-							<textarea rows="8" id="description" name="description" class="form-control" placeholder="Organization Info">' . $row['Description'] . '</textarea>
-                                                        <i class="font-icon font-icon-user"></i>
-						</div>
-                    </div>
-                    
-                    <button type="submit" id="save" name="save" class="btn btn-rounded btn-success sign-up">Save Changes</button>';
+            echo '<div class = "sign-avatar no-photo" ><img id = "image" src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 96px; max-height:96px;"/> </div>
+<button class = "btn btn-rounded btn-file" >
+Change Picture
+
+<input type = "file" id = "file_upload" accept = "images/*" name = "file_upload">
+</button>
+
+<header class = "sign-title">Edit Organization Profile</header>
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" class = "form-control" name = "name" id = "name" placeholder = " Organization Name" value = "' . $row['Name'] . '"/>
+<i class = "font-icon font-icon-user"></i>
+</div>
+</div>
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" class = "form-control" id = "email" name = "email" placeholder = " Organization Email "value = "' . $row['Organization_Email'] . '"/>
+<i class = "font-icon font-icon-mail"></i>
+</div>
+</div>
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" class = "form-control" id = "address" name = "address" placeholder = " Organization Adress"value = "' . $row['Address'] . '"/>
+<i class = "font-icon font-icon-earth"></i>
+</div>
+</div>
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" class = "form-control" id = "phone" name = "phone" placeholder = "Telephone Number"value = "' . $row['Phone_Number'] . '"/>
+<i class = "font-icon font-icon-phone"></i>
+</div>
+</div>
+<div class = "form-group">
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" class = "form-control" id = "mobile" name = "mobile" placeholder = "Mobile Number"value = "' . $row['Mobile_Number'] . '"/>
+<i class = "font-icon font-icon-phone"></i>
+</div>
+</div>
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" class = "form-control" id = "website" name = "website" placeholder = "My WebSite"value = "' . $row['Website'] . '"/>
+<i class = "font-icon font-icon-earth-bordered"></i>
+</div>
+</div>
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" class = "form-control" id = "facebook" name = "facebook" placeholder = "Facebook Account"value = "' . $row['Facebook'] . '"/>
+<i class = "font-icon font-icon-facebook"></i>
+</div>
+</div>
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" class = "form-control" id = "linkdin" name = "linkdin" placeholder = "Linkedin Account"value = "' . $row['Linkdin'] . '"/>
+<i class = "font-icon font-icon-linkedin"></i>
+</div>
+</div>
+<div class = "form-group">
+<div class = "form-control-wrapper form-control-icon-left" >
+<input type = "text" class = "form-control" id = "twitter" name = "twitter" placeholder = "Twitter Account"value = "' . $row['Twitter'] . '"/>
+<i class = "font-icon font-icon-twitter"></i>
+</div>
+</div>
+
+<div class = "form-group row">
+
+<div class = "form-control-wrapper form-control-icon-left" >
+<textarea rows = "8" id = "description" name = "description" class = "form-control" placeholder = "Organization Info">' . $row['Description'] . '</textarea>
+<i class = "font-icon font-icon-user"></i>
+</div>
+</div>
+
+<button type = "submit" id = "save" name = "save" class = "btn btn-rounded btn-success sign-up">Save Changes</button>';
         }
     } catch (Exception $ex) {
         
@@ -2041,34 +2044,35 @@ function DB_getServicesForIndex($pdo) {
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] = 1", array(), "rows");
         foreach ($rows as $row) {
-            echo '<div class="card-grid-col">
-                    <article class="card-typical">
-                        <div class="card-typical-section">
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="profile_org.php?Organization=' . $row['OID'] . '">
-                                            <img src="' . $row['OPP'] . '" alt="Avatar">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-typical-section card-typical-content">
-                        <div class="photo">
-                                <img src="' . $row['MPP'] . '" alt="Service Pic"  height="185" width="110">
-                            </div>
-                            <header class="title"><a href="service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
-                            <p>' . $row['SDE'] . '</p>
-                        </div>
-                        <div class="card-typical-section">
-                        <input type=button onClick=window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '","AddToWiC","width=550,height=500,left=30,top=30,toolbar=0,status=0,"); value="+">
-                        </div>
-                    </article>
-                </div>';
+            echo '<div class = "card-grid-col">
+<article class = "card-typical">
+<div class = "card-typical-section">
+<div class = "user-card-row">
+<div class = "tbl-row">
+<div class = "tbl-cell tbl-cell-photo">
+<a href = "profile_org.php?Organization=' . $row['OID'] . '">
+<img src = "' . $row['OPP'] . '" alt = "Avatar">
+</a>
+</div>
+<div class = "tbl-cell">
+<p class = "user-card-row-name"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class = "card-typical-section card-typical-content">
+<div class = "photo">
+<img src = "' . $row['MPP'] . '" alt = "Service Pic" height = "185" width = "110">
+</div>
+<header class = "title"><a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
+<p>' . $row['SDE'] . '</p>
+</div>
+<div class = "card-typical-section">
+<input type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,");
+value = "+">
+</div>
+</article>
+</div>';
         }
 
         //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
@@ -2103,23 +2107,23 @@ function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
   join [Role]
   on [Role].[Id] = [User_Service].[Role_Id]
   where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
-            echo '<header class="box-typical-header-sm">People in responsible  </header>
-                    <div class="friends-list stripped">';
+            echo '<header class = "box-typical-header-sm">People in responsible </header>
+<div class = "friends-list stripped">';
             foreach ($rows as $row) {
-                echo '<article class="friends-list-item">';
-                echo '    <div class="user-card-row">';
-                echo '      <div class="tbl-row">';
-                echo '          <div class="tbl-cell tbl-cell-photo">';
-                echo '              <a href="#">';
-                echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
-                echo '             </a>';
-                echo '         </div>';
-                echo '        <div class="tbl-cell">';
-                echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
-                echo '            <p class="user-card-row-name">' . $row['Last_name'] . '</p>';
-                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
-                echo '         </div>';
-                echo '  </div>';
+                echo '<article class = "friends-list-item">';
+                echo ' <div class = "user-card-row">';
+                echo ' <div class = "tbl-row">';
+                echo ' <div class = "tbl-cell tbl-cell-photo">';
+                echo ' <a href = "#">';
+                echo ' <img src = ' . $row['Picture_Path'] . ' alt = "">';
+                echo ' </a>';
+                echo ' </div>';
+                echo ' <div class = "tbl-cell">';
+                echo ' <p class = "user-card-row-name">' . $row['First_Name'] . '</p>';
+                echo ' <p class = "user-card-row-name">' . $row['Last_name'] . '</p>';
+                echo ' <p class = "user-card-row-location">' . $row['ServiceName'] . '</p>';
+                echo ' </div>';
+                echo ' </div>';
                 echo ' </article>';
             }
             echo '</div>';
@@ -2150,26 +2154,26 @@ function DB_getServiceCommentFromUsers($pdo, $servideId) {
           AND [Comment].[Enabled] = 1 and [User].[Account_Enabled] = 1
           WHERE [Comment].[Service_Id] = ?
           ORDER BY [Comment].[Date_Created] DESC", array($servideId), "rows");
-        echo '<div class="recomendations-slider">';
+        echo '<div class = "recomendations-slider">';
         foreach ($rows as $row) {
-            echo '<div class="slide">
-                        <div class="citate-speech-bubble">
-                            <i class="font-icon-quote"></i>"'
+            echo '<div class = "slide">
+<div class = "citate-speech-bubble">
+<i class = "font-icon-quote"></i>"'
             . $row['CCC'] .
             '"</div>
-                        <div class="user-card-row">
-                            <div class="tbl-row">
-                                <div class="tbl-cell tbl-cell-photo">
-                                    <a>
-                                        <img src="' . $row['UPP'] . '" alt="Avatar">
-                                    </a>
-                                </div>
-                                <div class="tbl-cell">
-                                <p class="user-card-row-name"><a>' . $row['UFN'] . ' ' . $row['ULN'] . '</a></p>
-                                </div>
-                            </div>
-                        </div>
-                </div>';
+<div class = "user-card-row">
+<div class = "tbl-row">
+<div class = "tbl-cell tbl-cell-photo">
+<a>
+<img src = "' . $row['UPP'] . '" alt = "Avatar">
+</a>
+</div>
+<div class = "tbl-cell">
+<p class = "user-card-row-name"><a>' . $row['UFN'] . ' ' . $row['ULN'] . '</a></p>
+</div>
+</div>
+</div>
+</div>';
         }
         echo '</div>';
         //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
@@ -2219,22 +2223,22 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
         on [Organization].[Id] = [Service].[Organization_Id]
         AND [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
         AND [Service].[Id] =  ?", array($serviceId), "rows");
-        echo '<header class="box-typical-header-sm">/Supplier  </header>
-                    <div class="friends-list stripped">';
+        echo '<header class = "box-typical-header-sm">/Supplier </header>
+<div class = "friends-list stripped">';
         foreach ($rows as $row) {
-            echo '<div class="profile-card">';
-            echo '<div class="profile-card-photo">';
-            echo '                      <img src="' . $row['Picture_Path'] . '" alt=""/>';
-            echo '                  </div>';
-            echo '                <div class="profile-card-name">' . $row['Name'] . '</div>';
-            echo '                <div class="profile-card-status">' . $row['Phone_Number'] . '</div>';
-            echo '                <div class="profile-card-status">' . $row['Mobile_Number'] . '</div>';
-            echo '                <div class="profile-card-location">' . $row['Organization_Email'] . '</div>';
-            echo '                <div class="profile-card-location">' . $row['Address'] . '</div>';
-            echo '            <a  href="' . $row['Website'] . '" target="_blank"> <i class="font-icon font-icon-earth-bordered"></i></a>';
-            echo '           <a  href="' . $row['Facebook'] . '" target="_blank">  <i class="font-icon font-icon-fb-fill"></i></a>';
-            echo '        <a  href="' . $row['Linkdin'] . '" target="_blank">  <i class="font-icon font-icon-in-fill"></i></a>';
-            echo '         <a  href="' . $row['Twitter'] . '" target="_blank"> <i class="font-icon font-icon-tw-fill"></i></a>';
+            echo '<div class = "profile-card">';
+            echo '<div class = "profile-card-photo">';
+            echo ' <img src = "' . $row['Picture_Path'] . '" alt = ""/>';
+            echo ' </div>';
+            echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
+            echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
+            echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
+            echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
+            echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
+            echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
+            echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
+            echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
+            echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
 
             echo '</div>';
         }
@@ -2260,27 +2264,27 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
         AND [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
-            echo '<div class="slide">
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="profile_org.php?Organization=' . $row['OID'] . '">
-                                            <img src="' . $row['OPP'] . '" alt="Avatar">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a>' . $row['SNA'] . '</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-               <div class="slide">
-                            <div class="user-card-row">
-                                <div class="tbl-cell">
-                                    <p class="user-card-row-status"><a href="profile_org.php?Organization=' . $row['OID'] . '">/' . $row['ONA'] . '</a></p>
-                                </div>								
-                            </div>
-               </div>';
+            echo '<div class = "slide">
+<div class = "user-card-row">
+<div class = "tbl-row">
+<div class = "tbl-cell tbl-cell-photo">
+<a href = "profile_org.php?Organization=' . $row['OID'] . '">
+<img src = "' . $row['OPP'] . '" alt = "Avatar">
+</a>
+</div>
+<div class = "tbl-cell">
+<p class = "user-card-row-name"><a>' . $row['SNA'] . '</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class = "slide">
+<div class = "user-card-row">
+<div class = "tbl-cell">
+<p class = "user-card-row-status"><a href = "profile_org.php?Organization=' . $row['OID'] . '">/' . $row['ONA'] . '</a></p>
+</div>
+</div>
+</div>';
         }
     } catch (Exception $ex) {
         echo 'error';
@@ -2306,17 +2310,17 @@ function DB_GetServiceLocAndDescription($pdo, $serviceId) {
         WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
-            echo '<section class="box-typical">
-                    <article class="profile-info-item">
-                        <header class="profile-info-item-header">
-                            <i class="font-icon font-icon-notebook-bird"></i>
-                            Description
-                        </header>
-                        <div class="text-block text-block-typical">
-                            <p>' . $row['SDE'] . '</p>                           
-                        </div>
-                    </article>
-                </section>';
+            echo '<section class = "box-typical">
+<article class = "profile-info-item">
+<header class = "profile-info-item-header">
+<i class = "font-icon font-icon-notebook-bird"></i>
+Description
+</header>
+<div class = "text-block text-block-typical">
+<p>' . $row['SDE'] . '</p>
+</div>
+</article>
+</section>';
         }
     } catch (Exception $ex) {
         echo 'error';
@@ -2334,12 +2338,12 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         [WIC_Planner]
         WHERE [Enabled] = 1
         AND [User_Id] = ?", array($userId), "rows");
-        echo '<select class="bootstrap-select bootstrap-select-arrow" id="myWics" name="myWics">';
+        echo '<select class = "bootstrap-select bootstrap-select-arrow" id = "myWics" name = "myWics">';
         foreach ($rows as $row) {
             if ($row['Id'] === $idSubCat) {
-                echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+                echo '<option selected = "selected" value = "' . $row['Id'] . '">' . $row['Name'] . '</option>';
             } else {
-                echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+                echo '<option value = "' . $row['Id'] . '">' . $row['Name'] . '</option>';
             }
         }
         echo '</select> ';
@@ -2420,34 +2424,35 @@ function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
         AND [Multimedia].[First_Page] =  1
 		AND [Service].[Sub_Category_Id] = ?", array($CategoryId), "rows");
         foreach ($rows as $row) {
-            echo '<div class="card-grid-col">
-                    <article class="card-typical">
-                        <div class="card-typical-section">
-                            <div class="user-card-row">
-                                <div class="tbl-row">
-                                    <div class="tbl-cell tbl-cell-photo">
-                                        <a href="profile_org.php?Organization=' . $row['OID'] . '">
-                                            <img src="' . $row['OPP'] . '" alt="Avatar">
-                                        </a>
-                                    </div>
-                                    <div class="tbl-cell">
-                                        <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-typical-section card-typical-content">
-                        <div class="photo">
-                                <img src="' . $row['MPP'] . '" alt="Service Pic"  height="185" width="110">
-                            </div>
-                            <header class="title"><a href="service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
-                            <p>' . $row['SDE'] . '</p>
-                        </div>
-                        <div class="card-typical-section">
-                        <input type=button onClick=window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '","AddToWiC","width=550,height=500,left=30,top=30,toolbar=0,status=0,"); value="+">
-                        </div>
-                    </article>
-                </div>';
+            echo '<div class = "card-grid-col">
+<article class = "card-typical">
+<div class = "card-typical-section">
+<div class = "user-card-row">
+<div class = "tbl-row">
+<div class = "tbl-cell tbl-cell-photo">
+<a href = "profile_org.php?Organization=' . $row['OID'] . '">
+<img src = "' . $row['OPP'] . '" alt = "Avatar">
+</a>
+</div>
+<div class = "tbl-cell">
+<p class = "user-card-row-name"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class = "card-typical-section card-typical-content">
+<div class = "photo">
+<img src = "' . $row['MPP'] . '" alt = "Service Pic" height = "185" width = "110">
+</div>
+<header class = "title"><a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
+<p>' . $row['SDE'] . '</p>
+</div>
+<div class = "card-typical-section">
+<input type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,");
+value = "+">
+</div>
+</article>
+</div>';
         }
 
         //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">

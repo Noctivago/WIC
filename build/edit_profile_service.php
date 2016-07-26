@@ -44,8 +44,6 @@ include_once '../build/db/session.php';
                                             <?php
                                         }
 
-
-
                                         $data = DB_GetServiceInformation($pdo, $service);
                                         echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
