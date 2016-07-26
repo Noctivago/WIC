@@ -480,6 +480,19 @@ function DB_setBlockAccount($pdo, $email) {
     }
 }
 
+function DB_GetRolesOrganizationServiceAsSelect($pdo) {
+    try {
+        $rows =  sql($pdo,"SELECT [ID],[Name]
+  FROM [dbo].[Role]
+WHERE [Enabled] = ? and [Organization] = ?", array(1,1),"rows");
+        foreach ($rows as $row) {
+            echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 /**
  * ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA USER
  * @param type $email Email do User
@@ -1816,7 +1829,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 WHERE [Service].[Enabled] = 1 AND [WIC_Planner_Service].[Enabled] = 1 
                 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
                 AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
-            echo '<section class = "box-typical box-typical-max-280">
+            echo '<section class = "box-typical box-typical-max-280" style="width: 104%;">
 <header class = "box-typical-header">
 <div class = "tbl-row">
 <div class = "tbl-cell tbl-cell-title">
