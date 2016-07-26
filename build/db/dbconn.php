@@ -760,6 +760,37 @@ function db_getUserIndexInfo($pdo, $userId) {
     }
 }
 
+function db_getUserIndexInfoForOrgProfile($pdo, $userId) {
+    try {
+        $rows = sql($pdo, "SELECT 
+        [User_Profile].[First_Name] AS UFN
+        ,[User_Profile].[Last_Name] AS ULN
+        ,[User_Profile].[Picture_Path] AS UPP
+        ,[User].[Email] AS UEM
+        FROM [dbo].[User] 
+        join [User_Profile]
+        on [User_Profile].[User_Id] = [User].[id]
+        WHERE [User].[id] = ?", array($userId), "rows");
+        foreach ($rows as $row) {
+            echo '<div class = "text-block text-block-typical">';
+            echo '</div>';
+            echo ' </div>';
+            echo ' </article>';
+            echo ' </section>';
+            echo '<div class = "col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">';
+            echo ' <section class = "box-typical"> ';
+            echo '<div class = "profile-card">';
+            echo '<div class = "profile-card-photo">';
+            echo ' <img src = "' . $row['UPP'] . '" alt = ""/>';
+            echo ' </div>';
+            echo ' <div class = "profile-card-name">' . $row['UFN'] . ' ' . $row['ULA'] . '</div>';
+            echo '</div>';
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING USER PROFILE';
+    }
+}
+
 /**
  * FUNÇAO QUE DEVOLVE WICs PLANNER PARA PERFIL USER
  * @param type $pdo
@@ -1460,7 +1491,6 @@ function DB_GetOrganizationServicesByUserInService($pdo, $org, $idUser) {
             echo '</article>';
             echo '</div>';
         }
-
     } catch (Exception $ex) {
         
     }

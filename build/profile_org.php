@@ -48,7 +48,7 @@ include_once '../build/db/session.php';
                         <?php
                         if (isset($_GET['UserInService'])) {
                             $UserInService = (filter_var($_GET['UserInService']));
-                            db_getUserIndexInfo($pdo, $UserInService);
+                            db_getUserIndexInfoForOrgProfile($pdo, $UserInService);
                         } else {
                             DB_GetOrgInformation2($pdo, $org);
                         }
