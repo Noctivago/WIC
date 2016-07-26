@@ -52,8 +52,8 @@ include_once '../build/db/session.php';
                                                     die('Error uploading file - check destination is writeable.');
                                                 } else {
                                                     $picture_path = 'pics_service/' . $newfilename;
-                                                    //INSERIR NA TABELA MULTIMEDIA
-                                                    
+                                                    //INSERIR NA TABELA MULTIMEDIA - FirstPage
+                                                    DB_AddNewServiceFirstPagePicture($pdo, $last_Id, $user, $picture_path, 1);
                                                     $msg = ('File uploaded successfully.');
                                                 }
                                             }

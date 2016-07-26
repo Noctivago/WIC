@@ -1972,7 +1972,7 @@ function DB_AddNewServiceFirstPagePicture($pdo, $ServiceId, $UserId, $PicturePat
 //        echo 'true';
         echo $lastId;
     } catch (Exception $ex) {
-        echo 'ERROR ADDING SERVICE';
+        echo 'ERROR ADDING MULTIMEDIA TO SERVICE';
     }
 }
 
