@@ -482,8 +482,10 @@ function DB_setBlockAccount($pdo, $email) {
 
 function DB_BuildInvitesTable($pdo, $userId) {
     try {
-        $org = DB_GetOrgIdByUserBossId2($pdo, $idUser);
+        $org = DB_GetOrgIdByUserBossId2($pdo, $userId);
+        
         $idOrg = $org['Id'];
+        echo $idOrg;
         $rows = sql($pdo, "SELECT [User_Service].[ID],
         [Service].[Id],
         [Service].[Name],
@@ -511,7 +513,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
                                 <td class="table-icon-cell">
                                     <div class="form-group" >
                                         <select class="bootstrap-select bootstrap-select-arrow" id="Role" name="Role">
-                                            <?= DB_GetRolesOrganizationServiceAsSelect($pdo) ?>
+                                            '. DB_GetRolesOrganizationServiceAsSelect($pdo).'
                                         </select>
 </div>
                                 </td>
