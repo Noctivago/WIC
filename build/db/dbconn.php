@@ -2568,7 +2568,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
             $linkAWP = 'http://' . $_SERVER['HTTP_HOST'] . '/build/my_wicplanner.php';
             echo '<div class="sign-avatar no-photo">&plus;</div>
                 <header class="sign-title">#You don\'t have a WiC Planner?</header>';
-            echo '<a href="' . $linkAWP . '" class="btn btn-rounded btn-success sign-up" role="button">Create</a>';
+//            echo '<a href="' . $linkAWP . '" class="btn btn-rounded btn-success sign-up" role="button">Create</a>';
             echo '<input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">';
         }
     } catch (Exception $ex) {
