@@ -1267,7 +1267,7 @@ function getAllOrganizationServicesByUser($pdo, $org, $userId) {
   join [User_Profile]
   on [User_Profile].[User_Id] = [User].[id]
   where [Service].[Enabled] = 1  and [User_Service].[Enabled]= 1 and [organization_id] =:id
-  and [User_Service].[User_Id] = :uid");
+  and [User_Service].[User_Id] =:uid");
         $stmt->bindParam(':id', $org);
         $stmt->bindParam(':uid', $userId);
         $stmt->execute();
