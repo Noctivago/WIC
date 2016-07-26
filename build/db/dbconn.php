@@ -1953,13 +1953,13 @@ function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
         $d = getDateToDB();
         $stmt = $pdo->prepare("INSERT INTO [dbo].[Service] ([Name], [Description], [Organization_Id],
             [Date_Created], [Enabled], [Sub_Category_Id], [City_Id]) 
-        VALUES (:name, :description, :org_Id, :dCreated, 1, idSub, idCity)");
-        $stmt->bindParam(':name', $cname);
-        $stmt->bindParam(':description', $cDescription);
-        $stmt->bindParam(':org_Id', $org);
-        $stmt->bindParam(':dCreated', $d);
-        $stmt->bindParam(':idSub', $cSub);
-        $stmt->bindParam(':idCity', $city);
+        VALUES (:cname, :cdescription, :corg_Id, :cdCreated, 1, cidSub, cidCity)");
+        $stmt->bindParam(':cname', $cname);
+        $stmt->bindParam(':cdescription', $cDescription);
+        $stmt->bindParam(':corg_Id', $org);
+        $stmt->bindParam(':cdCreated', $d);
+        $stmt->bindParam(':cidSub', $cSub);
+        $stmt->bindParam(':cidCity', $city);
         $stmt->execute();
         $lastId = $pdo->lastInsertId();
         return $lastId;
