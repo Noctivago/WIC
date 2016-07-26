@@ -1139,7 +1139,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
 //COLOCAR LINK PARA POST ?Organization=x&UserInService=Y                
 //                echo '            <p class="user-card-row-name">' . $row['First_Name'] . '</p>';
 //                echo '            <p class="user-card-row-name">' . $row['Last_name'] . '</p>';
-                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
+//                echo '            <p class="user-card-row-location">' . $row['ServiceName'] . '</p>';
                 $a = htmlspecialchars($_SERVER['PHP_SELF']);
                 echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
                 echo '<br>';
