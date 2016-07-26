@@ -2,14 +2,14 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
-                <!--$stmt->execute();-->
-                <!--$lastId = $dbh->lastInsertId();-->
                 <!--IMAGEM PERFIL SERVICE-->
                 <section class="box-typical" stye="background-color:black">
                     <div id="imagePreview" style="width: 100%"></div>                    
@@ -35,7 +35,7 @@ include_once '../build/db/session.php';
                                         $last_Id = DB_AddNewService($pdo, $cname, $cDescription, $cSub, $idOrg, $city);
                                         $sID = $last_Id;
                                         $name = $_FILES['uploadFile']['name'];
-                                        $newfilename = $last_Id . generateActivationCode() . '.jpg';
+                                        $newfilename = $sID . generateActivationCode() . '.jpg';
                                         if (isset($name)) {
                                             if (!empty($name)) {
                                                 // Check for errors

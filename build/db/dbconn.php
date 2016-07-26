@@ -1990,7 +1990,7 @@ function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
            (?,?,?,?,?,?,?)", array($cname, $cDescription, $org, $d, 1, $cSub, $city));
         $lastId = $pdo->lastInsertId();
 //        echo 'true';
-        echo $lastId;
+        return $lastId;
     } catch (Exception $ex) {
         echo 'ERROR ADDING SERVICE';
     }
