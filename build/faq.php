@@ -180,7 +180,7 @@ include ("includes/head_sideMenu.php");
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
-							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+							<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
 								<div class="panel-collapse-in">
 									<div class="user-card-row">
 										<div class="tbl-row">
@@ -209,7 +209,36 @@ include ("includes/head_sideMenu.php");
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
-							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+							<div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												
+											</div>
+											<div class="tbl-cell">
+												
+											</div>
+										</div>
+									</div>
+									
+									<p>WiC is a free platform. There isn’t any kind of membership costs.</p>
+								</div>
+							</div>
+						</article>
+                                                <article class="panel">
+							<div class="panel-heading" role="tab" id="headingEight">
+								<a class="collapsed"
+								   data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseEight"
+								   aria-expanded="false"
+								   aria-controls="collapseEight">
+									Is there any membership costs? Do I pay to use the platform?
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
 								<div class="panel-collapse-in">
 									<div class="user-card-row">
 										<div class="tbl-row">
