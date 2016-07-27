@@ -192,7 +192,7 @@ include_once '../build/db/session.php';
                 </section>
                 <?php
             } else {
-                header("Location: ../build/index_teste.php"); /* Redirect browser */
+                header("Location: /build/index_teste.php"); /* Redirect browser */
                 exit();
             }
             ?>
