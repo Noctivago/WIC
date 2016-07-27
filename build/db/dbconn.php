@@ -2671,7 +2671,7 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
             </a>
             </div>
             <div class = "tbl-cell">
-            <p class = "user-card-row-name"><a>' . $row['SNA'] . '</a></p>';
+            <p class = "user-card-row-name"><a>   ' . $row['SNA'] . '</a></p>';
             echo '<p class = "user-card-row-status">
             <fieldset id = "demo1" class = "rating">
             <input class = "stars" type = "radio" id = "star5" name = "rating" value = "5" />

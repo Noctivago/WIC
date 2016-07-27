@@ -211,7 +211,7 @@ $serviceId = (filter_var($_GET['Service']));
     $(document).ready(function () {
         $("#demo1 .stars").click(function () {
 
-            $.post('rating.php', {rate: $(this).val()}, function (d) {
+            $.post('ajax/rating.php', {rate: $(this).val()}, function (d) {
                 if (d > 0)
                 {
                     alert('You already rated');
