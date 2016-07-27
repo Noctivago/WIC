@@ -4,10 +4,6 @@ require_once '../db/dbconn.php';
 include_once '../db/session.php';
 
 $userId = $_SESSION['id'];
-//var_dump($wicPlannerId);
-//db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId);
-//FALTA WIC PLANNER ONDE SOU CONVIDADO
-
 
 if (isset($_POST['rate']) && !empty($_POST['rate'])) {
     $rate = (filter_var($_POST ['rate']));
