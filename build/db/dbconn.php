@@ -2309,7 +2309,7 @@ function DB_validatePermissionEditInfo($pdo,$userId,$serviceId,$role){
   FROM [dbo].[User_Service]
  join [Role]
  on [Role].[Id] = [User_Service].[Role_Id]
- where [Service_Id] = ? and [Role].[Name] = ? and [User_Id] = ?", array($serviceId,$role,$userId),"count");
+ where [Service_Id] = ? and [Role].[Name] = ? and [User_Id] = ? and [User_Service].[Enabled] = 1", array($serviceId,$role,$userId),"count");
     if($count < 0){
         return TRUE;
     }else{

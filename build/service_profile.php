@@ -77,7 +77,9 @@ $serviceId = (filter_var($_GET['Service']));
                 <section class="">
                     <!--DISPLAY BOTAO EDIT AO BOSS-->
                     <?php
-                    if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])) {
+                    $role = 'Service manager';
+                    $role2 = 'Edit service information';
+                    if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])|| DB_validatePermissionEditInfo($pdo, $_SESSION['id'], $serviceId, $role)||  DB_validatePermissionEditInfo($pdo, $_SESSION['id'], $serviceId, $role2)) {
                         echo '<article class="friends-list-item">';
                         echo '    <div class="user-card-row">';
                         echo '      <div class="tbl-row">';
