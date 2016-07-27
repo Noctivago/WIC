@@ -2484,6 +2484,17 @@ function DB_getServicesForIndex($pdo) {
 <p>' . $row['SDE'] . '</p>
 </div>
 
+<div class="card-typical-section">
+<div class="card-typical-linked"><a href="#"  class="card-typical-likes">
+<i class="font-icon font-icon-plus" alt="Add to my Wic Planner"></i>
+</a></div>
+
+<a href="#" class="card-typical-likes">
+
+<i class="font-icon font-icon-comment"></i>
+</a>
+</div>
+
 <div class = "card-typical-section">
 <a href="#" class="card-typical-likes">
 <i class="font-icon font-icon-plus">
