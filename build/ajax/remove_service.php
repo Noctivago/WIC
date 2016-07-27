@@ -14,8 +14,5 @@ if ($val === $UserBoss) {
     DB_removeService($pdo, $serviceId);
     $org = DB_GetOrgIdByUserBossId($pdo, $UserBoss);
     //header('location: profile_org.php?Organization=' . $org);
-} else {
-    //NAO E BOSS MANDA PASSEAR
-    //header('location: index.php');
-}
+} 
 
