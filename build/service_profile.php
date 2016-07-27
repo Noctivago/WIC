@@ -175,11 +175,10 @@ $serviceId = (filter_var($_GET['Service']));
         }
     }
     function removeService() {
-        var sId = serviceId;
         $.ajax({
             url: 'ajax/remove_service.php',
             method: 'post',
-            data: {sId: sId},
+            data: {sId: <?= $serviceId; ?>},
             success: function (data) {
                 alert('REMOVIDO!');
             }
