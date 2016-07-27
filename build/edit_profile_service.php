@@ -35,7 +35,7 @@ include_once '../build/db/session.php';
                                     $user = $_SESSION['id'];
 //                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
 //                                    $idOg = $org['Id'];
-                                    if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg) || DB_validatePermissionEditInfo($pdo, $_SESSION['id'], $serviceId, $role) || DB_validatePermissionEditInfo($pdo, $_SESSION['id'], $serviceId, $role2)) {
+                                    if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg) || DB_validatePermissionEditInfo($pdo, $user, $service, $role) || DB_validatePermissionEditInfo($pdo, $user, $service, $role2)) {
                                         if(db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg)){
                                         $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                         $idOg = $org['Id'];
