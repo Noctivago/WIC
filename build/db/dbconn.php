@@ -2484,6 +2484,17 @@ function DB_getServicesForIndex($pdo) {
 <p>' . $row['SDE'] . '</p>
 </div>
 
+<div class="card-typical-section">
+<div class="card-typical-linked"><a href="#"  class="card-typical-likes">
+<i class="font-icon font-icon-plus" alt="Add to my Wic Planner"></i>
+</a></div>
+
+<a href="#" class="card-typical-likes">
+
+<i class="font-icon font-icon-comment"></i>
+</a>
+</div>
+
 <div class = "card-typical-section">
 <a href="#" class="card-typical-likes">
 <i class="font-icon font-icon-plus">
@@ -2960,5 +2971,44 @@ function DB_addUserRateService($pdo, $userId, $serviceId, $rate, $d) {
             print "ERROR CREATING RATE IN SERVICE!";
             die();
         }
+    }
+}
+
+/**
+ * Devolve o Id do Boss da Org atraves do serviço
+ * @param type $pdo
+ * @param type $service_Id
+ * @return type
+ */
+function DB_GetUserBossIdByService($pdo, $service_Id) {
+    try {
+        $stmt = $pdo->prepare("SELECT [Organization].[User_Boss]
+        FROM [dbo].[Organization]
+        join Service
+        on [Organization].[Id] = [Service].[Organization_Id]
+        WHERE [Service].[Id] =:id");
+        $stmt->bindParam(':id', $service_Id);
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $orgBossId['Id'] = $row['Id'];
+        }
+        return $orgBossId;
+    } catch (Exception $ex) {
+        echo 'error';
+    }
+}
+
+/**
+ * Remove um serviço de uma determinada Org
+ * @param type $pdo
+ * @param type $serviceId
+ * @return boolean
+ */
+function DB_removeService($pdo, $serviceId) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[Service] SET [Enabled] = ? WHERE [Id] = ? ", array('1', $serviceId));
+        return true;
+    } catch (Exception $exc) {
+        return false;
     }
 }
