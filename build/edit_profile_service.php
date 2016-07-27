@@ -57,7 +57,7 @@ include_once '../build/db/session.php';
                                         $data = DB_GetServiceInformation($pdo, $service);
                                         echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
-                                            <img src="' . $org['Picture_Path'] . '" alt="" style=">
+                                            <img src="' . $org['Picture_Path'] . '" alt="" >
                                         </a>
                                     </div>
                                     <div class="tbl-cell">
