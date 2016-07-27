@@ -36,11 +36,11 @@ include_once '../build/db/session.php';
 //                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
 //                                    $idOg = $org['Id'];
                                     if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg) || DB_validatePermissionEditInfo($pdo, $user, $service, $role) || DB_validatePermissionEditInfo($pdo, $user, $service, $role2)) {
-                                        if(db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg)){
-                                        $org = DB_GetOrgIdByUserBossId2($pdo, $user);
-                                        $idOg = $org['Id'];
-                                        }else{
-                                            $org = DB_GetOrgIdByIderService($pdo,$service);
+                                        if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg)) {
+                                            $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+                                            $idOg = $org['Id'];
+                                        } else {
+                                            $org = DB_GetOrgIdByIderService($pdo, $service);
                                             $idOg = $org['Id'];
                                         }
                                         if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
@@ -190,9 +190,12 @@ include_once '../build/db/session.php';
 
                         <button type = "submit" name="saveChanges" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
                 </section>
-            <?php }  else {
-                               header("location: ../build/index.php"); 
-                            } ?>
+                <?php
+            } else {
+                header("Location: ../build/index_teste.php"); /* Redirect browser */
+                exit();
+            }
+            ?>
 
         </div>
     </div><!--.row-->
