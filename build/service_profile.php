@@ -59,6 +59,18 @@ $serviceId = (filter_var($_GET['Service']));
 
                 <section class="box-typical">
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
+                    
+                    <header class="box-typical-header-sm">
+                        Organization Info
+                        <div class="slider-arrs">
+                            <button type="button" class="recomendations-slider-prev">
+                                <i class="font-icon font-icon-arrow-left"></i>
+                            </button>
+                            <button type="button" class="recomendations-slider-next">
+                                <i class="font-icon font-icon-arrow-right"></i>
+                            </button>
+                        </div>
+                    </header>
                     <div class="recomendations-slider" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
                         <div class="slide">
