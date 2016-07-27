@@ -34,14 +34,18 @@ $serviceId = (filter_var($_GET['Service']));
         color: #ddd; 
         float: right; 
     }
+
     .rating > input:checked ~ label, 
     .rating:not(:checked) > label:hover,  
     .rating:not(:checked) > label:hover ~ label { color: #FFD700;  }
+
     .rating > input:checked + label:hover, 
     .rating > input:checked ~ label:hover,
     .rating > label:hover ~ input:checked ~ label, 
     .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }     
 
+
+    /* Downloaded from http://devzone.co.in/ */
 </style>
 
 
@@ -57,8 +61,7 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>                                         
 
                 <section class="box-typical">
-                    <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
-                    <div class="recomendations-slider">
+                    <div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">
                         <?= DB_GetServiceInfoBar($pdo, $serviceId); ?>
                         <div class="slide">
                             <!--BOTOES CHAT + WIC-->
@@ -206,23 +209,6 @@ $serviceId = (filter_var($_GET['Service']));
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
-
-<script>
-    $(document).ready(function () {
-        $("#demo1 .stars").click(function () {
-
-            $.post('rating.php', {rate: $(this).val()}, function (d) {
-                if (d > 0)
-                {
-                    alert('You already rated');
-                } else {
-                    alert('Thanks For Rating');
-                }
-            });
-            $(this).attr("checked");
-        });
-    });
-</script>
 
 <script>
     $(document).ready(function () {

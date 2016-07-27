@@ -1660,7 +1660,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
         AND [Multimedia].[First_Page] = 1
 	AND [Organization].[Id] = ?", array($org), "rows");
         foreach ($rows as $row) {
-            $idService = $service['Id'];
+            //$idService = $service['Id'];
             //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
             //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
             $views = DB_GetNumberServiceViews($pdo, $row['SID']);
@@ -2663,26 +2663,39 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "slide">
-<div class = "user-card-row">
-<div class = "tbl-row">
-<div class = "tbl-cell tbl-cell-photo">
-<a href = "profile_org.php?Organization=' . $row['OID'] . '">
-<img src = "' . $row['OPP'] . '" alt = "Avatar">
-</a>
-</div>
-<div class = "tbl-cell">
-<p class = "user-card-row-name"><a>' . $row['SNA'] . '</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class = "slide">
-<div class = "user-card-row">
-<div class = "tbl-cell">
-<p class = "user-card-row-status"><a href = "profile_org.php?Organization=' . $row['OID'] . '">/' . $row['ONA'] . '</a></p>
-</div>
-</div>
-</div>';
+            <div class = "user-card-row">
+            <div class = "tbl-row">
+            <div class = "tbl-cell tbl-cell-photo">
+            <a href = "profile_org.php?Organization=' . $row['OID'] . '">
+            <img src = "' . $row['OPP'] . '" alt = "Avatar">
+            </a>
+            </div>
+            <div class = "tbl-cell">
+            <p class = "user-card-row-name"><a>' . $row['SNA'] . '</a></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class = "slide">
+            <div class = "user-card-row">
+            <div class = "tbl-cell">
+            <p class = "user-card-row-status"><a href = "profile_org.php?Organization=' . $row['OID'] . '">/' . $row['ONA'] . '</a></p>';
+            echo '<p class = "user-card-row-status">
+                    <fieldset id="demo1" class="rating">
+                        <input class="stars" type="radio" id="star5" name="rating" value="5" />
+                        <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <input class="stars" type="radio" id="star4" name="rating" value="4" />
+                        <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input class="stars" type="radio" id="star3" name="rating" value="3" />
+                        <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <input class="stars" type="radio" id="star2" name="rating" value="2" />
+                        <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input class="stars" type="radio" id="star1" name="rating" value="1" />
+                        <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    </fieldset></p>';
+            echo '</div>
+            </div>
+            </div>';
         }
     } catch (Exception $ex) {
         echo 'error';
@@ -2709,16 +2722,16 @@ function DB_GetServiceLocAndDescription($pdo, $serviceId) {
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
             echo '<section class = "box-typical">
-<article class = "profile-info-item">
-<header class = "profile-info-item-header">
-<i class = "font-icon font-icon-notebook-bird"></i>
-Description
-</header>
-<div class = "text-block text-block-typical">
-<p>' . $row['SDE'] . '</p>
-</div>
-</article>
-</section>';
+            <article class = "profile-info-item">
+            <header class = "profile-info-item-header">
+            <i class = "font-icon font-icon-notebook-bird"></i>
+            Description
+            </header>
+            <div class = "text-block text-block-typical">
+            <p>' . $row['SDE'] . '</p>
+            </div>
+            </article>
+            </section>';
         }
     } catch (Exception $ex) {
         echo 'error';
