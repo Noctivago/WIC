@@ -1360,8 +1360,8 @@ where [Service_Id] =:id");
 
 function DB_GetServiceMultimediaUnit($pdo, $idService) {
     try {
-        $stmt = $pdo->prepare("Select * from [Multimedia]
-where [Service_Id] =:id AND [First_Page] = 1");
+        $stmt = $pdo->prepare("SELECT * FROM [Multimedia]
+        WHERE [Service_Id] =:id AND [First_Page] = 1 AND [Enabled] = 1");
         $stmt->bindParam(':id', $idService);
         $stmt->execute();
         $multi = array();
