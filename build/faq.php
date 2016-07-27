@@ -262,7 +262,7 @@ include ("includes/head_sideMenu.php");
 								   data-parent="#accordion"
 								   href="#collapseNine"
 								   aria-expanded="false"
-								   aria-controls="collapseEight">
+								   aria-controls="collapseNine">
 									Do I have all the requirements to register as a supplier?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
@@ -319,7 +319,7 @@ include ("includes/head_sideMenu.php");
 								   data-parent="#accordion"
 								   href="#collapseTen"
 								   aria-expanded="false"
-								   aria-controls="collapseEight">
+								   aria-controls="collapseTen">
 									What are the reviews and how do they work?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
@@ -341,7 +341,37 @@ include ("includes/head_sideMenu.php");
                                                                         <p>Besides the written comments, users can evaluate suppliers using our star system, where 1 star means really bad and 5 stars means excellent.</p>
                                                                 </div>
 							</div>
-						</article>         
+						</article>      
+                                                <article class="panel">
+							<div class="panel-heading" role="tab" id="headingEleven">
+								<a class="collapsed"
+								   data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseEleven"
+								   aria-expanded="false"
+								   aria-controls="collapseEleven">
+									How do I plan my event?
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												
+											</div>
+											<div class="tbl-cell">
+												
+											</div>
+										</div>
+									</div>
+									
+									<p>All the reviews are written by platform users (clients who hired services from our suppliers using the platform). So, all comments are based on the experience and quality of a supplier when providing a service to a user.</p>
+                                                                        <p>Besides the written comments, users can evaluate suppliers using our star system, where 1 star means really bad and 5 stars means excellent.</p>
+                                                                </div>
+							</div>
+						</article>
 					</section>
                                                 </div>
              
