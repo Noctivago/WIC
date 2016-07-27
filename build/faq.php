@@ -234,7 +234,7 @@ include ("includes/head_sideMenu.php");
 								   href="#collapseEight"
 								   aria-expanded="false"
 								   aria-controls="collapseEight">
-									Is there any membership costs? Do I pay to use the platform?
+									What can I do if a supplier doesn’t reply on the chat?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
@@ -251,7 +251,7 @@ include ("includes/head_sideMenu.php");
 										</div>
 									</div>
 									
-									<p>WiC is a free platform. There isn’t any kind of membership costs.</p>
+									<p>If a supplier isn’t answering your questions on the deadline he established, you can contact WiC Support team by sending an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a> and our team will help you get in touch with the supplier or to find a solution that fits all your needs with another of our suppliers.</p>
 								</div>
 							</div>
 						</article>
