@@ -2495,7 +2495,7 @@ function DB_getServicesForIndex($pdo) {
 
 <a href="#" class="card-typical-likes">
 
-<i class="font-icon font-icon-comment">
+
 <button type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,"); class="font-icon font-icon-comment" > </button>
 
 </a>
