@@ -927,7 +927,7 @@ function db_getUserIndexInfo($pdo, $userId) {
         WHERE [User].[id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<div class="profile-card-photo">';
-            echo '<img src="' . $row['UPP'] . '" alt="Profile Pic"/>';
+            echo '<img src="' . $row['UPP'] . '" alt="Profile Pic" style = "max-width: 98px; max-height:98px;"/>';
             echo '</div>';
             echo '<div class = "profile-card-name">' . $row['UFN'] . ' ' . $row['ULN'] . '</div>';
             echo '<div class = "profile-card-location">' . $row['UEM'] . '</div>';
@@ -1358,7 +1358,7 @@ function DB_GetOrgInformation2($pdo, $org) {
             echo ' <section class = "box-typical"> ';
             echo '<div class = "profile-card">';
             echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['Picture_Path'] . '" alt = ""/  >';
+            echo ' <img src = "' . $row['Picture_Path'] . '" alt = ""/>';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
             echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
@@ -2075,7 +2075,7 @@ function DB_UserProfile($pdo, $userId) {
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rowss as $row) {
             echo '<div class = "sign-avatar no-photo" >
-<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "Avatar"/>
+<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "Avatar" style = "max-width: 98px; max-height:98px;"/>
 </div>
 
 <button class = "btn btn-rounded btn-file" >
