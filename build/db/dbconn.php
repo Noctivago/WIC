@@ -1920,7 +1920,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 width: 100%;
                 ">
 <div class = "table-responsive">
-<table class = "table table-hover">
+<table class = "table table-hover" style="width:100%">
 <thead>
 <tr>
 <th>Service</th>
@@ -1929,7 +1929,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <th></th>
 </tr>
 </thead>
-<tbody class="WICS">';
+<tbody class="WICS" style="width:100%">';
             foreach ($rows as $row) {
                 echo '
 <tr class = "table-check">
