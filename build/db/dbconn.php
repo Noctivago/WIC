@@ -959,7 +959,7 @@ function db_getUserIndexInfoForOrgProfile($pdo, $userId) {
             echo ' <section class = "box-typical"> ';
             echo '<div class = "profile-card">';
             echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['UPP'] . '" alt = ""/>';
+            echo ' <img src = "' . $row['UPP'] . '" alt = ""/>  style = "max-width: 110px; max-height:110px;"';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['UFN'] . ' ' . $row['ULA'] . '</div>';
             echo '</div>';
@@ -1358,7 +1358,7 @@ function DB_GetOrgInformation2($pdo, $org) {
             echo ' <section class = "box-typical"> ';
             echo '<div class = "profile-card">';
             echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['Picture_Path'] . '" alt = ""/>';
+            echo ' <img src = "' . $row['Picture_Path'] . '" alt = ""/  >';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
             echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
@@ -2107,7 +2107,7 @@ function DB_OrgProfile($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT * FROM [Organization] Where [User_Boss] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-            echo '<div class = "sign-avatar no-photo" ><img id = "image" src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 96px; max-height:96px;"/> </div>
+            echo '<div class = "sign-avatar no-photo" ><img id = "image" src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 98px; max-height:98px;"/> </div>
 <button class = "btn btn-rounded btn-file" >
 Change Picture
 
@@ -2486,10 +2486,13 @@ function DB_getServicesForIndex($pdo) {
 
 <div class="card-typical-section">
 <div class="card-typical-linked">
-<button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = window.open("./ajax/getMyWicsPopup.php?id='.$row['SID'].'","AddToWiC","width=550,height=500,left=30,top=30,toolbar=0,status=0,");  > </button>
+
 </div>
 <a  class="card-typical-likes">
+
+<button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = window.open("./ajax/getMyWicsPopup.php?id='.$row['SID'].'","AddToWiC","width=550,height=500,left=30,top=30,toolbar=0,status=0,");  > </button>
 <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = window.open("./ajax/getMyWicsPopup.php?id='.$row['SID'].'","AddToWiC","width=550,height=500,left=30,top=30,toolbar=0,status=0,");  > </button>
+
 </a>
 </div>
 
