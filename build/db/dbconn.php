@@ -512,17 +512,16 @@ function DB_BuildInvitesTable($pdo, $userId) {
 
                                 <td class="table-icon-cell">
                                     <div class="form-group" >
-                                        <select class="bootstrap-select bootstrap-select-arrow" id="Role" name="Role">
+                                        <select class="bootstrap-select bootstrap-select-arrow" id="row'.$row['ID'].'" name="Role">
                                             ';
             $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
 WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
             foreach ($rows as $row1) {
-                if($row['Role_Id'] === $row1['ID'] ){
-                    echo '<option selected id="row'.$row['ID'].'" value ="'.$row1['ID'].'">'.$row1['Name'].'</option>';
-                }  else {
-                echo '<option id="row'.$row['ID'].'" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
-                    
+                if ($row['Role_Id'] === $row1['ID']) {
+                    echo '<option selected id="Role' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
+                } else {
+                    echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
                 }
             }
 
@@ -560,19 +559,20 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
         
     }
 }
-function Db_UpdateRoleInService($pdo,$role,$idUserInService){
+
+function Db_UpdateRoleInService($pdo, $role, $idUserInService) {
     try {
         sql($pdo, "UPDATE [dbo].[User_Service]
    SET [Role_Id] = ?
- WHERE [Id]=?", array($role,$idUserInService));
+ WHERE [Id]=?", array($role, $idUserInService));
     } catch (Exception $ex) {
         
     }
 }
 
-function DB_removeUserInService($pdo,$idUserInService){
+function DB_removeUserInService($pdo, $idUserInService) {
     try {
-        sql($pdo,"UPDATE [dbo].[User_Service]
+        sql($pdo, "UPDATE [dbo].[User_Service]
    SET [Enabled] = 0
  WHERE [Id] = ?", array($idUserInService));
     } catch (Exception $ex) {
