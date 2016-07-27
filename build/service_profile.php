@@ -32,6 +32,7 @@ $serviceId = (filter_var($_GET['Service']));
 
                 <?php
                 if ($_SESSION['role'] === 'user') {
+                    DB_InsertView($pdo,$serviceId,$_SESSION['id']);
                     echo '<div class="box-typical">
                     <input type="text" id="userComment" name="userComment" class="write-something userComment" placeholder="Write a Review..." required/>
                     <div class="box-typical-footer">

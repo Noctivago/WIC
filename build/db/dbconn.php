@@ -1155,6 +1155,21 @@ function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
         
     }
 }
+function DB_InsertView($pdo,$serviceId,$user){
+    try {
+        $d = getDateToDB();
+        sql($pdo,"INSERT INTO [dbo].[Service_View]
+           ([Service_Id]
+           ,[User_Id]
+           ,[Date_View])
+     VALUES
+           (?
+           ,?
+           ,?)", array($serviceId,$user,$d));
+    } catch (Exception $ex) {
+        
+    }
+}
 
 function DB_GetOrgIdByIderService($pdo,$idService){
     try {
