@@ -2496,7 +2496,7 @@ function DB_getServicesForIndex($pdo) {
 <a  class="card-typical-likes">
 
 
-<button type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,"); class="font-icon font-icon-comment" > </button>
+<button type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,");  ><i class="font-icon font-icon-user"></i> </button>
 
 </a>
 </div>
@@ -2996,7 +2996,7 @@ function DB_GetUserBossIdByService($pdo, $service_Id) {
         $stmt->bindParam(':id', $service_Id);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $orgBossId['Id'] = $row['Id'];
+            $orgBossId['Id'] = $row['User_Boss'];
         }
         return $orgBossId;
     } catch (Exception $ex) {
