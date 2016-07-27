@@ -1917,7 +1917,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <div class = "box-typical-body" style = "overflow: hidden;
                 padding: 0px;
                 height: 700px;
-                width: 494px;
+                width: 100%;
                 ">
 <div class = "table-responsive">
 <table class = "table table-hover">
