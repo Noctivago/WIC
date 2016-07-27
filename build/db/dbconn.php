@@ -1355,9 +1355,8 @@ where [Service_Id] =:id");
 
 function DB_GetServiceMultimediaUnit($pdo, $idService) {
     try {
-        $stmt = $pdo->prepare("Select top(1) *
-From [Multimedia]
-where [Service_Id] =:id");
+        $stmt = $pdo->prepare("Select From [Multimedia]
+where [Service_Id] =:id AND [First_Page] = 1");
         $stmt->bindParam(':id', $idService);
         $stmt->execute();
         $multi = array();
@@ -1366,7 +1365,7 @@ where [Service_Id] =:id");
         }
         return $multi;
     } catch (PDOException $e) {
-        print "ERROR READING USER PROFILE INFO!<br/>";
+        print "ERROR READING MULTIMEDIA INFO!<br/>";
 #die();
     }$serviceInfo = array();
 }
