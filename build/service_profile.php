@@ -46,9 +46,6 @@ ini_set("display_errors", 1);
 
 </style>
 
-
-
-
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
@@ -216,10 +213,10 @@ ini_set("display_errors", 1);
             $.post('ajax/rating.php', {rate: $(this).val(), service: <?= $serviceId; ?>}, function (d) {
                 if (d > 0)
                 {
-                    alert('You already rated');
+                    alert('You already rated this service!');
                 } else {
-                    //alert('Thanks For Rating');
-                    alert(d);
+                    alert('Thanks For Rating');
+                    //alert(d);
                 }
             });
             $(this).attr("checked");
