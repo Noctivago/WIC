@@ -1,7 +1,8 @@
 <?php
 
-include_once '../build/db/dbconn.php';
-include_once '../build/db/session.php';
+include_once '../db/dbconn.php';
+include_once '../db/session.php';
+include_once '../db/functions.php';
 
 $serviceId = (filter_var($_POST ['sId']));
 $UserBoss = $_SESSION['id'];
