@@ -2925,7 +2925,7 @@ Function DB_checkIfUserMadeRate($pdo, $userId, $serviceId) {
 function DB_addUserRateService($pdo, $userId, $serviceId, $rate) {
     $d = getDateToDB();
     if (DB_checkIfUserMadeRate($pdo, $userId, $serviceId)) {
-        echo '1';
+        echo 1;
     } else {
         try {
             sql($pdo, "INSERT INTO [dbo].[Rating] ([User_Id], [Service_Id], [Rate], [Date_Created]) VALUES(?,?,?,?)"
