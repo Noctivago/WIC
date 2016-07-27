@@ -61,7 +61,7 @@ $msg = '';
         var role = document.getElementById(''+rolei).value;
         alert(role);
         $.post("ajax/EditRoleUserInService.php",{id:x,role:role},function(result){
-            
+            alert(result);
         });
         return false;
     }
