@@ -1906,7 +1906,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <thead>
 <tr>
 <th style="width: 50%;">Service</th>
-<th style="width: 25%;">Owner</th>
+<th style="width: 25%;">Owner<th></th><th></th></th>
 </tr>
 </thead>
 <tbody class="WICS">';
