@@ -174,6 +174,19 @@ $serviceId = (filter_var($_GET['Service']));
             });
         }
     }
+    function removeService() {
+        var sId = serviceId;
+            $.ajax({
+                url: 'ajax/remove_service.php',
+                method: 'post',
+                data: {sId: sId},
+                success: function (data) {
+                    alert('REMOVIDO!');
+                }
+            });
+       
+    }
+    
     function loadComments() {
         $.ajax({
             url: 'ajax/getServiceComment.php',

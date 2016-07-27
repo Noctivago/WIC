@@ -3,7 +3,7 @@
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 
-$serviceId = (filter_var($_GET['Service']));
+$serviceId = (filter_var($_POST['sId']));
 $UserBoss = $_SESSION['id'];
 //echo 'BOSS >' . $UserBoss . '<br>';
 $val = DB_GetUserBossIdByService($pdo, $serviceId);
@@ -13,9 +13,9 @@ if ($val === $UserBoss) {
     //REMOVER > HEADER LOCATION PROFILE ORG
     DB_removeService($pdo, $serviceId);
     $org = DB_GetOrgIdByUserBossId($pdo, $UserBoss);
-    header('location: profile_org.php?Organization=' . $org);
+    //header('location: profile_org.php?Organization=' . $org);
 } else {
     //NAO E BOSS MANDA PASSEAR
-    header('location: index.php');
+    //header('location: index.php');
 }
 
