@@ -183,7 +183,7 @@ $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/profile_org.php?Organization
                 success: function (data) {
                     alert(data);
                     if (data === 'OK') {
-                        window.location.replace(<?= $link; ?>);
+                        window.location.replace('<?= $link; ?>');
                     }
                     }
             );
