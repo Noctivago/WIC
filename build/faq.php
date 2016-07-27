@@ -281,37 +281,66 @@ include ("includes/head_sideMenu.php");
 									</div>
 									
 									<p>To join the platform as a supplier there are no membership costs. If your company offers any of the services listed below, please feel free to join WiC:</p>
-                                                                        <p>&nbsp;•	Space:<br><br>
+                                                                        <p>&nbsp;•	Space:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o	Hotel<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o	Venue<br>
-                                                                           &nbsp;•	Food:<br><br>
+                                                                           &nbsp;•	Food:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Restaurant<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o   Catering<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Bar<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Lounge<br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Breakfast<br>
-                                                                           &nbsp;•	Entertainment:<br><br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         o	Entertainment<br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Breakfast<br><br>
+                                                                           &nbsp;•	Entertainment:<br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Entertainment<br><br>
                                                                            &nbsp;•	Decoration:<br><br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          o	Decoration<br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Decoration<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Furniture<br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Inflatables<br>
-                                                                           &nbsp;•	Team Building:<br><br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Team Building<br>
-                                                                           &nbsp;•	Photographer & Videographer:<br><br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Inflatables<br><br>
+                                                                           &nbsp;•	Team Building:<br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Team Building<br><br>
+                                                                           &nbsp;•	Photographer & Videographer:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Photographer<br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Videographer<br>
-                                                                           &nbsp;•	Audiovisual:<br><br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Videographer<br><br>
+                                                                           &nbsp;•	Audiovisual:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Audio<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Visual<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Lighting<br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Infrastructures<br>
-                                                                           &nbsp;•	Original<br><br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Infrastructures<br><br>
+                                                                           &nbsp;•	Original<br>
                                                                          </p>
                                                                          <p>If you have any suggestion of any type of services, please send an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a></p>
                                                                 </div>
 							</div>
 						</article>
+                                                <article class="panel">
+							<div class="panel-heading" role="tab" id="headingTen">
+								<a class="collapsed"
+								   data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseTen"
+								   aria-expanded="false"
+								   aria-controls="collapseEight">
+									What are the reviews and how do they work?
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												
+											</div>
+											<div class="tbl-cell">
+												
+											</div>
+										</div>
+									</div>
+									
+									<p>If a supplier isn’t answering your questions on the deadline he established, you can contact WiC Support team by sending an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a> and our team will help you get in touch with the supplier or to find a solution that fits all your needs with another of our suppliers.</p>
+								</div>
+							</div>
+						</article>         
 					</section>
                                                 </div>
              
