@@ -254,7 +254,7 @@ include '../build/db/session.php';
 
 
                             <button type="button" class="burger-right">
-                                <i class="font-icon-menu-addl"></i>
+                                <i class="font-icon-pin-2"></i>
                             </button>
 
                         </div><!--.site-header-shown-->
@@ -483,7 +483,7 @@ include '../build/db/session.php';
                                                    
                                                    />
                                             <button type="submit">
-                                                <span class="font-icon-search"></span>
+                                                <span class="font-icon-pin-2"></span>
                                             </button>
                                             <div class="overlay"></div>
                                         </form>
