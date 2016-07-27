@@ -366,9 +366,16 @@ include ("includes/head_sideMenu.php");
 											</div>
 										</div>
 									</div>
+                                                                        <p>&nbsp;&nbsp;   1.	Search</p>
+                                                                        <p>WiC is a platform with suppliers from 10 countries and more than 20 cities around the world. All you have to do is tell us where your event is on the search box at the landing page to discover all the available services.</p>
+                                                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a.	Tools to help you search: Each service has photos and descriptions, supplier profiles and reviews to help you select the perfect service for your event. Also on the left side of the screen, a set of icons help you filter the services by type (Space, Food, Entertainment, Decoration, Team Building, Photographer & Videographer, Audiovisual and Original) in order to easily find the right one for you.</p>
+                                                                        <p>&nbsp;&nbsp;   2.	Contact suppliers to book the service</p>
+                                                                        <p>After choosing the right service for your event, you can get in touch with the suppliers by clicking the chat button on the service page with a conversation balloon icon.</p>
+                                                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a.	Tools to help you communicate with your suppliers: You can text chat the suppliers and bargain the prices instantaneously.</p>
+                                                                        <p>&nbsp;&nbsp;   3.	WiC planner</p>
+                                                                        <p>WiC planner is a tool that helps you organize all the services you need for your event, just like a notepad. You can save all the notes on your account, so you can check them in the future when organizing similar events.</p>
+
 									
-									<p>All the reviews are written by platform users (clients who hired services from our suppliers using the platform). So, all comments are based on the experience and quality of a supplier when providing a service to a user.</p>
-                                                                        <p>Besides the written comments, users can evaluate suppliers using our star system, where 1 star means really bad and 5 stars means excellent.</p>
                                                                 </div>
 							</div>
 						</article>
