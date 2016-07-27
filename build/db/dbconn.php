@@ -2075,7 +2075,7 @@ function DB_UserProfile($pdo, $userId) {
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rowss as $row) {
             echo '<div class = "sign-avatar no-photo" >
-<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "Avatar"/>
+<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "Avatar" style = "max-width: 98px; max-height:98px;"/>
 </div>
 
 <button class = "btn btn-rounded btn-file" >
