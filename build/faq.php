@@ -280,8 +280,9 @@ include ("includes/head_sideMenu.php");
 										</div>
 									</div>
 									
-									<p>If a supplier isn’t answering your questions on the deadline he established, you can contact WiC Support team by sending an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a> and our team will help you get in touch with the supplier or to find a solution that fits all your needs with another of our suppliers.</p>
-								</div>
+									<p>To join the platform as a supplier there are no membership costs. If your company offers any of the services listed below, please feel free to join WiC:</p>
+                                                                        <p></p>
+                                                                </div>
 							</div>
 						</article>
 					</section>
