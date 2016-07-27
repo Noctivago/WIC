@@ -35,7 +35,7 @@ $msg = '';
                                 <th></th>
                                 <th> Name </th>
                                 <th> Service Name</th>
-                                <th> Role</th>
+                                <th> Role Service Management</th>
                                 <th> Edit </th>
                                 <th> Remove </th>
                             </tr>
