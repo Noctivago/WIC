@@ -2996,7 +2996,7 @@ function DB_GetUserBossIdByService($pdo, $service_Id) {
         $stmt->bindParam(':id', $service_Id);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $orgBossId['Id'] = $row['Id'];
+            $orgBossId['Id'] = $row['User_Boss'];
         }
         return $orgBossId;
     } catch (Exception $ex) {
