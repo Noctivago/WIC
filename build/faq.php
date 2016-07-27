@@ -281,7 +281,8 @@ include ("includes/head_sideMenu.php");
 									</div>
 									
 									<p>To join the platform as a supplier there are no membership costs. If your company offers any of the services listed below, please feel free to join WiC:</p>
-                                                                        <p></p>
+                                                                        <p>&bull;•	Space:</p>
+                                                                        <p>&omicron;o	Hotel</p>
                                                                 </div>
 							</div>
 						</article>
