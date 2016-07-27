@@ -2671,8 +2671,21 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
             </a>
             </div>
             <div class = "tbl-cell">
-            <p class = "user-card-row-name"><a>' . $row['SNA'] . '</a></p>
-            </div>
+            <p class = "user-card-row-name"><a>' . $row['SNA'] . '</a></p>';
+            echo '<p class = "user-card-row-status">
+            <fieldset id = "demo1" class = "rating">
+            <input class = "stars" type = "radio" id = "star5" name = "rating" value = "5" />
+            <label class = "full" for = "star5" title = "Awesome - 5 stars"></label>
+            <input class = "stars" type = "radio" id = "star4" name = "rating" value = "4" />
+            <label class = "full" for = "star4" title = "Pretty good - 4 stars"></label>
+            <input class = "stars" type = "radio" id = "star3" name = "rating" value = "3" />
+            <label class = "full" for = "star3" title = "Meh - 3 stars"></label>
+            <input class = "stars" type = "radio" id = "star2" name = "rating" value = "2" />
+            <label class = "full" for = "star2" title = "Kinda bad - 2 stars"></label>
+            <input class = "stars" type = "radio" id = "star1" name = "rating" value = "1" />
+            <label class = "full" for = "star1" title = "Sucks big time - 1 star"></label>
+            </fieldset></p > ';
+            echo '</div>
             </div>
             </div>
             </div>
@@ -2680,19 +2693,6 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
             <div class = "user-card-row">
             <div class = "tbl-cell">
             <p class = "user-card-row-status"><a href = "profile_org.php?Organization=' . $row['OID'] . '">/' . $row['ONA'] . '</a></p>';
-            echo '<p class = "user-card-row-status">
-                    <fieldset id="demo1" class="rating">
-                        <input class="stars" type="radio" id="star5" name="rating" value="5" />
-                        <label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                        <input class="stars" type="radio" id="star4" name="rating" value="4" />
-                        <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                        <input class="stars" type="radio" id="star3" name="rating" value="3" />
-                        <label class = "full" for="star3" title="Meh - 3 stars"></label>
-                        <input class="stars" type="radio" id="star2" name="rating" value="2" />
-                        <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                        <input class="stars" type="radio" id="star1" name="rating" value="1" />
-                        <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                    </fieldset></p>';
             echo '</div>
             </div>
             </div>';
