@@ -2484,8 +2484,11 @@ function DB_getServicesForIndex($pdo) {
 <p>' . $row['SDE'] . '</p>
 </div>
 <div class = "card-typical-section">
+<a href="#" class="card-typical-likes">
+    <i class="font-icon font-icon-plus"></i>
 <input type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,");
-value = "+">
+>
+</a>
 </div>
 </article>
 </div>';
