@@ -2940,8 +2940,7 @@ Function DB_checkIfUserMadeRate($pdo, $userId, $serviceId) {
     }
 }
 
-function DB_addUserRateService($pdo, $userId, $serviceId, $rate) {
-    $d = getDateToDB();
+function DB_addUserRateService($pdo, $userId, $serviceId, $rate, $d) {
     if (DB_checkIfUserMadeRate($pdo, $userId, $serviceId)) {
         echo 1;
     } else {
