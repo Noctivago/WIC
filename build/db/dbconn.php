@@ -932,6 +932,7 @@ function db_getUserIndexInfoForOrgProfile($pdo, $userId) {
         WHERE [User].[id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "text-block text-block-typical">';
+            echo '<p>' . $row['Description'] . ' </p>';
             echo '</div>';
             echo ' </div>';
             echo ' </article>';
@@ -1152,6 +1153,28 @@ function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
         echo '</div>';
     } catch (Exception $ex) {
         
+    }
+}
+
+function DB_GetOrgIdByIderService($pdo,$idService){
+    try {
+        $stmt = $pdo->prepare("Select [Organization].[Id],[Organization].[Name],[Organization].[Picture_Path]
+from [Service]
+join [Organization]
+on [Organization].[Id] = [Service].[Organization_ID]
+where [Service].[Id] = :id");
+        $stmt->bindParam(':id', $idService);
+        $stmt->execute();
+        $organization = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            $organization['Id'] = $row['Id'];
+            $organization['Name'] = $row['Name'];
+            $organization['Picture_Path'] = $row['Picture_Path'];
+        }
+        return $organization;
+    } catch (Exception $ex) {
+        echo 'error';
     }
 }
 
@@ -2309,7 +2332,7 @@ function DB_validatePermissionEditInfo($pdo,$userId,$serviceId,$role){
   FROM [dbo].[User_Service]
  join [Role]
  on [Role].[Id] = [User_Service].[Role_Id]
- where [Service_Id] = ? and [Role].[Name] = ? and [User_Id] = ?", array($serviceId,$role,$userId),"count");
+ where [Service_Id] = ? and [Role].[Name] = ? and [User_Id] = ? and [User_Service].[Enabled] = 1", array($serviceId,$role,$userId),"count");
     if($count < 0){
         return TRUE;
     }else{
