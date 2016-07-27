@@ -13,7 +13,7 @@ if ($val === $UserBoss) {
     DB_removeService($pdo, $serviceId);
     header("location: ../build/profile_org.php");
 } else {
-    //NAO E BOSS
+    //NAO E BOSS MANDA PASSEAR
     header("location: ../build/index.php");
 }
 
