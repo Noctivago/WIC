@@ -57,7 +57,7 @@ $msg = '';
 
 <script>
     function EditRole(x){
-        var rolei = 'Role'+x;
+        var rolei = 'row'+x;
         var role = document.getElementById(''+rolei).value;
         alert(role);
         $.post("ajax/EditRoleUserInService.php",{id:x,role:role},function(result){
