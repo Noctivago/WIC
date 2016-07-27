@@ -58,7 +58,9 @@ $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/profile_org.php?Organization
 
                 <section class="box-typical">
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
-                    <div class="recomendations-slider">
+                    <div class="recomendations-slider" style="
+    padding-top: 20px;
+" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
                         <div class="slide">
                             <!--BOTOES CHAT + WIC-->
