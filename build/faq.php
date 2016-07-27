@@ -234,7 +234,7 @@ include ("includes/head_sideMenu.php");
 								   href="#collapseEight"
 								   aria-expanded="false"
 								   aria-controls="collapseEight">
-									Is there any membership costs? Do I pay to use the platform?
+									What can I do if a supplier doesn’t reply on the chat?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
@@ -251,8 +251,38 @@ include ("includes/head_sideMenu.php");
 										</div>
 									</div>
 									
-									<p>WiC is a free platform. There isn’t any kind of membership costs.</p>
+									<p>If a supplier isn’t answering your questions on the deadline he established, you can contact WiC Support team by sending an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a> and our team will help you get in touch with the supplier or to find a solution that fits all your needs with another of our suppliers.</p>
 								</div>
+							</div>
+						</article>
+                                                <article class="panel">
+							<div class="panel-heading" role="tab" id="headingNine">
+								<a class="collapsed"
+								   data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseNine"
+								   aria-expanded="false"
+								   aria-controls="collapseEight">
+									Do I have all the requirements to register as a supplier?
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												
+											</div>
+											<div class="tbl-cell">
+												
+											</div>
+										</div>
+									</div>
+									
+									<p>To join the platform as a supplier there are no membership costs. If your company offers any of the services listed below, please feel free to join WiC:</p>
+                                                                        <p></p>
+                                                                </div>
 							</div>
 						</article>
 					</section>
