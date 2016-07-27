@@ -927,7 +927,7 @@ function db_getUserIndexInfo($pdo, $userId) {
         WHERE [User].[id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<div class="profile-card-photo">';
-            echo '<img src="' . $row['UPP'] . '" alt="Profile Pic" style = "max-width: 98px; max-height:98px;"/> ';
+            echo '<img src="' . $row['UPP'] . '" alt="Profile Pic" style = "max-width: 98px; max-height:98px;"/>';
             echo '</div>';
             echo '<div class = "profile-card-name">' . $row['UFN'] . ' ' . $row['ULN'] . '</div>';
             echo '<div class = "profile-card-location">' . $row['UEM'] . '</div>';
@@ -1358,7 +1358,7 @@ function DB_GetOrgInformation2($pdo, $org) {
             echo ' <section class = "box-typical"> ';
             echo '<div class = "profile-card">';
             echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['Picture_Path'] . '" alt = ""/  >';
+            echo ' <img src = "' . $row['Picture_Path'] . '" alt = ""/>';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
             echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
