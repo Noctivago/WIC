@@ -491,7 +491,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
         [Service].[Name],
 		[User_Profile].[First_Name],
 		[User_Profile].[Last_Name],
-		[User_Profile].[Picture_Path]
+		[User_Profile].[Picture_Path],[User_Service].[Role_Id]
           FROM [dbo].[Service]
           join [User_Service]
           on [User_Service].[Service_Id] = [Service].[Id]
@@ -517,8 +517,13 @@ function DB_BuildInvitesTable($pdo, $userId) {
             $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
 WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
-            foreach ($rows as $row) {
-                echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            foreach ($rows as $row1) {
+                if($row['Role_Id'] === $row1['ID'] ){
+                    echo '<option selected id="row'.$row['ID'].'" value ="'.$row1['ID'].'">'.$row1['Name'].'</option>';
+                }  else {
+                echo '<option id="row'.$row['ID'].'" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
+                    
+                }
             }
 
             echo '
@@ -1899,16 +1904,16 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <table class = "table table-hover">
 <thead>
 <tr>
-<th>Service</th>
-<th>Owner</th><th></th><th></th>
+<th style="width: 50%;">Service</th>
+<th style="width: 25%;">Owner<th></th><th></th></th>
 </tr>
 </thead>
-<tbody>';
+<tbody class="WICS">';
             foreach ($rows as $row) {
                 echo '
 <tr class = "table-check">
 <td><a href = "./service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
-<td class = "table-photo">
+<td class = "table-photo" style="width: 50%;">
 <img src = "' . $row['OPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['ONA'] . '">
 </td>
 <td class = "table-photo">
