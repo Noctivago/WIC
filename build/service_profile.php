@@ -135,7 +135,7 @@ $serviceId = (filter_var($_GET['Service']));
                         echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" style="margin-top: 10px;" role="button">Edit your service</a> ';
                         if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])) {
 //                            $orgIdentifier = DB_GetOrgIdByUserBossId($pdo, $_SESSION['id']);
-                            $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index';
+                            $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php';
                             echo '<a onclick="removeService();" class="btn btn-rounded" style="margin-top: 10px;" role="button">Delete your service</a>';
                         }
                         echo '         </div>';
