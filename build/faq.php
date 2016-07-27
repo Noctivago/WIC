@@ -139,18 +139,18 @@ include ("includes/head_sideMenu.php");
 							</div>
 						</article>
                                                 <article class="panel">
-							<div class="panel-heading" role="tab" id="headingTwo">
+							<div class="panel-heading" role="tab" id="headingFive">
 								<a class="collapsed"
 								   data-toggle="collapse"
 								   data-parent="#accordion"
-								   href="#collapseTwo"
+								   href="#collapseFive"
 								   aria-expanded="false"
 								   aria-controls="collapseTwo">
 									How can I join WiC community?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
-							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
 								<div class="panel-collapse-in">
 									<div class="user-card-row">
 										<div class="tbl-row">
