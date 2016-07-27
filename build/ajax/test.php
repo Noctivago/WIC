@@ -7,6 +7,8 @@ include_once '../db/session.php';
 print 'SESSION INFO <br>';
 print 'ID > ' . $_SESSION['id'] . '<br>';
 var_dump($_SESSION);
+echo DB_getRatingTable($pdo);
+echo '<br>';
 DB_getUsersTable($pdo);
 echo '<br>';
 DB_getMultimediaTable($pdo);

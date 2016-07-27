@@ -702,6 +702,24 @@ function DB_getUsersTable($pdo) {
     }
 }
 
+function DB_getRatingTable($pdo) {
+    try {
+        $rows = sql($pdo, "SELECT * FROM [dbo].[Rating] WHERE [id] > ?", array('0'), "rows");
+        echo "<table class='table table-striped'><tr><th>ID</th><th>ID_User</th><th>ID_Service</th><th>Rate</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['User_Id'] . "</td>";
+            echo "<td>" . $row['Service_Id'] . "</td>";
+            echo "<td>" . $row['Rate'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING USERS';
+    }
+}
+
 /**
  * PARA TESTES
  * @param type $pdo
