@@ -404,8 +404,8 @@ include ("includes/head_sideMenu.php");
 										</div>
 									</div>
 									
-									<p>If a supplier isn’t answering your questions on the deadline he established, you can contact WiC Support team by sending an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a> and our team will help you get in touch with the supplier or to find a solution that fits all your needs with another of our suppliers.</p>
-								</div>
+									<p>You can upload or edit your services on your account at the “Services” section.</p>
+                                                                        <p>On the right side of your screen are all the necessary fields to upload or edit your service:</p>
 							</div>
 						</article>
 					</section>
