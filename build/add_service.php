@@ -78,7 +78,7 @@ ini_set("display_errors", 1);
                                                             #echo $j . ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
                                                             $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $target_path, 0);
                                                         } else {//if file was not moved.
-                                                            $msg = "please try again!";
+                                                            $msg = "Please try again!";
                                                         }
                                                     } else {//if file size and file type was incorrect.
                                                         $msg = "Invalid file Size or Type";
@@ -145,7 +145,7 @@ ini_set("display_errors", 1);
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
                         <input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
-                        Files: <input type="file" id="files" name="files[]" accept = "images/*" name="files" multiple><br/>
+                        Files: <input type="file" id="file" name="file[]" accept = "images/*" multiple><br/>
 
                         <div id="selectedFiles"></div>
 
