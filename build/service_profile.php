@@ -54,7 +54,7 @@ $serviceId = (filter_var($_GET['Service']));
             <div class="col-lg-9 col-lg-push-0 col-md-12">
 
                 <section class="box-typical" style="width: 725.99px; height: 350px;background-color:#212121 " >
-                    <div align="center">
+                    <div align="justify">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPBWSBDfjue9wT6G0hgrQv7Rmv7z47rB5sDk-HjWAAHaAOmypBCg"/>
                     </div>
                 </section>                                         
