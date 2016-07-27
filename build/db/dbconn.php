@@ -1155,23 +1155,24 @@ function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
         
     }
 }
-function DB_InsertView($pdo,$serviceId,$user){
+
+function DB_InsertView($pdo, $serviceId, $user) {
     try {
         $d = getDateToDB();
-        sql($pdo,"INSERT INTO [dbo].[Service_View]
+        sql($pdo, "INSERT INTO [dbo].[Service_View]
            ([Service_Id]
            ,[User_Id]
            ,[Date_View])
      VALUES
            (?
            ,?
-           ,?)", array($serviceId,$user,$d));
+           ,?)", array($serviceId, $user, $d));
     } catch (Exception $ex) {
         
     }
 }
 
-function DB_GetOrgIdByIderService($pdo,$idService){
+function DB_GetOrgIdByIderService($pdo, $idService) {
     try {
         $stmt = $pdo->prepare("Select [Organization].[Id],[Organization].[Name],[Organization].[Picture_Path]
 from [Service]
@@ -1601,26 +1602,80 @@ Free for 3 Months</header>';
  * @param type $org
  * @param type $idUser
  */
+//function DB_GetOrganizationServices($pdo, $org, $idUser) {
+//    try {
+//        $services = getAllOrganizationServices($pdo, $org);
+//        foreach ($services as $service) {
+//            $idService = $service['Id'];
+//            $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+//            $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+//            $views = DB_GetNumberServiceViews($pdo, $idService);
+//            $comments = DB_GetNumberServiceComments($pdo, $idService);
+//            echo '<div class = "slide">';
+//            echo '<article class = "post-announce">';
+//            echo '<div class = "post-announce-pic">';
+//            echo '<a href = "service_profile.php?Service=' . $idService . '">';
+//            echo ' <img src = "' . $Multi['Multimedia_Path'] . '" alt = "Avatar">';
+//            echo '</a>';
+//            echo ' </div>';
+//            echo '<div class = "post-announce-title">';
+//            echo '<a href = "service_profile.php?Service=' . $idService . '">' . $ServiceInfo['Name'] . '</a>';
+//            echo '</div>';
+//            echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
+//            echo '<ul class = "post-announce-meta">';
+//            echo '<li>';
+//            echo '<i class = "font-icon font-icon-eye"></i>';
+//            echo $views['NumView'];
+//            echo '</li>';
+//            echo '<li>';
+//            echo '<i class = "font-icon font-icon-comment"></i>';
+//            echo $comments['NumComment'];
+//            echo '</li>';
+//            echo '</ul>';
+//            echo '</article>';
+//            echo '</div>';
+//        }
+//    } catch (Exception $ex) {
+//        
+//    }
+//}
 function DB_GetOrganizationServices($pdo, $org, $idUser) {
     try {
-        $services = getAllOrganizationServices($pdo, $org);
-        foreach ($services as $service) {
+        $rows = sql($pdo, "SELECT
+        [Service].[Name] AS SNA,
+        [Service].[Id] AS SID,
+        [Service].[Description] AS SDE,
+        [Organization].[Name] AS ONA,
+        [Organization].[Id] AS OID,
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
+        FROM [Service]
+        join [Organization]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
+        AND [Organization].[Enabled] = 1 
+        AND [Service].[Enabled] = 1 
+        AND [Multimedia].[Enabled] = 1  
+        AND [Multimedia].[First_Page] = 1
+		AND [Organization].[Id]", array($org), "rows");
+        foreach ($rows as $row) {
             $idService = $service['Id'];
-            $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-            $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-            $views = DB_GetNumberServiceViews($pdo, $idService);
-            $comments = DB_GetNumberServiceComments($pdo, $idService);
+            //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+            //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+            $views = DB_GetNumberServiceViews($pdo, $row['SID']);
+            $comments = DB_GetNumberServiceComments($pdo, $row['SID']);
             echo '<div class = "slide">';
             echo '<article class = "post-announce">';
             echo '<div class = "post-announce-pic">';
-            echo '<a href = "service_profile.php?Service=' . $idService . '">';
-            echo ' <img src = "' . $Multi['Multimedia_Path'] . '" alt = "Avatar">';
+            echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">';
+            echo ' <img src = "' . $row['MPP'] . '" alt = "Avatar">';
             echo '</a>';
             echo ' </div>';
             echo '<div class = "post-announce-title">';
-            echo '<a href = "service_profile.php?Service=' . $idService . '">' . $ServiceInfo['Name'] . '</a>';
+            echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a>';
             echo '</div>';
-            echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
+            //echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
             echo '<ul class = "post-announce-meta">';
             echo '<li>';
             echo '<i class = "font-icon font-icon-eye"></i>';
@@ -2340,23 +2395,23 @@ function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
         return false;
     }
 }
+
 //Service manager , Responsible for the chat, Edit service informationx
-function DB_validatePermissionEditInfo($pdo,$userId,$serviceId,$role){
+function DB_validatePermissionEditInfo($pdo, $userId, $serviceId, $role) {
     try {
-       $count = sql($pdo,"SELECT *
+        $count = sql($pdo, "SELECT *
   FROM [dbo].[User_Service]
  join [Role]
  on [Role].[Id] = [User_Service].[Role_Id]
- where [Service_Id] = ? and [Role].[Name] = ? and [User_Id] = ? and [User_Service].[Enabled] = 1", array($serviceId,$role,$userId),"count");
-    if($count < 0){
-        return TRUE;
-    }else{
-        return FALSE;
-    }
-       
+ where [Service_Id] = ? and [Role].[Name] = ? and [User_Id] = ? and [User_Service].[Enabled] = 1", array($serviceId, $role, $userId), "count");
+        if ($count < 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     } catch (Exception $ex) {
         
-    }   
+    }
 }
 
 /**
@@ -2368,7 +2423,7 @@ function DB_validatePermissionEditInfo($pdo,$userId,$serviceId,$role){
  */
 function DB_getServicesForIndex($pdo) {
     try {
-        
+
         $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
