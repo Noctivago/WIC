@@ -2,7 +2,6 @@
 
 include_once '../db/dbconn.php';
 include_once '../db/session.php';
-include_once '../db/functions.php';
 
 $serviceId = (filter_var($_POST['Service']));
 $UserBoss = $_SESSION['id'];
@@ -13,7 +12,7 @@ if ($val === $UserBoss) {
     DB_removeService($pdo, $serviceId);
     header("location: ../build/profile_org.php");
 } else {
-    //NAO E BOSS
+    //NAO E BOSS MANDA PASSEAR
     header("location: ../build/index.php");
 }
 
