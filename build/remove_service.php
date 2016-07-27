@@ -3,7 +3,7 @@
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 
-$serviceId = (filter_var($_POST['Service']));
+$serviceId = (filter_var($_GET['Service']));
 $UserBoss = $_SESSION['id'];
 echo 'BOSS >' . $UserBoss . '<br>';
 $val = DB_GetUserBossIdByService($pdo, $serviceId);
