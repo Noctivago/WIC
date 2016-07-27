@@ -290,18 +290,18 @@ include ("includes/head_sideMenu.php");
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Bar<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Lounge<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Breakfast<br>
-                                                                           &nbsp;•	Entertainment<br>
+                                                                           &nbsp;•	Entertainment:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         o	Entertainment<br>
-                                                                           &nbsp;•	Decoration<br>
+                                                                           &nbsp;•	Decoration:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          o	Decoration<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Furniture<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Inflatables<br>
-                                                                           &nbsp;•	Team Building<br>
+                                                                           &nbsp;•	Team Building:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Team Building<br>
-                                                                           &nbsp;•	Photographer & Videographer<br>
+                                                                           &nbsp;•	Photographer & Videographer:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Photographer<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Videographer<br>
-                                                                           &nbsp;•	Audiovisual<br>
+                                                                           &nbsp;•	Audiovisual:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Audio<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Visual<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Lighting<br>
