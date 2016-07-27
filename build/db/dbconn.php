@@ -512,14 +512,14 @@ function DB_BuildInvitesTable($pdo, $userId) {
 
                                 <td class="table-icon-cell">
                                     <div class="form-group" >
-                                        <select class="bootstrap-select bootstrap-select-arrow" id="Role" name="Role">
+                                        <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">
                                             ';
             $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
 WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
             foreach ($rows as $row1) {
                 if ($row['Role_Id'] === $row1['ID']) {
-                    echo '<option selected id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
+                    echo '<option selected id="Role' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
                 } else {
                     echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
                 }
@@ -1907,7 +1907,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 WHERE [Service].[Enabled] = 1 AND [WIC_Planner_Service].[Enabled] = 1 
                 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
                 AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
-            echo '<section class = "box-typical box-typical-max-280" style="width: 104%;">
+            echo '<section class = "box-typical box-typical-max-280" style="width: 100%;">
 <header class = "box-typical-header">
 <div class = "tbl-row">
 <div class = "tbl-cell tbl-cell-title">
@@ -1918,19 +1918,18 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <div class = "box-typical-body" style = "overflow: hidden;
                 padding: 0px;
                 height: 700px;
-                width: 494px;
+                width: 100%;
                 ">
 <div class = "table-responsive">
-<table class = "table table-hover">
+<table class = "table table-hover" style="width:100%">
 <thead>
 <tr>
 <th>Service</th>
 <th>Owner</th>
 <th></th>
-<th></th>
 </tr>
 </thead>
-<tbody class="WICS">';
+<tbody class="WICS" style="width:100%">';
             foreach ($rows as $row) {
                 echo '
 <tr class = "table-check">
@@ -1938,8 +1937,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <td class = "table-photo">
 <img src = "' . $row['OPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['ONA'] . '">
 </td>
-<td class = "table-photo">
-</td>
+
 <td class = "table-photo">
 <a onclick = "removeWicService(this,' . $row['SID'] . ')" class = "font-icon font-icon-del" id = ' . $row['WID'] . '>
 </a>
@@ -2305,6 +2303,24 @@ function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
         return false;
     }
 }
+//Service manager , Responsible for the chat, Edit service informationx
+function DB_validatePermissionEditInfo($pdo,$userId,$serviceId,$role){
+    try {
+       $count = sql($pdo,"SELECT *
+  FROM [dbo].[User_Service]
+ join [Role]
+ on [Role].[Id] = [User_Service].[Role_Id]
+ where [Service_Id] = ? and [Role].[Name] = ? and [User_Id] = ? and [User_Service].[Enabled] = 1", array($serviceId,$role,$userId),"count");
+    if($count < 0){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+       
+    } catch (Exception $ex) {
+        
+    }   
+}
 
 /**
  * Função que devolve os serviços para o index
@@ -2315,6 +2331,7 @@ function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
  */
 function DB_getServicesForIndex($pdo) {
     try {
+        
         $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
