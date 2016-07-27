@@ -7,7 +7,7 @@ $serviceId = (filter_var($_POST['Service']));
 $UserBoss = $_SESSION['id'];
 echo 'BOSS >' . $UserBoss . '<br>';
 $val = DB_GetUserBossIdByService($pdo, $serviceId);
-echo 'KeyFromBD >' . $val;
+echo 'KeyBD >' . $val;
 //SE ID DO USER FOR IGUAL AO DO BOSS DA ORG ENTAO PODE APAGAR
 if ($val === $UserBoss) {
     //REMOVER > HEADER LOCATION PROFILE ORG
