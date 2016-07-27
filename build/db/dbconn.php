@@ -512,7 +512,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
 
                                 <td class="table-icon-cell">
                                     <div class="form-group" >
-                                        <select class="bootstrap-select bootstrap-select-arrow" id="row'.$row['ID'].'" name="Role">
+                                        <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">
                                             ';
             $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
@@ -2303,6 +2303,24 @@ function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
         return false;
     }
 }
+//Service manager , Responsible for the chat, Edit service informationx
+function DB_validatePermissionEditInfo($pdo,$userId,$serviceId,$role){
+    try {
+       $count = sql($pdo,"SELECT *
+  FROM [dbo].[User_Service]
+ join [Role]
+ on [Role].[Id] = [User_Service].[Role_Id]
+ where [Service_Id] = ? and [Role].[Name] = ? and [User_Id] = ?", array($serviceId,$role,$userId),"count");
+    if($count < 0){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+       
+    } catch (Exception $ex) {
+        
+    }   
+}
 
 /**
  * Função que devolve os serviços para o index
@@ -2313,6 +2331,7 @@ function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
  */
 function DB_getServicesForIndex($pdo) {
     try {
+        
         $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
