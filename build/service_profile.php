@@ -175,21 +175,8 @@ $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/profile_org.php?Organization
             });
         }
     }
-    function removeService() {
-        $.ajax({
-        url: 'ajax/remove_service.php',
-                method: 'post',
-                data: {sId: <?= $serviceId; ?>},
-                success: function (data) {
-                    alert(data);
-                    if (data === 'OK') {
-                        window.location.replace(<?= $link; ?>);
-                    }
-                    }
-            );
-        }
 
-        function loadComments() {
+    function loadComments() {
         $.ajax({
             url: 'ajax/getServiceComment.php',
             method: 'post',
@@ -199,10 +186,26 @@ $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/profile_org.php?Organization
             }
         });
     }
+
+    function removeService() {
+        $.ajax({
+            url: 'ajax/remove_service.php',
+            method: 'post',
+            data: {sId: <?= $serviceId; ?>},
+            success: function (data) {
+                if (data === 'OK') {
+                    window.location.replace("<?= $link; ?>");
+                }
+            }
+        });
+    }
+
     function load() {
         console.log("load comments");
         //loadComments();
     }
+
+
     window.onload = load;
 </script>
 
