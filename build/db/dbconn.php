@@ -491,7 +491,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
         [Service].[Name],
 		[User_Profile].[First_Name],
 		[User_Profile].[Last_Name],
-		[User_Profile].[Picture_Path]
+		[User_Profile].[Picture_Path],[User_Service].[Role_Id]
           FROM [dbo].[Service]
           join [User_Service]
           on [User_Service].[Service_Id] = [Service].[Id]
@@ -517,7 +517,10 @@ function DB_BuildInvitesTable($pdo, $userId) {
             $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
 WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
-            foreach ($rows as $row) {
+            foreach ($rows as $row1) {
+                if($row['ID'] === $row1['ID'] ){
+                    echo '<option selected value ="'.$row1['ID'].'">'.$row1['Name'].'</option>';
+                }
                 echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
             }
 
