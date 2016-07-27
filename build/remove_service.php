@@ -2,7 +2,6 @@
 
 include_once '../db/dbconn.php';
 include_once '../db/session.php';
-include_once '../db/functions.php';
 
 $serviceId = (filter_var($_POST['Service']));
 $UserBoss = $_SESSION['id'];
