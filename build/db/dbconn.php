@@ -932,6 +932,7 @@ function db_getUserIndexInfoForOrgProfile($pdo, $userId) {
         WHERE [User].[id] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "text-block text-block-typical">';
+            echo '<p>' . $row['Description'] . ' </p>';
             echo '</div>';
             echo ' </div>';
             echo ' </article>';
