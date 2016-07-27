@@ -59,9 +59,8 @@ include '../build/db/session.php';
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <i class="font-icon-plus" <input Type="button" Value="Teste" onDblClick="<a href="http://www.w3schools.com">" > </i>
-                                    
-                                </a>
+                                    <i class="font-icon-plus" <INPUT Type="button" Value="Teste" onDblClick="alert('Foi dado um duplo clique')"> </i>
+                       
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages" alt="WIC Planner">
                                     <div class="dropdown-menu-messages-header" >
                                         <ul class="nav" role="tablist">
