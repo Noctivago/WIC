@@ -379,6 +379,35 @@ include ("includes/head_sideMenu.php");
                                                                 </div>
 							</div>
 						</article>
+                                                <article class="panel">
+							<div class="panel-heading" role="tab" id="headingTwelve">
+								<a class="collapsed"
+								   data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseTwelve"
+								   aria-expanded="false"
+								   aria-controls="collapseTwelve">
+									How do I upload and edit my services as a supplier?
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												
+											</div>
+											<div class="tbl-cell">
+												
+											</div>
+										</div>
+									</div>
+									
+									<p>If a supplier isn’t answering your questions on the deadline he established, you can contact WiC Support team by sending an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a> and our team will help you get in touch with the supplier or to find a solution that fits all your needs with another of our suppliers.</p>
+								</div>
+							</div>
+						</article>
 					</section>
                                                 </div>
              
