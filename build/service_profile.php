@@ -99,12 +99,12 @@ $serviceId = (filter_var($_GET['Service']));
 
                 <section class="box-typical">
                     <!--DISPLAY SERVICE USERS-->
-<?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
+                    <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
                 </section>
 
                 <section class="box-typical">
                     <!--DISPLAY ORG INFO-->
-<?= DB_GetOrgInformationForService($pdo, $serviceId); ?>
+                    <?= DB_GetOrgInformationForService($pdo, $serviceId); ?>
                 </section>
             </div>
         </div>
