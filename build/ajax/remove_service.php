@@ -12,7 +12,8 @@ $val = DB_GetUserBossIdByService($pdo, $serviceId);
 //SE ID DO USER FOR IGUAL AO DO BOSS DA ORG ENTAO PODE APAGAR
 if ($val === $UserBoss) {
     DB_removeService($pdo, $serviceId);
+     echo 'OK';
 } else {
-    echo 'Empty!';
+    echo 'PERMISSION PROBLEM!';
 }
 
