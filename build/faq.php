@@ -173,7 +173,7 @@ include ("includes/head_sideMenu.php");
 								<a class="collapsed"
 								   data-toggle="collapse"
 								   data-parent="#accordion"
-								   href="#collapseThree"
+								   href="#collapseSix"
 								   aria-expanded="false"
 								   aria-controls="collapseSix">
 									How do I cancel my account?
@@ -194,6 +194,35 @@ include ("includes/head_sideMenu.php");
 									</div>
 									
 									<p>If you want to cancel your WiC account, send an email to  <a href="mailto:support@wic.club" target="_top">support@wic.club</a> and we’ll cancel your account within 24 hours.</p>
+								</div>
+							</div>
+						</article>
+                                                	<article class="panel">
+							<div class="panel-heading" role="tab" id="headingSeven">
+								<a class="collapsed"
+								   data-toggle="collapse"
+								   data-parent="#accordion"
+								   href="#collapseSeven"
+								   aria-expanded="false"
+								   aria-controls="collapseSeven">
+									Is there any membership costs? Do I pay to use the platform?
+									<i class="font-icon font-icon-arrow-down"></i>
+								</a>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+								<div class="panel-collapse-in">
+									<div class="user-card-row">
+										<div class="tbl-row">
+											<div class="tbl-cell tbl-cell-photo">
+												
+											</div>
+											<div class="tbl-cell">
+												
+											</div>
+										</div>
+									</div>
+									
+									<p>WiC is a free platform. There isn’t any kind of membership costs.</p>
 								</div>
 							</div>
 						</article>
