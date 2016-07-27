@@ -2906,3 +2906,33 @@ value = "+">
         echo 'ERROR READING SERVICE TABLE!';
     }
 }
+
+Function DB_checkIfUserMadeRate($pdo, $userId, $serviceId) {
+    try {
+        $count = sql($pdo, "SELECT * FROM
+        [Rating]
+        WHERE [User_Id] = ? AND [Service_Id] = ?", array($userId, $serviceId), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $ex) {
+        echo 'ERROR READING RATING TABLE!';
+    }
+}
+
+function DB_addUserRateService($pdo, $userId, $serviceId, $rate) {
+    $d = getDateToDB();
+    if (DB_checkIfUserMadeRate($pdo, $userId, $serviceId)) {
+        echo '1';
+    } else {
+        try {
+            sql($pdo, "INSERT INTO [dbo].[Rating] ([User_Id], [Service_Id], [Rate], [Date_Created]) VALUES(?,?,?,?)"
+                    . "", array($userId, $serviceId, $rate, $d));
+        } catch (PDOException $e) {
+            print "ERROR CREATING RATE IN SERVICE!";
+            die();
+        }
+    }
+}
