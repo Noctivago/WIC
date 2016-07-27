@@ -59,16 +59,15 @@ $msg = '';
     function EditRole(x){
         var rolei = 'row'+x;
         var role = document.getElementById(''+rolei).value;
-        alert(role);
         $.post("ajax/EditRoleUserInService.php",{id:x,role:role},function(result){
-            alert(result);
-        });
+        location.reload(2);
+    });
         return false;
     }
     function RemoveUserInService(x){
         alert(x);
         $.post("ajax/RemoveUserInService.php",{id:x},function(result){
-            
+        location.reload(2);
         });
         return false;
     }
