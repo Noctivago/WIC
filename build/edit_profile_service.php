@@ -190,7 +190,9 @@ include_once '../build/db/session.php';
 
                         <button type = "submit" name="saveChanges" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
                 </section>
-            <?php } ?>
+            <?php }  else {
+                               header("location: ../build/index.php"); 
+                            } ?>
 
         </div>
     </div><!--.row-->
