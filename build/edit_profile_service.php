@@ -33,9 +33,16 @@ include_once '../build/db/session.php';
                                     $service = $_GET['Service'];
                                     $serv = $_POST['Serv'];
                                     $user = $_SESSION['id'];
-                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
-                                    $idOg = $org['Id'];
+//                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+//                                    $idOg = $org['Id'];
                                     if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg) || DB_validatePermissionEditInfo($pdo, $_SESSION['id'], $serviceId, $role) || DB_validatePermissionEditInfo($pdo, $_SESSION['id'], $serviceId, $role2)) {
+                                        if(db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg)){
+                                        $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+                                        $idOg = $org['Id'];
+                                        }else{
+                                            $org = DB_GetOrgIdByIderService($pdo,$service);
+                                            $idOg = $org['Id'];
+                                        }
                                         if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                             $cname = $_POST['cName'];
                                             $cDescription = $_POST['cDescription'];

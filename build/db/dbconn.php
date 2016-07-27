@@ -1156,6 +1156,28 @@ function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
     }
 }
 
+function DB_GetOrgIdByIderService($pdo,$idService){
+    try {
+        $stmt = $pdo->prepare("Select [Organization].[Id],[Organization].[Name],[Organization].[Picture_Path]
+from [Service]
+join [Organization]
+on [Organization].[Id] = [Service].[Organization_ID]
+where [Service].[Id] = :id");
+        $stmt->bindParam(':id', $idService);
+        $stmt->execute();
+        $organization = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            $organization['Id'] = $row['Id'];
+            $organization['Name'] = $row['Name'];
+            $organization['Picture_Path'] = $row['Picture_Path'];
+        }
+        return $organization;
+    } catch (Exception $ex) {
+        echo 'error';
+    }
+}
+
 function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
     try {
         $stmt = $pdo->prepare("SELECT * From [Organization] Where [Enabled] = 1 and [User_Boss] = :id");
