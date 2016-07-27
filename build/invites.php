@@ -14,7 +14,7 @@ $msg = '';
             <header class="box-typical-header">
                 <div class="tbl-row">
                     <div class="tbl-cell tbl-cell-title">
-                        <h3>Invites</h3>
+                        <h3>My team</h3>
                     </div>
                     <!-- Botoes edit-->
                     <!--						<div class="tbl-cell tbl-cell-action-bordered">
