@@ -3013,7 +3013,7 @@ function DB_GetUserBossIdByService($pdo, $service_Id) {
  */
 function DB_removeService($pdo, $serviceId) {
     try {
-        $count = sql($pdo, "UPDATE [dbo].[Service] SET [Enabled] = ? WHERE [Id] = ? ", array('1', $serviceId));
+        $count = sql($pdo, "UPDATE [dbo].[Service] SET [Enabled] = ? WHERE [Id] = ? ", array('0', $serviceId));
         return true;
     } catch (Exception $exc) {
         return false;
