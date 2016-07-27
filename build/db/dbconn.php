@@ -2496,17 +2496,15 @@ function DB_getServicesForIndex($pdo) {
 <a  class="card-typical-likes">
 
 
-<button class="btn font-icon-plus" type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,");  > </button>
+<button class="btn font-icon-comment" type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,");  > </button>
 
 </a>
 </div>
 
 <div class = "card-typical-section">
-<a href="#" class="card-typical-likes">
-<i class="font-icon font-icon-plus">
+
 <input type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,"); >
-</i>
-</a>
+
 </div>
 
 </article>
