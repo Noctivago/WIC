@@ -3,6 +3,7 @@ include ("includes/head_sideMenu.php");
 $serviceId = (filter_var($_GET['Service']));
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
+$link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/profile_org.php?Organization=' . $serviceId;
 ?>
 
 <style>
@@ -176,18 +177,19 @@ $serviceId = (filter_var($_GET['Service']));
     }
     function removeService() {
         $.ajax({
-            url: 'ajax/remove_service.php',
-            method: 'post',
-            data: {sId: <?= $serviceId; ?>},
-            success: function (data) {
-                alert(data);
-            }
-        });
-        // similar behavior as an HTTP redirect
-        //window.location.replace("http://stackoverflow.com");
-    }
+        url: 'ajax/remove_service.php',
+                method: 'post',
+                data: {sId: <?= $serviceId; ?>},
+                success: function (data) {
+                    alert(data);
+                    if (data === 'OK') {
+                        window.location.replace(<?= $link; ?>);
+                    }
+                    }
+            );
+        }
 
-    function loadComments() {
+        function loadComments() {
         $.ajax({
             url: 'ajax/getServiceComment.php',
             method: 'post',
