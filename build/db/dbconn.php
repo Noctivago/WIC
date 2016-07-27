@@ -1904,8 +1904,8 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <table class = "table table-hover">
 <thead>
 <tr>
-<th style="width: 50%;">Service</th>
-<th style="width: 25%;">Owner</th>
+<th>Service</th>
+<th>Owner</th>
 </tr>
 </thead>
 <tbody class="WICS">';
