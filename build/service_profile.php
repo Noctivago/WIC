@@ -176,17 +176,18 @@ $serviceId = (filter_var($_GET['Service']));
     }
     function removeService() {
         var sId = serviceId;
-            $.ajax({
-                url: 'ajax/remove_service.php',
-                method: 'post',
-                data: {sId: sId},
-                success: function (data) {
-                    alert('REMOVIDO!');
-                }
-            });
-       
+        $.ajax({
+            url: 'ajax/remove_service.php',
+            method: 'post',
+            data: {sId: sId},
+            success: function (data) {
+                alert('REMOVIDO!');
+            }
+        });
+        // similar behavior as an HTTP redirect
+        //window.location.replace("http://stackoverflow.com");
     }
-    
+
     function loadComments() {
         $.ajax({
             url: 'ajax/getServiceComment.php',
