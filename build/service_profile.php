@@ -180,7 +180,7 @@ $serviceId = (filter_var($_GET['Service']));
             method: 'post',
             data: {sId: <?= $serviceId; ?>},
             success: function (data) {
-                alert('REMOVIDO!');
+                alert(data);
             }
         });
         // similar behavior as an HTTP redirect
