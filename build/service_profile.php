@@ -132,7 +132,7 @@ $serviceId = (filter_var($_GET['Service']));
                         echo '        <div class="tbl-cell">';
                         echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" style="margin-top: 10px;" role="button">Edit your service</a> ';
                         if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])) {
-                            echo '<a href="remove_service.php?Service=' . $serviceId . '" class="btn btn-rounded" style="margin-top: 10px;" role="button">Delete your service</a>';
+                            echo '<a onclick="removeService();" class="btn btn-rounded" style="margin-top: 10px;" role="button">Delete your service</a>';
                         }
                         echo '         </div>';
                         echo '  </div>';
