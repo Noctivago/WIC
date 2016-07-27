@@ -31,7 +31,7 @@ if (isset($id) && isset($uid)) {
     <!--DIV ESTAVA COMO FORM-->
     <div class="sign-box">
         <div class="title-label"><h3>New Event</h3></div>
-        <header class="sign-">You can Event</header>
+        <header class="sign-title">You can Event</header>
         <div class="form-group">
             <input type="text" id = "name" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name" required/>
         </div>
