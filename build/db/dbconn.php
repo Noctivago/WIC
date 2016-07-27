@@ -560,6 +560,25 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
         
     }
 }
+function Db_UpdateRoleInService($pdo,$role,$idUserInService){
+    try {
+        sql($pdo, "UPDATE [dbo].[User_Service]
+   SET [Role_Id] = ?
+ WHERE [Id]=?", array($role,$idUserInService));
+    } catch (Exception $ex) {
+        
+    }
+}
+
+function DB_removeUserInService($pdo,$idUserInService){
+    try {
+        sql($pdo,"UPDATE [dbo].[User_Service]
+   SET [Enabled] = 0
+ WHERE [Id] = ?", array($idUserInService));
+    } catch (Exception $ex) {
+        
+    }
+}
 
 /**
  * ENVIA MAIL COM INSTRUÇAO DE ATIVACAO DE CONTA USER
