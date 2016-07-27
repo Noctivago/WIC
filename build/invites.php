@@ -65,7 +65,7 @@ $msg = '';
         });
         return false;
     }
-    function remove(x){
+    function RemoveUserInService(x){
         alert(x);
         $.post("ajax/RemoveUserInService.php",{id:x},function(result){
             

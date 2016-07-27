@@ -533,12 +533,12 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
                                 <td>
 
                                     <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" onclick ="EditRole(' . $row['ID'] . ');"class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
+                                        <button type="button" onclick ="EditRole(' . $row['ID'] . ')"class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
                                     </div>
                                 </td>
                                 <td>  
                                     <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" onclick="remove(' . $row['ID'] . ');" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
+                                        <button type="button" onclick="RemoveUserInService(' . $row['ID'] . ')" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
                                     </div>
                                 </td>
                             </tr>';
