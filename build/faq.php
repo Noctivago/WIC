@@ -404,8 +404,22 @@ include ("includes/head_sideMenu.php");
 										</div>
 									</div>
 									
-									<p>If a supplier isn’t answering your questions on the deadline he established, you can contact WiC Support team by sending an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a> and our team will help you get in touch with the supplier or to find a solution that fits all your needs with another of our suppliers.</p>
-								</div>
+									<p>You can upload or edit your services on your account at the “Services” section.</p>
+                                                                        <p>On the right side of your screen are all the necessary fields to upload or edit your service:</p>
+                                                                        <p>1.	Service Name:<br>
+                                                                                a.	What are you offering?<br><br><br>
+                                                                           2.	Service description:<br>
+                                                                                a.	Use 1 or 2 sentences to briefly describe your service.<br><br><br>
+                                                                           3.	Service Type:<br>
+                                                                                a.	Choose in witch category your service fits<br><br><br>
+                                                                           4.	Service classification:<br>
+                                                                                a.	Choose in witch sub-category your service fits.<br><br><br>
+                                                                           5.	Upload photo:<br>
+                                                                                a.	You can upload 1 or more photos that better represent what your service is. Be careful, a photo is worth a thousand words.<br><br><br>
+                                                                           6.	Finalize:<br>
+                                                                                a.	Just click the “Upload” button to post your service online or add more services by clicking the “Add more services” button.<br><br><br>
+                                                                                       NOTE: You can follow all the steps in real time on the center of your screen so you can preview the way the service will appear on the platform.
+                                                                        </p>
 							</div>
 						</article>
 					</section>

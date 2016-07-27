@@ -132,7 +132,7 @@ $serviceId = (filter_var($_GET['Service']));
                         echo '        <div class="tbl-cell">';
                         echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" style="margin-top: 10px;" role="button">Edit your service</a> ';
                         if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])) {
-                            echo '<a href="remove_service.php?Service=' . $serviceId . '" class="btn btn-rounded" style="margin-top: 10px;" role="button">Delete your service</a>';
+                            echo '<a onclick="removeService();" class="btn btn-rounded" style="margin-top: 10px;" role="button">Delete your service</a>';
                         }
                         echo '         </div>';
                         echo '  </div>';
@@ -175,18 +175,18 @@ $serviceId = (filter_var($_GET['Service']));
         }
     }
     function removeService() {
-        var sId = serviceId;
-            $.ajax({
-                url: 'ajax/remove_service.php',
-                method: 'post',
-                data: {sId: sId},
-                success: function (data) {
-                    alert('REMOVIDO!');
-                }
-            });
-       
+        $.ajax({
+            url: 'ajax/remove_service.php',
+            method: 'post',
+            data: {sId: <?= $serviceId; ?>},
+            success: function (data) {
+                alert('REMOVIDO!');
+            }
+        });
+        // similar behavior as an HTTP redirect
+        //window.location.replace("http://stackoverflow.com");
     }
-    
+
     function loadComments() {
         $.ajax({
             url: 'ajax/getServiceComment.php',
