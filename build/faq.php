@@ -306,7 +306,7 @@ include ("includes/head_sideMenu.php");
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Visual<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Lighting<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Infrastructures<br><br>
-                                                                           &nbsp;•	Original<br><br>
+                                                                           &nbsp;•	Original<br>
                                                                          </p>
                                                                          <p>If you have any suggestion of any type of services, please send an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a></p>
                                                                 </div>
