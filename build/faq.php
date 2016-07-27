@@ -281,31 +281,31 @@ include ("includes/head_sideMenu.php");
 									</div>
 									
 									<p>To join the platform as a supplier there are no membership costs. If your company offers any of the services listed below, please feel free to join WiC:</p>
-                                                                        <p>&nbsp;•	Space:<br><br>
+                                                                        <p>&nbsp;•	Space:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o	Hotel<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o	Venue<br>
-                                                                           &nbsp;•	Food:<br><br>
+                                                                           &nbsp;•	Food:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Restaurant<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o   Catering<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Bar<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Lounge<br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Breakfast<br>
-                                                                           &nbsp;•	Entertainment:<br><br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         o	Entertainment<br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Breakfast<br><br>
+                                                                           &nbsp;•	Entertainment:<br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Entertainment<br><br>
                                                                            &nbsp;•	Decoration:<br><br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          o	Decoration<br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Decoration<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Furniture<br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Inflatables<br>
-                                                                           &nbsp;•	Team Building:<br><br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Team Building<br>
-                                                                           &nbsp;•	Photographer & Videographer:<br><br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Inflatables<br><br>
+                                                                           &nbsp;•	Team Building:<br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Team Building<br><br>
+                                                                           &nbsp;•	Photographer & Videographer:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Photographer<br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Videographer<br>
-                                                                           &nbsp;•	Audiovisual:<br><br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Videographer<br><br>
+                                                                           &nbsp;•	Audiovisual:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Audio<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Visual<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Lighting<br>
-                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Infrastructures<br>
+                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Infrastructures<br><br>
                                                                            &nbsp;•	Original<br><br>
                                                                          </p>
                                                                          <p>If you have any suggestion of any type of services, please send an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a></p>
