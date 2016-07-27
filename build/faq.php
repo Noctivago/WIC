@@ -337,8 +337,9 @@ include ("includes/head_sideMenu.php");
 										</div>
 									</div>
 									
-									<p>If a supplier isn’t answering your questions on the deadline he established, you can contact WiC Support team by sending an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a> and our team will help you get in touch with the supplier or to find a solution that fits all your needs with another of our suppliers.</p>
-								</div>
+									<p>All the reviews are written by platform users (clients who hired services from our suppliers using the platform). So, all comments are based on the experience and quality of a supplier when providing a service to a user.</p>
+                                                                        <p>Besides the written comments, users can evaluate suppliers using our star system, where 1 star means really bad and 5 stars means excellent.</p>
+                                                                </div>
 							</div>
 						</article>         
 					</section>
