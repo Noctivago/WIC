@@ -308,6 +308,7 @@ include ("includes/head_sideMenu.php");
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     o	Infrastructures<br>
                                                                            &nbsp;•	Original<br>
                                                                          </p>
+                                                                         <p>If you have any suggestion of any type of services, please send an email to <a href="mailto:support@wic.club" target="_top">support@wic.club</a></p>
                                                                 </div>
 							</div>
 						</article>
