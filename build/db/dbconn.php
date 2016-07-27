@@ -2668,7 +2668,7 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
  * Devolve a barra do serviço que se encontra abaixo da imagem
  * @param type $pdo
  */
-function DB_GetServiceInfoBar($pdo, $serviceId) {
+function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
     try {
         $rows = sql($pdo, "SELECT  [Service].[Name] AS SNA
         ,[Organization].[Picture_Path] AS OPP
@@ -2690,8 +2690,11 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
             </div>
             <div class = "tbl-cell">
             <p class = "user-card-row-name"><a>   ' . $row['SNA'] . '</a></p>';
-//            INICIO RATING
-            echo '<p class = "user-card-row-status">
+            if (DB_checkIfUserMadeRate($pdo, $user_Id, $serviceId)) {
+                //SE JA FEZ RATE -> MOSTRAR RATING SERVIÇO
+            } else {
+                //INICIO RATING
+                echo '<p class = "user-card-row-status">
             <fieldset id = "demo1" class = "rating">
             <input class = "stars" type = "radio" id = "star5" name = "rating" value = "5" />
             <label class = "full" for = "star5" title = "Awesome - 5 stars"></label>
@@ -2704,7 +2707,8 @@ function DB_GetServiceInfoBar($pdo, $serviceId) {
             <input class = "stars" type = "radio" id = "star1" name = "rating" value = "1" />
             <label class = "full" for = "star1" title = "Sucks big time - 1 star"></label>
             </fieldset></p > ';
-//            FIM RATING
+            }
+            //FIM RATING
             echo '</div>
             </div>
             </div>

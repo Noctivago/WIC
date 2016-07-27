@@ -58,7 +58,7 @@ ini_set("display_errors", 1);
                 <section class="box-typical">
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
                     <div class="recomendations-slider">
-                        <?= DB_GetServiceInfoBar($pdo, $serviceId); ?>
+                        <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
                         <div class="slide">
                             <!--BOTOES CHAT + WIC-->
                             <div class="user-card-row">
