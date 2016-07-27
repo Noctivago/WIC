@@ -1937,8 +1937,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <td class = "table-photo">
 <img src = "' . $row['OPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['ONA'] . '">
 </td>
-<td class = "table-photo">
-</td>
+
 <td class = "table-photo">
 <a onclick = "removeWicService(this,' . $row['SID'] . ')" class = "font-icon font-icon-del" id = ' . $row['WID'] . '>
 </a>
