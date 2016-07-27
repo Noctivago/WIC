@@ -13,9 +13,9 @@ if ($val === $UserBoss) {
     //REMOVER > HEADER LOCATION PROFILE ORG
     DB_removeService($pdo, $serviceId);
     $org = DB_GetOrgIdByUserBossId($pdo, $UserBoss);
-    header("location: ../build/profile_org.php?Organization=" . $org);
+    header('location: profile_org.php?Organization=' . $org);
 } else {
     //NAO E BOSS MANDA PASSEAR
-    header("location: ../build/index.php");
+    header('location: index.php');
 }
 
