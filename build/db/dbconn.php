@@ -1905,7 +1905,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <thead>
 <tr>
 <th style="width: 50%;">Service</th>
-<th style="width: 25%;">Owner<th></th><th></th></th>
+<th style="width: 25%;">Owner</th>
 </tr>
 </thead>
 <tbody class="WICS">';
@@ -1913,7 +1913,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 echo '
 <tr class = "table-check">
 <td><a href = "./service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
-<td class = "table-photo" style="width: 50%;">
+<td class = "table-photo">
 <img src = "' . $row['OPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['ONA'] . '">
 </td>
 <td class = "table-photo">
