@@ -2492,12 +2492,7 @@ function DB_getServicesForIndex($pdo) {
 <button class="btn btn-warning font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,");  > </button>
 </a>
 </div>
-<div class = "card-typical-section">
-<input type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,"); >
-    
-<input type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,");
-value = "+">
-</div>
+
 
 </article>
 </div>';
