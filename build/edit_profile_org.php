@@ -67,7 +67,7 @@ $msg = '';
         <div class="page-center-in">
             <div class="container-fluid" style="padding-top: 100px;">
                 <?= $msg; ?>
-                <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data" style="width: 60%">
+                <form class="sign-box"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
                     <?php
                     DB_OrgProfile($pdo, $userId);
                     ?>
