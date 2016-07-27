@@ -1914,7 +1914,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 echo '
 <tr class = "table-check">
 <td><a href = "./service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
-<td class = "table-photo">
+<td class = "table-photo" style="width: 50%;">
 <img src = "' . $row['OPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['ONA'] . '">
 </td>
 <td class = "table-photo">
