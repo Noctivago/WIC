@@ -3,30 +3,17 @@
 require_once '../db/dbconn.php';
 include_once '../db/session.php';
 
-$wicPlannerId = (filter_var($_POST ['con']));
 $userId = $_SESSION['id'];
 //var_dump($wicPlannerId);
 db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId);
 //FALTA WIC PLANNER ONDE SOU CONVIDADO
 
-//CDOE FOR INSERT
-$ipaddress = md5($_SERVER['REMOTE_ADDR']); // here I am taking IP as UniqueID but you can have user_id from Database or SESSION
-
-$servername = "localhost"; // Server details
-$username = "root";
-$password = "";
-$dbname = "rating";
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Unable to connect Server: " . $conn->connect_error);
-}
 
 if (isset($_POST['rate']) && !empty($_POST['rate'])) {
+    $rate = (filter_var($_POST ['rate']));
+    $service = (filter_var($_POST ['service']));
 
-    $rate = $conn->real_escape_string($_POST['rate']);
-// check if user has already rated
+    // check if user has already rated
     $sql = "SELECT `id` FROM `tbl_rating` WHERE `user_id`='" . $ipaddress . "'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
@@ -40,4 +27,3 @@ if (isset($_POST['rate']) && !empty($_POST['rate'])) {
         }
     }
 }
-$conn->close();
