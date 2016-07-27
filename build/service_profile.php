@@ -3,8 +3,8 @@ include ("includes/head_sideMenu.php");
 $serviceId = (filter_var($_GET['Service']));
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
-$orgIdentifier = DB_GetOrgIdByUserBossId($pdo, $_SESSION['id']);
-$link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/profile_org.php?Organization=' . $serviceId;
+$link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/';
+//$link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/profile_org.php?Organization=' . $serviceId;
 ?>
 
 <style>
