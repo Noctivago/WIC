@@ -59,7 +59,7 @@ include '../build/db/session.php';
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href='http://www.google.com'"> </i>
+                                    <i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href='index_teste.php'"> </i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages" alt="WIC Planner">
                                     <div class="dropdown-menu-messages-header" >
