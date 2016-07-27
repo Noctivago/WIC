@@ -983,7 +983,6 @@ include '../build/db/session.php';
                 var service = document.getElementById("service").value;
 
                 $.post("../ajax/sendInviteUser.php", {email: email, serv: service}, function (result) {
-                    alert(result);
                 });
 
             }
