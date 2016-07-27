@@ -519,7 +519,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
 WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
             foreach ($rows as $row1) {
                 if($row['Role_Id'] === $row1['ID'] ){
-                    echo '<option selected value ="'.$row1['ID'].'">'.$row1['Name'].'</option>';
+                    echo '<option selected id="row'.$row['ID'].'" value ="'.$row1['ID'].'">'.$row1['Name'].'</option>';
                 }  else {
                 echo '<option  value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
                     
