@@ -521,7 +521,7 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
                 if($row['Role_Id'] === $row1['ID'] ){
                     echo '<option selected id="row'.$row['ID'].'" value ="'.$row1['ID'].'">'.$row1['Name'].'</option>';
                 }  else {
-                echo '<option  value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
+                echo '<option id="row'.$row['ID'].'" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
                     
                 }
             }
