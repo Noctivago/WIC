@@ -285,6 +285,12 @@ include ("includes/head_sideMenu.php");
                                                                            &nbsp;&nbsp;&nbsp;o	Hotel<br>
                                                                            &nbsp;&nbsp;&nbsp;o	Venue<br>
                                                                            &nbsp;•	Food:<br>
+                                                                           &nbsp;&nbsp;&nbsp;     o	Restaurant<br>
+                                                                           &nbsp;&nbsp;&nbsp;     o     Catering<br>
+                                                                           &nbsp;&nbsp;&nbsp;     o	Bar<br>
+                                                                           &nbsp;&nbsp;&nbsp;     o	Lounge<br>
+                                                                           &nbsp;&nbsp;&nbsp;     o	Breakfast<br>
+
                                                                         </p>
                                                                 </div>
 							</div>
