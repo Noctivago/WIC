@@ -60,32 +60,7 @@ ini_set("display_errors", 1);
                                                 }
                                             }
                                         }
-                                        $name2 = $_FILES['file']['name'];
-                                        if (isset($name)) {
-                                            if (!empty($name)) {
-                                                $j = 0; //Variable for indexing uploaded image 
-                                                $target_path = "pics/"; //Declaring Path for uploaded images
-                                                for ($i = 0; $i < count($_FILES['file']['name']); $i++) {//loop to get individual element from the array
-                                                    $validextensions = array("jpeg", "jpg", "png");  //Extensions which are allowed
-                                                    $ext = explode('.', basename($_FILES['file']['name'][$i])); //explode file name from dot(.) 
-                                                    $file_extension = end($ext); //store extensions in the variable
-                                                    $target_path = $target_path . $sID . '_' . generateActivationCode() . "." . $ext[count($ext) - 1]; //set the target path with a new name of image
-                                                    $j = $j + 1; //increment the number of uploaded images according to the files in array       
-
-                                                    if (($_FILES["file"]["size"][$i] < 500001) //Approx. 100kb files can be uploaded.
-                                                            && in_array($file_extension, $validextensions)) {
-                                                        if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {//if file moved to uploads folder
-                                                            #echo $j . ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
-                                                            $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $target_path, 0);
-                                                        } else {//if file was not moved.
-                                                            $msg = "please try again!";
-                                                        }
-                                                    } else {//if file size and file type was incorrect.
-                                                        $msg = "Invalid file Size or Type";
-                                                    }
-                                                }
-                                            }
-                                        }
+//                                        FAZER LOOP PARA RESTANTES FOTOS
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
@@ -145,7 +120,7 @@ ini_set("display_errors", 1);
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
                         <input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
-                        Files: <input type="file" id="files" name="files[]" accept = "images/*" name="files" multiple><br/>
+                        Files: <input type="file" id="files" accept = "images/*" name="files" multiple><br/>
 
                         <div id="selectedFiles"></div>
 
