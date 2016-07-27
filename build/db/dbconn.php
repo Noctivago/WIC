@@ -1358,7 +1358,7 @@ function DB_GetOrgInformation2($pdo, $org) {
             echo ' <section class = "box-typical"> ';
             echo '<div class = "profile-card">';
             echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['Picture_Path'] . '" alt = ""/>';
+            echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
             echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
@@ -2649,12 +2649,12 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
         on [Organization].[Id] = [Service].[Organization_Id]
         AND [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
         AND [Service].[Id] =  ?", array($serviceId), "rows");
-        echo '<header class = "box-typical-header-sm">/Supplier </header>
+        echo '<header class = "box-typical-header-sm"> Vendor </header>
 <div class = "friends-list stripped">';
         foreach ($rows as $row) {
             echo '<div class = "profile-card">';
             echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['Picture_Path'] . '" alt = ""/>';
+            echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
             echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';

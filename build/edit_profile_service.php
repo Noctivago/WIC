@@ -35,14 +35,14 @@ include_once '../build/db/session.php';
                                     $user = $_SESSION['id'];
 //                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
 //                                    $idOg = $org['Id'];
-                                    if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg) || DB_validatePermissionEditInfo($pdo, $user, $service, $role) || DB_validatePermissionEditInfo($pdo, $user, $service, $role2)) {
-                                        if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg)) {
-                                            $org = DB_GetOrgIdByUserBossId2($pdo, $user);
-                                            $idOg = $org['Id'];
-                                        } else {
+                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+                                    $idOg1 = $org['Id'];
+
+                                    if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_validatePermissionEditInfo($pdo, $user, $service, $role) || DB_validatePermissionEditInfo($pdo, $user, $service, $role2)) {
+                                           if(!db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1)){
                                             $org = DB_GetOrgIdByIderService($pdo, $service);
                                             $idOg = $org['Id'];
-                                        }
+                                           }
                                         if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                             $cname = $_POST['cName'];
                                             $cDescription = $_POST['cDescription'];
