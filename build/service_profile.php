@@ -218,7 +218,8 @@ ini_set("display_errors", 1);
                 {
                     alert('You already rated');
                 } else {
-                    alert('Thanks For Rating');
+                    //alert('Thanks For Rating');
+                    alert(d);
                 }
             });
             $(this).attr("checked");

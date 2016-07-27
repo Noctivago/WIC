@@ -2928,7 +2928,7 @@ value = "+">
 Function DB_checkIfUserMadeRate($pdo, $userId, $serviceId) {
     try {
         $count = sql($pdo, "SELECT * FROM
-        [Rating]
+        [dbo].[Rating]
         WHERE [User_Id] = ? AND [Service_Id] = ?", array($userId, $serviceId), "count");
         if ($count < 0) {
             return true;
