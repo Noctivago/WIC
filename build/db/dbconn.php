@@ -533,12 +533,12 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
                                 <td>
 
                                     <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" onclick ="EditRole(' . $row['ID'] . ');"class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
+                                        <button type="button" onclick ="EditRole(' . $row['ID'] . ')"class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
                                     </div>
                                 </td>
                                 <td>  
                                     <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" onclick="remove(' . $row['ID'] . ');" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
+                                        <button type="button" onclick="RemoveUserInService(' . $row['ID'] . ')" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
                                     </div>
                                 </td>
                             </tr>';
@@ -556,6 +556,25 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
         foreach ($rows as $row) {
             echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
         }
+    } catch (Exception $ex) {
+        
+    }
+}
+function Db_UpdateRoleInService($pdo,$role,$idUserInService){
+    try {
+        sql($pdo, "UPDATE [dbo].[User_Service]
+   SET [Role_Id] = ?
+ WHERE [Id]=?", array($role,$idUserInService));
+    } catch (Exception $ex) {
+        
+    }
+}
+
+function DB_removeUserInService($pdo,$idUserInService){
+    try {
+        sql($pdo,"UPDATE [dbo].[User_Service]
+   SET [Enabled] = 0
+ WHERE [Id] = ?", array($idUserInService));
     } catch (Exception $ex) {
         
     }
@@ -1904,8 +1923,8 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 <table class = "table table-hover">
 <thead>
 <tr>
-<th style="width: 50%;">Service</th>
-<th style="width: 25%;">Owner</th>
+<th>Service</th>
+<th>Owner</th>
 </tr>
 </thead>
 <tbody class="WICS">';
