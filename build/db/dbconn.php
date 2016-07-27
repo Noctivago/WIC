@@ -2489,9 +2489,11 @@ function DB_getServicesForIndex($pdo) {
 <i class="font-icon font-icon-plus" alt="Add to my Wic Planner"></i>
 </a></div>
 
-<a type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,");  class="card-typical-likes">
+<a href="#" class="card-typical-likes">
 
-<i class="font-icon font-icon-comment"></i>
+<i class="font-icon font-icon-comment">
+<input type = button onClick = window.open("./ajax/getMyWicsPopup.php?id=' . $row['SID'] . '", "AddToWiC", "width=550,height=500,left=30,top=30,toolbar=0,status=0,"); >
+</i>
 </a>
 </div>
 
