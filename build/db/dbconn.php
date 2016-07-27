@@ -1658,7 +1658,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
         AND [Service].[Enabled] = 1 
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] = 1
-		AND [Organization].[Id]", array($org), "rows");
+	AND [Organization].[Id] = ?", array($org), "rows");
         foreach ($rows as $row) {
             $idService = $service['Id'];
             //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
