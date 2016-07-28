@@ -57,7 +57,7 @@ $serviceId = (filter_var($_GET['Service']));
                     <div class="container">
     <div class="row">
         <div class=" col-md-12 text-center" style="width: auto; height: auto;">
-           <img class="img-responsive" src="img/faq-2.png" alt="Imagem" align="center"/>
+           <img class="img-responsive" src="img/faq-2.png" alt="Imagem"style="width: 100%" align="center"/>
         </div>              
     </div>
 </div>
