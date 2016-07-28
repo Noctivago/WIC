@@ -514,12 +514,12 @@ function DB_BuildInvitesTable($pdo, $userId) {
                                     <div class="form-group" >
                                                <div class="form-group" >
                                             ';
-            //                            <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">
-//            $rows = sql($pdo, "SELECT [ID],[Name]
-//  FROM [dbo].[Role]
-//WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
-//          foreach ($rows as $row1) {
-            /* echo '<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+                              <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">
+     $rows = sql($pdo, "SELECT [ID],[Name]
+  FROM [dbo].[Role]
+WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
+          foreach ($rows as $row1) {
+             echo '<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
               <input type="checkbox" name="vehicle" value="Car">I have a car';
 
               if ($row['Role_Id'] === $row1['ID']) {
@@ -527,7 +527,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
               } else {
               echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
               }
-              }* */
+              }
 
             $rows = sql($pdo, "SELECT * FROM [PERMISSION] where [Enabled] = 1 and [Organization] = ?", array(1), "rows");
             foreach ($rows as $row1) {
