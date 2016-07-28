@@ -55,7 +55,12 @@ $msg = '';
     </div>
     <!--9234-->
 </div>
-
+ <script language="javascript" type="text/javascript">
+            function exefunction(){
+                var lfckv = document.getElementById("lifecheck").checked;
+                alert(lfckv);
+            }
+        </script>
 <script>
     function EditRole(x) {
         var rolei = 'row' + x;

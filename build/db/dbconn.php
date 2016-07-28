@@ -527,15 +527,15 @@ function DB_BuildInvitesTable($pdo, $userId) {
               } else {
               echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
               }
-              }* */
+              } **/
             if ($row['Role_Id'] === '4') {
-                echo '<input type="checkbox" name="permission" value="Edit" checked="checked"> To edit Service <br> <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
+                echo '<input type="checkbox" id="lifecheck" onclick="exefunction()" name="permission" value="Edit" checked="checked"> To edit Service <br> <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
             }
             if ($row['Role_Id'] === '5') {
-                echo '<input type="checkbox" name="permission" value="Edit"> To edit Service <br> <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
+                echo '<input type="checkbox" id="lifecheck" onclick="exefunction()" name="permission" value="Edit"> To edit Service <br> <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
             }
             if ($row['Role_Id'] === '6') {
-                echo '<input type="checkbox" name="permission" value="Edit" checked="checked"> To edit Service <br> <input type="checkbox" name="permission" value="talk"> Talk with costumers  ';
+                echo '<input type="checkbox" id="lifecheck" onclick="exefunction()" name="permission" value="Edit" checked="checked"> To edit Service <br> <input type="checkbox" name="permission" value="talk"> Talk with costumers  ';
             }
             //                          </select>
             echo '</div>
