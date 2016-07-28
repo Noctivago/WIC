@@ -56,12 +56,12 @@ $serviceId = (filter_var($_GET['Service']));
                 <section class="box-typical" style="width: auto; height: auto;background-color:#212121; border:8px solid " >
                     <header class="box-typical-header-sm">
 
-                        <div class="slider-arrs">
-                            <button type="button" class="recomendations-slider-prev1">
-                                <i class="font-icon font-icon-arrow-left1"></i>
+                        <div class="slider-arrs1">
+                            <button type="button" class="recomendations-slider-prev">
+                                <i class="font-icon font-icon-arrow-left"></i>
                             </button>
-                            <button type="button" class="recomendations-slider-next1">
-                                <i class="font-icon font-icon-arrow-right1"></i>
+                            <button type="button" class="recomendations-slider-next">
+                                <i class="font-icon font-icon-arrow-right"></i>
                             </button>
                         </div>
                     </header>
