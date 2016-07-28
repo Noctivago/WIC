@@ -531,7 +531,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
 
             $rows = sql($pdo, "SELECT * FROM [PERMISSION] where [Enabled] = 1 and [Organization] = ?", array(1), "rows");
             foreach ($rows as $row1) {
-                echo '<input type="checkbox" name="permission' . $row1['Id'] . '" value="' . $row1['Id'] . '">' . $row1['Name']. '  ';
+                echo '<input type="checkbox" name="permission' . $row1['Id'] . '" value="' . $row1['Id'] . '">  ' . $row1['Name']. '  ';
             }
 
             //                          </select>
