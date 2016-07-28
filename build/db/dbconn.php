@@ -528,16 +528,14 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
               echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
               }
               }* */
-            echo '<input type="checkbox" name="permission" value="Edit"> Edit Service <input type="checkbox" name="permission" value="talk"> Talk with costumers  ';
-        
         if ($row['Role_Id'] === 4) {
-            echo '<input type="checkbox" name="permission" value="Edit" checked> Edit Service <input type="checkbox" name="permission" value="talk" checked> Talk with costumers  ';
+            echo '<input type="checkbox" name="permission" value="Edit" checked="checked"> Edit Service <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
         }
         if ($row['Role_Id'] === 5) {
-            echo '<input type="checkbox" name="permission" value="Edit"> Edit Service <input type="checkbox" name="permission" value="talk" checked> Talk with costumers  ';
+            echo '<input type="checkbox" name="permission" value="Edit"> Edit Service <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
         }
         if ($row['Role_Id'] === 6) {
-            echo '<input type="checkbox" name="permission" value="Edit" checked> Edit Service <input type="checkbox" name="permission" value="talk"> Talk with costumers  ';
+            echo '<input type="checkbox" name="permission" value="Edit" checked="checked"> Edit Service <input type="checkbox" name="permission" value="talk"> Talk with costumers  ';
         }
         //                          </select>
         echo '</div>
