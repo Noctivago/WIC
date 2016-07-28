@@ -1361,14 +1361,14 @@ function DB_GetOrgInformation2($pdo, $org) {
             echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
-            echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
-            echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
-            echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
+            //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
+            //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
+            //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
             echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
-            echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
-            echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
-            echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
-            echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
+            //echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
+            //echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
+            //echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
+            //echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
 
             echo '</div>';
         }
@@ -2657,14 +2657,14 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
             echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
-            echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
-            echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
-            echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
-            echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
-            echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
-            echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
-            echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
-            echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
+            //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
+            //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
+            //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
+            //echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
+            //echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
+            //echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
+            //echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
+            //echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
 
             echo '</div>';
         }

@@ -26,9 +26,9 @@ $msg = '';
                 </div>
             </header>
             <div class="box-typical-body">
-                
+
                 <div class="table-responsive">
-                    
+
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -41,10 +41,11 @@ $msg = '';
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $userId = $_SESSION['id']; 
-                            DB_BuildInvitesTable($pdo,$userId);
+                            <?php
+                            $userId = $_SESSION['id'];
+                            DB_BuildInvitesTable($pdo, $userId);
                             ?>
-                                
+
                         </tbody>
                     </table>
                 </div>
@@ -56,22 +57,22 @@ $msg = '';
 </div>
 
 <script>
-    function EditRole(x){
-        var rolei = 'row'+x;
-        var role = document.getElementById(''+rolei).value;
-        $.post("ajax/EditRoleUserInService.php",{id:x,role:role},function(result){
-        location.reload(2);
-    });
-        return false;
-    }
-    function RemoveUserInService(x){
-        alert(x);
-        $.post("ajax/RemoveUserInService.php",{id:x},function(result){
-        location.reload(2);
+    function EditRole(x) {
+        var rolei = 'row' + x;
+        var role = document.getElementById('' + rolei).value;
+        $.post("ajax/EditRoleUserInService.php", {id: x, role: role}, function (result) {
+            location.reload(2);
         });
         return false;
     }
-    </script>
+    function RemoveUserInService(x) {
+        alert(x);
+        $.post("ajax/RemoveUserInService.php", {id: x}, function (result) {
+            location.reload(2);
+        });
+        return false;
+    }
+</script>
 
 
 
