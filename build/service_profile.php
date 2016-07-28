@@ -58,10 +58,10 @@ $serviceId = (filter_var($_GET['Service']));
 
                         <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
-                                <i class="font-icon font-icon-arrow-left"></i>
+                                <i class="font-icon font-icon-arrow-left1"></i>
                             </button>
                             <button type="button" class="recomendations-slider-next">
-                                <i class="font-icon font-icon-arrow-right"></i>
+                                <i class="font-icon font-icon-arrow-right1"></i>
                             </button>
                         </div>
                     </header>
