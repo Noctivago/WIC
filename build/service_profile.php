@@ -212,7 +212,7 @@ $serviceId = (filter_var($_GET['Service']));
 
     function openMyWics() {
         var x = (screen.width / 2) - (435 / 2);
-        var y = (screen.height / 2) - (322 / 2);
+        var y = (screen.height / 2) - (182 / 2);
         window.open("./ajax/getMyWicsPopup.php?id=' <?= $serviceId; ?> '", 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
     }
 
