@@ -527,7 +527,7 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
               } else {
               echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
               }
-              }* */
+              }**/
         if ($row['Role_Id'] === 4) {
             echo '<input type="checkbox" name="permission" value="Edit" checked="checked"> Edit Service <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
         }
