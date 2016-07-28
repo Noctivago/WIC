@@ -97,7 +97,7 @@ $serviceId = (filter_var($_GET['Service']));
                             <div class="user-card-row">
                                 <?php
                                 echo '<div class="card-typical-section">
-                                <input type=button onClick=window.open("./ajax/getMyWicsPopup.php?id=' . $serviceId . '","AddToWiC","width=322,height=435,left=30,top=30,toolbar=no,menubar=no, status=0,"); value="+">
+                                <input type=button onClick=window.open("./ajax/getMyWicsPopup.php?id=' . $serviceId . '","AddToWiC","width=322,height=435,left=30,top=30,toolbar=no,status=0,"); value="+">
                                 </div>';
                                 ?>
                             </div>
