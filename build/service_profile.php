@@ -55,6 +55,7 @@ $serviceId = (filter_var($_GET['Service']));
 
                 <section class="box-typical" style="width: auto; height: auto;background-color:#212121; border:8px solid " >
                     <header class="box-typical-header-sm" style="background-color:white">
+                        Photos
                         <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
