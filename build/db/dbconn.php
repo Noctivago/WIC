@@ -512,7 +512,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
 
                                 <td class="table-icon-cell">
                                     <div class="form-group" >
-                                        <select class="btn btn-default-outline dropdown-toggle" id="row' . $row['ID'] . '" name="Role">
+                                        <select class="filter-option pull-left" id="row' . $row['ID'] . '" name="Role">
                                             ';
             $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
