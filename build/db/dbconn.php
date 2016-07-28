@@ -512,22 +512,30 @@ function DB_BuildInvitesTable($pdo, $userId) {
 
                                 <td class="table-icon-cell">
                                     <div class="form-group" >
-                                        <select class="btn dropdown-toggle" id="row' . $row['ID'] . '" name="Role">
+                                               <div class="form-group" >
                                             ';
-            $rows = sql($pdo, "SELECT [ID],[Name]
-  FROM [dbo].[Role]
-WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
+            //                            <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">
+//            $rows = sql($pdo, "SELECT [ID],[Name]
+//  FROM [dbo].[Role]
+//WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
+//          foreach ($rows as $row1) {
+            /* echo '<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+              <input type="checkbox" name="vehicle" value="Car">I have a car';
+
+              if ($row['Role_Id'] === $row1['ID']) {
+              echo '<option selected id="Role' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
+              } else {
+              echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
+              }
+              }* */
+
+            $rows = sql($pdo, "SELECT * FROM [PERMISSION] where [Enabled] = 1 and [Organization] = ?", array(1), "rows");
             foreach ($rows as $row1) {
-                if ($row['Role_Id'] === $row1['ID']) {
-                    echo '<option selected id="Role' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
-                } else {
-                    echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
-                }
+                echo '<input type="checkbox" name="permission' . $row1['Id'] . '" value="' . $row1['Id'] . '">' . $row1['Name'];
             }
 
-            echo '
-                                        </select>
-</div>
+            //                          </select>
+            echo '</div>
                                 </td>
                                 <td>
 
