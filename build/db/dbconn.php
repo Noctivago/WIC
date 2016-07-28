@@ -529,7 +529,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
               }
               }* */
             echo '<input type="checkbox" name="permission" value="Edit"> Edit Service <input type="checkbox" name="permission" value="talk"> Talk with costumers  ';
-        }
+        
         if ($row['Role_Id'] === 4) {
             echo '<input type="checkbox" name="permission" value="Edit" checked> Edit Service <input type="checkbox" name="permission" value="talk" checked> Talk with costumers  ';
         }
@@ -555,7 +555,8 @@ function DB_BuildInvitesTable($pdo, $userId) {
                                 </td>
                             </tr>';
         }
-    } catch (Exception $ex) {
+        
+        } catch (Exception $ex) {
         
     }
 }
