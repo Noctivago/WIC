@@ -527,15 +527,20 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
               } else {
               echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
               }
-              }
-
-            $rows = sql($pdo, "SELECT * FROM [PERMISSION] where [Enabled] = 1 and [Organization] = ?", array(1), "rows");
-            foreach ($rows as $row1) {
-                echo '<input type="checkbox" name="permission' . $row1['Id'] . '" value="' . $row1['Id'] . '">  ' . $row1['Name']. '  ';
-            }
-
-                                      </select>
-            echo '</div>
+              }* */
+            echo '<input type="checkbox" name="permission" value="Edit"> Edit Service <input type="checkbox" name="permission" value="talk"> Talk with costumers  ';
+        
+        if ($row['Role_Id'] === 4) {
+            echo '<input type="checkbox" name="permission" value="Edit" checked> Edit Service <input type="checkbox" name="permission" value="talk" checked> Talk with costumers  ';
+        }
+        if ($row['Role_Id'] === 5) {
+            echo '<input type="checkbox" name="permission" value="Edit"> Edit Service <input type="checkbox" name="permission" value="talk" checked> Talk with costumers  ';
+        }
+        if ($row['Role_Id'] === 6) {
+            echo '<input type="checkbox" name="permission" value="Edit" checked> Edit Service <input type="checkbox" name="permission" value="talk"> Talk with costumers  ';
+        }
+        //                          </select>
+        echo '</div>
                                 </td>
                                 <td>
 
@@ -550,7 +555,8 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
                                 </td>
                             </tr>';
         }
-    } catch (Exception $ex) {
+        
+        } catch (Exception $ex) {
         
     }
 }
