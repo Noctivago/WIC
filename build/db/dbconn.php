@@ -514,12 +514,12 @@ function DB_BuildInvitesTable($pdo, $userId) {
                                     <div class="form-group" >
                                                <div class="form-group" >
                                             ';
-       /**            echo '           <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">;
-     $rows = sql($pdo, "SELECT [ID],[Name]
-  FROM [dbo].[Role]
-WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
-          foreach ($rows as $row1) {
-             echo '<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+            /**            echo '           <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">;
+              $rows = sql($pdo, "SELECT [ID],[Name]
+              FROM [dbo].[Role]
+              WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
+              foreach ($rows as $row1) {
+              echo '<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
               <input type="checkbox" name="vehicle" value="Car">I have a car';
 
               if ($row['Role_Id'] === $row1['ID']) {
@@ -527,18 +527,18 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
               } else {
               echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
               }
-              }**/
-        if ($row['Role_Id'] === 4) {
-            echo '<input type="checkbox" name="permission" value="Edit" checked="checked"> Edit Service <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
-        }
-        if ($row['Role_Id'] === 5) {
-            echo '<input type="checkbox" name="permission" value="Edit"> Edit Service <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
-        }
-        if ($row['Role_Id'] === 6) {
-            echo '<input type="checkbox" name="permission" value="Edit" checked="checked"> Edit Service <input type="checkbox" name="permission" value="talk"> Talk with costumers  ';
-        }
-        //                          </select>
-        echo '</div>
+              }* */
+            if ($row['Role_Id'] === '4') {
+                echo '<input type="checkbox" name="permission" value="Edit" checked="checked"> Edit Service <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
+            }
+            if ($row['Role_Id'] === '5') {
+                echo '<input type="checkbox" name="permission" value="Edit"> Edit Service <input type="checkbox" name="permission" value="talk" checked="checked"> Talk with costumers  ';
+            }
+            if ($row['Role_Id'] === '6') {
+                echo '<input type="checkbox" name="permission" value="Edit" checked="checked"> Edit Service <input type="checkbox" name="permission" value="talk"> Talk with costumers  ';
+            }
+            //                          </select>
+            echo '</div>
                                 </td>
                                 <td>
 
@@ -553,8 +553,7 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
                                 </td>
                             </tr>';
         }
-        
-        } catch (Exception $ex) {
+    } catch (Exception $ex) {
         
     }
 }
