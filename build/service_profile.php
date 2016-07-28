@@ -65,13 +65,14 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>
                     </header>
-                    <footer></footer>
-                    <div class="container">
+                    
+                    <div class="container" align="center">
     <div class="row">
         <div class=" col-md-12 text-center" style="width: auto; height: auto;">
            <img class="img-responsive" src="img/faq-2.png" alt="Imagem"style="width: 100%"/>
         </div>              
     </div>
+                        <footer></footer>
 </div>
                 </section>                                         
 
