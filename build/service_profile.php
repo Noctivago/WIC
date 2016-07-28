@@ -55,7 +55,7 @@ $serviceId = (filter_var($_GET['Service']));
 
                 <section class="box-typical" style="width: auto; height: auto;background-color:#212121; border:8px solid " >
                     <header class="box-typical-header-sm">
-                       
+
                         <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
@@ -65,20 +65,20 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>
                     </header>
-                    
+
                     <div class="container">
-    <div class="row">
-        <div class=" col-md-12 text-center" align="center" style="width: auto; height: auto;">
-           <img class="img-responsive" src="img/faq-2.png" alt="Imagem"style="width: 100%;  padding-bottom: 20px;"/>
-        </div>              
-    </div>
+                        <div class="row">
+                            <div class=" col-md-12 text-center" align="center" style="width: auto; height: auto;">
+                                <img class="img-responsive" src="img/faq-2.png" alt="Imagem"style="width: 100%;  padding-bottom: 20px;"/>
+                            </div>              
+                        </div>
                         <footer></footer>
-</div>
+                    </div>
                 </section>                                         
 
                 <section class="box-typical">
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
-                    
+
                     <header class="box-typical-header-sm">
                         Organization Info
                         <div class="slider-arrs">
@@ -97,7 +97,7 @@ $serviceId = (filter_var($_GET['Service']));
                             <div class="user-card-row">
                                 <?php
                                 echo '<div class="card-typical-section">
-                                <input type=button onClick=window.open("./ajax/getMyWicsPopup.php?id=' . $serviceId . '","AddToWiC","width=322,height=435,left=30,top=30,toolbar=no,status=0,"); value="+">
+                                 <input type=button onClick="openMyWics();",  value="+">
                                 </div>';
                                 ?>
                             </div>
@@ -208,6 +208,12 @@ $serviceId = (filter_var($_GET['Service']));
                 }
             });
         }
+    }
+
+    function openMyWics() {
+        var x = screen.width / 2 - 435 / 2;
+        var y = screen.height / 2 - 322 / 2;
+        window.open("./ajax/getMyWicsPopup.php?id=' <?= $serviceId; ?> '", 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
     }
 
     function loadComments() {
