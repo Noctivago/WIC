@@ -147,9 +147,14 @@ include ("./db/dbconn.php");
 </script>
 
 <script type="text/javascript">
-    function popup() {
-        var myWindow = window.open("", "MsgWindow", "width=200,height=100");
-        myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>
+    function openMyWics(Sid) {
+        var x = (screen.width / 2) - (435 / 2);
+        var y = (screen.height / 2) - (362 / 2);
+        if (Sid > 0) {
+            window.open('./ajax/getMyWicsPopup.php?id=' + Sid +  '', 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
+        } else {
+            
+        }
     }
 </script>
 
