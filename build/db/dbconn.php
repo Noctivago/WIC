@@ -514,7 +514,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
                                     <div class="form-group" >
                                                <div class="form-group" >
                                             ';
-                              <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">
+                   echo '           <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">;
      $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
 WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
@@ -534,7 +534,7 @@ WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
                 echo '<input type="checkbox" name="permission' . $row1['Id'] . '" value="' . $row1['Id'] . '">  ' . $row1['Name']. '  ';
             }
 
-            //                          </select>
+                                      </select>
             echo '</div>
                                 </td>
                                 <td>
