@@ -54,7 +54,8 @@ $serviceId = (filter_var($_GET['Service']));
             <div class="col-lg-9 col-lg-push-0 col-md-12">
 
                 <section class="box-typical" style="width: auto; height: auto;background-color:#212121; border:8px solid " >
-                    
+                    <header class="box-typical-header-sm">
+                       
                         <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
@@ -63,7 +64,7 @@ $serviceId = (filter_var($_GET['Service']));
                                 <i class="font-icon font-icon-arrow-right"></i>
                             </button>
                         </div>
-                   
+                    </header>
                     <div class="container">
     <div class="row">
         <div class=" col-md-12 text-center" style="width: auto; height: auto;">
