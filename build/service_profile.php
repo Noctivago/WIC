@@ -57,7 +57,7 @@ $serviceId = (filter_var($_GET['Service']));
                     <div class="container">
     <div class="row">
         <div class=" col-md-12 text-center" style="width: auto; height: auto;">
-            <img class="img-responsive" src="img/avatar-3-256.png" alt="Imagem"style="width: auto; height: auto;"/>
+            <img class="img-responsive" src="http://www.clickgratis.com.br/fotos-imagens/praia/aHR0cDovL3d3dy5vbGVvby5jb20uYnIvd3AtY29udGVudC91cGxvYWRzLzIwMTUvMTEvcHJhaWEuanBn.jpg" alt="Imagem"style="width: 100%"/>
         </div>              
     </div>
 </div>
