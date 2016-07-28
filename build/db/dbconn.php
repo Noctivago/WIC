@@ -2928,10 +2928,8 @@ function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
 
 </div>
 <a  class="card-typical-likes">
-
-<button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = window.open("./ajax/getMyWicsPopup.php?id='.$row['SID'].'","AddToWiC","width=550,height=500,left=30,top=30,toolbar=0,status=0,");  > </button>
-<button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = window.open("./ajax/getMyWicsPopup.php?id='.$row['SID'].'","AddToWiC","width=550,height=500,left=30,top=30,toolbar=0,status=0,");  > </button>
-
+<button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+<button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
 </a>
 </div>
 
