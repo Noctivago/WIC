@@ -514,7 +514,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
                                     <div class="form-group" >
                                                <div class="form-group" >
                                             ';
-                   echo '           <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">;
+       /**            echo '           <select class="bootstrap-select bootstrap-select-arrow" id="row' . $row['ID'] . '" name="Role">;
      $rows = sql($pdo, "SELECT [ID],[Name]
   FROM [dbo].[Role]
 WHERE [Enabled] = ? and [Organization] = ?", array(1, 1), "rows");
