@@ -65,6 +65,7 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>
                     </header>
+                    <footer></footer>
                     <div class="container">
     <div class="row">
         <div class=" col-md-12 text-center" style="width: auto; height: auto;">
