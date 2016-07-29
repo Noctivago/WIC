@@ -53,7 +53,7 @@ $serviceId = (filter_var($_GET['Service']));
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
 
-<!--                <section class="box-typical" style="width: auto; height: auto;background-color:#212121; border:8px solid " >
+                <section class="box-typical" style="width: auto; height: auto;background-color:#212121; border:8px solid " >
                     <header class="box-typical-header-sm">
 
                         <div class="slider-arrs">
@@ -64,7 +64,7 @@ $serviceId = (filter_var($_GET['Service']));
                                 <i class="font-icon font-icon-arrow-right"></i>
                             </button>
                         </div>
-                    </header>-->
+                    </header>
 
                     <div class="container">
                         <div class="row">
@@ -92,12 +92,12 @@ $(document).ready(function() {
 $('#coin-slider').coinslider({ width:320, height:480 });
 });
 </script>
-<!--                            </div>              
+                            </div>              
                         </div>
                         <footer></footer>
                     </div>
 
-                </section>                                         -->
+                </section>                                         
 
                 <section class="box-typical">
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
