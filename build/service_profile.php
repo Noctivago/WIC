@@ -72,23 +72,19 @@ $serviceId = (filter_var($_GET['Service']));
                                 	<div id="coin-slider">
     
     <a href="img01_url" target="_blank">
-	<img src="imagens/image1.jpg">
-    <span>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. </span>
+        <img src="img/avatar-1-128.png">
     </a>
     
     <a href="img02_url" target="_blank">
-	<img src="imagens/image2.jpg">
-    <span>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. </span>
+        <img src="img/avatar-1-256.png">
     </a>
     
     <a href="img03_url" target="_blank">
-    <img src="imagens/image3.jpg">
-    <span>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. </span>
+        <img src="img/avatar-1-32.png">
     </a>
     
     <a href="img04_url" target="_blank">
-    <img src="imagens/image4.jpg">  
-    <span>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. </span>
+        <img src="img/avatar-1-48.png">  
     </a>  
 	</div>
 
