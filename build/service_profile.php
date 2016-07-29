@@ -87,7 +87,11 @@ $serviceId = (filter_var($_GET['Service']));
         <img src="img/avatar-1-48.png">  
     </a>  
 	</div>
-
+<script type="text/javascript">
+$(document).ready(function() {
+$('#coin-slider').coinslider({ width:320, height:480 });
+});
+</script>
                             </div>              
                         </div>
                         <footer></footer>
