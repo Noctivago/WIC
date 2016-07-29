@@ -163,11 +163,11 @@ $serviceId = (filter_var($_GET['Service']));
                         echo '    <div class="user-card-row">';
                         echo '      <div class="tbl-row">';
                         echo '        <div class="tbl-cell">';
-                        echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" style="margin-top: 10px;" role="button">Edit your service</a> ';
+                        echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded btn-inline btn-primary" style="margin-top: 10px;" role="button">Edit your service</a> ';
                         if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])) {
 //                            $orgIdentifier = DB_GetOrgIdByUserBossId($pdo, $_SESSION['id']);
                             $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php';
-                            echo '<a onclick="removeService();" class="btn btn-rounded" style="margin-top: 10px;" role="button">Delete your service</a>';
+                            echo '<a onclick="removeService();" class="btn btn-rounded btn-inline btn-danger" style="margin-top: 10px;" role="button">Delete your service</a>';
                         }
                         echo '         </div>';
                         echo '  </div>';
