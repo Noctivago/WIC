@@ -969,7 +969,7 @@ function db_getUserIndexInfoForOrgProfile($pdo, $userId) {
             echo ' <section class = "box-typical"> ';
             echo '<div class = "profile-card">';
             echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['UPP'] . '" alt = ""/>  style = "max-width: 110px; max-height:110px;"';
+            echo ' <img src = "' . $row['UPP'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>  ';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['UFN'] . ' ' . $row['ULA'] . '</div>';
             echo '</div>';
