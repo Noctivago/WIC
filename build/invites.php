@@ -55,16 +55,18 @@ $msg = '';
     </div>
     <!--9234-->
 </div>
- <script language="javascript" type="text/javascript">
-            function exefunction(){
-                var lfckv = document.getElementById("lifecheck").checked;
-                alert(lfckv);
-            }
-        </script>
+
 <script>
     function EditRole(x) {
         var rolei = 'row' + x;
+        var edit = 'edit'+x;
+        var talk = 'talk'+x;
         var role = document.getElementById('' + rolei).value;
+        var editval = document.getElementById(''+edit).checked;
+        var talkval = document.getElementById(''talk).checked;
+        alert(editval);
+        alert(talkval);
+
         $.post("ajax/EditRoleUserInService.php", {id: x, role: role}, function (result) {
             location.reload(2);
         });
