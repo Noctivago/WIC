@@ -2496,13 +2496,15 @@ function DB_getServicesForIndex($pdo) {
 
 <div class="card-typical-section">
 <div class="card-typical-linked">
-asdsd
+
 </div>
 
 <a  class="card-typical-likes">
 
 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
 <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+
+
 </a>
 </div>
 
