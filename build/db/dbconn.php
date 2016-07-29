@@ -537,7 +537,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
             if ($row['Role_Id'] === '6') {
                 echo '<input type="checkbox" id="edit'.$row['ID'].'" name="permission" checked="checked"> To edit Service <br> <input type="checkbox" id="talk'.$row['ID'].'"> Talk with costumers  ';
             }
-            if (['Role_Id'] === ''){
+            if ($row['Role_Id']===''){
                 echo '<input type="checkbox" id="edit'.$row['ID'].'" name="permission" > To edit Service <br> <input type="checkbox" id="talk'.$row['ID'].'"> Talk with costumers  ';
             }
             //                          </select>
