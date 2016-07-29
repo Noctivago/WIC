@@ -4,6 +4,16 @@ include_once '../db/dbconn.php';
 include_once '../db/session.php';
 include_once '../db/functions.php';
 
-$role = (filter_var($_POST['role']));
+$edit = (filter_var($_POST['edit']));
+$talk = (filter_var($_POST['talk']));
 $idUserInService = (filter_var($_POST['id']));
+
+if($edit===true and $talk === false){
+    $role = 4;
+}else if($edit===true and $talk === false){
+    $role = 6;
+} else if($edit === false and $talk === true){
+    $role = 5;
+}
+
 Db_UpdateRoleInService($pdo,$role,$idUserInService);

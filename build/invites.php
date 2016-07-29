@@ -64,13 +64,11 @@ $msg = '';
         //var role = document.getElementById('' + rolei).value;
         var editval = document.getElementById(''+edit).checked;
         var talkval = document.getElementById(''+talk).checked;
-        alert(editval);
-        alert(talkval);
-
-//        $.post("ajax/EditRoleUserInService.php", {id: x, role: role}, function (result) {
-//            location.reload(2);
-//        });
-//        return false;
+       
+        $.post("ajax/EditRoleUserInService.php", {id: x, edit:editval , talk:talkval}, function (result) {
+            location.reload(2);
+        });
+        return false;
     }
     function RemoveUserInService(x) {
         alert(x);
