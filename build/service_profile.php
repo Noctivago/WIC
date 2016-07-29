@@ -178,7 +178,7 @@ $serviceId = (filter_var($_GET['Service']));
                         if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])) {
 //                            $orgIdentifier = DB_GetOrgIdByUserBossId($pdo, $_SESSION['id']);
                             $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php';
-                            echo '<a onclick="removeService();" class="btn btn-rounded btn-inline btn-danger" style="margin-top: 10px;" role="button">Delete your service</a>';
+                            echo '<a onclick="removeService();" class="btn btn-inline btn-danger" style="margin-top: 10px;" role="button">Delete your service</a>';
                         }
                         echo '         </div>';
                         echo '  </div>';
