@@ -53,51 +53,184 @@ $serviceId = (filter_var($_GET['Service']));
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
 
-                <section class="box-typical" style="width: auto; height: auto;background-color:#212121; border:8px solid " >
-                    <header class="box-typical-header-sm">
-
-                        <div class="slider-arrs">
-                            <button type="button" class="recomendations-slider-prev1">
-                                <i class="font-icon font-icon-arrow-left"></i>
-                            </button>
-                            <button type="button" class="recomendations-slider-next1">
-                                <i class="font-icon font-icon-arrow-right"></i>
-                            </button>
-                        </div>
-                    </header>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class=" col-md-12 text-center" align="center" style="width: auto; height: auto;">
-                                	<div id="coin-slider">
-    
-    <a href="img01_url" target="_blank">
-        <img src="img/avatar-1-128.png">
-    </a>
-    
-    <a href="img02_url" target="_blank">
-        <img src="img/avatar-1-256.png">
-    </a>
-    
-    <a href="img03_url" target="_blank">
-        <img src="img/avatar-1-32.png">
-    </a>
-    
-    <a href="img04_url" target="_blank">
-        <img src="img/avatar-1-48.png">  
-    </a>  
-	</div>
-<script type="text/javascript">
-$(document).ready(function() {
-$('#coin-slider').coinslider({ width:320, height:480 });
-});
-</script>
-                            </div>              
-                        </div>
-                        <footer></footer>
-                    </div>
-
-                </section>                                         
+					<section class="box-typical">
+						<header class="box-typical-header-sm">
+							Posts
+							<div class="slider-arrs">
+								<button type="button" class="posts-slider-prev">
+									<i class="font-icon font-icon-arrow-left"></i>
+								</button>
+								<button type="button" class="posts-slider-next">
+									<i class="font-icon font-icon-arrow-right"></i>
+								</button>
+							</div>
+						</header>
+						<div class="posts-slider">
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-1.jpeg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>
+									</div>
+									<div class="post-announce-date">Februrary 19, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div><!--.slide-->
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-2.jpg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">How Much Do We Spend on How Much Do We Spend on How Much Do We Spend on </a>
+									</div>
+									<div class="post-announce-date">January 21, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div><!--.slide-->
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-3.jpeg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">Good News You Might Have Good News You Might Have Good News You Might Have </a>
+									</div>
+									<div class="post-announce-date">December 30, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div><!--.slide-->
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-1.jpeg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">3 Myths That Confuse the D Myths That Confuse the D Myths That Confuse the D</a>
+									</div>
+									<div class="post-announce-date">Februrary 19, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div><!--.slide-->
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-2.jpg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">How Much Do We Spend on How Much Do We Spend on How Much Do We Spend on </a>
+									</div>
+									<div class="post-announce-date">January 21, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div><!--.slide-->
+							<div class="slide">
+								<article class="post-announce">
+									<div class="post-announce-pic">
+										<a href="#">
+											<img src="img/post-3.jpeg" alt="">
+										</a>
+									</div>
+									<div class="post-announce-title">
+										<a href="#">Good News You Might Have Good News You Might Have Good News You Might Have </a>
+									</div>
+									<div class="post-announce-date">December 30, 2016</div>
+									<ul class="post-announce-meta">
+										<li>
+											<i class="font-icon font-icon-eye"></i>
+											18
+										</li>
+										<li>
+											<i class="font-icon font-icon-heart"></i>
+											5K
+										</li>
+										<li>
+											<i class="font-icon font-icon-comment"></i>
+											3K
+										</li>
+									</ul>
+								</article>
+							</div><!--.slide-->
+						</div><!--.posts-slider-->
+					</section><!--.box-typical-->
+                                     
 
                 <section class="box-typical">
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
