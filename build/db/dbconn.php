@@ -527,18 +527,14 @@ function DB_BuildInvitesTable($pdo, $userId) {
               } else {
               echo '<option id="row' . $row['ID'] . '" value ="' . $row1['ID'] . '">' . $row1['Name'] . '</option>';
               }
-              } **/
+              } * */
             if ($row['Role_Id'] === '4') {
-                echo '<input type="checkbox" id="edit'.$row['ID'].'" name="permission" checked="checked"> To edit Service <br> <input type="checkbox" id="talk'.$row['ID'].'" checked="checked"> Talk with costumers  ';
-            }
-            if ($row['Role_Id'] === '5') {
-                echo '<input type="checkbox" id="edit'.$row['ID'].'" name="permission"> To edit Service <br> <input type="checkbox" id="talk'.$row['ID'].'" checked="checked"> Talk with costumers  ';
-            }
-            if ($row['Role_Id'] === '6') {
-                echo '<input type="checkbox" id="edit'.$row['ID'].'" name="permission" checked="checked"> To edit Service <br> <input type="checkbox" id="talk'.$row['ID'].'"> Talk with costumers  ';
-            }
-            if ($row['Role_Id']=== NULL){
-                echo '<input type="checkbox" id="edit'.$row['ID'].'" name="permission" > To edit Service <br> <input type="checkbox" id="talk'.$row['ID'].'"> Talk with costumers  ';
+                echo '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" checked="checked"> To edit Service <br> <input type="checkbox" id="talk' . $row['ID'] . '" checked="checked"> Talk with costumers  ';
+            } else if ($row['Role_Id'] === '5') {
+                echo '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission"> To edit Service <br> <input type="checkbox" id="talk' . $row['ID'] . '" checked="checked"> Talk with costumers  ';
+            } else if ($row['Role_Id'] === '6') {
+                echo '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" checked="checked"> To edit Service <br> <input type="checkbox" id="talk' . $row['ID'] . '"> Talk with costumers  ';
+            }else {   echo '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" > To edit Service <br> <input type="checkbox" id="talk' . $row['ID'] . '"> Talk with costumers  ';
             }
             //                          </select>
             echo '</div>
