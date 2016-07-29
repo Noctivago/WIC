@@ -93,7 +93,7 @@ $serviceId = (filter_var($_GET['Service']));
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
 
                     <header class="box-typical-header-sm">
-                        Organization Info
+                        Organization Information
                         <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
@@ -110,7 +110,8 @@ $serviceId = (filter_var($_GET['Service']));
                             <div class="user-card-row">
                                 <?php
                                 echo '<div class="card-typical-section">
-                                 <input type=button onClick="openMyWics();",  value="+">
+                                 
+                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
                                 </div>';
                                 ?>
                             </div>
