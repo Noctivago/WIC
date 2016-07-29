@@ -63,7 +63,7 @@ $msg = '';
         var talk = 'talk'+x;
         var role = document.getElementById('' + rolei).value;
         var editval = document.getElementById(''+edit).checked;
-        var talkval = document.getElementById(''talk).checked;
+        var talkval = document.getElementById(''+talk).checked;
         alert(editval);
         alert(talkval);
 
