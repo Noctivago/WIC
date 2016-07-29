@@ -69,7 +69,29 @@ $serviceId = (filter_var($_GET['Service']));
                     <div class="container">
                         <div class="row">
                             <div class=" col-md-12 text-center" align="center" style="width: auto; height: auto;">
-                                <img class="img-responsive" src="img/faq-2.png" alt="Imagem"style="width: 100%;  padding-bottom: 20px;"/>
+                                	<div id="coin-slider">
+    
+    <a href="img01_url" target="_blank">
+	<img src="imagens/image1.jpg">
+    <span>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. </span>
+    </a>
+    
+    <a href="img02_url" target="_blank">
+	<img src="imagens/image2.jpg">
+    <span>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. </span>
+    </a>
+    
+    <a href="img03_url" target="_blank">
+    <img src="imagens/image3.jpg">
+    <span>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. </span>
+    </a>
+    
+    <a href="img04_url" target="_blank">
+    <img src="imagens/image4.jpg">  
+    <span>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. </span>
+    </a>  
+	</div>
+
                             </div>              
                         </div>
                         <footer></footer>
