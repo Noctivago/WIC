@@ -68,7 +68,7 @@ $serviceId = (filter_var($_GET['Service']));
 						<div class="posts-slider">
 							<div class="slide">
 								<article class="post-announce">
-                                                                    <div class="post-announce-pic" style="width: 700px">
+									<div class="post-announce-pic">
 										<a href="#">
 											<img src="img/post-1.jpeg" alt="">
 										</a>
@@ -78,7 +78,7 @@ $serviceId = (filter_var($_GET['Service']));
 							</div><!--.slide-->
 							<div class="slide">
 								<article class="post-announce">
-									<div class="post-announce-pic" style="width: 700px">
+									<div class="post-announce-pic">
 										<a href="#">
 											<img src="img/post-2.jpg" alt="">
 										</a>
@@ -88,7 +88,7 @@ $serviceId = (filter_var($_GET['Service']));
 							</div><!--.slide-->
 							<div class="slide">
 								<article class="post-announce">
-									<div class="post-announce-pic"style="width: 700px">
+									<div class="post-announce-pic">
 										<a href="#">
 											<img src="img/post-3.jpeg" alt="">
 										</a>
