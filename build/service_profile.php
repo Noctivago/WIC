@@ -134,7 +134,7 @@ $serviceId = (filter_var($_GET['Service']));
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
 
                     <header class="box-typical-header-sm">
-                        Organization Info
+                        Organization Information
                         <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
