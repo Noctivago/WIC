@@ -547,14 +547,13 @@ $(document).ready(function(){
 		postsSlider.slick('slickNext');
 	});
 
-
 /* ==========================================================================
-	Recomendations slider 1
+	Recomendations slider
 	========================================================================== */
 
-	var recomendationsSlider1 = $(".recomendations-slider1");
+	var recomendationsSlider = $(".recomendations-slider");
 
-	recomendationsSlider1.slick({
+	recomendationsSlider.slick({
 		slidesToShow: 4,
 		adaptiveHeight: true,
 		arrows: false,
@@ -593,11 +592,11 @@ $(document).ready(function(){
 	});
 
 	$('.recomendations-slider-prev').click(function(){
-		recomendationsSlider1.slick('slickPrev');
+		recomendationsSlider.slick('slickPrev');
 	});
 
 	$('.recomendations-slider-next').click(function(){
-		recomendationsSlider1.slick('slickNext');
+		recomendationsSlider.slick('slickNext');
 	});
 
 /* ==========================================================================
