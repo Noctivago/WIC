@@ -28,7 +28,11 @@ include '../build/db/session.php';
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
-        $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        if (count($_GET) >= 1) {
+            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];           
+        } else {
+            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
+        }
         ?>
         <header class="site-header">
             <div class="container-fluid">
@@ -61,11 +65,8 @@ include '../build/db/session.php';
                                                 <a class="nav-link active"
                                                    data-toggle="tab"
                                                    href="messenger.php"
-                                                   role="tab"
-
-                                                   >
+                                                   role="tab">
                                                     Wic Planner
-                                                    <!--<span class="label label-pill label-danger"></span>-->
                                                 </a>
                                             </li>
 
