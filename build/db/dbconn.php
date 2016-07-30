@@ -94,11 +94,12 @@ function DB_GetPicsService($pdo, $serviceId) {
         $rows = sql($pdo, "Select * from [multimedia] where [Enabled]=1 and [Service_Id]=?", array($serviceId), "rows");
         foreach ($rows as $row) {
             $count+=1;
-            echo '<div data-p="144.50" style="display: none;">
+            echo '<div data-p="144.50"  style="display: none;">
                 <img data-u="image" id="'.$count.'" src="' . $row['Multimedia_Path'] . '" />
                 <img data-u="thumb" id="'.$count.'" src="' . $row['Multimedia_Path'] . '" />
             </div>';
         }
+        echo '<input type="hidden" value="'.$count.'"/>';
     } catch (Exception $ex) {
         
     }

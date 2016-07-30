@@ -200,7 +200,7 @@ $serviceId = (filter_var($_GET['Service']));
                             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
                             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;"></div>
                         </div>
-                        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
+                        <div data-u="slides" id="pictures" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
                             <?php DB_GetPicsService($pdo, $serviceId);
                             ?>
 
@@ -283,33 +283,33 @@ $serviceId = (filter_var($_GET['Service']));
 
                             <div class="user-card-row">
                                 <div class="tbl-row">
-<?php
-$role = 'Service manager';
-$role2 = 'Edit service information';
+                                    <?php
+                                    $role = 'Service manager';
+                                    $role2 = 'Edit service information';
 
-if ($_SESSION['role'] === 'user') {
-    header("location: ../build/index.php");
-}
-$service = $_GET['Service'];
-$serv = $_POST['Serv'];
-$user = $_SESSION['id'];
+                                    if ($_SESSION['role'] === 'user') {
+                                        header("location: ../build/index.php");
+                                    }
+                                    $service = $_GET['Service'];
+                                    $serv = $_POST['Serv'];
+                                    $user = $_SESSION['id'];
 //                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
 //                                    $idOg = $org['Id'];
-$org = DB_GetOrgIdByUserBossId2($pdo, $user);
-$idOg1 = $org['Id'];
+                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
+                                    $idOg1 = $org['Id'];
 
-if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_validatePermissionEditInfo($pdo, $user, $service, $role) || DB_validatePermissionEditInfo($pdo, $user, $service, $role2)) {
-    if (!db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1)) {
-        $org = DB_GetOrgIdByIderService($pdo, $service);
-        $idOg = $org['Id'];
-    }
-    if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
-        $cname = $_POST['cName'];
-        $cDescription = $_POST['cDescription'];
-        $cSub = $_POST['cSubCat'];
-        $city = $_POST['citySelect'];
-        $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub, $city);
-        ?> 
+                                    if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_validatePermissionEditInfo($pdo, $user, $service, $role) || DB_validatePermissionEditInfo($pdo, $user, $service, $role2)) {
+                                        if (!db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1)) {
+                                            $org = DB_GetOrgIdByIderService($pdo, $service);
+                                            $idOg = $org['Id'];
+                                        }
+                                        if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
+                                            $cname = $_POST['cName'];
+                                            $cDescription = $_POST['cDescription'];
+                                            $cSub = $_POST['cSubCat'];
+                                            $city = $_POST['citySelect'];
+                                            $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub, $city);
+                                            ?> 
                                             <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>
                                             <?php
                                         }
@@ -333,7 +333,7 @@ if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_valida
 
                             <div class="user-card-row">
                                 <div class="tbl-cell">
-    <?php echo '<p>Organization Name</p>
+                                    <?php echo '<p>Organization Name</p>
                                  <p class="user-card-row-name"><a href="profile_org.php?Organization=' . $org['Id'] . '">' . $org['Name'] . '</a></p>'; ?>
                                 </div>
                             </div>
@@ -341,11 +341,11 @@ if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_valida
 
                         <div class = "slide">
                             <div class = "user-card-row">
-    <?php
-    $subId = $data['Sub_Category_Id'];
-    $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo, $subId);
-    echo '<b>Category: </b><b id="Cat">' . $CatSubCatData['CatName'] . '</b><br><b> Sub category : </b> <b id="SubCat">' . $CatSubCatData['SubCatName'] . ' </b>';
-    ?>
+                                <?php
+                                $subId = $data['Sub_Category_Id'];
+                                $CatSubCatData = DB_getCategoryAndSubCategoryData($pdo, $subId);
+                                echo '<b>Category: </b><b id="Cat">' . $CatSubCatData['CatName'] . '</b><br><b> Sub category : </b> <b id="SubCat">' . $CatSubCatData['SubCatName'] . ' </b>';
+                                ?>
                                 <div class = "tbl-cell">
                                 </div> </div>
                         </div><!--.slide-->
@@ -366,7 +366,7 @@ if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_valida
                             Description
                         </header>
                         <div class = "text-block text-block-typical">
-    <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
+                            <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
                         </div>
                     </article>
 
@@ -399,7 +399,7 @@ if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_valida
                         <div class = "form-control-wrapper form-control-icon-left">
                             <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
                                 <option value="0">Country</option>
-    <?php DB_getCountryAsSelect($pdo) ?>
+                                <?php DB_getCountryAsSelect($pdo) ?>
                             </select>
                         </div>
 
@@ -419,10 +419,10 @@ if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_valida
                         <div class = "form-group">
                             <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
                             <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
-    <?php
-    $idCat = $CatSubCatData['CatId'];
-    DB_getCatgoryAsSelect($pdo, $idCat);
-    ?>
+                            <?php
+                            $idCat = $CatSubCatData['CatId'];
+                            DB_getCatgoryAsSelect($pdo, $idCat);
+                            ?>
                             <!--                            </select> -->
 
                             <!--                        </div>-->
@@ -430,10 +430,10 @@ if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_valida
                                 <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
                                     <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
 
-    <?php
-    $idSubCat = $CatSubCatData['SubCatId'];
-    DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
-    ?>
+                                <?php
+                                $idSubCat = $CatSubCatData['SubCatId'];
+                                DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
+                                ?>
                                 <!--                                </select> -->
 
                                 <!--                            </div>-->
@@ -449,12 +449,12 @@ if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_valida
 
                         <button type = "submit" name="saveChanges" class = "btn btn-rounded btn-success sign-up">Save Changes</button>
                 </section>
-    <?php
-} else {
-    header("Location: /build/index_teste.php"); /* Redirect browser */
-    exit();
-}
-?>
+                <?php
+            } else {
+                header("Location: /build/index_teste.php"); /* Redirect browser */
+                exit();
+            }
+            ?>
 
         </div>
     </div><!--.row-->
@@ -752,7 +752,29 @@ if (db_checkServiceOrgBossPermission($pdo, $serv, $service, $idOg1) || DB_valida
             });
         });
     });</script>
+<!--MULTI-PICS-->
+<script>
+    $(function () {
+        $("#file").change(function () {
+            var files = !!this.files ? this.files : [];
+            if (!files.length || !window.FileReader)
+                return; // no file selected, or no FileReader support
 
+            if (/^image/.test(files[0].type)) { // only image file
+                var reader = new FileReader(); // instance of the FileReader
+                reader.readAsDataURL(files[0]); // read the local file
+
+                reader.onloadend = function () { // set image data as background of div
+                    var elem = document.createElement("div");
+                    elem.setAttribute("data-p","144.50");
+                    elem.setAttribute("style","display:none");
+                    document.getElementById('pictures').appendChild(elem);
+                    //$("#1").css("background-image", "url(" + this.result + ")");
+                };
+            }
+        });
+    });
+</script>
 
 
 
