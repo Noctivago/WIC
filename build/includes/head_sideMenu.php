@@ -31,7 +31,7 @@ include '../build/db/session.php';
 
         $selfUrl = $_SERVER['PHP_SELF'];
         $getValues = array();
-        foreach ($_POST as $key => $value) {
+        foreach ($_GET as $key => $value) {
             array_push($getValues, $key . "=" . $value);
         }
         if (count($getValues) > 0) {
