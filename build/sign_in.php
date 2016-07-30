@@ -5,10 +5,12 @@ include_once '../build/db/functions.php';
 include_once '../build/db/dbconn.php';
 ob_start();
 session_start();
-$idOg = DB_GetOrgIdByUserBossId2($pdo,$_SESSION['Id']);
+
 if (isset($_SESSION['id'])) {
     if ($_SESSION['role'] === 'organization') {
-        header("location: ../build/profile_org.php?Organization=".$idOrg['Id']);
+        $use = $_SESSION['id'];
+        $idOg = DB_GetOrgIdByUserBossId2($pdo, $use);
+        header("location: ../build/profile_org.php?Organization=" . $idOg['Id']);
     }
     if ($_SESSION['role'] === 'user') {
         header("location: ../build/index.php");
