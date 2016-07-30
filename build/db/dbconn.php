@@ -537,7 +537,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
                         . '<br>'
                         .'<div class="checkbox checkbox-only">'
                         . '<input type="checkbox" id="talk' . $row['ID'] . '" checked="checked"/> Talk with costumers'
-                        . '<label for="talk"></label'
+                        . '<label for="talk"></label>'
                         . '</div>'
                         . '</th>';
             } else if ($row['Role_Id'] === '5') {
