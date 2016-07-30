@@ -351,6 +351,22 @@ $serviceId = (filter_var($_GET['Service']));
                                                                                                     
                                                                                                 </div>
 												<div class="exp-timeline-status">
+
+                                                                                                </div>
+												
+											</div>
+											<div class="tbl-cell tbl-cell-logo">
+                                                                                            <img src="img/a_tasca.jpg" alt="">
+											</div>
+										</div>
+									</div>
+								</li>
+                                                                <li class="exp-timeline-item">
+									<div class="dot"></div>
+									<div class="tbl">
+										<div class="tbl-row">
+											<div class="tbl-cell">
+												<div class="exp-timeline-range">
                                                                                                 <?php
                                                                                                     echo '<div class="card-typical-section">
 
@@ -359,15 +375,15 @@ $serviceId = (filter_var($_GET['Service']));
                                                                                                     </div>';
                                                                                                 ?>
                                                                                                 </div>
-												
+												<div class="exp-timeline-status">Senior Developer</div>
+												<div class="exp-timeline-location"><a href="#">YouTube</a></div>
 											</div>
 											<div class="tbl-cell tbl-cell-logo">
-                                                                                            <img src="img/a_tasca.jpg.png" alt="">
+												<img src="img/logo-2.png" alt="">
 											</div>
 										</div>
 									</div>
 								</li>
-
 
 							</ul>
 						</article><!--.profile-info-item-->
