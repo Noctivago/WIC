@@ -9,18 +9,29 @@ include ("./db/dbconn.php");
 
 
             <?php
-            if (isset($_GET ['Category']) && !isset($_GET ['qParam'])) {
+            //name
+            if (isset($_GET ['Category']) && !isset($_GET ['qParam']) && !isset($_GET ['name'])) {
                 $CategoryId = (filter_var($_GET ['Category']));
                 DB_getServicesForIndexByCategory($pdo, $CategoryId);
-            } elseif (!isset($_GET ['Category']) && isset($_GET ['qParam'])) {
+            } elseif (!isset($_GET ['Category']) && isset($_GET ['qParam']) && !isset($_GET ['name'])) {
                 $qParam = (filter_var($_GET ['qParam']));
                 DB_getServicesForIndexByName($pdo, $qParam);
-                 DB_getServicesForIndexByDescription($pdo, $qParam);
-            } elseif (isset($_GET ['Category']) && isset($_GET ['qParam'])) {
+                DB_getServicesForIndexByDescription($pdo, $qParam);
+            } elseif (isset($_GET ['Category']) && isset($_GET ['qParam']) && !isset($_GET ['name'])) {
                 $CategoryId = (filter_var($_GET ['Category']));
                 $qParam = (filter_var($_GET ['qParam']));
                 DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $CategoryId);
                 DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $CategoryId);
+                //APENAS CITY
+            } elseif (isset($_GET ['name']) && !isset($_GET ['qParam']) && !isset($_GET ['Category'])) {
+                $City = (filter_var($_GET ['name']));
+                $City = ucfirst($City);
+                $CityId = DB_getCityId($pdo, $City);
+                DB_getServicesForIndexByCity($pdo, $CityId);
+                //CITY e CATEGORY
+            } elseif (isset($_GET ['name']) && isset($_GET ['Category']) && !isset($_GET ['qParam'])) {
+                $City = (filter_var($_GET ['name']));
+                $CityId = DB_getCityId($pdo, $City);
             } else {
                 DB_getServicesForIndex($pdo);
             }
