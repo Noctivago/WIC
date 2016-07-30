@@ -320,33 +320,30 @@ $serviceId = (filter_var($_GET['Service']));
     </script>
 					</section><!--.box-typical-->
                                      
-
-                <section class="box-typical">
+    <section class="box-typical">
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
 
                     <header class="box-typical-header-sm">
-                        Organization Information
-<!--                        <div class="slider-arrs">
+                        Organization Info
+                        <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
                             </button>
                             <button type="button" class="recomendations-slider-next">
                                 <i class="font-icon font-icon-arrow-right"></i>
                             </button>
-                        </div>-->
+                        </div>
                     </header>
-                    <div class="recomendations-slider">
+                    <div class="recomendations-slider" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
-<!--                        <div class="slide">-->
+                        <div class="slide">
                             <!--BOTOES CHAT + WIC-->
                             <div class="user-card-row">
                                 <?php
                                 echo '<div class="card-typical-section">
-                                 
-                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width:41px;height:29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
+                                 <input type=button onClick="openMyWics();",  value="+">
                                 </div>';
                                 ?>
-                                <!--<input type=button onClick="openMyWics();",  value="+">-->
                             </div>
                         </div>
                     </div>
