@@ -748,6 +748,7 @@ $serviceId = (filter_var($_GET['Service']));
         $("#files").change(function () {
             if (typeof (FileReader) != "undefined") {
                 var dvPreview = $("#dvpreview");
+                dvPreview.empty();
                 $($(this)[0].files).each(function () {
                     var file = $(this);
                     var reader = new FileReader();
