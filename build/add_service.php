@@ -144,13 +144,13 @@ $msg = '';
                     <?= $msg; ?>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
-                        
+
                         <input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
-                        
-                        Files: <input type="file" id="file" name="file[]" accept = "images/*" multiple><br/>
+
+                        Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
 
                         <div id="selectedFiles"></div>
-
+                        <div id="dvpreview"></div>
                         <header class = "sign-title">Fill the fields below</header>
 
                         <div class = "form-group">
@@ -550,6 +550,29 @@ $msg = '';
         display: inline-block;
     }
 </style>
+<script>
+    $(function () {
+        $("#files").change(function () {
+            if (typeof (FileReader) != "undefined") {
+                var dvPreview = $("#dvpreview");
+                dvPreview.empty();
+                $($(this)[0].files).each(function () {
+                    var file = $(this);
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var img = $("<img />");
+                        img.attr("style", "height:100px;width: 100px");
+                        img.attr("src", e.target.result);
+
+                        dvPreview.append(img);
+                    }
+                    reader.readAsDataURL(file[0]);
+                });
+            } else {
+                alert("This browser does not support HTML5 FileReader.");
+            }
+        });
+    });</script>
 
 <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
 <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
