@@ -760,12 +760,11 @@ $serviceId = (filter_var($_GET['Service']));
                     elem.setAttribute("data-p", "144.50");
                     alert('cagao');
                     elem.setAttribute("style", "display:none");
-                    var inputImage = document.createElement("img");
-                    inputImage.setAttribute("data-u", "image");
-                    inputImage.setAttribute("src", this.result);
-                    elem.appendChild(inputImage);
+                    var img = $('<img id="dynamic">');
+                    img.attr('src', this.result);
+                    img.appendTo('#pictures');
                     alert(elem);
-                    document.getElementById('pictures').appendedNode(elem);
+                    // document.getElementById('pictures').appendChild(elem);
 //    alert('aaadsadasd');
 //data-p="144.50"  style="display: none; "
                     //data-u="image"
