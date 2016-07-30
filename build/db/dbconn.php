@@ -1723,7 +1723,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             $views = DB_GetNumberServiceViews($pdo, $row['SID']);
             $comments = DB_GetNumberServiceComments($pdo, $row['SID']);
             echo '<div class = "slide" style="max-width: 230px; max-height: 180px;">';
-            echo '<article class = "post-announce">';
+            echo '<article class = "post-announce" style="max-width: 230px; max-height: 180px;">';
             echo '<div class = "post-announce-pic" style="max-width: 230px; max-height: 180px;">';
             echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">';
             echo ' <img src = "' . $row['MPP'] . '" alt = "Avatar" style="max-width: 230px; max-height: 180px;">';
