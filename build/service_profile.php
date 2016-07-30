@@ -332,7 +332,7 @@ $serviceId = (filter_var($_GET['Service']));
                     </header>
                     <div class="recomendations" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
-                        <div class="slide1">
+                        <div class="slide">
                             <!--BOTOES CHAT + WIC-->
                             <div class="user-card-row">
                                 <?php
