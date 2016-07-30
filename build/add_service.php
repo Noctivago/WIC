@@ -47,7 +47,7 @@ $msg = '';
                                                     die('Please ensure you are uploading an image.');
                                                 }
                                                 // Check filesize
-                                                if ($_FILES['uploadFile']['size'] > 500000) {
+                                                if ($_FILES['uploadFile']['size'] > 2000000) {
                                                     die('File uploaded exceeds maximum upload size.');
                                                 }
                                                 if (!move_uploaded_file($_FILES['uploadFile']['tmp_name'], 'pics/' . $newfilename)) {
