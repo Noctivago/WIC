@@ -35,8 +35,8 @@ include_once '../build/db/session.php';
                             DB_GetOrganizationServices($pdo, $org, $idUser);
                         }
                         ?>
-                    </div>
-                </section>
+<!--                    </div>
+                </section>-->
 
                 <section class="box-typical">
                     <header class="box-typical-header-sm">Organization Information</header>

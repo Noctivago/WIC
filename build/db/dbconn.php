@@ -1725,7 +1725,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             echo '<div class = "slide" >';
             echo '<article class = "post-announce" >';
             echo '<div class = "post-announce-pic" >';
-            echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">';
+            echo '<a href = "service_profile.php?Service='.$row['SID'].'">';
             echo ' <img src = "' . $row['MPP'] . '" alt = "Avatar" >';
             echo '</a>';
             echo ' </div>';
