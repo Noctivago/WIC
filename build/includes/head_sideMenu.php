@@ -27,29 +27,29 @@ include '../build/db/session.php';
     </head>
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
-        $link =  'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        if (isset(filter_var($_GET['Category']))) {
-            if (preg_match('/Category/', $link)) {
-                
-            } else {
-                $s_cat = filter_var($_GET['Category']);
-                $link = $link . '&Category=' . $s_cat;
-            }
-        } elseif (isset(filter_var($_GET['City']))) {
-            if (preg_match('/City/', $link)) {
-                
-            } else {
-                $s_city = filter_var($_GET['City']);
-                $link = $link . $s_city;
-            }
-        } elseif (isset(filter_var($_GET['qParam']))) {
-            if (preg_match('/qParam/', $link)) {
-                
-            } else {
-                $s_name = filter_var($_GET['qParam']);
-                $link = $link . $s_city;
-            }
-        }
+//        $link =  'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+//        if (isset(filter_var($_GET['Category']))) {
+//            if (preg_match('/Category/', $link)) {
+//                
+//            } else {
+//                $s_cat = filter_var($_GET['Category']);
+//                $link = $link . '&Category=' . $s_cat;
+//            }
+//        } elseif (isset(filter_var($_GET['City']))) {
+//            if (preg_match('/City/', $link)) {
+//                
+//            } else {
+//                $s_city = filter_var($_GET['City']);
+//                $link = $link . $s_city;
+//            }
+//        } elseif (isset(filter_var($_GET['qParam']))) {
+//            if (preg_match('/qParam/', $link)) {
+//                
+//            } else {
+//                $s_name = filter_var($_GET['qParam']);
+//                $link = $link . $s_city;
+//            }
+//        }
         ?>
         <header class="site-header">
             <div class="container-fluid">
