@@ -529,15 +529,17 @@ function DB_BuildInvitesTable($pdo, $userId) {
               }
               } * */
             if ($row['Role_Id'] === '4') {
-                echo '<div class="checkbox checkbox-only"> '
-                . '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" checked="checked"> To edit Service'
+                echo '<th class="table-check">'
+                . '<div class="checkbox checkbox-only"> '
+                . '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" checked="checked"/> To edit Service'
                         . '<label for="edit"></label'
                         . ' </div>'
                         . '<br>'
                         .'<div class="checkbox checkbox-only">'
-                        . '<input type="checkbox" id="talk' . $row['ID'] . '" checked="checked"> Talk with costumers'
+                        . '<input type="checkbox" id="talk' . $row['ID'] . '" checked="checked"/> Talk with costumers'
                         . '<label for="talk"></label'
-                        . '</div>';
+                        . '</div>'
+                        . '</th>';
             } else if ($row['Role_Id'] === '5') {
                 echo '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission"> To edit Service <br> <input type="checkbox" id="talk' . $row['ID'] . '" checked="checked"> Talk with costumers  ';
             } else if ($row['Role_Id'] === '6') {
