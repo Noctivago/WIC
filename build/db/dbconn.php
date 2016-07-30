@@ -1726,7 +1726,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             echo '<article class = "post-announce" style="max-width: 230px; max-height: 180px;" >';
             echo '<div class = "post-announce-pic" >';
             echo '<a href = "service_profile.php?Service='.$row['SID'].'">';
-            echo ' <img src = "' . $row['MPP'] . '" alt = "Avatar" style="width: 200px; height: 150px;" >';
+            echo ' <img src = "' . $row['MPP'] . '" alt = "Avatar" >';
             echo '</a>';
             echo ' </div>';
             echo '<div class = "post-announce-title">';
