@@ -549,14 +549,14 @@ function DB_BuildInvitesTable($pdo, $userId) {
             //                          </select>
             echo '</div>
                                 </td>
-                                <td>
+                                <td class="table-icon-cell">
 
-                                    <div class="table-icon-cell">
+                                    <div >
                                         <button type="button" onclick ="EditRole(' . $row['ID'] . ')"class="class="btn btn-rounded btn-inline btn-secondary-outline""><i class="font-icon font-icon-folder"></i></button>
                                     </div>
                                 </td>
-                                <td>  
-                                    <div class="table-icon-cell">
+                                <td class="table-icon-cell">  
+                                    <div>
                                         <button type="button" onclick="RemoveUserInService(' . $row['ID'] . ')" class="class="btn btn-rounded btn-inline btn-secondary-outline""><i class="font-icon font-icon-trash"></i></button>
                                     </div>
                                 </td>
