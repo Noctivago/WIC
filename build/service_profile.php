@@ -421,7 +421,7 @@ $serviceId = (filter_var($_GET['Service']));
 
                 <section class="box-typical" style="width:270px">
                     <!--DISPLAY SERVICE USERS-->
-                    <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
+                    <?= DB_getUsersInServiceOrganizationByService($pdo, 2); ?>
                 </section>
 
                 <section class="box-typical" style="width:270px">
