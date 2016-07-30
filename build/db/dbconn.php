@@ -2098,7 +2098,7 @@ function DB_UserProfile($pdo, $userId) {
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rowss as $row) {
-            echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem;" >
+            echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem; max-width: 180px; max-height: 120px;" >
 <img id = "image" src = "'.$row['Picture_Path'].'" alt = "Avatar" style="display: block;width: 100%;-webkit-border-radius: 50%; max-width: 180px; max-height: 120px;"/>
 </div>
 
