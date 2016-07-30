@@ -752,10 +752,13 @@ $serviceId = (filter_var($_GET['Service']));
                     var file = $(this);
                     var reader = new FileReader();
                     reader.onload = function (e) {
+                        var div = $('1');
                         var img = $("<img />");
                         img.attr("style", "height:100px;width: 100px");
                         img.attr("src", e.target.result);
-                        dvPreview.append(img);
+                        div.append(img);
+                        dvPreview.append(div);
+    //dvPreview.append(img);
                     }
                     reader.readAsDataURL(file[0]);
 
