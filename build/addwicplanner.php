@@ -30,7 +30,7 @@ if (isset($id) && isset($uid)) {
 <div class="container-fluid">
     <!--DIV ESTAVA COMO FORM-->
     <div class="sign-box">
-        <div class="title-label" style="align:center;"> <h3 style="padding-left: 70px; color: #3299CC;"><i class="font-icon font-icon-plus"></i>New Event</h3></div>
+        <div class="title-label" style="align:center;"> <h3 style="padding-left: 60px; color: #3299CC;"><i class="font-icon font-icon-plus"></i>New Event</h3></div>
         <header class="sign-title">#youcanevent</header>
         <div class="form-group">
             <input type="text" id = "name" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name" required/>
