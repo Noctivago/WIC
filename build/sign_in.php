@@ -46,7 +46,9 @@ if (isset($_SESSION['id'])) {
                             //header('Location: profile.php');
                             $msg = "LOGIN OK! HEADER LOCATION";
                             if ($_SESSION['role'] === 'organization') {
-                                header("location: ../build/profile_org.php");
+                                $use = $_SESSION['id'];
+                                $idOg = DB_GetOrgIdByUserBossId2($pdo, $use);
+                                header("location: ../build/profile_org.php?Organization=". $idOg['Id']."");
                             }
                             if ($_SESSION['role'] === 'user') {
                                 header("location: ../build/index.php");
