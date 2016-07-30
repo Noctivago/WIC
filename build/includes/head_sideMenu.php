@@ -27,16 +27,28 @@ include '../build/db/session.php';
     </head>
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
-        $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php?';
-//        if (isset(filter_var($_GET['Category']))) {
-//            $s_cat = filter_var($_GET['Category']);
-//            $link = $link . '&Category=' . $s_cat;
-//        } elseif (isset(filter_var($_GET['City']))) {
-//            $s_city = filter_var($_GET['City']);
-//            $link = $link . $s_city;
-//        } elseif (isset(filter_var($_GET['qParam']))) {
-//            $s_name = filter_var($_GET['qParam']);
-//            $link = $link . $s_city;
+        //SE TIVER QUERY STRING
+        if (count($_GET) >= 1) {
+            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            $q = true;
+            if (isset(filter_var($_GET['qParam']))) {
+                
+            }
+            //SENAO TIVER QUERY STRING
+        } else {
+            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
+            $q = false;
+        }
+        if (isset($_POST['submit'])) {
+            
+        }
+        //SE Q TRUE > POSSUI QUERY PARAMETERS
+//        if (isset(filter_var($_GET['qParam']))) {
+//            if (isset(filter_var($_GET['Category']))) {
+//                $link = $link . filter_var($_GET['qParam']);
+//            } else {
+//                $link = $link . '?' . filter_var($_GET['qParam']);
+//            }
 //        }
         ?>
         <header class="site-header">
@@ -246,7 +258,8 @@ include '../build/db/session.php';
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <header class="side-menu-title">Advanced Search</header>
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                <!--<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">-->
+                <form action="<?php $link; ?>" method="post">
                     <div class="col-md-10">
 
                         <div class="typeahead-container">
