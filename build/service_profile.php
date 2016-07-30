@@ -325,27 +325,28 @@ $serviceId = (filter_var($_GET['Service']));
 
                     <header class="box-typical-header-sm">
                         Organization Info
-                        <div class="slider-arrs">
+<!--                        <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
                             </button>
                             <button type="button" class="recomendations-slider-next">
                                 <i class="font-icon font-icon-arrow-right"></i>
                             </button>
-                        </div>
+                        </div>-->
                     </header>
-                    <div class="recomendations-slider" >
+<!--                    <div class="recomendations-slider" >-->
+                        <div class="inforg" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
-                        <div class="slide">
+                        <!--<div class="slide">-->
                             <!--BOTOES CHAT + WIC-->
-                            <div class="user-card-row">
+                            <div class="inf">
                                 <?php
                                 echo '<div class="card-typical-section">
                                  <input type=button onClick="openMyWics();",  value="+">
                                 </div>';
                                 ?>
                             </div>
-                        </div>
+<!--                        </div>-->
                     </div>
                 </section>
 
