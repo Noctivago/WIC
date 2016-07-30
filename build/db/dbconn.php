@@ -1140,83 +1140,93 @@ function db_checkServiceOrgBossServicePermission($pdo, $service, $idOg) {
 }
 
 function DB_UpdateServiceInformation($pdo, $service, $cname, $cDescription, $cSub, $city) {
-    try {
-//verificar se o user é boss da cat com o servico X
-
-        sql($pdo, "UPDATE [dbo].[Service]
-   SET [Name] = ?
-      ,[Description] = ?
-      ,[Sub_Category_Id] = ?
-      ,[City_Id] = ?
- WHERE [Id] = ?", array($cname, $cDescription, $cSub, $city, $service));
-        echo 'true';
-    } catch (Exception $ex) {
-        
+    if ($city != '') {
+        try {
+            sql($pdo, "UPDATE [dbo].[Service]
+            SET [Name] = ?
+               ,[Description] = ?
+               ,[Sub_Category_Id] = ?
+               ,[City_Id] = ?
+          WHERE [Id] = ?", array($cname, $cDescription, $cSub, $city, $service));
+            echo 'true';
+        } catch (Exception $ex) {
+            
+        }
+    } else {
+        try {
+            sql($pdo, "UPDATE [dbo].[Service]
+            SET [Name] = ?
+               ,[Description] = ?
+               ,[Sub_Category_Id] = ?
+          WHERE [Id] = ?", array($cname, $cDescription, $cSub, $service));
+            echo 'true';
+        } catch (Exception $ex) {
+            
+        }
     }
-}
 
-function DB_getSubCategoryAsSelecCat($pdo, $idCat) {
-    try {
-        $rows = sql($pdo, "SELECT *
+    function DB_getSubCategoryAsSelecCat($pdo, $idCat) {
+        try {
+            $rows = sql($pdo, "SELECT *
   FROM [dbo].[Sub_Category]
   where [Enabled]=1 and [Category_Id] = ?", array($idCat), "rows");
-        echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">';
-        foreach ($rows as $row) {
-            echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">';
+            foreach ($rows as $row) {
+                echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            }
+            echo '</select> ';
+        } catch (Exception $ex) {
+            
         }
-        echo '</select> ';
-    } catch (Exception $ex) {
-        
     }
-}
 
-function DB_getSubCategoryAsSelectAA($pdo, $idCat, $idSubCat) {
-    try {
-        $rows = sql($pdo, "SELECT *
+    function DB_getSubCategoryAsSelectAA($pdo, $idCat, $idSubCat) {
+        try {
+            $rows = sql($pdo, "SELECT *
   FROM [dbo].[Sub_Category]
   where [Enabled]=1 and [Category_Id]=?", array($idCat), "rows");
 
-        echo '<div class = "form-control-wrapper form-control-icon-left" id="sc">';
-        echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">';
-        foreach ($rows as $row) {
-            if ($row['Id'] === $idSubCat) {
-                echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
-            } else {
-                echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            echo '<div class = "form-control-wrapper form-control-icon-left" id="sc">';
+            echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">';
+            foreach ($rows as $row) {
+                if ($row['Id'] === $idSubCat) {
+                    echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+                } else {
+                    echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+                }
             }
+            echo '</select> ';
+            echo '</div>';
+        } catch (Exception $ex) {
+            
         }
-        echo '</select> ';
-        echo '</div>';
-    } catch (Exception $ex) {
-        
     }
-}
 
-function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
-    try {
-        $rows = sql($pdo, "SELECT *
+    function DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat) {
+        try {
+            $rows = sql($pdo, "SELECT *
   FROM [dbo].[Sub_Category]
   where [Enabled]=1 and [Category_Id]=?", array($idCat), "rows");
-        echo '<div class = "form-control-wrapper form-control-icon-left" id="sc">';
-        echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">';
-        foreach ($rows as $row) {
-            if ($row['Id'] === $idSubCat) {
-                echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
-            } else {
-                echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+            echo '<div class = "form-control-wrapper form-control-icon-left" id="sc">';
+            echo '<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">';
+            foreach ($rows as $row) {
+                if ($row['Id'] === $idSubCat) {
+                    echo '<option selected="selected" value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+                } else {
+                    echo '<option value="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+                }
             }
+            echo '</select> ';
+            echo '</div>';
+        } catch (Exception $ex) {
+            
         }
-        echo '</select> ';
-        echo '</div>';
-    } catch (Exception $ex) {
-        
     }
-}
 
-function DB_InsertView($pdo, $serviceId, $user) {
-    try {
-        $d = getDateToDB();
-        sql($pdo, "INSERT INTO [dbo].[Service_View]
+    function DB_InsertView($pdo, $serviceId, $user) {
+        try {
+            $d = getDateToDB();
+            sql($pdo, "INSERT INTO [dbo].[Service_View]
            ([Service_Id]
            ,[User_Id]
            ,[Date_View])
@@ -1224,63 +1234,63 @@ function DB_InsertView($pdo, $serviceId, $user) {
            (?
            ,?
            ,?)", array($serviceId, $user, $d));
-    } catch (Exception $ex) {
-        
+        } catch (Exception $ex) {
+            
+        }
     }
-}
 
-function DB_GetOrgIdByIderService($pdo, $idService) {
-    try {
-        $stmt = $pdo->prepare("Select [Organization].[Id],[Organization].[Name],[Organization].[Picture_Path]
+    function DB_GetOrgIdByIderService($pdo, $idService) {
+        try {
+            $stmt = $pdo->prepare("Select [Organization].[Id],[Organization].[Name],[Organization].[Picture_Path]
 from [Service]
 join [Organization]
 on [Organization].[Id] = [Service].[Organization_ID]
 where [Service].[Id] = :id");
-        $stmt->bindParam(':id', $idService);
-        $stmt->execute();
-        $organization = array();
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $stmt->bindParam(':id', $idService);
+            $stmt->execute();
+            $organization = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-            $organization['Id'] = $row['Id'];
-            $organization['Name'] = $row['Name'];
-            $organization['Picture_Path'] = $row['Picture_Path'];
+                $organization['Id'] = $row['Id'];
+                $organization['Name'] = $row['Name'];
+                $organization['Picture_Path'] = $row['Picture_Path'];
+            }
+            return $organization;
+        } catch (Exception $ex) {
+            echo 'error';
         }
-        return $organization;
-    } catch (Exception $ex) {
-        echo 'error';
     }
-}
 
-function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
-    try {
-        $stmt = $pdo->prepare("SELECT * From [Organization] Where [Enabled] = 1 and [User_Boss] = :id");
-        $stmt->bindParam(':id', $idUser);
-        $stmt->execute();
-        $organization = array();
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
+        try {
+            $stmt = $pdo->prepare("SELECT * From [Organization] Where [Enabled] = 1 and [User_Boss] = :id");
+            $stmt->bindParam(':id', $idUser);
+            $stmt->execute();
+            $organization = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-            $organization['Id'] = $row['Id'];
-            $organization['Name'] = $row['Name'];
-            $organization['Picture_Path'] = $row['Picture_Path'];
+                $organization['Id'] = $row['Id'];
+                $organization['Name'] = $row['Name'];
+                $organization['Picture_Path'] = $row['Picture_Path'];
+            }
+            return $organization;
+        } catch (Exception $ex) {
+            echo 'error';
         }
-        return $organization;
-    } catch (Exception $ex) {
-        echo 'error';
     }
-}
 
 //falta dar o orgid
 // Dá o numero de pessoas em todos os servicos
 //esta a dar algum erro por isso não conta
-function DB_CountPeopleInOrg($pdo) {
-    try {
-        $count = 1;
-        $Services = sql($pdo, "SELECT *
+    function DB_CountPeopleInOrg($pdo) {
+        try {
+            $count = 1;
+            $Services = sql($pdo, "SELECT *
   FROM [Service]
   where [Organization_Id] = ? and [Enabled] = 1", array(2), "rows");
-        foreach ($Services as $Service) {
-            $idService = $Service['Id'];
-            $query = sql($pdo, "SELECT count([User_Service].[Id]) as contador
+            foreach ($Services as $Service) {
+                $idService = $Service['Id'];
+                $query = sql($pdo, "SELECT count([User_Service].[Id]) as contador
   FROM [dbo].[User_Service]
   join [User]
   on [User].[Id] = [User_Service].[User_Id]
@@ -1291,28 +1301,28 @@ function DB_CountPeopleInOrg($pdo) {
   join [Role]
   on [Role].[Id] = [User_Service].[Role_Id]
   where [Service_Id] = ?", array($idService), "rows");
-            $cont = $query['contador'];
-            $count += $cont;
+                $cont = $query['contador'];
+                $count += $cont;
+            }
+            echo $count;
+        } catch (Exception $ex) {
+            
         }
-        echo $count;
-    } catch (Exception $ex) {
-        
     }
-}
 
-/**
- * Devolve users associados a um service de uma org
- * @param type $pdo
- * @param type $org
- */
-function DB_getUsersInServiceOrganization($pdo, $org) {
-    try {
-        $Services = sql($pdo, "SELECT *
+    /**
+     * Devolve users associados a um service de uma org
+     * @param type $pdo
+     * @param type $org
+     */
+    function DB_getUsersInServiceOrganization($pdo, $org) {
+        try {
+            $Services = sql($pdo, "SELECT *
         FROM [Service]
         where [Organization_Id] = ? and [Enabled] = 1", array($org), "rows");
-        foreach ($Services as $Service) {
-            $idService = $Service['Id'];
-            $rows = sql($pdo, "SELECT distinct [User].[Id] AS UID, [Email], [User_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
+            foreach ($Services as $Service) {
+                $idService = $Service['Id'];
+                $rows = sql($pdo, "SELECT distinct [User].[Id] AS UID, [Email], [User_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
         ,[Service].[Name] as ServiceName,[Role].[Name]
           FROM [dbo].[User_Service]
           join [User]
@@ -1324,27 +1334,27 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
           join [Role]
           on [Role].[Id] = [User_Service].[Role_Id]
           where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
-            foreach ($rows as $row) {
-                echo '<article class="friends-list-item">';
-                echo '    <div class="user-card-row">';
-                echo '      <div class="tbl-row">';
-                echo '          <div class="tbl-cell tbl-cell-photo">';
-                echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
-                echo '         </div>';
-                echo '        <div class="tbl-cell">';
-                $a = htmlspecialchars($_SERVER['PHP_SELF']);
-                echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
-                echo '<br>';
-                echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['Last_name'] . '</a>';
-                echo ' </div>';
-                echo ' </div>';
-                echo ' </article>';
+                foreach ($rows as $row) {
+                    echo '<article class="friends-list-item">';
+                    echo '    <div class="user-card-row">';
+                    echo '      <div class="tbl-row">';
+                    echo '          <div class="tbl-cell tbl-cell-photo">';
+                    echo '                 <img src=' . $row['Picture_Path'] . ' alt="">';
+                    echo '         </div>';
+                    echo '        <div class="tbl-cell">';
+                    $a = htmlspecialchars($_SERVER['PHP_SELF']);
+                    echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['First_Name'] . '</a>';
+                    echo '<br>';
+                    echo '<a href="' . $a . '?Organization=' . $org . '&UserInService=' . $row['UID'] . '">' . $row['Last_name'] . '</a>';
+                    echo ' </div>';
+                    echo ' </div>';
+                    echo ' </article>';
+                }
             }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
 //<!--            <header class="box-typical-header-sm">
 //                        People in our organization
@@ -1354,191 +1364,191 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
 //                        
 //                    <!--/div-->
 
-function DB_GetOrgInformation($pdo) {
-    try {
-        $id = 2;
-        $rows = sql($pdo, "SELECT *
+    function DB_GetOrgInformation($pdo) {
+        try {
+            $id = 2;
+            $rows = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
   where [Id] = ?", array($id), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "profile-card">';
-            echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height: 110px;"/>';
-            echo ' </div>';
-            echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
-            echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
-            echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
-            echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
-            echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
-            echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
-            echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
-            echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
-            echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
-            echo '</div>';
+            foreach ($rows as $row) {
+                echo '<div class = "profile-card">';
+                echo '<div class = "profile-card-photo">';
+                echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height: 110px;"/>';
+                echo ' </div>';
+                echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
+                echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
+                echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
+                echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
+                echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
+                echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
+                echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
+                echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
+                echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
+                echo '</div>';
+            }
+        } catch (Exception $ex) {
+            echo 'error';
         }
-    } catch (Exception $ex) {
-        echo 'error';
     }
-}
 
-function DB_GetOrgInformation2($pdo, $org) {
-    try {
-        $rows = sql($pdo, "SELECT *
+    function DB_GetOrgInformation2($pdo, $org) {
+        try {
+            $rows = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
   where [Id] = ?", array($org), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "text-block text-block-typical">';
-            echo '<p>' . $row['Description'] . ' </p>';
-            echo '</div>';
-            echo ' </div>';
-            echo ' </article>';
-            echo ' </section>';
-            echo '<div class = "col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">';
-            echo ' <section class = "box-typical"> ';
-            echo '<div class = "profile-card">';
-            echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "width: 110px; height:110px;"/>';
-            echo ' </div>';
-            echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
-            //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
-            //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
-            //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
-            echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
-            //echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
-            //echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
-            //echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
-            //echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
+            foreach ($rows as $row) {
+                echo '<div class = "text-block text-block-typical">';
+                echo '<p>' . $row['Description'] . ' </p>';
+                echo '</div>';
+                echo ' </div>';
+                echo ' </article>';
+                echo ' </section>';
+                echo '<div class = "col-lg-3 col-lg-pull-6 col-md-6 col-sm-6">';
+                echo ' <section class = "box-typical"> ';
+                echo '<div class = "profile-card">';
+                echo '<div class = "profile-card-photo">';
+                echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "width: 110px; height:110px;"/>';
+                echo ' </div>';
+                echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
+                //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
+                //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
+                //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
+                echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
+                //echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
+                //echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
+                //echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
+                //echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
 
-            echo '</div>';
+                echo '</div>';
+            }
+        } catch (Exception $ex) {
+            echo 'error';
         }
-    } catch (Exception $ex) {
-        echo 'error';
     }
-}
 
-/**
- * VERIFICA SE CODIGO INTRODUZIDO CONFERE COM O DA BD
- * @param type $pdo
- * @param type $email
- * @param type $code
- * @return boolean
- */
-function DB_compareActivationCode($pdo, $email, $code) {
-    try {
-        $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [User_Code_Activation] = ?", array($email, $code), "count");
-        if ($count < 0) {
-            return true;
-        } else {
-            return false;
+    /**
+     * VERIFICA SE CODIGO INTRODUZIDO CONFERE COM O DA BD
+     * @param type $pdo
+     * @param type $email
+     * @param type $code
+     * @return boolean
+     */
+    function DB_compareActivationCode($pdo, $email, $code) {
+        try {
+            $count = sql($pdo, "SELECT * FROM [dbo].[User] WHERE [Email] = ? AND [User_Code_Activation] = ?", array($email, $code), "count");
+            if ($count < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $exc) {
+            echo '';
         }
-    } catch (Exception $exc) {
-        echo '';
     }
-}
 
-function DB_GetNumberServiceComments($pdo, $idService) {
-    try {
-        $stmt = $pdo->prepare("SELECT count([Comment].[Id]) as NumComment
+    function DB_GetNumberServiceComments($pdo, $idService) {
+        try {
+            $stmt = $pdo->prepare("SELECT count([Comment].[Id]) as NumComment
   FROM [dbo].[Comment]
   where [Service_Id] =:id");
-        $stmt->bindParam(':id', $idService);
-        $stmt->execute();
-        $comm = array();
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $comm['NumComment'] = $row['NumComment'];
-        }
-        return $comm;
-    } catch (PDOException $e) {
-        print "ERROR READING USER PROFILE INFO!<br/>";
+            $stmt->bindParam(':id', $idService);
+            $stmt->execute();
+            $comm = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $comm['NumComment'] = $row['NumComment'];
+            }
+            return $comm;
+        } catch (PDOException $e) {
+            print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
-    }$serviceInfo = array();
-}
+        }$serviceInfo = array();
+    }
 
-function DB_GetNumberServiceViews($pdo, $idService) {
-    try {
-        $stmt = $pdo->prepare("Select count([Service_View].[Id])as NumView
+    function DB_GetNumberServiceViews($pdo, $idService) {
+        try {
+            $stmt = $pdo->prepare("Select count([Service_View].[Id])as NumView
 From [Service_View]
 where [Service_Id] =:id");
-        $stmt->bindParam(':id', $idService);
-        $stmt->execute();
-        $views = array();
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $stmt->bindParam(':id', $idService);
+            $stmt->execute();
+            $views = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-            $views['NumView'] = $row['NumView'];
-        }
-        return $views;
-    } catch (PDOException $e) {
-        print "ERROR READING USER PROFILE INFO!<br/>";
+                $views['NumView'] = $row['NumView'];
+            }
+            return $views;
+        } catch (PDOException $e) {
+            print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
-    }$serviceInfo = array();
-}
+        }$serviceInfo = array();
+    }
 
-function DB_GetServiceMultimediaUnit($pdo, $idService) {
-    try {
-        $stmt = $pdo->prepare("SELECT * FROM [Multimedia]
+    function DB_GetServiceMultimediaUnit($pdo, $idService) {
+        try {
+            $stmt = $pdo->prepare("SELECT * FROM [Multimedia]
         WHERE [Service_Id] =:id AND [First_Page] = 1 AND [Enabled] = 1");
-        $stmt->bindParam(':id', $idService);
-        $stmt->execute();
-        $multi = array();
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $multi['Multimedia_Path'] = $row['Multimedia_Path'];
-        }
-        return $multi;
-    } catch (PDOException $e) {
-        print "ERROR READING MULTIMEDIA INFO!<br/>";
+            $stmt->bindParam(':id', $idService);
+            $stmt->execute();
+            $multi = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $multi['Multimedia_Path'] = $row['Multimedia_Path'];
+            }
+            return $multi;
+        } catch (PDOException $e) {
+            print "ERROR READING MULTIMEDIA INFO!<br/>";
 #die();
-    }$serviceInfo = array();
-}
+        }$serviceInfo = array();
+    }
 
-function DB_GetServiceInformation($pdo, $idService) {
-    try {
-        $stmt = $pdo->prepare("SELECT [Name],[Date_Created],[Description],[Sub_Category_Id]
+    function DB_GetServiceInformation($pdo, $idService) {
+        try {
+            $stmt = $pdo->prepare("SELECT [Name],[Date_Created],[Description],[Sub_Category_Id]
   FROM [dbo].[Service]
   where [Id] =:id");
-        $stmt->bindParam(':id', $idService);
-        $stmt->execute();
-        $serv = array();
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $serv['Name'] = $row['Name'];
-            $serv['Date_Created'] = $row['Date_Created'];
-            $serv['Description'] = $row['Description'];
-            $serv['Sub_Category_Id'] = $row['Sub_Category_Id'];
-        }
-        return $serv;
-    } catch (PDOException $e) {
-        print "ERROR READING USER PROFILE INFO!<br/>";
+            $stmt->bindParam(':id', $idService);
+            $stmt->execute();
+            $serv = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $serv['Name'] = $row['Name'];
+                $serv['Date_Created'] = $row['Date_Created'];
+                $serv['Description'] = $row['Description'];
+                $serv['Sub_Category_Id'] = $row['Sub_Category_Id'];
+            }
+            return $serv;
+        } catch (PDOException $e) {
+            print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
-    }$serviceInfo = array();
-}
+        }$serviceInfo = array();
+    }
 
-/**
- * Devolve todos os serviços de uma organização
- * @param type $pdo
- * @param type $org
- * @return array
- */
-function getAllOrganizationServices($pdo, $org) {
-    try {
-        $stmt = $pdo->prepare("SELECT *
+    /**
+     * Devolve todos os serviços de uma organização
+     * @param type $pdo
+     * @param type $org
+     * @return array
+     */
+    function getAllOrganizationServices($pdo, $org) {
+        try {
+            $stmt = $pdo->prepare("SELECT *
   FROM [dbo].[Service]
   where [Enabled]=1 and [organization_id] =:id");
-        $stmt->bindParam(':id', $org);
-        $stmt->execute();
-        $OrgServices = array();
-        $rows = $stmt->fetchALL();
-        foreach ($rows as $row) {
-            array_push($OrgServices, $row['Id']);
-        }
-        return $OrgServices;
-    } catch (PDOException $e) {
-        print "ERROR READING USER PROFILE INFO!<br/>";
+            $stmt->bindParam(':id', $org);
+            $stmt->execute();
+            $OrgServices = array();
+            $rows = $stmt->fetchALL();
+            foreach ($rows as $row) {
+                array_push($OrgServices, $row['Id']);
+            }
+            return $OrgServices;
+        } catch (PDOException $e) {
+            print "ERROR READING USER PROFILE INFO!<br/>";
 #die();
+        }
     }
-}
 
-function getAllOrganizationServicesByUser($pdo, $org, $userId) {
-    try {
-        $stmt = $pdo->prepare("SELECT 
+    function getAllOrganizationServicesByUser($pdo, $org, $userId) {
+        try {
+            $stmt = $pdo->prepare("SELECT 
         [Service].[Id],
         [Service].[Name],
         [Service].[Description],
@@ -1556,61 +1566,61 @@ function getAllOrganizationServicesByUser($pdo, $org, $userId) {
           where [Service].[Enabled] = 1 and [Multimedia].[First_Page] = 1 
           and [Multimedia].[Enabled] = 1 and [User_Service].[Enabled]= 1 and [organization_id] =:id
             and [User_Service].[User_Id] =:uid");
-        $stmt->bindParam(':id', $org);
-        $stmt->bindParam(':uid', $userId);
-        $stmt->execute();
-        $OrgServices = array();
-        $rows = $stmt->fetchALL();
-        foreach ($rows as $row) {
-            array_push($OrgServices, $row['Id']);
+            $stmt->bindParam(':id', $org);
+            $stmt->bindParam(':uid', $userId);
+            $stmt->execute();
+            $OrgServices = array();
+            $rows = $stmt->fetchALL();
+            foreach ($rows as $row) {
+                array_push($OrgServices, $row['Id']);
+            }
+            return $OrgServices;
+        } catch (PDOException $e) {
+            print "ERROR READING USER PROFILE INFO!<br/>";
         }
-        return $OrgServices;
-    } catch (PDOException $e) {
-        print "ERROR READING USER PROFILE INFO!<br/>";
     }
-}
 
-function DB_CheckIfBossOrg($pdo, $org, $idUser) {
-    try {
-        $count = sql($pdo, "SELECT *
+    function DB_CheckIfBossOrg($pdo, $org, $idUser) {
+        try {
+            $count = sql($pdo, "SELECT *
   FROM [dbo].[Organization]
   where [Id] =? and [User_Boss] = ?", array($org, $idUser), "count");
-        if ($count < 0) {
-            return true;
-        } else {
-            return false;
+            if ($count < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-function DB_ValidateSubscription($pdo, $org) {
-    try {
-        $count = sql($pdo, "SELECT *
+    function DB_ValidateSubscription($pdo, $org) {
+        try {
+            $count = sql($pdo, "SELECT *
   FROM [dbo].[Organization_Subscription]
   where [Organization_Id] = ? and [Date_Finish] > GETDATE()", array($org), "count");
-        if ($count < 0) {
-            return true;
-        } else {
-            return false;
+            if ($count < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-function DB_getPeopleViewServicesOrg($pdo, $org) {
-    try {
-        if (!DB_ValidateSubscription($pdo, $org)) {
-            echo ' <header class = "box-typical-header-sm">Activate the subscription below to see the users who saw your services
+    function DB_getPeopleViewServicesOrg($pdo, $org) {
+        try {
+            if (!DB_ValidateSubscription($pdo, $org)) {
+                echo ' <header class = "box-typical-header-sm">Activate the subscription below to see the users who saw your services
 <br><br>
 Free for 3 Months</header>';
-            echo '<div align = "center">';
-            echo '<button type = "submit" class = "btn btn-rounded btn-success sign-up" align = "center" onClick = "subscribe(' . $org . ')" >Activate</button><br><br>';
-            echo '</div>';
-        } else {
-            $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
+                echo '<div align = "center">';
+                echo '<button type = "submit" class = "btn btn-rounded btn-success sign-up" align = "center" onClick = "subscribe(' . $org . ')" >Activate</button><br><br>';
+                echo '</div>';
+            } else {
+                $rows = sql($pdo, "SELECT TOP 5 [Service_View].[Date_View],[User_Profile].[First_Name],[Service].[Id],[Service].[Name],[User_Profile].[Picture_Path]
   FROM [dbo].[Service_View]
   join [User]
   on [User].[Id] = [Service_View].[User_Id]
@@ -1622,46 +1632,46 @@ Free for 3 Months</header>';
   on [Organization].[Id] = [Service].[Organization_Id]
   Where [Organization_Id] = ?
   order by [Service_View].[Date_View] DESC", array($org), "rows");
-            echo ' <header class = "box-typical-header-sm">People also viewed</header>';
-            foreach ($rows as $row) {
-                echo '<article class = "friends-list-item">';
-                echo '<div class = "user-card-row">';
-                echo '<div class = "tbl-row">';
-                echo '<div class = "tbl-cell tbl-cell-photo">';
-                echo '<a href = "#">';
-                echo '<img src = "' . $row['Picture_Path'] . '" alt = "">';
-                echo '</a>';
-                echo '</div>';
-                echo '<div class = "tbl-cell">';
+                echo ' <header class = "box-typical-header-sm">People also viewed</header>';
+                foreach ($rows as $row) {
+                    echo '<article class = "friends-list-item">';
+                    echo '<div class = "user-card-row">';
+                    echo '<div class = "tbl-row">';
+                    echo '<div class = "tbl-cell tbl-cell-photo">';
+                    echo '<a href = "#">';
+                    echo '<img src = "' . $row['Picture_Path'] . '" alt = "">';
+                    echo '</a>';
+                    echo '</div>';
+                    echo '<div class = "tbl-cell">';
 
 //falta link para o perfil do user
-                echo '<p class = "user-card-row-name"><a href = "#">' . $row['First_Name'] . '</a></p>';
+                    echo '<p class = "user-card-row-name"><a href = "#">' . $row['First_Name'] . '</a></p>';
 
 //falta colocar o link para ver o servico
-                echo '<p class = "user-card-row-status">Service <a href = "service_profile.php?Service=' . $row['Id'] . '">' . $row['Name'] . '</a></p>';
-                echo '</div>';
-                echo '<div class = "tbl-cell tbl-cell-action">';
+                    echo '<p class = "user-card-row-status">Service <a href = "service_profile.php?Service=' . $row['Id'] . '">' . $row['Name'] . '</a></p>';
+                    echo '</div>';
+                    echo '<div class = "tbl-cell tbl-cell-action">';
 
 //falta inserir o iniciar chat
-                echo '<a href = "#" class = "plus-link-circle"><span>&plus;
+                    echo '<a href = "#" class = "plus-link-circle"><span>&plus;
 </span></a>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo ' </article>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo ' </article>';
+                }
             }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-/**
- * Preenche seção de serviços no perfil da org
- * @param type $pdo
- * @param type $org
- * @param type $idUser
- */
+    /**
+     * Preenche seção de serviços no perfil da org
+     * @param type $pdo
+     * @param type $org
+     * @param type $idUser
+     */
 //function DB_GetOrganizationServices($pdo, $org, $idUser) {
 //    try {
 //        $services = getAllOrganizationServices($pdo, $org);
@@ -1699,9 +1709,9 @@ Free for 3 Months</header>';
 //        
 //    }
 //}
-function DB_GetOrganizationServices($pdo, $org, $idUser) {
-    try {
-        $rows = sql($pdo, "SELECT
+    function DB_GetOrganizationServices($pdo, $org, $idUser) {
+        try {
+            $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
@@ -1719,93 +1729,93 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] = 1
 	AND [Organization].[Id] = ?", array($org), "rows");
-        foreach ($rows as $row) {
-            //$idService = $service['Id'];
-            //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-            //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-            $views = DB_GetNumberServiceViews($pdo, $row['SID']);
-            $comments = DB_GetNumberServiceComments($pdo, $row['SID']);
-            echo '<div class = "slide">';
-            echo '<article class = "post-announce" >';
-            echo '<div class = "post-announce-pic">';
-            echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">';
-            echo ' <img src = "' . $row['MPP'] . '" alt = "" >';
-            echo '</a>';
-            echo ' </div>';
-            echo '<div class = "post-announce-title">';
-            echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a>';
-            echo '</div>';
-            //echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
-            echo '<ul class = "post-announce-meta">';
-            echo '<li>';
-            echo '<i class = "font-icon font-icon-eye"></i>';
-            echo $views['NumView'];
-            echo '</li>';
-            echo '<li>';
-            echo '<i class = "font-icon font-icon-comment"></i>';
-            echo $comments['NumComment'];
-            echo '</li>';
-            echo '</ul>';
-            echo '</article>';
-            echo '</div>';
+            foreach ($rows as $row) {
+                //$idService = $service['Id'];
+                //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+                //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+                $views = DB_GetNumberServiceViews($pdo, $row['SID']);
+                $comments = DB_GetNumberServiceComments($pdo, $row['SID']);
+                echo '<div class = "slide">';
+                echo '<article class = "post-announce" >';
+                echo '<div class = "post-announce-pic">';
+                echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">';
+                echo ' <img src = "' . $row['MPP'] . '" alt = "" >';
+                echo '</a>';
+                echo ' </div>';
+                echo '<div class = "post-announce-title">';
+                echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a>';
+                echo '</div>';
+                //echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
+                echo '<ul class = "post-announce-meta">';
+                echo '<li>';
+                echo '<i class = "font-icon font-icon-eye"></i>';
+                echo $views['NumView'];
+                echo '</li>';
+                echo '<li>';
+                echo '<i class = "font-icon font-icon-comment"></i>';
+                echo $comments['NumComment'];
+                echo '</li>';
+                echo '</ul>';
+                echo '</article>';
+                echo '</div>';
+            }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-/**
- * Preenche seção de serviços no perfil da org a cargo de um determinado user
- * @param type $pdo
- * @param type $org
- * @param type $idUser
- */
-function DB_GetOrganizationServicesByUserInService($pdo, $org, $idUser) {
-    try {
-        $services = getAllOrganizationServicesByUser($pdo, $org, $idUser);
-        foreach ($services as $service) {
-            $idService = $service['Id'];
-            $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-            $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
-            $views = DB_GetNumberServiceViews($pdo, $idService);
-            $comments = DB_GetNumberServiceComments($pdo, $idService);
-            echo '<div class = "slide">';
-            echo '<article class = "post-announce">';
-            echo '<div class = "post-announce-pic">';
-            echo '<a href = "service_profile.php?Service=' . $idService . '">';
-            echo ' <img src = "' . $Multi['Multimedia_Path'] . '" alt = "">';
-            echo '</a>';
-            echo ' </div>';
-            echo '<div class = "post-announce-title">';
-            echo '<a href = "service_profile.php?Service=' . $idService . '">' . $ServiceInfo['Name'] . '</a>';
-            echo '</div>';
-            echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
-            echo '<ul class = "post-announce-meta">';
-            echo '<li>';
-            echo '<i class = "font-icon font-icon-eye"></i>';
-            echo $views['NumView'];
-            echo '</li>';
-            echo '<li>';
-            echo '<i class = "font-icon font-icon-comment"></i>';
-            echo $comments['NumComment'];
-            echo '</li>';
-            echo '</ul>';
-            echo '</article>';
-            echo '</div>';
+    /**
+     * Preenche seção de serviços no perfil da org a cargo de um determinado user
+     * @param type $pdo
+     * @param type $org
+     * @param type $idUser
+     */
+    function DB_GetOrganizationServicesByUserInService($pdo, $org, $idUser) {
+        try {
+            $services = getAllOrganizationServicesByUser($pdo, $org, $idUser);
+            foreach ($services as $service) {
+                $idService = $service['Id'];
+                $ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+                $Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+                $views = DB_GetNumberServiceViews($pdo, $idService);
+                $comments = DB_GetNumberServiceComments($pdo, $idService);
+                echo '<div class = "slide">';
+                echo '<article class = "post-announce">';
+                echo '<div class = "post-announce-pic">';
+                echo '<a href = "service_profile.php?Service=' . $idService . '">';
+                echo ' <img src = "' . $Multi['Multimedia_Path'] . '" alt = "">';
+                echo '</a>';
+                echo ' </div>';
+                echo '<div class = "post-announce-title">';
+                echo '<a href = "service_profile.php?Service=' . $idService . '">' . $ServiceInfo['Name'] . '</a>';
+                echo '</div>';
+                echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
+                echo '<ul class = "post-announce-meta">';
+                echo '<li>';
+                echo '<i class = "font-icon font-icon-eye"></i>';
+                echo $views['NumView'];
+                echo '</li>';
+                echo '<li>';
+                echo '<i class = "font-icon font-icon-comment"></i>';
+                echo $comments['NumComment'];
+                echo '</li>';
+                echo '</ul>';
+                echo '</article>';
+                echo '</div>';
+            }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-/**
- * DEVOLVE CONVERSAS COM OUTROS USERS
- * @param type $pdo
- * @param type $userId
- */
-function db_getUserMessengerWithUsers($pdo, $userId) {
-    try {
-        $rows = sql($pdo, "Select 
+    /**
+     * DEVOLVE CONVERSAS COM OUTROS USERS
+     * @param type $pdo
+     * @param type $userId
+     */
+    function db_getUserMessengerWithUsers($pdo, $userId) {
+        try {
+            $rows = sql($pdo, "Select 
         [User_Profile].[Picture_Path] AS UPP
         ,[User_Profile].[First_Name] AS UFN
         ,[User_Profile].[Last_Name] AS ULN
@@ -1816,39 +1826,39 @@ function db_getUserMessengerWithUsers($pdo, $userId) {
         join [User_Profile]
         on [User_Profile].[User_Id] = [User].[id]
         Where [Conversation].[User_Id1] = ? or [Conversation].[User_Id2] = ?", array($userId, $userId), "rows");
-        foreach ($rows as $row) {
-            if ($row['UID'] === $userId) {
-                
-            } else {
-                echo '<article class = "friends-list-item">';
-                echo '<div class = "user-card-row">';
-                echo '<div class = "tbl-row">';
-                echo '<div class = "tbl-cell tbl-cell-photo">';
-                echo '<a href = "#">';
-                echo '<img src = "' . $row['UPP'] . '" alt = "Avatar">';
-                echo '</a>';
-                echo '</div>';
-                echo '<div class = "tbl-cell">';
-                echo '<p class = "user-card-row-name"><a href = "#">' . $row['UFN'] . ' ' . $row['ULN'] . '</a></p>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '</article>';
+            foreach ($rows as $row) {
+                if ($row['UID'] === $userId) {
+                    
+                } else {
+                    echo '<article class = "friends-list-item">';
+                    echo '<div class = "user-card-row">';
+                    echo '<div class = "tbl-row">';
+                    echo '<div class = "tbl-cell tbl-cell-photo">';
+                    echo '<a href = "#">';
+                    echo '<img src = "' . $row['UPP'] . '" alt = "Avatar">';
+                    echo '</a>';
+                    echo '</div>';
+                    echo '<div class = "tbl-cell">';
+                    echo '<p class = "user-card-row-name"><a href = "#">' . $row['UFN'] . ' ' . $row['ULN'] . '</a></p>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</article>';
+                }
             }
+        } catch (Exception $exc) {
+            echo 'ERROR READING CONVERSATIONS';
         }
-    } catch (Exception $exc) {
-        echo 'ERROR READING CONVERSATIONS';
     }
-}
 
-/**
- * DEVOLVE CONVERSAS COM ORGS 
- * @param type $pdo
- * @param type $userId
- */
-function db_getUserMessengerWithOrgs($pdo, $userId) {
-    try {
-        $rows = sql($pdo, "Select 
+    /**
+     * DEVOLVE CONVERSAS COM ORGS 
+     * @param type $pdo
+     * @param type $userId
+     */
+    function db_getUserMessengerWithOrgs($pdo, $userId) {
+        try {
+            $rows = sql($pdo, "Select 
         [Organization].[Picture_Path] OPP
         ,[Organization].[Name] AS ONA
         From [Conversation]
@@ -1857,39 +1867,39 @@ function db_getUserMessengerWithOrgs($pdo, $userId) {
         join Organization
         on [Organization].[User_Boss] = [User].[id]
         Where [Conversation].[User_Id1] = ? or [Conversation].[User_Id2] = ?", array($userId, $userId), "rows");
-        foreach ($rows as $row) {
-            if ($row['UID'] === $userId) {
-                
-            } else {
-                echo '<article class = "friends-list-item">';
-                echo '<div class = "user-card-row">';
-                echo '<div class = "tbl-row">';
-                echo '<div class = "tbl-cell tbl-cell-photo">';
-                echo '<a href = "#">';
-                echo '<img src = "' . $row['OPP'] . '" alt = "Avatar">';
-                echo '</a>';
-                echo '</div>';
-                echo '<div class = "tbl-cell">';
-                echo '<p class = "user-card-row-name"><a href = "#">' . $row['ONA'] . '</a></p>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '</article>';
+            foreach ($rows as $row) {
+                if ($row['UID'] === $userId) {
+                    
+                } else {
+                    echo '<article class = "friends-list-item">';
+                    echo '<div class = "user-card-row">';
+                    echo '<div class = "tbl-row">';
+                    echo '<div class = "tbl-cell tbl-cell-photo">';
+                    echo '<a href = "#">';
+                    echo '<img src = "' . $row['OPP'] . '" alt = "Avatar">';
+                    echo '</a>';
+                    echo '</div>';
+                    echo '<div class = "tbl-cell">';
+                    echo '<p class = "user-card-row-name"><a href = "#">' . $row['ONA'] . '</a></p>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</article>';
+                }
             }
+        } catch (Exception $exc) {
+            echo 'ERROR READING CONVERSATIONS';
         }
-    } catch (Exception $exc) {
-        echo 'ERROR READING CONVERSATIONS';
     }
-}
 
-/**
- * FUNCAO QUE DEVOLVE OS MEUS WICPLANNERS
- * @param type $pdo
- * @param type $userId
- */
-function db_getMyWicPlannerToWICCrud($pdo, $userId) {
-    try {
-        $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
+    /**
+     * FUNCAO QUE DEVOLVE OS MEUS WICPLANNERS
+     * @param type $pdo
+     * @param type $userId
+     */
+    function db_getMyWicPlannerToWICCrud($pdo, $userId) {
+        try {
+            $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
         ,[WIC_Planner].[Name] AS WPN
         ,[WIC_Planner].[Event_Date] AS WPED        
             ,[User_Profile].[First_Name] AS UFN
@@ -1902,40 +1912,40 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
         on [WIC_Planner].[User_Id] = [User_Profile].[User_Id]
         WHERE [WIC_Planner].[Enabled] = 1
         AND [User].[id] = ? ORDER BY WPED DESC", array($userId), "rows");
-        foreach ($rows as $row) {
-            echo '<tr class = "table-check">';
-            echo '<td><a onclick = "showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
-            $str = $row['WPED'];
-            //SEPARA A DATA DAS HORAS
-            $subStr = explode(" ", $str);
-            //IMPRIME DATA
-            echo '<td>' . $subStr[0] . '</td>';
-            echo '<td class = "table-photo">';
-            echo '<img src = "' . $row['UPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
-            echo '</td>';
-            echo '<td class = "table-photo">';
-            echo '<a onclick = "showAddWicFormEditMode(' . $row['WID'] . ')" class = "font-icon font-icon-pencil" title="Edit">';
-            echo '</a>';
-            echo '</td>';
-            echo '<td class = "table-photo">';
-            echo '<a onclick = "removeWic(this)"class = "font-icon font-icon-trash" style="color:red;" title="Delete" id = ' . $row['WID'] . '>';
-            echo '</a>';
-            echo '</td>';
-            echo '</tr>';
+            foreach ($rows as $row) {
+                echo '<tr class = "table-check">';
+                echo '<td><a onclick = "showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
+                $str = $row['WPED'];
+                //SEPARA A DATA DAS HORAS
+                $subStr = explode(" ", $str);
+                //IMPRIME DATA
+                echo '<td>' . $subStr[0] . '</td>';
+                echo '<td class = "table-photo">';
+                echo '<img src = "' . $row['UPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
+                echo '</td>';
+                echo '<td class = "table-photo">';
+                echo '<a onclick = "showAddWicFormEditMode(' . $row['WID'] . ')" class = "font-icon font-icon-pencil" title="Edit">';
+                echo '</a>';
+                echo '</td>';
+                echo '<td class = "table-photo">';
+                echo '<a onclick = "removeWic(this)"class = "font-icon font-icon-trash" style="color:red;" title="Delete" id = ' . $row['WID'] . '>';
+                echo '</a>';
+                echo '</td>';
+                echo '</tr>';
+            }
+        } catch (Exception $exc) {
+            echo 'ERROR READING MY WIC PLANNERS';
         }
-    } catch (Exception $exc) {
-        echo 'ERROR READING MY WIC PLANNERS';
     }
-}
 
-/**
- * FUNCAO QUE DEVOLVE WICS DE OUTROS SOBRE OS QUAIS TENHO ACESSO
- * @param type $pdo
- * @param type $userId
- */
-function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
-    try {
-        $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
+    /**
+     * FUNCAO QUE DEVOLVE WICS DE OUTROS SOBRE OS QUAIS TENHO ACESSO
+     * @param type $pdo
+     * @param type $userId
+     */
+    function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
+        try {
+            $rows = sql($pdo, "SELECT [WIC_Planner].[Id] AS WID
         ,[WIC_Planner].[Name] AS WPN
         ,[WIC_Planner].[Event_Date] AS WPED        
             ,[User_Profile].[First_Name] AS UFN
@@ -1949,17 +1959,17 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
         join [WIC_Planner_User]
         on [WIC_Planner_User].[Wic_Planner_ID] = [Wic_Planner].[Id]
         WHERE [WIC_Planner].[Enabled] = 1 and [Wic_Planner_User].[User_Id] = ? and [WIC_Planner_User].[Enabled] = 1", array($userId), "rows");
-        foreach ($rows as $row) {
-            echo '<tr class = "table-check">';
-            echo '<td><a onclick = "showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
-            $str = $row['WPED'];
-            //SEPARA A DATA DAS HORAS
-            $subStr = explode(" ", $str);
-            //IMPRIME DATA
-            echo '<td>' . $subStr[0] . '</td>';
-            echo '<td class = "table-photo">';
-            echo '<img src = "' . $row['UPP'] . '" alt = "Avatar"  data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
-            echo '</td>';
+            foreach ($rows as $row) {
+                echo '<tr class = "table-check">';
+                echo '<td><a onclick = "showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
+                $str = $row['WPED'];
+                //SEPARA A DATA DAS HORAS
+                $subStr = explode(" ", $str);
+                //IMPRIME DATA
+                echo '<td>' . $subStr[0] . '</td>';
+                echo '<td class = "table-photo">';
+                echo '<img src = "' . $row['UPP'] . '" alt = "Avatar"  data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
+                echo '</td>';
 //COMO USER E CONVIDADO APENAS PODE VER/REMOVER E ADICIONAR SERVIÇOS            
 //            echo '<td class = "table-photo">';
 //            echo '<a href = "#" class = "font-icon font-icon-pencil">';
@@ -1969,46 +1979,46 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
 //            echo '<a href = "#" class = "font-icon font-icon-del">';
 //            echo '</a>';
 //            echo '</td>';
-            echo '</tr>';
+                echo '</tr>';
+            }
+        } catch (Exception $exc) {
+            echo 'ERROR READING THIRD WIC PLANNERS';
         }
-    } catch (Exception $exc) {
-        echo 'ERROR READING THIRD WIC PLANNERS';
     }
-}
 
-/**
- * DEVOLVE TODOS OS WIC ONDE SE ENCONTRA O USER
- * @param type $pdo
- * @param type $userId
- */
-function DB_getMyWicsAjax($pdo, $userId) {
-    echo db_getMyWicPlannerToWICCrud($pdo, $userId);
-    echo db_getThirdWicPlannerToWICCrud($pdo, $userId);
-}
+    /**
+     * DEVOLVE TODOS OS WIC ONDE SE ENCONTRA O USER
+     * @param type $pdo
+     * @param type $userId
+     */
+    function DB_getMyWicsAjax($pdo, $userId) {
+        echo db_getMyWicPlannerToWICCrud($pdo, $userId);
+        echo db_getThirdWicPlannerToWICCrud($pdo, $userId);
+    }
 
-function DB_removeWICPlanner($pdo, $userId, $wicId) {
-    try {
-        sql($pdo, "UPDATE [WIC_Planner]
+    function DB_removeWICPlanner($pdo, $userId, $wicId) {
+        try {
+            sql($pdo, "UPDATE [WIC_Planner]
             SET [WIC_Planner].[Enabled]=0
             WHERE [WIC_Planner].[Enabled]=1 
             AND [WIC_Planner].[Id]= ? 
             AND [WIC_Planner].[User_Id] = ?", array($wicId, $userId));
-        echo "SUCCESSFULLY REMOVED!";
-    } catch (PDOException $e) {
-        print "ERROR REMOVING WIC PLANNER :(!";
-        die();
+            echo "SUCCESSFULLY REMOVED!";
+        } catch (PDOException $e) {
+            print "ERROR REMOVING WIC PLANNER :(!";
+            die();
+        }
     }
-}
 
-/**
- * Verifica se o Wic Planner tem serviços
- * @param type $pdo
- * @param type $email
- * @return boolean
- */
-function DB_checkIfWicPlannerHaveServices($pdo, $wicPlannerId, $userId) {
-    try {
-        $count = sql($pdo, "SELECT [Service].[Id] AS SID
+    /**
+     * Verifica se o Wic Planner tem serviços
+     * @param type $pdo
+     * @param type $email
+     * @return boolean
+     */
+    function DB_checkIfWicPlannerHaveServices($pdo, $wicPlannerId, $userId) {
+        try {
+            $count = sql($pdo, "SELECT [Service].[Id] AS SID
                 , [Service].[Name] AS SNA
                 , [Organization].[Name] AS ONA
                 , [Organization].[Id] AS OID
@@ -2023,26 +2033,26 @@ function DB_checkIfWicPlannerHaveServices($pdo, $wicPlannerId, $userId) {
                 on [Service].[Organization_Id] = [Organization].[Id]
                 WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
                 AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "count");
-        if ($count < 0) {
-            return true;
-        } else {
-            return false;
+            if ($count < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $exc) {
+            echo '';
         }
-    } catch (Exception $exc) {
-        echo '';
     }
-}
 
-/**
- * Função que devolve os serviços do meu WIC Planner
- * @param type $pdo
- * @param type $wicPlannerId
- * @param type $userId
- */
-function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
-    try {
-        if (DB_checkIfWicPlannerHaveServices($pdo, $wicPlannerId, $userId)) {
-            $rows = sql($pdo, "SELECT [Service].[Id] AS SID
+    /**
+     * Função que devolve os serviços do meu WIC Planner
+     * @param type $pdo
+     * @param type $wicPlannerId
+     * @param type $userId
+     */
+    function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
+        try {
+            if (DB_checkIfWicPlannerHaveServices($pdo, $wicPlannerId, $userId)) {
+                $rows = sql($pdo, "SELECT [Service].[Id] AS SID
                 , [Service].[Name] AS SNA
                 , [Organization].[Name] AS ONA
                 , [Organization].[Id] AS OID
@@ -2059,7 +2069,7 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
                 WHERE [Service].[Enabled] = 1 AND [WIC_Planner_Service].[Enabled] = 1 
                 AND [Organization].[Enabled] = 1 AND [WIC_Planner_Service].[WIC_Planner_Id] = ?
                 AND [WIC_Planner].[User_Id] = ?", array($wicPlannerId, $userId), "rows");
-            echo '<section class = "box-typical box-typical-max-280" style="width: 100%;">
+                echo '<section class = "box-typical box-typical-max-280" style="width: 100%;">
 <header class = "box-typical-header">
 <div class = "tbl-row">
 <div class = "tbl-cell tbl-cell-title">
@@ -2082,8 +2092,8 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 </tr>
 </thead>
 <tbody class="WICS" style="width:100%">';
-            foreach ($rows as $row) {
-                echo '
+                foreach ($rows as $row) {
+                    echo '
 <tr class = "table-check">
 <td><a href = "./service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></td>
 <td class = "table-photo">
@@ -2095,28 +2105,28 @@ function db_getServicesOfMyWicPlanner($pdo, $wicPlannerId, $userId) {
 </a>
 </td>
 </tr>';
-            }
-            echo '</tbody>
+                }
+                echo '</tbody>
 </table>
 </div>
 </div>
 </section>
 </div>';
-        } else {
-            
+            } else {
+                
+            }
+        } catch (Exception $exc) {
+            echo 'ERROR READING SERVICES OF WIC PLANNER!';
         }
-    } catch (Exception $exc) {
-        echo 'ERROR READING SERVICES OF WIC PLANNER!';
     }
-}
 
-function DB_UserProfile($pdo, $userId) {
-    try {
-        $rowss = sql($pdo, "SELECT *
+    function DB_UserProfile($pdo, $userId) {
+        try {
+            $rowss = sql($pdo, "SELECT *
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
-        foreach ($rowss as $row) {
-            echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem; max-width: 180px; max-height: 120px;" >
+            foreach ($rowss as $row) {
+                echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem; max-width: 180px; max-height: 120px;" >
 <img id = "image" src = "' . $row['Picture_Path'] . '" alt = "Avatar" style="display: block;width: 100%;-webkit-border-radius: 50%; max-width: 180px; max-height: 120px;"/>
 </div>
 
@@ -2139,18 +2149,18 @@ Change Picture
 </div>
 </div>
 <button type = "submit" name = "save" class = "btn btn-rounded btn-success sign-up">Save Changes</button>';
+            }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-function DB_OrgProfile($pdo, $userId) {
-    try {
-        $rows = sql($pdo, "SELECT * FROM [Organization] Where [User_Boss] = ?", array($userId), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem;max-width: 180px; max-height: 120px;" >'
-            . '<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "" style="display: block;width: 100%;-webkit-border-radius: 50%;max-width: 180px; max-height: 120px;"/>
+    function DB_OrgProfile($pdo, $userId) {
+        try {
+            $rows = sql($pdo, "SELECT * FROM [Organization] Where [User_Boss] = ?", array($userId), "rows");
+            foreach ($rows as $row) {
+                echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem;max-width: 180px; max-height: 120px;" >'
+                . '<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "" style="display: block;width: 100%;-webkit-border-radius: 50%;max-width: 180px; max-height: 120px;"/>
                 </div>
 <button class = "btn btn-rounded btn-file" >
 Change Picture
@@ -2224,25 +2234,25 @@ Change Picture
 </div>
 
 <button type = "submit" id = "save" name = "save" class = "btn btn-rounded btn-success sign-up">Save Changes</button>';
+            }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-/**
- * Adiciona serviço; Devolve Service_Id
- * @param type $pdo
- * @param type $cname
- * @param type $cDescription
- * @param type $cSub
- * @param type $org
- * @param type $city
- */
-function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
-    try {
-        $d = getDateToDB();
-        sql($pdo, "INSERT INTO [dbo].[Service]
+    /**
+     * Adiciona serviço; Devolve Service_Id
+     * @param type $pdo
+     * @param type $cname
+     * @param type $cDescription
+     * @param type $cSub
+     * @param type $org
+     * @param type $city
+     */
+    function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
+        try {
+            $d = getDateToDB();
+            sql($pdo, "INSERT INTO [dbo].[Service]
            ([Name]
            ,[Description]
            ,[Organization_Id]
@@ -2252,18 +2262,18 @@ function DB_AddNewService($pdo, $cname, $cDescription, $cSub, $org, $city) {
            ,[City_Id])
             VALUES
            (?,?,?,?,?,?,?)", array($cname, $cDescription, $org, $d, 1, $cSub, $city));
-        $lastId = $pdo->lastInsertId();
+            $lastId = $pdo->lastInsertId();
 //        echo 'true';
-        return $lastId;
-    } catch (Exception $ex) {
-        echo 'ERROR ADDING SERVICE';
+            return $lastId;
+        } catch (Exception $ex) {
+            echo 'ERROR ADDING SERVICE';
+        }
     }
-}
 
-function DB_AddNewServiceFirstPagePicture($pdo, $ServiceId, $UserId, $PicturePath, $FirstPage) {
-    try {
-        $d = getDateToDB();
-        sql($pdo, "INSERT INTO [dbo].[Multimedia]
+    function DB_AddNewServiceFirstPagePicture($pdo, $ServiceId, $UserId, $PicturePath, $FirstPage) {
+        try {
+            $d = getDateToDB();
+            sql($pdo, "INSERT INTO [dbo].[Multimedia]
            ([Multimedia_Type_Id]
            ,[Service_Id]
            ,[User_Created_Id]
@@ -2272,70 +2282,70 @@ function DB_AddNewServiceFirstPagePicture($pdo, $ServiceId, $UserId, $PicturePat
            ,[First_Page])
             VALUES
            (?,?,?,?,?,?)", array(1, $ServiceId, $UserId, 1, $PicturePath, $FirstPage));
-        $lastId = $pdo->lastInsertId();
-        echo 'OKI > MULTIMEDIA OKI > ';
-        echo $lastId;
-    } catch (Exception $ex) {
-        echo 'ERROR ADDING MULTIMEDIA TO SERVICE';
+            $lastId = $pdo->lastInsertId();
+            echo 'OKI > MULTIMEDIA OKI > ';
+            echo $lastId;
+        } catch (Exception $ex) {
+            echo 'ERROR ADDING MULTIMEDIA TO SERVICE';
+        }
     }
-}
 
-/**
- * Atualiza dados do user | profile
- * @param type $pdo
- * @param type $sId
- * @param type $first
- * @param type $last
- */
-function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
-    try {
-        sql($pdo, "UPDATE [dbo].[User_Profile]
+    /**
+     * Atualiza dados do user | profile
+     * @param type $pdo
+     * @param type $sId
+     * @param type $first
+     * @param type $last
+     */
+    function DB_UpdateUserInformation($pdo, $sId, $first, $last) {
+        try {
+            sql($pdo, "UPDATE [dbo].[User_Profile]
    SET [First_Name] = ?
       ,[Last_Name] = ?
  WHERE [User_Id] =? ", array($first, $last, $sId));
-        echo 'Your profile was updated';
-    } catch (Exception $ex) {
-        echo 'Error';
+            echo 'Your profile was updated';
+        } catch (Exception $ex) {
+            echo 'Error';
+        }
     }
-}
 
-/**
- * Funcao para alterar pic profile user
- * @param type $pdo
- * @param type $sId
- * @param type $picture_path
- */
-function DB_UpdateUserPictureInformation($pdo, $sId, $picture_path) {
-    try {
-        sql($pdo, "UPDATE [dbo].[User_Profile]
+    /**
+     * Funcao para alterar pic profile user
+     * @param type $pdo
+     * @param type $sId
+     * @param type $picture_path
+     */
+    function DB_UpdateUserPictureInformation($pdo, $sId, $picture_path) {
+        try {
+            sql($pdo, "UPDATE [dbo].[User_Profile]
    SET [Picture_Path] = ?
  WHERE [User_Id] =? ", array($picture_path, $sId));
-        echo 'Your profile picture was updated';
-    } catch (Exception $ex) {
-        echo 'Error';
+            echo 'Your profile picture was updated';
+        } catch (Exception $ex) {
+            echo 'Error';
+        }
     }
-}
 
-/**
- * Funcao para alterar pic profile org
- * @param type $pdo
- * @param type $sId
- * @param type $picture_path
- */
-function DB_UpdateOrgPictureInformation($pdo, $sId, $picture_path) {
-    try {
-        sql($pdo, "UPDATE [dbo].[Organization]
+    /**
+     * Funcao para alterar pic profile org
+     * @param type $pdo
+     * @param type $sId
+     * @param type $picture_path
+     */
+    function DB_UpdateOrgPictureInformation($pdo, $sId, $picture_path) {
+        try {
+            sql($pdo, "UPDATE [dbo].[Organization]
    SET [Picture_Path] = ?
  WHERE [User_Boss] =? ", array($picture_path, $sId));
-        echo 'Your profile picture was updated';
-    } catch (Exception $ex) {
-        echo 'Error';
+            echo 'Your profile picture was updated';
+        } catch (Exception $ex) {
+            echo 'Error';
+        }
     }
-}
 
-function DB_UpdateOrgInformation($pdo, $name, $email, $address, $phone, $mobile, $website, $facebook, $linkdin, $twitter, $description, $userId) {
-    try {
-        sql($pdo, "UPDATE [dbo].[Organization]
+    function DB_UpdateOrgInformation($pdo, $name, $email, $address, $phone, $mobile, $website, $facebook, $linkdin, $twitter, $description, $userId) {
+        try {
+            sql($pdo, "UPDATE [dbo].[Organization]
    SET [Name] = ?
       ,[Phone_Number] = ?
       ,[Mobile_Number] = ?
@@ -2348,145 +2358,145 @@ function DB_UpdateOrgInformation($pdo, $name, $email, $address, $phone, $mobile,
 	  ,[Picture_Path] = ?
       ,[Description] = ?
  WHERE [User_Boss] = ?", array($name, $phone, $mobile, $address, $facebook, $twitter, $linkdin, $email, $website, NULL, $description, $userId));
-        echo 'Updated';
-    } catch (Exception $ex) {
-        echo 'error';
-    }
-}
-
-/**
- * Adiciona um WIC Planner
- * @param type $pdo
- * @param type $name
- * @param type $userId
- * @param type $d
- * @param type $eventDate
- */
-function DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate) {
-    try {
-        sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [User_Id], [Date_Created],"
-                . " [Enabled], [Event_Date]) VALUES (?, ?, ?, ?, ?)", array($name, $userId, $d, 1, $eventDate));
-        echo $name . " created!";
-    } catch (PDOException $e) {
-        echo "ERROR CREATING WIC PLANNER!";
-    }
-}
-
-/**
- * Devolve informação sobre um Wic Planner
- * @param type $pdo
- * @param type $wicId
- * @param type $userId
- * @return type
- */
-function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
-    try {
-        $rows = sql($pdo, "SELECT * FROM [dbo].[WIC_Planner] WHERE [Id] = ? and [User_Id] = ?", array($wicId, $userId), "rows");
-        $wicInfo = array();
-        foreach ($rows as $row) {
-            $str = $row['Event_Date'];
-            //SEPARA A DATA DAS HORAS
-            $subStr = explode(" ", $str);
-            //SEPARA DIA MES ANO
-            $subSubStr = explode("-", $subStr[0]);
-            $wicInfo["Name"] = $row["Name"];
-            $wicInfo["Event_Date"] = $subSubStr[1] . '-' . $subSubStr[2] . '-' . $subSubStr[0];
-            //$wicInfo["Event_Date"] = $row['Event_Date'];
+            echo 'Updated';
+        } catch (Exception $ex) {
+            echo 'error';
         }
-        return $wicInfo;
-    } catch (Exception $exc) {
-        echo 'ERROR READING WIC PLANNER!';
     }
-}
 
-/**
- * Funcção que atualiza o wicplanner
- * @param type $pdo
- * @param type $wicId
- * @param type $userId
- * @param type $name
- * @param type $eventDate
- */
-function DB_updateWicPlanner($pdo, $wicId, $userId, $name, $eventDate) {
-    if ($wicId != 0) {
+    /**
+     * Adiciona um WIC Planner
+     * @param type $pdo
+     * @param type $name
+     * @param type $userId
+     * @param type $d
+     * @param type $eventDate
+     */
+    function DB_addWicPlanner($pdo, $name, $userId, $d, $eventDate) {
         try {
-            sql($pdo, "UPDATE [WIC_Planner]
+            sql($pdo, "INSERT INTO [dbo].[WIC_Planner] ([Name], [User_Id], [Date_Created],"
+                    . " [Enabled], [Event_Date]) VALUES (?, ?, ?, ?, ?)", array($name, $userId, $d, 1, $eventDate));
+            echo $name . " created!";
+        } catch (PDOException $e) {
+            echo "ERROR CREATING WIC PLANNER!";
+        }
+    }
+
+    /**
+     * Devolve informação sobre um Wic Planner
+     * @param type $pdo
+     * @param type $wicId
+     * @param type $userId
+     * @return type
+     */
+    function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
+        try {
+            $rows = sql($pdo, "SELECT * FROM [dbo].[WIC_Planner] WHERE [Id] = ? and [User_Id] = ?", array($wicId, $userId), "rows");
+            $wicInfo = array();
+            foreach ($rows as $row) {
+                $str = $row['Event_Date'];
+                //SEPARA A DATA DAS HORAS
+                $subStr = explode(" ", $str);
+                //SEPARA DIA MES ANO
+                $subSubStr = explode("-", $subStr[0]);
+                $wicInfo["Name"] = $row["Name"];
+                $wicInfo["Event_Date"] = $subSubStr[1] . '-' . $subSubStr[2] . '-' . $subSubStr[0];
+                //$wicInfo["Event_Date"] = $row['Event_Date'];
+            }
+            return $wicInfo;
+        } catch (Exception $exc) {
+            echo 'ERROR READING WIC PLANNER!';
+        }
+    }
+
+    /**
+     * Funcção que atualiza o wicplanner
+     * @param type $pdo
+     * @param type $wicId
+     * @param type $userId
+     * @param type $name
+     * @param type $eventDate
+     */
+    function DB_updateWicPlanner($pdo, $wicId, $userId, $name, $eventDate) {
+        if ($wicId != 0) {
+            try {
+                sql($pdo, "UPDATE [WIC_Planner]
             SET [WIC_Planner].[Name] = ?,
             [WIC_Planner].[Event_Date] = ?
             WHERE [WIC_Planner].[Id]= ? 
             AND [WIC_Planner].[User_Id] = ?", array($name, $eventDate, $wicId, $userId));
-            echo "Event updated!";
-        } catch (PDOException $e) {
-            print "ERROR UPDATING WIC PLANNER :(!";
-            die();
+                echo "Event updated!";
+            } catch (PDOException $e) {
+                print "ERROR UPDATING WIC PLANNER :(!";
+                die();
+            }
         }
     }
-}
 
-/**
- * Função que alterar a imagem de perfil do user
- * @param type $pdo
- * @param type $pic
- * @param type $userId
- */
-function DB_addUserProfilePicture($pdo, $pic, $userId) {
-    try {
-        sql($pdo, "UPDATE [dbo].[User_Profile] SET [Picture_Path] = ? WHERE [User_Id] = ?", array($pic, $userId));
-        echo 'Picture sucessufully changed!';
-    } catch (PDOException $e) {
-        echo "ERROR UPDATING PROFILE PICTURE!";
+    /**
+     * Função que alterar a imagem de perfil do user
+     * @param type $pdo
+     * @param type $pic
+     * @param type $userId
+     */
+    function DB_addUserProfilePicture($pdo, $pic, $userId) {
+        try {
+            sql($pdo, "UPDATE [dbo].[User_Profile] SET [Picture_Path] = ? WHERE [User_Id] = ?", array($pic, $userId));
+            echo 'Picture sucessufully changed!';
+        } catch (PDOException $e) {
+            echo "ERROR UPDATING PROFILE PICTURE!";
+        }
     }
-}
 
-/**
- * Função para remover serviço do wic planner
- * @param type $pdo
- * @param type $serviceId
- * @param type $WicPlannerId
- * @return boolean
- */
-function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
-    //SE PASSARMOS O USERID PODEMOS VERIFICARA SE O USER ESTA NESTE WIC PLANNER
-    try {
-        $count = sql($pdo, "UPDATE [dbo].[WIC_Planner_Service] "
-                . "SET [Enabled]=0 "
-                . "WHERE [Service_Id] = ? "
-                . "AND [WIC_Planner_Id] = ?", array($serviceId, $WicPlannerId));
-        return true;
-    } catch (Exception $exc) {
-        return false;
+    /**
+     * Função para remover serviço do wic planner
+     * @param type $pdo
+     * @param type $serviceId
+     * @param type $WicPlannerId
+     * @return boolean
+     */
+    function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
+        //SE PASSARMOS O USERID PODEMOS VERIFICARA SE O USER ESTA NESTE WIC PLANNER
+        try {
+            $count = sql($pdo, "UPDATE [dbo].[WIC_Planner_Service] "
+                    . "SET [Enabled]=0 "
+                    . "WHERE [Service_Id] = ? "
+                    . "AND [WIC_Planner_Id] = ?", array($serviceId, $WicPlannerId));
+            return true;
+        } catch (Exception $exc) {
+            return false;
+        }
     }
-}
 
 //Service manager , Responsible for the chat, Edit service informationx
-function DB_validatePermissionEditInfo($pdo, $userId, $serviceId, $role) {
-    try {
-        $count = sql($pdo, "SELECT *
+    function DB_validatePermissionEditInfo($pdo, $userId, $serviceId, $role) {
+        try {
+            $count = sql($pdo, "SELECT *
   FROM [dbo].[User_Service]
  join [Role]
  on [Role].[Id] = [User_Service].[Role_Id]
  where [Service_Id] = ? and [Role].[Name] = ? and [User_Id] = ? and [User_Service].[Enabled] = 1", array($serviceId, $role, $userId), "count");
-        if ($count < 0) {
-            return TRUE;
-        } else {
-            return FALSE;
+            if ($count < 0) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-/**
- * Função que devolve os serviços para o index
- * @param type $pdo
- * @param type $Category
- * @param type $SubCategoty
- * @param type $city
- */
-function DB_getServicesForIndex($pdo) {
-    try {
+    /**
+     * Função que devolve os serviços para o index
+     * @param type $pdo
+     * @param type $Category
+     * @param type $SubCategoty
+     * @param type $city
+     */
+    function DB_getServicesForIndex($pdo) {
+        try {
 
-        $rows = sql($pdo, "SELECT
+            $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
@@ -2503,8 +2513,8 @@ function DB_getServicesForIndex($pdo) {
         AND [Service].[Enabled] = 1 
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] = 1", array(), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "card-grid-col">
+            foreach ($rows as $row) {
+                echo '<div class = "card-grid-col">
 <article class = "card-typical">
 <div class = "card-typical-section">
 <div class = "user-card-row">
@@ -2545,29 +2555,29 @@ function DB_getServicesForIndex($pdo) {
 
 </article>
 </div>';
+            }
+
+            //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+            //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+        } catch (Exception $exc) {
+            echo 'ERROR READING SERVICE TABLE!';
         }
-
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-    } catch (Exception $exc) {
-        echo 'ERROR READING SERVICE TABLE!';
     }
-}
 
-/**
- * Devolve os users de um serviço/org side
- * @param type $pdo
- * @param type $org
- */
-function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
-    try {
-        $Services = sql($pdo, "SELECT *
+    /**
+     * Devolve os users de um serviço/org side
+     * @param type $pdo
+     * @param type $org
+     */
+    function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
+        try {
+            $Services = sql($pdo, "SELECT *
         FROM [Service]
         where [Enabled] = 1 and [Id] = ?", array($servideId), "rows");
-        echo $Service['Id'];
-        foreach ($Services as $Service) {
-            $idService = $Service['Id'];
-            $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
+            echo $Service['Id'];
+            foreach ($Services as $Service) {
+                $idService = $Service['Id'];
+                $rows = sql($pdo, "SELECT [Email],[UseR_Profile].[First_Name],[User_Profile].[Last_name],[User_Profile].[Picture_Path]
 ,[Service].[Name] as ServiceName,[Role].[Name]
   FROM [dbo].[User_Service]
   join [User]
@@ -2579,40 +2589,40 @@ function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
   join [Role]
   on [Role].[Id] = [User_Service].[Role_Id]
   where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
-            echo '<header class = "box-typical-header-sm">People in responsible </header>
+                echo '<header class = "box-typical-header-sm">People in responsible </header>
 <div class = "friends-list stripped">';
-            foreach ($rows as $row) {
-                echo '<article class = "friends-list-item">';
-                echo ' <div class = "user-card-row">';
-                echo ' <div class = "tbl-row">';
-                echo ' <div class = "tbl-cell tbl-cell-photo">';
-                echo ' <a href = "#">';
-                echo ' <img src = ' . $row['Picture_Path'] . ' alt = "">';
-                echo ' </a>';
-                echo ' </div>';
-                echo ' <div class = "tbl-cell">';
-                echo ' <p class = "user-card-row-name">' . $row['First_Name'] . '</p>';
-                echo ' <p class = "user-card-row-name">' . $row['Last_name'] . '</p>';
-                //echo ' <p class = "user-card-row-location">' . $row['ServiceName'] . '</p>';
-                echo ' </div>';
-                echo ' </div>';
-                echo ' </article>';
+                foreach ($rows as $row) {
+                    echo '<article class = "friends-list-item">';
+                    echo ' <div class = "user-card-row">';
+                    echo ' <div class = "tbl-row">';
+                    echo ' <div class = "tbl-cell tbl-cell-photo">';
+                    echo ' <a href = "#">';
+                    echo ' <img src = ' . $row['Picture_Path'] . ' alt = "">';
+                    echo ' </a>';
+                    echo ' </div>';
+                    echo ' <div class = "tbl-cell">';
+                    echo ' <p class = "user-card-row-name">' . $row['First_Name'] . '</p>';
+                    echo ' <p class = "user-card-row-name">' . $row['Last_name'] . '</p>';
+                    //echo ' <p class = "user-card-row-location">' . $row['ServiceName'] . '</p>';
+                    echo ' </div>';
+                    echo ' </div>';
+                    echo ' </article>';
+                }
+                echo '</div>';
             }
-            echo '</div>';
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-/**
- * Função que devolve os comentários de um serviço
- * @param type $pdo
- * @param type $servideId
- */
-function DB_getServiceCommentFromUsers($pdo, $servideId) {
-    try {
-        $rows = sql($pdo, "SELECT [User_Profile].[First_Name] AS UFN
+    /**
+     * Função que devolve os comentários de um serviço
+     * @param type $pdo
+     * @param type $servideId
+     */
+    function DB_getServiceCommentFromUsers($pdo, $servideId) {
+        try {
+            $rows = sql($pdo, "SELECT [User_Profile].[First_Name] AS UFN
                   ,[User_Profile].[Last_Name] AS ULN
                   ,[User_Profile].[Picture_Path] AS UPP
               ,[Comment] AS CCC
@@ -2626,13 +2636,13 @@ function DB_getServiceCommentFromUsers($pdo, $servideId) {
           AND [Comment].[Enabled] = 1 and [User].[Account_Enabled] = 1
           WHERE [Comment].[Service_Id] = ?
           ORDER BY [Comment].[Date_Created] DESC", array($servideId), "rows");
-        echo '<div class = "recomendations-slider">';
-        foreach ($rows as $row) {
-            echo '<div class = "slide">
+            echo '<div class = "recomendations-slider">';
+            foreach ($rows as $row) {
+                echo '<div class = "slide">
 <div class = "citate-speech-bubble">
 <i class = "font-icon-quote"></i>"'
-            . $row['CCC'] .
-            '"</div>
+                . $row['CCC'] .
+                '"</div>
 <div class = "user-card-row">
 <div class = "tbl-row">
 <div class = "tbl-cell tbl-cell-photo">
@@ -2646,40 +2656,40 @@ function DB_getServiceCommentFromUsers($pdo, $servideId) {
 </div>
 </div>
 </div>';
+            }
+            echo '</div>';
+            //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+            //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+        } catch (Exception $exc) {
+            echo 'ERROR READING SERVICE TABLE!';
         }
-        echo '</div>';
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-    } catch (Exception $exc) {
-        echo 'ERROR READING SERVICE TABLE!';
     }
-}
 
-/**
- * Função para adicionar comentarios aos serviços
- * @param type $pdo
- * @param type $email
- */
-function DB_addCommentsToService($pdo, $userId, $Comment, $ServiceId) {
-    $d = getDateToDB();
-    try {
-        sql($pdo, "INSERT INTO [dbo].[Comment] ([User_Id],[Comment],[Service_Id],[Date_Created],[Enabled]) "
-                . "VALUES(?,?,?,?,?)"
-                . "", array($userId, $Comment, $ServiceId, $d, 1));
-        print 'Added!';
-    } catch (PDOException $e) {
-        print "ERROR ADDING YOUR REVIEW!";
-        die();
+    /**
+     * Função para adicionar comentarios aos serviços
+     * @param type $pdo
+     * @param type $email
+     */
+    function DB_addCommentsToService($pdo, $userId, $Comment, $ServiceId) {
+        $d = getDateToDB();
+        try {
+            sql($pdo, "INSERT INTO [dbo].[Comment] ([User_Id],[Comment],[Service_Id],[Date_Created],[Enabled]) "
+                    . "VALUES(?,?,?,?,?)"
+                    . "", array($userId, $Comment, $ServiceId, $d, 1));
+            print 'Added!';
+        } catch (PDOException $e) {
+            print "ERROR ADDING YOUR REVIEW!";
+            die();
+        }
     }
-}
 
-/**
- * Devolve informação da Org para display no service
- * @param type $pdo
- */
-function DB_GetOrgInformationForService($pdo, $serviceId) {
-    try {
-        $rows = sql($pdo, "SELECT  
+    /**
+     * Devolve informação da Org para display no service
+     * @param type $pdo
+     */
+    function DB_GetOrgInformationForService($pdo, $serviceId) {
+        try {
+            $rows = sql($pdo, "SELECT  
         [Organization].[Name]
         ,[Organization].[Picture_Path]
         ,[Organization].[Id]
@@ -2696,38 +2706,38 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
         on [Organization].[Id] = [Service].[Organization_Id]
         AND [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
         AND [Service].[Id] =  ?", array($serviceId), "rows");
-        echo '<header class = "box-typical-header-sm"> Vendor </header>
+            echo '<header class = "box-typical-header-sm"> Vendor </header>
 <div class = "friends-list stripped">';
-        foreach ($rows as $row) {
-            echo '<div class = "profile-card">';
-            echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
-            echo ' </div>';
-            echo ' <div class = "profile-card-name"><a href="../build/profile_org.php?Organization=' . $row['Id'] . '" >' . $row['Name'] . '</a></div>';
-            //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
-            //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
-            //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
-            //echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
-            //echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
-            //echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
-            //echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
-            //echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
+            foreach ($rows as $row) {
+                echo '<div class = "profile-card">';
+                echo '<div class = "profile-card-photo">';
+                echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
+                echo ' </div>';
+                echo ' <div class = "profile-card-name"><a href="../build/profile_org.php?Organization=' . $row['Id'] . '" >' . $row['Name'] . '</a></div>';
+                //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
+                //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
+                //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
+                //echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
+                //echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
+                //echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
+                //echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
+                //echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
 
+                echo '</div>';
+            }
             echo '</div>';
+        } catch (Exception $ex) {
+            echo 'error';
         }
-        echo '</div>';
-    } catch (Exception $ex) {
-        echo 'error';
     }
-}
 
-/**
- * Devolve a barra do serviço que se encontra abaixo da imagem
- * @param type $pdo
- */
-function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
-    try {
-        $rows = sql($pdo, "SELECT  [Service].[Name] AS SNA
+    /**
+     * Devolve a barra do serviço que se encontra abaixo da imagem
+     * @param type $pdo
+     */
+    function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
+        try {
+            $rows = sql($pdo, "SELECT  [Service].[Name] AS SNA
         ,[Organization].[Picture_Path] AS OPP
         ,[Organization].[Name] AS ONA
         ,[Organization].[Id] AS OID
@@ -2736,8 +2746,8 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
         on [Organization].[Id] = [Service].[Organization_Id]
         AND [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
         AND [Service].[Id] = ?", array($serviceId), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "new">
+            foreach ($rows as $row) {
+                echo '<div class = "new">
             <div class = "user-card-row">
             <div class = "tbl-row">
             <div class = "tbl-cell tbl-cell-photo">
@@ -2747,11 +2757,11 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
             </div>
             <div class = "tbl-cell">
             <p class = "user-card-row-name"><a>   ' . $row['SNA'] . '</a></p>';
-            if (DB_checkIfUserMadeRate($pdo, $user_Id, $serviceId)) {
-                //SE JA FEZ RATE -> MOSTRAR RATING SERVIÇO
-            } else {
-                //INICIO RATING
-                echo '<p class = "user-card-row-status">
+                if (DB_checkIfUserMadeRate($pdo, $user_Id, $serviceId)) {
+                    //SE JA FEZ RATE -> MOSTRAR RATING SERVIÇO
+                } else {
+                    //INICIO RATING
+                    echo '<p class = "user-card-row-status">
             <fieldset id = "demo1" class = "rating">
             <input class = "stars" type = "radio" id = "star5" name = "rating" value = "5" />
             <label class = "full" for = "star5" title = "Awesome - 5 stars"></label>
@@ -2764,9 +2774,9 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
             <input class = "stars" type = "radio" id = "star1" name = "rating" value = "1" />
             <label class = "full" for = "star1" title = "Sucks big time - 1 star"></label>
             </fieldset></p > ';
-            }
-            //FIM RATING
-            echo '</div>
+                }
+                //FIM RATING
+                echo '</div>
             </div>
             </div>
             </div>
@@ -2774,22 +2784,22 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
             <div class = "user-card-row">
             <div class = "tbl-cell">
             <p class = "user-card-row-status"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>';
-            echo '</div>
+                echo '</div>
             </div>
             </div>';
+            }
+        } catch (Exception $ex) {
+            echo 'error';
         }
-    } catch (Exception $ex) {
-        echo 'error';
     }
-}
 
-/**
- * Devolve a barra do serviço que se encontra abaixo da imagem
- * @param type $pdo
- */
-function DB_GetServiceLocAndDescription($pdo, $serviceId) {
-    try {
-        $rows = sql($pdo, "SELECT  
+    /**
+     * Devolve a barra do serviço que se encontra abaixo da imagem
+     * @param type $pdo
+     */
+    function DB_GetServiceLocAndDescription($pdo, $serviceId) {
+        try {
+            $rows = sql($pdo, "SELECT  
         [Service].[Name] AS SNA 
         ,[Service].[Description] AS SDE
         ,[Organization].[Address] AS OAD
@@ -2801,8 +2811,8 @@ function DB_GetServiceLocAndDescription($pdo, $serviceId) {
         on [City].[Id] = [Organization].[City_Id]
         WHERE [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
         AND [Service].[Id] = ?", array($serviceId), "rows");
-        foreach ($rows as $row) {
-            echo '<section class = "box-typical">
+            foreach ($rows as $row) {
+                echo '<section class = "box-typical">
             <article class = "profile-info-item">
             <header class = "profile-info-item-header">
             <i class = "font-icon font-icon-notebook-bird"></i>
@@ -2813,123 +2823,123 @@ function DB_GetServiceLocAndDescription($pdo, $serviceId) {
             </div>
             </article>
             </section>';
+            }
+        } catch (Exception $ex) {
+            echo 'error';
         }
-    } catch (Exception $ex) {
-        echo 'error';
     }
-}
 
-/**
- * Verifica se o user tem wp criados
- * @param type $pdo
- * @param type $userId
- * @return boolean
- */
-Function DB_checkIfUserHaveWicPlanner($pdo, $userId) {
-    try {
-        $count = sql($pdo, "SELECT * FROM
+    /**
+     * Verifica se o user tem wp criados
+     * @param type $pdo
+     * @param type $userId
+     * @return boolean
+     */
+    Function DB_checkIfUserHaveWicPlanner($pdo, $userId) {
+        try {
+            $count = sql($pdo, "SELECT * FROM
         [WIC_Planner]
         WHERE [User_Id] = ? AND [Enabled] = 1", array($userId), "count");
-        if ($count < 0) {
-            return true;
-        } else {
-            return false;
+            if ($count < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-/**
- * retorna os wicplanners do user para um select utilizado no popup
- * @param type $pdo
- * @param type $userId
- */
-Function DB_getMyWicsAsPopup($pdo, $userId) {
-    try {
-        $rows = sql($pdo, "SELECT * FROM
+    /**
+     * retorna os wicplanners do user para um select utilizado no popup
+     * @param type $pdo
+     * @param type $userId
+     */
+    Function DB_getMyWicsAsPopup($pdo, $userId) {
+        try {
+            $rows = sql($pdo, "SELECT * FROM
         [WIC_Planner]
         WHERE [Enabled] = 1
         AND [User_Id] = ?", array($userId), "rows");
-        if (DB_checkIfUserHaveWicPlanner($pdo, $userId)) {
-            echo '<div class="sign-avatar no-photo">&plus;</div>
+            if (DB_checkIfUserHaveWicPlanner($pdo, $userId)) {
+                echo '<div class="sign-avatar no-photo">&plus;</div>
                 <header class="sign-title">#Choose a WiC Planner?</header>';
-            echo '<div class="form-group">';
-            echo '<select class = "bootstrap-select bootstrap-select-arrow" id = "myWics" name = "myWics">';
-            foreach ($rows as $row) {
-                echo '<option value = "' . $row['Id'] . '">' . $row['Name'] . '</option>';
-            }
-            echo '</select> ';
-            echo '</div>
+                echo '<div class="form-group">';
+                echo '<select class = "bootstrap-select bootstrap-select-arrow" id = "myWics" name = "myWics">';
+                foreach ($rows as $row) {
+                    echo '<option value = "' . $row['Id'] . '">' . $row['Name'] . '</option>';
+                }
+                echo '</select> ';
+                echo '</div>
                 <p class="form-group">  <?= $msg; ?> </p>
                 <button type="submit" name="add2WiC" id="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
                 <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">';
-        } else {
-            $linkAWP = 'http://' . $_SERVER['HTTP_HOST'] . '/build/my_wicplanner.php';
-            echo '<div class="sign-avatar no-photo">&plus;</div>
+            } else {
+                $linkAWP = 'http://' . $_SERVER['HTTP_HOST'] . '/build/my_wicplanner.php';
+                echo '<div class="sign-avatar no-photo">&plus;</div>
                 <header class="sign-title">#You don\'t have a WiC Planner?</header>';
 //            echo '<a href="' . $linkAWP . '" class="btn btn-rounded btn-success sign-up" role="button">Create</a>';
-            echo '<input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">';
+                echo '<input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">';
+            }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-/**
- * Adiciona um serviço ao Wic Planner do User
- * @param type $pdo
- * @param type $wicId
- * @param type $serviceId
- */
-function DB_addServiceToWicPlanner($pdo, $wicId, $serviceId) {
-    try {
-        if (DB_checkIfServiceExistsOnWicPlanner($pdo, $wicId, $serviceId)) {
-            echo 'Service already exists in that WiC planner';
-        } else {
-            sql($pdo, "INSERT INTO [dbo].[WIC_Planner_Service] ([Service_Id], [WIC_Planner_Id], [Enabled]) "
-                    . "VALUES (?, ?, ?)", array($serviceId, $wicId, 1));
-            echo "Service added to your WiC planner!";
+    /**
+     * Adiciona um serviço ao Wic Planner do User
+     * @param type $pdo
+     * @param type $wicId
+     * @param type $serviceId
+     */
+    function DB_addServiceToWicPlanner($pdo, $wicId, $serviceId) {
+        try {
+            if (DB_checkIfServiceExistsOnWicPlanner($pdo, $wicId, $serviceId)) {
+                echo 'Service already exists in that WiC planner';
+            } else {
+                sql($pdo, "INSERT INTO [dbo].[WIC_Planner_Service] ([Service_Id], [WIC_Planner_Id], [Enabled]) "
+                        . "VALUES (?, ?, ?)", array($serviceId, $wicId, 1));
+                echo "Service added to your WiC planner!";
+            }
+        } catch (PDOException $e) {
+            echo "ERROR ADDDING SERVIVE TO WIC PLANNER!";
         }
-    } catch (PDOException $e) {
-        echo "ERROR ADDDING SERVIVE TO WIC PLANNER!";
     }
-}
 
-/**
- * Verifica se o serviço ja existe, ou nao, num determinado wic planner
- * @param type $pdo
- * @param type $wicId
- * @param type $serviceId
- * @return boolean
- */
-Function DB_checkIfServiceExistsOnWicPlanner($pdo, $wicId, $serviceId) {
-    try {
-        $count = sql($pdo, "SELECT * FROM
+    /**
+     * Verifica se o serviço ja existe, ou nao, num determinado wic planner
+     * @param type $pdo
+     * @param type $wicId
+     * @param type $serviceId
+     * @return boolean
+     */
+    Function DB_checkIfServiceExistsOnWicPlanner($pdo, $wicId, $serviceId) {
+        try {
+            $count = sql($pdo, "SELECT * FROM
         [WIC_Planner_Service]
         WHERE [Enabled] = 1
         AND [Service_Id] = ? 
         AND WIC_Planner_Id = ? ", array($serviceId, $wicId), "count");
-        if ($count < 0) {
-            return true;
-        } else {
-            return false;
+            if ($count < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $ex) {
+            
         }
-    } catch (Exception $ex) {
-        
     }
-}
 
-/**
- * Função que devolve os serviços para o index selecionado categoria
- * @param type $pdo
- * @param type $Category
- * @param type $SubCategoty
- * @param type $city
- */
-function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
-    try {
-        $rows = sql($pdo, "SELECT
+    /**
+     * Função que devolve os serviços para o index selecionado categoria
+     * @param type $pdo
+     * @param type $Category
+     * @param type $SubCategoty
+     * @param type $city
+     */
+    function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
+        try {
+            $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
@@ -2947,8 +2957,8 @@ function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
 		AND [Service].[Sub_Category_Id] = ?", array($CategoryId), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "card-grid-col">
+            foreach ($rows as $row) {
+                echo '<div class = "card-grid-col">
             <article class = "card-typical">
             <div class = "card-typical-section">
             <div class = "user-card-row">
@@ -2983,19 +2993,19 @@ function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
 
             </article>
             </div>';
+            }
+
+            //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+            //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+        } catch (Exception $exc) {
+            echo 'ERROR READING SERVICE TABLE!';
         }
-
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-    } catch (Exception $exc) {
-        echo 'ERROR READING SERVICE TABLE!';
     }
-}
 
-function DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $categoryId) {
-    $s = '%' . $qParam . '%';
-    try {
-        $rows = sql($pdo, "SELECT
+    function DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $categoryId) {
+        $s = '%' . $qParam . '%';
+        try {
+            $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
 		[Service].[Enabled],
@@ -3014,9 +3024,9 @@ function DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $category
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
         AND [Service].[Description] Like '%" . $qParam . "%' "
-                . "AND [Service].[Sub_Category_Id] = ? ", array($categoryId), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "card-grid-col">
+                    . "AND [Service].[Sub_Category_Id] = ? ", array($categoryId), "rows");
+            foreach ($rows as $row) {
+                echo '<div class = "card-grid-col">
         <article class = "card-typical">
         <div class = "card-typical-section">
         <div class = "user-card-row">
@@ -3051,19 +3061,19 @@ function DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $category
 
         </article>
         </div>';
+            }
+
+            //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+            //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+        } catch (Exception $exc) {
+            echo 'ERROR READING SERVICE TABLE!';
         }
-
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-    } catch (Exception $exc) {
-        echo 'ERROR READING SERVICE TABLE!';
     }
-}
 
-function DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $categoryId) {
-    $s = '%' . $qParam . '%';
-    try {
-        $rows = sql($pdo, "SELECT
+    function DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $categoryId) {
+        $s = '%' . $qParam . '%';
+        try {
+            $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
 		[Service].[Enabled],
@@ -3082,9 +3092,9 @@ function DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $categoryId) {
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
         AND [Service].[Name] Like '%" . $qParam . "%' "
-                . "AND [Service].[Sub_Category_Id] = ? ", array($categoryId), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "card-grid-col">
+                    . "AND [Service].[Sub_Category_Id] = ? ", array($categoryId), "rows");
+            foreach ($rows as $row) {
+                echo '<div class = "card-grid-col">
         <article class = "card-typical">
         <div class = "card-typical-section">
         <div class = "user-card-row">
@@ -3119,19 +3129,19 @@ function DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $categoryId) {
 
         </article>
         </div>';
+            }
+
+            //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+            //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+        } catch (Exception $exc) {
+            echo 'ERROR READING SERVICE TABLE!';
         }
-
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-    } catch (Exception $exc) {
-        echo 'ERROR READING SERVICE TABLE!';
     }
-}
 
-function DB_getServicesForIndexByDescription($pdo, $description) {
-    $s = '%' . $description . '%';
-    try {
-        $rows = sql($pdo, "SELECT
+    function DB_getServicesForIndexByDescription($pdo, $description) {
+        $s = '%' . $description . '%';
+        try {
+            $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
 		[Service].[Enabled],
@@ -3150,8 +3160,8 @@ function DB_getServicesForIndexByDescription($pdo, $description) {
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
         AND [Service].[Description] Like '%" . $s . "%' ", array(), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "card-grid-col">
+            foreach ($rows as $row) {
+                echo '<div class = "card-grid-col">
         <article class = "card-typical">
         <div class = "card-typical-section">
         <div class = "user-card-row">
@@ -3186,19 +3196,19 @@ function DB_getServicesForIndexByDescription($pdo, $description) {
 
         </article>
         </div>';
+            }
+
+            //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+            //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+        } catch (Exception $exc) {
+            echo 'ERROR READING SERVICE TABLE!';
         }
-
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-    } catch (Exception $exc) {
-        echo 'ERROR READING SERVICE TABLE!';
     }
-}
 
-function DB_getServicesForIndexByName($pdo, $qParam) {
-    $s = '%' . $qParam . '%';
-    try {
-        $rows = sql($pdo, "SELECT
+    function DB_getServicesForIndexByName($pdo, $qParam) {
+        $s = '%' . $qParam . '%';
+        try {
+            $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
 		[Service].[Enabled],
@@ -3217,8 +3227,8 @@ function DB_getServicesForIndexByName($pdo, $qParam) {
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
         AND [Service].[Name] Like '%" . $qParam . "%' ", array(), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "card-grid-col">
+            foreach ($rows as $row) {
+                echo '<div class = "card-grid-col">
         <article class = "card-typical">
         <div class = "card-typical-section">
         <div class = "user-card-row">
@@ -3253,109 +3263,109 @@ function DB_getServicesForIndexByName($pdo, $qParam) {
 
         </article>
         </div>';
+            }
+
+            //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+            //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+        } catch (Exception $exc) {
+            echo 'ERROR READING SERVICE TABLE!';
         }
-
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-    } catch (Exception $exc) {
-        echo 'ERROR READING SERVICE TABLE!';
     }
-}
 
-Function DB_checkIfUserMadeRate($pdo, $userId, $serviceId) {
-    try {
-        $count = sql($pdo, "SELECT * FROM
+    Function DB_checkIfUserMadeRate($pdo, $userId, $serviceId) {
+        try {
+            $count = sql($pdo, "SELECT * FROM
         [dbo].[Rating]
         WHERE [User_Id] = ? AND [Service_Id] = ?", array($userId, $serviceId), "count");
-        if ($count < 0) {
-            return true;
+            if ($count < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $ex) {
+            echo 'ERROR READING RATING TABLE!';
+        }
+    }
+
+    function DB_addUserRateService($pdo, $userId, $serviceId, $rate, $d) {
+        if (DB_checkIfUserMadeRate($pdo, $userId, $serviceId)) {
+            echo 1;
         } else {
-            return false;
+            try {
+                sql($pdo, "INSERT INTO [dbo].[Rating] ([User_Id], [Service_Id], [Rate], [Date_Created]) VALUES(?,?,?,?)"
+                        . "", array($userId, $serviceId, $rate, $d));
+            } catch (PDOException $e) {
+                print "ERROR CREATING RATE IN SERVICE!";
+                die();
+            }
         }
-    } catch (Exception $ex) {
-        echo 'ERROR READING RATING TABLE!';
     }
-}
 
-function DB_addUserRateService($pdo, $userId, $serviceId, $rate, $d) {
-    if (DB_checkIfUserMadeRate($pdo, $userId, $serviceId)) {
-        echo 1;
-    } else {
+    /**
+     * Devolve o Id do Boss da Org atraves do serviço
+     * @param type $pdo
+     * @param type $service_Id
+     * @return type
+     */
+    function DB_GetUserBossIdByService($pdo, $service_Id) {
         try {
-            sql($pdo, "INSERT INTO [dbo].[Rating] ([User_Id], [Service_Id], [Rate], [Date_Created]) VALUES(?,?,?,?)"
-                    . "", array($userId, $serviceId, $rate, $d));
-        } catch (PDOException $e) {
-            print "ERROR CREATING RATE IN SERVICE!";
-            die();
-        }
-    }
-}
-
-/**
- * Devolve o Id do Boss da Org atraves do serviço
- * @param type $pdo
- * @param type $service_Id
- * @return type
- */
-function DB_GetUserBossIdByService($pdo, $service_Id) {
-    try {
-        $stmt = $pdo->prepare("SELECT [Organization].[User_Boss]
+            $stmt = $pdo->prepare("SELECT [Organization].[User_Boss]
         FROM [dbo].[Organization]
         join Service
         on [Organization].[Id] = [Service].[Organization_Id]
         WHERE [Service].[Id] =:id");
-        $stmt->bindParam(':id', $service_Id);
-        $stmt->execute();
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $orgBossId = $row['User_Boss'];
+            $stmt->bindParam(':id', $service_Id);
+            $stmt->execute();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $orgBossId = $row['User_Boss'];
+            }
+            return $orgBossId;
+        } catch (Exception $ex) {
+            echo 'error';
         }
-        return $orgBossId;
-    } catch (Exception $ex) {
-        echo 'error';
     }
-}
 
-/**
- * Remove um serviço de uma determinada Org
- * @param type $pdo
- * @param type $serviceId
- * @return boolean
- */
-function DB_removeService($pdo, $serviceId) {
-    try {
-        $count = sql($pdo, "UPDATE [dbo].[Service] SET [Enabled] = ? WHERE [Id] = ? ", array('0', $serviceId));
-        return true;
-    } catch (Exception $exc) {
-        return false;
-    }
-}
-
-/**
- * Devolve o Id de uma City pelo seu nome
- * @param type $pdo
- * @param type $cityName
- * @return type
- */
-function DB_getCityId($pdo, $cityName) {
-    try {
-        $rows = sql($pdo, "SELECT [Id] FROM [dbo].[City] WHERE [Name] = ?", array($cityName), "rows");
-        foreach ($rows as $row) {
-            return $row['Id'];
+    /**
+     * Remove um serviço de uma determinada Org
+     * @param type $pdo
+     * @param type $serviceId
+     * @return boolean
+     */
+    function DB_removeService($pdo, $serviceId) {
+        try {
+            $count = sql($pdo, "UPDATE [dbo].[Service] SET [Enabled] = ? WHERE [Id] = ? ", array('0', $serviceId));
+            return true;
+        } catch (Exception $exc) {
+            return false;
         }
-    } catch (Exception $exc) {
-        echo 'ERROR READING CITY!';
     }
-}
 
-/**
- * Devolve os serviços de uma determinada cidade
- * @param type $pdo
- * @param type $CityId
- */
-function DB_getServicesForIndexByCity($pdo, $CityId) {
-    try {
+    /**
+     * Devolve o Id de uma City pelo seu nome
+     * @param type $pdo
+     * @param type $cityName
+     * @return type
+     */
+    function DB_getCityId($pdo, $cityName) {
+        try {
+            $rows = sql($pdo, "SELECT [Id] FROM [dbo].[City] WHERE [Name] = ?", array($cityName), "rows");
+            foreach ($rows as $row) {
+                return $row['Id'];
+            }
+        } catch (Exception $exc) {
+            echo 'ERROR READING CITY!';
+        }
+    }
 
-        $rows = sql($pdo, "SELECT
+    /**
+     * Devolve os serviços de uma determinada cidade
+     * @param type $pdo
+     * @param type $CityId
+     */
+    function DB_getServicesForIndexByCity($pdo, $CityId) {
+        try {
+
+            $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
@@ -3376,8 +3386,8 @@ function DB_getServicesForIndexByCity($pdo, $CityId) {
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] = 1
 		AND [City].[Id] = ?", array($CityId), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "card-grid-col">
+            foreach ($rows as $row) {
+                echo '<div class = "card-grid-col">
 <article class = "card-typical">
 <div class = "card-typical-section">
 <div class = "user-card-row">
@@ -3418,18 +3428,18 @@ function DB_getServicesForIndexByCity($pdo, $CityId) {
 
 </article>
 </div>';
+            }
+
+            //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+            //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+        } catch (Exception $exc) {
+            echo 'ERROR READING SERVICE TABLE!';
         }
-
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-    } catch (Exception $exc) {
-        echo 'ERROR READING SERVICE TABLE!';
     }
-}
 
-function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
-    try {
-        $rows = sql($pdo, "SELECT
+    function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
+        try {
+            $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
@@ -3451,8 +3461,8 @@ function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
         AND [Multimedia].[First_Page] = 1
 		AND [Service].[City_Id] = ?
 		AND [Service].[Sub_Category_Id] = ?", array($CityId, $Category), "rows");
-        foreach ($rows as $row) {
-            echo '<div class = "card-grid-col">
+            foreach ($rows as $row) {
+                echo '<div class = "card-grid-col">
         <article class = "card-typical">
         <div class = "card-typical-section">
         <div class = "user-card-row">
@@ -3487,31 +3497,32 @@ function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
 
         </article>
         </div>';
+            }
+
+            //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+            //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+        } catch (Exception $exc) {
+            echo 'ERROR READING SERVICE TABLE!';
         }
-
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
-    } catch (Exception $exc) {
-        echo 'ERROR READING SERVICE TABLE!';
     }
-}
 
-function db_getWicsForHeader($pdo, $userId) {
-    try {
-        $rows = sql($pdo, "SELECT [Name]
+    function db_getWicsForHeader($pdo, $userId) {
+        try {
+            $rows = sql($pdo, "SELECT [Name]
         ,[Event_Date]
         FROM [dbo].[WIC_Planner]
         WHERE [Enabled]=1
         AND [User_Id] = ?
         ORDER BY [Event_Date] DESC", array($userId), "rows");
-        foreach ($rows as $row) {
-            $subStr = explode(" ", $row['Event_Date']);
-            echo '<a href="/build/my_wicplanner.php" class="mess-item" padding-left: 15px; style="padding-left: 5px;">';
-            echo '<span class="mess-item-name" ><i class="fa fa-calendar" style="padding-right:5px;"></i>' . $row['Name'] . ' <i class="font-icon font-icon-arrow-right"></i> ' . $subStr[0] . '</span>';
-            //echo '<span class="mess-item-txt">' . $subStr[0] . '</span>';
-            echo '</a>';
+            foreach ($rows as $row) {
+                $subStr = explode(" ", $row['Event_Date']);
+                echo '<a href="/build/my_wicplanner.php" class="mess-item" padding-left: 15px; style="padding-left: 5px;">';
+                echo '<span class="mess-item-name" ><i class="fa fa-calendar" style="padding-right:5px;"></i>' . $row['Name'] . ' <i class="font-icon font-icon-arrow-right"></i> ' . $subStr[0] . '</span>';
+                //echo '<span class="mess-item-txt">' . $subStr[0] . '</span>';
+                echo '</a>';
+            }
+        } catch (Exception $exc) {
+            echo 'ERROR READING WIC PLANNER';
         }
-    } catch (Exception $exc) {
-        echo 'ERROR READING WIC PLANNER';
     }
-}
+    
