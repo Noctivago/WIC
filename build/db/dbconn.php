@@ -3010,7 +3010,7 @@ function DB_getServicesForIndexByName($pdo, $qParam) {
         AND [Service].[Enabled] = 1 
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
-        AND [Service].[Name] Like ? ", array($s), "rows");
+        AND [Service].[Name] Like '%amb%' ", array(), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
         <article class = "card-typical">
