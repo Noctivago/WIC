@@ -3329,3 +3329,20 @@ function DB_removeService($pdo, $serviceId) {
         return false;
     }
 }
+
+/**
+ * Devolve o Id de uma City pelo seu nome
+ * @param type $pdo
+ * @param type $cityName
+ * @return type
+ */
+function DB_getCityId($pdo, $cityName) {
+    try {
+        $rows = sql($pdo, "SELECT [id] FROM [dbo].[City] WHERE [Name] = ?", array($cityName), "rows");
+        foreach ($rows as $row) {
+            return $row['Id'];
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING CITY!';
+    }
+}
