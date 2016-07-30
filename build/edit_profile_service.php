@@ -379,7 +379,7 @@ $serviceId = (filter_var($_GET['Service']));
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
 
                         Change Profile photo:<input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
-                        New Files: <input type="file" id="file" name="file[]" accept = "images/*" multiple/><br/>
+                        New Files: <input type="file" id="file" name="file" name="file[]" accept = "images/*" multiple/><br/>
 
                         <header class = "sign-title">Edit Service Profile</header>
                         <div class = "form-group" Style="display: none">
@@ -764,7 +764,7 @@ $serviceId = (filter_var($_GET['Service']));
                 var reader = new FileReader(); // instance of the FileReader
                 reader.readAsDataURL(files[0]); // read the local file
 
-                reader.onloadend = function () { // set image data as background of div
+                reader.onloadend = function () { // set image data
                     var elem = document.createElement("div");
                     elem.setAttribute("data-p","144.50");
                     elem.setAttribute("style","display:none");
