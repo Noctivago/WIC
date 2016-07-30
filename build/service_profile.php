@@ -335,7 +335,7 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>-->
                     </header>
-                    <div class="recomendations-slider" >
+                    <div class="posts-slider slick-initialized slick-slider" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
                         <div class="slide">
                             <!--BOTOES CHAT + WIC-->
