@@ -765,7 +765,7 @@ $serviceId = (filter_var($_GET['Service']));
                     inputImage.setAttribute("src", this.result);
                     elem.appendChild(inputImage);
                     alert(elem);
-                    document.getElementById('pictures').appendChild(elem);
+                    document.getElementById('pictures').appendedNode(elem);
 //    alert('aaadsadasd');
 //data-p="144.50"  style="display: none; "
                     //data-u="image"
