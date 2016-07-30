@@ -32,6 +32,7 @@ include ("./db/dbconn.php");
             } elseif (isset($_GET ['name']) && isset($_GET ['Category']) && !isset($_GET ['qParam'])) {
                 $City = (filter_var($_GET ['name']));
                 $CityId = DB_getCityId($pdo, $City);
+                DB_getServicesForIndexByCity($pdo, $CityId);
             } else {
                 DB_getServicesForIndex($pdo);
             }
