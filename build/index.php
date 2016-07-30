@@ -25,7 +25,7 @@ include ("./db/dbconn.php");
                 //APENAS CITY
             } elseif (isset($_GET ['name']) && !isset($_GET ['qParam']) && !isset($_GET ['Category'])) {
                 $City = (filter_var($_GET ['name']));
-                $City = ucfirst($City);
+                //$City = ucfirst($City);
                 $CityId = DB_getCityId($pdo, $City);
                 DB_getServicesForIndexByCity($pdo, $CityId);
                 //CITY e CATEGORY

@@ -3338,7 +3338,7 @@ function DB_removeService($pdo, $serviceId) {
  */
 function DB_getCityId($pdo, $cityName) {
     try {
-        $rows = sql($pdo, "SELECT [id] FROM [dbo].[City] WHERE [Name] = ?", array($cityName), "rows");
+        $rows = sql($pdo, "SELECT [Id] FROM [dbo].[City] WHERE [Name] = ?", array($cityName), "rows");
         foreach ($rows as $row) {
             return $row['Id'];
         }
