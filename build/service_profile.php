@@ -345,14 +345,14 @@ $serviceId = (filter_var($_GET['Service']));
                         <div class="slide">
                             <!--BOTOES CHAT + WIC-->
                             <div class="user-card-row">
-                                <?php
-                                echo '<div class="card-typical-section">
-                            
-                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
-                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics();" </button>
-                                     
-                                </div>';
-                                ?>
+                                //<?php
+//                                echo '<div class="card-typical-section">
+//                            
+//                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
+//                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics();" </button>
+//                                     
+//                                </div>';
+//                                ?>
                             </div>
                             <!--<input type=button onClick="openMyWics();",  value="+">-->
                         </div>
