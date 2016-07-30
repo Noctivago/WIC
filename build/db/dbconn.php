@@ -1307,7 +1307,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
           on [Role].[Id] = [User_Service].[Role_Id]
           where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
             foreach ($rows as $row) {
-                echo '<article class="friends-list-item" >';
+                echo '<article class="friends-list-item">';
                 echo '    <div class="user-card-row">';
                 echo '      <div class="tbl-row">';
                 echo '          <div class="tbl-cell tbl-cell-photo">';
@@ -2131,7 +2131,7 @@ function DB_OrgProfile($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT * FROM [Organization] Where [User_Boss] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-            echo '<div class = "sign-avatar no-photo" ><img id = "image" src = "' . $row['Picture_Path'] . '" alt = "" style = "width: 180px;height: 130px;margin: 0 auto 0.2rem;"/> </div>
+            echo '<div class = "sign-avatar no-photo" style = "width: 180px;height: 130px;margin: 0 auto 0.2rem;" ><img id = "image" src = "' . $row['Picture_Path'] . '" alt = "" /> </div>
 <button class = "btn btn-rounded btn-file" >
 Change Picture
 
