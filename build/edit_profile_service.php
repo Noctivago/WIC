@@ -740,7 +740,12 @@ $serviceId = (filter_var($_GET['Service']));
 
 
 
+<script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+<script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="js/lib/select2/select2.full.min.js"></script>
 
+<script src="js/app.js"></script>
 
 
 <script src="js/app.js"></script>

@@ -19,6 +19,7 @@ include ("./db/dbconn.php");
                 $CategoryId = (filter_var($_GET ['Category']));
                 $qParam = (filter_var($_GET ['qParam']));
                 DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $CategoryId);
+                DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $CategoryId);
             } else {
                 DB_getServicesForIndex($pdo);
             }
