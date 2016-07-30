@@ -245,7 +245,7 @@ include '../build/db/session.php';
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <header class="side-menu-title">Advanced search</header>
 
-                <form action="<?php echo $selfUrl; ?>">>
+                <form action="<?php echo $selfUrl; ?>">
                     <div class="col-md-10">
                         <div class="typeahead-container">
                             <div class="typeahead-field">
