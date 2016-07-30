@@ -319,14 +319,7 @@ $serviceId = (filter_var($_GET['Service']));
         jssor_1_slider_init();
     </script>
     
-                 <?php
-                   echo '<div class="card-typical-section">
-                            
-                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
-                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics();" </button>
-                                     
-                     </div>';
-                ?>
+
 					</section><!--.box-typical-->
                                         
           
@@ -435,6 +428,14 @@ $serviceId = (filter_var($_GET['Service']));
                         echo ' </article>';
                     }
                     ?>
+                     <?php
+                   echo '<div class="card-typical-section">
+                            
+                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
+                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics();" </button>
+                                     
+                     </div>';
+                ?>
                 </section>
                 <br>
 
