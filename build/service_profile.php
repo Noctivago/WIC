@@ -70,7 +70,7 @@ $serviceId = (filter_var($_GET['Service']));
 								<article class="post-announce">
 									<div class="post-announce-pic">
 										<a href="#">
-											<img src="img/post-1.jpeg" alt="">
+                                                                                    <img src="img/post-1.jpeg" alt="" style="width: 700px; height: 300px">
 										</a>
 									</div>
 									
@@ -80,7 +80,7 @@ $serviceId = (filter_var($_GET['Service']));
 								<article class="post-announce">
 									<div class="post-announce-pic">
 										<a href="#">
-											<img src="img/post-2.jpg" alt="">
+											<img src="img/post-2.jpg" alt="" style="width: 700px; height: 300px">
 										</a>
 									</div>
 									

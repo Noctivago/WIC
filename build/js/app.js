@@ -502,7 +502,7 @@ $(document).ready(function(){
 	var postsSlider = $(".posts-slider");
 
 	postsSlider.slick({
-		slidesToShow: 4,
+		slidesToShow: 1,
 		adaptiveHeight: true,
 		arrows: false,
 		responsive: [
