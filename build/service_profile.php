@@ -335,9 +335,9 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>-->
                     </header>
-                    <div class="recomendations-slider" >
+                    <div class="container">
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
-                        <div class="slide">
+<!--                        <div class="slide">-->
                             <!--BOTOES CHAT + WIC-->
                             <div class="user-card-row">
                                 <?php
@@ -451,7 +451,7 @@ $serviceId = (filter_var($_GET['Service']));
                 success: function (data) {
                     //alert(data);
                     loadComments();
-                    $("#userComment").empty();
+                    $('#userComment').val('');
                 }
             });
         }
