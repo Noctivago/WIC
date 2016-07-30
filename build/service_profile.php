@@ -341,10 +341,12 @@ $serviceId = (filter_var($_GET['Service']));
                             <div class="user-card-row">
                                 <?php
                                 echo '<div class="card-typical-section">
-                                 <input type=button onClick="openMyWics();",  value="+">
+//                                 
+                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
                                 </div>';
                                 ?>
                             </div>
+                            <!--<input type=button onClick="openMyWics();",  value="+">-->
                         </div>
                     </div>
                 </section>
