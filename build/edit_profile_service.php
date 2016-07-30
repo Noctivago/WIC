@@ -20,68 +20,65 @@ $serviceId = (filter_var($_GET['Service']));
                     <script>
                         jssor_1_slider_init = function () {
 
-                            var jssor_1_SlideshowTransitions = [
-                                {x: 0.3, $During: {$Left: [0.3, 0.7]}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {x: -0.3, $SlideOut: true, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {x: -0.3, $During: {$Left: [0.3, 0.7]}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, x: 0.3, $SlideOut: true, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, y: 0.3, $During: {$Top: [0.3, 0.7]}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, y: -0.3, $SlideOut: true, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, y: -0.3, $During: {$Top: [0.3, 0.7]}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, y: 0.3, $SlideOut: true, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, x: 0.3, $Cols: 2, $During: {$Left: [0.3, 0.7]}, $ChessMode: {$Column: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, x: 0.3, $Cols: 2, $SlideOut: true, $ChessMode: {$Column: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, y: 0.3, $Rows: 2, $During: {$Top: [0.3, 0.7]}, $ChessMode: {$Row: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, y: 0.3, $Rows: 2, $SlideOut: true, $ChessMode: {$Row: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, y: 0.3, $Cols: 2, $During: {$Top: [0.3, 0.7]}, $ChessMode: {$Column: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, y: -0.3, $Cols: 2, $SlideOut: true, $ChessMode: {$Column: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, x: 0.3, $Rows: 2, $During: {$Left: [0.3, 0.7]}, $ChessMode: {$Row: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, x: -0.3, $Rows: 2, $SlideOut: true, $ChessMode: {$Row: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]}, $ChessMode: {$Column: 3, $Row: 12}, $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]}, $SlideOut: true, $ChessMode: {$Column: 3, $Row: 12}, $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, $Delay: 20, $Clip: 3, $Assembly: 260, $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, $Delay: 20, $Clip: 3, $SlideOut: true, $Assembly: 260, $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, $Delay: 20, $Clip: 12, $Assembly: 260, $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-                                {$Duration: 1200, $Delay: 20, $Clip: 12, $SlideOut: true, $Assembly: 260, $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2}
-                            ];
-
-                            var jssor_1_options = {
-                                $AutoPlay: false,
+                        var jssor_1_SlideshowTransitions = [
+                        {x: 0.3, $During: {$Left: [0.3, 0.7]}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {x: - 0.3, $SlideOut: true, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {x: - 0.3, $During: {$Left: [0.3, 0.7]}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, x: 0.3, $SlideOut: true, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, y: 0.3, $During: {$Top: [0.3, 0.7]}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, y: - 0.3, $SlideOut: true, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, y: - 0.3, $During: {$Top: [0.3, 0.7]}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, y: 0.3, $SlideOut: true, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, x: 0.3, $Cols: 2, $During: {$Left: [0.3, 0.7]}, $ChessMode: {$Column: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, x: 0.3, $Cols: 2, $SlideOut: true, $ChessMode: {$Column: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, y: 0.3, $Rows: 2, $During: {$Top: [0.3, 0.7]}, $ChessMode: {$Row: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, y: 0.3, $Rows: 2, $SlideOut: true, $ChessMode: {$Row: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, y: 0.3, $Cols: 2, $During: {$Top: [0.3, 0.7]}, $ChessMode: {$Column: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, y: - 0.3, $Cols: 2, $SlideOut: true, $ChessMode: {$Column: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, x: 0.3, $Rows: 2, $During: {$Left: [0.3, 0.7]}, $ChessMode: {$Row: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, x: - 0.3, $Rows: 2, $SlideOut: true, $ChessMode: {$Row: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]}, $ChessMode: {$Column: 3, $Row: 12}, $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]}, $SlideOut: true, $ChessMode: {$Column: 3, $Row: 12}, $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, $Delay: 20, $Clip: 3, $Assembly: 260, $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, $Delay: 20, $Clip: 3, $SlideOut: true, $Assembly: 260, $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, $Delay: 20, $Clip: 12, $Assembly: 260, $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                        {$Duration: 1200, $Delay: 20, $Clip: 12, $SlideOut: true, $Assembly: 260, $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2}
+                        ];
+                        var jssor_1_options = {
+                        $AutoPlay: false,
                                 $SlideshowOptions: {
-                                    $Class: $JssorSlideshowRunner$,
-                                    $Transitions: jssor_1_SlideshowTransitions,
-                                    $TransitionsOrder: 1
+                                $Class: $JssorSlideshowRunner$,
+                                        $Transitions: jssor_1_SlideshowTransitions,
+                                        $TransitionsOrder: 1
                                 },
                                 $ArrowNavigatorOptions: {
-                                    $Class: $JssorArrowNavigator$
+                                $Class: $JssorArrowNavigator$
                                 },
                                 $ThumbnailNavigatorOptions: {
-                                    $Class: $JssorThumbnailNavigator$,
-                                    $Cols: 10,
-                                    $SpacingX: 8,
-                                    $SpacingY: 8,
-                                    $Align: 360
+                                $Class: $JssorThumbnailNavigator$,
+                                        $Cols: 10,
+                                        $SpacingX: 8,
+                                        $SpacingY: 8,
+                                        $Align: 360
                                 }
-                            };
-
-                            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-                            //responsive code begin
-                            //you can remove responsive code if you don't want the slider scales while window resizing
-                            function ScaleSlider() {
-                                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-                                if (refSize) {
-                                    refSize = Math.min(refSize, 800);
-                                    jssor_1_slider.$ScaleWidth(refSize);
-                                } else {
-                                    window.setTimeout(ScaleSlider, 30);
-                                }
-                            }
-                            ScaleSlider();
-                            $Jssor$.$AddEvent(window, "load", ScaleSlider);
-                            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-                            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-                            //responsive code end
+                        };
+                        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+                        //responsive code begin
+                        //you can remove responsive code if you don't want the slider scales while window resizing
+                        function ScaleSlider() {
+                        var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                        if (refSize) {
+                        refSize = Math.min(refSize, 800);
+                        jssor_1_slider.$ScaleWidth(refSize);
+                        } else {
+                        window.setTimeout(ScaleSlider, 30);
+                        }
+                        }
+                        ScaleSlider();
+                        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+                        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+                        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+                        //responsive code end
                         };
                     </script>
 
@@ -461,105 +458,102 @@ $serviceId = (filter_var($_GET['Service']));
 </div><!--.container-fluid-->
 </div><!--.page-content-->
 <script type="text/javascript">function viewS(id) {
-        location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service=' + id;
+    location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service=' + id;
     }</script>
 <script>
     function readURL(this) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#gallery').attr('src', e.target.result).width(150).height(200);
-            };
-            reader.readAsDataURL(input.Files[0]);
-        }
+    if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+    $('#gallery').attr('src', e.target.result).width(150).height(200);
+    };
+    reader.readAsDataURL(input.Files[0]);
+    }
 
     }
 </script>
 
 <script>
     $('#formm').on('submit', function (e) {
-        e.preventDefault();
-        $.ajax({
-            url: 'ajax/uploadImage.php',
+    e.preventDefault();
+    $.ajax({
+    url: 'ajax/uploadImage.php',
             type: POST,
             data: new FormData(this),
             contentType: false,
             success: function (data) {
-                $('#gallery').html(data);
-                alert("image uploaded");
+            $('#gallery').html(data);
+            alert("image uploaded");
             }
-        })
-    });
-</script>
+    })
+    });</script>
 
 <script>
     function myFunction() {
-        var x = document.getElementById("countrySelect").value;
-        if (x === '0') {
+    var x = document.getElementById("countrySelect").value;
+    if (x === '0') {
 
-        } else {
-            loadState(x);
-        }
+    } else {
+    loadState(x);
+    }
     }
     function myFunctionC() {
-        var x = document.getElementById("stateSelect").value;
-        if (x === '0') {
+    var x = document.getElementById("stateSelect").value;
+    if (x === '0') {
 
-        } else {
-            loadCity(x);
-        }
+    } else {
+    loadCity(x);
+    }
     }
     function loadState(Country) {
-        var Country_Id = Country;
-        $.ajax({
-            url: '../build/ajax/get_state.php',
+    var Country_Id = Country;
+    $.ajax({
+    url: '../build/ajax/get_state.php',
             method: 'post',
             data: {con: Country_Id},
             success: function (data) {
-                $('#state').html(data);
+            $('#state').html(data);
             }
-        });
+    });
     }
     function loadCity(State) {
-        var State_Id = State;
-        $.ajax({
-            url: '../build/ajax/get_city.php',
+    var State_Id = State;
+    $.ajax({
+    url: '../build/ajax/get_city.php',
             method: 'post',
             data: {con: State_Id},
             success: function (data) {
-                $('#cities').html(data);
+            $('#cities').html(data);
             }
-        });
+    });
     }
 </script>
 
 <script>
     function reloadDescription() {
-        document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
+    document.getElementById('description').innerHTML = document.getElementById('cDescription').value;
     }
     function reloadName() {
-        document.getElementById('serviceName').innerHTML = document.getElementById('cName').value;
+    document.getElementById('serviceName').innerHTML = document.getElementById('cName').value;
     }
     function reloadPhoto() {
 
     }
     function reloadServ(sel) {
-        document.getElementById('SubCat').innerHTML = sel.options[sel.selectedIndex].text;
+    document.getElementById('SubCat').innerHTML = sel.options[sel.selectedIndex].text;
     }
 
     function reloadSubCat(sel) {
-        var val = sel.options[sel.selectedIndex].text;
-        document.getElementById('Cat').innerHTML = val;
-        var value = sel.options[sel.selectedIndex].value;
-        var idSub = document.getElementById('cSubCat').value;
-        $.post("ajax/SubCategories.php", {value: value, idSub: idSub}, function (result) {
-            // $('#sc').find('select').remove().end();
-            //    $('#sc').html(result);
-            document.getElementById('sc').innerHTML = result;
-
-        });
-
-        return false;
+    var val = sel.options[sel.selectedIndex].text;
+    document.getElementById('Cat').innerHTML = val;
+    var value = sel.options[sel.selectedIndex].value;
+    var idSub = document.getElementById('cSubCat').value;
+    $.post("ajax/SubCategories.php", {value: value, idSub: idSub}, function (result) {
+    // $('#sc').find('select').remove().end();
+    //    $('#sc').html(result);
+    document.getElementById('sc').innerHTML = result;
+    });
+    return false;
     }
 </script>
 
@@ -589,58 +583,57 @@ $serviceId = (filter_var($_GET['Service']));
 
 
     $(document).ready(function () {
-        $("#range-slider-1").ionRangeSlider({
-            min: 0,
+    $("#range-slider-1").ionRangeSlider({
+    min: 0,
             max: 100,
             from: 30,
             hide_min_max: true,
             hide_from_to: true
-        });
-        $("#range-slider-2").ionRangeSlider({
-            min: 0,
+    });
+    $("#range-slider-2").ionRangeSlider({
+    min: 0,
             max: 100,
             from: 30,
             hide_min_max: true,
             hide_from_to: true
-        });
-        $("#range-slider-3").ionRangeSlider({
-            min: 0,
+    });
+    $("#range-slider-3").ionRangeSlider({
+    min: 0,
             max: 100,
             from: 30,
             hide_min_max: true,
             hide_from_to: true
-        });
-        $("#range-slider-4").ionRangeSlider({
-            min: 0,
+    });
+    $("#range-slider-4").ionRangeSlider({
+    min: 0,
             max: 100,
             from: 30,
             hide_min_max: true,
             hide_from_to: true
-        });
+    });
     });</script>
 
 
 
 <script>
     $(function () {
-        $("#uploadFile").change(function () {
-            var files = !!this.files ? this.files : [];
-            if (!files.length || !window.FileReader)
-                return; // no file selected, or no FileReader support
+    $("#uploadFile").change(function () {
+    var files = !!this.files ? this.files : [];
+    if (!files.length || !window.FileReader)
+            return; // no file selected, or no FileReader support
 
-            if (/^image/.test(files[0].type)) { // only image file
-                var reader = new FileReader(); // instance of the FileReader
-                reader.readAsDataURL(files[0]); // read the local file
+    if (/^image/.test(files[0].type)) { // only image file
+    var reader = new FileReader(); // instance of the FileReader
+    reader.readAsDataURL(files[0]); // read the local file
 
-                reader.onloadend = function () { // set image data as background of div
-                    var output = document.getElementById('1');
-                    output.src = this.result;
-                    //$("#1").css("background-image", "url(" + this.result + ")");
-                };
-            }
-        });
+    reader.onloadend = function () { // set image data as background of div
+    var output = document.getElementById('1');
+    output.src = this.result;
+    //$("#1").css("background-image", "url(" + this.result + ")");
+    };
+    }
     });
-</script>
+    });</script>
 
 
 
@@ -648,137 +641,139 @@ $serviceId = (filter_var($_GET['Service']));
 
 <script>
     $(document).ready(function () {
-        $('.panel').lobiPanel({
-            sortable: true
-        });
-        google.charts.load('current', {'packages': ['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var dataTable = new google.visualization.DataTable();
-            dataTable.addColumn('string', 'Day');
-            dataTable.addColumn('number', 'Values');
-            // A column for custom tooltip content
-            dataTable.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
-            dataTable.addRows([
-                ['MON', 130, ' '],
-                ['TUE', 130, '130'],
-                ['WED', 180, '180'],
-                ['THU', 175, '175'],
-                ['FRI', 200, '200'],
-                ['SAT', 170, '170'],
-                ['SUN', 250, '250'],
-                ['MON', 220, '220'],
-                ['TUE', 220, ' ']
-            ]);
-            var options = {
-                height: 314,
-                legend: 'none',
-                areaOpacity: 0.18,
-                axisTitlesPosition: 'out',
-                hAxis: {
-                    title: '',
+    $('.panel').lobiPanel({
+    sortable: true
+    });
+    google.charts.load('current', {'packages': ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn('string', 'Day');
+    dataTable.addColumn('number', 'Values');
+    // A column for custom tooltip content
+    dataTable.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+    dataTable.addRows([
+    ['MON', 130, ' '],
+    ['TUE', 130, '130'],
+    ['WED', 180, '180'],
+    ['THU', 175, '175'],
+    ['FRI', 200, '200'],
+    ['SAT', 170, '170'],
+    ['SUN', 250, '250'],
+    ['MON', 220, '220'],
+    ['TUE', 220, ' ']
+    ]);
+    var options = {
+    height: 314,
+            legend: 'none',
+            areaOpacity: 0.18,
+            axisTitlesPosition: 'out',
+            hAxis: {
+            title: '',
                     textStyle: {
-                        color: '#fff',
-                        fontName: 'Proxima Nova',
-                        fontSize: 11,
-                        bold: true,
-                        italic: false
+                    color: '#fff',
+                            fontName: 'Proxima Nova',
+                            fontSize: 11,
+                            bold: true,
+                            italic: false
                     },
                     textPosition: 'out'
-                },
-                vAxis: {
-                    minValue: 0,
+            },
+            vAxis: {
+            minValue: 0,
                     textPosition: 'out',
                     textStyle: {
-                        color: '#fff',
-                        fontName: 'Proxima Nova',
-                        fontSize: 11,
-                        bold: true,
-                        italic: false
+                    color: '#fff',
+                            fontName: 'Proxima Nova',
+                            fontSize: 11,
+                            bold: true,
+                            italic: false
                     },
                     baselineColor: '#16b4fc',
                     ticks: [0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350],
                     gridlines: {
-                        color: '#1ba0fc',
-                        count: 15
+                    color: '#1ba0fc',
+                            count: 15
                     },
-                },
-                lineWidth: 2,
-                colors: ['#fff'],
-                curveType: 'function',
-                pointSize: 5,
-                pointShapeType: 'circle',
-                pointFillColor: '#f00',
-                backgroundColor: {
-                    fill: '#008ffb',
+            },
+            lineWidth: 2,
+            colors: ['#fff'],
+            curveType: 'function',
+            pointSize: 5,
+            pointShapeType: 'circle',
+            pointFillColor: '#f00',
+            backgroundColor: {
+            fill: '#008ffb',
                     strokeWidth: 0,
-                },
-                chartArea: {
-                    left: 0,
+            },
+            chartArea: {
+            left: 0,
                     top: 0,
                     width: '100%',
                     height: '100%'
-                },
-                fontSize: 11,
-                fontName: 'Proxima Nova',
-                tooltip: {
-                    trigger: 'selection',
+            },
+            fontSize: 11,
+            fontName: 'Proxima Nova',
+            tooltip: {
+            trigger: 'selection',
                     isHtml: true
-                }
-            };
-            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-            chart.draw(dataTable, options);
-        }
-        $(window).resize(function () {
-            drawChart();
-            setTimeout(function () {
-            }, 1000);
-        });
-        $('.panel').on('dragged.lobiPanel', function (ev, lobiPanel) {
-            $('.dahsboard-column').matchHeight();
-        });
+            }
+    };
+    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+    chart.draw(dataTable, options);
+    }
+    $(window).resize(function () {
+    drawChart();
+    setTimeout(function () {
+    }, 1000);
+    });
+    $('.panel').on('dragged.lobiPanel', function (ev, lobiPanel) {
+    $('.dahsboard-column').matchHeight();
+    });
     });</script>
 
 <!--scrpit-messenger-->
 <script>
     $(function () {
-        $('.chat-settings .change-bg-color label').on('click', function () {
-            var color = $(this).data('color');
-            $('.messenger-message-container.from').each(function () {
-                $(this).removeClass(function (index, css) {
-                    return (css.match(/(^|\s)bg-\S+/g) || []).join(' ');
-                });
-                $(this).addClass('bg-' + color);
-            });
-        });
+    $('.chat-settings .change-bg-color label').on('click', function () {
+    var color = $(this).data('color');
+    $('.messenger-message-container.from').each(function () {
+    $(this).removeClass(function (index, css) {
+    return (css.match(/(^|\s)bg-\S+/g) || []).join(' ');
+    });
+    $(this).addClass('bg-' + color);
+    });
+    });
     });</script>
 <!--MULTI-PICS-->
 <script>
     $(function () {
-        $("#files").change(function () {
-            var files = !!this.files ? this.files : [];
-            if (!files.length || !window.FileReader)
-                return; // no file selected, or no FileReader support
+    $("#files").change(function () {
+    var files = !!this.files ? this.files : [];
+    if (!files.length || !window.FileReader)
+            return; // no file selected, or no FileReader support
 
-            if (/^image/.test(files[0].type)) { // only image file
-                var reader = new FileReader(); // instance of the FileReader
-                reader.readAsDataURL(files[0]); // read the local file
+    if (/^image/.test(files[0].type)) { // only image file
+    var reader = new FileReader(); // instance of the FileReader
+    reader.readAsDataURL(files[0]); // read the local file
 
-                reader.onloadend = function () { // set image data
-                    var elem = document.createElement("div");
-                    elem.setAttribute("data-p","144.50");
-                    elem.setAttribute("style","display:none");
-                    var inputImage = document.createElement("img");
-                    inputImage.setAttribute("data-u","image");
-                    inputImage.setAttribute("src",this.result);
-                    elem.appendChild(inputImage);
-                    document.getElementById('pictures').appendChild(elem);
-                    //$("#1").css("background-image", "url(" + this.result + ")");
-                };
-            }
-        });
+    reader.onloadend = function () { // set image data
+//                    var elem = document.createElement("div");
+//                    elem.setAttribute("data-p","144.50");
+//                    elem.setAttribute("style","display:none");
+//                    var inputImage = document.createElement("img");
+//                    inputImage.setAttribute("data-u","image");
+//                    inputImage.setAttribute("src",this.result);
+//                    elem.appendChild(inputImage);
+    document.getElementById('pictures').append("<div> <img/> <img /> </div>");
+    //data-p="144.50"  style="display: none; "
+    //data-u="image"
+    //data-u="thumb"
+            //$("#1").css("background-image", "url(" + this.result + ")");
+    };
+    }
     });
-</script>
+    });</script>
 
 
 
