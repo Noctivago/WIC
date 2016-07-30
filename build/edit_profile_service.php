@@ -378,8 +378,8 @@ $serviceId = (filter_var($_GET['Service']));
                     <header class = "box-typical-header-sm">Edit Service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
 
-                        Change Profile photo:<input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
-                        New Files: <input type="file" id="file[]" name="file[]" accept = "images/*" multiple/><br/>
+                        Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />
+                        New Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple/><br/>
 
                         <header class = "sign-title">Edit Service Profile</header>
                         <div class = "form-group" Style="display: none">
@@ -755,7 +755,7 @@ $serviceId = (filter_var($_GET['Service']));
 <!--MULTI-PICS-->
 <script>
     $(function () {
-        $("#file[]").change(function () {
+        $("#files").change(function () {
             var files = !!this.files ? this.files : [];
             if (!files.length || !window.FileReader)
                 return; // no file selected, or no FileReader support

@@ -13,7 +13,7 @@ include_once '../build/db/session.php';
                 
                 
                 
-                <section class="box-typical" style="height: 402px;">
+                <section class="box-typical" >
                     <header class="box-typical-header-sm">
                         Services
                         <div class="slider-arrs">
