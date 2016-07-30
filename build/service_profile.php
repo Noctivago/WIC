@@ -321,14 +321,14 @@ $serviceId = (filter_var($_GET['Service']));
 
                     <header class="box-typical-header-sm">
                         Organization Information
-                        <div class="slider-arrs">
+<!--                        <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
                             </button>
                             <button type="button" class="recomendations-slider-next">
                                 <i class="font-icon font-icon-arrow-right"></i>
                             </button>
-                        </div>
+                        </div>-->
                     </header>
                     <div class="recomendations-slider" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
