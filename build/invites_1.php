@@ -44,13 +44,13 @@ $msg = '';
                                 <th> Remove </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <?php
-                            $userId = $_SESSION['id'];
-                            DB_BuildInvitesTable($pdo, $userId);
-                            ?>
+<!--                        <tbody>
+                            //<?php
+//                            $userId = $_SESSION['id'];
+//                            DB_BuildInvitesTable($pdo, $userId);
+//                            ?>
 
-                        </tbody>
+                        </tbody>-->
                     </table>
                 </div>
             </div><!--.box-typical-body-->
@@ -189,6 +189,11 @@ $msg = '';
 	<script src="js/lib/tether/tether.min.js"></script>
 	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
 	<script src="js/plugins.js"></script>
+        
+        <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+<script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="js/lib/select2/select2.full.min.js"></script>
 
 	<script src="js/lib/table-edit/jquery.tabledit.min.js"></script>
 	<script>
