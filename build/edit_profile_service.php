@@ -759,8 +759,9 @@ $serviceId = (filter_var($_GET['Service']));
                     var elem = document.getElementById("1");
                     var img = document.getElementById("1.1");
                     img.attr('src', this.result);
-                    img.appendTo('pictures');
-                    alert(img);
+                    var div = document.getElementById('pictures');
+                    div.appendChild(elem);
+                    document.getElementById('pictures') = div;
                     // document.getElementById('pictures').appendChild(elem);
 //    alert('aaadsadasd');
 //data-p="144.50"  style="display: none; "
