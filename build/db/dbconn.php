@@ -3499,13 +3499,13 @@ function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
 function db_getWicsForHeader($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT [Name]
-      ,[Event_Date]
+        ,[Event_Date]
         FROM [dbo].[WIC_Planner]
         WHERE [Enabled]=1
         AND [User_Id] = ?
         ORDER BY [Date_Created] DESC", array($userId), "rows");
         foreach ($rows as $row) {
-            $subStr = explode(" ", $row['Date_Created']);
+            $subStr = explode(" ", $row['Event_Date']);
             echo '<a href="/build/my_wicplanner.php" class="mess-item">';
             echo '<span class="mess-item-name">' . $row['Name'] . ' > ' . $subStr[0] . '</span>';
             //echo '<span class="mess-item-txt">' . $subStr[0] . '</span>';
