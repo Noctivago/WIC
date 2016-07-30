@@ -756,12 +756,18 @@ $serviceId = (filter_var($_GET['Service']));
                 var reader = new FileReader(); // instance of the FileReader
                 reader.readAsDataURL(files[0]); // read the local file
                 reader.onloadend = function () { // set image data
-                    var elem = document.getElementById("1");
-                    var img = document.getElementById("1.1");
-                    img.attr('src', this.result);
-                    var div = document.getElementById('pictures');
-                    div.appendChild(elem);
-                    document.getElementById('pictures') = div;
+                    var img = $("<img />");
+                    img.attr("src",this.result);
+                    var dep = $('#pictures');
+                    dep.append(img);
+////  
+//  
+//                    var elem = document.getElementById("1");
+//                    var img = document.getElementById("1.1");
+//                    img.attr('src', this.result);
+//                    var div = document.getElementById('pictures');
+//                    div.appendChild(elem);
+//                    document.getElementById('pictures') = div;
                     // document.getElementById('pictures').appendChild(elem);
 //    alert('aaadsadasd');
 //data-p="144.50"  style="display: none; "
