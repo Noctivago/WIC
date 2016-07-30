@@ -542,7 +542,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
                                 <td>
 
                                     <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" onclick ="EditRole(' . $row['ID'] . ')"class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
+                                        <button type="button" onclick ="EditRole(' . $row['ID'] . ')"class="action-btn"><i class="fa fa-save"></i></button>
                                     </div>
                                 </td>
                                 <td>  
