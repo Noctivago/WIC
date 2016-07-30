@@ -15,7 +15,7 @@ include_once '../db/session.php';
 //echo '<br>';
 //DB_getUserProfileTable($pdo);
 //echo '<br>';
-echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&City=3';
 //echo '<br>';
 //$EM = "paulo.cunha@esprominho.com";
 //$AC = '14551ASDF';
