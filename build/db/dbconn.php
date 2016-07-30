@@ -556,11 +556,12 @@ function DB_BuildInvitesTable($pdo, $userId) {
                                     </div>
                                 </td>
                                 <td>  
-                                    <div class="tbl-cell tbl-cell-action-bordered">
+                                    <div class="table-icon-cell">
                                         <button type="button" onclick="RemoveUserInService(' . $row['ID'] . ')" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
                                     </div>
                                 </td>
                             </tr>';
+//            class="tbl-cell tbl-cell-action-bordered"
         }
     } catch (Exception $ex) {
         
