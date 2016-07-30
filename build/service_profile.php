@@ -335,82 +335,23 @@ $serviceId = (filter_var($_GET['Service']));
                         </div>-->
                     </header>
                     
-<!--						<article class="profile-info-item">
-							<header class="profile-info-item-header">
-								<i class="font-icon font-icon-case"></i>
-								Service 
-							</header>
-							<ul class="exp-timeline">
-								<li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">
-                                                                                                <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
-                                                                                                    
-                                                                                                </div>
 
-												
-											</div>
-											
-										</div>
-									</div>
-								</li>
-                                                                <li class="exp-timeline-item">
-									<div class="dot"></div>
-									<div class="tbl">
-										<div class="tbl-row">
-											<div class="tbl-cell">
-												<div class="exp-timeline-range">
-                                                                                                <?php
-                                                                                                    echo '
-
-                                                                                                     <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
-
-                                                                                                    ';
-//                                                                                                    echo '<div class="card-typical-section">
-//
-//                                                                                                     <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
-//
-//                                                                                                    </div>';
-                                                                                                ?> 
-                                                                                                </div>
-												
-											</div>
-											
-										</div>
-									</div>
-								</li>
-
-							</ul>
-						</article>.profile-info-item-->
-                                                <div class="right-top">
-                                                    <?php
-                                                                                                    echo '
-                                                                                                        <div class="card-typical-section">
-                                                                                                     <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
-                                                                                                         </div>
-                                                                                                    ';
-                                                    ?>
-                                                </div>
-
-<!--                    <div class="recomendations-slider" >
+                    <div class="recomendations-slider" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
                         <div class="slide">
                             BOTOES CHAT + WIC
                             <div class="user-card-row">
                                 <?php
-//                                echo '<div class="card-typical-section">
-//                            
-//                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
-//                                     
-//                                </div>';
+                                echo '<div class="card-typical-section">
+                            
+                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
+                                     
+                                </div>';
                                 ?>
                             </div>
                             <input type=button onClick="openMyWics();",  value="+">
                         </div>
-                    </div>-->
+                    </div>
                 </section>
 
                 <!--DESCR SERVICE-->
