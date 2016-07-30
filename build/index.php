@@ -9,16 +9,16 @@ include ("./db/dbconn.php");
             
             
         <?php
-        $s_catId = (filter_var($_GET['Category']));
-        $s_qParamString = (filter_var($_GET['aParam']));
-        $s_cityId = (filter_var($_GET['City']));
-        $idUser = $_SESSION['id'];
-
-        if(isset(filter_var($_GET['Category']))) {
-            
-        } elseif (isset(filter_var($_GET['aParam']))) {
-            
-        }
+//        $s_catId = (filter_var($_GET['Category']));
+//        $s_qParamString = (filter_var($_GET['aParam']));
+//        $s_cityId = (filter_var($_GET['City']));
+//        $idUser = $_SESSION['id'];
+//
+//        if(isset(filter_var($_GET['Category']))) {
+//            
+//        } elseif (isset(filter_var($_GET['aParam']))) {
+//            
+//        }
 //        if (isset($_GET['UserInService'])) {
 //                            DEVOLVE OS SERVIÇOS DA ORG DE UM DETERMINADO USER
 //            $UserInService = (filter_var($_GET['UserInService']));
