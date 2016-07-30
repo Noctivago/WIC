@@ -301,6 +301,58 @@ $serviceId = (filter_var($_GET['Service']));
                                             $idOg = $org['Id'];
                                         }
                                         if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
+                                            $name = $_FILES['uploadFile']['name'];
+                                            $newfilename = $sID . '_' . generateActivationCode() . '.jpg';
+                                            if (isset($name)) {
+                                                if (!empty($name)) {
+                                                    // Check for errors
+                                                    if ($_FILES['uploadFile']['error'] > 0) {
+                                                        die('An error ocurred when uploading.');
+                                                    }
+                                                    if (!getimagesize($_FILES['uploadFile']['tmp_name'])) {
+                                                        die('Please ensure you are uploading an image.');
+                                                    }
+                                                    // Check filesize
+                                                    if ($_FILES['uploadFile']['size'] > 2000000) {
+                                                        die('File uploaded exceeds maximum upload size.');
+                                                    }
+                                                    if (!move_uploaded_file($_FILES['uploadFile']['tmp_name'], 'pics/' . $newfilename)) {
+                                                        die('Error uploading file - check destination is writeable.');
+                                                    } else {
+                                                        $picture_path = 'pics/' . $newfilename;
+                                                        //falta remover a first page para 0
+                                                        //INSERIR NA TABELA MULTIMEDIA - FirstPage
+                                                        $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $picture_path, 1);
+                                                        //$msg = ('File uploaded successfully.');
+                                                    }
+                                                }
+                                            }
+                                            $name2 = $_FILES['files']['name'];
+                                            if (isset($name)) {
+                                                if (!empty($name)) {
+                                                    $j = 0; //Variable for indexing uploaded image 
+                                                    $target_path = "pics/"; //Declaring Path for uploaded images
+                                                    for ($i = 0; $i < count($_FILES['file']['name']); $i++) {//loop to get individual element from the array
+                                                        $validextensions = array("jpeg", "jpg", "png");  //Extensions which are allowed
+                                                        $ext = explode('.', basename($_FILES['file']['name'][$i])); //explode file name from dot(.) 
+                                                        $file_extension = end($ext); //store extensions in the variable
+                                                        $target_path = $target_path . $sID . '_' . generateActivationCode() . "." . $ext[count($ext) - 1]; //set the target path with a new name of image
+                                                        $j = $j + 1; //increment the number of uploaded images according to the files in array       
+
+                                                        if (($_FILES["file"]["size"][$i] < 2000000) //Approx. 100kb files can be uploaded.
+                                                                && in_array($file_extension, $validextensions)) {
+                                                            if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {//if file moved to uploads folder
+                                                                #echo $j . ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
+                                                                $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $target_path, 0);
+                                                            } else {//if file was not moved.
+                                                                $msg = "Please try again!";
+                                                            }
+                                                        } else {//if file size and file type was incorrect.
+                                                            $msg = "Invalid file Size or Type";
+                                                        }
+                                                    }
+                                                }
+                                            }
                                             $cname = $_POST['cName'];
                                             $cDescription = $_POST['cDescription'];
                                             $cSub = $_POST['cSubCat'];
