@@ -432,7 +432,7 @@ $serviceId = (filter_var($_GET['Service']));
                    echo '<section class="">
                             
                        <button class="btn btn-inline btn-warning-outline font-icon-plus-1"  onClick="openMyWics('.$row['SID'].');"> Add To my Wic Planner </button>
-                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics();" title="Add To my wic planner"> </button>
+                       
                                      
                      </section>';
                 ?>
