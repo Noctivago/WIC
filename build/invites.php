@@ -122,4 +122,3 @@ $msg = '';
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 
-<script>
