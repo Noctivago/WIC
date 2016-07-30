@@ -332,9 +332,9 @@ $serviceId = (filter_var($_GET['Service']));
                     </header>
                     <div class="recomendations" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
-                        <div class="slide">
+                        <div class="slide1">
                             <!--BOTOES CHAT + WIC-->
-                            <div class="user-card-row">
+                            <div class="user-card-row1">
                                 <?php
                                 echo '<div class="card-typical-section">
                                  <input type=button onClick="openMyWics();",  value="+">
