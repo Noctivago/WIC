@@ -86,7 +86,7 @@ $msg = '';
 									<th>Role Permission Management</th>
 									<th class="table-icon-cell">
                                                                             
-										 Edit
+										 Save
                                                                                 
 									</th>
 									<th class="table-icon-cell">
