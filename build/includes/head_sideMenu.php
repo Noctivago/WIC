@@ -258,7 +258,7 @@ include '../build/db/session.php';
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <header class="side-menu-title">Advanced Search</header>
-                <!--<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">-->
+               
                 <form action="<?php $link; ?>" method="post">
                     <div class="col-md-10">
 
