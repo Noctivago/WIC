@@ -39,9 +39,9 @@ include '../build/db/session.php';
             $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
             $q = false;
         }
-        if (isset($_POST['submit'])) {
-            
-        }
+//        if (isset($_POST['submit'])) {
+//            
+//        }
         //SE Q TRUE > POSSUI QUERY PARAMETERS
 //        if (isset(filter_var($_GET['qParam']))) {
 //            if (isset(filter_var($_GET['Category']))) {
@@ -259,7 +259,7 @@ include '../build/db/session.php';
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <header class="side-menu-title">Advanced Search</header>
                
-                <form action="<?php $link; ?>" method="post">
+                <form action="<?php $link; ?>" method="GET">
                     <div class="col-md-10">
 
                         <div class="typeahead-container">
