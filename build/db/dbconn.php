@@ -1307,7 +1307,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
           on [Role].[Id] = [User_Service].[Role_Id]
           where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
             foreach ($rows as $row) {
-                echo '<article class="friends-list-item" <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button> >';
+                echo '<article class="friends-list-item" <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>';
                 echo '    <div class="user-card-row">';
                 echo '      <div class="tbl-row">';
                 echo '          <div class="tbl-cell tbl-cell-photo">';
