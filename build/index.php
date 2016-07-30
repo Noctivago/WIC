@@ -6,30 +6,20 @@ include ("./db/dbconn.php");
 <div class="page-content">
     <div class="container-fluid">
         <div class="cards-grid" data-columns>
-            
-            
-        <?php
-//        $s_catId = (filter_var($_GET['Category']));
-//        $s_qParamString = (filter_var($_GET['aParam']));
-//        $s_cityId = (filter_var($_GET['City']));
-//        $idUser = $_SESSION['id'];
-//
-//        if(isset(filter_var($_GET['Category']))) {
-//            
-//        } elseif (isset(filter_var($_GET['aParam']))) {
-//            
-//        }
-//        if (isset($_GET['UserInService'])) {
-//                            DEVOLVE OS SERVIÇOS DA ORG DE UM DETERMINADO USER
-//            $UserInService = (filter_var($_GET['UserInService']));
-//            DB_GetOrganizationServicesByUserInService($pdo, $org, $UserInService);
-//        } else {
-//                            DEVOLVE TODOS OS SERVIÇOS DAS ORG
-//            DB_GetOrganizationServices($pdo, $org, $idUser);
-//        }
-        ?>
+
 
             <?php
+            //$link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php?';
+            if (isset(filter_var($_GET['Category']))) {
+                $s_cat = filter_var($_GET['Category']);
+                $link = $link . '&Category=' . $s_cat;
+            } elseif (isset(filter_var($_GET['City']))) {
+                $s_city = filter_var($_GET['City']);
+                $link = $link . $s_city;
+            } elseif (isset(filter_var($_GET['qParam']))) {
+                $s_name = filter_var($_GET['qParam']);
+                $link = $link . $s_city;
+            }
             if (isset($_GET ['Category'])) {
                 $CategoryId = (filter_var($_GET ['Category']));
                 DB_getServicesForIndexByCategory($pdo, $CategoryId);
@@ -173,9 +163,9 @@ include ("./db/dbconn.php");
         var x = (screen.width / 2) - (435 / 2);
         var y = (screen.height / 2) - (362 / 2);
         if (Sid > 0) {
-            window.open('./ajax/getMyWicsPopup.php?id=' + Sid +  '', 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
+            window.open('./ajax/getMyWicsPopup.php?id=' + Sid + '', 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
         } else {
-            
+
         }
     }
 </script>
