@@ -379,11 +379,10 @@ $serviceId = (filter_var($_GET['Service']));
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Edit Service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
-                        <div class = "sign-avatar no-photo">&plus;
-                        </div>
-                        <button name="photos" id="photo" type="submit" class = "btn btn-rounded btn-file">Change Picture 
-                            <input type="file" name="images[]" id="images" multiple >
-                        </button>
+                        
+                        <input id="uploadFile" placeholder="Change profile photo"name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
+                        Files: <input placeholder="Add new photos" type="file" id="file" name="file[]" accept = "images/*" multiple/><br/>
+
                         <header class = "sign-title">Edit Service Profile</header>
                         <div class = "form-group" Style="display: none">
                             <div class = "form-control-wrapper form-control-icon-left" >
