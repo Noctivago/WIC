@@ -149,7 +149,7 @@ $msg = '';
 
                         Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
 
-                        <div id="selectedFiles"></div>
+                       
                         <div id="dvpreview"></div>
                         <header class = "sign-title">Fill the fields below</header>
 
