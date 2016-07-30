@@ -4,6 +4,9 @@ include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 $serviceId = (filter_var($_GET['Service']));
 //
+$msg = '';
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 
 <div class="page-content">
@@ -327,12 +330,12 @@ $serviceId = (filter_var($_GET['Service']));
                                                     }
                                                 }
                                             }
-                                            $name2 = $_FILES['files']['name'];
-                                            if (isset($name)) {
-                                                if (!empty($name)) {
+                                            $name2 = $_FILES['file']['name'];
+                                            if (isset($name2)) {
+                                                if (!empty($name2)) {
                                                     $j = 0; //Variable for indexing uploaded image 
                                                     $target_path = "pics/"; //Declaring Path for uploaded images
-                                                    for ($i = 0; $i < count($_FILES['files']['name']); $i++) {//loop to get individual element from the array
+                                                    for ($i = 0; $i < count($_FILES['file']['name']); $i++) {//loop to get individual element from the array
                                                         $validextensions = array("jpeg", "jpg", "png");  //Extensions which are allowed
                                                         $ext = explode('.', basename($_FILES['file']['name'][$i])); //explode file name from dot(.) 
                                                         $file_extension = end($ext); //store extensions in the variable
