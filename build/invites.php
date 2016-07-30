@@ -71,15 +71,15 @@ $msg = '';
 <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
 <script src="js/lib/select2/select2.full.min.js"></script>
 
-
+<!--
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
 
-
+<!--
 <script src="js/lib/salvattore/salvattore.min.js"></script>
-<script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
+<script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>-->
 
 <script>
     function EditRole(x) {
