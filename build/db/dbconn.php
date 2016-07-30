@@ -1726,7 +1726,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             echo '<article class = "post-announce">';
             echo '<div class = "post-announce-pic">';
             echo '<a href = "service_profile.php?Service='.$row['SID'].'">';
-            echo ' <img src = "'.$row['MPP'].'" alt = "Avatar">';
+            echo ' <img src = "'.$row['MPP'].'" alt = "Avatar" style="max-width: 230px; max-height: 180px;">';
             echo '</a>';
             echo ' </div>';
             echo '<div class = "post-announce-title">';
@@ -1955,7 +1955,7 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
             //IMPRIME DATA
             echo '<td>' . $subStr[0] . '</td>';
             echo '<td class = "table-photo">';
-            echo '<img src = "' . $row['UPP'] . '" alt = "Avatar" style="max-width: 230px; max-height: 180px;" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
+            echo '<img src = "' . $row['UPP'] . '" alt = "Avatar"  data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
             echo '</td>';
 //COMO USER E CONVIDADO APENAS PODE VER/REMOVER E ADICIONAR SERVIÇOS            
 //            echo '<td class = "table-photo">';
