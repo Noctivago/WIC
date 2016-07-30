@@ -393,22 +393,22 @@ $serviceId = (filter_var($_GET['Service']));
 							</ul>
 						</article><!--.profile-info-item-->
 
-                    <div class="recomendations-slider" >
+<!--                    <div class="recomendations-slider" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
                         <div class="slide">
-                            <!--BOTOES CHAT + WIC-->
+                            BOTOES CHAT + WIC
                             <div class="user-card-row">
                                 <?php
-                                echo '<div class="card-typical-section">
-                            
-                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
-                                     
-                                </div>';
+//                                echo '<div class="card-typical-section">
+//                            
+//                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
+//                                     
+//                                </div>';
                                 ?>
                             </div>
-                            <!--<input type=button onClick="openMyWics();",  value="+">-->
+                            <input type=button onClick="openMyWics();",  value="+">
                         </div>
-                    </div>
+                    </div>-->
                 </section>
 
                 <!--DESCR SERVICE-->
