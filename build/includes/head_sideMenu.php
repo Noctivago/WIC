@@ -186,7 +186,7 @@ include '../build/db/session.php';
                                 <i class="font-icon-pin-2"></i>
                             </button>
                         </div>
-
+ 
                         <div class="mobile-menu-right-overlay"></div>
                         <div class="site-header-collapsed">
                             <div class="site-header-collapsed-in">
