@@ -3507,7 +3507,7 @@ function db_getWicsForHeader($pdo, $userId) {
         foreach ($rows as $row) {
             $subStr = explode(" ", $row['Event_Date']);
             echo '<a href="/build/my_wicplanner.php" class="mess-item" padding-left: 15px; style="padding-left: 5px;">';
-            echo '<span class="mess-item-name" >' . $row['Name'] . ' > ' . $subStr[0] . '</span>';
+            echo '<span class="mess-item-name" ><i class="font-icon font-icon-calend">' . $row['Name'] . ' > ' . $subStr[0] . '</span>';
             //echo '<span class="mess-item-txt">' . $subStr[0] . '</span>';
             echo '</a>';
         }
