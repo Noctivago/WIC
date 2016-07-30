@@ -451,7 +451,7 @@ $serviceId = (filter_var($_GET['Service']));
                 success: function (data) {
                     //alert(data);
                     loadComments();
-                    $(".userComment").empty();
+                    $('#userComment').val('');
                 }
             });
         }
