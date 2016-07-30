@@ -2735,7 +2735,8 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "new">
-          
+            <div class = "user-card-row">
+            <div class = "tbl-row">
             <div class = "tbl-cell tbl-cell-photo">
             <a href = "profile_org.php?Organization=' . $row['OID'] . '">
             <img src = "' . $row['OPP'] . '" alt = "Avatar">
