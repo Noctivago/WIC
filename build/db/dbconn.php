@@ -2700,7 +2700,7 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
             echo '<div class = "profile-card-photo">';
             echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
             echo ' </div>';
-            echo ' <div class = "profile-card-name"><a href="../build/profile_org.php?Organization='.$row['Id'].'" >' . $row['Name'] . '</a></div>';
+            echo ' <div class = "profile-card-name"><a href="../build/profile_org.php?Organization=' . $row['Id'] . '" >' . $row['Name'] . '</a></div>';
             //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
             //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
             //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
@@ -2990,6 +2990,7 @@ function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
 }
 
 function DB_getServicesForIndexByName($pdo, $qParam) {
+    $s = '%' . $qParam . '%';
     try {
         $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
@@ -3009,7 +3010,7 @@ function DB_getServicesForIndexByName($pdo, $qParam) {
         AND [Service].[Enabled] = 1 
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
-        AND [Service].[Name] Like '%?%' ", array($qParam), "rows");
+        AND [Service].[Name] Like '%amb%' ", array(), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
         <article class = "card-typical">
