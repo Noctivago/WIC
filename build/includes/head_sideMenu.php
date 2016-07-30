@@ -171,7 +171,7 @@ include '../build/db/session.php';
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $idOrg = $org['Id'];
 
-//                                    echo 'iii'.DB_GetOrgIdByUserBossId2($pdo, $user);
+                                    //echo 'iii'.DB_GetOrgIdByUserBossId2($pdo, $user);
                                     if ($_SESSION['role'] == 'organization') {
                                         echo ' <a class="dropdown-item" href="profile_org.php?Organization=' . $idOrg . '"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
                                         echo ' <a class="dropdown-item" href="edit_profile_org.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
@@ -217,7 +217,7 @@ include '../build/db/session.php';
 
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
-                                    <form class="site-header-search opened" action="<?php $selfUrl; ?>">
+                                    <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
                                         <input type="text" placeholder="Choose your City.."
                                                id="categories"
                                                class="form-control"
