@@ -37,7 +37,7 @@ include '../build/db/session.php';
         if (count($getValues) > 0) {
             $selfUrl .= "?" . implode('&', $getValues);
         } else {
-            $selfUrl .= "?&";
+            $selfUrl .= "?";   
         }
         ?>
         <header class="site-header">
