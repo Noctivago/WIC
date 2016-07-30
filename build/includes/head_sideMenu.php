@@ -102,7 +102,7 @@ include '../build/db/session.php';
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <i class="font-icon-comments" <input Type="button" Value="Teste" ondblclick="window.location.href = 'messenger.php'"> ></i>
+                                    <i class="font-icon-comments" <input Type="button" Value="Teste" ondblclick="window.location.href = 'messenger.php'"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages">
                                     <div class="dropdown-menu-messages-header">
