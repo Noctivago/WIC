@@ -3011,6 +3011,7 @@ function DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $categoryId) {
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
         AND [Service].[Name] Like '%" . $qParam . "%' "
+                . "OR [Service].[Description] Like '%" . $qParam . "%' "
                 . "AND [Service].[Sub_Category_Id] = ? ", array($categoryId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
