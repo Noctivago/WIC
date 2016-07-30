@@ -31,16 +31,16 @@ include '../build/db/session.php';
         if (count($_GET) >= 1) {
             $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             $q = true;
-            if (isset(filter_var($_GET['qParam']))) {
-                
+            if (isset(filter_var($_POST['qParam'])) || isset($_POST['submit'])) {
+                $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&' . filter_var($_GET['qParam']);
             }
             //SENAO TIVER QUERY STRING
         } else {
             $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
             $q = false;
-        }
-        if (isset($_POST['submit'])) {
-            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&' . filter_var($_GET['qParam']);
+            if (isset(filter_var($_POST['qParam'])) || isset($_POST['submit'])) {
+                $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&' . filter_var($_GET['qParam']);
+            }
         }
         //SE Q TRUE > POSSUI QUERY PARAMETERS
 //        if (isset(filter_var($_GET['qParam']))) {
