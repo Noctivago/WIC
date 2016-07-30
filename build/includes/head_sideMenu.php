@@ -292,6 +292,12 @@ include '../build/db/session.php';
                 <li class="gold with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
                 </li>
+                <li class="gold with-sub">
+                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Original</a>
+                </li>
+                <li class="gold with-sub">
+                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Team Building</a>
+                </li>
 
                 <?php
                 $userId = $_SESSION['id'];
