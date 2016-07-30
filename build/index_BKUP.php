@@ -16,8 +16,6 @@ include ("./db/dbconn.php");
 
         if(isset(filter_var($_GET['Category']))) {
             
-        } elseif (isset(filter_var($_GET['aParam']))) {
-            
         }
 //        if (isset($_GET['UserInService'])) {
 //                            DEVOLVE OS SERVIÇOS DA ORG DE UM DETERMINADO USER
