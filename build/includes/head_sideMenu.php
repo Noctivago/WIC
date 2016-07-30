@@ -27,7 +27,7 @@ include '../build/db/session.php';
     </head>
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
-        $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php?';
+        $link =  'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         if (isset(filter_var($_GET['Category']))) {
             if (preg_match('/Category/', $link)) {
                 
