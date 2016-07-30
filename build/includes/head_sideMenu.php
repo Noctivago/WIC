@@ -28,7 +28,7 @@ include '../build/db/session.php';
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
-       
+
         $selfUrl = $_SERVER['PHP_SELF'];
         $getValues = array();
         foreach ($_POST as $key => $value) {
@@ -36,6 +36,8 @@ include '../build/db/session.php';
         }
         if (count($getValues) > 0) {
             $selfUrl .= "?" . implode('&', $getValues);
+        } else {
+            $selfUrl .= "?&";
         }
         ?>
         <header class="site-header">
