@@ -752,24 +752,21 @@ $serviceId = (filter_var($_GET['Service']));
                     var file = $(this);
                     var reader = new FileReader();
                     reader.onload = function (e) {
-                        var div = $('1');
+                        var diva = $('<div data-p="144.50"  style="display: none;"> < /div>');
                         var img = $("<img />");
                         img.attr("style", "height:100px;width: 100px");
                         img.attr("src", e.target.result);
-                        div.append(img);
-                        dvPreview.append(div);
-    //dvPreview.append(img);
+                        diva.append(img);
+                        dvPreview.append(diva);
+                        //dvPreview.append(img);
                     }
                     reader.readAsDataURL(file[0]);
-
                 });
             } else {
                 alert("This browser does not support HTML5 FileReader.");
             }
         });
-    });
-
-</script>
+    });</script>
 
 
 
