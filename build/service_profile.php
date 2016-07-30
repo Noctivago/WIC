@@ -85,48 +85,7 @@ $serviceId = (filter_var($_GET['Service']));
 									</div>
 									
 								</article>
-							</div><!--.slide-->
-							<div class="slide">
-								<article class="post-announce">
-									<div class="post-announce-pic">
-										<a href="#">
-											<img src="img/post-3.jpeg" alt="">
-										</a>
-									</div>
-								
-								</article>
-							</div><!--.slide-->
-							<div class="slide">
-								<article class="post-announce">
-									<div class="post-announce-pic">
-										<a href="#">
-											<img src="img/post-1.jpeg" alt="">
-										</a>
-									</div>
-									
-								</article>
-							</div><!--.slide-->
-							<div class="slide">
-								<article class="post-announce">
-									<div class="post-announce-pic">
-										<a href="#">
-											<img src="img/post-2.jpg" alt="">
-										</a>
-									</div>
-									
-								</article>
-							</div><!--.slide-->
-							<div class="slide">
-								<article class="post-announce">
-									<div class="post-announce-pic">
-										<a href="#">
-											<img src="img/post-3.jpeg" alt="">
-										</a>
-									</div>
-									
-								</article>
-							</div><!--.slide-->
-						</div><!--.posts-slider-->
+						
 					</section><!--.box-typical-->
                                      
 
