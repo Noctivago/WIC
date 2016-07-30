@@ -28,28 +28,11 @@ include '../build/db/session.php';
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
-        if (count($_GET) == 1) {
-            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            $q = true;
-            if (isset(filter_var($_POST['qParam'])) || isset($_POST['submit'])) {
-                $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&' . filter_var($_GET['qParam']);
-            }
-            //SENAO TIVER QUERY STRING
+        if (count($_GET) >= 1) {
+            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];           
         } else {
             $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
-            $q = false;
-            if (isset(filter_var($_POST['qParam'])) || isset($_POST['submit'])) {
-                $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&' . filter_var($_GET['qParam']);
-            }
         }
-        //SE Q TRUE > POSSUI QUERY PARAMETERS
-//        if (isset(filter_var($_GET['qParam']))) {
-//            if (isset(filter_var($_GET['Category']))) {
-//                $link = $link . filter_var($_GET['qParam']);
-//            } else {
-//                $link = $link . '?' . filter_var($_GET['qParam']);
-//            }
-//        }
         ?>
         <header class="site-header">
             <div class="container-fluid">
@@ -82,11 +65,8 @@ include '../build/db/session.php';
                                                 <a class="nav-link active"
                                                    data-toggle="tab"
                                                    href="messenger.php"
-                                                   role="tab"
-
-                                                   >
+                                                   role="tab">
                                                     Wic Planner
-                                                    <!--<span class="label label-pill label-danger"></span>-->
                                                 </a>
                                             </li>
 
@@ -257,9 +237,9 @@ include '../build/db/session.php';
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
-                <header class="side-menu-title">Advanced Search</header>
+                <header class="side-menu-title">Advanced search.</header>
 
-                <form action="<?php $link; ?>" method="POST">
+                <form action="<?php $link; ?>">
                     <div class="col-md-10">
                         <div class="typeahead-container">
                             <div class="typeahead-field">
