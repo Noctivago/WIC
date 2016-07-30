@@ -51,7 +51,7 @@ $serviceId = (filter_var($_GET['Service']));
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-9 col-lg-push-0 col-md-12"style="width:auto">
+            <div class="col-lg-9 col-lg-push-0 col-md-12">
 
                 <section class="box-typical" style="background-color: transparent; border: 0px">
 			
