@@ -28,7 +28,7 @@ include '../build/db/session.php';
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
-        if (count($_GET) == 1) {
+        if (count($_GET) >= 1 || count($_POST) >= 1) {
             $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             $q = true;
             if (isset(filter_var($_POST['qParam'])) || isset($_POST['submit'])) {
@@ -259,7 +259,7 @@ include '../build/db/session.php';
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <header class="side-menu-title">Advanced Search</header>
 
-                <form action="<?php $link; ?>" method="POST">
+                <form action="<?php $link; ?>">
                     <div class="col-md-10">
                         <div class="typeahead-container">
                             <div class="typeahead-field">
