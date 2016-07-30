@@ -126,7 +126,7 @@ $msg = '';
 										<i class="font-icon font-icon-folder"></i>
 										
 									</td>
-									<td class="table-icon-cell">
+                                                                        <td class="table-icon-cell" style="max-width: 180px; max-height: 120px;">
 										<i class="font-icon font-icon-trash"></i>
 										
 									</td>
