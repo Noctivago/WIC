@@ -29,7 +29,7 @@ include '../build/db/session.php';
         <?php
         //SE TIVER QUERY STRING
         if (count($_GET) >= 1) {
-            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];           
+            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         } else {
             $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
         }
@@ -211,15 +211,13 @@ include '../build/db/session.php';
 
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
-                                    <form class="site-header-search opened  ">
+                                    <form class="site-header-search opened" action="<?php $link; ?>">
                                         <input type="text" placeholder="Choose your City.."
                                                id="categories"
                                                class="form-control"
                                                name="name"
                                                type="text"
-                                               autocomplete="on"
-
-                                               />
+                                               autocomplete="on"/>
                                         <button type="submit">
                                             <span class="font-icon-pin-2"></span>
                                         </button>
