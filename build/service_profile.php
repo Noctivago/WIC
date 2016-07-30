@@ -53,7 +53,7 @@ $serviceId = (filter_var($_GET['Service']));
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
 
-					
+					<section class="box-typical">
 			
                             <script src="js/jssor.slider.min.js" type="text/javascript"></script>
     <!-- use jssor.slider.debug.js instead for debug -->
@@ -235,7 +235,7 @@ $serviceId = (filter_var($_GET['Service']));
     </style>
 
 
-    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">
+    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: auto; height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
@@ -313,7 +313,7 @@ $serviceId = (filter_var($_GET['Service']));
     <script>
         jssor_1_slider_init();
     </script>
-				
+					</section><!--.box-typical-->
                                      
 
                 <section class="box-typical">
@@ -323,10 +323,10 @@ $serviceId = (filter_var($_GET['Service']));
                         Organization Information
                         <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
-                                <i class="font-icon font-icon-arrow-left1"></i>
+                                <i class="font-icon font-icon-arrow-left"></i>
                             </button>
                             <button type="button" class="recomendations-slider-next">
-                                <i class="font-icon font-icon-arrow-right1"></i>
+                                <i class="font-icon font-icon-arrow-right"></i>
                             </button>
                         </div>
                     </header>
