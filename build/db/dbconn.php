@@ -1745,8 +1745,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             echo '</ul>';
             echo '</article>';
             echo '</div>';
-            echo '</div>';
-            echo '</section>';
+
         }
     } catch (Exception $ex) {
         
