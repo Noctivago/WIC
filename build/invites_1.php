@@ -199,7 +199,7 @@ include ("includes/head_sideMenu.php");
 		});
 	</script>
 
-	<script src="js/lib/table-edit/jquery.tabledit.min.js"></script>
+<!--	<script src="js/lib/table-edit/jquery.tabledit.min.js"></script>
 	<script>
 		$(function () {
 			$('#table-edit').Tabledit({
@@ -210,7 +210,7 @@ include ("includes/head_sideMenu.php");
 				}
 			});
 		});
-	</script>
+	</script>-->
 
 <script src="js/app.js"></script>
 
