@@ -27,6 +27,7 @@ include ("./db/dbconn.php");
                 DB_getServicesForIndex($pdo);
             }
             ?>
+            ?>
 
         </div><!--.card-grid-->
         <div class="clear"></div>
