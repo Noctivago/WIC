@@ -41,7 +41,7 @@ include ("./db/dbconn.php");
 
         </div><!--.card-grid-->
         <div class="clear"></div>
-        <div>
+        <div style="alignment-adjust: central">
                             <nav>
 					<ul class="pagination">
 						<li class="page-item disabled">
