@@ -90,16 +90,16 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
 
 function DB_GetPicsService($pdo, $serviceId) {
     try {
-        $count=0;
+        $count = 0;
         $rows = sql($pdo, "Select * from [multimedia] where [Enabled]=1 and [Service_Id]=?", array($serviceId), "rows");
         foreach ($rows as $row) {
             $count+=1;
             echo '<div data-p="144.50"  style="display: none;">
-                <img data-u="image" id="'.$count.'" src="' . $row['Multimedia_Path'] . '" />
-                <img data-u="thumb" id="'.$count.'" src="' . $row['Multimedia_Path'] . '" />
+                <img data-u="image" id="' . $count . '" src="' . $row['Multimedia_Path'] . '" />
+                <img data-u="thumb" id="' . $count . '" src="' . $row['Multimedia_Path'] . '" />
             </div>';
         }
-        echo '<input type="hidden" value="'.$count.'"/>';
+        echo '<input type="hidden" value="' . $count . '"/>';
     } catch (Exception $ex) {
         
     }
@@ -1728,8 +1728,8 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             echo '<div class = "slide">';
             echo '<article class = "post-announce" >';
             echo '<div class = "post-announce-pic">';
-            echo '<a href = "service_profile.php?Service='.$row['SID'].'">';
-            echo ' <img src = "'.$row['MPP'].'" alt = "" >';
+            echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">';
+            echo ' <img src = "' . $row['MPP'] . '" alt = "" >';
             echo '</a>';
             echo ' </div>';
             echo '<div class = "post-announce-title">';
@@ -1748,7 +1748,6 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             echo '</ul>';
             echo '</article>';
             echo '</div>';
-
         }
     } catch (Exception $ex) {
         
@@ -3494,5 +3493,25 @@ function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
         //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
+    }
+}
+
+function db_getWicsForHeader($pdo, $userId) {
+    try {
+        $rows = sql($pdo, "SELECT [Name]
+        ,[Event_Date]
+        FROM [dbo].[WIC_Planner]
+        WHERE [Enabled]=1
+        AND [User_Id] = ?
+        ORDER BY [Date_Created] DESC", array($userId), "rows");
+        foreach ($rows as $row) {
+            $subStr = explode(" ", $row['Event_Date']);
+            echo '<a href="/build/my_wicplanner.php" class="mess-item">';
+            echo '<span class="mess-item-name">' . $row['Name'] . ' > ' . $subStr[0] . '</span>';
+            //echo '<span class="mess-item-txt">' . $subStr[0] . '</span>';
+            echo '</a>';
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING WIC PLANNER';
     }
 }
