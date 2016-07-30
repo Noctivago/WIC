@@ -2,6 +2,8 @@
 
 
 include ("includes/head_sideMenu.php");
+include_once '../build/db/dbconn.php';
+include_once '../build/db/session.php';
 
 ?>			
 <div class="page-content">
