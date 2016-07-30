@@ -756,20 +756,20 @@ $serviceId = (filter_var($_GET['Service']));
                 var reader = new FileReader(); // instance of the FileReader
                 reader.readAsDataURL(files[0]); // read the local file
                 reader.onloadend = function () { // set image data
-//                    var elem = document.createElement("div");
-//                    elem.setAttribute("data-p","144.50");
-//                    elem.setAttribute("style","display:none");
-//                    var inputImage = document.createElement("img");
-//                    inputImage.setAttribute("data-u","image");
-//                    inputImage.setAttribute("src",this.result);
-//                    elem.appendChild(inputImage);
-//    document.getElementById('pictures').append("<div> <img/> <img /> </div>");
+                    var elem = document.createElement("div");
+                    elem.setAttribute("data-p", "144.50");
+                    elem.setAttribute("style", "display:none");
+                    var inputImage = document.createElement("img");
+                    inputImage.setAttribute("data-u", "image");
+                    inputImage.setAttribute("src", this.result);
+                    elem.appendChild(inputImage);
+                    document.getElementById('pictures').appendChild(elem);
 //    alert('aaadsadasd');
 //data-p="144.50"  style="display: none; "
                     //data-u="image"
                     //data-u="thumb"
-                    var output = document.getElementById('2');
-                    output.src = this.result;
+//                    var output = document.getElementById('2');
+//                    output.src = this.result;
                 };
             }
         });
