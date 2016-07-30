@@ -225,12 +225,12 @@ include '../build/db/session.php';
                                         <div class="overlay"></div>
                                     </form>
                                 </div>
-                            </div><!--.site-header-collapsed-in-->
-                        </div><!--.site-header-collapsed-->
-                    </div><!--site-header-content-in-->
-                </div><!--.site-header-content-->
-            </div><!--.container-fluid-->
-        </header><!--.site-header-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
