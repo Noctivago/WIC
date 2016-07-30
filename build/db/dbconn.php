@@ -2774,7 +2774,7 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
             <div class = "slide">
             <div class = "user-card-row">
             <div class = "tbl-cell">
-            <p class = "user-card-row-status"><a href = "profile_org.php?Organization=' . $row['OID'] . '">/' . $row['ONA'] . '</a></p>';
+            <p class = "user-card-row-status"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>';
             echo '</div>
             </div>
             </div>';
