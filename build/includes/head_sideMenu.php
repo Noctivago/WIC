@@ -271,26 +271,26 @@ include '../build/db/session.php';
 
                 <header class="side-menu-title">Start Planning</header>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . 'Category=1' ?>"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
+                    <a class="lbl" href="<?= $link . '&Category=1' ?>"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=2"><i class="fa fa-spoon"></i> Food</a>
+                    <a class="lbl" href="<?= $link . '&Category=2' ?>"><i class="fa fa-spoon"></i> Food</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=3"><i class="fa fa-film"></i> Entertainment</a>
+                    <a class="lbl" href="<?= $link . '&Category=3' ?>"><i class="fa fa-film"></i> Entertainment</a>
                 </li>
 
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=4"><i class="fa fa-tree"></i>Decoration</a>
+                    <a class="lbl" href="<?= $link . '&Category=4' ?>"><i class="fa fa-tree"></i>Decoration</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=5"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                    <a class="lbl" href="<?= $link . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=6"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
+                    <a class="lbl" href="<?= $link . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=7"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
+                    <a class="lbl" href="<?= $link . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
                 </li>
 
                 <?php
