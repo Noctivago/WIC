@@ -332,7 +332,7 @@ $serviceId = (filter_var($_GET['Service']));
                                                 if (!empty($name)) {
                                                     $j = 0; //Variable for indexing uploaded image 
                                                     $target_path = "pics/"; //Declaring Path for uploaded images
-                                                    for ($i = 0; $i < count($_FILES['file']['name']); $i++) {//loop to get individual element from the array
+                                                    for ($i = 0; $i < count($_FILES['files']['name']); $i++) {//loop to get individual element from the array
                                                         $validextensions = array("jpeg", "jpg", "png");  //Extensions which are allowed
                                                         $ext = explode('.', basename($_FILES['file']['name'][$i])); //explode file name from dot(.) 
                                                         $file_extension = end($ext); //store extensions in the variable
