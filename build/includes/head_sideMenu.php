@@ -33,6 +33,14 @@ include '../build/db/session.php';
         } else {
             $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
         }
+        $selfUrl = $_SERVER['PHP_SELF'];
+        $getValues = array();
+        foreach ($_GET as $key => $value) {
+            array_push($getValues, $key . "=" . $value);
+        }
+        if (count($getValues) > 0) {
+            $selfUrl .= "?" . implode('&', $getValues);
+        }
         ?>
         <header class="site-header">
             <div class="container-fluid">
@@ -235,9 +243,9 @@ include '../build/db/session.php';
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
-                <header class="side-menu-title">Advanced search.</header>
+                <header class="side-menu-title">Advanced search</header>
 
-                <form action="<?php $link; ?>">
+                <form action="<?php echo $selfUrl; ?>">
                     <div class="col-md-10">
                         <div class="typeahead-container">
                             <div class="typeahead-field">
