@@ -9,6 +9,49 @@ $msg = '';
 ?>			
 <div class="page-content">
     <div class="container-fluid">
+        
+        
+                <section class="box-typical">
+            <header class="box-typical-header">
+                <div class="tbl-row">
+                    <div class="tbl-cell tbl-cell-title">
+                        <h3>My team</h3>
+                    </div>
+                    <!-- Botoes edit-->
+<!--                    	<div class="tbl-cell tbl-cell-action-bordered">
+                                    <button type="button" class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
+                                </div>
+                                <div class="tbl-cell tbl-cell-action-bordered">
+                                     <button type="button" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
+                                 </div>-->
+                </div>
+            </header>
+            <div class="box-typical-body">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th> Name </th>
+                                <th> Service Name</th>
+                                <th> Role Service Management</th>
+                                <th> Edit </th>
+                                <th> Remove </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $userId = $_SESSION['id'];
+                            DB_BuildInvitesTable($pdo, $userId);
+                            ?>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--.box-typical-body-->
+        </section><!--.box-typical-->
 
         
         
