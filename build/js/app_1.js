@@ -554,7 +554,7 @@ $(document).ready(function(){
 	var recomendationsSlider = $(".recomendations-slider");
 
 	recomendationsSlider.slick({
-		slidesToShow: 4,
+		slidesToShow: 1,
 		adaptiveHeight: true,
 		arrows: false,
 		responsive: [
