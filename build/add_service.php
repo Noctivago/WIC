@@ -144,7 +144,9 @@ $msg = '';
                     <?= $msg; ?>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
+                        
                         <input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
+                        
                         Files: <input type="file" id="file" name="file[]" accept = "images/*" multiple><br/>
 
                         <div id="selectedFiles"></div>
