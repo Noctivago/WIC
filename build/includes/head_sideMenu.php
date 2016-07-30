@@ -215,7 +215,7 @@ include '../build/db/session.php';
 
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
-                                    <form class="site-header-search opened" action="<?php $link; ?>">
+                                    <form class="site-header-search opened" action="<?php $selfUrl; ?>">
                                         <input type="text" placeholder="Choose your City.."
                                                id="categories"
                                                class="form-control"
