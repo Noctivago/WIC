@@ -334,6 +334,44 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>-->
                     </header>
+                    
+						<article class="profile-info-item">
+							<header class="profile-info-item-header">
+								<i class="font-icon font-icon-case"></i>
+								Experience
+							</header>
+							<ul class="exp-timeline">
+								<li class="exp-timeline-item">
+									<div class="dot"></div>
+									<div class="tbl">
+										<div class="tbl-row">
+											<div class="tbl-cell">
+												<div class="exp-timeline-range">
+                                                                                                <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
+                                                                                                    
+                                                                                                </div>
+												<div class="exp-timeline-status">
+                                                                                                <?php
+                                                                                                    echo '<div class="card-typical-section">
+
+                                                                                                     <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
+
+                                                                                                    </div>';
+                                                                                                ?>
+                                                                                                </div>
+												
+											</div>
+											<div class="tbl-cell tbl-cell-logo">
+                                                                                            <img src="img/a_tasca.jpg.png" alt="">
+											</div>
+										</div>
+									</div>
+								</li>
+
+
+							</ul>
+						</article><!--.profile-info-item-->
+
                     <div class="recomendations-slider" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
                         <div class="slide">
@@ -341,8 +379,9 @@ $serviceId = (filter_var($_GET['Service']));
                             <div class="user-card-row">
                                 <?php
                                 echo '<div class="card-typical-section">
-//                                 
+                            
                                  <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
+                                     
                                 </div>';
                                 ?>
                             </div>
