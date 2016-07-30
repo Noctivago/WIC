@@ -337,11 +337,23 @@ include '../build/db/session.php';
                                 SET [Enabled] = 0
                                    ,[Validate] = 0
                               WHERE [User_Id] = ? and [Service_id] = ?", array($idUser, $serviceId));
+                                ?>
+                <script>
+                    window.location = "http://new-website.com";
+                    </script>
+                                <?php
+                                
                             } else {
                                 sql($pdo, "INSERT INTO [dbo].[User_Service]
                                 ([Service_Id],[User_Id],[Enabled],[Validate],[Role_id])
                                     VALUES
                                 (?,?,0,0,2)", array($serviceId, $idUser));
+                              ?>
+                <script>
+                    window.location = "http://new-website.com";
+                    </script>
+                                <?php
+                                
                             }
                         }
                     } else {
@@ -364,7 +376,12 @@ include '../build/db/session.php';
                                 . "WIC<br><br>"
                                 . "Note: Please do not reply to this email! Thanks!";
                         sendEmail($to, $subject, $body);
-                    }
+                     ?>
+                <script>
+                    window.location = "http://new-website.com";
+                    </script>
+                                <?php
+                        }
                     
                 }
                 ?>
