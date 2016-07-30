@@ -1722,11 +1722,11 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
             $views = DB_GetNumberServiceViews($pdo, $row['SID']);
             $comments = DB_GetNumberServiceComments($pdo, $row['SID']);
-            echo '<div class = "slide" style="max-width: 230px; max-height: 180px;">';
-            echo '<article class = "post-announce" style="max-width: 230px; max-height: 180px;">';
-            echo '<div class = "post-announce-pic" style="max-width: 230px; max-height: 180px;">';
+            echo '<div class = "slide" >';
+            echo '<article class = "post-announce" >';
+            echo '<div class = "post-announce-pic" >';
             echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">';
-            echo ' <img src = "' . $row['MPP'] . '" alt = "Avatar" style="max-width: 230px; max-height: 180px;">';
+            echo ' <img src = "' . $row['MPP'] . '" alt = "Avatar" >';
             echo '</a>';
             echo ' </div>';
             echo '<div class = "post-announce-title">';
@@ -1745,6 +1745,8 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             echo '</ul>';
             echo '</article>';
             echo '</div>';
+            echo '</div>';
+            echo '</section>';
         }
     } catch (Exception $ex) {
         
