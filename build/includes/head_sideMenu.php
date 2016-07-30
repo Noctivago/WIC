@@ -339,7 +339,7 @@ include '../build/db/session.php';
                               WHERE [User_Id] = ? and [Service_id] = ?", array($idUser, $serviceId));
                                 ?>
                 <script>
-                    window.location = "http://new-website.com";
+                    window.location = "../build/index.php";
                     </script>
                                 <?php
                                 
@@ -350,7 +350,7 @@ include '../build/db/session.php';
                                 (?,?,0,0,2)", array($serviceId, $idUser));
                               ?>
                 <script>
-                    window.location = "http://new-website.com";
+                    window.location = "../build/index.php";
                     </script>
                                 <?php
                                 
@@ -378,7 +378,7 @@ include '../build/db/session.php';
                         sendEmail($to, $subject, $body);
                      ?>
                 <script>
-                    window.location = "http://new-website.com";
+                    window.location = "../build/index.php";
                     </script>
                                 <?php
                         }
