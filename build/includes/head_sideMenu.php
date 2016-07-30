@@ -29,7 +29,7 @@ include '../build/db/session.php';
         <?php
         //SE TIVER QUERY STRING
 
-        $selfUrl = $_SERVER['PHP_SELF'];
+        $selfUrl = 'http://' . $_SERVER['HTTP_HOST'] . 'build/index.php';
         $getValues = array();
         foreach ($_GET as $key => $value) {
             array_push($getValues, $key . "=" . $value);
