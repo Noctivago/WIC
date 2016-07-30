@@ -302,7 +302,7 @@ $serviceId = (filter_var($_GET['Service']));
                                         }
                                         if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                             $name = $_FILES['uploadFile']['name'];
-                                            $newfilename = $sID . '_' . generateActivationCode() . '.jpg';
+                                            $newfilename = $serviceId . '_' . generateActivationCode() . '.jpg';
                                             if (isset($name)) {
                                                 if (!empty($name)) {
                                                     // Check for errors
@@ -322,7 +322,7 @@ $serviceId = (filter_var($_GET['Service']));
                                                         $picture_path = 'pics/' . $newfilename;
                                                         //falta remover a first page para 0
                                                         //INSERIR NA TABELA MULTIMEDIA - FirstPage
-                                                        $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $picture_path, 1);
+                                                        $msg = DB_AddNewServiceFirstPagePicture($pdo, $serviceId, $user, $picture_path, 1);
                                                         //$msg = ('File uploaded successfully.');
                                                     }
                                                 }
@@ -336,14 +336,14 @@ $serviceId = (filter_var($_GET['Service']));
                                                         $validextensions = array("jpeg", "jpg", "png");  //Extensions which are allowed
                                                         $ext = explode('.', basename($_FILES['file']['name'][$i])); //explode file name from dot(.) 
                                                         $file_extension = end($ext); //store extensions in the variable
-                                                        $target_path = $target_path . $sID . '_' . generateActivationCode() . "." . $ext[count($ext) - 1]; //set the target path with a new name of image
+                                                        $target_path = $target_path . $serviceId . '_' . generateActivationCode() . "." . $ext[count($ext) - 1]; //set the target path with a new name of image
                                                         $j = $j + 1; //increment the number of uploaded images according to the files in array       
 
                                                         if (($_FILES["file"]["size"][$i] < 2000000) //Approx. 100kb files can be uploaded.
                                                                 && in_array($file_extension, $validextensions)) {
                                                             if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {//if file moved to uploads folder
                                                                 #echo $j . ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
-                                                                $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $target_path, 0);
+                                                                $msg = DB_AddNewServiceFirstPagePicture($pdo, $serviceId, $user, $target_path, 0);
                                                             } else {//if file was not moved.
                                                                 $msg = "Please try again!";
                                                             }
