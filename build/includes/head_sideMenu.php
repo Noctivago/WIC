@@ -28,11 +28,7 @@ include '../build/db/session.php';
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
-        if (count($_GET) >= 1) {
-            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        } else {
-            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
-        }
+       
         $selfUrl = $_SERVER['PHP_SELF'];
         $getValues = array();
         foreach ($_POST as $key => $value) {
@@ -243,7 +239,7 @@ include '../build/db/session.php';
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
-                <header class="side-menu-title">Advanced search</header>
+                <header class="side-menu-title">Advanced search.</header>
 
                 <form action="<?php echo $selfUrl; ?>">
                     <div class="col-md-10">
@@ -269,26 +265,25 @@ include '../build/db/session.php';
 
                 <header class="side-menu-title">Start Planning</header>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=1' ?>"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=2' ?>"><i class="fa fa-spoon"></i> Food</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-spoon"></i> Food</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=3' ?>"><i class="fa fa-film"></i> Entertainment</a>
-                </li>
-
-                <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=4' ?>"><i class="fa fa-tree"></i>Decoration</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=3' ?>"><i class="fa fa-film"></i> Entertainment</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=4' ?>"><i class="fa fa-tree"></i>Decoration</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
+                </li>
+                <li class="gold with-sub">
+                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
                 </li>
 
                 <?php
