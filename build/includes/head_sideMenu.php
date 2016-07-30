@@ -365,7 +365,7 @@ include '../build/db/session.php';
                                 . "Note: Please do not reply to this email! Thanks!";
                         sendEmail($to, $subject, $body);
                     }
-                    header("Location: /invites.php");
+                    header("Location: http://wicplanner-testslot.azurewebsites.net/build/invites.php");
                 }
                 ?>
             </ul>
