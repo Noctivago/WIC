@@ -379,7 +379,7 @@ $serviceId = (filter_var($_GET['Service']));
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
 
                         Change Profile photo:<input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
-                        New Files: <input type="file" id="file" name="file[]" accept = "images/*" multiple/><br/>
+                        New Files: <input type="file" id="file[]" name="file[]" accept = "images/*" multiple/><br/>
 
                         <header class = "sign-title">Edit Service Profile</header>
                         <div class = "form-group" Style="display: none">
@@ -768,6 +768,10 @@ $serviceId = (filter_var($_GET['Service']));
                     var elem = document.createElement("div");
                     elem.setAttribute("data-p","144.50");
                     elem.setAttribute("style","display:none");
+                    var inputImage = document.createElement("img");
+                    inputImage.setAttribute("data-u","image");
+                    inputImage.setAttribute("src",this.result);
+                    elem.appendChild(inputImage);
                     document.getElementById('pictures').appendChild(elem);
                     //$("#1").css("background-image", "url(" + this.result + ")");
                 };
