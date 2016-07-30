@@ -293,10 +293,10 @@ include '../build/db/session.php';
                     <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Original</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="fa fa-gift"></i>Original</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Team Building</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="font-icon font-icon-users-group"></i>Team Building</a>
                 </li>
 
                 <?php
