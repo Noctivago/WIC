@@ -755,7 +755,7 @@ $serviceId = (filter_var($_GET['Service']));
 <!--MULTI-PICS-->
 <script>
     $(function () {
-        $("#file").change(function () {
+        $("#file[]").change(function () {
             var files = !!this.files ? this.files : [];
             if (!files.length || !window.FileReader)
                 return; // no file selected, or no FileReader support
@@ -764,7 +764,7 @@ $serviceId = (filter_var($_GET['Service']));
                 var reader = new FileReader(); // instance of the FileReader
                 reader.readAsDataURL(files[0]); // read the local file
 
-                reader.onloadend = function () { // set image data as background of div
+                reader.onloadend = function () { // set image data
                     var elem = document.createElement("div");
                     elem.setAttribute("data-p","144.50");
                     elem.setAttribute("style","display:none");
