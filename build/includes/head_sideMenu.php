@@ -61,7 +61,7 @@ include '../build/db/session.php';
                                    aria-expanded="false">
                                     <i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href = 'my_wicplanner.php'"> </i>
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages" alt="WIC Planner">
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages" alt="WIC Planner" ondblclick="window.location.href = 'messeger.php.php'">
                                     <div class="dropdown-menu-messages-header" >
                                         <ul class="nav" role="tablist">
                                             <li class="nav-item">
