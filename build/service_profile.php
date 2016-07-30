@@ -350,14 +350,10 @@ $serviceId = (filter_var($_GET['Service']));
                                                                                                 <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
                                                                                                     
                                                                                                 </div>
-												<div class="exp-timeline-status">
 
-                                                                                                </div>
 												
 											</div>
-											<div class="tbl-cell tbl-cell-logo">
-                                                                                            <img src="img/a_tasca.jpg" alt="">
-											</div>
+											
 										</div>
 									</div>
 								</li>
@@ -378,14 +374,11 @@ $serviceId = (filter_var($_GET['Service']));
 //                                                                                                     <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
 //
 //                                                                                                    </div>';
-                                                                                                ?>
+                                                                                                ?> 
                                                                                                 </div>
-												<div class="exp-timeline-status">Senior Developer</div>
-												<div class="exp-timeline-location"><a href="#">YouTube</a></div>
+												
 											</div>
-											<div class="tbl-cell tbl-cell-logo">
-												<img src="img/logo-2.png" alt="">
-											</div>
+											
 										</div>
 									</div>
 								</li>
