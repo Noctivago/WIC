@@ -179,6 +179,7 @@ $msg = '';
 					</div>
 				</div><!--.box-typical-body-->
 			</section><!--.box-typical-->
+                        
 
     </div>
     <!--9234-->
@@ -245,6 +246,7 @@ $msg = '';
 			$('#tags-editor-textarea').tagEditor();
 		});
 	</script>
+        <script src="js/app.js"></script>
 
 
 
