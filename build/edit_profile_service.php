@@ -747,18 +747,16 @@ $serviceId = (filter_var($_GET['Service']));
     $(function () {
         $("#files").change(function () {
             if (typeof (FileReader) != "undefined") {
-                var dvPreview = $("#dvPreview");
+                var dvPreview = $("#dvpreview");
                 $($(this)[0].files).each(function () {
                     var file = $(this);
                     var reader = new FileReader();
                     reader.onload = function (e) {
-                        var diva = $('<div data-p="144.50"  style="display: none;"> < /div>');
                         var img = $("<img />");
                         img.attr("style", "height:100px;width: 100px");
                         img.attr("src", e.target.result);
-                        diva.append(img);
-                        dvPreview.append(diva);
-                        //dvPreview.append(img);
+
+                        dvPreview.append(img);
                     }
                     reader.readAsDataURL(file[0]);
                 });
