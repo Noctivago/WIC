@@ -8,7 +8,7 @@ include ("./db/dbconn.php");
         <div class="cards-grid" data-columns>
 
 
-            <?php
+          <?php
             //name
             if (isset($_GET ['Category']) && !isset($_GET ['qParam']) && !isset($_GET ['name'])) {
                 $CategoryId = (filter_var($_GET ['Category']));
@@ -32,7 +32,7 @@ include ("./db/dbconn.php");
             } elseif (isset($_GET ['name']) && isset($_GET ['Category']) && !isset($_GET ['qParam'])) {
                 $City = (filter_var($_GET ['name']));
                 $CityId = DB_getCityId($pdo, $City);
-                DB_getServicesForIndexByCity($pdo, $CityId);
+                DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId);
             } else {
                 DB_getServicesForIndex($pdo);
             }
