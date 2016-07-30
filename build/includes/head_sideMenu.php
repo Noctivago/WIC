@@ -393,13 +393,13 @@ include '../build/db/session.php';
                         <!--invite members to my wic planner-->
                 <?php
                 $userId = $_SESSION['id'];
-                if ($_SESSION['role'] === 'organization') {
+                if ($_SESSION['role'] === 'user') {
                     echo '<div class="container-fluid">
                  <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
                         <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
                         </div>
-                        <header class="sign-title">Invite to my services</header>
+                        <header class="sign-title">Invite to my Wic Planner</header>
                         <div class="form-group">
                             <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
                         </div>';
