@@ -116,6 +116,11 @@ $msg = '';
     });
 </script>-->
 
+	<script>
+		$(function() {
+			$('#tags-editor-textarea').tagEditor();
+		});
+	</script>
 
 
 
