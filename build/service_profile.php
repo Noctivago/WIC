@@ -334,19 +334,18 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>-->
                     </header>
-<!--                    <div class="recomendations-slider" >-->
-                        <div class="inforg" >
+                    <div class="recomendations-slider" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
-                        <!--<div class="slide">-->
+                        <div class="slide">
                             <!--BOTOES CHAT + WIC-->
-                            <div class="inf">
+                            <div class="user-card-row">
                                 <?php
                                 echo '<div class="card-typical-section">
                                  <input type=button onClick="openMyWics();",  value="+">
                                 </div>';
                                 ?>
                             </div>
-<!--                        </div>-->
+                        </div>
                     </div>
                 </section>
 
