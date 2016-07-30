@@ -8,9 +8,7 @@
 //$wicSelected = (filter_var($_POST ['id']));
 
 include ("includes/head_sideMenu.php");
-include_once '../build/db/dbconn.php';
-include_once '../build/db/session.php';
-//$msg = '';
+
 ?>			
 <div class="page-content">
     <div class="container-fluid">
