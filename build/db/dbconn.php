@@ -87,6 +87,19 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         die();
     }
 }
+function DB_GetPicsService($pdo, $serviceId) {
+    try {
+        $rows = sql($pdo,"Select * from [multimedia] where [Enabled]=1 and [Service_Id]=?", array($serviceId), "rows");
+        foreach ($rows as $row){
+            echo '<div data-p="144.50" style="display: none;">
+                <img data-u="image" src="'.$row['Multimedia_Path'].'" />
+                <img data-u="thumb" src="'.$row['Multimedia_Path'].'" />
+            </div>';
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
 
 /**
  * DEVOLVE AS CITIES PARA SEREM USADAS NUMA SELECT

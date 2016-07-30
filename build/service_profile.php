@@ -242,7 +242,12 @@ $serviceId = (filter_var($_GET['Service']));
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;"></div>
         </div>
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
-            <div data-p="144.50" style="display: none;">
+            <?php DB_GetPicsService($pdo,$serviceId);
+            
+
+?>
+            
+<!--            <div data-p="144.50" style="display: none;">
                 <img data-u="image" src="img/01.jpg" />
                 <img data-u="thumb" src="img/01.jpg" />
             </div>
@@ -289,7 +294,7 @@ $serviceId = (filter_var($_GET['Service']));
             <div data-p="144.50" style="display: none;">
                 <img data-u="image" src="img/12.jpg" />
                 <img data-u="thumb" src="img/thumb-12.jpg" />
-            </div>
+            </div>-->
             <a data-u="add" href="http://www.jssor.com" style="display:none">Jssor Slider</a>
         
         </div>
