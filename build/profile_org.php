@@ -20,7 +20,7 @@ include_once '../build/db/session.php';
                             </button>
                         </div>
                     </header>
-                    <div class="posts-slider" >
+                    <div class="posts-slider">
 
                         <?php
                         $org = (filter_var($_GET['Organization']));
