@@ -2098,8 +2098,8 @@ function DB_UserProfile($pdo, $userId) {
   FROM [dbo].[User_Profile]
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rowss as $row) {
-            echo '<div class = "sign-avatar no-photo" >
-<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "Avatar" style = "max-width: 98px; max-height:98px;"/>
+            echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem;" >
+<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "Avatar" style="display: block;width: 100%;-webkit-border-radius: 50%;"/>
 </div>
 
 <button class = "btn btn-rounded btn-file" >
