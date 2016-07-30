@@ -243,7 +243,7 @@ include '../build/db/session.php';
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
-                <header class="side-menu-title">Advanced search.</header>
+                <header class="side-menu-title">Advanced search</header>
 
                 <form action="<?php echo $selfUrl; ?>">>
                     <div class="col-md-10">
