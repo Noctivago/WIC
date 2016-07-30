@@ -2131,7 +2131,9 @@ function DB_OrgProfile($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT * FROM [Organization] Where [User_Boss] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-            echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem;" ><img id = "image" src = "' . $row['Picture_Path'] . '" alt = "" style="display: block;width: 100%;-webkit-border-radius: 50%;" /> </div>
+            echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem;" >'
+            . '<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "" style="display: block;width: 100%;-webkit-border-radius: 50%;" />
+                </div>
 <button class = "btn btn-rounded btn-file" >
 Change Picture
 
