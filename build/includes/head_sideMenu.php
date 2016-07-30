@@ -217,9 +217,7 @@ include '../build/db/session.php';
                                                class="form-control"
                                                name="name"
                                                type="text"
-                                               autocomplete="on"
-
-                                               />
+                                               autocomplete="on"/>
                                         <button type="submit">
                                             <span class="font-icon-pin-2"></span>
                                         </button>
