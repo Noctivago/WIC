@@ -28,23 +28,21 @@ include '../build/db/session.php';
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
-        if (count($_GET) >= 1) {
-            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        } else {
-            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
-        }
-        $selfUrl = $_SERVER['PHP_SELF'];
+
+        $selfUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php';
         $getValues = array();
-        foreach ($_POST as $key => $value) {
+        foreach ($_GET as $key => $value) {
             array_push($getValues, $key . "=" . $value);
         }
         if (count($getValues) > 0) {
             $selfUrl .= "?" . implode('&', $getValues);
+        } else {
+            $selfUrl .= "?";   
         }
         ?>
         <header class="site-header">
             <div class="container-fluid">
-                <a href="index_teste.php" class="site-logo">
+                <a href="index.php" class="site-logo">
 
                     <img class="hidden-md-down" src="img/wic_logo.png" alt="">
                     <img class="hidden-lg-up" src="img/wic_logo.png" alt="">
@@ -219,7 +217,7 @@ include '../build/db/session.php';
 
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
-                                    <form class="site-header-search opened" action="<?php $link; ?>">
+                                    <form class="site-header-search opened" action="<?php $selfUrl; ?>">
                                         <input type="text" placeholder="Choose your City.."
                                                id="categories"
                                                class="form-control"
@@ -252,6 +250,7 @@ include '../build/db/session.php';
                                 <span class="typeahead-query">
                                     <input id="qParam"
                                            class="form-control"
+                                           required="required"
                                            name="qParam"
                                            type="search"
                                            autocomplete="on">
@@ -269,26 +268,25 @@ include '../build/db/session.php';
 
                 <header class="side-menu-title">Start Planning</header>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=1' ?>"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=2' ?>"><i class="fa fa-spoon"></i> Food</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-spoon"></i> Food</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=3' ?>"><i class="fa fa-film"></i> Entertainment</a>
-                </li>
-
-                <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=4' ?>"><i class="fa fa-tree"></i>Decoration</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=3' ?>"><i class="fa fa-film"></i> Entertainment</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=4' ?>"><i class="fa fa-tree"></i>Decoration</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $link . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
+                </li>
+                <li class="gold with-sub">
+                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
                 </li>
 
                 <?php

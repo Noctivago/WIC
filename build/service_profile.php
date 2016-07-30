@@ -242,7 +242,12 @@ $serviceId = (filter_var($_GET['Service']));
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;"></div>
         </div>
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
-            <div data-p="144.50" style="display: none;">
+            <?php DB_GetPicsService($pdo,$serviceId);
+            
+
+?>
+            
+<!--            <div data-p="144.50" style="display: none;">
                 <img data-u="image" src="img/01.jpg" />
                 <img data-u="thumb" src="img/01.jpg" />
             </div>
@@ -289,7 +294,7 @@ $serviceId = (filter_var($_GET['Service']));
             <div data-p="144.50" style="display: none;">
                 <img data-u="image" src="img/12.jpg" />
                 <img data-u="thumb" src="img/thumb-12.jpg" />
-            </div>
+            </div>-->
             <a data-u="add" href="http://www.jssor.com" style="display:none">Jssor Slider</a>
         
         </div>
@@ -315,12 +320,11 @@ $serviceId = (filter_var($_GET['Service']));
     </script>
 					</section><!--.box-typical-->
                                      
-
-                <section class="box-typical">
+    <section class="box-typical">
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
 
                     <header class="box-typical-header-sm">
-                        Organization Information
+                        Organization Info
 <!--                        <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
@@ -330,18 +334,16 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>-->
                     </header>
-                    <div class="recomendations" >
+                    <div class="recomendations-slider" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
-                        <div class="slide1">
+                        <div class="slide">
                             <!--BOTOES CHAT + WIC-->
-                            <div class="user-card-row1">
+                            <div class="user-card-row">
                                 <?php
                                 echo '<div class="card-typical-section">
-                                 
-                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width:41px;height:29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
+                                 <input type=button onClick="openMyWics();",  value="+">
                                 </div>';
                                 ?>
-                                <!--<input type=button onClick="openMyWics();",  value="+">-->
                             </div>
                         </div>
                     </div>
@@ -446,7 +448,7 @@ $serviceId = (filter_var($_GET['Service']));
                 success: function (data) {
                     //alert(data);
                     loadComments();
-                    $("#userComment").empty();
+                    $('#userComment').val('');
                 }
             });
         }

@@ -88,6 +88,20 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
     }
 }
 
+function DB_GetPicsService($pdo, $serviceId) {
+    try {
+        $rows = sql($pdo, "Select * from [multimedia] where [Enabled]=1 and [Service_Id]=?", array($serviceId), "rows");
+        foreach ($rows as $row) {
+            echo '<div data-p="144.50" style="display: none;">
+                <img data-u="image" src="' . $row['Multimedia_Path'] . '" />
+                <img data-u="thumb" src="' . $row['Multimedia_Path'] . '" />
+            </div>';
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 /**
  * DEVOLVE AS CITIES PARA SEREM USADAS NUMA SELECT
  * @param type $pdo
@@ -532,19 +546,20 @@ function DB_BuildInvitesTable($pdo, $userId) {
                 echo '<th class="table-check">'
                 . '<div class="checkbox checkbox-only"> '
                 . '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" checked="checked"/> To edit Service'
-                        . '<label for="edit"></label'
-                        . ' </div>'
-                        . '<br>'
-                        .'<div class="checkbox checkbox-only">'
-                        . '<input type="checkbox" id="talk' . $row['ID'] . '" checked="checked"/> Talk with costumers'
-                        . '<label for="talk"></label>'
-                        . '</div>'
-                        . '</th>';
+                . '<label for="edit"></label'
+                . ' </div>'
+                . '<br>'
+                . '<div class="checkbox checkbox-only">'
+                . '<input type="checkbox" id="talk' . $row['ID'] . '" checked="checked"/> Talk with costumers'
+                . '<label for="talk"></label>'
+                . '</div>'
+                . '</th>';
             } else if ($row['Role_Id'] === '5') {
                 echo '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission"> To edit Service <br> <input type="checkbox" id="talk' . $row['ID'] . '" checked="checked"> Talk with costumers  ';
             } else if ($row['Role_Id'] === '6') {
                 echo '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" checked="checked"> To edit Service <br> <input type="checkbox" id="talk' . $row['ID'] . '"> Talk with costumers  ';
-            }else {   echo '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" > To edit Service <br> <input type="checkbox" id="talk' . $row['ID'] . '"> Talk with costumers  ';
+            } else {
+                echo '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" > To edit Service <br> <input type="checkbox" id="talk' . $row['ID'] . '"> Talk with costumers  ';
             }
             //                          </select>
             echo '</div>
@@ -2099,7 +2114,7 @@ function DB_UserProfile($pdo, $userId) {
   where [User_Profile].[User_Id] = ?", array($userId), "rows");
         foreach ($rowss as $row) {
             echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem; max-width: 180px; max-height: 120px;" >
-<img id = "image" src = "'.$row['Picture_Path'].'" alt = "Avatar" style="display: block;width: 100%;-webkit-border-radius: 50%; max-width: 180px; max-height: 120px;"/>
+<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "Avatar" style="display: block;width: 100%;-webkit-border-radius: 50%; max-width: 180px; max-height: 120px;"/>
 </div>
 
 <button class = "btn btn-rounded btn-file" >
@@ -2132,7 +2147,7 @@ function DB_OrgProfile($pdo, $userId) {
         $rows = sql($pdo, "SELECT * FROM [Organization] Where [User_Boss] = ?", array($userId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem;max-width: 180px; max-height: 120px;" >'
-            . '<img id = "image" src = "'.$row['Picture_Path'].'" alt = "" style="display: block;width: 100%;-webkit-border-radius: 50%;max-width: 180px; max-height: 120px;"/>
+            . '<img id = "image" src = "' . $row['Picture_Path'] . '" alt = "" style="display: block;width: 100%;-webkit-border-radius: 50%;max-width: 180px; max-height: 120px;"/>
                 </div>
 <button class = "btn btn-rounded btn-file" >
 Change Picture
@@ -2664,6 +2679,7 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
         $rows = sql($pdo, "SELECT  
         [Organization].[Name]
         ,[Organization].[Picture_Path]
+        ,[Organization].[Id]
         ,[Organization].[Phone_Number]
         ,[Organization].[Mobile_Number]
         ,[Organization].[Organization_Email]
@@ -2684,7 +2700,7 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
             echo '<div class = "profile-card-photo">';
             echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
             echo ' </div>';
-            echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
+            echo ' <div class = "profile-card-name"><a href="../build/profile_org.php?Organization=' . $row['Id'] . '" >' . $row['Name'] . '</a></div>';
             //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
             //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
             //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
@@ -2718,7 +2734,7 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
         AND [Service].[Enabled] = 1 AND [Organization].[Enabled] = 1
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
-            echo '<div class = "slide">
+            echo '<div class = "new">
             <div class = "user-card-row">
             <div class = "tbl-row">
             <div class = "tbl-cell tbl-cell-photo">
@@ -2930,40 +2946,175 @@ function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
 		AND [Service].[Sub_Category_Id] = ?", array($CategoryId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
-<article class = "card-typical">
-<div class = "card-typical-section">
-<div class = "user-card-row">
-<div class = "tbl-row">
-<div class = "tbl-cell tbl-cell-photo">
-<a href = "profile_org.php?Organization=' . $row['OID'] . '">
-<img src = "' . $row['OPP'] . '" alt = "Avatar">
-</a>
-</div>
-<div class = "tbl-cell">
-<p class = "user-card-row-name"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class = "card-typical-section card-typical-content">
-<div class = "photo">
-<img src = "' . $row['MPP'] . '" alt = "Service Pic" height = "185" width = "110">
-</div>
-<header class = "title"><a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
-<p>' . $row['SDE'] . '</p>
-</div>
-<div class="card-typical-section">
-<div class="card-typical-linked">
+            <article class = "card-typical">
+            <div class = "card-typical-section">
+            <div class = "user-card-row">
+            <div class = "tbl-row">
+            <div class = "tbl-cell tbl-cell-photo">
+            <a href = "profile_org.php?Organization=' . $row['OID'] . '">
+            <img src = "' . $row['OPP'] . '" alt = "Avatar">
+            </a>
+            </div>
+            <div class = "tbl-cell">
+            <p class = "user-card-row-name"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class = "card-typical-section card-typical-content">
+            <div class = "photo">
+            <img src = "' . $row['MPP'] . '" alt = "Service Pic" height = "185" width = "110">
+            </div>
+            <header class = "title"><a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
+            <p>' . $row['SDE'] . '</p>
+            </div>
+            <div class="card-typical-section">
+            <div class="card-typical-linked">
 
-</div>
-<a  class="card-typical-likes">
-<button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
-<button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
-</a>
-</div>
+            </div>
+            <a  class="card-typical-likes">
+            <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+            <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+            </a>
+            </div>
 
-</article>
-</div>';
+            </article>
+            </div>';
+        }
+
+        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+    } catch (Exception $exc) {
+        echo 'ERROR READING SERVICE TABLE!';
+    }
+}
+
+function DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $categoryId) {
+    $s = '%' . $qParam . '%';
+    try {
+        $rows = sql($pdo, "SELECT
+        [Service].[Name] AS SNA,
+        [Service].[Id] AS SID,
+		[Service].[Enabled],
+        [Service].[Description] AS SDE,
+        [Organization].[Name] AS ONA,
+        [Organization].[Id] AS OID,
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
+        FROM [Service]
+        join [Organization]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
+        AND [Organization].[Enabled] = 1 
+        AND [Service].[Enabled] = 1 
+        AND [Multimedia].[Enabled] = 1  
+        AND [Multimedia].[First_Page] =  1
+        AND [Service].[Name] Like '%" . $qParam . "%' "
+                . "AND [Service].[Sub_Category_Id] = ? ", array($categoryId), "rows");
+        foreach ($rows as $row) {
+            echo '<div class = "card-grid-col">
+        <article class = "card-typical">
+        <div class = "card-typical-section">
+        <div class = "user-card-row">
+        <div class = "tbl-row">
+        <div class = "tbl-cell tbl-cell-photo">
+        <a href = "profile_org.php?Organization=' . $row['OID'] . '">
+        <img src = "' . $row['OPP'] . '" alt = "Avatar">
+        </a>
+        </div>
+        <div class = "tbl-cell">
+        <p class = "user-card-row-name"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class = "card-typical-section card-typical-content">
+        <div class = "photo">
+        <img src = "' . $row['MPP'] . '" alt = "Service Pic" height = "185" width = "110">
+        </div>
+        <header class = "title"><a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
+        <p>' . $row['SDE'] . '</p>
+        </div>
+        <div class="card-typical-section">
+        <div class="card-typical-linked">
+
+        </div>
+        <a  class="card-typical-likes">
+        <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+        <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+        </a>
+        </div>
+
+        </article>
+        </div>';
+        }
+
+        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+    } catch (Exception $exc) {
+        echo 'ERROR READING SERVICE TABLE!';
+    }
+}
+
+function DB_getServicesForIndexByName($pdo, $qParam) {
+    $s = '%' . $qParam . '%';
+    try {
+        $rows = sql($pdo, "SELECT
+        [Service].[Name] AS SNA,
+        [Service].[Id] AS SID,
+		[Service].[Enabled],
+        [Service].[Description] AS SDE,
+        [Organization].[Name] AS ONA,
+        [Organization].[Id] AS OID,
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
+        FROM [Service]
+        join [Organization]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
+        AND [Organization].[Enabled] = 1 
+        AND [Service].[Enabled] = 1 
+        AND [Multimedia].[Enabled] = 1  
+        AND [Multimedia].[First_Page] =  1
+        AND [Service].[Name] Like '%" . $qParam . "%' ", array(), "rows");
+        foreach ($rows as $row) {
+            echo '<div class = "card-grid-col">
+        <article class = "card-typical">
+        <div class = "card-typical-section">
+        <div class = "user-card-row">
+        <div class = "tbl-row">
+        <div class = "tbl-cell tbl-cell-photo">
+        <a href = "profile_org.php?Organization=' . $row['OID'] . '">
+        <img src = "' . $row['OPP'] . '" alt = "Avatar">
+        </a>
+        </div>
+        <div class = "tbl-cell">
+        <p class = "user-card-row-name"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class = "card-typical-section card-typical-content">
+        <div class = "photo">
+        <img src = "' . $row['MPP'] . '" alt = "Service Pic" height = "185" width = "110">
+        </div>
+        <header class = "title"><a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
+        <p>' . $row['SDE'] . '</p>
+        </div>
+        <div class="card-typical-section">
+        <div class="card-typical-linked">
+
+        </div>
+        <a  class="card-typical-likes">
+        <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+        <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+        </a>
+        </div>
+
+        </article>
+        </div>';
         }
 
         //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
