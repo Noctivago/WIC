@@ -26,7 +26,19 @@ include '../build/db/session.php';
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="with-side-menu control-panel control-panel-compact">
-
+        <?php
+        $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php?';
+//        if (isset(filter_var($_GET['Category']))) {
+//            $s_cat = filter_var($_GET['Category']);
+//            $link = $link . '&Category=' . $s_cat;
+//        } elseif (isset(filter_var($_GET['City']))) {
+//            $s_city = filter_var($_GET['City']);
+//            $link = $link . $s_city;
+//        } elseif (isset(filter_var($_GET['qParam']))) {
+//            $s_name = filter_var($_GET['qParam']);
+//            $link = $link . $s_city;
+//        }
+        ?>
         <header class="site-header">
             <div class="container-fluid">
                 <a href="index_teste.php" class="site-logo">
@@ -259,26 +271,26 @@ include '../build/db/session.php';
 
                 <header class="side-menu-title">Start Planning</header>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=1"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
+                    <a class="lbl" href="<?= $link . '&Category=1' ?>"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=2"><i class="fa fa-spoon"></i> Food</a>
+                    <a class="lbl" href="<?= $link . '&Category=2' ?>"><i class="fa fa-spoon"></i> Food</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=3"><i class="fa fa-film"></i> Entertainment</a>
+                    <a class="lbl" href="<?= $link . '&Category=3' ?>"><i class="fa fa-film"></i> Entertainment</a>
                 </li>
 
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=4"><i class="fa fa-tree"></i>Decoration</a>
+                    <a class="lbl" href="<?= $link . '&Category=4' ?>"><i class="fa fa-tree"></i>Decoration</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=5"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                    <a class="lbl" href="<?= $link . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=6"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
+                    <a class="lbl" href="<?= $link . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="index_teste.php?Category=7"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
+                    <a class="lbl" href="<?= $link . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
                 </li>
 
                 <?php
