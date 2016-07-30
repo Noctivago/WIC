@@ -10,16 +10,16 @@ include ("./db/dbconn.php");
 
             <?php
             //$link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php?';
-            if (isset(filter_var($_GET['Category']))) {
-                $s_cat = filter_var($_GET['Category']);
-                $link = $link . '&Category=' . $s_cat;
-            } elseif (isset(filter_var($_GET['City']))) {
-                $s_city = filter_var($_GET['City']);
-                $link = $link . $s_city;
-            } elseif (isset(filter_var($_GET['qParam']))) {
-                $s_name = filter_var($_GET['qParam']);
-                $link = $link . $s_city;
-            }
+//            if (isset(filter_var($_GET['Category']))) {
+//                $s_cat = filter_var($_GET['Category']);
+//                $link = $link . '&Category=' . $s_cat;
+//            } elseif (isset(filter_var($_GET['City']))) {
+//                $s_city = filter_var($_GET['City']);
+//                $link = $link . $s_city;
+//            } elseif (isset(filter_var($_GET['qParam']))) {
+//                $s_name = filter_var($_GET['qParam']);
+//                $link = $link . $s_city;
+//            }
             if (isset($_GET ['Category'])) {
                 $CategoryId = (filter_var($_GET ['Category']));
                 DB_getServicesForIndexByCategory($pdo, $CategoryId);
