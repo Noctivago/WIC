@@ -763,7 +763,7 @@ $serviceId = (filter_var($_GET['Service']));
                     var img = $('<img id="dynamic">');
                     img.attr('src', this.result);
                     img.appendTo('#pictures');
-                    alert(elem);
+                    alert(img);
                     // document.getElementById('pictures').appendChild(elem);
 //    alert('aaadsadasd');
 //data-p="144.50"  style="display: none; "
