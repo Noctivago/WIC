@@ -51,7 +51,7 @@ $serviceId = (filter_var($_GET['Service']));
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-9 col-lg-push-0 col-md-12"style="width:auto">
+            <div class="col-lg-9 col-lg-push-0 col-md-12">
 
                 <section class="box-typical" style="background-color: transparent; border: 0px">
 			
@@ -237,7 +237,7 @@ $serviceId = (filter_var($_GET['Service']));
 
     <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">
         <!-- Loading Screen -->
-        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+        <div align="center"  data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
