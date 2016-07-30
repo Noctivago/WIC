@@ -28,7 +28,7 @@ include '../build/db/session.php';
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
-        if (count($_GET) >= 1) {
+        if (count($_GET) == 1) {
             $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             $q = true;
             if (isset(filter_var($_POST['qParam'])) || isset($_POST['submit'])) {
