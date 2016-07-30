@@ -325,7 +325,7 @@ ini_set("display_errors", 1);
                                                         $picture_path = 'pics/' . $newfilename;
                                                         //falta remover a first page para 0
                                                         //INSERIR NA TABELA MULTIMEDIA - FirstPage
-                                                        $msg = DB_AddNewServiceFirstPagePicture($pdo, $service, $user, $picture_path, 1);
+                                                        $msg = DB_AddNewServiceFirstPagePicture($pdo, $serviceId, $user, $picture_path, 1);
                                                         //$msg = ('File uploaded successfully.');
                                                     }
                                                 }
@@ -346,7 +346,7 @@ ini_set("display_errors", 1);
                                                                 && in_array($file_extension, $validextensions)) {
                                                             if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {//if file moved to uploads folder
                                                                 #echo $j . ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
-                                                                $msg = DB_AddNewServiceFirstPagePicture($pdo, $service, $user, $target_path, 0);
+                                                                $msg = DB_AddNewServiceFirstPagePicture($pdo, $serviceId, $user, $target_path, 0);
                                                             } else {//if file was not moved.
                                                                 $msg = "Please try again!";
                                                             }
