@@ -9,20 +9,14 @@ include ("./db/dbconn.php");
 
 
             <?php
-            //$link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php?';
-//            if (isset(filter_var($_GET['Category']))) {
-//                $s_cat = filter_var($_GET['Category']);
-//                $link = $link . '&Category=' . $s_cat;
-//            } elseif (isset(filter_var($_GET['City']))) {
-//                $s_city = filter_var($_GET['City']);
-//                $link = $link . $s_city;
-//            } elseif (isset(filter_var($_GET['qParam']))) {
-//                $s_name = filter_var($_GET['qParam']);
-//                $link = $link . $s_city;
-//            }
-            if (isset($_GET ['Category'])) {
+            if (isset($_GET ['Category']) && !isset($_GET ['qParam'])) {
                 $CategoryId = (filter_var($_GET ['Category']));
                 DB_getServicesForIndexByCategory($pdo, $CategoryId);
+            } elseif (!isset($_GET ['Category']) && isset($_GET ['qParam'])) {
+                $qParam = (filter_var($_GET ['qParam']));
+                DB_getServicesForIndexByName($pdo, $qParam);
+            } elseif (isset($_GET ['Category']) && isset($_GET ['qParam'])) {
+                
             } else {
                 DB_getServicesForIndex($pdo);
             }
