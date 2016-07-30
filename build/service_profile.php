@@ -53,7 +53,7 @@ $serviceId = (filter_var($_GET['Service']));
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
 
-					<section class="box-typical">
+                <section class="box-typical" style="background-color: transparent; border: 0px">
 			
                             <script src="js/jssor.slider.min.js" type="text/javascript"></script>
     <!-- use jssor.slider.debug.js instead for debug -->
