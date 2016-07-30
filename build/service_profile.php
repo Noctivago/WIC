@@ -86,7 +86,7 @@ $serviceId = (filter_var($_GET['Service']));
 //            ];
             
             var jssor_1_options = {
-              $AutoPlay: true,
+              $AutoPlay: false,
               $SlideshowOptions: {
                 $Class: $JssorSlideshowRunner$,
                 $Transitions: jssor_1_SlideshowTransitions,
