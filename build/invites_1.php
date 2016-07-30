@@ -221,7 +221,7 @@ $msg = '';
     }
 </script>
 
-<!--	<script src="js/lib/table-edit/jquery.tabledit.min.js"></script>
+	<script src="js/lib/table-edit/jquery.tabledit.min.js"></script>
 	<script>
 		$(function () {
 			$('#table-edit').Tabledit({
@@ -232,7 +232,7 @@ $msg = '';
 				}
 			});
 		});
-	</script>-->
+	</script>
 
 <script src="js/app.js"></script>
 

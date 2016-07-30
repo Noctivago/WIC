@@ -419,12 +419,12 @@ $serviceId = (filter_var($_GET['Service']));
                 <br>
 
 
-                <section class="box-typical">
+                <section class="box-typical" style="width:270px">
                     <!--DISPLAY SERVICE USERS-->
                     <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
                 </section>
 
-                <section class="box-typical">
+                <section class="box-typical" style="width:270px">
                     <!--DISPLAY ORG INFO-->
                     <?= DB_GetOrgInformationForService($pdo, $serviceId); ?>
                 </section>
