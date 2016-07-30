@@ -2679,6 +2679,7 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
         $rows = sql($pdo, "SELECT  
         [Organization].[Name]
         ,[Organization].[Picture_Path]
+        ,[Organization].[Id]
         ,[Organization].[Phone_Number]
         ,[Organization].[Mobile_Number]
         ,[Organization].[Organization_Email]
@@ -2699,7 +2700,7 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
             echo '<div class = "profile-card-photo">';
             echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
             echo ' </div>';
-            echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
+            echo ' <div class = "profile-card-name"><a href="../build/profile_org.php?Organization='.$row['Id'].'" >' . $row['Name'] . '</a></div>';
             //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
             //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
             //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
