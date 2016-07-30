@@ -9,38 +9,13 @@ include_once '../build/db/session.php';
         <div class="row">
             <div class="col-lg-6 col-lg-push-3 col-md-12">
                 
-                <form class="box-typical">
-						<input type="text" class="write-something" placeholder="Write Something..."/>
-						<div class="box-typical-footer">
-							<div class="tbl">
-								<div class="tbl-row">
-									<div class="tbl-cell">
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-earth"></i>
-										</button>
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-picture"></i>
-										</button>
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-calend"></i>
-										</button>
-										<button type="button" class="btn-icon">
-											<i class="font-icon font-icon-video-fill"></i>
-										</button>
-									</div>
-									<div class="tbl-cell tbl-cell-action">
-										<button type="submit" class="btn btn-rounded">Send</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</form><!--.box-typical-->
+ 
                 
                 
                 
-                <section class="box-typical">
+                <section class="box-typical" style="height: 402px;">
                     <header class="box-typical-header-sm">
-                        teste
+                        Services
                         <div class="slider-arrs">
                             <button type="button" class="posts-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
