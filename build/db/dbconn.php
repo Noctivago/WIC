@@ -1307,7 +1307,7 @@ function DB_getUsersInServiceOrganization($pdo, $org) {
           on [Role].[Id] = [User_Service].[Role_Id]
           where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
             foreach ($rows as $row) {
-                echo '<article class="friends-list-item">';
+                echo '<article class="friends-list-item" <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>>';
                 echo '    <div class="user-card-row">';
                 echo '      <div class="tbl-row">';
                 echo '          <div class="tbl-cell tbl-cell-photo">';
@@ -2131,7 +2131,7 @@ function DB_OrgProfile($pdo, $userId) {
     try {
         $rows = sql($pdo, "SELECT * FROM [Organization] Where [User_Boss] = ?", array($userId), "rows");
         foreach ($rows as $row) {
-            echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem;" >'
+            echo '<div class = "profile-card-photo" style="width: 180px;height: 120px;margin: 0 auto .2rem;max-width: 180px; max-height: 120px;" >'
             . '<img id = "image" src = "'.$row['Picture_Path'].'" alt = "" style="display: block;width: 100%;-webkit-border-radius: 50%;"/>
                 </div>
 <button class = "btn btn-rounded btn-file" >
