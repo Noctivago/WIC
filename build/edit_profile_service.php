@@ -370,6 +370,7 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
 
             </div>
+        <div id="dvpreview"></div>
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Edit Service </header>
@@ -746,7 +747,7 @@ $serviceId = (filter_var($_GET['Service']));
     $(function () {
         $("#files").change(function () {
             if (typeof (FileReader) != "undefined") {
-                var dvPreview = $("#pictures");
+                var dvPreview = $("#dvpreview");
                 $($(this)[0].files).each(function () {
                     var file = $(this);
                     if (regex.test(file[0].name.toLowerCase())) {
