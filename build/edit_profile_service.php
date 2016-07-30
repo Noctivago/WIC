@@ -377,7 +377,7 @@ $serviceId = (filter_var($_GET['Service']));
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
 
                         Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />
-                        New Files: <input type="file" id="file" name="file[]" accept = "images/*" multiple/><br/>
+                        New Files: <input type="files" id="file" name="file[]" accept = "images/*" multiple/><br/>
 
                         <header class = "sign-title">Edit Service Profile</header>
                         <div class = "form-group" Style="display: none">
