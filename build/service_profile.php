@@ -235,13 +235,13 @@ $serviceId = (filter_var($_GET['Service']));
     </style>
 
 
-    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: auto; height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">
+    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: auto; height: 356px; overflow: hidden;">
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
             <div data-p="144.50" style="display: none;">
                 <img data-u="image" src="img/01.jpg" />
                 <img data-u="thumb" src="img/01.jpg" />
@@ -322,10 +322,10 @@ $serviceId = (filter_var($_GET['Service']));
                     <header class="box-typical-header-sm">
                         Organization Information
                         <div class="slider-arrs">
-                            <button type="button" class="recomendations-slider-prev">
+                            <button type="button" class="recomendations-slider-prev1">
                                 <i class="font-icon font-icon-arrow-left"></i>
                             </button>
-                            <button type="button" class="recomendations-slider-next">
+                            <button type="button" class="recomendations-slider-next1">
                                 <i class="font-icon font-icon-arrow-right"></i>
                             </button>
                         </div>
