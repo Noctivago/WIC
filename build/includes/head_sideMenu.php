@@ -250,6 +250,7 @@ include '../build/db/session.php';
                                 <span class="typeahead-query">
                                     <input id="qParam"
                                            class="form-control"
+                                           required="required"
                                            name="qParam"
                                            type="search"
                                            autocomplete="on">
