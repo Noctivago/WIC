@@ -378,7 +378,7 @@ $serviceId = (filter_var($_GET['Service']));
 
                         Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />
                         New Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple/><br/>
-                        <div id="dvpreview">jjjjjjjjjjjjjjj</div>
+                        <div id="dvpreview"></div>
                         <header class = "sign-title">Edit Service Profile</header>
                         <div class = "form-group" Style="display: none">
                             <div class = "form-control-wrapper form-control-icon-left" >
@@ -747,29 +747,25 @@ $serviceId = (filter_var($_GET['Service']));
     $(function () {
         $("#files").change(function () {
             if (typeof (FileReader) != "undefined") {
-                var dvPreview = $("#pictures");
+                var dvPreview = $("#dvpreview");
+                dvPreview.empty();
                 $($(this)[0].files).each(function () {
                     var file = $(this);
                     var reader = new FileReader();
                     reader.onload = function (e) {
-                        var div = $('1');
                         var img = $("<img />");
                         img.attr("style", "height:100px;width: 100px");
                         img.attr("src", e.target.result);
-                        div.append(img);
-                        dvPreview.append(div);
-    //dvPreview.append(img);
+
+                        dvPreview.append(img);
                     }
                     reader.readAsDataURL(file[0]);
-
                 });
             } else {
                 alert("This browser does not support HTML5 FileReader.");
             }
         });
-    });
-
-</script>
+    });</script>
 
 
 
