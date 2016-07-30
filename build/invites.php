@@ -21,12 +21,12 @@ $msg = '';
                         <h3>My team</h3>
                     </div>
                     <!-- Botoes edit-->
-                    <!--						<div class="tbl-cell tbl-cell-action-bordered">
+                    						<div class="tbl-cell tbl-cell-action-bordered">
                                                                             <button type="button" class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
                                                                     </div>
                                                                     <div class="tbl-cell tbl-cell-action-bordered">
                                                                             <button type="button" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
-                                                                    </div>-->
+                                                                    </div>
                 </div>
             </header>
             <div class="box-typical-body">
@@ -103,15 +103,6 @@ $msg = '';
         return false;
     }
 </script>
-
-
-
-
-
-
-
-
-
 
 <script>
     $(function () {
