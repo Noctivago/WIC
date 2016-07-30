@@ -635,10 +635,6 @@ $serviceId = (filter_var($_GET['Service']));
         });
     });</script>
 
-
-
-
-
 <script>
     $(document).ready(function () {
         $('.panel').lobiPanel({
@@ -748,37 +744,33 @@ $serviceId = (filter_var($_GET['Service']));
 <!--MULTI-PICS-->
 <script>
     $(function () {
-        $("#file").change(function () {
-            var files = !!this.files ? this.files : [];
-            if (!files.length || !window.FileReader)
-                return; // no file selected, or no FileReader support
-            if (/^image/.test(files[0].type)) { // only image file
-                var reader = new FileReader(); // instance of the FileReader
-                reader.readAsDataURL(files[0]); // read the local file
-                reader.onloadend = function () { // set image data
-                    var img = $("<img />");
-                    img.attr("src",this.result);
-                    var dep = $('#pictures');
-                    dep.append(img);
-////  
-//  
-//                    var elem = document.getElementById("1");
-//                    var img = document.getElementById("1.1");
-//                    img.attr('src', this.result);
-//                    var div = document.getElementById('pictures');
-//                    div.appendChild(elem);
-//                    document.getElementById('pictures') = div;
-                    // document.getElementById('pictures').appendChild(elem);
-//    alert('aaadsadasd');
-//data-p="144.50"  style="display: none; "
-                    //data-u="image"
-                    //data-u="thumb"
-//                    var output = document.getElementById('2');
-//                    output.src = this.result;
-                };
+        $("#files").change(function () {
+            if (typeof (FileReader) != "undefined") {
+                var dvPreview = $("#pictures");
+                $($(this)[0].files).each(function () {
+                    var file = $(this);
+                    if (regex.test(file[0].name.toLowerCase())) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            var img = $("<img />");
+                            img.attr("style", "height:100px;width: 100px");
+                            img.attr("src", e.target.result);
+                            dvPreview.append(img);
+                        }
+                        reader.readAsDataURL(file[0]);
+                    } else {
+                        alert(file[0].name + " is not a valid image file.");
+                        dvPreview.html("");
+                        return false;
+                    }
+                });
+            } else {
+                alert("This browser does not support HTML5 FileReader.");
             }
         });
-    });</script>
+    });
+
+</script>
 
 
 
