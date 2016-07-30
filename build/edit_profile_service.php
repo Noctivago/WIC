@@ -758,11 +758,13 @@ $serviceId = (filter_var($_GET['Service']));
                 reader.onloadend = function () { // set image data
                     var elem = document.createElement("div");
                     elem.setAttribute("data-p", "144.50");
+                    alert('cagao');
                     elem.setAttribute("style", "display:none");
                     var inputImage = document.createElement("img");
                     inputImage.setAttribute("data-u", "image");
                     inputImage.setAttribute("src", this.result);
                     elem.appendChild(inputImage);
+                    alert(elem);
                     document.getElementById('pictures').appendChild(elem);
 //    alert('aaadsadasd');
 //data-p="144.50"  style="display: none; "
