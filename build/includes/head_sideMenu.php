@@ -28,7 +28,11 @@ include '../build/db/session.php';
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
-        $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        if (count($_GET) >= 1) {
+            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        } else {
+            $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
+        }
         ?>
         <header class="site-header">
             <div class="container-fluid">
@@ -186,7 +190,7 @@ include '../build/db/session.php';
                                 <i class="font-icon-pin-2"></i>
                             </button>
                         </div>
- 
+
                         <div class="mobile-menu-right-overlay"></div>
                         <div class="site-header-collapsed">
                             <div class="site-header-collapsed-in">
@@ -225,12 +229,12 @@ include '../build/db/session.php';
                                         <div class="overlay"></div>
                                     </form>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+                            </div><!--.site-header-collapsed-in-->
+                        </div><!--.site-header-collapsed-->
+                    </div><!--site-header-content-in-->
+                </div><!--.site-header-content-->
+            </div><!--.container-fluid-->
+        </header><!--.site-header-->
 
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
