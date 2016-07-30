@@ -72,7 +72,7 @@ $msg = '';
                                                     $target_path = $target_path . $sID . '_' . generateActivationCode() . "." . $ext[count($ext) - 1]; //set the target path with a new name of image
                                                     $j = $j + 1; //increment the number of uploaded images according to the files in array       
 
-                                                    if (($_FILES["file"]["size"][$i] < 500001) //Approx. 100kb files can be uploaded.
+                                                    if (($_FILES["file"]["size"][$i] < 2000000) //Approx. 100kb files can be uploaded.
                                                             && in_array($file_extension, $validextensions)) {
                                                         if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {//if file moved to uploads folder
                                                             #echo $j . ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
