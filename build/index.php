@@ -41,7 +41,8 @@ include ("./db/dbconn.php");
 
         </div><!--.card-grid-->
         <div class="clear"></div>
-        <nav>
+        <div>
+                            <nav>
 					<ul class="pagination">
 						<li class="page-item disabled">
 							<a class="page-link" href="#" aria-label="Previous">
@@ -64,6 +65,7 @@ include ("./db/dbconn.php");
 						</li>
 					</ul>
 				</nav>
+        </div>
     </div>
 </div>
 
