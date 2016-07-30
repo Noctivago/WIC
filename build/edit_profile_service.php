@@ -2,6 +2,7 @@
 include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
+$serviceId = (filter_var($_GET['Service']));
 //?>
 
 <div class="page-content">
@@ -739,7 +740,12 @@ include_once '../build/db/session.php';
 
 
 
+<script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+<script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="js/lib/select2/select2.full.min.js"></script>
 
+<script src="js/app.js"></script>
 
 
 <script src="js/app.js"></script>
