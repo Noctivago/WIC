@@ -198,6 +198,28 @@ $msg = '';
 			$('#tags-editor-textarea').tagEditor();
 		});
 	</script>
+        <script>
+    function EditRole(x) {
+        //var rolei = 'row' + x;
+        var edit = 'edit'+x;
+        var talk = 'talk'+x;
+        //var role = document.getElementById('' + rolei).value;
+        var editval = document.getElementById(''+edit).checked;
+        var talkval = document.getElementById(''+talk).checked;
+       
+        $.post("ajax/EditRoleUserInService.php", {id: x, edit:editval , talk:talkval}, function (result) {
+            location.reload(2);
+        });
+        return false;
+    }
+    function RemoveUserInService(x) {
+        alert(x);
+        $.post("ajax/RemoveUserInService.php", {id: x}, function (result) {
+            location.reload(2);
+        });
+        return false;
+    }
+</script>
 
 <!--	<script src="js/lib/table-edit/jquery.tabledit.min.js"></script>
 	<script>
