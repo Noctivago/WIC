@@ -104,7 +104,7 @@ $msg = '';
     }
 </script>
 
-<script>
+<!--<script>
     $(function () {
         $('#table-edit').Tabledit({
             url: 'example.php',
@@ -114,7 +114,7 @@ $msg = '';
             }
         });
     });
-</script>
+</script>-->
 
 
 
