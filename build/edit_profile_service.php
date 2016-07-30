@@ -752,11 +752,11 @@ $serviceId = (filter_var($_GET['Service']));
     var files = !!this.files ? this.files : [];
     if (!files.length || !window.FileReader)
             return; // no file selected, or no FileReader support
-
+        alert('aaa');
     if (/^image/.test(files[0].type)) { // only image file
     var reader = new FileReader(); // instance of the FileReader
     reader.readAsDataURL(files[0]); // read the local file
-
+    alert('bbb');
     reader.onloadend = function () { // set image data
 //                    var elem = document.createElement("div");
 //                    elem.setAttribute("data-p","144.50");
@@ -766,7 +766,8 @@ $serviceId = (filter_var($_GET['Service']));
 //                    inputImage.setAttribute("src",this.result);
 //                    elem.appendChild(inputImage);
     document.getElementById('pictures').append("<div> <img/> <img /> </div>");
-    //data-p="144.50"  style="display: none; "
+    alert('aaadsadasd');
+//data-p="144.50"  style="display: none; "
     //data-u="image"
     //data-u="thumb"
             //$("#1").css("background-image", "url(" + this.result + ")");
