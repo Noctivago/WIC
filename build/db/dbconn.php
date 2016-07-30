@@ -2743,7 +2743,7 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
             </a>
             </div>
             <div class = "tbl-cell">
-            <p class = "user-card-row-name"><a>   ' . $row['SNA'] . '</a></p><br><br><br>';
+            <p class = "user-card-row-name"><a>   ' . $row['SNA'] . '</a><br><br><br></p>';
             if (DB_checkIfUserMadeRate($pdo, $user_Id, $serviceId)) {
                 //SE JA FEZ RATE -> MOSTRAR RATING SERVIÇO
             } else {
