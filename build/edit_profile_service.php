@@ -305,7 +305,7 @@ ini_set("display_errors", 1);
                                         }
                                         if (isset($_POST['saveChanges']) && !empty($_POST['cName'])) {
                                             $name = $_FILES['uploadFile']['name'];
-                                            $newfilename = $service . '_' . generateActivationCode() . '.jpg';
+                                            $newfilename = $serviceId . '_' . generateActivationCode() . '.jpg';
                                             if (isset($name)) {
                                                 if (!empty($name)) {
                                                     // Check for errors
@@ -339,7 +339,7 @@ ini_set("display_errors", 1);
                                                         $validextensions = array("jpeg", "jpg", "png");  //Extensions which are allowed
                                                         $ext = explode('.', basename($_FILES['file']['name'][$i])); //explode file name from dot(.) 
                                                         $file_extension = end($ext); //store extensions in the variable
-                                                        $target_path = $target_path . $service . '_' . generateActivationCode() . "." . $ext[count($ext) - 1]; //set the target path with a new name of image
+                                                        $target_path = $target_path . $serviceId . '_' . generateActivationCode() . "." . $ext[count($ext) - 1]; //set the target path with a new name of image
                                                         $j = $j + 1; //increment the number of uploaded images according to the files in array       
 
                                                         if (($_FILES["file"]["size"][$i] < 2000000) //Approx. 100kb files can be uploaded.
