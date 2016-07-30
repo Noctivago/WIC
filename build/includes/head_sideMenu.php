@@ -388,6 +388,98 @@ include '../build/db/session.php';
                     }
                 }
                 ?>
+                        
+                        
+                        <!--invite members to my wic planner-->
+                <?php
+                $userId = $_SESSION['id'];
+                if ($_SESSION['role'] === 'organization') {
+                    echo '<div class="container-fluid">
+                 <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
+                        <div class="sign-avatar">
+                            <img src="img/avatar-sign.png" alt="">
+                        </div>
+                        <header class="sign-title">Invite to my services</header>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
+                        </div>';
+                    $rows = sql($pdo, "SELECT [Service].[Id], [Service].[Name]
+                    FROM [dbo].[Service]
+                    join [Organization]
+                    on [Organization].[Id] = [Service].[Organization_id]
+                    where [Organization].[User_Boss] = ? and [Organization].[Enabled] = 1 and [Service].[Enabled] = 1", array($userId), "rows");
+                    echo '<div class="form-group" >';
+                    echo '<select class="bootstrap-select bootstrap-select-arrow" id="service" name="service">';
+                    foreach ($rows as $row) {
+                        echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
+                    }
+                    echo ' </select> ';
+                    echo '</div>';
+//                    DB_GetServicesAsSelect($pdo, $userId);
+                    echo '<div class="form-group">
+                            <button type="submit" name="sendInvite" id="sendInvite" class="btn btn-rounded">Invite</button>
+                        </div>
+                        </div>
+                        </form>';
+                }
+                if (isset($_POST['sendInvite']) && !empty($_POST['email']) && !empty($_POST['service'])) {
+                    $email = $_POST['email'];
+                    $serviceId = $_POST['service'];
+                    if (DB_checkIfUserExists($pdo, $email)) {
+                        $idUser = DB_checkUserByEmail($pdo, $email);
+                        if (DB_checkIfUserInService($pdo, $idUser, $serviceId, 1)) {
+                            echo 'User is already in service';
+                        } else {
+                            if (DB_checkIfUserInService($pdo, $idUser, $serviceId, 0)) {
+                                sql($pdo, "UPDATE [dbo].[User_Service]
+                                SET [Enabled] = 0
+                                   ,[Validate] = 0
+                              WHERE [User_Id] = ? and [Service_id] = ?", array($idUser, $serviceId));
+                                ?>
+                                <script>
+                                    window.location = "../build/invites.php";
+                                </script>
+                                <?php
+                            } else {
+                                sql($pdo, "INSERT INTO [dbo].[User_Service]
+                                ([Service_Id],[User_Id],[Enabled],[Validate],[Role_id])
+                                    VALUES
+                                (?,?,0,0,2)", array($serviceId, $idUser));
+                                ?>
+                                <script>
+                                    window.location = "../build/invites.php";
+                                </script>
+                                <?php
+                            }
+                        }
+                    } else {
+
+                        //insert in organization invite
+                        sql($pdo, "INSERT INTO [dbo].[Organization_Invites]
+                                ([Email]
+                                ,[Enabled]
+                                ,[Service_Id])
+                          VALUES
+                                (?
+                                ,0
+                                ,?)", array($email, $serviceId));
+                        $to = $email;
+                        $subject = "WIC #INVITATION";
+                        $body = "Hi! <br>"
+                                . "You have been invited to be part of an Organization.<br>"
+                                . "To do that you must sign up at: http://www.wic.club/<br>"
+                                . "Best regards,<br>"
+                                . "WIC<br><br>"
+                                . "Note: Please do not reply to this email! Thanks!";
+                        sendEmail($to, $subject, $body);
+                        ?>
+                        <script>
+                            window.location = "../build/invites.php";
+                        </script>
+                        <?php
+                    }
+                }
+                ?>
             </ul>
         </nav><!--.side-menu-->
         <script>
