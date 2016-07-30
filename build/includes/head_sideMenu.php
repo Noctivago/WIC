@@ -42,7 +42,7 @@ include '../build/db/session.php';
         ?>
         <header class="site-header">
             <div class="container-fluid">
-                <a href="index_teste.php" class="site-logo">
+                <a href="index.php" class="site-logo">
 
                     <img class="hidden-md-down" src="img/wic_logo.png" alt="">
                     <img class="hidden-lg-up" src="img/wic_logo.png" alt="">
