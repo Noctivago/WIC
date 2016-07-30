@@ -28,20 +28,20 @@ include '../build/db/session.php';
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
-        if (count($_GET) >= 1) {
+        if (count($_GET) == 1) {
             $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             $q = true;
-            if (isset(filter_var($_GET['qParam']))) {
-                
+            if (isset(filter_var($_POST['qParam'])) || isset($_POST['submit'])) {
+                $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&' . filter_var($_GET['qParam']);
             }
             //SENAO TIVER QUERY STRING
         } else {
             $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?';
             $q = false;
+            if (isset(filter_var($_POST['qParam'])) || isset($_POST['submit'])) {
+                $link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&' . filter_var($_GET['qParam']);
+            }
         }
-//        if (isset($_POST['submit'])) {
-//            
-//        }
         //SE Q TRUE > POSSUI QUERY PARAMETERS
 //        if (isset(filter_var($_GET['qParam']))) {
 //            if (isset(filter_var($_GET['Category']))) {
@@ -258,10 +258,9 @@ include '../build/db/session.php';
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <header class="side-menu-title">Advanced Search</header>
-               
-                <form action="<?php $link; ?>" method="GET">
-                    <div class="col-md-10">
 
+                <form action="<?php $link; ?>" method="POST">
+                    <div class="col-md-10">
                         <div class="typeahead-container">
                             <div class="typeahead-field">
                                 <span class="typeahead-query">
@@ -351,22 +350,20 @@ include '../build/db/session.php';
                                    ,[Validate] = 0
                               WHERE [User_Id] = ? and [Service_id] = ?", array($idUser, $serviceId));
                                 ?>
-                <script>
-                    window.location = "../build/invites.php";
-                    </script>
+                                <script>
+                                    window.location = "../build/invites.php";
+                                </script>
                                 <?php
-                                
                             } else {
                                 sql($pdo, "INSERT INTO [dbo].[User_Service]
                                 ([Service_Id],[User_Id],[Enabled],[Validate],[Role_id])
                                     VALUES
                                 (?,?,0,0,2)", array($serviceId, $idUser));
-                              ?>
-                <script>
-                    window.location = "../build/invites.php";
-                    </script>
+                                ?>
+                                <script>
+                                    window.location = "../build/invites.php";
+                                </script>
                                 <?php
-                                
                             }
                         }
                     } else {
@@ -389,13 +386,12 @@ include '../build/db/session.php';
                                 . "WIC<br><br>"
                                 . "Note: Please do not reply to this email! Thanks!";
                         sendEmail($to, $subject, $body);
-                     ?>
-                <script>
-                    window.location = "../build/invites.php";
-                    </script>
-                                <?php
-                        }
-                    
+                        ?>
+                        <script>
+                            window.location = "../build/invites.php";
+                        </script>
+                        <?php
+                    }
                 }
                 ?>
             </ul>
