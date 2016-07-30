@@ -537,7 +537,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
                         . '<br>'
                         .'<div class="checkbox checkbox-only">'
                         . '<input type="checkbox" id="talk' . $row['ID'] . '" checked="checked"/> Talk with costumers'
-                        . '<label for="talk"></label'
+                        . '<label for="talk"></label>'
                         . '</div>'
                         . '</th>';
             } else if ($row['Role_Id'] === '5') {
@@ -549,18 +549,19 @@ function DB_BuildInvitesTable($pdo, $userId) {
             //                          </select>
             echo '</div>
                                 </td>
-                                <td>
+                                <td class="table-icon-cell">
 
-                                    <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" onclick ="EditRole(' . $row['ID'] . ')"class="action-btn"><i class="font-icon font-icon-folder"></i></button>
+                                    <div >
+                                        <button type="button" onclick ="EditRole(' . $row['ID'] . ')"class="class="btn btn-rounded btn-inline btn-secondary-outline""><i class="font-icon font-icon-folder"></i></button>
                                     </div>
                                 </td>
-                                <td>  
-                                    <div class="tbl-cell tbl-cell-action-bordered">
-                                        <button type="button" onclick="RemoveUserInService(' . $row['ID'] . ')" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
+                                <td class="table-icon-cell">  
+                                    <div>
+                                        <button type="button" onclick="RemoveUserInService(' . $row['ID'] . ')" class="class="btn btn-rounded btn-inline btn-secondary-outline""><i class="font-icon font-icon-trash"></i></button>
                                     </div>
                                 </td>
                             </tr>';
+//            class="tbl-cell tbl-cell-action-bordered"
         }
     } catch (Exception $ex) {
         
@@ -1378,7 +1379,7 @@ function DB_GetOrgInformation2($pdo, $org) {
             echo ' <section class = "box-typical"> ';
             echo '<div class = "profile-card">';
             echo '<div class = "profile-card-photo">';
-            echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
+            echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "width: 110px; height:110px;"/>';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
             //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
