@@ -757,7 +757,7 @@ $serviceId = (filter_var($_GET['Service']));
                 reader.readAsDataURL(files[0]); // read the local file
                 reader.onloadend = function () { // set image data
                     var img = $("<img />");
-                    img.attr("scr",this.result);
+                    img.attr("src",this.result);
                     var dep = $('#pictures');
                     dep.append(img);
 ////  
