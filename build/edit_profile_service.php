@@ -44,7 +44,6 @@ $serviceId = (filter_var($_GET['Service']));
                                 {$Duration: 1200, $Delay: 20, $Clip: 12, $Assembly: 260, $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
                                 {$Duration: 1200, $Delay: 20, $Clip: 12, $SlideOut: true, $Assembly: 260, $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2}
                             ];
-
                             var jssor_1_options = {
                                 $AutoPlay: false,
                                 $SlideshowOptions: {
@@ -63,9 +62,7 @@ $serviceId = (filter_var($_GET['Service']));
                                     $Align: 360
                                 }
                             };
-
                             var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
                             //responsive code begin
                             //you can remove responsive code if you don't want the slider scales while window resizing
                             function ScaleSlider() {
@@ -373,13 +370,14 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
 
             </div>
+        <div id="dvpreview"></div>
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Edit Service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
 
                         Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />
-                        New Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple/><br/>
+                        New Files: <input type="file" id="file" name="file[]" accept = "images/*" multiple/><br/>
 
                         <header class = "sign-title">Edit Service Profile</header>
                         <div class = "form-group" Style="display: none">
@@ -489,8 +487,7 @@ $serviceId = (filter_var($_GET['Service']));
                 alert("image uploaded");
             }
         })
-    });
-</script>
+    });</script>
 
 <script>
     function myFunction() {
@@ -556,9 +553,7 @@ $serviceId = (filter_var($_GET['Service']));
             // $('#sc').find('select').remove().end();
             //    $('#sc').html(result);
             document.getElementById('sc').innerHTML = result;
-
         });
-
         return false;
     }
 </script>
@@ -639,12 +634,7 @@ $serviceId = (filter_var($_GET['Service']));
                 };
             }
         });
-    });
-</script>
-
-
-
-
+    });</script>
 
 <script>
     $(document).ready(function () {
@@ -756,28 +746,31 @@ $serviceId = (filter_var($_GET['Service']));
 <script>
     $(function () {
         $("#files").change(function () {
-            var files = !!this.files ? this.files : [];
-            if (!files.length || !window.FileReader)
-                return; // no file selected, or no FileReader support
-
-            if (/^image/.test(files[0].type)) { // only image file
-                var reader = new FileReader(); // instance of the FileReader
-                reader.readAsDataURL(files[0]); // read the local file
-
-                reader.onloadend = function () { // set image data
-                    var elem = document.createElement("div");
-                    elem.setAttribute("data-p","144.50");
-                    elem.setAttribute("style","display:none");
-                    var inputImage = document.createElement("img");
-                    inputImage.setAttribute("data-u","image");
-                    inputImage.setAttribute("src",this.result);
-                    elem.appendChild(inputImage);
-                    document.getElementById('pictures').appendChild(elem);
-                    //$("#1").css("background-image", "url(" + this.result + ")");
-                };
+            if (typeof (FileReader) != "undefined") {
+                var dvPreview = $("#dvpreview");
+                $($(this)[0].files).each(function () {
+                    var file = $(this);
+                    if (regex.test(file[0].name.toLowerCase())) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            var img = $("<img />");
+                            img.attr("style", "height:100px;width: 100px");
+                            img.attr("src", e.target.result);
+                            dvPreview.append(img);
+                        }
+                        reader.readAsDataURL(file[0]);
+                    } else {
+                        alert(file[0].name + " is not a valid image file.");
+                        dvPreview.html("");
+                        return false;
+                    }
+                });
+            } else {
+                alert("This browser does not support HTML5 FileReader.");
             }
         });
     });
+
 </script>
 
 

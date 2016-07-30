@@ -318,13 +318,17 @@ $serviceId = (filter_var($_GET['Service']));
     <script>
         jssor_1_slider_init();
     </script>
+    
+
 					</section><!--.box-typical-->
+                                        
+          
                                      
     <section class="box-typical">
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
 
                     <header class="box-typical-header-sm">
-                        Organization Info
+                        Organization Information
 <!--                        <div class="slider-arrs">
                             <button type="button" class="recomendations-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
@@ -334,6 +338,8 @@ $serviceId = (filter_var($_GET['Service']));
                             </button>
                         </div>-->
                     </header>
+                    
+
                     <div class="recomendations-slider" >
                         <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
                         <div class="slide">
@@ -341,10 +347,14 @@ $serviceId = (filter_var($_GET['Service']));
                             <div class="user-card-row">
                                 <?php
                                 echo '<div class="card-typical-section">
-                                 <input type=button onClick="openMyWics();",  value="+">
+                            
+                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
+                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics();" </button>
+                                     
                                 </div>';
                                 ?>
                             </div>
+                            <!--<input type=button onClick="openMyWics();",  value="+">-->
                         </div>
                     </div>
                 </section>
@@ -418,6 +428,14 @@ $serviceId = (filter_var($_GET['Service']));
                         echo ' </article>';
                     }
                     ?>
+                     <?php
+                   echo '<section class="">
+                            
+                       Add to My Wic Planner<button class="btn btn-inline btn-warning-outline font-icon-plus-1"  onClick="openMyWics('.$row['SID'].');"> </button>
+                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics();" title="Add To my wic planner"> </button>
+                                     
+                     </section>';
+                ?>
                 </section>
                 <br>
 
