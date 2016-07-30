@@ -335,7 +335,7 @@ $serviceId = (filter_var($_GET['Service']));
                         </div>-->
                     </header>
                     
-						<article class="profile-info-item">
+<!--						<article class="profile-info-item">
 							<header class="profile-info-item-header">
 								<i class="font-icon font-icon-case"></i>
 								Service 
@@ -384,13 +384,13 @@ $serviceId = (filter_var($_GET['Service']));
 								</li>
 
 							</ul>
-						</article><!--.profile-info-item-->
+						</article>.profile-info-item-->
                                                 <div class="right-top">
                                                     <?php
                                                                                                     echo '
-
+                                                                                                        <div class="card-typical-section">
                                                                                                      <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
-
+                                                                                                         </div>
                                                                                                     ';
                                                     ?>
                                                 </div>
