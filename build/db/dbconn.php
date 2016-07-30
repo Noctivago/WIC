@@ -2742,8 +2742,8 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
             <img src = "' . $row['OPP'] . '" alt = "Avatar">
             </a>
             </div>
-            <div class = "tbl-cell"> <br><br><br>
-            <p class = "user-card-row-name"><a>   ' . $row['SNA'] . '</a></p>';
+            <div class = "tbl-cell">
+            <p class = "user-card-row-name"><a>   ' . $row['SNA'] . '</a></p><br><br><br>';
             if (DB_checkIfUserMadeRate($pdo, $user_Id, $serviceId)) {
                 //SE JA FEZ RATE -> MOSTRAR RATING SERVIÇO
             } else {
