@@ -315,7 +315,7 @@ ini_set("display_errors", 1);
                                             $city = $_POST['citySelect'];
                                             $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub, $city);
                                             ?> 
-                                            <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>
+                                            <!--<script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>-->
                                             <?php
                                         }
 

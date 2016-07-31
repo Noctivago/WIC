@@ -3535,7 +3535,8 @@ function db_getWicsForHeader($pdo, $userId) {
  */
 function DB_getServiceCurrentFirstPagePic($pdo, $serviceId) {
     try {
-        $rows = sql($pdo, "SELECT [Id] FROM [dbo].[Multimedia] WHERE [Service_Id] = ? AND [First_Page] = 1", array($serviceId), "rows");
+        $rows = sql($pdo, "SELECT [Id] FROM [dbo].[Multimedia] "
+                . "WHERE [Service_Id] = ? AND [Enabled] = 1 AND [First_Page] = 1", array($serviceId), "rows");
         foreach ($rows as $row) {
             return $row['Id'];
         }
