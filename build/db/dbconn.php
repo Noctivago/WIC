@@ -3562,10 +3562,10 @@ function DB_deleteServiceFirstPagePic($pdo, $MultimediaId) {
 
 function DB_DisplyPicuresToRemove($pdo, $serviceId) {
     try {
-        $rows = sql($pdo, "SELECT [Multimedia_Path] as MP FROM [dbo].[Multimedia] "
+        $rows = sql($pdo, "SELECT [Multimedia_Path] FROM [dbo].[Multimedia] "
                 . "WHERE [Service_Id] = ? AND [Enabled] = 1 AND [First_Page] = 0", array($serviceId), "rows");
         foreach ($rows as $row) {
-            $image = $rows['Multimedia_Path'];
+            $image = $row['Multimedia_Path'];
             echo '<img src=' . $image . 'style="width:128px;height:128px">';
 //            echo "<br>";
             //return $row['MP'];
