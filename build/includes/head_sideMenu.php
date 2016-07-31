@@ -422,9 +422,8 @@ include '../build/db/session.php';
                         </div>
                         </form>';
                 }
-                if (isset($_POST['sendInvite']) && !empty($_POST['email']) && !empty($_POST['service'])) {
-                    $email = $_POST['email'];
-                    $serviceId = $_POST['service'];
+                if (isset($_POST['sendInviteWP']) && !empty($_POST['emailWP'])) {
+                    $email = $_POST['emailWP'];
                     if (DB_checkIfUserExists($pdo, $email)) {
                         $idUser = DB_checkUserByEmail($pdo, $email);
                         if (DB_checkIfUserInService($pdo, $idUser, $serviceId, 1)) {
