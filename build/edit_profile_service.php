@@ -5,8 +5,8 @@ include_once '../build/db/session.php';
 $serviceId = (filter_var($_GET['Service']));
 //
 $msg = '';
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
 ?>
 
 <div class="page-content">
