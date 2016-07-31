@@ -549,7 +549,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
                 echo '<th class="table-check">'
                 . '<div class="checkbox checkbox-only"> '
                 . '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" checked="checked"/> To edit Service'
-                . '<label for="edit"></label'
+                . '<label for="edit"></label>'
                 . ' </div>'
                 . '<br>'
                 . '<div class="checkbox checkbox-only">'
