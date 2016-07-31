@@ -231,7 +231,8 @@ ini_set("display_errors", 1);
                 <section class="box-typical">
                     <div class="recomendations-slider">
                         <div class="slide">
-
+                            <!--DISPLAY DAS FOTOS TO REMOVE-->
+                            <?= DB_DisplyPicuresToRemove($pdo, $serviceId); ?>
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
@@ -315,7 +316,7 @@ ini_set("display_errors", 1);
                                             $city = $_POST['citySelect'];
                                             $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub, $city);
                                             ?> 
-                                                    <!--<script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>-->
+                                                            <!--<script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>-->
                                             <?php
                                         }
 
@@ -334,7 +335,6 @@ ini_set("display_errors", 1);
                             </div>
                         </div>
 
-                        <?= DB_DisplyPicuresToRemove($pdo, $serviceId); ?>
 
                         <div class="slide">
                             <div class="user-card-row">
@@ -381,7 +381,7 @@ ini_set("display_errors", 1);
                     <header class = "box-typical-header-sm">Edit Service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
 
-                                    <!--Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />-->
+                                        <!--Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />-->
                         Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="uploadFile" class="img" />
                         New Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple/><br/>
                         <div id="dvpreview"></div>
