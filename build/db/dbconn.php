@@ -3564,12 +3564,16 @@ function DB_DisplyPicuresToRemove($pdo, $serviceId) {
     try {
         $rows = sql($pdo, "SELECT [Multimedia_Path] FROM [dbo].[Multimedia] "
                 . "WHERE [Service_Id] = ? AND [Enabled] = 1 AND [First_Page] = 0", array($serviceId), "rows");
+
+        echo '<section class="box-typical" style="width:auto">
+                    <header class="box-typical-header-sm">
+                        Secondary Pictures > Click on the picture do remove
+                    </header>';
         foreach ($rows as $row) {
             $image = $row['Multimedia_Path'];
             echo '<img src="' . $image . '" style="width:64px;height:64px">';
-            //echo "<br>";
-            //return $row['MP'];
         }
+        echo '</section>';
     } catch (Exception $exc) {
         echo 'ERROR READING MULTIMEDIA!';
     }
