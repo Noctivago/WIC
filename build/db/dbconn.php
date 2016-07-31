@@ -3560,6 +3560,11 @@ function DB_deleteServiceFirstPagePic($pdo, $MultimediaId) {
     }
 }
 
+/**
+ * Mostra as pics para remoção à exceção da de perfil
+ * @param type $pdo
+ * @param type $serviceId
+ */
 function DB_DisplyPicuresToRemove($pdo, $serviceId) {
     try {
         $rows = sql($pdo, "SELECT [Multimedia_Path] FROM [dbo].[Multimedia] "
@@ -3571,7 +3576,7 @@ function DB_DisplyPicuresToRemove($pdo, $serviceId) {
                     </header>';
         foreach ($rows as $row) {
             $image = $row['Multimedia_Path'];
-            echo '<img src="' . $image . '" onclick="alert(Hello)" style="width:64px;height:64px">';
+            echo '<img src="' . $image . '" onclick="alert(\'Hello\')" style="width:64px;height:64px">';
         }
         echo '</section>';
     } catch (Exception $exc) {
