@@ -3572,7 +3572,7 @@ function DB_DisplyPicuresToRemove($pdo, $serviceId) {
 
         echo '<section class="box-typical" style="width:auto">
                     <header class="box-typical-header-sm">
-                        Secondary Pictures > Click on the picture do remove
+                        Secondary Pictures
                     </header>';
         foreach ($rows as $row) {
             $image = $row['Multimedia_Path'];
