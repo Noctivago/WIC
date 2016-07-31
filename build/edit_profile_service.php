@@ -229,7 +229,7 @@ ini_set("display_errors", 1);
                 </section>                
 
                 <!--DISPLAY DAS FOTOS TO REMOVE-->
-                <section class="box-typical" style="width:270px">
+                <section class="box-typical" style="width:auto">
                     <?= DB_DisplyPicuresToRemove($pdo, $serviceId); ?>
                 </section>
 
