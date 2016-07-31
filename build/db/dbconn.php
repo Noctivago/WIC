@@ -3584,3 +3584,18 @@ function DB_DisplyPicuresToRemove($pdo, $serviceId) {
         echo 'ERROR READING MULTIMEDIA!';
     }
 }
+
+/**
+ * Remove fotos secundarias
+ * @param type $pdo
+ * @param type $MultimediaId
+ * @return boolean
+ */
+function DB_deleteServiceSecondaryPagePic($pdo, $MultimediaId) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[Multimedia] SET [Enabled] = 0 WHERE [Id] = ? ", array($MultimediaId));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}
