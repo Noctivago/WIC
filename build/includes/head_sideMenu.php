@@ -388,9 +388,9 @@ include '../build/db/session.php';
                     }
                 }
                 ?>
-                        
-                        
-                        <!--invite members to my wic planner-->
+
+
+                <!--invite members to my wic planner-->
                 <?php
                 $userId = $_SESSION['id'];
                 if ($_SESSION['role'] === 'user') {
@@ -403,13 +403,13 @@ include '../build/db/session.php';
                         <div class="form-group">
                             <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
                         </div>';
-                    $rows = sql($pdo, "SELECT [Service].[Id], [Service].[Name]
-                    FROM [dbo].[Service]
-                    join [Organization]
-                    on [Organization].[Id] = [Service].[Organization_id]
-                    where [Organization].[User_Boss] = ? and [Organization].[Enabled] = 1 and [Service].[Enabled] = 1", array($userId), "rows");
+                    $rows = sql($pdo, "SELECT [Id]
+                        ,[Name]
+                    FROM [dbo].[WIC_Planner]
+                    WHERE [Enabled] = 1
+                    AND [User_Id] = ?", array($userId), "rows");
                     echo '<div class="form-group" >';
-                    echo '<select class="bootstrap-select bootstrap-select-arrow" id="service" name="service">';
+                    echo '<select class="bootstrap-select bootstrap-select-arrow" id="wicplanner" name="wicplanner">';
                     foreach ($rows as $row) {
                         echo '<option  value ="' . $row['Id'] . '">' . $row['Name'] . '</option>';
                     }
@@ -417,7 +417,7 @@ include '../build/db/session.php';
                     echo '</div>';
 //                    DB_GetServicesAsSelect($pdo, $userId);
                     echo '<div class="form-group">
-                            <button type="submit" name="sendInvite" id="sendInvite" class="btn btn-rounded">Invite</button>
+                            <button type="submit" name="sendInviteWP" id="sendInviteWP" class="btn btn-rounded">Invite</button>
                         </div>
                         </div>
                         </form>';
@@ -465,7 +465,7 @@ include '../build/db/session.php';
                                 ,?)", array($email, $serviceId));
                         $to = $email;
                         $subject = "WIC #INVITATION";
-                        $body = "Hi! <br>"
+                        $body = "Hello! <br>"
                                 . "You have been invited to be part of an Organization.<br>"
                                 . "To do that you must sign up at: http://www.wic.club/<br>"
                                 . "Best regards,<br>"
