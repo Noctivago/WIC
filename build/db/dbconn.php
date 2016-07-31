@@ -3567,7 +3567,7 @@ function DB_deleteServiceFirstPagePic($pdo, $MultimediaId) {
  */
 function DB_DisplyPicuresToRemove($pdo, $serviceId) {
     try {
-        $rows = sql($pdo, "SELECT [Multimedia_Path] FROM [dbo].[Multimedia] "
+        $rows = sql($pdo, "SELECT [Multimedia_Path], [Id] FROM [dbo].[Multimedia] "
                 . "WHERE [Service_Id] = ? AND [Enabled] = 1 AND [First_Page] = 0", array($serviceId), "rows");
 
         echo '<section class="box-typical" style="width:auto">
@@ -3577,7 +3577,7 @@ function DB_DisplyPicuresToRemove($pdo, $serviceId) {
         foreach ($rows as $row) {
             $image = $row['Multimedia_Path'];
             echo '<img src="' . $image . '" style="width:50px;height:50px">';
-            echo '<button type="button" class = "font-icon font-icon-trash" style="color:red;height: 54px;background-color: transparent;border: 0px;"></button>';
+            echo '<button type="button" id="' . $row['Id'] . '" name ="' . $row['Id'] . '" class = "font-icon font-icon-trash" style="color:red;height: 54px;background-color: transparent;border: 0px;"></button>';
         }
         echo '</section>';
     } catch (Exception $exc) {
