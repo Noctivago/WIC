@@ -332,7 +332,7 @@ ini_set("display_errors", 1);
                                     </div>
                                 </div>
                             </div>
-                        </div><!--.slide-->
+                        </div>
 
                         <div class="slide">
 
