@@ -3577,6 +3577,7 @@ function DB_DisplyPicuresToRemove($pdo, $serviceId) {
         foreach ($rows as $row) {
             $image = $row['Multimedia_Path'];
             echo '<img src="' . $image . '" style="width:64px;height:64px">';
+            echo '<button type="button">Click Me!</button>';
         }
         echo '</section>';
     } catch (Exception $exc) {
