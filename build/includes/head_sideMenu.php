@@ -401,7 +401,7 @@ include '../build/db/session.php';
                         </div>
                         <header class="sign-title">Invite to my Wic Planner</header>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
+                            <input type="email" id="emailWP" name="emailWP" class="form-control" placeholder="E-Mail" required/>
                         </div>';
                     $rows = sql($pdo, "SELECT [Id]
                         ,[Name]
