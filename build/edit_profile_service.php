@@ -320,11 +320,10 @@ $msg = '';
                                             <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>
                                             <?php
                                         }
-
-                                        $data = DB_GetServiceInformation($pdo, $serv);
+                                        $data = DB_GetServiceInformation($pdo, $serviceId);
                                         echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
-                                            <img src="' . $org['Picture_Path'] . '" alt="" >
+                                            <img src="' . $org['Picture_Path'] . '" alt="Avatar" >
                                         </a>
                                     </div>
                                     <div class="tbl-cell">
@@ -335,8 +334,6 @@ $msg = '';
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="slide">
                             <div class="user-card-row">
                                 <div class="tbl-cell">
@@ -345,7 +342,6 @@ $msg = '';
                                 </div>
                             </div>
                         </div><!--.slide-->
-
                         <div class = "slide">
                             <div class = "user-card-row">
                                 <?php
@@ -356,11 +352,8 @@ $msg = '';
                                 <div class = "tbl-cell">
                                 </div> </div>
                         </div><!--.slide-->
-
                 </div><!--.recomendations-slider-->
                 </section><!--.box-typical-->
-
-
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Service Information</header>
                     <article class = "profile-info-item">
@@ -372,17 +365,12 @@ $msg = '';
                             <?php echo '<p id="description">' . $data['Description'] . '</p>'; ?>
                         </div>
                     </article>
-
                 </section>
-
             </div>
-
             <div class = "col-lg-3 col-md-6 col-sm-6" style = "padding-right: 0px;">
                 <section class = "box-typical">
                     <header class = "box-typical-header-sm">Edit Service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
-
-                                                                <!--Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />-->
                         Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="uploadFile" class="img" />
                         New Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple/><br/>
                         <div id="dvpreview"></div>
@@ -393,25 +381,20 @@ $msg = '';
                                 <i class = "font-icon font-icon-user"></i>
                             </div>
                         </div>
-
                         <div class = "form-group">
                             <div class = "form-control-wrapper form-control-icon-left" >
                                 <input type = "text" class = "form-control" onchange="reloadName()"id="cName" name="cName" value='<?= $data['Name'] ?>' placeholder = " Service Name"/>
                                 <i class = "font-icon font-icon-user"></i>
                             </div>
                         </div>
-
                         <div class = "form-control-wrapper form-control-icon-left">
                             <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
                                 <option value="0">Country</option>
                                 <?php DB_getCountryAsSelect($pdo) ?>
                             </select>
                         </div>
-
                         <div class = "form-group" >
                             <div class = "form-control-wrapper form-control-icon-left" id="state">
-
-
                             </div>
                         </div>
                         <div class = "form-group" >
@@ -419,11 +402,8 @@ $msg = '';
 
                             </div>    
                         </div>
-
-
                         <div class = "form-group">
-                            <!--                        <div class = "form-control-wrapper form-control-icon-left" id="cc">-->
-                            <!--                            <select class="bootstrap-select bootstrap-select-arrow" onchange="reloadSubCat(this)" id="cCat" name="cCat">-->
+
                             <?php
                             $idCat = $CatSubCatData['CatId'];
                             DB_getCatgoryAsSelect($pdo, $idCat);
@@ -432,16 +412,11 @@ $msg = '';
 
                             <!--                        </div>-->
                             <div class = "form-group">
-                                <!--<div class = "form-control-wrapper form-control-icon-left" id="sc">-->
-                                    <!--<select class="bootstrap-select bootstrap-select-arrow" onchange="reloadServ(this)" id="cSubCat" name="cSubCat">-->
-
                                 <?php
                                 $idSubCat = $CatSubCatData['SubCatId'];
                                 DB_getSubCategoryAsSelect($pdo, $idCat, $idSubCat);
                                 ?>
-                                <!--                                </select> -->
 
-                                <!--                            </div>-->
                             </div>
                         </div>
                         <div class = "form-group row">
