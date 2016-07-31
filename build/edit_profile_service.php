@@ -427,7 +427,8 @@ ini_set("display_errors", 1);
                     <header class = "box-typical-header-sm">Edit Service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
 
-                        Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />
+                        <!--Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />-->
+                        Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="uploadFile" class="img" />
                         New Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple/><br/>
                         <div id="dvpreview"></div>
                         <header class = "sign-title">Edit Service Profile</header>
