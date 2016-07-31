@@ -372,7 +372,7 @@ $serviceId = (filter_var($_GET['Service']));
                     ?>
                     <?php
                     echo '<section class="">
-                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1"  onClick="openMyWics();"> Add To my Wic Planner </button>           
+                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
                      </section>';
                     ?>
                 </section>
@@ -411,10 +411,14 @@ $serviceId = (filter_var($_GET['Service']));
         }
     }
 
-    function openMyWics() {
+    function openMyWics(Sid) {
         var x = (screen.width / 2) - (435 / 2);
         var y = (screen.height / 2) - (362 / 2);
-        window.open("./ajax/getMyWicsPopup.php?id=' <?= trim($serviceId); ?> '", 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
+        if (Sid > 0) {
+            window.open('./ajax/getMyWicsPopup.php?id=' + Sid + '', 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
+        } else {
+
+        }
     }
 
     function loadComments() {
