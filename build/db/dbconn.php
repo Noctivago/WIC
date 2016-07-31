@@ -3566,7 +3566,7 @@ function DB_DisplyPicuresToRemove($pdo, $serviceId) {
                 . "WHERE [Service_Id] = ? AND [Enabled] = 1 AND [First_Page] = 0", array($serviceId), "rows");
         foreach ($rows as $row) {
             $image = $row['Multimedia_Path'];
-            echo '<img src="' . $image . '" style="width:50px;height:50px">';
+            echo '<img src="' . $image . '" style="width:64px;height:64px">';
             //echo "<br>";
             //return $row['MP'];
         }
