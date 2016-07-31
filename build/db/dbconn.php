@@ -91,7 +91,9 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
 function DB_GetPicsService($pdo, $serviceId) {
     try {
         $count = 0;
-        $rows = sql($pdo, "Select * from [multimedia] where [Enabled]=1 and [Service_Id]=?", array($serviceId), "rows");
+        //$rows = sql($pdo, "Select * from [multimedia] where [Enabled]=1 and [Service_Id]=?", array($serviceId), "rows");
+        $rows = sql($pdo, "Select * from [multimedia] where [Enabled]=1 and [Service_Id]=? ORDEY BY [First_Page] DESC", array($serviceId), "rows");
+
         foreach ($rows as $row) {
             $count+=1;
             echo '<div data-p="144.50"  style="display: none;">
