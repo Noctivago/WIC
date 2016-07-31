@@ -319,7 +319,7 @@ ini_set("display_errors", 1);
                                             <?php
                                         }
 
-                                        $data = DB_GetServiceInformation($pdo, $service);
+                                        $data = DB_GetServiceInformation($pdo, $serv);
                                         echo '<div class="tbl-cell tbl-cell-photo">
                                         <a href="#">
                                             <img src="' . $org['Picture_Path'] . '" alt="" >
@@ -334,7 +334,7 @@ ini_set("display_errors", 1);
                             </div>
                         </div>
 
-                        <?= DB_DisplyPicuresToRemove($pdo, $serviceId); ?>
+                        <?= DB_DisplyPicuresToRemove($pdo, $service); ?>
 
                         <div class="slide">
                             <div class="user-card-row">
