@@ -3526,3 +3526,35 @@ function db_getWicsForHeader($pdo, $userId) {
         echo 'ERROR READING WIC PLANNER';
     }
 }
+
+/**
+ * Retorna ID da imagem de perfil
+ * @param type $pdo
+ * @param type $serviceId
+ * @return type
+ */
+function DB_getServiceCurrentFirstPagePic($pdo, $serviceId) {
+    try {
+        $rows = sql($pdo, "SELECT [Id] FROM [dbo].[Multimedia] WHERE [Service_Id] = ? AND [First_Page] = 1", array($serviceId), "rows");
+        foreach ($rows as $row) {
+            return $row['Id'];
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING MULTIMEDIA!';
+    }
+}
+
+/**
+ * Elimina imagem de perfil
+ * @param type $pdo
+ * @param type $email
+ * @return boolean
+ */
+function DB_deleteServiceFirstPagePic($pdo, $MultimediaId) {
+    try {
+        $count = sql($pdo, "UPDATE [dbo].[Multimedia] SET [Enabled] = 0 WHERE [Id] = ? ", array($MultimediaId));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}

@@ -201,57 +201,8 @@ ini_set("display_errors", 1);
                             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;"></div>
                         </div>
                         <div data-u="slides" id="pictures" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
-                            <?php DB_GetPicsService($pdo, $serviceId);
-                            ?>
+                            <?php DB_GetPicsService($pdo, $serviceId); ?>
 
-                            <!--            <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/01.jpg" />
-                                            <img data-u="thumb" src="img/01.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/02.jpg" />
-                                            <img data-u="thumb" src="img/thumb-02.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/03.jpg" />
-                                            <img data-u="thumb" src="img/thumb-03.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/04.jpg" />
-                                            <img data-u="thumb" src="img/thumb-04.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/05.jpg" />
-                                            <img data-u="thumb" src="img/thumb-05.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/06.jpg" />
-                                            <img data-u="thumb" src="img/thumb-06.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/07.jpg" />
-                                            <img data-u="thumb" src="img/thumb-07.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/08.jpg" />
-                                            <img data-u="thumb" src="img/thumb-08.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/09.jpg" />
-                                            <img data-u="thumb" src="img/thumb-09.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/10.jpg" />
-                                            <img data-u="thumb" src="img/thumb-10.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/11.jpg" />
-                                            <img data-u="thumb" src="img/thumb-11.jpg" />
-                                        </div>
-                                        <div data-p="144.50" style="display: none;">
-                                            <img data-u="image" src="img/12.jpg" />
-                                            <img data-u="thumb" src="img/thumb-12.jpg" />
-                                        </div>-->
                             <a data-u="add" href="http://www.jssor.com" style="display:none">Jssor Slider</a>
 
                         </div>
@@ -325,6 +276,8 @@ ini_set("display_errors", 1);
                                                         $picture_path = 'pics/' . $newfilename;
                                                         //falta remover a first page para 0
                                                         //INSERIR NA TABELA MULTIMEDIA - FirstPage
+                                                        $MultimediaId = DB_getServiceCurrentFirstPagePic($pdo, $serv);
+                                                        DB_deleteServiceFirstPagePic($pdo, $MultimediaId);
                                                         $msg = DB_AddNewServiceFirstPagePicture($pdo, $serv, $user, $picture_path, 1);
                                                         //$msg = ('File uploaded successfully.');
                                                     }
@@ -427,7 +380,7 @@ ini_set("display_errors", 1);
                     <header class = "box-typical-header-sm">Edit Service </header>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
 
-                        <!--Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />-->
+                                <!--Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="image" class="img" />-->
                         Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="uploadFile" class="img" />
                         New Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple/><br/>
                         <div id="dvpreview"></div>
