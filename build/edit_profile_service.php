@@ -334,7 +334,7 @@ ini_set("display_errors", 1);
                             </div>
                         </div>
 
-                        <?= DB_DisplyPicuresToRemove($pdo, $service); ?>
+                        <?= DB_DisplyPicuresToRemove($pdo, $serviceId); ?>
 
                         <div class="slide">
                             <div class="user-card-row">
