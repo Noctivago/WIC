@@ -5,9 +5,8 @@ include ("./db/dbconn.php");
 
 <div class="page-content">
     <div class="container-fluid">
-        <div class="cards-grid" data-columns>
-            
-            					<div class="row">
+        
+        <div class="row">
 						<div class="col-md-3 col-sm-6">
 							<div class="checkbox">
 								<input type="checkbox" id="check-1">
@@ -49,6 +48,11 @@ include ("./db/dbconn.php");
 						</div>
 
 					</div><!--.row-->
+        
+        
+        <div class="cards-grid" data-columns>
+            
+            					
 
 
             <?php
