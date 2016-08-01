@@ -291,10 +291,10 @@ include '../build/db/session.php';
                 <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
-                <li class="gold with-sub">
+                <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="fa fa-camera-retro"></i>Reportage Photo & Video</a>
                 </li>
-                <li class="gold with-sub">
+                <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=8' ?>"><i class="fa fa-diamond"></i>Original</a>
                 </li>
                 <li class="brown with-sub">
