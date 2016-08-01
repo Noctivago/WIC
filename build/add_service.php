@@ -149,14 +149,14 @@ $msg = '';
 
                         <input type = "file" id = "uploadFile" accept = "images/*" name = "uploadFile" name="image" >
                         </button>
-                        <input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />
+                        <!--<input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />-->
 
                         Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
 
                         <button class = "btn btn-rounded btn-file" >
                             Add Pictures to my Album
 
-                            <input type="file" id="files" name="file[]" accept = "images/*" multiple>
+                            <input type="file" id="files" name="file[]" accept = "images/*" multiple/>
                         </button>
                         
                        
