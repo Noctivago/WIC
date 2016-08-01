@@ -40,7 +40,7 @@ if ($_SESSION['role'] === 'organization') {
 
                     </div><!--.profile-card-->
 
-                    </ul>
+                    <!--</ul>-->
 
                 </section>
             </div><!--.col- -->
