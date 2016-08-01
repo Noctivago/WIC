@@ -1,6 +1,9 @@
 <?php
-include ("includes/head_sideMenu.php");
-include ("./db/dbconn.php");
+include_once 'includes/head_sideMenu.php';
+include_once '../build/db/functions.php';
+include_once '../build/db/dbconn.php';
+include_once '../build/db/session.php';
+$msg = '';
 ?>
 
 <div class="page-content">
