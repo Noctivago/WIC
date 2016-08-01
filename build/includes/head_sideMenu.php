@@ -257,7 +257,8 @@ include '../build/db/session.php';
                                            required="required"
                                            name="qParam"
                                            type="search"
-                                           autocomplete="on">
+                                           autocomplete="on"
+                                           title="eg:sushi">
                                 </span>
                                 <span class="typeahead-button">
                                     <button type="submit">
