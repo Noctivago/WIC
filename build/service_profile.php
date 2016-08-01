@@ -263,6 +263,7 @@ $serviceId = (filter_var($_GET['Service']));
                         <!-- Arrow Navigator -->
                         <span data-u="arrowleft" class="jssora05l" style="top:158px;left:8px;width:40px;height:40px;"></span>
                         <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;" style="color: brown"></span>
+                        
                     </div>
                     <script>
                         jssor_1_slider_init();
@@ -274,7 +275,7 @@ $serviceId = (filter_var($_GET['Service']));
                 <?php
                     echo '<section class="">
                        <button class="btn btn-rounded btn-inline  font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
-                       <button class="btn btn-rounded btn-inline  font-icon-comments" style="color: brown"  onClick="openMyWics(' . $serviceId . ');"> Chat </button>           
+                       <button class="btn btn-rounded btn-inline brown font-icon-comments"   onClick="openMyWics(' . $serviceId . ');"> Chat </button>           
                      </section>';
                     ?>
 
