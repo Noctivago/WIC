@@ -449,8 +449,6 @@ $serviceId = (filter_var($_GET['Service']));
         console.log("load comments");
         //loadComments();
     }
-
-
     window.onload = load;
 </script>
 
