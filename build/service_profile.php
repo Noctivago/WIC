@@ -275,10 +275,10 @@ $serviceId = (filter_var($_GET['Service']));
                 </section><!--.box-typical-->
                 
                 <?php
-                    echo '<section class="center-block">
+                    echo '&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<section class="center-block">
                        <button class="btn btn-rounded btn-inline  font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
                        <button class="btn btn-rounded btn-inline btn-warning  font-icon-comments"   onClick="openMyWics(' . $serviceId . ');"> Chat </button>           
-                     </section>';
+                     </section>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;';
                     ?>
 
 
