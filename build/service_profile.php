@@ -56,7 +56,7 @@ $serviceId = (filter_var($_GET['Service']));
                 <section class="box-typical" style="background-color: transparent; border: 0px">
 
                     <script src="js/jssor.slider.min.js" type="text/javascript"></script>
-                   
+
                     <!-- use jssor.slider.debug.js instead for debug -->
                     <script>
                         jssor_1_slider_init = function () {
@@ -378,6 +378,9 @@ $serviceId = (filter_var($_GET['Service']));
                      </section>';
                     ?>
                 </section>
+
+                <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(<?= $serviceId; ?>);" </button>
+
                 <br>
 
 
