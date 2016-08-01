@@ -156,7 +156,7 @@ $msg = '';
                         <button class = "btn btn-rounded btn-file" >
                             Add Pictures to my Album
 
-                            <input type = "file" id = "files" name = "file[]" accept = "images/*" multiple >
+                            <input type="file" id="files" name="file[]" accept = "images/*" multiple>
                         </button>
                         
                        
