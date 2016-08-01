@@ -969,7 +969,7 @@ function db_getUserIndexInfo($pdo, $userId) {
             echo '<img src="' . $row['UPP'] . '" alt="Profile Pic" style = "max-width: 98px; max-height:98px;"/>';
             echo '</div>';
             echo '<div class = "profile-card-name">' . $row['UFN'] . ' ' . $row['ULN'] . '</div>';
-            echo '<div class = "profile-card-location" style="height: 0px;>' . $row['UEM'] . '</div>';
+            echo '<div class = "profile-card-location">' . $row['UEM'] . '</div>';
         }
     } catch (Exception $exc) {
         echo 'ERROR READING USER PROFILE';
