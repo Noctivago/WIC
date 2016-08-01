@@ -10,16 +10,16 @@ include ("./db/dbconn.php");
 						<!--<div class="col-md-3 col-sm-6">-->
                                                 <div class="form-group-checkbox">
 							<div class="checkbox">
-								<input type="checkbox" id="check-1">
+								<input type="checkbox" id="check-1" checked>
 								<label for="check-1">SubCategorie1</label>
                                                                 
                                                                 <input type="checkbox" id="check-2" checked>
 								<label for="check-2">SubCategorie2</label>
                                                                 
-                                                                <input type="checkbox" id="check-3" disabled>
+                                                                <input type="checkbox" id="check-3"checked >
 								<label for="check-3">SubCategorie3</label>
                                                                 
-                                                                <input type="checkbox" id="check-4" checked disabled>
+                                                                <input type="checkbox" id="check-4" checked >
 								<label for="check-4">SubCategorie4</label>
 							</div>
                                                 </div>
