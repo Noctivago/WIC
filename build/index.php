@@ -8,7 +8,7 @@ include ("./db/dbconn.php");
         
         <div class="row">
 						<!--<div class="col-md-3 col-sm-6">-->
-                                                <div class="form-control">
+                                                <div class="form-group-checkbox">
 							<div class="checkbox">
 								<input type="checkbox" id="check-1">
 								<label for="check-1">SubCategorie1</label>
