@@ -6,6 +6,49 @@ include ("./db/dbconn.php");
 <div class="page-content">
     <div class="container-fluid">
         <div class="cards-grid" data-columns>
+            
+            					<div class="row">
+						<div class="col-md-3 col-sm-6">
+							<div class="checkbox">
+								<input type="checkbox" id="check-1">
+								<label for="check-1">Check me out</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" id="check-2" checked>
+								<label for="check-2">Check me out</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" id="check-3" disabled>
+								<label for="check-3">Check me out</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" id="check-4" checked disabled>
+								<label for="check-4">Check me out</label>
+							</div>
+						</div>
+
+					</div><!--.row-->
+            					<div class="card-grid-col">
+						<div class="col-md-3 col-sm-6">
+							<div class="checkbox">
+								<input type="checkbox" id="check-1">
+								<label for="check-1">Check me out</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" id="check-2" checked>
+								<label for="check-2">Check me out</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" id="check-3" disabled>
+								<label for="check-3">Check me out</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" id="check-4" checked disabled>
+								<label for="check-4">Check me out</label>
+							</div>
+						</div>
+
+					</div><!--.row-->
 
 
             <?php
