@@ -248,7 +248,7 @@ include '../build/db/session.php';
                  <?php
                  
                  if ($_SESSION['role'] === 'organization') {
-        if(isset($id)) {
+         
             echo '<header class="side-menu-title">My Services search</header>';
         } else {
             echo '<header class="side-menu-title">Advanced Search</header>';
