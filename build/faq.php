@@ -424,7 +424,8 @@ include ("includes/head_sideMenu.php");
 						</article>
 					</section>
                                                 </div>
-
+                                                    </div>
+                
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
 
 <script src="js/lib/tether/tether.min.js"></script>
