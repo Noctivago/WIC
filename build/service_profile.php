@@ -56,7 +56,7 @@ $serviceId = (filter_var($_GET['Service']));
                 <section class="box-typical" style="background-color: transparent; border: 0px">
 
                     <script src="js/jssor.slider.min.js" type="text/javascript"></script>
-
+                   
                     <!-- use jssor.slider.debug.js instead for debug -->
                     <script>
                         jssor_1_slider_init = function () {
@@ -271,6 +271,8 @@ $serviceId = (filter_var($_GET['Service']));
 
                 </section><!--.box-typical-->
 
+
+
                 <section class="box-typical">
                     <!--<div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">-->
 
@@ -312,6 +314,7 @@ $serviceId = (filter_var($_GET['Service']));
                         <div class="tbl">
                             <div class="tbl-row">
                                 <div class="tbl-cell">
+
                                 </div>
                                 <div class="tbl-cell tbl-cell-action">
                                     <button onclick="addServiceComment(' . $serviceId . ');" class="btn btn-rounded">Send</button>
@@ -368,11 +371,11 @@ $serviceId = (filter_var($_GET['Service']));
                         echo '</article>';
                     }
                     ?>
-
-                    <section class="">
-                        <button class="btn btn-inline btn-warning-outline font-icon-plus-1" onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
-                    </section>
-
+                    <?php
+                    echo '<section class="">
+                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
+                     </section>';
+                    ?>
                 </section>
                 <br>
 
