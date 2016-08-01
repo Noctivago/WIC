@@ -73,7 +73,7 @@ include ("./db/dbconn.php");
             }
             ?>
 
-            style="overflow: hidden;max-height: 70px;"
+            
             
             
             
