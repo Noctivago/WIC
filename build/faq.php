@@ -421,6 +421,7 @@ include ("includes/head_sideMenu.php");
                                                                            <b> NOTE:</b> You can follow all the steps in real time on the center of your screen so you can preview the way the service will appear on the platform.
                                                                         </p>
 							</div>
+                                                        </div>
 						</article>
 					</section>
                                                 </div>
