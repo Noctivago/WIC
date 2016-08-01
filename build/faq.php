@@ -1,14 +1,22 @@
 <?php
-include_once 'includes/head_sideMenu.php';
-include_once '../build/db/functions.php';
+include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
-$msg = '';
 ?>
 
+    <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+    <link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+    <link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+    <link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+    <link href="img/favicon.png" rel="icon" type="image/png">
+    <link href="img/favicon.ico" rel="shortcut icon">
+
+    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
 <div class="page-content">
-		<div class="container-fluid">
-                     <div class="row">
+    <div class="container-fluid">
+        <div class="row">
                     <div class="box-typical box-typical-padding" style="height: 80px">
 				<h1 class="text-center">F.A.Q.</h1>
 				<br/>
@@ -435,17 +443,26 @@ $msg = '';
                 </div>
                                                     </div>                                                
                                                     
-					
-	<script src="js/lib/jquery/jquery.min.js"></script>
-	<script src="js/lib/tether/tether.min.js"></script>
-	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-	<script src="js/plugins.js"></script>
+        
+<script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
+<script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
+<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+
+<script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
+<script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<script src="js/lib/salvattore/salvattore.min.js"></script>  
+
         <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<!--	<script type="text/javascript">-->
+	<script type="text/javascript">
 	<script src="js/lib/ladda-button/spin.min.js"></script>
 	<script src="js/lib/ladda-button/ladda.min.js"></script>
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
