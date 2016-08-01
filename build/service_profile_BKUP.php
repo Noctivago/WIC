@@ -351,29 +351,38 @@ $serviceId = (filter_var($_GET['Service']));
                     $role = 'Service manager';
                     $role2 = 'Edit service information';
                     if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id']) || DB_validatePermissionEditInfo($pdo, $_SESSION['id'], $serviceId, $role) || DB_validatePermissionEditInfo($pdo, $_SESSION['id'], $serviceId, $role2)) {
-                        echo '<article class="friends-list-item">';
+                        echo '<article class="friends-list-item" style="width:300px">';
                         echo '    <div class="user-card-row">';
                         echo '      <div class="tbl-row">';
                         echo '        <div class="tbl-cell">';
-                        echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" style="margin-top: 10px;" role="button">Edit your service</a> ';
+                        echo '            <a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-inline btn-primary" style="margin-top: 10px;" role="button">Edit service</a> ';
                         if (db_checkServiceOrgBossServicePermission($pdo, $serviceId, $_SESSION['id'])) {
-                            echo '<a href="edit_profile_service.php?Service=' . $serviceId . '" class="btn btn-rounded" style="margin-top: 10px;" role="button">Delete your service</a>';
+//                            $orgIdentifier = DB_GetOrgIdByUserBossId($pdo, $_SESSION['id']);
+                            $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php';
+                            echo '<a onclick="removeService();" class="btn btn-inline btn-danger" style="margin-top: 10px;" role="button">Delete service</a>';
                         }
-                        echo '         </div>';
-                        echo '  </div>';
-                        echo ' </article>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</article>';
                     }
                     ?>
+                    <?php
+                    echo '<section class="">
+                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
+                     </section>';
+                    ?>
                 </section>
+
                 <br>
 
 
-                <section class="box-typical">
+                <section class="box-typical" style="width:270px">
                     <!--DISPLAY SERVICE USERS-->
                     <?= DB_getUsersInServiceOrganizationByService($pdo, $serviceId); ?>
                 </section>
 
-                <section class="box-typical">
+                <section class="box-typical" style="width:270px">
                     <!--DISPLAY ORG INFO-->
                     <?= DB_GetOrgInformationForService($pdo, $serviceId); ?>
                 </section>
