@@ -145,7 +145,7 @@ $msg = '';
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
                         <button class = "btn btn-rounded btn-file" >
-                            Change Picture
+                            Add Profile Picture
 
                         <input type = "file" id = "uploadFile" accept = "images/*" name = "uploadFile" name="image" >
                         </button>
@@ -154,7 +154,7 @@ $msg = '';
                         Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
 
                         <button class = "btn btn-rounded btn-file" >
-                            Change Picture
+                            Add Pictures to my Album
 
                             <input type = "file" id = "files" accept = "images/*" multiple name = "file[]"  >
                         </button>
