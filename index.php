@@ -1,8 +1,7 @@
 <?php
-include ("includes/head_sideMenu.php");
-include ("./db/dbconn.php");
+include ("build/includes/head_sideMenuPub.php");
+include ("build/db/dbconn.php");
 ?>
-
 <div class="page-content">
     <div class="container-fluid">
 
