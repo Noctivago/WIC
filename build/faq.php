@@ -1,9 +1,7 @@
 <?php
-include_once 'includes/head_sideMenu.php';
-include_once '../build/db/functions.php';
+include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
-$msg = '';
 ?>
 
    <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
