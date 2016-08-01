@@ -3,7 +3,6 @@
 //include_once '../includes/head_singleforms.php';
 include '../build/db/dbconn.php';
 include '../build/db/functions.php';
-include '../build/db/session.php';
 ?>
 
 <html>
