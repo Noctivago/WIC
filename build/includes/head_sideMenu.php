@@ -309,7 +309,7 @@ include '../build/db/session.php';
                         <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
                         </div>
-                        <header class="sign-title">Invite to my services</header>
+                        <header class="sign-title">Invite people to manage my services</header>
                         <div class="form-group">
                             <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
                         </div>';
