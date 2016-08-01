@@ -6,7 +6,7 @@ include ("./db/dbconn.php");
 <div class="page-content">
     <div class="container-fluid">
         
-        <div class="row">
+        <div class="row" style="padding-left: 35px;">
 						<!--<div class="col-md-3 col-sm-6">-->
                                                 <div class="form-group-checkbox">
 							<div class="checkbox">
