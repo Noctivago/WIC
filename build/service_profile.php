@@ -350,8 +350,6 @@ $serviceId = (filter_var($_GET['Service']));
 
 
             <div class="col-lg-3 col-md-6 col-sm-6" style="padding-right: 0px;">
-                <!--TESTE ADD2WIC-->
-                <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(<?= $serviceId; ?>);" </button>
                 <section class="">
                     <!--DISPLAY BOTAO EDIT AO BOSS-->
                     <?php
