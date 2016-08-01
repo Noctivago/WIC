@@ -28,8 +28,8 @@ include ("./db/dbconn.php");
 						</div>
 
 					</div><!--.row-->
-            					<div class="card-grid-col">
-						<div class="col-md-3 col-sm-6">
+            					<div class="row">
+						<div class="form-group-checkbox">
 							<div class="checkbox">
 								<input type="checkbox" id="check-1">
 								<label for="check-1">Check me out</label>
