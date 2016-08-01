@@ -1654,8 +1654,7 @@ Free for 3 Months</header>';
                 echo '<div class = "tbl-cell tbl-cell-action">';
 
 //falta inserir o iniciar chat
-                echo '<a href = "#" class = "plus-link-circle"><span>&plus;
-</span></a>';
+                echo '<a href = "#" class = "font-icon font-icon-comment"></a>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
