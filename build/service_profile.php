@@ -396,6 +396,7 @@ $serviceId = (filter_var($_GET['Service']));
     </div>
 </div>
 
+
 <script type="text/javascript">
     function addServiceComment(serviceId) {
         var comment = document.getElementById("userComment").value;
