@@ -124,6 +124,8 @@ include ("./db/dbconn.php");
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 
+
+
 <script>
     $(document).ready(function () {
         $('.panel').lobiPanel({

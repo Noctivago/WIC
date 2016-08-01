@@ -16,7 +16,7 @@ include_once '../build/db/session.php';
     
 <div class="page-content">
     <div class="container-fluid">
-        <div class="row">
+        
                     <div class="box-typical box-typical-padding" style="height: 80px">
 				<h1 class="text-center">F.A.Q.</h1>
 				<br/>
@@ -439,7 +439,7 @@ include_once '../build/db/session.php';
 					</section>
                                                 </div>
              
-                       </div>	
+                       	
                 </div>
                                                     </div>                                                
                                                     
