@@ -3,8 +3,8 @@ include ("includes/head_sideMenu.php");
 include_once '../build/db/dbconn.php';
 include_once '../build/db/session.php';
 $msg = '';
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
 ?>
 
 <div class="page-content">
