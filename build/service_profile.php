@@ -388,8 +388,8 @@ $serviceId = (filter_var($_GET['Service']));
                     ?>
                     
                 </section>
-                <section class="box-typical">
-                    <span class="lbl">Share</span>
+                <section class="">
+                    <h4 class="lbl" style="font: bold">Share</h4><br>
                     <a class="font-icon font-icon-facebook"></a>
                     <a class="font-icon font-icon-twitter"></a>
                     <a class="font-icon font-icon-instagram"></a>
