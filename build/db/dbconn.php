@@ -2527,7 +2527,7 @@ function DB_getServicesForIndex($pdo) {
 </a>
 </div>
 <div class = "tbl-cell">
-<p class = "user-card-row-name" style="overflow: hidden;max-height: 70px;"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
+<p class = "user-card-row-name" style="overflow: hidden;height: 70px;"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
 </div>
 </div>
 </div>
