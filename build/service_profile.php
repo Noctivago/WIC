@@ -7,66 +7,6 @@ $serviceId = (filter_var($_GET['Service']));
 //$link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/profile_org.php?Organization=' . $serviceId;
 ?>
 
-
-<script type="text/javascript">
-    function addServiceComment(serviceId) {
-        var comment = document.getElementById("userComment").value;
-        var sId = serviceId;
-        if (comment !== '') {
-            $.ajax({
-                url: 'ajax/addServiceComment.php',
-                method: 'post',
-                data: {comment: comment, sId: sId},
-                success: function (data) {
-                    //alert(data);
-                    loadComments();
-                    $('#userComment').val('');
-                }
-            });
-        }
-    }
-
-    function openMyWics(Sid) {
-        var x = (screen.width / 2) - (435 / 2);
-        var y = (screen.height / 2) - (362 / 2);
-        if (Sid > 0) {
-            window.open('./ajax/getMyWicsPopup.php?id=' + Sid + '', 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
-        } else {
-
-        }
-    }
-
-    function loadComments() {
-        $.ajax({
-            url: 'ajax/getServiceComment.php',
-            method: 'post',
-            data: {sId: <?= $serviceId; ?>},
-            success: function (data) {
-                $('.COMMENTS').html(data);
-            }
-        });
-    }
-
-    function removeService() {
-        $.ajax({
-            url: 'ajax/remove_service.php',
-            method: 'post',
-            data: {sId: <?= $serviceId; ?>},
-            success: function (data) {
-                if (data === 'OK') {
-                    window.location.replace("<?= $link; ?>");
-                }
-            }
-        });
-    }
-
-    function load() {
-        console.log("load comments");
-        //loadComments();
-    }
-    window.onload = load;
-</script>
-
 <style>
     /****** Rating Starts *****/
     @import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
@@ -119,71 +59,71 @@ $serviceId = (filter_var($_GET['Service']));
 
                     <!-- use jssor.slider.debug.js instead for debug -->
                     <script>
-    jssor_1_slider_init = function () {
+                        jssor_1_slider_init = function () {
 
-        var jssor_1_SlideshowTransitions = [
-            {x: 0.3, $During: {$Left: [0.3, 0.7]}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {x: -0.3, $SlideOut: true, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {x: -0.3, $During: {$Left: [0.3, 0.7]}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, x: 0.3, $SlideOut: true, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, y: 0.3, $During: {$Top: [0.3, 0.7]}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, y: -0.3, $SlideOut: true, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, y: -0.3, $During: {$Top: [0.3, 0.7]}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, y: 0.3, $SlideOut: true, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, x: 0.3, $Cols: 2, $During: {$Left: [0.3, 0.7]}, $ChessMode: {$Column: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, x: 0.3, $Cols: 2, $SlideOut: true, $ChessMode: {$Column: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, y: 0.3, $Rows: 2, $During: {$Top: [0.3, 0.7]}, $ChessMode: {$Row: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, y: 0.3, $Rows: 2, $SlideOut: true, $ChessMode: {$Row: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, y: 0.3, $Cols: 2, $During: {$Top: [0.3, 0.7]}, $ChessMode: {$Column: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, y: -0.3, $Cols: 2, $SlideOut: true, $ChessMode: {$Column: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, x: 0.3, $Rows: 2, $During: {$Left: [0.3, 0.7]}, $ChessMode: {$Row: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, x: -0.3, $Rows: 2, $SlideOut: true, $ChessMode: {$Row: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]}, $ChessMode: {$Column: 3, $Row: 12}, $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]}, $SlideOut: true, $ChessMode: {$Column: 3, $Row: 12}, $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, $Delay: 20, $Clip: 3, $Assembly: 260, $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, $Delay: 20, $Clip: 3, $SlideOut: true, $Assembly: 260, $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, $Delay: 20, $Clip: 12, $Assembly: 260, $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
-            {$Duration: 1200, $Delay: 20, $Clip: 12, $SlideOut: true, $Assembly: 260, $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2}
-        ];
+                            var jssor_1_SlideshowTransitions = [
+                                {x: 0.3, $During: {$Left: [0.3, 0.7]}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {x: -0.3, $SlideOut: true, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {x: -0.3, $During: {$Left: [0.3, 0.7]}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, x: 0.3, $SlideOut: true, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, y: 0.3, $During: {$Top: [0.3, 0.7]}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, y: -0.3, $SlideOut: true, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, y: -0.3, $During: {$Top: [0.3, 0.7]}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, y: 0.3, $SlideOut: true, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, x: 0.3, $Cols: 2, $During: {$Left: [0.3, 0.7]}, $ChessMode: {$Column: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, x: 0.3, $Cols: 2, $SlideOut: true, $ChessMode: {$Column: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, y: 0.3, $Rows: 2, $During: {$Top: [0.3, 0.7]}, $ChessMode: {$Row: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, y: 0.3, $Rows: 2, $SlideOut: true, $ChessMode: {$Row: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, y: 0.3, $Cols: 2, $During: {$Top: [0.3, 0.7]}, $ChessMode: {$Column: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, y: -0.3, $Cols: 2, $SlideOut: true, $ChessMode: {$Column: 12}, $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, x: 0.3, $Rows: 2, $During: {$Left: [0.3, 0.7]}, $ChessMode: {$Row: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, x: -0.3, $Rows: 2, $SlideOut: true, $ChessMode: {$Row: 3}, $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]}, $ChessMode: {$Column: 3, $Row: 12}, $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]}, $SlideOut: true, $ChessMode: {$Column: 3, $Row: 12}, $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, $Delay: 20, $Clip: 3, $Assembly: 260, $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, $Delay: 20, $Clip: 3, $SlideOut: true, $Assembly: 260, $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, $Delay: 20, $Clip: 12, $Assembly: 260, $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2},
+                                {$Duration: 1200, $Delay: 20, $Clip: 12, $SlideOut: true, $Assembly: 260, $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear}, $Opacity: 2}
+                            ];
 
-        var jssor_1_options = {
-            $AutoPlay: false,
-            $SlideshowOptions: {
-                $Class: $JssorSlideshowRunner$,
-                $Transitions: jssor_1_SlideshowTransitions,
-                $TransitionsOrder: 1
-            },
-            $ArrowNavigatorOptions: {
-                $Class: $JssorArrowNavigator$
-            },
-            $ThumbnailNavigatorOptions: {
-                $Class: $JssorThumbnailNavigator$,
-                $Cols: 10,
-                $SpacingX: 8,
-                $SpacingY: 8,
-                $Align: 360
-            }
-        };
+                            var jssor_1_options = {
+                                $AutoPlay: false,
+                                $SlideshowOptions: {
+                                    $Class: $JssorSlideshowRunner$,
+                                    $Transitions: jssor_1_SlideshowTransitions,
+                                    $TransitionsOrder: 1
+                                },
+                                $ArrowNavigatorOptions: {
+                                    $Class: $JssorArrowNavigator$
+                                },
+                                $ThumbnailNavigatorOptions: {
+                                    $Class: $JssorThumbnailNavigator$,
+                                    $Cols: 10,
+                                    $SpacingX: 8,
+                                    $SpacingY: 8,
+                                    $Align: 360
+                                }
+                            };
 
-        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+                            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
-        //responsive code begin
-        //you can remove responsive code if you don't want the slider scales while window resizing
-        function ScaleSlider() {
-            var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-            if (refSize) {
-                refSize = Math.min(refSize, 800);
-                jssor_1_slider.$ScaleWidth(refSize);
-            } else {
-                window.setTimeout(ScaleSlider, 30);
-            }
-        }
-        ScaleSlider();
-        $Jssor$.$AddEvent(window, "load", ScaleSlider);
-        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-        //responsive code end
-    };
+                            //responsive code begin
+                            //you can remove responsive code if you don't want the slider scales while window resizing
+                            function ScaleSlider() {
+                                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                                if (refSize) {
+                                    refSize = Math.min(refSize, 800);
+                                    jssor_1_slider.$ScaleWidth(refSize);
+                                } else {
+                                    window.setTimeout(ScaleSlider, 30);
+                                }
+                            }
+                            ScaleSlider();
+                            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+                            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+                            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+                            //responsive code end
+                        };
                     </script>
 
                     <style>
@@ -456,37 +396,94 @@ $serviceId = (filter_var($_GET['Service']));
     </div>
 </div>
 
+
+<script type="text/javascript">
+    function addServiceComment(serviceId) {
+        var comment = document.getElementById("userComment").value;
+        var sId = serviceId;
+        if (comment !== '') {
+            $.ajax({
+                url: 'ajax/addServiceComment.php',
+                method: 'post',
+                data: {comment: comment, sId: sId},
+                success: function (data) {
+                    //alert(data);
+                    loadComments();
+                    $('#userComment').val('');
+                }
+            });
+        }
+    }
+
+    function openMyWics(Sid) {
+        var x = (screen.width / 2) - (435 / 2);
+        var y = (screen.height / 2) - (362 / 2);
+        if (Sid > 0) {
+            window.open('./ajax/getMyWicsPopup.php?id=' + Sid + '', 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
+        } else {
+
+        }
+    }
+
+    function loadComments() {
+        $.ajax({
+            url: 'ajax/getServiceComment.php',
+            method: 'post',
+            data: {sId: <?= $serviceId; ?>},
+            success: function (data) {
+                $('.COMMENTS').html(data);
+            }
+        });
+    }
+
+    function removeService() {
+        $.ajax({
+            url: 'ajax/remove_service.php',
+            method: 'post',
+            data: {sId: <?= $serviceId; ?>},
+            success: function (data) {
+                if (data === 'OK') {
+                    window.location.replace("<?= $link; ?>");
+                }
+            }
+        });
+    }
+
+    function load() {
+        console.log("load comments");
+        //loadComments();
+    }
+    window.onload = load;
+</script>
+
 <script src = "js/lib/jquery/jquery.min.js" type = "text/javascript"></script>
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
-
 <script src="js/lib/tether/tether.min.js"></script>
 <script src="js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
-
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
 
 <script>
-                        $(document).ready(function () {
-                            $("#demo1 .stars").click(function () {
+    $(document).ready(function () {
+        $("#demo1 .stars").click(function () {
 
-                                $.post('ajax/rating.php', {rate: $(this).val(), service: <?= $serviceId; ?>}, function (d) {
-                                    if (d > 0)
-                                    {
-                                        alert('You already rated this service!');
-                                    } else {
-                                        alert('Thanks For Rating');
-                                        //alert(d);
-                                    }
-                                });
-                                $(this).attr("checked");
-                            });
-                        });
+            $.post('ajax/rating.php', {rate: $(this).val(), service: <?= $serviceId; ?>}, function (d) {
+                if (d > 0)
+                {
+                    alert('You already rated this service!');
+                } else {
+                    alert('Thanks For Rating');
+                    //alert(d);
+                }
+            });
+            $(this).attr("checked");
+        });
+    });
 </script>
 
 <script>
@@ -644,7 +641,6 @@ $serviceId = (filter_var($_GET['Service']));
 <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
 <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
 <script src="js/lib/select2/select2.full.min.js"></script>
-
 <script src="js/app.js"></script>
 
 </body>
