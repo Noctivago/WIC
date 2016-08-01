@@ -7,47 +7,25 @@ include ("./db/dbconn.php");
     <div class="container-fluid">
         
         <div class="row">
-						<div class="col-md-3 col-sm-6">
+						<!--<div class="col-md-3 col-sm-6">-->
 							<div class="checkbox">
 								<input type="checkbox" id="check-1">
-								<label for="check-1">Check me out</label>
+								<label for="check-1">SubCategorie1</label>
+                                                                
+                                                                <input type="checkbox" id="check-2" checked>
+								<label for="check-2">SubCategorie2</label>
+                                                                
+                                                                <input type="checkbox" id="check-3" disabled>
+								<label for="check-3">SubCategorie3</label>
+                                                                
+                                                                <input type="checkbox" id="check-4" checked disabled>
+								<label for="check-4">SubCategorie4</label>
 							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="check-2" checked>
-								<label for="check-2">Check me out</label>
-							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="check-3" disabled>
-								<label for="check-3">Check me out</label>
-							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="check-4" checked disabled>
-								<label for="check-4">Check me out</label>
-							</div>
-						</div>
+
+						<!--</div>-->
 
 					</div><!--.row-->
-            					<div class="row">
-						<div class="form-group-checkbox">
-							<div class="checkbox">
-								<input type="checkbox" id="check-1">
-								<label for="check-1">Check me out</label>
-							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="check-2" checked>
-								<label for="check-2">Check me out</label>
-							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="check-3" disabled>
-								<label for="check-3">Check me out</label>
-							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="check-4" checked disabled>
-								<label for="check-4">Check me out</label>
-							</div>
-						</div>
 
-					</div><!--.row-->
         
         
         <div class="cards-grid" data-columns>
