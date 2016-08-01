@@ -2547,7 +2547,7 @@ function DB_getServicesForIndex($pdo) {
 
 <div  class="card-typical-likes">
 
-<button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+<button class="font-icon font-icon-plus" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
 <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
 
 
@@ -3636,10 +3636,9 @@ function DB_GetSubCategories($pdo, $Category) {
             <div class="form-group-checkbox">
                 <div class="checkbox">';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<input type="checkbox" id="' . $row['SCID'] . '" checked>';
+            echo '<input type="checkbox" id="' . $row['SCID'] . '">';
             echo '<label for="' . $row['SCID'] . '">' . $row['SCNA'] . '</label>';
         }
-        //return $orgBossId;
         echo ' </div>
                 </div>
         </div>
