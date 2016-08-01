@@ -14,8 +14,21 @@ include_once '../build/db/session.php';
                 
                 
                 <section class="box-typical">
-                    <header class="box-typical-header-sm">
-                        Services
+        <?php
+                 
+         if ($_SESSION['role'] === 'organization') {
+         
+            echo '<header class="box-typical-header-sm">
+                        My Services';
+        } else {
+            echo '<header class="box-typical-header-sm">
+                        Services';
+        }
+        ?>
+                    
+                    
+<!--                    <header class="box-typical-header-sm">
+                        Services-->
                         <div class="slider-arrs">
                             <button type="button" class="posts-slider-prev">
                                 <i class="font-icon font-icon-arrow-left"></i>
