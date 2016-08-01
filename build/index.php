@@ -73,6 +73,13 @@ include ("./db/dbconn.php");
             }
             ?>
 
+            style="overflow: hidden;max-height: 70px;"
+            
+            
+            
+            
+            
+            
         </div><!--.card-grid-->
         <div class="clear"></div>
         <div style="padding-left: 500px;">
