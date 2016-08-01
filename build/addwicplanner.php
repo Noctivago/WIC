@@ -28,6 +28,7 @@ if (isset($id) && isset($uid)) {
 <!--    <div class="page-center">
         <div class="page-center-in">-->
 <div class="container-fluid">
+    
     <!--DIV ESTAVA COMO FORM-->
     <div class="sign-box">
         <div class="title-label" style="align:center;"> <h3 style="padding-left: 60px; color: #3299CC;"><i class="font-icon font-icon-plus "></i>&ensp;New Event</h3></div>
@@ -42,7 +43,7 @@ if (isset($id) && isset($uid)) {
             </span>
         </div>
         <span id="textelement" class="form-control" style="border:0px"></span>
-        <button onclick="addWic(<?= $wicId; ?>);" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
+        <button  onclick="addWic(<?= $wicId; ?>);" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
     </div>
 </div>
 
