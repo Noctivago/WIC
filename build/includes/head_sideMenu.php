@@ -166,7 +166,7 @@ include '../build/db/session.php';
                             </div>
 
                             <div class="dropdown user-menu">
-                                <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true"  aria-expanded="false">
                                     <img src="img/avatar-2-64.png" alt="">
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
@@ -179,7 +179,7 @@ include '../build/db/session.php';
                                     if ($_SESSION['role'] == 'organization') {
                                         echo ' <a class="dropdown-item" href="profile_org.php?Organization=' . $idOrg . '"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
                                         echo ' <a class="dropdown-item" href="edit_profile_org.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
-                                        echo ' <a class="dropdown-item" href="add_service.php"><span class="font-icon glyphicon glyphicon-cog"></span>New Service</a>';
+                                        echo ' <a class="dropdown-item" href="add_service.php"><span class="fa fa-paper-plane"></span>New Service</a>';
                                         echo ' <a class="dropdown-item" href="invites.php"><span class="font-icon glyphicon glyphicon-cog"></span>My Team</a>';
                                     } else {
                                         echo '<a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
@@ -274,16 +274,16 @@ include '../build/db/session.php';
 
                 <header class="side-menu-title">Start Planning</header>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="font-icon font-icon-earth-bordered"></i> Space</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-spoon"></i> Food</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-cutlery"></i> Food</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=3' ?>"><i class="fa fa-film"></i> Entertainment</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=3' ?>"><i class="fa fa-music"></i> Entertainment</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=4' ?>"><i class="fa fa-tree"></i>Decoration</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=4' ?>"><i class="fa fa-star"></i>Decoration</a>
                 </li>
                 <li class="gold with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
@@ -292,10 +292,10 @@ include '../build/db/session.php';
                     <a class="lbl" href="<?= $selfUrl . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="font-icon font-icon-cam-photo"></i>Reportage Photo & Video</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="fa fa-camera-retro"></i>Reportage Photo & Video</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=8' ?>"><i class="fa fa-gift"></i>Original</a>
+                    <a class="lbl" href="<?= $selfUrl . '&Category=8' ?>"><i class="fa fa-diamond"></i>Original</a>
                 </li>
                 <li class="gold with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=9' ?>"><i class="font-icon font-icon-users-group"></i>Team Building</a>
