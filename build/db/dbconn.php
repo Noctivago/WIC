@@ -3617,3 +3617,35 @@ function DB_deleteServiceSecondaryPagePic($pdo, $MultimediaId) {
         return false;
     }
 }
+
+/**
+ * 
+ * @param type $pdo
+ * @param type $service_Id
+ * @return type
+ */
+function DB_GetSubCategories($pdo, $Category) {
+    try {
+        $stmt = $pdo->prepare("SELECT [Sub_Category].[Id] AS SCID, [Sub_Category].[Name] AS SCNA, [Sub_Category].[Category_id] 
+            FROM [Sub_Category]
+            WHERE [Sub_Category].[Category_Id] =:id");
+        $stmt->bindParam(':id', $Category);
+        $stmt->execute();
+        echo '<div class="row" style="padding-left: 35px;">
+            <div class="col-md-3 col-sm-6">
+            <div class="form-group-checkbox">
+                <div class="checkbox">';
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo '<input type="checkbox" id="' . $row['SCID'] . '" checked>';
+            echo '<label for="' . $row['SCID'] . '">' . $row['SCNA'] . '</label>';
+        }
+        //return $orgBossId;
+        echo ' </div>
+                </div>
+        </div>.row
+        <br>
+        <br>';
+    } catch (Exception $ex) {
+        echo 'error';
+    }
+}
