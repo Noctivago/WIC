@@ -3643,6 +3643,8 @@ function DB_GetSubCategories($pdo, $Category) {
                 </div>
         </div>
         <br>
+        <br>
+        <br>
         <br>';
     } catch (Exception $ex) {
         echo 'error';
