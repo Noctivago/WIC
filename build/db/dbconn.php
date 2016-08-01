@@ -2521,11 +2521,7 @@ function DB_getServicesForIndex($pdo) {
 <div class = "card-typical-section">
 <div class = "user-card-row">
 <div class = "tbl-row">
-<div class = "tbl-cell tbl-cell-photo">
-<a href = "profile_org.php?Organization=' . $row['OID'] . '">
-<img src = "' . $row['OPP'] . '" alt = "Avatar">
-</a>
-</div>
+
 <div class = "tbl-cell">
 <p class = "user-card-row-name" ><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
 </div>
