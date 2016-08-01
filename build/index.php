@@ -26,60 +26,7 @@ include ("./db/dbconn.php");
 								<label for="check-4">Check me out</label>
 							</div>
 						</div>
-						<div class="col-md-3 col-sm-6">
-							<div class="radio">
-								<input type="radio" name="optionsRadios" id="radio-1" value="option1">
-								<label for="radio-1">Option one </label>
-							</div>
-							<div class="radio">
-								<input type="radio" name="optionsRadios" id="radio-2" value="option2" checked>
-								<label for="radio-2">Option two </label>
-							</div>
-							<div class="radio">
-								<input type="radio" name="optionsRadios" id="radio-3" value="option3" disabled>
-								<label for="radio-3">Option three is disabled</label>
-							</div>
-							<div class="radio">
-								<input type="radio" name="optionsRadios2" id="radio-4" value="option4" checked disabled>
-								<label for="radio-4">Option four is disabled</label>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6">
-							<div class="checkbox-slide">
-								<input type="checkbox" id="check-slide-1" />
-								<label for="check-slide-1">Slide</label>
-							</div>
-							<div class="checkbox-slide">
-								<input type="checkbox" id="check-slide-2" checked />
-								<label for="check-slide-2">Slide checked</label>
-							</div>
-							<div class="checkbox-slide">
-								<input type="checkbox" id="check-slide-3" disabled />
-								<label for="check-slide-3">Slide disabled</label>
-							</div>
-							<div class="checkbox-slide">
-								<input type="checkbox" id="check-slide-4" checked disabled />
-								<label for="check-slide-4">Slide checked disabled</label>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6">
-							<div class="checkbox-toggle">
-								<input type="checkbox" id="check-toggle-1" />
-								<label for="check-toggle-1">Toggle</label>
-							</div>
-							<div class="checkbox-toggle">
-								<input type="checkbox" id="check-toggle-2" checked />
-								<label for="check-toggle-2">Toggle checked</label>
-							</div>
-							<div class="checkbox-toggle">
-								<input type="checkbox" id="check-toggle-3" disabled />
-								<label for="check-toggle-3">Toggle disabled</label>
-							</div>
-							<div class="checkbox-toggle">
-								<input type="checkbox" id="check-toggle-4" checked disabled />
-								<label for="check-toggle-4">Toggle checked disabled</label>
-							</div>
-						</div>
+
 					</div><!--.row-->
 
 
