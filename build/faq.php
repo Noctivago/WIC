@@ -64,8 +64,8 @@ include ("includes/head_sideMenu.php");
 											</div>
 										</div>
 									</div>
-								    <p>If you’re a supplier: Register here (link here)<br></p>
-                                                                    <p>If you’re a user: Register here (link here)<br></p>
+								    <p>If you’re a supplier: Register <a href="sign_up_org.php">here</a><br></p>
+                                                                    <p>If you’re a user: Register <a href="sign_up_user.php">here</a><br></p>
                                                                     <p>You can use your email address to register or login using your Facebook account.</p>
 						</div>
 							</div>
