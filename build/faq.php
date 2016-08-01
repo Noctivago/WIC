@@ -418,7 +418,7 @@ include ("includes/head_sideMenu.php");
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     a.	You can upload 1 or more photos that better represent what your service is. Be careful, a photo is worth a thousand words.<br><br><br>
                                                                            6.	Finalize:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     a.	Just click the “Upload” button to post your service online or add more services by clicking the “Add more services” button.<br><br><br>
-                                                                                       NOTE: You can follow all the steps in real time on the center of your screen so you can preview the way the service will appear on the platform.
+                                                                           <b> NOTE:</b> You can follow all the steps in real time on the center of your screen so you can preview the way the service will appear on the platform.
                                                                         </p>
 							</div>
 						</article>
