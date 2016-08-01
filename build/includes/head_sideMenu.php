@@ -276,7 +276,7 @@ include '../build/db/session.php';
                 <li class="orange">
                     <a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="fa fa-bank"></i> Space</a>
                 </li>
-                <li class="orange with-sub">
+                <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-cutlery"></i> Food</a>
                 </li>
                 <li class="gold with-sub">
