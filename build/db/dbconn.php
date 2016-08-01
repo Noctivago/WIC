@@ -3636,10 +3636,9 @@ function DB_GetSubCategories($pdo, $Category) {
             <div class="form-group-checkbox">
                 <div class="checkbox">';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<input type="checkbox" id="' . $row['SCID'] . '" checked>';
+            echo '<input type="checkbox" id="' . $row['SCID'] . '">';
             echo '<label for="' . $row['SCID'] . '">' . $row['SCNA'] . '</label>';
         }
-        //return $orgBossId;
         echo ' </div>
                 </div>
         </div>
