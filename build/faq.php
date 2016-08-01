@@ -434,7 +434,7 @@ include ("includes/head_sideMenu.php");
         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
-                                           
+<!--                                           
 					
 	<script src="js/lib/jquery/jquery.min.js"></script>
 	<script src="js/lib/tether/tether.min.js"></script>
@@ -444,7 +444,7 @@ include ("includes/head_sideMenu.php");
 	<script src="js/lib/ladda-button/ladda.min.js"></script>
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.contextMenu.min.js"></script>
-	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>-->
 	
         <script>
 		$(document).ready(function() {
