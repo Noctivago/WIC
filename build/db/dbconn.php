@@ -3461,7 +3461,7 @@ function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
         [Service].[Description] AS SDE,
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
-        [Organization].[Picture_Path] AS OPP,
+        [Organization].[Picture_Path] AS OPP, 
         [Multimedia].[Multimedia_Path] AS MPP
         FROM SERVICE
         join [Multimedia]
