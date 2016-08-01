@@ -1737,7 +1737,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             $views = DB_GetNumberServiceViews($pdo, $row['SID']);
             $comments = DB_GetNumberServiceComments($pdo, $row['SID']);
             echo '<div class = "slide">';
-            echo '<article class = "post-announce" style="width:200px; height:200px;" >';
+            echo '<article class = "post-announce" style="width:200px; >';
             echo '<div class = "post-announce-pic">';
             echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">';
             echo ' <img src = "' . $row['MPP'] . '" alt = "" >';
