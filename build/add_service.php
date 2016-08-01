@@ -152,14 +152,14 @@ $msg = '';
                         <!--<input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />-->
 
                         <!--Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple class = "btn btn-rounded btn-file"><br/>-->
-<div id="dvpreview">
+
                         <button class = "btn btn-rounded btn-file" >
                             Add Pictures to my Album
 
                              Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
-                              
+                             <div id="dvpreview"></div>
                         </button>
-</div>
+
                         
                        
                         <div id="dvpreview"></div>
