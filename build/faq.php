@@ -4,7 +4,7 @@ include ("includes/head_sideMenu.php");
 
 <div class="page-content">
 		<div class="container-fluid">
-			<div class="box-typical box-typical-padding">
+                    <div class="box-typical box-typical-padding" style="height: 80px">
 				<h1 class="text-center">F.A.Q.</h1>
 				<br/>
 				
