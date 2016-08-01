@@ -2863,8 +2863,8 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         WHERE [Enabled] = 1
         AND [User_Id] = ?", array($userId), "rows");
         if (DB_checkIfUserHaveWicPlanner($pdo, $userId)) {
-            echo '<div class="title-label" style="align:center;"> <button class="btn btn-rounded btn-inline btn-primary" style="padding-left: 60px; color: #3299CC;"><i class="font-icon font-icon-plus "></i>&ensp;New Event</button></div>
-                <h3>WiC Planner - The notepad for event planners</h3>
+            echo '<div class="title-label" style="align:center;"> <button class="btn btn-rounded btn-inline btn-primary" ><i class="font-icon font-icon-plus "></i>&ensp;New Event</button></div>
+                <h6>WiC Planner - The notepad for event planners</h6>
                 <header class="sign-title">#Choose a WiC Planner?</header>';
             echo '<div class="form-group">';
             echo '<select class = "bootstrap-select bootstrap-select-arrow" id = "myWics" name = "myWics">';
