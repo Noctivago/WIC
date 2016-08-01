@@ -381,9 +381,9 @@ $serviceId = (filter_var($_GET['Service']));
                     }
                     ?>
                     <?php
-                    echo '<section class="">
-                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
-                     </section>';
+//                    echo '<section class="">
+//                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
+//                     </section>';
                     ?>
                     
                 </section>
