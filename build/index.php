@@ -32,9 +32,6 @@ include ("./db/dbconn.php");
         
         <div class="cards-grid" data-columns>
             
-            					
-
-
             <?php
             //name
             if (isset($_GET ['Category']) && !isset($_GET ['qParam']) && !isset($_GET ['name'])) {
