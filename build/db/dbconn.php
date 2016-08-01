@@ -2590,7 +2590,7 @@ function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
   join [Role]
   on [Role].[Id] = [User_Service].[Role_Id]
   where [Service_Id] = ? and [User_Service].[Enabled] = 1", array($idService), "rows");
-            echo '<header class = "box-typical-header-sm">People in responsible </header>
+            echo '<header class = "box-typical-header-sm">People in charge </header>
 <div class = "friends-list stripped">';
             foreach ($rows as $row) {
                 echo '<article class = "friends-list-item">';
