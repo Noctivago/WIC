@@ -2946,7 +2946,8 @@ function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
         [Service].[Description] AS SDE,
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
-        [Organization].[Picture_Path] AS OPP
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
         FROM SERVICE
         join [Multimedia]
         on [Multimedia].[Service_Id] = [Service].[Id]
@@ -3016,7 +3017,8 @@ function DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $category
         [Service].[Description] AS SDE,
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
-        [Organization].[Picture_Path] AS OPP
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
         FROM SERVICE
         join [Multimedia]
         on [Multimedia].[Service_Id] = [Service].[Id]
@@ -3087,7 +3089,8 @@ function DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $categoryId) {
         [Service].[Description] AS SDE,
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
-        [Organization].[Picture_Path] AS OPP
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
         FROM SERVICE
         join [Multimedia]
         on [Multimedia].[Service_Id] = [Service].[Id]
@@ -3456,7 +3459,8 @@ function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
         [Service].[Description] AS SDE,
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
-        [Organization].[Picture_Path] AS OPP
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
         FROM SERVICE
         join [Multimedia]
         on [Multimedia].[Service_Id] = [Service].[Id]
