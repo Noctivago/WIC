@@ -2940,28 +2940,24 @@ Function DB_checkIfServiceExistsOnWicPlanner($pdo, $wicId, $serviceId) {
  */
 function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
     try {
-        $rows = sql($pdo, "SELECT 
+        $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
-        [Organization].[Picture_Path] AS OPP
-        FROM SERVICE
-        join [Multimedia]
-        on [Multimedia].[Service_Id] = [Service].[Id]
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
+        FROM [Service]
         join [Organization]
         on [Organization].[Id] = [Service].[Organization_Id]
-        join [Sub_Category]
-        on [Service].[Sub_Category_Id] = [Sub_Category].[Id]
-        join [Category]
-        on [Category].[Id] = [Sub_Category].[Id]
-        WHERE
-        [Organization].[Enabled] = 1 
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
+        AND [Organization].[Enabled] = 1 
         AND [Service].[Enabled] = 1 
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
-        AND [Category].[Id] =  ?", array($CategoryId), "rows");
+		AND [Service].[Sub_Category_Id] = ?", array($CategoryId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
             <article class = "card-typical">
@@ -3450,30 +3446,28 @@ function DB_getServicesForIndexByCity($pdo, $CityId) {
 
 function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
     try {
-        $rows = sql($pdo, "SELECT 
+        $rows = sql($pdo, "SELECT
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
-        [Organization].[Picture_Path] AS OPP
-        FROM SERVICE
-        join [Multimedia]
-        on [Multimedia].[Service_Id] = [Service].[Id]
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP,
+		[Service].[City_id]
+        FROM [Service]
         join [Organization]
         on [Organization].[Id] = [Service].[Organization_Id]
-        join [Sub_Category]
-        on [Service].[Sub_Category_Id] = [Sub_Category].[Id]
-        join [Category]
-        on [Category].[Id] = [Sub_Category].[Id]
-        WHERE
-        [Organization].[Enabled] = 1 
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
+		join [City]
+		on [Service].[City_Id] = [City].[Id]
+        AND [Organization].[Enabled] = 1 
         AND [Service].[Enabled] = 1 
         AND [Multimedia].[Enabled] = 1  
-        AND [Multimedia].[First_Page] =  1"
-                . "AND [Category].[Id] = ? "
-                . "AND [Service].[City_Id] = ?", array($CityId, $Category), "rows");
-
+        AND [Multimedia].[First_Page] = 1
+		AND [Service].[City_Id] = ?
+		AND [Service].[Sub_Category_Id] = ?", array($CityId, $Category), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
         <article class = "card-typical">
