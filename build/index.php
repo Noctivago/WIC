@@ -6,7 +6,7 @@ include ("./db/dbconn.php");
 <div class="page-content">
     <div class="container-fluid">
 
-        <?php
+        <?php  
         if (isset($_GET ['Category'])) {
             $CategoryId = (filter_var($_GET ['Category']));
             DB_GetSubCategories($pdo, $CategoryId);
