@@ -8,6 +8,7 @@ include ("./db/dbconn.php");
         
         <div class="row">
 						<!--<div class="col-md-3 col-sm-6">-->
+                                                <div class="form-control">
 							<div class="checkbox">
 								<input type="checkbox" id="check-1">
 								<label for="check-1">SubCategorie1</label>
@@ -21,6 +22,7 @@ include ("./db/dbconn.php");
                                                                 <input type="checkbox" id="check-4" checked disabled>
 								<label for="check-4">SubCategorie4</label>
 							</div>
+                                                </div>
 
 						<!--</div>-->
 
