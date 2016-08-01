@@ -274,6 +274,7 @@ $serviceId = (filter_var($_GET['Service']));
                 <?php
                     echo '<section class="">
                        <button class="btn btn-rounded btn-inline  font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
+                       <button class="btn btn-rounded btn-inline  font-icon-comments"  onClick="openMyWics(' . $serviceId . ');"> Chat </button>           
                      </section>';
                     ?>
 
