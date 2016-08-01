@@ -365,9 +365,9 @@ $serviceId = (filter_var($_GET['Service']));
                             $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php';
                             echo '<a onclick="removeService();" class="btn btn-inline btn-danger" style="margin-top: 10px;" role="button">Delete service</a>';
                         }
-                        echo '         </div>';
-                        echo '  </div>';
-                        echo ' </article>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</article>';
                     }
                     ?>
                     <?php
