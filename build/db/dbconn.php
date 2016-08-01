@@ -1654,8 +1654,9 @@ Free for 3 Months</header>';
                 echo '<div class = "tbl-cell tbl-cell-action">';
 
 //falta inserir o iniciar chat
-                echo '<a href = "#" class = "plus-link-circle"><span>&plus;
-</span></a>';
+                echo '<button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onclick="openMyWics(17);" <="" button=""><a class="card-typical-likes">
+            </a>
+            </button>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
