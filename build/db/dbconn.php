@@ -2544,7 +2544,7 @@ function DB_getServicesForIndex($pdo) {
 <div  class="card-typical-likes">
 
 <button class="btn btn-rounded btn-inline btn-primary-outline font-icon-plus" style="width: 41px;height: 29px;border-color:white;    padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
-<button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+<button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;    padding-left: 10px;padding-right: 10px;padding-top: 3px;  onClick = "openMyWics(' . $row['SID'] . ');" </button>
 
 
 </div>
