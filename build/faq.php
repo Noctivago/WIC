@@ -366,13 +366,13 @@ include ("includes/head_sideMenu.php");
 											</div>
 										</div>
 									</div>
-                                                                        <p>&nbsp;&nbsp;   1.	Search</p>
+                                                                        <b>&nbsp;&nbsp;   1.	Search</b>
                                                                         <p>WiC is a platform with suppliers from 10 countries and more than 20 cities around the world. All you have to do is tell us where your event is on the search box at the landing page to discover all the available services.</p>
                                                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a.	Tools to help you search: Each service has photos and descriptions, supplier profiles and reviews to help you select the perfect service for your event. Also on the left side of the screen, a set of icons help you filter the services by type (Space, Food, Entertainment, Decoration, Team Building, Photographer & Videographer, Audiovisual and Original) in order to easily find the right one for you.</p>
-                                                                        <p>&nbsp;&nbsp;   2.	Contact suppliers to book the service</p>
+                                                                        <b>&nbsp;&nbsp;   2.	Contact suppliers to book the service</b>
                                                                         <p>After choosing the right service for your event, you can get in touch with the suppliers by clicking the chat button on the service page with a conversation balloon icon.</p>
                                                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a.	Tools to help you communicate with your suppliers: You can text chat the suppliers and bargain the prices instantaneously.</p>
-                                                                        <p>&nbsp;&nbsp;   3.	WiC planner</p>
+                                                                        <b>&nbsp;&nbsp;   3.	WiC planner</b>
                                                                         <p>WiC planner is a tool that helps you organize all the services you need for your event, just like a notepad. You can save all the notes on your account, so you can check them in the future when organizing similar events.</p>
 
 									
@@ -418,7 +418,7 @@ include ("includes/head_sideMenu.php");
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     a.	You can upload 1 or more photos that better represent what your service is. Be careful, a photo is worth a thousand words.<br><br><br>
                                                                            6.	Finalize:<br>
                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     a.	Just click the “Upload” button to post your service online or add more services by clicking the “Add more services” button.<br><br><br>
-                                                                                       NOTE: You can follow all the steps in real time on the center of your screen so you can preview the way the service will appear on the platform.
+                                                                           <b> NOTE:</b> You can follow all the steps in real time on the center of your screen so you can preview the way the service will appear on the platform.
                                                                         </p>
 							</div>
 						</article>
@@ -431,22 +431,12 @@ include ("includes/head_sideMenu.php");
 	<script src="js/lib/tether/tether.min.js"></script>
 	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
 	<script src="js/plugins.js"></script>
-        <script src="js/lib/jquery/jquery.min.js"></script>
-	<script src="js/lib/tether/tether.min.js"></script>
-	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-	<script src="js/plugins.js"></script>
-        
-        
         <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
-        
-        
-
-	
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript">
+<!--	<script type="text/javascript">-->
 	<script src="js/lib/ladda-button/spin.min.js"></script>
 	<script src="js/lib/ladda-button/ladda.min.js"></script>
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
