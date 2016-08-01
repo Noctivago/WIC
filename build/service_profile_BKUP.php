@@ -279,20 +279,25 @@ $serviceId = (filter_var($_GET['Service']));
                     <header class="box-typical-header-sm">
                         Organization Information
 
-                    </header>                                 
+                    </header>
 
-                <section class="box-typical">
-                    <div class="recomendations-slider" style="opacity: 1;width: 726px;left: 0px;height: 36px;">
-                        <?= DB_GetServiceInfoBar($pdo, $serviceId); ?>
+
+                    <div class="recomendations-slider" >
+                        <?= DB_GetServiceInfoBar($pdo, $serviceId, $_SESSION['id']); ?>
                         <div class="slide">
                             <!--BOTOES CHAT + WIC-->
                             <div class="user-card-row">
                                 <?php
-                                echo '<div class="card-typical-section">
-                                <input type=button onClick=window.open("./ajax/getMyWicsPopup.php?id=' . $serviceId . '","AddToWiC","width=550,height=500,left=30,top=30,toolbar=0,status=0,"); value="+">
-                                </div>';
+//                                echo '<div class="card-typical-section">
+//                            
+//                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics('.$row['SID'].');" </button>
+//                                 <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onClick="openMyWics();" </button>
+//                                     
+//                                </div>';
+//                                
                                 ?>
                             </div>
+                            <!--<input type=button onClick="openMyWics();",  value="+">-->
                         </div>
                     </div>
                 </section>
@@ -391,6 +396,7 @@ $serviceId = (filter_var($_GET['Service']));
     </div>
 </div>
 
+
 <script type="text/javascript">
     function addServiceComment(serviceId) {
         var comment = document.getElementById("userComment").value;
@@ -403,11 +409,22 @@ $serviceId = (filter_var($_GET['Service']));
                 success: function (data) {
                     //alert(data);
                     loadComments();
-                    $("#userComment").empty();
+                    $('#userComment').val('');
                 }
             });
         }
     }
+
+    function openMyWics(Sid) {
+        var x = (screen.width / 2) - (435 / 2);
+        var y = (screen.height / 2) - (362 / 2);
+        if (Sid > 0) {
+            window.open('./ajax/getMyWicsPopup.php?id=' + Sid + '', 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
+        } else {
+
+        }
+    }
+
     function loadComments() {
         $.ajax({
             url: 'ajax/getServiceComment.php',
@@ -418,6 +435,20 @@ $serviceId = (filter_var($_GET['Service']));
             }
         });
     }
+
+    function removeService() {
+        $.ajax({
+            url: 'ajax/remove_service.php',
+            method: 'post',
+            data: {sId: <?= $serviceId; ?>},
+            success: function (data) {
+                if (data === 'OK') {
+                    window.location.replace("<?= $link; ?>");
+                }
+            }
+        });
+    }
+
     function load() {
         console.log("load comments");
         //loadComments();
@@ -427,18 +458,33 @@ $serviceId = (filter_var($_GET['Service']));
 
 <script src = "js/lib/jquery/jquery.min.js" type = "text/javascript"></script>
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
-
 <script src="js/lib/tether/tether.min.js"></script>
 <script src="js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
-
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 <script src="js/lib/ion-range-slider/ion.rangeSlider.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#demo1 .stars").click(function () {
+
+            $.post('ajax/rating.php', {rate: $(this).val(), service: <?= $serviceId; ?>}, function (d) {
+                if (d > 0)
+                {
+                    alert('You already rated this service!');
+                } else {
+                    alert('Thanks For Rating');
+                    //alert(d);
+                }
+            });
+            $(this).attr("checked");
+        });
+    });
+</script>
 
 <script>
     $(document).ready(function () {
@@ -595,7 +641,6 @@ $serviceId = (filter_var($_GET['Service']));
 <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
 <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
 <script src="js/lib/select2/select2.full.min.js"></script>
-
 <script src="js/app.js"></script>
 
 </body>
