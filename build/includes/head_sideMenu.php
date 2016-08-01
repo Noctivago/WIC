@@ -273,7 +273,7 @@ include '../build/db/session.php';
                 <br>
 
                 <header class="side-menu-title">Start Planning</header>
-                <li class="tag-color orange">
+                <li class="color-orange">
                     <a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="orange with-sub">
