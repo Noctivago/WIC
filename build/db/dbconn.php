@@ -3642,7 +3642,7 @@ function DB_GetSubCategories($pdo, $Category) {
         //return $orgBossId;
         echo ' </div>
                 </div>
-        </div>.row
+        </div>
         <br>
         <br>';
     } catch (Exception $ex) {
