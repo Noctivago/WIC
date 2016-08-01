@@ -1,6 +1,9 @@
 <?php
-include ("includes/head_sideMenu.php");
-include ("./db/dbconn.php");
+include_once 'includes/head_sideMenu.php';
+include_once '../build/db/functions.php';
+include_once '../build/db/dbconn.php';
+include_once '../build/db/session.php';
+$msg = '';
 ?>
 
 <div class="page-content">
@@ -10,7 +13,7 @@ include ("./db/dbconn.php");
 				<br/>
 				
 		           </div>
-                </div>				<div class="col-md-12">
+               			<div class="col-md-12">
                                                      <section class="widget widget-accordion" id="accordion" role="tablist" aria-multiselectable="true">
 						<article class="panel">
 							<div class="panel-heading" role="tab" id="headingOne">
@@ -427,7 +430,7 @@ include ("./db/dbconn.php");
 					</section>
                                                 </div>
              
-                      
+                       </div>	
                                                     </div>                                                
                                                     
 					

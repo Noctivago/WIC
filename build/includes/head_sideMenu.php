@@ -179,7 +179,7 @@ include '../build/db/session.php';
                                     if ($_SESSION['role'] == 'organization') {
                                         echo ' <a class="dropdown-item" href="profile_org.php?Organization=' . $idOrg . '"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
                                         echo ' <a class="dropdown-item" href="edit_profile_org.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
-                                        echo ' <a class="dropdown-item" href="add_service.php"><span class="glyphicon glyphicon-send"></span>Add new Service</a>';
+                                        echo ' <a class="dropdown-item" href="add_service.php"><span class=" font-icon glyphicon glyphicon-send"></span>Add new Service</a>';
                                         echo ' <a class="dropdown-item" href="invites.php"><span class="font-icon glyphicon glyphicon-cog"></span>My Team</a>';
                                     } else {
                                         echo '<a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
@@ -273,10 +273,10 @@ include '../build/db/session.php';
                 <br>
 
                 <header class="side-menu-title">Start Planning</header>
-                <li class="gold with-sub">
+                <li class="tag-color orange">
                     <a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="fa fa-bank"></i> Space</a>
                 </li>
-                <li class="gold with-sub">
+                <li class="orange with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-cutlery"></i> Food</a>
                 </li>
                 <li class="gold with-sub">
