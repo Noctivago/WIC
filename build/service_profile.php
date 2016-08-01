@@ -384,6 +384,9 @@ $serviceId = (filter_var($_GET['Service']));
                        <button class="btn btn-inline btn-warning-outline font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
                      </section>';
                     ?>
+                    <a class="font-icon font-icon-facebook"></a>
+                    <a class="font-icon font-icon-twitter"></a>
+                    <a class="font-icon font-icon-instagram"></a>
                 </section>
 
                 <br>
