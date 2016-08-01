@@ -179,7 +179,7 @@ include '../build/db/session.php';
                                     if ($_SESSION['role'] == 'organization') {
                                         echo ' <a class="dropdown-item" href="profile_org.php?Organization=' . $idOrg . '"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
                                         echo ' <a class="dropdown-item" href="edit_profile_org.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
-                                        echo ' <a class="dropdown-item" href="add_service.php"><span class="fa fa-paper-plane"></span>New Service</a>';
+                                        echo ' <a class="dropdown-item" href="add_service.php"><span class="fa fa-paper-plane"></span>Add new Service</a>';
                                         echo ' <a class="dropdown-item" href="invites.php"><span class="font-icon glyphicon glyphicon-cog"></span>My Team</a>';
                                     } else {
                                         echo '<a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
