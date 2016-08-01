@@ -245,7 +245,18 @@ include '../build/db/session.php';
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
-                <header class="side-menu-title">Advanced search</header>
+                 <?php
+                 
+                 if ($_SESSION['role'] === 'organization') {
+         
+            echo '<header class="side-menu-title">My Services search</header>';
+        } else {
+            echo '<header class="side-menu-title">Advanced Search</header>';
+        }
+        ?>
+                
+                
+                <!--<header class="side-menu-title">Advanced search</header>-->
 
                 <form action="<?php echo $selfUrl; ?>">
                     <div class="col-md-10">
