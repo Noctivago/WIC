@@ -2527,7 +2527,7 @@ function DB_getServicesForIndex($pdo) {
 </a>
 </div>
 <div class = "tbl-cell">
-<p class = "user-card-row-name" style="overflow: hidden;max-height: 70px;"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
+<p class = "user-card-row-name" ><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
 </div>
 </div>
 </div>
@@ -2537,7 +2537,7 @@ function DB_getServicesForIndex($pdo) {
 <img src = "' . $row['MPP'] . '" alt = "Service Pic" height = "185" width = "110">
 </div>
 <header class = "title"><a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
-<p>' . $row['SDE'] . '</p>
+<p style="overflow: hidden;height: 70px;">' . $row['SDE'] . '</p>
 </div>
 
 <div class="card-typical-section">
