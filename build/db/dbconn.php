@@ -2964,7 +2964,7 @@ function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
         AND [Service].[Enabled] = 1 
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
-        AND [Category].[Id] =  ?", array($CategoryId), "rows");
+        AND [Sub_Category].[Category_Id] =   ?", array($CategoryId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
             <article class = "card-typical">
@@ -3036,7 +3036,7 @@ function DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $category
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
         AND [Service].[Description] Like '%" . $qParam . "%' "
-                . "AND [Category].[Id] = ? ", array($categoryId), "rows");
+                . "AND [Sub_Category].[Category_Id] = ? ", array($categoryId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
         <article class = "card-typical">
@@ -3108,7 +3108,7 @@ function DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $categoryId) {
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
         AND [Service].[Name] Like '%" . $qParam . "%' "
-                . "AND [Category].[Id] = ? ", array($categoryId), "rows");
+                . "AND [Sub_Category].[Category_Id] = ? ", array($categoryId), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
         <article class = "card-typical">
@@ -3461,7 +3461,7 @@ function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
         [Service].[Description] AS SDE,
         [Organization].[Name] AS ONA,
         [Organization].[Id] AS OID,
-        [Organization].[Picture_Path] AS OPP,
+        [Organization].[Picture_Path] AS OPP, 
         [Multimedia].[Multimedia_Path] AS MPP
         FROM SERVICE
         join [Multimedia]
@@ -3477,8 +3477,8 @@ function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
         AND [Service].[Enabled] = 1 
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1"
-                . "AND [Category].[Id] = ? "
-                . "AND [Service].[City_Id] = ?", array($CityId, $Category), "rows");
+                . "AND [Sub_Category].[Category_Id] = ? "
+                . "AND [Service].[City_Id] = ?", array($Category, $CityId), "rows");
 
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
