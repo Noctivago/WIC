@@ -232,7 +232,7 @@ include '../build/db/session.php';
                                            type="text"
                                            autocomplete="on"/>
                                     <!--<button type="submit">-->
-                                    <button onclick="getCitySearchValue()">
+                                    <button type="submit" onclick="getCitySearchValue()">
                                         <span class="font-icon-pin-2"></span>
                                     </button>
                                     <div class="overlay"></div>
