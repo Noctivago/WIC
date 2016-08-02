@@ -265,12 +265,12 @@ include ("./db/dbconn.php");
 
 <!--O PROXIMO SCRIPT DESABILITA BOTAO DIREITO-->
 <script>
-    $(document).ready(function ()
-    {
-        $(document).bind("contextmenu", function (e) {
-            return false;
-        });
-    })
+//    $(document).ready(function ()
+//    {
+//        $(document).bind("contextmenu", function (e) {
+//            return false;
+//        });
+//    })
     $(function () {
         $('#tags-editor-textarea').tagEditor();
     });

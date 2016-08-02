@@ -1738,7 +1738,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             $views = DB_GetNumberServiceViews($pdo, $row['SID']);
             $comments = DB_GetNumberServiceComments($pdo, $row['SID']);
             echo '<div class = "slide">';
-            echo '<article class = "post-announce" style="width:200px;" >';
+            echo '<article class = "post-announce"  >';
             echo '<div class = "post-announce-pic">';
             echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">';
             echo ' <img src = "' . $row['MPP'] . '" alt = "" >';
@@ -3651,7 +3651,7 @@ function DB_GetSubCategories($pdo, $Category) {
         echo '<div class="options">';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo '<label title="' . $row['SCID'] . '">';
-            echo '<input type="radio" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCNA'] . '">' . $row['SCNA'] . ' ';
+            echo '<input type="radio" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCNA'] . '">' . $row['SCNA'] . ' ';
             echo '<img/>';
             echo '</label>';
         }

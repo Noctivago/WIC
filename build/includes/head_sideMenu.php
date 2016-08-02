@@ -32,7 +32,7 @@ include '../build/db/session.php';
         <?php
         //SE TIVER QUERY STRING
 
-        $selfUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php?qParam=&Category=&name=&SubCategory=';
+        $selfUrl = '/build/index.php';
 //        $getValues = array();
 //        foreach ($_GET as $key => $value) {
 //            array_push($getValues, $key . "=" . $value);
@@ -45,7 +45,7 @@ include '../build/db/session.php';
         ?>
         <header class="site-header">
             <div class="container-fluid">
-                <a href="index.php?qParam=&Category=&name=&SubCategory=" class="site-logo">
+                <a href="index.php" class="site-logo">
 
                     <img class="hidden-md-down" src="img/wic_logo.png" alt="">
                     <img class="hidden-lg-up" src="img/wic_logo.png" alt="">
@@ -224,18 +224,19 @@ include '../build/db/session.php';
 
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
-                                    <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
-                                        <input type="text" placeholder="Choose your City.."
-                                               id="categories"
-                                               class="form-control"
-                                               name="name"
-                                               type="text"
-                                               autocomplete="on"/>
-                                        <button type="submit">
-                                            <span class="font-icon-pin-2"></span>
-                                        </button>
-                                        <div class="overlay"></div>
-                                    </form>
+                                    <!--<form class="site-header-search opened" action="<?php echo $selfUrl; ?>">-->
+                                    <input type="text" placeholder="Choose your City.."
+                                           id="name"
+                                           class="form-control"
+                                           name="name"
+                                           type="text"
+                                           autocomplete="on"/>
+                                    <!--<button type="submit">-->
+                                    <button id= "btnName" onclick="getCitySearchValue()">
+                                        <span class="font-icon-pin-2"></span>
+                                    </button>
+                                    <div class="overlay"></div>
+                                    <!--</form>-->
                                 </div>
                             </div>
                         </div>
@@ -260,59 +261,59 @@ include '../build/db/session.php';
 
                 <!--<header class="side-menu-title">Advanced search</header>-->
 
-                <form action="<?php echo $selfUrl; ?>">
-                    <div class="col-md-10">
-                        <div class="typeahead-container">
-                            <div class="typeahead-field">
-                                <span class="typeahead-query">
-                                    <input id="qParam"
-                                           class="form-control"
-                                           required="required"
-                                           name="qParam"
-                                           type="search"
-                                           autocomplete="on"
-
-                                           placeholder="Ex: Catering...">
-                                </span>
-                                <span class="typeahead-button">
-                                    <button type="submit">
-                                        <span class="font-icon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
+                <!--<form action="<?php echo $selfUrl; ?>">-->
+                <div class="col-md-10">
+                    <div class="typeahead-container">
+                        <div class="typeahead-field">
+                            <span class="typeahead-query">
+                                <input id="qParam"
+                                       class="form-control"
+                                       required="required"
+                                       name="qParam"
+                                       type="search"
+                                       autocomplete="on"
+                                       placeholder="Ex: Catering...">
+                            </span>
+                            <span class="typeahead-button">
+                                <!--<button type="submit">-->
+                                <button id= "btnQparam" onclick="getAdvancedSearchValue()">
+                                    <span class="font-icon-search"></span>
+                                </button>
+                            </span>
                         </div>
                     </div>
-                </form>
+                </div>
+                <!--</form>-->
                 <br>
 
                 <header class="side-menu-title">Start Planning</header>
+                <!--updateQueryStringParameter(uri, key, value)-->  
                 <li class="brown with-sub">
-                    <!--preg_replace("#&d=.*&#", '&d=newvalue&', $_SERVER['REQUEST_URI'])-->
-                    <a class="lbl" href="<?= preg_replace("#&Category=.*&#", '&Category=1', $_SERVER['REQUEST_URI']) ?>"><i class="fa fa-bank"></i> Space</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-cutlery"></i> Food</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '2');"><i class="fa fa-cutlery"></i> Food</a>
                 </li>
                 <li class="brown with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=3' ?>"><i class="fa fa-music"></i> Entertainment</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '3');"><i class="fa fa-music"></i> Entertainment</a>
                 </li>
                 <li class="brown with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=4' ?>"><i class="fa fa-star"></i>Decoration</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '4');"><i class="fa fa-star"></i>Decoration</a>
                 </li>
                 <li class="gold with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
                 </li>
                 <li class="brown with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '6');"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
                 <li class="brown with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=7' ?>"><i class="fa fa-camera-retro"></i>Reportage Photo & Video</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '7');"><i class="fa fa-camera-retro"></i>Reportage Photo & Video</a>
                 </li>
                 <li class="brown with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=8' ?>"><i class="fa fa-diamond"></i>Original</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '8');"><i class="fa fa-diamond"></i>Original</a>
                 </li>
                 <li class="brown with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=9' ?>"><i class="font-icon font-icon-users-group"></i>Team Building</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '9');"><i class="font-icon font-icon-users-group"></i>Team Building</a>
                 </li>
 
                 <?php
@@ -498,6 +499,52 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
+            if ($("input[type='radio'].SubCat").is(':checked')) {
+                var card_type = $("input[type='radio'].SubCat:checked").val();
+                alert(card_type);
+            }
+
+            var CityArea = $('#name')
+            CityArea.bind('keydown', function (event) {
+                // Check if enter is pressed without pressing the shiftKey
+                if (event.keyCode === 13 && event.shiftKey === false) {
+                    getCitySearchValue();
+                }
+            });
+
+            var SearchArea = $('#qParam')
+            SearchArea.bind('keydown', function (event) {
+                // Check if enter is pressed without pressing the shiftKey
+                if (event.keyCode === 13 && event.shiftKey === false) {
+                    getAdvancedSearchValue();
+                }
+            });
+
+            function getAdvancedSearchValue() {
+                var x = document.getElementById('qParam').value;
+                updateQueryStringParameter('qParam', x);
+            }
+            function getCitySearchValue() {
+                var x = document.getElementById('name').value;
+                updateQueryStringParameter('name', x);
+            }
+            function updateQueryStringParameter(key, value) {
+                var uri = window.location.href;
+                var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
+                if (uri.match(re)) {
+                    window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
+                    //return uri.replace(re, '$1' + key + "=" + value + '$2');
+                } else {
+                    var hash = '';
+                    if (uri.indexOf('#') !== -1) {
+                        hash = uri.replace(/.*#/, '#');
+                        uri = uri.replace(/#.*/, '');
+                    }
+                    var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+                    //return uri + separator + key + "=" + value + hash;
+                    window.location.assign(uri + separator + key + "=" + value + hash);
+                }
+            }
             function sendInvite() {
                 var email = document.getElementById("email").value;
                 var service = document.getElementById("service").value;
@@ -513,9 +560,3 @@ include '../build/db/session.php';
         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
-
-
-
-
-
-
