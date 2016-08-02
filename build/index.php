@@ -87,9 +87,6 @@ include ("./db/dbconn.php");
             }
             ?>
 
-            <br>
-            <br>
-
         </div><!--.card-grid-->
         <div class="clear"></div>
         <div style="padding-left: 500px;">
