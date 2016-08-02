@@ -91,7 +91,7 @@ include ("./db/dbconn.php");
                 //$CityId = 
                 $CityId = ' = ' . DB_getCityId($pdo, $City);
             } else {
-                $CityId = '> 0';
+                $CityId = ' > 0';
             }
             /**
              * Pesquisa por subCategoria
