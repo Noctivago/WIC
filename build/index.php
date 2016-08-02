@@ -69,46 +69,46 @@ include ("./db/dbconn.php");
                 DB_GetSubCategories($pdo, $CategoryId);
             }
 
-            if (isset($_GET ['Category']) || isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['SubCategory'])) {
-                $CategoryId = (filter_var($_GET ['Category']));
-                $name = (filter_var($_GET ['qParam']));
-                $City = (filter_var($_GET ['name']));
-                $City = ucfirst($City);
-                $CityId = DB_getCityId($pdo, $City);
-                $SubCategory = (filter_var($_GET ['SubCategory']));
-                DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $CityId, $SubCategory);
-            } else {
-                DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
-            }
+            //if (isset($_GET ['Category']) || isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['SubCategory'])) {
+            $CategoryId = (filter_var($_GET ['Category']));
+            $name = (filter_var($_GET ['qParam']));
+            $City = (filter_var($_GET ['name']));
+            $City = ucfirst($City);
+            $CityId = DB_getCityId($pdo, $City);
+            $SubCategory = (filter_var($_GET ['SubCategory']));
+            DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $CityId, $SubCategory);
+            //} else {
+            //    DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
+            //}
             ?>
 
         </div><!--.card-grid-->
-<!--        <div class="clear"></div>
-        <div style="padding-left: 500px;">
-            <nav>
-                <ul class="pagination">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>-->
+        <!--        <div class="clear"></div>
+                <div style="padding-left: 500px;">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>-->
     </div>
 </div>
 
