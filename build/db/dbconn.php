@@ -3650,8 +3650,17 @@ function DB_GetSubCategories($pdo, $Category) {
             <div class="col-md-3 col-sm-6">
             <div class="form-group-checkbox">
                 <div class="checkbox">';
+
+        /**
+         * <input type="radio" name="gender" id="test1" value="male">
+          <label for="test1"> check 1</label>
+          <input type="radio" name="gender" value="female" id="test2">
+          <label for="test2"> check 2</label>
+          <input type="radio" name="gender" value="other" id="test3">
+          <label for="test3"> check 3</label>
+         */
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<input type="checkbox" id="' . $row['SCID'] . '">';
+            echo '<input type="radio" name ="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCNA'] . '">';
             echo '<label for="' . $row['SCID'] . '">' . $row['SCNA'] . '</label>';
         }
         echo ' </div>
