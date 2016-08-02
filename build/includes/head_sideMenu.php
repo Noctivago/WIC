@@ -288,7 +288,7 @@ include '../build/db/session.php';
                 <header class="side-menu-title">Start Planning</header>
                 <!--updateQueryStringParameter(uri, key, value)-->  
                 <li class="brown with-sub">
-                    <a class="lbl" onclick="updateQueryStringParameter('<?= $selfUrl ?>' , 'Category', '1');"><i class="fa fa-bank"></i> Space</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '2');"><i class="fa fa-cutlery"></i> Food</a>
@@ -498,7 +498,8 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
-            function updateQueryStringParameter(uri, key, value) {
+            function updateQueryStringParameter(key, value) {
+                var uri = window.location.href;
                 var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                 if (uri.match(re)) {
                     return uri.replace(re, '$1' + key + "=" + value + '$2');
