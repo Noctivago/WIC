@@ -120,7 +120,17 @@ include ("./db/dbconn.php");
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 
-
+<style type="text/css">
+    input[type="radio"]{
+        display: none;
+    }
+    label:before{
+        content:url(http://strawberrycambodia.com/book/admin/templates/default/images/icons/16x16/checkbox.gif);
+    }
+    input[type="radio"]:checked+label:before{
+        content:url(http://www.treatment-abroad.ru/img/admin/icons/16x16/checkbox.gif);
+    }
+</style>
 
 <script>
     $(document).ready(function () {
