@@ -88,7 +88,10 @@ include ("./db/dbconn.php");
             if (isset($_GET ['name'])) {
                 $City = (filter_var($_GET ['name']));
                 $City = ucfirst($City);
-                $CityId = DB_getCityId($pdo, $City);
+                //$CityId = 
+                $CityId = ' = ' . DB_getCityId($pdo, $City);
+            } else {
+                $CityId = '> 0';
             }
             /**
              * Pesquisa por subCategoria
