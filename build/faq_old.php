@@ -11,7 +11,7 @@ include ("includes/head_sideMenu.php");
     <link href="img/favicon.png" rel="icon" type="image/png">
     <link href="img/favicon.ico" rel="shortcut icon">-->
 
-<!--    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">-->
+    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
 
 <div class="page-content">
@@ -443,7 +443,7 @@ include ("includes/head_sideMenu.php");
                 </div>
                                                     </div>                                                
                                                     
-					
+	<script src="js/lib/salvattore/salvattore.min.js"></script>  				
 	<script src="js/lib/jquery/jquery.min.js"></script>
 	<script src="js/lib/tether/tether.min.js"></script>
 	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
