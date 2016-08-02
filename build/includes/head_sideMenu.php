@@ -32,7 +32,7 @@ include '../build/db/session.php';
         <?php
         //SE TIVER QUERY STRING
 
-        $selfUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php?qParam=&Category=&name=&SubCategory=';
+        $selfUrl = $_SERVER['HTTP_HOST'] . '/build/index.php?qParam=&Category=&name=&SubCategory=';
 //        $getValues = array();
 //        foreach ($_GET as $key => $value) {
 //            array_push($getValues, $key . "=" . $value);
@@ -288,7 +288,7 @@ include '../build/db/session.php';
                 <header class="side-menu-title">Start Planning</header>
                 <!--updateQueryStringParameter(uri, key, value)-->
                 <li class="brown with-sub">
-                    <a class="lbl" onclick="updateQueryStringParameter(<?= $selfUrl; ?>, 'Category', '1');"><i class="fa fa-bank"></i> Space</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('<?= $selfUrl; ?>', 'Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-cutlery"></i> Food</a>
