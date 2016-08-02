@@ -224,18 +224,19 @@ include '../build/db/session.php';
 
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
-                                    <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
-                                        <input type="text" placeholder="Choose your City.."
-                                               id="categories"
-                                               class="form-control"
-                                               name="name"
-                                               type="text"
-                                               autocomplete="on"/>
-                                        <button type="submit">
-                                            <span class="font-icon-pin-2"></span>
-                                        </button>
-                                        <div class="overlay"></div>
-                                    </form>
+                                    <!--<form class="site-header-search opened" action="<?php echo $selfUrl; ?>">-->
+                                    <input type="text" placeholder="Choose your City.."
+                                           id="name"
+                                           class="form-control"
+                                           name="name"
+                                           type="text"
+                                           autocomplete="on"/>
+                                    <!--<button type="submit">-->
+                                    <button onclick="getCitySearchValue()">
+                                        <span class="font-icon-pin-2"></span>
+                                    </button>
+                                    <div class="overlay"></div>
+                                    <!--</form>-->
                                 </div>
                             </div>
                         </div>
@@ -502,7 +503,10 @@ include '../build/db/session.php';
                 var x = document.getElementById('qParam').value;
                 updateQueryStringParameter('qParam', x);
             }
-
+            function getCitySearchValue() {
+                var x = document.getElementById('name').value;
+                updateQueryStringParameter('name', x);
+            }
             function updateQueryStringParameter(key, value) {
                 var uri = window.location.href;
                 var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
