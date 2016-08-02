@@ -16,7 +16,7 @@ include ("includes/head_sideMenu.php");
 
 <div class="page-content">
 		<div class="container-fluid">
-                     <div class="row">
+<!--                     <div class="row">-->
                     <div class="box-typical box-typical-padding" style="height: 80px">
 				<h1 class="text-center">F.A.Q.</h1>
 				<br/>
@@ -437,7 +437,7 @@ include ("includes/head_sideMenu.php");
                                                         </div>
 						</article>
 					</section>
-                                                </div>
+<!--                                                </div>-->
              
                        </div>	
                 </div>
