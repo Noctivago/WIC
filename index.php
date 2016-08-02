@@ -12,64 +12,9 @@ include ("build/db/dbconn.php");
         }
         ?>
 
-        <!--        <div class="row" style="padding-left: 35px;">
-                    <div class="col-md-3 col-sm-6">
-                    <div class="form-group-checkbox">
-                        <div class="checkbox">
-                            <input type="checkbox" id="check-1" checked>
-                            <label for="check-1">SubCategorie1</label>
-        
-                            <input type="checkbox" id="check-2" checked>
-                            <label for="check-2">SubCategorie2</label>
-        
-                            <input type="checkbox" id="check-3"checked >
-                            <label for="check-3">SubCategorie3</label>
-        
-                            <input type="checkbox" id="check-4" checked >
-                            <label for="check-4">SubCategorie4</label>
-                        </div>
-                    </div>
-        
-                    </div>
-        
-                </div>.row
-        
-                <br>
-                <br>-->
-
-
-
         <div class="cards-grid" data-columns>
 
             <?php
-//name
-//            if (isset($_GET ['Category']) && !isset($_GET ['qParam']) && !isset($_GET ['name'])) {
-//                $CategoryId = (filter_var($_GET ['Category']));
-//                DB_getServicesForIndexByCategory($pdo, $CategoryId);
-//            } elseif (!isset($_GET ['Category']) && isset($_GET ['qParam']) && !isset($_GET ['name'])) {
-//                $qParam = (filter_var($_GET ['qParam']));
-//                DB_getServicesForIndexByName($pdo, $qParam);
-//                DB_getServicesForIndexByDescription($pdo, $qParam);
-//            } elseif (isset($_GET ['Category']) && isset($_GET ['qParam']) && !isset($_GET ['name'])) {
-//                $CategoryId = (filter_var($_GET ['Category']));
-//                $qParam = (filter_var($_GET ['qParam']));
-//                DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $CategoryId);
-//                DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $CategoryId);
-//                //APENAS CITY
-//            } elseif (isset($_GET ['name']) && !isset($_GET ['qParam']) && !isset($_GET ['Category'])) {
-//                $City = (filter_var($_GET ['name']));
-//                //$City = ucfirst($City);
-//                $CityId = DB_getCityId($pdo, $City);
-//                DB_getServicesForIndexByCity($pdo, $CityId);
-//                //CITY e CATEGORY
-//            } elseif (isset($_GET ['name']) && isset($_GET ['Category']) && !isset($_GET ['qParam'])) {
-//                $City = (filter_var($_GET ['name']));
-//                $CategoryId = (filter_var($_GET ['Category']));
-//                $CityId = DB_getCityId($pdo, $City);
-//                DB_getServicesForIndexByCityAndCategory($pdo, $CategoryId, $CityId);
-//            } else {
-//                DB_getServicesForIndex($pdo);
-//            }
             if (isset($_GET ['Category']) || isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['SubCategory'])) {
                 $CategoryId = (filter_var($_GET ['Category']));
                 $name = (filter_var($_GET ['qParam']));
@@ -83,11 +28,6 @@ include ("build/db/dbconn.php");
 
 
             style="overflow: hidden;max-height: 70px;"
-
-
-
-
-
 
         </div><!--.card-grid-->
         <div class="clear"></div>
