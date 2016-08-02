@@ -501,9 +501,7 @@ include '../build/db/session.php';
             function UpdateQueryString(url, key, value) {
                 if (!url)
                     url = window.location.href;
-                var re = new RegExp("([?&])" + key + "=.*?(&|#|$)(.*)", "gi"),
-                        hash;
-
+                var re = new RegExp("([?&])" + key + "=.*?(&|#|$)(.*)", "gi"), hash;
                 if (re.test(url)) {
                     if (typeof value !== 'undefined' && value !== null)
                         return url.replace(re, '$1' + key + "=" + value + '$2$3');
