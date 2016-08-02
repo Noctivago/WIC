@@ -292,7 +292,7 @@ include '../build/db/session.php';
                     $oldurl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
                     ?>
 
-                    <a class="lbl" href="<?= $selfUrl = preg_replace("/Category=\d+/", "Category=1", $oldurl); ?>"><i class="fa fa-bank"></i> Space</a>
+                    <a class="lbl" href="<?= $selfUrl = preg_replace("/Category=\/", "Category=1", $oldurl); ?>"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-cutlery"></i> Food</a>
