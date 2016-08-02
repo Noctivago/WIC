@@ -499,13 +499,13 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
-            $("#btnName").keyup(function (ev) {
+            $("#name").keyup(function (ev) {
                 // 13 is ENTER
                 if (ev.which === 13) {
                     getCitySearchValue();
                 }
             });
-            $("#btnQparam").keyup(function (ev) {
+            $("#qParam").keyup(function (ev) {
                 // 13 is ENTER
                 if (ev.which === 13) {
                     getAdvancedSearchValue();
@@ -551,9 +551,3 @@ include '../build/db/session.php';
         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
-
-
-
-
-
-
