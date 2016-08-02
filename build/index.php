@@ -263,12 +263,6 @@ include ("./db/dbconn.php");
 <script src="js/lib/select2/select2.full.min.js"></script>
 
 <script>
-    $(document).ready(function ()
-    {
-        $(document).bind("contextmenu", function (e) {
-            return false;
-        });
-    })
     $(function () {
         $('#tags-editor-textarea').tagEditor();
     });
