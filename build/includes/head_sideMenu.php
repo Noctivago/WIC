@@ -248,17 +248,16 @@ include '../build/db/session.php';
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
-                 <?php
-                 
-                 if ($_SESSION['role'] === 'organization') {
-         
-            echo '<header class="side-menu-title">My Services search</header>';
-        } else {
-            echo '<header class="side-menu-title">Advanced Search</header>';
-        }
-        ?>
-                
-                
+                <?php
+                if ($_SESSION['role'] === 'organization') {
+
+                    echo '<header class="side-menu-title">My Services search</header>';
+                } else {
+                    echo '<header class="side-menu-title">Advanced Search</header>';
+                }
+                ?>
+
+
                 <!--<header class="side-menu-title">Advanced search</header>-->
 
                 <form action="<?php echo $selfUrl; ?>">
@@ -272,7 +271,7 @@ include '../build/db/session.php';
                                            name="qParam"
                                            type="search"
                                            autocomplete="on"
-                                          
+
                                            placeholder="Ex: Catering...">
                                 </span>
                                 <span class="typeahead-button">
@@ -299,9 +298,9 @@ include '../build/db/session.php';
                 <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=4' ?>"><i class="fa fa-star"></i>Decoration</a>
                 </li>
-<!--                <li class="gold with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
-                </li>-->
+                <!--                <li class="gold with-sub">
+                                    <a class="lbl" href="<?= $selfUrl . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                                </li>-->
                 <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
@@ -496,7 +495,16 @@ include '../build/db/session.php';
                 }
                 ?>
             </ul>
-        </nav><!--.side-menu-->
+        </nav>
+        <!--O PROXIMO SCRIPT DESABILITA BOTAO DIREITO-->
+        <script>
+            $(document).ready(function ()
+            {
+                $(document).bind("contextmenu", function (e) {
+                    return false;
+                });
+            })
+        </script>
         <script>
             function sendInvite() {
                 var email = document.getElementById("email").value;

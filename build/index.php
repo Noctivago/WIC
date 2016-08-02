@@ -62,6 +62,7 @@ include ("./db/dbconn.php");
              */
             if (isset($_GET ['name'])) {
                 $city = (filter_var($_GET ['name']));
+                //echo 'City > ' . $city . '<br>';
             } else {
                 
             }
@@ -139,16 +140,19 @@ include ("./db/dbconn.php");
     div.options > label > img {
         display: inline-block;
         padding: 0px;
-        height:30px;
-        width:30px;
+        /*height:30px;
+        width:30px;*/
+        height:20px;
+        width:20px;
         background: none;
     }
 
     div.options > label > input:checked +img {  
-        background: url(http://cdn1.iconfinder.com/data/icons/onebit/PNG/onebit_34.png);
+        background: url(https://www.ureach.com/home/images/checkmark_grey20.png);
         background-repeat: no-repeat;
         background-position:center center;
-        background-size:30px 30px;
+        /*background-size:30px 30px;*/
+        background-size:20px 20px;
     }
 
 </style>
