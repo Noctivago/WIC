@@ -77,7 +77,7 @@ include ("build/db/dbconn.php");
                 $SubCategory = (filter_var($_GET ['SubCategory']));
                 DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
             } else {
-                DB_getServicesForIndex($pdo);
+                DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
             }
             ?>
 
