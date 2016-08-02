@@ -30,11 +30,6 @@ include ("./db/dbconn.php");
         
                 <br>
                 <br>-->
-
-
-
-
-
         <?php
 //name
 //            if (isset($_GET ['Category']) && !isset($_GET ['qParam']) && !isset($_GET ['name'])) {
