@@ -288,7 +288,7 @@ include '../build/db/session.php';
                 <header class="side-menu-title">Start Planning</header>
                 <!--updateQueryStringParameter(uri, key, value)-->
                 <li class="brown with-sub">
-                    <a class="lbl" onclick="updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
+                    <a class="lbl" onclick="updateQueryStringParameter(<?= $selfUrl ?>; , 'Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '2');"><i class="fa fa-cutlery"></i> Food</a>
@@ -498,21 +498,13 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
-            function updateQueryStringParameter(StringValue, StringUpdateValue) {
-                if (StringValue === 'qParam') {
-                    var newUrl = location.href.replace("qParam=", "qParam=" + StringUpdateValue);
-                    window.location = newUrl;
-                } else if (StringValue === 'Category') {
-                    var newUrl = location.href.replace("Category=", "Category=" + StringUpdateValue);
-                    window.location = newUrl;
-                } else if (StringValue === 'SubCat') {
-                    var newUrl = location.href.replace("SubCategory=" + currentPageNum, "SubCategory=" + StringUpdateValue);
-                    window.location = newUrl;
-                } else if (StringValue === 'City') {
-                    var newUrl = location.href.replace("name=" + currentPageNum, "name=" + StringUpdateValue);
-                    window.location = newUrl;
+            function updateQueryStringParameter(uri, key, value) {
+                var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+                var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+                if (uri.match(re)) {
+                    return uri.replace(re, '$1' + key + "=" + value + '$2');
                 } else {
-                    alert('TTF');
+                    return uri + separator + key + "=" + value;
                 }
             }
             function sendInvite() {
