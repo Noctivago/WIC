@@ -86,9 +86,11 @@ include ("./db/dbconn.php");
                 if (isset($_GET ['Category']) || isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['SubCategory'])) {
                     $CategoryId = (filter_var($_GET ['Category']));
                     $name = (filter_var($_GET ['qParam']));
-                    $city = (filter_var($_GET ['name']));
+                    $City = (filter_var($_GET ['name']));
+                    $City = ucfirst($City);
+                    $CityId = DB_getCityId($pdo, $City);
                     $SubCategory = (filter_var($_GET ['SubCategory']));
-                    DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
+                    DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $CityId, $SubCategory);
                 } else {
                     DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
                 }
