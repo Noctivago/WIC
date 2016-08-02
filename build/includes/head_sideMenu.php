@@ -232,7 +232,7 @@ include '../build/db/session.php';
                                            type="text"
                                            autocomplete="on"/>
                                     <!--<button type="submit">-->
-                                    <button onclick="getCitySearchValue()">
+                                    <button id= "btnName" onclick="getCitySearchValue()">
                                         <span class="font-icon-pin-2"></span>
                                     </button>
                                     <div class="overlay"></div>
@@ -276,7 +276,7 @@ include '../build/db/session.php';
                             </span>
                             <span class="typeahead-button">
                                 <!--<button type="submit">-->
-                                <button onclick="getAdvancedSearchValue()">
+                                <button id= "btnQparam" onclick="getAdvancedSearchValue()">
                                     <span class="font-icon-search"></span>
                                 </button>
                             </span>
@@ -499,13 +499,13 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
-            $("#name").keyup(function (ev) {
+            $("#btnName").keyup(function (ev) {
                 // 13 is ENTER
                 if (ev.which === 13) {
                     getCitySearchValue();
                 }
             });
-            $("#qParam").keyup(function (ev) {
+            $("#btnQparam").keyup(function (ev) {
                 // 13 is ENTER
                 if (ev.which === 13) {
                     getAdvancedSearchValue();
