@@ -3650,9 +3650,16 @@ function DB_GetSubCategories($pdo, $Category) {
             <div class="col-md-3 col-sm-6">
             <div class="form-group-checkbox">
                 <div class="checkbox">';
+        $counter = 0;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<input type="checkbox" id="' . $row['SCID'] . '">';
-            echo '<label for="' . $row['SCID'] . '">' . $row['SCNA'] . '</label>';
+            if ($counter === 0) {
+                echo '<input type="checkbox" id="' . $row['SCID'] . '" checked>';
+                echo '<label for="' . $row['SCID'] . '">' . $row['SCNA'] . '</label>';
+                $counter++;
+            } else {
+                echo '<input type="checkbox" id="' . $row['SCID'] . '">';
+                echo '<label for="' . $row['SCID'] . '">' . $row['SCNA'] . '</label>';
+            }
         }
         echo ' </div>
                 </div>
@@ -3701,7 +3708,6 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
         AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
         AND [City].[Name] Like '%" . $city . "'
         AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
-        //AND [City].[Id] Like '" . $city . "%' | FUCK ERRO NA CITY
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
             <article class = "card-typical">
