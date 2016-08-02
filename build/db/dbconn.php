@@ -3648,20 +3648,10 @@ function DB_GetSubCategories($pdo, $Category) {
         $stmt->execute();
         echo '<div class="row" style="padding-left: 35px;">
             <div class="col-md-3 col-sm-6">';
-
-        /**
-         * <div class="options">
-          <label title="item1">
-          <input type="radio" name="foo" value="0" />
-          Item 1
-          <img />
-          </label>
-          </div>
-         */
         echo '<div class="options">';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo '<label title="' . $row['SCID'] . '">';
-            echo '<input type="radio" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCNA'] . '">' . $row['SCNA'];
+            echo '<input type="radio" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCNA'] . '">' . $row['SCNA'] . ' ';
             echo '<img/>';
             echo '</label>';
         }
