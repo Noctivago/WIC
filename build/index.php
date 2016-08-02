@@ -63,9 +63,9 @@ include ("./db/dbconn.php");
                 $City = (filter_var($_GET ['name']));
                 $City = ucfirst($City);
                 //$CityId = 
-                $CityId = DB_getCityId($pdo, $City);
+                $CityId = " = " . DB_getCityId($pdo, $City);
             } else {
-                
+                $CityId = " > 0";
             }
             /**
              * Pesquisa por subCategoria
