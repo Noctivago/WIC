@@ -3370,6 +3370,23 @@ function DB_getCityId($pdo, $cityName) {
 }
 
 /**
+ * Devolve o nome da Cidade atraves do seu ID
+ * @param type $pdo
+ * @param type $cityName
+ * @return type
+ */
+function DB_getCityById($pdo, $cityId) {
+    try {
+        $rows = sql($pdo, "SELECT [Name] FROM [dbo].[City] WHERE [Id] = ?", array($cityId), "rows");
+        foreach ($rows as $row) {
+            return $row['Name'];
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING CITY!';
+    }
+}
+
+/**
  * Devolve os serviços de uma determinada cidade
  * @param type $pdo
  * @param type $CityId
