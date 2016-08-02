@@ -39,6 +39,7 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['Category'])) {
             $CategoryId = (filter_var($_GET ['Category']));
+            //DEVOLVE SUBCATS DE UMA CAT
             DB_GetSubCategories($pdo, $CategoryId);
         }
         ?>
@@ -120,16 +121,36 @@ include ("./db/dbconn.php");
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>
 
+<!--MAKE RADIO LOOKS LIKE A CHECKBOX-->
 <style type="text/css">
-    input[type="radio"]{
-        display: none;
+    div.options > label > input {
+        visibility: hidden;
     }
-    label:before{
-        content:url(http://strawberrycambodia.com/book/admin/templates/default/images/icons/16x16/checkbox.gif);
+
+    div.options > label {
+        display: block;
+        margin: 0 0 0 -10px;
+        padding: 0 0 20px 0;  
+        height: 20px;
+        width: 150px;
+
     }
-    input[type="radio"]:checked+label:before{
-        content:url(http://www.treatment-abroad.ru/img/admin/icons/16x16/checkbox.gif);
+
+    div.options > label > img {
+        display: inline-block;
+        padding: 0px;
+        height:30px;
+        width:30px;
+        background: none;
     }
+
+    div.options > label > input:checked +img {  
+        background: url(http://cdn1.iconfinder.com/data/icons/onebit/PNG/onebit_34.png);
+        background-repeat: no-repeat;
+        background-position:center center;
+        background-size:30px 30px;
+    }
+
 </style>
 
 <script>

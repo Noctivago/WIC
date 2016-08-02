@@ -3647,25 +3647,27 @@ function DB_GetSubCategories($pdo, $Category) {
         $stmt->bindParam(':id', $Category);
         $stmt->execute();
         echo '<div class="row" style="padding-left: 35px;">
-            <div class="col-md-3 col-sm-6">
-            <div class="form-group-checkbox">
-                <div class="checkbox">';
+            <div class="col-md-3 col-sm-6">';
 
         /**
-         * <input type="radio" name="gender" id="test1" value="male">
-          <label for="test1"> check 1</label>
-          <input type="radio" name="gender" value="female" id="test2">
-          <label for="test2"> check 2</label>
-          <input type="radio" name="gender" value="other" id="test3">
-          <label for="test3"> check 3</label>
+         * <div class="options">
+          <label title="item1">
+          <input type="radio" name="foo" value="0" />
+          Item 1
+          <img />
+          </label>
+          </div>
          */
+        echo '<div class="options">';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<input type="radio" name ="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCNA'] . '">';
-            echo '<label for="' . $row['SCID'] . '">' . $row['SCNA'] . '</label>';
+            echo '<label title="' . $row['SCID'] . '">';
+            echo '<input type="radio" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCNA'] . '">' . $row['SCNA'];
+            echo '<img/>';
+            echo '</label>';
         }
         echo ' </div>
                 </div>
-        </div>
+                </div>
         <br>
         <br>
         <br>
