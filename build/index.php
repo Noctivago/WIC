@@ -62,9 +62,9 @@ include ("./db/dbconn.php");
             if (isset($_GET ['name'])) {
                 $City = (filter_var($_GET ['name']));
                 $City = ucfirst($City);
-                $CityId = " AND [City].[Id] = " . DB_getCityId($pdo, $City);
+                $CityId = " AND [Service].[City_Id] = " . DB_getCityId($pdo, $City);
             } else {
-                $CityId = " AND [City].[Id] > 0";
+                $CityId = " AND [Service].[City_Id] > 0";
             }
             /**
              * Pesquisa por subCategoria
