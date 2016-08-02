@@ -32,7 +32,7 @@ include '../build/db/session.php';
         <?php
         //SE TIVER QUERY STRING
 
-        $selfUrl = $_SERVER['HTTP_HOST'] . '/build/index.php?qParam=&Category=&name=&SubCategory=';
+        $selfUrl = '/build/index.php';
 //        $getValues = array();
 //        foreach ($_GET as $key => $value) {
 //            array_push($getValues, $key . "=" . $value);
@@ -45,7 +45,7 @@ include '../build/db/session.php';
         ?>
         <header class="site-header">
             <div class="container-fluid">
-                <a href="index.php?qParam=&Category=&name=&SubCategory=" class="site-logo">
+                <a href="index.php" class="site-logo">
 
                     <img class="hidden-md-down" src="img/wic_logo.png" alt="">
                     <img class="hidden-lg-up" src="img/wic_logo.png" alt="">
@@ -514,7 +514,6 @@ include '../build/db/session.php';
                     //return uri + separator + key + "=" + value + hash;
                     window.location.assign(uri + separator + key + "=" + value + hash);
                 }
-
             }
             function sendInvite() {
                 var email = document.getElementById("email").value;
