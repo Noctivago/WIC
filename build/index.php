@@ -39,6 +39,7 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['Category'])) {
             $CategoryId = (filter_var($_GET ['Category']));
+            //DEVOLVE SUBCATS DE UMA CAT
             DB_GetSubCategories($pdo, $CategoryId);
         }
         ?>
