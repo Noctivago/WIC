@@ -64,10 +64,10 @@ include ("./db/dbconn.php");
                 $City = ucfirst($City);
                 $x = DB_getCityId($pdo, $City);
                 $y = DB_getCityById($pdo, $x);
-                $CityId = " AND [Service].[City_Id] = " . $x;
+                $CityId = " AND [City].[Id] = " . $x;
                 echo '<br><br> City > ' . $y . '<br><br>';
             } else {
-                $CityId = " AND [Service].[City_Id] > 0";
+                $CityId = " AND [City].[Id] > 0";
             }
             /**
              * Pesquisa por subCategoria
