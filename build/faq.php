@@ -1,7 +1,7 @@
 <?php
 include ("includes/head_sideMenu.php");
 //include_once '../build/db/dbconn.php';
-//include_once '../build/db/session.php';
+include_once '../build/db/session.php';
 ?>
 
 <!--    <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
@@ -27,10 +27,10 @@ include ("includes/head_sideMenu.php");
 						<article class="panel">
 							<div class="panel-heading" role="tab" id="headingOne">
 								<a data-toggle="collapse"
-<!--								   data-parent="#accordion"
+								   data-parent="#accordion"
 								   href="#collapseOne"
 								   aria-expanded="true"
-								   aria-controls="collapseOne">-->
+								   aria-controls="collapseOne">
 									What is WiC?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
