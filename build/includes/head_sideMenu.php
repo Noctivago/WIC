@@ -502,7 +502,8 @@ include '../build/db/session.php';
                 var uri = window.location.href;
                 var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                 if (uri.match(re)) {
-                    return uri.replace(re, '$1' + key + "=" + value + '$2');
+                    window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
+                    //return uri.replace(re, '$1' + key + "=" + value + '$2');
                 } else {
                     var hash = '';
                     if (uri.indexOf('#') !== -1) {
@@ -510,8 +511,9 @@ include '../build/db/session.php';
                         uri = uri.replace(/#.*/, '');
                     }
                     var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-                    return uri + separator + key + "=" + value + hash;
+                    //return uri + separator + key + "=" + value + hash;
                 }
+                window.location.assign(uri + separator + key + "=" + value + hash);
             }
             function sendInvite() {
                 var email = document.getElementById("email").value;
