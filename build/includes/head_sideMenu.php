@@ -271,7 +271,6 @@ include '../build/db/session.php';
                                        name="qParam"
                                        type="search"
                                        autocomplete="on"
-
                                        placeholder="Ex: Catering...">
                             </span>
                             <span class="typeahead-button">
