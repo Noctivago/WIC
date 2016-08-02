@@ -286,8 +286,10 @@ include '../build/db/session.php';
                 <br>
 
                 <header class="side-menu-title">Start Planning</header>
+                <!--updateQueryStringParameter(uri, key, value)-->
                 <li class="brown with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="fa fa-bank"></i> Space</a>
+                    <!--<a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="fa fa-bank"></i> Space</a>-->
+                    <a class="lbl" onclick="updateQueryStringParameter(<?= $selfUrl; ?>, 'Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-cutlery"></i> Food</a>
@@ -497,6 +499,16 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
+            function updateQueryStringParameter(uri, key, value) {
+                var re = new RegExp("([?&])" + key + "=[^&#]*", "i");
+                if (re.test(uri)) {
+                    return uri.replace(re, '$1' + key + "=" + value);
+                } else {
+                    var matchData = uri.match(/^([^#]*)(#.*)?$/);
+                    var separator = /\?/.test(uri) ? "&" : "?";
+                    return matchData[0] + separator + key + "=" + value + (matchData[1] || '');
+                }
+            }
             function sendInvite() {
                 var email = document.getElementById("email").value;
                 var service = document.getElementById("service").value;
