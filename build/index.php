@@ -88,7 +88,7 @@ include ("./db/dbconn.php");
             ?>
 
         </div><!--.card-grid-->
-        <div class="clear"></div>
+<!--        <div class="clear"></div>
         <div style="padding-left: 500px;">
             <nav>
                 <ul class="pagination">
@@ -113,7 +113,7 @@ include ("./db/dbconn.php");
                     </li>
                 </ul>
             </nav>
-        </div>
+        </div>-->
     </div>
 </div>
 
