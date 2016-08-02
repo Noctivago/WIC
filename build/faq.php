@@ -451,8 +451,8 @@ include ("includes/head_sideMenu.php");
 
 <!--<script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
-<script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+<script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>  
