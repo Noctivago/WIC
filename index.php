@@ -1,1 +1,1 @@
-<meta http-equiv="refresh" content="3;URL=/public/index.php" />
+<meta http-equiv="refresh" content="0;URL=/public/index.php" />
