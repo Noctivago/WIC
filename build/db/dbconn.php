@@ -3683,6 +3683,7 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
         AND [City].[Id] Like '%" . $city . "' 
         AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
         //AND [City].[Id] Like '" . $city . "%' | FUCK ERRO NA CITY
+        echo $rows;
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
             <article class = "card-typical">
