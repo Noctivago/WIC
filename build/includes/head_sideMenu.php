@@ -499,6 +499,10 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
+            if ($("input[type='radio'].SubCat").is(':checked')) {
+                var card_type = $("input[type='radio'].SubCat:checked").val();
+                alert(card_type);
+            }
             $("#name").keyup(function (ev) {
                 // 13 is ENTER
                 if (ev.which === 13) {
