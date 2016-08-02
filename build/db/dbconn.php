@@ -3634,7 +3634,7 @@ function DB_deleteServiceSecondaryPagePic($pdo, $MultimediaId) {
 }
 
 /**
- * 
+ * Devolve as SubCats de um Cat
  * @param type $pdo
  * @param type $service_Id
  * @return type
