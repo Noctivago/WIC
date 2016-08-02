@@ -435,7 +435,7 @@ $serviceId = (filter_var($_GET['Service']));
         var x = (screen.width / 2) - (435 / 2);
         var y = (screen.height / 2) - (362 / 2);
         if (Sid > 0) {
-            window.open('./ajax/getMyWicsPopup.php?id=' + Sid + '', 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
+            window.open('./ajax/getMyWicsPopup.php?id=' + Sid + '', 'MyWics', 'height=455,width=322,left=' + x + ',top=' + y);
         } else {
 
         }
