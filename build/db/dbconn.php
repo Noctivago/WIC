@@ -3680,7 +3680,7 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
         AND [Multimedia].[First_Page] =  1
         AND [Service].[Name] Like '%" . $name . "%'
         AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
-        AND [City].[Id] Like '%" . $city . "'
+        AND [City].[Id] Like '" . $city . "%'
         AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
