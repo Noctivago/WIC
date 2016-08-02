@@ -139,8 +139,10 @@ include ("./db/dbconn.php");
     div.options > label > img {
         display: inline-block;
         padding: 0px;
-        height:30px;
-        width:30px;
+        /*height:30px;
+        width:30px;*/
+        height:20px;
+        width:20px;
         background: none;
     }
 
