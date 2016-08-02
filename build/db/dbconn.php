@@ -3646,3 +3646,84 @@ function DB_GetSubCategories($pdo, $Category) {
         echo 'error';
     }
 }
+
+/**
+ * Index Queries
+ * @param type $pdo
+ * @param type $CategoryId
+ */
+function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory) {
+    try {
+        $rows = sql($pdo, "SELECT 
+        [Service].[Name] AS SNA,
+        [Service].[Id] AS SID,
+        [Service].[Description] AS SDE,
+        [Organization].[Name] AS ONA,
+        [Organization].[Id] AS OID,
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
+        FROM SERVICE
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
+        join [Organization]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        join [Sub_Category]
+        on [Service].[Sub_Category_Id] = [Sub_Category].[Id]
+        join [Category]
+        on [Category].[Id] = [Sub_Category].[Id]
+        join [City]
+        on [Service].[City_Id] = [City].[Id]
+        WHERE
+        [Organization].[Enabled] = 1 
+        AND [Service].[Enabled] = 1 
+        AND [Multimedia].[Enabled] = 1  
+        AND [Multimedia].[First_Page] =  1
+        AND [Service].[Name] Like '%" . $name . "%'
+        AND [Service].[Description] Like '%" . $name . "%'
+        AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
+        AND [City].[Id] Like '%" . $city . "'
+        AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
+        foreach ($rows as $row) {
+            echo '<div class = "card-grid-col">
+            <article class = "card-typical">
+            <div class = "card-typical-section">
+            <div class = "user-card-row">
+            <div class = "tbl-row">
+            <div class = "tbl-cell tbl-cell-photo">
+            <a href = "profile_org.php?Organization=' . $row['OID'] . '">
+            <img src = "' . $row['OPP'] . '" alt = "Avatar">
+            </a>
+            </div>
+            <div class = "tbl-cell">
+            <p class = "user-card-row-name"><a href = "profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class = "card-typical-section card-typical-content">
+            <div class = "photo">
+            <img src = "' . $row['MPP'] . '" alt = "Service Pic" height = "185" width = "110">
+            </div>
+            <header class = "title"><a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
+            <p>' . $row['SDE'] . '</p>
+            </div>
+            <div class="card-typical-section">
+            <div class="card-typical-linked">
+
+            </div>
+            <a  class="card-typical-likes">
+            <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+            <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+            </a>
+            </div>
+
+            </article>
+            </div>';
+        }
+
+        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+    } catch (Exception $exc) {
+        echo 'ERROR READING SERVICE TABLE!';
+    }
+}

@@ -5,39 +5,108 @@ include ("./db/dbconn.php");
 
 <div class="page-content">
     <div class="container-fluid">
-        <div class="cards-grid" data-columns>
-            
-            
-        <?php
-        $s_catId = (filter_var($_GET['Category']));
-        $s_qParamString = (filter_var($_GET['aParam']));
-        $s_cityId = (filter_var($_GET['City']));
-        $idUser = $_SESSION['id'];
 
-        if(isset(filter_var($_GET['Category']))) {
-            
+        <?php  
+        if (isset($_GET ['Category'])) {
+            $CategoryId = (filter_var($_GET ['Category']));
+            DB_GetSubCategories($pdo, $CategoryId);
         }
-//        if (isset($_GET['UserInService'])) {
-//                            DEVOLVE OS SERVIÇOS DA ORG DE UM DETERMINADO USER
-//            $UserInService = (filter_var($_GET['UserInService']));
-//            DB_GetOrganizationServicesByUserInService($pdo, $org, $UserInService);
-//        } else {
-//                            DEVOLVE TODOS OS SERVIÇOS DAS ORG
-//            DB_GetOrganizationServices($pdo, $org, $idUser);
-//        }
         ?>
 
+        <!--        <div class="row" style="padding-left: 35px;">
+                    <div class="col-md-3 col-sm-6">
+                    <div class="form-group-checkbox">
+                        <div class="checkbox">
+                            <input type="checkbox" id="check-1" checked>
+                            <label for="check-1">SubCategorie1</label>
+        
+                            <input type="checkbox" id="check-2" checked>
+                            <label for="check-2">SubCategorie2</label>
+        
+                            <input type="checkbox" id="check-3"checked >
+                            <label for="check-3">SubCategorie3</label>
+        
+                            <input type="checkbox" id="check-4" checked >
+                            <label for="check-4">SubCategorie4</label>
+                        </div>
+                    </div>
+        
+                    </div>
+        
+                </div>.row
+        
+                <br>
+                <br>-->
+
+
+
+        <div class="cards-grid" data-columns>
+
             <?php
-            if (isset($_GET ['Category'])) {
+//name
+            if (isset($_GET ['Category']) && !isset($_GET ['qParam']) && !isset($_GET ['name'])) {
                 $CategoryId = (filter_var($_GET ['Category']));
                 DB_getServicesForIndexByCategory($pdo, $CategoryId);
+            } elseif (!isset($_GET ['Category']) && isset($_GET ['qParam']) && !isset($_GET ['name'])) {
+                $qParam = (filter_var($_GET ['qParam']));
+                DB_getServicesForIndexByName($pdo, $qParam);
+                DB_getServicesForIndexByDescription($pdo, $qParam);
+            } elseif (isset($_GET ['Category']) && isset($_GET ['qParam']) && !isset($_GET ['name'])) {
+                $CategoryId = (filter_var($_GET ['Category']));
+                $qParam = (filter_var($_GET ['qParam']));
+                DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $CategoryId);
+                DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $CategoryId);
+                //APENAS CITY
+            } elseif (isset($_GET ['name']) && !isset($_GET ['qParam']) && !isset($_GET ['Category'])) {
+                $City = (filter_var($_GET ['name']));
+                //$City = ucfirst($City);
+                $CityId = DB_getCityId($pdo, $City);
+                DB_getServicesForIndexByCity($pdo, $CityId);
+                //CITY e CATEGORY
+            } elseif (isset($_GET ['name']) && isset($_GET ['Category']) && !isset($_GET ['qParam'])) {
+                $City = (filter_var($_GET ['name']));
+                $CategoryId = (filter_var($_GET ['Category']));
+                $CityId = DB_getCityId($pdo, $City);
+                DB_getServicesForIndexByCityAndCategory($pdo, $CategoryId, $CityId);
             } else {
                 DB_getServicesForIndex($pdo);
             }
             ?>
 
+            
+            
+            
+            
+            
+            
+            
         </div><!--.card-grid-->
         <div class="clear"></div>
+        <div style="padding-left: 500px;">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </div>
 
@@ -54,6 +123,8 @@ include ("./db/dbconn.php");
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>
+
+
 
 <script>
     $(document).ready(function () {
@@ -171,9 +242,9 @@ include ("./db/dbconn.php");
         var x = (screen.width / 2) - (435 / 2);
         var y = (screen.height / 2) - (362 / 2);
         if (Sid > 0) {
-            window.open('./ajax/getMyWicsPopup.php?id=' + Sid +  '', 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
+            window.open('./ajax/getMyWicsPopup.php?id=' + Sid + '', 'MyWics', 'height=435,width=322,left=' + x + ',top=' + y);
         } else {
-            
+
         }
     }
 </script>
