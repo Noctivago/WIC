@@ -3360,7 +3360,9 @@ function DB_removeService($pdo, $serviceId) {
  */
 function DB_getCityId($pdo, $cityName) {
     try {
-        $rows = sql($pdo, "SELECT [Id] FROM [dbo].[City] WHERE [Name] = ?", array($cityName), "rows");
+        $rows = sql($pdo, "SELECT [Id]
+        FROM [dbo].[City]
+        WHERE [Name] LIKE '%" . $cityName . "'", array(), "rows");
         foreach ($rows as $row) {
             return $row['Id'];
         }
@@ -3742,5 +3744,20 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
         //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
+    }
+}
+
+function DB_countSubCategories($pdo, $CategoryId) {
+    try {
+        $count = sql($pdo, "SELECT [Sub_Category].[Id] AS SCID, [Sub_Category].[Name] AS SCNA, [Sub_Category].[Category_id] 
+            FROM [Sub_Category]
+            WHERE [Sub_Category].[Category_Id] = ?", array($CategoryId), "count");
+        if ($count < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $ex) {
+        
     }
 }

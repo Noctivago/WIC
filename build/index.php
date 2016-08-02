@@ -64,7 +64,7 @@ include ("./db/dbconn.php");
                 $City = ucfirst($City);
                 $x = DB_getCityId($pdo, $City);
                 $y = DB_getCityById($pdo, $x);
-                $CityId = " AND [City].[Id] = " . $x;
+                $CityId = " AND [City].[Id] Like '%" . $x . "'";
                 echo '<br><br> City > ' . $y . '<br><br>';
             } else {
                 $CityId = " AND [City].[Id] > 0";
