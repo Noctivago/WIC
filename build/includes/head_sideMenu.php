@@ -45,7 +45,7 @@ include '../build/db/session.php';
         ?>
         <header class="site-header">
             <div class="container-fluid">
-                <a href="index.php" class="site-logo">
+                <a href="index.php?qParam=&Category=&name=&SubCategory=" class="site-logo">
 
                     <img class="hidden-md-down" src="img/wic_logo.png" alt="">
                     <img class="hidden-lg-up" src="img/wic_logo.png" alt="">
@@ -288,7 +288,6 @@ include '../build/db/session.php';
                 <header class="side-menu-title">Start Planning</header>
                 <li class="brown with-sub">
                     <!--preg_replace("#&d=.*&#", '&d=newvalue&', $_SERVER['REQUEST_URI'])-->
-                    <!--<a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="fa fa-bank"></i> Space</a>-->
                     <a class="lbl" href="<?= preg_replace("#&Category=.*&#", '&Category=1&', $_SERVER['REQUEST_URI']) ?>"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
@@ -300,9 +299,9 @@ include '../build/db/session.php';
                 <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=4' ?>"><i class="fa fa-star"></i>Decoration</a>
                 </li>
-                <!--                <li class="gold with-sub">
-                                    <a class="lbl" href="<?= $selfUrl . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
-                                </li>-->
+                <li class="gold with-sub">
+                    <a class="lbl" href="<?= $selfUrl . '&Category=5' ?>"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                </li>
                 <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=6' ?>"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
