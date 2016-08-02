@@ -32,16 +32,16 @@ include '../build/db/session.php';
         <?php
         //SE TIVER QUERY STRING
 
-        $selfUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php';
-        $getValues = array();
-        foreach ($_GET as $key => $value) {
-            array_push($getValues, $key . "=" . $value);
-        }
-        if (count($getValues) > 0) {
-            $selfUrl .= "?" . implode('&', $getValues);
-        } else {
-            $selfUrl .= "?";
-        }
+        $selfUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php?qParam=&Category=&name=&SubCategory=';
+//        $getValues = array();
+//        foreach ($_GET as $key => $value) {
+//            array_push($getValues, $key . "=" . $value);
+//        }
+//        if (count($getValues) > 0) {
+//            $selfUrl .= "?" . implode('&', $getValues);
+//        } else {
+//            $selfUrl .= "?";
+//        }
         ?>
         <header class="site-header">
             <div class="container-fluid">
@@ -237,12 +237,12 @@ include '../build/db/session.php';
                                         <div class="overlay"></div>
                                     </form>
                                 </div>
-                            </div><!--.site-header-collapsed-in-->
-                        </div><!--.site-header-collapsed-->
-                    </div><!--site-header-content-in-->
-                </div><!--.site-header-content-->
-            </div><!--.container-fluid-->
-        </header><!--.site-header-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
@@ -287,7 +287,9 @@ include '../build/db/session.php';
 
                 <header class="side-menu-title">Start Planning</header>
                 <li class="brown with-sub">
-                    <a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="fa fa-bank"></i> Space</a>
+                    <!--preg_replace("#&d=.*&#", '&d=newvalue&', $_SERVER['REQUEST_URI'])-->
+                    <!--<a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="fa fa-bank"></i> Space</a>-->
+                    <a class="lbl" href="<?= preg_replace("#&Category=.*&#", '&Category=1&', $_SERVER['REQUEST_URI']) ?>"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-cutlery"></i> Food</a>
