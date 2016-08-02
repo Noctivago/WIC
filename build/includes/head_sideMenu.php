@@ -503,18 +503,23 @@ include '../build/db/session.php';
                 var card_type = $("input[type='radio'].SubCat:checked").val();
                 alert(card_type);
             }
-            $("#name").keyup(function (ev) {
-                // 13 is ENTER
-                if (ev.which === 13) {
+
+            var CityArea = $('#name')
+            CityArea.bind('keydown', function (event) {
+                // Check if enter is pressed without pressing the shiftKey
+                if (event.keyCode === 13 && event.shiftKey === false) {
                     getCitySearchValue();
                 }
             });
-            $("#qParam").keyup(function (ev) {
-                // 13 is ENTER
-                if (ev.which === 13) {
+
+            var SearchArea = $('#qParam')
+            SearchArea.bind('keydown', function (event) {
+                // Check if enter is pressed without pressing the shiftKey
+                if (event.keyCode === 13 && event.shiftKey === false) {
                     getAdvancedSearchValue();
                 }
             });
+
             function getAdvancedSearchValue() {
                 var x = document.getElementById('qParam').value;
                 updateQueryStringParameter('qParam', x);
