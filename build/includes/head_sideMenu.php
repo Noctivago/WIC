@@ -500,10 +500,10 @@ include '../build/db/session.php';
         <script>
             function updateQueryStringParameter(StringValue, StringUpdateValue) {
                 if (StringValue === 'qParam') {
-                    var newUrl = location.href.replace("qParam=" + currentPageNum, "qParam=" + StringUpdateValue);
+                    var newUrl = location.href.replace("qParam=", "qParam=" + StringUpdateValue);
                     window.location = newUrl;
                 } else if (StringValue === 'Category') {
-                    var newUrl = location.href.replace("Category=" + currentPageNum, "Category=" + StringUpdateValue);
+                    var newUrl = location.href.replace("Category=", "Category=" + StringUpdateValue);
                     window.location = newUrl;
                 } else if (StringValue === 'SubCat') {
                     var newUrl = location.href.replace("SubCategory=" + currentPageNum, "SubCategory=" + StringUpdateValue);
