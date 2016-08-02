@@ -65,7 +65,7 @@ include ("./db/dbconn.php");
                 $x = DB_getCityId($pdo, $City);
                 $y = DB_getCityById($pdo, $x);
                 $CityId = " AND [Service].[City_Id] = " . $x;
-                echo $y;
+                echo 'City > ' . $y;
             } else {
                 $CityId = " AND [Service].[City_Id] > 0";
             }
