@@ -3372,7 +3372,7 @@ function DB_getCityId($pdo, $cityName) {
 /**
  * Devolve o nome da Cidade atraves do seu ID
  * @param type $pdo
- * @param type $cityName
+ * @param type $cityId
  * @return type
  */
 function DB_getCityById($pdo, $cityId) {
