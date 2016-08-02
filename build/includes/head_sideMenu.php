@@ -505,6 +505,12 @@ include '../build/db/session.php';
                     getCitySearchValue();
                 }
             });
+            $("#qParam").keyup(function (ev) {
+                // 13 is ENTER
+                if (ev.which === 13) {
+                    getAdvancedSearchValue();
+                }
+            });
             function getAdvancedSearchValue() {
                 var x = document.getElementById('qParam').value;
                 updateQueryStringParameter('qParam', x);
