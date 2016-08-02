@@ -496,15 +496,6 @@ include '../build/db/session.php';
                 ?>
             </ul>
         </nav>
-        <!--O PROXIMO SCRIPT DESABILITA BOTAO DIREITO-->
-        <script>
-            $(document).ready(function ()
-            {
-                $(document).bind("contextmenu", function (e) {
-                    return false;
-                });
-            })
-        </script>
         <script>
             function sendInvite() {
                 var email = document.getElementById("email").value;
@@ -512,7 +503,6 @@ include '../build/db/session.php';
 
                 $.post("../ajax/sendInviteUser.php", {email: email, serv: service}, function (result) {
                 });
-
             }
         </script>
         <script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
