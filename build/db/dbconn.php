@@ -3679,7 +3679,6 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
         AND [Multimedia].[Enabled] = 1  
         AND [Multimedia].[First_Page] =  1
         AND [Service].[Name] Like '%" . $name . "%'
-        OR [Service].[Description] Like '%" . $name . "%'
         AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
         AND [City].[Id] Like '%" . $city . "'
         AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
