@@ -25,12 +25,9 @@ include ("includes/head_sideMenu.php");
                			<div class="col-md-12">
                                                      <section class="widget widget-accordion" id="accordion" role="tablist" aria-multiselectable="true">
 						<article class="panel">
-							<div class="" role="tab" id="headingOne">
+							<div class="panel" role="tab" id="headingOne">
 								<a data-toggle="collapse"
-								   data-parent="#accordion"
-								   href="#collapseOne"
-								   aria-expanded="true"
-								   aria-controls="collapseOne">
+								  >
 									What is WiC?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
