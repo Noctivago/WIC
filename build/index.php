@@ -61,7 +61,7 @@ include ("./db/dbconn.php");
              */
             if (isset($_GET ['name'])) {
                 $City = (filter_var($_GET ['name']));
-                //$City = ucfirst($City);
+                $City = ucfirst($City);
                 $x = DB_getCityId($pdo, $City);
                 $y = DB_getCityById($pdo, $x);
                 $CityId = " AND [Service].[City_Id] = " . $x;
