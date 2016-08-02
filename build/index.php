@@ -6,13 +6,6 @@ include ("./db/dbconn.php");
 <div class="page-content">
     <div class="container-fluid">
 
-        <?php
-        if (isset($_GET ['Category'])) {
-            $CategoryId = (filter_var($_GET ['Category']));
-            DB_GetSubCategories($pdo, $CategoryId);
-        }
-        ?>
-
         <!--        <div class="row" style="padding-left: 35px;">
                     <div class="col-md-3 col-sm-6">
                     <div class="form-group-checkbox">
@@ -40,9 +33,9 @@ include ("./db/dbconn.php");
 
 
 
-        <div class="cards-grid" data-columns>
 
-            <?php
+
+        <?php
 //name
 //            if (isset($_GET ['Category']) && !isset($_GET ['qParam']) && !isset($_GET ['name'])) {
 //                $CategoryId = (filter_var($_GET ['Category']));
@@ -71,30 +64,30 @@ include ("./db/dbconn.php");
 //            } else {
 //                DB_getServicesForIndex($pdo);
 //            }
-            ?>
+        ?>
 
-            <?php
-            if (isset($_GET ['Category'])) {
-                $CategoryId = (filter_var($_GET ['Category']));
-                DB_GetSubCategories($pdo, $CategoryId);
-            }
+        <?php
+        if (isset($_GET ['Category'])) {
+            $CategoryId = (filter_var($_GET ['Category']));
+            DB_GetSubCategories($pdo, $CategoryId);
+        }
 
-            if (isset($_GET ['Category']) || isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['SubCategory'])) {
-                $CategoryId = (filter_var($_GET ['Category']));
-                $name = (filter_var($_GET ['qParam']));
-                $City = (filter_var($_GET ['name']));
-                $City = ucfirst($City);
-                $CityId = DB_getCityId($pdo, $City);
-                $SubCategory = (filter_var($_GET ['SubCategory']));
-                DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $CityId, $SubCategory);
-            } else {
-                DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
-            }
-            ?>
+        if (isset($_GET ['Category']) || isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['SubCategory'])) {
+            $CategoryId = (filter_var($_GET ['Category']));
+            $name = (filter_var($_GET ['qParam']));
+            $City = (filter_var($_GET ['name']));
+            $City = ucfirst($City);
+            $CityId = DB_getCityId($pdo, $City);
+            $SubCategory = (filter_var($_GET ['SubCategory']));
+            DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $CityId, $SubCategory);
+        } else {
+            DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
+        }
+        ?>
 
-            <br>
-            <br>
-
+        <br>
+        <br>
+        <div class="cards-grid" data-columns>
             <div class="cards-grid" data-columns>
             </div><!--.card-grid-->
             <div class="clear"></div>
