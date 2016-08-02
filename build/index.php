@@ -1,8 +1,6 @@
 <?php
 include ("includes/head_sideMenu.php");
 include ("./db/dbconn.php");
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
 ?>
 
 <div class="page-content">
@@ -65,9 +63,9 @@ ini_set("display_errors", 1);
                 $City = (filter_var($_GET ['name']));
                 $City = ucfirst($City);
                 //$CityId = 
-                $CityId = " = " . DB_getCityId($pdo, $City);
+                $CityId = DB_getCityId($pdo, $City);
             } else {
-                $CityId = " > 0";
+                
             }
             /**
              * Pesquisa por subCategoria
