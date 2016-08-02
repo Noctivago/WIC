@@ -512,8 +512,9 @@ include '../build/db/session.php';
                     }
                     var separator = uri.indexOf('?') !== -1 ? "&" : "?";
                     //return uri + separator + key + "=" + value + hash;
+                    window.location.assign(uri + separator + key + "=" + value + hash);
                 }
-                window.location.assign(uri + separator + key + "=" + value + hash);
+
             }
             function sendInvite() {
                 var email = document.getElementById("email").value;
