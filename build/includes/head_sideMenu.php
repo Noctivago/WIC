@@ -232,7 +232,7 @@ include '../build/db/session.php';
                                            type="text"
                                            autocomplete="on"/>
                                     <!--<button type="submit">-->
-                                    <button type="submit" onclick="getCitySearchValue()">
+                                    <button onclick="getCitySearchValue()">
                                         <span class="font-icon-pin-2"></span>
                                     </button>
                                     <div class="overlay"></div>
@@ -254,7 +254,7 @@ include '../build/db/session.php';
 
                     echo '<header class="side-menu-title">My Services search</header>';
                 } else {
-                    echo '<header class="side-menu-title">Advanced Search.</header>';
+                    echo '<header class="side-menu-title">Advanced Search</header>';
                 }
                 ?>
 
@@ -499,6 +499,12 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
+            $("#name").keyup(function (ev) {
+                // 13 is ENTER
+                if (ev.which === 13) {
+                    getCitySearchValue();
+                }
+            });
             function getAdvancedSearchValue() {
                 var x = document.getElementById('qParam').value;
                 updateQueryStringParameter('qParam', x);
