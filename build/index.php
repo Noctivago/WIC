@@ -60,14 +60,9 @@ include ("./db/dbconn.php");
              * Pesquisa por nome da cidade
              */
             if (isset($_GET ['name'])) {
-                $City = (filter_var($_GET ['name']));
-                //$City = ucfirst($City);
-                $x = DB_getCityId($pdo, $City);
-                $y = DB_getCityById($pdo, $x);
-                $CityId = " AND [City].[Id] Like '%" . $x . "'";
-                echo '<br><br> City > ' . $y . '<br><br>';
+                $city = (filter_var($_GET ['name']));
             } else {
-                $CityId = " AND [City].[Id] > 0";
+                
             }
             /**
              * Pesquisa por subCategoria
