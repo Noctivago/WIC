@@ -11,8 +11,8 @@ include ("includes/head_sideMenu.php");
     <link href="img/favicon.png" rel="icon" type="image/png">
     <link href="img/favicon.ico" rel="shortcut icon">-->
 
-    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
-    <link rel="stylesheet" href="css/main.css">
+<!--    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">-->
 
 <div class="page-content">
 		<div class="container-fluid">
