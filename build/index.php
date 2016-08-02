@@ -62,7 +62,7 @@ include ("./db/dbconn.php");
              */
             if (isset($_GET ['name'])) {
                 $city = (filter_var($_GET ['name']));
-                echo 'City > ' . $city . '<br>';
+                //echo 'City > ' . $city . '<br>';
             } else {
                 
             }
