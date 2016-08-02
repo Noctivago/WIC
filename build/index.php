@@ -150,7 +150,8 @@ include ("./db/dbconn.php");
         background: url(https://www.ureach.com/home/images/checkmark_grey20.png);
         background-repeat: no-repeat;
         background-position:center center;
-        background-size:30px 30px;
+        /*background-size:30px 30px;*/
+        background-size:20px 20px;
     }
 
 </style>
