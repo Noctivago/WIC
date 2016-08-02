@@ -3647,9 +3647,7 @@ function DB_GetSubCategories($pdo, $Category) {
         $stmt->bindParam(':id', $Category);
         $stmt->execute();
         echo '<div class="row" style="padding-left: 35px;">
-            <div class="col-md-3 col-sm-6">
-            <div class="form-group-checkbox">
-                <div class="checkbox">';
+            <div class="col-md-3 col-sm-6">';
 
         /**
          * <div class="options">
@@ -3670,7 +3668,6 @@ function DB_GetSubCategories($pdo, $Category) {
         echo ' </div>
                 </div>
                 </div>
-        </div>
         <br>
         <br>
         <br>
