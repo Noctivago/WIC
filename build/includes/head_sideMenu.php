@@ -32,7 +32,7 @@ include '../build/db/session.php';
         <?php
         //SE TIVER QUERY STRING
 
-        $selfUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/build/index.php?qParam=&Category=&name=&SubCategory=';
+        $selfUrl = $_SERVER['HTTP_HOST'] . '/build/index.php?qParam=&Category=&name=&SubCategory=';
 //        $getValues = array();
 //        foreach ($_GET as $key => $value) {
 //            array_push($getValues, $key . "=" . $value);
