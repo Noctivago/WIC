@@ -59,28 +59,46 @@ include ("./db/dbconn.php");
 //            } else {
 //                DB_getServicesForIndex($pdo);
 //            }
+
+        /**
+         * Vai buscar as subCats da Cat
+         */
+        if (isset($_GET ['Category'])) {
+            $CategoryId = (filter_var($_GET ['Category']));
+            DB_GetSubCategories($pdo, $CategoryId);
+        }
         ?>
         <div class="cards-grid" data-columns>
             <?php
+            /**
+             * Pesquisa por categoria
+             */
             if (isset($_GET ['Category'])) {
                 $CategoryId = (filter_var($_GET ['Category']));
-                DB_GetSubCategories($pdo, $CategoryId);
             }
-            if (isset($_GET ['Category'])) {
-                $CategoryId = (filter_var($_GET ['Category']));
-            }
+            /**
+             * Pesquisa por nome de serviço
+             */
             if (isset($_GET ['qParam'])) {
                 $name = (filter_var($_GET ['qParam']));
             }
-
+            /**
+             * Pesquisa por nome da cidade
+             */
             if (isset($_GET ['name'])) {
                 $City = (filter_var($_GET ['name']));
                 $City = ucfirst($City);
                 $CityId = DB_getCityId($pdo, $City);
             }
+            /**
+             * Pesquisa por subCategoria
+             */
             if (isset($_GET ['SubCategory'])) {
                 $SubCategory = (filter_var($_GET ['SubCategory']));
             }
+            /**
+             * Executa a Querie c/ todos os parametros
+             */
             DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
             ?>
 

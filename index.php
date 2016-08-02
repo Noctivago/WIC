@@ -1,5 +1,5 @@
 <?php
-
+//INDEX DO SERVER ROOT | NÃO MEXER EM NADA SFF.
 ob_start();
 session_start();
 if (isset($_SESSION['id'])) {
