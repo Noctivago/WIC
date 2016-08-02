@@ -288,7 +288,11 @@ include '../build/db/session.php';
                 <header class="side-menu-title">Start Planning</header>
                 <li class="brown with-sub">
                     <!--preg_replace("#&d=.*&#", '&d=newvalue&', $_SERVER['REQUEST_URI'])-->
-                    <a class="lbl" href="<?= preg_replace("#&Category=.*&#", '&Category=1&', $_SERVER['REQUEST_URI']) ?>"><i class="fa fa-bank"></i> Space</a>
+                    <?php
+                    $oldurl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                    ?>
+
+                    <a class="lbl" href="<?= $selfUrl = preg_replace("/Category=\d+/", "Category=1", $oldurl); ?>"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
                     <a class="lbl" href="<?= $selfUrl . '&Category=2' ?>"><i class="fa fa-cutlery"></i> Food</a>
