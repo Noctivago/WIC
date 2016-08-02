@@ -92,6 +92,8 @@ include ("./db/dbconn.php");
             }
             ?>
 
+            <br>
+            <br>
 
             <div class="cards-grid" data-columns>
             </div><!--.card-grid-->
