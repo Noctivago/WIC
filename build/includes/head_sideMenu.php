@@ -288,7 +288,6 @@ include '../build/db/session.php';
                 <header class="side-menu-title">Start Planning</header>
                 <!--updateQueryStringParameter(uri, key, value)-->
                 <li class="brown with-sub">
-                    <!--<a class="lbl" href="<?= $selfUrl . '&Category=1' ?>"><i class="fa fa-bank"></i> Space</a>-->
                     <a class="lbl" onclick="updateQueryStringParameter(<?= $selfUrl; ?>, 'Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
