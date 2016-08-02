@@ -3658,16 +3658,6 @@ function DB_GetSubCategories($pdo, $Category) {
           Item 1
           <img />
           </label>
-          <label title="item2">
-          <input type="radio" name="foo" value="1" />
-          Item 2
-          <img />
-          </label>
-          <label title="item3">
-          <input type="radio" name="foo" value="2" />
-          Item 3
-          <img />
-          </label>
           </div>
          */
         echo '<div class="options">';
