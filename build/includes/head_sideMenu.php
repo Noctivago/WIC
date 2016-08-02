@@ -260,29 +260,30 @@ include '../build/db/session.php';
 
                 <!--<header class="side-menu-title">Advanced search</header>-->
 
-                <form action="<?php echo $selfUrl; ?>">
-                    <div class="col-md-10">
-                        <div class="typeahead-container">
-                            <div class="typeahead-field">
-                                <span class="typeahead-query">
-                                    <input id="qParam"
-                                           class="form-control"
-                                           required="required"
-                                           name="qParam"
-                                           type="search"
-                                           autocomplete="on"
+                <!--<form action="<?php echo $selfUrl; ?>">-->
+                <div class="col-md-10">
+                    <div class="typeahead-container">
+                        <div class="typeahead-field">
+                            <span class="typeahead-query">
+                                <input id="qParam"
+                                       class="form-control"
+                                       required="required"
+                                       name="qParam"
+                                       type="search"
+                                       autocomplete="on"
 
-                                           placeholder="Ex: Catering...">
-                                </span>
-                                <span class="typeahead-button">
-                                    <button type="submit">
-                                        <span class="font-icon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
+                                       placeholder="Ex: Catering...">
+                            </span>
+                            <span class="typeahead-button">
+                                <!--<button type="submit">-->
+                                <button onclick="getAdvancedSearchValue()">
+                                    <span class="font-icon-search"></span>
+                                </button>
+                            </span>
                         </div>
                     </div>
-                </form>
+                </div>
+                <!--</form>-->
                 <br>
 
                 <header class="side-menu-title">Start Planning</header>
@@ -498,6 +499,11 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
+            function getAdvancedSearchValue() {
+                var x = document.getElementById('qParam').value;
+                updateQueryStringParameter('qParam', x);
+            }
+
             function updateQueryStringParameter(key, value) {
                 var uri = window.location.href;
                 var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
