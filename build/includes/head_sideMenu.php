@@ -499,21 +499,20 @@ include '../build/db/session.php';
         </nav>
         <script>
             function updateQueryStringParameter(StringValue, StringUpdateValue) {
-                if (StringValue == 'qParam') {
+                if (StringValue === 'qParam') {
                     var newUrl = location.href.replace("qParam=" + currentPageNum, "qParam=" + StringUpdateValue);
                     window.location = newUrl;
-                }
-                if (StringValue == 'Cat') {
+                } else if (StringValue === 'Category') {
                     var newUrl = location.href.replace("Category=" + currentPageNum, "Category=" + StringUpdateValue);
                     window.location = newUrl;
-                }
-                if (StringValue == 'SubCat') {
+                } else if (StringValue === 'SubCat') {
                     var newUrl = location.href.replace("SubCategory=" + currentPageNum, "SubCategory=" + StringUpdateValue);
                     window.location = newUrl;
-                }
-                if (StringValue == 'City') {
+                } else if (StringValue === 'City') {
                     var newUrl = location.href.replace("name=" + currentPageNum, "name=" + StringUpdateValue);
                     window.location = newUrl;
+                } else {
+                    alert('TTF');
                 }
 
 
