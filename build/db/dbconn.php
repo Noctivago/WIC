@@ -3699,7 +3699,7 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
         AND [Multimedia].[First_Page] =  1
         AND [Service].[Name] Like '%" . $name . "%'
         AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
-        $city
+        AND [City].[Name] Like '%" . $city . "'
         AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
         //AND [City].[Id] Like '" . $city . "%' | FUCK ERRO NA CITY
         foreach ($rows as $row) {
