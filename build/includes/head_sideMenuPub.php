@@ -58,7 +58,7 @@ if (isset($_SESSION['id'])) {
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
-                                <a href="../build/sign_in.php?redUrl=/build/my_wicplanner.php"
+                                <a class="btn btn-rounded btn-inline btn-primary-outline" href="../build/sign_in.php?redUrl=/build/my_wicplanner.php"
 <!--                                   class="header-alarm"
                                    id="dd-messages"
                                    data-toggle="dropdown"
