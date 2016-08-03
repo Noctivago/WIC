@@ -6,33 +6,35 @@ include ("./db/dbconn.php");
 <div class="page-content">
     <div class="container-fluid">
         <?php
-//            if (isset($_GET ['Category']) && !isset($_GET ['qParam']) && !isset($_GET ['name'])) {
-//                $CategoryId = (filter_var($_GET ['Category']));
-//                DB_getServicesForIndexByCategory($pdo, $CategoryId);
-//            } elseif (!isset($_GET ['Category']) && isset($_GET ['qParam']) && !isset($_GET ['name'])) {
-//                $qParam = (filter_var($_GET ['qParam']));
-//                DB_getServicesForIndexByName($pdo, $qParam);
-//                DB_getServicesForIndexByDescription($pdo, $qParam);
-//            } elseif (isset($_GET ['Category']) && isset($_GET ['qParam']) && !isset($_GET ['name'])) {
-//                $CategoryId = (filter_var($_GET ['Category']));
-//                $qParam = (filter_var($_GET ['qParam']));
-//                DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $CategoryId);
-//                DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $CategoryId);
-//                //APENAS CITY
-//            } elseif (isset($_GET ['name']) && !isset($_GET ['qParam']) && !isset($_GET ['Category'])) {
-//                $City = (filter_var($_GET ['name']));
-//                //$City = ucfirst($City);
-//                $CityId = DB_getCityId($pdo, $City);
-//                DB_getServicesForIndexByCity($pdo, $CityId);
-//                //CITY e CATEGORY
-//            } elseif (isset($_GET ['name']) && isset($_GET ['Category']) && !isset($_GET ['qParam'])) {
-//                $City = (filter_var($_GET ['name']));
-//                $CategoryId = (filter_var($_GET ['Category']));
-//                $CityId = DB_getCityId($pdo, $City);
-//                DB_getServicesForIndexByCityAndCategory($pdo, $CategoryId, $CityId);
-//            } else {
-//                DB_getServicesForIndex($pdo);
-//            }
+        $query = '';
+        /**
+         * Pesquisa por categoria
+         */
+        if (isset($_GET ['Category'])) {
+            $CategoryId = (filter_var($_GET ['Category']));
+        }
+        /**
+         * Pesquisa por nome de serviço
+         */
+        if (isset($_GET ['qParam'])) {
+            $name = (filter_var($_GET ['qParam']));
+            $query .= '#Advanced Search Criteria > ' . $name . ' ';
+        }
+        /**
+         * Pesquisa por nome da cidade
+         */
+        if (isset($_GET ['name'])) {
+            $city = (filter_var($_GET ['name']));
+            $query .= '#City > ' . $city . ' ';
+        }
+        /**
+         * Pesquisa por subCategoria
+         */
+        if (isset($_GET ['SubCategory'])) {
+            $SubCategory = (filter_var($_GET ['SubCategory']));
+        }
+
+        echo $query . '<br><br>';
 
         /**
          * Vai buscar as subCats da Cat
@@ -42,42 +44,16 @@ include ("./db/dbconn.php");
             //DEVOLVE SUBCATS DE UMA CAT
             DB_GetSubCategories($pdo, $CategoryId);
         }
-        echo '123';
         ?>
         <div class="cards-grid" data-columns>
-
             <?php
-            /**
-             * Pesquisa por categoria
-             */
-            if (isset($_GET ['Category'])) {
-                $CategoryId = (filter_var($_GET ['Category']));
-            }
-            /**
-             * Pesquisa por nome de serviço
-             */
-            if (isset($_GET ['qParam'])) {
-                $name = (filter_var($_GET ['qParam']));
-            }
-            /**
-             * Pesquisa por nome da cidade
-             */
-            if (isset($_GET ['name'])) {
-                $city = (filter_var($_GET ['name']));
-            }
-            /**
-             * Pesquisa por subCategoria
-             */
-            if (isset($_GET ['SubCategory'])) {
-                $SubCategory = (filter_var($_GET ['SubCategory']));
-            }
             /**
              * Executa a Querie c/ todos os parametros
              */
             DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
             ?>
 
-        </div><!--.card-grid-->
+        </div>
         <!--        <div class="clear"></div>
                 <div style="padding-left: 500px;">
                     <nav>
