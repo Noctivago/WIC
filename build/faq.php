@@ -22,7 +22,7 @@ include_once '../build/db/session.php';
 				<br/>
 				
 		           </div>
-               			<div class="col-md-12">
+<!--               			<div class="col-md-12">-->
                                                      <section class="widget widget-accordion" id="accordion" role="tablist" aria-multiselectable="true">
 						<article class="panel">
 							<div class="panel-heading" role="tab" id="headingOne">
@@ -437,7 +437,7 @@ include_once '../build/db/session.php';
                                                         </div>
 						</article>
 					</section>
-                                                </div>
+<!--                                                </div>-->
              
                        	
                 </div>
