@@ -60,7 +60,7 @@ if (isset($_SESSION['id'])) {
 
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
                                 <a href="../build/sign_in.php?redUrl=/build/my_wicplanner.php"
-                                   class="header-alarm  "
+                                   class="header-alarm"
                                    id="dd-messages"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
