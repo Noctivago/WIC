@@ -26,9 +26,6 @@ if (isset($_SESSION['id'])) {
         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
         $pw = (filter_var($_POST ['pw'], FILTER_SANITIZE_STRING));
         $hashPassword = hash('whirlpool', $pw);
-        if (isset($_Get ['redUrl'])) {
-            $url = (filter_var($_Get ['redUrl'], FILTER_SANITIZE_STRING));
-        }
         //1 verifica se user exist
         if (DB_checkIfUserExists($pdo, $email)) {
             //2 se existir verifica se enabled / CONTA N BLOQUEADA
@@ -51,16 +48,21 @@ if (isset($_SESSION['id'])) {
                         if (DB_setLoginFailed($pdo, $email)) {
                             //header('Location: profile.php');
                             $msg = "LOGIN OK! HEADER LOCATION";
-                            if ($_SESSION['role'] === 'organization') {
-                                $use = $_SESSION['id'];
-                                $idOg = DB_GetOrgIdByUserBossId2($pdo, $use);
-                                $idorga = $idOg['Id'];
-                                //header("location: ../build/profile_org.php?Organization=". $idOg['Id']."");
-                                //header("location: ../build/profile_org.php?Organization= $idorga ");
-                                header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/profile_org.php?Organization=$idorga");
-                            }
-                            if ($_SESSION['role'] === 'user') {
-                                header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/index.php");
+                            if (isset($_Get ['redUrl'])) {
+                                $url = (filter_var($_Get ['redUrl'], FILTER_SANITIZE_STRING));
+                                header("location: http://$url");
+                            } else {
+                                if ($_SESSION['role'] === 'organization') {
+                                    $use = $_SESSION['id'];
+                                    $idOg = DB_GetOrgIdByUserBossId2($pdo, $use);
+                                    $idorga = $idOg['Id'];
+                                    //header("location: ../build/profile_org.php?Organization = ". $idOg['Id']."");
+                                    //header("location: ../build/profile_org.php?Organization = $idorga ");
+                                    header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/profile_org.php?Organization=$idorga");
+                                }
+                                if ($_SESSION['role'] === 'user') {
+                                    header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/index.php");
+                                }
                             }
                         }
                     } else {
