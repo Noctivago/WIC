@@ -3,6 +3,7 @@ include ("includes/head_sideMenuPub.php");
 include ("./db/dbconn.php");
 ?>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="css/lib/bootstrap-sweetalert/sweetalert.css"/>
 <div class="page-content">
     <div class="container-fluid">
         <?php
