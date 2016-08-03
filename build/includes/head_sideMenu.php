@@ -565,7 +565,22 @@ include '../build/db/session.php';
                 } else {
                     var str = uri;
                     str = /.php(.+)/.exec(str)[1];
-                    alert(<?= $_SERVER['HTTP_HOST']; ?> + str);
+                    //alert(<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?> + str);
+                    uri = <?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?> + str;
+                    var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
+                    if (uri.match(re)) {
+                        window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
+                        //return uri.replace(re, '$1' + key + "=" + value + '$2');
+                    } else {
+                        var hash = '';
+                        if (uri.indexOf('#') !== -1) {
+                            hash = uri.replace(/.*#/, '#');
+                            uri = uri.replace(/#.*/, '');
+                        }
+                        var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+                        //return uri + separator + key + "=" + value + hash;
+                        window.location.assign(uri + separator + key + "=" + value + hash);
+                    }
                 }
             }
             function sendInvite() {
