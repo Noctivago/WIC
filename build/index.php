@@ -7,13 +7,7 @@ include ("./db/dbconn.php");
     <div class="container-fluid">
         <?php
         $query = '';
-        /**
-         * Pesquisa por categoria
-         */
-        if (isset($_GET ['Category'])) {
-            $CategoryId = (filter_var($_GET ['Category']));
-            $query .= '#Category > ' . DB_getCategoryName($pdo, $CategoryId) . ' ';
-        }
+
         /**
          * Pesquisa por nome de serviçoF
          */
@@ -27,6 +21,13 @@ include ("./db/dbconn.php");
         if (isset($_GET ['name'])) {
             $city = (filter_var($_GET ['name']));
             $query .= '#City > ' . $city . ' ';
+        }
+        /**
+         * Pesquisa por categoria
+         */
+        if (isset($_GET ['Category'])) {
+            $CategoryId = (filter_var($_GET ['Category']));
+            $query .= '#Category > ' . DB_getCategoryName($pdo, $CategoryId) . ' ';
         }
         /**
          * Pesquisa por subCategoria
