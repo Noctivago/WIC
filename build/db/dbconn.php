@@ -3854,12 +3854,12 @@ function DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory) {
                         </a>
                     </li>';
         foreach ($rows as $row) {
-            $pageNum = $row['COUNTER'] / 50;
+            $pageNum = ($row['COUNTER'] / 50);
             for ($i = 0; $i <= $pageNum; $i++) {
 //                    <li class="page-item active">
 //                        <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
 //                    </li>
-                echo '<li class="page-item"><a class="page-link" href="#">' . $i + 1 . '</a></li>';
+                echo '<li class="page-item"><a class="page-link">' . $i + 1 . '</a></li>';
             }
         }
         echo '<li class="page-item">
