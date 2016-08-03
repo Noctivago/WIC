@@ -3847,7 +3847,7 @@ function DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory) {
         echo '<div style="padding-left: 500px;">
                     <nav>
                         <ul class="pagination">
-                            <li class="page-item disabled">
+                            <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                     <span class="sr-only">Previous</span>
