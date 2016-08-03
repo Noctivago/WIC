@@ -3673,10 +3673,12 @@ function DB_GetSubCategories($pdo, $Category) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             if ($x === 1) {
                 echo '<div class="checkbox">';
+
                 echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
                 echo '<label for="' . $row['SCID'] . '" title="' . $row['SCID'] . '">';
                 echo '<img/>';
                 echo '</label>';
+                echo '</div>';
             } else {
                 echo '<label title="' . $row['SCID'] . '">';
                 echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">' . $row['SCNA'] . ' ';
@@ -3757,21 +3759,29 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
             <p style="overflow:hidden; max-height:75px; ">' . $row['SDE'] . '</p>
             </div>
 
+<div class="card-typical-section">
+<div class="card-typical-linked">
+
+</div>
+
+<div  class="card-typical-likes">
+
+<button class="btn btn-rounded btn-inline btn-primary-outline font-icon-plus" style="width: 53px;height: 37px;border-color:white;    padding-left: 0px;padding-right: 0px;padding-top: 0px;onClick = "openMyWics(' . $row['SID'] . ');" </button>
+<button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;    padding-left: 10px;padding-right: 10px;padding-top: 3px;  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+
+
+</div>
+</div>            
+
             <div class="card-typical-section">
             <div class="card-typical-linked">
 
             </div>
-
-            <div  class="card-typical-likes">
-
-            <button class="btn btn-rounded btn-inline btn-primary-outline font-icon-plus" style="width: 53px;height: 37px;border-color:white;    padding-left: 0px;padding-right: 0px;padding-top: 0px;onClick = "openMyWics(' . $row['SID'] . ');" </button>
-            <button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;    padding-left: 10px;padding-right: 10px;padding-top: 3px;  onClick = "openMyWics(' . $row['SID'] . ');" </button>
-
-
+            <a  class="card-typical-likes">
+            <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+            <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+            </a>
             </div>
-            </div>            
-
-    
 
             </article>
             </div>';
