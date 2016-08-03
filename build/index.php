@@ -105,7 +105,7 @@ include ("./db/dbconn.php");
         <?php
         //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
         //onclick="updateQueryStringParameter('Category', '4');"
-onclick="setPAge(' . ($PAgeNum - 1) . ')"
+
         echo '<button onclick="setPage(' . ($PageNum - 1) . ')" type="button"><<</button>';
 //        if (($PageNum + 1) > ($numPag / 50)) {
 //            echo '<button onclick="setPage(' . ($PageNum) . ')" type="button">>></button>';
