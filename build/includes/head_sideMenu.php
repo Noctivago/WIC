@@ -546,6 +546,7 @@ include '../build/db/session.php';
             }
             function updateQueryStringParameter(key, value) {
                 var uri = window.location.href;
+                alert(uri);
                 var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                 if (uri.match(re)) {
                     window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
