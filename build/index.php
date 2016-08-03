@@ -34,6 +34,7 @@ include ("./db/dbconn.php");
 //                DB_getServicesForIndex($pdo);
 //            }
 
+        $query = '';
         /**
          * Vai buscar as subCats da Cat
          */
@@ -73,7 +74,7 @@ include ("./db/dbconn.php");
             $SubCategory = (filter_var($_GET ['SubCategory']));
         }
 
-        echo '123';
+        echo $query;
         ?>
         <div class="cards-grid" data-columns>
             <?php
