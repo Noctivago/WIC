@@ -301,7 +301,7 @@ include '../build/db/session.php';
                 <header class="side-menu-title">Start Planning</header>
                 <!--updateQueryStringParameter(uri, key, value)-->  
                 <li class="brown with-sub">
-                    <a class="lbl" onclick="updateQueryStringParameter('Category', '1');setPage('0');"><i class="fa fa-bank"></i> Space</a>
+                    <a class="lbl" onclick="changePageNum();updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '2');"><i class="fa fa-cutlery"></i> Food</a>
@@ -547,6 +547,10 @@ include '../build/db/session.php';
             function setPage(Page) {
                 var x = Page;
                 updateQueryStringParameter('PageNum', x);
+            }
+            function changePageNum() {
+                var uri = window.location.href;
+                uri.replace(re, '$1' + 'pageNum' + "=" + '0' + '$2'));
             }
 
             //FALTA COLOCAR PageNum,0 quando troca algum criterio de pesquisa
