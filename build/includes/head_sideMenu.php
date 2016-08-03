@@ -504,7 +504,7 @@ include '../build/db/session.php';
                 alert(card_type);
             }
 
-            function bindKeys() {
+            function bindKeysBTN() {
                 var CityArea = $('#name')
                 CityArea.bind('keydown', function (event) {
                     // Check if enter is pressed without pressing the shiftKey
@@ -553,7 +553,7 @@ include '../build/db/session.php';
                 $.post("../ajax/sendInviteUser.php", {email: email, serv: service}, function (result) {
                 });
             }
-            bindKeys();
+            bindKeysBTN();
         </script>
         <script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
