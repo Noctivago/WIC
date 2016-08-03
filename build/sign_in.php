@@ -8,7 +8,7 @@ session_start();
 
 if (isset($_GET ['redUrl'])) {
     $url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
-    $msg = $url;
+    //$msg = $url;
 }
 
 if (isset($_SESSION['id'])) {
@@ -61,8 +61,6 @@ if (isset($_SESSION['id'])) {
                                     $use = $_SESSION['id'];
                                     $idOg = DB_GetOrgIdByUserBossId2($pdo, $use);
                                     $idorga = $idOg['Id'];
-                                    //header("location: ../build/profile_org.php?Organization = ". $idOg['Id']."");
-                                    //header("location: ../build/profile_org.php?Organization = $idorga ");
                                     header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/profile_org.php?Organization=$idorga");
                                 }
                                 if ($_SESSION['role'] === 'user') {
