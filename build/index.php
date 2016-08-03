@@ -57,12 +57,14 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['qParam'])) {
             $name = (filter_var($_GET ['qParam']));
+            $query .= 'Advanced Search > ' . $name . ' ';
         }
         /**
          * Pesquisa por nome da cidade
          */
         if (isset($_GET ['name'])) {
             $city = (filter_var($_GET ['name']));
+            $query .= 'City > ' . $city . ' ';
         }
         /**
          * Pesquisa por subCategoria
