@@ -6,36 +6,6 @@ include ("./db/dbconn.php");
 <div class="page-content">
     <div class="container-fluid">
         <?php
-//            if (isset($_GET ['Category']) && !isset($_GET ['qParam']) && !isset($_GET ['name'])) {
-//                $CategoryId = (filter_var($_GET ['Category']));
-//                DB_getServicesForIndexByCategory($pdo, $CategoryId);
-//            } elseif (!isset($_GET ['Category']) && isset($_GET ['qParam']) && !isset($_GET ['name'])) {
-//                $qParam = (filter_var($_GET ['qParam']));
-//                DB_getServicesForIndexByName($pdo, $qParam);
-//                DB_getServicesForIndexByDescription($pdo, $qParam);
-//            } elseif (isset($_GET ['Category']) && isset($_GET ['qParam']) && !isset($_GET ['name'])) {
-//                $CategoryId = (filter_var($_GET ['Category']));
-//                $qParam = (filter_var($_GET ['qParam']));
-//                DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $CategoryId);
-//                DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $CategoryId);
-//                //APENAS CITY
-//            } elseif (isset($_GET ['name']) && !isset($_GET ['qParam']) && !isset($_GET ['Category'])) {
-//                $City = (filter_var($_GET ['name']));
-//                //$City = ucfirst($City);
-//                $CityId = DB_getCityId($pdo, $City);
-//                DB_getServicesForIndexByCity($pdo, $CityId);
-//                //CITY e CATEGORY
-//            } elseif (isset($_GET ['name']) && isset($_GET ['Category']) && !isset($_GET ['qParam'])) {
-//                $City = (filter_var($_GET ['name']));
-//                $CategoryId = (filter_var($_GET ['Category']));
-//                $CityId = DB_getCityId($pdo, $City);
-//                DB_getServicesForIndexByCityAndCategory($pdo, $CategoryId, $CityId);
-//            } else {
-//                DB_getServicesForIndex($pdo);
-//            }
-        ?>
-
-        <?php
         $query = '';
         /**
          * Pesquisa por categoria
@@ -76,12 +46,12 @@ include ("./db/dbconn.php");
         echo $query;
         ?>
         <div class="cards-grid" data-columns>
-        <?php
-        /**
-         * Executa a Querie c/ todos os parametros
-         */
-        DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
-        ?>
+            <?php
+            /**
+             * Executa a Querie c/ todos os parametros
+             */
+            DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
+            ?>
 
         </div>
         <!--        <div class="clear"></div>
