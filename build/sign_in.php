@@ -6,6 +6,11 @@ include_once '../build/db/dbconn.php';
 ob_start();
 session_start();
 
+if (isset($_GET ['redUrl'])) {
+    $url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
+    $msg = $url;
+}
+
 if (isset($_SESSION['id'])) {
     if ($_SESSION['role'] === 'organization') {
         //header("location: ../build/profile_org.php");
