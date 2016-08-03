@@ -56,7 +56,8 @@ if (isset($_SESSION['id'])) {
                                 //$url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
                                 //header("location: http://$url");
                                 $url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
-                                header("location: http://" . $url);
+                                //$_SERVER['HTTP_HOST']
+                                header("location: http://" . $_SERVER['HTTP_HOST'] . $url);
                             } else {
                                 if ($_SESSION['role'] === 'organization') {
                                     $use = $_SESSION['id'];
