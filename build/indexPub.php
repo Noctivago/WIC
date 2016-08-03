@@ -2,6 +2,7 @@
 include ("includes/head_sideMenuPub.php");
 include ("./db/dbconn.php");
 ?>
+
 <div class="page-content">
     <div class="container-fluid">
         <?php
