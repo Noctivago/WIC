@@ -86,9 +86,6 @@ if (isset($_SESSION['id'])) {
                                     <img src="img/avatar-2-64.png" alt="">
                                 </button>
                             </div>
-                            <button type="button" class="burger-right">
-                                <i class="font-icon-pin-2"></i>
-                            </button>
                         </div>
                         <div class="mobile-menu-right-overlay"></div>
                         <div class="site-header-collapsed">
