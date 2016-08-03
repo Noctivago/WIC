@@ -41,7 +41,7 @@ if (isset($_SESSION['id'])) {
         <link rel="stylesheet" href="css/lib/bootstrap-sweetalert/sweetalert.css"/>
 
     </head>
-    <body class="with-side-menu control-panel control-panel-compact">
+    <body class="with-side-menu control-panel control-panel-compact" >
         <?php
         //SE TIVER QUERY STRING
 
