@@ -40,7 +40,7 @@ include ("./db/dbconn.php");
         if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
         } else {
-            echo '<script> updateQueryStringParameter(PageNum, 1);';
+            echo 'updateQueryStringParameter(PageNum, 1);';
             $PageNum = 1;
         }
 
