@@ -3778,12 +3778,10 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
 
 function DB_countSubCategories($pdo, $CategoryId) {
     try {
-        $count = sql($pdo, "SELECT COUNT(*) FROM [Sub_Category]
-            WHERE [Sub_Category].[Category_Id] = ?", array($CategoryId), "count");
-        if ($count < 0) {
-            return true;
-        } else {
-            return false;
+        $rows = sql($pdo, "SELECT COUNT(*) AS C FROM [Sub_Category]
+            WHERE [Sub_Category].[Category_Id] = ?", array($CategoryId), "rows");
+        foreach ($rows as $row) {
+            return $row['C'];
         }
     } catch (Exception $ex) {
         
