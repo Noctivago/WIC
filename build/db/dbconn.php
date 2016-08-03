@@ -3827,14 +3827,7 @@ function DB_getSubCategoryName($pdo, $SubCategory) {
 function DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page) {
     $pageNum = $page * 50;
     try {
-        $rows = sql($pdo, "SELECT 
-        [Service].[Name] AS SNA,
-        [Service].[Id] AS SID,
-        [Service].[Description] AS SDE,
-        [Organization].[Name] AS ONA,
-        [Organization].[Id] AS OID,
-        [Organization].[Picture_Path] AS OPP,
-        [Multimedia].[Multimedia_Path] AS MPP
+        $rows = sql($pdo, "SELECT COUNT(*)
         FROM SERVICE
         join [Multimedia]
         on [Multimedia].[Service_Id] = [Service].[Id]
