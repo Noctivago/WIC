@@ -5,17 +5,13 @@ include '../build/db/dbconn.php';
 include '../build/db/functions.php';
 //include '../build/db/session.php';
 
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
 ?>
-
 <html>
     <head lang="en">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>WIC</title>
-
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
@@ -33,7 +29,7 @@ include '../build/db/functions.php';
         <?php
         //SE TIVER QUERY STRING
 
-        $selfUrl = '/build/index.php';
+        $selfUrl = '/public/index.php';
 //        $getValues = array();
 //        foreach ($_GET as $key => $value) {
 //            array_push($getValues, $key . "=" . $value);
@@ -368,8 +364,8 @@ include '../build/db/functions.php';
                 } else {
                     //var str = uri;
                     //str = /.php(.+)/.exec(str)[1];
-                    //alert('<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>' + str);
-                    uri = 'http://<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>';
+                    //alert('<?= $_SERVER['HTTP_HOST'] . '/public/index.php'; ?>' + str);
+                    uri = 'http://<?= $_SERVER['HTTP_HOST'] . '/public/index.php'; ?>';
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
