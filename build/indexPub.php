@@ -335,10 +335,6 @@ include ("./db/dbconn.php");
     <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="js/lib/select2/select2.full.min.js"></script>
 
-
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
     <!--O PROXIMO SCRIPT DESABILITA BOTAO DIREITO-->
     <script>
         $(function () {

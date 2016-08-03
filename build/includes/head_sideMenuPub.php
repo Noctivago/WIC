@@ -39,10 +39,6 @@ if (isset($_SESSION['id'])) {
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
-        <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">-->
-        <!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
-        <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
-
     </head>
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
@@ -312,7 +308,3 @@ if (isset($_SESSION['id'])) {
         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
-
-        <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">-->
-        <!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
-        <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
