@@ -60,7 +60,7 @@ if (isset($_SESSION['id'])) {
                         <div class="site-header-shown">
 
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
-                                <a href="#"
+                                <a href="#POPUP"
                                    class="header-alarm  "
                                    id="dd-messages"
                                    data-toggle="dropdown"
@@ -71,7 +71,7 @@ if (isset($_SESSION['id'])) {
                             </div>
 
                             <div class="dropdown dropdown-notification messages">
-                                <a href="#"
+                                 <a href="#POPUP"
                                    class="header-alarm dropdown-toggle active"
                                    id="dd-messages"
                                    data-toggle="dropdown"
