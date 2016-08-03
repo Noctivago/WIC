@@ -36,7 +36,7 @@ include '../build/db/functions.php';
         ?>
         <header class="site-header">
             <div class="container-fluid">
-                <a href="index.php" class="site-logo">
+                <a href="indexPub.php" class="site-logo">
                     <img class="hidden-md-down" src="img/wic_logo.png" alt="">
                     <img class="hidden-lg-up" src="img/wic_logo.png" alt="">
                 </a>
@@ -241,7 +241,7 @@ include '../build/db/functions.php';
             function updateQueryStringParameter(key, value) {
                 var uri = window.location.href;
                 //alert(uri);
-                if (uri.indexOf('index.php') >= 0) {
+                if (uri.indexOf('indexPub.php') >= 0) {
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
@@ -261,8 +261,8 @@ include '../build/db/functions.php';
                 } else {
                     //var str = uri;
                     //str = /.php(.+)/.exec(str)[1];
-                    //alert('<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>' + str);
-                    uri = 'http://<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>';
+                    //alert('<?= $_SERVER['HTTP_HOST'] . '/build/indexPub.php'; ?>' + str);
+                    uri = 'http://<?= $_SERVER['HTTP_HOST'] . '/build/indexPub.php'; ?>';
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
@@ -282,13 +282,6 @@ include '../build/db/functions.php';
                         //updateQueryStringParameter('PageNum', 0);
                     }
                 }
-            }
-            function sendInvite() {
-                var email = document.getElementById("email").value;
-                var service = document.getElementById("service").value;
-
-                $.post("../ajax/sendInviteUser.php", {email: email, serv: service}, function (result) {
-                });
             }
             bindKeysBTN();
         </script>
