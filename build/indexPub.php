@@ -67,15 +67,27 @@ include ("./db/dbconn.php");
             DB_GetSubCategories($pdo, $CategoryId);
         }
         ?>
-        <div data-role="main" class="ui-content">
-            <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                <form>
-                    <div>
-                        <h3>Login information</h3>
-                        <input type="submit" data-inline="true" value="Log in">
+        <!--        <div data-role="main" class="ui-content">
+                    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                        <form>
+                            <div>
+                                <h3>Login information</h3>
+                                <input type="submit" data-inline="true" value="Log in">
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>-->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Input message
+                </div>
+                <div class="card-block">
+                    <p class="card-text">
+                        <button class="btn btn-primary swal-btn-input">Try Alert!</button>
+                    </p>
+                </div>
             </div>
         </div>
         <div class="cards-grid" data-columns>
@@ -353,6 +365,25 @@ include ("./db/dbconn.php");
 
             }
         }
+        $('.swal-btn-input').click(function (e) {
+            e.preventDefault();
+            swal({
+                title: "An input!",
+                text: "Write something interesting:",
+                type: "input",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                inputPlaceholder: "Write something"
+            }, function (inputValue) {
+                if (inputValue === false)
+                    return false;
+                if (inputValue === "") {
+                    swal.showInputError("You need to write something!");
+                    return false
+                }
+                swal("Nice!", "You wrote: " + inputValue, "success");
+            });
+        });
     </script>
     <script>
         function openWindow() {
