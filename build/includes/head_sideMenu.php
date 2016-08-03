@@ -544,6 +544,11 @@ include '../build/db/session.php';
                 var x = document.getElementById('name').value;
                 updateQueryStringParameter('name', x);
             }
+            function setPage(Page) {
+                var x = Page;
+                updateQueryStringParameter('PageNum', x);
+            }
+
             function updateQueryStringParameter(key, value) {
                 var uri = window.location.href;
                 //alert(uri);
