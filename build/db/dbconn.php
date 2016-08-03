@@ -3759,3 +3759,39 @@ function DB_countSubCategories($pdo, $CategoryId) {
         
     }
 }
+
+/**
+ * Devolve Nome da Categoria atraves do seu ID
+ * @param type $pdo
+ * @param type $Category
+ * @return type
+ */
+function DB_getCategoryName($pdo, $Category) {
+    try {
+        $rows = sql($pdo, "SELECT [Name] AS CNA FROM [Category]
+        WHERE [Id] = ?", array($Category), "rows");
+        foreach ($rows as $row) {
+            return $row['CNA'];
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING CATEGORY!';
+    }
+}
+
+/**
+ * Devolve Nome da SubCategoria atraves do seu ID
+ * @param type $pdo
+ * @param type $SubCategory
+ * @return type
+ */
+function DB_getSubCategoryName($pdo, $SubCategory) {
+    try {
+        $rows = sql($pdo, "SELECT [Name] AS CNA FROM [Sub_Category]
+        WHERE [Id] = ?", array($SubCategory), "rows");
+        foreach ($rows as $row) {
+            return $row['CNA'];
+        }
+    } catch (Exception $exc) {
+        echo 'ERROR READING SUBCATEGORY!';
+    }
+}
