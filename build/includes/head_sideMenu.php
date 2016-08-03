@@ -27,7 +27,7 @@ include '../build/db/session.php';
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
-        
+
     </head>
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
@@ -226,7 +226,15 @@ include '../build/db/session.php';
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
                                     <!--<form class="site-header-search opened" action="<?php echo $selfUrl; ?>">-->
-                                    <input type="text" placeholder="Choose your City.."
+                                    <!--<input type="text" placeholder="Choose your City.."-->
+                                    <input type="text"
+                                    <?php
+                                    if (isset($_GET ['name'])) {
+                                        echo 'value = ' . (filter_var($_GET ['name']));
+                                    } else {
+                                        echo 'placeholder="Choose your City..">';
+                                    }
+                                    ?>
                                            id="name"
                                            class="form-control"
                                            name="name"
@@ -270,7 +278,13 @@ include '../build/db/session.php';
                                        name="qParam"
                                        type="search"
                                        autocomplete="on"
-                                       placeholder="Ex: Catering...">
+                                       <?php
+                                       if (isset($_GET ['qParam'])) {
+                                           echo 'value = ' . (filter_var($_GET ['qParam']));
+                                       } else {
+                                           echo 'placeholder="Ex: Catering...">';
+                                       }
+                                       ?>
                             </span>
                             <span class="typeahead-button">
                                 <!--<button type="submit">-->
