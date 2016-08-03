@@ -342,6 +342,7 @@ include ("./db/dbconn.php");
     <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
     <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="js/lib/select2/select2.full.min.js"></script>
+    <script src="js/lib/bootstrap-sweetalert/sweetalert.min.js"></script>
 
     <!--O PROXIMO SCRIPT DESABILITA BOTAO DIREITO-->
     <script>
@@ -499,6 +500,5 @@ include ("./db/dbconn.php");
         }
         window.onload = closeWindow();
     </script>
-
 </body>
 </html>
