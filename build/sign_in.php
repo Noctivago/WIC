@@ -26,6 +26,9 @@ if (isset($_SESSION['id'])) {
         $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
         $pw = (filter_var($_POST ['pw'], FILTER_SANITIZE_STRING));
         $hashPassword = hash('whirlpool', $pw);
+        if (isset($_Get ['redUrl'])) {
+            $url = (filter_var($_Get ['redUrl'], FILTER_SANITIZE_STRING));
+        }
         //1 verifica se user exist
         if (DB_checkIfUserExists($pdo, $email)) {
             //2 se existir verifica se enabled / CONTA N BLOQUEADA
