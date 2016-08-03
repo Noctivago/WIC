@@ -2,7 +2,7 @@
 include ("includes/head_sideMenuPub.php");
 include ("./db/dbconn.php");
 ?>
-
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <div class="page-content">
     <div class="container-fluid">
         <?php
