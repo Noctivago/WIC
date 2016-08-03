@@ -107,11 +107,11 @@ include ("./db/dbconn.php");
         //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
         //onclick="updateQueryStringParameter('Category', '4');"
 
-        echo '<button onclick="setPage(' . ($PageNum - 1) . ')" type="button"><<</button>';
+        echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum - 1) . ')" type="button"><<</button>';
 //        if (($PageNum + 1) > ($numPag / 50)) {
 //            echo '<button onclick="setPage(' . ($PageNum) . ')" type="button">>></button>';
 //        } else {
-        echo '<button onclick="setPage(' . ($PageNum + 1) . ')" type="button">>></button>';
+        echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">>></button>';
 //        }
         ?>
                     
