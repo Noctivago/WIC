@@ -43,6 +43,27 @@ function sql($pdo, $q, $params, $return) {
     }
 }
 
+function alteraFirst($pdo) {
+    try {
+        $rows = sql($pdo, "Select * From [Service] where [Id] >= ?", array(4626), "rows");
+        foreach ($rows as $row) {
+            $serv = $row['Id'];
+            $rows2 = sql($pdo, "Select * From [Multimedia] where [Service_Id] = ?", array($serv), "rows");
+            $cont = 0;
+            foreach ($rows2 as $row2) {
+                $cont++;
+                if ($cont == 1) {
+                    sql($pdo, "UPDATE [dbo].[Multimedia]
+   SET [First_Page] = 1 where [Id] = ? ", array($row2['Id']));
+                }
+                
+            }
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
 //LOCATIONS
 //
 //
