@@ -3674,12 +3674,12 @@ function DB_GetSubCategories($pdo, $Category) {
             if ($x === 1) {
                 echo '<label title="' . $row['SCID'] . '">';
                 echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
-//                echo '<img/>';
+                echo '<img/>';
                 echo '</label>';
             } else {
                 echo '<label title="' . $row['SCID'] . '">';
                 echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">' . $row['SCNA'] . ' ';
-//                echo '<img/>';
+                echo '<img/>';
                 echo '</label>';
             }
         }
