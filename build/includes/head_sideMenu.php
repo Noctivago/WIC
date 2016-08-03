@@ -556,7 +556,7 @@ include '../build/db/session.php';
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
-                        updateQueryStringParameter('PageNum', 0);
+                        //updateQueryStringParameter('PageNum', 0);
                         //return uri.replace(re, '$1' + key + "=" + value + '$2');
                     } else {
                         var hash = '';
@@ -567,7 +567,7 @@ include '../build/db/session.php';
                         var separator = uri.indexOf('?') !== -1 ? "&" : "?";
                         //return uri + separator + key + "=" + value + hash;
                         window.location.assign(uri + separator + key + "=" + value + hash);
-                        updateQueryStringParameter('PageNum', 0);
+                        //updateQueryStringParameter('PageNum', 0);
                     }
                 } else {
                     //var str = uri;
@@ -577,7 +577,7 @@ include '../build/db/session.php';
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
-                        updateQueryStringParameter('PageNum', 0);
+                        //updateQueryStringParameter('PageNum', 0);
                         //window.location = (uri.replace(re, '$1' + key + "=" + value + '$2'));
                         //return uri.replace(re, '$1' + key + "=" + value + '$2');
                     } else {
@@ -590,7 +590,7 @@ include '../build/db/session.php';
                         //return uri + separator + key + "=" + value + hash;
                         //window.location = (uri + separator + key + "=" + value + hash);
                         window.location.assign(uri + separator + key + "=" + value + hash);
-                        updateQueryStringParameter('PageNum', 0);
+                        //updateQueryStringParameter('PageNum', 0);
                     }
                 }
             }
