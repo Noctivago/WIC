@@ -579,7 +579,7 @@ include '../build/db/session.php';
                         }
                         var separator = uri.indexOf('?') !== -1 ? "&" : "?";
                         //return uri + separator + key + "=" + value + hash;
-                        window.location = url(uri + separator + key + "=" + value + hash);
+                        window.location = (uri + separator + key + "=" + value + hash);
                     }
                 }
             }
