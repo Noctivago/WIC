@@ -3786,11 +3786,11 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
 }
 
 // REPOR QUANDO CONSEGUIRMOS COLOCAR FOTOS DE PERFIL DE ORG!!! NO ESPAÇO EM BRANCO 
-         //<div class = "tbl-cell tbl-cell-photo">
-         //   <a href = "profile_org.php?Organization=' . $row['OID'] . '">
-         //   <img src = "' . $row['OPP'] . '" alt = "Avatar">
-         //   </a>
-         //   </div>
+//<div class = "tbl-cell tbl-cell-photo">
+//   <a href = "profile_org.php?Organization=' . $row['OID'] . '">
+//   <img src = "' . $row['OPP'] . '" alt = "Avatar">
+//   </a>
+//   </div>
 
 function DB_countSubCategories($pdo, $CategoryId) {
     try {
@@ -3953,14 +3953,8 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
 
 <button class="btn btn-rounded btn-inline btn-primary-outline font-icon-plus" style="width: 53px;height: 37px;border-color:white;padding-left: 0px;padding-right: 0px;padding-top: 6px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
 <button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
-
-
 </div>
-</div>            
-
-            
-
-            </article>
+</div>     </article>
             </div>';
         }
 
