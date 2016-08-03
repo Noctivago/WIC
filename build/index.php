@@ -64,7 +64,9 @@ include ("./db/dbconn.php");
 
         </div>
         <div class="clear"></div>
-        <?= DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); ?>
+        <?php
+        //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
+        ?>
         <!--        <div style="padding-left: 500px;">
                     <nav>
                         <ul class="pagination">
