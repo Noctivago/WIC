@@ -89,11 +89,6 @@ include '../build/db/session.php';
                                         <div class="tab-pane active" id="tab-incoming" role="tabpanel">
                                             <div class="dropdown-menu-messages-list">
                                                 <?= db_getWicsForHeader($pdo, $_SESSION['id']); ?>
-                                                <!--                                                <a href="#" class="mess-item">
-                                                                                                    <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
-                                                                                                    <span class="mess-item-name">Tim Collins</span>
-                                                                                                    <span class="mess-item-txt">Morgan was bothering about something!</span>
-                                                                                                </a>-->
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="tab-outgoing" role="tabpanel">
