@@ -257,10 +257,7 @@ include '../build/db/session.php';
                     echo '<header class="side-menu-title">Advanced Search</header>';
                 }
                 ?>
-
-
                 <!--<header class="side-menu-title">Advanced search</header>-->
-
                 <!--<form action="<?php echo $selfUrl; ?>">-->
                 <div class="col-md-10">
                     <div class="typeahead-container">
@@ -502,7 +499,8 @@ include '../build/db/session.php';
             function getSubCategoryValue() {
                 if ($("input[type='radio'].SubCat").is(':checked')) {
                     var card_type = $("input[type='radio'].SubCat:checked").val();
-                    alert(card_type);
+                    //alert(card_type);
+                    updateQueryStringParameter('SubCategory', card_type);
                 }
             }
 
