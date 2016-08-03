@@ -57,24 +57,23 @@ if (isset($_SESSION['id'])) {
                 <div class="site-header-content">
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
-
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
                                 <a href="../build/sign_in.php?redUrl=/build/my_wicplanner.php"
-                                   class="header-alarm"
+<!--                                   class="header-alarm"
                                    id="dd-messages"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
-                                   aria-expanded="false">
+                                   aria-expanded="false">-->
                                    <i class="font-icon-plus" <input Type="button" Value="Teste"> </i>
                                 </a>
                             </div>
                             <div class="dropdown dropdown-notification messages">
                                 <a href="../build/sign_in.php?redUrl=/build/index.php"
-                                   class="header-alarm dropdown-toggle active"
+<!--                                   class="header-alarm dropdown-toggle active"
                                    id="dd-messages"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
-                                   aria-expanded="false">
+                                   aria-expanded="false">-->
                                     <i class="font-icon-comments" <input Type="button" Value="Teste"></i>
                                 </a>
                             </div>
