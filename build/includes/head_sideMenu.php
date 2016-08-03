@@ -555,8 +555,8 @@ include '../build/db/session.php';
                 if (uri.indexOf('index.php') >= 0) {
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
-                        setPage('0');
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
+                        setPage('0');
                         //return uri.replace(re, '$1' + key + "=" + value + '$2');
                     } else {
                         var hash = '';
@@ -566,8 +566,8 @@ include '../build/db/session.php';
                         }
                         var separator = uri.indexOf('?') !== -1 ? "&" : "?";
                         //return uri + separator + key + "=" + value + hash;
-                        setPage('0');
                         window.location.assign(uri + separator + key + "=" + value + hash);
+                        setPage('0');
                     }
                 } else {
                     //var str = uri;
@@ -576,8 +576,8 @@ include '../build/db/session.php';
                     uri = 'http://<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>';
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
-                        setPage('0');
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
+                        setPage('0');
                         //window.location = (uri.replace(re, '$1' + key + "=" + value + '$2'));
                         //return uri.replace(re, '$1' + key + "=" + value + '$2');
                     } else {
@@ -589,8 +589,8 @@ include '../build/db/session.php';
                         var separator = uri.indexOf('?') !== -1 ? "&" : "?";
                         //return uri + separator + key + "=" + value + hash;
                         //window.location = (uri + separator + key + "=" + value + hash);
-                        setPage('0');
                         window.location.assign(uri + separator + key + "=" + value + hash);
+                        setPage('0');
                     }
                 }
             }
