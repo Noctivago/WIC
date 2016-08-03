@@ -565,7 +565,7 @@ include '../build/db/session.php';
                 } else {
                     var str = uri;
                     str = /.php(.+)/.exec(str)[1];
-                    alert(str);
+                    alert(<?= $_SERVER['HTTP_HOST']; ?> + str);
                 }
             }
             function sendInvite() {
