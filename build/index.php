@@ -34,7 +34,7 @@ include ("./db/dbconn.php");
             $SubCategory = (filter_var($_GET ['SubCategory']));
         }
 
-        echo $query;
+        echo $query . '<br>';
 
         /**
          * Vai buscar as subCats da Cat
