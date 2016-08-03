@@ -55,7 +55,8 @@ if (isset($_SESSION['id'])) {
                             //$msg = "LOGIN OK! HEADER LOCATION";
                             if (strlen($url) > 0) {
                                 //$url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
-                                header("location: http://$url");
+                                //header("location: http://$url");
+                                $msg = $url;
                             } else {
                                 if ($_SESSION['role'] === 'organization') {
                                     $use = $_SESSION['id'];
