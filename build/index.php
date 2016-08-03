@@ -78,6 +78,30 @@ include ("./db/dbconn.php");
 
         </div>
         <div class="clear"></div>
+        <div style="padding-left: 500px;">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <?php
+                        echo'<a class="page-link" aria-label="Previous" onclick="setPAge(' . ($PAgeNum - 1) . ')"  >
+                            <span aria-hiden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>';
+                                    ?>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" ><span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="page-item"><a class="page-link">2</a></li>
+                    <li class="page-item"><a class="page-link">3</a></li>
+                    <li class="page-item"><a class="page-link">4</a></li>
+                    <li class="page-item"><a class="page-link">5</a></li>
+                    <li class="page-item">
+                        <a class="page-link" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
         <?php
         //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
         //onclick="updateQueryStringParameter('Category', '4');"
@@ -89,6 +113,10 @@ include ("./db/dbconn.php");
         echo '<button onclick="setPage(' . ($PageNum + 1) . ')" type="button">>></button>';
 //        }
         ?>
+                    
+                </ul>
+            </nav>
+        </div>
         <!--        <div style="padding-left: 500px;">
                     <nav>
                         <ul class="pagination">
