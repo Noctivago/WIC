@@ -3742,7 +3742,7 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
             <div class = "tbl-row">
             <div class = "tbl-cell tbl-cell-photo">
             <a href = "profile_org.php?Organization=' . $row['OID'] . '">
-            <img src = "' . $row['OPP'] . '" alt = "Avatar">
+            
             </a>
             </div>
             <div class = "tbl-cell">
@@ -3788,6 +3788,8 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
         echo 'ERROR READING SERVICE TABLE!';
     }
 }
+
+// REPOR QUANDO CONSEGUIRMOS COLOCAR FOTOS DE PERFIL DE ORG!!! NO ESPAÇO EM BRANCO <img src = "' . $row['OPP'] . '" alt = "Avatar">
 
 function DB_countSubCategories($pdo, $CategoryId) {
     try {
