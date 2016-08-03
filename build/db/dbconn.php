@@ -3943,18 +3943,15 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
             <header class = "title"><a href = "../build/sign_in.php?redUrl=/build/service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
             <p style="overflow:hidden; max-height:75px; ">' . $row['SDE'] . '</p>
             </div>
-
-<div class="card-typical-section">
-<div class="card-typical-linked">
-
-</div>
-
-<div  class="card-typical-likes">
-
-<button class="btn btn-rounded btn-inline btn-primary-outline font-icon-plus" style="width: 53px;height: 37px;border-color:white;padding-left: 0px;padding-right: 0px;padding-top: 6px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
-<button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
-</div>
-</div>     </article>
+            <div class="card-typical-section">
+            <div class="card-typical-linked">
+            </div>
+            <div  class="card-typical-likes">
+            <a class="btn btn-rounded btn-inline btn-primary-outline font-icon-plus" style="width: 53px;height: 37px;border-color:white;padding-left: 0px;padding-right: 0px;padding-top: 6px;" href = "../build/sign_in.php?redUrl=/build/service_profile.php?Service=' . $row['SID'] . '"></a>
+            <a class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;" href = "../build/sign_in.php?redUrl=/build/service_profile.php?Service=' . $row['SID'] . '"></a>
+            </div>
+            </div>     
+            </article>
             </div>';
         }
 
