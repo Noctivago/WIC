@@ -3707,7 +3707,7 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
         join [Sub_Category]
         on [Service].[Sub_Category_Id] = [Sub_Category].[Id]
         join [Category]
-        on [Category].[Id] = [Sub_Category].[Id]
+        on [Sub_Category].[Category_Id] = [Category].[Id]
         join [City]
         on [Service].[City_Id] = [City].[Id]
         WHERE
