@@ -569,6 +569,7 @@ include '../build/db/session.php';
                     uri = '<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>';
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
+                        //window.location.href = "http://example.com/new_url";
                         window.location = (uri.replace(re, '$1' + key + "=" + value + '$2'));
                         //return uri.replace(re, '$1' + key + "=" + value + '$2');
                     } else {
