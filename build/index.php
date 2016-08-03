@@ -37,6 +37,12 @@ include ("./db/dbconn.php");
             $query .= '#SubCategory > ' . DB_getSubCategoryName($pdo, $SubCategory) . ' ';
         }
 
+        if (isset($_GET ['PageNum'])) {
+            $PageNum = (filter_var($_GET ['PageNum']));
+        } else {
+            $PageNum = 1;
+        }
+
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
             $clear = '<a href="index.php"> Clear</a>';
         } else {
@@ -59,7 +65,7 @@ include ("./db/dbconn.php");
             /**
              * Executa a Querie c/ todos os parametros
              */
-            DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
+            DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $PageNum);
             ?>
 
         </div>

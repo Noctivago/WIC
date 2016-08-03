@@ -3689,7 +3689,8 @@ function DB_GetSubCategories($pdo, $Category) {
  * @param type $pdo
  * @param type $CategoryId
  */
-function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory) {
+function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $page) {
+    $pageNum = $page * 2;
     try {
         $rows = sql($pdo, "SELECT 
         [Service].[Name] AS SNA,
@@ -3718,7 +3719,10 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
         AND [Service].[Name] Like '%" . $name . "%'
         AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
         AND [City].[Name] Like '%" . $city . "'
-        AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
+        AND [Sub_Category].[Id] Like '%" . $SubCategory . "'"
+                . " ORDER BY [Service].[Id]
+                OFFSET " . $pageNum . " ROWS
+                FETCH NEXT 50 ROWS ONLY", array(), "rows");
         foreach ($rows as $row) {
             echo '<div class = "card-grid-col">
             <article class = "card-typical">
