@@ -57,7 +57,7 @@ include '../build/db/functions.php';
                                     <i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href = 'my_wicplanner.php'"> </i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages" alt="WIC Planner">
-                                    
+
                                 </div>
                             </div>
 
@@ -71,7 +71,7 @@ include '../build/db/functions.php';
                                     <i class="font-icon-comments" <input Type="button" Value="Teste" ondblclick="window.location.href = 'messenger.php'"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages">
-                                  
+
                                 </div>
                             </div>
 
@@ -182,9 +182,9 @@ include '../build/db/functions.php';
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '4');"><i class="fa fa-star"></i>Decoration</a>
                 </li>
-                <!--                <li class="gold with-sub">
-                                    <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
-                                </li>-->
+                <li class="gold with-sub">
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                </li>
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '6');"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
