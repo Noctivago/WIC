@@ -12,10 +12,10 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['Category'])) {
             $CategoryId = (filter_var($_GET ['Category']));
-            $query .= '#Category > ' . DB_getCategoryName($pdo, $CategoryId);
+            $query .= '#Category > ' . DB_getCategoryName($pdo, $CategoryId) . ' ';
         }
         /**
-         * Pesquisa por nome de serviço
+         * Pesquisa por nome de serviçoF
          */
         if (isset($_GET ['qParam'])) {
             $name = (filter_var($_GET ['qParam']));
@@ -33,7 +33,7 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['SubCategory'])) {
             $SubCategory = (filter_var($_GET ['SubCategory']));
-            $query .= '#SubCategory > ' . DB_getSubCategoryName($pdo, $SubCategory);
+            $query .= '#SubCategory > ' . DB_getSubCategoryName($pdo, $SubCategory) . ' ';
         }
 
         echo $query . '<br><br>';
