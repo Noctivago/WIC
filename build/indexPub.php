@@ -67,6 +67,17 @@ include ("./db/dbconn.php");
             DB_GetSubCategories($pdo, $CategoryId);
         }
         ?>
+        <div data-role="main" class="ui-content">
+            <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <form>
+                    <div>
+                        <h3>Login information</h3>
+                        <input type="submit" data-inline="true" value="Log in">
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="cards-grid" data-columns>
             <?php
             /**
@@ -328,12 +339,12 @@ include ("./db/dbconn.php");
 
     <!--O PROXIMO SCRIPT DESABILITA BOTAO DIREITO-->
     <script>
-    //    $(document).ready(function ()
-    //    {
-    //        $(document).bind("contextmenu", function (e) {
-    //            return false;
-    //        });
-    //    })
+        //    $(document).ready(function ()
+        //    {
+        //        $(document).bind("contextmenu", function (e) {
+        //            return false;
+        //        });
+        //    })
         $(function () {
             $('#tags-editor-textarea').tagEditor();
         });

@@ -218,7 +218,7 @@ if (isset($_SESSION['id'])) {
                 </li>
             </ul>
         </nav>
-        <div data-role="main" class="ui-content">
+<!--        <div data-role="main" class="ui-content">
             <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
                 <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
                 <form>
@@ -228,7 +228,7 @@ if (isset($_SESSION['id'])) {
                     </div>
                 </form>
             </div>
-        </div>
+        </div>-->
         <script>
             function getSubCategoryValue() {
                 if ($("input[type='radio'].SubCat").is(':checked')) {
