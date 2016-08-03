@@ -248,7 +248,6 @@ include ("./db/dbconn.php");
             $('.panel').lobiPanel({
                 sortable: true
             });
-
             google.charts.load('current', {'packages': ['corechart']});
             google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
@@ -268,7 +267,6 @@ include ("./db/dbconn.php");
                     ['MON', 220, '220'],
                     ['TUE', 220, ' ']
                 ]);
-
                 var options = {
                     height: 314,
                     legend: 'none',
@@ -325,7 +323,6 @@ include ("./db/dbconn.php");
                         isHtml: true
                     }
                 };
-
                 var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
                 chart.draw(dataTable, options);
             }
@@ -334,7 +331,6 @@ include ("./db/dbconn.php");
                 setTimeout(function () {
                 }, 1000);
             });
-
             $('.panel').on('dragged.lobiPanel', function (ev, lobiPanel) {
                 $('.dahsboard-column').matchHeight();
             });
@@ -365,26 +361,133 @@ include ("./db/dbconn.php");
 
             }
         }
-        $('.swal-btn-input').click(function (e) {
-            e.preventDefault();
-            swal({
-                title: "An input!",
-                text: "Write something interesting:",
-                type: "input",
-                showCancelButton: true,
-                closeOnConfirm: false,
-                inputPlaceholder: "Write something"
-            }, function (inputValue) {
-                if (inputValue === false)
-                    return false;
-                if (inputValue === "") {
-                    swal.showInputError("You need to write something!");
-                    return false
-                }
-                swal("Nice!", "You wrote: " + inputValue, "success");
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.swal-btn-basic').click(function (e) {
+                e.preventDefault();
+                swal("Here's a message!");
+            });
+
+            $('.swal-btn-text').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Here's a message!",
+                    text: "It's pretty, isn't it?"
+                });
+            });
+
+            $('.swal-btn-success').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    type: "success",
+                    confirmButtonClass: "btn-success",
+                    confirmButtonText: "Success"
+                });
+            });
+
+            $('.swal-btn-warning').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Are you sure?",
+                    text: "Your will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    cancelButtonClass: "btn-default",
+                    confirmButtonClass: "btn-warning",
+                    confirmButtonText: "Warning",
+                    closeOnConfirm: false
+                },
+                        function () {
+                            swal({
+                                title: "Deleted!",
+                                text: "Your imaginary file has been deleted.",
+                                type: "success",
+                                confirmButtonClass: "btn-success"
+                            });
+                        });
+            });
+
+            $('.swal-btn-cancel').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel plx!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                swal({
+                                    title: "Deleted!",
+                                    text: "Your imaginary file has been deleted.",
+                                    type: "success",
+                                    confirmButtonClass: "btn-success"
+                                });
+                            } else {
+                                swal({
+                                    title: "Cancelled",
+                                    text: "Your imaginary file is safe :)",
+                                    type: "error",
+                                    confirmButtonClass: "btn-danger"
+                                });
+                            }
+                        });
+            });
+
+            $('.swal-btn-custom-img').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Sweet!",
+                    text: "Here's a custom image.",
+                    confirmButtonClass: "btn-success",
+                    imageUrl: 'img/smile.png'
+                });
+            });
+
+            $('.swal-btn-info').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Are you sure?",
+                    text: "Your will not be able to recover this imaginary file!",
+                    type: "info",
+                    showCancelButton: true,
+                    cancelButtonClass: "btn-default",
+                    confirmButtonText: "Info",
+                    confirmButtonClass: "btn-primary"
+                });
+            });
+
+            $('.swal-btn-input').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "An input!",
+                    text: "Write something interesting:",
+                    type: "input",
+                    showCancelButton: true,
+                    closeOnConfirm: false,
+                    inputPlaceholder: "Write something"
+                }, function (inputValue) {
+                    if (inputValue === false)
+                        return false;
+                    if (inputValue === "") {
+                        swal.showInputError("You need to write something!");
+                        return false
+                    }
+                    swal("Nice!", "You wrote: " + inputValue, "success");
+                });
             });
         });
     </script>
+
     <script>
         function openWindow() {
             $('#myPopup').popup("open");
