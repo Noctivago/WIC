@@ -4,7 +4,7 @@ include ("./db/dbconn.php");
 ?>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <link rel="stylesheet" href="css/lib/bootstrap-sweetalert/sweetalert.css"/>
-<div class="page-content" onload=".swal-btn-input">
+<div class="page-content" onload=".swal - btn - input">
     <div class="container-fluid">
         <?php
         $query = '';
@@ -79,19 +79,19 @@ include ("./db/dbconn.php");
                         </form>
                     </div>
                 </div>-->
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Input message
-                </div>
-                <div class="card-block">
-                    <p class="card-text">
-                        <button class="btn btn-primary swal-btn-input">Try Alert!</button>
-                        <a onload=""
-                    </p>
-                </div>
-            </div>
-        </div>
+        <!--        <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Input message
+                        </div>
+                        <div class="card-block">
+                            <p class="card-text">
+                                <button class="btn btn-primary swal-btn-input">Try Alert!</button>
+                                <a onload=""
+                            </p>
+                        </div>
+                    </div>
+                </div>-->
         <div class="cards-grid" data-columns>
             <?php
             /**
@@ -214,97 +214,97 @@ include ("./db/dbconn.php");
     </style>
 
     <script>
-        $(document).ready(function () {
-            $('.panel').lobiPanel({
-                sortable: true
-            });
-            google.charts.load('current', {'packages': ['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
-                var dataTable = new google.visualization.DataTable();
-                dataTable.addColumn('string', 'Day');
-                dataTable.addColumn('number', 'Values');
-                // A column for custom tooltip content
-                dataTable.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
-                dataTable.addRows([
-                    ['MON', 130, ' '],
-                    ['TUE', 130, '130'],
-                    ['WED', 180, '180'],
-                    ['THU', 175, '175'],
-                    ['FRI', 200, '200'],
-                    ['SAT', 170, '170'],
-                    ['SUN', 250, '250'],
-                    ['MON', 220, '220'],
-                    ['TUE', 220, ' ']
-                ]);
-                var options = {
-                    height: 314,
-                    legend: 'none',
-                    areaOpacity: 0.18,
-                    axisTitlesPosition: 'out',
-                    hAxis: {
-                        title: '',
-                        textStyle: {
-                            color: '#fff',
-                            fontName: 'Proxima Nova',
-                            fontSize: 11,
-                            bold: true,
-                            italic: false
-                        },
-                        textPosition: 'out'
-                    },
-                    vAxis: {
-                        minValue: 0,
-                        textPosition: 'out',
-                        textStyle: {
-                            color: '#fff',
-                            fontName: 'Proxima Nova',
-                            fontSize: 11,
-                            bold: true,
-                            italic: false
-                        },
-                        baselineColor: '#16b4fc',
-                        ticks: [0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350],
-                        gridlines: {
-                            color: '#1ba0fc',
-                            count: 15
-                        },
-                    },
-                    lineWidth: 2,
-                    colors: ['#fff'],
-                    curveType: 'function',
-                    pointSize: 5,
-                    pointShapeType: 'circle',
-                    pointFillColor: '#f00',
-                    backgroundColor: {
-                        fill: '#008ffb',
-                        strokeWidth: 0,
-                    },
-                    chartArea: {
-                        left: 0,
-                        top: 0,
-                        width: '100%',
-                        height: '100%'
-                    },
-                    fontSize: 11,
-                    fontName: 'Proxima Nova',
-                    tooltip: {
-                        trigger: 'selection',
-                        isHtml: true
-                    }
-                };
-                var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-                chart.draw(dataTable, options);
-            }
-            $(window).resize(function () {
-                drawChart();
-                setTimeout(function () {
-                }, 1000);
-            });
-            $('.panel').on('dragged.lobiPanel', function (ev, lobiPanel) {
-                $('.dahsboard-column').matchHeight();
-            });
+    $(document).ready(function () {
+        $('.panel').lobiPanel({
+            sortable: true
         });
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var dataTable = new google.visualization.DataTable();
+            dataTable.addColumn('string', 'Day');
+            dataTable.addColumn('number', 'Values');
+            // A column for custom tooltip content
+            dataTable.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+            dataTable.addRows([
+                ['MON', 130, ' '],
+                ['TUE', 130, '130'],
+                ['WED', 180, '180'],
+                ['THU', 175, '175'],
+                ['FRI', 200, '200'],
+                ['SAT', 170, '170'],
+                ['SUN', 250, '250'],
+                ['MON', 220, '220'],
+                ['TUE', 220, ' ']
+            ]);
+            var options = {
+                height: 314,
+                legend: 'none',
+                areaOpacity: 0.18,
+                axisTitlesPosition: 'out',
+                hAxis: {
+                    title: '',
+                    textStyle: {
+                        color: '#fff',
+                        fontName: 'Proxima Nova',
+                        fontSize: 11,
+                        bold: true,
+                        italic: false
+                    },
+                    textPosition: 'out'
+                },
+                vAxis: {
+                    minValue: 0,
+                    textPosition: 'out',
+                    textStyle: {
+                        color: '#fff',
+                        fontName: 'Proxima Nova',
+                        fontSize: 11,
+                        bold: true,
+                        italic: false
+                    },
+                    baselineColor: '#16b4fc',
+                    ticks: [0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350],
+                    gridlines: {
+                        color: '#1ba0fc',
+                        count: 15
+                    },
+                },
+                lineWidth: 2,
+                colors: ['#fff'],
+                curveType: 'function',
+                pointSize: 5,
+                pointShapeType: 'circle',
+                pointFillColor: '#f00',
+                backgroundColor: {
+                    fill: '#008ffb',
+                    strokeWidth: 0,
+                },
+                chartArea: {
+                    left: 0,
+                    top: 0,
+                    width: '100%',
+                    height: '100%'
+                },
+                fontSize: 11,
+                fontName: 'Proxima Nova',
+                tooltip: {
+                    trigger: 'selection',
+                    isHtml: true
+                }
+            };
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+            chart.draw(dataTable, options);
+        }
+        $(window).resize(function () {
+            drawChart();
+            setTimeout(function () {
+            }, 1000);
+        });
+        $('.panel').on('dragged.lobiPanel', function (ev, lobiPanel) {
+            $('.dahsboard-column').matchHeight();
+        });
+    });
     </script>
 
     <script src="js/app.js"></script>
@@ -316,9 +316,9 @@ include ("./db/dbconn.php");
 
     <!--O PROXIMO SCRIPT DESABILITA BOTAO DIREITO-->
     <script>
-        $(function () {
-            $('#tags-editor-textarea').tagEditor();
-        });
+    $(function () {
+        $('#tags-editor-textarea').tagEditor();
+    });
     </script>
 
     <script type="text/javascript">
