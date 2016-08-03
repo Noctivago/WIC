@@ -115,7 +115,7 @@ include ("./db/dbconn.php");
         echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
 //        }
         ?>
-</div>
+<!--</div>-->
                     
 <!--                </ul>
             </nav>
