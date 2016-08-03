@@ -33,7 +33,9 @@ if (isset($_SESSION['id'])) {
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png">
         <link href="img/wic_logo.png" rel="icon" type="image/png">
         <link href="img/wic_logo.png" rel="shortcut icon">
-
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -60,7 +62,7 @@ if (isset($_SESSION['id'])) {
                         <div class="site-header-shown">
 
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
-                                <a href="#POPUP"
+                                <a href="#myPopup"
                                    class="header-alarm  "
                                    id="dd-messages"
                                    data-toggle="dropdown"
@@ -71,7 +73,7 @@ if (isset($_SESSION['id'])) {
                             </div>
 
                             <div class="dropdown dropdown-notification messages">
-                                 <a href="#POPUP"
+                                <a href="#myPopup"
                                    class="header-alarm dropdown-toggle active"
                                    id="dd-messages"
                                    data-toggle="dropdown"
