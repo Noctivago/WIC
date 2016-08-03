@@ -1,7 +1,6 @@
 <?php
 include ("includes/head_sideMenuPub.php");
 include ("./db/dbconn.php");
-
 ?>
 
 <div class="page-content">
@@ -288,6 +287,19 @@ include ("./db/dbconn.php");
     $(function () {
         $('#tags-editor-textarea').tagEditor();
     });
+</script>
+
+<script type="text/javascript">
+    //MUDAR PARA POPUP LOGIN
+    function openMyWics(Sid) {
+        var x = (screen.width / 2) - (435 / 2);
+        var y = (screen.height / 2) - (362 / 2);
+        if (Sid > 0) {
+            window.open('./ajax/getMyWicsPopup.php?id=' + Sid + '', 'MyWics', 'height=455,width=322,left=' + x + ',top=' + y);
+        } else {
+
+        }
+    }
 </script>
 
 </body>
