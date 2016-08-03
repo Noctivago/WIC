@@ -395,6 +395,23 @@ $serviceId = (filter_var($_GET['Service']));
                     <a class="font-icon font-icon-twitter"></a>
                     <a class="font-icon font-icon-instagram"></a>
                 </section>
+                
+                
+                <section class="">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = "//connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v2.7";
+                          fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+                        <div class="fb-share-button" data-href="http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=4658" data-layout="button" data-size="large" data-mobile-iframe="true">
+                            <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwicplanner-testslot.azurewebsites.net%2Fbuild%2Fservice_profile.php%3FService%3D4658&amp;src=sdkpreparse">Partilhar</a>
+                        </div>
+                </section>
                 <br>
 
 
