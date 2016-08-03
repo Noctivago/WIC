@@ -4,7 +4,6 @@
 include '../build/db/dbconn.php';
 include '../build/db/functions.php';
 //include '../build/db/session.php';
-
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
 ?>
@@ -196,7 +195,6 @@ include '../build/db/functions.php';
                                 <i class="font-icon-pin-2"></i>
                             </button>
                         </div>
-
                         <div class="mobile-menu-right-overlay"></div>
                         <div class="site-header-collapsed">
                             <div class="site-header-collapsed-in">
@@ -217,29 +215,28 @@ include '../build/db/functions.php';
                                     </a>
                                     <br>
                                     <br>
-
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
                                     <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
                                     <!--<input type="text" placeholder="Choose your City.."-->
-                                    <input type="text"
-                                    <?php
-                                    if (isset($_GET ['name'])) {
-                                        echo 'value = ' . (filter_var($_GET ['name']));
-                                    } else {
-                                        echo 'placeholder="Choose your City.."';
-                                    }
-                                    ?>
-                                           id="name"
-                                           class="form-control"
-                                           name="name"
-                                           type="text"
-                                           autocomplete="on"/>
-                                    <!--<button type="submit">-->
-                                    <button id= "btnName" onclick="getCitySearchValue()">
-                                        <span class="font-icon-pin-2"></span>
-                                    </button>
-                                    <div class="overlay"></div>
+                                        <input type="text"
+                                        <?php
+                                        if (isset($_GET ['name'])) {
+                                            echo 'value = ' . (filter_var($_GET ['name']));
+                                        } else {
+                                            echo 'placeholder="Choose your City.."';
+                                        }
+                                        ?>
+                                               id="name"
+                                               class="form-control"
+                                               name="name"
+                                               type="text"
+                                               autocomplete="on"/>
+                                        <!--<button type="submit">-->
+                                        <button id= "btnName" onclick="getCitySearchValue()">
+                                            <span class="font-icon-pin-2"></span>
+                                        </button>
+                                        <div class="overlay"></div>
                                     </form>
                                 </div>
                             </div>
@@ -248,21 +245,10 @@ include '../build/db/functions.php';
                 </div>
             </div>
         </header>
-
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
             <ul class="side-menu-list">
-                <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
-                <?php
-                if ($_SESSION['role'] === 'organization') {
-
-                    echo '<header class="side-menu-title">My Services search</header>';
-                } else {
-                    echo '<header class="side-menu-title">Advanced Search.</header>';
-                }
-                ?>
-                <!--<header class="side-menu-title">Advanced search</header>-->
-                <!--<form action="<?php echo $selfUrl; ?>">-->
+                <header class="side-menu-title">Advanced Search.</header>
                 <div class="col-md-10">
                     <div class="typeahead-container">
                         <div class="typeahead-field">
@@ -307,9 +293,9 @@ include '../build/db/functions.php';
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '4');"><i class="fa fa-star"></i>Decoration</a>
                 </li>
-<!--                <li class="gold with-sub">
-                    <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
-                </li>-->
+                <!--                <li class="gold with-sub">
+                                    <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                                </li>-->
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '6');"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
