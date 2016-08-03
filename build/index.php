@@ -37,7 +37,13 @@ include ("./db/dbconn.php");
             $query .= '#SubCategory > ' . DB_getSubCategoryName($pdo, $SubCategory) . ' ';
         }
 
-        echo $query . '<a href="index.php"> Clear</a> <br><br>';
+        if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
+            $clear = '<a href="index.php"> Clear</a>';
+        } else {
+            $clear = '';
+        }
+
+        echo $query . $clear . '<br><br>';
 
         /**
          * Vai buscar as subCats da Cat
