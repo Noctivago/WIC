@@ -225,7 +225,7 @@ include '../build/db/session.php';
 
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
-                                    <!--<form class="site-header-search opened" action="<?php echo $selfUrl; ?>">-->
+                                    <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
                                     <!--<input type="text" placeholder="Choose your City.."-->
                                     <input type="text"
                                     <?php
@@ -245,7 +245,7 @@ include '../build/db/session.php';
                                         <span class="font-icon-pin-2"></span>
                                     </button>
                                     <div class="overlay"></div>
-                                    <!--</form>-->
+                                    </form>
                                 </div>
                             </div>
                         </div>
