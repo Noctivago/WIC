@@ -43,7 +43,6 @@ if (isset($_SESSION['id'])) {
     <body class="with-side-menu control-panel control-panel-compact" >
         <?php
         //SE TIVER QUERY STRING
-
         $selfUrl = '/build/indexPub.php';
         ?>
         <header class="site-header">
