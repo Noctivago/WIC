@@ -35,14 +35,6 @@ include ("./db/dbconn.php");
 //            }
 
         $query = '';
-        /**
-         * Vai buscar as subCats da Cat
-         */
-        if (isset($_GET ['Category'])) {
-            $CategoryId = (filter_var($_GET ['Category']));
-            //DEVOLVE SUBCATS DE UMA CAT
-            DB_GetSubCategories($pdo, $CategoryId);
-        }
         ?>
 
 
@@ -58,14 +50,14 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['qParam'])) {
             $name = (filter_var($_GET ['qParam']));
-            $query .= 'Advanced Search > ' . $name . ' ';
+            $query .= '#Advanced Search Criteria > ' . $name . ' ';
         }
         /**
          * Pesquisa por nome da cidade
          */
         if (isset($_GET ['name'])) {
             $city = (filter_var($_GET ['name']));
-            $query .= 'City > ' . $city . ' ';
+            $query .= '#City > ' . $city . ' ';
         }
         /**
          * Pesquisa por subCategoria
@@ -75,6 +67,15 @@ include ("./db/dbconn.php");
         }
 
         echo $query;
+
+        /**
+         * Vai buscar as subCats da Cat
+         */
+        if (isset($_GET ['Category'])) {
+            $CategoryId = (filter_var($_GET ['Category']));
+            //DEVOLVE SUBCATS DE UMA CAT
+            DB_GetSubCategories($pdo, $CategoryId);
+        }
         ?>
         <div class="cards-grid" data-columns>
             <?php
