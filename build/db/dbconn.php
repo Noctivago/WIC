@@ -45,7 +45,7 @@ function sql($pdo, $q, $params, $return) {
 
 function alteraFirst($pdo) {
     try {
-        $rows = sql($pdo, "Select * From [Service] where [Id] >= ?", array(4626), "rows");
+        $rows = sql($pdo, "Select * From [Service] where [Id] >= ?", array(5442), "rows");
         foreach ($rows as $row) {
             $serv = $row['Id'];
             $rows2 = sql($pdo, "Select * From [Multimedia] where [Service_Id] = ?", array($serv), "rows");
@@ -3786,11 +3786,11 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
 }
 
 // REPOR QUANDO CONSEGUIRMOS COLOCAR FOTOS DE PERFIL DE ORG!!! NO ESPAÇO EM BRANCO 
-         //<div class = "tbl-cell tbl-cell-photo">
-         //   <a href = "profile_org.php?Organization=' . $row['OID'] . '">
-         //   <img src = "' . $row['OPP'] . '" alt = "Avatar">
-         //   </a>
-         //   </div>
+//<div class = "tbl-cell tbl-cell-photo">
+//   <a href = "profile_org.php?Organization=' . $row['OID'] . '">
+//   <img src = "' . $row['OPP'] . '" alt = "Avatar">
+//   </a>
+//   </div>
 
 function DB_countSubCategories($pdo, $CategoryId) {
     try {
@@ -3871,6 +3871,91 @@ function DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCatego
         AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
         foreach ($rows as $row) {
             return $row['COUNTER'];
+        }
+
+        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+    } catch (Exception $exc) {
+        echo 'ERROR READING SERVICE TABLE!';
+    }
+}
+
+/**
+ * Get Services Public Profile
+ * @param type $pdo
+ * @param type $CategoryId
+ * @param type $name
+ * @param type $city
+ * @param type $SubCategory
+ * @param type $page
+ */
+function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $page) {
+    $pageNum = $page * 50;
+    try {
+        $rows = sql($pdo, "SELECT 
+        [Service].[Name] AS SNA,
+        [Service].[Id] AS SID,
+        [Service].[Description] AS SDE,
+        [Organization].[Name] AS ONA,
+        [Organization].[Id] AS OID,
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
+        FROM SERVICE
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
+        join [Organization]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        join [Sub_Category]
+        on [Service].[Sub_Category_Id] = [Sub_Category].[Id]
+        join [Category]
+        on [Sub_Category].[Category_Id] = [Category].[Id]
+        join [City]
+        on [Service].[City_Id] = [City].[Id]
+        WHERE
+        [Organization].[Enabled] = 1 
+        AND [Service].[Enabled] = 1 
+        AND [Multimedia].[Enabled] = 1  
+        AND [Multimedia].[First_Page] =  1
+        AND [Service].[Name] Like '%" . $name . "%'
+        AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
+        AND [City].[Name] Like '%" . $city . "'
+        AND [Sub_Category].[Id] Like '%" . $SubCategory . "'"
+                . " ORDER BY [Service].[Id]
+                OFFSET " . $pageNum . " ROWS
+                FETCH NEXT 50 ROWS ONLY", array(), "rows");
+        foreach ($rows as $row) {
+            echo '<div class = "card-grid-col">
+            <article class = "card-typical">
+            <div class = "card-typical-section">
+            <div class = "user-card-row">
+            <div class = "tbl-row">
+            
+            <div class = "tbl-cell">
+            <p class = "user-card-row-name"><a href = "../build/sign_in.php?redUrl=/build/profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class = "card-typical-section card-typical-content">
+            <div class = "photo">
+            <img src = "' . $row['MPP'] . '" alt = "Service Pic" height = "185" width = "110">
+            </div>
+            <header class = "title"><a href = "../build/sign_in.php?redUrl=/build/service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
+            <p style="overflow:hidden; max-height:75px; ">' . $row['SDE'] . '</p>
+            </div>
+
+<div class="card-typical-section">
+<div class="card-typical-linked">
+
+</div>
+
+<div  class="card-typical-likes">
+
+<button class="btn btn-rounded btn-inline btn-primary-outline font-icon-plus" style="width: 53px;height: 37px;border-color:white;padding-left: 0px;padding-right: 0px;padding-top: 6px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+<button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
+</div>
+</div>     </article>
+            </div>';
         }
 
         //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
