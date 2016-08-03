@@ -47,9 +47,9 @@ if (isset($_SESSION['id'])) {
                         //SET [Login_failed] = 0
                         if (DB_setLoginFailed($pdo, $email)) {
                             //header('Location: profile.php');
-                            $msg = "LOGIN OK! HEADER LOCATION";
+                            //$msg = "LOGIN OK! HEADER LOCATION";
                             if (isset($_Get ['redUrl'])) {
-                                $url = (filter_var($_Get ['redUrl'], FILTER_SANITIZE_STRING));
+                                $url = (filter_var($_Get['redUrl'], FILTER_SANITIZE_STRING));
                                 header("location: http://$url");
                             } else {
                                 if ($_SESSION['role'] === 'organization') {
