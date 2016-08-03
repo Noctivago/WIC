@@ -39,6 +39,9 @@ include ("./db/dbconn.php");
 
         if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
+            if ($PageNum < 0) {
+                echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
+            }
         } else {
             //echo 'updateQueryStringParameter(PageNum, 1);';
             //$func = "updateQueryStringParameter('PageNum', '1')";
@@ -77,8 +80,9 @@ include ("./db/dbconn.php");
         <?php
         //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
         //onclick="updateQueryStringParameter('Category', '4');"
-        echo '<button type="button"><<</button>';
-        echo '<button type="button">>></button>';
+
+        echo '<button onclick="updateQueryStringParameter("PageNum","' . ($PageNum - 1) . '");" type="button"><<</button>';
+        echo '<button onclick="updateQueryStringParameter("PageNum","' . ($PageNum + 1) . '");" type="button">>></button>';
         ?>
         <!--        <div style="padding-left: 500px;">
                     <nav>
