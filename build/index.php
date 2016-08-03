@@ -43,7 +43,7 @@ include ("./db/dbconn.php");
                 echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
                 $query .= '#Page > 1 /' . $numPag = DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page);
             }
-            $query .= '#Page > ' . ($PageNum + 1) . $numPag = DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page) . ' ';
+            $query .= '#Page > ' . ($PageNum + 1) . '/' . $numPag = DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page) . ' ';
         } else {
             //echo 'updateQueryStringParameter(PageNum, 1);';
             //$func = "updateQueryStringParameter('PageNum', '1')";
