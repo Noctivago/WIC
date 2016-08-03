@@ -23,7 +23,7 @@ include ("includes/head_sideMenu.php");
 				
 		           </div>
                			<div class="col-md-12">
-                                                     <section class="widget widget-accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                                                     <section class="widget widget-accordion" id="accordion" role="tablist" aria-multiselectable="false">
 						<article class="panel">
 							<div class="panel-heading" role="tab" id="headingOne">
 								<a data-toggle="collapse"
