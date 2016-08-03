@@ -138,7 +138,7 @@ if (isset($_SESSION['id'])) {
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
             <ul class="side-menu-list">
-                <header class="side-menu-title">Advanced Search.</header>
+                <header class="side-menu-title">Advanced Search</header>
                 <div class="col-md-10">
                     <div class="typeahead-container">
                         <div class="typeahead-field">
