@@ -41,15 +41,15 @@ include ("./db/dbconn.php");
             $PageNum = (filter_var($_GET ['PageNum']));
             if ($PageNum < 0) {
                 echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
-                $query .= '#Page > 0 ';
+                $query .= '#Page > 1 ';
             }
-            $query .= '#Page > ' . $PageNum . ' ';
+            $query .= '#Page > ' . ($PageNum + 1) . ' ';
         } else {
             //echo 'updateQueryStringParameter(PageNum, 1);';
             //$func = "updateQueryStringParameter('PageNum', '1')";
             echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
             //echo '<Script language="text/javascript">' . $func . '</Script>';
-            $query .= '#Page > 0 ';
+            $query .= '#Page > 1 ';
             $PageNum = 0;
         }
 
