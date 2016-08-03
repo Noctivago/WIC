@@ -42,7 +42,7 @@ include ("./db/dbconn.php");
         } else {
             //echo 'updateQueryStringParameter(PageNum, 1);';
             //$func = "updateQueryStringParameter('PageNum', '1')";
-            echo '<script>updateQueryStringParameter("PageNum","1"); </script>';
+            echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
             //echo '<Script language="text/javascript">' . $func . '</Script>';
             $PageNum = 0;
         }
@@ -76,6 +76,7 @@ include ("./db/dbconn.php");
         <div class="clear"></div>
         <?php
         //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
+        //onclick="updateQueryStringParameter('Category', '4');"
         echo '<button type="button"><<</button>';
         echo '<button type="button">>></button>';
         ?>
