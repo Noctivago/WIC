@@ -2,9 +2,8 @@
 include ("includes/head_sideMenuPub.php");
 include ("./db/dbconn.php");
 ?>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<link rel="stylesheet" href="css/lib/bootstrap-sweetalert/sweetalert.css"/>
-<div class="page-content" onload=".swal-btn-input">
+
+<div class="page-content">
     <div class="container-fluid">
         <?php
         $query = '';
@@ -68,67 +67,20 @@ include ("./db/dbconn.php");
             DB_GetSubCategories($pdo, $CategoryId);
         }
         ?>
-        <!--        <div data-role="main" class="ui-content">
-                    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                        <form>
-                            <div>
-                                <h3>Login information</h3>
-                                <input type="submit" data-inline="true" value="Log in">
-                            </div>
-                        </form>
-                    </div>
-                </div>-->
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Input message
-                </div>
-                <div class="card-block">
-                    <p class="card-text">
-                        <button class="btn btn-primary swal-btn-input">Try Alert!</button>
-                        <a onload=""
-                    </p>
-                </div>
-            </div>
-        </div>
+       
         <div class="cards-grid" data-columns>
             <?php
             /**
              * Executa a Querie c/ todos os parametros
              */
             //DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $PageNum);
-            DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $page);
+            DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $PageNum);
             //$numPag = DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page);
             ?>
 
         </div>
         <div class="clear"></div>
-        <!--        <div style="padding-left: 500px;">
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item disabled">
-                               
-                                echo'<a class="page-link" aria-label="Previous" onclick="setPAge(' . ($PAgeNum - 1) . ')"  >
-                                    <span aria-hiden="true">&laquo;</span>
-                                   
-                                    <span class="sr-only">Previous</span>
-                                </a>';
-                           
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" ><span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="page-item"><a class="page-link">2</a></li>
-                            <li class="page-item"><a class="page-link">3</a></li>
-                            <li class="page-item"><a class="page-link">4</a></li>
-                            <li class="page-item"><a class="page-link">5</a></li>
-                            <li class="page-item">
-                                <a class="page-link" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>-->
+
         <div class="right" style="margin-left: 450px; padding-left: 35px;" >
             <?php
             //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
@@ -141,30 +93,11 @@ include ("./db/dbconn.php");
             echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
 //        }
             ?>
-
-            <!--<div data-role="page"-->
-            <!--        <div data-role="main" class="ui-content">
-                                    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Show Popup Form</a>
-            
-                        <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-                            <form method="post" action="demoform.asp">
-                                <div>
-                                    <h3>Login information</h3>
-                                    <label for="usrnm" class="ui-hidden-accessible">Username:</label>
-                                    <input type="text" name="user" id="usrnm" placeholder="Username">
-                                    <label for="pswd" class="ui-hidden-accessible">Password:</label>
-                                    <input type="password" name="passw" id="pswd" placeholder="Password">
-                                    <label for="log">Keep me logged in</label>
-                                    <input type="checkbox" name="login" id="log" value="1" data-mini="true">
-                                    <input type="submit" data-inline="true" value="Log in">
-                                </div>
-                            </form>
-                        </div>
-                    </div>-->
             <!--</div>-->
 
-
-
+            <!--                </ul>
+                        </nav>
+                    </div>-->
             <!--        <div style="padding-left: 500px;">
                         <nav>
                             <ul class="pagination">
@@ -364,143 +297,6 @@ include ("./db/dbconn.php");
 
             }
         }
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            $('.swal-btn-basic').click(function (e) {
-                e.preventDefault();
-                swal("Here's a message!");
-            });
-
-            $('.swal-btn-text').click(function (e) {
-                e.preventDefault();
-                swal({
-                    title: "Here's a message!",
-                    text: "It's pretty, isn't it?"
-                });
-            });
-
-            $('.swal-btn-success').click(function (e) {
-                e.preventDefault();
-                swal({
-                    title: "Good job!",
-                    text: "You clicked the button!",
-                    type: "success",
-                    confirmButtonClass: "btn-success",
-                    confirmButtonText: "Success"
-                });
-            });
-
-            $('.swal-btn-warning').click(function (e) {
-                e.preventDefault();
-                swal({
-                    title: "Are you sure?",
-                    text: "Your will not be able to recover this imaginary file!",
-                    type: "warning",
-                    showCancelButton: true,
-                    cancelButtonClass: "btn-default",
-                    confirmButtonClass: "btn-warning",
-                    confirmButtonText: "Warning",
-                    closeOnConfirm: false
-                },
-                        function () {
-                            swal({
-                                title: "Deleted!",
-                                text: "Your imaginary file has been deleted.",
-                                type: "success",
-                                confirmButtonClass: "btn-success"
-                            });
-                        });
-            });
-
-            $('.swal-btn-cancel').click(function (e) {
-                e.preventDefault();
-                swal({
-                    title: "Are you sure?",
-                    text: "You will not be able to recover this imaginary file!",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonClass: "btn-danger",
-                    confirmButtonText: "Yes, delete it!",
-                    cancelButtonText: "No, cancel plx!",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                        function (isConfirm) {
-                            if (isConfirm) {
-                                swal({
-                                    title: "Deleted!",
-                                    text: "Your imaginary file has been deleted.",
-                                    type: "success",
-                                    confirmButtonClass: "btn-success"
-                                });
-                            } else {
-                                swal({
-                                    title: "Cancelled",
-                                    text: "Your imaginary file is safe :)",
-                                    type: "error",
-                                    confirmButtonClass: "btn-danger"
-                                });
-                            }
-                        });
-            });
-
-            $('.swal-btn-custom-img').click(function (e) {
-                e.preventDefault();
-                swal({
-                    title: "Sweet!",
-                    text: "Here's a custom image.",
-                    confirmButtonClass: "btn-success",
-                    imageUrl: 'img/smile.png'
-                });
-            });
-
-            $('.swal-btn-info').click(function (e) {
-                e.preventDefault();
-                swal({
-                    title: "Are you sure?",
-                    text: "Your will not be able to recover this imaginary file!",
-                    type: "info",
-                    showCancelButton: true,
-                    cancelButtonClass: "btn-default",
-                    confirmButtonText: "Info",
-                    confirmButtonClass: "btn-primary"
-                });
-            });
-
-            $('.swal-btn-input').click(function (e) {
-                e.preventDefault();
-                swal({
-                    title: "An input!",
-                    text: "Write something interesting:",
-                    type: "input",
-                    showCancelButton: true,
-                    closeOnConfirm: false,
-                    inputPlaceholder: "Write something"
-                }, function (inputValue) {
-                    if (inputValue === false)
-                        return false;
-                    if (inputValue === "") {
-                        swal.showInputError("You need to write something!");
-                        return false
-                    }
-                    swal("Nice!", "You wrote: " + inputValue, "success");
-                });
-            });
-        });
-    </script>
-
-    <script>
-        function openWindow() {
-            $('#myPopup').popup("open");
-        }
-        function  closeWindow() {
-            var timeout = window.setTimeout(function () {
-                $('#myPopup').stop().fadeOut('medium');
-            }, 10000);
-        }
-        window.onload = closeWindow();
     </script>
 </body>
 </html>
