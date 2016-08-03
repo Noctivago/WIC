@@ -38,7 +38,6 @@ if (isset($_SESSION['id'])) {
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="css/lib/bootstrap-sweetalert/sweetalert.css"/>
 
     </head>
     <body class="with-side-menu control-panel control-panel-compact" >
