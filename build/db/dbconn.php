@@ -3847,10 +3847,7 @@ function DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCatego
         AND [Service].[Name] Like '%" . $name . "%'
         AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
         AND [City].[Name] Like '%" . $city . "'
-        AND [Sub_Category].[Id] Like '%" . $SubCategory . "'"
-                . " ORDER BY [Service].[Id]
-                OFFSET " . $pageNum . " ROWS
-                FETCH NEXT 50 ROWS ONLY", array(), "rows");
+        AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
         foreach ($rows as $row) {
             return $row['COUNTER'];
         }
