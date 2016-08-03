@@ -68,7 +68,6 @@ if (isset($_SESSION['id'])) {
                                    <i class="font-icon-plus" <input Type="button" Value="Teste"> </i>
                                 </a>
                             </div>
-
                             <div class="dropdown dropdown-notification messages">
                                 <a href="../build/sign_in.php?redUrl=/build/index.php"
                                    class="header-alarm dropdown-toggle active"
@@ -79,7 +78,6 @@ if (isset($_SESSION['id'])) {
                                     <i class="font-icon-comments" <input Type="button" Value="Teste"></i>
                                 </a>
                             </div>
-
                             <div class="dropdown user-menu">
                                 <a href="../build/sign_in.php?redUrl=/build/index.php">
                                     <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
