@@ -50,8 +50,8 @@ include ("./db/dbconn.php");
             $PageNum = 0;
         }
 
-        if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
-            $clear = '<a href="index.php"> Clear</a>';
+        if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
+            $clear = '<a href="index.php"> Reset</a>';
         } else {
             $clear = '';
         }
