@@ -232,7 +232,7 @@ include '../build/db/session.php';
                                     if (isset($_GET ['name'])) {
                                         echo 'value = ' . (filter_var($_GET ['name']));
                                     } else {
-                                        echo 'placeholder="Choose your City..">';
+                                        echo 'placeholder="Choose your City.."';
                                     }
                                     ?>
                                            id="name"
