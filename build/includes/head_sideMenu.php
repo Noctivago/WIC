@@ -547,19 +547,25 @@ include '../build/db/session.php';
             function updateQueryStringParameter(key, value) {
                 var uri = window.location.href;
                 alert(uri);
-                var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
-                if (uri.match(re)) {
-                    window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
-                    //return uri.replace(re, '$1' + key + "=" + value + '$2');
-                } else {
-                    var hash = '';
-                    if (uri.indexOf('#') !== -1) {
-                        hash = uri.replace(/.*#/, '#');
-                        uri = uri.replace(/#.*/, '');
+                if (uri.indexOf('build/index.php') >= 0) {
+                    var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
+                    if (uri.match(re)) {
+                        window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
+                        //return uri.replace(re, '$1' + key + "=" + value + '$2');
+                    } else {
+                        var hash = '';
+                        if (uri.indexOf('#') !== -1) {
+                            hash = uri.replace(/.*#/, '#');
+                            uri = uri.replace(/#.*/, '');
+                        }
+                        var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+                        //return uri + separator + key + "=" + value + hash;
+                        window.location.assign(uri + separator + key + "=" + value + hash);
                     }
-                    var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-                    //return uri + separator + key + "=" + value + hash;
-                    window.location.assign(uri + separator + key + "=" + value + hash);
+                } else {
+                    var str = uri;
+                    str = /.php(.+)/.exec(str)[1];
+                    alert(str);
                 }
             }
             function sendInvite() {
