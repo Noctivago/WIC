@@ -49,11 +49,12 @@ if (isset($_SESSION['id'])) {
                                 $use = $_SESSION['id'];
                                 $idOg = DB_GetOrgIdByUserBossId2($pdo, $use);
                                 $idorga = $idOg['Id'];
-//                                header("location: ../build/profile_org.php?Organization=". $idOg['Id']."");
-                                header("location: ../build/profile_org.php?Organization= $idorga ");
+                                //header("location: ../build/profile_org.php?Organization=". $idOg['Id']."");
+                                //header("location: ../build/profile_org.php?Organization= $idorga ");
+                                header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/profile_org.php?Organization=$idorga");
                             }
                             if ($_SESSION['role'] === 'user') {
-                                header("location: ../build/index.php");
+                                header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/index.php");
                             }
                         }
                     } else {
