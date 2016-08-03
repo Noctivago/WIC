@@ -3690,7 +3690,7 @@ function DB_GetSubCategories($pdo, $Category) {
  * @param type $CategoryId
  */
 function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $page) {
-    $pageNum = $page * 2;
+    $pageNum = $page * 50;
     try {
         $rows = sql($pdo, "SELECT 
         [Service].[Name] AS SNA,
