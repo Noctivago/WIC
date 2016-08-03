@@ -462,7 +462,7 @@ include_once '../build/db/session.php';
         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!--	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
 	<script type="text/javascript">
 	<script src="js/lib/ladda-button/spin.min.js"></script>
 	<script src="js/lib/ladda-button/ladda.min.js"></script>
