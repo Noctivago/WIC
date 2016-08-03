@@ -42,6 +42,7 @@ include ("./db/dbconn.php");
             //DEVOLVE SUBCATS DE UMA CAT
             DB_GetSubCategories($pdo, $CategoryId);
         }
+        echo '123';
         ?>
         <div class="cards-grid" data-columns>
 
