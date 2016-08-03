@@ -3669,11 +3669,19 @@ function DB_GetSubCategories($pdo, $Category) {
         echo '<div class="row" style="padding-left: 35px;">
             <div class="col-md-3 col-sm-6">';
         echo '<div class="options">';
+        $x = DB_countSubCategories($pdo, $CategoryId);
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<label title="' . $row['SCID'] . '">';
-            echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">' . $row['SCNA'] . ' ';
-            echo '<img/>';
-            echo '</label>';
+            if ($x === 1) {
+                echo '<label title="' . $row['SCID'] . '">';
+                echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
+                echo '<img/>';
+                echo '</label>';
+            } else {
+                echo '<label title="' . $row['SCID'] . '">';
+                echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">' . $row['SCNA'] . ' ';
+                echo '<img/>';
+                echo '</label>';
+            }
         }
         echo ' </div>
                 </div>
