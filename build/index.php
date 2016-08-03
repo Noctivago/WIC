@@ -103,7 +103,7 @@ include ("./db/dbconn.php");
                             <span class="sr-only">Next</span>
                         </a>
                     </li>-->
-<div class="right">
+<div class="right" style="margin-left: 900px; padding-left: 35px;">
         <?php
         //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
         //onclick="updateQueryStringParameter('Category', '4');"
