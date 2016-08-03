@@ -263,7 +263,7 @@ include '../build/db/session.php';
 
                     echo '<header class="side-menu-title">My Services search</header>';
                 } else {
-                    echo '<header class="side-menu-title">Advanced Search</header>';
+                    echo '<header class="side-menu-title">Advanced Search.</header>';
                 }
                 ?>
                 <!--<header class="side-menu-title">Advanced search</header>-->
@@ -301,7 +301,7 @@ include '../build/db/session.php';
                 <header class="side-menu-title">Start Planning</header>
                 <!--updateQueryStringParameter(uri, key, value)-->  
                 <li class="brown with-sub">
-                    <a class="lbl" onclick="changePageNum();updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
+                    <a class="lbl" onclick="updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '2');"><i class="fa fa-cutlery"></i> Food</a>
@@ -548,19 +548,6 @@ include '../build/db/session.php';
                 var x = Page;
                 updateQueryStringParameter('PageNum', x);
             }
-            function changePageNum() {
-                var uri = window.location.href;
-                //uri.replace(re, '$1' + 'pageNum' + "=" + '0' + '$2'));
-                var hash = '';
-                if (uri.indexOf('#') !== -1) {
-                    hash = uri.replace(/.*#/, '#');
-                    uri = uri.replace(/#.*/, '');
-                }
-                var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-                //return uri + separator + key + "=" + value + hash;
-                window.location.assign(uri.replace(re, '$1' + 'PageNum' + "=" + '0' + '$2'));
-            }
-
             //FALTA COLOCAR PageNum,0 quando troca algum criterio de pesquisa
             function updateQueryStringParameter(key, value) {
                 var uri = window.location.href;
