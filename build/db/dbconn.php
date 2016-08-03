@@ -3778,8 +3778,7 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
 
 function DB_countSubCategories($pdo, $CategoryId) {
     try {
-        $count = sql($pdo, "SELECT [Sub_Category].[Id] AS SCID, [Sub_Category].[Name] AS SCNA, [Sub_Category].[Category_id] 
-            FROM [Sub_Category]
+        $count = sql($pdo, "SELECT COUNT(*) FROM [Sub_Category]
             WHERE [Sub_Category].[Category_Id] = ?", array($CategoryId), "count");
         if ($count < 0) {
             return true;
