@@ -56,7 +56,6 @@ function alteraFirst($pdo) {
                     sql($pdo, "UPDATE [dbo].[Multimedia]
    SET [First_Page] = 1 where [Id] = ? ", array($row2['Id']));
                 }
-                
             }
         }
     } catch (Exception $ex) {
@@ -3814,5 +3813,68 @@ function DB_getSubCategoryName($pdo, $SubCategory) {
         }
     } catch (Exception $exc) {
         echo 'ERROR READING SUBCATEGORY!';
+    }
+}
+
+/**
+ * Index Queries
+ * @param type $pdo
+ * @param type $CategoryId
+ */
+function DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory) {
+    try {
+        $rows = sql($pdo, "SELECT COUNT(*) AS COUNTER
+        FROM SERVICE
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
+        join [Organization]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        join [Sub_Category]
+        on [Service].[Sub_Category_Id] = [Sub_Category].[Id]
+        join [Category]
+        on [Category].[Id] = [Sub_Category].[Id]
+        join [City]
+        on [Service].[City_Id] = [City].[Id]
+        WHERE
+        [Organization].[Enabled] = 1 
+        AND [Service].[Enabled] = 1 
+        AND [Multimedia].[Enabled] = 1  
+        AND [Multimedia].[First_Page] =  1
+        AND [Service].[Name] Like '%" . $name . "%'
+        AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
+        AND [City].[Name] Like '%" . $city . "'
+        AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
+        echo ' <div style="padding-left: 500px;">
+                <nav>
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>';
+        foreach ($rows as $row) {
+            $pageNum = $row['COUNTER'] / 50;
+            for ($i = 0; $i <= $pageNum; $i++) {
+//                    <li class="page-item active">
+//                        <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+//                    </li>
+                echo '<li class="page-item"><a class="page-link" href="#">' . $i + 1 . '</a></li>';
+            }
+        }
+        echo '<li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>';
+
+        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+    } catch (Exception $exc) {
+        echo 'ERROR READING SERVICE TABLE!';
     }
 }
