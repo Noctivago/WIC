@@ -3954,9 +3954,6 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
             </article>
             </div>';
         }
-
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
