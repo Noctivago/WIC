@@ -51,33 +51,28 @@ include ("./db/dbconn.php");
              */
             if (isset($_GET ['Category'])) {
                 $CategoryId = (filter_var($_GET ['Category']));
-                $query .= 'Category > ';
             }
             /**
              * Pesquisa por nome de serviço
              */
             if (isset($_GET ['qParam'])) {
                 $name = (filter_var($_GET ['qParam']));
-                $query .= 'Search > ';
             }
             /**
              * Pesquisa por nome da cidade
              */
             if (isset($_GET ['name'])) {
                 $city = (filter_var($_GET ['name']));
-                $query .= 'City > ';
             }
             /**
              * Pesquisa por subCategoria
              */
             if (isset($_GET ['SubCategory'])) {
                 $SubCategory = (filter_var($_GET ['SubCategory']));
-                $query .= 'SubCategory > ';
             }
             /**
              * Executa a Querie c/ todos os parametros
              */
-            echo $query;
             DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
             ?>
 
