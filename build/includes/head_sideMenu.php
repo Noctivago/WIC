@@ -569,7 +569,7 @@ include '../build/db/session.php';
                     uri = '<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>' + str;
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
-                        window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
+                        window.location = (uri.replace(re, '$1' + key + "=" + value + '$2'));
                         //return uri.replace(re, '$1' + key + "=" + value + '$2');
                     } else {
                         var hash = '';
@@ -579,7 +579,7 @@ include '../build/db/session.php';
                         }
                         var separator = uri.indexOf('?') !== -1 ? "&" : "?";
                         //return uri + separator + key + "=" + value + hash;
-                        window.location.assign(uri + separator + key + "=" + value + hash);
+                        window.location = url(uri + separator + key + "=" + value + hash);
                     }
                 }
             }
