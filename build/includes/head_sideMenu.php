@@ -566,7 +566,7 @@ include '../build/db/session.php';
                     var str = uri;
                     str = /.php(.+)/.exec(str)[1];
                     alert('<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>' + str);
-                    uri = '<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>' + str;
+                    uri = '<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>';
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location = (uri.replace(re, '$1' + key + "=" + value + '$2'));
