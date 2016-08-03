@@ -565,7 +565,7 @@ include '../build/db/session.php';
                 } else {
                     var str = uri;
                     str = /.php(.+)/.exec(str)[1];
-                    //alert(<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?> + str);
+                    alert(<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?> + str);
                     uri = <?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?> + str;
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
