@@ -1,7 +1,7 @@
 <?php
 include ("includes/head_sideMenuPub.php");
 include ("./db/dbconn.php");
-//ob_start();
+ob_start();
 //session_start();
 if (isset($_SESSION['id'])) {
     if ($_SESSION['role'] === 'organization') {
@@ -11,7 +11,7 @@ if (isset($_SESSION['id'])) {
         header("location: /build/sign_in.php");
     }
 } else {
-    header("location: /build/indexPub.php");
+    //header("location: /build/indexPub.php");
 }
 ?>
 
