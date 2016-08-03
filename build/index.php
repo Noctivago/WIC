@@ -82,13 +82,13 @@ include ("./db/dbconn.php");
             <nav>
                 <ul class="pagination">
                     <li class="page-item disabled">
-                        <?php
+                       
                         echo'<a class="page-link" aria-label="Previous" onclick="setPAge(' . ($PAgeNum - 1) . ')"  >
                             <span aria-hiden="true">&laquo;</span>
-                            <button aria-hiden="true" onclick="setPage(' . ($PageNum - 1) . ')" type="button">&laquo;</button>
+                           
                             <span class="sr-only">Previous</span>
                         </a>';
-                                    ?>
+                   
                     </li>
                     <li class="page-item active">
                         <a class="page-link" ><span class="sr-only">(current)</span></a>
@@ -103,6 +103,7 @@ include ("./db/dbconn.php");
                             <span class="sr-only">Next</span>
                         </a>
                     </li>-->
+<div class="right">
         <?php
         //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
         //onclick="updateQueryStringParameter('Category', '4');"
@@ -114,6 +115,7 @@ include ("./db/dbconn.php");
         echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
 //        }
         ?>
+<!--</div>-->
                     
 <!--                </ul>
             </nav>
