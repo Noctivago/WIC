@@ -336,15 +336,8 @@ include ("./db/dbconn.php");
     <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="js/lib/select2/select2.full.min.js"></script>
 
-
     <!--O PROXIMO SCRIPT DESABILITA BOTAO DIREITO-->
     <script>
-        //    $(document).ready(function ()
-        //    {
-        //        $(document).bind("contextmenu", function (e) {
-        //            return false;
-        //        });
-        //    })
         $(function () {
             $('#tags-editor-textarea').tagEditor();
         });
@@ -361,6 +354,17 @@ include ("./db/dbconn.php");
 
             }
         }
+    </script>
+    <script>
+        function openWindow() {
+            $('#myPopup').popup("open");
+        }
+        function  closeWindow() {
+            var timeout = window.setTimeout(function () {
+                $('#myPopup').stop().fadeOut('medium');
+            }, 10000);
+        }
+        window.onload = closeWindow();
     </script>
 
 </body>

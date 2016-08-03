@@ -40,21 +40,11 @@ if (isset($_SESSION['id'])) {
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
         <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">-->
-        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script>
-            function openWindow() {
-                $('#myPopup').popup("open");
-            }
-            function  closeWindow() {
-                var timeout = window.setTimeout(function () {
-                    $('#myPopup').stop().fadeOut('medium');
-                }, 10000);
-            }
-            window.onload = closeWindow();
-        </script>
+        <!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+        <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+       
     </head>
-    <body class="with-side-menu control-panel control-panel-compact" onload="openWindow()">
+    <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
 
