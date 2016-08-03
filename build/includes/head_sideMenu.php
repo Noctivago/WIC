@@ -257,10 +257,7 @@ include '../build/db/session.php';
                     echo '<header class="side-menu-title">Advanced Search</header>';
                 }
                 ?>
-
-
                 <!--<header class="side-menu-title">Advanced search</header>-->
-
                 <!--<form action="<?php echo $selfUrl; ?>">-->
                 <div class="col-md-10">
                     <div class="typeahead-container">
