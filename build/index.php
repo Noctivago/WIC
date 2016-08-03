@@ -41,8 +41,9 @@ include ("./db/dbconn.php");
             $PageNum = (filter_var($_GET ['PageNum']));
         } else {
             //echo 'updateQueryStringParameter(PageNum, 1);';
-            $func = "updateQueryStringParameter('PageNum', '1')";
-            echo '<Script language="text/javascript">' . $func . '</Script>';
+            //$func = "updateQueryStringParameter('PageNum', '1')";
+            echo '<script> updateQueryStringParameter("PageNum","1"); </script>';
+            //echo '<Script language="text/javascript">' . $func . '</Script>';
             $PageNum = 1;
         }
 
