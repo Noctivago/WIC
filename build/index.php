@@ -53,7 +53,7 @@ include ("./db/dbconn.php");
             $PageNum = 0;
         }
 
-        if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
+        if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
             $clear = '<a href="index.php"> Clear</a>';
         } else {
             $clear = '';
