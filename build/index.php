@@ -72,6 +72,8 @@ include ("./db/dbconn.php");
         <div class="clear"></div>
         <?php
         //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
+        echo '<button type="button"><<</button>';
+        echo '<button type="button">>></button>';
         ?>
         <!--        <div style="padding-left: 500px;">
                     <nav>
