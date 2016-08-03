@@ -33,23 +33,12 @@ include '../build/db/functions.php';
         //SE TIVER QUERY STRING
 
         $selfUrl = '/build/indexPub.php';
-//        $getValues = array();
-//        foreach ($_GET as $key => $value) {
-//            array_push($getValues, $key . "=" . $value);
-//        }
-//        if (count($getValues) > 0) {
-//            $selfUrl .= "?" . implode('&', $getValues);
-//        } else {
-//            $selfUrl .= "?";
-//        }
         ?>
         <header class="site-header">
             <div class="container-fluid">
                 <a href="index.php" class="site-logo">
-
                     <img class="hidden-md-down" src="img/wic_logo.png" alt="">
                     <img class="hidden-lg-up" src="img/wic_logo.png" alt="">
-
                 </a>
                 <button class="hamburger hamburger--htla">
                     <span>toggle menu</span>
@@ -68,42 +57,7 @@ include '../build/db/functions.php';
                                     <i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href = 'my_wicplanner.php'"> </i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages" alt="WIC Planner">
-                                    <div class="dropdown-menu-messages-header" >
-                                        <ul class="nav" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active"
-                                                   data-toggle="tab"
-                                                   href="messenger.php"
-                                                   role="tab">
-                                                    Wic Planner
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                        <button type="button" class="create">
-                                            <i class="font-icon font-icon-pen-square" alt="Create a new Wic Planner"></i>
-                                        </button>
-                                    </div>
-                                    <div class="tab-content">
-                                        <div class="tab-pane active" id="tab-incoming" role="tabpanel">
-                                            <div class="dropdown-menu-messages-list">
-                                                <?= db_getWicsForHeader($pdo, $_SESSION['id']); ?>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane" id="tab-outgoing" role="tabpanel">
-                                            <div class="dropdown-menu-messages-list">
-                                                <a href="#" class="mess-item">
-                                                    <span class="avatar-preview avatar-preview-32"><img src="img/avatar-2-64.png" alt=""></span>
-                                                    <span class="mess-item-name">Christian Burton</span>
-                                                    <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something...</span>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-menu-notif-more">
-                                        <a href="my_wicplanner.php">See My Wic Planners</a>
-                                    </div>
+                                    
                                 </div>
                             </div>
 
@@ -117,49 +71,7 @@ include '../build/db/functions.php';
                                     <i class="font-icon-comments" <input Type="button" Value="Teste" ondblclick="window.location.href = 'messenger.php'"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages">
-                                    <div class="dropdown-menu-messages-header">
-                                        <ul class="nav" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active"
-                                                   data-toggle="tab"
-                                                   href="messenger.php"
-                                                   role="tab">
-                                                    Inbox
-                                                    <span class="label label-pill label-danger">8</span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="tab-content">
-                                        <div class="tab-pane active" id="tab-incoming" role="tabpanel">
-                                            <div class="dropdown-menu-messages-list">
-                                                <a href="#" class="mess-item">
-                                                    <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
-                                                    <span class="mess-item-name">Tim Collins</span>
-                                                    <span class="mess-item-txt">Morgan was bothering about something!</span>
-                                                </a>
-                                                <a href="#" class="mess-item">
-                                                    <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
-                                                    <span class="mess-item-name">Tim Collins</span>
-                                                    <span class="mess-item-txt">Morgan was bothering about something!</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane" id="tab-outgoing" role="tabpanel">
-                                            <div class="dropdown-menu-messages-list">
-                                                <a href="#" class="mess-item">
-                                                    <span class="avatar-preview avatar-preview-32"><img src="img/avatar-2-64.png" alt=""></span>
-                                                    <span class="mess-item-name">Christian Burton</span>
-                                                    <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something...</span>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-menu-notif-more">
-                                        <a href="messenger.php">See more</a>
-                                    </div>
+                                  
                                 </div>
                             </div>
 
@@ -167,29 +79,6 @@ include '../build/db/functions.php';
                                 <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
                                     <img src="img/avatar-2-64.png" alt="">
                                 </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
-                                    <?php
-                                    $user = $_SESSION['id'];
-                                    $org = DB_GetOrgIdByUserBossId2($pdo, $user);
-                                    $idOrg = $org['Id'];
-
-                                    //echo 'iii'.DB_GetOrgIdByUserBossId2($pdo, $user);
-                                    if ($_SESSION['role'] == 'organization') {
-                                        echo ' <a class="dropdown-item" href="profile_org.php?Organization=' . $idOrg . '"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
-                                        echo ' <a class="dropdown-item" href="edit_profile_org.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
-                                        echo ' <a class="dropdown-item" href="add_service.php"><span class=" font-icon glyphicon glyphicon-send"></span>Add new Service</a>';
-                                        echo ' <a class="dropdown-item" href="invites.php"><span class="font-icon glyphicon glyphicon-cog"></span>My Team</a>';
-                                    } else {
-                                        echo '<a class="dropdown-item" href="profile_user.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
-                                    <a class="dropdown-item" href="edit_profile_user.php"><span class="font-icon glyphicon glyphicon-cog"></span>Edit Profile</a>';
-                                    }
-                                    ?>
-
-                                    <a class="dropdown-item" href="new_password.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>Change password</a>
-                                    <a class="dropdown-item" href="faq.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>FAQ</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="logout.php"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
-                                </div>
                             </div>
                             <button type="button" class="burger-right">
                                 <i class="font-icon-pin-2"></i>
