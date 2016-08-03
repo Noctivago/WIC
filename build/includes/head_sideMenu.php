@@ -89,11 +89,6 @@ include '../build/db/session.php';
                                         <div class="tab-pane active" id="tab-incoming" role="tabpanel">
                                             <div class="dropdown-menu-messages-list">
                                                 <?= db_getWicsForHeader($pdo, $_SESSION['id']); ?>
-                                                <!--                                                <a href="#" class="mess-item">
-                                                                                                    <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
-                                                                                                    <span class="mess-item-name">Tim Collins</span>
-                                                                                                    <span class="mess-item-txt">Morgan was bothering about something!</span>
-                                                                                                </a>-->
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="tab-outgoing" role="tabpanel">
@@ -227,24 +222,24 @@ include '../build/db/session.php';
                                 <div class="site-header-search-container" style="width: 250px;">
                                     <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
                                     <!--<input type="text" placeholder="Choose your City.."-->
-                                    <input type="text"
-                                    <?php
-                                    if (isset($_GET ['name'])) {
-                                        echo 'value = ' . (filter_var($_GET ['name']));
-                                    } else {
-                                        echo 'placeholder="Choose your City.."';
-                                    }
-                                    ?>
-                                           id="name"
-                                           class="form-control"
-                                           name="name"
-                                           type="text"
-                                           autocomplete="on"/>
-                                    <!--<button type="submit">-->
-                                    <button id= "btnName" onclick="getCitySearchValue()">
-                                        <span class="font-icon-pin-2"></span>
-                                    </button>
-                                    <div class="overlay"></div>
+                                        <input type="text"
+                                        <?php
+                                        if (isset($_GET ['name'])) {
+                                            echo 'value = ' . (filter_var($_GET ['name']));
+                                        } else {
+                                            echo 'placeholder="Choose your City.."';
+                                        }
+                                        ?>
+                                               id="name"
+                                               class="form-control"
+                                               name="name"
+                                               type="text"
+                                               autocomplete="on"/>
+                                        <!--<button type="submit">-->
+                                        <button id= "btnName" onclick="getCitySearchValue()">
+                                            <span class="font-icon-pin-2"></span>
+                                        </button>
+                                        <div class="overlay"></div>
                                     </form>
                                 </div>
                             </div>
@@ -312,9 +307,9 @@ include '../build/db/session.php';
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '4');"><i class="fa fa-star"></i>Decoration</a>
                 </li>
-<!--                <li class="gold with-sub">
+                <li class="gold with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
-                </li>-->
+                </li>
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '6');"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
