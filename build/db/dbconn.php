@@ -3929,7 +3929,6 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
             <div class = "card-typical-section">
             <div class = "user-card-row">
             <div class = "tbl-row">
-            
             <div class = "tbl-cell">
             <p class = "user-card-row-name"><a href = "../build/sign_in.php?redUrl=/build/profile_org.php?Organization=' . $row['OID'] . '">' . $row['ONA'] . '</a></p>
             </div>
