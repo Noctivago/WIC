@@ -97,7 +97,7 @@ include ("./db/dbconn.php");
              * Executa a Querie c/ todos os parametros
              */
             //DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $PageNum);
-            DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $page);
+            DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $PageNum);
             //$numPag = DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page);
             ?>
 
