@@ -81,8 +81,8 @@ include ("./db/dbconn.php");
         //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
         //onclick="updateQueryStringParameter('Category', '4');"
 
-        echo '<button onclick="updateQueryStringParameter("PageNum",' . ($PageNum - 1) . ');" type="button">Previous</button>';
-        echo '<button onclick="updateQueryStringParameter("PageNum",' . ($PageNum + 1) . ');" type="button">Next</button>';
+        echo '<button onclick="updateQueryStringParameter(PageNum,' . ($PageNum - 1) . ');" type="button">Previous</button>';
+        echo '<button onclick="updateQueryStringParameter(PageNum,' . ($PageNum + 1) . ');" type="button">Next</button>';
         ?>
         <!--        <div style="padding-left: 500px;">
                     <nav>
