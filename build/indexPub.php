@@ -330,7 +330,7 @@ include ("./db/dbconn.php");
     </script>
 
     <script src="js/app.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
     <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
