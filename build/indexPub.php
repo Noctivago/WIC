@@ -1,18 +1,7 @@
 <?php
 include ("includes/head_sideMenuPub.php");
 include ("./db/dbconn.php");
-ob_start();
-session_start();
-if (isset($_SESSION['id'])) {
-    if ($_SESSION['role'] === 'organization') {
-        header("location: /build/sign_in.php");
-    }
-    if ($_SESSION['role'] === 'user') {
-        header("location: /build/sign_in.php");
-    }
-} else {
-    //header("location: /build/indexPub.php");
-}
+
 ?>
 
 <div class="page-content">

@@ -6,6 +6,18 @@ include '../build/db/functions.php';
 //include '../build/db/session.php';
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
+ob_start();
+session_start();
+if (isset($_SESSION['id'])) {
+    if ($_SESSION['role'] === 'organization') {
+        header("location: /build/sign_in.php");
+    }
+    if ($_SESSION['role'] === 'user') {
+        header("location: /build/sign_in.php");
+    }
+} else {
+    //header("location: /build/indexPub.php");
+}
 ?>
 
 <html>
