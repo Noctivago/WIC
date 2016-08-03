@@ -52,7 +52,7 @@ if (isset($_SESSION['id'])) {
                         //SET [Login_failed] = 0
                         if (DB_setLoginFailed($pdo, $email)) {
                             //SE EXISTE URL REENCAMINHA
-                            if ((filter_var($_GET['redUrl'], FILTER_SANITIZE_URL)) > 0) {
+                            if (isset($_GET['redUrl'])) {
                                 //$url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
                                 //header("location: http://$url");
                                 $url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
