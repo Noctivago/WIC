@@ -52,10 +52,11 @@ if (isset($_SESSION['id'])) {
                         //SET [Login_failed] = 0
                         if (DB_setLoginFailed($pdo, $email)) {
                             //SE EXISTE URL REENCAMINHA
-                            if (strlen($url) > 0) {
+                            if ((filter_var($_GET['redUrl'], FILTER_SANITIZE_URL)) > 0) {
                                 //$url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
                                 //header("location: http://$url");
-                                $msg = $url;
+                                $url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
+                                header("location: http://" . $url);
                             } else {
                                 if ($_SESSION['role'] === 'organization') {
                                     $use = $_SESSION['id'];
