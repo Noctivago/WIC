@@ -1,8 +1,8 @@
 <?php
 include ("includes/head_sideMenuPub.php");
 include ("./db/dbconn.php");
-//ob_start();
-//session_start();
+ob_start();
+session_start();
 if (isset($_SESSION['id'])) {
     if ($_SESSION['role'] === 'organization') {
         header("location: /build/sign_in.php");
@@ -299,18 +299,6 @@ if (isset($_SESSION['id'])) {
     $(function () {
         $('#tags-editor-textarea').tagEditor();
     });
-</script>
-
-<script type="text/javascript">
-    function openMyWics(Sid) {
-        var x = (screen.width / 2) - (435 / 2);
-        var y = (screen.height / 2) - (362 / 2);
-        if (Sid > 0) {
-            window.open('./ajax/getMyWicsPopup.php?id=' + Sid + '', 'MyWics', 'height=455,width=322,left=' + x + ',top=' + y);
-        } else {
-
-        }
-    }
 </script>
 
 </body>
