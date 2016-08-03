@@ -23,13 +23,13 @@ include '../build/db/session.php';
         <link href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13173937_1763868363834284_3279338552525658697_n.png?oh=c86fc546335d68e979a8f7523a725015&oe=585E625B" rel="icon" type="image/png">
         <link href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13173937_1763868363834284_3279338552525658697_n.png?oh=c86fc546335d68e979a8f7523a725015&oe=585E625B" rel="shortcut icon">
 
-        <meta property="fb:app_id"          content="1234567890" /> 
-        <meta property="og:type"            content="article" /> 
-        <meta property="og:url"             content="http://newsblog.org/news/136756249803614" /> 
-        <meta property="og:title"           content="Introducing our New Site" /> 
-        <meta property="og:image"    content="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xap1/t39.2178-6/851565_496755187057665_544240989_n.jpg" /> 
-        <meta property="og:description"    content="http://samples.ogp.me/390580850990722" />
-        
+        <meta property="fb:admins" content="YOUR-FACEBOOK-ID" />
+        <meta property="og:title" content="HyperArts SEO Services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="http://www.hyperarts.com/_img-fb/Image-SRC_HyperArts.png" />
+        <meta property="og:image" content="http://www.hyperarts.com/_img-fb/Image-SRC_HyperArts_blue.png" />
+        <meta property="og:url" content="http://www.hyperarts.com/seo-services/search-engine-optimization-services-san-francisco.html" />
+        <meta property="og:site_name" content="HyperArts Web Design & Social Media" />
         
         
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
