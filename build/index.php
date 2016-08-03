@@ -43,35 +43,38 @@ include ("./db/dbconn.php");
             DB_GetSubCategories($pdo, $CategoryId);
         }
         ?>
+
+
+        <?php
+        /**
+         * Pesquisa por categoria
+         */
+        if (isset($_GET ['Category'])) {
+            $CategoryId = (filter_var($_GET ['Category']));
+        }
+        /**
+         * Pesquisa por nome de serviço
+         */
+        if (isset($_GET ['qParam'])) {
+            $name = (filter_var($_GET ['qParam']));
+        }
+        /**
+         * Pesquisa por nome da cidade
+         */
+        if (isset($_GET ['name'])) {
+            $city = (filter_var($_GET ['name']));
+        }
+        /**
+         * Pesquisa por subCategoria
+         */
+        if (isset($_GET ['SubCategory'])) {
+            $SubCategory = (filter_var($_GET ['SubCategory']));
+        }
+
+        echo '123';
+        ?>
         <div class="cards-grid" data-columns>
-
             <?php
-            /**
-             * Pesquisa por categoria
-             */
-            if (isset($_GET ['Category'])) {
-                $CategoryId = (filter_var($_GET ['Category']));
-            }
-            /**
-             * Pesquisa por nome de serviço
-             */
-            if (isset($_GET ['qParam'])) {
-                $name = (filter_var($_GET ['qParam']));
-            }
-            /**
-             * Pesquisa por nome da cidade
-             */
-            if (isset($_GET ['name'])) {
-                $city = (filter_var($_GET ['name']));
-            }
-            /**
-             * Pesquisa por subCategoria
-             */
-            if (isset($_GET ['SubCategory'])) {
-                $SubCategory = (filter_var($_GET ['SubCategory']));
-            }
-
-            echo '123';
             /**
              * Executa a Querie c/ todos os parametros
              */
