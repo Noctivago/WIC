@@ -85,6 +85,7 @@ include ("./db/dbconn.php");
                         <?php
                         echo'<a class="page-link" aria-label="Previous" onclick="setPAge(' . ($PAgeNum - 1) . ')"  >
                             <span aria-hiden="true">&laquo;</span>
+                            <button onclick="setPage(' . ($PageNum - 1) . ')" type="button">&laquo;</button>
                             <span class="sr-only">Previous</span>
                         </a>';
                                     ?>
