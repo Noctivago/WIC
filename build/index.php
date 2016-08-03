@@ -40,6 +40,7 @@ include ("./db/dbconn.php");
         if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
         } else {
+            echo '<script> updateQueryStringParameter(PageNum, 1);';
             $PageNum = 1;
         }
 
@@ -71,7 +72,7 @@ include ("./db/dbconn.php");
         </div>
         <div class="clear"></div>
         <?php
-        //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
+//DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
         echo '<button type="button"><<</button>';
         echo '<button type="button">>></button>';
         ?>
