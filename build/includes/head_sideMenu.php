@@ -254,7 +254,7 @@ include '../build/db/session.php';
 
                     echo '<header class="side-menu-title">My Services search</header>';
                 } else {
-                    echo '<header class="side-menu-title">Advanced Search</header>';
+                    echo '<header class="side-menu-title">Advanced Search.</header>';
                 }
                 ?>
 
@@ -504,22 +504,23 @@ include '../build/db/session.php';
                 alert(card_type);
             }
 
-            var CityArea = $('#name')
-            CityArea.bind('keydown', function (event) {
-                // Check if enter is pressed without pressing the shiftKey
-                if (event.keyCode === 13 && event.shiftKey === false) {
-                    getCitySearchValue();
-                }
-            });
+            function bindKeysBTN() {
+                var CityArea = $('#name')
+                CityArea.bind('keydown', function (event) {
+                    // Check if enter is pressed without pressing the shiftKey
+                    if (event.keyCode === 13 && event.shiftKey === false) {
+                        getCitySearchValue();
+                    }
+                });
 
-            var SearchArea = $('#qParam')
-            SearchArea.bind('keydown', function (event) {
-                // Check if enter is pressed without pressing the shiftKey
-                if (event.keyCode === 13 && event.shiftKey === false) {
-                    getAdvancedSearchValue();
-                }
-            });
-
+                var SearchArea = $('#qParam')
+                SearchArea.bind('keydown', function (event) {
+                    // Check if enter is pressed without pressing the shiftKey
+                    if (event.keyCode === 13 && event.shiftKey === false) {
+                        getAdvancedSearchValue();
+                    }
+                });
+            }
             function getAdvancedSearchValue() {
                 var x = document.getElementById('qParam').value;
                 updateQueryStringParameter('qParam', x);
@@ -552,6 +553,7 @@ include '../build/db/session.php';
                 $.post("../ajax/sendInviteUser.php", {email: email, serv: service}, function (result) {
                 });
             }
+            bindKeysBTN();
         </script>
         <script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
