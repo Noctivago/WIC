@@ -549,6 +549,7 @@ include '../build/db/session.php';
                 updateQueryStringParameter('PageNum', x);
             }
 
+            //FALTA COLOCAR PageNum,0 quando troca algum criterio de pesquisa
             function updateQueryStringParameter(key, value) {
                 var uri = window.location.href;
                 //alert(uri);
