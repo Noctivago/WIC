@@ -558,7 +558,7 @@ include '../build/db/session.php';
                 }
                 var separator = uri.indexOf('?') !== -1 ? "&" : "?";
                 //return uri + separator + key + "=" + value + hash;
-                window.location.assign(uri + separator + 'pageNum' + "=" + '0' + hash);
+                window.location.assign(uri.replace(re, '$1' + 'PageNum' + "=" + '0' + '$2'));
             }
 
             //FALTA COLOCAR PageNum,0 quando troca algum criterio de pesquisa
