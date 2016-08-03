@@ -466,8 +466,8 @@ include_once '../build/db/session.php';
 	<script src="js/lib/ladda-button/spin.min.js"></script>
 	<script src="js/lib/ladda-button/ladda.min.js"></script>
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
-<!--	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.contextMenu.min.js"></script>
-	-->
+	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.contextMenu.min.js"></script>
+	
 	<script>
 		$(document).ready(function() {
 			$('.panel').lobiPanel({
