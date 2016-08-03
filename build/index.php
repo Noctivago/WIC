@@ -34,6 +34,8 @@ include ("./db/dbconn.php");
             $SubCategory = (filter_var($_GET ['SubCategory']));
         }
 
+        echo $query;
+
         /**
          * Vai buscar as subCats da Cat
          */
@@ -42,8 +44,6 @@ include ("./db/dbconn.php");
             //DEVOLVE SUBCATS DE UMA CAT
             DB_GetSubCategories($pdo, $CategoryId);
         }
-
-        echo $query;
         ?>
         <div class="cards-grid" data-columns>
             <?php
