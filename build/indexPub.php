@@ -5,10 +5,10 @@ ob_start();
 session_start();
 if (isset($_SESSION['id'])) {
     if ($_SESSION['role'] === 'organization') {
-        header("location: /build/profile_org.php");
+        header("location: /build/sign_in.php");
     }
     if ($_SESSION['role'] === 'user') {
-        header("location: /build/index.php");
+        header("location: /build/sign_in.php");
     }
 } else {
     header("location: /build/indexPub.php");
@@ -63,7 +63,7 @@ if (isset($_SESSION['id'])) {
         }
 
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
-            $clear = '<a href="index.php"> Reset</a>';
+            $clear = '<a href="indexPub.php"> Reset</a>';
         } else {
             $clear = '';
         }
