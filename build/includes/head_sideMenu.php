@@ -550,7 +550,15 @@ include '../build/db/session.php';
             }
             function changePageNum() {
                 var uri = window.location.href;
-                uri.replace(re, '$1' + 'pageNum' + "=" + '0' + '$2'));
+                //uri.replace(re, '$1' + 'pageNum' + "=" + '0' + '$2'));
+                var hash = '';
+                if (uri.indexOf('#') !== -1) {
+                    hash = uri.replace(/.*#/, '#');
+                    uri = uri.replace(/#.*/, '');
+                }
+                var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+                //return uri + separator + key + "=" + value + hash;
+                window.location.assign(uri + separator + 'pageNum' + "=" + '0' + hash);
             }
 
             //FALTA COLOCAR PageNum,0 quando troca algum criterio de pesquisa
