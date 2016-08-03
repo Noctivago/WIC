@@ -563,14 +563,14 @@ include '../build/db/session.php';
                         window.location.assign(uri + separator + key + "=" + value + hash);
                     }
                 } else {
-                    var str = uri;
-                    str = /.php(.+)/.exec(str)[1];
-                    alert('<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>' + str);
+                    //var str = uri;
+                    //str = /.php(.+)/.exec(str)[1];
+                    //alert('<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>' + str);
                     uri = '<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>';
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
-                        //window.location.href = "http://example.com/new_url";
-                        window.location = (uri.replace(re, '$1' + key + "=" + value + '$2'));
+                        window.location.href = (uri.replace(re, '$1' + key + "=" + value + '$2'));
+                        //window.location = (uri.replace(re, '$1' + key + "=" + value + '$2'));
                         //return uri.replace(re, '$1' + key + "=" + value + '$2');
                     } else {
                         var hash = '';
@@ -580,7 +580,8 @@ include '../build/db/session.php';
                         }
                         var separator = uri.indexOf('?') !== -1 ? "&" : "?";
                         //return uri + separator + key + "=" + value + hash;
-                        window.location = (uri + separator + key + "=" + value + hash);
+                        //window.location = (uri + separator + key + "=" + value + hash);
+                        window.location.href = (uri + separator + key + "=" + value + hash);
                     }
                 }
             }
