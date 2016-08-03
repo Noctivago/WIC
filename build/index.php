@@ -78,7 +78,7 @@ include ("./db/dbconn.php");
 
         </div>
         <div class="clear"></div>
-        <div style="padding-left: 500px;">
+<!--        <div style="padding-left: 500px;">
             <nav>
                 <ul class="pagination">
                     <li class="page-item disabled">
@@ -102,22 +102,22 @@ include ("./db/dbconn.php");
                             <span aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Next</span>
                         </a>
-                    </li>
+                    </li>-->
         <?php
         //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
         //onclick="updateQueryStringParameter('Category', '4');"
 
-        echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum - 1) . ')" type="button"><<</button>';
+        echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum - 1) . ')" type="button">&laquo;</button>';
 //        if (($PageNum + 1) > ($numPag / 50)) {
 //            echo '<button onclick="setPage(' . ($PageNum) . ')" type="button">>></button>';
 //        } else {
-        echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">>></button>';
+        echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">&laquo;</button>';
 //        }
         ?>
                     
-                </ul>
+<!--                </ul>
             </nav>
-        </div>
+        </div>-->
         <!--        <div style="padding-left: 500px;">
                     <nav>
                         <ul class="pagination">
