@@ -9,8 +9,8 @@ include ("./db/dbconn.php");
         $query = '';
 
         /**
-         * Pesquisa por nome de serviçoF
-         */
+ * Pesquisa por nome de serviçoF
+ */
         if (isset($_GET ['qParam'])) {
             $name = (filter_var($_GET ['qParam']));
             $query .= '#Advanced Search Criteria > ' . $name . ' ';
