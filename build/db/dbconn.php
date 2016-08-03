@@ -3767,7 +3767,7 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
 <div  class="card-typical-likes">
 
 <button class="btn btn-rounded btn-inline btn-primary-outline font-icon-plus" style="width: 53px;height: 37px;border-color:white;padding-left: 0px;padding-right: 0px;padding-top: 6px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
-<button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;onClick = "openMyWics('.$row['SID'].');" </button>
+
 
 
 <button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
@@ -3776,20 +3776,7 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
 </div>
 </div>            
 
-            <div class="card-typical-section">
-            <div class="card-typical-linked">
-
-            </div>
-            <a  class="card-typical-likes">
-            <button class="btn btn-inline btn-warning-outline font-icon-plus-1" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
-            <button class="btn btn-inline btn-warning-outline font-icon-comment" style="width: 41px;height: 29px;padding-left: 10px;padding-right: 10px;padding-top: 3px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
             
-<button class="btn btn-rounded btn-inline btn-primary-outline font-icon-plus" style="width: 53px;height: 37px;border-color:white;padding-left: 0px;padding-right: 0px;padding-top: 6px;onClick = "openMyWics('.$row['SID'].');" </button>
-<button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;onClick = "openMyWics('.$row['SID'].');" </button>
-
-
-</a>
-            </div>
 
             </article>
             </div>';
