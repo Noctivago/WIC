@@ -44,7 +44,7 @@ include ("./db/dbconn.php");
             //$func = "updateQueryStringParameter('PageNum', '1')";
             echo '<script>updateQueryStringParameter("PageNum","1"); </script>';
             //echo '<Script language="text/javascript">' . $func . '</Script>';
-            $PageNum = 1;
+            $PageNum = 0;
         }
 
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
