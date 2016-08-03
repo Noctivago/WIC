@@ -27,7 +27,7 @@ include '../build/db/session.php';
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
-<!--        <script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>-->
+        
     </head>
     <body class="with-side-menu control-panel control-panel-compact">
         <?php

@@ -22,7 +22,7 @@ include_once '../build/db/session.php';
 				<br/>
 				
 		           </div>
-<!--               			<div class="col-md-12">-->
+               			<div class="col-md-12">
                                                      <section class="widget widget-accordion" id="accordion" role="tablist" aria-multiselectable="true">
 						<article class="panel">
 							<div class="panel-heading" role="tab" id="headingOne">
@@ -34,6 +34,7 @@ include_once '../build/db/session.php';
 									What is WiC?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
+                                                           
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-collapse-in">
@@ -437,7 +438,7 @@ include_once '../build/db/session.php';
                                                         </div>
 						</article>
 					</section>
-<!--                                                </div>-->
+                                                </div>
              
                        	
                 </div>
@@ -462,12 +463,12 @@ include_once '../build/db/session.php';
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript"></script>
+	<script type="text/javascript">
 	<script src="js/lib/ladda-button/spin.min.js"></script>
 	<script src="js/lib/ladda-button/ladda.min.js"></script>
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.contextMenu.min.js"></script>
-	
+	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			$('.panel').lobiPanel({
