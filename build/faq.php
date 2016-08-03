@@ -1,7 +1,7 @@
 <?php
 include ("includes/head_sideMenu.php");
 //include_once '../build/db/dbconn.php';
-//include_once '../build/db/session.php';
+include_once '../build/db/session.php';
 ?>
 
 <!--    <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
@@ -23,7 +23,7 @@ include ("includes/head_sideMenu.php");
 				
 		           </div>
                			<div class="col-md-12">
-                                                     <section class="widget widget-accordion" id="accordion" role="tablist" aria-multiselectable="false">
+                                                     <section class="widget widget-accordion" id="accordion" role="tablist" aria-multiselectable="true">
 						<article class="panel">
 							<div class="panel-heading" role="tab" id="headingOne">
 								<a data-toggle="collapse"
@@ -269,7 +269,7 @@ include ("includes/head_sideMenu.php");
 							</div>
 						</article>
                                                 <article class="panel">
-							<div class="panel-headin" role="tab" id="headingNine">
+							<div class="panel-heading" role="tab" id="headingNine">
 								<a class="collapsed"
 								   data-toggle="collapse"
 								   data-parent="#accordion"
@@ -462,12 +462,12 @@ include ("includes/head_sideMenu.php");
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript"></script>
+	<script type="text/javascript">
 	<script src="js/lib/ladda-button/spin.min.js"></script>
 	<script src="js/lib/ladda-button/ladda.min.js"></script>
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.contextMenu.min.js"></script>
-<!--	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>-->
+	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			$('.panel').lobiPanel({
