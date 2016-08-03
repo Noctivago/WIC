@@ -51,8 +51,7 @@ if (isset($_SESSION['id'])) {
                         //$msg = 'Welcome ' . $row['Username'];
                         //SET [Login_failed] = 0
                         if (DB_setLoginFailed($pdo, $email)) {
-                            //header('Location: profile.php');
-                            //$msg = "LOGIN OK! HEADER LOCATION";
+                            //SE EXISTE URL REENCAMINHA
                             if (strlen($url) > 0) {
                                 //$url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
                                 //header("location: http://$url");
