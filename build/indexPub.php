@@ -102,31 +102,7 @@ include ("./db/dbconn.php");
 
         </div>
         <div class="clear"></div>
-        <!--        <div style="padding-left: 500px;">
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item disabled">
-                               
-                                echo'<a class="page-link" aria-label="Previous" onclick="setPAge(' . ($PAgeNum - 1) . ')"  >
-                                    <span aria-hiden="true">&laquo;</span>
-                                   
-                                    <span class="sr-only">Previous</span>
-                                </a>';
-                           
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" ><span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="page-item"><a class="page-link">2</a></li>
-                            <li class="page-item"><a class="page-link">3</a></li>
-                            <li class="page-item"><a class="page-link">4</a></li>
-                            <li class="page-item"><a class="page-link">5</a></li>
-                            <li class="page-item">
-                                <a class="page-link" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>-->
+
         <div class="right" style="margin-left: 450px; padding-left: 35px;" >
             <?php
             //DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory); 
@@ -139,27 +115,40 @@ include ("./db/dbconn.php");
             echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
 //        }
             ?>
-
-            <!--<div data-role="page"-->
-            <!--        <div data-role="main" class="ui-content">
-                                    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Show Popup Form</a>
-            
-                        <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-                            <form method="post" action="demoform.asp">
-                                <div>
-                                    <h3>Login information</h3>
-                                    <label for="usrnm" class="ui-hidden-accessible">Username:</label>
-                                    <input type="text" name="user" id="usrnm" placeholder="Username">
-                                    <label for="pswd" class="ui-hidden-accessible">Password:</label>
-                                    <input type="password" name="passw" id="pswd" placeholder="Password">
-                                    <label for="log">Keep me logged in</label>
-                                    <input type="checkbox" name="login" id="log" value="1" data-mini="true">
-                                    <input type="submit" data-inline="true" value="Log in">
-                                </div>
-                            </form>
-                        </div>
-                    </div>-->
             <!--</div>-->
+
+            <!--                </ul>
+                        </nav>
+                    </div>-->
+            <!--        <div style="padding-left: 500px;">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>-->
         </div>
     </div>
 
