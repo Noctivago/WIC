@@ -60,7 +60,7 @@ if (isset($_SESSION['id'])) {
                         <div class="site-header-shown">
 
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
-                                <a href="#POPUP"
+                                <a href="../sign_in.php?redUrl=/build/my_wicplanner.php"
                                    class="header-alarm  "
                                    id="dd-messages"
                                    data-toggle="dropdown"
@@ -71,7 +71,7 @@ if (isset($_SESSION['id'])) {
                             </div>
 
                             <div class="dropdown dropdown-notification messages">
-                                 <a href="#POPUP"
+                                <a href="#POPUP"
                                    class="header-alarm dropdown-toggle active"
                                    id="dd-messages"
                                    data-toggle="dropdown"
@@ -83,6 +83,7 @@ if (isset($_SESSION['id'])) {
 
                             <div class="dropdown user-menu">
                                 <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
+                                    <a href="../sign_in.php?redUrl=/build/my_wicplanner.php"></a>
                                     <img src="img/avatar-2-64.png" alt="">
                                 </button>
                             </div>
