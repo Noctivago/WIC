@@ -33,12 +33,10 @@ include ("./db/dbconn.php");
 //            } else {
 //                DB_getServicesForIndex($pdo);
 //            }
-
-        $query = '';
         ?>
 
-
         <?php
+        $query = '';
         /**
          * Pesquisa por categoria
          */
@@ -66,8 +64,6 @@ include ("./db/dbconn.php");
             $SubCategory = (filter_var($_GET ['SubCategory']));
         }
 
-        echo $query;
-
         /**
          * Vai buscar as subCats da Cat
          */
@@ -76,16 +72,18 @@ include ("./db/dbconn.php");
             //DEVOLVE SUBCATS DE UMA CAT
             DB_GetSubCategories($pdo, $CategoryId);
         }
+
+        echo $query;
         ?>
         <div class="cards-grid" data-columns>
-            <?php
-            /**
-             * Executa a Querie c/ todos os parametros
-             */
-            DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
-            ?>
+        <?php
+        /**
+         * Executa a Querie c/ todos os parametros
+         */
+        DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory);
+        ?>
 
-        </div><!--.card-grid-->
+        </div>
         <!--        <div class="clear"></div>
                 <div style="padding-left: 500px;">
                     <nav>
