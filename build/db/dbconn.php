@@ -3824,9 +3824,17 @@ function DB_getSubCategoryName($pdo, $SubCategory) {
  * @param type $pdo
  * @param type $CategoryId
  */
-function DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory) {
+function DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page) {
+    $pageNum = $page * 50;
     try {
-        $rows = sql($pdo, "SELECT COUNT(*) AS COUNTER
+        $rows = sql($pdo, "SELECT 
+        [Service].[Name] AS SNA,
+        [Service].[Id] AS SID,
+        [Service].[Description] AS SDE,
+        [Organization].[Name] AS ONA,
+        [Organization].[Id] AS OID,
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
         FROM SERVICE
         join [Multimedia]
         on [Multimedia].[Service_Id] = [Service].[Id]
@@ -3835,7 +3843,7 @@ function DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory) {
         join [Sub_Category]
         on [Service].[Sub_Category_Id] = [Sub_Category].[Id]
         join [Category]
-        on [Category].[Id] = [Sub_Category].[Id]
+        on [Sub_Category].[Category_Id] = [Category].[Id]
         join [City]
         on [Service].[City_Id] = [City].[Id]
         WHERE
@@ -3846,35 +3854,13 @@ function DB_CountServices($pdo, $CategoryId, $name, $city, $SubCategory) {
         AND [Service].[Name] Like '%" . $name . "%'
         AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
         AND [City].[Name] Like '%" . $city . "'
-        AND [Sub_Category].[Id] Like '%" . $SubCategory . "'", array(), "rows");
-        echo '<div style="padding-left: 500px;">
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>';
+        AND [Sub_Category].[Id] Like '%" . $SubCategory . "'"
+                . " ORDER BY [Service].[Id]
+                OFFSET " . $pageNum . " ROWS
+                FETCH NEXT 50 ROWS ONLY", array(), "rows");
         foreach ($rows as $row) {
-            $pageNum = ($row['COUNTER'] / 50);
-            for ($i = 0; $i <= $pageNum; $i++) {
-//                    <li class="page-item active">
-//                        <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-//                    </li>
-                //<li class="page-item"><a class="page-link" href="#">2</a></li>
-                echo '<li class="page-item"><a class="page-link">' . $i + 1 . '</a></li>';
-            }
+            return $row['COUNTER'];
         }
-        echo '<li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>';
 
         //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
         //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 

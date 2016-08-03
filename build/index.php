@@ -73,6 +73,7 @@ include ("./db/dbconn.php");
              * Executa a Querie c/ todos os parametros
              */
             DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCategory, $PageNum);
+            $numPag = DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page);
             ?>
 
         </div>
@@ -82,7 +83,11 @@ include ("./db/dbconn.php");
         //onclick="updateQueryStringParameter('Category', '4');"
 
         echo '<button onclick="setPage(' . ($PageNum - 1) . ')" type="button"><<</button>';
-        echo '<button onclick="setPage(' . ($PageNum + 1) . ')" type="button">>></button>';
+        if (($PageNum + 1) > ($numPag / 50)) {
+            echo '<button onclick="setPage(' . ($PageNum) . ')" type="button">>></button>';
+        } else {
+            echo '<button onclick="setPage(' . ($PageNum + 1) . ')" type="button">>></button>';
+        }
         ?>
         <!--        <div style="padding-left: 500px;">
                     <nav>
