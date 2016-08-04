@@ -81,12 +81,14 @@ include ("./db/dbconn.php");
 
         <div class="right" style="margin-left: 450px; padding-left: 35px;" >
             <?php
-            echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum - 1) . ')" type="button">Previous</button>';
+           echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum - 1) . ')" type="button">Previous</button>';
        if (($PageNum + 1) > ($numPag / 50)) {
-           echo '<button onclick="setPage(' . ($PageNum) . ')" type="button">>></button>';
-       } else {
+           
             echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
-        }
+//           echo '<button onclick="setPage(' . ($PageNum) . ')" type="button">>></button>';
+        } else {
+            echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
+       }
             ?>
 
         </div>
