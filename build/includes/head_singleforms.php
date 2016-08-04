@@ -21,7 +21,7 @@
         
             <!-- You can use Open Graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-	<meta property="og:url"           content="http://wicplanner-testslot.azurewebsites.net/build/include/headsideMenu.php" />
+	<meta property="og:url"           content="http://wicplanner-testslot.azurewebsites.net/build/include/head_sideMenu.php" />
 	<meta property="og:url"          content="url" />
         <meta property="og:type"            content="article" /> 
 	<meta property="og:title"         content="WIC" />
