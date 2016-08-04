@@ -23,7 +23,7 @@ include '../build/db/session.php';
         <link href="img/wic_logo.png" rel="icon" type="image/png">
         <link href="img/wic_logo.png" rel="shortcut icon">
 
-    >
+    
 
 
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
@@ -260,7 +260,7 @@ include '../build/db/session.php';
 
                     echo '<header class="side-menu-title">My Services search</header>';
                 } else {
-                    echo '<header class="side-menu-title">Advanced Search.</header>';
+                    echo '<header class="side-menu-title">Advanced Search</header>';
                 }
                 ?>
                 <!--<header class="side-menu-title">Advanced search</header>-->
