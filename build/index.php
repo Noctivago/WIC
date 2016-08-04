@@ -46,7 +46,7 @@ include ("./db/dbconn.php");
             $CategoryId = (filter_var($_GET ['Category']));
             $query .= '<span  class="label label-primary" style="height: 27px; padding-top: 5px; margin-left: 5px;"'
                     . ' disable><i class="fa fa-cubes"></i>'
-                    . '#Category > ' . DB_getCategoryName($pdo, $CategoryId) . ' ';
+                    . 'Category: <h8> ' . DB_getCategoryName($pdo, $CategoryId) . '</h8></span> ';
         }
         /**
          * Pesquisa por subCategoria
