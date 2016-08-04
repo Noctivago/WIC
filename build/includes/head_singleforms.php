@@ -21,7 +21,7 @@
         
             <!-- You can use Open Graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-	<meta property="og:url"           content="http://http://wicplanner-testslot.azurewebsites.net/build/service_profile.php" />
+	<meta property="og:url"           content="http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=4658" />
 	<meta property="og:url"          content="url" />
 	<meta property="og:title"         content="WIC" />
 	<meta property="og:description"   content="You can event, event your life!" />
