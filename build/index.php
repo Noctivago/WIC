@@ -37,7 +37,7 @@ include ("./db/dbconn.php");
         if (isset($_GET ['name'])) {
             $city = (filter_var($_GET ['name']));
             $query .= '<span  class="label label-primary" style="width: 91.2px; height: 27px; padding-top: 5px; border-left-width: 5px;"'
-                    . ' disable>#City <span sytle="color:red">&raquo</span> ' . $city . '</span> ';
+                    . ' disable>#City <i class="font-icon font-icon-pin-2"></i> ' . $city . '</span> ';
         }
         /**
          * Pesquisa por categoria
