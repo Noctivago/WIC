@@ -49,7 +49,13 @@ include ("./db/dbconn.php");
             }
             $query .= '#Page > ' . ($PageNum + 1) . ' ';
         } else {
-            echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
+            echo '		<fieldset class="form-group">
+							<label class="form-label" for="exampleInputDisabled">Disabled</label>
+							<input type="email" class="form-control" id="exampleInputDisabled" placeholder="First Name" disabled>
+                                                        <script>updateQueryStringParameter("PageNum","0"); </script>
+                                                        
+						</fieldset>'
+            . '<script>updateQueryStringParameter("PageNum","0"); </script>';
             $query .= '#Page > 1 ';
             $PageNum = 0;
         }
