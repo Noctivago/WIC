@@ -66,9 +66,6 @@ if (isset($_SESSION['id'])) {
                                    aria-expanded="false">
                                     <i class="font-icon-plus" <input Type="button" Value="Teste"> </i>
                                 </a>
-                                <!--                                <a href="../build/sign_in.php?redUrl=/build/my_wicplanner.php"
-                                                                   <i class="font-icon-plus" <input Type="button" Value="Teste"> </i>
-                                                                </a>-->
                             </div>
                             <div class="dropdown dropdown-notification messages">
                                 <a href="../build/sign_in.php?redUrl=/build/index.php"
