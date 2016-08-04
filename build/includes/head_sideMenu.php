@@ -583,7 +583,7 @@ include '../build/db/session.php';
             function updateQueryStringParameter(key, value) {
                 var uri = window.location.href;
                 //alert(uri);
-                if (uri.indexOf('indexPub.php') >= 0) {
+                if (uri.indexOf('index.php') >= 0) {
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
@@ -599,8 +599,8 @@ include '../build/db/session.php';
                 } else {
                     //var str = uri;
                     //str = /.php(.+)/.exec(str)[1];
-                    //alert('<?= $_SERVER['HTTP_HOST'] . '/build/indexPub.php'; ?>' + str);
-                    uri = 'http://<?= $_SERVER['HTTP_HOST'] . '/build/indexPub.php'; ?>';
+                    //alert('<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>' + str);
+                    uri = 'http://<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>';
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
