@@ -243,7 +243,7 @@ $serviceId = (filter_var($_GET['Service']));
                             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;"></div>
                         </div>
                         <!--<div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">-->
-                        <div data-u="slides" style="cursor: default; position: static; top: 0px; left: 0px; width: auto; height: auto; overflow: hidden;">
+                        <div data-u="slides" style="cursor: default;">
                         <!--<div data-u="slides" style="cursor: default; display: block; top: 0px; left: 0px; width: null; max-height: 356px;  margin: 0 auto;">-->
                             <?php DB_GetPicsService($pdo, $serviceId); ?>
 
