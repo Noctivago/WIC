@@ -57,14 +57,14 @@ if (isset($_SESSION['id'])) {
                 <div class="site-header-content">
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
-                            <div class="dropdown dropdown-notification add-customers-screen-user">
+                            <div class="dropdown dropdown-notification  add-customers-screen-user">
                                 <a href="sign_in.php?redUrl=/build/index.php"
                                    class="header-alarm  "
                                    id="dd-messages"
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <i class="font-icon-comments" <input Type="button" Value="Teste"></i>
+                                    <i class="font-icon-plus-1" <input Type="button" Value="Teste"></i>
                                 </a>
                             </div>
                             <div class="dropdown dropdown-notification messages">
