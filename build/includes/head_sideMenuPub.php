@@ -68,7 +68,7 @@ if (isset($_SESSION['id'])) {
                                 </a>
                             </div>
                             <div class="dropdown user-menu">
-                                <a href="../build/sign_in.php?redUrl=/build/index.php">
+                                <a href="../build/sign_in.php?redUrl=/build/index.php"
                                     <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
                                         <img src="img/avatar-2-64.png" alt="">
                                     </button>
