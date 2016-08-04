@@ -55,7 +55,7 @@ include ("./db/dbconn.php");
         }
 
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
-            $clear = '<a href="index.php"> Reset</a>';
+            $clear = '<a class="btn btn-rounded btn-inline btn-danger" href="index.php"> Reset</a>';
         } else {
             $clear = '';
         }
