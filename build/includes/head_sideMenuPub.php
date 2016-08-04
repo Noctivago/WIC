@@ -246,8 +246,6 @@ if (isset($_SESSION['id'])) {
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
-                        //updateQueryStringParameter('PageNum', 0);
-                        //return uri.replace(re, '$1' + key + "=" + value + '$2');
                     } else {
                         var hash = '';
                         if (uri.indexOf('#') !== -1) {
@@ -255,9 +253,11 @@ if (isset($_SESSION['id'])) {
                             uri = uri.replace(/#.*/, '');
                         }
                         var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-                        //return uri + separator + key + "=" + value + hash;
-                        window.location.assign(uri + separator + key + "=" + value + hash);
-                        //updateQueryStringParameter('PageNum', 0);
+                        if (key === 'qParam' || key === 'name' || key === 'Category' || key === 'SubCategory') {
+                            uri = uri.replace(re, '$1' + 'PageNum' + "=" + '0' + '$2');
+                            window.location.assign(uri + separator + key + "=" + value + hash);
+                        }
+
                     }
                 } else {
                     //var str = uri;
