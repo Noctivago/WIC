@@ -64,7 +64,7 @@ if (isset($_SESSION['id'])) {
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <i class="font-icon-plus" <input Type="button" Value="Teste"> </i>
+                                    <i class="font-icon-comments" <input Type="button" Value="Teste"></i>
                                 </a>
                             </div>
                             <div class="dropdown dropdown-notification messages">
