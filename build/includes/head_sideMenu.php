@@ -23,13 +23,7 @@ include '../build/db/functions.php';
         <link href="img/wic_logo.png" rel="icon" type="image/png">
         <link href="img/wic_logo.png" rel="shortcut icon">
         
-           <!-- You can use Open Graph tags to customize link previews.
-    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-	<meta property="og:url"           content="http://http://wicplanner-testslot.azurewebsites.net/build/service_profile.php" />
-	<meta property="og:url"          content="url" />
-	<meta property="og:title"         content="WIC" />
-	<meta property="og:description"   content="You can event, event your life!" />
-<!--	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />-->
+      
 
 
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
@@ -38,6 +32,17 @@ include '../build/db/functions.php';
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
     </head>
+    
+    <div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+    
+    
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
