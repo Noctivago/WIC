@@ -43,8 +43,8 @@ include ("./db/dbconn.php");
                 echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
                 $query .= '#Page > 1 ';
             }
-            $query .= '<div class="form-group">'
-                    . '<span class="label label-primary" disable> Page <span sytle="color:red">&raquo</span> ' . ($PageNum + 1) . ' </span>';
+            $query .= '<div class="form-group" style="padding-left:35px;">'
+                    . '<span  class="label label-primary" disable> Page <span sytle="color:red">&raquo</span> ' . ($PageNum + 1) . ' </span>';
         } else {
             echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
             
