@@ -514,6 +514,13 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
+            function sendInvite() {
+                var email = document.getElementById("email").value;
+                var service = document.getElementById("service").value;
+
+                $.post("../ajax/sendInviteUser.php", {email: email, serv: service}, function (result) {
+                });
+            }
             function getURLParameter(name) {
                 return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
             }
@@ -619,13 +626,6 @@ include '../build/db/session.php';
                         //updateQueryStringParameter('PageNum', 0);
                     }
                 }
-            }
-            function sendInvite() {
-                var email = document.getElementById("email").value;
-                var service = document.getElementById("service").value;
-
-                $.post("../ajax/sendInviteUser.php", {email: email, serv: service}, function (result) {
-                });
             }
         </script>
         <script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
