@@ -30,8 +30,8 @@ include '../build/db/session.php';
         <meta property="og:image" content="http://www.hyperarts.com/_img-fb/Image-SRC_HyperArts_blue.png" />
         <meta property="og:url" content="http://www.hyperarts.com/seo-services/search-engine-optimization-services-san-francisco.html" />
         <meta property="og:site_name" content="HyperArts Web Design & Social Media" />
-        
-        
+
+
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -315,9 +315,9 @@ include '../build/db/session.php';
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '4');"><i class="fa fa-star"></i>Decoration</a>
                 </li>
-<!--                <li class="gold with-sub">
-                    <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
-                </li>-->
+                <!--                <li class="gold with-sub">
+                                    <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                                </li>-->
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '6');"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
@@ -514,10 +514,37 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
+            function getURLParameter(name) {
+                return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
+            }
+
+            function changeUrlParam(param, value) {
+                var currentURL = window.location.href + '&';
+                var change = new RegExp('(' + param + ')=(.*)&', 'g');
+                var newURL = currentURL.replace(change, '$1=' + value + '&');
+
+                if (getURLParameter(param) !== null) {
+                    try {
+                        window.history.replaceState('', '', newURL.slice(0, -1));
+                    } catch (e) {
+                        console.log(e);
+                    }
+                } else {
+                    var currURL = window.location.href;
+                    if (currURL.indexOf("?") !== -1) {
+                        window.history.replaceState('', '', currentURL.slice(0, -1) + '&' + param + '=' + value);
+                    } else {
+                        window.history.replaceState('', '', currentURL.slice(0, -1) + '?' + param + '=' + value);
+                    }
+                }
+            }
+
+
             function getSubCategoryValue() {
                 if ($("input[type='radio'].SubCat").is(':checked')) {
                     var card_type = $("input[type='radio'].SubCat:checked").val();
                     //alert(card_type);
+                    changeUrlParam('PageNum', 0);
                     updateQueryStringParameter('SubCategory', card_type);
                 }
             }
@@ -540,6 +567,7 @@ include '../build/db/session.php';
                 });
             }
             function getAdvancedSearchValue() {
+                changeUrlParam('PageNum', 0);
                 var x = document.getElementById('qParam').value;
                 updateQueryStringParameter('qParam', x);
             }
@@ -555,12 +583,10 @@ include '../build/db/session.php';
             function updateQueryStringParameter(key, value) {
                 var uri = window.location.href;
                 //alert(uri);
-                if (uri.indexOf('index.php') >= 0) {
+                if (uri.indexOf('indexPub.php') >= 0) {
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
-                        //updateQueryStringParameter('PageNum', 0);
-                        //return uri.replace(re, '$1' + key + "=" + value + '$2');
                     } else {
                         var hash = '';
                         if (uri.indexOf('#') !== -1) {
@@ -568,15 +594,13 @@ include '../build/db/session.php';
                             uri = uri.replace(/#.*/, '');
                         }
                         var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-                        //return uri + separator + key + "=" + value + hash;
                         window.location.assign(uri + separator + key + "=" + value + hash);
-                        //updateQueryStringParameter('PageNum', 0);
                     }
                 } else {
                     //var str = uri;
                     //str = /.php(.+)/.exec(str)[1];
-                    //alert('<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>' + str);
-                    uri = 'http://<?= $_SERVER['HTTP_HOST'] . '/build/index.php'; ?>';
+                    //alert('<?= $_SERVER['HTTP_HOST'] . '/build/indexPub.php'; ?>' + str);
+                    uri = 'http://<?= $_SERVER['HTTP_HOST'] . '/build/indexPub.php'; ?>';
                     var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
                     if (uri.match(re)) {
                         window.location.assign(uri.replace(re, '$1' + key + "=" + value + '$2'));
@@ -604,7 +628,6 @@ include '../build/db/session.php';
                 $.post("../ajax/sendInviteUser.php", {email: email, serv: service}, function (result) {
                 });
             }
-            bindKeysBTN();
         </script>
         <script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
