@@ -201,10 +201,37 @@ if (isset($_SESSION['id'])) {
             </ul>
         </nav>
         <script>
+            function getURLParameter(name) {
+                return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
+            }
+
+            function changeUrlParam(param, value) {
+                var currentURL = window.location.href + '&';
+                var change = new RegExp('(' + param + ')=(.*)&', 'g');
+                var newURL = currentURL.replace(change, '$1=' + value + '&');
+
+                if (getURLParameter(param) !== null) {
+                    try {
+                        window.history.replaceState('', '', newURL.slice(0, -1));
+                    } catch (e) {
+                        console.log(e);
+                    }
+                } else {
+                    var currURL = window.location.href;
+                    if (currURL.indexOf("?") !== -1) {
+                        window.history.replaceState('', '', currentURL.slice(0, -1) + '&' + param + '=' + value);
+                    } else {
+                        window.history.replaceState('', '', currentURL.slice(0, -1) + '?' + param + '=' + value);
+                    }
+                }
+            }
+
+
             function getSubCategoryValue() {
                 if ($("input[type='radio'].SubCat").is(':checked')) {
                     var card_type = $("input[type='radio'].SubCat:checked").val();
                     //alert(card_type);
+                    changeUrlParam('PageNum', 0);
                     updateQueryStringParameter('SubCategory', card_type);
                 }
             }
@@ -227,11 +254,7 @@ if (isset($_SESSION['id'])) {
                 });
             }
             function getAdvancedSearchValue() {
-                var uri = window.location.href;
-                var re = new RegExp("([?|&])" + 'PageNum' + "=.*?(&|#|$)", "i");
-                if (uri.match(re)) {
-                    window.location.hash = (uri.replace(re, '$1' + 'PageNum' + "=" + '0' + '$2'));
-                }
+                changeUrlParam('PageNum', 0);
                 var x = document.getElementById('qParam').value;
                 updateQueryStringParameter('qParam', x);
             }
