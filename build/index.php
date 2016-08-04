@@ -36,8 +36,7 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['name'])) {
             $city = (filter_var($_GET ['name']));
-            $query .= '<div class="form-group" style="padding-left:35px;">'
-                    . '<span  class="label label-primary" style="width: 91.2px; height: 27px; padding-top: 5px;" disable>#City <span sytle="color:red">&raquo</span> ' . $city . '</span> ';
+            $query .= '<span  style="width: 91.2px; height: 27px; padding-top: 5px; border-left-width:5px;" disable>#City <span sytle="color:red">&raquo</span> ' . $city . '</span> ';
         }
         /**
          * Pesquisa por categoria
@@ -57,7 +56,7 @@ include ("./db/dbconn.php");
 //        botao reset
         
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
-            $clear = '<a style="width: 91.2px; height: 27px; padding-top: 5px; border-left-width:20px;" class="label label-danger" href="index.php"> Reset</a>'
+            $clear = '<a style="width: 91.2px; height: 27px; padding-top: 5px; border-left-width:5px;" class="label label-danger" href="index.php"> Reset</a>'
                     . '</div>';
         } else {
             $clear = '';
