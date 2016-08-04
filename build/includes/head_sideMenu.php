@@ -29,7 +29,7 @@ include '../build/db/session.php';
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="WIC" />
 	<meta property="og:description"   content="You can event, event your life!" />
-	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+<!--	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />-->
 
 
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
