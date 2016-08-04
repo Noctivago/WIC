@@ -107,7 +107,6 @@ include '../build/db/session.php';
                                                     <span class="mess-item-name">Christian Burton</span>
                                                     <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something...</span>
                                                 </a>
-
                                             </div>
                                         </div>
                                     </div>
