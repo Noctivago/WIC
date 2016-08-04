@@ -390,12 +390,12 @@ $serviceId = (filter_var($_GET['Service']));
                     
                 </section>
                 <section class="">
-                    <span class="lbl" style="font: bold">Share:</span>
+<!--                    <span class="lbl" style="font: bold">Share:</span>-->
                     <div class="fb-share-button" data-href="http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=4658" data-layout="button" data-size="large" data-mobile-iframe="true">
                     <a class="font-icon font-icon-facebook fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwicplanner-testslot.azurewebsites.net%2Fbuild%2Fservice_profile.php%3FService%3D4658&amp;src=sdkpreparse"  ></a>
                     </div>
-                    <a class="font-icon font-icon-twitter"></a>
-                    <a class="font-icon font-icon-instagram"></a>
+<!--                    <a class="font-icon font-icon-twitter"></a>
+                    <a class="font-icon font-icon-instagram"></a>-->
                 </section>
                 
                 
