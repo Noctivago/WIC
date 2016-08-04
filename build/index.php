@@ -47,7 +47,9 @@ include ("./db/dbconn.php");
                         . '#Page > 1 '
                         . '</div>';
             }
-            $query .= '#Page > ' . ($PageNum + 1) . ' ';
+            $query .= '<div class="form-group">'
+                    . '<label> #Page > ' . ($PageNum + 1) . ' </label>'
+                    . '</div>';
         } else {
             echo '<div class="form-group">'
             . '<script>updateQueryStringParameter("PageNum","0"); </script>'
