@@ -3762,7 +3762,7 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
 
 <div  class="card-typical-likes">
 
-<i class="font-icon font-icon-plus" style="width: 53px;height: 37px;border-color:white;padding-left: 0px;padding-right: 0px;padding-top: 6px;"  onClick = "openMyWics(' . $row['SID'] . ');" </i>
+<button class="btn btn-rounded btn-inline btn-primary-outline font-icon-plus" style="width: 53px;height: 37px;border-color:white;padding-left: 0px;padding-right: 0px;padding-top: 6px;"  onClick = "openMyWics(' . $row['SID'] . ');" </button>
 
 
 
