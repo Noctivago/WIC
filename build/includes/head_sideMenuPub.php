@@ -254,7 +254,6 @@ if (isset($_SESSION['id'])) {
                 });
             }
             function getAdvancedSearchValue() {
-                changeUrlParam('PageNum', 0);
                 var x = document.getElementById('qParam').value;
                 updateQueryStringParameter('qParam', x);
             }
