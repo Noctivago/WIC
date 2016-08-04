@@ -236,13 +236,15 @@ $serviceId = (filter_var($_GET['Service']));
 
 
                     <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">
+                    <!--<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; max-width: 800px; max-height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">-->
                         <!-- Loading Screen -->
                         <div align="center"  data-u="loading" style="position: absolute; top: 0px; left: 0px;">
                             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
                             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;"></div>
                         </div>
                         <!--<div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">-->
-                        <div data-u="slides" style="cursor: default; display: block; top: 0px; left: 0px; max-width: 800px; max-height: 356px;  margin: 0 auto;">
+                        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
+                        <!--<div data-u="slides" style="cursor: default; display: block; top: 0px; left: 0px; width: null; max-height: 356px;  margin: 0 auto;">-->
                             <?php DB_GetPicsService($pdo, $serviceId); ?>
 
                             <a data-u="add" href="http://www.jssor.com" style="display:none">Jssor Slider</a>
