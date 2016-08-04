@@ -26,7 +26,7 @@ include '../build/db/session.php';
            <!-- You can use Open Graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 	<meta property="og:url"           content="http://http://wicplanner-testslot.azurewebsites.net/build/service_profile.php" />
-	<meta property="og:type"          content="website" />
+	<meta property="og:type"          content="image" />
 	<meta property="og:title"         content="WIC" />
 	<meta property="og:description"   content="You can event, event your life!" />
 <!--	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />-->
