@@ -254,7 +254,9 @@ if (isset($_SESSION['id'])) {
                         }
                         var separator = uri.indexOf('?') !== -1 ? "&" : "?";
                         if (key === 'qParam' || key === 'name' || key === 'Category' || key === 'SubCategory') {
-                            uri = uri.replace(re, '$1' + 'PageNum' + "=" + '0' + '$2');
+                            text = uri;
+                            var newSrc = '0';
+                            var newText = text.replace(/(PageNum=).*?(&)/, '$1' + newSrc + '$2');
                             window.location.assign(uri + separator + key + "=" + value + hash);
                         }
 
