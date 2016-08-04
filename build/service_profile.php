@@ -109,15 +109,15 @@ $serviceId = (filter_var($_GET['Service']));
 
                             //responsive code begin
                             //you can remove responsive code if you don't want the slider scales while window resizing
-//                            function ScaleSlider() {
-//                                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-//                                if (refSize) {
-//                                    refSize = Math.min(refSize, 800);
-//                                    jssor_1_slider.$ScaleWidth(refSize);
-//                                } else {
-//                                    window.setTimeout(ScaleSlider, 30);
-//                                }
-//                            }
+                            function ScaleSlider() {
+                                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                                if (refSize) {
+                                    refSize = Math.min(refSize, 800);
+                                    jssor_1_slider.$ScaleWidth(refSize);
+                                } else {
+                                    window.setTimeout(ScaleSlider, 30);
+                                }
+                            }
                             ScaleSlider();
                             $Jssor$.$AddEvent(window, "load", ScaleSlider);
                             $Jssor$.$AddEvent(window, "resize", ScaleSlider);
