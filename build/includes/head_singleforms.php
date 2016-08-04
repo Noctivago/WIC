@@ -21,12 +21,12 @@
         
             <!-- You can use Open Graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-	<meta property="og:url"           content="http://http://wicplanner-testslot.azurewebsites.net/build/include/headsideMenu.php" />
+	<meta property="og:url"           content="http://wicplanner-testslot.azurewebsites.net/build/include/headsideMenu.php" />
 	<!--<meta property="og:url"          content="url" />-->
         <meta property="og:type"            content="article" /> 
 	<meta property="og:title"         content="WIC" />
 	<meta property="og:description"   content="You can event, event your life!" />
-	<meta property="og:image"         content="http://wicplanner-testslot.azurewebsites.net/build//img/08.jpg" />
+	<meta property="og:image"         content="http://wicplanner-testslot.azurewebsites.net/build//img/wic_logo.png" />
     <!--<img src="../img/08.jpg" alt=""/>-->
         
         <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
