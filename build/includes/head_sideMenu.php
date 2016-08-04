@@ -15,15 +15,20 @@ include '../build/db/session.php';
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>WIC</title>
-
+        <meta property="fb:app_id"          content="1234567890" /> 
+        <meta property="og:type"            content="article" /> 
+        <meta property="og:url"             content="http://wicplanner-testslot.azurewebsites.net/build/includes/headsideMenu.php" /> 
+        <meta property="og:title"           content="Introducing our New Site" /> 
+        <meta property="og:image"           content="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xap1/t39.2178-6/851565_496755187057665_544240989_n.jpg" /> 
+        <meta property="og:description"    content="http://samples.ogp.me/390580850990722" />
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png">
         <link href="img/wic_logo.png" rel="icon" type="image/png">
         <link href="img/wic_logo.png" rel="shortcut icon">
-        
-      
+
+
 
 
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
@@ -32,17 +37,19 @@ include '../build/db/session.php';
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
     </head>
-    
+
     <div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-    
-    
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id))
+                return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+
     <body class="with-side-menu control-panel control-panel-compact">
         <?php
         //SE TIVER QUERY STRING
@@ -320,9 +327,9 @@ include '../build/db/session.php';
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '4');"><i class="fa fa-star"></i>Decoration</a>
                 </li>
-<!--                <li class="gold with-sub">
-                    <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
-                </li>-->
+                <!--                <li class="gold with-sub">
+                                    <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
+                                </li>-->
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '6');"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
@@ -636,7 +643,7 @@ include '../build/db/session.php';
         <script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
         <script src="js/lib/typeahead/typeahead-init.js"></script>
-        
+
         <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
