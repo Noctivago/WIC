@@ -109,15 +109,15 @@ $serviceId = (filter_var($_GET['Service']));
 
                             //responsive code begin
                             //you can remove responsive code if you don't want the slider scales while window resizing
-                            function ScaleSlider() {
-                                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-                                if (refSize) {
-                                    refSize = Math.min(refSize, 800);
-                                    jssor_1_slider.$ScaleWidth(refSize);
-                                } else {
-                                    window.setTimeout(ScaleSlider, 30);
-                                }
-                            }
+//                            function ScaleSlider() {
+//                                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+//                                if (refSize) {
+//                                    refSize = Math.min(refSize, 800);
+//                                    jssor_1_slider.$ScaleWidth(refSize);
+//                                } else {
+//                                    window.setTimeout(ScaleSlider, 30);
+//                                }
+//                            }
                             ScaleSlider();
                             $Jssor$.$AddEvent(window, "load", ScaleSlider);
                             $Jssor$.$AddEvent(window, "resize", ScaleSlider);
@@ -242,8 +242,8 @@ $serviceId = (filter_var($_GET['Service']));
                             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
                             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;"></div>
                         </div>
-                        <!--<div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">-->
-                        <div data-u="slides" style="cursor: default;">
+                        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
+                        <!--<div data-u="slides" style="cursor: default; position: static; top: 0px; left: 0px; width: auto; height: auto; overflow: hidden;">-->
                         <!--<div data-u="slides" style="cursor: default; display: block; top: 0px; left: 0px; width: null; max-height: 356px;  margin: 0 auto;">-->
                             <?php DB_GetPicsService($pdo, $serviceId); ?>
 
