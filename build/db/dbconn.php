@@ -45,7 +45,7 @@ function sql($pdo, $q, $params, $return) {
 
 function alteraFirst($pdo) {
     try {
-        $rows = sql($pdo, "Select * From [Service] where [Id] >= ?", array(5442), "rows");
+        $rows = sql($pdo, "Select * From [Service] where [Id] >= ?", array(5254), "rows");
         foreach ($rows as $row) {
             $serv = $row['Id'];
             $rows2 = sql($pdo, "Select * From [Multimedia] where [Service_Id] = ?", array($serv), "rows");
