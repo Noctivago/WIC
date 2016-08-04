@@ -27,8 +27,8 @@
 	<meta property="og:title"         content="WIC" />
 	<meta property="og:description"   content="You can event, event your life!" />
 	<meta property="og:image"         content="http://wicplanner-testslot.azurewebsites.net/build//img/wic_logo.png" />
-        <meta property="og:image:width"  content="8" />
-        <meta property="og:image:height"  content="8" />
+        <meta property="og:image:width"  content="100" />
+        <meta property="og:image:height"  content="100" />
         
         <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
         <link rel="stylesheet" href="css/main.css">
