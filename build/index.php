@@ -15,28 +15,7 @@ include ("./db/dbconn.php");
             $name = (filter_var($_GET ['qParam']));
             $query .= '#Advanced Search Criteria > ' . $name . ' ';
         }
-        /**
-         * Pesquisa por nome da cidade
-         */
-        if (isset($_GET ['name'])) {
-            $city = (filter_var($_GET ['name']));
-            $query .= '#City > ' . $city . ' ';
-        }
-        /**
-         * Pesquisa por categoria
-         */
-        if (isset($_GET ['Category'])) {
-            $CategoryId = (filter_var($_GET ['Category']));
-            $query .= '#Category > ' . DB_getCategoryName($pdo, $CategoryId) . ' ';
-        }
-        /**
-         * Pesquisa por subCategoria
-         */
-        if (isset($_GET ['SubCategory'])) {
-            $SubCategory = (filter_var($_GET ['SubCategory']));
-            $query .= '#SubCategory > ' . DB_getSubCategoryName($pdo, $SubCategory) . ' ';
-        }
-//        numero de pagina
+        //        numero de pagina
         if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
             if ($PageNum < 0) {
@@ -52,8 +31,30 @@ include ("./db/dbconn.php");
             
             $PageNum = 0;
         }
-        
-        
+        /**
+         * Pesquisa por nome da cidade
+         */
+        if (isset($_GET ['name'])) {
+            $city = (filter_var($_GET ['name']));
+            $query .= '<div class="form-group" style="padding-left:35px;">'
+                    . '<span  class="label label-primary" style="width: 91.2px; height: 27px; padding-top: 5px;" disable>#City <span sytle="color:red">&raquo</span> ' . $city . '</span> ';
+        }
+        /**
+         * Pesquisa por categoria
+         */
+        if (isset($_GET ['Category'])) {
+            $CategoryId = (filter_var($_GET ['Category']));
+            $query .= '#Category > ' . DB_getCategoryName($pdo, $CategoryId) . ' ';
+        }
+        /**
+         * Pesquisa por subCategoria
+         */
+        if (isset($_GET ['SubCategory'])) {
+            $SubCategory = (filter_var($_GET ['SubCategory']));
+            $query .= '#SubCategory > ' . DB_getSubCategoryName($pdo, $SubCategory) . ' ';
+        }
+
+//        botao reset
         
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
             $clear = '<a style="width: 91.2px; height: 27px; padding-top: 5px; border-left-width:20px;" class="label label-danger" href="index.php"> Reset</a>'
@@ -62,7 +63,7 @@ include ("./db/dbconn.php");
             $clear = '';
         }
 
-        echo $query . $clear . '<br><br>';
+        echo $query . $clear . '<br>';
 
         /**
          * Vai buscar as subCats da Cat
