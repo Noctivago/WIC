@@ -227,6 +227,11 @@ if (isset($_SESSION['id'])) {
                 });
             }
             function getAdvancedSearchValue() {
+                var uri = window.location.href;
+                var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
+                if (uri.match(re)) {
+                    window.location.hash = (uri.replace(re, '$1' + 'PageNum' + "=" + '0' + '$2'));
+                }
                 var x = document.getElementById('qParam').value;
                 updateQueryStringParameter('qParam', x);
             }
