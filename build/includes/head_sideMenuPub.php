@@ -59,17 +59,25 @@ if (isset($_SESSION['id'])) {
                         <div class="site-header-shown">
                             <div class="dropdown dropdown-notification add-customers-screen-user">
                                 <a href="../build/sign_in.php?redUrl=/build/my_wicplanner.php"
-                                   <i class="font-icon-plus" <input Type="button" Value="Teste"> </i>
+                                   class="header-alarm  "
+                                   id="dd-messages"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href = 'my_wicplanner.php'"> </i>
                                 </a>
+                                <!--                                <a href="../build/sign_in.php?redUrl=/build/my_wicplanner.php"
+                                                                   <i class="font-icon-plus" <input Type="button" Value="Teste"> </i>
+                                                                </a>-->
                             </div>
                             <div class="dropdown dropdown-notification messages">
                                 <a href="../build/sign_in.php?redUrl=/build/index.php"
-                                    <i class="font-icon-comments" <input Type="button" Value="Teste"></i>
+                                   <i class="font-icon-comments" <input Type="button" Value="Teste"></i>
                                 </a>
                             </div>
                             <div class="dropdown user-menu">
                                 <a href="../build/sign_in.php?redUrl=/build/index.php"
-                                    <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
+                                   <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
                                         <img src="img/avatar-2-64.png" alt="">
                                     </button>
                                 </a>
