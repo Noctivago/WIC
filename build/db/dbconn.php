@@ -115,7 +115,7 @@ function DB_GetPicsService($pdo, $serviceId) {
         foreach ($rows as $row) {
             $count+=1;
             echo '<div   style="display: block; top: 0px; left: 0px; max-width: 800px; max-height: 356px;  margin: 0 auto;">
-                <img  style="display: block; top: 0px; left: 0px; max-width: 800px; max-height: 356px;  margin: 0 auto; width: auto; height:auto; position: static;" data-u="image" id="' . $count . '" src="' . $row['Multimedia_Path'] . '" />
+                <img  style="display: block; top: 0px; left: 0px; max-width: 800px; max-height: 356px;  margin: 0 auto; width: auto; height: auto; position: static;" data-u="image" id="' . $count . '" src="' . $row['Multimedia_Path'] . '" />
                 <img data-u="thumb" id="' . $count . '" src="' . $row['Multimedia_Path'] . '" />
             </div>';
         }
