@@ -40,22 +40,16 @@ include ("./db/dbconn.php");
         if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
             if ($PageNum < 0) {
-                echo '<fieldset class="form-group">
-			<label class="form-label" for="exampleInputDisabled">Disabled</label>
-			<input type="email" class="form-control" id="exampleInputDisabled" placeholder="First Name" disabled><script>updateQueryStringParameter("PageNum","0"); </script>
-                      </fieldset>
-                        <script>updateQueryStringParameter("PageNum","0"); </script>';
+                echo '<div class="form-group">'
+                . '<script>updateQueryStringParameter("PageNum","0"); </script>'
+                        . '</div>';
                 $query .= '#Page > 1 ';
             }
             $query .= '#Page > ' . ($PageNum + 1) . ' ';
         } else {
-            echo '		<fieldset class="form-group">
-							<label class="form-label" for="exampleInputDisabled">Disabled</label>
-							
-                                                        <script disable class="form-control" id="exampleInputDisabled">updateQueryStringParameter("PageNum","0"); </script>
-                                                        
-						</fieldset>'
-            . '<script>updateQueryStringParameter("PageNum","0"); </script>';
+            echo '<div class="form-group">'
+            . '<script>updateQueryStringParameter("PageNum","0"); </script>'
+                    . '</div>';
             $query .= '#Page > 1 ';
             $PageNum = 0;
         }
