@@ -23,13 +23,7 @@ include '../build/db/session.php';
         <link href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13173937_1763868363834284_3279338552525658697_n.png?oh=c86fc546335d68e979a8f7523a725015&oe=585E625B" rel="icon" type="image/png">
         <link href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13173937_1763868363834284_3279338552525658697_n.png?oh=c86fc546335d68e979a8f7523a725015&oe=585E625B" rel="shortcut icon">
 
-        <meta property="fb:admins" content="YOUR-FACEBOOK-ID" />
-        <meta property="og:title" content="HyperArts SEO Services" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="http://www.hyperarts.com/_img-fb/Image-SRC_HyperArts.png" />
-        <meta property="og:image" content="http://www.hyperarts.com/_img-fb/Image-SRC_HyperArts_blue.png" />
-        <meta property="og:url" content="http://www.hyperarts.com/seo-services/search-engine-optimization-services-san-francisco.html" />
-        <meta property="og:site_name" content="HyperArts Web Design & Social Media" />
+        
 
 
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
