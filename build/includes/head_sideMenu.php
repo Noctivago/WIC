@@ -309,9 +309,9 @@ include '../build/db/session.php';
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '4');"><i class="fa fa-star"></i>Decoration</a>
                 </li>
-                <li class="gold with-sub">
+<!--                <li class="gold with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
-                </li>
+                </li>-->
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '6');"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
