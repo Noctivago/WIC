@@ -115,8 +115,21 @@ function DB_GetPicsService($pdo, $serviceId) {
         foreach ($rows as $row) {
             $count+=1;
             echo '<div data-p="144.50"  >
-                <img  style="display: block !important; top: 0px; left: 0px; max-width: 800px; max-height: 356px;  margin: 0px auto; width: auto !important; height:auto !important; position: static !important;" data-u="image" id="' . $count . '" src="' . $row['Multimedia_Path'] . '" />
+                <img  style="display: block !important; top: 0px; left: 0px; max-width: 800px; max-height: 356px;  margin: 0px auto; width: auto !important; height:auto !important; position: static !important;"  id="' . $count . '" src="' . $row['Multimedia_Path'] . '" />
                 <img data-u="thumb" id="' . $count . '" src="' . $row['Multimedia_Path'] . '" />
+                     <style>
+                            .imagens{
+                                display: block;
+                                top: 0px;
+                                left: opx;
+                                max-height: 356px;
+                                max-width: 800px;
+                                margin: 0 auto;
+                                width: auto;
+                                height: auto;
+                                position: static;
+                            }
+                            </style>
             </div>';
         }
         echo '<input type="hidden" value="' . $count . '"/>';
