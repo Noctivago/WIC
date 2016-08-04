@@ -15,21 +15,18 @@ include '../build/db/session.php';
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>WIC</title>
-        <meta property="fb:app_id"          content="1234567890" /> 
+        <!--<meta property="fb:app_id"          content="1234567890" /> 
         <meta property="og:type"            content="article" /> 
-        <meta property="og:url"             content="http://wicplanner-testslot.azurewebsites.net/build/includes/headsideMenu.php" /> 
+        <meta property="og:url"             content="http://newsblog.org/news/136756249803614" /> 
         <meta property="og:title"           content="Introducing our New Site" /> 
         <meta property="og:image"           content="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xap1/t39.2178-6/851565_496755187057665_544240989_n.jpg" /> 
-        <meta property="og:description"    content="http://samples.ogp.me/390580850990722" />
+        <meta property="og:description"    content="http://samples.ogp.me/390580850990722" />-->
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png">
         <link href="img/wic_logo.png" rel="icon" type="image/png">
         <link href="img/wic_logo.png" rel="shortcut icon">
-
-
-
 
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
