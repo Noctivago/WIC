@@ -44,14 +44,14 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['Category'])) {
             $CategoryId = (filter_var($_GET ['Category']));
-            $query .= '#Category > ' . DB_getCategoryName($pdo, $CategoryId) . ' ';
+            $query .= '<span  class="label label-primary" style="height: 27px; padding-top: 5px; margin-left: 5px;" disable><i class="fa fa-cubes"></i> Category: <h8> ' . DB_getCategoryName($pdo, $CategoryId) . '</h8></span> ';
         }
         /**
          * Pesquisa por subCategoria
          */
         if (isset($_GET ['SubCategory'])) {
             $SubCategory = (filter_var($_GET ['SubCategory']));
-            $query .= '#SubCategory > ' . DB_getSubCategoryName($pdo, $SubCategory) . ' ';
+            $query .= '<span  class="label label-primary" style="height: 27px; padding-top: 5px; margin-left: 5px;" disable><i class="fa fa-cubes"></i>SubCategory: <h8> ' . DB_getSubCategoryName($pdo, $SubCategory) . '</h8></span>';
         }
 
 //        botao reset
