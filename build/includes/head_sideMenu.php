@@ -16,14 +16,14 @@ include '../build/db/session.php';
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>WIC</title>
 
-        <link href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13173937_1763868363834284_3279338552525658697_n.png?oh=c86fc546335d68e979a8f7523a725015&oe=585E625B" rel="apple-touch-icon" type="image/png" sizes="144x144">
-        <link href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13173937_1763868363834284_3279338552525658697_n.png?oh=c86fc546335d68e979a8f7523a725015&oe=585E625B" rel="apple-touch-icon" type="image/png" sizes="114x114">
-        <link href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13173937_1763868363834284_3279338552525658697_n.png?oh=c86fc546335d68e979a8f7523a725015&oe=585E625B" rel="apple-touch-icon" type="image/png" sizes="72x72">
-        <link href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13173937_1763868363834284_3279338552525658697_n.png?oh=c86fc546335d68e979a8f7523a725015&oe=585E625B" rel="apple-touch-icon" type="image/png">
-        <link href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13173937_1763868363834284_3279338552525658697_n.png?oh=c86fc546335d68e979a8f7523a725015&oe=585E625B" rel="icon" type="image/png">
-        <link href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13173937_1763868363834284_3279338552525658697_n.png?oh=c86fc546335d68e979a8f7523a725015&oe=585E625B" rel="shortcut icon">
+        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png">
+        <link href="img/wic_logo.png" rel="icon" type="image/png">
+        <link href="img/wic_logo.png" rel="shortcut icon">
 
-        
+    >
 
 
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
