@@ -54,7 +54,7 @@ include ("./db/dbconn.php");
         }
 
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
-            $clear = '<a class="label label-primary" href="index.php"> Reset</a>'
+            $clear = '<a class="label label-danger" href="index.php"> Reset</a>'
                     . '</div>';
         } else {
             $clear = '';
