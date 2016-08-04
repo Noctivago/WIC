@@ -1,5 +1,5 @@
 <?php
-include ("includes/head_sideMenu.php");
+include ("includes/head_sideMenu_BKUP.php");
 include ("./db/dbconn.php");
 ?>
 
