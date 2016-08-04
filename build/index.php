@@ -40,23 +40,23 @@ include ("./db/dbconn.php");
         if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
             if ($PageNum < 0) {
-                echo '<fieldset class="form-group">
-			<label class="form-label" for="exampleInputDisabled">Disabled</label>
-			<input type="email" class="form-control" id="exampleInputDisabled" placeholder="First Name" disabled><script>updateQueryStringParameter("PageNum","0"); </script>
-                      </fieldset>
-                        <script>updateQueryStringParameter("PageNum","0"); </script>';
-                $query .= '#Page > 1 ';
+                echo '<div class="form-group">'
+                . '<script>updateQueryStringParameter("PageNum","0"); </script>'
+                        . '</div>';
+                $query .= '<div class="form-group">'
+                        . '#Page > 1 '
+                        . '</div>';
             }
-            $query .= '#Page > ' . ($PageNum + 1) . ' ';
+            $query .= '<div class="form-group">'
+                    . '<label> #Page > ' . ($PageNum + 1) . ' </label>'
+                    . '</div>';
         } else {
-            echo '		<fieldset class="form-group">
-							<label class="form-label" for="exampleInputDisabled">Disabled</label>
-							<input type="email" class="form-control" id="exampleInputDisabled" placeholder="First Name" disabled>
-                                                        <script>updateQueryStringParameter("PageNum","0"); </script>
-                                                        
-						</fieldset>'
-            . '<script>updateQueryStringParameter("PageNum","0"); </script>';
-            $query .= '#Page > 1 ';
+            echo '<div class="form-group">'
+            . '<script>updateQueryStringParameter("PageNum","0"); </script>'
+                    . '</div>';
+            $query .= '<div class="form-group">'
+                    . '#Page > 1 '
+                    . '</div>';
             $PageNum = 0;
         }
 
