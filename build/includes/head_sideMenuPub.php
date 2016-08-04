@@ -253,13 +253,7 @@ if (isset($_SESSION['id'])) {
                             uri = uri.replace(/#.*/, '');
                         }
                         var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-                        if (key === 'qParam' || key === 'name' || key === 'Category' || key === 'SubCategory') {
-                            text = uri;
-                            var newSrc = '0';
-                            var newText = text.replace(/(PageNum=).*?(&)/, '$1' + newSrc + '$2');
-                            window.location.assign(uri + separator + key + "=" + value + hash);
-                        }
-
+                        window.location.assign(uri + separator + key + "=" + value + hash);
                     }
                 } else {
                     //var str = uri;
