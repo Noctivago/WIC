@@ -36,7 +36,7 @@ include ("./db/dbconn.php");
             $SubCategory = (filter_var($_GET ['SubCategory']));
             $query .= '#SubCategory > ' . DB_getSubCategoryName($pdo, $SubCategory) . ' ';
         }
-
+//        numero de pagina
         if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
             if ($PageNum < 0) {
@@ -52,7 +52,9 @@ include ("./db/dbconn.php");
             
             $PageNum = 0;
         }
-
+        
+        
+        
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
             $clear = '<a style="width: 91.2px; height: 27px; padding-top: 5px; border-left-width:20px;" class="label label-danger" href="index.php"> Reset</a>'
                     . '</div>';
