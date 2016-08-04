@@ -43,14 +43,18 @@ include ("./db/dbconn.php");
                 echo '<div class="form-group">'
                 . '<script>updateQueryStringParameter("PageNum","0"); </script>'
                         . '</div>';
-                $query .= '#Page > 1 ';
+                $query .= '<div class="form-group">'
+                        . '#Page > 1 '
+                        . '</div>';
             }
             $query .= '#Page > ' . ($PageNum + 1) . ' ';
         } else {
             echo '<div class="form-group">'
             . '<script>updateQueryStringParameter("PageNum","0"); </script>'
                     . '</div>';
-            $query .= '#Page > 1 ';
+            $query .= '<div class="form-group">'
+                    . '#Page > 1 '
+                    . '</div>';
             $PageNum = 0;
         }
 
