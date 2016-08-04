@@ -3,7 +3,7 @@
 //include_once '../includes/head_singleforms.php';
 include '../build/db/dbconn.php';
 include '../build/db/functions.php';
-include '../build/db/session.php';
+//include '../build/db/session.php';
 
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
