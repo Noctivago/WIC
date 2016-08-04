@@ -44,8 +44,7 @@ include ("./db/dbconn.php");
                 $query .= '#Page > 1 ';
             }
             $query .= '<div class="form-group">'
-                    . '<span class="label label-primary"> #Page > ' . ($PageNum + 1) . ' </span>'
-                    . '</div>';
+                    . '<span class="label label-primary"> #Page > ' . ($PageNum + 1) . ' </span>';
         } else {
             echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
             
@@ -55,7 +54,8 @@ include ("./db/dbconn.php");
         }
 
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
-            $clear = '<a class="label label-primary" href="index.php"> Reset</a>';
+            $clear = '<a class="label label-primary" href="index.php"> Reset</a>'
+                    . '</div>';
         } else {
             $clear = '';
         }
