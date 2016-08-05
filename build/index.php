@@ -44,7 +44,7 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['Category'])) {
             $CategoryId = (filter_var($_GET ['Category']));
-            $query .= '<span  class="label label-primary" style="height: 27px; padding-top: 5px; margin-left: 5px;" disable><i class="fa fa-cubes"></i> Category: <h8> ' . DB_getCategoryName($pdo, $CategoryId) . '</h8></span> ';
+            $query .= '<span  class="label label-primary" style="height: auto; padding-top: 5px; margin-left: 5px;" disable><i class="fa fa-cubes"></i> Category: <h8> ' . DB_getCategoryName($pdo, $CategoryId) . '</h8></span> ';
         }
         /**
          * Pesquisa por subCategoria
@@ -57,7 +57,7 @@ include ("./db/dbconn.php");
 //        botao reset
         
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
-            $clear = '<a style="width: 91.2px; height: 27px; padding-top: 5px; border-left-width:5px;" class="btn btn-rounded btn-inline btn-secondary" href="index.php"> Reset</a>'
+            $clear = '<a style="width: 91.2px; height: auto; padding-top: 5px; border-left-width:5px;" class="btn btn-rounded btn-inline btn-secondary" href="index.php"> Reset</a>'
                     . '</div>';
         } else {
             $clear = '';
