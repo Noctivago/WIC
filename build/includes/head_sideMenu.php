@@ -313,7 +313,7 @@ include '../build/db/session.php';
                 <header class="side-menu-title">Start Planning</header>
                 
                 <button type="button"
-						class="btn btn-inline fa fa-question-circle "
+						class="btn btn-inline "
 						title="Popover title"
 						data-container="body"
 						data-toggle="popover"
