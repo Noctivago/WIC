@@ -3692,7 +3692,7 @@ function DB_GetSubCategories($pdo, $Category) {
                 echo '</div>';
                 
             } else {
-                echo '<div class="checkbox">';
+                echo '<div class="btn btn-inline">';
                 
                 
 
