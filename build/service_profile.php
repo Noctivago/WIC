@@ -410,7 +410,8 @@ $serviceId = (filter_var($_GET['Service']));
                     <div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true">
                         <a class="font-icon font-icon-facebook fb-xfbml-parse-ignore" target="_blank" href="<?= DB_FacebookShareFunc($pdo, $serviceId); ?>"></a>
                     </div>
-                    <a class="font-icon font-icon-twitter"></a>
+                    <!--<a class="font-icon font-icon-twitter"></a>-->
+                    <?= DB_TwitterShareFunc($pdo, $serviceId); ?>
                     <!--<a class="font-icon font-icon-instagram"></a>-->
                 </section>
 

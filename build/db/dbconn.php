@@ -3988,6 +3988,11 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
     }
 }
 
+/**
+ * Share Service on FB
+ * @param type $pdo
+ * @param type $serviceId
+ */
 function DB_FacebookShareFunc($pdo, $serviceId) {
     try {
         $rows = sql($pdo, "SELECT
@@ -4015,6 +4020,49 @@ function DB_FacebookShareFunc($pdo, $serviceId) {
             . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/' . $row['MPP']
             . '&title=' . $row['SNA']
             . '&description=' . $row['SDE'];
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
+
+/**
+ * Share Service on Twitter
+ * @param type $pdo
+ * @param type $serviceId
+ */
+function DB_TwitterShareFunc($pdo, $serviceId) {
+    try {
+        $rows = sql($pdo, "SELECT
+        [Service].[Name] AS SNA,
+        [Service].[Id] AS SID,
+        [Service].[Description] AS SDE,
+        [Organization].[Name] AS ONA,
+        [Organization].[Id] AS OID,
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
+        FROM [Service]
+        join [Organization]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
+        AND [Organization].[Enabled] = 1 
+        AND [Service].[Enabled] = 1 
+        AND [Multimedia].[Enabled] = 1  
+        AND [Multimedia].[First_Page] = 1
+        AND [Service].[Id] = ?", array($serviceId), "rows");
+        foreach ($rows as $row) {
+
+            //echo '<a class="twitter-share-button"
+            echo '<a class="font-icon font-icon-twitter
+                href="https://twitter.com/share"
+                data-size="large"
+                data-url="' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'] . '"
+                data-via="wic.club"
+                data-related="twitterapi,twitter"'
+            //data-hashtags="example,demo"
+            . 'data-text="' . $row['SNA'] . '">
+            </a>';
         }
     } catch (Exception $ex) {
         
