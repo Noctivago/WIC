@@ -4052,9 +4052,12 @@ function DB_TwitterShareFunc($pdo, $serviceId) {
         AND [Multimedia].[First_Page] = 1
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
-            $link = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            $link = "https://twitter.com/intent/tweet?text=";
+            $link .= $row['SNA'];
+            $link .= "&via=" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             echo '<a class = "font-icon font-icon-twitter"';
-            echo 'href = "https://twitter.com/intent/tweet?text=' . $row['SNA'] . '&via=' . $link . '"';
+            echo 'href="' . $link . '"';
+//            echo 'href = "https://twitter.com/intent/tweet?text=' . $row['SNA'] . '&via=' . $link . '"';
             echo '</a>';
         }
     } catch (Exception $ex) {
