@@ -313,13 +313,13 @@ include '../build/db/session.php';
                 <header class="side-menu-title">Start Planning</header>
                 
                 <button type="button"
-						class="btn btn-inline "
+						class="btn btn-inline btn-rounded "
 						title="AJUDA PARA VOCES MORCOES"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="right"
 						data-content="Sardinha Pequeninha Cheirosinha Piroquinha Doninha Coninha"
-                                                style="margin: 0px auto auto 150px; display: block;"><i>Help</i>
+                                                style="margin: 0px auto auto 150px; display: block;"><i>?</i>
                     
 				</button>
                
