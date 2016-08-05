@@ -236,28 +236,28 @@ $serviceId = (filter_var($_GET['Service']));
 
 
                     <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">
-                    <!--<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; max-width: 800px; max-height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">-->
+                        <!--<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; max-width: 800px; max-height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">-->
                         <!-- Loading Screen -->
                         <div align="center"  data-u="loading" style="position: absolute; top: 0px; left: 0px;">
                             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100% ;"></div>
                             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;"></div>
                         </div>
                         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
-                        <!--<div data-u="slides" style="cursor: default; position: static; top: 0px; left: 0px; width: auto; height: auto; overflow: hidden;">-->
-                        <!--<div data-u="slides" style="cursor: default; display: block; top: 0px; left: 0px; width: null; max-height: 356px;  margin: 0 auto;">-->
+                            <!--<div data-u="slides" style="cursor: default; position: static; top: 0px; left: 0px; width: auto; height: auto; overflow: hidden;">-->
+                            <!--<div data-u="slides" style="cursor: default; display: block; top: 0px; left: 0px; width: null; max-height: 356px;  margin: 0 auto;">-->
                             <?php DB_GetPicsService($pdo, $serviceId); ?>
-                        <style>
-                            .imagens{
-                                display: block;
-                                top: 0px;
-                                left: opx;
-                                max-height: 356px;
-                                max-width: 800px;
-                                margin: 0 auto;
-                                width: auto;
-                                height: auto;
-                                position: static;
-                            }
+                            <style>
+                                .imagens{
+                                    display: block;
+                                    top: 0px;
+                                    left: opx;
+                                    max-height: 356px;
+                                    max-width: 800px;
+                                    margin: 0 auto;
+                                    width: auto;
+                                    height: auto;
+                                    position: static;
+                                }
                             </style>
                             <a data-u="add" href="http://www.jssor.com" style="display:none">Jssor Slider</a>
 
@@ -278,8 +278,8 @@ $serviceId = (filter_var($_GET['Service']));
                         <!-- Arrow Navigator -->
                         <span data-u="arrowleft" class="jssora05l" style="top:158px;left:8px;width:40px;height:40px;"></span>
                         <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;" style="color: brown"></span>
-                       
-                        
+
+
                     </div>
                     <script>
                         jssor_1_slider_init();
@@ -288,13 +288,13 @@ $serviceId = (filter_var($_GET['Service']));
 
 
                 </section><!--.box-typical-->
-                
+
                 <?php
-                    echo '<section class="center-block" style="max-width: 400px; display:block;position: static;margin: 0px auto;">
+                echo '<section class="center-block" style="max-width: 400px; display:block;position: static;margin: 0px auto;">
                        <button class="btn btn-rounded btn-inline  font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
                        <button class="btn btn-rounded btn-inline btn-warning  font-icon-comments"   onClick="openMyWics(' . $serviceId . ');"> Chat </button>           
                      </section>';
-                    ?>
+                ?>
 
 
 
@@ -402,42 +402,42 @@ $serviceId = (filter_var($_GET['Service']));
 //                       <button class="btn btn-inline btn-warning-outline font-icon-plus-1"  onClick="openMyWics(' . $serviceId . ');"> Add To my Wic Planner </button>           
 //                     </section>';
                     ?>
-                    
+
                 </section>
                 <section class="">
                     <span class="lbl" style="font: bold">Share:</span>
                     <!--<div class="fb-share-button" data-href="http://wicplanner-testslot.azurewebsites.net/build/index.php" data-layout="button" data-size="large" data-mobile-iframe="true">-->
                     <div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true">
-                    <a class="font-icon font-icon-facebook fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/dialog/feed?app_id=231111773916943&link=https://wic.club&picture=http://img2.10bestmedia.com/Images/Photos/96123/captiva-beach-captiva_54_990x660_201404211817.jpg&title=SERVICE_NAME&description=tghe wdjfhudsjhnf sdfhsjdf"  ></a>
+                        <a class="font-icon font-icon-facebook fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/dialog/feed?app_id=231111773916943&link=https://wic.club&picture=<?= DB_GetServiceFirstPagePicture($pdo, $serviceId); ?>&title=SERVICE_NAME&description=<?= DB_GetServiceLocAndDescription($pdo, $serviceId); ?>"  ></a>
                     </div>
                     <a class="font-icon font-icon-twitter"></a>
                     <!--<a class="font-icon font-icon-instagram"></a>-->
                 </section>
-                
-                
+
+
 <!--                <section class="">
-                        <div id="fb-root"></div>
-                        <script>(function(d, s, id) {
-                          var js, fjs = d.getElementsByTagName(s)[0];
-                          if (d.getElementById(id)) return;
-                          js = d.createElement(s); js.id = id;
-                          js.src = "//connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v2.7";
-                          fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'));</script>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v2.7";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
 
-                        <div class="fb-share-button" data-href="http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=4658" data-layout="button" data-size="large" data-mobile-iframe="true">
-                            <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwicplanner-testslot.azurewebsites.net%2Fbuild%2Fservice_profile.php%3FService%3D4658&amp;src=sdkpreparse">Share</a>
-                        </div>
-                        twitter
-                        
-                        <a class="twitter-share-button"
-                            href="https://twitter.com/intent/tweet?text=Hello%20world"
-                            data-size="large">
-                          Tweet
-                        </a>
-                        
-                </section>-->
+        <div class="fb-share-button" data-href="http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=4658" data-layout="button" data-size="large" data-mobile-iframe="true">
+            <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwicplanner-testslot.azurewebsites.net%2Fbuild%2Fservice_profile.php%3FService%3D4658&amp;src=sdkpreparse">Share</a>
+        </div>
+        twitter
+        
+        <a class="twitter-share-button"
+            href="https://twitter.com/intent/tweet?text=Hello%20world"
+            data-size="large">
+          Tweet
+        </a>
+        
+</section>-->
                 <br>
 
 
