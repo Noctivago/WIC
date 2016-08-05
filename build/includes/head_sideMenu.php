@@ -311,6 +311,17 @@ include '../build/db/session.php';
                 <br>
 
                 <header class="side-menu-title">Start Planning</header>
+                
+                <button type="button"
+						class="btn btn-inline fa fa-question-circle"
+						title="Popover title"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="right"
+						data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+					Popover on right
+				</button>
+                
                 <!--updateQueryStringParameter(uri, key, value)-->  
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
