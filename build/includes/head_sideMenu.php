@@ -312,7 +312,7 @@ include '../build/db/session.php';
 
                 <header class="side-menu-title">Start Planning
                                     <button type="button"
-						class="fa fa-question-circle "
+						class="btn btn-inline btn-rounded fa fa-question-circle "
 						title="Muita parra pouca uva"
 						data-container="body"
 						data-toggle="popover"
