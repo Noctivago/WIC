@@ -4012,7 +4012,7 @@ function DB_FacebookShareFunc($pdo, $serviceId) {
             //return $_SERVER['HTTP_HOST'] . "/build/" . $row['Multimedia_Path'];
             echo 'https://www.facebook.com/dialog/feed?app_id=231111773916943'
             . '&link=https://wic.club'
-            . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/'
+            . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/' . $row['MPP']
             . '&title=' . $row['SNA']
             . '&description=' . $row['SDE'];
         }
