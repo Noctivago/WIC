@@ -3683,23 +3683,23 @@ function DB_GetSubCategories($pdo, $Category) {
             <div class="">';
             
 //        echo '<div class="form-group-checkbox">'; '<div class="col-md-3 col-sm-6">';
-        echo '<div class="checkbox">';
+        echo '<div class="radio">';
         $x = DB_countSubCategories($pdo, $Category);
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             if ($x === 1) {
                 
                 echo '<label for="' . $row['SCID'] . '" title="' . $row['SCID'] . '"></label>';
-                echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
+                echo '<input type="radio" onclick="getSubCategoryValue()" class = "" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
                 
                
                 
             } else {
                 
-                echo '<label title="' . $row['SCID'] . '">';
+                
                 
 
-                echo '<input type="checkbox" onclick="getSubCategoryValue()" class = ""  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '"> ' . $row['SCNA'] . ' ';
-                echo '</label>';
+                echo '<input type="radio" onclick="getSubCategoryValue()" class = ""  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '"> ' . $row['SCNA'] . ' ';
+                echo '<label title="' . $row['SCID'] . '"></label>';
                 
             }
         }
