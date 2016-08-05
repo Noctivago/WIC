@@ -3988,7 +3988,7 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
     }
 }
 
-function DB_GetServiceFirstPagePicture($pdo, $serviceId) {
+function DB_FacebookShareFunc($pdo, $serviceId) {
     try {
         $rows = sql($pdo, "Select [Multimedia_Path] from [multimedia] where [Enabled]=1 and [Service_Id]= ? and [First_Page]=1", array($serviceId), "rows");
         foreach ($rows as $row) {
