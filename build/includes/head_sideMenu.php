@@ -314,12 +314,22 @@ include '../build/db/session.php';
                 
                 <button type="button"
 						class="btn btn-inline btn-rounded "
-						title="AJUDA PARA VOCES MORCOES"
+						title="Muita parra pouca uva"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="right"
-						data-content="Sardinha Pequeninha Cheirosinha Piroquinha Doninha Coninha"
-                                                style="margin: 0px auto auto 150px; display: block;"><i>?</i>
+						data-content="Comer e o coçar o mal é começar "
+                                                style="margin: 0px auto auto 150px; display: block;"><i class="">?</i>
+                    
+				</button>
+                <button type="button"
+						class="fa fa-question-circle "
+						title="Muita parra pouca uva"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="right"
+						data-content="Comer e o coçar o mal é começar "
+                                                style="margin: 0px auto auto 150px; display: block;">
                     
 				</button>
                
