@@ -86,6 +86,7 @@ $msg = '';
                                                 }
                                             }
                                         }
+//                                        HEADER LOCATION
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
