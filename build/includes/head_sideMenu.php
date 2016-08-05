@@ -318,7 +318,7 @@ include '../build/db/session.php';
 						data-container="body"
 						data-toggle="popover"
 						data-placement="right"
-						data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+						data-content="Chupamos sagittis lacus vel augue laoreet rutrum faucibus.">
                     
 				</button>
                    </div>
