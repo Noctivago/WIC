@@ -3681,26 +3681,22 @@ function DB_GetSubCategories($pdo, $Category) {
         $stmt->execute();
         echo '<div class="row" style="padding-left: 35px;">
             <div class="">';
-            
+
 //        echo '<div class="form-group-checkbox">'; '<div class="col-md-3 col-sm-6">';
         echo '<div class="radio">';
         $x = DB_countSubCategories($pdo, $Category);
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             if ($x === 1) {
-                
+
                 echo '<label for="' . $row['SCID'] . '" title="' . $row['SCID'] . '"></label>';
                 echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
-                
-               
-                
             } else {
-                
-                
-                
+
+
+
 
                 echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat"  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">  ';
                 echo '<label style="margin-left:20px;height:23px;" class="btn btn-default" title="' . $row['SCNA'] . '"  for="' . $row['SCID'] . '" >' . $row['SCNA'] . '</label>';
-                
             }
         }
 //        codigo inalterado abaixo comentado
@@ -3989,5 +3985,16 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
         }
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
+    }
+}
+
+function DB_GetServiceFirstPagePicture($pdo, $serviceId) {
+    try {
+        $rows = sql($pdo, "Select [Multimedia_Path] from [multimedia] where [Enabled]=1 and [Service_Id]= ? and [First_Page]=1", array($serviceId), "rows");
+        foreach ($rows as $row) {
+            return $_SERVER['HTTP_HOST'] . "/build/" . $row['Multimedia_Path'];
+        }
+    } catch (Exception $ex) {
+        
     }
 }
