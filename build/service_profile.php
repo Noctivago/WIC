@@ -414,7 +414,7 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
                 
                 
-                <section class="">
+<!--                <section class="">
                         <div id="fb-root"></div>
                         <script>(function(d, s, id) {
                           var js, fjs = d.getElementsByTagName(s)[0];
@@ -428,7 +428,7 @@ $serviceId = (filter_var($_GET['Service']));
                         <div class="fb-share-button" data-href="http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=4658" data-layout="button" data-size="large" data-mobile-iframe="true">
                             <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwicplanner-testslot.azurewebsites.net%2Fbuild%2Fservice_profile.php%3FService%3D4658&amp;src=sdkpreparse">Share</a>
                         </div>
-                        <!--twitter-->
+                        twitter
                         
                         <a class="twitter-share-button"
                             href="https://twitter.com/intent/tweet?text=Hello%20world"
@@ -436,7 +436,7 @@ $serviceId = (filter_var($_GET['Service']));
                           Tweet
                         </a>
                         
-                </section>
+                </section>-->
                 <br>
 
 
