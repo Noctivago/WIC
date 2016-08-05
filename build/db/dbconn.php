@@ -3687,14 +3687,14 @@ function DB_GetSubCategories($pdo, $Category) {
             if ($x === 1) {
                 echo '<div class="checkbox">';
                 echo '<label for="' . $row['SCID'] . '" title="' . $row['SCID'] . '"></label>';
-                echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
+                echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "btn btn-inline" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
                 
                 echo '</div>';
                 
             } else {
                 echo '<div class="radio">';
                 
-                echo '<label title="' . $row['SCID'] . '" for="' . $row['SCID'] . '" title="' . $row['SCID'] . '">';
+                echo '<label  for="' . $row['SCID'] . '" title="' . $row['SCID'] . '">';
                 
                 
                 echo '<input type="radio" onclick="getSubCategoryValue()" class = "btn btn-inline"  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">' . $row['SCNA'] . ' ';
