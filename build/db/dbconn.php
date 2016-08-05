@@ -4070,13 +4070,14 @@ function DB_TwitterShareFunc($pdo, $serviceId) {
 //                  Tweet
 //                  </a>
 //                  ';
+            $link = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             echo '<a class="twitter-share-button"
                     href="https://twitter.com/share"
                     data-size="large"
                     data-via="wic.club"
                     data-related="twitterapi, twitter"
                     data-hashtags="You can event, event your life!"
-                    data-url="' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '"
+                    data-url="' . $link . '"
                     data-text="' . $row['SNA'] . '">
                   Tweet
                   </a>

@@ -17,7 +17,7 @@ include_once '../db/session.php';
 //echo '<br>';
 //echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&City=3';
 //echo $_SERVER['HTTP_HOST'] . '/build/my_wicplanner.php';
-echo $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'];
+//echo $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'];
 echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 //echo '<br>http://' . $_SERVER['HTTP_HOST'];
 //echo '<br>';
