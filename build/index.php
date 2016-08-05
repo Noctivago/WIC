@@ -51,7 +51,7 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['SubCategory'])) {
             $SubCategory = (filter_var($_GET ['SubCategory']));
-            $query .= '<span  class="label label-primary" style="height: 27px; padding-top: 5px; margin-left: 5px;" disable><i class="fa fa-cubes"></i>SubCategory: <h8> ' . DB_getSubCategoryName($pdo, $SubCategory) . '</h8></span>';
+            $query .= '<span  class="label label-primary" style="height: auto; padding-top: 5px; margin-left: 5px;" disable><i class="fa fa-cubes"></i>SubCategory: <h8> ' . DB_getSubCategoryName($pdo, $SubCategory) . '</h8></span>';
         }
 
 //        botao reset
