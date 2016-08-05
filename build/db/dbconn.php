@@ -3686,17 +3686,16 @@ function DB_GetSubCategories($pdo, $Category) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             if ($x === 1) {
                 echo '<div class="checkbox">';
-
+                echo '<label for="' . $row['SCID'] . '" title="' . $row['SCID'] . '"></label>';
                 echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
-                echo '<label for="' . $row['SCID'] . '" title="' . $row['SCID'] . '">atum';
-                echo '</label>';
+                
                 echo '</div>';
                 
             } else {
                 echo '<div class="checkbox">';
+                echo '<label title="' . $row['SCID'] . '"></label>';
                 echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">' . $row['SCNA'] . ' ';
-                echo '<label title="' . $row['SCID'] . '">';
-                echo '</label>';
+                
                 echo '</div>';
             }
         }
