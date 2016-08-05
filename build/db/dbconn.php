@@ -4012,8 +4012,8 @@ function DB_FacebookShareFunc($pdo, $serviceId) {
             //return $_SERVER['HTTP_HOST'] . "/build/" . $row['Multimedia_Path'];
             echo 'https://www.facebook.com/dialog/feed?app_id=231111773916943'
             . '&link=https://wic.club'
-            . '&picture=http://img2.10bestmedia.com/Images/Photos/96123/captiva-beach-captiva_54_990x660_201404211817.jpg'
-            . '&title=' . $row['MPP']
+            . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/'
+            . '&title=' . $row['SNA']
             . '&description=' . $row['SDE'];
         }
     } catch (Exception $ex) {
