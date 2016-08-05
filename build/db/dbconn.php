@@ -4052,36 +4052,10 @@ function DB_TwitterShareFunc($pdo, $serviceId) {
         AND [Multimedia].[First_Page] = 1
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
-
-//echo '<a class="twitter-share-button"
-//            echo '<a class="font-icon font-icon-twitter"';
-//            echo 'href="http://twitter.com/share?text=' . $row['SNA'] . ' # ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&url=http://www.wic.club';
-//            echo '</a>';
-//            
-//            
-//            echo '<a class="twitter-share-button"
-//                    href="https://twitter.com/share"
-//                    data-size="large"
-//                    data-url="https://dev.twitter.com/web/tweet-button"
-//                    data-via="twitterdev"
-//                    data-related="twitterapi,twitter"
-//                    data-hashtags="example,demo"
-//                    data-text="custom share text">
-//                  Tweet
-//                  </a>
-//                  ';
             $link = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            echo '<a class="twitter-share-button"
-                    href="https://twitter.com/share"
-                    data-size="large"
-                    data-url="' . $link . '"
-                    data-via="wic.club"
-                    data-related="twitterapi, twitter"
-                    data-hashtags="You can event, event your life!"
-                    data-text="' . $row['SNA'] . '">
-                  Tweet
-                  </a>
-                  ';
+            echo '<a class = "font-icon font-icon-twitter"';
+            echo 'href = "https://twitter.com/intent/tweet?text=' . $row['SNA'] . '&via=' . $link . '"';
+            echo '</a>';
         }
     } catch (Exception $ex) {
         
