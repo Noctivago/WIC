@@ -4055,8 +4055,8 @@ function DB_TwitterShareFunc($pdo, $serviceId) {
 
             //echo '<a class="twitter-share-button"
             echo '<a class="font-icon font-icon-twitter"';
-            echo 'href="http://twitter.com/share?text=' . $row['SNA'] . '&url=' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'];
-            echo '</a>';
+            echo 'href="http://twitter.com/share?text=' . $row['SNA'] . '&url=' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            echo '"</a>';
         }
     } catch (Exception $ex) {
         
