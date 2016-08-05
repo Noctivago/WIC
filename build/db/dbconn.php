@@ -4054,14 +4054,8 @@ function DB_TwitterShareFunc($pdo, $serviceId) {
         foreach ($rows as $row) {
 
             //echo '<a class="twitter-share-button"
-            echo '<a class="font-icon font-icon-twitter"
-                href="https://twitter.com/share"
-                data-size="large"
-                data-url="' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'] . '"
-                data-via="wic.club"
-                data-related="twitterapi,twitter"'
-            //data-hashtags="example,demo"
-            . 'data-text="' . $row['SNA'] . '">
+            echo '<a class="font-icon font-icon-twitter"    
+                href="http://twitter.com/share?text=' . $row['SNA'] . '&url=' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'] . '"          
             </a>';
         }
     } catch (Exception $ex) {
