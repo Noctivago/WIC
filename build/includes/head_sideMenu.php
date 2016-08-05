@@ -310,20 +310,9 @@ include '../build/db/session.php';
                 <!--</form>-->
                 <br>
 
-                <header class="side-menu-title">Start Planning</header>
-                
-                <button type="button"
-						class="btn btn-inline btn-rounded "
-						title="Muita parra pouca uva"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="right"
-						data-content="Comer e o coçar o mal é começar "
-                                                style="margin: 0px auto auto 150px; display: block;"><i class="">?</i>
-                    
-				</button>
-                <button type="button"
-						class="fa fa-question-circle "
+                <header class="side-menu-title">Start Planning
+                                    <button type="button"
+						class="btn btn-inline btn-rounded fa fa-question-circle "
 						title="Muita parra pouca uva"
 						data-container="body"
 						data-toggle="popover"
@@ -332,6 +321,21 @@ include '../build/db/session.php';
                                                 style="margin: 0px auto auto 150px; display: block;">
                     
 				</button>
+                
+                
+                </header>
+                
+                <button type="button"
+						class="btn btn-inline btn-rounded "
+						title="Muita parra pouca uva"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="right"
+						data-content="Comer e o coçar o mal é começar "
+                                                style="margin: 0px auto auto 150px; display: block; width: 22px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
+                    
+				</button>
+
                
                 
                 <!--updateQueryStringParameter(uri, key, value)-->  
