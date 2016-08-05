@@ -310,7 +310,7 @@ include '../build/db/session.php';
                 <!--</form>-->
                 <br>
 
-                <header class="side-menu-title">Start Planning<i class="fa fa-question">Start Planning</i></header>
+                <header class="side-menu-title">Start Planning</header>
                 <!--updateQueryStringParameter(uri, key, value)-->  
                 <li class="brown with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
