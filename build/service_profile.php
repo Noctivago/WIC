@@ -406,8 +406,9 @@ $serviceId = (filter_var($_GET['Service']));
                 </section>
                 <section class="">
                     <span class="lbl" style="font: bold">Share:</span>
-                    <div class="fb-share-button" data-href="http://wicplanner-testslot.azurewebsites.net/build/index.php" data-layout="button" data-size="large" data-mobile-iframe="true">
-                    <a class="font-icon font-icon-facebook fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwicplanner-testslot.azurewebsites.net%2Fbuild%2Fservice_profile.php%3FService%3D4658&amp;src=sdkpreparse"  ></a>
+                    <!--<div class="fb-share-button" data-href="http://wicplanner-testslot.azurewebsites.net/build/index.php" data-layout="button" data-size="large" data-mobile-iframe="true">-->
+                    <div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true">
+                    <a class="font-icon font-icon-facebook fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/dialog/feed?app_id=231111773916943&link=https://wic.club&picture=http://img2.10bestmedia.com/Images/Photos/96123/captiva-beach-captiva_54_990x660_201404211817.jpg&title=SERVICE_NAME&description=tghe wdjfhudsjhnf sdfhsjdf"  ></a>
                     </div>
                     <a class="font-icon font-icon-twitter"></a>
                     <!--<a class="font-icon font-icon-instagram"></a>-->
