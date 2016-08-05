@@ -318,7 +318,8 @@ include '../build/db/session.php';
 						data-container="body"
 						data-toggle="popover"
 						data-placement="right"
-						data-content="Chupamos sagittis lacus vel augue laoreet rutrum faucibus.">
+						data-content="Chupamos sagittis lacus vel augue laoreet rutrum faucibus."
+                                                style="margin: 0px auto; display: block;"><i class="fa fa-question-circle"></i>
                     
 				</button>
                
