@@ -410,7 +410,7 @@ $serviceId = (filter_var($_GET['Service']));
                     <a class="font-icon font-icon-facebook fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwicplanner-testslot.azurewebsites.net%2Fbuild%2Fservice_profile.php%3FService%3D4658&amp;src=sdkpreparse"  ></a>
                     </div>
                     <a class="font-icon font-icon-twitter"></a>
-                    <a class="font-icon font-icon-instagram"></a>
+                    <!--<a class="font-icon font-icon-instagram"></a>-->
                 </section>
                 
                 
