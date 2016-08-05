@@ -3681,7 +3681,7 @@ function DB_GetSubCategories($pdo, $Category) {
         $stmt->execute();
         echo '<div class="row" style="padding-left: 35px;">
             <div class="col-md-3 col-sm-6">';
-        echo '<div class="form-group-checkbox">';
+//        echo '<div class="form-group-checkbox">';
         $x = DB_countSubCategories($pdo, $Category);
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             if ($x === 1) {
