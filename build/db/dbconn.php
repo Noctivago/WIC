@@ -4074,10 +4074,10 @@ function DB_TwitterShareFunc($pdo, $serviceId) {
             echo '<a class="twitter-share-button"
                     href="https://twitter.com/share"
                     data-size="large"
+                    data-url="' . $link . '"
                     data-via="wic.club"
                     data-related="twitterapi, twitter"
                     data-hashtags="You can event, event your life!"
-                    data-url="' . $link . '"
                     data-text="' . $row['SNA'] . '">
                   Tweet
                   </a>
