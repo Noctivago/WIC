@@ -3689,7 +3689,7 @@ function DB_GetSubCategories($pdo, $Category) {
             if ($x === 1) {
                 
                 echo '<label for="' . $row['SCID'] . '" title="' . $row['SCID'] . '"></label>';
-                echo '<input type="radio" onclick="getSubCategoryValue()" class = "" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
+                echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
                 
                
                 
@@ -3698,7 +3698,7 @@ function DB_GetSubCategories($pdo, $Category) {
                 
                 
 
-                echo '<input type="radio" onclick="getSubCategoryValue()" class = ""  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '"> ' . $row['SCNA'] . ' ';
+                echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat"  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '"> ' . $row['SCNA'] . ' ';
                 echo '<label title="' . $row['SCID'] . '"></label>';
                 
             }
