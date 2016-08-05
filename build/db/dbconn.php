@@ -4013,7 +4013,7 @@ function DB_FacebookShareFunc($pdo, $serviceId) {
             echo 'https://www.facebook.com/dialog/feed?app_id=231111773916943'
             . '&link=https://wic.club'
             . '&picture=http://img2.10bestmedia.com/Images/Photos/96123/captiva-beach-captiva_54_990x660_201404211817.jpg'
-            . '&title="' . $row['MPP'] . '"'
+            . '&title=' . $row['MPP']
             . '&description=' . $row['SDE'];
         }
     } catch (Exception $ex) {
