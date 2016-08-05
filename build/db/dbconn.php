@@ -3703,6 +3703,7 @@ function DB_GetSubCategories($pdo, $Category) {
                 
             }
         }
+//        codigo inalterado abaixo comentado
 //        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 //            if ($x === 1) {
 //                echo '<div class="checkbox">';
