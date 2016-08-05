@@ -3682,23 +3682,24 @@ function DB_GetSubCategories($pdo, $Category) {
         echo '<div class="row" style="padding-left: 35px;">
             <div class="col-md-3 col-sm-6">';
 //        echo '<div class="form-group-checkbox">';
+        echo '<div class="checkbox">';
         $x = DB_countSubCategories($pdo, $Category);
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             if ($x === 1) {
-                echo '<div class="checkbox">';
+                
                 echo '<label for="' . $row['SCID'] . '" title="' . $row['SCID'] . '"></label>';
                 echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
                 
-                echo '</div>';
+               
                 
             } else {
-                echo '<div class="btn btn-inline">';
+                
                 
                 
 
                 echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "btn btn-inline"  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '"> ';
                 echo '<label  for="' . $row['SCID'] . '" title="' . $row['SCID'] . '">' . $row['SCNA'] . '</label>';
-                echo '</div>';
+                
             }
         }
 //        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -3718,7 +3719,7 @@ function DB_GetSubCategories($pdo, $Category) {
 //            }
 //        }
         echo ' </div>
-                
+                </div>
                 </div>
         <br>';
     } catch (Exception $ex) {
