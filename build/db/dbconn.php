@@ -597,7 +597,7 @@ function DB_BuildInvitesTable($pdo, $userId) {
             } else {
                 echo '<input type="checkbox" id="edit' . $row['ID'] . '" name="permission" > To edit Service <br> <input type="checkbox" id="talk' . $row['ID'] . '"> Talk with costumers  ';
             }
-            //                          </select>
+//                          </select>
             echo '</div>
                                 </td>
                                 <td class="tbl-cell tbl-cell-action-bordered">
@@ -1444,14 +1444,14 @@ function DB_GetOrgInformation2($pdo, $org) {
             echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "width: 110px; height:110px;"/>';
             echo ' </div>';
             echo ' <div class = "profile-card-name">' . $row['Name'] . '</div>';
-            //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
-            //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
-            //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
+//echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
+//echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
+//echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
             echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
-            //echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
-            //echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
-            //echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
-            //echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
+//echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
+//echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
+//echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
+//echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
 
             echo '</div>';
         }
@@ -1765,9 +1765,9 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
         AND [Multimedia].[First_Page] = 1
 	AND [Organization].[Id] = ?", array($org), "rows");
         foreach ($rows as $row) {
-            //$idService = $service['Id'];
-            //$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
-            //$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
+//$idService = $service['Id'];
+//$ServiceInfo = DB_GetServiceInformation($pdo, $idService);
+//$Multi = DB_GetServiceMultimediaUnit($pdo, $idService);
             $views = DB_GetNumberServiceViews($pdo, $row['SID']);
             $comments = DB_GetNumberServiceComments($pdo, $row['SID']);
             echo '<div class = "slide">';
@@ -1780,7 +1780,7 @@ function DB_GetOrganizationServices($pdo, $org, $idUser) {
             echo '<div class = "post-announce-title">';
             echo '<a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a>';
             echo '</div>';
-            //echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
+//echo '<div class = "post-announce-date">' . $ServiceInfo['Date_Created'] . '</div>';
             echo '<ul class = "post-announce-meta">';
             echo '<li>';
             echo '<i class = "font-icon font-icon-eye"></i>';
@@ -1951,9 +1951,9 @@ function db_getMyWicPlannerToWICCrud($pdo, $userId) {
             echo '<tr class = "table-check">';
             echo '<td><a onclick = "showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
             $str = $row['WPED'];
-            //SEPARA A DATA DAS HORAS
+//SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
-            //IMPRIME DATA
+//IMPRIME DATA
             echo '<td>' . $subStr[0] . '</td>';
             echo '<td class = "table-photo">';
             echo '<img src = "' . $row['UPP'] . '" alt = "Avatar" data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
@@ -1998,9 +1998,9 @@ function db_getThirdWicPlannerToWICCrud($pdo, $userId) {
             echo '<tr class = "table-check">';
             echo '<td><a onclick = "showWicServicesForm(' . $row['WID'] . ')">' . $row['WPN'] . '</a></td>';
             $str = $row['WPED'];
-            //SEPARA A DATA DAS HORAS
+//SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
-            //IMPRIME DATA
+//IMPRIME DATA
             echo '<td>' . $subStr[0] . '</td>';
             echo '<td class = "table-photo">';
             echo '<img src = "' . $row['UPP'] . '" alt = "Avatar"  data-toggle = "tooltip" data-placement = "bottom" title = "' . $row['UFN'] . '<br/>' . $row['ULN'] . '">';
@@ -2430,13 +2430,13 @@ function DB_getWicPlannerInfo($pdo, $wicId, $userId) {
         $wicInfo = array();
         foreach ($rows as $row) {
             $str = $row['Event_Date'];
-            //SEPARA A DATA DAS HORAS
+//SEPARA A DATA DAS HORAS
             $subStr = explode(" ", $str);
-            //SEPARA DIA MES ANO
+//SEPARA DIA MES ANO
             $subSubStr = explode("-", $subStr[0]);
             $wicInfo["Name"] = $row["Name"];
             $wicInfo["Event_Date"] = $subSubStr[1] . '-' . $subSubStr[2] . '-' . $subSubStr[0];
-            //$wicInfo["Event_Date"] = $row['Event_Date'];
+//$wicInfo["Event_Date"] = $row['Event_Date'];
         }
         return $wicInfo;
     } catch (Exception $exc) {
@@ -2491,7 +2491,7 @@ function DB_addUserProfilePicture($pdo, $pic, $userId) {
  * @return boolean
  */
 function DB_removeServiceFromWicPlanner($pdo, $serviceId, $WicPlannerId) {
-    //SE PASSARMOS O USERID PODEMOS VERIFICARA SE O USER ESTA NESTE WIC PLANNER
+//SE PASSARMOS O USERID PODEMOS VERIFICARA SE O USER ESTA NESTE WIC PLANNER
     try {
         $count = sql($pdo, "UPDATE [dbo].[WIC_Planner_Service] "
                 . "SET [Enabled]=0 "
@@ -2588,8 +2588,8 @@ function DB_getServicesForIndex($pdo) {
 </div>';
         }
 
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -2634,7 +2634,7 @@ function DB_getUsersInServiceOrganizationByService($pdo, $servideId) {
                 echo ' <div class = "tbl-cell">';
                 echo ' <p class = "user-card-row-name">' . $row['First_Name'] . '</p>';
                 echo ' <p class = "user-card-row-name">' . $row['Last_name'] . '</p>';
-                //echo ' <p class = "user-card-row-location">' . $row['ServiceName'] . '</p>';
+//echo ' <p class = "user-card-row-location">' . $row['ServiceName'] . '</p>';
                 echo ' </div>';
                 echo ' </div>';
                 echo ' </article>';
@@ -2689,8 +2689,8 @@ function DB_getServiceCommentFromUsers($pdo, $servideId) {
 </div>';
         }
         echo '</div>';
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -2745,14 +2745,14 @@ function DB_GetOrgInformationForService($pdo, $serviceId) {
             echo ' <img src = "' . $row['Picture_Path'] . '" alt = "" style = "max-width: 110px; max-height:110px;"/>';
             echo ' </div>';
             echo ' <div class = "profile-card-name"><a href="../build/profile_org.php?Organization=' . $row['Id'] . '" >' . $row['Name'] . '</a></div>';
-            //echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
-            //echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
-            //echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
-            //echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
-            //echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
-            //echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
-            //echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
-            //echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
+//echo ' <div class = "profile-card-status">' . $row['Phone_Number'] . '</div>';
+//echo ' <div class = "profile-card-status">' . $row['Mobile_Number'] . '</div>';
+//echo ' <div class = "profile-card-location">' . $row['Organization_Email'] . '</div>';
+//echo ' <div class = "profile-card-location">' . $row['Address'] . '</div>';
+//echo ' <a href = "' . $row['Website'] . '" target = "_blank"> <i class = "font-icon font-icon-earth-bordered"></i></a>';
+//echo ' <a href = "' . $row['Facebook'] . '" target = "_blank"> <i class = "font-icon font-icon-fb-fill"></i></a>';
+//echo ' <a href = "' . $row['Linkdin'] . '" target = "_blank"> <i class = "font-icon font-icon-in-fill"></i></a>';
+//echo ' <a href = "' . $row['Twitter'] . '" target = "_blank"> <i class = "font-icon font-icon-tw-fill"></i></a>';
 
             echo '</div>';
         }
@@ -2789,9 +2789,9 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
             <div class = "tbl-cell">
             <p class = "user-card-row-name"><a>   ' . $row['SNA'] . '</a></p>';
             if (DB_checkIfUserMadeRate($pdo, $user_Id, $serviceId)) {
-                //SE JA FEZ RATE -> MOSTRAR RATING SERVIÇO
+//SE JA FEZ RATE -> MOSTRAR RATING SERVIÇO
             } else {
-                //INICIO RATING
+//INICIO RATING
                 echo '<p class = "user-card-row-status">
             <fieldset id = "demo1" class = "rating">
             <input class = "stars" type = "radio" id = "star5" name = "rating" value = "5" />
@@ -2806,7 +2806,7 @@ function DB_GetServiceInfoBar($pdo, $serviceId, $user_Id) {
             <label class = "full" for = "star1" title = "Sucks big time - 1 star"></label>
             </fieldset></p > ';
             }
-            //FIM RATING
+//FIM RATING
             echo '</div>
             </div>
             </div>
@@ -3032,8 +3032,8 @@ function DB_getServicesForIndexByCategory($pdo, $CategoryId) {
             </div>';
         }
 
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -3104,8 +3104,8 @@ function DB_getServicesForIndexByDescriptionAndCategory($pdo, $qParam, $category
         </div>';
         }
 
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -3176,8 +3176,8 @@ function DB_getServicesForIndexByNameAndCategory($pdo, $qParam, $categoryId) {
         </div>';
         }
 
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -3243,8 +3243,8 @@ function DB_getServicesForIndexByDescription($pdo, $description) {
         </div>';
         }
 
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -3310,8 +3310,8 @@ function DB_getServicesForIndexByName($pdo, $qParam) {
         </div>';
         }
 
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -3494,8 +3494,8 @@ function DB_getServicesForIndexByCity($pdo, $CityId) {
 </div>';
         }
 
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -3566,8 +3566,8 @@ function DB_getServicesForIndexByCityAndCategory($pdo, $Category, $CityId) {
         </div>';
         }
 
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -3585,7 +3585,7 @@ function db_getWicsForHeader($pdo, $userId) {
             $subStr = explode(" ", $row['Event_Date']);
             echo '<a href="/build/my_wicplanner.php" class="mess-item" padding-left: 15px; style="padding-left: 5px;">';
             echo '<span class="mess-item-name" ><i class="fa fa-calendar" style="padding-right:5px;"></i>' . $row['Name'] . ' <i class="font-icon font-icon-arrow-right"></i> ' . $subStr[0] . '</span>';
-            //echo '<span class="mess-item-txt">' . $subStr[0] . '</span>';
+//echo '<span class="mess-item-txt">' . $subStr[0] . '</span>';
             echo '</a>';
         }
     } catch (Exception $exc) {
@@ -3808,8 +3808,8 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
             </div>';
         }
 
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -3903,8 +3903,8 @@ function DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCatego
             return $row['COUNTER'];
         }
 
-        //<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
-        //<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
+//<a href="service_profile.php?service=' . $row['SID'] . '" class="card-typical-likes">
+//<i class="font-icon font-icon-eye">' . DB_GetNumberServiceViews($pdo, $row['SID']) . '</i> 
     } catch (Exception $exc) {
         echo 'ERROR READING SERVICE TABLE!';
     }
@@ -4014,7 +4014,7 @@ function DB_FacebookShareFunc($pdo, $serviceId) {
         AND [Multimedia].[First_Page] = 1
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
-            //return $_SERVER['HTTP_HOST'] . "/build/" . $row['Multimedia_Path'];
+//return $_SERVER['HTTP_HOST'] . "/build/" . $row['Multimedia_Path'];
             echo 'https://www.facebook.com/dialog/feed?app_id=231111773916943'
             . '&link=https://wic.club'
             . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/' . $row['MPP']
@@ -4053,10 +4053,34 @@ function DB_TwitterShareFunc($pdo, $serviceId) {
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
 
-            //echo '<a class="twitter-share-button"
-            echo '<a class="font-icon font-icon-twitter"';
-            echo 'href="http://twitter.com/share?text=' . $row['SNA'] . ' # ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&url=http://www.wic.club';
-            echo '</a>';
+//echo '<a class="twitter-share-button"
+//            echo '<a class="font-icon font-icon-twitter"';
+//            echo 'href="http://twitter.com/share?text=' . $row['SNA'] . ' # ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&url=http://www.wic.club';
+//            echo '</a>';
+//            
+//            
+//            echo '<a class="twitter-share-button"
+//                    href="https://twitter.com/share"
+//                    data-size="large"
+//                    data-url="https://dev.twitter.com/web/tweet-button"
+//                    data-via="twitterdev"
+//                    data-related="twitterapi,twitter"
+//                    data-hashtags="example,demo"
+//                    data-text="custom share text">
+//                  Tweet
+//                  </a>
+//                  ';
+            echo '<a class="twitter-share-button"
+                    href="https://twitter.com/share"
+                    data-size="large"
+                    data-url="http://twitter.com/share?text="' . $row['SNA'] . ' # ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '"
+                    data-via="twitterdev"
+                    data-related="twitterapi, twitter"
+                    data-hashtags="wic.club, You can event, event your life!"
+                    data-text="' . $row['SNA'] . '">
+                  Tweet
+                  </a>
+                  ';
         }
     } catch (Exception $ex) {
         
