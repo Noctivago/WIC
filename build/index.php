@@ -23,7 +23,7 @@ include ("./db/dbconn.php");
                 $query .= '#Page > 1 ';
             }
             $query .= '<div class="form-group" style="padding-left:35px;">'
-                    . '<span  class="label label-primary" style="width: 91.2px; height: 27px; padding-top: 5px;" disable> Page <span sytle="color:red">&raquo</span> ' . ($PageNum + 1) . ' </span>';
+                    . '<span  class="btn btn-inline" disable style="width: 91.2px; height: 27px; padding-top: 5px;" disable> Page <span sytle="color:red">&raquo</span> ' . ($PageNum + 1) . ' </span>';
         } else {
             echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
             
