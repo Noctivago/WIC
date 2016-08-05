@@ -3990,9 +3990,31 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
 
 function DB_FacebookShareFunc($pdo, $serviceId) {
     try {
-        $rows = sql($pdo, "Select [Multimedia_Path] from [multimedia] where [Enabled]=1 and [Service_Id]= ? and [First_Page]=1", array($serviceId), "rows");
+        $rows = sql($pdo, "SELECT
+        [Service].[Name] AS SNA,
+        [Service].[Id] AS SID,
+        [Service].[Description] AS SDE,
+        [Organization].[Name] AS ONA,
+        [Organization].[Id] AS OID,
+        [Organization].[Picture_Path] AS OPP,
+        [Multimedia].[Multimedia_Path] AS MPP
+        FROM [Service]
+        join [Organization]
+        on [Organization].[Id] = [Service].[Organization_Id]
+        join [Multimedia]
+        on [Multimedia].[Service_Id] = [Service].[Id]
+        AND [Organization].[Enabled] = 1 
+        AND [Service].[Enabled] = 1 
+        AND [Multimedia].[Enabled] = 1  
+        AND [Multimedia].[First_Page] = 1
+        AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
-            return $_SERVER['HTTP_HOST'] . "/build/" . $row['Multimedia_Path'];
+            //return $_SERVER['HTTP_HOST'] . "/build/" . $row['Multimedia_Path'];
+            echo 'https://www.facebook.com/dialog/feed?app_id=231111773916943'
+            . '&link=https://wic.club'
+            . '&picture=http://img2.10bestmedia.com/Images/Photos/96123/captiva-beach-captiva_54_990x660_201404211817.jpg'
+            . '&title="' . $row['MPP'] . '"'
+            . '&description=' . $row['SDE'];
         }
     } catch (Exception $ex) {
         
