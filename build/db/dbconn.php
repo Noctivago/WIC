@@ -3698,8 +3698,8 @@ function DB_GetSubCategories($pdo, $Category) {
                 
                 
 
-                echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat"  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '"> ' . $row['SCNA'] . ' ';
-                echo '<label title="' . $row['SCID'] . '"  for="' . $row['SCID'] . '" ></label>';
+                echo '<input type="radio" onclick="getSubCategoryValue()" class = "SubCat"  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">  ';
+                echo '<label title="' . $row['SCNA'] . '"  for="' . $row['SCID'] . '" >' . $row['SCNA'] . '</label>';
                 
             }
         }
