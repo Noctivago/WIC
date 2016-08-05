@@ -3687,7 +3687,7 @@ function DB_GetSubCategories($pdo, $Category) {
             if ($x === 1) {
                 echo '<div class="checkbox">';
                 echo '<label for="' . $row['SCID'] . '" title="' . $row['SCID'] . '"></label>';
-                echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "btn btn-inline" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
+                echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '" checked>' . $row['SCNA'] . ' ';
                 
                 echo '</div>';
                 
@@ -3696,7 +3696,7 @@ function DB_GetSubCategories($pdo, $Category) {
                 
                 echo '<label  for="' . $row['SCID'] . '" title="' . $row['SCID'] . '">';
 
-                echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "btn btn-inline"  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '"> ';
+                echo '<input type="checkbox" onclick="getSubCategoryValue()" class = ""  name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '"> ';
                 echo '' . $row['SCNA'] . '</label>';
                 echo '</div>';
             }
