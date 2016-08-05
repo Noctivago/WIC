@@ -311,16 +311,17 @@ include '../build/db/session.php';
                 <br>
 
                 <header class="side-menu-title">Start Planning</header>
-                
+                <div>
                 <button type="button"
-						class="btn btn-inline "
+						class="btn btn-inline fa fa-question-circle "
 						title="Popover title"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="right"
 						data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    <i class="fa fa-question-circle"></i>
+                    
 				</button>
+                   </div>
                 
                 <!--updateQueryStringParameter(uri, key, value)-->  
                 <li class="brown with-sub">
