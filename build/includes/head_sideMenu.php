@@ -314,11 +314,11 @@ include '../build/db/session.php';
                 
                 <button type="button"
 						class="btn btn-inline "
-						title="Popover title"
+						title="AJUDA PARA VOCES MORCOES"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="right"
-						data-content="Chupamos sagittis lacus vel augue laoreet rutrum faucibus."
+						data-content="Sardinha Pequeninha Cheirosinha Piroquinha Doninha Coninha"
                                                 style="margin: 0px auto auto 150px; display: block;"><i>Help</i>
                     
 				</button>
