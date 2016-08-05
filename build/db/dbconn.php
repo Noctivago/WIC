@@ -3693,9 +3693,9 @@ function DB_GetSubCategories($pdo, $Category) {
                 
             } else {
                 echo '<div class="checkbox">';
-                echo '<label title="' . $row['SCID'] . '"></label>';
-                echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">' . $row['SCNA'] . ' ';
                 
+                echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">' . $row['SCNA'] . ' ';
+                echo '<label title="' . $row['SCID'] . '"></label>';
                 echo '</div>';
             }
         }
