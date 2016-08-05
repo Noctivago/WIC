@@ -319,7 +319,7 @@ include '../build/db/session.php';
 						data-toggle="popover"
 						data-placement="right"
 						data-content="Chupamos sagittis lacus vel augue laoreet rutrum faucibus."
-                                                style="margin: 0px auto; display: block;"><i class="fa fa-question-circle"></i>
+                                                style="margin: 0px auto auto 200px; display: block;"><i>Help</i>
                     
 				</button>
                
