@@ -408,7 +408,7 @@ $serviceId = (filter_var($_GET['Service']));
                     <span class="lbl" style="font: bold">Share:</span>
                     <!--<div class="fb-share-button" data-href="http://wicplanner-testslot.azurewebsites.net/build/index.php" data-layout="button" data-size="large" data-mobile-iframe="true">-->
                     <div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true">
-                        <a class="font-icon font-icon-facebook fb-xfbml-parse-ignore" target="_blank" href=""></a>
+                        <a class="font-icon font-icon-facebook fb-xfbml-parse-ignore" target="_blank" href="<?= DB_FacebookShareFunc($pdo, $serviceId); ?>"></a>
                     </div>
                     <a class="font-icon font-icon-twitter"></a>
                     <!--<a class="font-icon font-icon-instagram"></a>-->
