@@ -3693,11 +3693,12 @@ function DB_GetSubCategories($pdo, $Category) {
                 echo '</div>';
                 
             } else {
+                echo '<div class="checkbox">';
                 echo '<label title="' . $row['SCID'] . '">';
                 echo '<input type="checkbox" onclick="getSubCategoryValue()" class = "SubCat" name="SubCat" id="' . $row['SCID'] . '" value = "' . $row['SCID'] . '">' . $row['SCNA'] . ' ';
                 echo '';
                 echo '</label>';
-//                echo '</div>';
+                echo '</div>';
             }
         }
 //        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
