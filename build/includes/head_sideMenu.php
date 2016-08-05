@@ -311,7 +311,7 @@ include '../build/db/session.php';
                 <br>
 
                 <header class="side-menu-title">Start Planning</header>
-                <li>
+                <li class="with-side-menu">
                 <button type="button"
 						class="btn btn-inline fa fa-question-circle "
 						title="Popover title"
