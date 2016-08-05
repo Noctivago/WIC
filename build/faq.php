@@ -33,8 +33,7 @@ include_once '../build/db/session.php';
 								   aria-controls="collapseOne">
 									What is WiC?
 									<i class="font-icon font-icon-arrow-down"></i>
-                                                                        <?php alteraFirst($pdo)?>
-								</a>
+                                                        	</a>
                                                            
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
