@@ -311,7 +311,7 @@ include '../build/db/session.php';
                 <br>
 
                 <header class="side-menu-title">Start Planning</header>
-                <div>
+                <li>
                 <button type="button"
 						class="btn btn-inline fa fa-question-circle "
 						title="Popover title"
@@ -321,7 +321,7 @@ include '../build/db/session.php';
 						data-content="Chupamos sagittis lacus vel augue laoreet rutrum faucibus.">
                     
 				</button>
-                   </div>
+                </li>
                 
                 <!--updateQueryStringParameter(uri, key, value)-->  
                 <li class="brown with-sub">
