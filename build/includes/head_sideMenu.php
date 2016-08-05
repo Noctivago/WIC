@@ -322,6 +322,16 @@ include '../build/db/session.php';
                                                 style="margin: 0px auto auto 150px; display: block;"><i>?</i>
                     
 				</button>
+                <button type="button"
+						class="fa fa-question-circle "
+						title="Muita parra pouca uva"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="right"
+						data-content="Comer e o coçar o mal é começar "
+                                                style="margin: 0px auto auto 150px; display: block;"><i>?</i>
+                    
+				</button>
                
                 
                 <!--updateQueryStringParameter(uri, key, value)-->  
