@@ -27,6 +27,9 @@ include '../build/db/session.php';
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
+        
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     </head>
 
