@@ -77,7 +77,7 @@ include '../build/db/session.php';
                                 
                                 
                                 <button type="button"
-						class="btn btn-inline btn-rounded btn-success-outline"
+						class="btn btn-inline btn-rounded btn-warning-outline"
 						title="Help"
 						data-container="body"
 						data-toggle="popover"
@@ -209,7 +209,7 @@ include '../build/db/session.php';
                         <div class="dropdown dropdown-lang open"  >
 
                                 <button type="button"
-						class="btn btn-inline btn-rounded btn-success-outline"
+						class="btn btn-inline btn-rounded btn-warning-outline"
 						title="Profile help"
 						data-container="body"
 						data-toggle="popover"
@@ -327,7 +327,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                 </div>
                                 <div class="dropdown dropdown-menu-right" >
                                 <button type="button"
-						class="btn btn-inline btn-rounded btn-success-outline"
+						class="btn btn-inline btn-rounded btn-warning-outline"
 						title="Choose your city"
 						data-container="body"
 						data-toggle="popover"
@@ -423,7 +423,7 @@ of what you want. Example search for: Coffee break or Ballrooms "
             
                 
                 <!--updateQueryStringParameter(uri, key, value)-->  
-                <li class="brown with-sub">
+                <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
