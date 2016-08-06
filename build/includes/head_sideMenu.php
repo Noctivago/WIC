@@ -372,6 +372,8 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                 
                 </header>
                 
+                <section class="">
+                
                 <button type="button"
 						class="btn btn-inline btn-rounded "
 						title="Muita parra pouca uva"
@@ -382,6 +384,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                                 style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="fa fa-question"></i>
                     
 				</button>
+                </section>
             <li class=" with-sub">
                 <button type="button"
 						class="btn btn-inline btn-rounded lbl "
