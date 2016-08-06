@@ -333,7 +333,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 						data-toggle="popover"
 						data-placement="bottom"
 						data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
                     
 				</button>
                                 </div>
