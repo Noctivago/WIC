@@ -45,7 +45,7 @@ function sql($pdo, $q, $params, $return) {
 
 function alteraFirst($pdo) {
     try {
-        $rows = sql($pdo, "Select * From [Service] where [Id] >= ?", array(10578), "rows");
+        $rows = sql($pdo, "Select * From [Service] where [Id] >= ?", array(11445), "rows");
         foreach ($rows as $row) {
             $serv = $row['Id'];
             $rows2 = sql($pdo, "Select * From [Multimedia] where [Service_Id] = ?", array($serv), "rows");
@@ -96,12 +96,14 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         $stmt = $pdo->prepare("SELECT * FROM State WHERE Country_Id = :countryID ORDER BY Name ASC");
         $stmt->bindParam(':countryID', $Country_Id);
         $stmt->execute();
-        echo '<select id = "stateSelect" name="stateSelect" class="states bootstrap-select bootstrap-select-arrow" placeholder="City" onchange="myFunctionC()" required>';
+        echo '<select id = "stateSelect" name="stateSelect" class=" bootstrap-select bootstrap-select-arrow" placeholder="City" onchange="myFunctionC()" required>';
         echo '<option value="0">State</option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            
         }
         echo '</select>';
+
     } catch (PDOException $e) {
         echo 'ERROR READING STATE TABLE';
         die();

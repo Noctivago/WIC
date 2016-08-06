@@ -149,8 +149,8 @@ $msg = '';
                     <header class = "box-typical-header-sm">Add new service </header>
                     <?= $msg; ?>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
-                        <!--PROFILE SERVICE PIC-->
-                        <!--                        <button class = "btn btn-rounded btn-file" >
+<!--                        PROFILE SERVICE PIC
+                                                <button class = "btn btn-rounded btn-file" >
                                                     Add Profile Picture
                                                     <input type = "file" id = "uploadFile" accept = "images/*" name = "uploadFile" name="image" >
                                                 </button>
@@ -163,6 +163,8 @@ $msg = '';
 
 
                         <div id="dvpreview"></div>
+                    
+                    
                         <header class = "sign-title">Fill the fields below</header>
 
                         <div class = "form-group">
@@ -172,11 +174,29 @@ $msg = '';
                             </div>
                         </div>
                         <div class = "form-control-wrapper form-control-icon-left">
-                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
+                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country" onchange="myFunction()"  required>
                                 <option value="0">Country</option>
                                 <?php DB_getCountryAsSelect($pdo) ?>
                             </select>
                         </div>
+<!--
+                        <div class = "form-control-wrapper form-control-icon-left">
+                            <select id = "stateSelect" name="stateSelect" class=" bootstrap-select bootstrap-select-arrow" placeholder="City" onchange="myFunctionC()" required>
+                                <option value="0">State</option>
+                                <?php // DB_getStateAsSelectByCountrySelected($pdo, $Country_Id)?>
+                            </select>
+                        </div>
+                        
+                        <div class = "form-control-wrapper form-control-icon-left">
+                            <select id = "citySelect" name="citySelect" class="cities bootstrap-select bootstrap-select-arrow" placeholder="City" required>
+                                <option value="0">City</option>
+                                <?php // DB_getCityAsSelectByStateSelected($pdo, $State_Id)?>
+                            </select>
+                        </div>-->
+                        
+                       
+                             
+
 
                         <div class = "form-group" >
                             <div class = "form-control-wrapper form-control-icon-left" id="state">
