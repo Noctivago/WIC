@@ -426,7 +426,7 @@ include ("includes/head_sideMenu.php");
 
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>  
-
+<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
         <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
