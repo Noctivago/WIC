@@ -150,8 +150,8 @@ $msg = '';
                 method: 'post',
                 data: {Xname: wicName, eDate: wicDate, wicId: wId},
                 success: function (data) {
-                    wicName.innerHTML = '';
-                    wicDate.innerHTML = '';
+//                    wicName.innerHTML = '';
+//                    wicDate.innerHTML = '';
                     loadMyWics();
                     document.getElementById("textelement").innerHTML = data;
                 }
