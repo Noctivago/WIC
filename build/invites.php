@@ -104,6 +104,7 @@ $msg = '';
 
         }
     }
+    
     function RemoveUserInService(x) {
         var answer = confirm("are you sure?")
         if (answer) {
