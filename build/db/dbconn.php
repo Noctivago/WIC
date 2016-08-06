@@ -1689,7 +1689,7 @@ Free for 3 Months</header>';
                 echo '<div class = "tbl-cell tbl-cell-action">';
 
 //falta inserir o iniciar chat
-                echo '<button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onclick="openMyWics(17);" <="" button=""><a class="card-typical-likes">
+                echo '<button class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="background: coral;width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;" onclick="openMyWics(17);" <="" button=""><a class="card-typical-likes">
             </a>
             </button>';
                 echo '</div>';
