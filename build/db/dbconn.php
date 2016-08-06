@@ -78,7 +78,13 @@ function DB_getCountryAsSelect($pdo) {
         $stmt = $pdo->prepare("SELECT * FROM [dbo].[Country] ORDER BY NAME ASC");
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+//            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo '<div class = "form-control-wrapper form-control-icon-left">';
+                            '<select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>';
+                               echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+                                '<?php DB_getCountryAsSelect($pdo) ?>';
+                          
+//            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
     } catch (PDOException $e) {
         echo 'ERROR READING COUNTRY TABLE';
@@ -102,10 +108,7 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
         echo '</select>'
-        . '<script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
-<script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
-<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
-<script src="js/lib/select2/select2.full.min.js"></script>';
+        . '';
     } catch (PDOException $e) {
         echo 'ERROR READING STATE TABLE';
         die();
@@ -157,7 +160,9 @@ function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
-        echo '</select>';
+        echo '</select>'
+        .   '</select>';
+           '</div>';
     } catch (PDOException $e) {
         echo 'ERROR READING CITY TABLE';
         die();
