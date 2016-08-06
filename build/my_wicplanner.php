@@ -141,8 +141,8 @@ $msg = '';
         var wicDate = document.getElementById("daterange3").value;
         var wId = wicId;
         //ESTA A FALHAR AQUI!! OU NA VALIDAÇÂO OU ENTAO NO GET VALUE
-        if (document.getElementById("name") === null) {
-            alert('NULL > TTF');
+        if (document.getElementById("name") !== null) {
+            alert('!NULL > TTF');
         }
         if (wicName !== "") {
             $.ajax({
