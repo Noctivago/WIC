@@ -71,7 +71,7 @@ include '../build/db/session.php';
                 <div class="site-header-content">
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
-                            <div class="dropdown dropdown-lang open"  >
+<!--                            <div class="dropdown dropdown-lang open"  >
 
 
                                 
@@ -90,7 +90,7 @@ include '../build/db/session.php';
 				</button>
                             
 
-                        </div>
+                        </div>-->
 
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
                                 <a href="#"
@@ -311,7 +311,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                         <div class="overlay"></div>
                                     </form>
                                 </div>
-                                <div class="dropdown dropdown-menu-right" >
+<!--                                <div class="dropdown dropdown-menu-right" >
                                 <button type="button"
 						class="btn btn-rounded btn-inline btn-info font-icon-lamp "
 						title="Choose your city"
@@ -322,7 +322,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                                 style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;">
                     
 				</button>
-                                </div>
+                                </div>-->
                                 
                             </div>
                         </div>
