@@ -74,7 +74,7 @@ include '../build/db/session.php';
                             <div class="dropdown dropdown-lang open"  >
 
 <button type="button"
-						class="btn btn-inline btn-rounded btn-success"
+						class="btn btn-inline btn-rounded btn-success-outline"
 						title="Quem não arrisca não petisca"
 						data-container="body"
 						data-toggle="popover"
@@ -223,7 +223,7 @@ include '../build/db/session.php';
                                                         <div class="dropdown dropdown-lang open"  >
 
 <button type="button"
-						class="btn btn-inline btn-rounded btn-success"
+						class="btn btn-inline btn-rounded btn-success-outline"
 						title="Quem não arrisca não petisca"
 						data-container="body"
 						data-toggle="popover"
