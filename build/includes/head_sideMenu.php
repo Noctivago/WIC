@@ -327,7 +327,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                 </div>
                                 <div class="dropdown dropdown-menu-right" >
                                 <button type="button"
-						class="btn btn-inline btn-rounded btn-warning-outline font-icon-lamp "
+						class="btn btn-rounded btn-inline btn-warning-outline font-icon-lamp "
 						title="Choose your city"
 						data-container="body"
 						data-toggle="popover"
