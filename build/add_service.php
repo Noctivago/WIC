@@ -88,6 +88,7 @@ $msg = '';
                                         }
 //                                        HEADER LOCATION
 //                                        <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv </script>
+                                        header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/service_profile.php?Service=" . $last_Id);
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
@@ -149,7 +150,7 @@ $msg = '';
                         <button class = "btn btn-rounded btn-file" >
                             Add Profile Picture
 
-                        <input type = "file" id = "uploadFile" accept = "images/*" name = "uploadFile" name="image" >
+                            <input type = "file" id = "uploadFile" accept = "images/*" name = "uploadFile" name="image" >
                         </button>
                         <!--<input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />-->
 
@@ -158,12 +159,12 @@ $msg = '';
                         <button class = "btn btn-rounded btn-file" >
                             Add Pictures to my Album
 
-                             Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
-                             
+                            Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
+
                         </button>
 
-                        
-                       
+
+
                         <div id="dvpreview"></div>
                         <header class = "sign-title">Fill the fields below</header>
 
