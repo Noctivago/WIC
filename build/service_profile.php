@@ -235,7 +235,7 @@ $serviceId = (filter_var($_GET['Service']));
                     </style>
 
 
-                    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">
+                    <div id="jssor_1" style="position: relative; margin: 150 auto; top: 0px; left: 0px; width: 800px; height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">
                         <!--<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; max-width: 800px; max-height: 456px; overflow: hidden; visibility: hidden; background-color: #24262e;">-->
                         <!-- Loading Screen -->
                         <div align="center"  data-u="loading" style="position: absolute; top: 0px; left: 0px;">
