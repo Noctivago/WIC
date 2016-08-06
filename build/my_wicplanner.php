@@ -76,27 +76,41 @@ $msg = '';
         });
     }
     function removeWic(x) {
-        var id = x.id;
-        $.ajax({
-            url: 'ajax/remove_wic_planner.php',
-            method: 'post',
-            data: {con: id},
-            success: function (data) {
-                loadMyWics();
-            }
-        });
+        var answer = confirm("Remove event?")
+        if (answer) {
+            //some code
+            var id = x.id;
+            $.ajax({
+                url: 'ajax/remove_wic_planner.php',
+                method: 'post',
+                data: {con: id},
+                success: function (data) {
+                    loadMyWics();
+                }
+            });
+        } else {
+            //some code
+        }
+
     }
     function removeWicService(x, y) {
-        var id = x.id;
-        var sid = y;
-        $.ajax({
-            url: 'ajax/remove_wic_planner_service.php',
-            method: 'post',
-            data: {con: id, conId: sid},
-            success: function (data) {
-                showWicServicesForm(id);
-            }
-        });
+        var answer = confirm("Remove service from this event?")
+        if (answer) {
+            //some code
+            var id = x.id;
+            var sid = y;
+            $.ajax({
+                url: 'ajax/remove_wic_planner_service.php',
+                method: 'post',
+                data: {con: id, conId: sid},
+                success: function (data) {
+                    showWicServicesForm(id);
+                }
+            });
+        } else {
+            //some code
+        }
+
     }
     function showAddWicForm() {
         $(".INCLUDE").load("addwicplanner.php");
@@ -244,7 +258,7 @@ $msg = '';
     });
 </script>
 
-        
+
 <!--<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
