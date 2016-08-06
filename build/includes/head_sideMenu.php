@@ -139,6 +139,35 @@ include '../build/db/session.php';
                                     </div>
                                 </div>
                             </div>
+                            
+                            
+                            
+                            
+                            <div class="dropdown dropdown-lang open"  >
+
+
+                                
+                                
+                                <button type="button"
+						class="btn btn-inline btn-rounded btn-success-outline"
+						title="Help"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="bottom"
+                                                data-content=" WiC planner:  WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event;
+                                                -Inbox: Here you can take a look on the latest conversations with the suppliers;
+                                                -Profile: Change the password, the name of your account, clarify your doubts and ask for help when needed."
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
+                    
+				</button>
+                            
+
+                        </div>
+                            
+                            
+                            
+                            
+                            
 
                             <div class="dropdown dropdown-notification messages">
                                 <a href="#"
