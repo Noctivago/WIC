@@ -296,7 +296,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                         if (isset($_GET ['name'])) {
                                             echo 'value = ' . (filter_var($_GET ['name']));
                                         } else {
-                                            echo 'href="faq.php"';
+                                            echo 'placeholder="Choose your City.."';
                                         }
                                         ?>
                                                id="name"
