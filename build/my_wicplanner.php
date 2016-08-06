@@ -123,7 +123,7 @@ $msg = '';
     }
 
     function addWic(wicId) {
-        var wicName = document.getElementById("WICname").value;
+        var wicName = document.getElementById("name").value;
         var wicDate = document.getElementById("daterange3").value;
         var wId = wicId;
         if (wicName !== "") {
