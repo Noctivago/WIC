@@ -124,15 +124,13 @@ $msg = '';
 
     function addWic(wicId) {
         var wicName = document.getElementById("name").value;
-        var wicNameByName = document.getElementsByName("nameByName").value;
         var wicDate = document.getElementById("daterange3").value;
         var wId = wicId;
-//        if (wicName !== "") {
-        if (wicNameByName !== "") {
+        if (wicName !== "") {
             $.ajax({
                 url: 'ajax/addWicP.php',
                 method: 'post',
-                data: {name: wicNameByName, eDate: wicDate, wicId: wId},
+                data: {name: wicName, eDate: wicDate, wicId: wId},
                 success: function (data) {
                     wicName.innerHTML = '';
                     wicDate.innerHTML = '';
@@ -244,7 +242,7 @@ $msg = '';
         $('#tags-editor-textarea').tagEditor();
     });
 </script>
-
+        
 <!--<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
