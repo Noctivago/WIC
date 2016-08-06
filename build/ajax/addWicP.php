@@ -10,7 +10,7 @@ include_once '../db/functions.php';
 //var_dump($_SESSION);
 $userId = $_SESSION['id'];
 $d = getDateToDB();
-$name = (filter_var($_POST ['name']));
+$name = (filter_var($_POST ['Xname']));
 $eventDate = (filter_var($_POST ['eDate']));
 $wicId = (filter_var($_POST ['wicId']));
 

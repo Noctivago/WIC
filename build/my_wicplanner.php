@@ -148,7 +148,7 @@ $msg = '';
             $.ajax({
                 url: 'ajax/addWicP.php',
                 method: 'post',
-                data: {name: wicName, eDate: wicDate, wicId: wId},
+                data: {Xname: wicName, eDate: wicDate, wicId: wId},
                 success: function (data) {
                     wicName.innerHTML = '';
                     wicDate.innerHTML = '';
