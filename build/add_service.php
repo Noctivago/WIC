@@ -176,9 +176,24 @@ $msg = '';
                         <div class = "form-control-wrapper form-control-icon-left">
                             <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
                                 <option value="0">Country</option>
-                                <?php // DB_getCountryAsSelect($pdo) ?>
+                                <?php DB_getCountryAsSelect($pdo) ?>
                             </select>
                         </div>
+
+                        <div class = "form-control-wrapper form-control-icon-left">
+                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
+                                <option value="0">State</option>
+                                <?php DB_getStateAsSelectByCountrySelected($pdo, $Country_Id)?>
+                            </select>
+                        </div>
+                        
+                        <div class = "form-control-wrapper form-control-icon-left">
+                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
+                                <option value="0">City</option>
+                                <?php DB_getCityAsSelectByStateSelected($pdo, $State_Id)?>
+                            </select>
+                        </div>
+                        
                        
                              
 
