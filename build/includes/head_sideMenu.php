@@ -255,7 +255,7 @@ include '../build/db/session.php';
                                     </form>
                                 </div>
                                 <button type="button"
-						class="btn btn-inline btn-rounded fa fa-question-circle "
+						class=" fa fa-question-circle "
 						title="Quem nada não se afoga"
 						data-container="body"
 						data-toggle="popover"
