@@ -317,7 +317,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <button type="button"
-						class="btn btn-inline btn-rounded "
+						class="btn btn-inline btn-rounded btn-success-outline "
 						title="Muita parra pouca uva"
 						data-container="body"
 						data-toggle="popover"
