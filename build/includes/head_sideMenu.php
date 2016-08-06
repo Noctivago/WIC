@@ -334,8 +334,8 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 	                                <div class="help-dropdown-popup-cont">
 	                                    <div class="help-dropdown-popup-cont-in">
 	                                        <div class="jscroll">
-                                                    <a href="#" for="3" class="help-dropdown-popup-item">
-                                                        <i class="font-icon font-icon-calend" style="color: coral"></i>Start Planning
+                                                    <a href="#" for="3" class="help-dropdown-popup-item font-icon font-icon-calend">
+                                                        <i style="color: coral"></i>Start Planning
                                                         <span class="describe font-icon " for="3">Here you can find all the needs for your event clicking 
 separately on each category or by doing an advanced search
 of what you want. Example search for: Coffee break or Ballrooms</span>
