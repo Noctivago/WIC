@@ -288,11 +288,11 @@ include '../build/db/session.php';
                                 <div class="dropdown dropdown-menu-right" >
                                 <button type="button"
 						class="btn btn-inline btn-rounded btn-success-outline"
-						title="Quem nada não se afoga"
+						title="Choose your city"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="bottom"
-						data-content="Pau que nasce torto jamais se endireita "
+						data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
                                                 style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;border-top-width: 1px;"><i class="fa fa-question"></i>
                     
 				</button>
