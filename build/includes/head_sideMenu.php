@@ -14,7 +14,7 @@ include '../build/db/session.php';
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>WIC</title>
+        <title>WiC - Event your Life</title>
         
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
@@ -61,8 +61,8 @@ include '../build/db/session.php';
             <div class="container-fluid">
                 <a href="index.php" class="site-logo">
 
-                    <img class="hidden-md-down" src="img/wic_logo.png" alt="">
-                    <img class="hidden-lg-up" src="img/wic_logo.png" alt="">
+                    <img class="hidden-md-down" src="img/w_logo.png" alt="">
+                    <img class="hidden-lg-up" src="img/w_logo.png" alt="">
 
                 </a>
                 <button class="hamburger hamburger--htla">
