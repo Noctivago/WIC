@@ -4033,13 +4033,13 @@ function DB_FacebookShareFunc($pdo, $serviceId) {
                 . '&link=' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']
                 . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/img/wic_logo.png'
                 . '&title=' . $row['SNA']
-                . '&description=' . 'URL: ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '<br>' . $row['SDE'];
+                . '&description=' . $row['SDE'];
             } else {
                 echo 'https://www.facebook.com/dialog/feed?app_id=231111773916943'
                 . '&link=' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']
                 . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/' . $row['MPP']
                 . '&title=' . $row['SNA']
-                . '&description=' . 'URL: ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '<br>' . $row['SDE'];
+                . '&description=' . $row['SDE'];
             }
         }
     } catch (Exception $ex) {

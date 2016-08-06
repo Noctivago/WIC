@@ -82,12 +82,12 @@ include '../build/db/session.php';
                                 </a>-->
 <button type="button"
 						class="btn btn-inline btn-rounded btn-success"
-						title="Quem nada não se afoga"
+						title="Quem não arrisca não petisca"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="bottom"
-						data-content="Pau que nasce torto jamais se endireita "
-                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
+						data-content="Quem está no convento é que sabe o que lhe vai dentro  "
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;"><i class="">?</i>
                     
 				</button>
                             
@@ -235,6 +235,16 @@ include '../build/db/session.php';
                                     <a class="dropdown-item" href="faq.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>FAQ</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="logout.php"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
+                                    <button type="button"
+						class="btn btn-inline btn-rounded btn-success"
+						title="Quem não arrisca não petisca"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="bottom"
+						data-content="Quem está no convento é que sabe o que lhe vai dentro  "
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;"><i class="">?</i>
+                    
+				</button>
                                 </div>
                             </div>
                             <button type="button" class="burger-right">
