@@ -16,9 +16,9 @@ include '../build/db/session.php';
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>WiC - Event your Life</title>
         
-        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
-        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
-        <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+        <link href="img/w_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+        <link href="img/w_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+        <link href="img/w_logo.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
         <link href="img/wic_logo.png" rel="apple-touch-icon" type="image/png">
         <link href="img/wic_logo.png" rel="icon" type="image/png">
         <link href="img/wic_logo.png" rel="shortcut icon">
