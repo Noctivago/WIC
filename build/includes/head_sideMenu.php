@@ -79,7 +79,7 @@ include '../build/db/session.php';
 						title="Help"
 						data-container="body"
 						data-toggle="popover"
-						data-placement="left"
+						data-placement="bottom"
                                                 data-content="# +WiC planner: WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event :)<br>
                                                 # Inbox: Here you can take a look on the latest conversations with the suppliers"
                                                 style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="fa fa-question"></i>
@@ -229,7 +229,7 @@ include '../build/db/session.php';
 						title="Quem não arrisca não petisca"
 						data-container="body"
 						data-toggle="popover"
-						data-placement="bottom"
+						data-placement="left"
 						data-content="Quem está no convento é que sabe o que lhe vai dentro  "
                                                 style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="fa fa-question"></i>
                     
