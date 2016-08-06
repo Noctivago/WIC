@@ -73,43 +73,21 @@ include '../build/db/session.php';
                         <div class="site-header-shown">
                             <div class="dropdown dropdown-lang open"  >
 
- <?php
-                if ($_SESSION['role'] === 'organization') {
-
-                    
-                    echo '<button type="button"';
-						'class="btn btn-inline btn-rounded btn-success-outline"';
-						'title="Help"';
-						'data-container="body"';
-						'data-toggle="popover"';
-						'data-placement="bottom"'
-                                                . 'data-content=" Add New Service - Add the latest services of your brand. Never forget, As much as you offer, more planners will find solutions on you ;  My team - Manage your employees, give them the responsability to manage the services and talk with customers exactly like in your real structure.  + WiC planner'
-                                                        . 'Here you can create the events scheduled with the services that you will provide. More organization, you save time and time is.... :)'
-                                                        . 'Inbox - Here you can take a look on the latest conversations with the planners.Blog-  Take a look on the latest and fresh ideas about the events industry on WiCs official blog."'
-                                                        . 'style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>'
-                                                        . '</button>';
-                     
-                } else {
-                    
-                    echo '<button type="button"';
-						'class="btn btn-inline btn-rounded btn-success-outline"';
-						'title="Help"';
-						'data-container="body"';
-						'data-toggle="popover"';
-						'data-placement="bottom"'
-                                                . 'data-content=" WiC planner:  WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Do not forget that you need everything planned by the day of the event;'
-                                                        . '-Inbox: Here you can take a look on the latest conversations with the suppliers'
-                                                        . '-Profile: Change the password, the name of your account, clarify your doubts and ask for help when needed."'
-                                                        . 'style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>'
-                                                        . '</button>';
-                }
-                ?>
 
                                 
-
-
-
-                                                                
+                                
+                                <button type="button"
+						class="btn btn-inline btn-rounded btn-success-outline"
+						title="Help"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="bottom"
+                                                data-content=" WiC planner:  WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event;
+                                                -Inbox: Here you can take a look on the latest conversations with the suppliers;
+                                                -Profile: Change the password, the name of your account, clarify your doubts and ask for help when needed."
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
+                    
+				</button>
                             
 
                         </div>
