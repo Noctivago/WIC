@@ -11,30 +11,37 @@ $msg = '';
 <body>
     <?php
     if (isset($_POST['signup']) && !empty($_POST['Orgname']) && !empty($_POST['email']) && !empty($_POST['citySelect']) && !empty($_POST['pw1']) && !empty($_POST['pw2'])) {
-        $nameOrg = (filter_var($_POST ['Orgname'], FILTER_SANITIZE_STRING));
-        $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
-        $city = (filter_var($_POST ['citySelect'], FILTER_SANITIZE_NUMBER_INT));
-        $pw1 = (filter_var($_POST ['pw1'], FILTER_SANITIZE_STRING));
-        $pw2 = (filter_var($_POST ['pw2'], FILTER_SANITIZE_STRING));
-        if ($city === 0) {
-            $msg = "PLEASE CHOOSE A CITY!";
-        } else {
-            if ($pw1 != $pw2) {
-                $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
+        $secret = "6LdypyQTAAAAAPaex4p6DqVY6W62Ihld7DDfCMDm";
+        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $_POST['g-recaptcha-response']);
+        $response = json_decode($response, true);
+        if ($response["success"] === true) {
+            $nameOrg = (filter_var($_POST ['Orgname'], FILTER_SANITIZE_STRING));
+            $email = (filter_var($_POST ['email'], FILTER_SANITIZE_EMAIL));
+            $city = (filter_var($_POST ['citySelect'], FILTER_SANITIZE_NUMBER_INT));
+            $pw1 = (filter_var($_POST ['pw1'], FILTER_SANITIZE_STRING));
+            $pw2 = (filter_var($_POST ['pw2'], FILTER_SANITIZE_STRING));
+            if ($city === 0) {
+                $msg = "PLEASE CHOOSE A CITY!";
             } else {
-                if (DB_checkIfUserExists($pdo, $email)) {
-                    $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
+                if ($pw1 != $pw2) {
+                    $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
                 } else {
-                    $hashPassword = hash('whirlpool', $pw1);
-                    try {
-                        $code = generateActivationCode();
-                        $msg = DB_addOrg($pdo, $hashPassword, $email, $nameOrg, $code, $city);
-                    } catch (Exception $ex) {
-                        echo "ERROR!";
+                    if (DB_checkIfUserExists($pdo, $email)) {
+                        $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
+                    } else {
+                        $hashPassword = hash('whirlpool', $pw1);
+                        try {
+                            $code = generateActivationCode();
+                            $msg = DB_addOrg($pdo, $hashPassword, $email, $nameOrg, $code, $city);
+                        } catch (Exception $ex) {
+                            echo "ERROR!";
+                        }
                     }
                 }
             }
         }
+    } else {
+        $msg = "You are a robot";
     }
     ?>
     <div class="page-center">
@@ -75,6 +82,9 @@ $msg = '';
                     <div class="form-group">
                         <input type="password" id="pw2" name = "pw2" class="form-control" placeholder="Repeat password" required/>
                     </div>
+                    <div class="form-group">
+                        <div class="g-recaptcha" class="form-control" data-sitekey="6LdypyQTAAAAACjs5ZFCy67r2JXYJUcudQvstby6"></div>
+                    </div>
                     <p class="sign-note">  <?= $msg; ?> </p>
                     <button type="submit" name="signup" class="btn btn-rounded btn-success sign-up">Sign up</button>
                     <p class="sign-note">Already have an account? <a href="sign_in.php">Sign in</a></p>
@@ -95,6 +105,8 @@ $msg = '';
     <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
     <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="js/lib/select2/select2.full.min.js"></script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
 
     <script>
