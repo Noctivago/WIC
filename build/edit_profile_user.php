@@ -20,7 +20,7 @@ $msg = "";
         $msg = DB_UpdateUserInformation($pdo, $userId, $firstName, $lastName);
         //FALTA ACERTAR NISTO
         $name = $_FILES['file_upload']['name'];
-        $newfilename = $userId . '.jpg';
+        $newfilename = $userId . '_' . generateActivationCode() . '.jpg';
         if (isset($name)) {
             if (!empty($name)) {
                 // Check for errors
@@ -66,7 +66,7 @@ $msg = "";
                 </form>
                 <?= $msg; ?>
             </div>
-            
+
         </div>
     </div><!--.page-center-->
 
@@ -76,8 +76,8 @@ $msg = "";
     <script src="js/plugins.js"></script>
     <script src="js/app.js"></script>
 
-    
-    
+
+
     <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
     <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
     <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
