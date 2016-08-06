@@ -426,10 +426,10 @@ of what you want. Example search for: Coffee break or Ballrooms "
                 <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
-                <li class="brown with-sub">
+                <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '2');"><i class="fa fa-cutlery"></i> Food</a>
                 </li>
-                <li class="brown with-sub">
+                <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '3');"><i class="fa fa-music"></i> Entertainment</a>
                 </li>
                 <li class="brown with-sub">
@@ -438,16 +438,16 @@ of what you want. Example search for: Coffee break or Ballrooms "
                 <!--                <li class="gold with-sub">
                                     <a class="lbl" onclick="updateQueryStringParameter('Category', '5');"><i class="font-icon font-icon-users-group"></i>Staff</a>
                                 </li>-->
-                <li class="brown with-sub">
+                <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '6');"><i class="font-icon glyphicon glyphicon-film"></i> Audio Visual</a>
                 </li>
-                <li class="brown with-sub">
+                <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '7');"><i class="fa fa-camera-retro"></i>Reportage Photo & Video</a>
                 </li>
-                <li class="brown with-sub">
+                <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '8');"><i class="fa fa-diamond"></i>Original</a>
                 </li>
-                <li class="brown with-sub">
+                <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '9');"><i class="font-icon font-icon-users-group"></i>Team Building</a>
                 </li>
 
