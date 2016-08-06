@@ -113,7 +113,7 @@ include_once '../build/db/session.php';
 								</div>
 							</div>
 						</article>
-<!--                                                <article class="panel">
+                                                <article class="panel">
 							<div class="panel-heading" role="tab" id="headingFour">
 								<a class="collapsed"
 								   data-toggle="collapse"
@@ -436,7 +436,7 @@ include_once '../build/db/session.php';
                                                                         </p>
 							</div>
                                                         </div>
-						</article>-->
+						</article>
 					</section>
                                                 </div>
              
@@ -451,7 +451,7 @@ include_once '../build/db/session.php';
 <script src="js/plugins.js"></script>
 
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
+<!--<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>-->
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
