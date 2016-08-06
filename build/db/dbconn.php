@@ -131,8 +131,7 @@ function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
-        echo '</select>'
-        .   '</select>';
+        echo  '</select>';
            '</div>';
     } catch (PDOException $e) {
         echo 'ERROR READING CITY TABLE';
