@@ -181,14 +181,14 @@ $msg = '';
                         </div>
 
                         <div class = "form-control-wrapper form-control-icon-left">
-                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
+                            <select id = "StateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State"   required>
                                 <option value="0">State</option>
                                 <?php DB_getStateAsSelectByCountrySelected($pdo, $Country_Id)?>
                             </select>
                         </div>
                         
                         <div class = "form-control-wrapper form-control-icon-left">
-                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
+                            <select id = "CitySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="City"  onchange="myFunction()" required>
                                 <option value="0">City</option>
                                 <?php DB_getCityAsSelectByStateSelected($pdo, $State_Id)?>
                             </select>
