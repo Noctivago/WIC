@@ -87,6 +87,7 @@ $msg = '';
                                             }
                                         }
 //                                        HEADER LOCATION
+//                                        <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv </script>
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
