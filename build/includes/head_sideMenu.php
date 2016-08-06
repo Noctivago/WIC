@@ -71,6 +71,39 @@ include '../build/db/session.php';
                 <div class="site-header-content">
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
+                            <div class="dropdown dropdown-notification add-customers-screen-user"  >
+<!--                                <a href="#"
+                                   class="header-alarm  "
+                                   id="dd-messages"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href = 'my_wicplanner.php'"> </i>
+                                </a>-->
+<button type="button"
+						class="btn btn-inline btn-rounded btn-success"
+						title="Quem nada não se afoga"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="bottom"
+						data-content="Pau que nasce torto jamais se endireita "
+                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
+                    
+				</button>
+                            
+<!--                            <div class="dropdown dropdown-menu" >
+                                <button type="button"
+						class="btn btn-inline btn-rounded btn-success"
+						title="Quem nada não se afoga"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="bottom"
+						data-content="Pau que nasce torto jamais se endireita "
+                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
+                    
+				</button>
+                                </div>-->
+                        </div>
 
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
                                 <a href="#"

@@ -66,7 +66,7 @@ include_once '../build/db/session.php';
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
 							</div>
-							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
 								<div class="panel-collapse-in">
 									<div class="user-card-row">
 										<div class="tbl-row">
@@ -113,7 +113,7 @@ include_once '../build/db/session.php';
 								</div>
 							</div>
 						</article>
-                                                <article class="panel">
+<!--                                                <article class="panel">
 							<div class="panel-heading" role="tab" id="headingFour">
 								<a class="collapsed"
 								   data-toggle="collapse"
@@ -436,7 +436,7 @@ include_once '../build/db/session.php';
                                                                         </p>
 							</div>
                                                         </div>
-						</article>
+						</article>-->
 					</section>
                                                 </div>
              
