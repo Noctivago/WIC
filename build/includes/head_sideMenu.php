@@ -261,7 +261,7 @@ include '../build/db/session.php';
 						data-toggle="popover"
 						data-placement="bottom"
 						data-content="Pau que nasce torto jamais se endireita "
-                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="fa fa-question"></i>
+                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
                     
 				</button>
                                 
