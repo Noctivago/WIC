@@ -71,7 +71,7 @@ include '../build/db/session.php';
                 <div class="site-header-content">
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
-<!--                            <div class="dropdown dropdown-lang open"  >
+                            <div class="dropdown dropdown-lang open"  >
 
 
                                 
@@ -90,7 +90,7 @@ include '../build/db/session.php';
 				</button>
                             
 
-                        </div>-->
+                        </div>
 
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
                                 <a href="#"
@@ -142,27 +142,7 @@ include '../build/db/session.php';
                             
                             
                             
-                            
-                            <div class="dropdown dropdown-lang open"  >
-
-
-                                
-                                
-                                <button type="button"
-						class="btn btn-inline btn-rounded btn-success-outline"
-						title="Help"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="bottom"
-                                                data-content=" WiC planner:  WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event;
-                                                -Inbox: Here you can take a look on the latest conversations with the suppliers;
-                                                -Profile: Change the password, the name of your account, clarify your doubts and ask for help when needed."
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
-                    
-				</button>
-                            
-
-                        </div>
+                           
                             
                             
                             
@@ -224,6 +204,27 @@ include '../build/db/session.php';
                                     </div>
                                 </div>
                             </div>
+                            
+                            
+                        <div class="dropdown dropdown-lang open"  >
+
+                                <button type="button"
+						class="btn btn-inline btn-rounded btn-success-outline"
+						title="Profile help"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="left"
+						data-content="My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
+
+Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
+                    
+				</button>
+                                                            
+     
+
+
+                        </div>
 
                             <div class="dropdown user-menu">
                                 <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
@@ -255,7 +256,7 @@ include '../build/db/session.php';
 
                                 </div>
                             </div>
-                                                        <div class="dropdown dropdown-lang open"  >
+<!--                                                        <div class="dropdown dropdown-lang open"  >
 
                                 <button type="button"
 						class="btn btn-inline btn-rounded btn-success-outline"
@@ -273,7 +274,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
      
 
 
-                        </div>
+                        </div>-->
                             <button type="button" class="burger-right">
                                 <i class="font-icon-pin-2"></i>
                             </button>
