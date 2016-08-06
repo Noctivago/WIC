@@ -341,7 +341,7 @@ of what you want. Example search for: Coffee break or Ballrooms</span>
 	                                                <span class="describe ">You should write down the city of where you wanna do the event to find the best vendors
 that fit your needs.</span>
 	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus-1">
+	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus">
 	                                                Wic Planner
 	                                                <span class="describe">WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event </span>
 	                                            </a>
