@@ -82,11 +82,11 @@ include '../build/db/session.php';
                                 </a>-->
 <button type="button"
 						class="btn btn-inline btn-rounded btn-success"
-						title="Quem nada não se afoga"
+						title="Quem não arrisca não petisca"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="bottom"
-						data-content="Pau que nasce torto jamais se endireita "
+						data-content="Quem está no convento é que sabe o que lhe vai dentro  "
                                                 style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;"><i class="">?</i>
                     
 				</button>
