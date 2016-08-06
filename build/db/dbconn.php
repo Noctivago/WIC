@@ -102,7 +102,7 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
 //            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
-        echo '</select>'
+        echo '</select>';
 
     } catch (PDOException $e) {
         echo 'ERROR READING STATE TABLE';
