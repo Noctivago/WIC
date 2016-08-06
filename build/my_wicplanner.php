@@ -126,7 +126,7 @@ $msg = '';
         var wicName = document.getElementById("name").value;
         var wicDate = document.getElementById("daterange3").value;
         var wId = wicId;
-        if (str.length(wicName) !== 0) {
+        if (str.length(wicName) >= 1) {
             $.ajax({
                 url: 'ajax/addWicP.php',
                 method: 'post',
