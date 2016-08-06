@@ -114,7 +114,7 @@ if (isset($_SESSION['id'])) {
                 <!--SE !ISSET REDURL TEM DE FAZER APENAS PHP_SELF-->
                 <?php
                 if (isset($_GET['redUrl'])) {
-                    echo '<form class="sign-box" action="<?php echo htmlspecialchars(' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'] . '); ?>" method="post">';
+                    echo '<form class="sign-box" action="' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'] . ' " method="post">';
                 } else {
                     echo '<form class="sign-box" action="<?php echo htmlspecialchars(' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'] . '); ?>" method="post">';
                 }
