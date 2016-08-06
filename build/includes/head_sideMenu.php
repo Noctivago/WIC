@@ -318,14 +318,18 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
             <ul class="side-menu-list">
                 <button type="button"
 						class="btn btn-inline btn-rounded btn-success-outline "
-						title="Muita parra pouca uva"
+						title="Start Planning"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="right"
-						data-content="Comer e o coçar o mal é começar "
+						data-content="Here you can find all the needs for your event clicking 
+separately on each category or by doing an advanced search
+of what you want. Example search for: Coffee break or Ballrooms "
                                                 style="margin: 0px auto auto 190px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 1px;"><i class="font-icon font-icon-lamp" style="margin:82px auto auto 174px;"></i>
                     
 				</button>
+                
+
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <?php
                 if ($_SESSION['role'] === 'organization') {
