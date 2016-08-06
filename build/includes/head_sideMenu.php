@@ -349,7 +349,7 @@ that fit your needs.</span>
 	                                                Inbox
 	                                                <span class="describe">Here you can take a look on the latest conversations with the suppliers</span>
 	                                            </a>
-                                                    <a href="#" class="help-dropdown-popup-item"><img src="img/avatar-2-64.png">
+                                                    <a href="#" class="help-dropdown-popup-item"><img style="width: 32px;" src="img/avatar-2-64.png">
 	                                                Profile
 	                                                <span class="describe">Change the password, the name of your account, clarify your doubts and ask for help when needed. </span>
 	                                            </a>
