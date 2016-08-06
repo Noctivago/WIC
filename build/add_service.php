@@ -56,7 +56,8 @@ $msg = '';
                                                 } else {
                                                     $picture_path = 'pics/' . $newfilename;
                                                     //INSERIR NA TABELA MULTIMEDIA - FirstPage
-                                                    $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $picture_path, 1);
+                                                    //$msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $picture_path, 1);
+                                                    DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $picture_path, 1);
                                                     //$msg = ('File uploaded successfully.');
                                                 }
                                             }
@@ -77,7 +78,8 @@ $msg = '';
                                                             && in_array($file_extension, $validextensions)) {
                                                         if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {//if file moved to uploads folder
                                                             #echo $j . ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
-                                                            $msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $target_path, 0);
+                                                            //$msg = DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $target_path, 0);
+                                                            DB_AddNewServiceFirstPagePicture($pdo, $sID, $user, $target_path, 0);
                                                         } else {//if file was not moved.
                                                             $msg = "Please try again!";
                                                         }
