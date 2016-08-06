@@ -78,7 +78,7 @@ include '../build/db/session.php';
                                    data-toggle="dropdown"
                                    aria-haspopup="true"
                                    aria-expanded="false">
-                                    <i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href = 'my_wicplanner.php'"> </i>
+                                    <!--<i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href = 'my_wicplanner.php'"> </i>-->
                                 </a>
                             
                             <div class="dropdown dropdown-menu" >
