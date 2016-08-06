@@ -83,8 +83,6 @@ if (isset($_SESSION['id'])) {
                                         <img src="img/avatar-2-64.png" alt="">
                                     </button>
                                 </a>
-                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">   
-                                <a class="dropdown-item" href="faq.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>FAQ</a>
                             </div>
                         </div>
                         <div class="mobile-menu-right-overlay"></div>
