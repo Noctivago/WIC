@@ -83,7 +83,7 @@ include '../build/db/session.php';
                                                 data-content="- WiC planner: WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event :)<br>
                                                 -Inbox: Here you can take a look on the latest conversations with the suppliers;
                                                 -Profile: Change the password, the name of your account, clarify your doubts and ask for help when needed."
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="fa fa-question"></i>
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
                     
 				</button>
                             
@@ -235,7 +235,7 @@ include '../build/db/session.php';
 						data-content="My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
 
 Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="fa fa-question"></i>
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
                     
 				</button>
                                                             
@@ -301,7 +301,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 						data-toggle="popover"
 						data-placement="bottom"
 						data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;border-top-width: 1px;"><i class="fa fa-question"></i>
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
                     
 				</button>
                                 </div>
@@ -316,6 +316,20 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
             <ul class="side-menu-list">
+                <button type="button"
+						class="btn btn-inline btn-rounded btn-warning-outline sty "
+						title="Start Planning"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="right"
+						data-content="Here you can find all the needs for your event clicking 
+separately on each category or by doing an advanced search
+of what you want. Example search for: Coffee break or Ballrooms "
+                                                style="margin: 0px auto auto 190px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 1px;"><i class="font-icon font-icon-lamp" style="margin:82px auto auto 174px;"></i>
+                    
+				</button>
+                
+
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <?php
                 if ($_SESSION['role'] === 'organization') {
@@ -328,6 +342,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                 <!--<header class="side-menu-title">Advanced search</header>-->
                 <!--<form action="<?php echo $selfUrl; ?>">-->
                 <div class="col-md-10">
+                    
                     <div class="typeahead-container">
                         <div class="typeahead-field">
                             <span class="typeahead-query">
@@ -372,28 +387,8 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                 
                 </header>
                 
-                <button type="button"
-						class="btn btn-inline btn-rounded "
-						title="Muita parra pouca uva"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="right"
-						data-content="Comer e o coçar o mal é começar "
-                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="fa fa-question"></i>
-                    
-				</button>
-            <li class=" with-sub">
-                <button type="button"
-						class="btn btn-inline btn-rounded lbl "
-						title="Muita parra pouca uva"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="right"
-						data-content="Comer e o coçar o mal é começar "
-                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="fa fa-question"> </i>
-                    
-				</button>
-            </li>
+                
+            
                 
                 <!--updateQueryStringParameter(uri, key, value)-->  
                 <li class="brown with-sub">
