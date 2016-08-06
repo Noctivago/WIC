@@ -229,7 +229,7 @@ include '../build/db/session.php';
 						data-toggle="popover"
 						data-placement="left"
 						data-content="Quem está no convento é que sabe o que lhe vai dentro  "
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="">?</i>
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="fa fa-question"></i>
                     
 				</button>
                             
@@ -293,7 +293,7 @@ include '../build/db/session.php';
 						data-toggle="popover"
 						data-placement="bottom"
 						data-content="Pau que nasce torto jamais se endireita "
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;border-top-width: 1px;"><i style="font-family: serif">?</i>
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;border-top-width: 1px;"><i class="fa fa-question"></i>
                     
 				</button>
                                 </div>
@@ -371,7 +371,7 @@ include '../build/db/session.php';
 						data-toggle="popover"
 						data-placement="right"
 						data-content="Comer e o coçar o mal é começar "
-                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
+                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="fa fa-question"></i>
                     
 				</button>
             <li class=" with-sub">
@@ -382,7 +382,7 @@ include '../build/db/session.php';
 						data-toggle="popover"
 						data-placement="right"
 						data-content="Comer e o coçar o mal é começar "
-                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
+                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="fa fa-question"></i>
                     
 				</button>
             </li>
