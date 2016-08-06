@@ -85,7 +85,7 @@ if (isset($_SESSION['id'])) {
                                 <a href="../build/sign_in.php?redUrl=/build/index.php">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
-                                    <a class="dropdown-item" href="faq.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>FAQ</a>
+                                    <a class="dropdown-item" href="faqPub.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>FAQ</a>
                                 </div>     
                             </div>
                         </div>
