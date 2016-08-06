@@ -101,7 +101,11 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
-        echo '</select>';
+        echo '</select>'
+        . '<script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+<script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="js/lib/select2/select2.full.min.js"></script>';
     } catch (PDOException $e) {
         echo 'ERROR READING STATE TABLE';
         die();
