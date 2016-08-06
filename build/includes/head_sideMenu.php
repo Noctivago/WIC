@@ -77,7 +77,7 @@ include '../build/db/session.php';
                                 
                                 
                                 <button type="button"
-						class="btn btn-inline btn-rounded btn-warning-outline"
+						class="btn btn-inline btn-rounded btn-info"
 						title="Help"
 						data-container="body"
 						data-toggle="popover"
@@ -209,7 +209,7 @@ include '../build/db/session.php';
                         <div class="dropdown dropdown-lang open"  >
 
                                 <button type="button"
-						class="btn btn-inline btn-rounded btn-warning-outline"
+						class="btn btn-inline btn-rounded btn-info"
 						title="Profile help"
 						data-container="body"
 						data-toggle="popover"
@@ -327,7 +327,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                 </div>
                                 <div class="dropdown dropdown-menu-right" >
                                 <button type="button"
-						class="btn btn-rounded btn-inline btn-warning-outline font-icon-lamp "
+						class="btn btn-rounded btn-inline btn-info font-icon-lamp "
 						title="Choose your city"
 						data-container="body"
 						data-toggle="popover"
@@ -349,7 +349,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <button type="button"
-						class="btn btn-inline btn-rounded btn-warning-outline sty "
+						class="btn btn-inline btn-rounded btn-info sty "
 						title="Start Planning"
 						data-container="body"
 						data-toggle="popover"
