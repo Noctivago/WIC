@@ -213,7 +213,7 @@ include '../build/db/session.php';
 						title="Profile help"
 						data-container="body"
 						data-toggle="popover"
-						data-placement="left"
+						data-placement="bottom"
 						data-content="My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
 
 Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
