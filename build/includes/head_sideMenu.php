@@ -77,7 +77,7 @@ include '../build/db/session.php';
                                 
                                 
                                 <button type="button"
-						class="btn btn-inline btn-rounded btn-warning-outline"
+						class="btn btn-inline btn-rounded btn-info"
 						title="Help"
 						data-container="body"
 						data-toggle="popover"
@@ -206,25 +206,7 @@ include '../build/db/session.php';
                             </div>
                             
                             
-                        <div class="dropdown dropdown-lang open"  >
-
-                                <button type="button"
-						class="btn btn-inline btn-rounded btn-warning-outline"
-						title="Profile help"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="bottom"
-						data-content="My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
-
-Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
-                    
-				</button>
-                                                            
-     
-
-
-                        </div>
+                        
 
                             <div class="dropdown user-menu">
                                 <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
@@ -328,7 +310,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                 </div>
                                 <div class="dropdown dropdown-menu-right" >
                                 <button type="button"
-						class="btn btn-rounded btn-inline btn-warning-outline font-icon-lamp "
+						class="btn btn-rounded btn-inline btn-info font-icon-lamp "
 						title="Choose your city"
 						data-container="body"
 						data-toggle="popover"
@@ -350,7 +332,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <button type="button"
-						class="btn btn-inline btn-rounded btn-warning-outline sty "
+						class="btn btn-inline btn-rounded btn-info sty "
 						title="Start Planning"
 						data-container="body"
 						data-toggle="popover"
