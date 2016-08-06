@@ -24,23 +24,33 @@ $msg = "";
         if (isset($name)) {
             if (!empty($name)) {
                 // Check for errors
-                if ($_FILES['uploadFile']['error'] > 0) {
+                if ($_FILES['file_upload']['error'] > 0) {
                     die('An error ocurred when uploading.');
                 }
-                if (!getimagesize($_FILES['uploadFile']['tmp_name'])) {
+                if (!getimagesize($_FILES['file_upload']['tmp_name'])) {
                     die('Please ensure you are uploading an image.');
                 }
+                // Check filetype
+//                if ($_FILES['file_upload']['type'] != 'image/jpg') {
+//                    $msg = 'Unsupported filetype uploaded.';
+//                }
                 // Check filesize
-                if ($_FILES['uploadFile']['size'] > 2000000) {
+                if ($_FILES['file_upload']['size'] > 500000) {
                     die('File uploaded exceeds maximum upload size.');
                 }
-                if (!move_uploaded_file($_FILES['uploadFile']['tmp_name'], 'pics/' . $newfilename)) {
+                // Check if the file exists
+//                if (file_exists('pics/' . $_FILES['file_upload']['name'])) {
+//                    die('File with that name already exists.');
+//                }
+                // Upload file
+//                if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $_FILES['file_upload']['name'])) {
+                if (!move_uploaded_file($_FILES['file_upload']['tmp_name'], 'pics/' . $newfilename)) {
                     die('Error uploading file - check destination is writeable.');
                 } else {
                     $picture_path = 'pics/' . $newfilename;
                     //filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
-                    $msg = DB_UpdateUserPictureInformation($pdo, $userId, $picture_path);
-                    //$msg = ('File uploaded successfully.');
+                    DB_UpdateUserPictureInformation($pdo, $userId, $picture_path);
+                    $msg = ('File uploaded successfully.');
                 }
             }
         }
@@ -56,7 +66,7 @@ $msg = "";
                 </form>
                 <?= $msg; ?>
             </div>
-
+            
         </div>
     </div><!--.page-center-->
 
@@ -66,8 +76,8 @@ $msg = "";
     <script src="js/plugins.js"></script>
     <script src="js/app.js"></script>
 
-
-
+    
+    
     <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
     <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
     <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
