@@ -321,7 +321,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 	                                    <ul>
 	                                        <li><a href="#">Getting Started</a></li>
 	                                        <li><a href="#" class="active">Creating a new project</a></li>
-                                                <li><a href="#" class="open">Adding customers</a></li>
+                                                <li><a href="#" id="3">Adding customers</a></li>
 	                                        <li><a href="#">Settings</a></li>
 	                                        <li><a href="#">Importing data</a></li>
 	                                        <li><a href="#">Exporting data</a></li>
@@ -330,9 +330,9 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 	                                <div class="help-dropdown-popup-cont">
 	                                    <div class="help-dropdown-popup-cont-in">
 	                                        <div class="jscroll">
-	                                            <a href="#" class="help-dropdown-popup-item">
+                                                    <a href="#" for="3" class="help-dropdown-popup-item">
 	                                                Lorem Ipsum is simply
-	                                                <span class="describe">Lorem Ipsum has been the industry's standard dummy text </span>
+                                                        <span class="describe" for="3">Lorem Ipsum has been the industry's standard dummy text </span>
 	                                            </a>
 	                                            <a href="#" class="help-dropdown-popup-item">
 	                                                Contrary to popular belief
