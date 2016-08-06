@@ -113,7 +113,7 @@ include_once '../build/db/session.php';
 								</div>
 							</div>
 						</article>
-<!--                                                <article class="panel">
+                                                <article class="panel">
 							<div class="panel-heading" role="tab" id="headingFour">
 								<a class="collapsed"
 								   data-toggle="collapse"
@@ -436,7 +436,7 @@ include_once '../build/db/session.php';
                                                                         </p>
 							</div>
                                                         </div>
-						</article>-->
+						</article>
 					</section>
                                                 </div>
              
