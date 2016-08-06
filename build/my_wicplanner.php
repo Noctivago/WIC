@@ -142,9 +142,9 @@ $msg = '';
         var wicDate = document.getElementById("daterange3").value;
         var wId = wicId;
         //ESTA A FALHAR AQUI!! OU NA VALIDAÇÂO OU ENTAO NO GET VALUE
-        if (document.getElementById('Wicname') !== null) {
-            alert('!NULL > TTF #>' + document.getElementById('Wicname').value + ' < + DATE > ' + document.getElementById("daterange3").value);
-        }
+//        if (document.getElementById('Wicname') !== null) {
+//            alert('!NULL > TTF #>' + document.getElementById('Wicname').value + ' < + DATE > ' + document.getElementById("daterange3").value);
+//        }
         if (wicName !== "") {
             $.ajax({
                 url: 'ajax/addWicP.php',
