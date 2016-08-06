@@ -250,7 +250,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 
                                     <a class="dropdown-item" href="new_password.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>Change password</a>
                                     <a class="dropdown-item" href="faq.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>FAQ</a>
-                                    <a class="dropdown-item" href="helpPub.php"><span class="font-icon glyphicon glyphicon-phone"></span>Help</a>
+                                    <a class="dropdown-item" href="help.php"><span class="font-icon glyphicon glyphicon-phone"></span>Help</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="http://youcanevent.com"><span class="font-icon glyphicon glyphicon-thumbs-up"></span>Our Blog</a>
                                     <a class="dropdown-item" href="logout.php"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
