@@ -149,7 +149,7 @@ $msg = '';
                     <header class = "box-typical-header-sm">Add new service </header>
                     <?= $msg; ?>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
-                        PROFILE SERVICE PIC
+<!--                        PROFILE SERVICE PIC
                                                 <button class = "btn btn-rounded btn-file" >
                                                     Add Profile Picture
                                                     <input type = "file" id = "uploadFile" accept = "images/*" name = "uploadFile" name="image" >
@@ -157,7 +157,7 @@ $msg = '';
                                                 <button class = "btn btn-rounded btn-file" >
                                                     Add Pictures to my Album
                                                     Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
-                                                </button>
+                                                </button>-->
                         Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="uploadFile" class="form-control" />
                         Add Pictures to my Album: <input type="file" id="files" name="file[]" accept = "images/*" multiple class="form-control"/><br/>
 
