@@ -311,30 +311,8 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                         <div class="overlay"></div>
                                     </form>
                                 </div>
-<!--                                <div class="dropdown dropdown-menu-right" >
-                                <button type="button"
-						class="btn btn-rounded btn-inline btn-info font-icon-lamp "
-						title="Choose your city"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="bottom"
-						data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;">
-                    
-				</button>
-                                </div>-->
                                 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="mobile-menu-left-overlay"></div>
-        <nav class="side-menu">
-            <ul class="side-menu-list">
-                                        <div class="help-dropdown">
+                                <div class="help-dropdown">
 	                            <button type="button">
 	                                <i class="font-icon font-icon-help"></i>
 	                            </button>
@@ -405,6 +383,31 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 	                                </div>
 	                            </div>
 	                        </div><!--.help-dropdown-->
+                                
+<!--                                <div class="dropdown dropdown-menu-right" >
+                                <button type="button"
+						class="btn btn-rounded btn-inline btn-info font-icon-lamp "
+						title="Choose your city"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="bottom"
+						data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;">
+                    
+				</button>
+                                </div>-->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="mobile-menu-left-overlay"></div>
+        <nav class="side-menu">
+            <ul class="side-menu-list">
+                                        
 
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <?php
