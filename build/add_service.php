@@ -21,6 +21,7 @@ $msg = '';
                             <div class="user-card-row">
                                 <div class="tbl-row">
                                     <?php
+                                    $last_Id;
                                     if ($_SESSION['role'] === 'user') {
                                         header("location: ../build/index.php");
                                     }
@@ -86,9 +87,9 @@ $msg = '';
                                                 }
                                             }
                                         }
-//                                        HEADER LOCATION
-//                                        <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv </script>
-                                        header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/service_profile.php?Service=" . $last_Id);
+                                        ?>
+                                        <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $last_Id ?></script>
+                                        <?php
                                     }
                                     ?> 
                                     <div class="tbl-cell tbl-cell-photo">
