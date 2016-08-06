@@ -173,12 +173,15 @@ $msg = '';
                                 <i class = "font-icon font-icon-user"></i>
                             </div>
                         </div>
-                        <div class = "form-control-wrapper form-control-icon-left">
+<!--                        <div class = "form-control-wrapper form-control-icon-left">
                             <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
                                 <option value="0">Country</option>
-                                <?php DB_getCountryAsSelect($pdo) ?>
+                                <?php // DB_getCountryAsSelect($pdo) ?>
                             </select>
-                        </div>
+                        </div>-->
+                       
+                                <?php DB_getCountryAsSelect($pdo) ?>
+
 
                         <div class = "form-group" >
                             <div class = "form-control-wrapper form-control-icon-left" id="state">
