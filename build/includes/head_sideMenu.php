@@ -319,10 +319,10 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 	                            <div class="help-dropdown-popup">
 	                                <div class="help-dropdown-popup-side">
 	                                    <ul>
-	                                        <li><a href="#">Getting Started</a></li>
-	                                        <li><a href="#" class="active">Creating a new project</a></li>
-                                                <li><a href="#" id="3">Adding customers</a></li>
-	                                        <li><a href="#">Settings</a></li>
+                                                <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
+	                                        <li><a href="#" class="active font-icon font-icon-pin-2">Chose your City</a></li>
+                                                <li><a class="font-icon font-icon-plus-1" href="#" id="3">Wic Planner</a></li>
+	                                        <li><a href="#" >Inbox</a></li>
 	                                        <li><a href="#">Importing data</a></li>
 	                                        <li><a href="#">Exporting data</a></li>
 	                                    </ul>
@@ -330,54 +330,38 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 	                                <div class="help-dropdown-popup-cont">
 	                                    <div class="help-dropdown-popup-cont-in">
 	                                        <div class="jscroll">
-                                                    <a href="#" for="3" class="help-dropdown-popup-item">
-	                                                Lorem Ipsum is simply
-                                                        <span class="describe" for="3">Lorem Ipsum has been the industry's standard dummy text </span>
+                                                    <a href="#" for="3" class="help-dropdown-popup-item font-icon-calend">
+	                                                Start Planning
+                                                        <span class="describe font-icon " for="3">Here you can find all the needs for your event clicking 
+separately on each category or by doing an advanced search
+of what you want. Example search for: Coffee break or Ballrooms</span>
 	                                            </a>
 	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                Contrary to popular belief
-	                                                <span class="describe">Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</span>
+	                                                Chose your City
+	                                                <span class="describe font-icon font-icon-pin-2">You should write down the city of where you wanna do the event to find the best vendors
+that fit your needs.</span>
 	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                The point of using Lorem Ipsum
-	                                                <span class="describe">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</span>
+	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus-1">
+	                                                Wic Planner
+	                                                <span class="describe">WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event </span>
 	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                Lorem Ipsum
-	                                                <span class="describe">There are many variations of passages of Lorem Ipsum available</span>
+	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-comments">
+	                                                Inbox
+	                                                <span class="describe">Here you can take a look on the latest conversations with the suppliers</span>
 	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                Lorem Ipsum is simply
-	                                                <span class="describe">Lorem Ipsum has been the industry's standard dummy text </span>
+                                                    <a href="#" class="help-dropdown-popup-item"><img src="img/avatar-2-64.png">
+	                                                Profile
+	                                                <span class="describe">Change the password, the name of your account, clarify your doubts and ask for help when needed. </span>
 	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                Contrary to popular belief
-	                                                <span class="describe">Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</span>
+	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-users-group">
+	                                                My Team
+	                                                <span class="describe">That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes.</span>
 	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                The point of using Lorem Ipsum
-	                                                <span class="describe">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</span>
+	                                            <a href="#" class="help-dropdown-popup-item glyphicon glyphicon-thumbs-up">
+	                                                Blog
+	                                                <span class="describe">Take a look on the latest and fresh ideas about the events industry on WiC's official blog</span>
 	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                Lorem Ipsum
-	                                                <span class="describe">There are many variations of passages of Lorem Ipsum available</span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                Lorem Ipsum is simply
-	                                                <span class="describe">Lorem Ipsum has been the industry's standard dummy text </span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                Contrary to popular belief
-	                                                <span class="describe">Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                The point of using Lorem Ipsum
-	                                                <span class="describe">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
-	                                                Lorem Ipsum
-	                                                <span class="describe">There are many variations of passages of Lorem Ipsum available</span>
-	                                            </a>
+ 
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -794,6 +778,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                     }
                 }
             }
+            
         </script>
         <script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>
