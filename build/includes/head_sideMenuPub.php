@@ -86,6 +86,7 @@ if (isset($_SESSION['id'])) {
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
                                     <a class="dropdown-item" href="sign_in.php"><span class="font-icon glyphicon glyphicon-user"></span>Sign In</a>
+                                    <a class="dropdown-item" href="http://youcanevent.com"><span class="font-icon glyphicon glyphicon-thumbs-up"></span>Our Blog</a>
                                     <a class="dropdown-item" href="faqPub.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>FAQ</a>
                                 </div>     
                             </div>
