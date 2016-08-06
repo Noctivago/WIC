@@ -25,7 +25,7 @@ include ("includes/head_sideMenu.php");
 						<div class="add-customers-screen-user">
 							<i class="font-icon font-icon-user"></i>
 						</div>
-						<h2>Your customers list</h2>
+						<h2>I'm sorry ! Not available yet ;-( Help us building the biggest community of events and entertainment worldwide here.</h2>
 						<p class="lead color-blue-grey-lighter">Create items with names, contact information<br/> and locations to speed-up dispatching.</p>
 						<a href="#" class="btn">Add customer</a>
 					</div>
