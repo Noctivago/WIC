@@ -34,7 +34,7 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['SubCategory'])) {
             $SubCategory = (filter_var($_GET ['SubCategory']));
-            $query .= '#SubCategory > ' . DB_getSubCategoryName($pdo, $SubCategory) . ' ';
+            $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-cubes"></i>SubCategory: <h8> ' . DB_getSubCategoryName($pdo, $SubCategory) . '</h8></button>';
         }
 
         if (isset($_GET ['PageNum'])) {
