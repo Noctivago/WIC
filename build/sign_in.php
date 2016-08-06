@@ -112,9 +112,9 @@ if (isset($_SESSION['id'])) {
             <div class="container-fluid">
                 <?php
                 if (isset($_GET['redUrl'])) {
-                    echo '<form class="sign-box" action="<?php echo htmlspecialchars(' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'] . ') method="post">';
+                    echo '<form class="sign-box" action="<?php echo htmlspecialchars(' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'] . ');>? method="post">';
                 } else {
-                    echo '<form class="sign-box" action="<?php echo htmlspecialchars(' . $_SERVER['PHP_SELF'] . ') method="post">';
+                    echo '<form class="sign-box" action="<?php echo htmlspecialchars(' . $_SERVER['PHP_SELF'] . ');>? method="post">';
                 }
                 ?>
                 <div class="sign-avatar">
