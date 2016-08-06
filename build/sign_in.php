@@ -110,38 +110,32 @@ if (isset($_SESSION['id'])) {
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <?php
-                if (isset($_GET['redUrl'])) {
-                    echo '<form class="sign-box" action="<?php echo htmlspecialchars(' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'] . ');>? method="post">';
-                } else {
-                    echo '<form class="sign-box" action="<?php echo htmlspecialchars(' . $_SERVER['PHP_SELF'] . ');>? method="post">';
-                }
-                ?>
-                <div class="sign-avatar">
-                    <img src="img/avatar-sign.png" alt="">
-                </div>
-                <header class="sign-title">Sign In</header>
-                <div class="form-group">
-                    <input type="text" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="pw" name="pw" class="form-control" placeholder="Password" required/>
-                </div>
-                <div class="form-group">
-                    <div class="checkbox float-left">
-                        <input type="checkbox" id="signed-in"/>
-                        <label for="signed-in">Keep me signed in</label>
+                <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI']); ?>" method="post">
+                    <div class="sign-avatar">
+                        <img src="img/avatar-sign.png" alt="">
                     </div>
-                    <div class="float-right reset">
-                        <a href="reset_password.php">Reset Password</a>
+                    <header class="sign-title">Sign In</header>
+                    <div class="form-group">
+                        <input type="text" id="email" name="email" class="form-control" placeholder="E-Mail" required/>
                     </div>
-                </div>
-                <p class="sign-note">  <?= $msg; ?> </p>
-                <button type="submit" name="signin" class="btn btn-rounded">Sign in</button>
-                <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as a planner</a><a href="sign_up_org.php"> Sign up as a vendor</a></p>
-                <!--<button type="button" class="close">
-                    <span aria-hidden="true">&times;</span>
-                </button>-->
+                    <div class="form-group">
+                        <input type="password" id="pw" name="pw" class="form-control" placeholder="Password" required/>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox float-left">
+                            <input type="checkbox" id="signed-in"/>
+                            <label for="signed-in">Keep me signed in</label>
+                        </div>
+                        <div class="float-right reset">
+                            <a href="reset_password.php">Reset Password</a>
+                        </div>
+                    </div>
+                    <p class="sign-note">  <?= $msg; ?> </p>
+                    <button type="submit" name="signin" class="btn btn-rounded">Sign in</button>
+                    <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as a planner</a><a href="sign_up_org.php"> Sign up as a vendor</a></p>
+                    <!--<button type="button" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>-->
                 </form>
             </div>
         </div>
