@@ -236,11 +236,7 @@ include '../build/db/session.php';
                                                             
                                                             # + WiC planner 
 
-WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event :)
 
-# Inbox
-
-Here you can take a look on the latest conversations with the suppliers
 
                             
 
