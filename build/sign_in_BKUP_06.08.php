@@ -111,8 +111,7 @@ if (isset($_SESSION['id'])) {
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <!--SE !ISSET REDURL TEM DE FAZER APENAS PHP_SELF-->
-                <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                <form class="sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI']); ?>" method="post">
                     <div class="sign-avatar">
                         <img src="img/avatar-sign.png" alt="">
                     </div>
