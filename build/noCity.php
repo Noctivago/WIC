@@ -39,7 +39,7 @@ include ("includes/head_sideMenu.php");
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
 <script src="js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
-
+<link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
