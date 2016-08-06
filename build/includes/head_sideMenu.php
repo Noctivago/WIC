@@ -80,7 +80,7 @@ include '../build/db/session.php';
                                    aria-expanded="false">
                                     <i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href = 'my_wicplanner.php'"> </i>
                                 </a>-->
-<button type="button"
+<!--<button type="button"
 						class="btn btn-inline btn-rounded btn-success"
 						title="Quem nada não se afoga"
 						data-container="body"
@@ -89,9 +89,9 @@ include '../build/db/session.php';
 						data-content="Pau que nasce torto jamais se endireita "
                                                 style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
                     
-				</button>
+				</button>-->
                             
-<!--                            <div class="dropdown dropdown-menu" >
+                            <div class="dropdown dropdown-menu" >
                                 <button type="button"
 						class="btn btn-inline btn-rounded btn-success"
 						title="Quem nada não se afoga"
@@ -102,7 +102,7 @@ include '../build/db/session.php';
                                                 style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
                     
 				</button>
-                                </div>-->
+                                </div>
                         </div>
 
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
