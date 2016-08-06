@@ -88,7 +88,7 @@ if (isset($_SESSION['id'])) {
                                     <a class="dropdown-item" href="sign_in.php"><span class="font-icon glyphicon glyphicon-user"></span>Sign In</a>
                                     <a class="dropdown-item" href="http://youcanevent.com"><span class="font-icon glyphicon glyphicon-thumbs-up"></span>Our Blog</a>
                                     <a class="dropdown-item" href="faqPub.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>FAQ</a>
-                                    <a class="dropdown-item" href="helpPub.php"><span class="font-icon glyphicon glyphicon-phone"></span>Help</a>
+                                    <a class="dropdown-item" href="helpPub.php"><span class="font-icon glyphicon glyphicon-earphone"></span>Help</a>
                                 </div>     
                             </div>
                         </div>
