@@ -35,7 +35,7 @@ $msg = "";
 //                    $msg = 'Unsupported filetype uploaded.';
 //                }
                 // Check filesize
-                if ($_FILES['file_upload']['size'] > 500000) {
+                if ($_FILES['file_upload']['size'] > 50000) {
                     die('File uploaded exceeds maximum upload size.');
                 }
                 // Check if the file exists
