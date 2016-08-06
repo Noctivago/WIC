@@ -37,16 +37,19 @@ include ("./db/dbconn.php");
             $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-cubes"></i>SubCategory: <h8> ' . DB_getSubCategoryName($pdo, $SubCategory) . '</h8></button>';
         }
 
-        if (isset($_GET ['PageNum'])) {
+                if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
             if ($PageNum < 0) {
                 echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
                 $query .= '#Page > 1 ';
             }
-            $query .= '#Page > ' . ($PageNum + 1) . ' ';
+            $query .= '<div class="form-group" style="padding-left:35px;">'
+                    . '<button type="button" class="btn btn-inline" disabled><i class="fa fa-home"></i> Page: ' . ($PageNum + 1) . ' </button>';
         } else {
             echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
+            
             $query .= '#Page > 1 ';
+            
             $PageNum = 0;
         }
 
