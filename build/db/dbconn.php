@@ -99,8 +99,8 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         echo '<select id = "stateSelect" name="stateSelect" class=" bootstrap-select bootstrap-select-arrow" placeholder="City" onchange="myFunctionC()" required>';
         echo '<option value="0">State</option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            
         }
         echo '</select>';
 
