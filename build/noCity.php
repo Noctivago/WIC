@@ -22,7 +22,7 @@ include ("includes/head_sideMenu.php");
 			<div class="box-typical box-typical-full-height">
 				<div class="add-customers-screen tbl">
 					<div class="add-customers-screen-in">
-						<p class="lead color-blue-grey-lighter"> I'm sorry ! Not available yet ;-( Help us building the biggest community of events and entertainment worldwide here.</p>
+						<p class="lead color-blue-grey-lighter"> I'm sorry ! Not available yet! Help us building the biggest community of events and entertainment worldwide here.</p>
 						<!--<h2>And be the first to know the official opening of your city <i class="fa fa-smile-o" aria-hidden="true"></i></h2>-->
 						<a href="#" class="btn">Newsletter Subscribe</a>
 					</div>
