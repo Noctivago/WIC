@@ -11,10 +11,10 @@ include ("./db/dbconn.php");
         /**
          * Pesquisa por nome de serviçoF
          */
-        if (isset($_GET ['qParam'])) {
-            $name = (filter_var($_GET ['qParam']));
-            $query .= '#Advanced Search Criteria > ' . $name . ' ';
-        }
+//        if (isset($_GET ['qParam'])) {
+//            $name = (filter_var($_GET ['qParam']));
+//            $query .= '#Advanced Search Criteria > ' . $name . ' ';
+//        }
         //        numero de pagina
         if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
@@ -30,6 +30,14 @@ include ("./db/dbconn.php");
             $query .= '#Page > 1 ';
             
             $PageNum = 0;
+        }
+        
+        /**
+         * Pesquisa por nome de serviçoF
+         */
+        if (isset($_GET ['qParam'])) {
+            $name = (filter_var($_GET ['qParam']));
+            $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-home"></i>Advanced Search Criteria : ' . $name . '</button> ';
         }
         /**
          * Pesquisa por nome da cidade

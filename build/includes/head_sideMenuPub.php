@@ -78,13 +78,15 @@ if (isset($_SESSION['id'])) {
                                 </a>
                             </div>
                             <div class="dropdown user-menu">
-                                <a href="../build/sign_in.php?redUrl=/build/index.php">
+                                
                                    <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
                                         <img src="img/avatar-2-64.png" alt="">
                                     </button>
+                                <a href="../build/sign_in.php?redUrl=/build/index.php">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
-                                    <a class="dropdown-item" href="faq.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>FAQ</a>
+                                    <a class="dropdown-item" href="sign_in.php"><span class="font-icon glyphicon glyphicon-user"></span>Sign In</a>
+                                    <a class="dropdown-item" href="faqPub.php"><span class="font-icon glyphicon glyphicon-question-sign"></span>FAQ</a>
                                 </div>     
                             </div>
                         </div>
