@@ -76,7 +76,7 @@ $msg = '';
         });
     }
     function removeWic(x) {
-        var answer = confirm("Remove event?")
+        var answer = confirm("are you sure?")
         if (answer) {
             //some code
             var id = x.id;
@@ -94,7 +94,7 @@ $msg = '';
 
     }
     function removeWicService(x, y) {
-        var answer = confirm("Remove service from this event?")
+        var answer = confirm("are you sure?")
         if (answer) {
             //some code
             var id = x.id;
