@@ -254,6 +254,7 @@ include '../build/db/session.php';
                                         <div class="overlay"></div>
                                     </form>
                                 </div>
+                                <div class="dropdown dropdown-menu-right" >
                                 <button type="button"
 						class="btn btn-inline btn-rounded"
 						title="Quem nada não se afoga"
@@ -264,6 +265,7 @@ include '../build/db/session.php';
                                                 style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
                     
 				</button>
+                                </div>
                                 
                             </div>
                         </div>
