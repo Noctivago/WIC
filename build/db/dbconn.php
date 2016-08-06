@@ -3995,7 +3995,7 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
  */
 function DB_FacebookShareFunc($pdo, $serviceId) {
     try {
-        $rows = sql($pdo, "SELECT
+        $rows = sql($pdo, "SELECT TOP 1
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
