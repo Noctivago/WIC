@@ -684,7 +684,7 @@ function DB_sendActivationEmailOrg($email, $name, $code) {
     $body = "Hello " . $name . ", <br><br>"
             . "Welcome to Wic the biggest community of events and entertainment on earth.<br>"
             . "Talk, dead and start planning the event of your dreams.<br>"
-            . "Click on the following link to validate your account:" . $link . " <br><br>"
+            . "Click on the following link to validate your account: " . $link . " <br><br>"
             . "Event your life ! You Can Event ! <br><br>"
             . "Note: Please do not reply to this email! Thanks!";
     return sendEmail($to, $subject, $body);
@@ -3977,7 +3977,7 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
             <div class="card-typical-linked">
             </div>
             <div  class="card-typical-likes">
-            <a class="btn btn-rounded btn-inline btn-primary font-icon-plus" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 6px;" href = "../build/sign_in.php?redUrl=/build/service_profile.php?Service=' . $row['SID'] . '"></a>
+            <a class="btn btn-rounded btn-inline btn-primary font-icon-plus" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;" href = "../build/sign_in.php?redUrl=/build/service_profile.php?Service=' . $row['SID'] . '"></a>
             <a class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;" href = "../build/sign_in.php?redUrl=/build/service_profile.php?Service=' . $row['SID'] . '"></a>
             </div>
             </div>     
