@@ -102,6 +102,8 @@ include '../build/db/session.php';
                                                         . '-Profile: Change the password, the name of your account, clarify your doubts and ask for help when needed."'
                                                         . 'style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>'
                                                         . '</button>';
+                }
+                ?>
 
                                 
 
