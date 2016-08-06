@@ -80,7 +80,7 @@ include '../build/db/session.php';
 						data-toggle="popover"
 						data-placement="bottom"
 						data-content="Quem está no convento é que sabe o que lhe vai dentro  "
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="">?</i>
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><img class="fa fa-question">
                     
 				</button>
                             
