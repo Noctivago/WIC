@@ -17,7 +17,7 @@ if (isset($id) && isset($uid)) {
     $wicInfo = DB_getWicPlannerInfo($pdo, $wicId, $userId);
 } else {
     $wicId = 0;
-    $wicInfo["Name"] = null;
+    $wicInfo["Name"] = '';
     $wicInfo["Event_Date"] = '01-08-2016';
 //    $wicInfo["Event_Date"] = '2016/08/01';
 }
@@ -40,7 +40,7 @@ if (isset($id) && isset($uid)) {
         ?>
         <header class="sign-title">#youcanevent</header>
         <div class="form-group">
-            <input type="text" id = "name" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name" required/>
+            <input type="text" id = "WICname" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name" required/>
         </div>
         <div class='input-group date'>
             <input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control" required>
