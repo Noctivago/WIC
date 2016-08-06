@@ -78,14 +78,7 @@ function DB_getCountryAsSelect($pdo) {
         $stmt = $pdo->prepare("SELECT * FROM [dbo].[Country] ORDER BY NAME ASC");
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
-            echo '<div class = "form-control-wrapper form-control-icon-left">';
-                            '<select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>';
-                               echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
-                                '<?php DB_getCountryAsSelect($pdo) ?>';
-                               echo '</select>';
-                          
-//            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
         }
     } catch (PDOException $e) {
         echo 'ERROR READING COUNTRY TABLE';
@@ -112,29 +105,6 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         . '';
     } catch (PDOException $e) {
         echo 'ERROR READING STATE TABLE';
-        die();
-    }
-}
-
-/**
- * DEVOLVE AS CITIES PARA SEREM USADAS NUMA SELECT
- * @param type $pdo
- * @param type $State_Id StateId
- */
-function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
-    try {
-        $stmt = $pdo->prepare("SELECT * FROM City WHERE State_Id = :stateID ORDER BY Name ASC");
-        $stmt->bindParam(':stateID', $State_Id);
-        $stmt->execute();
-        echo '<select id = "citySelect" name="citySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="City" required>';
-        echo '<option value="0">City</option>';
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
-        }
-        echo  '</select>';
-           '</div>';
-    } catch (PDOException $e) {
-        echo 'ERROR READING CITY TABLE';
         die();
     }
 }
@@ -169,7 +139,27 @@ function DB_GetPicsService($pdo, $serviceId) {
     }
 }
 
-
+/**
+ * DEVOLVE AS CITIES PARA SEREM USADAS NUMA SELECT
+ * @param type $pdo
+ * @param type $State_Id StateId
+ */
+function DB_getCityAsSelectByStateSelected($pdo, $State_Id) {
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM City WHERE State_Id = :stateID ORDER BY Name ASC");
+        $stmt->bindParam(':stateID', $State_Id);
+        $stmt->execute();
+        echo '<select id = "citySelect" name="citySelect" class="cities bootstrap-select bootstrap-select-arrow" placeholder="City" required>';
+        echo '<option value="0">City</option>';
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
+        }
+        echo '</select>';
+    } catch (PDOException $e) {
+        echo 'ERROR READING CITY TABLE';
+        die();
+    }
+}
 
 //USER
 //
