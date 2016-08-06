@@ -321,7 +321,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 	                                    <ul>
 	                                        <li><a href="#">Getting Started</a></li>
 	                                        <li><a href="#" class="active">Creating a new project</a></li>
-	                                        <li><a href="#">Adding customers</a></li>
+                                                <li><a href="#" class="open">Adding customers</a></li>
 	                                        <li><a href="#">Settings</a></li>
 	                                        <li><a href="#">Importing data</a></li>
 	                                        <li><a href="#">Exporting data</a></li>
