@@ -423,7 +423,7 @@ of what you want. Example search for: Coffee break or Ballrooms "
             
                 
                 <!--updateQueryStringParameter(uri, key, value)-->  
-                <li class="brown with-sub">
+                <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
                 </li>
                 <li class="brown with-sub">
