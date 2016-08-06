@@ -329,7 +329,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                                     <span class="describe">Start Planning, and realize the Event of you life</span></li>
 	                                    </ul>-->
 <a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
-                                            <span class="describe"><h5>Start Planning, and realize the Event of you life</h5></span>
+                                            <span class="describe"><h5>Start exploring, and plan the Event of you life</h5></span>
 	                                </div>
 	                                <div class="help-dropdown-popup-cont">
 	                                    <div class="help-dropdown-popup-cont-in">
