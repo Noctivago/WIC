@@ -142,7 +142,7 @@ $msg = '';
         var wId = wicId;
         //ESTA A FALHAR AQUI!! OU NA VALIDAÇÂO OU ENTAO NO GET VALUE
         if (document.getElementById("name") !== null) {
-            alert('!NULL > TTF >' + document.getElementById("name").value + ' <');
+            alert('!NULL > TTF #>' + document.getElementById("name").value + ' <');
         }
         if (wicName !== "") {
             $.ajax({
