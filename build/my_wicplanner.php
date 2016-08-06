@@ -137,7 +137,8 @@ $msg = '';
     }
 
     function addWic(wicId) {
-        var wicName = document.getElementById("name").value;
+        //var wicName = document.getElementById("name").value;
+        var wicName = document.getElementById("Xname").value;
         var wicDate = document.getElementById("daterange3").value;
         var wId = wicId;
         //ESTA A FALHAR AQUI!! OU NA VALIDAÇÂO OU ENTAO NO GET VALUE
