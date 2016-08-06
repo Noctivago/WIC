@@ -181,10 +181,9 @@ $msg = '';
                         </div>
 
                         <div class = "form-control-wrapper form-control-icon-left">
-                            <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunction()"  required>
-                                <option value="0">State</option>
+                            
                                 <?php DB_getStateAsSelectByCountrySelected($pdo, $Country_Id)?>
-                            </select>
+                            
                         </div>
                         
                         <div class = "form-control-wrapper form-control-icon-left">
