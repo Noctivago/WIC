@@ -9,6 +9,29 @@ include_once '../build/db/session.php';
         <div class="row">
             <div class="col-lg-6 col-lg-push-3 col-md-12">
                 
+                
+                
+                
+                <div class="dropdown dropdown-lang open"  >
+
+                                <button type="button"
+						class="btn btn-inline btn-rounded btn-info-outline"
+						title="Profile help"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="bottom"
+						data-content="My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
+
+                                                             Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
+                    
+				</button>
+                                                            
+     
+
+
+                        </div>
+                
  
                 
                 
