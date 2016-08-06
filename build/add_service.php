@@ -174,14 +174,14 @@ $msg = '';
                             </div>
                         </div>
                         <div class = "form-control-wrapper form-control-icon-left">
-                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"   required>
+                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country" onchange="myFunction()"  required>
                                 <option value="0">Country</option>
                                 <?php DB_getCountryAsSelect($pdo) ?>
                             </select>
                         </div>
 
                         <div class = "form-control-wrapper form-control-icon-left">
-                            <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State"   required>
+                            <select id = "stateSelect" class="bootstrap-select bootstrap-select-arrow" placeholder="State" onchange="myFunction()"  required>
                                 <option value="0">State</option>
                                 <?php DB_getStateAsSelectByCountrySelected($pdo, $Country_Id)?>
                             </select>
