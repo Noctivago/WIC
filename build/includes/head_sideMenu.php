@@ -328,13 +328,13 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                 </div>
                                 <div class="dropdown dropdown-menu-right" >
                                 <button type="button"
-						class="btn btn-inline btn-rounded btn-warning-outline"
+						class="btn btn-rounded btn-inline btn-warning-outline font-icon-lamp "
 						title="Choose your city"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="bottom"
 						data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;">
                     
 				</button>
                                 </div>
@@ -433,7 +433,7 @@ of what you want. Example search for: Coffee break or Ballrooms "
                 <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '3');"><i class="fa fa-music"></i> Entertainment</a>
                 </li>
-                <li class="brown with-sub">
+                <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '4');"><i class="fa fa-star"></i>Decoration</a>
                 </li>
                 <!--                <li class="gold with-sub">
