@@ -20,42 +20,45 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['name'])) {
             $city = (filter_var($_GET ['name']));
-            $query .= '#City > ' . $city . ' ';
+             $query .= '<button type="button" class="btn btn-inline" disabled><i class="font-icon font-icon-pin-2"></i> City : <h8> ' . $city . '</h8></button> ';
         }
         /**
          * Pesquisa por categoria
          */
         if (isset($_GET ['Category'])) {
             $CategoryId = (filter_var($_GET ['Category']));
-            $query .= '#Category > ' . DB_getCategoryName($pdo, $CategoryId) . ' ';
+             $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-cubes"></i> Category: <h8> ' . DB_getCategoryName($pdo, $CategoryId) . '</h8></button> ';
         }
         /**
          * Pesquisa por subCategoria
          */
         if (isset($_GET ['SubCategory'])) {
             $SubCategory = (filter_var($_GET ['SubCategory']));
-            $query .= '#SubCategory > ' . DB_getSubCategoryName($pdo, $SubCategory) . ' ';
+            $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-cubes"></i>SubCategory: <h8> ' . DB_getSubCategoryName($pdo, $SubCategory) . '</h8></button>';
         }
 
-        if (isset($_GET ['PageNum'])) {
+                if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
             if ($PageNum < 0) {
                 echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
                 $query .= '#Page > 1 ';
             }
-            $query .= '#Page > ' . ($PageNum + 1) . ' ';
+            $query .= '<div class="form-group" style="padding-left:35px;">'
+                    . '<button type="button" class="btn btn-inline" disabled><i class="fa fa-home"></i> Page: ' . ($PageNum + 1) . ' </button>';
         } else {
             echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
+            
             $query .= '#Page > 1 ';
+            
             $PageNum = 0;
         }
 
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
-            $clear = '<a href="indexPub.php"> Reset</a>';
+            $clear = '<a class="btn btn-rounded btn-inline btn-secondary" href="index.php"><i class="fa fa-refresh"></i> Reset</a>'
+                   . '</div>';
         } else {
             $clear = '';
         }
-
         echo $query . $clear . '<br><br>';
 
         /**
