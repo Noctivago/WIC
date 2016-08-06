@@ -40,8 +40,7 @@ if (isset($id) && isset($uid)) {
         ?>
         <header class="sign-title">#youcanevent</header>
         <div class="form-group">
-            <input type="text" id = "Wicname" name ="Wicname" class="form-control" placeholder="Wic Planner Name"/>
-            <input type="text" id="name" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name"/>
+            <input type="text" id = "Wicname" name ="Wicname" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name"/>
         </div>
         <div class='input-group date'>
             <input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control">
