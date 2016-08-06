@@ -123,7 +123,7 @@ $msg = '';
     }
 
     function addWic(wicId) {
-        var wicName = document.getElementById("Xname").value;
+        var wicName = document.getElementById("name").value;
         var wicDate = document.getElementById("daterange3").value;
         var wId = wicId;
         if (wicName !== "") {
@@ -242,6 +242,7 @@ $msg = '';
         $('#tags-editor-textarea').tagEditor();
     });
 </script>
+
         
 <!--<link rel="stylesheet" href="css/lib/clockpicker/bootstrap-clockpicker.min.css">-->
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>

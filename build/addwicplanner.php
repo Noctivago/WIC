@@ -40,7 +40,7 @@ if (isset($id) && isset($uid)) {
         ?>
         <header class="sign-title">#youcanevent</header>
         <div class="form-group">
-            <input type="text" id = "Xname" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name"/>
+            <input type="text" id="name" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name"/>
         </div>
         <div class='input-group date'>
             <input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control">
@@ -62,43 +62,43 @@ if (isset($id) && isset($uid)) {
 
 
 <script>
-    $(function () {
-        function cb(start, end) {
-            $('#reportrange span').html(start.format('YYYY, MMMM D') + ' - ' + end.format('YYYY, MMMM D'));
-        }
-        cb(moment().subtract(29, 'days'), moment());
+            $(function () {
+                function cb(start, end) {
+                    $('#reportrange span').html(start.format('YYYY, MMMM D') + ' - ' + end.format('YYYY, MMMM D'));
+                }
+                cb(moment().subtract(29, 'days'), moment());
 
-        $('#daterange').daterangepicker({
-            "timePicker": true,
-            ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-            },
-            "linkedCalendars": false,
-            "autoUpdateInput": false,
-            "alwaysShowCalendars": true,
-            "showWeekNumbers": true,
-            "showDropdowns": true,
-            "showISOWeekNumbers": true
-        });
+                $('#daterange').daterangepicker({
+                    "timePicker": true,
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                    },
+                    "linkedCalendars": false,
+                    "autoUpdateInput": false,
+                    "alwaysShowCalendars": true,
+                    "showWeekNumbers": true,
+                    "showDropdowns": true,
+                    "showISOWeekNumbers": true
+                });
 
-        $('#daterange2').daterangepicker();
+                $('#daterange2').daterangepicker();
 
-        $('#daterange3').daterangepicker({
-            singleDatePicker: true,
-            showDropdowns: true
-        });
+                $('#daterange3').daterangepicker({
+                    singleDatePicker: true,
+                    showDropdowns: true
+                });
 
-        $('#daterange').on('show.daterangepicker', function (ev, picker) {
+                $('#daterange').on('show.daterangepicker', function (ev, picker) {
 //				$('.daterangepicker select').selectpicker({
 //					size: 10
 //				});
-        });
-    });
+                });
+            });
 </script>
 
 
