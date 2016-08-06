@@ -432,7 +432,7 @@ of what you want. Example search for: Coffee break or Ballrooms "
                 <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '3');"><i class="fa fa-music"></i> Entertainment</a>
                 </li>
-                <li class="brown with-sub">
+                <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '4');"><i class="fa fa-star"></i>Decoration</a>
                 </li>
                 <!--                <li class="gold with-sub">
