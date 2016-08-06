@@ -174,7 +174,7 @@ $msg = '';
                             </div>
                         </div>
                         <div class = "form-control-wrapper form-control-icon-left">
-                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"  onchange="myFunction()" required>
+                            <select id = "countrySelect" class="bootstrap-select bootstrap-select-arrow" placeholder="Country"   required>
                                 <option value="0">Country</option>
                                 <?php DB_getCountryAsSelect($pdo) ?>
                             </select>
