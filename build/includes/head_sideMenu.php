@@ -73,7 +73,15 @@ include '../build/db/session.php';
                         <div class="site-header-shown">
                             <div class="dropdown dropdown-notification"
                             
-                            <div class="dropdown dropdown-menu-right" >
+                            <div class="dropdown dropdown-notification add-customers-screen-user"  >
+                                <a href="#"
+                                   class="header-alarm  "
+                                   id="dd-messages"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
+<!--                                    <i class="font-icon-plus" <input Type="button" Value="Teste" ondblclick="window.location.href = 'my_wicplanner.php'"> </i>-->
+                                </a>
                                 <button type="button"
 						class="btn btn-inline btn-rounded btn-success"
 						title="Quem nada não se afoga"
