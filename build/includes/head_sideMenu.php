@@ -314,7 +314,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                 
                                 <div class="help-dropdown">
 	                            <button type="button">
-	                                <i class="fa fa-question-circle"></i>
+                                        <i class="fa fa-question-circle" style="color: darkolivegreen"></i>
 	                            </button>
 	                            <div class="help-dropdown-popup">
 	                                <div class="help-dropdown-popup-side">
