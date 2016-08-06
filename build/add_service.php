@@ -150,22 +150,16 @@ $msg = '';
                     <?= $msg; ?>
                     <form class = "sign-box" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="formm" enctype="multipart/form-data" method="post">
                         <!--PROFILE SERVICE PIC-->
-                        <button class = "btn btn-rounded btn-file" >
-                            Add Profile Picture
-
-                            <input type = "file" id = "uploadFile" accept = "images/*" name = "uploadFile" name="image" >
-                        </button>
-                        <!--<input id="uploadFile" name="uploadFile" accept = "images/*" type="file" name="image" class="img" />-->
-
-                        <!--Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple class = "btn btn-rounded btn-file"><br/>-->
-
-                        <button class = "btn btn-rounded btn-file" >
-                            Add Pictures to my Album
-
-                            Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
-
-                        </button>
-
+                        <!--                        <button class = "btn btn-rounded btn-file" >
+                                                    Add Profile Picture
+                                                    <input type = "file" id = "uploadFile" accept = "images/*" name = "uploadFile" name="image" >
+                                                </button>
+                                                <button class = "btn btn-rounded btn-file" >
+                                                    Add Pictures to my Album
+                                                    Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
+                                                </button>-->
+                        Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="uploadFile" class="form-control" />
+                        New Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple class="form-control"/><br/>
 
 
                         <div id="dvpreview"></div>
