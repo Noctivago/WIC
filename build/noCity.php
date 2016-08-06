@@ -23,7 +23,7 @@ include ("includes/head_sideMenu.php");
 				<div class="add-customers-screen tbl">
 					<div class="add-customers-screen-in">
 						<p class="lead color-blue-grey-lighter"> I'm sorry ! Not available yet ;-( Help us building the biggest community of events and entertainment worldwide here.</p>
-						<h2>And be the first to know the official opening of your city <i class="fa fa-smile-o" aria-hidden="true"></i></h2>
+						<!--<h2>And be the first to know the official opening of your city <i class="fa fa-smile-o" aria-hidden="true"></i></h2>-->
 						<a href="#" class="btn">Newsletter Subscribe</a>
 					</div>
 				</div>
@@ -39,7 +39,7 @@ include ("includes/head_sideMenu.php");
 <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
 <script src="js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
- <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
+<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
 <script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
