@@ -338,7 +338,7 @@ include '../build/db/session.php';
 						data-toggle="popover"
 						data-placement="right"
 						data-content="Comer e o coçar o mal é começar "
-                                                style=""><i class=""></i>
+                                                style=""><i class="">?</i>
                     
 				</button>
             </li>
