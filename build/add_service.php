@@ -179,20 +179,20 @@ $msg = '';
                                 <?php DB_getCountryAsSelect($pdo) ?>
                             </select>
                         </div>
-
+<!--
                         <div class = "form-control-wrapper form-control-icon-left">
                             <select id = "stateSelect" name="stateSelect" class=" bootstrap-select bootstrap-select-arrow" placeholder="City" onchange="myFunctionC()" required>
                                 <option value="0">State</option>
-                                <?php DB_getStateAsSelectByCountrySelected($pdo, $Country_Id)?>
+                                <?php // DB_getStateAsSelectByCountrySelected($pdo, $Country_Id)?>
                             </select>
                         </div>
                         
                         <div class = "form-control-wrapper form-control-icon-left">
                             <select id = "citySelect" name="citySelect" class="cities bootstrap-select bootstrap-select-arrow" placeholder="City" required>
                                 <option value="0">City</option>
-                                <?php DB_getCityAsSelectByStateSelected($pdo, $State_Id)?>
+                                <?php // DB_getCityAsSelectByStateSelected($pdo, $State_Id)?>
                             </select>
-                        </div>
+                        </div>-->
                         
                        
                              
