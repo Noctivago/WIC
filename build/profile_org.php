@@ -11,7 +11,7 @@ include_once '../build/db/session.php';
                 
                 
                 
-                
+<!--                
                 <div class="dropdown dropdown-lang open"  >
 
                                 <button type="button"
@@ -31,7 +31,7 @@ include_once '../build/db/session.php';
 
 
                         </div>
-                
+                -->
  
                 
                 
