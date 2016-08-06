@@ -426,7 +426,7 @@ include ("includes/head_sideMenu.php");
 
 
 <script src="js/lib/salvattore/salvattore.min.js"></script>  
-
+<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
         <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
         <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
@@ -438,7 +438,7 @@ include ("includes/head_sideMenu.php");
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.contextMenu.min.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>
-	<script>
+<!--	<script>
 		$(document).ready(function() {
 			$('.panel').lobiPanel({
 				sortable: true
@@ -534,7 +534,7 @@ include ("includes/head_sideMenu.php");
 				$('.dahsboard-column').matchHeight();
 			});
 		});
-	</script>
+	</script>-->
         
         <!--scrpit-messenger-->
         <script>
