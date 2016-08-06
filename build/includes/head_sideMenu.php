@@ -228,14 +228,20 @@ include '../build/db/session.php';
 
                                 <button type="button"
 						class="btn btn-inline btn-rounded btn-success-outline"
-						title="Quem não arrisca não petisca"
+						title="Profile help"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="left"
-						data-content="Quem está no convento é que sabe o que lhe vai dentro  "
+						data-content="# My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
+
+# Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
                                                 style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="fa fa-question"></i>
                     
 				</button>
+                                                            
+                                                            # My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
+
+# Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog.
 
 
                         </div>
