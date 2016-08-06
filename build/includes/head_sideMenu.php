@@ -277,7 +277,64 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                     </div>
                                 </div>
                                 
-                        <div class="help-dropdown">
+
+                                
+
+                                <div class="dropdown dropdown-typical">
+                                    <a class="header" id="dd-header-marketing" data-target="#" href="#" >
+                                        <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                                    </a>
+                                    <br>
+                                    <br>
+
+                                </div>
+                                <div class="site-header-search-container" style="width: 250px;">
+                                    <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
+                                    <!--<input type="text" placeholder="Choose your City.."-->
+                                        <input type="text"
+                                        <?php
+                                        if (isset($_GET ['name'])) {
+                                            echo 'value = ' . (filter_var($_GET ['name']));
+                                        } else {
+                                            echo 'placeholder="Choose your City.."';
+                                        }
+                                        ?>
+                                               id="name"
+                                               class="form-control"
+                                               name="name"
+                                               type="text"
+                                               autocomplete="on"/>
+                                        <!--<button type="submit">-->
+                                        <button id= "btnName" onclick="getCitySearchValue()">
+                                            <span class="font-icon-pin-2"></span>
+                                        </button>
+                                        <div class="overlay"></div>
+                                    </form>
+                                </div>
+                                <div class="dropdown dropdown-menu-right" >
+                                <button type="button"
+						class="btn btn-rounded btn-inline btn-info font-icon-lamp "
+						title="Choose your city"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="bottom"
+						data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
+                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;">
+                    
+				</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="mobile-menu-left-overlay"></div>
+        <nav class="side-menu">
+            <ul class="side-menu-list">
+                                        <div class="help-dropdown">
 	                            <button type="button">
 	                                <i class="font-icon font-icon-help"></i>
 	                            </button>
@@ -348,75 +405,6 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 	                                </div>
 	                            </div>
 	                        </div><!--.help-dropdown-->
-                                
-
-                                <div class="dropdown dropdown-typical">
-                                    <a class="header" id="dd-header-marketing" data-target="#" href="#" >
-                                        <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                    </a>
-                                    <br>
-                                    <br>
-
-                                </div>
-                                <div class="site-header-search-container" style="width: 250px;">
-                                    <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
-                                    <!--<input type="text" placeholder="Choose your City.."-->
-                                        <input type="text"
-                                        <?php
-                                        if (isset($_GET ['name'])) {
-                                            echo 'value = ' . (filter_var($_GET ['name']));
-                                        } else {
-                                            echo 'placeholder="Choose your City.."';
-                                        }
-                                        ?>
-                                               id="name"
-                                               class="form-control"
-                                               name="name"
-                                               type="text"
-                                               autocomplete="on"/>
-                                        <!--<button type="submit">-->
-                                        <button id= "btnName" onclick="getCitySearchValue()">
-                                            <span class="font-icon-pin-2"></span>
-                                        </button>
-                                        <div class="overlay"></div>
-                                    </form>
-                                </div>
-                                <div class="dropdown dropdown-menu-right" >
-                                <button type="button"
-						class="btn btn-rounded btn-inline btn-info font-icon-lamp "
-						title="Choose your city"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="bottom"
-						data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;">
-                    
-				</button>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="mobile-menu-left-overlay"></div>
-        <nav class="side-menu">
-            <ul class="side-menu-list">
-                <button type="button"
-						class="btn btn-inline btn-rounded btn-info sty "
-						title="Start Planning"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="right"
-						data-content="Here you can find all the needs for your event clicking 
-separately on each category or by doing an advanced search
-of what you want. Example search for: Coffee break or Ballrooms "
-                                                style="margin: 0px auto auto 190px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 1px;"><i class="font-icon font-icon-lamp" style="margin:82px auto auto 174px;"></i>
-                    
-				</button>
-                
 
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <?php
