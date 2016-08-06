@@ -6,10 +6,10 @@ include_once '../build/db/dbconn.php';
 ob_start();
 session_start();
 
-//if (isset($_GET ['redUrl'])) {
-//    $url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
-//    //$msg = $url;
-//}
+if (isset($_GET ['redUrl'])) {
+    $url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
+    //$msg = $url;
+}
 
 if (isset($_SESSION['id'])) {
     if ($_SESSION['role'] === 'organization') {
@@ -58,15 +58,16 @@ if (isset($_SESSION['id'])) {
                                 $url = (filter_var($_GET['redUrl'], FILTER_SANITIZE_URL));
                                 //$_SERVER['HTTP_HOST']
                                 header("location: http://" . $_SERVER['HTTP_HOST'] . $url);
-                            }
-                            if ($_SESSION['role'] === 'organization') {
-                                $use = $_SESSION['id'];
-                                $idOg = DB_GetOrgIdByUserBossId2($pdo, $use);
-                                $idorga = $idOg['Id'];
-                                header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/profile_org.php?Organization=$idorga");
-                            }
-                            if ($_SESSION['role'] === 'user') {
-                                header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/index.php");
+                            } else {
+                                if ($_SESSION['role'] === 'organization') {
+                                    $use = $_SESSION['id'];
+                                    $idOg = DB_GetOrgIdByUserBossId2($pdo, $use);
+                                    $idorga = $idOg['Id'];
+                                    header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/profile_org.php?Organization=$idorga");
+                                }
+                                if ($_SESSION['role'] === 'user') {
+                                    header("location: http://" . $_SERVER['HTTP_HOST'] . "/build/index.php");
+                                }
                             }
                         }
                     } else {
@@ -132,7 +133,7 @@ if (isset($_SESSION['id'])) {
                     </div>
                     <p class="sign-note">  <?= $msg; ?> </p>
                     <button type="submit" name="signin" class="btn btn-rounded">Sign in</button>
-                    <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as a planner</a><a href="sign_up_org.php"> Sign up as a vendor</a></p>
+                    <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as an user</a><a href="sign_up_org.php"> Sign up as an Organization</a></p>
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->
