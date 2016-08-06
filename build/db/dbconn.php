@@ -4033,7 +4033,7 @@ function DB_FacebookShareFunc($pdo, $serviceId) {
  */
 function DB_TwitterShareFunc($pdo, $serviceId) {
     try {
-        $rows = sql($pdo, "SELECT
+        $rows = sql($pdo, "SELECT TOP 1
         [Service].[Name] AS SNA,
         [Service].[Id] AS SID,
         [Service].[Description] AS SDE,
