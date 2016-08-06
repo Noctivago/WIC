@@ -4015,15 +4015,28 @@ function DB_FacebookShareFunc($pdo, $serviceId) {
         AND [Multimedia].[First_Page] = 1
         AND [Service].[Id] = ?", array($serviceId), "rows");
         foreach ($rows as $row) {
+//            if (strlen($row['MPP']) > 60) {
+//                echo 'https://www.facebook.com/dialog/feed?app_id=231111773916943'
+//                . '&link=https://wic.club'
+//                . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/img/wic_logo.png'
+//                . '&title=' . $row['SNA']
+//                . '&description=' . $row['SDE'];
+//            } else {
+//                echo 'https://www.facebook.com/dialog/feed?app_id=231111773916943'
+//                . '&link=https://wic.club'
+//                . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/' . $row['MPP']
+//                . '&title=' . $row['SNA']
+//                . '&description=' . $row['SDE'];
+//            }
             if (strlen($row['MPP']) > 60) {
                 echo 'https://www.facebook.com/dialog/feed?app_id=231111773916943'
-                . '&link=https://wic.club'
+                . '&link=' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']
                 . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/img/wic_logo.png'
                 . '&title=' . $row['SNA']
                 . '&description=' . $row['SDE'];
             } else {
                 echo 'https://www.facebook.com/dialog/feed?app_id=231111773916943'
-                . '&link=https://wic.club'
+                . '&link=' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']
                 . '&picture=http://' . $_SERVER['HTTP_HOST'] . '/build/' . $row['MPP']
                 . '&title=' . $row['SNA']
                 . '&description=' . $row['SDE'];
