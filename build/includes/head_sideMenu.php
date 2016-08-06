@@ -28,7 +28,7 @@ include '../build/db/session.php';
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
         
-        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        
 
 
     </head>
@@ -317,7 +317,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                 
                                 <div class="help-dropdown">
 	                            <button type="button">
-                                        <i  class="fa fa-question-circle w3-spin w3-jumbo" style="color: darkolivegreen"></i>
+                                        <i  class="fa fa-question-circle " style="color: darkolivegreen"></i>
 	                            </button>
 	                            <div class="help-dropdown-popup">
 	                                <div class="help-dropdown-popup-side">
