@@ -30,7 +30,7 @@ include_once '../build/db/session.php';
 								   data-parent="#accordion"
 								   href="#collapseOne"
 								   aria-expanded="true"
-								   aria-controls="collapseOne">
+<!--								   aria-controls="collapseOne">-->
 									What is WiC?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
@@ -61,7 +61,7 @@ include_once '../build/db/session.php';
 								   data-parent="#accordion"
 								   href="#collapseTwo"
 								   aria-expanded="false"
-								   aria-controls="collapseTwo">
+<!--								   aria-controls="collapseTwo">-->
 									How can I join WiC community?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
