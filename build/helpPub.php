@@ -19,8 +19,8 @@ include ("includes/head_sideMenu.php");
         
                     <div class="box-typical box-typical-padding" style="height: 80px">
 				<h1 class="text-center">Help</h1>
-                                <section
-                                <p>For any help contact :  <a href="mailto:support@wic.club" target="_top">support@wic.club</a> </p>
+                                <section>
+                                <p>For any help contact :  <a href="mailto:support@wic.club" target="_top">support@wic.club</a></p>
                                 <p>Support Line Center : US +1 646-564-5693 EU +351968 412 97 - +351 929 248 860</p>
                                 </section>
 				
