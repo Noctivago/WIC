@@ -73,13 +73,16 @@ include '../build/db/session.php';
                         <div class="site-header-shown">
                             <div class="dropdown dropdown-lang open"  >
 
-<button type="button"
+
+                                                                <button type="button"
 						class="btn btn-inline btn-rounded btn-success-outline"
-						title="Quem não arrisca não petisca"
+						title="Help"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="bottom"
-						data-content="Quem está no convento é que sabe o que lhe vai dentro  "
+                                                data-content="# +WiC planner: WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event :)<br>
+                                                # Inbox: Here you can take a look on the latest conversations with the suppliers
+                                                # Profile: Change the password, the name of your account, clarify your doubts and ask for help when needed."
                                                 style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="fa fa-question"></i>
                     
 				</button>
@@ -222,7 +225,7 @@ include '../build/db/session.php';
                             </div>
                                                         <div class="dropdown dropdown-lang open"  >
 
-<button type="button"
+                                <button type="button"
 						class="btn btn-inline btn-rounded btn-success-outline"
 						title="Quem não arrisca não petisca"
 						data-container="body"
@@ -232,7 +235,7 @@ include '../build/db/session.php';
                                                 style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="fa fa-question"></i>
                     
 				</button>
-                            
+
 
                         </div>
                             <button type="button" class="burger-right">
@@ -288,11 +291,11 @@ include '../build/db/session.php';
                                 <div class="dropdown dropdown-menu-right" >
                                 <button type="button"
 						class="btn btn-inline btn-rounded btn-success-outline"
-						title="Quem nada não se afoga"
+						title="Choose your city"
 						data-container="body"
 						data-toggle="popover"
 						data-placement="bottom"
-						data-content="Pau que nasce torto jamais se endireita "
+						data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
                                                 style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;border-top-width: 1px;"><i class="fa fa-question"></i>
                     
 				</button>

@@ -21,12 +21,12 @@ $msg = '';
                         <h3>My team</h3>
                     </div>
                     <!-- Botoes edit-->
-<!--                    	<div class="tbl-cell tbl-cell-action-bordered">
-                                    <button type="button" class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
-                                </div>
-                                <div class="tbl-cell tbl-cell-action-bordered">
-                                     <button type="button" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
-                                 </div>-->
+                    <!--                    	<div class="tbl-cell tbl-cell-action-bordered">
+                                                        <button type="button" class="action-btn"><i class="font-icon font-icon-pencil"></i></button>
+                                                    </div>
+                                                    <div class="tbl-cell tbl-cell-action-bordered">
+                                                         <button type="button" class="action-btn"><i class="font-icon font-icon-trash"></i></button>
+                                                     </div>-->
                 </div>
             </header>
             <div class="box-typical-body">
@@ -55,10 +55,10 @@ $msg = '';
                 </div>
             </div><!--.box-typical-body-->
         </section><!--.box-typical-->
-        
-        
 
-                        
+
+
+
 
     </div>
     <!--9234-->
@@ -88,23 +88,33 @@ $msg = '';
 <script>
     function EditRole(x) {
         //var rolei = 'row' + x;
-        var edit = 'edit'+x;
-        var talk = 'talk'+x;
-        //var role = document.getElementById('' + rolei).value;
-        var editval = document.getElementById(''+edit).checked;
-        var talkval = document.getElementById(''+talk).checked;
-       
-        $.post("ajax/EditRoleUserInService.php", {id: x, edit:editval , talk:talkval}, function (result) {
-            location.reload(2);
-        });
-        return false;
+        var answer = confirm("are you sure?")
+        if (answer) {
+            var edit = 'edit' + x;
+            var talk = 'talk' + x;
+            //var role = document.getElementById('' + rolei).value;
+            var editval = document.getElementById('' + edit).checked;
+            var talkval = document.getElementById('' + talk).checked;
+
+            $.post("ajax/EditRoleUserInService.php", {id: x, edit: editval, talk: talkval}, function (result) {
+                location.reload(2);
+            });
+            return false;
+        } else {
+
+        }
     }
+    
     function RemoveUserInService(x) {
-        alert(x);
-        $.post("ajax/RemoveUserInService.php", {id: x}, function (result) {
-            location.reload(2);
-        });
-        return false;
+        var answer = confirm("are you sure?")
+        if (answer) {
+            $.post("ajax/RemoveUserInService.php", {id: x}, function (result) {
+                location.reload(2);
+            });
+            return false;
+        } else {
+
+        }
     }
 </script>
 
@@ -120,12 +130,12 @@ $msg = '';
     });
 </script>-->
 
-	<script>
-		$(function() {
-			$('#tags-editor-textarea').tagEditor();
-		});
-	</script>
-        <script src="js/app.js"></script>
+<script>
+    $(function () {
+        $('#tags-editor-textarea').tagEditor();
+    });
+</script>
+<script src="js/app.js"></script>
 
 
 
