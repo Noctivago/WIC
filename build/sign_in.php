@@ -119,7 +119,6 @@ if (isset($_SESSION['id'])) {
                     echo '<form class="sign-box" action="<?php echo htmlspecialchars(' . $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'] . '); ?>" method="post">';
                 }
                 ?>
-                <
                 <div class="sign-avatar">
                     <img src="img/avatar-sign.png" alt="">
                 </div>
