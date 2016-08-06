@@ -159,7 +159,7 @@ $msg = '';
                                                     Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple><br/>
                                                 </button>-->
                         Change Profile photo:<input id="uploadFile"  accept = "images/*" type="file" name="uploadFile" class="form-control" />
-                        New Files: <input type="file" id="files" name="file[]" accept = "images/*" multiple class="form-control"/><br/>
+                        Add Pictures to my Album: <input type="file" id="files" name="file[]" accept = "images/*" multiple class="form-control"/><br/>
 
 
                         <div id="dvpreview"></div>
