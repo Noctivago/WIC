@@ -74,7 +74,7 @@ include '../build/db/session.php';
                             
                             <div class="dropdown dropdown-menu-right" >
                                 <button type="button"
-						class="btn btn-inline btn-rounded"
+						class="btn btn-inline btn-rounded btn-success"
 						title="Quem nada não se afoga"
 						data-container="body"
 						data-toggle="popover"
