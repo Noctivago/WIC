@@ -438,7 +438,7 @@ include ("includes/head_sideMenuPub.php");
 	<script src="js/lib/ladda-button/ladda-button-init.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.contextMenu.min.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-contextmenu/jquery.ui.position.min.js"></script>
-	<script>
+<!--	<script>
 		$(document).ready(function() {
 			$('.panel').lobiPanel({
 				sortable: true
@@ -535,7 +535,7 @@ include ("includes/head_sideMenuPub.php");
 			});
 		});
 	</script>
-        
+        -->
         <!--scrpit-messenger-->
         <script>
     $(function() {
