@@ -318,16 +318,18 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 	                            </button>
 	                            <div class="help-dropdown-popup">
 	                                <div class="help-dropdown-popup-side">
-	                                    <ul>
-<!--                                                <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
+<!--	                                    <ul>
+                                                <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
 	                                        <li><a href="#" class="active font-icon font-icon-pin-2">Chose your City</a></li>
                                                 <li><a class="font-icon font-icon-plus-1" href="#" id="3">Wic Planner</a></li>
 	                                        <li><a href="#" >Inbox</a></li>
 	                                        <li><a href="#">Importing data</a></li>
-	                                        <li><a href="#">Exporting data</a></li>-->
+	                                        <li><a href="#">Exporting data</a></li>
                                                 <li><a>First guide into WiC</a>
                                                     <span class="describe">Start Planning, and realize the Event of you life</span></li>
-	                                    </ul>
+	                                    </ul>-->
+                                            <a>First guide into WiC</a>
+                                            <span class="describe">Start Planning, and realize the Event of you life</span>
 	                                </div>
 	                                <div class="help-dropdown-popup-cont">
 	                                    <div class="help-dropdown-popup-cont-in">
