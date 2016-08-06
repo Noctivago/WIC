@@ -316,6 +316,16 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
         <div class="mobile-menu-left-overlay"></div>
         <nav class="side-menu">
             <ul class="side-menu-list">
+                <button type="button"
+						class="btn btn-inline btn-rounded "
+						title="Muita parra pouca uva"
+						data-container="body"
+						data-toggle="popover"
+						data-placement="right"
+						data-content="Comer e o coçar o mal é começar "
+                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="fa fa-question"></i>
+                    
+				</button>
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <?php
                 if ($_SESSION['role'] === 'organization') {
@@ -328,16 +338,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                 <!--<header class="side-menu-title">Advanced search</header>-->
                 <!--<form action="<?php echo $selfUrl; ?>">-->
                 <div class="col-md-10">
-                    <button type="button"
-						class="btn btn-inline btn-rounded "
-						title="Muita parra pouca uva"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="right"
-						data-content="Comer e o coçar o mal é começar "
-                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="fa fa-question"></i>
                     
-				</button>
                     <div class="typeahead-container">
                         <div class="typeahead-field">
                             <span class="typeahead-query">
