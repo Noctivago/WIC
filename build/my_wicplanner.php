@@ -124,9 +124,11 @@ $msg = '';
 
     function addWic(wicId) {
         var wicName = document.getElementById("name").value;
+        var wicNameByName = document.getElementsByName("nameByName").value;
         var wicDate = document.getElementById("daterange3").value;
         var wId = wicId;
-        if (wicName !== "") {
+//        if (wicName !== "") {
+        if (wicNameByName !== "") {
             $.ajax({
                 url: 'ajax/addWicP.php',
                 method: 'post',

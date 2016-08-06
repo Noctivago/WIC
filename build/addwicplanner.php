@@ -28,11 +28,11 @@ if (isset($id) && isset($uid)) {
 <!--    <div class="page-center">
         <div class="page-center-in">-->
 <div class="container-fluid">
-    
+
     <!--DIV ESTAVA COMO FORM-->
     <div class="sign-box">
         <?php
-        if(isset($id)) {
+        if (isset($id)) {
             echo '<div class="title-label" style="align:center;"> <h3 style="padding-left: 60px; color: #3299CC;"><i class="font-icon font-icon-plus "></i>&ensp;Edit Event</h3></div>';
         } else {
             echo '<div class="title-label" style="align:center;"> <h3 style="padding-left: 60px; color: #3299CC;"><i class="font-icon font-icon-plus "></i>&ensp;New Event</h3></div>';
@@ -40,7 +40,7 @@ if (isset($id) && isset($uid)) {
         ?>
         <header class="sign-title">#youcanevent</header>
         <div class="form-group">
-            <input type="text" id = "WICname" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name" required/>
+            <input type="text" id = "WICname" name = "nameByName" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name" required/>
         </div>
         <div class='input-group date'>
             <input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control" required>
@@ -52,53 +52,48 @@ if (isset($id) && isset($uid)) {
         <button  onclick="addWic(<?= $wicId; ?>);" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
     </div>
 </div>
+<script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
+<script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
+<script src="js/lib/daterangepicker/daterangepicker.js"></script>
+<script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
+<script>
+    $(function () {
+        function cb(start, end) {
+            $('#reportrange span').html(start.format('YYYY, MMMM D') + ' - ' + end.format('YYYY, MMMM D'));
+        }
+        cb(moment().subtract(29, 'days'), moment());
 
+        $('#daterange').daterangepicker({
+            "timePicker": true,
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            "linkedCalendars": false,
+            "autoUpdateInput": false,
+            "alwaysShowCalendars": true,
+            "showWeekNumbers": true,
+            "showDropdowns": true,
+            "showISOWeekNumbers": true
+        });
 
+        $('#daterange2').daterangepicker();
 
-	<script src="js/lib/clockpicker/bootstrap-clockpicker.min.js"></script>
-	<script src="js/lib/clockpicker/bootstrap-clockpicker-init.js"></script>
-        <script src="js/lib/daterangepicker/daterangepicker.js"></script>
-        <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
-        
-	
-	<script>
-		$(function() {
-			function cb(start, end) {
-				$('#reportrange span').html(start.format('YYYY, MMMM D') + ' - ' + end.format('YYYY, MMMM D'));
-			}
-			cb(moment().subtract(29, 'days'), moment());
+        $('#daterange3').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true
+        });
 
-			$('#daterange').daterangepicker({
-				"timePicker": true,
-				ranges: {
-					'Today': [moment(), moment()],
-					'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-					'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-					'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-					'This Month': [moment().startOf('month'), moment().endOf('month')],
-					'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-				},
-				"linkedCalendars": false,
-				"autoUpdateInput": false,
-				"alwaysShowCalendars": true,
-				"showWeekNumbers": true,
-				"showDropdowns": true,
-				"showISOWeekNumbers": true
-			});
-
-			$('#daterange2').daterangepicker();
-
-			$('#daterange3').daterangepicker({
-				singleDatePicker: true,
-				showDropdowns: true
-			});
-
-			$('#daterange').on('show.daterangepicker', function(ev, picker) {
+        $('#daterange').on('show.daterangepicker', function (ev, picker) {
 //				$('.daterangepicker select').selectpicker({
 //					size: 10
 //				});
-			});
-		});
-	</script>
+        });
+    });
+</script>
 
 
