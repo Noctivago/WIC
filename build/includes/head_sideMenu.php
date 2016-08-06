@@ -71,7 +71,7 @@ include '../build/db/session.php';
                 <div class="site-header-content">
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
-                            <div class="dropdown dropdown-lang open"  >
+<!--                            <div class="dropdown dropdown-lang open"  >
 
 
                                 
@@ -90,7 +90,7 @@ include '../build/db/session.php';
 				</button>
                             
 
-                        </div>
+                        </div>-->
 
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
                                 <a href="#"
