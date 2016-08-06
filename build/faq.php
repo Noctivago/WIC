@@ -152,37 +152,7 @@ include_once '../build/db/session.php';
 								</div>
 							</div>
 						</article>
-                                                <article class="panel">
-							<div class="panel-heading" role="tab" id="headingFive">
-								<a class="collapsed"
-								   data-toggle="collapse"
-								   data-parent="#accordion"
-								   href="#collapseFive"
-								   aria-expanded="false"
-								   aria-controls="collapseTwo">
-									How can I join WiC community?
-									<i class="font-icon font-icon-arrow-down"></i>
-								</a>
-							</div>
-							<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-								<div class="panel-collapse-in">
-									<div class="user-card-row">
-										<div class="tbl-row">
-											<div class="tbl-cell tbl-cell-photo">
-											
-											</div>
-											<div class="tbl-cell">
-											
-											</div>
-										</div>
-									</div>
-								    <p>If you’re a supplier: Register here (link here)<br></p>
-                                                                    <p>If you’re a user: Register here (link here)<br></p>
-                                                                    <p>You can use your email address to register or login using your Facebook account.</p>
-						</div>
-							</div>
-						</article>
-						<article class="panel">
+                                            <article class="panel">
 							<div class="panel-heading" role="tab" id="headingSix">
 								<a class="collapsed"
 								   data-toggle="collapse"
