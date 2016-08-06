@@ -336,9 +336,9 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 separately on each category or by doing an advanced search
 of what you want. Example search for: Coffee break or Ballrooms</span>
 	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item">
+	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-pin-2">
 	                                                Chose your City
-	                                                <span class="describe font-icon font-icon-pin-2">You should write down the city of where you wanna do the event to find the best vendors
+	                                                <span class="describe ">You should write down the city of where you wanna do the event to find the best vendors
 that fit your needs.</span>
 	                                            </a>
 	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus-1">
