@@ -89,7 +89,7 @@ include ("./db/dbconn.php");
         </div>
     </div>
 
-      </div>
+<!--      </div>-->
 
     <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
