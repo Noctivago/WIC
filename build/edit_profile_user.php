@@ -36,7 +36,7 @@ $msg = "";
 //                }
                 // Check filesize
                 if ($_FILES['file_upload']['size'] > 50000) {
-                    die('File uploaded exceeds maximum upload size.');
+                    $msg = 'File uploaded exceeds maximum upload size.';
                 }
                 // Check if the file exists
 //                if (file_exists('pics/' . $_FILES['file_upload']['name'])) {
@@ -50,7 +50,7 @@ $msg = "";
                     $picture_path = 'pics/' . $newfilename;
                     //filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
                     DB_UpdateUserPictureInformation($pdo, $userId, $picture_path);
-                    $msg = ('File uploaded successfully.');
+                    $msg = 'File uploaded successfully.';
                 }
             }
         }
@@ -64,7 +64,7 @@ $msg = "";
                     DB_UserProfile($pdo, $userId);
                     ?>
                 </form>
-                <?= $msg; ?>
+                
             </div>
 
         </div>

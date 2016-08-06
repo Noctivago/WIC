@@ -2183,6 +2183,7 @@ Change Picture
 <i class = "font-icon font-icon-user"></i>
 </div>
 </div>
+<?= $msg; ?>
 <button type = "submit" name = "save" class = "btn btn-rounded btn-success sign-up">Save Changes</button>';
         }
     } catch (Exception $ex) {
