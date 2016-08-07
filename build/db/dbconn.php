@@ -3980,7 +3980,7 @@ function DB_getServicesForPublicIndexByQuery($pdo, $CategoryId, $name, $city, $S
             </div>
             <div  class="card-typical-likes">
             <a class="btn btn-rounded btn-inline btn-primary font-icon-plus" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;" href = "../build/sign_in.php?redUrl=/build/service_profile.php?Service=' . $row['SID'] . '"></a>
-            <a class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;" href = "../build/sign_in.php?redUrl=/build/service_profile.php?Service=' . $row['SID'] . '"></a>
+            <a class="btn btn-rounded btn-inline btn-warning font-icon-comment" style="background:coral; width: 41px;height: 29px;border-color:white;padding-left: 10px;padding-right: 10px;padding-top: 3px;" href = "../build/sign_in.php?redUrl=/build/service_profile.php?Service=' . $row['SID'] . '"></a>
             </div>
             </div>     
             </article>
