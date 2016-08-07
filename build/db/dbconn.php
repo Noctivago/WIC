@@ -4085,7 +4085,12 @@ function DB_TwitterShareFunc($pdo, $serviceId) {
     }
 }
 
-
+/**
+ * UPDATE LAST LOGIN DATE
+ * @param type $pdo
+ * @param type $email
+ * @return boolean
+ */
 function DB_updateLastLoginDate($pdo, $email) {
     try {
         $d = getDateToDB();
