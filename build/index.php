@@ -1,6 +1,6 @@
 <?php
-include ("includes/head_sideMenu.php");
-include ("./db/dbconn.php");
+include_once ("includes/head_sideMenu.php");
+//include ("./db/dbconn.php");
 ?>
 
 <div class="page-content">
