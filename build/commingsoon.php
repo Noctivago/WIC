@@ -18,7 +18,7 @@ $serviceId = (filter_var($_GET['Service']));
 						<div class="add-customers-screen-user">
 							<i class="font-icon font-icon-comments"></i>
 						</div>
-						<h2>Your customers list</h2>
+						<h2>Comming soon...</h2>
 <!--						<p class="lead color-blue-grey-lighter">Create items with names, contact information<br/> and locations to speed-up dispatching.</p>
 						<a href="#" class="btn">Add customer</a>-->
 					</div>
