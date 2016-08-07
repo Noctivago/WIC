@@ -48,6 +48,8 @@ if (isset($_SESSION['id'])) {
                         $_SESSION['email'] = $row['Email'];
                         $_SESSION['password'] = $row['Password'];
                         $_SESSION['role'] = DB_getUserRole($pdo, $email);
+                        //ATUALIZA LAST LOGIN DATE
+                        DB_updateLastLoginDate($pdo, $email);
                         //$msg = 'Welcome ' . $row['Username'];
                         //SET [Login_failed] = 0
                         if (DB_setLoginFailed($pdo, $email)) {

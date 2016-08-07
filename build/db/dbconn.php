@@ -4085,4 +4085,18 @@ function DB_TwitterShareFunc($pdo, $serviceId) {
     }
 }
 
-
+/**
+ * UPDATE LAST LOGIN DATE
+ * @param type $pdo
+ * @param type $email
+ * @return boolean
+ */
+function DB_updateLastLoginDate($pdo, $email) {
+    try {
+        $d = getDateToDB();
+        $count = sql($pdo, "UPDATE [dbo].[User] SET [Last_Status_Online] = ? WHERE [Email] = ? ", array($d, $email));
+        return true;
+    } catch (Exception $exc) {
+        return false;
+    }
+}
