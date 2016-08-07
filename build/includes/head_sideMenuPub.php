@@ -186,7 +186,7 @@ if (isset($_SESSION['id'])) {
 	                                                My Team
 	                                                <span class="describe">That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes.</span>
 	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item glyphicon glyphicon-thumbs-up">
+	                                            <a href="#" class="help-dropdown-popup-item fa fa-thumbs-o-up">
 	                                                Blog
 	                                                <span class="describe">Take a look on the latest and fresh ideas about the events industry on WiC's official blog</span>
 	                                            </a>
