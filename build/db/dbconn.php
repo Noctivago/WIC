@@ -1,6 +1,6 @@
 <?php
 
-include_once './functions.php';
+include_once 'functions.php';
 
 $dbserver = "wicsqlserver.database.windows.net";
 $dbport = "1433";
@@ -3764,7 +3764,7 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
         AND [Sub_Category].[Category_Id] Like '%" . $CategoryId . "'
         AND [City].[Name] Like '%" . $city . "'
         AND [Sub_Category].[Id] Like '%" . $SubCategory . "'"
-                . " ORDER BY [Service].[Id]
+                . " ORDER BY [Service].[Id] DESC
                 OFFSET " . $pageNum . " ROWS
                 FETCH NEXT 50 ROWS ONLY", array(), "rows");
         foreach ($rows as $row) {
