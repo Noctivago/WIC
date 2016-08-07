@@ -153,7 +153,7 @@ if (isset($_SESSION['id'])) {
                                                 <li><a>First guide into WiC</a>
                                                     <span class="describe">Start Planning, and realize the Event of you life</span></li>
 	                                    </ul>-->
-<a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
+                                        <a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
                                             <span class="describe"><h5>Start exploring, and plan the Event of you life</h5></span>
 	                                </div>
 	                                <div class="help-dropdown-popup-cont">
@@ -162,13 +162,13 @@ if (isset($_SESSION['id'])) {
                                                     <a href="#" for="3" class="help-dropdown-popup-item font-icon font-icon-calend">
                                                         <i style="color: coral"></i>Start Planning
                                                         <span class="describe font-icon " for="3">Here you can find all the needs for your event clicking 
-separately on each category or by doing an advanced search
-of what you want. Example search for: Coffee break or Ballrooms</span>
+                                                            separately on each category or by doing an advanced search
+                                                            of what you want. Example search for: Coffee break or Ballrooms</span>
 	                                            </a>
 	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-pin-2">
 	                                                Chose your City
 	                                                <span class="describe ">You should write down the city of where you wanna do the event to find the best vendors
-that fit your needs.</span>
+                                                            that fit your needs.</span>             
 	                                            </a>
 	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus">
 	                                                Wic Planner
