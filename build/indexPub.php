@@ -6,14 +6,104 @@ include_once ("includes/head_sideMenuPub.php");
 <div class="page-content">
     <div class="container-fluid">
         <?php
+//        $query = '';
+//
+//        /**
+//         * Pesquisa por nome de serviçoF
+//         */
+//        if (isset($_GET ['qParam'])) {
+//            $name = (filter_var($_GET ['qParam']));
+//            $query .= '#Advanced Search Criteria > ' . $name . ' ';
+//        }
+//        /**
+//         * Pesquisa por nome da cidade
+//         */
+//        if (isset($_GET ['name'])) {
+//            $city = (filter_var($_GET ['name']));
+//            $query .= '<button type="button" class="btn btn-inline" disabled><i class="font-icon font-icon-pin-2"></i> City : <h8> ' . $city . '</h8></button> ';
+//        }
+//        /**
+//         * Pesquisa por categoria
+//         */
+//        if (isset($_GET ['Category'])) {
+//            $CategoryId = (filter_var($_GET ['Category']));
+//            $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-cubes"></i> Category: <h8> ' . DB_getCategoryName($pdo, $CategoryId) . '</h8></button> ';
+//        }
+//        /**
+//         * Pesquisa por subCategoria
+//         */
+//        if (isset($_GET ['SubCategory'])) {
+//            $SubCategory = (filter_var($_GET ['SubCategory']));
+//            $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-cubes"></i>SubCategory: <h8> ' . DB_getSubCategoryName($pdo, $SubCategory) . '</h8></button>';
+//        }
+//
+//        if (isset($_GET ['PageNum'])) {
+//            $PageNum = (filter_var($_GET ['PageNum']));
+//            if ($PageNum < 0) {
+//                echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
+//                $query .= '#Page > 1 ';
+//            }
+//            $query .= '<div class="form-group" style="padding-left:35px;">'
+//                    . '<button type="button" class="btn btn-inline" disabled><i class="fa fa-home"></i> Page: ' . ($PageNum + 1) . ' </button>';
+//        } else {
+//            echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
+//
+//            $query .= '#Page > 1 ';
+//
+//            $PageNum = 0;
+//        }
+//
+//        if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
+//            $clear = '<a class="btn btn-rounded btn-inline btn-secondary" href="index.php"><i class="fa fa-refresh"></i> Reset</a>'
+//                    . '</div>';
+//        } else {
+//            $clear = '';
+//        }
+//        echo $query . $clear . '<br><br>';
+//
+//        /**
+//         * Vai buscar as subCats da Cat
+//         */
+//        if (isset($_GET ['Category'])) {
+//            $CategoryId = (filter_var($_GET ['Category']));
+//            //DEVOLVE SUBCATS DE UMA CAT
+//            DB_GetSubCategories($pdo, $CategoryId);
+//        }
+        ?>
+        
+         <?php
         $query = '';
+
+        /**
+         * Pesquisa por nome de serviçoF
+         */
+//        if (isset($_GET ['qParam'])) {
+//            $name = (filter_var($_GET ['qParam']));
+//            $query .= '#Advanced Search Criteria > ' . $name . ' ';
+//        }
+        //        numero de pagina
+        if (isset($_GET ['PageNum'])) {
+            $PageNum = (filter_var($_GET ['PageNum']));
+            if ($PageNum < 0) {
+                echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
+                $query .= '#Page > 1 ';
+            }
+            $query .= '<div class="form-group" style="padding-left:35px;">'
+                    . '<button type="button" class="btn btn-inline" disabled><i class="fa fa-home"></i> Page: ' . ($PageNum + 1) . ' </button>';
+        } else {
+            echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
+
+            $query .= '#Page > 1 ';
+
+            $PageNum = 0;
+        }
 
         /**
          * Pesquisa por nome de serviçoF
          */
         if (isset($_GET ['qParam'])) {
             $name = (filter_var($_GET ['qParam']));
-            $query .= '#Advanced Search Criteria > ' . $name . ' ';
+            $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-home"></i>Advanced Search Criteria : ' . $name . '</button> ';
         }
         /**
          * Pesquisa por nome da cidade
@@ -37,21 +127,7 @@ include_once ("includes/head_sideMenuPub.php");
             $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-cubes"></i>SubCategory: <h8> ' . DB_getSubCategoryName($pdo, $SubCategory) . '</h8></button>';
         }
 
-        if (isset($_GET ['PageNum'])) {
-            $PageNum = (filter_var($_GET ['PageNum']));
-            if ($PageNum < 0) {
-                echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
-                $query .= '#Page > 1 ';
-            }
-            $query .= '<div class="form-group" style="padding-left:35px;">'
-                    . '<button type="button" class="btn btn-inline" disabled><i class="fa fa-home"></i> Page: ' . ($PageNum + 1) . ' </button>';
-        } else {
-            echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
-
-            $query .= '#Page > 1 ';
-
-            $PageNum = 0;
-        }
+//        botao reset
 
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
             $clear = '<a class="btn btn-rounded btn-inline btn-secondary" href="index.php"><i class="fa fa-refresh"></i> Reset</a>'
@@ -59,7 +135,8 @@ include_once ("includes/head_sideMenuPub.php");
         } else {
             $clear = '';
         }
-        echo $query . $clear . '<br><br>';
+
+        echo $query . $clear . '<br>';
 
         /**
          * Vai buscar as subCats da Cat
