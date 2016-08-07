@@ -13,7 +13,7 @@ $serviceId = (filter_var($_GET['Service']));
         
         
         <div class="box-typical box-typical-full-height">
-				<div class="add-customers-screen tbl">
+            <div class="add-customers-screen tbl" style="height: 530px;">
 					<div class="add-customers-screen-in">
 						<div class="add-customers-screen-user">
 							<i class="font-icon font-icon-comments"></i>
