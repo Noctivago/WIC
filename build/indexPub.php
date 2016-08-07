@@ -1,6 +1,6 @@
 <?php
-include ("includes/head_sideMenuPub.php");
-include ("./db/dbconn.php");
+include_once ("includes/head_sideMenuPub.php");
+//include ("./db/dbconn.php");
 ?>
 
 <div class="page-content">
@@ -20,14 +20,14 @@ include ("./db/dbconn.php");
          */
         if (isset($_GET ['name'])) {
             $city = (filter_var($_GET ['name']));
-             $query .= '<button type="button" class="btn btn-inline" disabled><i class="font-icon font-icon-pin-2"></i> City : <h8> ' . $city . '</h8></button> ';
+            $query .= '<button type="button" class="btn btn-inline" disabled><i class="font-icon font-icon-pin-2"></i> City : <h8> ' . $city . '</h8></button> ';
         }
         /**
          * Pesquisa por categoria
          */
         if (isset($_GET ['Category'])) {
             $CategoryId = (filter_var($_GET ['Category']));
-             $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-cubes"></i> Category: <h8> ' . DB_getCategoryName($pdo, $CategoryId) . '</h8></button> ';
+            $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-cubes"></i> Category: <h8> ' . DB_getCategoryName($pdo, $CategoryId) . '</h8></button> ';
         }
         /**
          * Pesquisa por subCategoria
@@ -37,7 +37,7 @@ include ("./db/dbconn.php");
             $query .= '<button type="button" class="btn btn-inline" disabled><i class="fa fa-cubes"></i>SubCategory: <h8> ' . DB_getSubCategoryName($pdo, $SubCategory) . '</h8></button>';
         }
 
-                if (isset($_GET ['PageNum'])) {
+        if (isset($_GET ['PageNum'])) {
             $PageNum = (filter_var($_GET ['PageNum']));
             if ($PageNum < 0) {
                 echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
@@ -47,15 +47,15 @@ include ("./db/dbconn.php");
                     . '<button type="button" class="btn btn-inline" disabled><i class="fa fa-home"></i> Page: ' . ($PageNum + 1) . ' </button>';
         } else {
             echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
-            
+
             $query .= '#Page > 1 ';
-            
+
             $PageNum = 0;
         }
 
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
             $clear = '<a class="btn btn-rounded btn-inline btn-secondary" href="index.php"><i class="fa fa-refresh"></i> Reset</a>'
-                   . '</div>';
+                    . '</div>';
         } else {
             $clear = '';
         }
@@ -84,15 +84,22 @@ include ("./db/dbconn.php");
         </div>
         <div class="clear"></div>
 
-        <div class="right" style="margin-left: 450px; padding-left: 35px;" >
+       <section class="center-block" style="margin: 0px auto; display: block; max-width: 300px; position: static;" >
             <?php
             echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum - 1) . ')" type="button">Previous</button>';
-            echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
+            if (($PageNum + 1) > ($numPag / 50)) {
+
+                echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
+//           echo '<button onclick="setPage(' . ($PageNum) . ')" type="button">>></button>';
+            } else {
+                echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
+            }
             ?>
-        </div>
+
+        </section>
     </div>
 
-<!--      </div>-->
+    <!--      </div>-->
 
     <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="js/lib/tether/tether.min.js" type="text/javascript"></script>
@@ -105,8 +112,8 @@ include ("./db/dbconn.php");
     <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
     <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    
-    
+
+
     <script src="js/lib/salvattore/salvattore.min.js"></script>
 
     <!--MAKE RADIO LOOKS LIKE A CHECKBOX-->

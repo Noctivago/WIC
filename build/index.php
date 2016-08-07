@@ -26,12 +26,12 @@ include_once ("includes/head_sideMenu.php");
                     . '<button type="button" class="btn btn-inline" disabled><i class="fa fa-home"></i> Page: ' . ($PageNum + 1) . ' </button>';
         } else {
             echo '<script>updateQueryStringParameter("PageNum","0"); </script>';
-            
+
             $query .= '#Page > 1 ';
-            
+
             $PageNum = 0;
         }
-        
+
         /**
          * Pesquisa por nome de serviçoF
          */
@@ -62,7 +62,7 @@ include_once ("includes/head_sideMenu.php");
         }
 
 //        botao reset
-        
+
         if (isset($_GET ['qParam']) || isset($_GET ['name']) || isset($_GET ['PageNum']) || isset($_GET ['Category']) || isset($_GET ['SubCategory'])) {
             $clear = '<a class="btn btn-rounded btn-inline btn-secondary" href="index.php"><i class="fa fa-refresh"></i> Reset</a>'
                     . '</div>';
@@ -95,14 +95,14 @@ include_once ("includes/head_sideMenu.php");
 
         <section class="center-block" style="margin: 0px auto; display: block; max-width: 300px; position: static;" >
             <?php
-           echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum - 1) . ')" type="button">Previous</button>';
-       if (($PageNum + 1) > ($numPag / 50)) {
-           
-            echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
+            echo '<button class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum - 1) . ')" type="button">Previous</button>';
+            if (($PageNum + 1) > ($numPag / 50)) {
+
+                echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
 //           echo '<button onclick="setPage(' . ($PageNum) . ')" type="button">>></button>';
-        } else {
-            echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
-       }
+            } else {
+                echo '<button  class="btn btn-rounded btn-inline btn-secondary-outline" onclick="setPage(' . ($PageNum + 1) . ')" type="button">Next</button>';
+            }
             ?>
 
         </section>
@@ -119,14 +119,14 @@ include_once ("includes/head_sideMenu.php");
     <script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
     <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    
-   
+
+
 
 
 
 
     <script src="js/lib/salvattore/salvattore.min.js"></script>
-    
+
 
     <!--MAKE RADIO LOOKS LIKE A CHECKBOX-->
     <style type="text/css">
@@ -268,7 +268,7 @@ include_once ("includes/head_sideMenu.php");
     <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="js/lib/select2/select2.full.min.js"></script>
 
-    
+
 
 
     <!--O PROXIMO SCRIPT DESABILITA BOTAO DIREITO-->

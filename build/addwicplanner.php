@@ -23,7 +23,7 @@ if (isset($id) && isset($uid)) {
 } else {
     $wicId = 0;
     $wicInfo["Name"] = '';
-    $wicInfo["Event_Date"] = '01-08-2016';
+    $wicInfo["Event_Date"] = '01-08-2099';
 //    $wicInfo["Event_Date"] = '2016/08/01';
 }
 ?>
