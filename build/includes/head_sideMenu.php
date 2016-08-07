@@ -396,6 +396,65 @@ that fit your needs.</span>
         </header>
 
         <div class="mobile-menu-left-overlay"></div>
+        <div class="help-dropdown">
+	                            <button type="button">
+                                        <i  class="fa fa-question-circle " style="color: darkolivegreen"></i>
+	                            </button>
+	                            <div class="help-dropdown-popup">
+	                                <div class="help-dropdown-popup-side">
+<!--	                                    <ul>
+                                                <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
+	                                        <li><a href="#" class="active font-icon font-icon-pin-2">Chose your City</a></li>
+                                                <li><a class="font-icon font-icon-plus-1" href="#" id="3">Wic Planner</a></li>
+	                                        <li><a href="#" >Inbox</a></li>
+	                                        <li><a href="#">Importing data</a></li>
+	                                        <li><a href="#">Exporting data</a></li>
+                                                <li><a>First guide into WiC</a>
+                                                    <span class="describe">Start Planning, and realize the Event of you life</span></li>
+	                                    </ul>-->
+<a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
+                                            <span class="describe"><h5>Start exploring, and plan the Event of you life</h5></span>
+	                                </div>
+	                                <div class="help-dropdown-popup-cont">
+	                                    <div class="help-dropdown-popup-cont-in">
+	                                        <div class="jscroll">
+                                                    <a href="#" for="3" class="help-dropdown-popup-item font-icon font-icon-calend">
+                                                        <i style="color: coral"></i>Start Planning
+                                                        <span class="describe font-icon " for="3">Here you can find all the needs for your event clicking 
+separately on each category or by doing an advanced search
+of what you want. Example search for: Coffee break or Ballrooms</span>
+	                                            </a>
+	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-pin-2">
+	                                                Chose your City
+	                                                <span class="describe ">You should write down the city of where you wanna do the event to find the best vendors
+that fit your needs.</span>
+	                                            </a>
+	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus">
+	                                                Wic Planner
+	                                                <span class="describe">WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event </span>
+	                                            </a>
+	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-comments">
+	                                                Inbox
+	                                                <span class="describe">Here you can take a look on the latest conversations with the suppliers</span>
+	                                            </a>
+                                                    <a href="#" class="help-dropdown-popup-item"><img style="width: 32px;" src="img/avatar-2-64.png">
+	                                                Profile
+	                                                <span class="describe">Change the password, the name of your account, clarify your doubts and ask for help when needed. </span>
+	                                            </a>
+	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-users-group">
+	                                                My Team
+	                                                <span class="describe">That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes.</span>
+	                                            </a>
+	                                            <a href="#" class="help-dropdown-popup-item fa fa-thumbs-o-up">
+	                                                Blog
+	                                                <span class="describe">Take a look on the latest and fresh ideas about the events industry on WiC's official blog</span>
+	                                            </a>
+ 
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div><!--.help-dropdown-->
         <nav class="side-menu">
             <ul class="side-menu-list">
                                         
