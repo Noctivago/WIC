@@ -28,13 +28,8 @@ include '../build/db/session.php';
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
-<!--        <style>
-        input, textarea {border:1px solid #CCC;margin:0px;padding:0px}
 
-        #body {max-width:800px;margin:auto}
-        #log {width:100%;height:400px}
-        #message {width:100%;line-height:20px}
-</style>-->
+        <!--        COISAS CHAT-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="../chat/fwebsocket.js"></script>
         <script>
@@ -71,23 +66,25 @@ include '../build/db/session.php';
                 //Let the user know we're connected
                 Server.bind('open', function () {
                     //log("Connected.");
+                    console.log("Connected.");
                 });
 
                 //OH NOES! Disconnection occurred.
                 Server.bind('close', function (data) {
                     //log("Disconnected.");
+                    console.log("Disconnected.");
                 });
 
                 //Log any messages sent from server
                 Server.bind('message', function (payload) {
                     //log(payload);
+                    console.log("payload.");
                 });
 
                 Server.connect();
             });
         </script>
-
-
+        <!--COISAS CHAT-->
 
     </head>
 
