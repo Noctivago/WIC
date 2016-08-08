@@ -79,58 +79,87 @@ include '../build/db/session.php';
 <script type="text/javascript">
 $(document).ready(function() {	
 
-		var id = '#dialog';
-	
-		//Get the screen height and width
-		var maskHeight = $(document).height();
-		var maskWidth = $(window).width();
-	
-		//Set heigth and width to mask to fill up the whole screen
-		$('#mask').css({'width':maskWidth,'height':maskHeight});
-		
-		//transition effect		
-		$('#mask').fadeIn(1000);	
-		$('#mask').fadeTo("slow",0.8);	
-	
-		//Get the window height and width
-		var winH = $(window).height();
-		var winW = $(window).width();
-              
-		//Set the popup window to center
-		$(id).css('top',  winH/2-$(id).height()/0.51);
-		$(id).css('left', winW/2-$(id).width()/2);
-	
-		//transition effect
-		$(id).fadeIn(2000); 	
-	
-	//if close button is clicked
-	$('.window .close').click(function (e) {
-		//Cancel the link behavior
-		e.preventDefault();
-		
-		$('#mask').hide();
-		$('.window').hide();
-	});		
-	
-	//if mask is clicked
-	$('#mask').click(function () {
-		$(this).hide();
-		$('.window').hide();
-	});		
-	
-});
+        <script type="text/javascript">
+            $(document).ready(function () {
 
-</script>
+                var id = '#dialog';
+
+                //Get the screen height and width
+                var maskHeight = $(document).height();
+                var maskWidth = $(window).width();
+
+                //Set heigth and width to mask to fill up the whole screen
+                $('#mask').css({'width': maskWidth, 'height': maskHeight});
+
+                //transition effect		
+                $('#mask').fadeIn(1000);
+                $('#mask').fadeTo("slow", 0.8);
+
+                //Get the window height and width
+                var winH = $(window).height();
+                var winW = $(window).width();
+
+                //Set the popup window to center
+                $(id).css('top', winH / 2 - $(id).height() / 0.51);
+                $(id).css('left', winW / 2 - $(id).width() / 2);
+
+                //transition effect
+                $(id).fadeIn(2000);
+
+                //if close button is clicked
+                $('.window .close').click(function (e) {
+                    //Cancel the link behavior
+                    e.preventDefault();
+
+                    $('#mask').hide();
+                    $('.window').hide();
+                });
+
+                //if mask is clicked
+                $('#mask').click(function () {
+                    $(this).hide();
+                    $('.window').hide();
+                });
+
+            });
+
+        </script>
 
 
-<style type="text/css">
-/*body {
-font-family:verdana;
-font-size:15px;
-}
+        <style type="text/css">
+            /*body {
+            font-family:verdana;
+            font-size:15px;
+            }
+            
+            a {color:#333; text-decoration:none}
+            a:hover {color:#ccc; text-decoration:none}*/
 
-a {color:#333; text-decoration:none}
-a:hover {color:#ccc; text-decoration:none}*/
+            #mask {
+                position:absolute;
+                left:0;
+                top:0;
+                z-index:9000;
+                background-color:#000;
+                display:none;
+            }  
+            #boxes .window {
+                position:absolute;
+                left:0;
+                top:0;
+                width:440px;
+                height:200px;
+                display:none;
+                z-index:9999;
+                padding:20px;
+            }
+            #boxes #dialog {
+                width:450px; 
+                height:600px;
+                padding:10px;
+                background-color:#ffffff;
+            }
+        </style>
 
 #mask {
   position:absolute;
@@ -427,76 +456,76 @@ a:hover {color:#ccc; text-decoration:none}*/
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
 
-                                                                   <select class="bootstrap-select">
+                                    <select class="bootstrap-select">
                                         <option disabled data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>
 
-								<optgroup label="Portugal">
-                                                                        <option>Braga</option>
-									<option>Porto</option>
-									<option>Lisboa</option>
-								</optgroup>
-                                                                
-                                                                <optgroup label="EUA">
-                                                                        <option>Los Angeles</option>
-                                                                        <option data-content='<span class="font-icon font-icon-dots"></span>Choose your City' disabled>New York</option>
-									<option disabled>Orlando</option>
-                                                                        <option disabled>Austin</option>
-									<option disabled>Chicago</option>
-									<option disabled>Las Vegas</option>
-									<option disabled>San Francisco</option>
-									<option disabled>San Diego</option>
-									<option disabled>Washington DC</option>
-									<option disabled>Miami</option>
-									<option disabled >Houston</option>
-									<option disabled>Seattle</option>
-								</optgroup>
-                                                                
-                                                                <optgroup label="England">
-									<option>London</option>
-								</optgroup>
-                                                                
-								<optgroup label="France">
-									<option disabled>Paris</option>
-									<option disabled>Lyon</option>
-								</optgroup>
-								
-								<optgroup label="Belgium">
-									<option disabled>Brussels</option>
-								</optgroup>
-								<optgroup label="Sweden">
-									<option disabled>Stockholm</option>
-								</optgroup>
-								<optgroup label="Denmark">
-									<option disabled>Copenhagen</option>
-								</optgroup>
-								<optgroup label="Netherlands">
-									<option disabled>Amsterdam</option>
-								</optgroup>
-								<optgroup label="Brasil">
-									<option disabled>Rio de Janeiro</option>
-                                                                        <option disabled>São Paulo</option>
-									<option disabled>Porto Alegre</option>
-                                                                        <option disabled>Florianopolis</option>
-                                                                        <option disabled>Brasilia</option>
-								</optgroup>
-								<optgroup label="Canada">
-									<option disabled>Toronto</option>
-                                                                        <option disabled>Vancouver</option>
-								</optgroup>
-								
-								<optgroup label="China">
-									<option disabled>Hong Kong</option>
-								</optgroup>
-								<optgroup label="United Arab Emirates">
-									<option disabled>Dubai</option>
-								</optgroup>
-								<optgroup label="Singapore">
-									<option disabled>London</option>
-								</optgroup>
-								<optgroup label="Australia">
-									<option disabled>Sydney</option>
-								</optgroup>
-							</select>
+                                        <optgroup label="Portugal">
+                                            <option onclick="setCityValue(this.value)">Braga</option>
+                                            <option>Porto</option>
+                                            <option>Lisboa</option>
+                                        </optgroup>
+
+                                        <optgroup label="EUA">
+                                            <option>Los Angeles</option>
+                                            <option data-content='<span class="font-icon font-icon-dots"></span>Choose your City' disabled>New York</option>
+                                            <option disabled>Orlando</option>
+                                            <option disabled>Austin</option>
+                                            <option disabled>Chicago</option>
+                                            <option disabled>Las Vegas</option>
+                                            <option disabled>San Francisco</option>
+                                            <option disabled>San Diego</option>
+                                            <option disabled>Washington DC</option>
+                                            <option disabled>Miami</option>
+                                            <option disabled >Houston</option>
+                                            <option disabled>Seattle</option>
+                                        </optgroup>
+
+                                        <optgroup label="England">
+                                            <option>London</option>
+                                        </optgroup>
+
+                                        <optgroup label="France">
+                                            <option disabled>Paris</option>
+                                            <option disabled>Lyon</option>
+                                        </optgroup>
+
+                                        <optgroup label="Belgium">
+                                            <option disabled>Brussels</option>
+                                        </optgroup>
+                                        <optgroup label="Sweden">
+                                            <option disabled>Stockholm</option>
+                                        </optgroup>
+                                        <optgroup label="Denmark">
+                                            <option disabled>Copenhagen</option>
+                                        </optgroup>
+                                        <optgroup label="Netherlands">
+                                            <option disabled>Amsterdam</option>
+                                        </optgroup>
+                                        <optgroup label="Brasil">
+                                            <option disabled>Rio de Janeiro</option>
+                                            <option disabled>São Paulo</option>
+                                            <option disabled>Porto Alegre</option>
+                                            <option disabled>Florianopolis</option>
+                                            <option disabled>Brasilia</option>
+                                        </optgroup>
+                                        <optgroup label="Canada">
+                                            <option disabled>Toronto</option>
+                                            <option disabled>Vancouver</option>
+                                        </optgroup>
+
+                                        <optgroup label="China">
+                                            <option disabled>Hong Kong</option>
+                                        </optgroup>
+                                        <optgroup label="United Arab Emirates">
+                                            <option disabled>Dubai</option>
+                                        </optgroup>
+                                        <optgroup label="Singapore">
+                                            <option disabled>London</option>
+                                        </optgroup>
+                                        <optgroup label="Australia">
+                                            <option disabled>Sydney</option>
+                                        </optgroup>
+                                    </select>
 
 
                                     <!--                                    
@@ -607,67 +636,67 @@ a:hover {color:#ccc; text-decoration:none}*/
 
         <nav class="side-menu">
             <ul class="side-menu-list">
-<!--                <div class="header">
-                    <div class="help-dropdown">
-                        <button type="button">
-                            <i  class="fa fa-question-circle " style="color: darkolivegreen"></i>
-                        </button>
-                        <div class="help-dropdown-popup">
-                            <div class="help-dropdown-popup-side">
-                                	                                    <ul>
-                                                                                <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
-                                                                                <li><a href="#" class="active font-icon font-icon-pin-2">Chose your City</a></li>
-                                                                                <li><a class="font-icon font-icon-plus-1" href="#" id="3">Wic Planner</a></li>
-                                                                                <li><a href="#" >Inbox</a></li>
-                                                                                <li><a href="#">Importing data</a></li>
-                                                                                <li><a href="#">Exporting data</a></li>
-                                                                                <li><a>First guide into WiC</a>
-                                                                                    <span class="describe">Start Planning, and realize the Event of you life</span></li>
-                                                                            </ul>
-                                <a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
-                                <span class="describe"><h5>Start exploring, and plan the Event of you life</h5></span>
-                            </div>
-                            <div class="help-dropdown-popup-cont">
-                                <div class="help-dropdown-popup-cont-in">
-                                    <div class="jscroll">
-                                        <a href="#" for="3" class="help-dropdown-popup-item font-icon font-icon-calend">
-                                            <i style="color: coral"></i>Start Planning
-                                            <span class="describe font-icon " for="3">Here you can find all the needs for your event clicking 
-                                                separately on each category or by doing an advanced search
-                                                of what you want. Example search for: Coffee break or Ballrooms</span>
-                                        </a>
-                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-pin-2">
-                                            Chose your City
-                                            <span class="describe ">You should write down the city of where you wanna do the event to find the best vendors
-                                                that fit your needs.</span>
-                                        </a>
-                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus">
-                                            Wic Planner
-                                            <span class="describe">WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event </span>
-                                        </a>
-                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-comments">
-                                            Inbox
-                                            <span class="describe">Here you can take a look on the latest conversations with the suppliers</span>
-                                        </a>
-                                        <a href="#" class="help-dropdown-popup-item"><img style="width: 32px;" src="img/avatar-2-64.png">
-                                            Profile
-                                            <span class="describe">Change the password, the name of your account, clarify your doubts and ask for help when needed. </span>
-                                        </a>
-                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-users-group">
-                                            My Team
-                                            <span class="describe">That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes.</span>
-                                        </a>
-                                        <a href="#" class="help-dropdown-popup-item fa fa-thumbs-o-up">
-                                            Blog
-                                            <span class="describe">Take a look on the latest and fresh ideas about the events industry on WiC's official blog</span>
-                                        </a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>.help-dropdown
-                </div>-->
+                <!--                <div class="header">
+                                    <div class="help-dropdown">
+                                        <button type="button">
+                                            <i  class="fa fa-question-circle " style="color: darkolivegreen"></i>
+                                        </button>
+                                        <div class="help-dropdown-popup">
+                                            <div class="help-dropdown-popup-side">
+                                                                                            <ul>
+                                                                                                <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
+                                                                                                <li><a href="#" class="active font-icon font-icon-pin-2">Chose your City</a></li>
+                                                                                                <li><a class="font-icon font-icon-plus-1" href="#" id="3">Wic Planner</a></li>
+                                                                                                <li><a href="#" >Inbox</a></li>
+                                                                                                <li><a href="#">Importing data</a></li>
+                                                                                                <li><a href="#">Exporting data</a></li>
+                                                                                                <li><a>First guide into WiC</a>
+                                                                                                    <span class="describe">Start Planning, and realize the Event of you life</span></li>
+                                                                                            </ul>
+                                                <a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
+                                                <span class="describe"><h5>Start exploring, and plan the Event of you life</h5></span>
+                                            </div>
+                                            <div class="help-dropdown-popup-cont">
+                                                <div class="help-dropdown-popup-cont-in">
+                                                    <div class="jscroll">
+                                                        <a href="#" for="3" class="help-dropdown-popup-item font-icon font-icon-calend">
+                                                            <i style="color: coral"></i>Start Planning
+                                                            <span class="describe font-icon " for="3">Here you can find all the needs for your event clicking 
+                                                                separately on each category or by doing an advanced search
+                                                                of what you want. Example search for: Coffee break or Ballrooms</span>
+                                                        </a>
+                                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-pin-2">
+                                                            Chose your City
+                                                            <span class="describe ">You should write down the city of where you wanna do the event to find the best vendors
+                                                                that fit your needs.</span>
+                                                        </a>
+                                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus">
+                                                            Wic Planner
+                                                            <span class="describe">WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event </span>
+                                                        </a>
+                                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-comments">
+                                                            Inbox
+                                                            <span class="describe">Here you can take a look on the latest conversations with the suppliers</span>
+                                                        </a>
+                                                        <a href="#" class="help-dropdown-popup-item"><img style="width: 32px;" src="img/avatar-2-64.png">
+                                                            Profile
+                                                            <span class="describe">Change the password, the name of your account, clarify your doubts and ask for help when needed. </span>
+                                                        </a>
+                                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-users-group">
+                                                            My Team
+                                                            <span class="describe">That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes.</span>
+                                                        </a>
+                                                        <a href="#" class="help-dropdown-popup-item fa fa-thumbs-o-up">
+                                                            Blog
+                                                            <span class="describe">Take a look on the latest and fresh ideas about the events industry on WiC's official blog</span>
+                                                        </a>
+                
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>.help-dropdown
+                                </div>-->
 
 
 
@@ -999,13 +1028,18 @@ a:hover {color:#ccc; text-decoration:none}*/
                     if (event.keyCode === 13 && event.shiftKey === false) {
                         getAdvancedSearchValue();
                     }
-                });
+                }); 
             }
             function getAdvancedSearchValue() {
                 changeUrlParam('PageNum', 0);
                 var x = document.getElementById('qParam').value;
                 updateQueryStringParameter('qParam', x);
             }
+
+            function setCityValue(x) {
+                updateQueryStringParameter('name', x);
+            }
+
             function getCitySearchValue() {
                 var x = document.getElementById('name').value;
                 updateQueryStringParameter('name', x);
