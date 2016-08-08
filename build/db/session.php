@@ -9,6 +9,16 @@ if (!isset($_SESSION['id'])) {
     //SE EXISTIR
 } else {
     //FAZ GET DOS VALORES
+    if (isset($_SESSION['timeout'])) {
+        # Time is in seconds. 10 * 60 = 600s = 10 minutes
+        #if ($_SESSION['timeout'] + 30 * 60 < time()) {
+        if ($_SESSION['timeout'] + 10 < time()) {
+            session_unset();
+            session_destroy();
+            header('Location:../build/sign_in.php'); // Redirecting To Home Page
+        }
+    }
+
     $sId = $_SESSION['id'];
     $sEmail = $_SESSION['email'];
     $s_pw = $_SESSION['password'];
