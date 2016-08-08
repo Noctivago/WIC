@@ -1,6 +1,6 @@
 <?php
 
-include_once './dbconn.php';
+include_once 'dbconn.php';
 //ob_start();
 session_start(); // Starting Session
 //VERIFICA SE SESSION NAO EXISTE
@@ -11,8 +11,7 @@ if (!isset($_SESSION['id'])) {
     //FAZ GET DOS VALORES
     if (isset($_SESSION['timeout'])) {
         # Time is in seconds. 10 * 60 = 600s = 10 minutes
-        #if ($_SESSION['timeout'] + 30 * 60 < time()) {
-        if ($_SESSION['timeout'] + 10 < time()) {
+        if ($_SESSION['timeout'] + 60 * 60 < time()) {
             session_unset();
             session_destroy();
             header('Location:../build/sign_in.php'); // Redirecting To Home Page
