@@ -40,7 +40,7 @@ include '../build/db/session.php';
             }
 
             $(document).ready(function () {
-                //log('Connecting...');
+                console.log('Connecting...');
                 //40.117.188.29/chatwic.eastus.cloudapp.azure.com
                 Server = new fWebSocket('ws://chatwic.eastus.cloudapp.azure.com:9000');
 
