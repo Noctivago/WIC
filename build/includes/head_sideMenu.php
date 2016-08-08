@@ -329,19 +329,76 @@ include '../build/db/session.php';
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
 
-                                    <select class="bootstrap-select">
+                                                                   <select class="bootstrap-select">
                                         <option disabled data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>
-                                        <optgroup label="Portugal">
-                                            <option>Braga</option>
-                                            <option>Porto</option>
-                                            <option>Lisboa</option>
-                                        </optgroup>
-                                        <optgroup label="Group second">
-                                            <option>Prep test</option>
-                                            <option>Catprep test</option>
-                                            <option>Third Party Test</option>
-                                        </optgroup>
-                                    </select>
+
+								<optgroup label="Portugal">
+									<option>Braga</option>
+									<option>Porto</option>
+									<option>Lisboa</option>
+								</optgroup>
+                                                                
+                                                                <optgroup label="EUA">
+                                                                        <option>Los Angeles</option>
+									<option disabled>New York</option>
+									<option disabled>Orlando</option>
+                                                                        <option disabled>Austin</option>
+									<option disabled>Chicago</option>
+									<option disabled>Las Vegas</option>
+									<option disabled>San Francisco</option>
+									<option disabled>San Diego</option>
+									<option disabled>Washington DC</option>
+									<option disabled>Miami</option>
+									<option disabled >Houston</option>
+									<option disabled>Seattle</option>
+								</optgroup>
+                                                                
+                                                                <optgroup label="England">
+									<option>London</option>
+								</optgroup>
+                                                                
+								<optgroup label="France">
+									<option disabled>Paris</option>
+									<option disabled>Lyon</option>
+								</optgroup>
+								
+								<optgroup label="Belgium">
+									<option disabled>Brussels</option>
+								</optgroup>
+								<optgroup label="Sweden">
+									<option disabled>Stockholm</option>
+								</optgroup>
+								<optgroup label="Denmark">
+									<option disabled>Copenhagen</option>
+								</optgroup>
+								<optgroup label="Netherlands">
+									<option disabled>Amsterdam</option>
+								</optgroup>
+								<optgroup label="Brasil">
+									<option disabled>Rio de Janeiro</option>
+                                                                        <option disabled>São Paulo</option>
+									<option disabled>Porto Alegre</option>
+                                                                        <option disabled>Florianopolis</option>
+                                                                        <option disabled>Brasilia</option>
+								</optgroup>
+								<optgroup label="Canada">
+									<option disabled>Toronto</option>
+                                                                        <option disabled>Vancouver</option>
+								</optgroup>
+								
+								<optgroup label="China">
+									<option disabled>Hong Kong</option>
+								</optgroup>
+								<optgroup label="United Arab Emirates">
+									<option disabled>Dubai</option>
+								</optgroup>
+								<optgroup label="Singapore">
+									<option disabled>London</option>
+								</optgroup>
+								<optgroup label="Australia">
+									<option disabled>Sydney</option>
+								</optgroup>
+							</select>
 
 
                                     <!--                                    
