@@ -34,8 +34,7 @@ include ("includes/head_sideMenu.php");
 									What is WiC?
 									<i class="font-icon font-icon-arrow-down"></i>
 								</a>
-                                                          <?php alteraFirst($pdo) ?>
-							</div>
+                                                        </div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-collapse-in">
 <!--									<div class="user-card-row">
