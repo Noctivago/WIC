@@ -173,7 +173,7 @@ if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
             function redirect()() {
                 var parent = window.opener;
                 parent.location = 'http://www.google.com';
-                window.close();
+                self.close();
             }
         </script>
         <script>
