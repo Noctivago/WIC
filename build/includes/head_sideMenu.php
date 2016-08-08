@@ -509,12 +509,12 @@ include '../build/db/session.php';
 
         <nav class="side-menu">
             <ul class="side-menu-list">
-                <div class="header">
+<!--                <div class="header">
                     <div class="help-dropdown">
                         <button type="button">
                             <i  class="fa fa-question-circle " style="color: darkolivegreen"></i>
                         </button>
-<!--                        <div class="help-dropdown-popup">
+                        <div class="help-dropdown-popup">
                             <div class="help-dropdown-popup-side">
                                 	                                    <ul>
                                                                                 <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
@@ -568,8 +568,8 @@ include '../build/db/session.php';
                                 </div>
                             </div>
                         </div>
-                    </div>.help-dropdown-->
-                </div>
+                    </div>.help-dropdown
+                </div>-->
 
 
 
