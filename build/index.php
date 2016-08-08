@@ -7,7 +7,7 @@ include_once ("includes/head_sideMenu.php");
     <div class="container-fluid">
         
         
-                            <div id="boxes" class="card-typical window" >
+                    <div id="boxes" class="card-typical window" >
             <div  id="dialog" class=" card-typical window">
 <!--                <div class="card-typical-section">
                     <div class="user-card-row">
