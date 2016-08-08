@@ -12,7 +12,9 @@ if (!isset($_SESSION['id'])) {
     if (isset($_SESSION['timeout'])) {
         # Time is in seconds. 10 * 60 = 600s = 10 minutes
         if ($_SESSION['timeout'] + 30 * 60 < time()) {
+            session_unset();
             session_destroy();
+            header('Location:../build/sign_in.php'); // Redirecting To Home Page
         }
     }
 
