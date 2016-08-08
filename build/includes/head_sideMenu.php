@@ -28,21 +28,9 @@ include '../build/db/session.php';
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
-        <!--COISAS CHAT-->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="chat/shared.js"></script>
-
-        <script>
-            var worker = new SharedWorker("shared.js");
-            worker.port.addEventListener("message", function (e) {
-                console.log("Got message: " + e.data);
-            }, false);
-            worker.port.start();
-            worker.port.postMessage("start");
-        </script>
         <!--        COISAS CHAT-->
-<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="chat/fwebsocket.js"></script>
         <script>
             var Server;
@@ -55,7 +43,7 @@ include '../build/db/session.php';
                 console.log('Connecting...');
                 //40.117.188.29/chatwic.eastus.cloudapp.azure.com
                 Server = new fWebSocket('ws://chatwic.eastus.cloudapp.azure.com:9000');
-                
+
                 //Let the user know we're connected
                 Server.bind('open', function () {
                     //log("Connected.");
@@ -76,7 +64,7 @@ include '../build/db/session.php';
 
                 Server.connect();
             });
-        </script>-->
+        </script>
         <!--COISAS CHAT-->
 
     </head>
