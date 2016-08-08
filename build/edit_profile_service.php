@@ -1,7 +1,7 @@
 <?php
 include ("includes/head_sideMenu.php");
-include_once '../build/db/dbconn.php';
-include_once '../build/db/session.php';
+//include_once '../build/db/dbconn.php';
+//include_once '../build/db/session.php';
 $serviceId = (filter_var($_GET['Service']));
 //
 $msg = '';
@@ -317,7 +317,7 @@ $msg = '';
                                             $city = $_POST['citySelect'];
                                             $msg = DB_UpdateServiceInformation($pdo, $serv, $cname, $cDescription, $cSub, $city);
                                             ?> 
-                                            <script type="text/javascript">location.href = 'http://wicplanner-testslot.azurewebsites.net/build/service_profile.php?Service=' +<?= $serv ?></script>
+                                            <script type="text/javascript">location.href = 'http://wic.club/build/service_profile.php?Service=' +<?= $serv ?></script>
                                             <?php
                                         }
                                         $data = DB_GetServiceInformation($pdo, $serviceId);
@@ -441,7 +441,7 @@ $msg = '';
 </div><!--.container-fluid-->
 </div><!--.page-content-->
 <script type="text/javascript">function viewS(id) {
-        location.href = 'http://wicplanner-testslot.azurewebsites.net/build/edit_profile_service.php?Service=' + id;
+        location.href = 'http://wic.club/build/edit_profile_service.php?Service=' + id;
     }</script>
 <script>
     function readURL(this) {
