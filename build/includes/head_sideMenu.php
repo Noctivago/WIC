@@ -1028,7 +1028,7 @@ $(document).ready(function() {
                     if (event.keyCode === 13 && event.shiftKey === false) {
                         getAdvancedSearchValue();
                     }
-                });
+                }); 
             }
             function getAdvancedSearchValue() {
                 changeUrlParam('PageNum', 0);
