@@ -333,14 +333,14 @@ include '../build/db/session.php';
                                         <option disabled data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>
 
 								<optgroup label="Portugal">
-                                                                    <option class="fa fa-hourglass-half">Braga<i class="fa fa-hourglass-half"></i></option>
+                                                                        <option>Braga<i class="fa fa-hourglass-half"></i></option>
 									<option>Porto</option>
 									<option>Lisboa</option>
 								</optgroup>
                                                                 
                                                                 <optgroup label="EUA">
                                                                         <option>Los Angeles</option>
-									<option disabled>New York</option>
+                                                                        <option data-content='<span class="fa fa-hourglass-half"></span>Choose your City' disabled>New York</option>
 									<option disabled>Orlando</option>
                                                                         <option disabled>Austin</option>
 									<option disabled>Chicago</option>
