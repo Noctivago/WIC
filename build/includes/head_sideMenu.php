@@ -296,7 +296,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                     <select class="bootstrap-select">
                                         <option disabled data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>
 								<optgroup label="Group first">
-									<option data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>
+									<option data-content='<span class="font-icon font-icon-pin-2"></span>ATUM'>PARRECO</option>
 									<option>Real Gmat Test</option>
 								</optgroup>
 								<optgroup label="Group second">
