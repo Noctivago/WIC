@@ -29,7 +29,7 @@ include '../build/db/session.php';
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         
 
         
@@ -125,7 +125,7 @@ a:hover {color:#ccc; text-decoration:none}*/
 
 
   <!--        COISAS CHAT-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        
         <script src="chat/fwebsocket.js"></script>
         <script>
             var Server;
