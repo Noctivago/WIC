@@ -36,43 +36,7 @@ include '../build/db/session.php';
         
 
 
-        <!--        COISAS CHAT-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="chat/fwebsocket.js"></script>
-        <script>
-            var Server;
-
-            function send(text) {
-                Server.send('message', text);
-            }
-
-            $(document).ready(function () {
-                console.log('Connecting...');
-                //40.117.188.29/chatwic.eastus.cloudapp.azure.com
-                Server = new fWebSocket('ws://chatwic.eastus.cloudapp.azure.com:9000');
-
-                //Let the user know we're connected
-                Server.bind('open', function () {
-                    //log("Connected.");
-                    console.log("Connected.");
-                });
-
-                //OH NOES! Disconnection occurred.
-                Server.bind('close', function (data) {
-                    //log("Disconnected.");
-                    console.log("Disconnected.");
-                });
-
-                //Log any messages sent from server
-                Server.bind('message', function (payload) {
-                    //log(payload);
-                    console.log("payload.");
-                });
-
-                Server.connect();
-            });
-        </script>
-        <!--COISAS CHAT-->
+      
         
         
        <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>-->
@@ -158,6 +122,45 @@ a:hover {color:#ccc; text-decoration:none}*/
   background-color:#ffffff;
 }
 </style>
+
+
+  <!--        COISAS CHAT-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="chat/fwebsocket.js"></script>
+        <script>
+            var Server;
+
+            function send(text) {
+                Server.send('message', text);
+            }
+
+            $(document).ready(function () {
+                console.log('Connecting...');
+                //40.117.188.29/chatwic.eastus.cloudapp.azure.com
+                Server = new fWebSocket('ws://chatwic.eastus.cloudapp.azure.com:9000');
+
+                //Let the user know we're connected
+                Server.bind('open', function () {
+                    //log("Connected.");
+                    console.log("Connected.");
+                });
+
+                //OH NOES! Disconnection occurred.
+                Server.bind('close', function (data) {
+                    //log("Disconnected.");
+                    console.log("Disconnected.");
+                });
+
+                //Log any messages sent from server
+                Server.bind('message', function (payload) {
+                    //log(payload);
+                    console.log("payload.");
+                });
+
+                Server.connect();
+            });
+        </script>
+        <!--COISAS CHAT-->
         
 
         
