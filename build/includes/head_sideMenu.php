@@ -292,27 +292,42 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
+                                    
+                                    <select class="bootstrap-select">
+								<optgroup label="Group first">
+									<option>Quant Verbal</option>
+									<option>Real Gmat Test</option>
+								</optgroup>
+								<optgroup label="Group second">
+									<option>Prep test</option>
+									<option>Catprep test</option>
+									<option>Third Party Test</option>
+								</optgroup>
+							</select>
+                                    
+                                    
+<!--                                    
                                     <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
-                                    <!--<input type="text" placeholder="Choose your City.."-->
+                                    <input type="text" placeholder="Choose your City.."
                                         <input type="text"
                                         <?php
-                                        if (isset($_GET ['name'])) {
-                                            echo 'value = ' . (filter_var($_GET ['name']));
-                                        } else {
-                                            echo 'placeholder="Choose your City.."';
-                                        }
+//                                        if (isset($_GET ['name'])) {
+//                                            echo 'value = ' . (filter_var($_GET ['name']));
+//                                        } else {
+//                                            echo 'placeholder="Choose your City.."';
+//                                        }
                                         ?>
                                                id="name"
                                                class="form-control"
                                                name="name"
                                                type="text"
                                                autocomplete="on"/>
-                                        <!--<button type="submit">-->
+                                        <button type="submit">
                                         <button id= "btnName" onclick="getCitySearchValue()">
                                             <span class="font-icon-pin-2"></span>
                                         </button>
                                         <div class="overlay"></div>
-                                    </form>
+                                    </form>-->
                                 </div>
                                 
                                 <div class="help-dropdown">
