@@ -19,7 +19,7 @@ include_once '../db/session.php';
 //echo $_SERVER['HTTP_HOST'] . '/build/my_wicplanner.php';
 //echo $_SERVER['PHP_SELF'] . $_SERVER['REQUEST_URI'];
 //echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-echo DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page);
+echo DB_getServicesForIndexCount($pdo, $CategoryId, $name, 'Porto', $SubCategory, $page);
 //echo '<br>http://' . $_SERVER['HTTP_HOST'];
 //echo '<br>';
 //$EM = "paulo.cunha@esprominho.com";

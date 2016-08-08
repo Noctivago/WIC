@@ -100,10 +100,8 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         echo '<option value="0">State</option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
-            
         }
         echo '</select>';
-
     } catch (PDOException $e) {
         echo 'ERROR READING STATE TABLE';
         die();
@@ -3878,10 +3876,10 @@ function DB_getSubCategoryName($pdo, $SubCategory) {
  * @param type $pdo
  * @param type $CategoryId
  */
-function DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page) {
-    $pageNum = $page * 50;
+function DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory) {
+
     try {
-        $rows = sql($pdo, "SELECT COUNT(*)
+        $rows = sql($pdo, "SELECT COUNT(*) AS COUNTER
         FROM SERVICE
         join [Multimedia]
         on [Multimedia].[Service_Id] = [Service].[Id]
