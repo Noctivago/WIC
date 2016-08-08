@@ -168,7 +168,15 @@ if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
         <script src="../js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
         <script src="../js/lib/bootstrap-select/bootstrap-select.min.js"></script>
         <script src="../js/lib/select2/select2.full.min.js"></script>
-       
+
+        <script>
+            function RedSelf() {
+                window.opener.parent.location.href = "http://google.com";
+                self.close();
+            }
+        </script>
+
+
         <script>
             $(function () {
                 $('#tags-editor-textarea').tagEditor();

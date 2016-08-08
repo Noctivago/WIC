@@ -2894,7 +2894,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         WHERE [Enabled] = 1
         AND [User_Id] = ?", array($userId), "rows");
         if (DB_checkIfUserHaveWicPlanner($pdo, $userId)) {
-            echo '<div class="title-label" style="align:center;"> <button class="btn btn-rounded btn-inline btn-primary" href ><i class="font-icon font-icon-plus "></i>&ensp;New Event?</button></div>
+            echo '<div class="title-label" style="align:center;"> <button class="btn btn-rounded btn-inline btn-primary" href ><i class="font-icon font-icon-plus "></i>&ensp;New Event</button></div>
                 <h6>WiC Planner - The notepad for event planners</h6>
                 <header class="sign-title">Address to an existent one</header>';
             echo '<div class="form-group">';
@@ -2912,7 +2912,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
             echo '<div class="sign-avatar no-photo">&plus;</div>
                 <header class="sign-title">#You don\'t have a WiC Planner?</header>';
 //            echo '<a href="' . $linkAWP . '" class="btn btn-rounded btn-success sign-up" role="button">Create</a>';
-            echo '<input type=button class="btn btn-rounded btn-success sign-up" onClick="window.opener.parent.location.href="http://google.com";self.close();" value="Close">';
+            echo '<input type=button class="btn btn-rounded btn-success sign-up" onClick="RedSelf();" value="Close">';
         }
     } catch (Exception $ex) {
         
