@@ -23,7 +23,11 @@ include '../build/db/session.php';
         <link href="img/w_logo.png" rel="icon" type="image/png">
         <link href="img/w_logo.png" rel="shortcut icon">
         
-          <script>
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script>
   $( function() {
     $( "#dialog" ).dialog();
   } );
@@ -90,8 +94,8 @@ include '../build/db/session.php';
     <body class="with-side-menu control-panel control-panel-compact">
         
         <div id="dialog" title="Basic dialog">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div>
+                    <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+        </div>
         <?php
         //SE TIVER QUERY STRING
 
