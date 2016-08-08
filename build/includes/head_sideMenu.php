@@ -24,6 +24,7 @@ include '../build/db/session.php';
         <link href="img/w_logo.png" rel="shortcut icon">
         
           <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+             <script type="text/javascript" src="jquery-1.11.3-jquery.min.js"></script>
 
            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
 
