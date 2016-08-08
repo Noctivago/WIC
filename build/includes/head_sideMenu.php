@@ -413,7 +413,10 @@ that fit your needs.</span>
         </header>
 
         <div class="mobile-menu-left-overlay"></div>
-        <div class="help-dropdown">
+
+        <nav class="side-menu">
+            <ul class="side-menu-list">
+                        <div class="help-dropdown">
 	                            <button type="button">
                                         <i  class="fa fa-question-circle " style="color: darkolivegreen"></i>
 	                            </button>
@@ -472,8 +475,6 @@ that fit your needs.</span>
 	                                </div>
 	                            </div>
 	                        </div><!--.help-dropdown-->
-        <nav class="side-menu">
-            <ul class="side-menu-list">
                                         
 
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
