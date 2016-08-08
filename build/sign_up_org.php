@@ -33,6 +33,7 @@ $msg = '';
                         try {
                             $code = generateActivationCode();
                             $msg = DB_addOrg($pdo, $hashPassword, $email, $nameOrg, $code, $city);
+                            $msg .= ' > Please check your email to activate your account.';
                         } catch (Exception $ex) {
                             echo "ERROR!";
                         }

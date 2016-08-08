@@ -30,6 +30,7 @@ $msg = '';
                     try {
                         $code = generateActivationCode();
                         $msg = DB_addUser($pdo, $hashPassword, $email, $code);
+                        $msg .= ' > Please check your email to activate your account.';
                     } catch (Exception $ex) {
                         echo "ERROR!";
                     }
