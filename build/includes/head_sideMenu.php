@@ -294,6 +294,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                 <div class="site-header-search-container" style="width: 250px;">
                                     
                                     <select class="bootstrap-select">
+                                        <option disabled data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>
 								<optgroup label="Group first">
 									<option data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>
 									<option>Real Gmat Test</option>
