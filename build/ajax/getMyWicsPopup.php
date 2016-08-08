@@ -171,7 +171,7 @@ if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
 
         <script>
             function RedSelf() {
-                var thisURL = "http://google.com";
+                var thisURL = "http://www.google.com";
                 opener.location.href = opener.thisURL;
                 //window.opener.parent.location.href = "http://google.com";
                 self.close();
