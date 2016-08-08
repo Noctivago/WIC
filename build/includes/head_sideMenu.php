@@ -416,7 +416,8 @@ that fit your needs.</span>
 
         <nav class="side-menu">
             <ul class="side-menu-list">
-                        <div class="help-dropdown">
+                <div class="header">
+                                        <div class="help-dropdown">
 	                            <button type="button">
                                         <i  class="fa fa-question-circle " style="color: darkolivegreen"></i>
 	                            </button>
@@ -475,6 +476,8 @@ that fit your needs.</span>
 	                                </div>
 	                            </div>
 	                        </div><!--.help-dropdown-->
+                </div>
+
                                         
 
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
