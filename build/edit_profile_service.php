@@ -752,16 +752,21 @@ $msg = '';
 
 <script>
     function removePic(x) {
-        var id = x.id;
-        $.ajax({
-            url: 'ajax/remove_service_pictures.php',
-            method: 'post',
-            data: {con: id},
-            success: function (data) {
-                //loadMyWics();
-                window.location.reload();
-            }
-        });
+        var answer = confirm("are you sure?");
+        if (answer) {
+            var id = x.id;
+            $.ajax({
+                url: 'ajax/remove_service_pictures.php',
+                method: 'post',
+                data: {con: id},
+                success: function (data) {
+                    //loadMyWics();
+                    window.location.reload();
+                }
+            });
+        } else {
+            //some code
+        }
     }
 </script>
 
