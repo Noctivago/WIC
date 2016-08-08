@@ -100,10 +100,8 @@ function DB_getStateAsSelectByCountrySelected($pdo, $Country_Id) {
         echo '<option value="0">State</option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<option value='" . htmlspecialchars($row['Id']) . "'>" . htmlspecialchars($row['Name']) . "</option>";
-            
         }
         echo '</select>';
-
     } catch (PDOException $e) {
         echo 'ERROR READING STATE TABLE';
         die();
@@ -2896,7 +2894,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         WHERE [Enabled] = 1
         AND [User_Id] = ?", array($userId), "rows");
         if (DB_checkIfUserHaveWicPlanner($pdo, $userId)) {
-            echo '<div class="title-label" style="align:center;"> <button class="btn btn-rounded btn-inline btn-primary" href ><i class="font-icon font-icon-plus "></i>&ensp;New Event</button></div>
+            echo '<div class="title-label" style="align:center;">  <button class="btn btn-rounded btn-inline btn-primary" href ><i class="font-icon font-icon-plus "></i>&ensp;New Event?</button></div>
                 <h6>WiC Planner - The notepad for event planners</h6>
                 <header class="sign-title">Address to an existent one</header>';
             echo '<div class="form-group">';
@@ -2908,7 +2906,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
             echo '</div>
                 <p class="form-group">  <?= $msg; ?> </p>
                 <button type="submit" name="add2WiC" id="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
-                <input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">';
+                <input type=button class="btn btn-rounded btn-success sign-up" onClick="RedSelf();"  value="Close">';
         } else {
             $linkAWP = 'http://' . $_SERVER['HTTP_HOST'] . '/build/my_wicplanner.php';
             echo '<div class="sign-avatar no-photo">&plus;</div>
@@ -3878,10 +3876,10 @@ function DB_getSubCategoryName($pdo, $SubCategory) {
  * @param type $pdo
  * @param type $CategoryId
  */
-function DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory, $page) {
-    $pageNum = $page * 50;
+function DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory) {
+
     try {
-        $rows = sql($pdo, "SELECT COUNT(*)
+        $rows = sql($pdo, "SELECT COUNT(*) AS COUNTER
         FROM SERVICE
         join [Multimedia]
         on [Multimedia].[Service_Id] = [Service].[Id]

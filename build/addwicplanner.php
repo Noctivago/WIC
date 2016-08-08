@@ -23,7 +23,10 @@ if (isset($id) && isset($uid)) {
 } else {
     $wicId = 0;
     $wicInfo["Name"] = '';
-    $wicInfo["Event_Date"] = '01-08-2099';
+    $now = new DateTime();
+    $now->format('Y-m-d H:i:s');
+    $subStr = explode(" ", $now);
+    $wicInfo["Event_Date"] = $subStr;
 //    $wicInfo["Event_Date"] = '2016/08/01';
 }
 ?>
