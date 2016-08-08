@@ -22,6 +22,12 @@ include '../build/db/session.php';
         <link href="img/w_logo.png" rel="apple-touch-icon" type="image/png">
         <link href="img/w_logo.png" rel="icon" type="image/png">
         <link href="img/w_logo.png" rel="shortcut icon">
+        
+          <script>
+  $( function() {
+    $( "#dialog" ).dialog();
+  } );
+  </script>
 
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
@@ -82,6 +88,10 @@ include '../build/db/session.php';
 
 
     <body class="with-side-menu control-panel control-panel-compact">
+        
+        <div id="dialog" title="Basic dialog">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
         <?php
         //SE TIVER QUERY STRING
 
