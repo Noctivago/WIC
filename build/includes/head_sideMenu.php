@@ -326,8 +326,6 @@ a:hover {color:#ccc; text-decoration:none}*/
         
         
         
-        
-        
                     <div id="boxes" class="card-typical window" >
             <div  id="dialog" class=" card-typical window">
 <!--                <div class="card-typical-section">
@@ -410,7 +408,7 @@ a:hover {color:#ccc; text-decoration:none}*/
             </div>
             <!-- Mask to cover the whole screen -->
             <div style=" display: none; opacity: 0.8;" id="mask"></div>
-            </div>        
+            </div>     
         
         
         
