@@ -7,6 +7,7 @@ include_once ("includes/head_sideMenu.php");
     <div class="container-fluid">
         
         
+
                             <div id="boxes" class="card-typical window" >
             <div  id="dialog" class=" card-typical window">
 <!--                <div class="card-typical-section">
@@ -90,7 +91,6 @@ include_once ("includes/head_sideMenu.php");
             <!-- Mask to cover the whole screen -->
             <div style=" display: none; opacity: 0.8;" id="mask"></div>
             </div>
-        
         
         
         
