@@ -25,7 +25,8 @@ if (isset($id) && isset($uid)) {
     $wicInfo["Name"] = '';
     $now = new DateTime();
     $now->format('Y-m-d H:i:s');
-    $wicInfo["Event_Date"] = $now;
+    $subStr = explode(" ", $now);
+    $wicInfo["Event_Date"] = $subStr;
 //    $wicInfo["Event_Date"] = '2016/08/01';
 }
 ?>
