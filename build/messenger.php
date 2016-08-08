@@ -628,6 +628,11 @@ include_once ("includes/head_sideMenu.php");
         //Autoscroll
         $log[0].scrollTop = $log[0].scrollHeight - $log[0].clientHeight;
     }
+
+    function send(text) {
+        Server.send('message', text);
+    }
+    
     $(document).ready(function () {
         //log('Connecting...');
         //40.117.188.29/chatwic.eastus.cloudapp.azure.com

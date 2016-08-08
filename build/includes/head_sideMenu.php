@@ -45,42 +45,42 @@ include '../build/db/session.php';
             }
 
             $(document).ready(function () {
-                log('Connecting...');
+                //log('Connecting...');
                 //40.117.188.29/chatwic.eastus.cloudapp.azure.com
                 Server = new fWebSocket('ws://chatwic.eastus.cloudapp.azure.com:9000');
 
 
-                $('#message').keypress(function (e) {
-                    if (e.keyCode === 13 && this.value) {
-                        var mySubject = $('#subject').val();
-                        var myMessage = this.value;
-                        var toSend = new Object();
-                        toSend.subject = mySubject;
-                        toSend.message = myMessage;
-                        toSend.receivers = ["Ana", "Bob"];
-
-                        var myString = JSON.stringify(this.value);
-
-                        log('You: ' + this.value + ' : ' + $('#subject').val());
-                        send(toSend);
-
-                        $(this).val('');
-                    }
-                });
+//                $('#message').keypress(function (e) {
+//                    if (e.keyCode === 13 && this.value) {
+//                        var mySubject = $('#subject').val();
+//                        var myMessage = this.value;
+//                        var toSend = new Object();
+//                        toSend.subject = mySubject;
+//                        toSend.message = myMessage;
+//                        toSend.receivers = ["Ana", "Bob"];
+//
+//                        var myString = JSON.stringify(this.value);
+//
+//                        log('You: ' + this.value + ' : ' + $('#subject').val());
+//                        send(toSend);
+//
+//                        $(this).val('');
+//                    }
+//                });
 
                 //Let the user know we're connected
                 Server.bind('open', function () {
-                    log("Connected.");
+                    //log("Connected.");
                 });
 
                 //OH NOES! Disconnection occurred.
                 Server.bind('close', function (data) {
-                    log("Disconnected.");
+                    //log("Disconnected.");
                 });
 
                 //Log any messages sent from server
                 Server.bind('message', function (payload) {
-                    log(payload);
+                    //log(payload);
                 });
 
                 Server.connect();
