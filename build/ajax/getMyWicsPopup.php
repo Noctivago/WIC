@@ -172,7 +172,7 @@ if (isset($_POST['add2WiC']) && isset($_GET ['id'])) {
         <script>
             function RedSelf() {
                 var thisURL = "../my_wicplanner.php";
-                opener.location.href = 'http://google.com';
+                opener.location.href = thisURL;
                 //window.opener.parent.location.href = "http://google.com";
                 self.close();
             }
