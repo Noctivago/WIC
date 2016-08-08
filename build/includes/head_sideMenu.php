@@ -29,6 +29,143 @@ include '../build/db/session.php';
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
+        
+        
+        
+        
+        
+            
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        
+        <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>-->
+
+     
+     
+<script type="text/javascript">
+$(document).ready(function() {	
+
+		var id = '#dialog';
+	
+		//Get the screen height and width
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+	
+		//Set heigth and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+		
+		//transition effect		
+		$('#mask').fadeIn(1000);	
+		$('#mask').fadeTo("slow",0.8);	
+	
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+              
+		//Set the popup window to center
+		$(id).css('top',  winH/2-$(id).height()/0.51);
+		$(id).css('left', winW/2-$(id).width()/2);
+	
+		//transition effect
+		$(id).fadeIn(2000); 	
+	
+	//if close button is clicked
+	$('.window .close').click(function (e) {
+		//Cancel the link behavior
+		e.preventDefault();
+		
+		$('#mask').hide();
+		$('.window').hide();
+	});		
+	
+	//if mask is clicked
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});		
+	
+});
+
+</script>
+
+
+<style type="text/css">
+/*body {
+font-family:verdana;
+font-size:15px;
+}
+
+a {color:#333; text-decoration:none}
+a:hover {color:#ccc; text-decoration:none}*/
+
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+#boxes #dialog {
+  width:450px; 
+  height:600px;
+  padding:10px;
+  background-color:#ffffff;
+}
+</style>
+
+
+      <!--        COISAS CHAT-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+        <script src="chat/fwebsocket.js"></script>
+        <script>
+            var Server;
+
+            function send(text) {
+                Server.send('message', text);
+            }
+
+            $(document).ready(function () {
+                console.log('Connecting...');
+                //40.117.188.29/chatwic.eastus.cloudapp.azure.com
+                Server = new fWebSocket('ws://chatwic.eastus.cloudapp.azure.com:9000');
+
+                //Let the user know we're connected
+                Server.bind('open', function () {
+                    //log("Connected.");
+                    console.log("Connected.");
+                });
+
+                //OH NOES! Disconnection occurred.
+                Server.bind('close', function (data) {
+                    //log("Disconnected.");
+                    console.log("Disconnected.");
+                });
+
+                //Log any messages sent from server
+                Server.bind('message', function (payload) {
+                    //log(payload);
+                    console.log("payload.");
+                });
+
+                Server.connect();
+            });
+        </script>
+        <!--COISAS CHAT-->
+        
+        
+        
+<!--        BACKUP
+        
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         
 
@@ -39,7 +176,7 @@ include '../build/db/session.php';
       
         
         
-       <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>-->
+       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {	
@@ -124,7 +261,7 @@ a:hover {color:#ccc; text-decoration:none}*/
 </style>
 
 
-  <!--        COISAS CHAT-->
+          COISAS CHAT
         
         <script src="chat/fwebsocket.js"></script>
         <script>
@@ -159,8 +296,11 @@ a:hover {color:#ccc; text-decoration:none}*/
 
                 Server.connect();
             });
-        </script>
+        </script>-->
         <!--COISAS CHAT-->
+        
+        
+        <!--FIM BACKUP-->
         
 
         
