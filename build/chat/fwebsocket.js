@@ -16,7 +16,7 @@ var fWebSocket = function(url)
 	};
 
 	this.connect = function() {
-		if ( typeof(MozWebSocket) == 'function' )
+		if ( typeof(MozWebSocket) === 'function' )
 			this.conn = new MozWebSocket(url);
 		else
 			this.conn = new WebSocket(url);
@@ -36,7 +36,7 @@ var fWebSocket = function(url)
 
 	var dispatch = function(event_name, message){
 		var chain = callbacks[event_name];
-		if(typeof chain == 'undefined') return; // no callbacks for this event
+		if(typeof chain === 'undefined') return; // no callbacks for this event
 		for(var i = 0; i < chain.length; i++){
 			chain[i]( message )
 		}

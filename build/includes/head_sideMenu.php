@@ -15,7 +15,7 @@ include '../build/db/session.php';
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>WiC - Event your Life</title>
-        
+
         <link href="img/w_logo.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
         <link href="img/w_logo.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
         <link href="img/w_logo.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
@@ -27,8 +27,55 @@ include '../build/db/session.php';
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
-        
-        
+
+<!--        <style>
+        input, textarea {border:1px solid #CCC;margin:0px;padding:0px}
+
+        #body {max-width:800px;margin:auto}
+        #log {width:100%;height:400px}
+        #message {width:100%;line-height:20px}
+</style>-->
+
+        <!--COISAS CHAT-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="../chat/fwebsocket.js"></script>       
+
+        <script>
+            var Server;
+
+            function log(text) {
+                $log = $('#log');
+                //Add text to log
+                $log.append(($log.val() ? "\n" : '') + text);
+                //Autoscroll
+                $log[0].scrollTop = $log[0].scrollHeight - $log[0].clientHeight;
+            }
+
+            function send(text) {
+                Server.send('message', text);
+            }
+
+            $(document).ready(function () {
+                log('Connecting...');
+                //40.117.188.29/chatwic.eastus.cloudapp.azure.com
+                Server = new fWebSocket('ws://chatwic.eastus.cloudapp.azure.com:9000');
+
+
+               
+                //Let the user know we're connected
+                Server.bind('open', function () {
+                    log("Connected.");
+                });
+
+                //OH NOES! Disconnection occurred.
+                Server.bind('close', function (data) {
+                    log("Disconnected.");
+                });
+
+                //Log any messages sent from server
+                Server.connect();
+            });
+        </script>
 
 
     </head>
@@ -42,7 +89,7 @@ include '../build/db/session.php';
             js.id = id;
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
             fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
+        }(document, 'script', 'facebook-jssdk'));</script>
 
 
     <body class="with-side-menu control-panel control-panel-compact">
@@ -74,26 +121,26 @@ include '../build/db/session.php';
                 <div class="site-header-content">
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
-<!--                            <div class="dropdown dropdown-lang open"  >
-
-
-                                
-                                
-                                <button type="button"
-						class="btn btn-inline btn-rounded btn-info"
-						title="Help"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="bottom"
-                                                data-content=" WiC planner:  WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event;
-                                                -Inbox: Here you can take a look on the latest conversations with the suppliers;
-                                                -Profile: Change the password, the name of your account, clarify your doubts and ask for help when needed."
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
-                    
-				</button>
+                            <!--                            <div class="dropdown dropdown-lang open"  >
                             
-
-                        </div>-->
+                            
+                                                            
+                                                            
+                                                            <button type="button"
+                                                                            class="btn btn-inline btn-rounded btn-info"
+                                                                            title="Help"
+                                                                            data-container="body"
+                                                                            data-toggle="popover"
+                                                                            data-placement="bottom"
+                                                                            data-content=" WiC planner:  WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event;
+                                                                            -Inbox: Here you can take a look on the latest conversations with the suppliers;
+                                                                            -Profile: Change the password, the name of your account, clarify your doubts and ask for help when needed."
+                                                                            style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
+                                                
+                                                            </button>
+                                                        
+                            
+                                                    </div>-->
 
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
                                 <a href="#"
@@ -142,15 +189,15 @@ include '../build/db/session.php';
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
-                           
-                            
-                            
-                            
-                            
-                            
+
+
+
+
+
+
+
+
+
 
                             <div class="dropdown dropdown-notification messages">
                                 <a href="#"
@@ -207,9 +254,9 @@ include '../build/db/session.php';
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                        
+
+
+
 
                             <div class="dropdown user-menu">
                                 <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
@@ -242,25 +289,25 @@ include '../build/db/session.php';
 
                                 </div>
                             </div>
-<!--                                                        <div class="dropdown dropdown-lang open"  >
-
-                                <button type="button"
-						class="btn btn-inline btn-rounded btn-success-outline"
-						title="Profile help"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="left"
-						data-content="My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
-
-Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
-                    
-				</button>
-                                                            
-     
-
-
-                        </div>-->
+                            <!--                                                        <div class="dropdown dropdown-lang open"  >
+                            
+                                                            <button type="button"
+                                                                            class="btn btn-inline btn-rounded btn-success-outline"
+                                                                            title="Profile help"
+                                                                            data-container="body"
+                                                                            data-toggle="popover"
+                                                                            data-placement="left"
+                                                                            data-content="My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
+                            
+                            Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
+                                                                            style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
+                                                
+                                                            </button>
+                                                                                        
+                                 
+                            
+                            
+                                                    </div>-->
                             <button type="button" class="burger-right">
                                 <i class="font-icon-pin-2"></i>
                             </button>
@@ -279,9 +326,9 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                         <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third Party Test</a>
                                     </div>
                                 </div>
-                                
 
-                                
+
+
 
                                 <div class="dropdown dropdown-typical">
                                     <a class="header" id="dd-header-marketing" data-target="#" href="#" >
@@ -292,119 +339,119 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
 
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
-                                    
+
                                     <select class="bootstrap-select">
                                         <option disabled data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>
-								<optgroup label="Portugal">
-									<option>Braga</option>
-									<option>Porto</option>
-									<option>Lisboa</option>
-								</optgroup>
-								<optgroup label="Group second">
-									<option>Prep test</option>
-									<option>Catprep test</option>
-									<option>Third Party Test</option>
-								</optgroup>
-							</select>
-                                    
-                                    
-<!--                                    
-                                    <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
-                                    <input type="text" placeholder="Choose your City.."
-                                        <input type="text"
-                                        <?php
+                                        <optgroup label="Portugal">
+                                            <option>Braga</option>
+                                            <option>Porto</option>
+                                            <option>Lisboa</option>
+                                        </optgroup>
+                                        <optgroup label="Group second">
+                                            <option>Prep test</option>
+                                            <option>Catprep test</option>
+                                            <option>Third Party Test</option>
+                                        </optgroup>
+                                    </select>
+
+
+                                    <!--                                    
+                                                                        <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
+                                                                        <input type="text" placeholder="Choose your City.."
+                                                                            <input type="text"
+                                    <?php
 //                                        if (isset($_GET ['name'])) {
 //                                            echo 'value = ' . (filter_var($_GET ['name']));
 //                                        } else {
 //                                            echo 'placeholder="Choose your City.."';
 //                                        }
-                                        ?>
-                                               id="name"
-                                               class="form-control"
-                                               name="name"
-                                               type="text"
-                                               autocomplete="on"/>
-                                        <button type="submit">
-                                        <button id= "btnName" onclick="getCitySearchValue()">
-                                            <span class="font-icon-pin-2"></span>
-                                        </button>
-                                        <div class="overlay"></div>
-                                    </form>-->
+                                    ?>
+                                                                                   id="name"
+                                                                                   class="form-control"
+                                                                                   name="name"
+                                                                                   type="text"
+                                                                                   autocomplete="on"/>
+                                                                            <button type="submit">
+                                                                            <button id= "btnName" onclick="getCitySearchValue()">
+                                                                                <span class="font-icon-pin-2"></span>
+                                                                            </button>
+                                                                            <div class="overlay"></div>
+                                                                        </form>-->
                                 </div>
-                                
+
                                 <div class="help-dropdown">
-	                            <button type="button">
+                                    <button type="button">
                                         <i  class="fa fa-question-circle " style="color: darkolivegreen"></i>
-	                            </button>
-	                            <div class="help-dropdown-popup">
-	                                <div class="help-dropdown-popup-side">
-<!--	                                    <ul>
-                                                <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
-	                                        <li><a href="#" class="active font-icon font-icon-pin-2">Chose your City</a></li>
-                                                <li><a class="font-icon font-icon-plus-1" href="#" id="3">Wic Planner</a></li>
-	                                        <li><a href="#" >Inbox</a></li>
-	                                        <li><a href="#">Importing data</a></li>
-	                                        <li><a href="#">Exporting data</a></li>
-                                                <li><a>First guide into WiC</a>
-                                                    <span class="describe">Start Planning, and realize the Event of you life</span></li>
-	                                    </ul>-->
-<a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
+                                    </button>
+                                    <div class="help-dropdown-popup">
+                                        <div class="help-dropdown-popup-side">
+                                            <!--	                                    <ul>
+                                                                                            <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
+                                                                                            <li><a href="#" class="active font-icon font-icon-pin-2">Chose your City</a></li>
+                                                                                            <li><a class="font-icon font-icon-plus-1" href="#" id="3">Wic Planner</a></li>
+                                                                                            <li><a href="#" >Inbox</a></li>
+                                                                                            <li><a href="#">Importing data</a></li>
+                                                                                            <li><a href="#">Exporting data</a></li>
+                                                                                            <li><a>First guide into WiC</a>
+                                                                                                <span class="describe">Start Planning, and realize the Event of you life</span></li>
+                                                                                        </ul>-->
+                                            <a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
                                             <span class="describe"><h5>Start exploring, and plan the Event of you life</h5></span>
-	                                </div>
-	                                <div class="help-dropdown-popup-cont">
-	                                    <div class="help-dropdown-popup-cont-in">
-	                                        <div class="jscroll">
+                                        </div>
+                                        <div class="help-dropdown-popup-cont">
+                                            <div class="help-dropdown-popup-cont-in">
+                                                <div class="jscroll">
                                                     <a href="#" for="3" class="help-dropdown-popup-item font-icon font-icon-calend">
                                                         <i style="color: coral"></i>Start Planning
                                                         <span class="describe font-icon " for="3">Here you can find all the needs for your event clicking 
-separately on each category or by doing an advanced search
-of what you want. Example search for: Coffee break or Ballrooms</span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-pin-2">
-	                                                Chose your City
-	                                                <span class="describe ">You should write down the city of where you wanna do the event to find the best vendors
-that fit your needs.</span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus">
-	                                                Wic Planner
-	                                                <span class="describe">WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event </span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-comments">
-	                                                Inbox
-	                                                <span class="describe">Here you can take a look on the latest conversations with the suppliers</span>
-	                                            </a>
+                                                            separately on each category or by doing an advanced search
+                                                            of what you want. Example search for: Coffee break or Ballrooms</span>
+                                                    </a>
+                                                    <a href="#" class="help-dropdown-popup-item font-icon font-icon-pin-2">
+                                                        Chose your City
+                                                        <span class="describe ">You should write down the city of where you wanna do the event to find the best vendors
+                                                            that fit your needs.</span>
+                                                    </a>
+                                                    <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus">
+                                                        Wic Planner
+                                                        <span class="describe">WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event </span>
+                                                    </a>
+                                                    <a href="#" class="help-dropdown-popup-item font-icon font-icon-comments">
+                                                        Inbox
+                                                        <span class="describe">Here you can take a look on the latest conversations with the suppliers</span>
+                                                    </a>
                                                     <a href="#" class="help-dropdown-popup-item"><img style="width: 32px;" src="img/avatar-2-64.png">
-	                                                Profile
-	                                                <span class="describe">Change the password, the name of your account, clarify your doubts and ask for help when needed. </span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-users-group">
-	                                                My Team
-	                                                <span class="describe">That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes.</span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item fa fa-thumbs-o-up">
-	                                                Blog
-	                                                <span class="describe">Take a look on the latest and fresh ideas about the events industry on WiC's official blog</span>
-	                                            </a>
- 
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div><!--.help-dropdown-->
-                                
-<!--                                <div class="dropdown dropdown-menu-right" >
-                                <button type="button"
-						class="btn btn-rounded btn-inline btn-info font-icon-lamp "
-						title="Choose your city"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="bottom"
-						data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;">
-                    
-				</button>
-                                </div>-->
-                                
+                                                        Profile
+                                                        <span class="describe">Change the password, the name of your account, clarify your doubts and ask for help when needed. </span>
+                                                    </a>
+                                                    <a href="#" class="help-dropdown-popup-item font-icon font-icon-users-group">
+                                                        My Team
+                                                        <span class="describe">That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes.</span>
+                                                    </a>
+                                                    <a href="#" class="help-dropdown-popup-item fa fa-thumbs-o-up">
+                                                        Blog
+                                                        <span class="describe">Take a look on the latest and fresh ideas about the events industry on WiC's official blog</span>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--.help-dropdown-->
+
+                                <!--                                <div class="dropdown dropdown-menu-right" >
+                                                                <button type="button"
+                                                                                class="btn btn-rounded btn-inline btn-info font-icon-lamp "
+                                                                                title="Choose your city"
+                                                                                data-container="body"
+                                                                                data-toggle="popover"
+                                                                                data-placement="bottom"
+                                                                                data-content="You should write down the city of where you wanna do the event to find the best vendors that fit your needs. "
+                                                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;">
+                                                    
+                                                                </button>
+                                                                </div>-->
+
                             </div>
                         </div>
                     </div>
@@ -417,68 +464,68 @@ that fit your needs.</span>
         <nav class="side-menu">
             <ul class="side-menu-list">
                 <div class="header">
-                                        <div class="help-dropdown">
-	                            <button type="button">
-                                        <i  class="fa fa-question-circle " style="color: darkolivegreen"></i>
-	                            </button>
-	                            <div class="help-dropdown-popup">
-	                                <div class="help-dropdown-popup-side">
-<!--	                                    <ul>
-                                                <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
-	                                        <li><a href="#" class="active font-icon font-icon-pin-2">Chose your City</a></li>
-                                                <li><a class="font-icon font-icon-plus-1" href="#" id="3">Wic Planner</a></li>
-	                                        <li><a href="#" >Inbox</a></li>
-	                                        <li><a href="#">Importing data</a></li>
-	                                        <li><a href="#">Exporting data</a></li>
-                                                <li><a>First guide into WiC</a>
-                                                    <span class="describe">Start Planning, and realize the Event of you life</span></li>
-	                                    </ul>-->
-<a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
-                                            <span class="describe"><h5>Start exploring, and plan the Event of you life</h5></span>
-	                                </div>
-	                                <div class="help-dropdown-popup-cont">
-	                                    <div class="help-dropdown-popup-cont-in">
-	                                        <div class="jscroll">
-                                                    <a href="#" for="3" class="help-dropdown-popup-item font-icon font-icon-calend">
-                                                        <i style="color: coral"></i>Start Planning
-                                                        <span class="describe font-icon " for="3">Here you can find all the needs for your event clicking 
-separately on each category or by doing an advanced search
-of what you want. Example search for: Coffee break or Ballrooms</span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-pin-2">
-	                                                Chose your City
-	                                                <span class="describe ">You should write down the city of where you wanna do the event to find the best vendors
-that fit your needs.</span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus">
-	                                                Wic Planner
-	                                                <span class="describe">WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event </span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-comments">
-	                                                Inbox
-	                                                <span class="describe">Here you can take a look on the latest conversations with the suppliers</span>
-	                                            </a>
-                                                    <a href="#" class="help-dropdown-popup-item"><img style="width: 32px;" src="img/avatar-2-64.png">
-	                                                Profile
-	                                                <span class="describe">Change the password, the name of your account, clarify your doubts and ask for help when needed. </span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item font-icon font-icon-users-group">
-	                                                My Team
-	                                                <span class="describe">That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes.</span>
-	                                            </a>
-	                                            <a href="#" class="help-dropdown-popup-item fa fa-thumbs-o-up">
-	                                                Blog
-	                                                <span class="describe">Take a look on the latest and fresh ideas about the events industry on WiC's official blog</span>
-	                                            </a>
- 
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div><!--.help-dropdown-->
+                    <div class="help-dropdown">
+                        <button type="button">
+                            <i  class="fa fa-question-circle " style="color: darkolivegreen"></i>
+                        </button>
+                        <div class="help-dropdown-popup">
+                            <div class="help-dropdown-popup-side">
+                                <!--	                                    <ul>
+                                                                                <li><a href="#" class="font-icon font-icon-calend">Start Planning</a></li>
+                                                                                <li><a href="#" class="active font-icon font-icon-pin-2">Chose your City</a></li>
+                                                                                <li><a class="font-icon font-icon-plus-1" href="#" id="3">Wic Planner</a></li>
+                                                                                <li><a href="#" >Inbox</a></li>
+                                                                                <li><a href="#">Importing data</a></li>
+                                                                                <li><a href="#">Exporting data</a></li>
+                                                                                <li><a>First guide into WiC</a>
+                                                                                    <span class="describe">Start Planning, and realize the Event of you life</span></li>
+                                                                            </ul>-->
+                                <a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
+                                <span class="describe"><h5>Start exploring, and plan the Event of you life</h5></span>
+                            </div>
+                            <div class="help-dropdown-popup-cont">
+                                <div class="help-dropdown-popup-cont-in">
+                                    <div class="jscroll">
+                                        <a href="#" for="3" class="help-dropdown-popup-item font-icon font-icon-calend">
+                                            <i style="color: coral"></i>Start Planning
+                                            <span class="describe font-icon " for="3">Here you can find all the needs for your event clicking 
+                                                separately on each category or by doing an advanced search
+                                                of what you want. Example search for: Coffee break or Ballrooms</span>
+                                        </a>
+                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-pin-2">
+                                            Chose your City
+                                            <span class="describe ">You should write down the city of where you wanna do the event to find the best vendors
+                                                that fit your needs.</span>
+                                        </a>
+                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-plus">
+                                            Wic Planner
+                                            <span class="describe">WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event </span>
+                                        </a>
+                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-comments">
+                                            Inbox
+                                            <span class="describe">Here you can take a look on the latest conversations with the suppliers</span>
+                                        </a>
+                                        <a href="#" class="help-dropdown-popup-item"><img style="width: 32px;" src="img/avatar-2-64.png">
+                                            Profile
+                                            <span class="describe">Change the password, the name of your account, clarify your doubts and ask for help when needed. </span>
+                                        </a>
+                                        <a href="#" class="help-dropdown-popup-item font-icon font-icon-users-group">
+                                            My Team
+                                            <span class="describe">That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes.</span>
+                                        </a>
+                                        <a href="#" class="help-dropdown-popup-item fa fa-thumbs-o-up">
+                                            Blog
+                                            <span class="describe">Take a look on the latest and fresh ideas about the events industry on WiC's official blog</span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.help-dropdown-->
                 </div>
 
-                                        
+
 
                 <!--TESTE PESQUISA POR NOME -> ADICIONEI FORM TAG-->
                 <?php
@@ -492,7 +539,7 @@ that fit your needs.</span>
                 <!--<header class="side-menu-title">Advanced search</header>-->
                 <!--<form action="<?php echo $selfUrl; ?>">-->
                 <div class="col-md-10">
-                    
+
                     <div class="typeahead-container">
                         <div class="typeahead-field">
                             <span class="typeahead-query">
@@ -523,23 +570,23 @@ that fit your needs.</span>
                 <br>
 
                 <header class="side-menu-title"> Start Planning
-<!--                                     <button type="button"
-						class="btn btn-inline btn-rounded "
-						title="Muita parra pouca uva"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="right"
-						data-content="Comer e o coçar o mal é começar "
-                                                style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
-                    
-				</button>-->
-                
-                
+                    <!--                                     <button type="button"
+                                                                    class="btn btn-inline btn-rounded "
+                                                                    title="Muita parra pouca uva"
+                                                                    data-container="body"
+                                                                    data-toggle="popover"
+                                                                    data-placement="right"
+                                                                    data-content="Comer e o coçar o mal é começar "
+                                                                    style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
+                                        
+                                                    </button>-->
+
+
                 </header>
-                
-                
-            
-                
+
+
+
+
                 <!--updateQueryStringParameter(uri, key, value)-->  
                 <li class="coral with-sub">
                     <a class="lbl" onclick="updateQueryStringParameter('Category', '1');"><i class="fa fa-bank"></i> Space</a>
@@ -865,7 +912,7 @@ that fit your needs.</span>
                     }
                 }
             }
-            
+
         </script>
         <script src="js/lib/typeahead/jquery.typeahead.min.js"></script>
         <script src="js/lib/select2/select2.full.min.js"></script>

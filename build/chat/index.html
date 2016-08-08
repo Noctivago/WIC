@@ -33,7 +33,7 @@
 			
 
 			$('#message').keypress(function(e) {
-				if ( e.keyCode == 13 && this.value ) {
+				if ( e.keyCode === 13 && this.value ) {
 				    var mySubject = $('#subject').val();
 					var myMessage = this.value;
 					var toSend = new Object();
