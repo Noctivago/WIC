@@ -295,7 +295,7 @@ Blog: Take a look on the latest and fresh ideas about the events industry on WiC
                                     
                                     <select class="bootstrap-select">
 								<optgroup label="Group first">
-									<option data-content='<span class="font-icon font-icon-pin-2"></span>Quant Verbal'>Choose your City</option>
+									<option data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>
 									<option>Real Gmat Test</option>
 								</optgroup>
 								<optgroup label="Group second">
