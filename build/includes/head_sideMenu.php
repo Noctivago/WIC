@@ -31,7 +31,7 @@ include '../build/db/session.php';
 
         <!--        COISAS CHAT-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="fwebsocket.js"></script>
+        <script src="../chat/fwebsocket.js"></script>
         <script>
             var Server;
 
@@ -43,26 +43,7 @@ include '../build/db/session.php';
                 console.log('Connecting...');
                 //40.117.188.29/chatwic.eastus.cloudapp.azure.com
                 Server = new fWebSocket('ws://chatwic.eastus.cloudapp.azure.com:9000');
-
-
-//                $('#message').keypress(function (e) {
-//                    if (e.keyCode === 13 && this.value) {
-//                        var mySubject = $('#subject').val();
-//                        var myMessage = this.value;
-//                        var toSend = new Object();
-//                        toSend.subject = mySubject;
-//                        toSend.message = myMessage;
-//                        toSend.receivers = ["Ana", "Bob"];
-//
-//                        var myString = JSON.stringify(this.value);
-//
-//                        log('You: ' + this.value + ' : ' + $('#subject').val());
-//                        send(toSend);
-//
-//                        $(this).val('');
-//                    }
-//                });
-
+                
                 //Let the user know we're connected
                 Server.bind('open', function () {
                     //log("Connected.");
