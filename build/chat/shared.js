@@ -9,7 +9,7 @@ self.addEventListener("connect", function (e) {
     var port = e.ports[0];
     port.addEventListener("message", function (e) {
         if (e.data === "start") {
-            var ws = new WebSocket("ws://localhost:6080");
+            var ws = new WebSocket("ws://chatwic.eastus.cloudapp.azure.com:9000");
             port.postMessage("done");
         }
     }, false);

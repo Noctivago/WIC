@@ -29,7 +29,7 @@ include '../build/db/session.php';
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
         <!--COISAS CHAT-->
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="chat/shared.js"></script>
 
