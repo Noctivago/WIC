@@ -161,31 +161,7 @@ $(document).ready(function() {
             }
         </style>
 
-#mask {
-  position:absolute;
-  left:0;
-  top:0;
-  z-index:9000;
-  background-color:#000;
-  display:none;
-}  
-#boxes .window {
-  position:absolute;
-  left:0;
-  top:0;
-  width:440px;
-  height:200px;
-  display:none;
-  z-index:9999;
-  padding:20px;
-}
-#boxes #dialog {
-  width:450px; 
-  height:600px;
-  padding:10px;
-  background-color:#ffffff;
-}
-</style>
+
         
         
         
