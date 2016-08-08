@@ -40,14 +40,6 @@ include '../build/db/session.php';
         <script>
             var Server;
 
-            function log(text) {
-                $log = $('#log');
-                //Add text to log
-                $log.append(($log.val() ? "\n" : '') + text);
-                //Autoscroll
-                $log[0].scrollTop = $log[0].scrollHeight - $log[0].clientHeight;
-            }
-
             function send(text) {
                 Server.send('message', text);
             }
