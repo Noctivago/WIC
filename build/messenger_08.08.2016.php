@@ -1,5 +1,5 @@
 <?php
-include_once ("includes/head_sideMenu.php");
+include ("includes/head_sideMenu.php");
 ?>
  
 
@@ -11,7 +11,7 @@ include_once ("includes/head_sideMenu.php");
             <section class="chat-list">
                 <div class="chat-list-search chat-list-settings-header">
                     <div class="row">
-                        <div class="col-sm-1 col-lg-1 action">
+                        <div class="col-sm-2 col-lg-2 action">
                             <a href="#"><span class="font-icon font-icon-cogwheel"></span></a>
                         </div>
                         <div class="col-sm-8 col-lg-8 text-center description">
@@ -258,13 +258,106 @@ include_once ("includes/head_sideMenu.php");
                     </div>
                 </div><!--.chat-list-in-->
             </section><!--.chat-list-->
-			
+
+            <section class="chat-list-info">
+                <div class="chat-list-search chat-list-settings-header">
+                    <a href="#"><span class="fa fa-phone"></span></a>
+                    <a href="#"><span class="fa fa-video-camera"></span></a>
+                    <a href="#"><span class="fa fa-info-circle"></span></a>
+                </div><!--.chat-list-search-->
+                <div class="chat-list-in">
+                    <section class="chat-user-info chat-list-item online">
+                        <div class="chat-list-item-photo">
+                            <img src="img/photo-64-1.jpg" alt="">
+                        </div>
+                        <div class="chat-list-item-header">
+                            <div class="chat-list-item-name">
+                                <span class="name">Matt McGill</span>
+                            </div>
+                        </div>
+                        <div class="chat-list-item-cont">
+                            <div class="chat-list-item-txt writing">
+                                Matt McGill typing a message
+                            </div>
+                        </div>
+                    </section>
+                    <section class="chat-settings">
+                        <div class="item">
+                            <a href="#">
+                                <span class="font-icon font-icon-pencil"></span>
+                                Edit name
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <span class="font-icon fa fa-eyedropper"></span>
+                                Change color
+                            </a>
+                        </div>
+                        <div class="item change-bg-color">
+                            <div class="checkbox-bird green">
+                                <input name="color" type="radio" id="color-green"/>
+                                <label for="color-green" data-color="green"></label>
+                            </div>
+                            <div class="checkbox-bird yellow">
+                                <input name="color" type="radio" id="color-yellow"/>
+                                <label for="color-yellow" data-color="yellow"></label>
+                            </div>
+                            <div class="checkbox-bird blue">
+                                <input name="color" type="radio" id="color-blue" checked/>
+                                <label for="color-blue" data-color="blue"></label>
+                            </div>
+                            <div class="checkbox-bird red">
+                                <input name="color" type="radio" id="color-red"/>
+                                <label for="color-red" data-color="red"></label>
+                            </div>
+                            <div class="checkbox-bird pink">
+                                <input name="color" type="radio" id="color-pink"/>
+                                <label for="color-pink" data-color="pink"></label>
+                            </div>
+                            <div class="checkbox-bird blue-light">
+                                <input name="color" type="radio" id="color-blue-light"/>
+                                <label for="color-blue-light" data-color="blue-light"></label>
+                            </div>
+                            <div class="checkbox-bird purple-light">
+                                <input name="color" type="radio" id="color-purple-light"/>
+                                <label for="color-purple-light" data-color="purple-light"></label>
+                            </div>
+                            <div class="checkbox-bird lime">
+                                <input name="color" type="radio" id="color-lime"/>
+                                <label for="color-lime" data-color="lime"></label>
+                            </div>
+                            <div class="checkbox-bird orange">
+                                <input name="color" type="radio" id="color-orange"/>
+                                <label for="color-orange" data-color="orange"></label>
+                            </div>
+                            <div class="checkbox-bird pink-dark">
+                                <input name="color" type="radio" id="color-pink-dark"/>
+                                <label for="color-pink-dark" data-color="pink-dark"></label>
+                            </div>
+                            <div class="checkbox-bird purple">
+                                <input name="color" type="radio" id="color-purple"/>
+                                <label for="color-purple" data-color="purple"></label>
+                            </div>
+                        </div>
+                        <div class="checkbox-toggle">
+                            <input type="checkbox" id="check-toggle-2" checked="">
+                            <label for="check-toggle-2">Disable notifications</label>
+                        </div>
+                    </section>
+                    <section class="chat-profiles">
+                        <header>Profile on facebook</header>
+                        <a href="#">http://facebook.com/startui</a>
+                    </section>
+                </div>
+            </section>
+
             <section class="chat-area">
                 <div class="chat-area-in">
                     <div class="chat-area-header">
                         <div class="chat-list-item online">
                             <div class="chat-list-item-name">
-                                <span class="name">Thomas Bryan - Service :Weding in Vegas</span>
+                                <span class="name">Thomas Bryan</span>
                             </div>
                             <div class="chat-list-item-txt writing">Last seen 05 aug 2015 at 18:04</div>
                         </div>
@@ -278,7 +371,16 @@ include_once ("includes/head_sideMenu.php");
                                 </div>
                                 <div class="messages">
                                     <ul>
-                                             <div class="message">
+                                        <li>
+                                            <div class="message">
+                                                <div>
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </div>
+                                            </div>
+                                            <div class="time-ago">1:26</div>
+                                        </li>
+                                        <li>
+                                            <div class="message">
                                                 <div>
                                                     Lorem Ipsum is simply dummy text...
                                                 </div>
@@ -291,7 +393,115 @@ include_once ("includes/head_sideMenu.php");
                             <div class="messenger-message-container from bg-blue">
                                 <div class="messages">
                                     <ul>
-                                          <li>
+                                        <li>
+                                            <div class="time-ago">1:26</div>
+                                            <div class="message">
+                                                <div>
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="time-ago">1:26</div>
+                                            <div class="message">
+                                                <div>
+                                                    Lorem Ipsum is simply dummy text...
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="avatar chat-list-item-photo">
+                                    <img src="img/photo-64-1.jpg">
+                                </div>
+                            </div>
+                            <div class="messenger-message-container">
+                                <div class="avatar">
+                                    <img src="img/avatar-1-32.png">
+                                </div>
+                                <div class="messages">
+                                    <ul>
+                                        <li>
+                                            <div class="message">
+                                                <div>
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </div>
+                                            </div>
+                                            <div class="time-ago">1:26</div>
+                                        </li>
+                                        <li>
+                                            <div class="message">
+                                                <div>
+                                                    Lorem Ipsum is simply dummy text...
+                                                </div>
+                                            </div>
+                                            <div class="time-ago">1:26</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="messenger-message-container from bg-blue">
+                                <div class="messages">
+                                    <ul>
+                                        <li>
+                                            <div class="time-ago">1:26</div>
+                                            <div class="message">
+                                                <div>
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="time-ago">1:26</div>
+                                            <div class="message">
+                                                <div>
+                                                    Lorem Ipsum is simply dummy text...
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="avatar chat-list-item-photo">
+                                    <img src="img/photo-64-1.jpg">
+                                </div>
+                            </div>
+                            <div class="messenger-message-container">
+                                <div class="avatar">
+                                    <img src="img/avatar-1-32.png">
+                                </div>
+                                <div class="messages">
+                                    <ul>
+                                        <li>
+                                            <div class="message">
+                                                <div>
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </div>
+                                            </div>
+                                            <div class="time-ago">1:26</div>
+                                        </li>
+                                        <li>
+                                            <div class="message">
+                                                <div>
+                                                    Lorem Ipsum is simply dummy text...
+                                                </div>
+                                            </div>
+                                            <div class="time-ago">1:26</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="messenger-message-container from bg-blue">
+                                <div class="messages">
+                                    <ul>
+                                        <li>
+                                            <div class="time-ago">1:26</div>
+                                            <div class="message">
+                                                <div>
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
                                             <div class="time-ago">1:26</div>
                                             <div class="message">
                                                 <div>
@@ -312,8 +522,7 @@ include_once ("includes/head_sideMenu.php");
                         <form class="write-message">
                             <div class="form-group">
                                 <textarea rows="1" class="form-control" placeholder="Type a message"></textarea>
-                                <!--
-								<div class="dropdown dropdown-typical dropup attach">
+                                <div class="dropdown dropdown-typical dropup attach">
                                     <a class="dropdown-toggle dropdown-toggle-txt"
                                        id="dd-chat-attach"
                                        data-target="#"
@@ -330,7 +539,6 @@ include_once ("includes/head_sideMenu.php");
                                         <a class="dropdown-item" href="#"><i class="font-icon font-icon-earth"></i>Map</a>
                                     </div>
                                 </div>
-								-->
                             </div>
                         </form>
                     </div><!--.chat-area-bottom-->
