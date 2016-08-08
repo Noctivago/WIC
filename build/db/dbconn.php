@@ -2912,7 +2912,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
             echo '<div class="sign-avatar no-photo">&plus;</div>
                 <header class="sign-title">#You don\'t have a WiC Planner?</header>';
 //            echo '<a href="' . $linkAWP . '" class="btn btn-rounded btn-success sign-up" role="button">Create</a>';
-            echo '<input type=button class="btn btn-rounded btn-success sign-up" onClick="self.close();" value="Close">';
+            echo '<input type=button class="btn btn-rounded btn-success sign-up" onClick="window.opener.parent.location.href="http://google.com";self.close();" value="Close">';
         }
     } catch (Exception $ex) {
         
