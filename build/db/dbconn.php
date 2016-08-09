@@ -3780,7 +3780,9 @@ function DB_getServicesForIndexByQuery($pdo, $CategoryId, $name, $city, $SubCate
             </div>
             <div class = "card-typical-section card-typical-content">
             <div class = "photo">
+            <a href="service_profile.php?Service=' . $row['SID'] . '">
             <img src = "' . $row['MPP'] . '" alt = "Service Pic" max-height = "185" max-width = "110">
+            </a>
             </div>
             <header class = "title"><a href = "service_profile.php?Service=' . $row['SID'] . '">' . $row['SNA'] . '</a></header>
             <p style="overflow:hidden; max-height:75px; ">' . $row['SDE'] . '</p>
