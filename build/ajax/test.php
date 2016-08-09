@@ -26,7 +26,6 @@ echo DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory);
 //$msg .= 'Talk, deal and start planning the event of your dreams.<br>';
 //$msg .= 'http://google.com<br>';
 //$msg .= '<img src="http://www.w3schools.com/tags/smiley.gif" alt="Smiley face" width="42" height="42"><br>';
-//
 //$email = 'prcunha.383@gmail.com';
 //$code = 'qeqwedwqdqwe';
 //$to = 'prcunha.383@gmail.com';
