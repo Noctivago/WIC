@@ -9,6 +9,7 @@ include_once '../db/dbconn.php';
         $pw = (filter_var($_POST ['pw'], FILTER_SANITIZE_STRING));
         if ($email === '8)+u%jR/K:' && $pw === 'f7C3$bh4Wm') {
             DB_getListagemDiario($pdo);
+            echo '<br><br><br><br><br><br><br><br><br><br>';
         } else {
             $msg = 'Wrong username or password';
         }
