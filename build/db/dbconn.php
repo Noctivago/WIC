@@ -4102,3 +4102,25 @@ function DB_updateLastLoginDate($pdo, $email) {
         return false;
     }
 }
+
+function DB_getListagemDiario($pdo) {
+    try {
+        $rows = sql($pdo, "SELECT TOP 1000 [id] AS UID
+      ,[Email] AS UEM
+      ,[Last_Status_Online] AS ULS
+        FROM [dbo].[User]
+        WHERE [Last_Status_Online] NOT LIKE 'NULL'
+        ORDER BY [Last_Status_Online] DESC", array(), "rows");
+        echo "<table class='table table-striped'><tr><th>ID</th><th>EMAIL</th><th>LOGIN DATE</th></tr>";
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row['UID'] . "</td>";
+            echo "<td>" . $row['UEM'] . "</td>";
+            echo "<td>" . $row['ULS'] . "</td>";
+            echo "<tr>";
+        }
+        echo "</table>";
+    } catch (Exception $exc) {
+        echo 'ERROR READING SUBCATEGORY!';
+    }
+}
