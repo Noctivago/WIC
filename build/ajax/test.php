@@ -21,6 +21,18 @@ include_once '../db/session.php';
 //echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 echo DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory);
 
+$msg = '<head></head>';
+$msg .= '<body>';
+$msg .= '<p>Hello!</p><br>';
+$msg .= '<p>Welcome to Wic the biggest community of events and entertainment on earth.</p><br>';
+$msg .= '<p>Talk, deal and start planning the event of your dreams.</p><br>';
+$msg .= '<p><a href="http://google.com>LINK</a></p><br>';
+$msg .= '</body>';
+$email = 'prcunha.383@gmail.com';
+$code = 'qeqwedwqdqwe';
+$to = 'prcunha.383@gmail.com';
+$subject = 'TESTE';
+return sendEmail($to, $subject, $msg);
 //$msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
 //$email = 'prcunha.383@gmail.com';
 //$code = 'qeqwedwqdqwe';
@@ -29,7 +41,7 @@ echo DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory);
 //$subject = "Welcome to the biggest community of events";
 //$body = "Hello " . $name . ", <br><br>"
 //        . "Welcome to Wic the biggest community of events and entertainment on earth.<br>"
-//        . "Talk, dead and start planning the event of your dreams.<br>"
+//        . "Talk, deal and start planning the event of your dreams.<br>"
 //        . "Click on the following link to validate your account: <a href=\"" . $link . ">Click to validate your account</a><br><br>"
 //        . "Event your life ! You Can Event ! <br><br>"
 //        . "Note: Please do not reply to this email! Thanks!";
