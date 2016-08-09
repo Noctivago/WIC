@@ -5,18 +5,7 @@ include_once ("includes/head_sideMenu.php");
 
 <div class="page-content">
     <div class="container-fluid">
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        <?php
+       <?php
         $query = '';
 
         /**

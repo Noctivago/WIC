@@ -442,7 +442,7 @@ include '../build/db/session.php';
                                 <div class="site-header-search-container" style="width: 250px;">
 
                                     <select class="bootstrap-select">
-                                        <option disabled data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>
+<!--                                        <option disabled data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>-->
 
                                         <optgroup label="Portugal">
                                             <option onclick="setCityValue(this.value)">Braga</option>
