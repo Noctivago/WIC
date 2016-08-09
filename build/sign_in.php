@@ -143,7 +143,7 @@ if (isset($_SESSION['id'])) {
                 </div>
                 <p class="sign-note">  <?= $msg; ?> </p>
                 <button type="submit" name="signin" class="btn btn-rounded">Sign in</button>
-                <p class="sign-note">New to our website? <a href="sign_up_user.php">Sign up as a planner</a><a href="sign_up_org.php"> Sign up as a vendor</a></p>
+                <p class="sign-note">New to our website? <br><a href="sign_up_user.php">Sign up as a planner</a><br><a href="sign_up_org.php"> Sign up as a vendor</a></p>
                 <!--<button type="button" class="close">
                     <span aria-hidden="true">&times;</span>
                 </button>-->
