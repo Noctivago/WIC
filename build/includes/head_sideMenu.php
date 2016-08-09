@@ -446,12 +446,12 @@ include '../build/db/session.php';
 
                                         <optgroup label="Portugal">
                                             <option onclick="setCityValue(this.value)">Braga</option>
-                                            <option>Porto</option>
-                                            <option>Lisboa</option>
+                                            <option  onclick="setCityValue(this.value)">Porto</option>
+                                            <option onclick="setCityValue(this.value)">Lisboa</option>
                                         </optgroup>
 
                                         <optgroup label="EUA">
-                                            <option>Los Angeles</option>
+                                            <option onclick="setCityValue(this.value)">Los Angeles</option>
                                             <option data-content='<span class="font-icon font-icon-dots"></span>Choose your City' disabled>New York</option>
                                             <option disabled>Orlando</option>
                                             <option disabled>Austin</option>
@@ -466,7 +466,7 @@ include '../build/db/session.php';
                                         </optgroup>
 
                                         <optgroup label="England">
-                                            <option>London</option>
+                                            <option onclick="setCityValue(this.value)">London</option>
                                         </optgroup>
 
                                         <optgroup label="France">
