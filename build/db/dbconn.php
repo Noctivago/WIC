@@ -684,7 +684,7 @@ function DB_sendActivationEmailOrg($email, $name, $code) {
     $body = "Hello " . $name . ", <br><br>"
             . "Welcome to Wic the biggest community of events and entertainment on earth.<br>"
             . "Talk, dead and start planning the event of your dreams.<br>"
-            . "Click on the following link to validate your account: " . $link . " <br><br>"
+            . "Click on the following link to validate your account: <a href=\"" . $link . ">Click to validate your account</a><br><br>"
             . "Event your life ! You Can Event ! <br><br>"
             . "Note: Please do not reply to this email! Thanks!";
     return sendEmail($to, $subject, $body);
