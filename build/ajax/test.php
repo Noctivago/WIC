@@ -21,19 +21,19 @@ include_once '../db/session.php';
 //echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 echo DB_getServicesForIndexCount($pdo, $CategoryId, $name, $city, $SubCategory);
 
-$msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
-$email = 'prcunha.383@gmail.com';
-$code = 'qeqwedwqdqwe';
-$to = 'prcunha.383@gmail.com';
-$link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/account_confirmation_link.php?EM=' . $email . '&AC=' . $code . '';
-$subject = "Welcome to the biggest community of events";
-$body = "Hello " . $name . ", <br><br>"
-        . "Welcome to Wic the biggest community of events and entertainment on earth.<br>"
-        . "Talk, dead and start planning the event of your dreams.<br>"
-        . "Click on the following link to validate your account: <a href=\"" . $link . ">Click to validate your account</a><br><br>"
-        . "Event your life ! You Can Event ! <br><br>"
-        . "Note: Please do not reply to this email! Thanks!";
-return sendEmail($to, $subject, $body);
+//$msg = "ACCOUNT INFORMATION IS BEING SENT! PLEASE WAIT!";
+//$email = 'prcunha.383@gmail.com';
+//$code = 'qeqwedwqdqwe';
+//$to = 'prcunha.383@gmail.com';
+//$link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/account_confirmation_link.php?EM=' . $email . '&AC=' . $code . '';
+//$subject = "Welcome to the biggest community of events";
+//$body = "Hello " . $name . ", <br><br>"
+//        . "Welcome to Wic the biggest community of events and entertainment on earth.<br>"
+//        . "Talk, dead and start planning the event of your dreams.<br>"
+//        . "Click on the following link to validate your account: <a href=\"" . $link . ">Click to validate your account</a><br><br>"
+//        . "Event your life ! You Can Event ! <br><br>"
+//        . "Note: Please do not reply to this email! Thanks!";
+//return sendEmail($to, $subject, $body);
 
 
 //echo '<br>http://' . $_SERVER['HTTP_HOST'];
