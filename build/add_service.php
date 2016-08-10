@@ -224,7 +224,7 @@ $msg = '';
                             <textarea onchange="reloadDescription()" name="cDescription" id="cDescription" rows = "8" class = "form-control"  required placeholder = "Service Info"><?= $data['Description'] ?></textarea>
                             <i class = "font-icon font-icon-user"></i>
                         </div>
-                        <button type = "submit" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
+<button type = "button" name="addservice" class = "btn btn-rounded btn-success sign-up">Add Service</button>
                         </div>
                     </form>
                 </section>
