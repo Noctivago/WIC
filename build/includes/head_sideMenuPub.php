@@ -139,7 +139,7 @@ if (isset($_SESSION['id'])) {
                                 
                                 <div class="help-dropdown">
 	                            <button type="button">
-                                        <i  class="fa fa-info-circle"></i>
+                                        <i  class="fa fa-info-circle"><span>USERS GUIDE</span></i>
 	                            </button>
 	                            <div class="help-dropdown-popup">
 	                                <div class="help-dropdown-popup-side">
