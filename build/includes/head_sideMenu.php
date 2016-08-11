@@ -1030,7 +1030,7 @@ include '../build/db/session.php';
                                         . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
                                         . "Thanks a lot.<br>"
                                         . "Best Regards,<br>"
-                                        . "<a href='www.wic.club'>WiC</a><br><br>"
+                                        . "WiC<br><br>"
                                         . "Note: Please do not reply to this email! Thanks";
                                 sendEmail($to, $subject, $body);
                             } else {
@@ -1042,7 +1042,7 @@ include '../build/db/session.php';
                                         . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
                                         . "Thanks a lot.<br>"
                                         . "Best Regards,<br>"
-                                        . "<a href='www.wic.club'>WiC</a><br><br>"
+                                        . "WiC<br><br>"
                                         . "Note: Please do not reply to this email! Thanks";
                                 sendEmail($to, $subject, $body);
                             }
@@ -1070,7 +1070,7 @@ include '../build/db/session.php';
                                         . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
                                         . "Thanks a lot.<br>"
                                         . "Best Regards,<br>"
-                                        . "<a href='www.wic.club'>WiC</a><br><br>"
+                                        . "WiC<br><br>"
                                         . "Note: Please do not reply to this email! Thanks";
                                 sendEmail($to, $subject, $body);
                             } else {
@@ -1082,7 +1082,7 @@ include '../build/db/session.php';
                                         . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
                                         . "Thanks a lot.<br>"
                                         . "Best Regards,<br>"
-                                        . "<a href='www.wic.club'>WiC</a><br><br>"
+                                        . "WiC<br><br>"
                                         . "Note: Please do not reply to this email! Thanks";
                                 sendEmail($to, $subject, $body);
                             }
@@ -1108,7 +1108,7 @@ include '../build/db/session.php';
                                     . "Can you register <a href='https://wic.club/build/sign_up_user.php'> here </a><br>"
                                     . "Thanks a lot.<br>"
                                     . "Best Regards,<br>"
-                                    . "<a href='www.wic.club'>WiC</a><br><br>"
+                                    . "WiC<br><br>"
                                     . "Note: Please do not reply to this email! Thanks!";
                             sendEmail($to, $subject, $body);
                         } else {
@@ -1121,7 +1121,7 @@ include '../build/db/session.php';
                                     . "Can you register <a href='https://wic.club/build/sign_up_user.php'> here </a><br>"
                                     . "Thanks a lot.<br>"
                                     . "Best Regards,<br>"
-                                    . "<a href='www.wic.club'>WiC</a> <br><br>"
+                                    . "WiC<br><br>"
                                     . "Note: Please do not reply to this email! Thanks!";
                             sendEmail($to, $subject, $body);
                         }
