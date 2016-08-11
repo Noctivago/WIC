@@ -51,9 +51,10 @@ if (isset($id) && isset($uid)) {
             <input type="text" id = "Wicname" name ="Wicname" value="<?= $wicInfo["Name"] ?>" class="form-control" placeholder="Event Name"/>
         </div>
         <div class='input-group date'>
-            <input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control">
+            <input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control"/>
             <span class="input-group-addon">
-                <i class="font-icon font-icon-calend"></i>
+                <!--i class="font-icon font-icon-calend"></i-->
+                <span class="font-icon font-icon-calend"></span>
             </span>
         </div>
         <span id="textelement" class="form-control" style="border:0px"></span>
