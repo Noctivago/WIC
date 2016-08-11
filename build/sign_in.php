@@ -77,7 +77,7 @@ if (isset($_SESSION['id'])) {
                         if ($val < 3) {
                             $value = $val + 1;
                             DB_setLoginFailed($pdo, $email, $value);
-                            $msg = 'Wrong email or password';
+                            $msg = 'Wrong email or password <span class="label label-pill label-danger">Wrong password</span>';
                         } else {
                             //BLOCK ACCOUNT
                             DB_setLoginFailed($pdo, $email);
