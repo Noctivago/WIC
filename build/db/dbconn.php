@@ -2946,7 +2946,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
 function DB_addServiceToWicPlanner($pdo, $wicId, $serviceId) {
     try {
         if (DB_checkIfServiceExistsOnWicPlanner($pdo, $wicId, $serviceId)) {
-            echo 'Service already exists in that WiC planner';
+            echo ' <span class="label label-pill label-danger" > Service already exists in that WiC planner!</span>';
         } else {
             sql($pdo, "INSERT INTO [dbo].[WIC_Planner_Service] ([Service_Id], [WIC_Planner_Id], [Enabled]) "
                     . "VALUES (?, ?, ?)", array($serviceId, $wicId, 1));
