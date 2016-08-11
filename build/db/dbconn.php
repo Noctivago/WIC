@@ -2903,10 +2903,14 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
                 echo '<option value = "' . $row['Id'] . '">' . $row['Name'] . '</option>';
             }
             echo '</select> ';
+//            alteração feita 11/08/2016
             echo '</div>
                 <p class="form-group">  <?= $msg; ?> </p>
-                <button type="submit" name="add2WiC" id="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
+                
+
+                <input type="button" name="add2WiC" id="add2WiC" class="btn btn-rounded btn-success sign-up">Save</button>
                 <input type=button class="btn btn-rounded btn-success sign-up" onClick="RedSelf();"  value="Close">';
+//              fim da alteração feita 11/08/2016
         } else {
             $linkAWP = 'http://' . $_SERVER['HTTP_HOST'] . '/build/my_wicplanner.php';
             echo '<div class="sign-avatar no-photo">&plus;</div>
