@@ -233,8 +233,8 @@ include '../build/db/session.php';
                         </div>
                     </div>
                     <div class="card-typical-section card-typical-content">
-                        
-                        
+
+
                         <header class="title">Hello Super, Exclusive, Fantastic, Special Guest ! :)</header>
                         <br>                                
                         <p>Did you ever heard something about WiC? We are a Social Network for Events that gathers vendors to planners around the world. Basically you can search, Chat and deal with the best vendors for yours: Social Events, Meet ups, Brand activations, product launch, Fashion shows, Fast meetings, executive breakfasts, coffee breaks, business dinners, galas, corporate parties and a lot more.</p>
@@ -258,8 +258,8 @@ include '../build/db/session.php';
 
                         <p >You Can Event!</p>
                         <br><p >WiC&copy; All rights reserved 2016</p></div>
-                        
-                       
+
+
                     <!--							<a href="#" class="card-typical-likes">
                                                                                     <i class="font-icon font-icon-heart"></i>
                                                                                     123
@@ -464,7 +464,7 @@ include '../build/db/session.php';
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $idOrg = $org['Id'];
                                     $userProfile = DB_getUserProfile($pdo, $user);
-                                    
+
                                     //echo 'iii'.DB_GetOrgIdByUserBossId2($pdo, $user);
                                     if ($_SESSION['role'] == 'organization') {
                                         echo ' <a class="dropdown-item" href="profile_org.php?Organization=' . $idOrg . '"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
@@ -902,8 +902,10 @@ include '../build/db/session.php';
                         </form>';
                 }
                 if (isset($_POST['sendInvite']) && !empty($_POST['email']) && !empty($_POST['service'])) {
+
                     $email = $_POST['email'];
                     $serviceId = $_POST['service'];
+                    $service = DB_GetServiceInformation($pdo, $serviceId);
                     if (DB_checkIfUserExists($pdo, $email)) {
                         $idUser = DB_checkUserByEmail($pdo, $email);
                         if (DB_checkIfUserInService($pdo, $idUser, $serviceId, 1)) {
@@ -924,6 +926,16 @@ include '../build/db/session.php';
                                 ([Service_Id],[User_Id],[Enabled],[Validate],[Role_id])
                                     VALUES
                                 (?,?,0,0,2)", array($serviceId, $idUser));
+
+                                $to = $email;
+                                $subject = "WIC #INVITATION";
+                                $body = "You have been invited by ".$org['Name']." to manage the service ".$service['Name']."."
+                                        . "Only people like you with a lots of skills and hability could manage a service like that ;)."
+                                        . "Just go for the front door and give your name on the sign up at: https.//wic.club"
+                                        . "Best Regards,<br>"
+                                        . "WiC<br><br>"
+                                        . "Note: Please do not Reply to this email ! Thanks !";
+                                sendEmail($to, $subject, $body);
                                 ?>
                                 <script>
                                     window.location = "../build/invites.php";
@@ -944,12 +956,13 @@ include '../build/db/session.php';
                                 ,?)", array($email, $serviceId));
                         $to = $email;
                         $subject = "WIC #INVITATION";
-                        $body = "Hi! <br>"
-                                . "You have been invited to be part of an Organization.<br>"
-                                . "To do that you must sign up at: http://www.wic.club/<br>"
-                                . "Best regards,<br>"
-                                . "WIC<br><br>"
-                                . "Note: Please do not reply to this email! Thanks!";
+                        $body = "You have been invited by " . $org['Name'] . " to manage the service " . $service['Name'] . "<br>"
+                                . "How is possible such a talented and professional person like you never been on WiC.Club ? <br>"
+                                . "You are that kind of special guest that everyone wanna have.<br>"
+                                . "Please register at : Just go for the front door and give your name on the sign up at: https.//wic.club <br>"
+                                . " Best Regards,<br><br>"
+                                . "WiC<br>"
+                                . "Note: Please do not Reply to this email ! Thanks !";
                         sendEmail($to, $subject, $body);
                         ?>
                         <script>
@@ -1007,33 +1020,32 @@ include '../build/db/session.php';
  WHERE [User_Id] = ? and [Wic_Planner_Id] = ?", array($idUser, $wiki));
                             //falta enviar o email para o user
 //                            
-                           
+
                             if ($_SESSION['role'] === 'organization') {
                                 //email org
                                 $to = $email;
                                 $subject = "Wic";
                                 $body = "Hi!<br>"
-                                        .$org['Name']." have been invited to be part of event ".$wicEvent['Name'].".<br>"
-                                        ."You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
-                                        ."Thanks a lot.<br>"
-                                        ."Best Regards,<br>"
-                                        ."WiC<br><br>"
-                                        ."Note: Please do not reply to this email! Thanks";
+                                        . $org['Name'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
+                                        . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
+                                        . "Thanks a lot.<br>"
+                                        . "Best Regards,<br>"
+                                        . "<a href='www.wic.club'>WiC</a><br><br>"
+                                        . "Note: Please do not reply to this email! Thanks";
                                 sendEmail($to, $subject, $body);
                             } else {
                                 //email user
                                 $to = $email;
                                 $subject = "Wic";
                                 $body = "Hi!<br>"
-                                        .$userProfile['First']." ".$userProfile['Last'] ." have been invited to be part of event ".$wicEvent['Name'].".<br>"
-                                        ."You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
-                                        ."Thanks a lot.<br>"
-                                        ."Best Regards,<br>"
-                                        ."WiC<br><br>"
-                                        ."Note: Please do not reply to this email! Thanks";
-                                        sendEmail($to, $subject, $body);
+                                        . $userProfile['First'] . " " . $userProfile['Last'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
+                                        . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
+                                        . "Thanks a lot.<br>"
+                                        . "Best Regards,<br>"
+                                        . "<a href='www.wic.club'>WiC</a><br><br>"
+                                        . "Note: Please do not reply to this email! Thanks";
+                                sendEmail($to, $subject, $body);
                             }
-                            
                         } else {
                             //insere em wicplanner user o id do user e do wicplanner
                             sql($pdo, "INSERT INTO [dbo].[WIC_Planner_User]
@@ -1054,25 +1066,25 @@ include '../build/db/session.php';
                                 $to = $email;
                                 $subject = "Wic";
                                 $body = "Hi!<br>"
-                                        .$org['Name']." have been invited to be part of event ".$wicEvent['Name'].".<br>"
-                                        ."You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
-                                        ."Thanks a lot.<br>"
-                                        ."Best Regards,<br>"
-                                        ."WiC<br><br>"
-                                        ."Note: Please do not reply to this email! Thanks";
+                                        . $org['Name'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
+                                        . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
+                                        . "Thanks a lot.<br>"
+                                        . "Best Regards,<br>"
+                                        . "<a href='www.wic.club'>WiC</a><br><br>"
+                                        . "Note: Please do not reply to this email! Thanks";
                                 sendEmail($to, $subject, $body);
                             } else {
                                 //email user
                                 $to = $email;
                                 $subject = "Wic";
                                 $body = "Hi!<br>"
-                                     .$userProfile['First']." ".$userProfile['Last'] ." have been invited to be part of event ".$wicEvent['Name'].".<br>"
-                                        ."You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
-                                        ."Thanks a lot.<br>"
-                                        ."Best Regards,<br>"
-                                        ."WiC<br><br>"
-                                        ."Note: Please do not reply to this email! Thanks";
-                                        sendEmail($to, $subject, $body);
+                                        . $userProfile['First'] . " " . $userProfile['Last'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
+                                        . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
+                                        . "Thanks a lot.<br>"
+                                        . "Best Regards,<br>"
+                                        . "<a href='www.wic.club'>WiC</a><br><br>"
+                                        . "Note: Please do not reply to this email! Thanks";
+                                sendEmail($to, $subject, $body);
                             }
                         }
                     } else {
@@ -1091,12 +1103,12 @@ include '../build/db/session.php';
                             $to = $email;
                             $subject = "Wic";
                             $body = "Hi!<br>"
-                                    .$org['Name']. " have been invited to be part of event ".$wicEvent['Name'].".<br>"
+                                    . $org['Name'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
                                     . "I know that you wanna be part of this memorable celebration but first we need to put your name on the guestlist ;)<br>"
                                     . "Can you register <a href='https://wic.club/build/sign_up_user.php'> here </a><br>"
                                     . "Thanks a lot.<br>"
                                     . "Best Regards,<br>"
-                                    . "WiC <br><br>"
+                                    . "<a href='www.wic.club'>WiC</a><br><br>"
                                     . "Note: Please do not reply to this email! Thanks!";
                             sendEmail($to, $subject, $body);
                         } else {
@@ -1104,12 +1116,12 @@ include '../build/db/session.php';
                             $to = $email;
                             $subject = "Wic";
                             $body = "Hi!<br>"
-                                    .$userProfile['First']." ".$userProfile['Last'] ." have been invited to be part of event ".$wicEvent['Name'].".<br>"
+                                    . $userProfile['First'] . " " . $userProfile['Last'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
                                     . "I know that you wanna be part of this memorable celebration but first we need to put your name on the guestlist ;)<br>"
                                     . "Can you register <a href='https://wic.club/build/sign_up_user.php'> here </a><br>"
                                     . "Thanks a lot.<br>"
                                     . "Best Regards,<br>"
-                                    . "WiC <br><br>"
+                                    . "<a href='www.wic.club'>WiC</a> <br><br>"
                                     . "Note: Please do not reply to this email! Thanks!";
                             sendEmail($to, $subject, $body);
                         }
