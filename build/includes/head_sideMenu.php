@@ -959,7 +959,7 @@ a:hover {color:#ccc; text-decoration:none}*/
                 <!--invite members to my wic planner-->
                 <?php
                 $userId = $_SESSION['id'];
-                if ($_SESSION['role'] === 'user') {
+                if ($_SESSION['role'] === 'user' || $_SESSION['role'] === 'organization') {
                     echo '<div class="container-fluid">
                  <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
                         <div class="sign-avatar">
@@ -990,59 +990,7 @@ a:hover {color:#ccc; text-decoration:none}*/
                 }
                 if (isset($_POST['sendInviteWP']) && !empty($_POST['emailWP'])) {
                     $email = $_POST['emailWP'];
-                    if (DB_checkIfUserExists($pdo, $email)) {
-                        $idUser = DB_checkUserByEmail($pdo, $email);
-                        if (DB_checkIfUserInService($pdo, $idUser, $serviceId, 1)) {
-                            echo 'User is already in service';
-                        } else {
-                            if (DB_checkIfUserInService($pdo, $idUser, $serviceId, 0)) {
-                                sql($pdo, "UPDATE [dbo].[User_Service]
-                                SET [Enabled] = 0
-                                   ,[Validate] = 0
-                              WHERE [User_Id] = ? and [Service_id] = ?", array($idUser, $serviceId));
-                                ?>
-                                <script>
-                                    window.location = "../build/invites.php";
-                                </script>
-                                <?php
-                            } else {
-                                sql($pdo, "INSERT INTO [dbo].[User_Service]
-                                ([Service_Id],[User_Id],[Enabled],[Validate],[Role_id])
-                                    VALUES
-                                (?,?,0,0,2)", array($serviceId, $idUser));
-                                ?>
-                                <script>
-                                    window.location = "../build/invites.php";
-                                </script>
-                                <?php
-                            }
-                        }
-                    } else {
-
-                        //insert in organization invite
-                        sql($pdo, "INSERT INTO [dbo].[Organization_Invites]
-                                ([Email]
-                                ,[Enabled]
-                                ,[Service_Id])
-                          VALUES
-                                (?
-                                ,0
-                                ,?)", array($email, $serviceId));
-                        $to = $email;
-                        $subject = "WIC #INVITATION";
-                        $body = "Hello! <br>"
-                                . "You have been invited to be part of an Organization.<br>"
-                                . "To do that you must sign up at: http://www.wic.club/<br>"
-                                . "Best regards,<br>"
-                                . "WIC<br><br>"
-                                . "Note: Please do not reply to this email! Thanks!";
-                        sendEmail($to, $subject, $body);
-                        ?>
-                        <script>
-                            window.location = "../build/invites.php";
-                        </script>
-                        <?php
-                    }
+                    
                 }
                 ?>
             </ul>
