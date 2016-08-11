@@ -242,7 +242,16 @@ include '../build/db/session.php';
                                                         
                             
                                                     </div>-->
-
+                                <div class="dropdown dropdown-notification help-dropdown"  >
+                                <a href="#"
+                                   class="header-alarm  "
+                                   id="dd-messages"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
+                                  <i  class="fa fa-info-circle"><span>USERS GUIDE</span></i>
+                                </a>
+                            
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
                                 <a href="#"
                                    class="header-alarm  "
