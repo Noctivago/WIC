@@ -22,105 +22,103 @@ include '../build/db/session.php';
         <link href="img/w_logo.png" rel="apple-touch-icon" type="image/png">
         <link href="img/w_logo.png" rel="icon" type="image/png">
         <link href="img/w_logo.png" rel="shortcut icon">
-        
+
 
 
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
-        
 
-        
+
+
         <!--BACKUP-->
-        
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        
-<script type="text/javascript">
-$(document).ready(function() {	
 
-		var id = '#dialog';
-	
-		//Get the screen height and width
-		var maskHeight = $(document).height();
-		var maskWidth = $(window).width();
-	
-		//Set heigth and width to mask to fill up the whole screen
-		$('#mask').css({'width':maskWidth,'height':maskHeight});
-		
-		//transition effect		
-		$('#mask').fadeIn(1000);	
-		$('#mask').fadeTo("slow",0.8);	
-	
-		//Get the window height and width
-		var winH = $(window).height();
-		var winW = $(window).width();
-              
-		//Set the popup window to center
-		$(id).css('top',  winH/2-$(id).height()/0.51);
-		$(id).css('left', winW/2-$(id).width()/2);
-	
-		//transition effect
-		$(id).fadeIn(2000); 	
-	
-	//if close button is clicked
-	$('.window .close').click(function (e) {
-		//Cancel the link behavior
-		e.preventDefault();
-		
-		$('#mask').hide();
-		$('.window').hide();
-	});		
-	
-	//if mask is clicked
-	$('#mask').click(function () {
-		$(this).hide();
-		$('.window').hide();
-	});		
-	
-});
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
-</script>
+        <script type="text/javascript">
+            $(document).ready(function () {
 
+                var id = '#dialog';
 
+                //Get the screen height and width
+                var maskHeight = $(document).height();
+                var maskWidth = $(window).width();
+
+                //Set heigth and width to mask to fill up the whole screen
+                $('#mask').css({'width': maskWidth, 'height': maskHeight});
+
+                //transition effect		
+                $('#mask').fadeIn(1000);
+                $('#mask').fadeTo("slow", 0.8);
+
+                //Get the window height and width
+                var winH = $(window).height();
+                var winW = $(window).width();
+
+                //Set the popup window to center
+                $(id).css('top', winH / 2 - $(id).height() / 0.51);
+                $(id).css('left', winW / 2 - $(id).width() / 2);
+
+                //transition effect
+                $(id).fadeIn(2000);
+
+                //if close button is clicked
+                $('.window .close').click(function (e) {
+                    //Cancel the link behavior
+                    e.preventDefault();
+
+                    $('#mask').hide();
+                    $('.window').hide();
+                });
+
+                //if mask is clicked
+                $('#mask').click(function () {
+                    $(this).hide();
+                    $('.window').hide();
+                });
+
+            });
+
+        </script>
 
 
-<style type="text/css">
-/*body {
-font-family:verdana;
-font-size:15px;
-}
-
-a {color:#333; text-decoration:none}
-a:hover {color:#ccc; text-decoration:none}*/
-
-#mask {
-  position:absolute;
-  left:0;
-  top:0;
-  z-index:9000;
-  background-color:#000;
-  display:none;
-}  
-#boxes .window {
-  position:absolute;
-  left:0;
-  top:0;
-  width:440px;
-  height:200px;
-  display:none;
-  z-index:9999;
-  padding:20px;
-}
-#boxes #dialog {
-  width:450px; 
-  height:600px;
-  padding:10px;
-  background-color:#ffffff;
-}
-</style>
 
 
+        <style type="text/css">
+            /*body {
+            font-family:verdana;
+            font-size:15px;
+            }
+            
+            a {color:#333; text-decoration:none}
+            a:hover {color:#ccc; text-decoration:none}*/
+
+            #mask {
+                position:absolute;
+                left:0;
+                top:0;
+                z-index:9000;
+                background-color:#000;
+                display:none;
+            }  
+            #boxes .window {
+                position:absolute;
+                left:0;
+                top:0;
+                width:440px;
+                height:200px;
+                display:none;
+                z-index:9999;
+                padding:20px;
+            }
+            #boxes #dialog {
+                width:450px; 
+                height:600px;
+                padding:10px;
+                background-color:#ffffff;
+            }
+        </style>
 
 
 
@@ -128,8 +126,10 @@ a:hover {color:#ccc; text-decoration:none}*/
 
 
 
-          <!--COISAS CHAT-->
-        
+
+
+        <!--COISAS CHAT-->
+
         <script src="chat/fwebsocket.js"></script>
         <script>
             var Server;
@@ -165,13 +165,13 @@ a:hover {color:#ccc; text-decoration:none}*/
             });
         </script>
         <!--COISAS CHAT-->
-        
-        
-        <!--FIM BACKUP-->
-        
 
-        
-        
+
+        <!--FIM BACKUP-->
+
+
+
+
 
     </head>
 
@@ -188,103 +188,103 @@ a:hover {color:#ccc; text-decoration:none}*/
 
 
     <body class="with-side-menu control-panel control-panel-compact">
-        
-        
-        
-        
-        
-                    <div id="boxes" class="card-typical window" >
+
+
+
+
+
+        <div id="boxes" class="card-typical window" >
             <div  id="dialog" class=" card-typical window">
-<!--                <div class="card-typical-section">
-                    <div class="user-card-row">
-                        atum
+                <!--                <div class="card-typical-section">
+                                    <div class="user-card-row">
+                                        atum
+                                    </div>
+                                </div>
+                                <div class="card-typical-content">Welcome to Wic
+                                    <div class="photo">
+                                        <img src="img/wic_logo.png" style="max-width:80px;">
+                                    </div>
+                                
+                                
+                                <header class="title"> Welcome TO Wic</header>
+                                <p>Simple Modal Window | </p>
+                                </div>-->
+
+                <article class="card-typical">
+                    <div class="card-typical-section">
+                        <div class="user-card-row">
+                            <div class="tbl-row">
+                                <!--									<div class="tbl-cell tbl-cell-photo">
+                                                                                                                <a href="#">
+                                                                                                                    <img src="img/wic_logo.png"style="max-width: 80px" alt="">
+                                                                                                                </a>
+                                                                                                        </div>-->
+                                <div class="tbl-cell">
+                                    <p class="user-card-row-name"><h3>Welcome to WiC</h3></p>
+                                        <!--<p class="color-blue-grey-lighter">3 days ago - 23 min read</p>-->
+                                </div>
+                                <div class="tbl-cell tbl-cell-status">
+
+                                    <a href="#">
+                                        <img src="img/wic_logo.png"style="max-width: 80px" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card-typical-content">Welcome to Wic
-                    <div class="photo">
-                        <img src="img/wic_logo.png" style="max-width:80px;">
+                    <div class="card-typical-section card-typical-content">
+                        <header class="title">Search, Chat and Deal with the best vendors for yours:</header>
+                        <br>                                
+                        <p>Social Events, Meet ups, Brand activations, product launch, Fashion shows, Fast meetings, executive breakfasts, coffee breaks, business dinners, galas, corporate parties and a lot more.</p>
+                        <br>
+                        <p>Enjoy the biggest community of events and entertainment:</p>
+
+                        <p >&emsp;&emsp;&ordm;&emsp;4000+ services for events around the world</p>
+
+                        <p> &emsp;&emsp;&ordm;&emsp;700+ vendors</p>
+
+                        <p> &emsp;&emsp;&ordm;&emsp;The best tools and support for your event management.</p>
+                        <br>
+                        <p>This is not a marketplace. The transaction or any type of sale is responsible for the Planner and Vendor. </p>
+                        <br>
+                        <p>Each event is unique and there is no customized prices for any type of service provided.</p>
+                        <br>
+
                     </div>
-                
-                
-                <header class="title"> Welcome TO Wic</header>
-                <p>Simple Modal Window | </p>
-                </div>-->
-                
-                		<article class="card-typical">
-						<div class="card-typical-section">
-							<div class="user-card-row">
-								<div class="tbl-row">
-<!--									<div class="tbl-cell tbl-cell-photo">
-										<a href="#">
-                                                                                    <img src="img/wic_logo.png"style="max-width: 80px" alt="">
-										</a>
-									</div>-->
-									<div class="tbl-cell">
-                                                                            <p class="user-card-row-name"><h3>Welcome to WiC</h3></p>
-										<!--<p class="color-blue-grey-lighter">3 days ago - 23 min read</p>-->
-									</div>
-									<div class="tbl-cell tbl-cell-status">
-                                                                            
-										<a href="#">
-                                                                                    <img src="img/wic_logo.png"style="max-width: 80px" alt="">
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card-typical-section card-typical-content">
-							<header class="title">Search, Chat and Deal with the best vendors for yours:</header>
-                                                        <br>                                
-<p>Social Events, Meet ups, Brand activations, product launch, Fashion shows, Fast meetings, executive breakfasts, coffee breaks, business dinners, galas, corporate parties and a lot more.</p>
-<br>
-<p>Enjoy the biggest community of events and entertainment:</p>
+                    <!--<div class="card-typical-section">-->
+                    <div class="card-typical-linked"><a class="btn btn-rounded btn-success close" style="font-size: xx-large;margin: 10px auto auto 100px; display: table-row-group;">Start Planning</a>
 
-<p >&emsp;&emsp;&ordm;&emsp;4000+ services for events around the world</p>
+                        <p >Event Your Life !</p>
+                        <br><p >WiC&copy; All rights reserved 2016</p></div>
+                    <!--							<a href="#" class="card-typical-likes">
+                                                                                    <i class="font-icon font-icon-heart"></i>
+                                                                                    123
+                                                                            </a>-->
 
-<p> &emsp;&emsp;&ordm;&emsp;700+ vendors</p>
+                    <!--</div>-->
+                </article><!--.card-typical-->
 
-<p> &emsp;&emsp;&ordm;&emsp;The best tools and support for your event management.</p>
-<br>
-<p>This is not a marketplace. The transaction or any type of sale is responsible for the Planner and Vendor. </p>
-<br>
-<p>Each event is unique and there is no customized prices for any type of service provided.</p>
-<br>
 
-						</div>
-						<!--<div class="card-typical-section">-->
-                                                <div class="card-typical-linked"><a class="btn btn-rounded btn-success close" style="font-size: xx-large;margin: 10px auto auto 100px; display: table-row-group;">Start Planning</a>
-                                                
-                                                    <p >Event Your Life !</p>
-                                                <br><p >WiC&copy; All rights reserved 2016</p></div>
-<!--							<a href="#" class="card-typical-likes">
-								<i class="font-icon font-icon-heart"></i>
-								123
-							</a>-->
-                                                     
-						<!--</div>-->
-					</article><!--.card-typical-->
-            
-            
-            <!--<a href="#" class="close">Close it</a>-->
-            
-<!--            <div class="box-typical-footer">
-            <button class="btn btn-rounded btn-primary close"> Start Planning</button>
-            
-            </div>-->
-            
+                <!--<a href="#" class="close">Close it</a>-->
+
+                <!--            <div class="box-typical-footer">
+                            <button class="btn btn-rounded btn-primary close"> Start Planning</button>
+                            
+                            </div>-->
+
             </div>
             <!-- Mask to cover the whole screen -->
             <div style=" display: none; opacity: 0.8;" id="mask"></div>
-            </div>     
-        
-        
-        
-        
-        
-        
-        
-        
-       
+        </div>     
+
+
+
+
+
+
+
+
+
         <?php
         //SE TIVER QUERY STRING
 
@@ -988,9 +988,50 @@ a:hover {color:#ccc; text-decoration:none}*/
                         </div>
                         </form>';
                 }
-                if (isset($_POST['sendInviteWP']) && !empty($_POST['emailWP'])) {
+                if (isset($_POST['sendInviteWP']) && !empty($_POST['emailWP']) && !empty($_POST['wicplanner'])) {
                     $email = $_POST['emailWP'];
-                    
+                    if (DB_checkIfUserExists($pdo, $email)) {
+                        $idWic = $_POST['wicplanner'];
+                        $idUser = DB_getUserId($pdo, $email);
+                        if (DB_checkifUserInWicPlanner($pdo, $idUser, $idWic)) {
+                            // atualiza validate para 0
+                            sql($pdo, "UPDATE [dbo].[WIC_Planner_User]
+      SET [Enabled] = 0
+      ,[Validate] = 0
+ WHERE [User_Id] = ? and [Wic_Planner_Id] = ?", array($idUser, $idWic));
+                            //falta enviar o email para o user
+                        
+                            
+                            
+                        } else {
+                            //insere em wicplanner user o id do user e do wicplanner
+                            sql($pdo, "INSERT INTO [dbo].[WIC_Planner_User]
+           ([User_Id]
+           ,[Wic_Planner_Id]
+           ,[Enabled]
+           ,[Validate])
+     VALUES
+           (?
+           ,?
+           ,0
+           ,0)", array($idUser, $idWic));
+                            //falta enviar email para o user se for org envia um email X se for user envia email Y
+                        
+                            
+                            
+                        }
+                    } else {
+                        //insere na tabela wicplannerinvites
+                        sql($pdo, "INSERT INTO [dbo].[Wic_Planner_Invites]
+           ([Email]
+           ,[Enabled]
+           ,[Wic_Planner_Id])
+     VALUES
+           (?
+           ,0
+           ,?)", array($email, $idWic));
+                        //enviar email para se registar
+                    }
                 }
                 ?>
             </ul>
@@ -1052,7 +1093,7 @@ a:hover {color:#ccc; text-decoration:none}*/
                     if (event.keyCode === 13 && event.shiftKey === false) {
                         getAdvancedSearchValue();
                     }
-                }); 
+                });
             }
             function getAdvancedSearchValue() {
                 changeUrlParam('PageNum', 0);

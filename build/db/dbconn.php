@@ -180,6 +180,21 @@ function DB_checkIfUserInService($pdo, $userId, $serviceId, $enabled) {
         
     }
 }
+function DB_checkifUserInWicPlanner($pdo,$idUser,$idWic){
+    try {
+        //verificar se existe o user no wicplanner
+        $count = sql($pdo,"SELECT *
+  FROM [dbo].[WIC_Planner_User]
+  where [User_Id] = ? and [Wic_Planner_Id] = ?",array($idUser,$idWic),"count");
+        if($count < 0){
+            return true;
+        }else{
+            return false;
+        }
+    } catch (Exception $ex) {
+        
+    }
+}
 
 /**
  * Verifica se o User ja existe
