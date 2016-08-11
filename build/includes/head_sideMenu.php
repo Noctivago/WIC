@@ -998,14 +998,13 @@ include '../build/db/session.php';
                     $wiki = $_POST['wicplanner'];
                     $wicEvent = DB_getWicPlannerName($pdo, $wiki);
                     if (DB_checkIfUserExists($pdo, $email)) {
-                        $idWic = $_POST['wicplanner'];
                         $idUser = DB_getUserId($pdo, $email);
-                        if (DB_checkifUserInWicPlanner($pdo, $idUser, $idWic)) {
+                        if (DB_checkifUserInWicPlanner($pdo, $idUser, $wiki)) {
                             // atualiza validate para 0
                             sql($pdo, "UPDATE [dbo].[WIC_Planner_User]
       SET [Enabled] = 0
       ,[Validate] = 0
- WHERE [User_Id] = ? and [Wic_Planner_Id] = ?", array($idUser, $idWic));
+ WHERE [User_Id] = ? and [Wic_Planner_Id] = ?", array($idUser, $wiki));
                             //falta enviar o email para o user
 //                            
                            
@@ -1046,7 +1045,7 @@ include '../build/db/session.php';
            (?
            ,?
            ,0
-           ,0)", array($idUser, $idWic));
+           ,0)", array($idUser, $wiki));
 
 
 //falta enviar email para o user se for org envia um email X se for user envia email Y
@@ -1085,7 +1084,7 @@ include '../build/db/session.php';
      VALUES
            (?
            ,0
-           ,?)", array($email, $idWic));
+           ,?)", array($email, $wiki));
                         //enviar email para se registar
                         if ($_SESSION['role'] === 'organization') {
                             //email org
