@@ -763,7 +763,7 @@ function sendEmail($to, $subject, $body) {
     if (!$mail->Send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-        return '<span class="label label-pill label-danger">Message sent!</span>';
+        return '<span class="label label-pill label-warning">Message sent!</span>';
     }
 }
 
