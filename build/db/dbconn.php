@@ -2950,7 +2950,7 @@ function DB_addServiceToWicPlanner($pdo, $wicId, $serviceId) {
         } else {
             sql($pdo, "INSERT INTO [dbo].[WIC_Planner_Service] ([Service_Id], [WIC_Planner_Id], [Enabled]) "
                     . "VALUES (?, ?, ?)", array($serviceId, $wicId, 1));
-            echo "Service added to your WiC planner!";
+            echo '<span class="label label-pill label-warning" style="background:coral"> Service added to your WiC planner!</span>';
         }
     } catch (PDOException $e) {
         echo "ERROR ADDDING SERVIVE TO WIC PLANNER!";
