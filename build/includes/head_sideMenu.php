@@ -233,9 +233,11 @@ include '../build/db/session.php';
                         </div>
                     </div>
                     <div class="card-typical-section card-typical-content">
-                        <header class="title">Search, Chat and Deal with the best vendors for yours:</header>
+                        
+                        
+                        <header class="title">Hello Super, Exclusive, Fantastic, Special Guest ! :)</header>
                         <br>                                
-                        <p>Social Events, Meet ups, Brand activations, product launch, Fashion shows, Fast meetings, executive breakfasts, coffee breaks, business dinners, galas, corporate parties and a lot more.</p>
+                        <p>Did you ever heard something about WiC? We are a Social Network for Events that gathers vendors to planners around the world. Basically you can search, Chat and deal with the best vendors for yours: Social Events, Meet ups, Brand activations, product launch, Fashion shows, Fast meetings, executive breakfasts, coffee breaks, business dinners, galas, corporate parties and a lot more.</p>
                         <br>
                         <p>Enjoy the biggest community of events and entertainment:</p>
 
@@ -243,19 +245,21 @@ include '../build/db/session.php';
 
                         <p> &emsp;&emsp;&ordm;&emsp;700+ vendors</p>
 
-                        <p> &emsp;&emsp;&ordm;&emsp;The best tools and support for your event management.</p>
+                        <p> &emsp;&emsp;&ordm;&emsp;And an amazing Notepad, called WiCplanner for you event management.</p>
                         <br>
-                        <p>This is not a marketplace. The transaction or any type of sale is responsible for the Planner and Vendor. </p>
+                        <p>This is not a marketplace. The transaction or any type of sale is responsability for the Planner and Vendor. </p>
                         <br>
-                        <p>Each event is unique and there is no customized prices for any type of service provided.</p>
+                        <p>Because each event is unique and there is no customized prices for any type of service provided.</p>
                         <br>
 
                     </div>
                     <!--<div class="card-typical-section">-->
                     <div class="card-typical-linked"><a class="btn btn-rounded btn-success close" style="font-size: xx-large;margin: 10px auto auto 100px; display: table-row-group;">Start Planning</a>
 
-                        <p >Event Your Life !</p>
+                        <p >You Can Event!</p>
                         <br><p >WiC&copy; All rights reserved 2016</p></div>
+                        
+                       
                     <!--							<a href="#" class="card-typical-likes">
                                                                                     <i class="font-icon font-icon-heart"></i>
                                                                                     123
