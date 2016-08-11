@@ -770,7 +770,7 @@ function DB_getUsersTable($pdo) {
         }
         echo "</table>";
     } catch (Exception $exc) {
-        echo 'ERROR READING USERS';
+        echo ' <span class="label label-pill label-danger">ERROR READING USERS</span>';
     }
 }
 
@@ -788,7 +788,7 @@ function DB_getRatingTable($pdo) {
         }
         echo "</table>";
     } catch (Exception $exc) {
-        echo 'ERROR READING USERS';
+        echo '<span class="label label-pill label-danger">ERROR READING USERS</span>';
     }
 }
 
@@ -811,7 +811,7 @@ function DB_getMultimediaTable($pdo) {
         }
         echo "</table>";
     } catch (Exception $exc) {
-        echo 'ERROR READING USERS';
+        echo '<span class="label label-pill label-danger">ERROR READING USERS</span>';
     }
 }
 
