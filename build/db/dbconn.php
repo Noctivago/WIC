@@ -866,7 +866,7 @@ function DB_addOrg($pdo, $hashPassword, $email, $name, $code, $city) {
         DB_addOrgProfile($pdo, $email, $name, $city);
         echo DB_sendActivationEmailOrg($email, $name, $code);
     } catch (PDOException $e) {
-        echo ' <span class="label label-pill label-danger">ERROR CREATING ORGANIZATION ACCOUNT!</span>';
+        echo '<span class="label label-pill label-danger">ERROR CREATING ORGANIZATION ACCOUNT!</span>';
         die();
     }
 }
