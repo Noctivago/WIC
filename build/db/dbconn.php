@@ -843,7 +843,7 @@ function DB_getUserProfileTable($pdo) {
         }
         echo "</table>";
     } catch (Exception $exc) {
-        echo 'ERROR READING USERS';
+        echo '<span class="label label-pill label-danger">ERROR READING USERS</span>';
     }
 }
 
@@ -866,7 +866,7 @@ function DB_addOrg($pdo, $hashPassword, $email, $name, $code, $city) {
         DB_addOrgProfile($pdo, $email, $name, $city);
         echo DB_sendActivationEmailOrg($email, $name, $code);
     } catch (PDOException $e) {
-        echo "ERROR CREATING ORGANIZATION ACCOUNT!";
+        echo ' <span class="label label-pill label-danger">ERROR CREATING ORGANIZATION ACCOUNT!</span>';
         die();
     }
 }
