@@ -77,15 +77,15 @@ if (isset($_SESSION['id'])) {
                         if ($val < 3) {
                             $value = $val + 1;
                             DB_setLoginFailed($pdo, $email, $value);
-                            $msg = 'Wrong email or password <span class="label label-pill label-danger">Wrong password</span>';
+                            $msg = 'Wrong email or password';
                         } else {
                             //BLOCK ACCOUNT
                             DB_setLoginFailed($pdo, $email);
                             DB_setBlockAccount($pdo, $email);
                             //ENVIAR EMAIL COM INSTRUÇÔES DE DESBLOQUEIO
-                            $msg = 'Account blocked! <span class="label label-pill label-danger">Wrong password</span> ';
+                            $msg = 'Account blocked!';
                             $to = $email;
-                            $subject = 'Account Blocked <span class="label label-pill label-danger">Wrong password</span> ';
+                            $subject = 'Account Blocked';
                             $code = generateActivationCode();
                             DB_updateUserAccountActivationCode($pdo, $email, $code);
                             $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/account_confirmation_link.php?EM=' . $email . '&AC=' . $code . '';
@@ -102,11 +102,11 @@ if (isset($_SESSION['id'])) {
                 }
             } else {
                 //SE ENABLED = 0
-                $msg = 'Your account is not activated or blocked!<span class="label label-pill label-danger">Wrong password</span>';
+                $msg = 'Your account is not activated or blocked!';
             }
         } else {
             //SE USER N EXISTS
-            $msg = 'Wrong email or password! <span class="label label-pill label-danger">Wrong password</span> ';
+            $msg = 'Wrong email or password!';
         }
     }
     ?>
@@ -141,7 +141,11 @@ if (isset($_SESSION['id'])) {
                         <a href="reset_password.php">Reset Password</a>
                     </div>
                 </div>
+                
+                <!--alterada cor das mensagens-->
                 <p class="sign-note"> <span class="label label-pill label-danger"> <?= $msg; ?></span> </p>
+                
+                <!--alterada cor das mensagens-->
                 <button type="submit" name="signin" class="btn btn-rounded">Sign in</button>
                 <p class="sign-note">New to our website? <br><a href="sign_up_user.php">Sign up as a planner</a><br><a href="sign_up_org.php"> Sign up as a vendor</a></p>
                 <!--<button type="button" class="close">
