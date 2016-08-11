@@ -959,7 +959,7 @@ a:hover {color:#ccc; text-decoration:none}*/
                 <!--invite members to my wic planner-->
                 <?php
                 $userId = $_SESSION['id'];
-                if ($_SESSION['role'] === 'user' || $_SESSION['role'] === 'Organization') {
+                if ($_SESSION['role'] === 'user' || $_SESSION['role'] === 'organization') {
                     echo '<div class="container-fluid">
                  <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
                         <div class="sign-avatar">
