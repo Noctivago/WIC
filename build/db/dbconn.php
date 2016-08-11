@@ -883,7 +883,7 @@ function DB_addOrgInRole($pdo, $email) {
         sql($pdo, "INSERT INTO [dbo].[User_In_Role] ([User_Id], [Role_Id], [Enabled]) VALUES(?,?,?)"
                 . "", array($userId, $role, 1));
     } catch (PDOException $e) {
-        echo "ERROR CREATING ORG USER IN ROLE!";
+        echo ' <span class="label label-pill label-danger">ERROR CREATING ORG USER IN ROLE!</span>';
         die();
     }
 }
