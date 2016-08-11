@@ -1000,9 +1000,15 @@ include '../build/db/session.php';
       ,[Validate] = 0
  WHERE [User_Id] = ? and [Wic_Planner_Id] = ?", array($idUser, $idWic));
                             //falta enviar o email para o user
-                        
-                            
-                            
+//                            $to = $email;
+//                            $subject = "WIC #INVITATION";
+//                            $body = "Hi! <br>"
+//                                    . "You have been invited to be part of an Organization.<br>"
+//                                    . "To do that you must sign up at: http://www.wic.club/<br>"
+//                                    . "Best regards,<br>"
+//                                    . "WIC<br><br>"
+//                                    . "Note: Please do not reply to this email! Thanks!";
+//                            sendEmail($to, $subject, $body);
                         } else {
                             //insere em wicplanner user o id do user e do wicplanner
                             sql($pdo, "INSERT INTO [dbo].[WIC_Planner_User]
@@ -1015,10 +1021,9 @@ include '../build/db/session.php';
            ,?
            ,0
            ,0)", array($idUser, $idWic));
-                            //falta enviar email para o user se for org envia um email X se for user envia email Y
-                        
-                            
-                            
+
+
+//falta enviar email para o user se for org envia um email X se for user envia email Y
                         }
                     } else {
                         //insere na tabela wicplannerinvites
@@ -1030,7 +1035,16 @@ include '../build/db/session.php';
            (?
            ,0
            ,?)", array($email, $idWic));
+                        
                         //enviar email para se registar
+                        $to = $email;
+                        $subject = "";
+                        $body = "Hi!<br>"
+                        ." have been invited to be part of event <name of the event>.<br>"
+                        ." I know that you wanna be part of this memorable celebration but first we need to put your name on the guestlist ;)<br>"
+                        ."Can you register here ? <a href='https://wic.club/build/sign_in.php'> Wic </a> Thanks a lot.<br>"
+                        ."Best Regards, WiC <br><br>"
+                        ."Note: Please do not reply to this email! Thanks!";
                     }
                 }
                 ?>
