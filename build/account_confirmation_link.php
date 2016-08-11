@@ -27,15 +27,15 @@ include("../build/db/dbconn.php");
                     $msg = sendEmail($to, $subject, $body) . ' Account successfully activated!';
                 } else {
                     //SENAO
-                    $msg = 'AN ERROR OCCURED WHILE ACTIVATING ACCOUNT';
+                    $msg = ' <span class="label label-pill label-danger">AN ERROR OCCURED WHILE ACTIVATING ACCOUNT</span>';
                 }
             } else {
                 //SENAO INFORMA
-                $msg = 'WRONG ACTIVATION CODE!';
+                $msg = '<span class="label label-pill label-danger">WRONG ACTIVATION CODE!</span>';
             }
         } else {
             //SENAO INFORMA
-            $msg = 'INCORRECT DATA. PLEASE TRY AGAIN!';
+            $msg = '<span class="label label-pill label-danger">INCORRECT DATA. PLEASE TRY AGAIN!</span>';
         }
     }
     ?>

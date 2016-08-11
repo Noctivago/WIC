@@ -711,7 +711,7 @@ function DB_resetPassword($pdo, $email) {
                 . "Event your life ! You Can Event ! <br><br>"
                 . "Note: Please do not reply to this email! Thanks!";
         sendEmail($to, $subject, $body);
-        return "AN EMAIL AS SENT WITH A NEW PASSWORD!";
+        return '<span class="label label-pill label-danger">AN EMAIL AS SENT WITH A NEW PASSWORD!</span>';
     } catch (Exception $exc) {
         return false;
     }
