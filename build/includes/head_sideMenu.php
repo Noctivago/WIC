@@ -1038,7 +1038,7 @@ include '../build/db/session.php';
                         
                         //enviar email para se registar
                         $to = $email;
-                        $subject = "";
+                        $subject = "Wic";
                         $body = "Hi!<br>"
                         ." have been invited to be part of event <name of the event>.<br>"
                         ." I know that you wanna be part of this memorable celebration but first we need to put your name on the guestlist ;)<br>"
