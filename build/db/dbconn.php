@@ -1310,6 +1310,39 @@ where [Service].[Id] = :id");
     }
 }
 
+function DB_getUserProfile($pdo, $user){
+    try {
+        $stmt = $pdo->prepare("SELECT * From [User_Profile] Where [Enabled] = 1 and [User_ID] = :id");
+        $stmt->bindParam(':id', $user);
+        $stmt->execute();
+        $userProfile = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            $userProfile['First'] = $row['First_Name'];
+            $userProfile['Last'] = $row['Last_Name'];
+        }
+        return $userProfile;
+    } catch (Exception $ex) {
+        
+    }
+}
+
+function DB_getWicPlannerName($pdo,$idWic){
+    try {
+         $stmt = $pdo->prepare("SELECT * From [Wic_Planner] Where [Enabled] = 1 and [Id] = :id");
+        $stmt->bindParam(':id', $idWic);
+        $stmt->execute();
+        $Wic = array();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            $Wic['Id'] = $row['Id'];
+            $Wic['Name'] = $row['Name'];
+        }
+        return $Wic;
+    } catch (Exception $ex) {
+        
+    }
+}
 function DB_GetOrgIdByUserBossId2($pdo, $idUser) {
     try {
         $stmt = $pdo->prepare("SELECT * From [Organization] Where [Enabled] = 1 and [User_Boss] = :id");

@@ -463,7 +463,8 @@ include '../build/db/session.php';
                                     $user = $_SESSION['id'];
                                     $org = DB_GetOrgIdByUserBossId2($pdo, $user);
                                     $idOrg = $org['Id'];
-
+                                    $userProfile = DB_getUserProfile($pdo, $user);
+                                    
                                     //echo 'iii'.DB_GetOrgIdByUserBossId2($pdo, $user);
                                     if ($_SESSION['role'] == 'organization') {
                                         echo ' <a class="dropdown-item" href="profile_org.php?Organization=' . $idOrg . '"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>';
@@ -994,6 +995,8 @@ include '../build/db/session.php';
                 }
                 if (isset($_POST['sendInviteWP']) && !empty($_POST['emailWP']) && !empty($_POST['wicplanner'])) {
                     $email = $_POST['emailWP'];
+                    $wiki = $_POST['wicplanner'];
+                    $wicEvent = DB_getWicPlannerName($pdo, $wiki);
                     if (DB_checkIfUserExists($pdo, $email)) {
                         $idWic = $_POST['wicplanner'];
                         $idUser = DB_getUserId($pdo, $email);
@@ -1004,15 +1007,34 @@ include '../build/db/session.php';
       ,[Validate] = 0
  WHERE [User_Id] = ? and [Wic_Planner_Id] = ?", array($idUser, $idWic));
                             //falta enviar o email para o user
-//                            $to = $email;
-//                            $subject = "WIC #INVITATION";
-//                            $body = "Hi! <br>"
-//                                    . "You have been invited to be part of an Organization.<br>"
-//                                    . "To do that you must sign up at: http://www.wic.club/<br>"
-//                                    . "Best regards,<br>"
-//                                    . "WIC<br><br>"
-//                                    . "Note: Please do not reply to this email! Thanks!";
-//                            sendEmail($to, $subject, $body);
+//                            
+                           
+                            if ($_SESSION['role'] === 'organization') {
+                                //email org
+                                $to = $email;
+                                $subject = "Wic";
+                                $body = "Hi!<br>"
+                                        .$org['Name']." have been invited to be part of event ".$wicEvent['Name'].".<br>"
+                                        ."You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
+                                        ."Thanks a lot.<br>"
+                                        ."Best Regards,<br>"
+                                        ."WiC<br><br>"
+                                        ."Note: Please do not reply to this email! Thanks";
+                                sendEmail($to, $subject, $body);
+                            } else {
+                                //email user
+                                $to = $email;
+                                $subject = "Wic";
+                                $body = "Hi!<br>"
+                                        .$userProfile['First']." ".$userProfile['Last'] ." have been invited to be part of event ".$wicEvent['Name'].".<br>"
+                                        ."You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
+                                        ."Thanks a lot.<br>"
+                                        ."Best Regards,<br>"
+                                        ."WiC<br><br>"
+                                        ."Note: Please do not reply to this email! Thanks";
+                                        sendEmail($to, $subject, $body);
+                            }
+                            
                         } else {
                             //insere em wicplanner user o id do user e do wicplanner
                             sql($pdo, "INSERT INTO [dbo].[WIC_Planner_User]
@@ -1028,6 +1050,31 @@ include '../build/db/session.php';
 
 
 //falta enviar email para o user se for org envia um email X se for user envia email Y
+                            if ($_SESSION['role'] === 'organization') {
+                                //email org
+                                $to = $email;
+                                $subject = "Wic";
+                                $body = "Hi!<br>"
+                                        .$org['Name']." have been invited to be part of event ".$wicEvent['Name'].".<br>"
+                                        ."You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
+                                        ."Thanks a lot.<br>"
+                                        ."Best Regards,<br>"
+                                        ."WiC<br><br>"
+                                        ."Note: Please do not reply to this email! Thanks";
+                                sendEmail($to, $subject, $body);
+                            } else {
+                                //email user
+                                $to = $email;
+                                $subject = "Wic";
+                                $body = "Hi!<br>"
+                                     .$userProfile['First']." ".$userProfile['Last'] ." have been invited to be part of event ".$wicEvent['Name'].".<br>"
+                                        ."You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
+                                        ."Thanks a lot.<br>"
+                                        ."Best Regards,<br>"
+                                        ."WiC<br><br>"
+                                        ."Note: Please do not reply to this email! Thanks";
+                                        sendEmail($to, $subject, $body);
+                            }
                         }
                     } else {
                         //insere na tabela wicplannerinvites
@@ -1039,16 +1086,34 @@ include '../build/db/session.php';
            (?
            ,0
            ,?)", array($email, $idWic));
-                        
                         //enviar email para se registar
-                        $to = $email;
-                        $subject = "Wic";
-                        $body = "Hi!<br>"
-                        ." have been invited to be part of event <name of the event>.<br>"
-                        ." I know that you wanna be part of this memorable celebration but first we need to put your name on the guestlist ;)<br>"
-                        ."Can you register here ? <a href='https://wic.club/build/sign_in.php'> Wic </a> Thanks a lot.<br>"
-                        ."Best Regards, WiC <br><br>"
-                        ."Note: Please do not reply to this email! Thanks!";
+                        if ($_SESSION['role'] === 'organization') {
+                            //email org
+                            $to = $email;
+                            $subject = "Wic";
+                            $body = "Hi!<br>"
+                                    .$org['Name']. " have been invited to be part of event ".$wicEvent['Name'].".<br>"
+                                    . "I know that you wanna be part of this memorable celebration but first we need to put your name on the guestlist ;)<br>"
+                                    . "Can you register here ? (link de registo)<br>"
+                                    . "Thanks a lot.<br>"
+                                    . "Best Regards,<br>"
+                                    . "WiC <br><br>"
+                                    . "Note: Please do not reply to this email! Thanks!";
+                            sendEmail($to, $subject, $body);
+                        } else {
+                            //email user
+                            $to = $email;
+                            $subject = "Wic";
+                            $body = "Hi!<br>"
+                                    .$userProfile['First']." ".$userProfile['Last'] ." have been invited to be part of event ".$wicEvent['Name'].".<br>"
+                                    . "I know that you wanna be part of this memorable celebration but first we need to put your name on the guestlist ;)<br>"
+                                    . "Can you register here ? (link de registo)<br>"
+                                    . "Thanks a lot.<br>"
+                                    . "Best Regards,<br>"
+                                    . "WiC <br><br>"
+                                    . "Note: Please do not reply to this email! Thanks!";
+                            sendEmail($to, $subject, $body);
+                        }
                     }
                 }
                 ?>
