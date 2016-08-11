@@ -130,7 +130,7 @@ include '../build/db/session.php';
 
         <!--COISAS CHAT-->
 
-        <script src="chat/fwebsocket.js"></script>
+<!--        <script src="chat/fwebsocket.js"></script>
         <script>
             var Server;
 
@@ -163,7 +163,7 @@ include '../build/db/session.php';
 
                 Server.connect();
             });
-        </script>
+        </script>-->
         <!--COISAS CHAT-->
 
 
