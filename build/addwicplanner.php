@@ -95,8 +95,9 @@ if (isset($id) && isset($uid)) {
 
                 $('#daterange3').daterangepicker({
                     singleDatePicker: true,
-                    showDropdowns: true
-                });
+                    showDropdowns: true,
+                    minDate: new Date()
+    });
 
                 $('#daterange').on('show.daterangepicker', function (ev, picker) {
 //				$('.daterangepicker select').selectpicker({
