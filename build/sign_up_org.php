@@ -21,19 +21,19 @@ $msg = '';
             $pw1 = (filter_var($_POST ['pw1'], FILTER_SANITIZE_STRING));
             $pw2 = (filter_var($_POST ['pw2'], FILTER_SANITIZE_STRING));
             if ($city === 0) {
-                $msg = "PLEASE CHOOSE A CITY!";
+                $msg = '<span class="label label-pill label-danger"> PLEASE CHOOSE A CITY!</span>';
             } else {
                 if ($pw1 != $pw2) {
-                    $msg = "PASSWORD & RETYPE PASSWORD DOES NOT MATCH!";
+                    $msg =  '<span class="label label-pill label-danger"> PASSWORD & RETYPE PASSWORD DOES NOT MATCH!</span>';
                 } else {
                     if (DB_checkIfUserExists($pdo, $email)) {
-                        $msg = 'EMAIL [' . $email . '] ALREADY REGISTED!';
+                        $msg = '<span class="label label-pill label-danger"> EMAIL [' . $email . '] ALREADY REGISTED!</span>';
                     } else {
                         $hashPassword = hash('whirlpool', $pw1);
                         try {
                             $code = generateActivationCode();
                             $msg = DB_addOrg($pdo, $hashPassword, $email, $nameOrg, $code, $city);
-                            $msg .= ' > Please check your email to activate your account.';
+                            $msg .= '<span class="label label-pill label-danger"> Please check your email to activate your account.</span>';
                         } catch (Exception $ex) {
                             echo "ERROR!";
                         }
