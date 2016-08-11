@@ -148,7 +148,7 @@ if (isset($_SESSION['id'])) {
                 <!--alterada cor das mensagens-->
                 <button type="submit" name="signin" class="btn btn-rounded">Sign in</button>
                 <!--adicionado botao para retornar homepage-->
-                <p class="sign-note">New to our website? <br><a href="sign_up_user.php">Sign up as a planner</a><br><a href="sign_up_org.php"> Sign up as a vendor</a><br><a href="hhtp://www.wic.club" class="label label-pill label-warning" style="background: coral"> Return To HomePage</a></p>
+                <p class="sign-note">New to our website? <br><a href="sign_up_user.php">Sign up as a planner</a><br><a href="sign_up_org.php"> Sign up as a vendor</a><br><a href="hhtp://www.wic.club" class="label label-pill label-warning" style="background: coral;color: white;"> Return To HomePage</a></p>
                 <!--adicionado botao para retornar homepage-->
                 <!--<button type="button" class="close">
                     <span aria-hidden="true">&times;</span>
