@@ -83,9 +83,9 @@ if (isset($_SESSION['id'])) {
                             DB_setLoginFailed($pdo, $email);
                             DB_setBlockAccount($pdo, $email);
                             //ENVIAR EMAIL COM INSTRUÇÔES DE DESBLOQUEIO
-                            $msg = 'Account blocked!';
+                            $msg = 'Account blocked! <span class="label label-pill label-danger">Wrong password</span> ';
                             $to = $email;
-                            $subject = "Account Blocked";
+                            $subject = 'Account Blocked <span class="label label-pill label-danger">Wrong password</span> ';
                             $code = generateActivationCode();
                             DB_updateUserAccountActivationCode($pdo, $email, $code);
                             $link = 'http://' . $_SERVER['HTTP_HOST'] . '/build/account_confirmation_link.php?EM=' . $email . '&AC=' . $code . '';
@@ -102,11 +102,11 @@ if (isset($_SESSION['id'])) {
                 }
             } else {
                 //SE ENABLED = 0
-                $msg = "Your account is not activated or blocked!";
+                $msg = 'Your account is not activated or blocked!<span class="label label-pill label-danger">Wrong password</span>';
             }
         } else {
             //SE USER N EXISTS
-            $msg = "Wrong email or password!";
+            $msg = 'Wrong email or password! <span class="label label-pill label-danger">Wrong password</span> ';
         }
     }
     ?>
