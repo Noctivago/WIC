@@ -537,12 +537,10 @@ include '../build/db/session.php';
                                                                         </form>-->
                                 </div>
 
-                                  <div class="mobile-menu-right-overlay"></div>
-                                 <div class="site-header-collapsed">
+                                <div class="help-dropdown">
                                     <button type="button">
                                         <i  class="fa fa-info-circle"><span>USERS GUIDE</span></i>
                                     </button>
-                                 </div>
                                     <div class="help-dropdown-popup">
                                         <div class="help-dropdown-popup-side">
                                             <!--	                                    <ul>
