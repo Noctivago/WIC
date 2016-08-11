@@ -2895,7 +2895,7 @@ Function DB_getMyWicsAsPopup($pdo, $userId) {
         AND [User_Id] = ?", array($userId), "rows");
 //        alterações feitas 11/08/2016 mudar button to input e colocar type="button"
         if (DB_checkIfUserHaveWicPlanner($pdo, $userId)) {
-            echo '<div class="title-label" style="align:center;">  <input type="button"  placeholder="&ensp;New Event?" class="btn btn-rounded btn-inline btn-primary" href ><i class="font-icon font-icon-plus "></i>&ensp;New Event?</div>
+            echo '<div class="title-label" style="align:center;">  <input type="button"  placeholder="&ensp;New Event?" class="btn btn-rounded btn-inline btn-primary" href ></div>
                 <h6>WiC Planner - The notepad for event planners</h6>
                 <header class="sign-title">Address to an existent one</header>';
             
