@@ -939,7 +939,7 @@ include '../build/db/session.php';
                 $userId = $_SESSION['id'];
                 
                 if ($_SESSION['role'] === 'organization') {
-                    echo '<selectclass="bootstrap-select bootstrap-select-arrow" id="Invites" name="invites" onSelect="inviteChange()">'
+                    echo '<select class="bootstrap-select bootstrap-select-arrow" id="Invites" name="invites" onSelect="inviteChange()">'
                     . '<option value="1">Wic</option>'
                             . '<option value="2">Service</option>'
                             . '</select>';
@@ -1205,6 +1205,7 @@ include '../build/db/session.php';
                 var reader = document.getElementById("invites").value;
                 alert(reader);
             }
+            
             function sendInvite() {
                 var email = document.getElementById("email").value;
                 var service = document.getElementById("service").value;
