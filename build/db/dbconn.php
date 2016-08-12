@@ -412,7 +412,7 @@ function DB_checkIfInvitationExists($pdo, $email) {
 //Validar Wic 12/08/2016
 function DB_checkInvitesWicWaiting($pdo,$id){
     try {
-        $rows = sql($pdo, "SELECT [WIC_Planner].[Name] as WicName,[WIC_Planner].[ID],[User_Profile].[First_Name],[User_Profile].[Last_Name]
+        $rows = sql($pdo, "SELECT [WIC_Planner].[Name] as WicName,[WIC_Planner].[ID],[Wic_Planner_User].[Id] as ident,[User_Profile].[First_Name],[User_Profile].[Last_Name]
   FROM [dbo].[Wic_Planner_User]
   join [WIC_Planner]
   on [WIC_Planner].[ID] = [Wic_Planner_User].[Wic_Planner_ID]
@@ -429,9 +429,9 @@ function DB_checkInvitesWicWaiting($pdo,$id){
             echo '<p class="user-card-row-name">'.$row['First_Name'].' '.$row['Last_Name'].' Invited you to the service ' . $row['WicName'] . '</p>';
             echo '<div>';
             echo '<div align="center">';
-            echo '<a class="font-icon font-icon-ok" onclick="acceptWic(' . $row['ID'] . ')"></a>';
+            echo '<a class="font-icon font-icon-ok" onclick="acceptWic(' . $row['ident'] . ')"></a>';
             echo '&nbsp;';
-            echo '<a class="font-icon font-icon-del" onclick="rejectWic(' . $row['ID'] . ')"></a>';
+            echo '<a class="font-icon font-icon-del" onclick="rejectWic(' . $row['ident'] . ')"></a>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
