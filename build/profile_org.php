@@ -8,58 +8,57 @@ include_once '../build/db/session.php';
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 col-lg-push-3 col-md-12">
+
+
+
+                <!--                
+                                <div class="dropdown dropdown-lang open"  >
+                
+                                                <button type="button"
+                                                                class="btn btn-inline btn-rounded btn-info-outline"
+                                                                title="Profile help"
+                                                                data-container="body"
+                                                                data-toggle="popover"
+                                                                data-placement="bottom"
+                                                                data-content="My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
+                
+                                                                             Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
+                                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
+                                    
+                                                </button>
+                                                                            
+                     
                 
                 
-                
-<!--                
-                <div class="dropdown dropdown-lang open"  >
-
-                                <button type="button"
-						class="btn btn-inline btn-rounded btn-info-outline"
-						title="Profile help"
-						data-container="body"
-						data-toggle="popover"
-						data-placement="bottom"
-						data-content="My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
-
-                                                             Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
-                                                style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
-                    
-				</button>
-                                                            
-     
-
-
-                        </div>
+                                        </div>
                 -->
- 
-                
-                
-                
+
+
+
+
                 <section class="box-typical">
-        <?php
-                 
-         if ($_SESSION['role'] === 'organization') {
-         
-            echo '<header class="box-typical-header-sm">
+                    <?php
+                    if ($_SESSION['role'] === 'organization') {
+
+                        echo '<header class="box-typical-header-sm">
                         My Services';
-        } else {
-            echo '<header class="box-typical-header-sm">
+                    } else {
+                        echo '<header class="box-typical-header-sm">
                         Services';
-        }
-        ?>
-                    
-                    
-<!--                    <header class="box-typical-header-sm">
-                        Services-->
-                        <div class="slider-arrs">
-                            <button type="button" class="posts-slider-prev">
-                                <i class="font-icon font-icon-arrow-left"></i>
-                            </button>
-                            <button type="button" class="posts-slider-next">
-                                <i class="font-icon font-icon-arrow-right"></i>
-                            </button>
-                        </div>
+                    }
+                    ?>
+
+
+                    <!--                    <header class="box-typical-header-sm">
+                                            Services-->
+                    <div class="slider-arrs">
+                        <button type="button" class="posts-slider-prev">
+                            <i class="font-icon font-icon-arrow-left"></i>
+                        </button>
+                        <button type="button" class="posts-slider-next">
+                            <i class="font-icon font-icon-arrow-right"></i>
+                        </button>
+                    </div>
                     </header>
                     <div class="posts-slider">
 
@@ -93,29 +92,39 @@ include_once '../build/db/session.php';
                         } else {
                             DB_GetOrgInformation2($pdo, $org);
                         }
-                        ?>
-                </section>
-                <section class="box-typical">
-                    <header class="box-typical-header-sm">
-                        People in our organization
-                        &nbsp;
-                    </header>
-                    <div class="friends-list">
-                        <!--ERRO NO ARRAY-->
-                        <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
-                    </div>
-                </section>
-            </div><!--.col- -->
-            <?php
-            if (DB_CheckIfBossOrg($pdo, $org, $idUser)) {
-                echo '<div class="col-lg-3 col-md-6 col-sm-6" >';
-                echo ' <section class="box-typical">';
-                echo '  <div class="friends-list stripped">';
-                DB_getPeopleViewServicesOrg($pdo, $org);
-                echo '         </div>';
-                echo '    </section><!--.box-typical-->';
-            }
-            ?>
+                        if (DB_CheckIfBossOrg($pdo, $org, $idUser)) {
+                            echo '<section class = "box-typical">
+                            <header class = "box-typical-header-sm">Invites to Wic Planner</header>
+                            <div class = "friends-list stripped">';
+                             DB_checkInvitesWicWaiting($pdo, $_SESSION['id']);
+                            ?>
+                            </div>
+                    </section>
+
+                    }
+                    ?>
+                    </section>
+                    <section class="box-typical">
+                        <header class="box-typical-header-sm">
+                            People in our organization
+                            &nbsp;
+                        </header>
+                        <div class="friends-list">
+                            <!--ERRO NO ARRAY-->
+                            <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
+                        </div>
+                    </section>
+                </div><!--.col- -->
+                <?php
+                if (DB_CheckIfBossOrg($pdo, $org, $idUser)) {
+                    echo '<div class="col-lg-3 col-md-6 col-sm-6" >';
+                    echo ' <section class="box-typical">';
+                    echo '  <div class="friends-list stripped">';
+                    DB_getPeopleViewServicesOrg($pdo, $org);
+                    echo '         </div>';
+                    echo '    </section><!--.box-typical-->';
+                }
+                ?>
         </div>
     </div>
 </div>

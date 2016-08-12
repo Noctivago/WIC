@@ -49,13 +49,13 @@ if ($_SESSION['role'] === 'organization') {
             <div class="col-lg-3 col-md-6 col-sm-6">
 
                 <section class="box-typical">
-                    <header class="box-typical-header-sm">Invites</header>
+                    <header class="box-typical-header-sm">Invites to service</header>
                     <div class="friends-list stripped">
                         <?PHP DB_checkInvitesWaiting($pdo, $_SESSION['id']); ?>
                     </div>
                 </section>
                 <section class="box-typical">
-                    <header class="box-typical-header-sm">Invites</header>
+                    <header class="box-typical-header-sm">Invites to Wic Planner</header>
                     <div class="friends-list stripped">
                         <?PHP DB_checkInvitesWicWaiting($pdo, $_SESSION['id']); ?>
                     </div>
