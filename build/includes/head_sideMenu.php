@@ -939,11 +939,11 @@ include '../build/db/session.php';
                 $userId = $_SESSION['id'];
                 
                 if ($_SESSION['role'] === 'organization') {
-                    echo '<select class="bootstrap-select bootstrap-select-arrow" id="Invites" name="invites" onSelect="inviteChange()">'
+                    echo '<select class="bootstrap-select bootstrap-select-arrow" id="Invites" name="invites" onChange="inviteChange()">'
                     . '<option value="1">Wic</option>'
                             . '<option value="2">Service</option>'
                             . '</select>';
-                    echo '<div class="container-fluid" style="Display: none">
+                    echo '<div class="container-fluid" id="invite_Service" "style="Display: none">
                  <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
                         <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
@@ -1048,7 +1048,7 @@ include '../build/db/session.php';
                 <?php
                 $userId = $_SESSION['id'];
                 if ($_SESSION['role'] === 'user' || $_SESSION['role'] === 'organization') {
-                    echo '<div class="container-fluid" style="Display: true">
+                    echo '<div class="container-fluid" id="invite_Wic"style="Display: true">
                  <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
                         <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
@@ -1204,6 +1204,14 @@ include '../build/db/session.php';
             function inviteChange(){
                 var reader = document.getElementById("invites").value;
                 alert(reader);
+                if(reader===1){
+                    document.getElementById("invite_Service").style.display ="true";
+                    document.getElementById("invite_Wic").style.display ="none";
+                }else{
+                    document.getElementById("invite_Wic").style.display = "true";
+                    document.getElementById("invite_Service").style.display = "none";
+                }
+                
             }
             
             function sendInvite() {
