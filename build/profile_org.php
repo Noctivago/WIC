@@ -96,36 +96,36 @@ include_once '../build/db/session.php';
                             echo '<section class = "box-typical">
                             <header class = "box-typical-header-sm">Invites to Wic Planner</header>
                             <div class = "friends-list stripped">';
-                             DB_checkInvitesWicWaiting($pdo, $_SESSION['id']);
+                            DB_checkInvitesWicWaiting($pdo, $_SESSION['id']);
                         }
                         ?>
-                            </div>
-                    </section>
-
-                    }
-                    ?>
-                    </section>
-                    <section class="box-typical">
-                        <header class="box-typical-header-sm">
-                            People in our organization
-                            &nbsp;
-                        </header>
-                        <div class="friends-list">
-                            <!--ERRO NO ARRAY-->
-                            <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
                         </div>
-                    </section>
-                </div><!--.col- -->
-                <?php
-                if (DB_CheckIfBossOrg($pdo, $org, $idUser)) {
-                    echo '<div class="col-lg-3 col-md-6 col-sm-6" >';
-                    echo ' <section class="box-typical">';
-                    echo '  <div class="friends-list stripped">';
-                    DB_getPeopleViewServicesOrg($pdo, $org);
-                    echo '         </div>';
-                    echo '    </section><!--.box-typical-->';
+                </section>
+
                 }
                 ?>
+                </section>
+                <section class="box-typical">
+                    <header class="box-typical-header-sm">
+                        People in our organization
+                        &nbsp;
+                    </header>
+                    <div class="friends-list">
+                        <!--ERRO NO ARRAY-->
+                        <?php DB_getUsersInServiceOrganization($pdo, $org); ?>
+                    </div>
+                </section>
+            </div><!--.col- -->
+            <?php
+            if (DB_CheckIfBossOrg($pdo, $org, $idUser)) {
+                echo '<div class="col-lg-3 col-md-6 col-sm-6" >';
+                echo ' <section class="box-typical">';
+                echo '  <div class="friends-list stripped">';
+                DB_getPeopleViewServicesOrg($pdo, $org);
+                echo '         </div>';
+                echo '    </section><!--.box-typical-->';
+            }
+            ?>
         </div>
     </div>
 </div>
@@ -149,15 +149,21 @@ include_once '../build/db/session.php';
         });
         location.reload();
     }
-    function acceptWic(id){
-        alert(id);
+    function acceptWic(id) {
+        var resp = 1;
+        $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
+
+        });
     }
-    
-    function rejectWic(id){
-        alert(id);
+
+    function rejectWic(id) {
+        var resp = 0;
+        $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
+
+        });
     }
-    
-    </script>
+
+</script>
 
 <script>
     $(document).ready(function () {

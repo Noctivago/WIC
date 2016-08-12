@@ -491,6 +491,16 @@ function DB_updateinvite($pdo, $resp, $invite, $userId) {
     }
 }
 
+function DB_updateWicinvite($pdo, $resp, $idWicInvite){
+    try {
+        sql($pdo,"UPDATE [dbo].[WIC_Planner_User]
+   SET [Enabled] = ?
+      ,[Validate] = 1
+ WHERE [ID] = ?",array($resp,$idWicInvite));
+    } catch (Exception $ex) {
+        
+    }
+}
 /**
  * VINCULA UM USER A UM SERVIÇO
  * @param type $pdo
