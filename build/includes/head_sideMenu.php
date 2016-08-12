@@ -1204,7 +1204,7 @@ include '../build/db/session.php';
             function inviteChange(){
                 var reader = document.getElementById("invites").value;
                 alert(reader);
-                if(reader === 1){
+                if(reader === '1'){
                     document.getElementById("invite_Service").style.display = "none";
                     document.getElementById("invite_Wic").style.display ="true";
                 }else{
