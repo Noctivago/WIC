@@ -113,6 +113,8 @@ if ($_SESSION['role'] === 'organization') {
         $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
 
         });
+        window.location.reload(1);
+
     }
 
     function rejectWic(id) {
@@ -120,13 +122,15 @@ if ($_SESSION['role'] === 'organization') {
         $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
 
         });
+        window.location.reload(1);
+
     }
 
 
 </script>
 
 <script>
-    
+
     $(document).ready(function () {
         $('.panel').lobiPanel({
             sortable: true
