@@ -497,8 +497,9 @@ function DB_updateWicinvite($pdo, $resp, $idWicInvite){
    SET [Enabled] = ?
       ,[Validate] = 1
  WHERE [ID] = ?",array($resp,$idWicInvite));
+        echo 'Updated';
     } catch (Exception $ex) {
-        
+        echo 'error';
     }
 }
 /**
