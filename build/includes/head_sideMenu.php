@@ -939,7 +939,7 @@ include '../build/db/session.php';
                 $userId = $_SESSION['id'];
                 
                 if ($_SESSION['role'] === 'organization') {
-                    echo '<select class="bootstrap-select bootstrap-select-arrow" id="Invites" name="invites" onChange="inviteChange()">'
+                    echo '<select class="bootstrap-select bootstrap-select-arrow" id="invites" name="invites" onChange="inviteChange()">'
                     . '<option value="1">Wic</option>'
                             . '<option value="2">Service</option>'
                             . '</select>';
