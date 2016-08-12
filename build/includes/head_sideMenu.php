@@ -939,7 +939,10 @@ include '../build/db/session.php';
                 $userId = $_SESSION['id'];
                 
                 if ($_SESSION['role'] === 'organization') {
-                    echo '<select></select>';
+                    echo '<selectclass="bootstrap-select bootstrap-select-arrow" id="Invites" name="invites" onSelect="inviteChange()">'
+                    . '<option value="1">Wic</option>'
+                            . '<option value="2">Service</option>'
+                            . '</select>';
                     echo '<div class="container-fluid" style="Display: none">
                  <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
                         <div class="sign-avatar">
@@ -1198,6 +1201,10 @@ include '../build/db/session.php';
             </ul>
         </nav>
         <script>
+            function inviteChange(){
+                var reader = document.getElementById("invites").value;
+                alert(reader);
+            }
             function sendInvite() {
                 var email = document.getElementById("email").value;
                 var service = document.getElementById("service").value;
