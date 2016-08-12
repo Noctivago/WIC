@@ -412,18 +412,21 @@ function DB_checkIfInvitationExists($pdo, $email) {
 //Validar Wic 12/08/2016
 function DB_checkInvitesWicWaiting($pdo,$id){
     try {
-        $rows = sql($pdo, "SELECT [WIC_Planner].[Name] as WicName,[WIC_Planner].[ID]
+        $rows = sql($pdo, "SELECT [WIC_Planner].[Name] as WicName,[WIC_Planner].[ID],[User_Profile].[First_Name],[User_Profile].[Last_Name]
   FROM [dbo].[Wic_Planner_User]
   join [WIC_Planner]
   on [WIC_Planner].[ID] = [Wic_Planner_User].[Wic_Planner_ID]
-  
-where [validate] = 0 and [Wic_Planner_User].[User_Id] = ?", array($id), "rows");
+  join [User]
+  on [User].[Id] = [WIC_Planner].[User_ID]
+  join [User_Profile]
+  on [User_Profile].[User_Id] = [User].[ID]
+  where [validate] = 0 and [Wic_Planner_User].[User_Id] = ?", array($id), "rows");
         foreach ($rows as $row) {
             echo '<article class="friends-list-item">';
             echo '<div class="user-card-row">';
             echo '<div class="tbl-row">';
             echo '<div class="tbl-cell">';
-            echo '<p class="user-card-row-name"> Invited you to the service ' . $row['WicName'] . '</p>';
+            echo '<p class="user-card-row-name">'.$row['First_Name'].' '.$row['Last_Name'].' Invited you to the service ' . $row['WicName'] . '</p>';
             echo '<div>';
             echo '<div align="center">';
             echo '<a class="font-icon font-icon-ok" onclick="acceptWic(' . $row['ID'] . ')"></a>';
