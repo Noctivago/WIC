@@ -1204,12 +1204,12 @@ include '../build/db/session.php';
             function inviteChange(){
                 var reader = document.getElementById("invites").value;
                 alert(reader);
-                if(reader == 1){
-                    document.getElementById("invite_Service").style.display ="true";
-                    document.getElementById("invite_Wic").style.display ="none";
-                }else{
-                    document.getElementById("invite_Wic").style.display = "true";
+                if(reader === 1){
                     document.getElementById("invite_Service").style.display = "none";
+                    document.getElementById("invite_Wic").style.display ="true";
+                }else{
+                    document.getElementById("invite_Wic").style.display = "none";
+                    document.getElementById("invite_Service").style.display = "true";
                 }
                 
             }
