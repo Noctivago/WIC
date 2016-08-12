@@ -416,13 +416,14 @@ function DB_checkInvitesWicWaiting($pdo,$id){
   FROM [dbo].[Wic_Planner_User]
   join [WIC_Planner]
   on [WIC_Planner].[ID] = [Wic_Planner_User].[Wic_Planner_ID]
-  where [validate] = 0 and [Wic_Planner_User].[User_Id] = ?", array($id), "rows");
+  
+where [validate] = 0 and [Wic_Planner_User].[User_Id] = ?", array($id), "rows");
         foreach ($rows as $row) {
             echo '<article class="friends-list-item">';
             echo '<div class="user-card-row">';
             echo '<div class="tbl-row">';
             echo '<div class="tbl-cell">';
-            echo '<p class="user-card-row-name"><a href="#">' . $row['ID'] . ' invited you to the service ' . $row['WicName'] . '</a></p>';
+            echo '<p class="user-card-row-name"> Invited you to the service ' . $row['WicName'] . '</p>';
             echo '<div>';
             echo '<div align="center">';
             echo '<a class="font-icon font-icon-ok" onclick="acceptWic(' . $row['ID'] . ')"></a>';
