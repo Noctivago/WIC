@@ -93,17 +93,22 @@ if ($_SESSION['role'] === 'organization') {
         window.location.reload(1);
     }
     
-        function acceptWic(id) {
+       function acceptWic(id) {
         var resp = 1;
+        alert(id);
+        //var id = document.getElementById("").value;
         $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
+            alert(result);
         });
         window.location.reload(1);
     }
 
     function rejectWic(id) {
         var resp = 0;
+        alert(id);
+        var id = document.getElementById("").value;
         $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
-
+            alert(result);
         });
         window.location.reload(1);
 
