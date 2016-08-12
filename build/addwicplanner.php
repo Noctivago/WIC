@@ -53,11 +53,11 @@ if (isset($id) && isset($uid)) {
         <div class='input-group date'>
             <input id="daterange3" type="text" value="<?= $wicInfo["Event_Date"] ?>" class="form-control"/>
             <span class="input-group-addon">
-                <i class="font-icon font-icon-calend"></i>
+                <i onclick="openDate();" class="font-icon font-icon-calend"></i>
             </span>
         </div>
-       
-       
+
+
         <span id="textelement" class="form-control" style="border:0px"></span>
         <button  onclick="addWic(<?= $wicId; ?>);" name="signup" class="btn btn-rounded btn-success sign-up">Save</button>
     </div>
@@ -69,6 +69,14 @@ if (isset($id) && isset($uid)) {
 <script src="js/lib/bootstrap-select/bootstrap-select.min.js"></script>
 
 <script>
+            function openDate() {
+                $('#daterange3').daterangepicker({
+                    singleDatePicker: true,
+                    showDropdowns: true,
+                    //Esta opçao para dizer que a data que podes escolher é a partir daqui..
+                    minDate: new Date()
+                });
+            }
             $(function () {
                 function cb(start, end) {
                     $('#reportrange span').html(start.format('YYYY, MMMM D') + ' - ' + end.format('YYYY, MMMM D'));
@@ -98,9 +106,9 @@ if (isset($id) && isset($uid)) {
                 $('#daterange3').daterangepicker({
                     singleDatePicker: true,
                     showDropdowns: true,
-       //Esta opçao para dizer que a data que podes escolher é a partir daqui..
-                                 minDate: new Date()
-    });
+                    //Esta opçao para dizer que a data que podes escolher é a partir daqui..
+                    minDate: new Date()
+                });
 
                 $('#daterange').on('show.daterangepicker', function (ev, picker) {
 //				$('.daterangepicker select').selectpicker({
