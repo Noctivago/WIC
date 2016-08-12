@@ -148,7 +148,16 @@ include_once '../build/db/session.php';
         $.post("ajax/Subscription.php", {org: org}, function (result) {
         });
         location.reload();
-    }</script>
+    }
+    function acceptWic(id){
+        alert(id);
+    }
+    
+    function rejectWic(id){
+        alert(id);
+    }
+    
+    </script>
 
 <script>
     $(document).ready(function () {
