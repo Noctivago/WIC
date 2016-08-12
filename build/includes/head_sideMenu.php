@@ -939,10 +939,12 @@ include '../build/db/session.php';
                 $userId = $_SESSION['id'];
                 
                 if ($_SESSION['role'] === 'organization') {
-                    echo '<select class="bootstrap-select bootstrap-select-arrow" id="invites" name="invites" onChange="inviteChange()">'
+                    echo '<div class="form-group" >'
+                    . '<select class="bootstrap-select bootstrap-select-arrow" id="invites" name="invites" onChange="inviteChange()">'
                     . '<option value="1">Wic</option>'
                             . '<option value="2">Service</option>'
-                            . '</select>';
+                            . '</select>'
+                            . '</div>';
                     echo '<div class="container-fluid" id="invite_Service" style="Display: none">
                  <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
                         <div class="sign-avatar">
