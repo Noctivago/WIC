@@ -935,9 +935,12 @@ include '../build/db/session.php';
                 </li>
 
                 <?php
+                
                 $userId = $_SESSION['id'];
+                
                 if ($_SESSION['role'] === 'organization') {
-                    echo '<div class="container-fluid">
+                    echo '<select></select>';
+                    echo '<div class="container-fluid" style="Display: none">
                  <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
                         <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
@@ -1042,7 +1045,7 @@ include '../build/db/session.php';
                 <?php
                 $userId = $_SESSION['id'];
                 if ($_SESSION['role'] === 'user' || $_SESSION['role'] === 'organization') {
-                    echo '<div class="container-fluid">
+                    echo '<div class="container-fluid" style="Display: true">
                  <form class="sign-box" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" method="post">
                         <div class="sign-avatar">
                             <img src="img/avatar-sign.png" alt="">
