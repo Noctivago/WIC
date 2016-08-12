@@ -416,7 +416,7 @@ function DB_checkInvitesWicWaiting($pdo,$id){
   FROM [dbo].[Wic_Planner_User]
   join [WIC_Planner]
   on [WIC_Planner].[ID] = [Wic_Planner_User].[Wic_Planner_ID]
-  where [validate] = 0 and [Wic_Planner_User].[User_Id] = ?", array($idUser), "rows");
+  where [validate] = 0 and [Wic_Planner_User].[User_Id] = ?", array($id), "rows");
         foreach ($rows as $row) {
             echo '<article class="friends-list-item">';
             echo '<div class="user-card-row">';

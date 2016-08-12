@@ -1000,7 +1000,7 @@ include '../build/db/session.php';
                                 (?,?,0,0,2)", array($serviceId, $idUser));
 
                                 $to = $email;
-                                $subject = "WIC #INVITATION";
+                                $subject = "WiC - Invitation";
                                 $body = "You have been invited by ".$org['Name']." to manage the service ".$service['Name']."."
                                         . "Only people like you with a lots of skills and hability could manage a service like that ;)."
                                         . "Just go for the front door and give your name on the sign up at: https.//wic.club"
@@ -1027,7 +1027,7 @@ include '../build/db/session.php';
                                 ,0
                                 ,?)", array($email, $serviceId));
                         $to = $email;
-                        $subject = "WIC #INVITATION";
+                        $subject = "WiC - Invitation";
                         $body = "You have been invited by " . $org['Name'] . " to manage the service " . $service['Name'] . "<br>"
                                 . "How is possible such a talented and professional person like you never been on WiC.Club ? <br>"
                                 . "You are that kind of special guest that everyone wanna have.<br>"
@@ -1096,7 +1096,7 @@ include '../build/db/session.php';
                             if ($_SESSION['role'] === 'organization') {
                                 //email org
                                 $to = $email;
-                                $subject = "Wic";
+                                $subject = "WiC - Invitation";
                                 $body = "Hi!<br>"
                                         . $org['Name'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
                                         . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
@@ -1108,7 +1108,7 @@ include '../build/db/session.php';
                             } else {
                                 //email user
                                 $to = $email;
-                                $subject = "Wic";
+                                $subject = "WiC - Invitation";
                                 $body = "Hi!<br>"
                                         . $userProfile['First'] . " " . $userProfile['Last'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
                                         . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
@@ -1136,7 +1136,7 @@ include '../build/db/session.php';
                             if ($_SESSION['role'] === 'organization') {
                                 //email org
                                 $to = $email;
-                                $subject = "Wic";
+                                $subject = "WiC - Invitation";
                                 $body = "Hi!<br>"
                                         . $org['Name'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
                                         . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
@@ -1148,7 +1148,7 @@ include '../build/db/session.php';
                             } else {
                                 //email user
                                 $to = $email;
-                                $subject = "Wic";
+                                $subject = "WiC - Invitation";
                                 $body = "Hi!<br>"
                                         . $userProfile['First'] . " " . $userProfile['Last'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
                                         . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
@@ -1173,7 +1173,7 @@ include '../build/db/session.php';
                         if ($_SESSION['role'] === 'organization') {
                             //email org
                             $to = $email;
-                            $subject = "Wic";
+                            $subject = "WiC - Invitation";
                             $body = "Hi!<br>"
                                     . $org['Name'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
                                     . "I know that you wanna be part of this memorable celebration but first we need to put your name on the guestlist ;)<br>"
@@ -1186,7 +1186,7 @@ include '../build/db/session.php';
                         } else {
                             //email user
                             $to = $email;
-                            $subject = "Wic";
+                            $subject = "WiC - Invitation";
                             $body = "Hi!<br>"
                                     . $userProfile['First'] . " " . $userProfile['Last'] . " have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
                                     . "I know that you wanna be part of this memorable celebration but first we need to put your name on the guestlist ;)<br>"
