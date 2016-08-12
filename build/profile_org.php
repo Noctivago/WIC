@@ -97,7 +97,8 @@ include_once '../build/db/session.php';
                             <header class = "box-typical-header-sm">Invites to Wic Planner</header>
                             <div class = "friends-list stripped">';
                              DB_checkInvitesWicWaiting($pdo, $_SESSION['id']);
-                            ?>
+                        }
+                        ?>
                             </div>
                     </section>
 
