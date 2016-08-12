@@ -152,10 +152,8 @@ include_once '../build/db/session.php';
     function acceptWic(id) {
         var resp = 1;
         $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
-
-
         });
-        location.reload();
+        window.location.reload(1);
     }
 
     function rejectWic(id) {
@@ -163,7 +161,7 @@ include_once '../build/db/session.php';
         $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
 
         });
-        location.reload();
+        window.location.reload(1);
 
     }
 

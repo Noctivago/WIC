@@ -108,6 +108,7 @@ if ($_SESSION['role'] === 'organization') {
         });
         window.location.reload(1);
     }
+    
     function acceptWic(id) {
         var resp = 1;
         $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
