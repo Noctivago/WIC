@@ -175,6 +175,7 @@ include_once '../build/db/session.php';
                 alert(data);
             }
         });
+        window.location.reload(1);
     }
 
 </script>
