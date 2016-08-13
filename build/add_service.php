@@ -580,7 +580,8 @@ $msg = '';
         max-height: 400px;
         position: static;
         background-repeat: no-repeat;
-        background-position: center center
+        background-position: center center;
+        background-size: contain;
     }
 </style>
 
