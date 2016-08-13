@@ -296,7 +296,7 @@ include '../build/db/session.php';
                                             <option disabled>Seattle</option>
                                         </optgroup>
                                         <optgroup label="England">
-                                            <option>London</option>
+                                            <option onclick="updateQueryStringParameter('name', 'London');">London</option>
                                         </optgroup>
                                         <optgroup label="France">
                                             <option disabled>Paris</option>
