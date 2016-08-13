@@ -274,10 +274,11 @@ include '../build/db/session.php';
                                 </div>
                                 <div class="site-header-search-container" style="width: 250px;">
 
-                                    <select class="bootstrap-select">
+                                    <!--<select class="bootstrap-select">-->
+                                    <select>
                                         <optgroup label="Portugal">
                                             <option onclick="alert('BRAGA');">BragA</option>
-                                            <option  onclick="alert('Porto');">Porto</option>
+                                            <option onclick="alert('Porto');">Porto</option>
                                             <option onclick="alert('Lisboa');">Lisboa</option>
                                         </optgroup>
                                         <optgroup label="EUA">
