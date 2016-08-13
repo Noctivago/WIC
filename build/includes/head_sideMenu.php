@@ -597,7 +597,7 @@ include '../build/db/session.php';
 
                                 $to = $email;
                                 $subject = "WiC - Invitation";
-                                $body = "You have been invited by <a href='wic.club/build/profile_org.php?Organization='".$org['Id'].">" . $org['Name'] . "</a> to manage the service <a href='wic.club/build/service_profile.php?Service='".$service['Id'].">" .$service['Name'] . "."
+                                $body = "You have been invited by <a href='https://wic.club/build/profile_org.php?Organization='".$org['Id'].">" . $org['Name'] . "</a> to manage the service <a href='https://wic.club/build/service_profile.php?Service='".$service['Id'].">" .$service['Name'] . "."
                                         . "Only people like you with a lots of skills and hability could manage a service like that ;)."
                                         . "Just go for the front door and give your name on the sign up at: https.//wic.club"
                                         . "Best Regards,<br>"
@@ -624,7 +624,7 @@ include '../build/db/session.php';
                                 ,?)", array($email, $serviceId));
                         $to = $email;
                         $subject = "WiC - Invitation";
-                        $body = "You have been invited by <a href='wic.club/build/profile_org.php?Organization='".$org['Id'].">"  . $org['Name'] . "</a> to manage the service <a href='wic.club/build/service_profile.php?Service='".$service['Id'].">" . $service['Name'] . "</a><br>"
+                        $body = "You have been invited by <a href='https://wic.club/build/profile_org.php?Organization='".$org['Id'].">"  . $org['Name'] . "</a> to manage the service <a href='wic.club/build/service_profile.php?Service='".$service['Id'].">" . $service['Name'] . "</a><br>"
                                 . "How is possible such a talented and professional person like you never been on WiC.Club ? <br>"
                                 . "You are that kind of special guest that everyone wanna have.<br>"
                                 . "Please register at : Just go for the front door and give your name on the sign up at: https.//wic.club <br>"
@@ -694,7 +694,7 @@ include '../build/db/session.php';
                                 $to = $email;
                                 $subject = "WiC - Invitation";
                                 $body = "Hi!<br>"
-                                        . "<a href='wic.club/build/profile_org.php?Organization='".$org['Id'].">".$org['Name'] . "</a> have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
+                                        . "<a href='https://wic.club/build/profile_org.php?Organization='".$org['Id'].">".$org['Name'] . "</a> have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
                                         . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
                                         . "Thanks a lot.<br>"
                                         . "Best Regards,<br>"
@@ -734,7 +734,7 @@ include '../build/db/session.php';
                                 $to = $email;
                                 $subject = "WiC - Invitation";
                                 $body = "Hi!<br>"
-                                        . "<a href='wic.club/build/profile_org.php?Organization='".$org['Id'].">".$org['Name'] . "</a> have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
+                                        . "<a href='https://wic.club/build/profile_org.php?Organization='".$org['Id'].">".$org['Name'] . "</a> have been invited to be part of event " . $wicEvent['Name'] . ".<br>"
                                         . "You are one of our favorite guests... You know, just give your name on the sign up, and take a look on the Event ;)<br>"
                                         . "Thanks a lot.<br>"
                                         . "Best Regards,<br>"
