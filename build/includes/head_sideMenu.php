@@ -380,8 +380,8 @@ include '../build/db/session.php';
                                                                                         </ul>
                                             <a><h3 style="color: coral;">First guide into WiC</h3></a><br> <br>
                                             <span class="describe"><h5>Start exploring, and plan the Event of you life</h5></span>
-                                        </div>
-                                        <div class="help-dropdown-popup-cont">
+                                       
+                                              <div class="help-dropdown-popup-cont">
                                             <div class="help-dropdown-popup-cont-in">
                                                 <div class="jscroll">
                                                     <a href="#" for="3" class="help-dropdown-popup-item font-icon font-icon-calend">
@@ -421,6 +421,8 @@ include '../build/db/session.php';
                                         </div>
                                     </div>
                                 </div>
+                                        </div>
+                                  
 
 
                                 </div>
