@@ -47,7 +47,7 @@ include '../build/db/session.php';
 
         <!--COISAS CHAT-->
 
-        <script src="chat/fwebsocket.js"></script>
+<!--        <script src="chat/fwebsocket.js"></script>
         <script>
             var Server;
 
@@ -80,7 +80,7 @@ include '../build/db/session.php';
 
                 Server.connect();
             });
-        </script>
+        </script>-->
         <!--COISAS CHAT-->
 
 
@@ -426,14 +426,11 @@ include '../build/db/session.php';
                                 <div class="site-header-search-container" style="width: 250px;">
 
                                     <select class="bootstrap-select">
-<!--                                        <option disabled data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>-->
-
                                         <optgroup label="Portugal">
                                             <option onclick="alert('BRAGA');">BragA</option>
-                                            <option  onSelect="alert('Porto');">Porto</option>
-                                            <option onSelect="alert('Lisboa');">Lisboa</option>
+                                            <option  onclick="alert('Porto');">Porto</option>
+                                            <option onclick="alert('Lisboa');">Lisboa</option>
                                         </optgroup>
-
                                         <optgroup label="EUA">
                                             <option>Los Angeles</option>
                                             <option data-content='<span class="font-icon font-icon-dots"></span>Choose your City' disabled>New York</option>
@@ -448,16 +445,13 @@ include '../build/db/session.php';
                                             <option disabled >Houston</option>
                                             <option disabled>Seattle</option>
                                         </optgroup>
-
                                         <optgroup label="England">
                                             <option>London</option>
                                         </optgroup>
-
                                         <optgroup label="France">
                                             <option disabled>Paris</option>
                                             <option disabled>Lyon</option>
                                         </optgroup>
-
                                         <optgroup label="Belgium">
                                             <option disabled>Brussels</option>
                                         </optgroup>
@@ -481,7 +475,6 @@ include '../build/db/session.php';
                                             <option disabled>Toronto</option>
                                             <option disabled>Vancouver</option>
                                         </optgroup>
-
                                         <optgroup label="China">
                                             <option disabled>Hong Kong</option>
                                         </optgroup>
