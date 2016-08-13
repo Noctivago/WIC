@@ -278,7 +278,7 @@ include '../build/db/session.php';
                                     <select>
                                         <optgroup label="">
                                             <!--<option onclick="updateQueryStringParameter('name', '');">Choose your city...</option>-->
-                                            <option disabled>Choose your city...</option>
+                                            <option onclick="updateQueryStringParameter('name', '');">Choose your city...</option>
                                         </optgroup>
                                         <optgroup label="Portugal">
                                             <option onclick="updateQueryStringParameter('name', 'Braga');">Braga</option>
