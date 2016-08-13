@@ -30,8 +30,6 @@ include '../build/db/session.php';
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
     </head>
 
     <div id="fb-root"></div>
@@ -105,16 +103,6 @@ include '../build/db/session.php';
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
-
-
                             <div class="dropdown dropdown-notification messages">
                                 <a href="#"
                                    class="header-alarm dropdown-toggle active"
@@ -170,10 +158,6 @@ include '../build/db/session.php';
                                     </div>
                                 </div>
                             </div>
-
-
-
-
                             <div class="dropdown user-menu">
                                 <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
                                     <img src="img/avatar-2-64.png" alt="">
@@ -206,25 +190,7 @@ include '../build/db/session.php';
 
                                 </div>
                             </div>
-                            <!--                                                        <div class="dropdown dropdown-lang open"  >
-                            
-                                                            <button type="button"
-                                                                            class="btn btn-inline btn-rounded btn-success-outline"
-                                                                            title="Profile help"
-                                                                            data-container="body"
-                                                                            data-toggle="popover"
-                                                                            data-placement="left"
-                                                                            data-content="My Team: That is the place where you can watch the people that you invited to be part of your events on wic planner. It's awesome for your teammates that are planning the event with you to be always on the same page knowing the latest incomes. 
-                            
-                            Blog: Take a look on the latest and fresh ideas about the events industry on WiC's official blog."
-                                                                            style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
-                                                
-                                                            </button>
-                                                                                        
-                                 
-                            
-                            
-                                                    </div>-->
+
                             <button type="button" class="burger-right">
                                 <i class="font-icon-pin-2"></i>
                             </button>
@@ -312,11 +278,11 @@ include '../build/db/session.php';
                                         </div>
                                     </div>
                                 </div>
-                                <!--<div class="site-header-search-container" style="width: 250px;">-->
+                                <div class="site-header-search-container" style="width: 250px;">
 
                                     <select class="bootstrap-select">
                                         <optgroup label="Portugal">
-                                            <option onclick="alert('BRAGA');">BragA</option>
+                                            <option onclick="alert('BRAGA');">Braga</option>
                                             <option  onclick="alert('Porto');">Porto</option>
                                             <option onclick="alert('Lisboa');">Lisboa</option>
                                         </optgroup>
@@ -401,7 +367,7 @@ include '../build/db/session.php';
                                                                             </button>
                                                                             <div class="overlay"></div>
                                                                         </form>-->
-                                <!--</div>-->
+                                </div>
 
 
                                 <!--                                <div class="dropdown dropdown-menu-right" >
