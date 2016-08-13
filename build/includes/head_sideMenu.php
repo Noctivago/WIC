@@ -438,9 +438,9 @@ include '../build/db/session.php';
 <!--                                        <option disabled data-content='<span class="font-icon font-icon-pin-2"></span>Choose your City'>MAMAS</option>-->
 
                                         <optgroup label="Portugal">
-                                            <option onclick="alert('BRAGA')">Braga</option>
-                                            <option  onclick="alert('BRAGA')">Porto</option>
-                                            <option onclick="alert('BRAGA')">Lisboa</option>
+                                            <option onclick="alert('BRAGA');">Braga</option>
+                                            <option  onSelect="alert('Porto');">Porto</option>
+                                            <option onSelect="alert('Lisboa');">Lisboa</option>
                                         </optgroup>
 
                                         <optgroup label="EUA">
