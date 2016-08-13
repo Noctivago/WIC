@@ -316,7 +316,7 @@ include '../build/db/session.php';
 
                                     <select class="bootstrap-select">
                                         <optgroup label="Portugal">
-                                            <option onclick="alert('BRAGA');">Braga</option>
+                                            <option onclick="alert('BRAGA');">BragA</option>
                                             <option  onclick="alert('Porto');">Porto</option>
                                             <option onclick="alert('Lisboa');">Lisboa</option>
                                         </optgroup>
