@@ -444,7 +444,7 @@ include '../build/db/session.php';
                                         </optgroup>
 
                                         <optgroup label="EUA">
-                                            <option onclick="setCityValue(this.value)">Los Angeles</option>
+                                            <option>Los Angeles</option>
                                             <option data-content='<span class="font-icon font-icon-dots"></span>Choose your City' disabled>New York</option>
                                             <option disabled>Orlando</option>
                                             <option disabled>Austin</option>
