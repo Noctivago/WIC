@@ -641,7 +641,10 @@ include '../build/db/session.php';
 
                               <div class="help-dropdown">
                                     <button type="button">
-                                        <i  class="fa fa-info-circle"><span>USERS GUIDE</span></i>
+                                        <i  class="fa fa-info-circle"><span style="
+    font-family: 'Proxima Nova',sans-serif;
+    font-size: 13px;
+">USERS GUIDE</span></i>
                                     </button>
                                     <div class="help-dropdown-popup">
                                         <div class="help-dropdown-popup-side">
@@ -697,7 +700,7 @@ include '../build/db/session.php';
                                             </div>
                                         </div>
                                     </div>
-                                </div>.help-dropdown
+                                </div>
 
                                 <!--                                <div class="dropdown dropdown-menu-right" >
                                                                 <button type="button"
