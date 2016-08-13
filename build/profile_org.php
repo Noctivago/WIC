@@ -101,9 +101,6 @@ include_once '../build/db/session.php';
                         ?>
                         </div>
                 </section>
-
-                }
-                ?>
                 </section>
                 <section class="box-typical">
                     <header class="box-typical-header-sm">
