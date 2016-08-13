@@ -12,7 +12,7 @@ $msg = '';
         <div class="row">
             <div class="col-lg-9 col-lg-push-0 col-md-12">
                 <!--IMAGEM PERFIL SERVICE-->
-                <section class="box-typical" stye="background-color:black">
+                <section class="box-typical" style="background-color:black; position: absolute;top: 0px; left:0px;width: 800px; height: 456px;">
                     <div  style="width: 100%;" style="margin: 0px auto; display: block; width: auto;height: auto;max-height: 400px;max-width: 700px;top: 0px; left: 0px;"></div>                    
                     <!--<div id="imagePreview" style="margin: 0px auto; display: block; width: auto;height: auto;max-height: 400px;max-width: 700px;top: 0px; left: 0px;"></div>-->                    
                 </section>    
