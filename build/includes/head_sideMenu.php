@@ -312,7 +312,7 @@ include '../build/db/session.php';
 
                 </a>
                 <button class="hamburger hamburger--htla">
-                    <span>toggle menu</span>
+                    <span style="background-color: coral;">toggle menu</span>
                 </button>
                 <div class="site-header-content">
                     <div class="site-header-content-in">
