@@ -23,8 +23,6 @@ include '../build/db/session.php';
         <link href="img/w_logo.png" rel="icon" type="image/png">
         <link href="img/w_logo.png" rel="shortcut icon">
 
-
-
         <link href="css/lib/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -209,10 +207,7 @@ include '../build/db/session.php';
                                         <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third Party Test</a>
                                     </div>
                                 </div>
-
-
-
-
+                                
                                 <div class="dropdown dropdown-typical">
                                     <a class="header" id="dd-header-marketing" data-target="#" href="#" >
                                         <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
@@ -270,7 +265,6 @@ include '../build/db/session.php';
                                                                 Blog
                                                                 <span class="describe">Take a look on the latest and fresh ideas about the events industry on WiC's official blog</span>
                                                             </a>
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -501,18 +495,7 @@ include '../build/db/session.php';
                 <br>
 
                 <header class="side-menu-title"> Start Planning
-                    <!--                                     <button type="button"
-                                                                    class="btn btn-inline btn-rounded "
-                                                                    title="Muita parra pouca uva"
-                                                                    data-container="body"
-                                                                    data-toggle="popover"
-                                                                    data-placement="right"
-                                                                    data-content="Comer e o coçar o mal é começar "
-                                                                    style="margin: 0px auto auto 150px; display: block; width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;"><i class="">?</i>
-                                        
-                                                    </button>-->
-
-
+                   
                 </header>
 
 
