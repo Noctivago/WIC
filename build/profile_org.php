@@ -98,7 +98,7 @@ include_once '../build/db/session.php';
                             <div class = "friends-list stripped">';
                             DB_checkInvitesWicWaiting($pdo, $_SESSION['id']);
                         }
-                        ?>
+                       ?>
                         </div>
                 </section>
                 </section>
@@ -158,19 +158,10 @@ include_once '../build/db/session.php';
 
     function rejectWic(id) {
         var resp = 0;
-//        alert(id);
-//        var id = document.getElementById("").value;
-//        $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
-//            alert(result);
-//        });
-//        window.location.reload(1);
-        $.ajax({
-            url: 'ajax/wicPlannerInvite.php',
-            method: 'post',
-            data: {resp: resp, Id: id},
-            success: function (data) {
-                alert(data);
-            }
+        alert(id);
+        var id = document.getElementById("").value;
+        $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
+            alert(result);
         });
         window.location.reload(1);
     }
