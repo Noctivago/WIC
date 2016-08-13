@@ -161,13 +161,20 @@ include_once '../build/db/session.php';
 
     function rejectWic(id) {
         var resp = 0;
-        alert(id);
-        var id = document.getElementById("").value;
-        $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
-            alert(result);
+//        alert(id);
+//        var id = document.getElementById("").value;
+//        $.post("ajax/wicPlannerInvite.php", {Id: id, resp: resp}, function (result) {
+//            alert(result);
+//        });
+//        window.location.reload(1);
+        $.ajax({
+            url: 'ajax/wicPlannerInvite.php',
+            method: 'post',
+            data: {resp: resp, Id: id},
+            success: function (data) {
+                showWicServicesForm(id);
+            }
         });
-        window.location.reload(1);
-
     }
 
 </script>
