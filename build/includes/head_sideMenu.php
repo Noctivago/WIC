@@ -362,7 +362,7 @@ include '../build/db/session.php';
                                     <a class="header" id="dd-header-marketing" data-target="#" href="#" >
                                         <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
                                     </a>
-                                 <div class="help-dropdown">
+<!--                                 <div class="help-dropdown">
                                <button type="button" style="margin-top: -5px;">
                                         <i  class="fa fa-info-circle"><span style="font-family: 'Proxima Nova';font-size: 17px;color: darkgray;">Users Guide</span></i>
                                     </button>
@@ -422,7 +422,7 @@ include '../build/db/session.php';
                                     </div>
                                 </div>
                                         </div>
-                                  
+                                  -->
 
 
                                 </div>
