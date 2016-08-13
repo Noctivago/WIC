@@ -172,7 +172,7 @@ include_once '../build/db/session.php';
             method: 'post',
             data: {resp: resp, Id: id},
             success: function (data) {
-                showWicServicesForm(id);
+                alert(data);
             }
         });
     }
