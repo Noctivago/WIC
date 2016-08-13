@@ -277,12 +277,12 @@ include '../build/db/session.php';
                                     <!--<select class="bootstrap-select">-->
                                     <select>
                                         <optgroup label="Portugal">
-                                            <option onclick="alert('BRAGA');">Braga</option>
-                                            <option onclick="alert('Porto');">Porto</option>
-                                            <option onclick="alert('Lisboa');">Lisboa</option>
+                                            <option onclick="updateQueryStringParameter('name', 'Braga');">Braga</option>
+                                            <option onclick="updateQueryStringParameter('name', 'Porto');">Porto</option>
+                                            <option onclick="updateQueryStringParameter('name', 'Lisboa');">Lisboa</option>
                                         </optgroup>
                                         <optgroup label="EUA">
-                                            <option>Los Angeles</option>
+                                            <option onclick="updateQueryStringParameter('name', 'Los Angeles');">Los Angeles</option>
                                             <option data-content='<span class="font-icon font-icon-dots"></span>Choose your City' disabled>New York</option>
                                             <option disabled>Orlando</option>
                                             <option disabled>Austin</option>
