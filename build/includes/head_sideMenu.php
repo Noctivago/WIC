@@ -276,7 +276,9 @@ include '../build/db/session.php';
 
                                     <!--<select class="bootstrap-select">-->
                                     <select>
-                                        <optgroup label="Choose your city...">
+                                        <optgroup label="">
+                                            <!--<option onclick="updateQueryStringParameter('name', '');">Choose your city...</option>-->
+                                            <option disabled>Choose your city...</option>
                                         </optgroup>
                                         <optgroup label="Portugal">
                                             <option onclick="updateQueryStringParameter('name', 'Braga');">Braga</option>
