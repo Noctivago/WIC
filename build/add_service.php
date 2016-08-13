@@ -13,7 +13,7 @@ $msg = '';
             <div class="col-lg-9 col-lg-push-0 col-md-12">
                 <!--IMAGEM PERFIL SERVICE-->
                 <section class="box-typical" stye="background-color:black">
-                    <div id="imagePreview" style="margin: 10px 30px 10px 30px; display: block; width: 100%;"></div>                    
+                    <div id="imagePreview" style="margin: 0px auto; display: block; width: auto;height: auto;max-height: 400px;max-width: 700px;top: 0px; left: 0px;"></div>                    
                 </section>    
                 <section class="box-typical">
                     <div class="recomendations-slider">
