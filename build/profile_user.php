@@ -1,7 +1,7 @@
 <?php
 include ("includes/head_sideMenu.php");
-include_once '../build/db/dbconn.php';
-include_once '../build/db/session.php';
+//include_once '../build/db/dbconn.php';
+//include_once '../build/db/session.php';
 
 if ($_SESSION['role'] === 'organization') {
     header("location: ../build/profile_org.php");

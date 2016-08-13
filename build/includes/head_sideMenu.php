@@ -30,109 +30,19 @@ include '../build/db/session.php';
         <link href="css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
-
-
-        <!--BACKUP-->
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-        <!--COISAS CHAT-->
-
-<!--        <script src="chat/fwebsocket.js"></script>
-        <script>
-            var Server;
-
-            function send(text) {
-                Server.send('message', text);
-            }
-
-            $(document).ready(function () {
-                console.log('Connecting...');
-                //40.117.188.29/chatwic.eastus.cloudapp.azure.com
-                Server = new fWebSocket('ws://chatwic.eastus.cloudapp.azure.com:9000');
-
-                //Let the user know we're connected
-                Server.bind('open', function () {
-                    //log("Connected.");
-                    console.log("Connected.");
-                });
-
-                //OH NOES! Disconnection occurred.
-                Server.bind('close', function (data) {
-                    //log("Disconnected.");
-                    console.log("Disconnected.");
-                });
-
-                //Log any messages sent from server
-                Server.bind('message', function (payload) {
-                    //log(payload);
-                    console.log("payload.");
-                });
-
-                Server.connect();
-            });
-        </script>-->
-        <!--COISAS CHAT-->
-
-
-        <!--FIM BACKUP-->
-
-
-
-
 
     </head>
 
     <div id="fb-root"></div>
-<!--    <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id))
-                return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>-->
-
 
     <body class="with-side-menu control-panel control-panel-compact">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         <?php
-        //SE TIVER QUERY STRING
 
         $selfUrl = '/build/index.php';
-//        $getValues = array();
-//        foreach ($_GET as $key => $value) {
-//            array_push($getValues, $key . "=" . $value);
-//        }
-//        if (count($getValues) > 0) {
-//            $selfUrl .= "?" . implode('&', $getValues);
-//        } else {
-//            $selfUrl .= "?";
-//        }
+
         ?>
         <header class="site-header">
             <div class="container-fluid">
@@ -148,27 +58,6 @@ include '../build/db/session.php';
                 <div class="site-header-content">
                     <div class="site-header-content-in">
                         <div class="site-header-shown">
-                            <!--                            <div class="dropdown dropdown-lang open"  >
-                            
-                            
-                                                            
-                                                            
-                                                            <button type="button"
-                                                                            class="btn btn-inline btn-rounded btn-info"
-                                                                            title="Help"
-                                                                            data-container="body"
-                                                                            data-toggle="popover"
-                                                                            data-placement="bottom"
-                                                                            data-content=" WiC planner:  WiC planner is a notepad for event planners. You create the event and when you close the deal with the vendor you should adress the service to the events created. Don't forget that you need everything planned by the day of the event;
-                                                                            -Inbox: Here you can take a look on the latest conversations with the suppliers;
-                                                                            -Profile: Change the password, the name of your account, clarify your doubts and ask for help when needed."
-                                                                            style="width: 21px;height: 21px; padding-top: 0px;padding-bottom: 0px; padding-left: 0px;padding-right: 0px;border-top-width: 0px;margin-top: 5px;border-top-width: 1px;"><i class="font-icon font-icon-lamp"></i>
-                                                
-                                                            </button>
-                                                        
-                            
-                                                    </div>-->
-
                             <div class="dropdown dropdown-notification add-customers-screen-user"  >
                                 <a href="#"
                                    class="header-alarm  "
@@ -423,7 +312,7 @@ include '../build/db/session.php';
                                         </div>
                                     </div>
                                 </div>
-                                <div class="site-header-search-container" style="width: 250px;">
+                                <!--<div class="site-header-search-container" style="width: 250px;">-->
 
                                     <select class="bootstrap-select">
                                         <optgroup label="Portugal">
@@ -512,7 +401,7 @@ include '../build/db/session.php';
                                                                             </button>
                                                                             <div class="overlay"></div>
                                                                         </form>-->
-                                </div>
+                                <!--</div>-->
 
 
                                 <!--                                <div class="dropdown dropdown-menu-right" >
