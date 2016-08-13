@@ -14,7 +14,7 @@ $msg = '';
                 <!--IMAGEM PERFIL SERVICE-->
                 <section class="box-typical" style=" position: static;top: 0px; left:0px;width: auto; height: 456px;">
                     <!--<div  style="margin: 0px auto; display: block; max-height: 356px;max-width: 700px;top: 0px; left: 0px;position: static;"></div>-->                    
-                    <div  id="imagePreview" style="width: auto; height: auto; min-height: 400px; max-width: 800px;margin: 10px 30px; display: block;"></div>                    
+                    <div  id="imagePreview" style="width: auto; height: auto; min-height: 400px; max-width: 800px;margin: 10px auto; display: block;"></div>                    
                     <!--<div id="imagePreview" style="margin: 0px auto; display: block; width: auto;height: auto;max-height: 400px;max-width: 700px;top: 0px; left: 0px;"></div>-->                    
                 </section>    
                 <section class="box-typical">
