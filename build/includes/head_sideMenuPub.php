@@ -106,13 +106,10 @@ if (isset($_SESSION['id'])) {
                                     </div>
                                 </div>
 
-                                <div class="dropdown dropdown-typical">
-                                    <a class="header" id="dd-header-marketing" data-target="#" href="#" >
-                                        <span style="color: darkgray; width: 200px;">You can event, event your life! &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                    </a>
-                                    <br>
-                                    <br>
-                                </div>
+                              <div class="help-dropdown">
+                               <button type="button" style="margin-top: -5px;">
+                                        <i  class="fa fa-info-circle"><span style="font-family: 'Proxima Nova';font-size: 17px;color: darkgray;">Users Guide</span></i>
+                                    </button>
                                 <div class="site-header-search-container" style="width: 250px;">
                                     <form class="site-header-search opened" action="<?php echo $selfUrl; ?>">
                                     <!--<input type="text" placeholder="Choose your City.."-->
